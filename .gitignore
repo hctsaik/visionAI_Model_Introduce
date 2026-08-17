@@ -1,0 +1,6 @@
+# Publish only the self-contained GitHub Pages bundle and its public README.
+*
+!.gitignore
+!README.md
+!docs/
+!docs/**
