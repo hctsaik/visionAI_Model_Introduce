@@ -11,14 +11,9 @@ choose `main` with the `/docs` folder. The site URL will be:
 
 ## Update the published site
 
-In the full course workspace, rebuild the lesson and Pages bundle:
-
-```powershell
-python tools/build_interactive_learning_html.py
-python tools/build_github_pages_site.py --clean
-```
-
-The bundle only contains `interactive-learning.html` as `docs/index.html` and
-the 1,114 image assets it references. It intentionally excludes local browser
+This repository is the deployable static snapshot. Regenerate the `docs/`
+bundle from the full course workspace, then replace and commit `docs/` here.
+The bundle contains `interactive-learning.html` as `docs/index.html` and the
+1,114 image assets it references. It intentionally excludes local browser
 caches, prompt intermediates, raw image-generation material, and presentation
 source files.
