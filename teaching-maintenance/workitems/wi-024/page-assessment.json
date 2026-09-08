@@ -1,0 +1,111 @@
+{
+  "rubric": "v1.0",
+  "reviewer": "Codex self review",
+  "learner_study": "not conducted",
+  "pages": [
+    {
+      "slug": "det-yolo-dense",
+      "scores": [
+        19,
+        19,
+        19,
+        19,
+        9,
+        9
+      ],
+      "total": 94,
+      "evidence": [
+        "同板兩電阻定位與密集排列案例",
+        "YOLOv8固定版本、多尺度與候選形成，NMS不修框",
+        "原圖覆核漏件與重複，候選不是量測",
+        "RT-DETR、標註、換品、完整延遲都在主線",
+        "三圖先因果再反例比較，手機為直向",
+        "密集且要求更快時比較取像／抑制／另一模型"
+      ],
+      "deductions": "沒有現場標註樣本或實跑基準；回歸細节未展開，比較段稍長",
+      "reading_record": "page-reading-det-yolo-dense.txt",
+      "reading_sha256": "84f82708ce812221124fea8f50d7a73e1bddeb6b120b5690aeaf2a1cae8c1e0b",
+      "scope": "default main text + opened self-test, desktop/mobile first-read figures; original engineering assets retained, not rescored",
+      "veto": false,
+      "user_review": "pending"
+    },
+    {
+      "slug": "det-rtdetr",
+      "scores": [
+        19,
+        19,
+        19,
+        19,
+        8,
+        9
+      ],
+      "total": 93,
+      "evidence": [
+        "同板小電阻與節拍限制",
+        "高層注意力與融合、一對一訓練、推論不用GT",
+        "無NMS仍有篩選與覆核",
+        "YOLO基準、層數與解析度的代價明確",
+        "四支路標籤需停讀；整課三圖與主線分工清楚",
+        "減層漏小件後要求有條件的取捨"
+      ],
+      "deductions": "查詢品質為簡化描述；手機核心支路及長比較段負擔較高",
+      "reading_record": "page-reading-det-rtdetr.txt",
+      "reading_sha256": "47fbb9b6842ae0a4f3d02cf487c1f61aece36d9c000e16bcb25142dc210ac7a2",
+      "scope": "default main text + opened self-test, desktop/mobile first-read figures; original engineering assets retained, not rescored",
+      "veto": false,
+      "user_review": "pending"
+    },
+    {
+      "slug": "det-grounding-dino-interface",
+      "scores": [
+        19,
+        19,
+        19,
+        19,
+        9,
+        9
+      ],
+      "total": 94,
+      "evidence": [
+        "料號R-17與實際電阻存在的衝突",
+        "圖文交換、起點、解碼三次文字參與",
+        "空候選不等於缺件，框詞語及分割責任分清",
+        "與YOLOE及固定類別方法比較提示／資料／成本",
+        "大工作物件、直向手機，文字分層",
+        "找不到或找到多物件且要輪廓時決策"
+      ],
+      "deductions": "未實跑提示成功率；比較準備與成本段偏長，手機修框局部小",
+      "reading_record": "page-reading-det-grounding-dino-interface.txt",
+      "reading_sha256": "5b294524719aaad5e37b609373a362588340b4f65ad70e4cac30624d0d068af9",
+      "scope": "default main text + opened self-test, desktop/mobile first-read figures; original engineering assets retained, not rescored",
+      "veto": false,
+      "user_review": "pending"
+    },
+    {
+      "slug": "yoloe",
+      "scores": [
+        19,
+        19,
+        19,
+        19,
+        8,
+        9
+      ],
+      "total": 93,
+      "evidence": [
+        "難命名物件及反光後mask偏出",
+        "SAVPE聚合與區域比對，RepRTA／LRPC來源分開",
+        "框與mask可一起，邊界與實體尺寸要另驗",
+        "三模式替代、內建詞庫限制、固定類別基準及完整成本",
+        "三圖分工完整；手機向量旁路需追讀",
+        "反光新產品要免標註又量尺寸，答案說明限制與驗證"
+      ],
+      "deductions": "文字／無外部提示模式以短文而非完整內部圖呈現；比較段較長，無真人測試",
+      "reading_record": "page-reading-yoloe.txt",
+      "reading_sha256": "25aad0ba7fc75c1a59c34b3c5d5f53969f70f7f9d74881479ffe48805be20f91",
+      "scope": "default main text + opened self-test, desktop/mobile first-read figures; original engineering assets retained, not rescored",
+      "veto": false,
+      "user_review": "pending"
+    }
+  ]
+}

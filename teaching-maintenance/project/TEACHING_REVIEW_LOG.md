@@ -1,5 +1,18 @@
 # 共用教學製作、評分與學習紀錄
 
+## WI-024 四個已提供連結的偵測課重製（2026-09-09）
+
+- 授權：使用skill重製並直接commit＋push；使用者稱六個但僅提供四連結，另外兩題已詢問未回覆，不自行推定。範圍為四課首讀圖文；原工程圖保留，未重新評整套工程參考。
+- 產物：每課核心／反例／比較三圖，桌面與手機獨立imagegen PNG；兩組比較共用後共20張不同PNG。原生及328px已逐張實看，精確prompt與候選在`teaching-images/vision-ai-model-selection/workitems/wi-024/`，正式引用在各topic及active-assets；生成示意不是模型實測。
+- 逐圖：`image-assessment.json`保存20張v1.0五分項、正面證據、扣分、完成度與hash；自評91–95，無否決項。桌面／手機、頁面與使用者核准分開；未做真人學習測試，使用者成品核准pending。
+- 修正閉環：YOLO D2桌面r01把NMS保留框縮緊，r02保留過寬幾何；RT-DETR C1桌面r01把細中層接到高層注意力，r02恢復旁路；RT D2手機r01將預測框混入測試輸入，r02改乾淨原圖。Grounding C1依次修原圖／特徵標籤、q進decoder與側文字遮擋；YOLOE C1 r02把「區域切分」改為特徵位置示意。
+- 比較圖學習：known D3 r01分支誤指同一方法，r02取消跨欄箭頭；此經驗已先寫入prompt D3 preflight，後者首稿明示替代方案及三模式擇一。個別候選失敗保留，不以最終分數抹除。
+- 網頁學習：實看發現第三callout藏在工程區，把換產品／完整成本移至預設摘要；再讀頁首發現learner的`output`未被renderer使用，改為`deliverable`，YOLOE舊「框或遮罩」及模式定義已修。來源正確不代表頁面呈現正確。
+- 規則位置：圖片指南既有WI-021/022段補運算不變量與替代模式；網頁指南補實際欄位／收合狀態；量表補證據判準，權重不變；skill主入口與image-production-cycle補成品驗證。下輪以運算前後幾何及實際可見摘要驗證，不靠prompt承諾。
+- 已驗證：四課course/docs×1440/390/360共24狀態、72圖載入／放大及解答導覽PASS；桌面與手機截圖已實看。尺寸、偵測內容、導覽、bundle共8 tests及6 subtests PASS。新增727×2164為原生手機尺寸，未重採樣。
+- 最終本機驗證：四課預設全文與自測已審讀，`page-assessment.json`逐課93–94分；最後8頁面狀態／24圖解碼PASS，1,311引用資產來源與docs一致、40次本機HTTP hash一致、未引用檔案0，bundle 1,045,579,220 bytes。頁內圖寬桌面936px、手機360視窗326px，另有328px獨立審圖。HTML資料差異僅指定四課。
+- 即將發布：同步四份Markdown、完整skill及逐图／整頁／發布包證據副本後commit/push。此為提交前紀錄，實際遠端與公開核對結果由Git歷史及WORKITEMS WI-024接續，不預先宣稱發布。全站歷史charuco驗證阻塞未處理，未宣稱全站測試全過。使用者成品核准仍pending。
+
 ## WI-017 SIFT＋LightGlue 依寫回契約重產（2026-09-08）
 
 - 回饋：若經驗已寫回 Markdown，重做 SIFT 與 LightGlue。
@@ -2428,6 +2441,12 @@ WI-021 AE D5 mobile r01：三種比較來源已可辨，但 RD4AD 的中央瓶�
 | subspacead-c1-r03-desktop.png | 9/9/9/8/9 | 9/9/9/8/9 |
 | subspacead-d2-r01-desktop.png | 9/9/9/8/9 | 8/9/9/8/9 |
 ## WI-022｜WI-021 學習正式回寫 skill 與權威文件（2026-09-09）
+## WI-024｜偵測課重製開始
+- 現版四核心PNG已實看：PCB素材偏小、圖解與文字重複、框提案／query及提示路徑仍依賴抽象格；舊雙比較圖分散每课責任。保留正確版本界線與原工程參考。
+- 採納WI-022：每課核心→反例→選用，獨立手機區內資料流，生成後全圖檢查。首原型brief `teaching-images/vision-ai-model-selection/workitems/wi-024/yolo-c1-r01.md`；參考指定PPT第1頁已看，不沿用頁碼。
+- 已保存四topic、model與learner基準；另兩題尚待使用者說明。不宣稱製作／評分完成，下一步YOLO C1桌面原型。
+
+## WI-022｜WI-021 學習正式回寫 skill 與權威文件（2026-09-09，續）
 
 WI-023版本保存補充：使用者後續授權commit＋push；本文件與其餘三份指南、完整teaching-review-cycle skill將同步至既有repo的`teaching-maintenance/`。該處為版本保存副本，原工作區／已安裝skill仍為編輯權威。後續更新同步副本與manifest再提交；歷史「未發布」描述保留為當時狀態，推送結果見WORKITEMS WI-023及Git歷史。
 

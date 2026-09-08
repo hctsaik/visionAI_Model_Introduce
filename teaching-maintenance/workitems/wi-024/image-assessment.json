@@ -1,0 +1,747 @@
+{
+  "rubric": "v1.0",
+  "scope": "20 unique first-read PNG; original engineering images not reassessed",
+  "reviewer": "Codex self review, not learner study",
+  "images": [
+    {
+      "asset": "yolo-c1-r01-desktop.png",
+      "sha256": "b1a0cb190db27702b7cda7caf93757f410469e3aa9320fca81d175083cf36e31",
+      "view": "native",
+      "scores": [
+        24,
+        23,
+        18,
+        19,
+        9
+      ],
+      "total": 93,
+      "positive_evidence": [
+        "A三候選與B一候選對照末欄各一框",
+        "多尺度格點、候選形成、NMS去重順序清楚",
+        "末欄可回板核對兩件",
+        "大板、四欄、黃句",
+        "A/B身分保持"
+      ],
+      "deductions": "回歸解碼未細畫，局部格點標籤較小",
+      "completion": [
+        9,
+        9,
+        9,
+        9,
+        9
+      ],
+      "completion_reasons": [
+        "工件主導、藍白四區、黃收束，局部細節略密",
+        "多尺度格點、候選形成、NMS去重順序清楚；主要因果或比較四段完整",
+        "標明教學示意且無實測性能；A/B身分保持",
+        "各區主體與短句能先看；回歸解碼未細畫，局部格點標籤較小",
+        "四主區、箭頭或比較分隔與單一結論層級清楚"
+      ],
+      "veto": false,
+      "user_review": "pending"
+    },
+    {
+      "asset": "yolo-c1-r01-mobile.png",
+      "sha256": "e6bf4dedad9168b9c4ce8ec12f62f07a1059a478f74b91d0b8ce2b92bc9dc7f2",
+      "view": "native + 328px CSS screenshot",
+      "scores": [
+        24,
+        22,
+        18,
+        19,
+        9
+      ],
+      "total": 92,
+      "positive_evidence": [
+        "上下四段保持A/B",
+        "特徵與候選到去重可追",
+        "底部框供覆核",
+        "328px主要短標籤可讀",
+        "同板兩物件"
+      ],
+      "deductions": "省略跨區細線，長圖需捲動",
+      "completion": [
+        8,
+        9,
+        9,
+        8,
+        9
+      ],
+      "completion_reasons": [
+        "藍白與單一黃收束一致；手機長幅使同屏完整性受限",
+        "特徵與候選到去重可追；主要因果或比較四段完整",
+        "標明教學示意且無實測性能；同板兩物件",
+        "328px主標籤可讀但需捲動；省略跨區細線，長圖需捲動",
+        "四主區、箭頭或比較分隔與單一結論層級清楚"
+      ],
+      "veto": false,
+      "user_review": "pending"
+    },
+    {
+      "asset": "yolo-d2-r02-desktop.png",
+      "sha256": "397b14a60490afa21830ccc565fda9cade2756c9510e4074f0b3f0614db0340f",
+      "view": "native",
+      "scores": [
+        24,
+        24,
+        19,
+        19,
+        9
+      ],
+      "total": 95,
+      "positive_evidence": [
+        "兩真物件與被刪B框可辨",
+        "保留的A框仍過寬，抑制不修框",
+        "末欄人工核對鄰件",
+        "橙色刪除與藍框對照",
+        "B本體未消失"
+      ],
+      "deductions": "未標精確IoU，人工框仍需看短標籤辨角色",
+      "completion": [
+        9,
+        9,
+        9,
+        9,
+        9
+      ],
+      "completion_reasons": [
+        "工件主導、藍白四區、黃收束，局部細節略密",
+        "保留的A框仍過寬，抑制不修框；主要因果或比較四段完整",
+        "標明教學示意且無實測性能；B本體未消失",
+        "各區主體與短句能先看；未標精確IoU，人工框仍需看短標籤辨角色",
+        "四主區、箭頭或比較分隔與單一結論層級清楚"
+      ],
+      "veto": false,
+      "user_review": "pending"
+    },
+    {
+      "asset": "yolo-d2-r01-mobile.png",
+      "sha256": "67726073a5b485a528011d4c3b5692ccf7ed1d2728c6305d5f26b4e57f73816f",
+      "view": "native + 328px CSS screenshot",
+      "scores": [
+        24,
+        23,
+        19,
+        18,
+        9
+      ],
+      "total": 93,
+      "positive_evidence": [
+        "原兩件到僅一獨立候選",
+        "B候選被抑制，物體留原位",
+        "回原圖檢查漏件",
+        "328px主要箭頭與保留框可見",
+        "A保留框幾何未縮"
+      ],
+      "deductions": "密集局部需停讀，虛線被刪狀態以文字輔助",
+      "completion": [
+        8,
+        9,
+        9,
+        8,
+        9
+      ],
+      "completion_reasons": [
+        "藍白與單一黃收束一致；手機長幅使同屏完整性受限",
+        "B候選被抑制，物體留原位；主要因果或比較四段完整",
+        "標明教學示意且無實測性能；A保留框幾何未縮",
+        "328px主標籤可讀但需捲動；密集局部需停讀，虛線被刪狀態以文字輔助",
+        "四主區、箭頭或比較分隔與單一結論層級清楚"
+      ],
+      "veto": false,
+      "user_review": "pending"
+    },
+    {
+      "asset": "rtdetr-c1-r02-desktop.png",
+      "sha256": "b9c38c24b96fd73c2ddbe034ef5d3a42e519915bfcc8afc1c7ed8c931d3c38d7",
+      "view": "native",
+      "scores": [
+        23,
+        24,
+        18,
+        19,
+        9
+      ],
+      "total": 93,
+      "positive_evidence": [
+        "A/B与查詢對應",
+        "細中旁路、高層注意力與跨尺度融合箭頭成立",
+        "輸出A/B框、未用q3",
+        "四欄大工件",
+        "103/272標記一致"
+      ],
+      "deductions": "特徵仍抽象，起點品質未画完整訓練目標",
+      "completion": [
+        9,
+        9,
+        9,
+        9,
+        9
+      ],
+      "completion_reasons": [
+        "工件主導、藍白四區、黃收束，局部細節略密",
+        "細中旁路、高層注意力與跨尺度融合箭頭成立；主要因果或比較四段完整",
+        "標明教學示意且無實測性能；103/272標記一致",
+        "各區主體與短句能先看；特徵仍抽象，起點品質未画完整訓練目標",
+        "四主區、箭頭或比較分隔與單一結論層級清楚"
+      ],
+      "veto": false,
+      "user_review": "pending"
+    },
+    {
+      "asset": "rtdetr-c1-r01-mobile.png",
+      "sha256": "d43235251b45b9438000d3ef7380646e0d5bcf80a11732ea21ac78bf39a72d0c",
+      "view": "native + 328px CSS screenshot",
+      "scores": [
+        23,
+        23,
+        18,
+        18,
+        9
+      ],
+      "total": 91,
+      "positive_evidence": [
+        "A/B查詢局部可辨",
+        "三尺度融合與逐次修框",
+        "最後兩物件定位",
+        "328px能追主要路徑",
+        "輸入與輸出身分對應"
+      ],
+      "deductions": "細部支路字较小，逐步框需停讀",
+      "completion": [
+        8,
+        9,
+        9,
+        8,
+        9
+      ],
+      "completion_reasons": [
+        "藍白與單一黃收束一致；手機長幅使同屏完整性受限",
+        "三尺度融合與逐次修框；主要因果或比較四段完整",
+        "標明教學示意且無實測性能；輸入與輸出身分對應",
+        "328px主標籤可讀但需捲動；細部支路字较小，逐步框需停讀",
+        "四主區、箭頭或比較分隔與單一結論層級清楚"
+      ],
+      "veto": false,
+      "user_review": "pending"
+    },
+    {
+      "asset": "rtdetr-d2-r01-desktop.png",
+      "sha256": "3a441a45bfed74a6e7304939a4bedd7a7ff1349b71373d4b803ac0c662b3e6f8",
+      "view": "native",
+      "scores": [
+        24,
+        24,
+        19,
+        19,
+        9
+      ],
+      "total": 95,
+      "positive_evidence": [
+        "q1/q2追A與q3追B",
+        "訓練匹配、未配對抑制與測試分開",
+        "無GT測試輸入明確",
+        "訓練區與測試區並列",
+        "未把查詢數少畫成自動分工"
+      ],
+      "deductions": "學習更新為示意，非重訓消融",
+      "completion": [
+        9,
+        9,
+        9,
+        9,
+        9
+      ],
+      "completion_reasons": [
+        "工件主導、藍白四區、黃收束，局部細節略密",
+        "訓練匹配、未配對抑制與測試分開；主要因果或比較四段完整",
+        "標明教學示意且無實測性能；未把查詢數少畫成自動分工",
+        "各區主體與短句能先看；學習更新為示意，非重訓消融",
+        "四主區、箭頭或比較分隔與單一結論層級清楚"
+      ],
+      "veto": false,
+      "user_review": "pending"
+    },
+    {
+      "asset": "rtdetr-d2-r02-mobile.png",
+      "sha256": "0f08a9f69627ae0c02382c4aa1c60f5e48feb69c90c2e3d1d675dd70a8adc587",
+      "view": "native + 328px CSS screenshot",
+      "scores": [
+        24,
+        23,
+        19,
+        18,
+        9
+      ],
+      "total": 93,
+      "positive_evidence": [
+        "重複追A例子可追",
+        "匹配僅訓練；推論輸入已無框",
+        "可分辨標註與正式輸入",
+        "328px兩階段順序清楚",
+        "測試沒有真值混入"
+      ],
+      "deductions": "前三區密度高，學習細節以短標籤表示",
+      "completion": [
+        8,
+        9,
+        9,
+        8,
+        9
+      ],
+      "completion_reasons": [
+        "藍白與單一黃收束一致；手機長幅使同屏完整性受限",
+        "匹配僅訓練；推論輸入已無框；主要因果或比較四段完整",
+        "標明教學示意且無實測性能；測試沒有真值混入",
+        "328px主標籤可讀但需捲動；前三區密度高，學習細節以短標籤表示",
+        "四主區、箭頭或比較分隔與單一結論層級清楚"
+      ],
+      "veto": false,
+      "user_review": "pending"
+    },
+    {
+      "asset": "known-d3-r02-desktop.png",
+      "sha256": "1a0c466b19a7ee678c0d28932de83efa9b65da87ae0e8429d3d862282eea6286",
+      "view": "native",
+      "scores": [
+        23,
+        23,
+        19,
+        19,
+        9
+      ],
+      "total": 93,
+      "positive_evidence": [
+        "同板與共同標註準備",
+        "dense/NMS與查詢修框可視差異",
+        "相機時鐘人工覆核提示公平比較",
+        "四方案區無誤串線",
+        "共同條件不宣稱勝負"
+      ],
+      "deductions": "畫的是流程成本，不是性能差異；查詢細字小",
+      "completion": [
+        9,
+        9,
+        9,
+        9,
+        9
+      ],
+      "completion_reasons": [
+        "工件主導、藍白四區、黃收束，局部細節略密",
+        "dense/NMS與查詢修框可視差異；主要因果或比較四段完整",
+        "標明教學示意且無實測性能；共同條件不宣稱勝負",
+        "各區主體與短句能先看；畫的是流程成本，不是性能差異；查詢細字小",
+        "四主區、箭頭或比較分隔與單一結論層級清楚"
+      ],
+      "veto": false,
+      "user_review": "pending"
+    },
+    {
+      "asset": "known-d3-r01-mobile.png",
+      "sha256": "111bb3a9b1257e0cde80a52d8c3284ea1a3e015fabc533240e28ffaf1b132c20",
+      "view": "native + 328px CSS screenshot",
+      "scores": [
+        23,
+        23,
+        19,
+        18,
+        9
+      ],
+      "total": 92,
+      "positive_evidence": [
+        "同板兩方法輸出可比",
+        "獨立方法段落非串接",
+        "末段同條件量測",
+        "328px四段可讀",
+        "共用資料和無排名"
+      ],
+      "deductions": "上下比較需記住前段；內部小框需停讀",
+      "completion": [
+        8,
+        9,
+        9,
+        8,
+        9
+      ],
+      "completion_reasons": [
+        "藍白與單一黃收束一致；手機長幅使同屏完整性受限",
+        "獨立方法段落非串接；主要因果或比較四段完整",
+        "標明教學示意且無實測性能；共用資料和無排名",
+        "328px主標籤可讀但需捲動；上下比較需記住前段；內部小框需停讀",
+        "四主區、箭頭或比較分隔與單一結論層級清楚"
+      ],
+      "veto": false,
+      "user_review": "pending"
+    },
+    {
+      "asset": "grounding-c1-r03-desktop.png",
+      "sha256": "7361ce991e25708494f940ba84bb9acd4f22bd8ec76b5bea42a159282e6c3946",
+      "view": "native",
+      "scores": [
+        24,
+        24,
+        18,
+        19,
+        9
+      ],
+      "total": 94,
+      "positive_evidence": [
+        "A/B與resistor語詞",
+        "圖文互動、查詢起點、雙來源解碼可追",
+        "末欄框加詞回原圖",
+        "修後側標籤未遮擋",
+        "A103/B272身分一致"
+      ],
+      "deductions": "格點與詞關係是示意，細部向量未畫",
+      "completion": [
+        9,
+        9,
+        9,
+        9,
+        9
+      ],
+      "completion_reasons": [
+        "工件主導、藍白四區、黃收束，局部細節略密",
+        "圖文互動、查詢起點、雙來源解碼可追；主要因果或比較四段完整",
+        "標明教學示意且無實測性能；A103/B272身分一致",
+        "各區主體與短句能先看；格點與詞關係是示意，細部向量未畫",
+        "四主區、箭頭或比較分隔與單一結論層級清楚"
+      ],
+      "veto": false,
+      "user_review": "pending"
+    },
+    {
+      "asset": "grounding-c1-r01-mobile.png",
+      "sha256": "62c8fa8760d4ced9c69a15d975f0b419ac57cf487868759625816131746b4606",
+      "view": "native + 328px CSS screenshot",
+      "scores": [
+        23,
+        23,
+        18,
+        19,
+        9
+      ],
+      "total": 92,
+      "positive_evidence": [
+        "原圖與文字分開",
+        "兩來源解碼箭頭及起點都在",
+        "底部詞語分數加框",
+        "328px圖文互動與黃句清楚",
+        "未把詞語當缺陷判定"
+      ],
+      "deductions": "修框小圖較小；全路徑需捲動",
+      "completion": [
+        8,
+        9,
+        9,
+        8,
+        9
+      ],
+      "completion_reasons": [
+        "藍白與單一黃收束一致；手機長幅使同屏完整性受限",
+        "兩來源解碼箭頭及起點都在；主要因果或比較四段完整",
+        "標明教學示意且無實測性能；未把詞語當缺陷判定",
+        "328px主標籤可讀但需捲動；修框小圖較小；全路徑需捲動",
+        "四主區、箭頭或比較分隔與單一結論層級清楚"
+      ],
+      "veto": false,
+      "user_review": "pending"
+    },
+    {
+      "asset": "grounding-d2-r01-desktop.png",
+      "sha256": "d756e27d4c19b5253c72fafdd71a5b77c58fe0d4f12f946709b5bd9e49120602",
+      "view": "native",
+      "scores": [
+        24,
+        23,
+        20,
+        19,
+        9
+      ],
+      "total": 95,
+      "positive_evidence": [
+        "R-17清單與A本體對照",
+        "同一板空候選而物件仍在",
+        "語義像素門檻三核對",
+        "大原圖與放大A",
+        "零框不等於合格明確"
+      ],
+      "deductions": "沒有呈現模型實際失敗原因，明示假設",
+      "completion": [
+        9,
+        9,
+        9,
+        9,
+        9
+      ],
+      "completion_reasons": [
+        "工件主導、藍白四區、黃收束，局部細節略密",
+        "同一板空候選而物件仍在；主要因果或比較四段完整",
+        "標明教學示意且無實測性能；零框不等於合格明確",
+        "各區主體與短句能先看；沒有呈現模型實際失敗原因，明示假設",
+        "四主區、箭頭或比較分隔與單一結論層級清楚"
+      ],
+      "veto": false,
+      "user_review": "pending"
+    },
+    {
+      "asset": "grounding-d2-r01-mobile.png",
+      "sha256": "145122fdc53db9c7680b4becfce17713feb9401154129edea43e1392c5b5c576",
+      "view": "native + 328px CSS screenshot",
+      "scores": [
+        24,
+        23,
+        19,
+        19,
+        9
+      ],
+      "total": 94,
+      "positive_evidence": [
+        "A與物料清單可辨",
+        "影像及代號分開輸入，零候選物仍在",
+        "末段原圖檢查及通用詞",
+        "328px主要標籤可讀",
+        "A/B位置與料號維持"
+      ],
+      "deductions": "最後一行位置規格字較小；僅假設失敗",
+      "completion": [
+        8,
+        9,
+        9,
+        8,
+        9
+      ],
+      "completion_reasons": [
+        "藍白與單一黃收束一致；手機長幅使同屏完整性受限",
+        "影像及代號分開輸入，零候選物仍在；主要因果或比較四段完整",
+        "標明教學示意且無實測性能；A/B位置與料號維持",
+        "328px主標籤可讀但需捲動；最後一行位置規格字較小；僅假設失敗",
+        "四主區、箭頭或比較分隔與單一結論層級清楚"
+      ],
+      "veto": false,
+      "user_review": "pending"
+    },
+    {
+      "asset": "yoloe-c1-r02-desktop.png",
+      "sha256": "7c7a6272fe1417e76f964b63ab5e3a8f043b551df37d8a9db59f5a63dfc0999a",
+      "view": "native",
+      "scores": [
+        24,
+        24,
+        18,
+        19,
+        9
+      ],
+      "total": 94,
+      "positive_evidence": [
+        "橙ROI與青mask角色可辨",
+        "兩分支聚合、兩向量入比對",
+        "可看到A/B皆相似需覆核",
+        "四大欄工件充足",
+        "特徵位置非獨立切圖已修"
+      ],
+      "deductions": "框與mask生成頭未展開；本圖專注視覺提示",
+      "completion": [
+        9,
+        9,
+        9,
+        9,
+        9
+      ],
+      "completion_reasons": [
+        "工件主導、藍白四區、黃收束，局部細節略密",
+        "兩分支聚合、兩向量入比對；主要因果或比較四段完整",
+        "標明教學示意且無實測性能；特徵位置非獨立切圖已修",
+        "各區主體與短句能先看；框與mask生成頭未展開；本圖專注視覺提示",
+        "四主區、箭頭或比較分隔與單一結論層級清楚"
+      ],
+      "veto": false,
+      "user_review": "pending"
+    },
+    {
+      "asset": "yoloe-c1-r01-mobile.png",
+      "sha256": "79ce682cec4c1cf3016fdbe504f77d5eb3ff58b6ca388b7433a2cdf160dcfb6f",
+      "view": "native + 328px CSS screenshot",
+      "scores": [
+        23,
+        24,
+        18,
+        18,
+        9
+      ],
+      "total": 92,
+      "positive_evidence": [
+        "圈A而A/B皆有輸出",
+        "提示橙旁路與區域藍路會合",
+        "末段類別與料號區別",
+        "328px旁路可循",
+        "ROI與mask颜色分工"
+      ],
+      "deductions": "第四段板較小，術語兩處約12px；長旁路需追讀",
+      "completion": [
+        8,
+        9,
+        9,
+        8,
+        9
+      ],
+      "completion_reasons": [
+        "藍白與單一黃收束一致；手機長幅使同屏完整性受限",
+        "提示橙旁路與區域藍路會合；主要因果或比較四段完整",
+        "標明教學示意且無實測性能；ROI與mask颜色分工",
+        "328px主標籤可讀但需捲動；第四段板較小，術語兩處約12px；長旁路需追讀",
+        "四主區、箭頭或比較分隔與單一結論層級清楚"
+      ],
+      "veto": false,
+      "user_review": "pending"
+    },
+    {
+      "asset": "yoloe-d2-r01-desktop.png",
+      "sha256": "e4da86618fa5f3a4fae7bfea035867d04e7268fce722d38125144da5b63aac1d",
+      "view": "native",
+      "scores": [
+        24,
+        23,
+        20,
+        19,
+        9
+      ],
+      "total": 95,
+      "positive_evidence": [
+        "原A與mask蓋背景可見",
+        "同一右邊緣放大證明溢出",
+        "提示輪廓取像及尺寸另驗",
+        "局部大對照有明確箭頭",
+        "物體未隨mask變寬"
+      ],
+      "deductions": "末欄青外框作檢查提示略易混同，標題核對後再用及正文已界定",
+      "completion": [
+        9,
+        9,
+        9,
+        9,
+        9
+      ],
+      "completion_reasons": [
+        "工件主導、藍白四區、黃收束，局部細節略密",
+        "同一右邊緣放大證明溢出；主要因果或比較四段完整",
+        "標明教學示意且無實測性能；物體未隨mask變寬",
+        "各區主體與短句能先看；末欄青外框作檢查提示略易混同，標題核對後再用及正文已界定",
+        "四主區、箭頭或比較分隔與單一結論層級清楚"
+      ],
+      "veto": false,
+      "user_review": "pending"
+    },
+    {
+      "asset": "yoloe-d2-r01-mobile.png",
+      "sha256": "5638565c0b95326115123535de6ca8271ec2a0425092c310444aae04eec73810",
+      "view": "native + 328px CSS screenshot",
+      "scores": [
+        24,
+        24,
+        19,
+        19,
+        9
+      ],
+      "total": 95,
+      "positive_evidence": [
+        "青背景窄帶與本體可分",
+        "同一邊緣放大支持偏差",
+        "原圖核對與尺度另驗",
+        "328px放大局部和結論清楚",
+        "末欄原圖無預測覆蓋"
+      ],
+      "deductions": "未展示校正方式；此圖任務為辨識mask限制",
+      "completion": [
+        8,
+        9,
+        9,
+        8,
+        9
+      ],
+      "completion_reasons": [
+        "藍白與單一黃收束一致；手機長幅使同屏完整性受限",
+        "同一邊緣放大支持偏差；主要因果或比較四段完整",
+        "標明教學示意且無實測性能；末欄原圖無預測覆蓋",
+        "328px主標籤可讀但需捲動；未展示校正方式；此圖任務為辨識mask限制",
+        "四主區、箭頭或比較分隔與單一結論層級清楚"
+      ],
+      "veto": false,
+      "user_review": "pending"
+    },
+    {
+      "asset": "prompt-d3-r01-desktop.png",
+      "sha256": "6fddbecc00a8956ee4a04a17e563a42ef6093d7c98b0425a1b87694b824f0ef2",
+      "view": "native",
+      "scores": [
+        24,
+        23,
+        19,
+        19,
+        9
+      ],
+      "total": 94,
+      "positive_evidence": [
+        "同板框與mask對比",
+        "文字找框與三替代模式差別",
+        "末欄漏件邊界延遲重驗",
+        "無跨欄箭頭，主體大",
+        "三模式擇一且詞庫有界"
+      ],
+      "deductions": "RepRTA/LRPC內部未展開，僅模式與交付物比較",
+      "completion": [
+        9,
+        9,
+        9,
+        9,
+        9
+      ],
+      "completion_reasons": [
+        "工件主導、藍白四區、黃收束，局部細節略密",
+        "文字找框與三替代模式差別；主要因果或比較四段完整",
+        "標明教學示意且無實測性能；三模式擇一且詞庫有界",
+        "各區主體與短句能先看；RepRTA/LRPC內部未展開，僅模式與交付物比較",
+        "四主區、箭頭或比較分隔與單一結論層級清楚"
+      ],
+      "veto": false,
+      "user_review": "pending"
+    },
+    {
+      "asset": "prompt-d3-r01-mobile.png",
+      "sha256": "456d03298f84584c26ebd33ede32e34a29532e7e404b0eb13f6f175b4f2bdd30",
+      "view": "native + 328px CSS screenshot",
+      "scores": [
+        23,
+        23,
+        19,
+        18,
+        9
+      ],
+      "total": 92,
+      "positive_evidence": [
+        "兩模型同板不同覆蓋",
+        "三模式OR可辨，非串接",
+        "四項現場重驗",
+        "328px四區主要字可讀",
+        "box/mask與詞庫界限一致"
+      ],
+      "deductions": "模式小圖較小，上下比較需捲动",
+      "completion": [
+        8,
+        9,
+        9,
+        8,
+        9
+      ],
+      "completion_reasons": [
+        "藍白與單一黃收束一致；手機長幅使同屏完整性受限",
+        "三模式OR可辨，非串接；主要因果或比較四段完整",
+        "標明教學示意且無實測性能；box/mask與詞庫界限一致",
+        "328px主標籤可讀但需捲動；模式小圖較小，上下比較需捲动",
+        "四主區、箭頭或比較分隔與單一結論層級清楚"
+      ],
+      "veto": false,
+      "user_review": "pending"
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 # Teaching maintenance snapshots
 
-This directory versions the WI-022 teaching lessons and reusable skill. It is
+This directory versions the shared teaching lessons and reusable skill. It is
 outside `docs/` and is not part of the GitHub Pages payload.
 
 ## Sources and editing
@@ -11,6 +11,8 @@ outside `docs/` and is not part of the GitHub Pages payload.
 - `skills/teaching-review-cycle/`: complete installed skill from
   `C:/Users/hctsa/.codex/skills/teaching-review-cycle`.
 - `manifest.json`: source locations and SHA-256 hashes at synchronization.
+- `workitems/wi-024/`: image/page self-assessments and the final local release
+  audit for the four supplied detector lessons. The PNGs are published in `docs/`.
 
 The original workspace files and installed skill remain the editing authorities.
 These are preservation copies, not a second independently maintained review log.
@@ -38,3 +40,13 @@ learning record; it is not a complete backup of the course authoring workspace.
 - Validate snapshot/source hashes and skill format before committing.
 - Verify the pushed commit against `origin/main`; record the result in workspace
   `WORKITEMS.md`. Git history is the authoritative snapshot revision.
+
+## WI-024 scope
+
+- Rebuild the four supplied lessons with 20 distinct desktop/mobile PNGs.
+- Preserve operation geometry, separate alternative modes from sequential steps,
+  and verify the actual rendered summary fields.
+- Sync the four authority Markdown files, complete review skill, and three audit
+  records. Original generation prompts, rejected drafts, authoring scripts and
+  full browser screenshots remain in the local workspace; this is not a full
+  authoring backup. User acceptance and the two unspecified lessons remain pending.

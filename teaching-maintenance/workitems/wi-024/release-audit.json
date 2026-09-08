@@ -1,0 +1,57 @@
+{
+  "referenced_assets": 1311,
+  "unique_new_png": 20,
+  "local_http_hash_checks": 40,
+  "bundle_bytes": 1045579220,
+  "extra_assets": 0,
+  "browser": [
+    {
+      "slug": "det-yolo-dense",
+      "width": 1440,
+      "images": 3,
+      "result": "pass"
+    },
+    {
+      "slug": "det-yolo-dense",
+      "width": 360,
+      "images": 3,
+      "result": "pass"
+    },
+    {
+      "slug": "det-rtdetr",
+      "width": 1440,
+      "images": 3,
+      "result": "pass"
+    },
+    {
+      "slug": "det-rtdetr",
+      "width": 360,
+      "images": 3,
+      "result": "pass"
+    },
+    {
+      "slug": "det-grounding-dino-interface",
+      "width": 1440,
+      "images": 3,
+      "result": "pass"
+    },
+    {
+      "slug": "det-grounding-dino-interface",
+      "width": 360,
+      "images": 3,
+      "result": "pass"
+    },
+    {
+      "slug": "yoloe",
+      "width": 1440,
+      "images": 3,
+      "result": "pass"
+    },
+    {
+      "slug": "yoloe",
+      "width": 360,
+      "images": 3,
+      "result": "pass"
+    }
+  ]
+}

@@ -1,50 +1,65 @@
 {
-    "workitem":  "WI-023",
-    "files":  [
-                  {
-                      "snapshot":  "project/IMAGE_STYLE_GUIDE.md",
-                      "source":  "C:\\code\\claude\\visionAI\\IMAGE_STYLE_GUIDE.md",
-                      "sha256":  "ab856833b0c8d79e0e2a156fa2c7ddbd6063dc009d9ac61bb4292b0c62e547bd"
-                  },
-                  {
-                      "snapshot":  "project/TEACHING_REVIEW_LOG.md",
-                      "source":  "C:\\code\\claude\\visionAI\\TEACHING_REVIEW_LOG.md",
-                      "sha256":  "4049f473d3224d39b88ec76d2ba9f5a92a64054fd2052e18a1a5b18048717d37"
-                  },
-                  {
-                      "snapshot":  "project/TEACHING_SCORING_RUBRIC.md",
-                      "source":  "C:\\code\\claude\\visionAI\\TEACHING_SCORING_RUBRIC.md",
-                      "sha256":  "5638e1d9c9455fcdd5c7f384352dec446839ede5691a04949ee13fec90d5859b"
-                  },
-                  {
-                      "snapshot":  "project/TEACHING_WEBPAGE_GUIDE.md",
-                      "source":  "C:\\code\\claude\\visionAI\\TEACHING_WEBPAGE_GUIDE.md",
-                      "sha256":  "be0b46ec56b8ff4447fdab9ab312d043ec5bf1fee2bc455ce77cc56180782f5c"
-                  },
-                  {
-                      "snapshot":  "skills/teaching-review-cycle/SKILL.md",
-                      "source":  "C:\\Users\\hctsa\\.codex\\skills\\teaching-review-cycle\\SKILL.md",
-                      "sha256":  "a1e9ed082213916cff4cbdf87d63398a59beaf659a795a0cf7e41d2cd2146cb1"
-                  },
-                  {
-                      "snapshot":  "skills/teaching-review-cycle/agents/openai.yaml",
-                      "source":  "C:\\Users\\hctsa\\.codex\\skills\\teaching-review-cycle\\agents\\openai.yaml",
-                      "sha256":  "462d025b4d8fde54f71d46164bac44759edff01754da3e108aec05f9b775cdfc"
-                  },
-                  {
-                      "snapshot":  "skills/teaching-review-cycle/references/default-rubric.md",
-                      "source":  "C:\\Users\\hctsa\\.codex\\skills\\teaching-review-cycle\\references\\default-rubric.md",
-                      "sha256":  "7ea6c1885706fb810a07109b5ae616ad31c329a28b07350c2d58d8353b635681"
-                  },
-                  {
-                      "snapshot":  "skills/teaching-review-cycle/references/image-production-cycle.md",
-                      "source":  "C:\\Users\\hctsa\\.codex\\skills\\teaching-review-cycle\\references\\image-production-cycle.md",
-                      "sha256":  "0e0aa5c6b66b23cd038c1dbc889742dd7cf08ea35ff45db896d453a676c84c1f"
-                  },
-                  {
-                      "snapshot":  "skills/teaching-review-cycle/references/visionai.md",
-                      "source":  "C:\\Users\\hctsa\\.codex\\skills\\teaching-review-cycle\\references\\visionai.md",
-                      "sha256":  "813bfc164497adf6d18bef687de9dbcccd62cfea410f4a01c6836cceca229ec8"
-                  }
-              ]
+  "workitem": "WI-024",
+  "files": [
+    {
+      "snapshot": "project/IMAGE_STYLE_GUIDE.md",
+      "source": "C:\\code\\claude\\visionAI\\IMAGE_STYLE_GUIDE.md",
+      "sha256": "aa2ef48cc726bfe196e4c7a31a79709808f65387c243d90e9ac8a4963afddeef"
+    },
+    {
+      "snapshot": "project/TEACHING_REVIEW_LOG.md",
+      "source": "C:\\code\\claude\\visionAI\\TEACHING_REVIEW_LOG.md",
+      "sha256": "9d496341f69ce954dc4192c245497b49a21e62ee29e19577242bbb67bcd5915e"
+    },
+    {
+      "snapshot": "project/TEACHING_SCORING_RUBRIC.md",
+      "source": "C:\\code\\claude\\visionAI\\TEACHING_SCORING_RUBRIC.md",
+      "sha256": "e2e40652a4e57b2dc4437d9b280835babb8ce23181073781eb1fd2a2e00fdcff"
+    },
+    {
+      "snapshot": "project/TEACHING_WEBPAGE_GUIDE.md",
+      "source": "C:\\code\\claude\\visionAI\\TEACHING_WEBPAGE_GUIDE.md",
+      "sha256": "1dca917eb848ba6eaf3733c85c62bc5d3b1786a6d214fd9bb1c01eecd6481bc8"
+    },
+    {
+      "snapshot": "skills/teaching-review-cycle/SKILL.md",
+      "source": "C:\\Users\\hctsa\\.codex\\skills\\teaching-review-cycle\\SKILL.md",
+      "sha256": "457413e81c37a8e11bc8cf7433743b19fc8c5b1daf35331e3c4694ae114fefbf"
+    },
+    {
+      "snapshot": "skills/teaching-review-cycle/agents/openai.yaml",
+      "source": "C:\\Users\\hctsa\\.codex\\skills\\teaching-review-cycle\\agents\\openai.yaml",
+      "sha256": "462d025b4d8fde54f71d46164bac44759edff01754da3e108aec05f9b775cdfc"
+    },
+    {
+      "snapshot": "skills/teaching-review-cycle/references/default-rubric.md",
+      "source": "C:\\Users\\hctsa\\.codex\\skills\\teaching-review-cycle\\references\\default-rubric.md",
+      "sha256": "7ea6c1885706fb810a07109b5ae616ad31c329a28b07350c2d58d8353b635681"
+    },
+    {
+      "snapshot": "skills/teaching-review-cycle/references/image-production-cycle.md",
+      "source": "C:\\Users\\hctsa\\.codex\\skills\\teaching-review-cycle\\references\\image-production-cycle.md",
+      "sha256": "94114229b425e5b529c92c1efa53ced662b0fa667eeaea0ef3f60518037a2a85"
+    },
+    {
+      "snapshot": "skills/teaching-review-cycle/references/visionai.md",
+      "source": "C:\\Users\\hctsa\\.codex\\skills\\teaching-review-cycle\\references\\visionai.md",
+      "sha256": "813bfc164497adf6d18bef687de9dbcccd62cfea410f4a01c6836cceca229ec8"
+    },
+    {
+      "snapshot": "workitems/wi-024/image-assessment.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-024\\image-assessment.json",
+      "sha256": "f095d44c2440c2e00eec540b95aed45e240e72509bb801ea609f2a9ad15d4a50"
+    },
+    {
+      "snapshot": "workitems/wi-024/page-assessment.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-024\\page-assessment.json",
+      "sha256": "b7fb5ecdd6c4284fcbbb6b3201cd8d1ab82f249b6efba0772e3d81daf684579d"
+    },
+    {
+      "snapshot": "workitems/wi-024/release-audit.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-024\\release-audit.json",
+      "sha256": "9e82f93d5925953e7c3d6cb7a2698b455e88ce02f3525512ca9cfe9496a213aa"
+    }
+  ]
 }
