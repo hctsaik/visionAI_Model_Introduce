@@ -1,0 +1,6 @@
+interface:
+  display_name: "教學評分與學習循環"
+  short_description: "實看參考與單圖原型，逐圖據證評分、寫回共用學習，再重製與驗證成品"
+  default_prompt: "使用 $teaching-review-cycle 接續目前教學的回饋，先記錄學習、檢視參考並驗證單圖原型，再重製、逐圖評分與驗證本輪成品。"
+policy:
+  allow_implicit_invocation: true

@@ -1,6 +1,8 @@
-# Publish only the self-contained GitHub Pages bundle and its public README.
+# Track the Pages bundle and explicit teaching-maintenance snapshots.
 *
 !.gitignore
 !README.md
 !docs/
 !docs/**
+!teaching-maintenance/
+!teaching-maintenance/**

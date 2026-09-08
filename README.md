@@ -22,3 +22,7 @@ The September 2026 teaching revision rebuilds the first-read content of 13
 anomaly-detection lessons with 62 distinct desktop/mobile PNG illustrations.
 These are instructional illustrations, not measured model inference results.
 The original engineering reference diagrams remain available in their folded sections.
+
+Teaching rules and the reusable review skill are versioned in
+[teaching-maintenance](teaching-maintenance/README.md), with their source and
+restore instructions. These maintenance snapshots are separate from the Pages bundle.

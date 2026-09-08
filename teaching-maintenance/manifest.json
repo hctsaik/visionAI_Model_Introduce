@@ -1,0 +1,50 @@
+{
+    "workitem":  "WI-023",
+    "files":  [
+                  {
+                      "snapshot":  "project/IMAGE_STYLE_GUIDE.md",
+                      "source":  "C:\\code\\claude\\visionAI\\IMAGE_STYLE_GUIDE.md",
+                      "sha256":  "ab856833b0c8d79e0e2a156fa2c7ddbd6063dc009d9ac61bb4292b0c62e547bd"
+                  },
+                  {
+                      "snapshot":  "project/TEACHING_REVIEW_LOG.md",
+                      "source":  "C:\\code\\claude\\visionAI\\TEACHING_REVIEW_LOG.md",
+                      "sha256":  "4049f473d3224d39b88ec76d2ba9f5a92a64054fd2052e18a1a5b18048717d37"
+                  },
+                  {
+                      "snapshot":  "project/TEACHING_SCORING_RUBRIC.md",
+                      "source":  "C:\\code\\claude\\visionAI\\TEACHING_SCORING_RUBRIC.md",
+                      "sha256":  "5638e1d9c9455fcdd5c7f384352dec446839ede5691a04949ee13fec90d5859b"
+                  },
+                  {
+                      "snapshot":  "project/TEACHING_WEBPAGE_GUIDE.md",
+                      "source":  "C:\\code\\claude\\visionAI\\TEACHING_WEBPAGE_GUIDE.md",
+                      "sha256":  "be0b46ec56b8ff4447fdab9ab312d043ec5bf1fee2bc455ce77cc56180782f5c"
+                  },
+                  {
+                      "snapshot":  "skills/teaching-review-cycle/SKILL.md",
+                      "source":  "C:\\Users\\hctsa\\.codex\\skills\\teaching-review-cycle\\SKILL.md",
+                      "sha256":  "a1e9ed082213916cff4cbdf87d63398a59beaf659a795a0cf7e41d2cd2146cb1"
+                  },
+                  {
+                      "snapshot":  "skills/teaching-review-cycle/agents/openai.yaml",
+                      "source":  "C:\\Users\\hctsa\\.codex\\skills\\teaching-review-cycle\\agents\\openai.yaml",
+                      "sha256":  "462d025b4d8fde54f71d46164bac44759edff01754da3e108aec05f9b775cdfc"
+                  },
+                  {
+                      "snapshot":  "skills/teaching-review-cycle/references/default-rubric.md",
+                      "source":  "C:\\Users\\hctsa\\.codex\\skills\\teaching-review-cycle\\references\\default-rubric.md",
+                      "sha256":  "7ea6c1885706fb810a07109b5ae616ad31c329a28b07350c2d58d8353b635681"
+                  },
+                  {
+                      "snapshot":  "skills/teaching-review-cycle/references/image-production-cycle.md",
+                      "source":  "C:\\Users\\hctsa\\.codex\\skills\\teaching-review-cycle\\references\\image-production-cycle.md",
+                      "sha256":  "0e0aa5c6b66b23cd038c1dbc889742dd7cf08ea35ff45db896d453a676c84c1f"
+                  },
+                  {
+                      "snapshot":  "skills/teaching-review-cycle/references/visionai.md",
+                      "source":  "C:\\Users\\hctsa\\.codex\\skills\\teaching-review-cycle\\references\\visionai.md",
+                      "sha256":  "813bfc164497adf6d18bef687de9dbcccd62cfea410f4a01c6836cceca229ec8"
+                  }
+              ]
+}

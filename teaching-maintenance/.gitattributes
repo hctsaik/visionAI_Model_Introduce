@@ -1,0 +1,3 @@
+# Preserve source bytes so manifest SHA-256 hashes survive checkout.
+# Preserve historical whitespace too; these are verbatim maintenance snapshots.
+* -text -whitespace
