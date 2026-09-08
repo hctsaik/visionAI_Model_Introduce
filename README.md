@@ -14,6 +14,11 @@ choose `main` with the `/docs` folder. The site URL will be:
 This repository is the deployable static snapshot. Regenerate the `docs/`
 bundle from the full course workspace, then replace and commit `docs/` here.
 The bundle contains `interactive-learning.html` as `docs/index.html` and the
-1,114 image assets it references. It intentionally excludes local browser
+visual assets and lesson documents it references. It intentionally excludes local browser
 caches, prompt intermediates, raw image-generation material, and presentation
 source files.
+
+The September 2026 teaching revision rebuilds the first-read content of 13
+anomaly-detection lessons with 62 distinct desktop/mobile PNG illustrations.
+These are instructional illustrations, not measured model inference results.
+The original engineering reference diagrams remain available in their folded sections.
