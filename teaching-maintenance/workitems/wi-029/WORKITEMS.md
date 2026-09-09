@@ -1,4 +1,5 @@
 ## WI-029 foundations／production 兩入口重製（2026-09-10）
+- 最終完成（取代下方歷史checkpoint）：WI-029兩入口重製及發布完成：內容commit `c6c32a4bad797a0c1bebb5287db6f95c5ffd0b95` 已push，Pages run 34415751416 success；公開HTML、12張PNG及2份Markdown全部一致。六案例由Markdown驅動，12狀態36次放大／自測、8最終狀態、9項回歸、1303資產course/docs一致；圖自評92–94、兩頁94，使用者成品核准pending，未做真人學習測試。
 - 最新checkpoint（取代下方舊狀態）：兩入口本機重製與驗證完成：6故事／12PNG，Markdown實際驅動頁面；12狀態36圖放大與解析、24PNG HTTP hash及4Markdown HTTP通過，8最終狀態正文一致與圖首可達，9回歸PASS，1303引用檔course/docs一致。圖自評92–94、頁93–94，使用者核准pending。學習回寫三份共用Markdown，正在保存副本／commit＋push；公開核對尚未執行。
 - 使用者明確指定兩頁重作並commit＋push；進行中，先保存基準與製作原型。
 - 接續：teaching-images/vision-ai-model-selection/workitems/wi-029/PLAN.md。

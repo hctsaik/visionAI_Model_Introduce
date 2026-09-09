@@ -2626,3 +2626,5 @@ WI-023版本保存補充：使用者後續授權commit＋push；本文件與其�
 - WI029一般化規則已合併到IMAGE_STYLE_GUIDE與TEACHING_WEBPAGE_GUIDE。觀察→規則→驗證：舊圖短註污染→全圖語意重查→量測及旁觀修稿原生／縮放確認；虛構表格數字→待測與HTML假設分開→PNG全表及A/B算式核對；CLI漏替換→正式入口驗證→新增命令列回歸與實際瀏覽器重跑。未改評分權重，未宣稱使用者核准。
 
 - WI029最終本機審查：兩入口本機重製與驗證完成：6故事／12PNG，Markdown實際驅動頁面；12狀態36圖放大與解析、24PNG HTTP hash及4Markdown HTTP通過，8最終狀態正文一致與圖首可達，9回歸PASS，1303引用檔course/docs一致。圖自評92–94、頁93–94，使用者核准pending。學習回寫三份共用Markdown，正在保存副本／commit＋push；公開核對尚未執行。
+
+- 最終發布：WI-029兩入口重製及發布完成：內容commit `c6c32a4bad797a0c1bebb5287db6f95c5ffd0b95` 已push，Pages run 34415751416 success；公開HTML、12張PNG及2份Markdown全部一致。六案例由Markdown驅動，12狀態36次放大／自測、8最終狀態、9項回歸、1303資產course/docs一致；圖自評92–94、兩頁94，使用者成品核准pending，未做真人學習測試。 詳見WI029 RELEASE.md。

@@ -16,7 +16,7 @@
 - [x] foundations 圖文、取捨與自測。
 - [x] production 圖文、取捨與自測。
 - [x] course/docs建置、互動、引用／HTTP、逐圖逐頁與必要回歸。
-- [ ] 共用學習、接續紀錄、保存副本、commit＋push與公開核對。
+- [x] 共用學習、接續紀錄、保存副本、commit＋push與公開核對。
 
 - Checkpoint：8個基準狀態／16截圖與來源已保存，兩張首選參考已實看，六brief preflight PASS。即將執行fdn-visible-r01桌面原型；prompt存prototype-prompt.json，預期PNG在本工作目錄。node_repl工具已找到，但瀏覽器discovery=[]，讀troubleshooting後使用Playwright Edge。未整合／發布。
 
@@ -44,3 +44,9 @@
 - 生成模式：built-in imagegen。完整意圖與版本在prototype-prompt、generation-plan／batch3、corrections-final及各brief；選用路徑／hash在assets.json和image-assessment。
 - 最後完成：實作與必要驗證；下一步：保存維護副本、commit/push並查公開HTML／PNG／Markdown。無阻礙。
 - 截圖校正：locator整元素截圖會把fixed工具列混入圖中；final-pages改用原viewport捲動、等待穩定後拍攝，24個圖首均在工具列下方，12手機圖尾可達。
+- 內容commit c6c32a4已push，遠端main一致；Pages34415751416進行中。首次公開hash仍為舊HTML，屬部署尚未完成，等待後重查。
+
+## 最終發布
+- WI-029兩入口重製及發布完成：內容commit `c6c32a4bad797a0c1bebb5287db6f95c5ffd0b95` 已push，Pages run 34415751416 success；公開HTML、12張PNG及2份Markdown全部一致。六案例由Markdown驅動，12狀態36次放大／自測、8最終狀態、9項回歸、1303資產course/docs一致；圖自評92–94、兩頁94，使用者成品核准pending，未做真人學習測試。
+- 公開核對首次遇部署進行中仍為舊HTML，待Pages成功後重查通過，未把排隊當發布。
+- 持久產物：RELEASE.md、deployment.json、public-release-verification.json；下一步依新回饋修訂，無發布阻礙。

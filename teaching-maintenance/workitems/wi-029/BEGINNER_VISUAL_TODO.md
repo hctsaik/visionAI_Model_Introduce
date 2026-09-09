@@ -1,5 +1,5 @@
 # WI-029 兩入口重製
-- [ ] 圖文／驗證／學習完成，接續 workitems/wi-029/PLAN.md 的commit＋push與公開核對。
+- [x] 六案例／12PNG、Markdown主線、互動、自評、驗證、學習及commit＋push／公開核對完成。詳見 workitems/wi-029/RELEASE.md。
 
 # Beginner visual redesign TODO
 
@@ -19,7 +19,7 @@
 - [ ] 逐圖 Markdown preflight、代表原型與實際PNG審查。
 - [ ] 重製 Frame Difference／Background Subtraction／Lucas–Kanade／RAFT。
 - [ ] 重製 ByteTrack／ConvLSTM／VideoMAE／V-JEPA。
-- [ ] production／foundations 已移交WI-029，依該項核對完成；不重複生成。
+- [x] production／foundations 已由WI-029完成與發布；本項其餘八課保持待辦。
 - [ ] 桌面手機、圖文／互動／HTTP、逐圖及整頁評分、必要回歸。
 - [ ] 學習回寫、保存副本、commit＋push及公開核對。
 
