@@ -1,15 +1,15 @@
 {
-  "workitem": "WI-024",
+  "workitem": "WI-026",
   "files": [
     {
       "snapshot": "project/IMAGE_STYLE_GUIDE.md",
       "source": "C:\\code\\claude\\visionAI\\IMAGE_STYLE_GUIDE.md",
-      "sha256": "aa2ef48cc726bfe196e4c7a31a79709808f65387c243d90e9ac8a4963afddeef"
+      "sha256": "006a6aa3dd185e18753a7fd50d63925eff418f51aba03b2efb93829bc0b02607"
     },
     {
       "snapshot": "project/TEACHING_REVIEW_LOG.md",
       "source": "C:\\code\\claude\\visionAI\\TEACHING_REVIEW_LOG.md",
-      "sha256": "9d496341f69ce954dc4192c245497b49a21e62ee29e19577242bbb67bcd5915e"
+      "sha256": "7657157ed7f6bec066020049ab9b067b7d7c70f1d3f05b15182f9cbc1b60799c"
     },
     {
       "snapshot": "project/TEACHING_SCORING_RUBRIC.md",
@@ -19,7 +19,7 @@
     {
       "snapshot": "project/TEACHING_WEBPAGE_GUIDE.md",
       "source": "C:\\code\\claude\\visionAI\\TEACHING_WEBPAGE_GUIDE.md",
-      "sha256": "1dca917eb848ba6eaf3733c85c62bc5d3b1786a6d214fd9bb1c01eecd6481bc8"
+      "sha256": "dcfc9bf161c0916ea09b782a47d63eb37183fd381023968e396dd687f43a89a7"
     },
     {
       "snapshot": "skills/teaching-review-cycle/SKILL.md",
@@ -60,6 +60,31 @@
       "snapshot": "workitems/wi-024/release-audit.json",
       "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-024\\release-audit.json",
       "sha256": "9e82f93d5925953e7c3d6cb7a2698b455e88ce02f3525512ca9cfe9496a213aa"
+    },
+    {
+      "snapshot": "workitems/wi-026/image-assessment.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-026\\image-assessment.json",
+      "sha256": "eb2659e41f02f75845fb8fec62b55b8261573430671c183ca961b3dd50e82cb3"
+    },
+    {
+      "snapshot": "workitems/wi-026/page-assessment.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-026\\page-assessment.json",
+      "sha256": "392030601d782e32c43c58d1eb5e957092e5adf8dd5c8048382939c0455c0507"
+    },
+    {
+      "snapshot": "workitems/wi-026/release-audit.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-026\\release-audit.json",
+      "sha256": "b33329b3b12989ce22b66d9360196c39616dee5d17cc01ad6379b269f4704365"
+    },
+    {
+      "snapshot": "workitems/wi-026/validation-summary.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-026\\validation-summary.json",
+      "sha256": "f47cc4eee58d329af9d9b88db71d50d235973029791320f30dd61d83ad59c3b0"
+    },
+    {
+      "snapshot": "workitems/wi-026/final-page-checks.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-026\\final-page-checks.json",
+      "sha256": "3495deb95ed9460038a4b15690cbcb7899a2e96e7359d507893758a578ed6aa4"
     }
   ]
 }

@@ -50,3 +50,12 @@ learning record; it is not a complete backup of the course authoring workspace.
   records. Original generation prompts, rejected drafts, authoring scripts and
   full browser screenshots remain in the local workspace; this is not a full
   authoring backup. User acceptance and the two unspecified lessons remain pending.
+
+## WI-026 scope
+
+- Publish eight generation/restoration lessons with 38 desktop/mobile PNGs.
+- Preserve five local validation and assessment reports in `workitems/wi-026/`,
+  plus the updated shared teaching rules and review log. Reports describe the
+  pre-publication checks; Git and Pages deployment are verified separately.
+- Original prompts, authoring sources, rejected drafts and browser screenshots
+  remain in the local workspace. User acceptance remains separate from publishing.

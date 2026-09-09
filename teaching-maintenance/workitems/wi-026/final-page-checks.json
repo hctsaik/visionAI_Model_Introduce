@@ -1,0 +1,418 @@
+[
+  {
+    "slug": "defectfill",
+    "width": 1440,
+    "core_comparison_and_cost_visible": true,
+    "first_and_evidence_visible": true,
+    "three_core_callouts": true,
+    "images": [
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/defectfill/wi026-defectfill-c1-r03-desktop.png",
+        "width": 935.625,
+        "height": 526.5625
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/defectfill/wi026-defectfill-d2-r02-desktop.png",
+        "width": 935.625,
+        "height": 526.5625
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/defectfill/wi026-generation-d3-r02-desktop.png",
+        "width": 935.625,
+        "height": 526.5625
+      }
+    ],
+    "overflow": false,
+    "errors": []
+  },
+  {
+    "slug": "defectfill",
+    "width": 360,
+    "core_comparison_and_cost_visible": true,
+    "first_and_evidence_visible": true,
+    "three_core_callouts": true,
+    "images": [
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/defectfill/wi026-defectfill-c1-r02-mobile.png",
+        "width": 326,
+        "height": 978
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/defectfill/wi026-defectfill-d2-r01-mobile.png",
+        "width": 326,
+        "height": 978
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/defectfill/wi026-generation-d3-r01-mobile.png",
+        "width": 326,
+        "height": 978
+      }
+    ],
+    "overflow": false,
+    "errors": []
+  },
+  {
+    "slug": "anomalydiffusion",
+    "width": 1440,
+    "core_comparison_and_cost_visible": true,
+    "first_and_evidence_visible": true,
+    "three_core_callouts": true,
+    "images": [
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/anomalydiffusion/wi026-anomalydiffusion-c1-r01-desktop.png",
+        "width": 935.625,
+        "height": 526.5625
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/anomalydiffusion/wi026-anomalydiffusion-d2-r02-desktop.png",
+        "width": 935.625,
+        "height": 526.5625
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/defectfill/wi026-generation-d3-r02-desktop.png",
+        "width": 935.625,
+        "height": 526.5625
+      }
+    ],
+    "overflow": false,
+    "errors": []
+  },
+  {
+    "slug": "anomalydiffusion",
+    "width": 360,
+    "core_comparison_and_cost_visible": true,
+    "first_and_evidence_visible": true,
+    "three_core_callouts": true,
+    "images": [
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/anomalydiffusion/wi026-anomalydiffusion-c1-r01-mobile.png",
+        "width": 326,
+        "height": 978
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/anomalydiffusion/wi026-anomalydiffusion-d2-r01-mobile.png",
+        "width": 326,
+        "height": 978
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/defectfill/wi026-generation-d3-r01-mobile.png",
+        "width": 326,
+        "height": 978
+      }
+    ],
+    "overflow": false,
+    "errors": []
+  },
+  {
+    "slug": "tf-idg",
+    "width": 1440,
+    "core_comparison_and_cost_visible": true,
+    "first_and_evidence_visible": true,
+    "three_core_callouts": true,
+    "images": [
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/tf-idg/wi026-tf-idg-c1-r02-desktop.png",
+        "width": 935.625,
+        "height": 526.5625
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/tf-idg/wi026-tf-idg-d2-r02-desktop.png",
+        "width": 935.625,
+        "height": 526.5625
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/defectfill/wi026-generation-d3-r02-desktop.png",
+        "width": 935.625,
+        "height": 526.5625
+      }
+    ],
+    "overflow": false,
+    "errors": []
+  },
+  {
+    "slug": "tf-idg",
+    "width": 360,
+    "core_comparison_and_cost_visible": true,
+    "first_and_evidence_visible": true,
+    "three_core_callouts": true,
+    "images": [
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/tf-idg/wi026-tf-idg-c1-r03-mobile.png",
+        "width": 326,
+        "height": 978
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/tf-idg/wi026-tf-idg-d2-r01-mobile.png",
+        "width": 326,
+        "height": 978
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/defectfill/wi026-generation-d3-r01-mobile.png",
+        "width": 326,
+        "height": 978
+      }
+    ],
+    "overflow": false,
+    "errors": []
+  },
+  {
+    "slug": "controlnet",
+    "width": 1440,
+    "core_comparison_and_cost_visible": true,
+    "first_and_evidence_visible": true,
+    "three_core_callouts": true,
+    "images": [
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/controlnet/wi026-controlnet-c1-r02-desktop.png",
+        "width": 935.625,
+        "height": 526.5625
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/controlnet/wi026-controlnet-d2-r01-desktop.png",
+        "width": 935.625,
+        "height": 526.5625
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/controlnet/wi026-editing-d3-r02-desktop.png",
+        "width": 935.625,
+        "height": 526.5625
+      }
+    ],
+    "overflow": false,
+    "errors": []
+  },
+  {
+    "slug": "controlnet",
+    "width": 360,
+    "core_comparison_and_cost_visible": true,
+    "first_and_evidence_visible": true,
+    "three_core_callouts": true,
+    "images": [
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/controlnet/wi026-controlnet-c1-r01-mobile.png",
+        "width": 326,
+        "height": 978
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/controlnet/wi026-controlnet-d2-r01-mobile.png",
+        "width": 326,
+        "height": 978
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/controlnet/wi026-editing-d3-r02-mobile.png",
+        "width": 326,
+        "height": 973.046875
+      }
+    ],
+    "overflow": false,
+    "errors": []
+  },
+  {
+    "slug": "inpainting",
+    "width": 1440,
+    "core_comparison_and_cost_visible": true,
+    "first_and_evidence_visible": true,
+    "three_core_callouts": true,
+    "images": [
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/inpainting/wi026-inpainting-c1-r02-desktop.png",
+        "width": 935.625,
+        "height": 526.5625
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/inpainting/wi026-inpainting-d2-r01-desktop.png",
+        "width": 935.625,
+        "height": 526.5625
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/controlnet/wi026-editing-d3-r02-desktop.png",
+        "width": 935.625,
+        "height": 526.5625
+      }
+    ],
+    "overflow": false,
+    "errors": []
+  },
+  {
+    "slug": "inpainting",
+    "width": 360,
+    "core_comparison_and_cost_visible": true,
+    "first_and_evidence_visible": true,
+    "three_core_callouts": true,
+    "images": [
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/inpainting/wi026-inpainting-c1-r01-mobile.png",
+        "width": 326,
+        "height": 978
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/inpainting/wi026-inpainting-d2-r01-mobile.png",
+        "width": 326,
+        "height": 978
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/controlnet/wi026-editing-d3-r02-mobile.png",
+        "width": 326,
+        "height": 973.046875
+      }
+    ],
+    "overflow": false,
+    "errors": []
+  },
+  {
+    "slug": "diffusion-restoration",
+    "width": 1440,
+    "core_comparison_and_cost_visible": true,
+    "first_and_evidence_visible": true,
+    "three_core_callouts": true,
+    "images": [
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/diffusion-restoration/wi026-diffusion-restoration-c1-r01-desktop.png",
+        "width": 935.625,
+        "height": 526.5625
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/diffusion-restoration/wi026-restoration-d2-r02-desktop.png",
+        "width": 935.625,
+        "height": 526.5625
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/diffusion-restoration/wi026-restoration-d3-r01-desktop.png",
+        "width": 935.625,
+        "height": 526.5625
+      }
+    ],
+    "overflow": false,
+    "errors": []
+  },
+  {
+    "slug": "diffusion-restoration",
+    "width": 360,
+    "core_comparison_and_cost_visible": true,
+    "first_and_evidence_visible": true,
+    "three_core_callouts": true,
+    "images": [
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/diffusion-restoration/wi026-diffusion-restoration-c1-r02-mobile.png",
+        "width": 326,
+        "height": 978
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/diffusion-restoration/wi026-restoration-d2-r02-mobile.png",
+        "width": 326,
+        "height": 978
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/diffusion-restoration/wi026-restoration-d3-r01-mobile.png",
+        "width": 326,
+        "height": 978
+      }
+    ],
+    "overflow": false,
+    "errors": []
+  },
+  {
+    "slug": "deblur",
+    "width": 1440,
+    "core_comparison_and_cost_visible": true,
+    "first_and_evidence_visible": true,
+    "three_core_callouts": true,
+    "images": [
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/deblur/wi026-deblur-c1-r02-desktop.png",
+        "width": 935.625,
+        "height": 526.5625
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/deblur/wi026-deblur-d2-r01-desktop.png",
+        "width": 935.625,
+        "height": 526.5625
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/diffusion-restoration/wi026-restoration-d3-r01-desktop.png",
+        "width": 935.625,
+        "height": 526.5625
+      }
+    ],
+    "overflow": false,
+    "errors": []
+  },
+  {
+    "slug": "deblur",
+    "width": 360,
+    "core_comparison_and_cost_visible": true,
+    "first_and_evidence_visible": true,
+    "three_core_callouts": true,
+    "images": [
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/deblur/wi026-deblur-c1-r02-mobile.png",
+        "width": 326,
+        "height": 978
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/deblur/wi026-deblur-d2-r01-mobile.png",
+        "width": 326,
+        "height": 967.6875
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/diffusion-restoration/wi026-restoration-d3-r01-mobile.png",
+        "width": 326,
+        "height": 978
+      }
+    ],
+    "overflow": false,
+    "errors": []
+  },
+  {
+    "slug": "super-resolution",
+    "width": 1440,
+    "core_comparison_and_cost_visible": true,
+    "first_and_evidence_visible": true,
+    "three_core_callouts": true,
+    "images": [
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/super-resolution/wi026-super-resolution-c1-r02-desktop.png",
+        "width": 935.625,
+        "height": 526.5625
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/super-resolution/wi026-sr-d2-r02-desktop.png",
+        "width": 935.625,
+        "height": 526.5625
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/diffusion-restoration/wi026-restoration-d3-r01-desktop.png",
+        "width": 935.625,
+        "height": 526.5625
+      }
+    ],
+    "overflow": false,
+    "errors": []
+  },
+  {
+    "slug": "super-resolution",
+    "width": 360,
+    "core_comparison_and_cost_visible": true,
+    "first_and_evidence_visible": true,
+    "three_core_callouts": true,
+    "images": [
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/super-resolution/wi026-super-resolution-c1-r01-mobile.png",
+        "width": 326,
+        "height": 978
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/super-resolution/wi026-sr-d2-r01-mobile.png",
+        "width": 326,
+        "height": 978
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/diffusion-restoration/wi026-restoration-d3-r01-mobile.png",
+        "width": 326,
+        "height": 978
+      }
+    ],
+    "overflow": false,
+    "errors": []
+  }
+]

@@ -1,0 +1,112 @@
+{
+  "first_read_qa_states": 48,
+  "zoom_load_escape_checks": 144,
+  "answers_navigation": true,
+  "new_assets": 38,
+  "http_hash_checks": 76,
+  "focused_tests": "5 passed; pytest navigation/bundle/native-canvas",
+  "preflight_topics": 8,
+  "slot_audit_full_pass": false,
+  "legacy_findings": {
+    "defectfill": [
+      "course still uses compact mechanism-step SVG",
+      "stale signature _course_content/generated-concepts/defectfill/defectfill-mechanism-step-04_v02.svg",
+      "stale signature roadmap-model-selection/diffusion-restoration/defectfill/slide-manifest.md"
+    ],
+    "anomalydiffusion": [
+      "course still uses compact mechanism-step SVG",
+      "stale signature _course_content/generated-concepts/anomalydiffusion/anomalydiffusion-mechanism-step-04_v02.svg",
+      "stale signature roadmap-model-selection/diffusion-restoration/anomalydiffusion/slide-manifest.md"
+    ],
+    "tf-idg": [
+      "course still uses compact mechanism-step SVG",
+      "stale signature _course_content/generated-concepts/tf-idg/tf-idg-mechanism-step-03_v02.svg",
+      "stale signature _course_content/generated-concepts/tf-idg/tf-idg-mechanism-step-04_v02.svg",
+      "stale signature roadmap-model-selection/diffusion-restoration/tf-idg/slide-manifest.md"
+    ],
+    "controlnet": [
+      "course still uses compact mechanism-step SVG",
+      "stale signature _course_content/generated-concepts/controlnet/controlnet-mechanism-step-04_v02.svg",
+      "stale signature roadmap-model-selection/diffusion-restoration/controlnet/slide-manifest.md"
+    ],
+    "inpainting": [
+      "course still uses compact mechanism-step SVG",
+      "stale signature _course_content/generated-concepts/inpainting/inpainting-mechanism-step-04_v02.svg",
+      "stale signature roadmap-model-selection/diffusion-restoration/inpainting/slide-manifest.md"
+    ],
+    "diffusion-restoration": [
+      "course still uses compact mechanism-step SVG",
+      "stale signature _course_content/generated-concepts/diffusion-restoration/diffusion-restoration-mechanism-step-04_v02.svg",
+      "stale signature roadmap-model-selection/diffusion-restoration/diffusion-restoration/slide-manifest.md"
+    ],
+    "deblur": [
+      "course still uses compact mechanism-step SVG",
+      "stale signature roadmap-model-selection/diffusion-restoration/deblur/slide-manifest.md"
+    ],
+    "super-resolution": [
+      "course still uses compact mechanism-step SVG",
+      "stale signature _course_content/generated-concepts/super-resolution/super-resolution-mechanism-step-04_v02.svg",
+      "stale signature roadmap-model-selection/diffusion-restoration/super-resolution/slide-manifest.md"
+    ]
+  },
+  "first_read_scope": [
+    {
+      "slug": "defectfill",
+      "new_first_read_paths_equal": true,
+      "disk_http_equal": true,
+      "course_docs_screenshots": "OK",
+      "legacy_findings": 3
+    },
+    {
+      "slug": "anomalydiffusion",
+      "new_first_read_paths_equal": true,
+      "disk_http_equal": true,
+      "course_docs_screenshots": "OK",
+      "legacy_findings": 3
+    },
+    {
+      "slug": "tf-idg",
+      "new_first_read_paths_equal": true,
+      "disk_http_equal": true,
+      "course_docs_screenshots": "OK",
+      "legacy_findings": 4
+    },
+    {
+      "slug": "controlnet",
+      "new_first_read_paths_equal": true,
+      "disk_http_equal": true,
+      "course_docs_screenshots": "OK",
+      "legacy_findings": 3
+    },
+    {
+      "slug": "inpainting",
+      "new_first_read_paths_equal": true,
+      "disk_http_equal": true,
+      "course_docs_screenshots": "OK",
+      "legacy_findings": 3
+    },
+    {
+      "slug": "diffusion-restoration",
+      "new_first_read_paths_equal": true,
+      "disk_http_equal": true,
+      "course_docs_screenshots": "OK",
+      "legacy_findings": 3
+    },
+    {
+      "slug": "deblur",
+      "new_first_read_paths_equal": true,
+      "disk_http_equal": true,
+      "course_docs_screenshots": "OK",
+      "legacy_findings": 2
+    },
+    {
+      "slug": "super-resolution",
+      "new_first_read_paths_equal": true,
+      "disk_http_equal": true,
+      "course_docs_screenshots": "OK",
+      "legacy_findings": 3
+    }
+  ],
+  "unassessed": "retained engineering slide teaching quality; real model performance; human learning effectiveness",
+  "user_review": "pending"
+}

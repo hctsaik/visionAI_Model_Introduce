@@ -1,0 +1,2096 @@
+{
+  "workitem": "WI-026",
+  "rubric": "v1.0",
+  "images": [
+    {
+      "id": "inpainting-c1",
+      "mode": "desktop",
+      "asset": "inpainting-c1-r02-desktop.png",
+      "sha256": "f64a3019d3a0bd40498d773253f06a0cd03d4202940a08c0bf1d8f11074bbcf9",
+      "native_size": [
+        1672,
+        941
+      ],
+      "review_css_width": 936,
+      "screenshot": "asset-size-views/inpainting-c1-r02-desktop-936.png",
+      "rubric": "v1.0",
+      "scores": [
+        24,
+        23,
+        19,
+        19,
+        9
+      ],
+      "total": 94,
+      "positive_evidence": {
+        "案例": "同板污漬、同區遮罩到平整面",
+        "方法": "周邊箭頭及局部噪聲到紋理三態",
+        "行動": "結果指向接縫檢查與另存",
+        "閱讀": "四區單一路徑、手機直向重排",
+        "一致": "局部不再誤帶上方孔"
+      },
+      "deductions": "去噪是定性示意；手機中間態較小，仍能辨別變化。",
+      "completion": {
+        "美感": {
+          "score": 9,
+          "evidence": "拉絲金屬材質、白底與輕藍線框配合局部對照，未加入無關人物。"
+        },
+        "完整": {
+          "score": 9,
+          "evidence": "同板污漬、同區遮罩到平整面；結果指向接縫檢查與另存"
+        },
+        "專業": {
+          "score": 9,
+          "evidence": "周邊箭頭及局部噪聲到紋理三態；AI生成示意與模型實測分開。"
+        },
+        "資訊密度": {
+          "score": 9,
+          "evidence": "四區單一路徑、手機直向重排；保留限制：去噪是定性示意；手機中間態較小，仍能辨別變化。"
+        },
+        "視覺層級": {
+          "score": 9,
+          "evidence": "單一標題、3至4主要節點、局部放大與單一黃結論。局部不再誤帶上方孔"
+        }
+      },
+      "veto": [],
+      "state": "self-reviewed",
+      "user_review": "pending",
+      "excluded": "模型實測效能、真人學習成效、原工程slide圖"
+    },
+    {
+      "id": "inpainting-c1",
+      "mode": "mobile",
+      "asset": "inpainting-c1-r01-mobile.png",
+      "sha256": "374955cffc37d8b957b4ae7437819140a6f663f943c41574f8242a853ca27ccd",
+      "native_size": [
+        724,
+        2172
+      ],
+      "review_css_width": 326,
+      "screenshot": "asset-size-views/inpainting-c1-r01-mobile-326.png",
+      "rubric": "v1.0",
+      "scores": [
+        24,
+        23,
+        18,
+        18,
+        9
+      ],
+      "total": 92,
+      "positive_evidence": {
+        "案例": "同板污漬、同區遮罩到平整面",
+        "方法": "周邊箭頭及局部噪聲到紋理三態",
+        "行動": "結果指向接縫檢查與另存",
+        "閱讀": "四區單一路徑、手機直向重排",
+        "一致": "局部不再誤帶上方孔"
+      },
+      "deductions": "去噪是定性示意；手機中間態較小，仍能辨別變化。",
+      "completion": {
+        "美感": {
+          "score": 9,
+          "evidence": "拉絲金屬材質、白底與輕藍線框配合局部對照，未加入無關人物。"
+        },
+        "完整": {
+          "score": 9,
+          "evidence": "同板污漬、同區遮罩到平整面；結果指向接縫檢查與另存"
+        },
+        "專業": {
+          "score": 9,
+          "evidence": "周邊箭頭及局部噪聲到紋理三態；AI生成示意與模型實測分開。"
+        },
+        "資訊密度": {
+          "score": 8,
+          "evidence": "四區單一路徑、手機直向重排；保留限制：去噪是定性示意；手機中間態較小，仍能辨別變化。"
+        },
+        "視覺層級": {
+          "score": 9,
+          "evidence": "單一標題、3至4主要節點、局部放大與單一黃結論。局部不再誤帶上方孔"
+        }
+      },
+      "veto": [],
+      "state": "self-reviewed",
+      "user_review": "pending",
+      "excluded": "模型實測效能、真人學習成效、原工程slide圖"
+    },
+    {
+      "id": "defectfill-c1",
+      "mode": "desktop",
+      "asset": "defectfill-c1-r03-desktop.png",
+      "sha256": "381f2f5f29b9c11a4aef43cab8d830a5d60d50c2a3a8008c15bd346af6231252",
+      "native_size": [
+        1672,
+        941
+      ],
+      "review_css_width": 936,
+      "screenshot": "asset-size-views/defectfill-c1-r03-desktop-936.png",
+      "rubric": "v1.0",
+      "scores": [
+        24,
+        23,
+        19,
+        17,
+        9
+      ],
+      "total": 92,
+      "positive_evidence": {
+        "案例": "少量刮傷例、正常板與多候選不同外觀",
+        "方法": "局部／物件／位置線索進LoRA再到生成",
+        "行動": "LFS比較候選後交下游",
+        "閱讀": "主體與局部多於文字；手机學習箭頭已補",
+        "一致": "同下半区及兩孔身份保持"
+      },
+      "deductions": "桌面三學習訊號的次標較小；注意力仍是關注區示意，不是實際activation。",
+      "completion": {
+        "美感": {
+          "score": 9,
+          "evidence": "拉絲金屬材質、白底與輕藍線框配合局部對照，未加入無關人物。"
+        },
+        "完整": {
+          "score": 9,
+          "evidence": "少量刮傷例、正常板與多候選不同外觀；LFS比較候選後交下游"
+        },
+        "專業": {
+          "score": 9,
+          "evidence": "局部／物件／位置線索進LoRA再到生成；AI生成示意與模型實測分開。"
+        },
+        "資訊密度": {
+          "score": 8,
+          "evidence": "主體與局部多於文字；手机學習箭頭已補；保留限制：桌面三學習訊號的次標較小；注意力仍是關注區示意，不是實際activation。"
+        },
+        "視覺層級": {
+          "score": 9,
+          "evidence": "單一標題、3至4主要節點、局部放大與單一黃結論。同下半区及兩孔身份保持"
+        }
+      },
+      "veto": [],
+      "state": "self-reviewed",
+      "user_review": "pending",
+      "excluded": "模型實測效能、真人學習成效、原工程slide圖"
+    },
+    {
+      "id": "defectfill-c1",
+      "mode": "mobile",
+      "asset": "defectfill-c1-r02-mobile.png",
+      "sha256": "f594840e5dc0cd1a31cda38ec3bb30b25b9efc26026a333435566347f3a8f1e1",
+      "native_size": [
+        724,
+        2172
+      ],
+      "review_css_width": 326,
+      "screenshot": "asset-size-views/defectfill-c1-r02-mobile-326.png",
+      "rubric": "v1.0",
+      "scores": [
+        24,
+        23,
+        19,
+        18,
+        9
+      ],
+      "total": 93,
+      "positive_evidence": {
+        "案例": "少量刮傷例、正常板與多候選不同外觀",
+        "方法": "局部／物件／位置線索進LoRA再到生成",
+        "行動": "LFS比較候選後交下游",
+        "閱讀": "主體與局部多於文字；手机學習箭頭已補",
+        "一致": "同下半区及兩孔身份保持"
+      },
+      "deductions": "桌面三學習訊號的次標較小；注意力仍是關注區示意，不是實際activation。",
+      "completion": {
+        "美感": {
+          "score": 9,
+          "evidence": "拉絲金屬材質、白底與輕藍線框配合局部對照，未加入無關人物。"
+        },
+        "完整": {
+          "score": 9,
+          "evidence": "少量刮傷例、正常板與多候選不同外觀；LFS比較候選後交下游"
+        },
+        "專業": {
+          "score": 9,
+          "evidence": "局部／物件／位置線索進LoRA再到生成；AI生成示意與模型實測分開。"
+        },
+        "資訊密度": {
+          "score": 8,
+          "evidence": "主體與局部多於文字；手机學習箭頭已補；保留限制：桌面三學習訊號的次標較小；注意力仍是關注區示意，不是實際activation。"
+        },
+        "視覺層級": {
+          "score": 9,
+          "evidence": "單一標題、3至4主要節點、局部放大與單一黃結論。同下半区及兩孔身份保持"
+        }
+      },
+      "veto": [],
+      "state": "self-reviewed",
+      "user_review": "pending",
+      "excluded": "模型實測效能、真人學習成效、原工程slide圖"
+    },
+    {
+      "id": "anomalydiffusion-c1",
+      "mode": "desktop",
+      "asset": "anomalydiffusion-c1-r01-desktop.png",
+      "sha256": "7f81acc0c04c8d4e66a41a6b7f48f7393388a99390b94efd6f8adef211243b28",
+      "native_size": [
+        1672,
+        941
+      ],
+      "review_css_width": 936,
+      "screenshot": "asset-size-views/anomalydiffusion-c1-r01-desktop-936.png",
+      "rubric": "v1.0",
+      "scores": [
+        24,
+        24,
+        18,
+        18,
+        9
+      ],
+      "total": 93,
+      "positive_evidence": {
+        "案例": "大、小預定區與完成刮傷可追蹤",
+        "方法": "外觀／位置條件與暫時結果比較補弱區",
+        "行動": "影像遮罩成對，檢查後供訓練",
+        "閱讀": "四節點及兩條件分工可讀",
+        "一致": "同兩孔板與相對區位"
+      },
+      "deductions": "手機回饋箭頭兼放大對應含義；寬鬆遮罩不表示精密分割。",
+      "completion": {
+        "美感": {
+          "score": 9,
+          "evidence": "拉絲金屬材質、白底與輕藍線框配合局部對照，未加入無關人物。"
+        },
+        "完整": {
+          "score": 9,
+          "evidence": "大、小預定區與完成刮傷可追蹤；影像遮罩成對，檢查後供訓練"
+        },
+        "專業": {
+          "score": 9,
+          "evidence": "外觀／位置條件與暫時結果比較補弱區；AI生成示意與模型實測分開。"
+        },
+        "資訊密度": {
+          "score": 8,
+          "evidence": "四節點及兩條件分工可讀；保留限制：手機回饋箭頭兼放大對應含義；寬鬆遮罩不表示精密分割。"
+        },
+        "視覺層級": {
+          "score": 9,
+          "evidence": "單一標題、3至4主要節點、局部放大與單一黃結論。同兩孔板與相對區位"
+        }
+      },
+      "veto": [],
+      "state": "self-reviewed",
+      "user_review": "pending",
+      "excluded": "模型實測效能、真人學習成效、原工程slide圖"
+    },
+    {
+      "id": "anomalydiffusion-c1",
+      "mode": "mobile",
+      "asset": "anomalydiffusion-c1-r01-mobile.png",
+      "sha256": "a39bc5fc62ec1f2c752673bc31a8618b35e1ca2ebdb95cdb4587a20111f3538a",
+      "native_size": [
+        724,
+        2172
+      ],
+      "review_css_width": 326,
+      "screenshot": "asset-size-views/anomalydiffusion-c1-r01-mobile-326.png",
+      "rubric": "v1.0",
+      "scores": [
+        24,
+        23,
+        18,
+        18,
+        9
+      ],
+      "total": 92,
+      "positive_evidence": {
+        "案例": "大、小預定區與完成刮傷可追蹤",
+        "方法": "外觀／位置條件與暫時結果比較補弱區",
+        "行動": "影像遮罩成對，檢查後供訓練",
+        "閱讀": "四節點及兩條件分工可讀",
+        "一致": "同兩孔板與相對區位"
+      },
+      "deductions": "手機回饋箭頭兼放大對應含義；寬鬆遮罩不表示精密分割。",
+      "completion": {
+        "美感": {
+          "score": 9,
+          "evidence": "拉絲金屬材質、白底與輕藍線框配合局部對照，未加入無關人物。"
+        },
+        "完整": {
+          "score": 9,
+          "evidence": "大、小預定區與完成刮傷可追蹤；影像遮罩成對，檢查後供訓練"
+        },
+        "專業": {
+          "score": 9,
+          "evidence": "外觀／位置條件與暫時結果比較補弱區；AI生成示意與模型實測分開。"
+        },
+        "資訊密度": {
+          "score": 8,
+          "evidence": "四節點及兩條件分工可讀；保留限制：手機回饋箭頭兼放大對應含義；寬鬆遮罩不表示精密分割。"
+        },
+        "視覺層級": {
+          "score": 9,
+          "evidence": "單一標題、3至4主要節點、局部放大與單一黃結論。同兩孔板與相對區位"
+        }
+      },
+      "veto": [],
+      "state": "self-reviewed",
+      "user_review": "pending",
+      "excluded": "模型實測效能、真人學習成效、原工程slide圖"
+    },
+    {
+      "id": "tf-idg-c1",
+      "mode": "desktop",
+      "asset": "tf-idg-c1-r02-desktop.png",
+      "sha256": "2ae7873c9a8ee3f47365ea2817eb5bedb7a50107d792d625269d2f6abaa6b994",
+      "native_size": [
+        1672,
+        941
+      ],
+      "review_css_width": 936,
+      "screenshot": "asset-size-views/tf-idg-c1-r02-desktop-936.png",
+      "rubric": "v1.0",
+      "scores": [
+        24,
+        23,
+        18,
+        18,
+        9
+      ],
+      "total": 92,
+      "positive_evidence": {
+        "案例": "正常面、參考刮傷及長短雙刮傷",
+        "方法": "固定權重鎖、參考對齊與補小區、保背景",
+        "行動": "影像及遮罩交人工核對",
+        "閱讀": "局部與反覆箭頭呈現生成時工作",
+        "一致": "最後手機修正目標與輸出遮罩對應"
+      },
+      "deductions": "特徵以外觀局部表示，不是張量實測；背景保存只展示紋理對照，未展開內部注意力。",
+      "completion": {
+        "美感": {
+          "score": 9,
+          "evidence": "拉絲金屬材質、白底與輕藍線框配合局部對照，未加入無關人物。"
+        },
+        "完整": {
+          "score": 9,
+          "evidence": "正常面、參考刮傷及長短雙刮傷；影像及遮罩交人工核對"
+        },
+        "專業": {
+          "score": 9,
+          "evidence": "固定權重鎖、參考對齊與補小區、保背景；AI生成示意與模型實測分開。"
+        },
+        "資訊密度": {
+          "score": 8,
+          "evidence": "局部與反覆箭頭呈現生成時工作；保留限制：特徵以外觀局部表示，不是張量實測；背景保存只展示紋理對照，未展開內部注意力。"
+        },
+        "視覺層級": {
+          "score": 9,
+          "evidence": "單一標題、3至4主要節點、局部放大與單一黃結論。最後手機修正目標與輸出遮罩對應"
+        }
+      },
+      "veto": [],
+      "state": "self-reviewed",
+      "user_review": "pending",
+      "excluded": "模型實測效能、真人學習成效、原工程slide圖"
+    },
+    {
+      "id": "tf-idg-c1",
+      "mode": "mobile",
+      "asset": "tf-idg-c1-r03-mobile.png",
+      "sha256": "891872b4fb914c2dfefe448070b0f075c020f5a7cfa5b5b9abd9aa2bbbbed598",
+      "native_size": [
+        724,
+        2172
+      ],
+      "review_css_width": 326,
+      "screenshot": "asset-size-views/tf-idg-c1-r03-mobile-326.png",
+      "rubric": "v1.0",
+      "scores": [
+        24,
+        23,
+        18,
+        18,
+        9
+      ],
+      "total": 92,
+      "positive_evidence": {
+        "案例": "正常面、參考刮傷及長短雙刮傷",
+        "方法": "固定權重鎖、參考對齊與補小區、保背景",
+        "行動": "影像及遮罩交人工核對",
+        "閱讀": "局部與反覆箭頭呈現生成時工作",
+        "一致": "最後手機修正目標與輸出遮罩對應"
+      },
+      "deductions": "特徵以外觀局部表示，不是張量實測；背景保存只展示紋理對照，未展開內部注意力。",
+      "completion": {
+        "美感": {
+          "score": 9,
+          "evidence": "拉絲金屬材質、白底與輕藍線框配合局部對照，未加入無關人物。"
+        },
+        "完整": {
+          "score": 9,
+          "evidence": "正常面、參考刮傷及長短雙刮傷；影像及遮罩交人工核對"
+        },
+        "專業": {
+          "score": 9,
+          "evidence": "固定權重鎖、參考對齊與補小區、保背景；AI生成示意與模型實測分開。"
+        },
+        "資訊密度": {
+          "score": 8,
+          "evidence": "局部與反覆箭頭呈現生成時工作；保留限制：特徵以外觀局部表示，不是張量實測；背景保存只展示紋理對照，未展開內部注意力。"
+        },
+        "視覺層級": {
+          "score": 9,
+          "evidence": "單一標題、3至4主要節點、局部放大與單一黃結論。最後手機修正目標與輸出遮罩對應"
+        }
+      },
+      "veto": [],
+      "state": "self-reviewed",
+      "user_review": "pending",
+      "excluded": "模型實測效能、真人學習成效、原工程slide圖"
+    },
+    {
+      "id": "controlnet-c1",
+      "mode": "desktop",
+      "asset": "controlnet-c1-r02-desktop.png",
+      "sha256": "5c1eae382d48fca3beb55caf899e008c47d089de8397909173aa02aed7a9fa75",
+      "native_size": [
+        1672,
+        941
+      ],
+      "review_css_width": 936,
+      "screenshot": "asset-size-views/controlnet-c1-r02-desktop-936.png",
+      "rubric": "v1.0",
+      "scores": [
+        24,
+        24,
+        18,
+        18,
+        9
+      ],
+      "total": 93,
+      "positive_evidence": {
+        "案例": "兩孔輪廓與同布局金屬外觀",
+        "方法": "條件進控制分支、訊號注入基礎去噪模型",
+        "行動": "結果與原輪廓疊圖核對",
+        "閱讀": "大輪廓、分支、三態及輸出四區",
+        "一致": "鎖在固定基礎模型，非控制分支"
+      },
+      "deductions": "零初始化連接未展開；末端橙色次圖例非主线必要且較小。",
+      "completion": {
+        "美感": {
+          "score": 9,
+          "evidence": "拉絲金屬材質、白底與輕藍線框配合局部對照，未加入無關人物。"
+        },
+        "完整": {
+          "score": 9,
+          "evidence": "兩孔輪廓與同布局金屬外觀；結果與原輪廓疊圖核對"
+        },
+        "專業": {
+          "score": 9,
+          "evidence": "條件進控制分支、訊號注入基礎去噪模型；AI生成示意與模型實測分開。"
+        },
+        "資訊密度": {
+          "score": 8,
+          "evidence": "大輪廓、分支、三態及輸出四區；保留限制：零初始化連接未展開；末端橙色次圖例非主线必要且較小。"
+        },
+        "視覺層級": {
+          "score": 9,
+          "evidence": "單一標題、3至4主要節點、局部放大與單一黃結論。鎖在固定基礎模型，非控制分支"
+        }
+      },
+      "veto": [],
+      "state": "self-reviewed",
+      "user_review": "pending",
+      "excluded": "模型實測效能、真人學習成效、原工程slide圖"
+    },
+    {
+      "id": "controlnet-c1",
+      "mode": "mobile",
+      "asset": "controlnet-c1-r01-mobile.png",
+      "sha256": "09a88e1969d7f08b4880dec91da989db8543ef25b4873b239d8b99dbf3abef96",
+      "native_size": [
+        724,
+        2172
+      ],
+      "review_css_width": 326,
+      "screenshot": "asset-size-views/controlnet-c1-r01-mobile-326.png",
+      "rubric": "v1.0",
+      "scores": [
+        24,
+        24,
+        18,
+        18,
+        9
+      ],
+      "total": 93,
+      "positive_evidence": {
+        "案例": "兩孔輪廓與同布局金屬外觀",
+        "方法": "條件進控制分支、訊號注入基礎去噪模型",
+        "行動": "結果與原輪廓疊圖核對",
+        "閱讀": "大輪廓、分支、三態及輸出四區",
+        "一致": "鎖在固定基礎模型，非控制分支"
+      },
+      "deductions": "零初始化連接未展開；末端橙色次圖例非主线必要且較小。",
+      "completion": {
+        "美感": {
+          "score": 9,
+          "evidence": "拉絲金屬材質、白底與輕藍線框配合局部對照，未加入無關人物。"
+        },
+        "完整": {
+          "score": 9,
+          "evidence": "兩孔輪廓與同布局金屬外觀；結果與原輪廓疊圖核對"
+        },
+        "專業": {
+          "score": 9,
+          "evidence": "條件進控制分支、訊號注入基礎去噪模型；AI生成示意與模型實測分開。"
+        },
+        "資訊密度": {
+          "score": 8,
+          "evidence": "大輪廓、分支、三態及輸出四區；保留限制：零初始化連接未展開；末端橙色次圖例非主线必要且較小。"
+        },
+        "視覺層級": {
+          "score": 9,
+          "evidence": "單一標題、3至4主要節點、局部放大與單一黃結論。鎖在固定基礎模型，非控制分支"
+        }
+      },
+      "veto": [],
+      "state": "self-reviewed",
+      "user_review": "pending",
+      "excluded": "模型實測效能、真人學習成效、原工程slide圖"
+    },
+    {
+      "id": "diffusion-restoration-c1",
+      "mode": "desktop",
+      "asset": "diffusion-restoration-c1-r01-desktop.png",
+      "sha256": "37112bbbde77187ac30f92cf50ac4e7299c3ea056658070a28e0fc4317c308a7",
+      "native_size": [
+        1672,
+        941
+      ],
+      "review_css_width": 936,
+      "screenshot": "asset-size-views/diffusion-restoration-c1-r01-desktop-936.png",
+      "rubric": "v1.0",
+      "scores": [
+        24,
+        23,
+        19,
+        18,
+        9
+      ],
+      "total": 93,
+      "positive_evidence": {
+        "案例": "有雜訊的觀測與較清楚候選對照",
+        "方法": "已學先驗及觀測匯合，逐步去噪",
+        "行動": "清晰估計套回退化再核對原觀測",
+        "閱讀": "四区有大工件与大步驟標籤",
+        "一致": "套回退化箭頭方向已核對"
+      },
+      "deductions": "雜訊為定性紋理；手機第2區末端箭頭未接到下一區，閱讀靠明確上下順序，該項扣分。",
+      "completion": {
+        "美感": {
+          "score": 9,
+          "evidence": "拉絲金屬材質、白底與輕藍線框配合局部對照，未加入無關人物。"
+        },
+        "完整": {
+          "score": 9,
+          "evidence": "有雜訊的觀測與較清楚候選對照；清晰估計套回退化再核對原觀測"
+        },
+        "專業": {
+          "score": 9,
+          "evidence": "已學先驗及觀測匯合，逐步去噪；AI生成示意與模型實測分開。"
+        },
+        "資訊密度": {
+          "score": 8,
+          "evidence": "四区有大工件与大步驟標籤；保留限制：雜訊為定性紋理；手機第2區末端箭頭未接到下一區，閱讀靠明確上下順序，該項扣分。"
+        },
+        "視覺層級": {
+          "score": 9,
+          "evidence": "單一標題、3至4主要節點、局部放大與單一黃結論。套回退化箭頭方向已核對"
+        }
+      },
+      "veto": [],
+      "state": "self-reviewed",
+      "user_review": "pending",
+      "excluded": "模型實測效能、真人學習成效、原工程slide圖"
+    },
+    {
+      "id": "diffusion-restoration-c1",
+      "mode": "mobile",
+      "asset": "diffusion-restoration-c1-r02-mobile.png",
+      "sha256": "528cc3ca5547b23ec2bd5c4f5c6257140c258276374228930893128500aac8ae",
+      "native_size": [
+        724,
+        2172
+      ],
+      "review_css_width": 326,
+      "screenshot": "asset-size-views/diffusion-restoration-c1-r02-mobile-326.png",
+      "rubric": "v1.0",
+      "scores": [
+        24,
+        23,
+        19,
+        17,
+        9
+      ],
+      "total": 92,
+      "positive_evidence": {
+        "案例": "有雜訊的觀測與較清楚候選對照",
+        "方法": "已學先驗及觀測匯合，逐步去噪",
+        "行動": "清晰估計套回退化再核對原觀測",
+        "閱讀": "四区有大工件与大步驟標籤",
+        "一致": "套回退化箭頭方向已核對"
+      },
+      "deductions": "雜訊為定性紋理；手機第2區末端箭頭未接到下一區，閱讀靠明確上下順序，該項扣分。",
+      "completion": {
+        "美感": {
+          "score": 9,
+          "evidence": "拉絲金屬材質、白底與輕藍線框配合局部對照，未加入無關人物。"
+        },
+        "完整": {
+          "score": 9,
+          "evidence": "有雜訊的觀測與較清楚候選對照；清晰估計套回退化再核對原觀測"
+        },
+        "專業": {
+          "score": 9,
+          "evidence": "已學先驗及觀測匯合，逐步去噪；AI生成示意與模型實測分開。"
+        },
+        "資訊密度": {
+          "score": 8,
+          "evidence": "四区有大工件与大步驟標籤；保留限制：雜訊為定性紋理；手機第2區末端箭頭未接到下一區，閱讀靠明確上下順序，該項扣分。"
+        },
+        "視覺層級": {
+          "score": 9,
+          "evidence": "單一標題、3至4主要節點、局部放大與單一黃結論。套回退化箭頭方向已核對"
+        }
+      },
+      "veto": [],
+      "state": "self-reviewed",
+      "user_review": "pending",
+      "excluded": "模型實測效能、真人學習成效、原工程slide圖"
+    },
+    {
+      "id": "deblur-c1",
+      "mode": "desktop",
+      "asset": "deblur-c1-r02-desktop.png",
+      "sha256": "92b9d0dc51e86d56d29a57e5a99526acf0af31a644b6efb044041d73c61ddeba",
+      "native_size": [
+        1672,
+        941
+      ],
+      "review_css_width": 936,
+      "screenshot": "asset-size-views/deblur-c1-r02-desktop-936.png",
+      "rubric": "v1.0",
+      "scores": [
+        24,
+        23,
+        18,
+        18,
+        9
+      ],
+      "total": 92,
+      "positive_evidence": {
+        "案例": "輸送運動與直邊拖影可見",
+        "方法": "先清晰到散開，再從散開反推的兩方向",
+        "行動": "回比原圖與可能假影",
+        "閱讀": "手機末區改兩行大配對，主線可读",
+        "一致": "不再用綠勾宣稱估計已真實對齊"
+      },
+      "deductions": "傳統與學習內部不展開；手機末區假影細線較弱，第三區板底靠近邊界但來源框仍可辨。",
+      "completion": {
+        "美感": {
+          "score": 9,
+          "evidence": "拉絲金屬材質、白底與輕藍線框配合局部對照，未加入無關人物。"
+        },
+        "完整": {
+          "score": 9,
+          "evidence": "輸送運動與直邊拖影可見；回比原圖與可能假影"
+        },
+        "專業": {
+          "score": 9,
+          "evidence": "先清晰到散開，再從散開反推的兩方向；AI生成示意與模型實測分開。"
+        },
+        "資訊密度": {
+          "score": 8,
+          "evidence": "手機末區改兩行大配對，主線可读；保留限制：傳統與學習內部不展開；手機末區假影細線較弱，第三區板底靠近邊界但來源框仍可辨。"
+        },
+        "視覺層級": {
+          "score": 9,
+          "evidence": "單一標題、3至4主要節點、局部放大與單一黃結論。不再用綠勾宣稱估計已真實對齊"
+        }
+      },
+      "veto": [],
+      "state": "self-reviewed",
+      "user_review": "pending",
+      "excluded": "模型實測效能、真人學習成效、原工程slide圖"
+    },
+    {
+      "id": "deblur-c1",
+      "mode": "mobile",
+      "asset": "deblur-c1-r02-mobile.png",
+      "sha256": "d3fc8367655a606136178a814f443674bc5a2907281198bdd5422b9c7e0570cb",
+      "native_size": [
+        724,
+        2172
+      ],
+      "review_css_width": 326,
+      "screenshot": "asset-size-views/deblur-c1-r02-mobile-326.png",
+      "rubric": "v1.0",
+      "scores": [
+        24,
+        23,
+        18,
+        17,
+        9
+      ],
+      "total": 91,
+      "positive_evidence": {
+        "案例": "輸送運動與直邊拖影可見",
+        "方法": "先清晰到散開，再從散開反推的兩方向",
+        "行動": "回比原圖與可能假影",
+        "閱讀": "手機末區改兩行大配對，主線可读",
+        "一致": "不再用綠勾宣稱估計已真實對齊"
+      },
+      "deductions": "傳統與學習內部不展開；手機末區假影細線較弱，第三區板底靠近邊界但來源框仍可辨。",
+      "completion": {
+        "美感": {
+          "score": 9,
+          "evidence": "拉絲金屬材質、白底與輕藍線框配合局部對照，未加入無關人物。"
+        },
+        "完整": {
+          "score": 9,
+          "evidence": "輸送運動與直邊拖影可見；回比原圖與可能假影"
+        },
+        "專業": {
+          "score": 9,
+          "evidence": "先清晰到散開，再從散開反推的兩方向；AI生成示意與模型實測分開。"
+        },
+        "資訊密度": {
+          "score": 8,
+          "evidence": "手機末區改兩行大配對，主線可读；保留限制：傳統與學習內部不展開；手機末區假影細線較弱，第三區板底靠近邊界但來源框仍可辨。"
+        },
+        "視覺層級": {
+          "score": 9,
+          "evidence": "單一標題、3至4主要節點、局部放大與單一黃結論。不再用綠勾宣稱估計已真實對齊"
+        }
+      },
+      "veto": [],
+      "state": "self-reviewed",
+      "user_review": "pending",
+      "excluded": "模型實測效能、真人學習成效、原工程slide圖"
+    },
+    {
+      "id": "super-resolution-c1",
+      "mode": "desktop",
+      "asset": "super-resolution-c1-r02-desktop.png",
+      "sha256": "bceaf9bea41bfd7f13026e1d1c935601bde140b0d63a45cfc004d48c4b0db919",
+      "native_size": [
+        1672,
+        941
+      ],
+      "review_css_width": 936,
+      "screenshot": "asset-size-views/super-resolution-c1-r02-desktop-936.png",
+      "rubric": "v1.0",
+      "scores": [
+        24,
+        23,
+        19,
+        18,
+        9
+      ],
+      "total": 93,
+      "positive_evidence": {
+        "案例": "同孔邊階梯像素、插值與細緻估計",
+        "方法": "同低解析輸入分到插值及已學先驗路徑",
+        "行動": "縮回觀測並保留估計與不確定標示",
+        "閱讀": "大局部像素讓差異直接可見",
+        "一致": "同位置孔邊，非兩方法必須串接"
+      },
+      "deductions": "先驗案例不是推論查庫；手機最后區三個小物件與輔助文字較密，主要結論仍清楚。",
+      "completion": {
+        "美感": {
+          "score": 9,
+          "evidence": "拉絲金屬材質、白底與輕藍線框配合局部對照，未加入無關人物。"
+        },
+        "完整": {
+          "score": 9,
+          "evidence": "同孔邊階梯像素、插值與細緻估計；縮回觀測並保留估計與不確定標示"
+        },
+        "專業": {
+          "score": 9,
+          "evidence": "同低解析輸入分到插值及已學先驗路徑；AI生成示意與模型實測分開。"
+        },
+        "資訊密度": {
+          "score": 8,
+          "evidence": "大局部像素讓差異直接可見；保留限制：先驗案例不是推論查庫；手機最后區三個小物件與輔助文字較密，主要結論仍清楚。"
+        },
+        "視覺層級": {
+          "score": 9,
+          "evidence": "單一標題、3至4主要節點、局部放大與單一黃結論。同位置孔邊，非兩方法必須串接"
+        }
+      },
+      "veto": [],
+      "state": "self-reviewed",
+      "user_review": "pending",
+      "excluded": "模型實測效能、真人學習成效、原工程slide圖"
+    },
+    {
+      "id": "super-resolution-c1",
+      "mode": "mobile",
+      "asset": "super-resolution-c1-r01-mobile.png",
+      "sha256": "3361ea2f2c343b2d6925ae85cf0eb459d9c72e218dbcfec8e2bd3e14c3f79c74",
+      "native_size": [
+        724,
+        2172
+      ],
+      "review_css_width": 326,
+      "screenshot": "asset-size-views/super-resolution-c1-r01-mobile-326.png",
+      "rubric": "v1.0",
+      "scores": [
+        24,
+        23,
+        19,
+        17,
+        9
+      ],
+      "total": 92,
+      "positive_evidence": {
+        "案例": "同孔邊階梯像素、插值與細緻估計",
+        "方法": "同低解析輸入分到插值及已學先驗路徑",
+        "行動": "縮回觀測並保留估計與不確定標示",
+        "閱讀": "大局部像素讓差異直接可見",
+        "一致": "同位置孔邊，非兩方法必須串接"
+      },
+      "deductions": "先驗案例不是推論查庫；手機最后區三個小物件與輔助文字較密，主要結論仍清楚。",
+      "completion": {
+        "美感": {
+          "score": 9,
+          "evidence": "拉絲金屬材質、白底與輕藍線框配合局部對照，未加入無關人物。"
+        },
+        "完整": {
+          "score": 9,
+          "evidence": "同孔邊階梯像素、插值與細緻估計；縮回觀測並保留估計與不確定標示"
+        },
+        "專業": {
+          "score": 9,
+          "evidence": "同低解析輸入分到插值及已學先驗路徑；AI生成示意與模型實測分開。"
+        },
+        "資訊密度": {
+          "score": 8,
+          "evidence": "大局部像素讓差異直接可見；保留限制：先驗案例不是推論查庫；手機最后區三個小物件與輔助文字較密，主要結論仍清楚。"
+        },
+        "視覺層級": {
+          "score": 9,
+          "evidence": "單一標題、3至4主要節點、局部放大與單一黃結論。同位置孔邊，非兩方法必須串接"
+        }
+      },
+      "veto": [],
+      "state": "self-reviewed",
+      "user_review": "pending",
+      "excluded": "模型實測效能、真人學習成效、原工程slide圖"
+    },
+    {
+      "id": "inpainting-d2",
+      "mode": "desktop",
+      "asset": "inpainting-d2-r01-desktop.png",
+      "sha256": "f7fa8d7cbe0789a63cc510aa9f6255bfe1d14ae652d2374bd2e288ddee752833",
+      "native_size": [
+        1672,
+        941
+      ],
+      "review_css_width": 936,
+      "screenshot": "asset-size-views/inpainting-d2-r01-desktop-936.png",
+      "rubric": "v1.0",
+      "scores": [
+        25,
+        24,
+        19,
+        18,
+        9
+      ],
+      "total": 95,
+      "positive_evidence": {
+        "案例": "兩正常孔下方真破洞與填平結果",
+        "方法": "遮罩覆洞到生成平面",
+        "行動": "原圖供實體檢查、編修圖另作模擬",
+        "閱讀": "破洞與平面大局部直接對照",
+        "一致": "保留原兩孔，不把正常孔當新缺陷"
+      },
+      "deductions": "最後剪貼板略偏符號，編修外區精確差異未量化。",
+      "completion": {
+        "美感": {
+          "score": 9,
+          "evidence": "拉絲金屬材質、白底與輕藍線框配合局部對照，未加入無關人物。"
+        },
+        "完整": {
+          "score": 9,
+          "evidence": "兩正常孔下方真破洞與填平結果；原圖供實體檢查、編修圖另作模擬"
+        },
+        "專業": {
+          "score": 9,
+          "evidence": "遮罩覆洞到生成平面；AI生成示意與模型實測分開。"
+        },
+        "資訊密度": {
+          "score": 8,
+          "evidence": "破洞與平面大局部直接對照；保留限制：最後剪貼板略偏符號，編修外區精確差異未量化。"
+        },
+        "視覺層級": {
+          "score": 9,
+          "evidence": "單一標題、3至4主要節點、局部放大與單一黃結論。保留原兩孔，不把正常孔當新缺陷"
+        }
+      },
+      "veto": [],
+      "state": "self-reviewed",
+      "user_review": "pending",
+      "excluded": "模型實測效能、真人學習成效、原工程slide圖"
+    },
+    {
+      "id": "inpainting-d2",
+      "mode": "mobile",
+      "asset": "inpainting-d2-r01-mobile.png",
+      "sha256": "cc2b3ef2c243678763034cfa09af057e0a630cc9d1670281aa23da123146b6f8",
+      "native_size": [
+        724,
+        2172
+      ],
+      "review_css_width": 326,
+      "screenshot": "asset-size-views/inpainting-d2-r01-mobile-326.png",
+      "rubric": "v1.0",
+      "scores": [
+        25,
+        24,
+        19,
+        18,
+        9
+      ],
+      "total": 95,
+      "positive_evidence": {
+        "案例": "兩正常孔下方真破洞與填平結果",
+        "方法": "遮罩覆洞到生成平面",
+        "行動": "原圖供實體檢查、編修圖另作模擬",
+        "閱讀": "破洞與平面大局部直接對照",
+        "一致": "保留原兩孔，不把正常孔當新缺陷"
+      },
+      "deductions": "最後剪貼板略偏符號，編修外區精確差異未量化。",
+      "completion": {
+        "美感": {
+          "score": 9,
+          "evidence": "拉絲金屬材質、白底與輕藍線框配合局部對照，未加入無關人物。"
+        },
+        "完整": {
+          "score": 9,
+          "evidence": "兩正常孔下方真破洞與填平結果；原圖供實體檢查、編修圖另作模擬"
+        },
+        "專業": {
+          "score": 9,
+          "evidence": "遮罩覆洞到生成平面；AI生成示意與模型實測分開。"
+        },
+        "資訊密度": {
+          "score": 8,
+          "evidence": "破洞與平面大局部直接對照；保留限制：最後剪貼板略偏符號，編修外區精確差異未量化。"
+        },
+        "視覺層級": {
+          "score": 9,
+          "evidence": "單一標題、3至4主要節點、局部放大與單一黃結論。保留原兩孔，不把正常孔當新缺陷"
+        }
+      },
+      "veto": [],
+      "state": "self-reviewed",
+      "user_review": "pending",
+      "excluded": "模型實測效能、真人學習成效、原工程slide圖"
+    },
+    {
+      "id": "controlnet-d2",
+      "mode": "desktop",
+      "asset": "controlnet-d2-r01-desktop.png",
+      "sha256": "9398b05914c79e21f107810bd905e5cb83b66dac0fe0543988977d02d9a064de",
+      "native_size": [
+        1672,
+        941
+      ],
+      "review_css_width": 936,
+      "screenshot": "asset-size-views/controlnet-d2-r01-desktop-936.png",
+      "rubric": "v1.0",
+      "scores": [
+        24,
+        24,
+        19,
+        18,
+        9
+      ],
+      "total": 94,
+      "positive_evidence": {
+        "案例": "原下邊微裂紋，輪廓缺此資訊",
+        "方法": "同輪廓分出有／無裂紋兩候選",
+        "行動": "同位置局部與補條件／回原圖動作",
+        "閱讀": "候選比較大而短標明確",
+        "一致": "假設情況及非實測明示"
+      },
+      "deductions": "補條件具體實作留在正文；未展示條件强度連續变化。",
+      "completion": {
+        "美感": {
+          "score": 9,
+          "evidence": "拉絲金屬材質、白底與輕藍線框配合局部對照，未加入無關人物。"
+        },
+        "完整": {
+          "score": 9,
+          "evidence": "原下邊微裂紋，輪廓缺此資訊；同位置局部與補條件／回原圖動作"
+        },
+        "專業": {
+          "score": 9,
+          "evidence": "同輪廓分出有／無裂紋兩候選；AI生成示意與模型實測分開。"
+        },
+        "資訊密度": {
+          "score": 8,
+          "evidence": "候選比較大而短標明確；保留限制：補條件具體實作留在正文；未展示條件强度連續变化。"
+        },
+        "視覺層級": {
+          "score": 9,
+          "evidence": "單一標題、3至4主要節點、局部放大與單一黃結論。假設情況及非實測明示"
+        }
+      },
+      "veto": [],
+      "state": "self-reviewed",
+      "user_review": "pending",
+      "excluded": "模型實測效能、真人學習成效、原工程slide圖"
+    },
+    {
+      "id": "controlnet-d2",
+      "mode": "mobile",
+      "asset": "controlnet-d2-r01-mobile.png",
+      "sha256": "4392b4d3c8623b5dc201b96b0519a02318a69d47816d87490242b063893494a5",
+      "native_size": [
+        724,
+        2172
+      ],
+      "review_css_width": 326,
+      "screenshot": "asset-size-views/controlnet-d2-r01-mobile-326.png",
+      "rubric": "v1.0",
+      "scores": [
+        24,
+        24,
+        19,
+        18,
+        9
+      ],
+      "total": 94,
+      "positive_evidence": {
+        "案例": "原下邊微裂紋，輪廓缺此資訊",
+        "方法": "同輪廓分出有／無裂紋兩候選",
+        "行動": "同位置局部與補條件／回原圖動作",
+        "閱讀": "候選比較大而短標明確",
+        "一致": "假設情況及非實測明示"
+      },
+      "deductions": "補條件具體實作留在正文；未展示條件强度連續变化。",
+      "completion": {
+        "美感": {
+          "score": 9,
+          "evidence": "拉絲金屬材質、白底與輕藍線框配合局部對照，未加入無關人物。"
+        },
+        "完整": {
+          "score": 9,
+          "evidence": "原下邊微裂紋，輪廓缺此資訊；同位置局部與補條件／回原圖動作"
+        },
+        "專業": {
+          "score": 9,
+          "evidence": "同輪廓分出有／無裂紋兩候選；AI生成示意與模型實測分開。"
+        },
+        "資訊密度": {
+          "score": 8,
+          "evidence": "候選比較大而短標明確；保留限制：補條件具體實作留在正文；未展示條件强度連續变化。"
+        },
+        "視覺層級": {
+          "score": 9,
+          "evidence": "單一標題、3至4主要節點、局部放大與單一黃結論。假設情況及非實測明示"
+        }
+      },
+      "veto": [],
+      "state": "self-reviewed",
+      "user_review": "pending",
+      "excluded": "模型實測效能、真人學習成效、原工程slide圖"
+    },
+    {
+      "id": "defectfill-d2",
+      "mode": "desktop",
+      "asset": "defectfill-d2-r02-desktop.png",
+      "sha256": "965733c4140316cb41c25c482a4ace2fbe032d8d325d2b3ce1da3df617b67283",
+      "native_size": [
+        1672,
+        941
+      ],
+      "review_css_width": 936,
+      "screenshot": "asset-size-views/defectfill-d2-r02-desktop-936.png",
+      "rubric": "v1.0",
+      "scores": [
+        24,
+        24,
+        19,
+        18,
+        9
+      ],
+      "total": 94,
+      "positive_evidence": {
+        "案例": "孔邊刮傷與孔中橋接紋理對比",
+        "方法": "放大沒有材料卻生成紋理的位置",
+        "行動": "正常候選送審、壞候選剔除、真留出驗證",
+        "閱讀": "主錯誤用大孔局部呈現",
+        "一致": "已把目標放置框移至同孔下方"
+      },
+      "deductions": "留出驗證仅示接法，未有實際效果數據；初始框是放置區不是精準缺陷真值。",
+      "completion": {
+        "美感": {
+          "score": 9,
+          "evidence": "拉絲金屬材質、白底與輕藍線框配合局部對照，未加入無關人物。"
+        },
+        "完整": {
+          "score": 9,
+          "evidence": "孔邊刮傷與孔中橋接紋理對比；正常候選送審、壞候選剔除、真留出驗證"
+        },
+        "專業": {
+          "score": 9,
+          "evidence": "放大沒有材料卻生成紋理的位置；AI生成示意與模型實測分開。"
+        },
+        "資訊密度": {
+          "score": 8,
+          "evidence": "主錯誤用大孔局部呈現；保留限制：留出驗證仅示接法，未有實際效果數據；初始框是放置區不是精準缺陷真值。"
+        },
+        "視覺層級": {
+          "score": 9,
+          "evidence": "單一標題、3至4主要節點、局部放大與單一黃結論。已把目標放置框移至同孔下方"
+        }
+      },
+      "veto": [],
+      "state": "self-reviewed",
+      "user_review": "pending",
+      "excluded": "模型實測效能、真人學習成效、原工程slide圖"
+    },
+    {
+      "id": "defectfill-d2",
+      "mode": "mobile",
+      "asset": "defectfill-d2-r01-mobile.png",
+      "sha256": "aa6093b8596c3ac55341858f68634de7b86f3dfb1ba5c64044c1e91cbb423b3f",
+      "native_size": [
+        724,
+        2172
+      ],
+      "review_css_width": 326,
+      "screenshot": "asset-size-views/defectfill-d2-r01-mobile-326.png",
+      "rubric": "v1.0",
+      "scores": [
+        24,
+        24,
+        19,
+        18,
+        9
+      ],
+      "total": 94,
+      "positive_evidence": {
+        "案例": "孔邊刮傷與孔中橋接紋理對比",
+        "方法": "放大沒有材料卻生成紋理的位置",
+        "行動": "正常候選送審、壞候選剔除、真留出驗證",
+        "閱讀": "主錯誤用大孔局部呈現",
+        "一致": "已把目標放置框移至同孔下方"
+      },
+      "deductions": "留出驗證仅示接法，未有實際效果數據；初始框是放置區不是精準缺陷真值。",
+      "completion": {
+        "美感": {
+          "score": 9,
+          "evidence": "拉絲金屬材質、白底與輕藍線框配合局部對照，未加入無關人物。"
+        },
+        "完整": {
+          "score": 9,
+          "evidence": "孔邊刮傷與孔中橋接紋理對比；正常候選送審、壞候選剔除、真留出驗證"
+        },
+        "專業": {
+          "score": 9,
+          "evidence": "放大沒有材料卻生成紋理的位置；AI生成示意與模型實測分開。"
+        },
+        "資訊密度": {
+          "score": 8,
+          "evidence": "主錯誤用大孔局部呈現；保留限制：留出驗證仅示接法，未有實際效果數據；初始框是放置區不是精準缺陷真值。"
+        },
+        "視覺層級": {
+          "score": 9,
+          "evidence": "單一標題、3至4主要節點、局部放大與單一黃結論。已把目標放置框移至同孔下方"
+        }
+      },
+      "veto": [],
+      "state": "self-reviewed",
+      "user_review": "pending",
+      "excluded": "模型實測效能、真人學習成效、原工程slide圖"
+    },
+    {
+      "id": "anomalydiffusion-d2",
+      "mode": "desktop",
+      "asset": "anomalydiffusion-d2-r02-desktop.png",
+      "sha256": "e8bfda36a3a0e79fd76a8b0ea9d8a927c7f949c213d46f1c649944d4d46fe0c3",
+      "native_size": [
+        1672,
+        941
+      ],
+      "review_css_width": 936,
+      "screenshot": "asset-size-views/anomalydiffusion-d2-r02-desktop-936.png",
+      "rubric": "v1.0",
+      "scores": [
+        24,
+        24,
+        19,
+        18,
+        9
+      ],
+      "total": 94,
+      "positive_evidence": {
+        "案例": "大區刮傷、小區仍平整",
+        "方法": "小區影像與白色預定mask矛盾",
+        "行動": "錯配影像標註拒收重產",
+        "閱讀": "手機減少重複裁切使主對照更大",
+        "一致": "黑底白區標籤已改正且兩區位置一致"
+      },
+      "deductions": "只示一種漏生成反例，注意力修復過程由核心圖承擔。",
+      "completion": {
+        "美感": {
+          "score": 9,
+          "evidence": "拉絲金屬材質、白底與輕藍線框配合局部對照，未加入無關人物。"
+        },
+        "完整": {
+          "score": 9,
+          "evidence": "大區刮傷、小區仍平整；錯配影像標註拒收重產"
+        },
+        "專業": {
+          "score": 9,
+          "evidence": "小區影像與白色預定mask矛盾；AI生成示意與模型實測分開。"
+        },
+        "資訊密度": {
+          "score": 8,
+          "evidence": "手機減少重複裁切使主對照更大；保留限制：只示一種漏生成反例，注意力修復過程由核心圖承擔。"
+        },
+        "視覺層級": {
+          "score": 9,
+          "evidence": "單一標題、3至4主要節點、局部放大與單一黃結論。黑底白區標籤已改正且兩區位置一致"
+        }
+      },
+      "veto": [],
+      "state": "self-reviewed",
+      "user_review": "pending",
+      "excluded": "模型實測效能、真人學習成效、原工程slide圖"
+    },
+    {
+      "id": "anomalydiffusion-d2",
+      "mode": "mobile",
+      "asset": "anomalydiffusion-d2-r01-mobile.png",
+      "sha256": "110ed1740545461ab1f686f6fd72df7cbb9dd9c1d14724a4b4cd396fc1d5a09c",
+      "native_size": [
+        724,
+        2172
+      ],
+      "review_css_width": 326,
+      "screenshot": "asset-size-views/anomalydiffusion-d2-r01-mobile-326.png",
+      "rubric": "v1.0",
+      "scores": [
+        24,
+        24,
+        19,
+        19,
+        9
+      ],
+      "total": 95,
+      "positive_evidence": {
+        "案例": "大區刮傷、小區仍平整",
+        "方法": "小區影像與白色預定mask矛盾",
+        "行動": "錯配影像標註拒收重產",
+        "閱讀": "手機減少重複裁切使主對照更大",
+        "一致": "黑底白區標籤已改正且兩區位置一致"
+      },
+      "deductions": "只示一種漏生成反例，注意力修復過程由核心圖承擔。",
+      "completion": {
+        "美感": {
+          "score": 9,
+          "evidence": "拉絲金屬材質、白底與輕藍線框配合局部對照，未加入無關人物。"
+        },
+        "完整": {
+          "score": 9,
+          "evidence": "大區刮傷、小區仍平整；錯配影像標註拒收重產"
+        },
+        "專業": {
+          "score": 9,
+          "evidence": "小區影像與白色預定mask矛盾；AI生成示意與模型實測分開。"
+        },
+        "資訊密度": {
+          "score": 9,
+          "evidence": "手機減少重複裁切使主對照更大；保留限制：只示一種漏生成反例，注意力修復過程由核心圖承擔。"
+        },
+        "視覺層級": {
+          "score": 9,
+          "evidence": "單一標題、3至4主要節點、局部放大與單一黃結論。黑底白區標籤已改正且兩區位置一致"
+        }
+      },
+      "veto": [],
+      "state": "self-reviewed",
+      "user_review": "pending",
+      "excluded": "模型實測效能、真人學習成效、原工程slide圖"
+    },
+    {
+      "id": "tf-idg-d2",
+      "mode": "desktop",
+      "asset": "tf-idg-d2-r02-desktop.png",
+      "sha256": "446b19acac669dd47c950903e38ecdd8732958b06e5b14e4589b4b2d3531f9ee",
+      "native_size": [
+        1672,
+        941
+      ],
+      "review_css_width": 936,
+      "screenshot": "asset-size-views/tf-idg-d2-r02-desktop-936.png",
+      "rubric": "v1.0",
+      "scores": [
+        24,
+        24,
+        19,
+        18,
+        9
+      ],
+      "total": 94,
+      "positive_evidence": {
+        "案例": "黑粗材質轉銀拉絲的黑色接縫",
+        "方法": "參考、目標、錯誤混入與換參考連續",
+        "行動": "更換同材質並重驗紋理保存",
+        "閱讀": "四組同局部可追踪",
+        "一致": "最後刮傷留在目標區，權重仍固定"
+      },
+      "deductions": "換參考是合理操作示意，非保證成功；特徵分布細節不在本圖展開。",
+      "completion": {
+        "美感": {
+          "score": 9,
+          "evidence": "拉絲金屬材質、白底與輕藍線框配合局部對照，未加入無關人物。"
+        },
+        "完整": {
+          "score": 9,
+          "evidence": "黑粗材質轉銀拉絲的黑色接縫；更換同材質並重驗紋理保存"
+        },
+        "專業": {
+          "score": 9,
+          "evidence": "參考、目標、錯誤混入與換參考連續；AI生成示意與模型實測分開。"
+        },
+        "資訊密度": {
+          "score": 8,
+          "evidence": "四組同局部可追踪；保留限制：換參考是合理操作示意，非保證成功；特徵分布細節不在本圖展開。"
+        },
+        "視覺層級": {
+          "score": 9,
+          "evidence": "單一標題、3至4主要節點、局部放大與單一黃結論。最後刮傷留在目標區，權重仍固定"
+        }
+      },
+      "veto": [],
+      "state": "self-reviewed",
+      "user_review": "pending",
+      "excluded": "模型實測效能、真人學習成效、原工程slide圖"
+    },
+    {
+      "id": "tf-idg-d2",
+      "mode": "mobile",
+      "asset": "tf-idg-d2-r01-mobile.png",
+      "sha256": "6f5ecc24ad0193038c1858af95adde4280212606bdaa3d884fd0501ee0e738e1",
+      "native_size": [
+        724,
+        2172
+      ],
+      "review_css_width": 326,
+      "screenshot": "asset-size-views/tf-idg-d2-r01-mobile-326.png",
+      "rubric": "v1.0",
+      "scores": [
+        24,
+        24,
+        19,
+        18,
+        9
+      ],
+      "total": 94,
+      "positive_evidence": {
+        "案例": "黑粗材質轉銀拉絲的黑色接縫",
+        "方法": "參考、目標、錯誤混入與換參考連續",
+        "行動": "更換同材質並重驗紋理保存",
+        "閱讀": "四組同局部可追踪",
+        "一致": "最後刮傷留在目標區，權重仍固定"
+      },
+      "deductions": "換參考是合理操作示意，非保證成功；特徵分布細節不在本圖展開。",
+      "completion": {
+        "美感": {
+          "score": 9,
+          "evidence": "拉絲金屬材質、白底與輕藍線框配合局部對照，未加入無關人物。"
+        },
+        "完整": {
+          "score": 9,
+          "evidence": "黑粗材質轉銀拉絲的黑色接縫；更換同材質並重驗紋理保存"
+        },
+        "專業": {
+          "score": 9,
+          "evidence": "參考、目標、錯誤混入與換參考連續；AI生成示意與模型實測分開。"
+        },
+        "資訊密度": {
+          "score": 8,
+          "evidence": "四組同局部可追踪；保留限制：換參考是合理操作示意，非保證成功；特徵分布細節不在本圖展開。"
+        },
+        "視覺層級": {
+          "score": 9,
+          "evidence": "單一標題、3至4主要節點、局部放大與單一黃結論。最後刮傷留在目標區，權重仍固定"
+        }
+      },
+      "veto": [],
+      "state": "self-reviewed",
+      "user_review": "pending",
+      "excluded": "模型實測效能、真人學習成效、原工程slide圖"
+    },
+    {
+      "id": "restoration-d2",
+      "mode": "desktop",
+      "asset": "restoration-d2-r02-desktop.png",
+      "sha256": "389f5ab11b69044f9e2afe7ac8d1f02bd7eb05cf697fd6151a8e4b44df01de60",
+      "native_size": [
+        1672,
+        941
+      ],
+      "review_css_width": 936,
+      "screenshot": "asset-size-views/restoration-d2-r02-desktop-936.png",
+      "rubric": "v1.0",
+      "scores": [
+        24,
+        24,
+        19,
+        18,
+        9
+      ],
+      "total": 94,
+      "positive_evidence": {
+        "案例": "模糊觀測與有／無裂紋候選",
+        "方法": "兩不同候選各自退化都近似觀測",
+        "行動": "相機重拍及同位置獨立核對",
+        "閱讀": "成對清晰／模糊區讓非唯一性可見",
+        "一致": "不以填平字樣預設原真值"
+      },
+      "deductions": "退化近似為定性，未提供數值或噪聲分布；獨立取像也未必可得。",
+      "completion": {
+        "美感": {
+          "score": 9,
+          "evidence": "拉絲金屬材質、白底與輕藍線框配合局部對照，未加入無關人物。"
+        },
+        "完整": {
+          "score": 9,
+          "evidence": "模糊觀測與有／無裂紋候選；相機重拍及同位置獨立核對"
+        },
+        "專業": {
+          "score": 9,
+          "evidence": "兩不同候選各自退化都近似觀測；AI生成示意與模型實測分開。"
+        },
+        "資訊密度": {
+          "score": 8,
+          "evidence": "成對清晰／模糊區讓非唯一性可見；保留限制：退化近似為定性，未提供數值或噪聲分布；獨立取像也未必可得。"
+        },
+        "視覺層級": {
+          "score": 9,
+          "evidence": "單一標題、3至4主要節點、局部放大與單一黃結論。不以填平字樣預設原真值"
+        }
+      },
+      "veto": [],
+      "state": "self-reviewed",
+      "user_review": "pending",
+      "excluded": "模型實測效能、真人學習成效、原工程slide圖"
+    },
+    {
+      "id": "restoration-d2",
+      "mode": "mobile",
+      "asset": "restoration-d2-r02-mobile.png",
+      "sha256": "22f20bf82eed7c6496ccbc996f203ccdd3828f5ea6419fa4a499f4df155bc54f",
+      "native_size": [
+        724,
+        2172
+      ],
+      "review_css_width": 326,
+      "screenshot": "asset-size-views/restoration-d2-r02-mobile-326.png",
+      "rubric": "v1.0",
+      "scores": [
+        24,
+        24,
+        19,
+        18,
+        9
+      ],
+      "total": 94,
+      "positive_evidence": {
+        "案例": "模糊觀測與有／無裂紋候選",
+        "方法": "兩不同候選各自退化都近似觀測",
+        "行動": "相機重拍及同位置獨立核對",
+        "閱讀": "成對清晰／模糊區讓非唯一性可見",
+        "一致": "不以填平字樣預設原真值"
+      },
+      "deductions": "退化近似為定性，未提供數值或噪聲分布；獨立取像也未必可得。",
+      "completion": {
+        "美感": {
+          "score": 9,
+          "evidence": "拉絲金屬材質、白底與輕藍線框配合局部對照，未加入無關人物。"
+        },
+        "完整": {
+          "score": 9,
+          "evidence": "模糊觀測與有／無裂紋候選；相機重拍及同位置獨立核對"
+        },
+        "專業": {
+          "score": 9,
+          "evidence": "兩不同候選各自退化都近似觀測；AI生成示意與模型實測分開。"
+        },
+        "資訊密度": {
+          "score": 8,
+          "evidence": "成對清晰／模糊區讓非唯一性可見；保留限制：退化近似為定性，未提供數值或噪聲分布；獨立取像也未必可得。"
+        },
+        "視覺層級": {
+          "score": 9,
+          "evidence": "單一標題、3至4主要節點、局部放大與單一黃結論。不以填平字樣預設原真值"
+        }
+      },
+      "veto": [],
+      "state": "self-reviewed",
+      "user_review": "pending",
+      "excluded": "模型實測效能、真人學習成效、原工程slide圖"
+    },
+    {
+      "id": "deblur-d2",
+      "mode": "desktop",
+      "asset": "deblur-d2-r01-desktop.png",
+      "sha256": "78a95e745ff08a224c85bd93c7ad54f028fa599e2186e52fe54d576f2c2ce0a3",
+      "native_size": [
+        1672,
+        941
+      ],
+      "review_css_width": 936,
+      "screenshot": "asset-size-views/deblur-d2-r01-desktop-936.png",
+      "rubric": "v1.0",
+      "scores": [
+        24,
+        24,
+        19,
+        18,
+        9
+      ],
+      "total": 94,
+      "positive_evidence": {
+        "案例": "模糊單邊、振鈴多線、清晰單邊",
+        "方法": "相同邊緣局部比較排除假線",
+        "行動": "改善曝光與穩定、重拍核對",
+        "閱讀": "三個同尺度邊緣加下一步",
+        "一致": "避開孔位，不把孔內線當邊緣"
+      },
+      "deductions": "相機參數無具體數值，依現場測量；未聲稱某模型必然振鈴。",
+      "completion": {
+        "美感": {
+          "score": 9,
+          "evidence": "拉絲金屬材質、白底與輕藍線框配合局部對照，未加入無關人物。"
+        },
+        "完整": {
+          "score": 9,
+          "evidence": "模糊單邊、振鈴多線、清晰單邊；改善曝光與穩定、重拍核對"
+        },
+        "專業": {
+          "score": 9,
+          "evidence": "相同邊緣局部比較排除假線；AI生成示意與模型實測分開。"
+        },
+        "資訊密度": {
+          "score": 8,
+          "evidence": "三個同尺度邊緣加下一步；保留限制：相機參數無具體數值，依現場測量；未聲稱某模型必然振鈴。"
+        },
+        "視覺層級": {
+          "score": 9,
+          "evidence": "單一標題、3至4主要節點、局部放大與單一黃結論。避開孔位，不把孔內線當邊緣"
+        }
+      },
+      "veto": [],
+      "state": "self-reviewed",
+      "user_review": "pending",
+      "excluded": "模型實測效能、真人學習成效、原工程slide圖"
+    },
+    {
+      "id": "deblur-d2",
+      "mode": "mobile",
+      "asset": "deblur-d2-r01-mobile.png",
+      "sha256": "410c0a9bc6b525b14370eb875bc65635dc365c8c1c4ecae30aac342395eac6b9",
+      "native_size": [
+        728,
+        2161
+      ],
+      "review_css_width": 326,
+      "screenshot": "asset-size-views/deblur-d2-r01-mobile-326.png",
+      "rubric": "v1.0",
+      "scores": [
+        24,
+        24,
+        19,
+        18,
+        9
+      ],
+      "total": 94,
+      "positive_evidence": {
+        "案例": "模糊單邊、振鈴多線、清晰單邊",
+        "方法": "相同邊緣局部比較排除假線",
+        "行動": "改善曝光與穩定、重拍核對",
+        "閱讀": "三個同尺度邊緣加下一步",
+        "一致": "避開孔位，不把孔內線當邊緣"
+      },
+      "deductions": "相機參數無具體數值，依現場測量；未聲稱某模型必然振鈴。",
+      "completion": {
+        "美感": {
+          "score": 9,
+          "evidence": "拉絲金屬材質、白底與輕藍線框配合局部對照，未加入無關人物。"
+        },
+        "完整": {
+          "score": 9,
+          "evidence": "模糊單邊、振鈴多線、清晰單邊；改善曝光與穩定、重拍核對"
+        },
+        "專業": {
+          "score": 9,
+          "evidence": "相同邊緣局部比較排除假線；AI生成示意與模型實測分開。"
+        },
+        "資訊密度": {
+          "score": 8,
+          "evidence": "三個同尺度邊緣加下一步；保留限制：相機參數無具體數值，依現場測量；未聲稱某模型必然振鈴。"
+        },
+        "視覺層級": {
+          "score": 9,
+          "evidence": "單一標題、3至4主要節點、局部放大與單一黃結論。避開孔位，不把孔內線當邊緣"
+        }
+      },
+      "veto": [],
+      "state": "self-reviewed",
+      "user_review": "pending",
+      "excluded": "模型實測效能、真人學習成效、原工程slide圖"
+    },
+    {
+      "id": "sr-d2",
+      "mode": "desktop",
+      "asset": "sr-d2-r02-desktop.png",
+      "sha256": "a83bd4d8b3d6ef5da58964fc50f0e8963faaee02f1446f73ca974a6cb097bed9",
+      "native_size": [
+        1673,
+        940
+      ],
+      "review_css_width": 936,
+      "screenshot": "asset-size-views/sr-d2-r02-desktop-936.png",
+      "rubric": "v1.0",
+      "scores": [
+        24,
+        24,
+        19,
+        18,
+        9
+      ],
+      "total": 94,
+      "positive_evidence": {
+        "案例": "圆板同邊緣的缺口／平邊",
+        "方法": "兩種高解析局部縮成近似粗像素",
+        "行動": "提高真實取像解析力再核對",
+        "閱讀": "上下配對保留缺口局部焦點",
+        "一致": "移除偽精確像素格數與實測暗示"
+      },
+      "deductions": "採樣近似非逐格數學模擬；相機示意不代表已實拍。",
+      "completion": {
+        "美感": {
+          "score": 9,
+          "evidence": "拉絲金屬材質、白底與輕藍線框配合局部對照，未加入無關人物。"
+        },
+        "完整": {
+          "score": 9,
+          "evidence": "圆板同邊緣的缺口／平邊；提高真實取像解析力再核對"
+        },
+        "專業": {
+          "score": 9,
+          "evidence": "兩種高解析局部縮成近似粗像素；AI生成示意與模型實測分開。"
+        },
+        "資訊密度": {
+          "score": 8,
+          "evidence": "上下配對保留缺口局部焦點；保留限制：採樣近似非逐格數學模擬；相機示意不代表已實拍。"
+        },
+        "視覺層級": {
+          "score": 9,
+          "evidence": "單一標題、3至4主要節點、局部放大與單一黃結論。移除偽精確像素格數與實測暗示"
+        }
+      },
+      "veto": [],
+      "state": "self-reviewed",
+      "user_review": "pending",
+      "excluded": "模型實測效能、真人學習成效、原工程slide圖"
+    },
+    {
+      "id": "sr-d2",
+      "mode": "mobile",
+      "asset": "sr-d2-r01-mobile.png",
+      "sha256": "2dc2ea8471b17c5ab650ab67b0285abd7e0a47b011f57328d8420f6a0a03d7e6",
+      "native_size": [
+        724,
+        2172
+      ],
+      "review_css_width": 326,
+      "screenshot": "asset-size-views/sr-d2-r01-mobile-326.png",
+      "rubric": "v1.0",
+      "scores": [
+        24,
+        24,
+        19,
+        18,
+        9
+      ],
+      "total": 94,
+      "positive_evidence": {
+        "案例": "圆板同邊緣的缺口／平邊",
+        "方法": "兩種高解析局部縮成近似粗像素",
+        "行動": "提高真實取像解析力再核對",
+        "閱讀": "上下配對保留缺口局部焦點",
+        "一致": "移除偽精確像素格數與實測暗示"
+      },
+      "deductions": "採樣近似非逐格數學模擬；相機示意不代表已實拍。",
+      "completion": {
+        "美感": {
+          "score": 9,
+          "evidence": "拉絲金屬材質、白底與輕藍線框配合局部對照，未加入無關人物。"
+        },
+        "完整": {
+          "score": 9,
+          "evidence": "圆板同邊緣的缺口／平邊；提高真實取像解析力再核對"
+        },
+        "專業": {
+          "score": 9,
+          "evidence": "兩種高解析局部縮成近似粗像素；AI生成示意與模型實測分開。"
+        },
+        "資訊密度": {
+          "score": 8,
+          "evidence": "上下配對保留缺口局部焦點；保留限制：採樣近似非逐格數學模擬；相機示意不代表已實拍。"
+        },
+        "視覺層級": {
+          "score": 9,
+          "evidence": "單一標題、3至4主要節點、局部放大與單一黃結論。移除偽精確像素格數與實測暗示"
+        }
+      },
+      "veto": [],
+      "state": "self-reviewed",
+      "user_review": "pending",
+      "excluded": "模型實測效能、真人學習成效、原工程slide圖"
+    },
+    {
+      "id": "generation-d3",
+      "mode": "desktop",
+      "asset": "generation-d3-r02-desktop.png",
+      "sha256": "1160b29977a403679d05104eb74b92eecc94ce7ee50994a2b42f67f411f56e3c",
+      "native_size": [
+        1672,
+        941
+      ],
+      "review_css_width": 936,
+      "screenshot": "asset-size-views/generation-d3-r02-desktop-936.png",
+      "rubric": "v1.0",
+      "scores": [
+        24,
+        23,
+        19,
+        17,
+        9
+      ],
+      "total": 92,
+      "positive_evidence": {
+        "案例": "共用正常板、刮傷參考與目標",
+        "方法": "LoRA、雙條件嵌入、生成迭代三種可見流程",
+        "行動": "固定下游與真實留出比較",
+        "閱讀": "三大區及手機三獨立方法行",
+        "一致": "刪除虛構LoRA類別及方法間串接"
+      },
+      "deductions": "桌面中層短標較小；手機未畫實際評估輸出，只畫資料分工與同下游評估動作。",
+      "completion": {
+        "美感": {
+          "score": 9,
+          "evidence": "拉絲金屬材質、白底與輕藍線框配合局部對照，未加入無關人物。"
+        },
+        "完整": {
+          "score": 9,
+          "evidence": "共用正常板、刮傷參考與目標；固定下游與真實留出比較"
+        },
+        "專業": {
+          "score": 9,
+          "evidence": "LoRA、雙條件嵌入、生成迭代三種可見流程；AI生成示意與模型實測分開。"
+        },
+        "資訊密度": {
+          "score": 8,
+          "evidence": "三大區及手機三獨立方法行；保留限制：桌面中層短標較小；手機未畫實際評估輸出，只畫資料分工與同下游評估動作。"
+        },
+        "視覺層級": {
+          "score": 9,
+          "evidence": "單一標題、3至4主要節點、局部放大與單一黃結論。刪除虛構LoRA類別及方法間串接"
+        }
+      },
+      "veto": [],
+      "state": "self-reviewed",
+      "user_review": "pending",
+      "excluded": "模型實測效能、真人學習成效、原工程slide圖"
+    },
+    {
+      "id": "generation-d3",
+      "mode": "mobile",
+      "asset": "generation-d3-r01-mobile.png",
+      "sha256": "3a28db2d35761e0f8c8855187a3a197e07de935b8b219508e8512d21a7d9cc37",
+      "native_size": [
+        724,
+        2172
+      ],
+      "review_css_width": 326,
+      "screenshot": "asset-size-views/generation-d3-r01-mobile-326.png",
+      "rubric": "v1.0",
+      "scores": [
+        24,
+        23,
+        18,
+        18,
+        9
+      ],
+      "total": 92,
+      "positive_evidence": {
+        "案例": "共用正常板、刮傷參考與目標",
+        "方法": "LoRA、雙條件嵌入、生成迭代三種可見流程",
+        "行動": "固定下游與真實留出比較",
+        "閱讀": "三大區及手機三獨立方法行",
+        "一致": "刪除虛構LoRA類別及方法間串接"
+      },
+      "deductions": "桌面中層短標較小；手機未畫實際評估輸出，只畫資料分工與同下游評估動作。",
+      "completion": {
+        "美感": {
+          "score": 9,
+          "evidence": "拉絲金屬材質、白底與輕藍線框配合局部對照，未加入無關人物。"
+        },
+        "完整": {
+          "score": 9,
+          "evidence": "共用正常板、刮傷參考與目標；固定下游與真實留出比較"
+        },
+        "專業": {
+          "score": 9,
+          "evidence": "LoRA、雙條件嵌入、生成迭代三種可見流程；AI生成示意與模型實測分開。"
+        },
+        "資訊密度": {
+          "score": 8,
+          "evidence": "三大區及手機三獨立方法行；保留限制：桌面中層短標較小；手機未畫實際評估輸出，只畫資料分工與同下游評估動作。"
+        },
+        "視覺層級": {
+          "score": 9,
+          "evidence": "單一標題、3至4主要節點、局部放大與單一黃結論。刪除虛構LoRA類別及方法間串接"
+        }
+      },
+      "veto": [],
+      "state": "self-reviewed",
+      "user_review": "pending",
+      "excluded": "模型實測效能、真人學習成效、原工程slide圖"
+    },
+    {
+      "id": "editing-d3",
+      "mode": "desktop",
+      "asset": "editing-d3-r02-desktop.png",
+      "sha256": "cce66ab5c9f17c5f14cd203da8545d0073dd4b4bb2f429842e103c37e3360509",
+      "native_size": [
+        1672,
+        941
+      ],
+      "review_css_width": 936,
+      "screenshot": "asset-size-views/editing-d3-r02-desktop-936.png",
+      "rubric": "v1.0",
+      "scores": [
+        24,
+        24,
+        18,
+        18,
+        9
+      ],
+      "total": 93,
+      "positive_evidence": {
+        "案例": "共用污漬板，整體銅外觀和局部去污不同",
+        "方法": "輪廓控制及遮罩編修分開，再示可選組合",
+        "行動": "依需求核對及查組合支援",
+        "閱讀": "手機兩列比較保留大外觀圖",
+        "一致": "沒有ControlNet到Inpainting串接，方法名稱補齊"
+      },
+      "deductions": "組合框內部不展開；兩種目標示例不是公平性能測試，依需求選。",
+      "completion": {
+        "美感": {
+          "score": 9,
+          "evidence": "拉絲金屬材質、白底與輕藍線框配合局部對照，未加入無關人物。"
+        },
+        "完整": {
+          "score": 9,
+          "evidence": "共用污漬板，整體銅外觀和局部去污不同；依需求核對及查組合支援"
+        },
+        "專業": {
+          "score": 9,
+          "evidence": "輪廓控制及遮罩編修分開，再示可選組合；AI生成示意與模型實測分開。"
+        },
+        "資訊密度": {
+          "score": 8,
+          "evidence": "手機兩列比較保留大外觀圖；保留限制：組合框內部不展開；兩種目標示例不是公平性能測試，依需求選。"
+        },
+        "視覺層級": {
+          "score": 9,
+          "evidence": "單一標題、3至4主要節點、局部放大與單一黃結論。沒有ControlNet到Inpainting串接，方法名稱補齊"
+        }
+      },
+      "veto": [],
+      "state": "self-reviewed",
+      "user_review": "pending",
+      "excluded": "模型實測效能、真人學習成效、原工程slide圖"
+    },
+    {
+      "id": "editing-d3",
+      "mode": "mobile",
+      "asset": "editing-d3-r02-mobile.png",
+      "sha256": "82e109771635655f1d02e6e30237eae9c7768e49454f0ef38d0637f213c09566",
+      "native_size": [
+        726,
+        2167
+      ],
+      "review_css_width": 326,
+      "screenshot": "asset-size-views/editing-d3-r02-mobile-326.png",
+      "rubric": "v1.0",
+      "scores": [
+        24,
+        24,
+        18,
+        18,
+        9
+      ],
+      "total": 93,
+      "positive_evidence": {
+        "案例": "共用污漬板，整體銅外觀和局部去污不同",
+        "方法": "輪廓控制及遮罩編修分開，再示可選組合",
+        "行動": "依需求核對及查組合支援",
+        "閱讀": "手機兩列比較保留大外觀圖",
+        "一致": "沒有ControlNet到Inpainting串接，方法名稱補齊"
+      },
+      "deductions": "組合框內部不展開；兩種目標示例不是公平性能測試，依需求選。",
+      "completion": {
+        "美感": {
+          "score": 9,
+          "evidence": "拉絲金屬材質、白底與輕藍線框配合局部對照，未加入無關人物。"
+        },
+        "完整": {
+          "score": 9,
+          "evidence": "共用污漬板，整體銅外觀和局部去污不同；依需求核對及查組合支援"
+        },
+        "專業": {
+          "score": 9,
+          "evidence": "輪廓控制及遮罩編修分開，再示可選組合；AI生成示意與模型實測分開。"
+        },
+        "資訊密度": {
+          "score": 8,
+          "evidence": "手機兩列比較保留大外觀圖；保留限制：組合框內部不展開；兩種目標示例不是公平性能測試，依需求選。"
+        },
+        "視覺層級": {
+          "score": 9,
+          "evidence": "單一標題、3至4主要節點、局部放大與單一黃結論。沒有ControlNet到Inpainting串接，方法名稱補齊"
+        }
+      },
+      "veto": [],
+      "state": "self-reviewed",
+      "user_review": "pending",
+      "excluded": "模型實測效能、真人學習成效、原工程slide圖"
+    },
+    {
+      "id": "restoration-d3",
+      "mode": "desktop",
+      "asset": "restoration-d3-r01-desktop.png",
+      "sha256": "76bf115cb5c70ba18c8f046ffa256356452c4fb540e8de9dbe125203c6d76088",
+      "native_size": [
+        1672,
+        941
+      ],
+      "review_css_width": 936,
+      "screenshot": "asset-size-views/restoration-d3-r01-desktop-936.png",
+      "rubric": "v1.0",
+      "scores": [
+        24,
+        23,
+        19,
+        18,
+        9
+      ],
+      "total": 93,
+      "positive_evidence": {
+        "案例": "同板拖影與粗像素為兩種退化",
+        "方法": "傳統、一次前饋、多步去噪的工作差異",
+        "行動": "同位置細節／假影／總時間共同評估",
+        "閱讀": "手機保留三方法上下排列",
+        "一致": "任務與做法分層，不畫串接"
+      },
+      "deductions": "傳統方法圖示抽象，手機評估區較密但主標可辨；未含公平速度實測。",
+      "completion": {
+        "美感": {
+          "score": 9,
+          "evidence": "拉絲金屬材質、白底與輕藍線框配合局部對照，未加入無關人物。"
+        },
+        "完整": {
+          "score": 9,
+          "evidence": "同板拖影與粗像素為兩種退化；同位置細節／假影／總時間共同評估"
+        },
+        "專業": {
+          "score": 9,
+          "evidence": "傳統、一次前饋、多步去噪的工作差異；AI生成示意與模型實測分開。"
+        },
+        "資訊密度": {
+          "score": 8,
+          "evidence": "手機保留三方法上下排列；保留限制：傳統方法圖示抽象，手機評估區較密但主標可辨；未含公平速度實測。"
+        },
+        "視覺層級": {
+          "score": 9,
+          "evidence": "單一標題、3至4主要節點、局部放大與單一黃結論。任務與做法分層，不畫串接"
+        }
+      },
+      "veto": [],
+      "state": "self-reviewed",
+      "user_review": "pending",
+      "excluded": "模型實測效能、真人學習成效、原工程slide圖"
+    },
+    {
+      "id": "restoration-d3",
+      "mode": "mobile",
+      "asset": "restoration-d3-r01-mobile.png",
+      "sha256": "f9d3d4d9abda89993124694d03924724ee0f09cfca9af35e98fecb6cf66264e6",
+      "native_size": [
+        724,
+        2172
+      ],
+      "review_css_width": 326,
+      "screenshot": "asset-size-views/restoration-d3-r01-mobile-326.png",
+      "rubric": "v1.0",
+      "scores": [
+        24,
+        23,
+        19,
+        17,
+        9
+      ],
+      "total": 92,
+      "positive_evidence": {
+        "案例": "同板拖影與粗像素為兩種退化",
+        "方法": "傳統、一次前饋、多步去噪的工作差異",
+        "行動": "同位置細節／假影／總時間共同評估",
+        "閱讀": "手機保留三方法上下排列",
+        "一致": "任務與做法分層，不畫串接"
+      },
+      "deductions": "傳統方法圖示抽象，手機評估區較密但主標可辨；未含公平速度實測。",
+      "completion": {
+        "美感": {
+          "score": 9,
+          "evidence": "拉絲金屬材質、白底與輕藍線框配合局部對照，未加入無關人物。"
+        },
+        "完整": {
+          "score": 9,
+          "evidence": "同板拖影與粗像素為兩種退化；同位置細節／假影／總時間共同評估"
+        },
+        "專業": {
+          "score": 9,
+          "evidence": "傳統、一次前饋、多步去噪的工作差異；AI生成示意與模型實測分開。"
+        },
+        "資訊密度": {
+          "score": 8,
+          "evidence": "手機保留三方法上下排列；保留限制：傳統方法圖示抽象，手機評估區較密但主標可辨；未含公平速度實測。"
+        },
+        "視覺層級": {
+          "score": 9,
+          "evidence": "單一標題、3至4主要節點、局部放大與單一黃結論。任務與做法分層，不畫串接"
+        }
+      },
+      "veto": [],
+      "state": "self-reviewed",
+      "user_review": "pending",
+      "excluded": "模型實測效能、真人學習成效、原工程slide圖"
+    }
+  ]
+}
