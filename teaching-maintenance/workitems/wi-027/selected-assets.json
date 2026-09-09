@@ -1,0 +1,92 @@
+{
+  "dinov2-c1": {
+    "desktop": "dinov2-c1-r02-desktop.png",
+    "desktop_reviewed": true,
+    "mobile": "dinov2-c1-r01-mobile.png",
+    "mobile_reviewed": true
+  },
+  "dinov3-c1": {
+    "desktop": "dinov3-c1-r02-desktop.png",
+    "desktop_reviewed": true,
+    "mobile": "dinov3-c1-r02-mobile.png",
+    "mobile_reviewed": true
+  },
+  "clip-c1": {
+    "desktop": "clip-c1-r01-desktop.png",
+    "desktop_reviewed": true,
+    "mobile": "clip-c1-r01-mobile.png",
+    "mobile_reviewed": true
+  },
+  "llava-c1": {
+    "desktop": "llava-c1-r02-desktop.png",
+    "desktop_reviewed": true,
+    "mobile": "llava-c1-r03-mobile.png",
+    "mobile_reviewed": true
+  },
+  "alignment-d2": {
+    "desktop": "alignment-d2-r01-desktop.png",
+    "desktop_reviewed": true,
+    "mobile": "alignment-d2-r01-mobile.png",
+    "mobile_reviewed": true
+  },
+  "gemini-vision-c1": {
+    "desktop": "gemini-vision-c1-r02-desktop.png",
+    "desktop_reviewed": true,
+    "mobile": "gemini-vision-c1-r02-mobile.png",
+    "mobile_reviewed": true
+  },
+  "siglip-c1": {
+    "desktop": "siglip-c1-r03-desktop.png",
+    "desktop_reviewed": true,
+    "mobile": "siglip-c1-r05-mobile.png",
+    "mobile_reviewed": true
+  },
+  "qwen-vl-c1": {
+    "desktop": "qwen-vl-c1-r03-desktop.png",
+    "desktop_reviewed": true,
+    "mobile": "qwen-vl-c1-r03-mobile.png",
+    "mobile_reviewed": true
+  },
+  "features-d3": {
+    "desktop": "features-d3-r02-desktop.png",
+    "desktop_reviewed": true,
+    "mobile": "features-d3-r03-mobile.png",
+    "mobile_reviewed": true
+  },
+  "llava-d2": {
+    "desktop": "llava-d2-r02-desktop.png",
+    "desktop_reviewed": true,
+    "mobile": "llava-d2-r02-mobile.png",
+    "mobile_reviewed": true
+  },
+  "gemini-d2": {
+    "desktop": "gemini-d2-r02-desktop.png",
+    "desktop_reviewed": true,
+    "mobile": "gemini-d2-r02-mobile.png",
+    "mobile_reviewed": true
+  },
+  "alignment-d3": {
+    "desktop": "alignment-d3-r03-desktop.png",
+    "desktop_reviewed": true,
+    "mobile": "alignment-d3-r03-mobile.png",
+    "mobile_reviewed": true
+  },
+  "dino-d2": {
+    "desktop": "dino-d2-r03-desktop.png",
+    "desktop_reviewed": true,
+    "mobile": "dino-d2-r03-mobile.png",
+    "mobile_reviewed": true
+  },
+  "vlm-d3": {
+    "desktop": "vlm-d3-r03-desktop.png",
+    "desktop_reviewed": true,
+    "mobile": "vlm-d3-r03-mobile.png",
+    "mobile_reviewed": true
+  },
+  "qwen-vl-d2": {
+    "desktop": "qwen-vl-d2-r03-desktop.png",
+    "desktop_reviewed": true,
+    "mobile": "qwen-vl-d2-r03-mobile.png",
+    "mobile_reviewed": true
+  }
+}

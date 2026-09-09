@@ -1,0 +1,51 @@
+[
+  {
+    "id": "llava-d2",
+    "mode": "desktop",
+    "version": "r02",
+    "ref": "C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-027/llava-d2-r01-desktop.png",
+    "prompt": "Edit supplied image ONLY needed fixes, preserve correct rest. Replace ENTIRE bottom yellowbanner text with exactly: 「把看得見的現象說清楚，把原因留給額外證據。」. Completely remove all words about contract or modelscorecomparison; they are from a different lesson. Keep lightbulb and single #FFF4CC banner. Change title to 「看到缺螺絲，推不出缺少的原因」. Firstgroup heading 「1 影像觀察示意」, replace 這是已知的事實 with 「原圖可見」. Keep observed leftscrewpresent/rightempty, hypotheticalvibrationclaim is unsupported; no actualeventclaim. Show AI生成教學示意，非模型實測. Preserve exact original aspectratio and size. Keep all text TraditionalChinese."
+  },
+  {
+    "id": "llava-d2",
+    "mode": "mobile",
+    "version": "r02",
+    "ref": "C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-027/llava-d2-r01-mobile.png",
+    "prompt": "Edit supplied image ONLY needed fixes, preserve correct rest. Replace ENTIRE bottom yellowbanner text with exactly: 「把看得見的現象說清楚，把原因留給額外證據。」. Completely remove all words about contract or modelscorecomparison; they are from a different lesson. Keep lightbulb and single #FFF4CC banner. Change title to 「看到缺螺絲，推不出缺少的原因」. Firstgroup heading 「1 影像觀察示意」, replace 這是已知的事實 with 「原圖可見」. Keep observed leftscrewpresent/rightempty, hypotheticalvibrationclaim is unsupported; no actualeventclaim. Show AI生成教學示意，非模型實測. Preserve exact original aspectratio and size. Keep all text TraditionalChinese."
+  },
+  {
+    "id": "qwen-vl-d2",
+    "mode": "desktop",
+    "version": "r02",
+    "ref": "C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-027/qwen-vl-d2-r01-desktop.png",
+    "prompt": "Edit supplied image ONLY needed fixes, preserve correct rest. Replace ENTIRE bottom yellowbanner text with exactly: 「比較答案時，同時比較細節覆蓋、token 與完整耗時。」. Completely remove all words about contract or modelscorecomparison; they are from a different lesson. Keep lightbulb and single #FFF4CC banner. First originalplate and all later copies/crops must have EXACT same rightbottom screw location; the finalsourcecrop contains ONLY rightfield 批次 B08 and its actual bottom-right screw atBOTTOMRIGHT, notnewtopscrew. Remove any invented manufacturer's name. In finalcostnote change 生成 tokens to 影像 tokens. Keep lowresolutiontext visibly pixelated and originalROIclear; sourceROI fromoriginal, not enhancedlowres. Preserve exact original aspectratio and size. Keep all text TraditionalChinese."
+  },
+  {
+    "id": "qwen-vl-d2",
+    "mode": "mobile",
+    "version": "r02",
+    "ref": "C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-027/qwen-vl-d2-r01-mobile.png",
+    "prompt": "Edit supplied image ONLY needed fixes, preserve correct rest. Replace ENTIRE bottom yellowbanner text with exactly: 「比較答案時，同時比較細節覆蓋、token 與完整耗時。」. Completely remove all words about contract or modelscorecomparison; they are from a different lesson. Keep lightbulb and single #FFF4CC banner. First originalplate and all later copies/crops must have EXACT same rightbottom screw location; the finalsourcecrop contains ONLY rightfield 批次 B08 and its actual bottom-right screw atBOTTOMRIGHT, notnewtopscrew. Remove any invented manufacturer's name. In finalcostnote change 生成 tokens to 影像 tokens. Keep lowresolutiontext visibly pixelated and originalROIclear; sourceROI fromoriginal, not enhancedlowres. Preserve exact original aspectratio and size. Keep all text TraditionalChinese."
+  },
+  {
+    "id": "gemini-d2",
+    "mode": "desktop",
+    "version": "r02",
+    "ref": "C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-027/gemini-d2-r01-desktop.png",
+    "prompt": "Edit supplied image ONLY needed fixes, preserve correct rest. Replace ENTIRE bottom yellowbanner text with exactly: 「格式檢查與內容核對，要分成兩個步驟。」. Completely remove all words about contract or modelscorecomparison; they are from a different lesson. Keep lightbulb and single #FFF4CC banner. First heading 原始影像（教學示意） instead of 事實依據. In thirdgroup label 「原圖可見：無螺絲」 instead of 事實. Sameleftscrew/rightemptycrop, right presentinvalidcontent despite validJSON correctedmissing. Mainheading 格式正確 ≠ 內容正確. Preserve exact original aspectratio and size. Keep all text TraditionalChinese."
+  },
+  {
+    "id": "gemini-d2",
+    "mode": "mobile",
+    "version": "r02",
+    "ref": "C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-027/gemini-d2-r01-mobile.png",
+    "prompt": "Edit supplied image ONLY needed fixes, preserve correct rest. Replace ENTIRE bottom yellowbanner text with exactly: 「格式檢查與內容核對，要分成兩個步驟。」. Completely remove all words about contract or modelscorecomparison; they are from a different lesson. Keep lightbulb and single #FFF4CC banner. First heading 原始影像（教學示意） instead of 事實依據. In thirdgroup label 「原圖可見：無螺絲」 instead of 事實. Sameleftscrew/rightemptycrop, right presentinvalidcontent despite validJSON correctedmissing. Mainheading 格式正確 ≠ 內容正確. Preserve exact original aspectratio and size. Keep all text TraditionalChinese."
+  },
+  {
+    "id": "llava-c1",
+    "mode": "mobile",
+    "version": "r03",
+    "ref": "C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-027/llava-c1-r02-mobile.png",
+    "prompt": "Edit supplied image panel3 only. There are upper projectedvisualtokens and lower questiontokens. Label UPPER tokens 「視覺 tokens」 and LOWER tokens 「文字 tokens」 separately. Do not let one visualtokenlabel cover questiontokens. Both groups feed the SAME LLM via existingbrace. Feature→projection→visualtoken path unchanged. Otherthreepanels, takeaway, exact724x2172canvas unchanged."
+  }
+]

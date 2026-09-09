@@ -1,0 +1,16 @@
+[
+  {
+    "id": "alignment-d3",
+    "mode": "desktop",
+    "version": "r03",
+    "ref": "C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-027/alignment-d3-r02-desktop.png",
+    "prompt": "Edit supplied comparison. Preserve all correct positive/negative pairs and trainingdiagram. Fix independent deployment inputs in group3: image AND candidate texts must be enclosed in ONE shared inputbox labelled 「獨立測試：同圖＋同候選文字」. FROM that sharedbox split arrows to BOTH CLIP and SigLIP; each receives both modalities. Never image-onlyarrow toCLIP and text-onlyarrow toSigLIP. Remove all 與左側相同/與上方相同 labels. Group1 heading 「1 工件與文字例子」 and subtitle 「用具體配對說明訓練差異」. Group2 subtitle 「訓練示意，非下方測試資料」. Group3 independentheldoutnewbracketphoto samegeneraltype is okay, no claim trainingtestsamepixels. Mobilegroup1 image label 「配對例子」 instead 測試用. Keep yellowtakeaway unchanged. Preserve originalaspectratio, mainlabelslarge. Remove extra prose to make room for shared inputbox."
+  },
+  {
+    "id": "alignment-d3",
+    "mode": "mobile",
+    "version": "r03",
+    "ref": "C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-027/alignment-d3-r02-mobile.png",
+    "prompt": "Edit supplied comparison. Preserve all correct positive/negative pairs and trainingdiagram. Fix independent deployment inputs in group3: image AND candidate texts must be enclosed in ONE shared inputbox labelled 「獨立測試：同圖＋同候選文字」. FROM that sharedbox split arrows to BOTH CLIP and SigLIP; each receives both modalities. Never image-onlyarrow toCLIP and text-onlyarrow toSigLIP. Remove all 與左側相同/與上方相同 labels. Group1 heading 「1 工件與文字例子」 and subtitle 「用具體配對說明訓練差異」. Group2 subtitle 「訓練示意，非下方測試資料」. Group3 independentheldoutnewbracketphoto samegeneraltype is okay, no claim trainingtestsamepixels. Mobilegroup1 image label 「配對例子」 instead 測試用. Keep yellowtakeaway unchanged. Preserve originalaspectratio, mainlabelslarge. Remove extra prose to make room for shared inputbox."
+  }
+]

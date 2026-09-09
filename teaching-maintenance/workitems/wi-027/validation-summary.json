@@ -1,0 +1,23 @@
+{
+  "workitem": "WI-027",
+  "images": 30,
+  "stories": 15,
+  "lessons": 7,
+  "interaction_states": 42,
+  "zoom_escape_checks": 126,
+  "final_rendered_states": 14,
+  "http_hash_checks": 60,
+  "referenced_assets": 1289,
+  "focused_tests": "5 passed in 27.43s",
+  "image_scores": "91–96",
+  "page_scores": "93–94",
+  "failures": "首輪最後兩課QA與docs清理複製重疊，卡片／圖像解碼失敗；等待建置完成後兩課12狀態36次放大重跑全部通過。",
+  "scope": "新版首讀；原工程圖、模型效能與真人學習未重測",
+  "user_review": "pending",
+  "publication": "commit/push pending",
+  "topic_preflights": 7,
+  "all_bundle_asset_hashes": 1289,
+  "unreferenced_bundle_files_removed": 90,
+  "final_refresh": "Windows CopyFile2 error 1224 while overwriting unchanged mapped asset. Verified all 1289 source/docs asset SHA256 hashes plus final HTML; final 14 states and 60 HTTP hashes passed after metadata refresh.",
+  "snapshot_retry": "First snapshot synchronization attempted before bundle audit finished; missing report caused failure, rerun only after report exists."
+}

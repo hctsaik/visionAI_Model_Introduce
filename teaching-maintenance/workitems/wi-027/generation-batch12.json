@@ -1,0 +1,16 @@
+[
+  {
+    "id": "vlm-d3",
+    "mode": "desktop",
+    "version": "r03",
+    "ref": "C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-027/vlm-d3-r02-desktop.png",
+    "prompt": "Edit supplied image exactchanges only, keep threegroup layout and correct same2terminal object. Replace whole main title with 「看圖回答：比較自建與託管」. The title must NOT be LLaVA coretitle. Local deployment lane heading 「LLaVA／Qwen-VL 自建範例」. Under GPUserver replace label with 「GPU、權重及處理器維護」 and small wrench icon. Cloudlane heading 「Gemini API 託管範例」; underAPI label 「網路、重試與 API 用量」, usage-document icon. Samequestionandanswer示意; clarify these are exampleanswers not performancewins. Subtitle 部署範例，非家族唯一方式. Replace finalbanner text exactly 「用同一工作比較回答品質、維護負擔與完整成本。」 (include 用 atbeginning). Keep samepixelsaspectratio and allother content/crops/arrows."
+  },
+  {
+    "id": "vlm-d3",
+    "mode": "mobile",
+    "version": "r03",
+    "ref": "C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-027/vlm-d3-r02-mobile.png",
+    "prompt": "Edit supplied image exactchanges only, keep threegroup layout and correct same2terminal object. Replace whole main title with 「看圖回答：比較自建與託管」. The title must NOT be LLaVA coretitle. Local deployment lane heading 「LLaVA／Qwen-VL 自建範例」. Under GPUserver replace label with 「GPU、權重及處理器維護」 and small wrench icon. Cloudlane heading 「Gemini API 託管範例」; underAPI label 「網路、重試與 API 用量」, usage-document icon. Samequestionandanswer示意; clarify these are exampleanswers not performancewins. Subtitle 部署範例，非家族唯一方式. Replace finalbanner text exactly 「用同一工作比較回答品質、維護負擔與完整成本。」 (include 用 atbeginning). Keep samepixelsaspectratio and allother content/crops/arrows."
+  }
+]

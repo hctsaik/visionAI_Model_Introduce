@@ -1,0 +1,366 @@
+[
+  {
+    "slug": "dinov2",
+    "width": 1440,
+    "core_comparison_and_cost_visible": true,
+    "first_and_evidence_visible": true,
+    "three_core_callouts": true,
+    "images": [
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/dinov2/wi027-dinov2-c1-r02-desktop.png",
+        "width": 935.625,
+        "height": 526.5625
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/dinov2/wi027-dino-d2-r03-desktop.png",
+        "width": 935.625,
+        "height": 526.5625
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/dinov2/wi027-features-d3-r02-desktop.png",
+        "width": 935.625,
+        "height": 526.5625
+      }
+    ],
+    "overflow": false,
+    "errors": []
+  },
+  {
+    "slug": "dinov2",
+    "width": 360,
+    "core_comparison_and_cost_visible": true,
+    "first_and_evidence_visible": true,
+    "three_core_callouts": true,
+    "images": [
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/dinov2/wi027-dinov2-c1-r01-mobile.png",
+        "width": 326,
+        "height": 978
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/dinov2/wi027-dino-d2-r03-mobile.png",
+        "width": 326,
+        "height": 975.296875
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/dinov2/wi027-features-d3-r03-mobile.png",
+        "width": 326,
+        "height": 977.546875
+      }
+    ],
+    "overflow": false,
+    "errors": []
+  },
+  {
+    "slug": "dinov3",
+    "width": 1440,
+    "core_comparison_and_cost_visible": true,
+    "first_and_evidence_visible": true,
+    "three_core_callouts": true,
+    "images": [
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/dinov3/wi027-dinov3-c1-r02-desktop.png",
+        "width": 935.625,
+        "height": 526.5625
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/dinov2/wi027-dino-d2-r03-desktop.png",
+        "width": 935.625,
+        "height": 526.5625
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/dinov2/wi027-features-d3-r02-desktop.png",
+        "width": 935.625,
+        "height": 526.5625
+      }
+    ],
+    "overflow": false,
+    "errors": []
+  },
+  {
+    "slug": "dinov3",
+    "width": 360,
+    "core_comparison_and_cost_visible": true,
+    "first_and_evidence_visible": true,
+    "three_core_callouts": true,
+    "images": [
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/dinov3/wi027-dinov3-c1-r02-mobile.png",
+        "width": 326,
+        "height": 975.75
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/dinov2/wi027-dino-d2-r03-mobile.png",
+        "width": 326,
+        "height": 975.296875
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/dinov2/wi027-features-d3-r03-mobile.png",
+        "width": 326,
+        "height": 977.546875
+      }
+    ],
+    "overflow": false,
+    "errors": []
+  },
+  {
+    "slug": "clip",
+    "width": 1440,
+    "core_comparison_and_cost_visible": true,
+    "first_and_evidence_visible": true,
+    "three_core_callouts": true,
+    "images": [
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/clip/wi027-clip-c1-r01-desktop.png",
+        "width": 935.625,
+        "height": 526.5625
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/clip/wi027-alignment-d2-r01-desktop.png",
+        "width": 935.625,
+        "height": 526.5625
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/clip/wi027-alignment-d3-r03-desktop.png",
+        "width": 935.625,
+        "height": 526.5625
+      }
+    ],
+    "overflow": false,
+    "errors": []
+  },
+  {
+    "slug": "clip",
+    "width": 360,
+    "core_comparison_and_cost_visible": true,
+    "first_and_evidence_visible": true,
+    "three_core_callouts": true,
+    "images": [
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/clip/wi027-clip-c1-r01-mobile.png",
+        "width": 326,
+        "height": 978
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/clip/wi027-alignment-d2-r01-mobile.png",
+        "width": 326,
+        "height": 978
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/clip/wi027-alignment-d3-r03-mobile.png",
+        "width": 326,
+        "height": 974.390625
+      }
+    ],
+    "overflow": false,
+    "errors": []
+  },
+  {
+    "slug": "siglip",
+    "width": 1440,
+    "core_comparison_and_cost_visible": true,
+    "first_and_evidence_visible": true,
+    "three_core_callouts": true,
+    "images": [
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/siglip/wi027-siglip-c1-r03-desktop.png",
+        "width": 935.625,
+        "height": 526.5625
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/clip/wi027-alignment-d2-r01-desktop.png",
+        "width": 935.625,
+        "height": 526.5625
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/clip/wi027-alignment-d3-r03-desktop.png",
+        "width": 935.625,
+        "height": 526.5625
+      }
+    ],
+    "overflow": false,
+    "errors": []
+  },
+  {
+    "slug": "siglip",
+    "width": 360,
+    "core_comparison_and_cost_visible": true,
+    "first_and_evidence_visible": true,
+    "three_core_callouts": true,
+    "images": [
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/siglip/wi027-siglip-c1-r05-mobile.png",
+        "width": 326,
+        "height": 691.75
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/clip/wi027-alignment-d2-r01-mobile.png",
+        "width": 326,
+        "height": 978
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/clip/wi027-alignment-d3-r03-mobile.png",
+        "width": 326,
+        "height": 974.390625
+      }
+    ],
+    "overflow": false,
+    "errors": []
+  },
+  {
+    "slug": "llava",
+    "width": 1440,
+    "core_comparison_and_cost_visible": true,
+    "first_and_evidence_visible": true,
+    "three_core_callouts": true,
+    "images": [
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/llava/wi027-llava-c1-r02-desktop.png",
+        "width": 935.625,
+        "height": 526.5625
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/llava/wi027-llava-d2-r02-desktop.png",
+        "width": 935.625,
+        "height": 526.5625
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/llava/wi027-vlm-d3-r03-desktop.png",
+        "width": 935.625,
+        "height": 526.5625
+      }
+    ],
+    "overflow": false,
+    "errors": []
+  },
+  {
+    "slug": "llava",
+    "width": 360,
+    "core_comparison_and_cost_visible": true,
+    "first_and_evidence_visible": true,
+    "three_core_callouts": true,
+    "images": [
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/llava/wi027-llava-c1-r03-mobile.png",
+        "width": 326,
+        "height": 978
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/llava/wi027-llava-d2-r02-mobile.png",
+        "width": 326,
+        "height": 978
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/llava/wi027-vlm-d3-r03-mobile.png",
+        "width": 326,
+        "height": 978
+      }
+    ],
+    "overflow": false,
+    "errors": []
+  },
+  {
+    "slug": "qwen-vl",
+    "width": 1440,
+    "core_comparison_and_cost_visible": true,
+    "first_and_evidence_visible": true,
+    "three_core_callouts": true,
+    "images": [
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/qwen-vl/wi027-qwen-vl-c1-r03-desktop.png",
+        "width": 935.625,
+        "height": 526.5625
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/qwen-vl/wi027-qwen-vl-d2-r03-desktop.png",
+        "width": 935.625,
+        "height": 526.5625
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/llava/wi027-vlm-d3-r03-desktop.png",
+        "width": 935.625,
+        "height": 526.5625
+      }
+    ],
+    "overflow": false,
+    "errors": []
+  },
+  {
+    "slug": "qwen-vl",
+    "width": 360,
+    "core_comparison_and_cost_visible": true,
+    "first_and_evidence_visible": true,
+    "three_core_callouts": true,
+    "images": [
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/qwen-vl/wi027-qwen-vl-c1-r03-mobile.png",
+        "width": 326,
+        "height": 975.75
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/qwen-vl/wi027-qwen-vl-d2-r03-mobile.png",
+        "width": 326,
+        "height": 978
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/llava/wi027-vlm-d3-r03-mobile.png",
+        "width": 326,
+        "height": 978
+      }
+    ],
+    "overflow": false,
+    "errors": []
+  },
+  {
+    "slug": "gemini-vision",
+    "width": 1440,
+    "core_comparison_and_cost_visible": true,
+    "first_and_evidence_visible": true,
+    "three_core_callouts": true,
+    "images": [
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/gemini-vision/wi027-gemini-vision-c1-r02-desktop.png",
+        "width": 935.625,
+        "height": 526.5625
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/gemini-vision/wi027-gemini-d2-r02-desktop.png",
+        "width": 935.625,
+        "height": 526.5625
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/llava/wi027-vlm-d3-r03-desktop.png",
+        "width": 935.625,
+        "height": 526.5625
+      }
+    ],
+    "overflow": false,
+    "errors": []
+  },
+  {
+    "slug": "gemini-vision",
+    "width": 360,
+    "core_comparison_and_cost_visible": true,
+    "first_and_evidence_visible": true,
+    "three_core_callouts": true,
+    "images": [
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/gemini-vision/wi027-gemini-vision-c1-r02-mobile.png",
+        "width": 326,
+        "height": 975.75
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/gemini-vision/wi027-gemini-d2-r02-mobile.png",
+        "width": 326,
+        "height": 978
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/llava/wi027-vlm-d3-r03-mobile.png",
+        "width": 326,
+        "height": 978
+      }
+    ],
+    "overflow": false,
+    "errors": []
+  }
+]

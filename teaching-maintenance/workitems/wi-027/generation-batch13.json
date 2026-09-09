@@ -1,0 +1,16 @@
+[
+  {
+    "id": "qwen-vl-d2",
+    "mode": "desktop",
+    "version": "r03",
+    "ref": "C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-027/qwen-vl-d2-r02-desktop.png",
+    "prompt": "Only correct the crop correspondence in GROUP3 of supplied image. On small originalplate, draw tight locatorrectangle around text 「批次 B08」 ONLY, excluding allmounting screws and plateedges. At right enlarged sourcecrop show ONLY matching brushedmetal rectangle and exact 「批次 B08」 text, no screws, no plateedges, nootherwords. The enlargedcrop must be a faithfulvisualcopy of that textregion. Caption 「原圖文字區裁切」. Desktop remove invented manufacturer name YAMADA ELECTRIC CO., LTD. from allfullplatecopies, leave plain brushedmetal instead. Preserve allothergroups, lowresolutioncomparison, answerillustrations, and yellowtakeaway. Sameaspectratio/nativecanvas."
+  },
+  {
+    "id": "qwen-vl-d2",
+    "mode": "mobile",
+    "version": "r03",
+    "ref": "C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-027/qwen-vl-d2-r02-mobile.png",
+    "prompt": "Only correct the crop correspondence in GROUP3 of supplied image. On small originalplate, draw tight locatorrectangle around text 「批次 B08」 ONLY, excluding allmounting screws and plateedges. At right enlarged sourcecrop show ONLY matching brushedmetal rectangle and exact 「批次 B08」 text, no screws, no plateedges, nootherwords. The enlargedcrop must be a faithfulvisualcopy of that textregion. Caption 「原圖文字區裁切」. Desktop remove invented manufacturer name YAMADA ELECTRIC CO., LTD. from allfullplatecopies, leave plain brushedmetal instead. Preserve allothergroups, lowresolutioncomparison, answerillustrations, and yellowtakeaway. Sameaspectratio/nativecanvas."
+  }
+]

@@ -1,0 +1,458 @@
+{
+  "all_referenced_files_exist": 1289,
+  "course_docs_html_equal": true,
+  "new_assets": [
+    {
+      "path": "_course_content/generated-concepts/clip/wi027-alignment-d2-r01-desktop.png",
+      "http": [
+        {
+          "url": "http://127.0.0.1:8000/_course_content/generated-concepts/clip/wi027-alignment-d2-r01-desktop.png",
+          "status": 200,
+          "sha256": "ef00684f591c9ecc9ddf4b4646f3ae47764e90f0e28abbec78b16c1dfd041f0e"
+        },
+        {
+          "url": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/clip/wi027-alignment-d2-r01-desktop.png",
+          "status": 200,
+          "sha256": "ef00684f591c9ecc9ddf4b4646f3ae47764e90f0e28abbec78b16c1dfd041f0e"
+        }
+      ]
+    },
+    {
+      "path": "_course_content/generated-concepts/clip/wi027-alignment-d2-r01-mobile.png",
+      "http": [
+        {
+          "url": "http://127.0.0.1:8000/_course_content/generated-concepts/clip/wi027-alignment-d2-r01-mobile.png",
+          "status": 200,
+          "sha256": "77c6b8f76eceeea53bf77c505618be6d946be9bd4f240270f55924c0d62b35de"
+        },
+        {
+          "url": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/clip/wi027-alignment-d2-r01-mobile.png",
+          "status": 200,
+          "sha256": "77c6b8f76eceeea53bf77c505618be6d946be9bd4f240270f55924c0d62b35de"
+        }
+      ]
+    },
+    {
+      "path": "_course_content/generated-concepts/clip/wi027-alignment-d3-r03-desktop.png",
+      "http": [
+        {
+          "url": "http://127.0.0.1:8000/_course_content/generated-concepts/clip/wi027-alignment-d3-r03-desktop.png",
+          "status": 200,
+          "sha256": "b70f445d2045a7e6ba5a34d451045e3c52379da7de9eeb21d1703502fdf17b68"
+        },
+        {
+          "url": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/clip/wi027-alignment-d3-r03-desktop.png",
+          "status": 200,
+          "sha256": "b70f445d2045a7e6ba5a34d451045e3c52379da7de9eeb21d1703502fdf17b68"
+        }
+      ]
+    },
+    {
+      "path": "_course_content/generated-concepts/clip/wi027-alignment-d3-r03-mobile.png",
+      "http": [
+        {
+          "url": "http://127.0.0.1:8000/_course_content/generated-concepts/clip/wi027-alignment-d3-r03-mobile.png",
+          "status": 200,
+          "sha256": "654abdbe4fb3767880036ab19afad3f83aea37dce736e6719a0929b78f5e47b6"
+        },
+        {
+          "url": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/clip/wi027-alignment-d3-r03-mobile.png",
+          "status": 200,
+          "sha256": "654abdbe4fb3767880036ab19afad3f83aea37dce736e6719a0929b78f5e47b6"
+        }
+      ]
+    },
+    {
+      "path": "_course_content/generated-concepts/clip/wi027-clip-c1-r01-desktop.png",
+      "http": [
+        {
+          "url": "http://127.0.0.1:8000/_course_content/generated-concepts/clip/wi027-clip-c1-r01-desktop.png",
+          "status": 200,
+          "sha256": "2b8505cee344eb220ab6b923637b70e971df6a8c4283cbbbafae25d33943d258"
+        },
+        {
+          "url": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/clip/wi027-clip-c1-r01-desktop.png",
+          "status": 200,
+          "sha256": "2b8505cee344eb220ab6b923637b70e971df6a8c4283cbbbafae25d33943d258"
+        }
+      ]
+    },
+    {
+      "path": "_course_content/generated-concepts/clip/wi027-clip-c1-r01-mobile.png",
+      "http": [
+        {
+          "url": "http://127.0.0.1:8000/_course_content/generated-concepts/clip/wi027-clip-c1-r01-mobile.png",
+          "status": 200,
+          "sha256": "b848e5f6b0fbf9276a626f780dbce1bdc98b0da0813c3fea02950f27baf33b67"
+        },
+        {
+          "url": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/clip/wi027-clip-c1-r01-mobile.png",
+          "status": 200,
+          "sha256": "b848e5f6b0fbf9276a626f780dbce1bdc98b0da0813c3fea02950f27baf33b67"
+        }
+      ]
+    },
+    {
+      "path": "_course_content/generated-concepts/dinov2/wi027-dino-d2-r03-desktop.png",
+      "http": [
+        {
+          "url": "http://127.0.0.1:8000/_course_content/generated-concepts/dinov2/wi027-dino-d2-r03-desktop.png",
+          "status": 200,
+          "sha256": "0c16a2c56639ce8d9957cf5316c895057c442e8f432c48dfd8e5922254733cc3"
+        },
+        {
+          "url": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/dinov2/wi027-dino-d2-r03-desktop.png",
+          "status": 200,
+          "sha256": "0c16a2c56639ce8d9957cf5316c895057c442e8f432c48dfd8e5922254733cc3"
+        }
+      ]
+    },
+    {
+      "path": "_course_content/generated-concepts/dinov2/wi027-dino-d2-r03-mobile.png",
+      "http": [
+        {
+          "url": "http://127.0.0.1:8000/_course_content/generated-concepts/dinov2/wi027-dino-d2-r03-mobile.png",
+          "status": 200,
+          "sha256": "2442c70d838609d2705282c3b7090f11e5071c2790eb00a57dc414efc8099f56"
+        },
+        {
+          "url": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/dinov2/wi027-dino-d2-r03-mobile.png",
+          "status": 200,
+          "sha256": "2442c70d838609d2705282c3b7090f11e5071c2790eb00a57dc414efc8099f56"
+        }
+      ]
+    },
+    {
+      "path": "_course_content/generated-concepts/dinov2/wi027-dinov2-c1-r01-mobile.png",
+      "http": [
+        {
+          "url": "http://127.0.0.1:8000/_course_content/generated-concepts/dinov2/wi027-dinov2-c1-r01-mobile.png",
+          "status": 200,
+          "sha256": "eb6b60b2375eae989e27ac7be2114eff1ceb5e5fea5f28b98c0db9bb088db797"
+        },
+        {
+          "url": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/dinov2/wi027-dinov2-c1-r01-mobile.png",
+          "status": 200,
+          "sha256": "eb6b60b2375eae989e27ac7be2114eff1ceb5e5fea5f28b98c0db9bb088db797"
+        }
+      ]
+    },
+    {
+      "path": "_course_content/generated-concepts/dinov2/wi027-dinov2-c1-r02-desktop.png",
+      "http": [
+        {
+          "url": "http://127.0.0.1:8000/_course_content/generated-concepts/dinov2/wi027-dinov2-c1-r02-desktop.png",
+          "status": 200,
+          "sha256": "9db891fa6b9eb79a01341e47b69d27ce4f6bea078ac9aef91b2241864d96bb7e"
+        },
+        {
+          "url": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/dinov2/wi027-dinov2-c1-r02-desktop.png",
+          "status": 200,
+          "sha256": "9db891fa6b9eb79a01341e47b69d27ce4f6bea078ac9aef91b2241864d96bb7e"
+        }
+      ]
+    },
+    {
+      "path": "_course_content/generated-concepts/dinov2/wi027-features-d3-r02-desktop.png",
+      "http": [
+        {
+          "url": "http://127.0.0.1:8000/_course_content/generated-concepts/dinov2/wi027-features-d3-r02-desktop.png",
+          "status": 200,
+          "sha256": "1388b9a548ccb9a12e90c298e43ff3d09ac99d1a453e3d734dfed29808682377"
+        },
+        {
+          "url": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/dinov2/wi027-features-d3-r02-desktop.png",
+          "status": 200,
+          "sha256": "1388b9a548ccb9a12e90c298e43ff3d09ac99d1a453e3d734dfed29808682377"
+        }
+      ]
+    },
+    {
+      "path": "_course_content/generated-concepts/dinov2/wi027-features-d3-r03-mobile.png",
+      "http": [
+        {
+          "url": "http://127.0.0.1:8000/_course_content/generated-concepts/dinov2/wi027-features-d3-r03-mobile.png",
+          "status": 200,
+          "sha256": "4a7e47177a76944b52cfe29923228d90ddcf5fbb7d81160826bdb572d0557e25"
+        },
+        {
+          "url": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/dinov2/wi027-features-d3-r03-mobile.png",
+          "status": 200,
+          "sha256": "4a7e47177a76944b52cfe29923228d90ddcf5fbb7d81160826bdb572d0557e25"
+        }
+      ]
+    },
+    {
+      "path": "_course_content/generated-concepts/dinov3/wi027-dinov3-c1-r02-desktop.png",
+      "http": [
+        {
+          "url": "http://127.0.0.1:8000/_course_content/generated-concepts/dinov3/wi027-dinov3-c1-r02-desktop.png",
+          "status": 200,
+          "sha256": "36c4bd8996767486a21bb07b68755a94587988a379c46e593449f33df9c41141"
+        },
+        {
+          "url": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/dinov3/wi027-dinov3-c1-r02-desktop.png",
+          "status": 200,
+          "sha256": "36c4bd8996767486a21bb07b68755a94587988a379c46e593449f33df9c41141"
+        }
+      ]
+    },
+    {
+      "path": "_course_content/generated-concepts/dinov3/wi027-dinov3-c1-r02-mobile.png",
+      "http": [
+        {
+          "url": "http://127.0.0.1:8000/_course_content/generated-concepts/dinov3/wi027-dinov3-c1-r02-mobile.png",
+          "status": 200,
+          "sha256": "2d62788022b4b44806383cdead5a4d5746734270a458455841ca0301670b111f"
+        },
+        {
+          "url": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/dinov3/wi027-dinov3-c1-r02-mobile.png",
+          "status": 200,
+          "sha256": "2d62788022b4b44806383cdead5a4d5746734270a458455841ca0301670b111f"
+        }
+      ]
+    },
+    {
+      "path": "_course_content/generated-concepts/gemini-vision/wi027-gemini-d2-r02-desktop.png",
+      "http": [
+        {
+          "url": "http://127.0.0.1:8000/_course_content/generated-concepts/gemini-vision/wi027-gemini-d2-r02-desktop.png",
+          "status": 200,
+          "sha256": "232e340e7ffa645bea1308c8b282a2d15ba8d4694cec8648a4c9c84ff1f52e0c"
+        },
+        {
+          "url": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/gemini-vision/wi027-gemini-d2-r02-desktop.png",
+          "status": 200,
+          "sha256": "232e340e7ffa645bea1308c8b282a2d15ba8d4694cec8648a4c9c84ff1f52e0c"
+        }
+      ]
+    },
+    {
+      "path": "_course_content/generated-concepts/gemini-vision/wi027-gemini-d2-r02-mobile.png",
+      "http": [
+        {
+          "url": "http://127.0.0.1:8000/_course_content/generated-concepts/gemini-vision/wi027-gemini-d2-r02-mobile.png",
+          "status": 200,
+          "sha256": "b70ec888fc0532453c1a4b917b6e6a5ff4f76b196d0007f39a01d05155a33c58"
+        },
+        {
+          "url": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/gemini-vision/wi027-gemini-d2-r02-mobile.png",
+          "status": 200,
+          "sha256": "b70ec888fc0532453c1a4b917b6e6a5ff4f76b196d0007f39a01d05155a33c58"
+        }
+      ]
+    },
+    {
+      "path": "_course_content/generated-concepts/gemini-vision/wi027-gemini-vision-c1-r02-desktop.png",
+      "http": [
+        {
+          "url": "http://127.0.0.1:8000/_course_content/generated-concepts/gemini-vision/wi027-gemini-vision-c1-r02-desktop.png",
+          "status": 200,
+          "sha256": "2d4aca0da36c05a9b1fc5c86ba669cd72293952e015cb46b2850668bd3cb281b"
+        },
+        {
+          "url": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/gemini-vision/wi027-gemini-vision-c1-r02-desktop.png",
+          "status": 200,
+          "sha256": "2d4aca0da36c05a9b1fc5c86ba669cd72293952e015cb46b2850668bd3cb281b"
+        }
+      ]
+    },
+    {
+      "path": "_course_content/generated-concepts/gemini-vision/wi027-gemini-vision-c1-r02-mobile.png",
+      "http": [
+        {
+          "url": "http://127.0.0.1:8000/_course_content/generated-concepts/gemini-vision/wi027-gemini-vision-c1-r02-mobile.png",
+          "status": 200,
+          "sha256": "d9ecc8d1dcb7526faf70e5db200a4b7b30ab3190cd2de125585a0ee97ddb2f80"
+        },
+        {
+          "url": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/gemini-vision/wi027-gemini-vision-c1-r02-mobile.png",
+          "status": 200,
+          "sha256": "d9ecc8d1dcb7526faf70e5db200a4b7b30ab3190cd2de125585a0ee97ddb2f80"
+        }
+      ]
+    },
+    {
+      "path": "_course_content/generated-concepts/llava/wi027-llava-c1-r02-desktop.png",
+      "http": [
+        {
+          "url": "http://127.0.0.1:8000/_course_content/generated-concepts/llava/wi027-llava-c1-r02-desktop.png",
+          "status": 200,
+          "sha256": "48fca437286eb850241331d92c649bb9c056cf54bb9c4d705891824910da3f06"
+        },
+        {
+          "url": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/llava/wi027-llava-c1-r02-desktop.png",
+          "status": 200,
+          "sha256": "48fca437286eb850241331d92c649bb9c056cf54bb9c4d705891824910da3f06"
+        }
+      ]
+    },
+    {
+      "path": "_course_content/generated-concepts/llava/wi027-llava-c1-r03-mobile.png",
+      "http": [
+        {
+          "url": "http://127.0.0.1:8000/_course_content/generated-concepts/llava/wi027-llava-c1-r03-mobile.png",
+          "status": 200,
+          "sha256": "c633afde9b51e70a028aae8aa4af12f75959f6aa03d58a79dace5d1e3802d4b1"
+        },
+        {
+          "url": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/llava/wi027-llava-c1-r03-mobile.png",
+          "status": 200,
+          "sha256": "c633afde9b51e70a028aae8aa4af12f75959f6aa03d58a79dace5d1e3802d4b1"
+        }
+      ]
+    },
+    {
+      "path": "_course_content/generated-concepts/llava/wi027-llava-d2-r02-desktop.png",
+      "http": [
+        {
+          "url": "http://127.0.0.1:8000/_course_content/generated-concepts/llava/wi027-llava-d2-r02-desktop.png",
+          "status": 200,
+          "sha256": "be43ffd2f8cd302968ccdc09d4ab2ab492f6e0939d1e8fc795053f24d20de7a6"
+        },
+        {
+          "url": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/llava/wi027-llava-d2-r02-desktop.png",
+          "status": 200,
+          "sha256": "be43ffd2f8cd302968ccdc09d4ab2ab492f6e0939d1e8fc795053f24d20de7a6"
+        }
+      ]
+    },
+    {
+      "path": "_course_content/generated-concepts/llava/wi027-llava-d2-r02-mobile.png",
+      "http": [
+        {
+          "url": "http://127.0.0.1:8000/_course_content/generated-concepts/llava/wi027-llava-d2-r02-mobile.png",
+          "status": 200,
+          "sha256": "8e8c6ba309282ce4ca13f4dc2a93e9eca990fc1d2fc577b70c502277c775e98c"
+        },
+        {
+          "url": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/llava/wi027-llava-d2-r02-mobile.png",
+          "status": 200,
+          "sha256": "8e8c6ba309282ce4ca13f4dc2a93e9eca990fc1d2fc577b70c502277c775e98c"
+        }
+      ]
+    },
+    {
+      "path": "_course_content/generated-concepts/llava/wi027-vlm-d3-r03-desktop.png",
+      "http": [
+        {
+          "url": "http://127.0.0.1:8000/_course_content/generated-concepts/llava/wi027-vlm-d3-r03-desktop.png",
+          "status": 200,
+          "sha256": "b20d243e102f205ad14c27dbb6d0e4ec0f21e4202d0859e926d17a14c0ec33e4"
+        },
+        {
+          "url": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/llava/wi027-vlm-d3-r03-desktop.png",
+          "status": 200,
+          "sha256": "b20d243e102f205ad14c27dbb6d0e4ec0f21e4202d0859e926d17a14c0ec33e4"
+        }
+      ]
+    },
+    {
+      "path": "_course_content/generated-concepts/llava/wi027-vlm-d3-r03-mobile.png",
+      "http": [
+        {
+          "url": "http://127.0.0.1:8000/_course_content/generated-concepts/llava/wi027-vlm-d3-r03-mobile.png",
+          "status": 200,
+          "sha256": "ee90541a3601abdee8b82d969a6a526b65fc2ae83d2ee4068efa95fd5d7009e8"
+        },
+        {
+          "url": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/llava/wi027-vlm-d3-r03-mobile.png",
+          "status": 200,
+          "sha256": "ee90541a3601abdee8b82d969a6a526b65fc2ae83d2ee4068efa95fd5d7009e8"
+        }
+      ]
+    },
+    {
+      "path": "_course_content/generated-concepts/qwen-vl/wi027-qwen-vl-c1-r03-desktop.png",
+      "http": [
+        {
+          "url": "http://127.0.0.1:8000/_course_content/generated-concepts/qwen-vl/wi027-qwen-vl-c1-r03-desktop.png",
+          "status": 200,
+          "sha256": "d2e2e398aa91b0f1767b966435b411f80977a572bc32134ee5be191e39272647"
+        },
+        {
+          "url": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/qwen-vl/wi027-qwen-vl-c1-r03-desktop.png",
+          "status": 200,
+          "sha256": "d2e2e398aa91b0f1767b966435b411f80977a572bc32134ee5be191e39272647"
+        }
+      ]
+    },
+    {
+      "path": "_course_content/generated-concepts/qwen-vl/wi027-qwen-vl-c1-r03-mobile.png",
+      "http": [
+        {
+          "url": "http://127.0.0.1:8000/_course_content/generated-concepts/qwen-vl/wi027-qwen-vl-c1-r03-mobile.png",
+          "status": 200,
+          "sha256": "d1b5f22ae8c981793a307ff91d63db93716a31a5bb362caab170d523f31bbc14"
+        },
+        {
+          "url": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/qwen-vl/wi027-qwen-vl-c1-r03-mobile.png",
+          "status": 200,
+          "sha256": "d1b5f22ae8c981793a307ff91d63db93716a31a5bb362caab170d523f31bbc14"
+        }
+      ]
+    },
+    {
+      "path": "_course_content/generated-concepts/qwen-vl/wi027-qwen-vl-d2-r03-desktop.png",
+      "http": [
+        {
+          "url": "http://127.0.0.1:8000/_course_content/generated-concepts/qwen-vl/wi027-qwen-vl-d2-r03-desktop.png",
+          "status": 200,
+          "sha256": "c1d52263be33f0c167bdcf531fd0dea768b9cf2afb123914f6b032d0af9e0ec3"
+        },
+        {
+          "url": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/qwen-vl/wi027-qwen-vl-d2-r03-desktop.png",
+          "status": 200,
+          "sha256": "c1d52263be33f0c167bdcf531fd0dea768b9cf2afb123914f6b032d0af9e0ec3"
+        }
+      ]
+    },
+    {
+      "path": "_course_content/generated-concepts/qwen-vl/wi027-qwen-vl-d2-r03-mobile.png",
+      "http": [
+        {
+          "url": "http://127.0.0.1:8000/_course_content/generated-concepts/qwen-vl/wi027-qwen-vl-d2-r03-mobile.png",
+          "status": 200,
+          "sha256": "a15279096aed0aabd24728eced1040967de83847bebbf6242be8eb6e14b50578"
+        },
+        {
+          "url": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/qwen-vl/wi027-qwen-vl-d2-r03-mobile.png",
+          "status": 200,
+          "sha256": "a15279096aed0aabd24728eced1040967de83847bebbf6242be8eb6e14b50578"
+        }
+      ]
+    },
+    {
+      "path": "_course_content/generated-concepts/siglip/wi027-siglip-c1-r03-desktop.png",
+      "http": [
+        {
+          "url": "http://127.0.0.1:8000/_course_content/generated-concepts/siglip/wi027-siglip-c1-r03-desktop.png",
+          "status": 200,
+          "sha256": "08256f45463216cd7c8cfc62b27c215de26f44ef8bfc83c2527cac87094e3a46"
+        },
+        {
+          "url": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/siglip/wi027-siglip-c1-r03-desktop.png",
+          "status": 200,
+          "sha256": "08256f45463216cd7c8cfc62b27c215de26f44ef8bfc83c2527cac87094e3a46"
+        }
+      ]
+    },
+    {
+      "path": "_course_content/generated-concepts/siglip/wi027-siglip-c1-r05-mobile.png",
+      "http": [
+        {
+          "url": "http://127.0.0.1:8000/_course_content/generated-concepts/siglip/wi027-siglip-c1-r05-mobile.png",
+          "status": 200,
+          "sha256": "fc8c99a08a9628106539b6951d3f92cffe4d07c5a19b311e5e6a74229dd56ac7"
+        },
+        {
+          "url": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/siglip/wi027-siglip-c1-r05-mobile.png",
+          "status": 200,
+          "sha256": "fc8c99a08a9628106539b6951d3f92cffe4d07c5a19b311e5e6a74229dd56ac7"
+        }
+      ]
+    }
+  ],
+  "user_review": "pending",
+  "scope": "new first-read assets; original engineering content not rescored"
+}

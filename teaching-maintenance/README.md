@@ -1,5 +1,11 @@
 # Teaching maintenance snapshots
 
+## WI-027 scope
+
+Seven foundation and vision-language lessons were rebuilt with 30 desktop/mobile PNGs, three first-read stories per lesson, explanations, comparisons, self-checks and operating cards. `workitems/wi-027/` preserves selected assets, versioned briefs, generation intentions, source references and individual image/page assessments. Validation covers 42 interaction states, 126 image zoom checks, 14 final page states, 60 local HTTP hashes and five regression tests. User review remains pending; illustrations are not model measurements.
+
+The clean Pages bundle omits unused historical assets; the authoring copies remain local. These snapshots preserve reusable Markdown learning and review evidence, not the complete authoring workspace or rejected image drafts.
+
 This directory versions the shared teaching lessons and reusable skill. It is
 outside `docs/` and is not part of the GitHub Pages payload.
 

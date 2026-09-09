@@ -1,0 +1,30 @@
+[
+  {
+    "id": "siglip-c1",
+    "version": "r03",
+    "mode": "desktop",
+    "ref": "C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-027/siglip-c1-r02-desktop.png",
+    "prompt": "Edit the supplied image, preserve all correct other layout, objects, pair signs and lowerlosslabels. Only fix region3: DELETE both blue curved circular arrows BETWEEN image Encoder and text Encoder. Add a small box ABOVE BOTH encoders labelled 各配對損失合計 and TWO downarrows FROM THIS BOX into the two encoders labelled 更新參數. There must be NO direct arrow between encoders. Change region1 subtitle 真實物件與對應文字 to 工件影像與對應文字. Change bottomline 從真實世界收集的圖文資料 to 影像與文字配對（教學示意）. Keep same aspect ratio and canvas dimensions as reference. One pale yellow takeaway. Do not change anyother content."
+  },
+  {
+    "id": "qwen-vl-c1",
+    "version": "r03",
+    "mode": "desktop",
+    "ref": "C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-027/qwen-vl-c1-r02-desktop.png",
+    "prompt": "Edit supplied image with ONLY the following exact text replacements; preserve mechanisms, originalplate A17/B08, encoder/tokens and separate LLM inputs and allother layout. In firstpanel DELETE ENTIRE sentence containing 真實拍攝 and replace with 「AI生成銘牌示意，非實際拍攝。」. Firstpanel heading must be 「1 輸入：銘牌影像示意」, never 實際銘牌. Panel4 title replace 正確讀取 with 回答示意, fullheading 「4 回答示意：對回原圖」. Rightanswer heading 「回答示意，需核對原圖」, never imply actualQweninference. Small 'AI生成教學示意，非模型實測' preserved. Keep exact same aspectratio/dimensions, allother objects/labels unchanged."
+  },
+  {
+    "id": "siglip-c1",
+    "version": "r03",
+    "mode": "mobile",
+    "ref": "C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-027/siglip-c1-r02-mobile.png",
+    "prompt": "Edit the supplied image, preserve all correct other layout, objects, pair signs and lowerlosslabels. Only fix region3: DELETE both blue curved circular arrows BETWEEN image Encoder and text Encoder. Add a small box ABOVE BOTH encoders labelled 各配對損失合計 and TWO downarrows FROM THIS BOX into the two encoders labelled 更新參數. There must be NO direct arrow between encoders. Change region1 subtitle 真實物件與對應文字 to 工件影像與對應文字. Change bottomline 從真實世界收集的圖文資料 to 影像與文字配對（教學示意）. Keep same aspect ratio and canvas dimensions as reference. One pale yellow takeaway. Do not change anyother content."
+  },
+  {
+    "id": "qwen-vl-c1",
+    "version": "r03",
+    "mode": "mobile",
+    "ref": "C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-027/qwen-vl-c1-r02-mobile.png",
+    "prompt": "Edit supplied image with ONLY the following exact text replacements; preserve mechanisms, originalplate A17/B08, encoder/tokens and separate LLM inputs and allother layout. In firstpanel DELETE ENTIRE sentence containing 真實拍攝 and replace with 「AI生成銘牌示意，非實際拍攝。」. Firstpanel heading must be 「1 輸入：銘牌影像示意」, never 實際銘牌. Panel4 title replace 正確讀取 with 回答示意, fullheading 「4 回答示意：對回原圖」. Rightanswer heading 「回答示意，需核對原圖」, never imply actualQweninference. Small 'AI生成教學示意，非模型實測' preserved. Keep exact same aspectratio/dimensions, allother objects/labels unchanged."
+  }
+]

@@ -1,5 +1,21 @@
 # 共用教學製作、評分與學習紀錄
 
+## WI-027 視覺基礎與多模態七課（2026-09-10）
+- 生成執行學習：傳入工具的prompt必須包含本圖完整標題、模型角色與逐字takeaway；只保存brief而漏傳欄位，工具可能抄參考頁標題／結論。這次三個反例及VLM比較都出現此錯誤，已分版修正。局部編輯後重新看完整画布，SigLIP手機r03因新增內容擠掉結論而退回r04；不因修正點正確就接受整張。
+- 最新 checkpoint：正文草稿與候選圖進行中，未整合／commit／push；上一輪 bd4b87b 不代表七課完成。LLaVA 投影旁路、DINOv3 不對稱矩陣已修正並實看936px；CLIP手機已實看326px。其他圖仍待逐項修正、整頁驗證，使用者核准pending。
+- 本輪學習：原圖切片不是編碼特徵；對照圖的正負標籤須逐對核對，負配對推遠同樣應降低訓練損失；查詢與參考都需經相容編碼器，查詢不可混入參考庫。DINO矩陣需保持內積對稱性。AI圖內若出現「真實拍攝」須改，不以頁外免責文字抵銷。
+- 回答證據：未見螺絲不能推成沒鎖緊、漏裝原因或導線狀態；API能力名稱也不等於可呼叫的 model ID。VLM比較r01擅改工作題目而退回，r02按兩端子及獨立部署箭頭重製。
+- 視覺驗證：DINOv3手機r01原生886×1772，頁內326px必要次標過小，未通過；另做1:3重排。原生清楚、檔案存在、預期prompt都不是頁內完成證據。逐版保留在workitems/wi-027/review-batch*.md與generation-batch*.json。
+- 授權：使用 Markdown 與 skills 重製 DINOv2、DINOv3、CLIP、SigLIP、LLaVA、Qwen-VL、Gemini Vision。以目前七課首讀為範圍，保留原工程參考。
+- 基準：`teaching-images/vision-ai-model-selection/workitems/wi-027/baseline/` 保存 topic、model.md 及 learner；`baseline-views/` 保存桌面／手機及預設文案。舊分數不沿用。
+- 觀察：七課必要原理被版本、ACL、schema 等設定清單取代，部分小標宣稱 heatmap 卻只講 feature 責任；讀者難以從主圖理解特有做法。
+- 採納：沿用 RULE-009、F02 與 WI-026，先畫可追蹤中間轉換；將訓練／部署分開，特徵／相似度／生成回答各用不同可見輸出。資料準備與驗收放在相應工作問題。
+- 參考：已實看 WI-025 首選 GEO-02、GEO-21，沿用具體金屬物件、來源定位、淡細框與可見變化，不照搬頁碼或高欄數。
+- 版本：DINOv2 原始視覺骨幹、DINOv3 ViT／Gram anchoring、原始 CLIP／SigLIP、原始 LLaVA 投影橋接、Qwen2-VL 作動態解析度範例；Gemini Vision 以官方 API 能力邊界說明，不杜撰內部架構或當作單一固定權重。
+- 原型：`workitems/wi-027/dinov2-c1-r01.md` preflight PASS，正在 built-in imagegen 生成桌面；尚未成圖審查／評分，user approval pending。工具原圖與 prompt 將保存工作項目。
+- 工具：瀏覽器 runtime 查無可用連線，已讀 troubleshooting 且 list=[]，改用本機 Playwright/Edge；baseline 文字輸出首次 cp950 無法編碼，原檔完整，後續以 Python -X utf8 讀取。
+
+
 ## WI-026 生成與影像復原八課重製（2026-09-09）
 - 2026-09-10：使用者授權 commit＋push；以下本機完成／未發布描述為提交前紀錄，實際部署結果見 WORKITEMS WI-026 與 Git。提交前 diff 審查補回先前同步遺漏的 WI-024 完成段，保留歷史證據。
 - 最新完成（取代本項下方執行中checkpoint）：八課首讀圖文完成：每課核心／反例／比較三張，19組不同故事、38張桌面／手機PNG。已接入topic、learner、model.md與course/docs；影像為AI生成示意。
@@ -2577,3 +2593,13 @@ WI-023版本保存補充：使用者後續授權commit＋push；本文件與其�
 - 證據：workitems/wi-021/public-release-verification.json、release-audit.json、page-assessment.json、image-assessment-*.json、qa-*/；共用TEACHING_REVIEW_LOG.md。Git僅發布docs與README，根記憶和製作素材保留本機，未宣稱已push。
 - 下一步：本輪已授權工作完成；若使用者給成品回饋，從此版本與上述證據接續。舊checkpoint保留為歷史，由本段取代。
 
+
+## WI-027 收尾學習與實際驗證（2026-09-10）
+
+- 七課首讀完成；30張逐圖原生與頁內審讀、七頁全文及桌面手機審看，分數与限制保存workitems/wi-027/image-assessment.json及page-assessment.json。技術驗證不代表使用者核准。
+- SigLIP精確改字仍會改變負樣本物件或裁掉結論：r04 footer修正卻把支架換成齒輪，r05恢復同支架。每次編輯重新核對整圖正負標籤、來源、箭頭與底部，不只檢查修改區。
+- 教學需區分影像裁切與編碼特徵、家族與版本、觀察與原因、格式與內容；同題比較固定任務和資料，保留各模型相容的前處理與下游。
+- 发布包清理複製是相依步驟，必須等建置程序exit=0再啟動HTTP／瀏覽器驗證。本輪曾提早測試造成卡片／解碼失敗，重跑最後两課12狀態36圖互動通過。
+- 42狀態126圖互動、14最終頁面、60HTTP hash、5項回歸通過。未做真人學習／模型效能測試，原工程圖未重評；發布結果另寫checkpoint。
+
+- 發布收尾另遇Windows映射檔案1224：只更新品質狀態後，重複覆寫未變PNG被拒。以完整1289資產SHA256和HTML一致證明發布包完整，並重驗14頁面／60HTTP；不要把啟動建置視為建置成功。同步報告也必須等依賴程序結束。

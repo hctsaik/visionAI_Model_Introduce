@@ -1,0 +1,16 @@
+[
+  {
+    "id": "dino-d2",
+    "mode": "desktop",
+    "version": "r03",
+    "ref": "C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-027/dino-d2-r02-desktop.png",
+    "prompt": "Edit supplied washer teachingimage ONLY theseareas. Group2 below 特徵可能接近: the two small sourceedge thumbnails left of blue featurebars must be visibly blurred/pixelated lowresolution edge crops, so notch is barely discernible; presently the second is sharp despite labelled縮小後. Keep bars similar and qualitative. Labels 正常邊緣（縮小後） and 缺口弱化（縮小後）. Group3 TOP originalresolutioncrop must CLEARLY SHOW same notch at rightedge center, fullyinsidecrop with white margin to its right. Copy physicalshape from firstgroup originalnotch, do not crop it off. Group3 bottom normal/notched comparison remains sharp same scale, notch sameposition. Allother parts incltitle/takeaway exactsame. Nativecanvas same dimensions."
+  },
+  {
+    "id": "dino-d2",
+    "mode": "mobile",
+    "version": "r03",
+    "ref": "C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-027/dino-d2-r02-mobile.png",
+    "prompt": "Edit supplied washer teachingimage ONLY theseareas. Group2 below 特徵可能接近: the two small sourceedge thumbnails left of blue featurebars must be visibly blurred/pixelated lowresolution edge crops, so notch is barely discernible; presently the second is sharp despite labelled縮小後. Keep bars similar and qualitative. Labels 正常邊緣（縮小後） and 缺口弱化（縮小後）. Group3 TOP originalresolutioncrop must CLEARLY SHOW same notch at rightedge center, fullyinsidecrop with white margin to its right. Copy physicalshape from firstgroup originalnotch, do not crop it off. Group3 bottom normal/notched comparison remains sharp same scale, notch sameposition. Allother parts incltitle/takeaway exactsame. Nativecanvas same dimensions."
+  }
+]

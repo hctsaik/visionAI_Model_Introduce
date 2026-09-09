@@ -1,0 +1,32 @@
+[
+  [
+    "siglip-c1",
+    "r02",
+    "Fix learning semantics: positive pair is bracket photo + text 金屬支架; negative pair is SAME bracket photo + text 齒輪. Positive 拉近，降低損失; negative 推遠，降低損失. NEVER 增加損失 as desired result. Show pair losses jointly update shared image/text encoders, not arrows between the encoders. Training and inference visibly separated. Images are AI teaching illustrations; no claim real captured data."
+  ],
+  [
+    "qwen-vl-c1",
+    "r02",
+    "Rebuild causal path with exactly 4 groups. 1 Wide industrial plate with MODEL A17 left and BATCH B08 right, question 型號是什麼？ label 銘牌影像示意 (never real photographed). 2 preserve aspect ratio; raw image patches → 視覺編碼器 → abstract nonphotographic colored feature tokens. No square image comparison or claim square necessarily fewer tokens. 3 encoded visual tokens with position → 語言模型, separate question-text arrow → same LLM; NEVER tokens entering question box. Explain M-ROPE records visual positions, not output bounding box. 4 回答示意：型號 A17，需核對原圖, sourcecrop linked to A17 left. Qwen2-VL example not all versions."
+  ],
+  [
+    "gemini-vision-c1",
+    "r02",
+    "Only correction: node 2 generic capability Gemini Vision is NOT an actual API model identifier. Replace 模型：Gemini Vision（多模態） with 指定可用模型 ID. Keep image+question → closed API → answer示意 and exact right empty socket evidence. Add original-image location box on right socket for crop. No invented model ID or private architecture."
+  ],
+  [
+    "alignment-d3",
+    "r02",
+    "Critical correction to SigLIP pairing: in SigLIP row show ONE SAME metal L bracket image repeated with text 金屬L形支架 (正配對), 齒輪 (負配對), 螺絲 (負配對). Do not show gearimage+geartext called mismatch! Both positive and negative reduce trainingloss when correctly separated. Label each pair loss, aggregated updates shared encoders. CLIP batch matching retains all image/text crosscomparisons. Avoid testdata-as-training leakage: group1 title 示意圖文, training conceptual examples group2, independent held-out comparison group3. Similarity ranks are schematic not measured."
+  ],
+  [
+    "features-d3",
+    "r02",
+    "Fix query path and identity: same single held-out bracket, same holes/shape throughout all panels. Each DINOv2/DINOv3 lane uses its OWN encoder twice logically: reference images → that encoder → reference features → own reference database, and query image → that SAME encoder (may draw second same-labelled box) → queryfeature → explicit 檢索 matching against database → candidate outputs. Query must not bypass encoder and must not be inserted into reference database. Maintain exact 3 main groups. No changed bracket shape between original and query. Use only three candidate examples to reduce density; quality/cost axes are questions no invented wins."
+  ],
+  [
+    "dino-d2",
+    "r02",
+    "Keep washer defect at 3 oclock and exact corresponding crops. Replace 真實影像中的小缺口 with 原圖示意中的小缺口. Lowresolution missingnotch input should actually hide notch; do not label sharp clear notch photo 縮小後. Show visibly blurred lowresolution edge thumbnail beside its similar feature vector. One paired normal/notched highresolution crops in finalgroup, no automatic defectscore."
+  ]
+]

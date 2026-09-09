@@ -1,0 +1,1656 @@
+{
+  "workitem": "WI-027",
+  "rubric": "v1.0",
+  "images": [
+    {
+      "id": "dinov2-c1",
+      "mode": "desktop",
+      "asset": "dinov2-c1-r02-desktop.png",
+      "sha256": "9db891fa6b9eb79a01341e47b69d27ce4f6bea078ac9aef91b2241864d96bb7e",
+      "native_size": [
+        1672,
+        941
+      ],
+      "review_css_width": 936,
+      "screenshot": "asset-size-views/dinov2-c1-r02-desktop.png",
+      "rubric": "v1.0",
+      "scores": [
+        24,
+        23,
+        19,
+        19,
+        9
+      ],
+      "total": 94,
+      "positive_evidence": {
+        "案例": "同一L形支架與裁切",
+        "方法": "Teacher目標到Student、整圖與局部表示再交查庫",
+        "行動": "藍查詢對藍支架／異色齒輪參考產生候選",
+        "閱讀": "四區資料流及單一結論",
+        "一致": "參考庫与查詢來源分開"
+      },
+      "deductions": "跨區箭頭位置較概括，表示僅為質性示意。",
+      "completion": {
+        "美感": {
+          "score": 9,
+          "evidence": "實體金屬與白底淡藍細框，單一黃結論；同一L形支架與裁切"
+        },
+        "完整": {
+          "score": 9,
+          "evidence": "Teacher目標到Student、整圖與局部表示再交查庫；藍查詢對藍支架／異色齒輪參考產生候選"
+        },
+        "專業": {
+          "score": 9,
+          "evidence": "參考庫与查詢來源分開；示意與實測分開"
+        },
+        "資訊密度": {
+          "score": 9,
+          "evidence": "四區資料流及單一結論；跨區箭頭位置較概括，表示僅為質性示意。"
+        },
+        "視覺層級": {
+          "score": 9,
+          "evidence": "3–4主要區、來源局部與單一結論；四區資料流及單一結論"
+        }
+      },
+      "veto": [],
+      "state": "self-reviewed",
+      "user_review": "pending",
+      "excluded": "模型實測效能、真人學習成效、原工程slide圖"
+    },
+    {
+      "id": "dinov2-c1",
+      "mode": "mobile",
+      "asset": "dinov2-c1-r01-mobile.png",
+      "sha256": "eb6b60b2375eae989e27ac7be2114eff1ceb5e5fea5f28b98c0db9bb088db797",
+      "native_size": [
+        724,
+        2172
+      ],
+      "review_css_width": 326,
+      "screenshot": "asset-size-views/dinov2-c1-r01-mobile.png",
+      "rubric": "v1.0",
+      "scores": [
+        24,
+        23,
+        19,
+        18,
+        9
+      ],
+      "total": 93,
+      "positive_evidence": {
+        "案例": "支架同孔位裁切及齒輪差異",
+        "方法": "訓練兩角色、部署單骨幹、查詢對參考",
+        "行動": "候選仍需下游驗證，黃結論連用途",
+        "閱讀": "四組直向，主字326px可讀",
+        "一致": "來源局部與抽象特徵不同"
+      },
+      "deductions": "第三／四組次標偏小，但查詢和參考路徑仍可分辨。",
+      "completion": {
+        "美感": {
+          "score": 9,
+          "evidence": "實體金屬與白底淡藍細框，單一黃結論；支架同孔位裁切及齒輪差異"
+        },
+        "完整": {
+          "score": 9,
+          "evidence": "訓練兩角色、部署單骨幹、查詢對參考；候選仍需下游驗證，黃結論連用途"
+        },
+        "專業": {
+          "score": 9,
+          "evidence": "來源局部與抽象特徵不同；示意與實測分開"
+        },
+        "資訊密度": {
+          "score": 8,
+          "evidence": "四組直向，主字326px可讀；第三／四組次標偏小，但查詢和參考路徑仍可分辨。"
+        },
+        "視覺層級": {
+          "score": 9,
+          "evidence": "3–4主要區、來源局部與單一結論；四組直向，主字326px可讀"
+        }
+      },
+      "veto": [],
+      "state": "self-reviewed",
+      "user_review": "pending",
+      "excluded": "模型實測效能、真人學習成效、原工程slide圖"
+    },
+    {
+      "id": "dinov3-c1",
+      "mode": "desktop",
+      "asset": "dinov3-c1-r02-desktop.png",
+      "sha256": "36c4bd8996767486a21bb07b68755a94587988a379c46e593449f33df9c41141",
+      "native_size": [
+        1672,
+        941
+      ],
+      "review_css_width": 936,
+      "screenshot": "asset-size-views/dinov3-c1-r02-desktop.png",
+      "rubric": "v1.0",
+      "scores": [
+        24,
+        23,
+        19,
+        18,
+        9
+      ],
+      "total": 93,
+      "positive_evidence": {
+        "案例": "A/B銀針與C黑殼對回原物",
+        "方法": "早期關係對齊Student矩陣，部署另列",
+        "行動": "局部特徵接配對／分類而非自動缺陷結果",
+        "閱讀": "四區單線，局部來源緊鄰",
+        "一致": "對稱矩陣與一致二色圖例"
+      },
+      "deductions": "早期參考角色由標題解釋；次標略密。",
+      "completion": {
+        "美感": {
+          "score": 9,
+          "evidence": "實體金屬與白底淡藍細框，單一黃結論；A/B銀針與C黑殼對回原物"
+        },
+        "完整": {
+          "score": 9,
+          "evidence": "早期關係對齊Student矩陣，部署另列；局部特徵接配對／分類而非自動缺陷結果"
+        },
+        "專業": {
+          "score": 9,
+          "evidence": "對稱矩陣與一致二色圖例；示意與實測分開"
+        },
+        "資訊密度": {
+          "score": 8,
+          "evidence": "四區單線，局部來源緊鄰；早期參考角色由標題解釋；次標略密。"
+        },
+        "視覺層級": {
+          "score": 9,
+          "evidence": "3–4主要區、來源局部與單一結論；四區單線，局部來源緊鄰"
+        }
+      },
+      "veto": [],
+      "state": "self-reviewed",
+      "user_review": "pending",
+      "excluded": "模型實測效能、真人學習成效、原工程slide圖"
+    },
+    {
+      "id": "clip-c1",
+      "mode": "desktop",
+      "asset": "clip-c1-r01-desktop.png",
+      "sha256": "2b8505cee344eb220ab6b923637b70e971df6a8c4283cbbbafae25d33943d258",
+      "native_size": [
+        1672,
+        941
+      ],
+      "review_css_width": 936,
+      "screenshot": "asset-size-views/clip-c1-r01-desktop.png",
+      "rubric": "v1.0",
+      "scores": [
+        24,
+        23,
+        19,
+        19,
+        9
+      ],
+      "total": 94,
+      "positive_evidence": {
+        "案例": "支架與齒輪及正負圖文配對",
+        "方法": "分開編碼、共同空間相似到候選排序",
+        "行動": "文字候選決定提問範圍",
+        "閱讀": "四區循序，936px主線清楚",
+        "一致": "藍支架／異色齒輪有區分"
+      },
+      "deductions": "共同空間是定性投影，座標非實測。",
+      "completion": {
+        "美感": {
+          "score": 9,
+          "evidence": "實體金屬與白底淡藍細框，單一黃結論；支架與齒輪及正負圖文配對"
+        },
+        "完整": {
+          "score": 9,
+          "evidence": "分開編碼、共同空間相似到候選排序；文字候選決定提問範圍"
+        },
+        "專業": {
+          "score": 9,
+          "evidence": "藍支架／異色齒輪有區分；示意與實測分開"
+        },
+        "資訊密度": {
+          "score": 9,
+          "evidence": "四區循序，936px主線清楚；共同空間是定性投影，座標非實測。"
+        },
+        "視覺層級": {
+          "score": 9,
+          "evidence": "3–4主要區、來源局部與單一結論；四區循序，936px主線清楚"
+        }
+      },
+      "veto": [],
+      "state": "self-reviewed",
+      "user_review": "pending",
+      "excluded": "模型實測效能、真人學習成效、原工程slide圖"
+    },
+    {
+      "id": "clip-c1",
+      "mode": "mobile",
+      "asset": "clip-c1-r01-mobile.png",
+      "sha256": "b848e5f6b0fbf9276a626f780dbce1bdc98b0da0813c3fea02950f27baf33b67",
+      "native_size": [
+        724,
+        2172
+      ],
+      "review_css_width": 326,
+      "screenshot": "asset-size-views/clip-c1-r01-mobile.png",
+      "rubric": "v1.0",
+      "scores": [
+        24,
+        23,
+        19,
+        18,
+        9
+      ],
+      "total": 93,
+      "positive_evidence": {
+        "案例": "支架與齒輪及錯配可見",
+        "方法": "兩編碼器分開、向量到相似排序",
+        "行動": "最後候選與輸入相對照",
+        "閱讀": "四區垂直，326px主標可讀",
+        "一致": "圖文角色以兩列及色彩區分"
+      },
+      "deductions": "投影區次標較小，示意座標非必要但未暗示性能。",
+      "completion": {
+        "美感": {
+          "score": 9,
+          "evidence": "實體金屬與白底淡藍細框，單一黃結論；支架與齒輪及錯配可見"
+        },
+        "完整": {
+          "score": 9,
+          "evidence": "兩編碼器分開、向量到相似排序；最後候選與輸入相對照"
+        },
+        "專業": {
+          "score": 9,
+          "evidence": "圖文角色以兩列及色彩區分；示意與實測分開"
+        },
+        "資訊密度": {
+          "score": 8,
+          "evidence": "四區垂直，326px主標可讀；投影區次標較小，示意座標非必要但未暗示性能。"
+        },
+        "視覺層級": {
+          "score": 9,
+          "evidence": "3–4主要區、來源局部與單一結論；四區垂直，326px主標可讀"
+        }
+      },
+      "veto": [],
+      "state": "self-reviewed",
+      "user_review": "pending",
+      "excluded": "模型實測效能、真人學習成效、原工程slide圖"
+    },
+    {
+      "id": "llava-c1",
+      "mode": "desktop",
+      "asset": "llava-c1-r02-desktop.png",
+      "sha256": "48fca437286eb850241331d92c649bb9c056cf54bb9c4d705891824910da3f06",
+      "native_size": [
+        1672,
+        941
+      ],
+      "review_css_width": 936,
+      "screenshot": "asset-size-views/llava-c1-r02-desktop.png",
+      "rubric": "v1.0",
+      "scores": [
+        24,
+        24,
+        19,
+        18,
+        9
+      ],
+      "total": 94,
+      "positive_evidence": {
+        "案例": "同端子左螺絲右空孔及來源局部",
+        "方法": "特徵→投影→序列→LLM，問題另入",
+        "行動": "回答回查原圖框選右孔",
+        "閱讀": "四區單路，936px主線可讀",
+        "一致": "旁路已移除，照片與特徵分開"
+      },
+      "deductions": "訓練次標較小；特徵僅定性不解釋逐維。",
+      "completion": {
+        "美感": {
+          "score": 9,
+          "evidence": "實體金屬與白底淡藍細框，單一黃結論；同端子左螺絲右空孔及來源局部"
+        },
+        "完整": {
+          "score": 9,
+          "evidence": "特徵→投影→序列→LLM，問題另入；回答回查原圖框選右孔"
+        },
+        "專業": {
+          "score": 9,
+          "evidence": "旁路已移除，照片與特徵分開；示意與實測分開"
+        },
+        "資訊密度": {
+          "score": 8,
+          "evidence": "四區單路，936px主線可讀；訓練次標較小；特徵僅定性不解釋逐維。"
+        },
+        "視覺層級": {
+          "score": 9,
+          "evidence": "3–4主要區、來源局部與單一結論；四區單路，936px主線可讀"
+        }
+      },
+      "veto": [],
+      "state": "self-reviewed",
+      "user_review": "pending",
+      "excluded": "模型實測效能、真人學習成效、原工程slide圖"
+    },
+    {
+      "id": "alignment-d2",
+      "mode": "desktop",
+      "asset": "alignment-d2-r01-desktop.png",
+      "sha256": "ef00684f591c9ecc9ddf4b4646f3ae47764e90f0e28abbec78b16c1dfd041f0e",
+      "native_size": [
+        1672,
+        941
+      ],
+      "review_css_width": 936,
+      "screenshot": "asset-size-views/alignment-d2-r01-desktop.png",
+      "rubric": "v1.0",
+      "scores": [
+        24,
+        24,
+        19,
+        18,
+        9
+      ],
+      "total": 94,
+      "positive_evidence": {
+        "案例": "齒輪及來源齒紋",
+        "方法": "候選沒有齒輪仍能有第一名",
+        "行動": "增加候選後重驗而非保證",
+        "閱讀": "三區改變候選集，936px可讀",
+        "一致": "排序有示意限定，未給虛假分數"
+      },
+      "deductions": "第三區文字稍多；其他候選本身不等於完成拒答機制。",
+      "completion": {
+        "美感": {
+          "score": 9,
+          "evidence": "實體金屬與白底淡藍細框，單一黃結論；齒輪及來源齒紋"
+        },
+        "完整": {
+          "score": 9,
+          "evidence": "候選沒有齒輪仍能有第一名；增加候選後重驗而非保證"
+        },
+        "專業": {
+          "score": 9,
+          "evidence": "排序有示意限定，未給虛假分數；示意與實測分開"
+        },
+        "資訊密度": {
+          "score": 8,
+          "evidence": "三區改變候選集，936px可讀；第三區文字稍多；其他候選本身不等於完成拒答機制。"
+        },
+        "視覺層級": {
+          "score": 9,
+          "evidence": "3–4主要區、來源局部與單一結論；三區改變候選集，936px可讀"
+        }
+      },
+      "veto": [],
+      "state": "self-reviewed",
+      "user_review": "pending",
+      "excluded": "模型實測效能、真人學習成效、原工程slide圖"
+    },
+    {
+      "id": "dinov3-c1",
+      "mode": "mobile",
+      "asset": "dinov3-c1-r02-mobile.png",
+      "sha256": "2d62788022b4b44806383cdead5a4d5746734270a458455841ca0301670b111f",
+      "native_size": [
+        725,
+        2170
+      ],
+      "review_css_width": 326,
+      "screenshot": "asset-size-views/dinov3-c1-r02-mobile.png",
+      "rubric": "v1.0",
+      "scores": [
+        24,
+        23,
+        18,
+        18,
+        9
+      ],
+      "total": 92,
+      "positive_evidence": {
+        "案例": "同接頭A/B/C來源與裁切",
+        "方法": "早期關係矩陣引導Student，圖例對稱",
+        "行動": "部署另接下游任務",
+        "閱讀": "326px四區直讀，兩矩陣角色可讀",
+        "一致": "色例及同物件位置一致"
+      },
+      "deductions": "第四區下游次標較小；特徵覆色只作位置示意。",
+      "completion": {
+        "美感": {
+          "score": 9,
+          "evidence": "實體金屬與白底淡藍細框，單一黃結論；同接頭A/B/C來源與裁切"
+        },
+        "完整": {
+          "score": 9,
+          "evidence": "早期關係矩陣引導Student，圖例對稱；部署另接下游任務"
+        },
+        "專業": {
+          "score": 9,
+          "evidence": "色例及同物件位置一致；示意與實測分開"
+        },
+        "資訊密度": {
+          "score": 8,
+          "evidence": "326px四區直讀，兩矩陣角色可讀；第四區下游次標較小；特徵覆色只作位置示意。"
+        },
+        "視覺層級": {
+          "score": 9,
+          "evidence": "3–4主要區、來源局部與單一結論；326px四區直讀，兩矩陣角色可讀"
+        }
+      },
+      "veto": [],
+      "state": "self-reviewed",
+      "user_review": "pending",
+      "excluded": "模型實測效能、真人學習成效、原工程slide圖"
+    },
+    {
+      "id": "gemini-vision-c1",
+      "mode": "desktop",
+      "asset": "gemini-vision-c1-r02-desktop.png",
+      "sha256": "2d4aca0da36c05a9b1fc5c86ba669cd72293952e015cb46b2850668bd3cb281b",
+      "native_size": [
+        1672,
+        941
+      ],
+      "review_css_width": 936,
+      "screenshot": "asset-size-views/gemini-vision-c1-r02-desktop.png",
+      "rubric": "v1.0",
+      "scores": [
+        24,
+        23,
+        19,
+        19,
+        9
+      ],
+      "total": 94,
+      "positive_evidence": {
+        "案例": "左螺絲右空孔原圖",
+        "方法": "影像加問題成請求，指定模型ID再入API",
+        "行動": "回答示意對回右側局部並現場確認",
+        "閱讀": "四區主線在936px清楚",
+        "一致": "API封閉且能力名稱與實際ID分開"
+      },
+      "deductions": "第二區請求和第三區輸入有重複；右側用文字位置而非原圖框定位。",
+      "completion": {
+        "美感": {
+          "score": 9,
+          "evidence": "實體金屬與白底淡藍細框，單一黃結論；左螺絲右空孔原圖"
+        },
+        "完整": {
+          "score": 9,
+          "evidence": "影像加問題成請求，指定模型ID再入API；回答示意對回右側局部並現場確認"
+        },
+        "專業": {
+          "score": 9,
+          "evidence": "API封閉且能力名稱與實際ID分開；示意與實測分開"
+        },
+        "資訊密度": {
+          "score": 9,
+          "evidence": "四區主線在936px清楚；第二區請求和第三區輸入有重複；右側用文字位置而非原圖框定位。"
+        },
+        "視覺層級": {
+          "score": 9,
+          "evidence": "3–4主要區、來源局部與單一結論；四區主線在936px清楚"
+        }
+      },
+      "veto": [],
+      "state": "self-reviewed",
+      "user_review": "pending",
+      "excluded": "模型實測效能、真人學習成效、原工程slide圖"
+    },
+    {
+      "id": "gemini-vision-c1",
+      "mode": "mobile",
+      "asset": "gemini-vision-c1-r02-mobile.png",
+      "sha256": "d9ecc8d1dcb7526faf70e5db200a4b7b30ab3190cd2de125585a0ee97ddb2f80",
+      "native_size": [
+        725,
+        2170
+      ],
+      "review_css_width": 326,
+      "screenshot": "asset-size-views/gemini-vision-c1-r02-mobile.png",
+      "rubric": "v1.0",
+      "scores": [
+        24,
+        23,
+        19,
+        18,
+        9
+      ],
+      "total": 93,
+      "positive_evidence": {
+        "案例": "同接頭原图与右孔裁切",
+        "方法": "組請求→封閉API→待查回答",
+        "行動": "原圖框選右側與現場確認",
+        "閱讀": "326px四區主標清楚",
+        "一致": "左右線索保持，沒有內部架構臆測"
+      },
+      "deductions": "第二區小標較密，原理範圍限公開工作介面。",
+      "completion": {
+        "美感": {
+          "score": 9,
+          "evidence": "實體金屬與白底淡藍細框，單一黃結論；同接頭原图与右孔裁切"
+        },
+        "完整": {
+          "score": 9,
+          "evidence": "組請求→封閉API→待查回答；原圖框選右側與現場確認"
+        },
+        "專業": {
+          "score": 9,
+          "evidence": "左右線索保持，沒有內部架構臆測；示意與實測分開"
+        },
+        "資訊密度": {
+          "score": 8,
+          "evidence": "326px四區主標清楚；第二區小標較密，原理範圍限公開工作介面。"
+        },
+        "視覺層級": {
+          "score": 9,
+          "evidence": "3–4主要區、來源局部與單一結論；326px四區主標清楚"
+        }
+      },
+      "veto": [],
+      "state": "self-reviewed",
+      "user_review": "pending",
+      "excluded": "模型實測效能、真人學習成效、原工程slide圖"
+    },
+    {
+      "id": "alignment-d2",
+      "mode": "mobile",
+      "asset": "alignment-d2-r01-mobile.png",
+      "sha256": "77c6b8f76eceeea53bf77c505618be6d946be9bd4f240270f55924c0d62b35de",
+      "native_size": [
+        724,
+        2172
+      ],
+      "review_css_width": 326,
+      "screenshot": "asset-size-views/alignment-d2-r01-mobile.png",
+      "rubric": "v1.0",
+      "scores": [
+        24,
+        24,
+        19,
+        17,
+        9
+      ],
+      "total": 93,
+      "positive_evidence": {
+        "案例": "齒輪放大與缺正解候選池",
+        "方法": "只有支架軸承仍能排序，擴池另測",
+        "行動": "黃結論第一名不能當真值",
+        "閱讀": "三區直讀，主要排序與物件清楚",
+        "一致": "示意順位與新增齒輪候選一致"
+      },
+      "deductions": "第三區次要段落在326px偏小，主線可由候選改變與大標讀出；完成度密度8。",
+      "completion": {
+        "美感": {
+          "score": 9,
+          "evidence": "實體金屬與白底淡藍細框，單一黃結論；齒輪放大與缺正解候選池"
+        },
+        "完整": {
+          "score": 9,
+          "evidence": "只有支架軸承仍能排序，擴池另測；黃結論第一名不能當真值"
+        },
+        "專業": {
+          "score": 9,
+          "evidence": "示意順位與新增齒輪候選一致；示意與實測分開"
+        },
+        "資訊密度": {
+          "score": 8,
+          "evidence": "三區直讀，主要排序與物件清楚；第三區次要段落在326px偏小，主線可由候選改變與大標讀出；完成度密度8。"
+        },
+        "視覺層級": {
+          "score": 9,
+          "evidence": "3–4主要區、來源局部與單一結論；三區直讀，主要排序與物件清楚"
+        }
+      },
+      "veto": [],
+      "state": "self-reviewed",
+      "user_review": "pending",
+      "excluded": "模型實測效能、真人學習成效、原工程slide圖"
+    },
+    {
+      "id": "siglip-c1",
+      "mode": "desktop",
+      "asset": "siglip-c1-r03-desktop.png",
+      "sha256": "08256f45463216cd7c8cfc62b27c215de26f44ef8bfc83c2527cac87094e3a46",
+      "native_size": [
+        1672,
+        941
+      ],
+      "review_css_width": 936,
+      "screenshot": "asset-size-views/siglip-c1-r03-desktop.png",
+      "rubric": "v1.0",
+      "scores": [
+        24,
+        24,
+        19,
+        18,
+        9
+      ],
+      "total": 94,
+      "positive_evidence": {
+        "案例": "同支架影像配支架／齒輪文字",
+        "方法": "正負配對均降低損失，合計更新兩編碼器",
+        "行動": "新圖文分別編碼到相似候選",
+        "閱讀": "936px四區主線及短標可讀",
+        "一致": "刪除兩編碼器間傳訊箭頭"
+      },
+      "deductions": "樣本到損失合計靠分區順序，未逐畫梯度路徑；次標略小。",
+      "completion": {
+        "美感": {
+          "score": 9,
+          "evidence": "實體金屬與白底淡藍細框，單一黃結論；同支架影像配支架／齒輪文字"
+        },
+        "完整": {
+          "score": 9,
+          "evidence": "正負配對均降低損失，合計更新兩編碼器；新圖文分別編碼到相似候選"
+        },
+        "專業": {
+          "score": 9,
+          "evidence": "刪除兩編碼器間傳訊箭頭；示意與實測分開"
+        },
+        "資訊密度": {
+          "score": 8,
+          "evidence": "936px四區主線及短標可讀；樣本到損失合計靠分區順序，未逐畫梯度路徑；次標略小。"
+        },
+        "視覺層級": {
+          "score": 9,
+          "evidence": "3–4主要區、來源局部與單一結論；936px四區主線及短標可讀"
+        }
+      },
+      "veto": [],
+      "state": "self-reviewed",
+      "user_review": "pending",
+      "excluded": "模型實測效能、真人學習成效、原工程slide圖"
+    },
+    {
+      "id": "qwen-vl-c1",
+      "mode": "desktop",
+      "asset": "qwen-vl-c1-r03-desktop.png",
+      "sha256": "d2e2e398aa91b0f1767b966435b411f80977a572bc32134ee5be191e39272647",
+      "native_size": [
+        1672,
+        940
+      ],
+      "review_css_width": 936,
+      "screenshot": "asset-size-views/qwen-vl-c1-r03-desktop.png",
+      "rubric": "v1.0",
+      "scores": [
+        24,
+        24,
+        19,
+        18,
+        9
+      ],
+      "total": 94,
+      "positive_evidence": {
+        "案例": "長銘牌A17/B08及左右来源裁切",
+        "方法": "影像切片→編碼特徵→含位置序列，問題另入LLM",
+        "行動": "示意回答逐欄回原圖與成本結論",
+        "閱讀": "936px四區流向清楚，長銘牌可讀",
+        "一致": "去除實拍主張，token數明示示意"
+      },
+      "deductions": "第三區位置說明稍密；多維位置只以靜態左右布局說明。",
+      "completion": {
+        "美感": {
+          "score": 9,
+          "evidence": "實體金屬與白底淡藍細框，單一黃結論；長銘牌A17/B08及左右来源裁切"
+        },
+        "完整": {
+          "score": 9,
+          "evidence": "影像切片→編碼特徵→含位置序列，問題另入LLM；示意回答逐欄回原圖與成本結論"
+        },
+        "專業": {
+          "score": 9,
+          "evidence": "去除實拍主張，token數明示示意；示意與實測分開"
+        },
+        "資訊密度": {
+          "score": 8,
+          "evidence": "936px四區流向清楚，長銘牌可讀；第三區位置說明稍密；多維位置只以靜態左右布局說明。"
+        },
+        "視覺層級": {
+          "score": 9,
+          "evidence": "3–4主要區、來源局部與單一結論；936px四區流向清楚，長銘牌可讀"
+        }
+      },
+      "veto": [],
+      "state": "self-reviewed",
+      "user_review": "pending",
+      "excluded": "模型實測效能、真人學習成效、原工程slide圖"
+    },
+    {
+      "id": "qwen-vl-c1",
+      "mode": "mobile",
+      "asset": "qwen-vl-c1-r03-mobile.png",
+      "sha256": "d1b5f22ae8c981793a307ff91d63db93716a31a5bb362caab170d523f31bbc14",
+      "native_size": [
+        725,
+        2170
+      ],
+      "review_css_width": 326,
+      "screenshot": "asset-size-views/qwen-vl-c1-r03-mobile.png",
+      "rubric": "v1.0",
+      "scores": [
+        24,
+        23,
+        19,
+        18,
+        9
+      ],
+      "total": 93,
+      "positive_evidence": {
+        "案例": "A17/B08原圖到同欄回查",
+        "方法": "編碼後特徵與文字問題分開，位置跟隨視覺序列",
+        "行動": "回答需對照與token成本",
+        "閱讀": "326px直向四區，型號和批次可辨",
+        "一致": "原圖非實拍、回覆非實測"
+      },
+      "deductions": "第三區次要解說字較小，tokens屬定性表示。",
+      "completion": {
+        "美感": {
+          "score": 9,
+          "evidence": "實體金屬與白底淡藍細框，單一黃結論；A17/B08原圖到同欄回查"
+        },
+        "完整": {
+          "score": 9,
+          "evidence": "編碼後特徵與文字問題分開，位置跟隨視覺序列；回答需對照與token成本"
+        },
+        "專業": {
+          "score": 9,
+          "evidence": "原圖非實拍、回覆非實測；示意與實測分開"
+        },
+        "資訊密度": {
+          "score": 8,
+          "evidence": "326px直向四區，型號和批次可辨；第三區次要解說字較小，tokens屬定性表示。"
+        },
+        "視覺層級": {
+          "score": 9,
+          "evidence": "3–4主要區、來源局部與單一結論；326px直向四區，型號和批次可辨"
+        }
+      },
+      "veto": [],
+      "state": "self-reviewed",
+      "user_review": "pending",
+      "excluded": "模型實測效能、真人學習成效、原工程slide圖"
+    },
+    {
+      "id": "features-d3",
+      "mode": "desktop",
+      "asset": "features-d3-r02-desktop.png",
+      "sha256": "1388b9a548ccb9a12e90c298e43ff3d09ac99d1a453e3d734dfed29808682377",
+      "native_size": [
+        1672,
+        941
+      ],
+      "review_css_width": 936,
+      "screenshot": "asset-size-views/features-d3-r02-desktop.png",
+      "rubric": "v1.0",
+      "scores": [
+        24,
+        23,
+        18,
+        17,
+        9
+      ],
+      "total": 91,
+      "positive_evidence": {
+        "案例": "參考工件集合與獨立查詢",
+        "方法": "兩模型各編碼查詢與參考、各自建立庫並比對",
+        "行動": "以同測試集比較候選／細節／建庫成本",
+        "閱讀": "936px能沿兩列追蹤；主標與候選可讀",
+        "一致": "查詢標成檢索而非加到參考库"
+      },
+      "deductions": "兩套管線細項較密，差異聚焦需重建的模型及特徵庫，未展開兩者訓練架構或實際性能。完成度密度8。",
+      "completion": {
+        "美感": {
+          "score": 9,
+          "evidence": "實體金屬與白底淡藍細框，單一黃結論；參考工件集合與獨立查詢"
+        },
+        "完整": {
+          "score": 9,
+          "evidence": "兩模型各編碼查詢與參考、各自建立庫並比對；以同測試集比較候選／細節／建庫成本"
+        },
+        "專業": {
+          "score": 9,
+          "evidence": "查詢標成檢索而非加到參考库；示意與實測分開"
+        },
+        "資訊密度": {
+          "score": 8,
+          "evidence": "936px能沿兩列追蹤；主標與候選可讀；兩套管線細項較密，差異聚焦需重建的模型及特徵庫，未展開兩者訓練架構或實際性能。完成度密度8。"
+        },
+        "視覺層級": {
+          "score": 9,
+          "evidence": "3–4主要區、來源局部與單一結論；936px能沿兩列追蹤；主標與候選可讀"
+        }
+      },
+      "veto": [],
+      "state": "self-reviewed",
+      "user_review": "pending",
+      "excluded": "模型實測效能、真人學習成效、原工程slide圖"
+    },
+    {
+      "id": "llava-d2",
+      "mode": "desktop",
+      "asset": "llava-d2-r02-desktop.png",
+      "sha256": "be43ffd2f8cd302968ccdc09d4ab2ab492f6e0939d1e8fc795053f24d20de7a6",
+      "native_size": [
+        1672,
+        941
+      ],
+      "review_css_width": 936,
+      "screenshot": "asset-size-views/llava-d2-r02-desktop.png",
+      "rubric": "v1.0",
+      "scores": [
+        24,
+        24,
+        19,
+        19,
+        9
+      ],
+      "total": 95,
+      "positive_evidence": {
+        "案例": "同端子左螺絲右空孔與右局部",
+        "方法": "振動原因示意被否定，現象與原因分開",
+        "行動": "查裝配紀錄／現場檢查有實體例",
+        "閱讀": "936px三區主線短句",
+        "一致": "原圖局部一致，推論明示非證據"
+      },
+      "deductions": "現場螺絲照片僅代表補查方向，不證明這次真的掉落。",
+      "completion": {
+        "美感": {
+          "score": 9,
+          "evidence": "實體金屬與白底淡藍細框，單一黃結論；同端子左螺絲右空孔與右局部"
+        },
+        "完整": {
+          "score": 9,
+          "evidence": "振動原因示意被否定，現象與原因分開；查裝配紀錄／現場檢查有實體例"
+        },
+        "專業": {
+          "score": 9,
+          "evidence": "原圖局部一致，推論明示非證據；示意與實測分開"
+        },
+        "資訊密度": {
+          "score": 9,
+          "evidence": "936px三區主線短句；現場螺絲照片僅代表補查方向，不證明這次真的掉落。"
+        },
+        "視覺層級": {
+          "score": 9,
+          "evidence": "3–4主要區、來源局部與單一結論；936px三區主線短句"
+        }
+      },
+      "veto": [],
+      "state": "self-reviewed",
+      "user_review": "pending",
+      "excluded": "模型實測效能、真人學習成效、原工程slide圖"
+    },
+    {
+      "id": "llava-d2",
+      "mode": "mobile",
+      "asset": "llava-d2-r02-mobile.png",
+      "sha256": "8e8c6ba309282ce4ca13f4dc2a93e9eca990fc1d2fc577b70c502277c775e98c",
+      "native_size": [
+        724,
+        2172
+      ],
+      "review_css_width": 326,
+      "screenshot": "asset-size-views/llava-d2-r02-mobile.png",
+      "rubric": "v1.0",
+      "scores": [
+        24,
+        24,
+        19,
+        18,
+        9
+      ],
+      "total": 94,
+      "positive_evidence": {
+        "案例": "同帶線端子右空孔放大",
+        "方法": "回答示意提出振動但尚無證據",
+        "行動": "觀察與待查分欄，紀錄及現場檢查",
+        "閱讀": "326px三區主標與行動可讀",
+        "一致": "右空孔局部保持"
+      },
+      "deductions": "第三區資料例較多，次標略小；示意案例和桌面同問題但物件造型不同。",
+      "completion": {
+        "美感": {
+          "score": 9,
+          "evidence": "實體金屬與白底淡藍細框，單一黃結論；同帶線端子右空孔放大"
+        },
+        "完整": {
+          "score": 9,
+          "evidence": "回答示意提出振動但尚無證據；觀察與待查分欄，紀錄及現場檢查"
+        },
+        "專業": {
+          "score": 9,
+          "evidence": "右空孔局部保持；示意與實測分開"
+        },
+        "資訊密度": {
+          "score": 8,
+          "evidence": "326px三區主標與行動可讀；第三區資料例較多，次標略小；示意案例和桌面同問題但物件造型不同。"
+        },
+        "視覺層級": {
+          "score": 9,
+          "evidence": "3–4主要區、來源局部與單一結論；326px三區主標與行動可讀"
+        }
+      },
+      "veto": [],
+      "state": "self-reviewed",
+      "user_review": "pending",
+      "excluded": "模型實測效能、真人學習成效、原工程slide圖"
+    },
+    {
+      "id": "gemini-d2",
+      "mode": "desktop",
+      "asset": "gemini-d2-r02-desktop.png",
+      "sha256": "232e340e7ffa645bea1308c8b282a2d15ba8d4694cec8648a4c9c84ff1f52e0c",
+      "native_size": [
+        1672,
+        941
+      ],
+      "review_css_width": 936,
+      "screenshot": "asset-size-views/gemini-d2-r02-desktop.png",
+      "rubric": "v1.0",
+      "scores": [
+        24,
+        25,
+        19,
+        19,
+        9
+      ],
+      "total": 96,
+      "positive_evidence": {
+        "案例": "左present／右missing同圖局部",
+        "方法": "可解析JSON的right present與原圖矛盾",
+        "行動": "逐欄將right更正missing",
+        "閱讀": "936px三區、JSON及叉號直接可讀",
+        "一致": "格式正確與內容正確明確分開"
+      },
+      "deductions": "未展開schema細節，聚焦本圖人工內容核對；JSON僅教學回覆。",
+      "completion": {
+        "美感": {
+          "score": 9,
+          "evidence": "實體金屬與白底淡藍細框，單一黃結論；左present／右missing同圖局部"
+        },
+        "完整": {
+          "score": 9,
+          "evidence": "可解析JSON的right present與原圖矛盾；逐欄將right更正missing"
+        },
+        "專業": {
+          "score": 9,
+          "evidence": "格式正確與內容正確明確分開；示意與實測分開"
+        },
+        "資訊密度": {
+          "score": 9,
+          "evidence": "936px三區、JSON及叉號直接可讀；未展開schema細節，聚焦本圖人工內容核對；JSON僅教學回覆。"
+        },
+        "視覺層級": {
+          "score": 9,
+          "evidence": "3–4主要區、來源局部與單一結論；936px三區、JSON及叉號直接可讀"
+        }
+      },
+      "veto": [],
+      "state": "self-reviewed",
+      "user_review": "pending",
+      "excluded": "模型實測效能、真人學習成效、原工程slide圖"
+    },
+    {
+      "id": "gemini-d2",
+      "mode": "mobile",
+      "asset": "gemini-d2-r02-mobile.png",
+      "sha256": "b70ec888fc0532453c1a4b917b6e6a5ff4f76b196d0007f39a01d05155a33c58",
+      "native_size": [
+        724,
+        2172
+      ],
+      "review_css_width": 326,
+      "screenshot": "asset-size-views/gemini-d2-r02-mobile.png",
+      "rubric": "v1.0",
+      "scores": [
+        24,
+        24,
+        19,
+        19,
+        9
+      ],
+      "total": 95,
+      "positive_evidence": {
+        "案例": "兩端子來源裁切可追蹤",
+        "方法": "right present錯值對比右空孔",
+        "行動": "雙向核對後改missing",
+        "閱讀": "326px JSON主要值可讀，單一黃結論",
+        "一致": "來源與回答分開，未把格式檢查當品質"
+      },
+      "deductions": "第三區說明字稍小；工程自動化處置不在本圖範圍。",
+      "completion": {
+        "美感": {
+          "score": 9,
+          "evidence": "實體金屬與白底淡藍細框，單一黃結論；兩端子來源裁切可追蹤"
+        },
+        "完整": {
+          "score": 9,
+          "evidence": "right present錯值對比右空孔；雙向核對後改missing"
+        },
+        "專業": {
+          "score": 9,
+          "evidence": "來源與回答分開，未把格式檢查當品質；示意與實測分開"
+        },
+        "資訊密度": {
+          "score": 9,
+          "evidence": "326px JSON主要值可讀，單一黃結論；第三區說明字稍小；工程自動化處置不在本圖範圍。"
+        },
+        "視覺層級": {
+          "score": 9,
+          "evidence": "3–4主要區、來源局部與單一結論；326px JSON主要值可讀，單一黃結論"
+        }
+      },
+      "veto": [],
+      "state": "self-reviewed",
+      "user_review": "pending",
+      "excluded": "模型實測效能、真人學習成效、原工程slide圖"
+    },
+    {
+      "id": "llava-c1",
+      "mode": "mobile",
+      "asset": "llava-c1-r03-mobile.png",
+      "sha256": "c633afde9b51e70a028aae8aa4af12f75959f6aa03d58a79dace5d1e3802d4b1",
+      "native_size": [
+        724,
+        2172
+      ],
+      "review_css_width": 326,
+      "screenshot": "asset-size-views/llava-c1-r03-mobile.png",
+      "rubric": "v1.0",
+      "scores": [
+        24,
+        24,
+        19,
+        17,
+        9
+      ],
+      "total": 93,
+      "positive_evidence": {
+        "案例": "同兩端子原圖及末端右孔",
+        "方法": "非照片特徵經投影，視覺與文字token分標接LLM",
+        "行動": "回答示意回原圖核對",
+        "閱讀": "326px四區有序，投影与token主標可读",
+        "一致": "問答輸入與編碼後特徵角色分清"
+      },
+      "deductions": "第三區仍較密，訓練次標較小，保留主要橋接與兩來源。",
+      "completion": {
+        "美感": {
+          "score": 9,
+          "evidence": "實體金屬與白底淡藍細框，單一黃結論；同兩端子原圖及末端右孔"
+        },
+        "完整": {
+          "score": 9,
+          "evidence": "非照片特徵經投影，視覺與文字token分標接LLM；回答示意回原圖核對"
+        },
+        "專業": {
+          "score": 9,
+          "evidence": "問答輸入與編碼後特徵角色分清；示意與實測分開"
+        },
+        "資訊密度": {
+          "score": 8,
+          "evidence": "326px四區有序，投影与token主標可读；第三區仍較密，訓練次標較小，保留主要橋接與兩來源。"
+        },
+        "視覺層級": {
+          "score": 9,
+          "evidence": "3–4主要區、來源局部與單一結論；326px四區有序，投影与token主標可读"
+        }
+      },
+      "veto": [],
+      "state": "self-reviewed",
+      "user_review": "pending",
+      "excluded": "模型實測效能、真人學習成效、原工程slide圖"
+    },
+    {
+      "id": "alignment-d3",
+      "mode": "desktop",
+      "asset": "alignment-d3-r03-desktop.png",
+      "sha256": "b70f445d2045a7e6ba5a34d451045e3c52379da7de9eeb21d1703502fdf17b68",
+      "native_size": [
+        1672,
+        941
+      ],
+      "review_css_width": 936,
+      "screenshot": "asset-size-views/alignment-d3-r03-desktop.png",
+      "rubric": "v1.0",
+      "scores": [
+        24,
+        24,
+        18,
+        17,
+        9
+      ],
+      "total": 92,
+      "positive_evidence": {
+        "案例": "支架／齒輪文字的正負配對",
+        "方法": "CLIP批次候選一列對比，SigLIP逐對損失；雙模態共輸入兩模型",
+        "行動": "同獨立測試圖文比候選排序，無模型勝負",
+        "閱讀": "936px三區主標清楚，細節密度偏高",
+        "一致": "正負配對與箭頭已更正"
+      },
+      "deductions": "比較圖只涵蓋訓練目標與排序，沒有展開完整成本；次標較小。圖內下一步是同題測試，成本在章節接續。",
+      "completion": {
+        "美感": {
+          "score": 9,
+          "evidence": "實體金屬與白底淡藍細框，單一黃結論；支架／齒輪文字的正負配對"
+        },
+        "完整": {
+          "score": 9,
+          "evidence": "CLIP批次候選一列對比，SigLIP逐對損失；雙模態共輸入兩模型；同獨立測試圖文比候選排序，無模型勝負"
+        },
+        "專業": {
+          "score": 9,
+          "evidence": "正負配對與箭頭已更正；示意與實測分開"
+        },
+        "資訊密度": {
+          "score": 8,
+          "evidence": "936px三區主標清楚，細節密度偏高；比較圖只涵蓋訓練目標與排序，沒有展開完整成本；次標較小。圖內下一步是同題測試，成本在章節接續。"
+        },
+        "視覺層級": {
+          "score": 9,
+          "evidence": "3–4主要區、來源局部與單一結論；936px三區主標清楚，細節密度偏高"
+        }
+      },
+      "veto": [],
+      "state": "self-reviewed",
+      "user_review": "pending",
+      "excluded": "模型實測效能、真人學習成效、原工程slide圖"
+    },
+    {
+      "id": "alignment-d3",
+      "mode": "mobile",
+      "asset": "alignment-d3-r03-mobile.png",
+      "sha256": "654abdbe4fb3767880036ab19afad3f83aea37dce736e6719a0929b78f5e47b6",
+      "native_size": [
+        725,
+        2167
+      ],
+      "review_css_width": 326,
+      "screenshot": "asset-size-views/alignment-d3-r03-mobile.png",
+      "rubric": "v1.0",
+      "scores": [
+        24,
+        23,
+        18,
+        17,
+        9
+      ],
+      "total": 91,
+      "positive_evidence": {
+        "案例": "同支架對支架／齒輪／螺絲文字",
+        "方法": "批次矩陣及逐對學習兩路可辨，部署共用圖文分流",
+        "行動": "排序錯誤、拒答、完整耗時三檢核",
+        "閱讀": "326px主要差異可讀，候選清單為次要小標",
+        "一致": "配對與不配對角色一致，無單模態誤送"
+      },
+      "deductions": "部署候選及解說次標较小，判讀重點放在同題比較與三個檢核，不宣稱真人理解通過。",
+      "completion": {
+        "美感": {
+          "score": 9,
+          "evidence": "實體金屬與白底淡藍細框，單一黃結論；同支架對支架／齒輪／螺絲文字"
+        },
+        "完整": {
+          "score": 9,
+          "evidence": "批次矩陣及逐對學習兩路可辨，部署共用圖文分流；排序錯誤、拒答、完整耗時三檢核"
+        },
+        "專業": {
+          "score": 9,
+          "evidence": "配對與不配對角色一致，無單模態誤送；示意與實測分開"
+        },
+        "資訊密度": {
+          "score": 8,
+          "evidence": "326px主要差異可讀，候選清單為次要小標；部署候選及解說次標较小，判讀重點放在同題比較與三個檢核，不宣稱真人理解通過。"
+        },
+        "視覺層級": {
+          "score": 9,
+          "evidence": "3–4主要區、來源局部與單一結論；326px主要差異可讀，候選清單為次要小標"
+        }
+      },
+      "veto": [],
+      "state": "self-reviewed",
+      "user_review": "pending",
+      "excluded": "模型實測效能、真人學習成效、原工程slide圖"
+    },
+    {
+      "id": "dino-d2",
+      "mode": "desktop",
+      "asset": "dino-d2-r03-desktop.png",
+      "sha256": "0c16a2c56639ce8d9957cf5316c895057c442e8f432c48dfd8e5922254733cc3",
+      "native_size": [
+        1672,
+        941
+      ],
+      "review_css_width": 936,
+      "screenshot": "asset-size-views/dino-d2-r03-desktop.png",
+      "rubric": "v1.0",
+      "scores": [
+        24,
+        24,
+        19,
+        19,
+        9
+      ],
+      "total": 95,
+      "positive_evidence": {
+        "案例": "墊圈3點鐘缺口與同區放大",
+        "方法": "縮小後輪廓及局部弱化，相近特徵不代表正常",
+        "行動": "回原圖局部再和正常邊緣同尺度驗證",
+        "閱讀": "936px三區差異直接可見",
+        "一致": "修正模糊程度、缺口保留與示意聲明"
+      },
+      "deductions": "色條只作相近特徵示意，不等於實際DINO輸出；缺口可見不保證下游成功。",
+      "completion": {
+        "美感": {
+          "score": 9,
+          "evidence": "實體金屬與白底淡藍細框，單一黃結論；墊圈3點鐘缺口與同區放大"
+        },
+        "完整": {
+          "score": 9,
+          "evidence": "縮小後輪廓及局部弱化，相近特徵不代表正常；回原圖局部再和正常邊緣同尺度驗證"
+        },
+        "專業": {
+          "score": 9,
+          "evidence": "修正模糊程度、缺口保留與示意聲明；示意與實測分開"
+        },
+        "資訊密度": {
+          "score": 9,
+          "evidence": "936px三區差異直接可見；色條只作相近特徵示意，不等於實際DINO輸出；缺口可見不保證下游成功。"
+        },
+        "視覺層級": {
+          "score": 9,
+          "evidence": "3–4主要區、來源局部與單一結論；936px三區差異直接可見"
+        }
+      },
+      "veto": [],
+      "state": "self-reviewed",
+      "user_review": "pending",
+      "excluded": "模型實測效能、真人學習成效、原工程slide圖"
+    },
+    {
+      "id": "dino-d2",
+      "mode": "mobile",
+      "asset": "dino-d2-r03-mobile.png",
+      "sha256": "2442c70d838609d2705282c3b7090f11e5071c2790eb00a57dc414efc8099f56",
+      "native_size": [
+        725,
+        2169
+      ],
+      "review_css_width": 326,
+      "screenshot": "asset-size-views/dino-d2-r03-mobile.png",
+      "rubric": "v1.0",
+      "scores": [
+        24,
+        24,
+        19,
+        18,
+        9
+      ],
+      "total": 94,
+      "positive_evidence": {
+        "案例": "同墊圈右側缺口的來源框與放大",
+        "方法": "低解析度輪廓、模糊局部及相近特徵",
+        "行動": "第三區原圖取局部後同尺度比較",
+        "閱讀": "326px三區主線可辨，結論完整",
+        "一致": "缺口及原圖局部在同位置"
+      },
+      "deductions": "第二區次標較小；局部特徵相似只示意，不用其色條宣稱效能。",
+      "completion": {
+        "美感": {
+          "score": 9,
+          "evidence": "實體金屬與白底淡藍細框，單一黃結論；同墊圈右側缺口的來源框與放大"
+        },
+        "完整": {
+          "score": 9,
+          "evidence": "低解析度輪廓、模糊局部及相近特徵；第三區原圖取局部後同尺度比較"
+        },
+        "專業": {
+          "score": 9,
+          "evidence": "缺口及原圖局部在同位置；示意與實測分開"
+        },
+        "資訊密度": {
+          "score": 8,
+          "evidence": "326px三區主線可辨，結論完整；第二區次標較小；局部特徵相似只示意，不用其色條宣稱效能。"
+        },
+        "視覺層級": {
+          "score": 9,
+          "evidence": "3–4主要區、來源局部與單一結論；326px三區主線可辨，結論完整"
+        }
+      },
+      "veto": [],
+      "state": "self-reviewed",
+      "user_review": "pending",
+      "excluded": "模型實測效能、真人學習成效、原工程slide圖"
+    },
+    {
+      "id": "features-d3",
+      "mode": "mobile",
+      "asset": "features-d3-r03-mobile.png",
+      "sha256": "4a7e47177a76944b52cfe29923228d90ddcf5fbb7d81160826bdb572d0557e25",
+      "native_size": [
+        724,
+        2171
+      ],
+      "review_css_width": 326,
+      "screenshot": "asset-size-views/features-d3-r03-mobile.png",
+      "rubric": "v1.0",
+      "scores": [
+        24,
+        24,
+        19,
+        18,
+        9
+      ],
+      "total": 94,
+      "positive_evidence": {
+        "案例": "參考支架／齒輪與獨立查詢分開",
+        "方法": "藍綠兩套骨幹各編碼參考和查詢、各自特徵庫",
+        "行動": "同測試集對候選／細節／建庫及查詢成本",
+        "閱讀": "326px拆四區，必要路徑字明顯放大",
+        "一致": "同查詢跨兩路、無跨模型混庫"
+      },
+      "deductions": "兩條管線外形相同是同任務的配套比較，未畫訓練差異；細节評估以局部為示意。",
+      "completion": {
+        "美感": {
+          "score": 9,
+          "evidence": "實體金屬與白底淡藍細框，單一黃結論；參考支架／齒輪與獨立查詢分開"
+        },
+        "完整": {
+          "score": 9,
+          "evidence": "藍綠兩套骨幹各編碼參考和查詢、各自特徵庫；同測試集對候選／細節／建庫及查詢成本"
+        },
+        "專業": {
+          "score": 9,
+          "evidence": "同查詢跨兩路、無跨模型混庫；示意與實測分開"
+        },
+        "資訊密度": {
+          "score": 8,
+          "evidence": "326px拆四區，必要路徑字明顯放大；兩條管線外形相同是同任務的配套比較，未畫訓練差異；細节評估以局部為示意。"
+        },
+        "視覺層級": {
+          "score": 9,
+          "evidence": "3–4主要區、來源局部與單一結論；326px拆四區，必要路徑字明顯放大"
+        }
+      },
+      "veto": [],
+      "state": "self-reviewed",
+      "user_review": "pending",
+      "excluded": "模型實測效能、真人學習成效、原工程slide圖"
+    },
+    {
+      "id": "vlm-d3",
+      "mode": "desktop",
+      "asset": "vlm-d3-r03-desktop.png",
+      "sha256": "b20d243e102f205ad14c27dbb6d0e4ec0f21e4202d0859e926d17a14c0ec33e4",
+      "native_size": [
+        1672,
+        941
+      ],
+      "review_css_width": 936,
+      "screenshot": "asset-size-views/vlm-d3-r03-desktop.png",
+      "rubric": "v1.0",
+      "scores": [
+        24,
+        24,
+        19,
+        18,
+        9
+      ],
+      "total": 94,
+      "positive_evidence": {
+        "案例": "同兩端子問題及人工參考例",
+        "方法": "自建GPU/權重/處理器與GeminiAPI兩路輸入输出",
+        "行動": "原圖右孔核對兩個示例答案，兩邊均需覆核",
+        "閱讀": "936px三區與兩替代路徑清楚",
+        "一致": "家族名及部署範例界線，未宣稱誰更準"
+      },
+      "deductions": "覆核圖例部分重複；成本只畫維護／網路用量責任，未量化。",
+      "completion": {
+        "美感": {
+          "score": 9,
+          "evidence": "實體金屬與白底淡藍細框，單一黃結論；同兩端子問題及人工參考例"
+        },
+        "完整": {
+          "score": 9,
+          "evidence": "自建GPU/權重/處理器與GeminiAPI兩路輸入输出；原圖右孔核對兩個示例答案，兩邊均需覆核"
+        },
+        "專業": {
+          "score": 9,
+          "evidence": "家族名及部署範例界線，未宣稱誰更準；示意與實測分開"
+        },
+        "資訊密度": {
+          "score": 8,
+          "evidence": "936px三區與兩替代路徑清楚；覆核圖例部分重複；成本只畫維護／網路用量責任，未量化。"
+        },
+        "視覺層級": {
+          "score": 9,
+          "evidence": "3–4主要區、來源局部與單一結論；936px三區與兩替代路徑清楚"
+        }
+      },
+      "veto": [],
+      "state": "self-reviewed",
+      "user_review": "pending",
+      "excluded": "模型實測效能、真人學習成效、原工程slide圖"
+    },
+    {
+      "id": "vlm-d3",
+      "mode": "mobile",
+      "asset": "vlm-d3-r03-mobile.png",
+      "sha256": "ee90541a3601abdee8b82d969a6a526b65fc2ae83d2ee4068efa95fd5d7009e8",
+      "native_size": [
+        724,
+        2172
+      ],
+      "review_css_width": 326,
+      "screenshot": "asset-size-views/vlm-d3-r03-mobile.png",
+      "rubric": "v1.0",
+      "scores": [
+        24,
+        23,
+        19,
+        18,
+        9
+      ],
+      "total": 93,
+      "positive_evidence": {
+        "案例": "同端子、問題與右孔核對",
+        "方法": "本地伺服器維護對託管API用量兩路",
+        "行動": "以同來源檢查回答並計入重試與人工",
+        "閱讀": "326px直向三區，自建和託管可對照",
+        "一致": "兩路無互相串接，示例答案不是實測勝負"
+      },
+      "deductions": "第二區維護次標較小；同答案僅用於示範核對方法，未代表兩者效能相等。",
+      "completion": {
+        "美感": {
+          "score": 9,
+          "evidence": "實體金屬與白底淡藍細框，單一黃結論；同端子、問題與右孔核對"
+        },
+        "完整": {
+          "score": 9,
+          "evidence": "本地伺服器維護對託管API用量兩路；以同來源檢查回答並計入重試與人工"
+        },
+        "專業": {
+          "score": 9,
+          "evidence": "兩路無互相串接，示例答案不是實測勝負；示意與實測分開"
+        },
+        "資訊密度": {
+          "score": 8,
+          "evidence": "326px直向三區，自建和託管可對照；第二區維護次標較小；同答案僅用於示範核對方法，未代表兩者效能相等。"
+        },
+        "視覺層級": {
+          "score": 9,
+          "evidence": "3–4主要區、來源局部與單一結論；326px直向三區，自建和託管可對照"
+        }
+      },
+      "veto": [],
+      "state": "self-reviewed",
+      "user_review": "pending",
+      "excluded": "模型實測效能、真人學習成效、原工程slide圖"
+    },
+    {
+      "id": "qwen-vl-d2",
+      "mode": "desktop",
+      "asset": "qwen-vl-d2-r03-desktop.png",
+      "sha256": "c1d52263be33f0c167bdcf531fd0dea768b9cf2afb123914f6b032d0af9e0ec3",
+      "native_size": [
+        1672,
+        941
+      ],
+      "review_css_width": 936,
+      "screenshot": "asset-size-views/qwen-vl-d2-r03-desktop.png",
+      "rubric": "v1.0",
+      "scores": [
+        24,
+        24,
+        19,
+        18,
+        9
+      ],
+      "total": 94,
+      "positive_evidence": {
+        "案例": "A17/B08銘牌原圖與模糊小字",
+        "方法": "縮圖再放大變模糊，原圖文字區清楚",
+        "行動": "B0?不確定與B08理想例，並看影像token及時間",
+        "閱讀": "936px三區因果清楚，放大文字可读",
+        "一致": "原圖文字區不再多出錯位螺絲，答案標示示意"
+      },
+      "deductions": "模糊是定性示意仍可能人工讀出，不推成固定錯誤率；局部取樣增加成本是條件性。",
+      "completion": {
+        "美感": {
+          "score": 9,
+          "evidence": "實體金屬與白底淡藍細框，單一黃結論；A17/B08銘牌原圖與模糊小字"
+        },
+        "完整": {
+          "score": 9,
+          "evidence": "縮圖再放大變模糊，原圖文字區清楚；B0?不確定與B08理想例，並看影像token及時間"
+        },
+        "專業": {
+          "score": 9,
+          "evidence": "原圖文字區不再多出錯位螺絲，答案標示示意；示意與實測分開"
+        },
+        "資訊密度": {
+          "score": 8,
+          "evidence": "936px三區因果清楚，放大文字可读；模糊是定性示意仍可能人工讀出，不推成固定錯誤率；局部取樣增加成本是條件性。"
+        },
+        "視覺層級": {
+          "score": 9,
+          "evidence": "3–4主要區、來源局部與單一結論；936px三區因果清楚，放大文字可读"
+        }
+      },
+      "veto": [],
+      "state": "self-reviewed",
+      "user_review": "pending",
+      "excluded": "模型實測效能、真人學習成效、原工程slide圖"
+    },
+    {
+      "id": "qwen-vl-d2",
+      "mode": "mobile",
+      "asset": "qwen-vl-d2-r03-mobile.png",
+      "sha256": "a15279096aed0aabd24728eced1040967de83847bebbf6242be8eb6e14b50578",
+      "native_size": [
+        724,
+        2172
+      ],
+      "review_css_width": 326,
+      "screenshot": "asset-size-views/qwen-vl-d2-r03-mobile.png",
+      "rubric": "v1.0",
+      "scores": [
+        24,
+        23,
+        19,
+        18,
+        9
+      ],
+      "total": 93,
+      "positive_evidence": {
+        "案例": "同長銘牌批次欄與原圖文字裁切",
+        "方法": "低像素小字弱化，回原圖而非增強縮圖",
+        "行動": "比较欄位答案、細節、影像tokens與時間",
+        "閱讀": "326px三區主標可讀，B08清楚",
+        "一致": "去掉放大區錯位螺絲，答案非實測"
+      },
+      "deductions": "主圖文字框仍含周圍區域，放大的是其中文字；次標較小，無像素級裁切一致性宣稱。",
+      "completion": {
+        "美感": {
+          "score": 9,
+          "evidence": "實體金屬與白底淡藍細框，單一黃結論；同長銘牌批次欄與原圖文字裁切"
+        },
+        "完整": {
+          "score": 9,
+          "evidence": "低像素小字弱化，回原圖而非增強縮圖；比较欄位答案、細節、影像tokens與時間"
+        },
+        "專業": {
+          "score": 9,
+          "evidence": "去掉放大區錯位螺絲，答案非實測；示意與實測分開"
+        },
+        "資訊密度": {
+          "score": 8,
+          "evidence": "326px三區主標可讀，B08清楚；主圖文字框仍含周圍區域，放大的是其中文字；次標較小，無像素級裁切一致性宣稱。"
+        },
+        "視覺層級": {
+          "score": 9,
+          "evidence": "3–4主要區、來源局部與單一結論；326px三區主標可讀，B08清楚"
+        }
+      },
+      "veto": [],
+      "state": "self-reviewed",
+      "user_review": "pending",
+      "excluded": "模型實測效能、真人學習成效、原工程slide圖"
+    },
+    {
+      "id": "siglip-c1",
+      "mode": "mobile",
+      "asset": "siglip-c1-r05-mobile.png",
+      "sha256": "fc8c99a08a9628106539b6951d3f92cffe4d07c5a19b311e5e6a74229dd56ac7",
+      "native_size": [
+        861,
+        1827
+      ],
+      "review_css_width": 326,
+      "screenshot": "asset-size-views/siglip-c1-r05-mobile.png",
+      "rubric": "v1.0",
+      "scores": [
+        24,
+        24,
+        19,
+        18,
+        9
+      ],
+      "total": 94,
+      "positive_evidence": {
+        "案例": "同一支架分別配支架與齒輪文字，負例一致",
+        "方法": "逐對損失合計更新兩個共享編碼器，無互相傳訊箭頭",
+        "行動": "部署重新編碼影像與候選文字後比相似度",
+        "閱讀": "326px四區順讀，完整黃結論與正負配對可讀",
+        "一致": "原始SigLIP與推論相似度分開，未聲稱校準機率"
+      },
+      "deductions": "手機次級小字偏細；省略損失公式，由正文補充。",
+      "completion": {
+        "美感": {
+          "score": 9,
+          "evidence": "實體金屬與白底淡藍細框，單一黃結論；同一支架分別配支架與齒輪文字，負例一致"
+        },
+        "完整": {
+          "score": 9,
+          "evidence": "逐對損失合計更新兩個共享編碼器，無互相傳訊箭頭；部署重新編碼影像與候選文字後比相似度"
+        },
+        "專業": {
+          "score": 9,
+          "evidence": "原始SigLIP與推論相似度分開，未聲稱校準機率；示意與實測分開"
+        },
+        "資訊密度": {
+          "score": 8,
+          "evidence": "326px四區順讀，完整黃結論與正負配對可讀；手機次級小字偏細；省略損失公式，由正文補充。"
+        },
+        "視覺層級": {
+          "score": 9,
+          "evidence": "3–4主要區、來源局部與單一結論；326px四區順讀，完整黃結論與正負配對可讀"
+        }
+      },
+      "veto": [],
+      "state": "self-reviewed",
+      "user_review": "pending",
+      "excluded": "模型實測效能、真人學習成效、原工程slide圖"
+    }
+  ]
+}
