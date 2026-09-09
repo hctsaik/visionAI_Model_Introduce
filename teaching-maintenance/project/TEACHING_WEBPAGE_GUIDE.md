@@ -394,3 +394,8 @@ WI-019 檢查補充：首圖補上正確機制後，仍需核對後續圖片、�
 - Each visual must have a dedicated desktop 16:9 PNG and a readable mobile PNG. Validate the rendered assets at 360px-equivalent width.
 - The page may claim a comparison only when the image itself shows the same viewing condition and distinct targets, with a visible causal path to the conclusion.
 - Record prototype completion, technical verification, Sol review, and user acceptance as separate statuses.
+
+### WI-029：共同前提與量產入口
+- 總覽以可連續追蹤的工作問題安排取像、資料、輸出責任，再接独立驗證、旁觀及失敗接手；模型名稱與工程細節放在對應工作之後。
+- 旁觀比較以工件配對，既有流程不是天然真值。數值案例要分開自動流程延遲、人工覆核時間和排隊，顯示計算假設及取捨。
+- Markdown 若是教學來源，須實際驅動頁面並提供可讀原文；發布建置也必須驗證同一路徑。函式測試不能替代CLI成品與瀏覽器檢查。

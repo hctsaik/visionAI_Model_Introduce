@@ -1,0 +1,128 @@
+{
+  "fdn-visible": {
+    "title": "先確認：缺口真的拍得清楚嗎？",
+    "desktop": {
+      "path": "_course_content/generated-concepts/shared/wi029-fdn-visible-r03-desktop.png",
+      "sha256": "d7567451ad8d7e78b302d683686a7809842dfe3bd8df8f4f91d73f71d6c3ab4d",
+      "size": [
+        1672,
+        941
+      ],
+      "review": "self-reviewed"
+    },
+    "mobile": {
+      "path": "_course_content/generated-concepts/shared/wi029-fdn-visible-r01-mobile.png",
+      "sha256": "789d45ce41aa081fe1fdafbe0521160a86e63b29a8dbc937957d479d84f37959",
+      "size": [
+        728,
+        2160
+      ],
+      "review": "self-reviewed"
+    }
+  },
+  "fdn-data": {
+    "title": "只有正常品，和已有缺陷標註，走法不同",
+    "desktop": {
+      "path": "_course_content/generated-concepts/shared/wi029-fdn-data-r02-desktop.png",
+      "sha256": "b5a51c14ca3bd611ba6cb3d77579955b7915afccb928ae0514c16c1220d14dfd",
+      "size": [
+        1672,
+        941
+      ],
+      "review": "self-reviewed"
+    },
+    "mobile": {
+      "path": "_course_content/generated-concepts/shared/wi029-fdn-data-r04-mobile.png",
+      "sha256": "d90bbb6149cc10ed697c7db90252dcd94f0689a0ea5f71fe4a671b2f13c82ef2",
+      "size": [
+        724,
+        2172
+      ],
+      "review": "self-reviewed"
+    }
+  },
+  "fdn-output": {
+    "title": "可疑提示、預測輪廓與尺寸，各有責任",
+    "desktop": {
+      "path": "_course_content/generated-concepts/shared/wi029-fdn-output-r02-desktop.png",
+      "sha256": "6c39523f53ea60f726c233793a5ae121eeac4eeb28b39434872945dde66bf869",
+      "size": [
+        1672,
+        941
+      ],
+      "review": "self-reviewed"
+    },
+    "mobile": {
+      "path": "_course_content/generated-concepts/shared/wi029-fdn-output-r02-mobile.png",
+      "sha256": "53576084610fd01d98f9de388d761581e8dda8dd03e2cb4a938a0d1a6156bebc",
+      "size": [
+        725,
+        2169
+      ],
+      "review": "self-reviewed"
+    }
+  },
+  "prd-test": {
+    "title": "留下真正沒看過的工件，再比較方法",
+    "desktop": {
+      "path": "_course_content/generated-concepts/shared/wi029-prd-test-r03-desktop.png",
+      "sha256": "251fca9ef086658827d9581366261c7567e73b8d620b87b911d86759a57c2bea",
+      "size": [
+        1672,
+        941
+      ],
+      "review": "self-reviewed"
+    },
+    "mobile": {
+      "path": "_course_content/generated-concepts/shared/wi029-prd-test-r03-mobile.png",
+      "sha256": "960f1d0bc399c66e838f07db016b0501fdf47fa2c22b859952ad32f62ec00d97",
+      "size": [
+        724,
+        2172
+      ],
+      "review": "self-reviewed"
+    }
+  },
+  "prd-shadow": {
+    "title": "先旁觀比對，別讓新模型立即控制分流",
+    "desktop": {
+      "path": "_course_content/generated-concepts/shared/wi029-prd-shadow-r01-desktop.png",
+      "sha256": "4a952971bab73ce7cca8e0bc51a1d8dad2e0c1185f15ce720fde590ff8620a17",
+      "size": [
+        1672,
+        941
+      ],
+      "review": "self-reviewed"
+    },
+    "mobile": {
+      "path": "_course_content/generated-concepts/shared/wi029-prd-shadow-r02-mobile.png",
+      "sha256": "a18b6e000c2397738cb43bd8c28096ad4422a498dee53b5aaee6e4d1ed782276",
+      "size": [
+        736,
+        2138
+      ],
+      "review": "self-reviewed"
+    }
+  },
+  "prd-return": {
+    "title": "上線前，先演練失敗時誰接手",
+    "desktop": {
+      "path": "_course_content/generated-concepts/shared/wi029-prd-return-r01-desktop.png",
+      "sha256": "25c697a47a36e11fba32a3b103ab607f9e2fb9f1a968b39426c74d6fdb3bf67c",
+      "size": [
+        1672,
+        941
+      ],
+      "review": "self-reviewed"
+    },
+    "mobile": {
+      "path": "_course_content/generated-concepts/shared/wi029-prd-return-r01-mobile.png",
+      "sha256": "353d7607acda10bcea3eb84defa9a05109b9f56d83d94fa5ba84a899725c3397",
+      "size": [
+        731,
+        2152
+      ],
+      "review": "self-reviewed"
+    }
+  }
+}

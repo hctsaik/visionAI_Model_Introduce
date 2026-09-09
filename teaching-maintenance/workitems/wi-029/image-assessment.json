@@ -1,0 +1,653 @@
+{
+  "workitem": "WI-029",
+  "images": [
+    {
+      "id": "fdn-visible",
+      "mode": "desktop",
+      "asset": "fdn-visible-r03-desktop.png",
+      "sha256": "d7567451ad8d7e78b302d683686a7809842dfe3bd8df8f4f91d73f71d6c3ab4d",
+      "native_size": [
+        1672,
+        941
+      ],
+      "screenshot": "asset-size-views/fdn-visible-r03-desktop.png",
+      "review_css_width": 936,
+      "rubric": "v1.0",
+      "scores": [
+        24,
+        24,
+        19,
+        18,
+        9
+      ],
+      "total": 94,
+      "positive_evidence": {
+        "案例": "右側缺口由清楚、失焦到重新取像可見",
+        "方法": "對焦旋鈕與重新拍攝箭頭，非憑空修復原圖",
+        "行動": "原圖與設定保存後再測模型",
+        "閱讀": "四個編號區、局部放大及單一黃色結論",
+        "一致": "同一右側缺口與中央孔維持；示意聲明"
+      },
+      "deductions": "局部小字和紀錄欄仍比標題密，需要正文作進一步說明；不包含真人理解與實測效能。",
+      "completion": {
+        "美感": {
+          "score": 9,
+          "evidence": "實體工件、留白與單一黃結論；資料比較使用較多淡色"
+        },
+        "完整": {
+          "score": 9,
+          "evidence": "原圖與設定保存後再測模型"
+        },
+        "專業": {
+          "score": 9,
+          "evidence": "同一右側缺口與中央孔維持；示意聲明"
+        },
+        "資訊密度": {
+          "score": 8,
+          "evidence": "局部小字和紀錄欄仍比標題密，需要正文作進一步說明；不包含真人理解與實測效能。"
+        },
+        "視覺層級": {
+          "score": 9,
+          "evidence": "四個編號區、局部放大及單一黃色結論"
+        }
+      },
+      "veto": [],
+      "state": "self-reviewed",
+      "user_review": "pending"
+    },
+    {
+      "id": "fdn-visible",
+      "mode": "mobile",
+      "asset": "fdn-visible-r01-mobile.png",
+      "sha256": "789d45ce41aa081fe1fdafbe0521160a86e63b29a8dbc937957d479d84f37959",
+      "native_size": [
+        728,
+        2160
+      ],
+      "screenshot": "asset-size-views/fdn-visible-r01-mobile.png",
+      "review_css_width": 326,
+      "rubric": "v1.0",
+      "scores": [
+        24,
+        24,
+        19,
+        18,
+        9
+      ],
+      "total": 94,
+      "positive_evidence": {
+        "案例": "右側缺口由清楚、失焦到重新取像可見",
+        "方法": "對焦旋鈕與重新拍攝箭頭，非憑空修復原圖",
+        "行動": "原圖與設定保存後再測模型",
+        "閱讀": "四個編號區、局部放大及單一黃色結論",
+        "一致": "同一右側缺口與中央孔維持；示意聲明"
+      },
+      "deductions": "局部小字和紀錄欄仍比標題密，需要正文作進一步說明；不包含真人理解與實測效能。",
+      "completion": {
+        "美感": {
+          "score": 9,
+          "evidence": "實體工件、留白與單一黃結論；資料比較使用較多淡色"
+        },
+        "完整": {
+          "score": 9,
+          "evidence": "原圖與設定保存後再測模型"
+        },
+        "專業": {
+          "score": 9,
+          "evidence": "同一右側缺口與中央孔維持；示意聲明"
+        },
+        "資訊密度": {
+          "score": 8,
+          "evidence": "局部小字和紀錄欄仍比標題密，需要正文作進一步說明；不包含真人理解與實測效能。"
+        },
+        "視覺層級": {
+          "score": 9,
+          "evidence": "四個編號區、局部放大及單一黃色結論"
+        }
+      },
+      "veto": [],
+      "state": "self-reviewed",
+      "user_review": "pending"
+    },
+    {
+      "id": "fdn-data",
+      "mode": "desktop",
+      "asset": "fdn-data-r02-desktop.png",
+      "sha256": "b5a51c14ca3bd611ba6cb3d77579955b7915afccb928ae0514c16c1220d14dfd",
+      "native_size": [
+        1672,
+        941
+      ],
+      "screenshot": "asset-size-views/fdn-data-r02-desktop.png",
+      "review_css_width": 936,
+      "rubric": "v1.0",
+      "scores": [
+        24,
+        23,
+        19,
+        18,
+        9
+      ],
+      "total": 93,
+      "positive_evidence": {
+        "案例": "共同缺口工作，正常參考與缺陷標註可對照",
+        "方法": "正常影像编码成向量庫、查詢編碼後比對；另一支標註訓練分割",
+        "行動": "熱圖／預測輪廓回原圖核對並保留人工覆核",
+        "閱讀": "四區分出共同任務、兩條替代方法與同測試核對",
+        "一致": "正常外緣完整且缺陷mask全黑，缺口標註及輸出位置一致"
+      },
+      "deductions": "方法比較較密；手機第四組的小結果與標籤較小，主要方法與覆核動作仍可見。色彩較首選參考多。",
+      "completion": {
+        "美感": {
+          "score": 8,
+          "evidence": "實體工件、留白與單一黃結論；資料比較使用較多淡色"
+        },
+        "完整": {
+          "score": 9,
+          "evidence": "熱圖／預測輪廓回原圖核對並保留人工覆核"
+        },
+        "專業": {
+          "score": 9,
+          "evidence": "正常外緣完整且缺陷mask全黑，缺口標註及輸出位置一致"
+        },
+        "資訊密度": {
+          "score": 8,
+          "evidence": "方法比較較密；手機第四組的小結果與標籤較小，主要方法與覆核動作仍可見。色彩較首選參考多。"
+        },
+        "視覺層級": {
+          "score": 9,
+          "evidence": "四區分出共同任務、兩條替代方法與同測試核對"
+        }
+      },
+      "veto": [],
+      "state": "self-reviewed",
+      "user_review": "pending"
+    },
+    {
+      "id": "fdn-data",
+      "mode": "mobile",
+      "asset": "fdn-data-r04-mobile.png",
+      "sha256": "d90bbb6149cc10ed697c7db90252dcd94f0689a0ea5f71fe4a671b2f13c82ef2",
+      "native_size": [
+        724,
+        2172
+      ],
+      "screenshot": "asset-size-views/fdn-data-r04-mobile.png",
+      "review_css_width": 326,
+      "rubric": "v1.0",
+      "scores": [
+        24,
+        23,
+        19,
+        17,
+        9
+      ],
+      "total": 92,
+      "positive_evidence": {
+        "案例": "共同缺口工作，正常參考與缺陷標註可對照",
+        "方法": "正常影像编码成向量庫、查詢編碼後比對；另一支標註訓練分割",
+        "行動": "熱圖／預測輪廓回原圖核對並保留人工覆核",
+        "閱讀": "四區分出共同任務、兩條替代方法與同測試核對",
+        "一致": "正常外緣完整且缺陷mask全黑，缺口標註及輸出位置一致"
+      },
+      "deductions": "方法比較較密；手機第四組的小結果與標籤較小，主要方法與覆核動作仍可見。色彩較首選參考多。",
+      "completion": {
+        "美感": {
+          "score": 8,
+          "evidence": "實體工件、留白與單一黃結論；資料比較使用較多淡色"
+        },
+        "完整": {
+          "score": 9,
+          "evidence": "熱圖／預測輪廓回原圖核對並保留人工覆核"
+        },
+        "專業": {
+          "score": 9,
+          "evidence": "正常外緣完整且缺陷mask全黑，缺口標註及輸出位置一致"
+        },
+        "資訊密度": {
+          "score": 8,
+          "evidence": "方法比較較密；手機第四組的小結果與標籤較小，主要方法與覆核動作仍可見。色彩較首選參考多。"
+        },
+        "視覺層級": {
+          "score": 9,
+          "evidence": "四區分出共同任務、兩條替代方法與同測試核對"
+        }
+      },
+      "veto": [],
+      "state": "self-reviewed",
+      "user_review": "pending"
+    },
+    {
+      "id": "fdn-output",
+      "mode": "desktop",
+      "asset": "fdn-output-r02-desktop.png",
+      "sha256": "6c39523f53ea60f726c233793a5ae121eeac4eeb28b39434872945dde66bf869",
+      "native_size": [
+        1672,
+        941
+      ],
+      "screenshot": "asset-size-views/fdn-output-r02-desktop.png",
+      "review_css_width": 936,
+      "rubric": "v1.0",
+      "scores": [
+        24,
+        24,
+        19,
+        18,
+        9
+      ],
+      "total": 94,
+      "positive_evidence": {
+        "案例": "同一右側缺口的熱圖、原圖與局部對照",
+        "方法": "熱圖僅提示，校正尺與邊界端點另做量測",
+        "行動": "原圖核對→條件式量測→依規格判定及留證",
+        "閱讀": "四區箭頭、相鄰放大，量測端點清楚",
+        "一致": "量測跨兩外唇且無杜撰尺寸，原圖與結果分開"
+      },
+      "deductions": "局部小字和紀錄欄仍比標題密，需要正文作進一步說明；不包含真人理解與實測效能。",
+      "completion": {
+        "美感": {
+          "score": 9,
+          "evidence": "實體工件、留白與單一黃結論；資料比較使用較多淡色"
+        },
+        "完整": {
+          "score": 9,
+          "evidence": "原圖核對→條件式量測→依規格判定及留證"
+        },
+        "專業": {
+          "score": 9,
+          "evidence": "量測跨兩外唇且無杜撰尺寸，原圖與結果分開"
+        },
+        "資訊密度": {
+          "score": 8,
+          "evidence": "局部小字和紀錄欄仍比標題密，需要正文作進一步說明；不包含真人理解與實測效能。"
+        },
+        "視覺層級": {
+          "score": 9,
+          "evidence": "四區箭頭、相鄰放大，量測端點清楚"
+        }
+      },
+      "veto": [],
+      "state": "self-reviewed",
+      "user_review": "pending"
+    },
+    {
+      "id": "fdn-output",
+      "mode": "mobile",
+      "asset": "fdn-output-r02-mobile.png",
+      "sha256": "53576084610fd01d98f9de388d761581e8dda8dd03e2cb4a938a0d1a6156bebc",
+      "native_size": [
+        725,
+        2169
+      ],
+      "screenshot": "asset-size-views/fdn-output-r02-mobile.png",
+      "review_css_width": 326,
+      "rubric": "v1.0",
+      "scores": [
+        24,
+        24,
+        19,
+        18,
+        9
+      ],
+      "total": 94,
+      "positive_evidence": {
+        "案例": "同一右側缺口的熱圖、原圖與局部對照",
+        "方法": "熱圖僅提示，校正尺與邊界端點另做量測",
+        "行動": "原圖核對→條件式量測→依規格判定及留證",
+        "閱讀": "四區箭頭、相鄰放大，量測端點清楚",
+        "一致": "量測跨兩外唇且無杜撰尺寸，原圖與結果分開"
+      },
+      "deductions": "局部小字和紀錄欄仍比標題密，需要正文作進一步說明；不包含真人理解與實測效能。",
+      "completion": {
+        "美感": {
+          "score": 9,
+          "evidence": "實體工件、留白與單一黃結論；資料比較使用較多淡色"
+        },
+        "完整": {
+          "score": 9,
+          "evidence": "原圖核對→條件式量測→依規格判定及留證"
+        },
+        "專業": {
+          "score": 9,
+          "evidence": "量測跨兩外唇且無杜撰尺寸，原圖與結果分開"
+        },
+        "資訊密度": {
+          "score": 8,
+          "evidence": "局部小字和紀錄欄仍比標題密，需要正文作進一步說明；不包含真人理解與實測效能。"
+        },
+        "視覺層級": {
+          "score": 9,
+          "evidence": "四區箭頭、相鄰放大，量測端點清楚"
+        }
+      },
+      "veto": [],
+      "state": "self-reviewed",
+      "user_review": "pending"
+    },
+    {
+      "id": "prd-test",
+      "mode": "desktop",
+      "asset": "prd-test-r03-desktop.png",
+      "sha256": "251fca9ef086658827d9581366261c7567e73b8d620b87b911d86759a57c2bea",
+      "native_size": [
+        1672,
+        941
+      ],
+      "screenshot": "asset-size-views/prd-test-r03-desktop.png",
+      "review_css_width": 936,
+      "rubric": "v1.0",
+      "scores": [
+        24,
+        23,
+        19,
+        18,
+        9
+      ],
+      "total": 93,
+      "positive_evidence": {
+        "案例": "同工件重拍並置，後面三種資料組明示不同工件",
+        "方法": "建置輸入產生模型、另組調參鎖定、封存組只測不調",
+        "行動": "最終稽核漏檢／誤報／時間均待測，不能反調門檻",
+        "閱讀": "四區及模型／固定設定箭頭；鎖頭呈現狀態改變",
+        "一致": "獨立測試封存不重用照片，數值未實測明示待測"
+      },
+      "deductions": "模型內部僅用表示示意，非本圖教學目標；手機紀錄字较小，主要待測／只測不調清楚。",
+      "completion": {
+        "美感": {
+          "score": 9,
+          "evidence": "實體工件、留白與單一黃結論；資料比較使用較多淡色"
+        },
+        "完整": {
+          "score": 9,
+          "evidence": "最終稽核漏檢／誤報／時間均待測，不能反調門檻"
+        },
+        "專業": {
+          "score": 9,
+          "evidence": "獨立測試封存不重用照片，數值未實測明示待測"
+        },
+        "資訊密度": {
+          "score": 8,
+          "evidence": "模型內部僅用表示示意，非本圖教學目標；手機紀錄字较小，主要待測／只測不調清楚。"
+        },
+        "視覺層級": {
+          "score": 9,
+          "evidence": "四區及模型／固定設定箭頭；鎖頭呈現狀態改變"
+        }
+      },
+      "veto": [],
+      "state": "self-reviewed",
+      "user_review": "pending"
+    },
+    {
+      "id": "prd-test",
+      "mode": "mobile",
+      "asset": "prd-test-r03-mobile.png",
+      "sha256": "960f1d0bc399c66e838f07db016b0501fdf47fa2c22b859952ad32f62ec00d97",
+      "native_size": [
+        724,
+        2172
+      ],
+      "screenshot": "asset-size-views/prd-test-r03-mobile.png",
+      "review_css_width": 326,
+      "rubric": "v1.0",
+      "scores": [
+        24,
+        23,
+        19,
+        18,
+        9
+      ],
+      "total": 93,
+      "positive_evidence": {
+        "案例": "同工件重拍並置，後面三種資料組明示不同工件",
+        "方法": "建置輸入產生模型、另組調參鎖定、封存組只測不調",
+        "行動": "最終稽核漏檢／誤報／時間均待測，不能反調門檻",
+        "閱讀": "四區及模型／固定設定箭頭；鎖頭呈現狀態改變",
+        "一致": "獨立測試封存不重用照片，數值未實測明示待測"
+      },
+      "deductions": "模型內部僅用表示示意，非本圖教學目標；手機紀錄字较小，主要待測／只測不調清楚。",
+      "completion": {
+        "美感": {
+          "score": 9,
+          "evidence": "實體工件、留白與單一黃結論；資料比較使用較多淡色"
+        },
+        "完整": {
+          "score": 9,
+          "evidence": "最終稽核漏檢／誤報／時間均待測，不能反調門檻"
+        },
+        "專業": {
+          "score": 9,
+          "evidence": "獨立測試封存不重用照片，數值未實測明示待測"
+        },
+        "資訊密度": {
+          "score": 8,
+          "evidence": "模型內部僅用表示示意，非本圖教學目標；手機紀錄字较小，主要待測／只測不調清楚。"
+        },
+        "視覺層級": {
+          "score": 9,
+          "evidence": "四區及模型／固定設定箭頭；鎖頭呈現狀態改變"
+        }
+      },
+      "veto": [],
+      "state": "self-reviewed",
+      "user_review": "pending"
+    },
+    {
+      "id": "prd-shadow",
+      "mode": "desktop",
+      "asset": "prd-shadow-r01-desktop.png",
+      "sha256": "4a952971bab73ce7cca8e0bc51a1d8dad2e0c1185f15ce720fde590ff8620a17",
+      "native_size": [
+        1672,
+        941
+      ],
+      "screenshot": "asset-size-views/prd-shadow-r01-desktop.png",
+      "review_css_width": 936,
+      "rubric": "v1.0",
+      "scores": [
+        24,
+        24,
+        19,
+        18,
+        9
+      ],
+      "total": 94,
+      "positive_evidence": {
+        "案例": "工件A右側缺口連到檢測、模型與配對紀錄",
+        "方法": "現場分類與影像副本模型支線分開，模型沒有控制分料箭頭",
+        "行動": "配對原圖、既有判定及模型建議，覆核錯誤與完整時間",
+        "閱讀": "四個編號組，桌面平行、手機副本虛線",
+        "一致": "既有判定為紀錄且缺口保留；生成示意與實測分開"
+      },
+      "deductions": "局部小字和紀錄欄仍比標題密，需要正文作進一步說明；不包含真人理解與實測效能。",
+      "completion": {
+        "美感": {
+          "score": 9,
+          "evidence": "實體工件、留白與單一黃結論；資料比較使用較多淡色"
+        },
+        "完整": {
+          "score": 9,
+          "evidence": "配對原圖、既有判定及模型建議，覆核錯誤與完整時間"
+        },
+        "專業": {
+          "score": 9,
+          "evidence": "既有判定為紀錄且缺口保留；生成示意與實測分開"
+        },
+        "資訊密度": {
+          "score": 8,
+          "evidence": "局部小字和紀錄欄仍比標題密，需要正文作進一步說明；不包含真人理解與實測效能。"
+        },
+        "視覺層級": {
+          "score": 9,
+          "evidence": "四個編號組，桌面平行、手機副本虛線"
+        }
+      },
+      "veto": [],
+      "state": "self-reviewed",
+      "user_review": "pending"
+    },
+    {
+      "id": "prd-shadow",
+      "mode": "mobile",
+      "asset": "prd-shadow-r02-mobile.png",
+      "sha256": "a18b6e000c2397738cb43bd8c28096ad4422a498dee53b5aaee6e4d1ed782276",
+      "native_size": [
+        736,
+        2138
+      ],
+      "screenshot": "asset-size-views/prd-shadow-r02-mobile.png",
+      "review_css_width": 326,
+      "rubric": "v1.0",
+      "scores": [
+        24,
+        24,
+        19,
+        18,
+        9
+      ],
+      "total": 94,
+      "positive_evidence": {
+        "案例": "工件A右側缺口連到檢測、模型與配對紀錄",
+        "方法": "現場分類與影像副本模型支線分開，模型沒有控制分料箭頭",
+        "行動": "配對原圖、既有判定及模型建議，覆核錯誤與完整時間",
+        "閱讀": "四個編號組，桌面平行、手機副本虛線",
+        "一致": "既有判定為紀錄且缺口保留；生成示意與實測分開"
+      },
+      "deductions": "局部小字和紀錄欄仍比標題密，需要正文作進一步說明；不包含真人理解與實測效能。",
+      "completion": {
+        "美感": {
+          "score": 9,
+          "evidence": "實體工件、留白與單一黃結論；資料比較使用較多淡色"
+        },
+        "完整": {
+          "score": 9,
+          "evidence": "配對原圖、既有判定及模型建議，覆核錯誤與完整時間"
+        },
+        "專業": {
+          "score": 9,
+          "evidence": "既有判定為紀錄且缺口保留；生成示意與實測分開"
+        },
+        "資訊密度": {
+          "score": 8,
+          "evidence": "局部小字和紀錄欄仍比標題密，需要正文作進一步說明；不包含真人理解與實測效能。"
+        },
+        "視覺層級": {
+          "score": 9,
+          "evidence": "四個編號組，桌面平行、手機副本虛線"
+        }
+      },
+      "veto": [],
+      "state": "self-reviewed",
+      "user_review": "pending"
+    },
+    {
+      "id": "prd-return",
+      "mode": "desktop",
+      "asset": "prd-return-r01-desktop.png",
+      "sha256": "25c697a47a36e11fba32a3b103ab607f9e2fb9f1a968b39426c74d6fdb3bf67c",
+      "native_size": [
+        1672,
+        941
+      ],
+      "screenshot": "asset-size-views/prd-return-r01-desktop.png",
+      "review_css_width": 936,
+      "rubric": "v1.0",
+      "scores": [
+        24,
+        24,
+        19,
+        18,
+        9
+      ],
+      "total": 94,
+      "positive_evidence": {
+        "案例": "同工件右側反光遮細節、改善後可見缺口",
+        "方法": "軟體回退與共同取像失效分支，原條件成立才能回退",
+        "行動": "暫停保存、人工或改取像、復驗後才啟用",
+        "閱讀": "四區與兩分支，反光前後差異清楚",
+        "一致": "相同缺口位置；不宣稱只換舊模型便會修好影像"
+      },
+      "deductions": "局部小字和紀錄欄仍比標題密，需要正文作進一步說明；不包含真人理解與實測效能。",
+      "completion": {
+        "美感": {
+          "score": 9,
+          "evidence": "實體工件、留白與單一黃結論；資料比較使用較多淡色"
+        },
+        "完整": {
+          "score": 9,
+          "evidence": "暫停保存、人工或改取像、復驗後才啟用"
+        },
+        "專業": {
+          "score": 9,
+          "evidence": "相同缺口位置；不宣稱只換舊模型便會修好影像"
+        },
+        "資訊密度": {
+          "score": 8,
+          "evidence": "局部小字和紀錄欄仍比標題密，需要正文作進一步說明；不包含真人理解與實測效能。"
+        },
+        "視覺層級": {
+          "score": 9,
+          "evidence": "四區與兩分支，反光前後差異清楚"
+        }
+      },
+      "veto": [],
+      "state": "self-reviewed",
+      "user_review": "pending"
+    },
+    {
+      "id": "prd-return",
+      "mode": "mobile",
+      "asset": "prd-return-r01-mobile.png",
+      "sha256": "353d7607acda10bcea3eb84defa9a05109b9f56d83d94fa5ba84a899725c3397",
+      "native_size": [
+        731,
+        2152
+      ],
+      "screenshot": "asset-size-views/prd-return-r01-mobile.png",
+      "review_css_width": 326,
+      "rubric": "v1.0",
+      "scores": [
+        24,
+        24,
+        19,
+        18,
+        9
+      ],
+      "total": 94,
+      "positive_evidence": {
+        "案例": "同工件右側反光遮細節、改善後可見缺口",
+        "方法": "軟體回退與共同取像失效分支，原條件成立才能回退",
+        "行動": "暫停保存、人工或改取像、復驗後才啟用",
+        "閱讀": "四區與兩分支，反光前後差異清楚",
+        "一致": "相同缺口位置；不宣稱只換舊模型便會修好影像"
+      },
+      "deductions": "局部小字和紀錄欄仍比標題密，需要正文作進一步說明；不包含真人理解與實測效能。",
+      "completion": {
+        "美感": {
+          "score": 9,
+          "evidence": "實體工件、留白與單一黃結論；資料比較使用較多淡色"
+        },
+        "完整": {
+          "score": 9,
+          "evidence": "暫停保存、人工或改取像、復驗後才啟用"
+        },
+        "專業": {
+          "score": 9,
+          "evidence": "相同缺口位置；不宣稱只換舊模型便會修好影像"
+        },
+        "資訊密度": {
+          "score": 8,
+          "evidence": "局部小字和紀錄欄仍比標題密，需要正文作進一步說明；不包含真人理解與實測效能。"
+        },
+        "視覺層級": {
+          "score": 9,
+          "evidence": "四區與兩分支，反光前後差異清楚"
+        }
+      },
+      "veto": [],
+      "state": "self-reviewed",
+      "user_review": "pending"
+    }
+  ]
+}

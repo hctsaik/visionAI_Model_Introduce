@@ -969,3 +969,9 @@ WI-009 D01驗證補充：成圖審查要檢查連線是否穿过query標籤、�
 - Make the combination explicit with a visible arrow or merge line from the two trade-offs into the ChArUco result.
 - Traditional Chinese is primary. Keep only essential terms and enlarge callouts; inspect the actual mobile asset at 360px, not only the source SVG.
 - A prototype is not approved until desktop and mobile PNGs each exceed the fixed rubric threshold; formal integration and user acceptance remain separate states.
+
+### WI-029：借用風格時排除舊內容污染
+- 參考圖只提供排版與材質。換教學目的後，重查所有圖內標題、短註與箭頭：對焦用語不得流入量測或資料調參故事。
+- 稽核表尚未量測時明寫「待測」；生成器自行補入的數字不得當作示範效能。確有教學計算需求時，改用可追算的 HTML 並明示假設。
+- 資料切分圖中，重複照片代表相依身分；獨立測試組不應再用調參照片裝飾，可用封存資料夾表示。模型／設定箭頭與資料箭頭須分清。
+- 並排原圖、既有判定與模型建議時，判定是紀錄；不得藉另畫正常工件表示同一缺陷工件的判定。

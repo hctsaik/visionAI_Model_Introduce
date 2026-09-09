@@ -1,0 +1,12 @@
+{
+  "foundations": [
+    {"label":"PatchCore 原論文：正常局部特徵參考","url":"https://arxiv.org/abs/2106.08265","scope":"正常參考路線的具體例子；圖中墊圈和輸出為教學示意。"},
+    {"label":"scikit-learn：前處理與資料洩漏","url":"https://scikit-learn.org/stable/common_pitfalls.html","scope":"先分資料，再建立前處理／模型；測試資料不參與選擇。"},
+    {"label":"OpenCV：相機校正","url":"https://docs.opencv.org/4.x/dc/dbb/tutorial_py_calibration.html","scope":"校正與幾何關係的工程背景；不構成本文工件已校正的證據。"}
+  ],
+  "production": [
+    {"label":"scikit-learn：分組與時間相依資料的驗證","url":"https://scikit-learn.org/stable/modules/cross_validation.html","scope":"相依樣本不能用一般隨機切分推定泛化；依任務分組。"},
+    {"label":"scikit-learn：資料洩漏","url":"https://scikit-learn.org/stable/common_pitfalls.html","scope":"測試集不參與前處理學習或模型選擇。"},
+    {"label":"Google：Rules of Machine Learning","url":"https://developers.google.com/machine-learning/guides/rules-of-ml","scope":"簡單基準、監控與訓練／服務差異；本頁旁觀及回退為案例流程設計。"}
+  ]
+}

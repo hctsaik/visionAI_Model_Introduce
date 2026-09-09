@@ -65,3 +65,10 @@ learning record; it is not a complete backup of the course authoring workspace.
   pre-publication checks; Git and Pages deployment are verified separately.
 - Original prompts, authoring sources, rejected drafts and browser screenshots
   remain in the local workspace. User acceptance remains separate from publishing.
+
+## WI-029 scope
+
+- Rebuild foundations and production around six work cases, with twelve independently reviewed desktop/mobile PNGs, Markdown-driven copy, self-checks and a traceable hypothetical workload comparison.
+- Preserve the Markdown sources, source list, image manifest, UI fragments, parser, builders, tests, briefs, generation intent and review/validation reports in `workitems/wi-029/`. The `authoring/` subtree mirrors course-root paths; restore those paths into an existing authoring workspace. Published PNGs live in `docs/`.
+- These additions preserve the changed authoring components, not the entire course source tree. Rejected images and browser screenshots remain local. Existing historical workitem snapshots are retained as dated checkpoints; shared `project/` files contain current learning.
+- User acceptance remains separate from self-review and technical verification. Publication evidence follows the content commit.

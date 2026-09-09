@@ -1,0 +1,23 @@
+[
+  {
+    "id": "prd-test",
+    "mode": "desktop",
+    "rev": "r03",
+    "source": "r02",
+    "prompt": "Edit this diagram keeping its four groups, Chinese titles, realistic steel washer style, arrows and ONE pale yellow takeaway. Critical corrections: in group4 replace all invented record numbers (12,8,2分18秒 or any results) with 待測. The three rows must read 漏檢：待測 / 誤報：待測 / 完整時間：待測. Replace group4 repeated test photos with a sealed blue folder labelled 獨立測試組 and a small neutral ID tag T, not the same photos as calibration. Keep fixed model then audit. No numeric performance claims. All other content remains. Exact title and no invented footnote."
+  },
+  {
+    "id": "prd-test",
+    "mode": "mobile",
+    "rev": "r03",
+    "source": "r02",
+    "prompt": "Edit this vertical teaching diagram with exactly four major story groups and one yellow takeaway. Replace ALL final measured result numbers (12,8,36秒) with 待測: 漏檢：待測 / 誤報：待測 / 完整時間：待測. In group2 replace wireframe 3D washer with a simple blue gear/network model icon, label 模型; change arrow label to 建置. In group3 arrow from calibration data to threshold slider must say 調參 (not 固定設定). In group4 replace repeated test photo thumbnails with a sealed blue folder labelled 獨立測試組, tag T; arrow from folder to model says 測試影像. Keep all four groups and other Chinese text including same physical object repeats kept together, lasttest not used for adjusting threshold. Do not invent any numbers or result. Preserve tall readable layout."
+  },
+  {
+    "id": "prd-shadow",
+    "mode": "mobile",
+    "rev": "r02",
+    "source": "r01",
+    "prompt": "Edit this vertical four-group diagram. In group4 按工件配對核對錯誤與耗時, three columns show original, existing judgment and model suggestion. The middle 既有判定 currently wrongly shows an intact washer whereas same工件A is notched. Replace ONLY that middle image with a simple clean record card reading 工件 A / 判定：不良 / 右側缺口, no photo. The original and model suggestion images must keep their existing SAME right V notch. In group1 originalimage caption replace 原始影像（對焦完成） with 原始影像（工件 A） to remove irrelevant reference text. Keep all remaining layout,4nodes,shadow branch only recording no control of sorter, yellowtakeaway. AI生成教學示意，非模型實測 must remain."
+  }
+]

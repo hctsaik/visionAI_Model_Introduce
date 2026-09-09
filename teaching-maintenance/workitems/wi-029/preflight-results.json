@@ -1,0 +1,227 @@
+[
+  {
+    "brief": "C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-029/fdn-data-r01.md",
+    "objective": "在同一墊圈缺口檢查任務下，比較正常參考與缺陷標註的資料及輸出責任。",
+    "page_type": "D — 比較條件與行動差異。",
+    "node_count": 4,
+    "reference": "teaching-images/vision-ai-model-selection/course-delivery/section-pages/01-geometry-alignment-measurement/images/final/GEO-02-common-contract_v01.png",
+    "takeaway": "#FFF4CC：只有正常品可先找可疑處；要學缺陷輪廓，仍要準備對應標註。",
+    "required_files_present": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "brief": "C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-029/fdn-data-r02.md",
+    "objective": "在同一墊圈缺口檢查任務下，比較正常參考與缺陷標註的資料及輸出責任。",
+    "page_type": "D — 比較條件與行動差異。",
+    "node_count": 4,
+    "reference": "teaching-images/vision-ai-model-selection/course-delivery/section-pages/01-geometry-alignment-measurement/images/final/GEO-02-common-contract_v01.png",
+    "takeaway": "#FFF4CC：只有正常品可先找可疑處；要學缺陷輪廓，仍要準備對應標註。",
+    "required_files_present": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "brief": "C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-029/fdn-data-r03.md",
+    "objective": "在同一墊圈缺口檢查任務下，比較正常參考與缺陷標註的資料及輸出責任。",
+    "page_type": "D — 比較條件與行動差異。",
+    "node_count": 4,
+    "reference": "teaching-images/vision-ai-model-selection/course-delivery/section-pages/01-geometry-alignment-measurement/images/final/GEO-02-common-contract_v01.png",
+    "takeaway": "#FFF4CC：只有正常品可先找可疑處；要學缺陷輪廓，仍要準備對應標註。",
+    "required_files_present": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "brief": "C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-029/fdn-data-r04.md",
+    "objective": "在同一墊圈缺口檢查任務下，比較正常參考與缺陷標註的資料及輸出責任。",
+    "page_type": "D — 比較條件與行動差異。",
+    "node_count": 4,
+    "reference": "teaching-images/vision-ai-model-selection/course-delivery/section-pages/01-geometry-alignment-measurement/images/final/GEO-02-common-contract_v01.png",
+    "takeaway": "#FFF4CC：只有正常品可先找可疑處；要學缺陷輪廓，仍要準備對應標註。",
+    "required_files_present": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "brief": "C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-029/fdn-output-r01.md",
+    "objective": "把墊圈缺口的可疑提示、回原圖檢查、尺度校正與人員處置分清。",
+    "page_type": "C — 追蹤輸入、方法、證據及行動。",
+    "node_count": 4,
+    "reference": "teaching-images/vision-ai-model-selection/course-delivery/section-pages/01-geometry-alignment-measurement/images/final/GEO-02-common-contract_v01.png",
+    "takeaway": "#FFF4CC：模型提示要對回原圖；尺寸與放行，另有驗證責任。",
+    "required_files_present": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "brief": "C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-029/fdn-output-r02.md",
+    "objective": "把墊圈缺口的可疑提示、回原圖檢查、尺度校正與人員處置分清。",
+    "page_type": "C — 追蹤輸入、方法、證據及行動。",
+    "node_count": 4,
+    "reference": "teaching-images/vision-ai-model-selection/course-delivery/section-pages/01-geometry-alignment-measurement/images/final/GEO-02-common-contract_v01.png",
+    "takeaway": "#FFF4CC：模型提示要對回原圖；尺寸與放行，另有驗證責任。",
+    "required_files_present": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "brief": "C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-029/fdn-visible-r01.md",
+    "objective": "同一墊圈右緣缺口在不同取像條件下是否仍可見，決定先改取像或評估模型。",
+    "page_type": "D — 比較條件與行動差異。",
+    "node_count": 4,
+    "reference": "teaching-images/vision-ai-model-selection/course-delivery/section-pages/01-geometry-alignment-measurement/images/final/GEO-02-common-contract_v01.png",
+    "takeaway": "#FFF4CC：原始影像看不清楚，先改善取像，再比較模型。",
+    "required_files_present": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "brief": "C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-029/fdn-visible-r02.md",
+    "objective": "同一墊圈由失焦到重新對焦取像，保留右緣缺口來源。",
+    "page_type": "D — 對比失焦及重新取像。",
+    "node_count": 4,
+    "reference": "teaching-images/vision-ai-model-selection/course-delivery/section-pages/01-geometry-alignment-measurement/images/final/GEO-02-common-contract_v01.png",
+    "takeaway": "#FFF4CC：原始影像看不清楚，先改善取像，再比較模型。",
+    "required_files_present": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "brief": "C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-029/fdn-visible-r03.md",
+    "objective": "同一墊圈由失焦到重新對焦取像，保留右緣缺口來源。",
+    "page_type": "D — 對比失焦及重新取像。",
+    "node_count": 4,
+    "reference": "teaching-images/vision-ai-model-selection/course-delivery/section-pages/01-geometry-alignment-measurement/images/final/GEO-02-common-contract_v01.png",
+    "takeaway": "#FFF4CC：原始影像看不清楚，先改善取像，再比較模型。",
+    "required_files_present": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "brief": "C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-029/prd-return-r01.md",
+    "objective": "區分新版軟體問題與共同取像失效，選擇可用舊流程或人工確認。",
+    "page_type": "D — 比較條件與行動差異。",
+    "node_count": 4,
+    "reference": "teaching-images/vision-ai-model-selection/course-delivery/section-pages/01-geometry-alignment-measurement/images/final/GEO-02-common-contract_v01.png",
+    "takeaway": "#FFF4CC：舊模型也看不清楚時，先轉人工與改善取像，再談重新啟用。",
+    "required_files_present": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "brief": "C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-029/prd-shadow-r01.md",
+    "objective": "同件影像同時保留既有決策與新模型記錄，旁觀期間模型不控制分流。",
+    "page_type": "C — 追蹤輸入、方法、證據及行動。",
+    "node_count": 4,
+    "reference": "teaching-images/vision-ai-model-selection/course-delivery/section-pages/01-geometry-alignment-measurement/images/final/GEO-02-common-contract_v01.png",
+    "takeaway": "#FFF4CC：旁觀期間不改現場動作；先核對漏檢、誤報與完整耗時。",
+    "required_files_present": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "brief": "C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-029/prd-shadow-r02.md",
+    "objective": "同件影像同時保留既有決策與新模型記錄，旁觀期間模型不控制分流。",
+    "page_type": "C — 追蹤輸入、方法、證據及行動。",
+    "node_count": 4,
+    "reference": "teaching-images/vision-ai-model-selection/course-delivery/section-pages/01-geometry-alignment-measurement/images/final/GEO-02-common-contract_v01.png",
+    "takeaway": "#FFF4CC：旁觀期間不改現場動作；先核對漏檢、誤報與完整耗時。",
+    "required_files_present": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "brief": "C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-029/prd-test-r01.md",
+    "objective": "按實體工件隔離建置、調參與最後測試，避免同工件重拍洩漏。",
+    "page_type": "C — 追蹤輸入、方法、證據及行動。",
+    "node_count": 4,
+    "reference": "teaching-images/vision-ai-model-selection/course-delivery/section-pages/01-geometry-alignment-measurement/images/final/GEO-02-common-contract_v01.png",
+    "takeaway": "#FFF4CC：同一工件的重拍留在同一組；最後測試不拿來調門檻。",
+    "required_files_present": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "brief": "C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-029/prd-test-r02.md",
+    "objective": "按實體工件隔離建置、調參與最後測試，避免同工件重拍洩漏。",
+    "page_type": "C — 追蹤輸入、方法、證據及行動。",
+    "node_count": 4,
+    "reference": "teaching-images/vision-ai-model-selection/course-delivery/section-pages/01-geometry-alignment-measurement/images/final/GEO-02-common-contract_v01.png",
+    "takeaway": "#FFF4CC：同一工件的重拍留在同一組；最後測試不拿來調門檻。",
+    "required_files_present": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "brief": "C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-029/prd-test-r03.md",
+    "objective": "按實體工件隔離建置、調參與最後測試，避免同工件重拍洩漏。",
+    "page_type": "C — 追蹤輸入、方法、證據及行動。",
+    "node_count": 4,
+    "reference": "teaching-images/vision-ai-model-selection/course-delivery/section-pages/01-geometry-alignment-measurement/images/final/GEO-02-common-contract_v01.png",
+    "takeaway": "#FFF4CC：同一工件的重拍留在同一組；最後測試不拿來調門檻。",
+    "required_files_present": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  }
+]

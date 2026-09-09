@@ -1,0 +1,23 @@
+[
+  {
+    "id": "fdn-data",
+    "mode": "mobile",
+    "revision": "r03",
+    "target": "C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-029/fdn-data-r02-mobile.png",
+    "prompt": "Precise object correction only. Every washer labeled NORMAL must have a COMPLETELY SMOOTH, CLOSED CIRCULAR OUTER RIM without any notch, dent, gap, cut or bite. Fix all THREE overlapping NORMAL REFERENCE washers in panel2 (currently frontwasherhasnotch). Also fix the TOP NORMAL training washer in panel3 (above black mask): its right outerrim currentlyhasnotch, fill to a smooth fullcircle. Keep its black defect mask entirely black. DO NOT alter any defect/test washers: all those keep right V notch. Keep all bluevectors, arrows, labels, layout, sizes, full footer and every other objectunchanged. We are correcting mislabeled syntheticnormalexamples, not concealing measured defects. Full portrait canvas."
+  },
+  {
+    "id": "fdn-output",
+    "mode": "desktop",
+    "revision": "r02",
+    "target": "C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-029/fdn-output-r01-desktop.png",
+    "prompt": "Precise text correction in panel2 only: replace subtitle 調整影像對焦，回到原始影像核對 with 回到原始影像核對. There is no focusing operation in this image, just returning to the existing original image. Preserve all other panels, washers, identical right V notches, measurement arrow endpoints, ruler, labels and complete yellow takeaway. Keep full wide canvas."
+  },
+  {
+    "id": "fdn-output",
+    "mode": "mobile",
+    "revision": "r02",
+    "target": "C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-029/fdn-output-r01-mobile.png",
+    "prompt": "Correct two details only. Panel2 subtitle replace 調整相機對焦，回到原始影像核對 with 回到原始影像核對 (no focus change here). Panel3 enlarged notch: remove all existing blue dimension marks; redraw TWO blue endpoints exactly at the UPPER and LOWER OUTER LIPS of the V-shaped notch (right outerrim), a VERTICAL double-ended arrow between horizontal extension lines to show opening span, not a horizontal arrow cutting across random metal. Ruler should have simple clean ticks and NO tiny numbers/gibberish. No numeric measurement claim. Preserve all washer geometry, same right rimnotch, sourcecrop mapping, 4panels and entireyellowfooter. Fullportrait."
+  }
+]

@@ -1,0 +1,26 @@
+{
+  "fdn-visible": {
+    "desktop": "fdn-visible-r03-desktop.png",
+    "mobile": "fdn-visible-r01-mobile.png"
+  },
+  "fdn-data": {
+    "desktop": "fdn-data-r02-desktop.png",
+    "mobile": "fdn-data-r04-mobile.png"
+  },
+  "fdn-output": {
+    "desktop": "fdn-output-r02-desktop.png",
+    "mobile": "fdn-output-r02-mobile.png"
+  },
+  "prd-test": {
+    "desktop": "prd-test-r03-desktop.png",
+    "mobile": "prd-test-r03-mobile.png"
+  },
+  "prd-shadow": {
+    "desktop": "prd-shadow-r01-desktop.png",
+    "mobile": "prd-shadow-r02-mobile.png"
+  },
+  "prd-return": {
+    "desktop": "prd-return-r01-desktop.png",
+    "mobile": "prd-return-r01-mobile.png"
+  }
+}

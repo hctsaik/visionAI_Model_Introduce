@@ -1,0 +1,58 @@
+[
+  {
+    "route": "interactive-learning.html",
+    "view": "foundations",
+    "width": 1440,
+    "markdown_copy_matches": true,
+    "stable_image_top_clear": 3
+  },
+  {
+    "route": "interactive-learning.html",
+    "view": "foundations",
+    "width": 360,
+    "markdown_copy_matches": true,
+    "stable_image_top_clear": 3
+  },
+  {
+    "route": "interactive-learning.html",
+    "view": "production",
+    "width": 1440,
+    "markdown_copy_matches": true,
+    "stable_image_top_clear": 3
+  },
+  {
+    "route": "interactive-learning.html",
+    "view": "production",
+    "width": 360,
+    "markdown_copy_matches": true,
+    "stable_image_top_clear": 3
+  },
+  {
+    "route": "docs/index.html",
+    "view": "foundations",
+    "width": 1440,
+    "markdown_copy_matches": true,
+    "stable_image_top_clear": 3
+  },
+  {
+    "route": "docs/index.html",
+    "view": "foundations",
+    "width": 360,
+    "markdown_copy_matches": true,
+    "stable_image_top_clear": 3
+  },
+  {
+    "route": "docs/index.html",
+    "view": "production",
+    "width": 1440,
+    "markdown_copy_matches": true,
+    "stable_image_top_clear": 3
+  },
+  {
+    "route": "docs/index.html",
+    "view": "production",
+    "width": 360,
+    "markdown_copy_matches": true,
+    "stable_image_top_clear": 3
+  }
+]
