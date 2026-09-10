@@ -1,0 +1,16 @@
+{
+  "changed_topics": [
+    "frame-difference",
+    "background-subtraction",
+    "lucas-kanade",
+    "raft",
+    "bytetrack",
+    "convlstm",
+    "videomae",
+    "v-jepa"
+  ],
+  "unchanged_topics": 50,
+  "charuco_payload_unchanged": true,
+  "baseline_commit": "9a5c147",
+  "content_commit": "ca72546"
+}

@@ -1,0 +1,187 @@
+{
+  "commit": "ca7254653d5f025617fff1885132063328adf67a",
+  "url": "https://hctsaik.github.io/visionAI_Model_Introduce/",
+  "html_matches": true,
+  "png_checks": [
+    {
+      "path": "_course_content/generated-concepts/background-subtraction/wi028-bg-c1-r01-desktop.png",
+      "status": 200,
+      "sha256": "753161ee886be5b912d06d6df3c0eb39a173df0f2d3971db785e6881789c44f9"
+    },
+    {
+      "path": "_course_content/generated-concepts/background-subtraction/wi028-bg-c1-r01-mobile.png",
+      "status": 200,
+      "sha256": "9dc425e871cddbb0787b0a11cea9e0b0338a6241b9c0be7f9a8ed87980836ec4"
+    },
+    {
+      "path": "_course_content/generated-concepts/background-subtraction/wi028-bg-d2-r01-desktop.png",
+      "status": 200,
+      "sha256": "59eb2fa7b691acc5bda1d6f0a484eeef90ee2286e3e212aff4ce1034724f1c3b"
+    },
+    {
+      "path": "_course_content/generated-concepts/background-subtraction/wi028-bg-d2-r01-mobile.png",
+      "status": 200,
+      "sha256": "08da87e318cb80d42d73898508ffe55cc03e2826d8d91f3cd7ad70b74c27f3ac"
+    },
+    {
+      "path": "_course_content/generated-concepts/bytetrack/wi028-byte-c1-r02-desktop.png",
+      "status": 200,
+      "sha256": "94a7c84d0eb8cb07040b4d31b223eeb4dcee0e80556e0c2a420272a9efe18a8a"
+    },
+    {
+      "path": "_course_content/generated-concepts/bytetrack/wi028-byte-c1-r03-mobile.png",
+      "status": 200,
+      "sha256": "e9ebc32a02b8136584917e3f0f8bd22ce7c01554423f9f727a5ff4441477f74a"
+    },
+    {
+      "path": "_course_content/generated-concepts/bytetrack/wi028-byte-d2-r01-desktop.png",
+      "status": 200,
+      "sha256": "16d04b7a53cb36ee9d425cad455306a6dd0aaad6c2f080d048e98e1c00ad31ce"
+    },
+    {
+      "path": "_course_content/generated-concepts/bytetrack/wi028-byte-d2-r01-mobile.png",
+      "status": 200,
+      "sha256": "799f2cebb770c03d88806c571cbd07a942d3df16019e89f3de7d513945a37360"
+    },
+    {
+      "path": "_course_content/generated-concepts/bytetrack/wi028-track-d3-r01-desktop.png",
+      "status": 200,
+      "sha256": "4091ab72b4a7a2d743d71871cd01827239bb333087e01813a3950c867038414c"
+    },
+    {
+      "path": "_course_content/generated-concepts/bytetrack/wi028-track-d3-r02-mobile.png",
+      "status": 200,
+      "sha256": "3fc1fcd20b35caa078cc94b9e7ed32127d5676a8586edc54f4be03ed24347a6e"
+    },
+    {
+      "path": "_course_content/generated-concepts/convlstm/wi028-conv-c1-r01-desktop.png",
+      "status": 200,
+      "sha256": "a3bc878924a39fbadfa0ef7f93d306cefb403d76b494b1268d3151ba9ac2392e"
+    },
+    {
+      "path": "_course_content/generated-concepts/convlstm/wi028-conv-c1-r01-mobile.png",
+      "status": 200,
+      "sha256": "7c3f8692977ddb62fdf4e6834d461e942c1011cc110188c739af00c47cabf087"
+    },
+    {
+      "path": "_course_content/generated-concepts/convlstm/wi028-conv-d2-r01-desktop.png",
+      "status": 200,
+      "sha256": "0b38a73f5108687ea3bf9cf48b3346b120b59907efc0f0208fd79f53701be9a3"
+    },
+    {
+      "path": "_course_content/generated-concepts/convlstm/wi028-conv-d2-r01-mobile.png",
+      "status": 200,
+      "sha256": "38476414bc9305d148b3e75821777c8e71b44703a59e2c513b1b7988ddaf7d3b"
+    },
+    {
+      "path": "_course_content/generated-concepts/convlstm/wi028-video-d3-r02-desktop.png",
+      "status": 200,
+      "sha256": "dfa827840e1e26fb21ab641bddb7c4ff17576610c24dbb7a08bd7a7939c939c3"
+    },
+    {
+      "path": "_course_content/generated-concepts/convlstm/wi028-video-d3-r02-mobile.png",
+      "status": 200,
+      "sha256": "410d1219d2f877283173afdce1d15760ea626e21ae4878b76bd55f0c1f175df5"
+    },
+    {
+      "path": "_course_content/generated-concepts/frame-difference/wi028-change-d3-r02-desktop.png",
+      "status": 200,
+      "sha256": "c29daf8a025c695fe0d4e8cfc0937fffa80a745452554f3b0ba952d344a560ea"
+    },
+    {
+      "path": "_course_content/generated-concepts/frame-difference/wi028-change-d3-r03-mobile.png",
+      "status": 200,
+      "sha256": "4871d2649252eccb6845864b238508972dae6730083f572b8949bd74227d3c5d"
+    },
+    {
+      "path": "_course_content/generated-concepts/frame-difference/wi028-frame-c1-r02-desktop.png",
+      "status": 200,
+      "sha256": "1c57ad4d7c778836bcdc4963b279ab60223ef2282683d1bebae2da18f93ac646"
+    },
+    {
+      "path": "_course_content/generated-concepts/frame-difference/wi028-frame-c1-r02-mobile.png",
+      "status": 200,
+      "sha256": "9b9aadb26244fbd7d046c9156d4751d87c43ffe9c69531b75b7399dc2a0e46ac"
+    },
+    {
+      "path": "_course_content/generated-concepts/frame-difference/wi028-frame-d2-r01-desktop.png",
+      "status": 200,
+      "sha256": "a4654638e7c84769fa9dfe325f6a542942b97761f6ce5adca0e1db7a6a05298d"
+    },
+    {
+      "path": "_course_content/generated-concepts/frame-difference/wi028-frame-d2-r01-mobile.png",
+      "status": 200,
+      "sha256": "5bfc622032eac8c67685c7819876f5383c7298c668e1ddb5b822a27b2193e36d"
+    },
+    {
+      "path": "_course_content/generated-concepts/lucas-kanade/wi028-flow-d2-r03-desktop.png",
+      "status": 200,
+      "sha256": "cae83ca570d6f86c4103c4e9a7e4ff0e61b9b55f18d48a47f27781c7a2cd87dd"
+    },
+    {
+      "path": "_course_content/generated-concepts/lucas-kanade/wi028-flow-d2-r03-mobile.png",
+      "status": 200,
+      "sha256": "bb27ec22d5e7f8fa796e50f47df823518e5b5b487ce2359ef09c8decd42f63ac"
+    },
+    {
+      "path": "_course_content/generated-concepts/lucas-kanade/wi028-flow-d3-r01-desktop.png",
+      "status": 200,
+      "sha256": "fbd02d803658dd4200d35dc6a6a888cf4eab37cd27bc56b3a7d265dc0a659e98"
+    },
+    {
+      "path": "_course_content/generated-concepts/lucas-kanade/wi028-flow-d3-r01-mobile.png",
+      "status": 200,
+      "sha256": "2e01d29715e1a93faa4d069f15dc140f8a6d3d747f705785844f94eaa66d2635"
+    },
+    {
+      "path": "_course_content/generated-concepts/lucas-kanade/wi028-lk-c1-r02-desktop.png",
+      "status": 200,
+      "sha256": "8bfc8f5d76b7fe49b0ac00e369d62485957084b50190289260849be1ee1dd21b"
+    },
+    {
+      "path": "_course_content/generated-concepts/lucas-kanade/wi028-lk-c1-r03-mobile.png",
+      "status": 200,
+      "sha256": "f997f89684c77db8e600d782e44e71010a940bd2eab70f15c88bcae7df400e5b"
+    },
+    {
+      "path": "_course_content/generated-concepts/raft/wi028-raft-c1-r01-desktop.png",
+      "status": 200,
+      "sha256": "2849d0a0b95ff36df972a50cf9d50bb88c9e3e49eacb93235a961f4a689a05c3"
+    },
+    {
+      "path": "_course_content/generated-concepts/raft/wi028-raft-c1-r01-mobile.png",
+      "status": 200,
+      "sha256": "2e1870722dab6a40e761ea7c380aee04affb78ec4438e523de30113c5079ad2d"
+    },
+    {
+      "path": "_course_content/generated-concepts/v-jepa/wi028-jepa-c1-r02-desktop.png",
+      "status": 200,
+      "sha256": "16479abe145492d839e78e87bab209ae74c78a93c762c50b3a8960dd094965cb"
+    },
+    {
+      "path": "_course_content/generated-concepts/v-jepa/wi028-jepa-c1-r02-mobile.png",
+      "status": 200,
+      "sha256": "820f25110a0875287541cf2f967b04b907c65e38042f8e438ddee144d7d9d416"
+    },
+    {
+      "path": "_course_content/generated-concepts/videomae/wi028-mae-c1-r02-desktop.png",
+      "status": 200,
+      "sha256": "2961a1c8314af84f37b0fea873d6750208ea1bb51000266c8a4aab69c13a8157"
+    },
+    {
+      "path": "_course_content/generated-concepts/videomae/wi028-mae-c1-r05-mobile.png",
+      "status": 200,
+      "sha256": "49f40fe49ee71177fa67da1e5b0ba2157e4766e07bd6d4458aad39bf81e3e29c"
+    },
+    {
+      "path": "_course_content/generated-concepts/videomae/wi028-video-d2-r01-desktop.png",
+      "status": 200,
+      "sha256": "8eb9ac44384a45b9e3ef0361c0168cc578dc4a35ce3e8334266cbbefc9758990"
+    },
+    {
+      "path": "_course_content/generated-concepts/videomae/wi028-video-d2-r01-mobile.png",
+      "status": 200,
+      "sha256": "47dfbd9913e9c8e8d8cae39b4445f4f0081e66218b440aed90d28c3d21e83148"
+    }
+  ]
+}

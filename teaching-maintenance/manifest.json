@@ -9,7 +9,7 @@
     {
       "snapshot": "project/TEACHING_REVIEW_LOG.md",
       "source": "C:\\code\\claude\\visionAI\\TEACHING_REVIEW_LOG.md",
-      "sha256": "993c8e40c48440ec33a7b531a9836433140a16ce31fee02b20a63323000f2e57"
+      "sha256": "3bea91cede8b610c35d70b3f050769932b4f0ff22288c2e5d5d1da2b65b92df9"
     },
     {
       "snapshot": "project/TEACHING_SCORING_RUBRIC.md",
@@ -829,7 +829,7 @@
     {
       "snapshot": "workitems/wi-028/PLAN.md",
       "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-028\\PLAN.md",
-      "sha256": "60c055c708f47ddcbc65c9ea6f0fb2c609d338ee8779574164c39bf8a4ed9053"
+      "sha256": "cd8dd4ce01fb475e0d5186d820fdeb7a2dcf5e1291be2a773354ec124bf0ea24"
     },
     {
       "snapshot": "workitems/wi-028/prototype-review.md",
@@ -1209,17 +1209,17 @@
     {
       "snapshot": "workitems/wi-028/WORKITEMS.md",
       "source": "C:\\code\\claude\\visionAI\\WORKITEMS.md",
-      "sha256": "ca18c9a8ba4b124478cfe6c06adc9949d0fdba57f7f82a50c48e860f9461c5ee"
+      "sha256": "ec0d017a435f34173010a49b48c4c6e11158819ef406254238528b440cf99763"
     },
     {
       "snapshot": "workitems/wi-028/BEGINNER_VISUAL_TODO.md",
       "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\BEGINNER_VISUAL_TODO.md",
-      "sha256": "772f7cc4c1633ec1f54a4f550a8e03efd0e29da4e75b9841806872ec2acf14a4"
+      "sha256": "b03d163959c5260843d867d4cf691e94bcf8d10de113e7671c70d91964b8dd27"
     },
     {
       "snapshot": "workitems/wi-028/BEGINNER_VISUAL_STATUS.md",
       "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\BEGINNER_VISUAL_STATUS.md",
-      "sha256": "f4c81907dabb64d73f29f577fce6c3b1fb8d47c7bbd1aa0874a3f54c8a9358d1"
+      "sha256": "ab3cc2c5c237beac5ff8b74243898ffee17647d47e9b9d72b5acdd0905eff7b8"
     },
     {
       "snapshot": "workitems/wi-028/authoring/_course_content/topics/frame-difference.json",
@@ -1455,6 +1455,26 @@
       "snapshot": "workitems/wi-028/prototype-exact-prompts.json",
       "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-028\\prototype-exact-prompts.json",
       "sha256": "1033b062da9f5f48785e92cf458816a8ef9f24b83ce368fd4e1fe51afe286fe6"
+    },
+    {
+      "snapshot": "workitems/wi-028/public-release-verification.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-028\\public-release-verification.json",
+      "sha256": "ab3a152e826877301376b9d93af206708c3b08f4c5d35069a15624edface7f3a"
+    },
+    {
+      "snapshot": "workitems/wi-028/scope-verification.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-028\\scope-verification.json",
+      "sha256": "764ad587f72995477f69d0d40d3e83ef8acf3084805d15c299b82a207de11050"
+    },
+    {
+      "snapshot": "workitems/wi-028/authoring/workitems/wi-028/complete.py",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-028\\complete.py",
+      "sha256": "37c0cebe77a249de5550a00e4fc0b9bede6114c9aaa78a948b03655f23150055"
+    },
+    {
+      "snapshot": "workitems/wi-028/authoring/workitems/wi-028/verify_scope.py",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-028\\verify_scope.py",
+      "sha256": "72535b4d17990bd048e04b137459e6d342975f787ce89bb700a3f765a90b8295"
     }
   ]
 }
