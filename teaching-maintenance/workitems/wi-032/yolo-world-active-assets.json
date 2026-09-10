@@ -1,0 +1,86 @@
+[
+  {
+    "id": "world-core",
+    "mode": "desktop",
+    "image": "_course_content/generated-concepts/yolo-world/wi032-world-core-r01-desktop.png",
+    "size": [
+      1672,
+      941
+    ],
+    "sha256": "9eff4ccc8083c901eccaf352fa3ff77aeed3611f57cdc30ab7e68197203fd47a",
+    "generation": "built-in imagegen",
+    "evidence": "illustrative, not model inference",
+    "user_review": "pending",
+    "page_review": "self-reviewed; interaction checks passed"
+  },
+  {
+    "id": "world-core",
+    "mode": "mobile",
+    "image": "_course_content/generated-concepts/yolo-world/wi032-world-core-r02-mobile.png",
+    "size": [
+      1024,
+      1536
+    ],
+    "sha256": "9f2e69509108dafa50307493d151c6b74cbbbcae3afa33abd766f6916e79bb61",
+    "generation": "built-in imagegen",
+    "evidence": "illustrative, not model inference",
+    "user_review": "pending",
+    "page_review": "self-reviewed; interaction checks passed"
+  },
+  {
+    "id": "world-failure",
+    "mode": "desktop",
+    "image": "_course_content/generated-concepts/yolo-world/wi032-world-failure-r03-desktop.png",
+    "size": [
+      1672,
+      941
+    ],
+    "sha256": "cf7e236d51dfe4bb0e3a8ec6920346136d288bfd19ce4669edc4cec37c5b3b11",
+    "generation": "built-in imagegen",
+    "evidence": "illustrative, not model inference",
+    "user_review": "pending",
+    "page_review": "self-reviewed; interaction checks passed"
+  },
+  {
+    "id": "world-failure",
+    "mode": "mobile",
+    "image": "_course_content/generated-concepts/yolo-world/wi032-world-failure-r03-mobile.png",
+    "size": [
+      1024,
+      1536
+    ],
+    "sha256": "89ab0e8455fafd29cdf547d71b2eecb740306cceb2efa1fc94d9e6bca96600fb",
+    "generation": "built-in imagegen",
+    "evidence": "illustrative, not model inference",
+    "user_review": "pending",
+    "page_review": "self-reviewed; interaction checks passed"
+  },
+  {
+    "id": "detector-compare",
+    "mode": "desktop",
+    "image": "_course_content/generated-concepts/det-dino-detector/wi032-detector-compare-r01-desktop.png",
+    "size": [
+      1672,
+      941
+    ],
+    "sha256": "3578ba3370635cf640fe13c4677d024ffc18065a0ac4413787c50904b14e7ea3",
+    "generation": "built-in imagegen",
+    "evidence": "illustrative, not model inference",
+    "user_review": "pending",
+    "page_review": "self-reviewed; interaction checks passed"
+  },
+  {
+    "id": "detector-compare",
+    "mode": "mobile",
+    "image": "_course_content/generated-concepts/det-dino-detector/wi032-detector-compare-r02-mobile.png",
+    "size": [
+      1024,
+      1536
+    ],
+    "sha256": "7519591799fa36ae21d4640d66efb1af292685d71985e8d784640fd318aa37e6",
+    "generation": "built-in imagegen",
+    "evidence": "illustrative, not model inference",
+    "user_review": "pending",
+    "page_review": "self-reviewed; interaction checks passed"
+  }
+]

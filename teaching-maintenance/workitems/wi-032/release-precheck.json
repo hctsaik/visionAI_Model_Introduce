@@ -1,0 +1,9 @@
+{
+  "html_sha256": "e4f657377bf9eeac2b7b0b857df46915acf72a699adf91147ccfaa786aac2ac2",
+  "unused_candidates_preserved_outside_docs": [
+    "docs/roadmap-model-selection/detector/yolo-world/images/final/WI032-YOLOWORLD-03-r04-desktop.png",
+    "docs/roadmap-model-selection/detector/yolo-world/images/final/WI032-YOLOWORLD-03-r04-mobile.png",
+    "docs/roadmap-model-selection/geometry-alignment-measurement/sift/images/final/WI032-SIFT-01-r04-desktop.png",
+    "docs/roadmap-model-selection/geometry-alignment-measurement/sift/images/final/WI032-SIFT-01-r04-mobile.png"
+  ]
+}

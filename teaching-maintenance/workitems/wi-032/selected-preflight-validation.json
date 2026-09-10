@@ -1,0 +1,230 @@
+[
+  {
+    "brief": "charuco-core-r05.md",
+    "returncode": 0,
+    "output": "{\n  \"brief\": \"C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-032/charuco-core-r05.md\",\n  \"objective\": \"同一標靶角點跨視角有固定身份，才能由已知板上位置與影像位置估相機內參及畸變，再用重投影核對。\",\n  \"page_type\": \"C — 已知目標、跨視角對應、參數與驗證。\",\n  \"node_count\": 3,\n  \"reference\": \"teaching-images/vision-ai-model-selection/course-delivery/section-pages/01-geometry-alignment-measurement/images/final/GEO-02-common-contract_v01.png\",\n  \"takeaway\": \"#FFF4CC：已知角點跨視角對應，才能建立可核對的相機幾何。\",\n  \"required_files_present\": [\n    true,\n    true,\n    true,\n    true,\n    true\n  ]\n}",
+    "error": ""
+  },
+  {
+    "brief": "charuco-engineering-1-r04.md",
+    "returncode": 0,
+    "output": "{\n  \"brief\": \"C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-032/charuco-engineering-1-r04.md\",\n  \"objective\": \"建立的是相機幾何，不是每天工件的定位結果。\",\n  \"page_type\": \"C\",\n  \"node_count\": 3,\n  \"reference\": \"teaching-images/vision-ai-model-selection/course-delivery/section-pages/01-geometry-alignment-measurement/images/final/GEO-21-alignment-to-measurement_v01.png\",\n  \"takeaway\": \"#FFF4CC：建立的是相機幾何，不是每天工件的定位結果。\",\n  \"required_files_present\": [\n    true,\n    true,\n    true,\n    true,\n    true\n  ]\n}",
+    "error": ""
+  },
+  {
+    "brief": "charuco-engineering-2-r04.md",
+    "returncode": 0,
+    "output": "{\n  \"brief\": \"C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-032/charuco-engineering-2-r04.md\",\n  \"objective\": \"ID解決身份，棋盤角點提供精細影像位置。\",\n  \"page_type\": \"C\",\n  \"node_count\": 3,\n  \"reference\": \"teaching-images/vision-ai-model-selection/course-delivery/section-pages/01-geometry-alignment-measurement/images/final/GEO-21-alignment-to-measurement_v01.png\",\n  \"takeaway\": \"#FFF4CC：ID解決身份，棋盤角點提供精細影像位置。\",\n  \"required_files_present\": [\n    true,\n    true,\n    true,\n    true,\n    true\n  ]\n}",
+    "error": ""
+  },
+  {
+    "brief": "charuco-engineering-3-r04.md",
+    "returncode": 0,
+    "output": "{\n  \"brief\": \"C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-032/charuco-engineering-3-r04.md\",\n  \"objective\": \"姿態、相機校正與工站轉換，是不同的交付。\",\n  \"page_type\": \"C\",\n  \"node_count\": 3,\n  \"reference\": \"teaching-images/vision-ai-model-selection/course-delivery/section-pages/01-geometry-alignment-measurement/images/final/GEO-21-alignment-to-measurement_v01.png\",\n  \"takeaway\": \"#FFF4CC：姿態、相機校正與工站轉換，是不同的交付。\",\n  \"required_files_present\": [\n    true,\n    true,\n    true,\n    true,\n    true\n  ]\n}",
+    "error": ""
+  },
+  {
+    "brief": "charuco-engineering-4-r04.md",
+    "returncode": 0,
+    "output": "{\n  \"brief\": \"C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-032/charuco-engineering-4-r04.md\",\n  \"objective\": \"把參數與取像條件綁定，改條件就重新核對。\",\n  \"page_type\": \"D\",\n  \"node_count\": 3,\n  \"reference\": \"teaching-images/vision-ai-model-selection/course-delivery/section-pages/01-geometry-alignment-measurement/images/final/GEO-21-alignment-to-measurement_v01.png\",\n  \"takeaway\": \"#FFF4CC：把參數與取像條件綁定，改條件就重新核對。\",\n  \"required_files_present\": [\n    true,\n    true,\n    true,\n    true,\n    true\n  ]\n}",
+    "error": ""
+  },
+  {
+    "brief": "charuco-failure-native-r05.md",
+    "returncode": 0,
+    "output": "{\n  \"brief\": \"C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-032/charuco-failure-native-r05.md\",\n  \"objective\": \"校正要涵蓋位置與傾角；再用獨立視角查邊角誤差。\",\n  \"page_type\": \"D — 以具體機制或同條件對照說明工作選擇。\",\n  \"node_count\": 3,\n  \"reference\": \"teaching-images/vision-ai-model-selection/course-delivery/section-pages/01-geometry-alignment-measurement/images/final/GEO-02-common-contract_v01.png\",\n  \"takeaway\": \"#FFF4CC：校正要涵蓋位置與傾角；再用獨立視角查邊角誤差。\",\n  \"required_files_present\": [\n    true,\n    true,\n    true,\n    true,\n    true\n  ]\n}",
+    "error": ""
+  },
+  {
+    "brief": "det-dino-detector-engineering-1-r04.md",
+    "returncode": 0,
+    "output": "{\n  \"brief\": \"C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-032/det-dino-detector-engineering-1-r04.md\",\n  \"objective\": \"DINO detector是偵測器，不是DINOv2特徵骨幹。\",\n  \"page_type\": \"C\",\n  \"node_count\": 3,\n  \"reference\": \"teaching-images/vision-ai-model-selection/course-delivery/section-pages/01-geometry-alignment-measurement/images/final/GEO-21-alignment-to-measurement_v01.png\",\n  \"takeaway\": \"#FFF4CC：DINO detector是偵測器，不是DINOv2特徵骨幹。\",\n  \"required_files_present\": [\n    true,\n    true,\n    true,\n    true,\n    true\n  ]\n}",
+    "error": ""
+  },
+  {
+    "brief": "det-dino-detector-engineering-2-r04.md",
+    "returncode": 0,
+    "output": "{\n  \"brief\": \"C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-032/det-dino-detector-engineering-2-r04.md\",\n  \"objective\": \"推論起點來自影像，不是人工真值框。\",\n  \"page_type\": \"C\",\n  \"node_count\": 3,\n  \"reference\": \"teaching-images/vision-ai-model-selection/course-delivery/section-pages/01-geometry-alignment-measurement/images/final/GEO-21-alignment-to-measurement_v01.png\",\n  \"takeaway\": \"#FFF4CC：推論起點來自影像，不是人工真值框。\",\n  \"required_files_present\": [\n    true,\n    true,\n    true,\n    true,\n    true\n  ]\n}",
+    "error": ""
+  },
+  {
+    "brief": "det-dino-detector-engineering-3-r04.md",
+    "returncode": 0,
+    "output": "{\n  \"brief\": \"C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-032/det-dino-detector-engineering-3-r04.md\",\n  \"objective\": \"帶噪查詢是訓練輔助，正式推論不用真值。\",\n  \"page_type\": \"C\",\n  \"node_count\": 3,\n  \"reference\": \"teaching-images/vision-ai-model-selection/course-delivery/section-pages/01-geometry-alignment-measurement/images/final/GEO-21-alignment-to-measurement_v01.png\",\n  \"takeaway\": \"#FFF4CC：帶噪查詢是訓練輔助，正式推論不用真值。\",\n  \"required_files_present\": [\n    true,\n    true,\n    true,\n    true,\n    true\n  ]\n}",
+    "error": ""
+  },
+  {
+    "brief": "det-dino-detector-engineering-4-r04.md",
+    "returncode": 0,
+    "output": "{\n  \"brief\": \"C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-032/det-dino-detector-engineering-4-r04.md\",\n  \"objective\": \"按類別變更與資料成本選方法，不按模型新舊。\",\n  \"page_type\": \"D\",\n  \"node_count\": 3,\n  \"reference\": \"teaching-images/vision-ai-model-selection/course-delivery/section-pages/01-geometry-alignment-measurement/images/final/GEO-21-alignment-to-measurement_v01.png\",\n  \"takeaway\": \"#FFF4CC：按類別變更與資料成本選方法，不按模型新舊。\",\n  \"required_files_present\": [\n    true,\n    true,\n    true,\n    true,\n    true\n  ]\n}",
+    "error": ""
+  },
+  {
+    "brief": "detector-compare-r01.md",
+    "returncode": 0,
+    "output": "{\n  \"brief\": \"C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-032/detector-compare-r01.md\",\n  \"objective\": \"用類別與資料維護需求選候選，再以同批影像比較。\",\n  \"page_type\": \"D — 以具體機制或同條件對照說明工作選擇。\",\n  \"node_count\": 3,\n  \"reference\": \"teaching-images/vision-ai-model-selection/course-delivery/section-pages/01-geometry-alignment-measurement/images/final/GEO-02-common-contract_v01.png\",\n  \"takeaway\": \"#FFF4CC：用類別與資料維護需求選候選，再以同批影像比較。\",\n  \"required_files_present\": [\n    true,\n    true,\n    true,\n    true,\n    true\n  ]\n}",
+    "error": ""
+  },
+  {
+    "brief": "dino-core-r01.md",
+    "returncode": 0,
+    "output": "{\n  \"brief\": \"C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-032/dino-core-r01.md\",\n  \"objective\": \"帶噪真值只幫助訓練；正式出框時沒有真值可偷看。\",\n  \"page_type\": \"C — 以具體機制或同條件對照說明工作選擇。\",\n  \"node_count\": 3,\n  \"reference\": \"teaching-images/vision-ai-model-selection/course-delivery/section-pages/01-geometry-alignment-measurement/images/final/GEO-02-common-contract_v01.png\",\n  \"takeaway\": \"#FFF4CC：帶噪真值只幫助訓練；正式出框時沒有真值可偷看。\",\n  \"required_files_present\": [\n    true,\n    true,\n    true,\n    true,\n    true\n  ]\n}",
+    "error": ""
+  },
+  {
+    "brief": "dino-failure-r01.md",
+    "returncode": 0,
+    "output": "{\n  \"brief\": \"C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-032/dino-failure-r01.md\",\n  \"objective\": \"去噪訓練改善學習訊號；現場遮擋與漏檢仍要實測。\",\n  \"page_type\": \"D — 以具體機制或同條件對照說明工作選擇。\",\n  \"node_count\": 3,\n  \"reference\": \"teaching-images/vision-ai-model-selection/course-delivery/section-pages/01-geometry-alignment-measurement/images/final/GEO-02-common-contract_v01.png\",\n  \"takeaway\": \"#FFF4CC：去噪訓練改善學習訊號；現場遮擋與漏檢仍要實測。\",\n  \"required_files_present\": [\n    true,\n    true,\n    true,\n    true,\n    true\n  ]\n}",
+    "error": ""
+  },
+  {
+    "brief": "ecc-core-r01.md",
+    "returncode": 0,
+    "output": "{\n  \"brief\": \"C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-032/ecc-core-r01.md\",\n  \"objective\": \"ECC反覆比較外觀相關並更新幾何變換，把已接近的兩張圖對齊；輸出變換，不判定缺陷。\",\n  \"page_type\": \"C — 以同一金屬支架的偏移、取樣比較、更新與交付呈現機制。\",\n  \"node_count\": 3,\n  \"reference\": \"teaching-images/vision-ai-model-selection/course-delivery/section-pages/01-geometry-alignment-measurement/images/final/GEO-02-common-contract_v01.png\",\n  \"takeaway\": \"#FFF4CC：ECC把已接近的影像微調對齊；缺陷仍要另外檢查。\",\n  \"required_files_present\": [\n    true,\n    true,\n    true,\n    true,\n    true\n  ]\n}",
+    "error": ""
+  },
+  {
+    "brief": "ecc-engineering-1-r04.md",
+    "returncode": 0,
+    "output": "{\n  \"brief\": \"C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-032/ecc-engineering-1-r04.md\",\n  \"objective\": \"相關值不是缺陷標記，也不是獨立定位誤差。\",\n  \"page_type\": \"C\",\n  \"node_count\": 3,\n  \"reference\": \"teaching-images/vision-ai-model-selection/course-delivery/section-pages/01-geometry-alignment-measurement/images/final/GEO-21-alignment-to-measurement_v01.png\",\n  \"takeaway\": \"#FFF4CC：相關值不是缺陷標記，也不是獨立定位誤差。\",\n  \"required_files_present\": [\n    true,\n    true,\n    true,\n    true,\n    true\n  ]\n}",
+    "error": ""
+  },
+  {
+    "brief": "ecc-engineering-2-r04.md",
+    "returncode": 0,
+    "output": "{\n  \"brief\": \"C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-032/ecc-engineering-2-r04.md\",\n  \"objective\": \"靠密集外觀更新幾何，不靠逐點描述子。\",\n  \"page_type\": \"C\",\n  \"node_count\": 3,\n  \"reference\": \"teaching-images/vision-ai-model-selection/course-delivery/section-pages/01-geometry-alignment-measurement/images/final/GEO-21-alignment-to-measurement_v01.png\",\n  \"takeaway\": \"#FFF4CC：靠密集外觀更新幾何，不靠逐點描述子。\",\n  \"required_files_present\": [\n    true,\n    true,\n    true,\n    true,\n    true\n  ]\n}",
+    "error": ""
+  },
+  {
+    "brief": "ecc-engineering-3-r04.md",
+    "returncode": 0,
+    "output": "{\n  \"brief\": \"C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-032/ecc-engineering-3-r04.md\",\n  \"objective\": \"先寫清楚映射方向，再決定反矩陣與取樣設定。\",\n  \"page_type\": \"C\",\n  \"node_count\": 3,\n  \"reference\": \"teaching-images/vision-ai-model-selection/course-delivery/section-pages/01-geometry-alignment-measurement/images/final/GEO-21-alignment-to-measurement_v01.png\",\n  \"takeaway\": \"#FFF4CC：先寫清楚映射方向，再決定反矩陣與取樣設定。\",\n  \"required_files_present\": [\n    true,\n    true,\n    true,\n    true,\n    true\n  ]\n}",
+    "error": ""
+  },
+  {
+    "brief": "ecc-engineering-4-r04.md",
+    "returncode": 0,
+    "output": "{\n  \"brief\": \"C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-032/ecc-engineering-4-r04.md\",\n  \"objective\": \"用獨立幾何與完整失敗成本決定是否採用。\",\n  \"page_type\": \"D\",\n  \"node_count\": 3,\n  \"reference\": \"teaching-images/vision-ai-model-selection/course-delivery/section-pages/01-geometry-alignment-measurement/images/final/GEO-21-alignment-to-measurement_v01.png\",\n  \"takeaway\": \"#FFF4CC：用獨立幾何與完整失敗成本決定是否採用。\",\n  \"required_files_present\": [\n    true,\n    true,\n    true,\n    true,\n    true\n  ]\n}",
+    "error": ""
+  },
+  {
+    "brief": "ecc-failure-native-r05.md",
+    "returncode": 0,
+    "output": "{\n  \"brief\": \"C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-032/ecc-failure-native-r05.md\",\n  \"objective\": \"ECC需要合理起點；對不上就先找粗定位。\",\n  \"page_type\": \"D — 以具體機制或同條件對照說明工作選擇。\",\n  \"node_count\": 3,\n  \"reference\": \"teaching-images/vision-ai-model-selection/course-delivery/section-pages/01-geometry-alignment-measurement/images/final/GEO-02-common-contract_v01.png\",\n  \"takeaway\": \"#FFF4CC：ECC需要合理起點；對不上就先找粗定位。\",\n  \"required_files_present\": [\n    true,\n    true,\n    true,\n    true,\n    true\n  ]\n}",
+    "error": ""
+  },
+  {
+    "brief": "geometry-compare-native-r05.md",
+    "returncode": 0,
+    "output": "{\n  \"brief\": \"C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-032/geometry-compare-native-r05.md\",\n  \"objective\": \"先分清校正、找對應與微調，再安排自己的定位流程。\",\n  \"page_type\": \"D — 以具體機制或同條件對照說明工作選擇。\",\n  \"node_count\": 3,\n  \"reference\": \"teaching-images/vision-ai-model-selection/course-delivery/section-pages/01-geometry-alignment-measurement/images/final/GEO-02-common-contract_v01.png\",\n  \"takeaway\": \"#FFF4CC：先分清校正、找對應與微調，再安排自己的定位流程。\",\n  \"required_files_present\": [\n    true,\n    true,\n    true,\n    true,\n    true\n  ]\n}",
+    "error": ""
+  },
+  {
+    "brief": "lightglue-core-native-r05.md",
+    "returncode": 0,
+    "output": "{\n  \"brief\": \"C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-032/lightglue-core-native-r05.md\",\n  \"objective\": \"LightGlue學的是配對；找點與求變換仍各有負責者。\",\n  \"page_type\": \"C — 以具體機制或同條件對照說明工作選擇。\",\n  \"node_count\": 3,\n  \"reference\": \"teaching-images/vision-ai-model-selection/course-delivery/section-pages/01-geometry-alignment-measurement/images/final/GEO-02-common-contract_v01.png\",\n  \"takeaway\": \"#FFF4CC：LightGlue學的是配對；找點與求變換仍各有負責者。\",\n  \"required_files_present\": [\n    true,\n    true,\n    true,\n    true,\n    true\n  ]\n}",
+    "error": ""
+  },
+  {
+    "brief": "lightglue-engineering-1-r04.md",
+    "returncode": 0,
+    "output": "{\n  \"brief\": \"C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-032/lightglue-engineering-1-r04.md\",\n  \"objective\": \"LightGlue不取代找點，也不直接給工站姿態。\",\n  \"page_type\": \"C\",\n  \"node_count\": 3,\n  \"reference\": \"teaching-images/vision-ai-model-selection/course-delivery/section-pages/01-geometry-alignment-measurement/images/final/GEO-21-alignment-to-measurement_v01.png\",\n  \"takeaway\": \"#FFF4CC：LightGlue不取代找點，也不直接給工站姿態。\",\n  \"required_files_present\": [\n    true,\n    true,\n    true,\n    true,\n    true\n  ]\n}",
+    "error": ""
+  },
+  {
+    "brief": "lightglue-engineering-2-r04.md",
+    "returncode": 0,
+    "output": "{\n  \"brief\": \"C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-032/lightglue-engineering-2-r04.md\",\n  \"objective\": \"不是每個點都必須硬配到另一張圖。\",\n  \"page_type\": \"C\",\n  \"node_count\": 3,\n  \"reference\": \"teaching-images/vision-ai-model-selection/course-delivery/section-pages/01-geometry-alignment-measurement/images/final/GEO-21-alignment-to-measurement_v01.png\",\n  \"takeaway\": \"#FFF4CC：不是每個點都必須硬配到另一張圖。\",\n  \"required_files_present\": [\n    true,\n    true,\n    true,\n    true,\n    true\n  ]\n}",
+    "error": ""
+  },
+  {
+    "brief": "lightglue-engineering-3-r04.md",
+    "returncode": 0,
+    "output": "{\n  \"brief\": \"C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-032/lightglue-engineering-3-r04.md\",\n  \"objective\": \"自適應不是每張圖都更快的保證。\",\n  \"page_type\": \"C\",\n  \"node_count\": 3,\n  \"reference\": \"teaching-images/vision-ai-model-selection/course-delivery/section-pages/01-geometry-alignment-measurement/images/final/GEO-21-alignment-to-measurement_v01.png\",\n  \"takeaway\": \"#FFF4CC：自適應不是每張圖都更快的保證。\",\n  \"required_files_present\": [\n    true,\n    true,\n    true,\n    true,\n    true\n  ]\n}",
+    "error": ""
+  },
+  {
+    "brief": "lightglue-engineering-4-r04.md",
+    "returncode": 0,
+    "output": "{\n  \"brief\": \"C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-032/lightglue-engineering-4-r04.md\",\n  \"objective\": \"看不見或分不出的部分，不能要求模型猜對。\",\n  \"page_type\": \"D\",\n  \"node_count\": 3,\n  \"reference\": \"teaching-images/vision-ai-model-selection/course-delivery/section-pages/01-geometry-alignment-measurement/images/final/GEO-21-alignment-to-measurement_v01.png\",\n  \"takeaway\": \"#FFF4CC：看不見或分不出的部分，不能要求模型猜對。\",\n  \"required_files_present\": [\n    true,\n    true,\n    true,\n    true,\n    true\n  ]\n}",
+    "error": ""
+  },
+  {
+    "brief": "lightglue-failure-native-r05.md",
+    "returncode": 0,
+    "output": "{\n  \"brief\": \"C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-032/lightglue-failure-native-r05.md\",\n  \"objective\": \"學習配對不能憑空補線索；含糊時要補視角或定位特徵。\",\n  \"page_type\": \"D — 以具體機制或同條件對照說明工作選擇。\",\n  \"node_count\": 3,\n  \"reference\": \"teaching-images/vision-ai-model-selection/course-delivery/section-pages/01-geometry-alignment-measurement/images/final/GEO-02-common-contract_v01.png\",\n  \"takeaway\": \"#FFF4CC：學習配對不能憑空補線索；含糊時要補視角或定位特徵。\",\n  \"required_files_present\": [\n    true,\n    true,\n    true,\n    true,\n    true\n  ]\n}",
+    "error": ""
+  },
+  {
+    "brief": "sift-core-native-r05.md",
+    "returncode": 0,
+    "output": "{\n  \"brief\": \"C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-032/sift-core-native-r05.md\",\n  \"objective\": \"SIFT找的是對應點；幾何變換還要另行估計與驗證。\",\n  \"page_type\": \"C — 以具體機制或同條件對照說明工作選擇。\",\n  \"node_count\": 3,\n  \"reference\": \"teaching-images/vision-ai-model-selection/course-delivery/section-pages/01-geometry-alignment-measurement/images/final/GEO-02-common-contract_v01.png\",\n  \"takeaway\": \"#FFF4CC：SIFT找的是對應點；幾何變換還要另行估計與驗證。\",\n  \"required_files_present\": [\n    true,\n    true,\n    true,\n    true,\n    true\n  ]\n}",
+    "error": ""
+  },
+  {
+    "brief": "sift-engineering-1-r06.md",
+    "returncode": 0,
+    "output": "{\n  \"brief\": \"C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-032/sift-engineering-1-r06.md\",\n  \"objective\": \"SIFT特徵、matcher點對與幾何變換分開。\",\n  \"page_type\": \"C\",\n  \"node_count\": 3,\n  \"reference\": \"teaching-images/vision-ai-model-selection/course-delivery/section-pages/01-geometry-alignment-measurement/images/final/GEO-21-alignment-to-measurement_v01.png\",\n  \"takeaway\": \"#FFF4CC：SIFT特徵、matcher點對與幾何變換分開。\",\n  \"required_files_present\": [\n    true,\n    true,\n    true,\n    true,\n    true\n  ]\n}",
+    "error": ""
+  },
+  {
+    "brief": "sift-engineering-2-r04.md",
+    "returncode": 0,
+    "output": "{\n  \"brief\": \"C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-032/sift-engineering-2-r04.md\",\n  \"objective\": \"ratio test篩含糊候選，不是幾何真值證明。\",\n  \"page_type\": \"C\",\n  \"node_count\": 3,\n  \"reference\": \"teaching-images/vision-ai-model-selection/course-delivery/section-pages/01-geometry-alignment-measurement/images/final/GEO-21-alignment-to-measurement_v01.png\",\n  \"takeaway\": \"#FFF4CC：ratio test篩含糊候選，不是幾何真值證明。\",\n  \"required_files_present\": [\n    true,\n    true,\n    true,\n    true,\n    true\n  ]\n}",
+    "error": ""
+  },
+  {
+    "brief": "sift-engineering-3-r04.md",
+    "returncode": 0,
+    "output": "{\n  \"brief\": \"C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-032/sift-engineering-3-r04.md\",\n  \"objective\": \"數量、正確性與分布要一起看。\",\n  \"page_type\": \"C\",\n  \"node_count\": 3,\n  \"reference\": \"teaching-images/vision-ai-model-selection/course-delivery/section-pages/01-geometry-alignment-measurement/images/final/GEO-21-alignment-to-measurement_v01.png\",\n  \"takeaway\": \"#FFF4CC：數量、正確性與分布要一起看。\",\n  \"required_files_present\": [\n    true,\n    true,\n    true,\n    true,\n    true\n  ]\n}",
+    "error": ""
+  },
+  {
+    "brief": "sift-engineering-4-r04.md",
+    "returncode": 0,
+    "output": "{\n  \"brief\": \"C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-032/sift-engineering-4-r04.md\",\n  \"objective\": \"匹配失敗與幾何模型不適用，要分開診斷。\",\n  \"page_type\": \"D\",\n  \"node_count\": 3,\n  \"reference\": \"teaching-images/vision-ai-model-selection/course-delivery/section-pages/01-geometry-alignment-measurement/images/final/GEO-21-alignment-to-measurement_v01.png\",\n  \"takeaway\": \"#FFF4CC：匹配失敗與幾何模型不適用，要分開診斷。\",\n  \"required_files_present\": [\n    true,\n    true,\n    true,\n    true,\n    true\n  ]\n}",
+    "error": ""
+  },
+  {
+    "brief": "sift-failure-native-r05.md",
+    "returncode": 0,
+    "output": "{\n  \"brief\": \"C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-032/sift-failure-native-r05.md\",\n  \"objective\": \"局部線索消失時，先改善影像，再談匹配數量。\",\n  \"page_type\": \"D — 以具體機制或同條件對照說明工作選擇。\",\n  \"node_count\": 3,\n  \"reference\": \"teaching-images/vision-ai-model-selection/course-delivery/section-pages/01-geometry-alignment-measurement/images/final/GEO-02-common-contract_v01.png\",\n  \"takeaway\": \"#FFF4CC：局部線索消失時，先改善影像，再談匹配數量。\",\n  \"required_files_present\": [\n    true,\n    true,\n    true,\n    true,\n    true\n  ]\n}",
+    "error": ""
+  },
+  {
+    "brief": "world-core-r01.md",
+    "returncode": 0,
+    "output": "{\n  \"brief\": \"C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-032/world-core-r01.md\",\n  \"objective\": \"詞彙可預先編碼；能否找到現場物件仍要驗證。\",\n  \"page_type\": \"C — 以具體機制或同條件對照說明工作選擇。\",\n  \"node_count\": 3,\n  \"reference\": \"teaching-images/vision-ai-model-selection/course-delivery/section-pages/01-geometry-alignment-measurement/images/final/GEO-02-common-contract_v01.png\",\n  \"takeaway\": \"#FFF4CC：詞彙可預先編碼；能否找到現場物件仍要驗證。\",\n  \"required_files_present\": [\n    true,\n    true,\n    true,\n    true,\n    true\n  ]\n}",
+    "error": ""
+  },
+  {
+    "brief": "world-failure-r01.md",
+    "returncode": 0,
+    "output": "{\n  \"brief\": \"C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-032/world-failure-r01.md\",\n  \"objective\": \"提示詞不能補回缺失像素；先確認缺陷看得見。\",\n  \"page_type\": \"D — 以具體機制或同條件對照說明工作選擇。\",\n  \"node_count\": 3,\n  \"reference\": \"teaching-images/vision-ai-model-selection/course-delivery/section-pages/01-geometry-alignment-measurement/images/final/GEO-02-common-contract_v01.png\",\n  \"takeaway\": \"#FFF4CC：提示詞不能補回缺失像素；先確認缺陷看得見。\",\n  \"required_files_present\": [\n    true,\n    true,\n    true,\n    true,\n    true\n  ]\n}",
+    "error": ""
+  },
+  {
+    "brief": "yolo-world-engineering-1-r04.md",
+    "returncode": 0,
+    "output": "{\n  \"brief\": \"C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-032/yolo-world-engineering-1-r04.md\",\n  \"objective\": \"詞彙可變，但現場辨識能力仍需驗證。\",\n  \"page_type\": \"C\",\n  \"node_count\": 3,\n  \"reference\": \"teaching-images/vision-ai-model-selection/course-delivery/section-pages/01-geometry-alignment-measurement/images/final/GEO-21-alignment-to-measurement_v01.png\",\n  \"takeaway\": \"#FFF4CC：詞彙可變，但現場辨識能力仍需驗證。\",\n  \"required_files_present\": [\n    true,\n    true,\n    true,\n    true,\n    true\n  ]\n}",
+    "error": ""
+  },
+  {
+    "brief": "yolo-world-engineering-2-r05.md",
+    "returncode": 0,
+    "output": "{\n  \"brief\": \"C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-032/yolo-world-engineering-2-r05.md\",\n  \"objective\": \"保留影像與文字两條來源，才看得懂比對。\",\n  \"page_type\": \"C\",\n  \"node_count\": 3,\n  \"reference\": \"teaching-images/vision-ai-model-selection/course-delivery/section-pages/01-geometry-alignment-measurement/images/final/GEO-21-alignment-to-measurement_v01.png\",\n  \"takeaway\": \"#FFF4CC：保留影像與文字两條來源，才看得懂比對。\",\n  \"required_files_present\": [\n    true,\n    true,\n    true,\n    true,\n    true\n  ]\n}",
+    "error": ""
+  },
+  {
+    "brief": "yolo-world-engineering-3-r07.md",
+    "returncode": 0,
+    "output": "{\n  \"brief\": \"C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-032/yolo-world-engineering-3-r07.md\",\n  \"objective\": \"快取向量不等於已完成模型重參數化。\",\n  \"page_type\": \"C\",\n  \"node_count\": 3,\n  \"reference\": \"teaching-images/vision-ai-model-selection/course-delivery/section-pages/01-geometry-alignment-measurement/images/final/GEO-21-alignment-to-measurement_v01.png\",\n  \"takeaway\": \"#FFF4CC：快取向量不等於已完成模型重參數化。\",\n  \"required_files_present\": [\n    true,\n    true,\n    true,\n    true,\n    true\n  ]\n}",
+    "error": ""
+  },
+  {
+    "brief": "yolo-world-engineering-4-r04.md",
+    "returncode": 0,
+    "output": "{\n  \"brief\": \"C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-032/yolo-world-engineering-4-r04.md\",\n  \"objective\": \"先定義要框物件還是判缺陷，再選後續流程。\",\n  \"page_type\": \"D\",\n  \"node_count\": 3,\n  \"reference\": \"teaching-images/vision-ai-model-selection/course-delivery/section-pages/01-geometry-alignment-measurement/images/final/GEO-21-alignment-to-measurement_v01.png\",\n  \"takeaway\": \"#FFF4CC：先定義要框物件還是判缺陷，再選後續流程。\",\n  \"required_files_present\": [\n    true,\n    true,\n    true,\n    true,\n    true\n  ]\n}",
+    "error": ""
+  }
+]

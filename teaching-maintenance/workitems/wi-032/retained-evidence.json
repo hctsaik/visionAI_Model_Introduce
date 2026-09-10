@@ -1,0 +1,26 @@
+[
+  {
+    "source": "_course_content/generated-concepts/sift/sift-r06-c2-how.png",
+    "image": "roadmap-model-selection/geometry-alignment-measurement/sift/images/final/WI032-retained-sift-r06-c2-how.png",
+    "sha256": "59bdd47590377c7dde8de0626412759fd7de2f0f5d91e7c082298d8208c79b60",
+    "evidence": "原圖標示教學示意、非實測；保留歷史案例，不沿用為新推論結果"
+  },
+  {
+    "source": "_course_content/generated-concepts/sift/sift-r06-d4-stop.png",
+    "image": "roadmap-model-selection/geometry-alignment-measurement/sift/images/final/WI032-retained-sift-r06-d4-stop.png",
+    "sha256": "bd88cb4814c0d7c024758e3e22ac050bc44c3bac78ea9a24c24cd6f1fb45a696",
+    "evidence": "原圖標示教學示意、非實測；保留歷史案例，不沿用為新推論結果"
+  },
+  {
+    "source": "_course_content/generated-concepts/ecc/ecc-r06-c3-get.png",
+    "image": "roadmap-model-selection/geometry-alignment-measurement/ecc/images/final/WI032-retained-ecc-r06-c3-get.png",
+    "sha256": "9eb64cb581551913d1f33fc0c244651e7a68b866d8796d7b8e53622e25dcd5a4",
+    "evidence": "原圖標示教學示意、非實測；保留歷史案例，不沿用為新推論結果"
+  },
+  {
+    "source": "_course_content/generated-concepts/ecc/ecc-r06-d4-stop.png",
+    "image": "roadmap-model-selection/geometry-alignment-measurement/ecc/images/final/WI032-retained-ecc-r06-d4-stop.png",
+    "sha256": "35f7ae43e6a4eaae7110d47ae82077130709109a5cff170923af0da5e56f3b6e",
+    "evidence": "原圖標示教學示意、非實測；保留歷史案例，不沿用為新推論結果"
+  }
+]

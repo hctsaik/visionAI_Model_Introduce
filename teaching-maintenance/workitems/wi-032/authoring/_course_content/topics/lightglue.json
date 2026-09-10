@@ -1,0 +1,576 @@
+{
+  "model": "LightGlue",
+  "badge": "有預訓練權重的學習式配對器",
+  "title": "用局部上下文，分清兩張圖的含糊配對",
+  "scenario": {
+    "title": "兩個孔看起來很像，只比較各自局部描述可能把孔位配錯。LightGlue接收上游找到的點和描述，讓同圖與跨圖訊息共同更新配對，幫助分辨含糊候選。",
+    "body": "兩個孔看起來很像，只比較各自局部描述可能把孔位配錯。LightGlue接收上游找到的點和描述，讓同圖與跨圖訊息共同更新配對，幫助分辨含糊候選。"
+  },
+  "promise": {
+    "title": "交付結果與接手工作",
+    "body": "交付點對、匹配信心等配對結果；上游找點、後端RANSAC／幾何變換與對齊取樣另有負責者。孔位身份、單應適用性與工站誤差仍由後續流程驗證。"
+  },
+  "mental_model": {
+    "title": "有預訓練權重的學習式配對器",
+    "body": "先由相容extractor提供關鍵點與描述；LightGlue以圖內與跨圖注意力更新表示，再估計點對與可匹配性。圖中缺口A的對應提供上下文，使孔B的兩條候選線收斂為較明確的配對。可可靠判斷的低可匹配點可被修剪，容易的配對也可提早停止；配對後仍需幾何求解與驗證。",
+    "limit": "當獨特缺口被遮住，兩個可見孔又很相似，上下文可能仍不足。模型不能憑空知道被遮住的外觀；保留不確定並補視角或定位特徵，比把某條高信心線直接當幾何真值更可靠。"
+  },
+  "micro_example": {
+    "title": "換配對器，還是先補拍？",
+    "setup": "相同孔位工件只露出兩個很像的孔；另一組影像保留了獨特缺口，但傳統描述子仍有含糊候選。",
+    "prediction": "兩組都換LightGlue就能解決嗎？如何安排小規模比較？",
+    "reveal": "只有兩個相似孔且缺乏其他線索時，先補視角、解除遮擋或增加已知定位點，不能要求配對器猜出身份。保留獨特缺口但傳統匹配含糊的那組，可以比較相容LightGlue流程與傳統matcher；固定影像與幾何核對，量錯配、定位誤差和完整成本。若原流程已穩定且成本低，保留傳統方法也是合理選擇。"
+  },
+  "mechanism_steps": [
+    {
+      "title": "上游提供點與描述",
+      "body": "上游extractor的點與描述需符合選用權重；不同extractor不能隨意共用matcher設定。",
+      "why": "由本課核心機制連接工作用途",
+      "anchor": "WI032-1",
+      "diagram": {
+        "title": "上游提供點與描述",
+        "body": "上游extractor的點與描述需符合選用權重；不同extractor不能隨意共用matcher設定。",
+        "why": "詳見本課版本與來源",
+        "anchor": "WI032-1"
+      }
+    },
+    {
+      "title": "互看上下文並修剪",
+      "body": "注意力讓點不只看自己的局部描述，也結合其他點與另一張圖的資訊；抑制錯候選不是刪掉原圖的孔或像素。",
+      "why": "由本課核心機制連接工作用途",
+      "anchor": "WI032-2",
+      "diagram": {
+        "title": "互看上下文並修剪",
+        "body": "注意力讓點不只看自己的局部描述，也結合其他點與另一張圖的資訊；抑制錯候選不是刪掉原圖的孔或像素。",
+        "why": "詳見本課版本與來源",
+        "anchor": "WI032-2"
+      }
+    },
+    {
+      "title": "匹配交給幾何估計",
+      "body": "交付點對、匹配信心等配對結果；上游找點、後端RANSAC／幾何變換與對齊取樣另有負責者。孔位身份、單應適用性與工站誤差仍由後續流程驗證。",
+      "why": "由本課核心機制連接工作用途",
+      "anchor": "WI032-3",
+      "diagram": {
+        "title": "匹配交給幾何估計",
+        "body": "交付點對、匹配信心等配對結果；上游找點、後端RANSAC／幾何變換與對齊取樣另有負責者。孔位身份、單應適用性與工站誤差仍由後續流程驗證。",
+        "why": "詳見本課版本與來源",
+        "anchor": "WI032-3"
+      }
+    },
+    {
+      "title": "工作核對與接手",
+      "body": "保存輸入、權重版本、extractor設定、點對／信心、修剪與停止設定，以及幾何內點、誤差和完整耗時；用同影像比較傳統matcher。本輪新圖只解釋候選更新，沒有執行LightGlue權重推論。",
+      "why": "由本課核心機制連接工作用途",
+      "anchor": "WI032-4",
+      "diagram": {
+        "title": "工作核對與接手",
+        "body": "保存輸入、權重版本、extractor設定、點對／信心、修剪與停止設定，以及幾何內點、誤差和完整耗時；用同影像比較傳統matcher。本輪新圖只解釋候選更新，沒有執行LightGlue權重推論。",
+        "why": "詳見本課版本與來源",
+        "anchor": "WI032-4"
+      }
+    }
+  ],
+  "visual_intro": "先由相容extractor提供關鍵點與描述；LightGlue以圖內與跨圖注意力更新表示，再估計點對與可匹配性。圖中缺口A的對應提供上下文，使孔B的兩條候選線收斂為較明確的配對。可可靠判斷的低可匹配點可被修剪，容易的配對也可提早停止；配對後仍需幾何求解與驗證。",
+  "concept_visuals": [],
+  "boundary_cases": [
+    {
+      "condition": "本課具體反例",
+      "effect": "當獨特缺口被遮住，兩個可見孔又很相似，上下文可能仍不足。模型不能憑空知道被遮住的外觀；保留不確定並補視角或定位特徵，比把某條高信心線直接當幾何真值更可靠。",
+      "action": "碰到少重疊、重複結構、遮擋或取像品質差時，查看原始對應與幾何驗證，必要時補拍或改取像。不要把matcher信心當作量測準確率。"
+    },
+    {
+      "condition": "更換產品、模型或輸入設定",
+      "effect": "換工件需重查重疊、紋理與幾何結果，未必需要重訓，但也不能假設預訓練配對器可直接保證工業件準確。記錄extractor與matcher權重、影像縮放及停止／修剪設定，測CPU/GPU和完整鏈成本。",
+      "action": "選相容extractor與LightGlue預訓練權重，準備有重疊且可獨立核對的影像對；先保存點與描述，再觀察匹配如何改變，最後接合適的幾何模型。"
+    },
+    {
+      "condition": "把示意當成實際推論",
+      "effect": "本課特徵、排序、回答及圖像僅用於解釋，不支持現場準確率或耗時結論。",
+      "action": "保存輸入、權重版本、extractor設定、點對／信心、修剪與停止設定，以及幾何內點、誤差和完整耗時；用同影像比較傳統matcher。本輪新圖只解釋候選更新，沒有執行LightGlue權重推論。"
+    }
+  ],
+  "comparison": [
+    {
+      "model": "ChArUco",
+      "normality": "已知尺寸標靶、多位置與傾角觀測",
+      "candidate": "內參／畸變；姿態與工站關係另求"
+    },
+    {
+      "model": "SIFT＋matcher",
+      "normality": "局部紋理清楚；尺度方向描述與比對",
+      "candidate": "影像點對；幾何估計與驗證另接"
+    },
+    {
+      "model": "LightGlue＋extractor",
+      "normality": "相容預訓練權重、點與描述；上下文配對",
+      "candidate": "點對與信心；納入完整計算成本"
+    },
+    {
+      "model": "ECC",
+      "normality": "合理起點、外觀穩定；密集相關迭代",
+      "candidate": "warp與相關值；獨立殘差另驗"
+    }
+  ],
+  "selection": "局部特徵已能分清時，可先用SIFT搭傳統matching減少部署複雜度；候選含糊時再以同資料評估LightGlue及其相容extractor。ECC使用的是密集外觀的局部對齊，ChArUco提供已知幾何校正，不能互換角色。 換工件需重查重疊、紋理與幾何結果，未必需要重訓，但也不能假設預訓練配對器可直接保證工業件準確。記錄extractor與matcher權重、影像縮放及停止／修剪設定，測CPU/GPU和完整鏈成本。",
+  "poc": {
+    "title": "以真實工作資料做小規模比較",
+    "steps": [
+      "選相容extractor與LightGlue預訓練權重，準備有重疊且可獨立核對的影像對；先保存點與描述，再觀察匹配如何改變，最後接合適的幾何模型。",
+      "換工件需重查重疊、紋理與幾何結果，未必需要重訓，但也不能假設預訓練配對器可直接保證工業件準確。記錄extractor與matcher權重、影像縮放及停止／修剪設定，測CPU/GPU和完整鏈成本。",
+      "保存輸入、權重版本、extractor設定、點對／信心、修剪與停止設定，以及幾何內點、誤差和完整耗時；用同影像比較傳統matcher。本輪新圖只解釋候選更新，沒有執行LightGlue權重推論。"
+    ],
+    "hold": "碰到少重疊、重複結構、遮擋或取像品質差時，查看原始對應與幾何驗證，必要時補拍或改取像。不要把matcher信心當作量測準確率。",
+    "acceptance": {
+      "baseline": "既有流程或最簡單可行方法",
+      "measure": "保存輸入、權重版本、extractor設定、點對／信心、修剪與停止設定，以及幾何內點、誤差和完整耗時；用同影像比較傳統matcher。本輪新圖只解釋候選更新，沒有執行LightGlue權重推論。",
+      "negative_control": "當獨特缺口被遮住，兩個可見孔又很相似，上下文可能仍不足。模型不能憑空知道被遮住的外觀；保留不確定並補視角或定位特徵，比把某條高信心線直接當幾何真值更可靠。",
+      "owner": "實作與影像核對負責人"
+    }
+  },
+  "teach_back": {
+    "question": "它改變什麼？何時選另一種做法？",
+    "answer": "先由相容extractor提供關鍵點與描述；LightGlue以圖內與跨圖注意力更新表示，再估計點對與可匹配性。圖中缺口A的對應提供上下文，使孔B的兩條候選線收斂為較明確的配對。可可靠判斷的低可匹配點可被修剪，容易的配對也可提早停止；配對後仍需幾何求解與驗證。 局部特徵已能分清時，可先用SIFT搭傳統matching減少部署複雜度；候選含糊時再以同資料評估LightGlue及其相容extractor。ECC使用的是密集外觀的局部對齊，ChArUco提供已知幾何校正，不能互換角色。"
+  },
+  "slide_reading": [
+    {
+      "title": "配對器前後各有負責的步驟",
+      "question": "LightGlue不取代找點，也不直接給工站姿態。",
+      "look": "先看相容extractor，再看LightGlue更新配對，最後核對點對交幾何估計。",
+      "relation": "官方提供多種extractor相容設定，部署應記錄權重、前處理與影像尺寸。點對與匹配信心不等於幾何準確率，後端求解與工作驗證仍需另行負責。",
+      "takeaway": "LightGlue不取代找點，也不直接給工站姿態。",
+      "terms": [
+        "相容extractor：輸入：兩圖的點與描述；核對extractor／matcher權重",
+        "LightGlue更新配對：有預訓練權重；圖內與跨圖上下文"
+      ]
+    },
+    {
+      "title": "圖內關係與跨圖關係，一起更新表示",
+      "question": "不是每個點都必須硬配到另一張圖。",
+      "look": "先看圖內注意力，再看跨圖注意力，最後核對可匹配性與分配。",
+      "relation": "LightGlue交替使用self-/cross-attention更新局部表示，再結合匹配分配與matchability；一些點沒有可靠對應時允許不匹配。圖為機制示意，無真實注意力或信心數值。",
+      "takeaway": "不是每個點都必須硬配到另一張圖。",
+      "terms": [
+        "圖內注意力：同圖點之間交換資訊；局部描述加入上下文",
+        "跨圖注意力：另一張圖提供候選關係；更新點的表示"
+      ]
+    },
+    {
+      "title": "自適應計算：少算什麼，要分清楚",
+      "question": "自適應不是每張圖都更快的保證。",
+      "look": "先看深度：可能提早停止，再看寬度：修剪部分點，最後核對量完整處理鏈。",
+      "relation": "自適應深度依信心提前停止，寬度修剪部分低可匹配點以減少後續計算；實際門檻與后端實現有關。完整時間包含extractor、資料搬移、matcher及幾何估計，不能只用名稱宣稱更快。",
+      "takeaway": "自適應不是每張圖都更快的保證。",
+      "terms": [
+        "深度：可能提早停止：容易的配對可少跑層；困難影像可能仍需更多層",
+        "寬度：修剪部分點：依判斷移除部分計算候選；不是刪掉原圖的像素"
+      ]
+    },
+    {
+      "title": "少重疊或對稱物，先確認是否有線索",
+      "question": "看不見或分不出的部分，不能要求模型猜對。",
+      "look": "先看少重疊，再看對稱與重複，最後核對補資料再比較。",
+      "relation": "用相同影像與獨立幾何證據比較傳統matcher及LightGlue；無法觀測的獨特細節不是換配對器一定能補回。優先核對重疊、紋理與遮擋，再決定是否換算法。",
+      "takeaway": "看不見或分不出的部分，不能要求模型猜對。",
+      "terms": [
+        "少重疊：兩圖共有可見區域有限；可用點對可能不足",
+        "對稱與重複：不同孔位可能很像；信心不是實體身份真值"
+      ]
+    }
+  ],
+  "beginner_path": {
+    "title": "從必要原理、具體反例到工作取捨",
+    "intro": "兩個孔看起來很像，只比較各自局部描述可能把孔位配錯。LightGlue接收上游找到的點和描述，讓同圖與跨圖訊息共同更新配對，幫助分辨含糊候選。 下列圖像、特徵及回答為教學示意，不是模型實測。",
+    "visuals": [
+      {
+        "id": "wi032-lightglue-core",
+        "title": "LightGlue：借周圍關係，把含糊配對分清",
+        "prompt": "兩個孔看起來很像，只比較各自局部描述可能把孔位配錯。LightGlue接收上游找到的點和描述，讓同圖與跨圖訊息共同更新配對，幫助分辨含糊候選。",
+        "caption": "先由相容extractor提供關鍵點與描述；LightGlue以圖內與跨圖注意力更新表示，再估計點對與可匹配性。圖中缺口A的對應提供上下文，使孔B的兩條候選線收斂為較明確的配對。可可靠判斷的低可匹配點可被修剪，容易的配對也可提早停止；配對後仍需幾何求解與驗證。",
+        "image": "_course_content/generated-concepts/lightglue/wi032-lightglue-core-native-r05-desktop.png",
+        "alt": "LightGlue：借周圍關係，把含糊配對分清。先由相容extractor提供關鍵點與描述；LightGlue以圖內與跨圖注意力更新表示，再估計點對與可匹配性。圖中缺口A的對應提供上下文，使孔B的兩條候選線收斂為較明確的配對。可可靠判斷的低可匹配點可被修剪，容易的配對也可提早停止；配對後仍需幾何求解與驗證。 教學示意，非模型實測。",
+        "callouts": [
+          {
+            "title": "輸入點不是它自己找的",
+            "body": "上游extractor的點與描述需符合選用權重；不同extractor不能隨意共用matcher設定。"
+          },
+          {
+            "title": "上下文改變候選關係",
+            "body": "注意力讓點不只看自己的局部描述，也結合其他點與另一張圖的資訊；抑制錯候選不是刪掉原圖的孔或像素。"
+          },
+          {
+            "title": "省計算有條件",
+            "body": "自適應深度／寬度可減少部分工作，但完整時間仍包含extractor、配對、幾何估計與硬體成本，不能只看名稱就宣稱比較快。"
+          }
+        ],
+        "reading_views": [
+          {
+            "title": "LightGlue：借周圍關係，把含糊配對分清",
+            "image": "_course_content/generated-concepts/lightglue/wi032-lightglue-core-native-r05-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/lightglue/wi032-lightglue-core-native-r05-mobile.png",
+            "alt": "LightGlue：借周圍關係，把含糊配對分清。先由相容extractor提供關鍵點與描述；LightGlue以圖內與跨圖注意力更新表示，再估計點對與可匹配性。圖中缺口A的對應提供上下文，使孔B的兩條候選線收斂為較明確的配對。可可靠判斷的低可匹配點可被修剪，容易的配對也可提早停止；配對後仍需幾何求解與驗證。 教學示意，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              768,
+              3050
+            ],
+            "mobile_display_mode": "full-mobile",
+            "desktop_intrinsic_width": 1672,
+            "desktop_intrinsic_height": 941,
+            "mobile_intrinsic_width": 768,
+            "mobile_intrinsic_height": 3050
+          }
+        ],
+        "core_ideas": true
+      },
+      {
+        "id": "wi032-lightglue-failure",
+        "title": "沒有可區分線索，學習配對也會含糊",
+        "prompt": "觀察哪個條件改變，讓原本的結果不夠可靠？",
+        "caption": "當獨特缺口被遮住，兩個可見孔又很相似，上下文可能仍不足。模型不能憑空知道被遮住的外觀；保留不確定並補視角或定位特徵，比把某條高信心線直接當幾何真值更可靠。",
+        "image": "_course_content/generated-concepts/lightglue/wi032-lightglue-failure-native-r05-desktop.png",
+        "alt": "沒有可區分線索，學習配對也會含糊。當獨特缺口被遮住，兩個可見孔又很相似，上下文可能仍不足。模型不能憑空知道被遮住的外觀；保留不確定並補視角或定位特徵，比把某條高信心線直接當幾何真值更可靠。 教學示意，非模型實測。",
+        "callouts": [
+          {
+            "title": "看哪裡",
+            "body": "當獨特缺口被遮住，兩個可見孔又很相似，上下文可能仍不足。模型不能憑空知道被遮住的外觀；保留不確定並補視角或定位特徵，比把某條高信心線直接當幾何真值更可靠。"
+          },
+          {
+            "title": "接著怎麼做",
+            "body": "碰到少重疊、重複結構、遮擋或取像品質差時，查看原始對應與幾何驗證，必要時補拍或改取像。不要把matcher信心當作量測準確率。"
+          }
+        ],
+        "reading_views": [
+          {
+            "title": "沒有可區分線索，學習配對也會含糊",
+            "image": "_course_content/generated-concepts/lightglue/wi032-lightglue-failure-native-r05-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/lightglue/wi032-lightglue-failure-native-r05-mobile.png",
+            "alt": "沒有可區分線索，學習配對也會含糊。當獨特缺口被遮住，兩個可見孔又很相似，上下文可能仍不足。模型不能憑空知道被遮住的外觀；保留不確定並補視角或定位特徵，比把某條高信心線直接當幾何真值更可靠。 教學示意，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              768,
+              3050
+            ],
+            "mobile_display_mode": "full-mobile",
+            "desktop_intrinsic_width": 1672,
+            "desktop_intrinsic_height": 941,
+            "mobile_intrinsic_width": 768,
+            "mobile_intrinsic_height": 3050
+          }
+        ],
+        "core_ideas": false
+      },
+      {
+        "id": "wi032-geometry-compare",
+        "title": "幾何四種工具，負責的工作不同",
+        "prompt": "相同工作需求下，資料、輸出與成本如何取捨？",
+        "caption": "局部特徵已能分清時，可先用SIFT搭傳統matching減少部署複雜度；候選含糊時再以同資料評估LightGlue及其相容extractor。ECC使用的是密集外觀的局部對齊，ChArUco提供已知幾何校正，不能互換角色。",
+        "image": "_course_content/generated-concepts/ecc/wi032-geometry-compare-native-r05-desktop.png",
+        "alt": "幾何四種工具，負責的工作不同。局部特徵已能分清時，可先用SIFT搭傳統matching減少部署複雜度；候選含糊時再以同資料評估LightGlue及其相容extractor。ECC使用的是密集外觀的局部對齊，ChArUco提供已知幾何校正，不能互換角色。 教學示意，非模型實測。",
+        "callouts": [
+          {
+            "title": "怎麼選",
+            "body": "局部特徵已能分清時，可先用SIFT搭傳統matching減少部署複雜度；候選含糊時再以同資料評估LightGlue及其相容extractor。ECC使用的是密集外觀的局部對齊，ChArUco提供已知幾何校正，不能互換角色。"
+          },
+          {
+            "title": "資料與完整成本",
+            "body": "換工件需重查重疊、紋理與幾何結果，未必需要重訓，但也不能假設預訓練配對器可直接保證工業件準確。記錄extractor與matcher權重、影像縮放及停止／修剪設定，測CPU/GPU和完整鏈成本。"
+          }
+        ],
+        "reading_views": [
+          {
+            "title": "幾何四種工具，負責的工作不同",
+            "image": "_course_content/generated-concepts/ecc/wi032-geometry-compare-native-r05-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/ecc/wi032-geometry-compare-native-r05-mobile.png",
+            "alt": "幾何四種工具，負責的工作不同。局部特徵已能分清時，可先用SIFT搭傳統matching減少部署複雜度；候選含糊時再以同資料評估LightGlue及其相容extractor。ECC使用的是密集外觀的局部對齊，ChArUco提供已知幾何校正，不能互換角色。 教學示意，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              768,
+              3050
+            ],
+            "mobile_display_mode": "full-mobile",
+            "desktop_intrinsic_width": 1672,
+            "desktop_intrinsic_height": 941,
+            "mobile_intrinsic_width": 768,
+            "mobile_intrinsic_height": 3050
+          }
+        ],
+        "core_ideas": false
+      }
+    ]
+  },
+  "comparison_headers": {
+    "title": "幾何四種工具，負責的工作不同",
+    "basis": "所需資料與方法差異",
+    "output": "輸出與維護責任"
+  },
+  "transfer_check": {
+    "title": "換配對器，還是先補拍？",
+    "scenario": "相同孔位工件只露出兩個很像的孔；另一組影像保留了獨特缺口，但傳統描述子仍有含糊候選。",
+    "question": "兩組都換LightGlue就能解決嗎？如何安排小規模比較？",
+    "answer": "只有兩個相似孔且缺乏其他線索時，先補視角、解除遮擋或增加已知定位點，不能要求配對器猜出身份。保留獨特缺口但傳統匹配含糊的那組，可以比較相容LightGlue流程與傳統matcher；固定影像與幾何核對，量錯配、定位誤差和完整成本。若原流程已穩定且成本低，保留傳統方法也是合理選擇。"
+  },
+  "review_trace": {
+    "authority": "roadmap-model-selection/geometry-alignment-measurement/lightglue/model.md",
+    "scope": "WI-032：六課主線及工程層圖文重建；既有ECC案例保留。頁內驗證與使用者核准另記。",
+    "claims": [
+      {
+        "id": "visual-1",
+        "field": "beginner_path.visuals[pcb-pair-anchor]",
+        "source": "模型定位 / architecture_path"
+      },
+      {
+        "id": "visual-2",
+        "field": "beginner_path.visuals[extractor-contract]",
+        "source": "architecture_path"
+      },
+      {
+        "id": "visual-3",
+        "field": "beginner_path.visuals[attention-pruning]",
+        "source": "representation_or_score"
+      },
+      {
+        "id": "visual-4",
+        "field": "beginner_path.visuals[geometry-gate]",
+        "source": "failure_boundary"
+      },
+      {
+        "id": "visual-5",
+        "field": "beginner_path.visuals[operating-boundary]",
+        "source": "selection_gate / evidence_bundle"
+      },
+      {
+        "id": "promise",
+        "field": "promise",
+        "source": "模型定位 / representation_or_score"
+      },
+      {
+        "id": "mechanism",
+        "field": "mechanism_steps",
+        "source": "architecture_path / representation_or_score"
+      },
+      {
+        "id": "boundaries",
+        "field": "boundary_cases",
+        "source": "failure_boundary / selection_gate"
+      },
+      {
+        "id": "comparison",
+        "field": "comparison + selection",
+        "source": "selection_gate"
+      },
+      {
+        "id": "poc",
+        "field": "poc + acceptance",
+        "source": "cost_and_operating_point / evidence_bundle"
+      },
+      {
+        "id": "transfer",
+        "field": "transfer_check",
+        "source": "failure_boundary / selection_gate"
+      },
+      {
+        "id": "f02-core",
+        "field": "beginner_path.visuals[0] + scenario + mental_model",
+        "source": "roadmap-model-selection/geometry-alignment-measurement/lightglue/model.md"
+      },
+      {
+        "id": "f02-transfer",
+        "field": "micro_example + transfer_check + selection",
+        "source": "roadmap-model-selection/geometry-alignment-measurement/lightglue/model.md"
+      },
+      {
+        "id": "wi032-first-read",
+        "field": "beginner_path + core + selection + transfer",
+        "source": "https://github.com/cvg/LightGlue"
+      }
+    ]
+  },
+  "quality_status": {
+    "label": "本機重建、自評與驗證完成",
+    "state": "self_reviewed",
+    "round": "WI-032",
+    "reason": "逐圖及整頁自評、實頁操作與必要回歸已完成；使用者成品核准pending，未發布。"
+  },
+  "teaching_preflight": {
+    "brief": "teaching-images/vision-ai-model-selection/workitems/wi-032/lightglue-core-native-r05.md",
+    "mobile_brief": "teaching-images/vision-ai-model-selection/workitems/wi-032/lightglue-core-native-r05.md",
+    "story": "C",
+    "major_visual_nodes": 3,
+    "visual_status": "self-reviewed",
+    "user_review": "pending"
+  },
+  "engineering_slides": [
+    {
+      "title": "配對器前後各有負責的步驟",
+      "question": "LightGlue不取代找點，也不直接給工站姿態。",
+      "plain": {
+        "look": "先看相容extractor，再看LightGlue更新配對，最後核對點對交幾何估計。",
+        "relation": "官方提供多種extractor相容設定，部署應記錄權重、前處理與影像尺寸。點對與匹配信心不等於幾何準確率，後端求解與工作驗證仍需另行負責。",
+        "takeaway": "LightGlue不取代找點，也不直接給工站姿態。"
+      },
+      "terms": [
+        "相容extractor：輸入：兩圖的點與描述；核對extractor／matcher權重",
+        "LightGlue更新配對：有預訓練權重；圖內與跨圖上下文"
+      ],
+      "guide": [
+        "官方提供多種extractor相容設定，部署應記錄權重、前處理與影像尺寸。點對與匹配信心不等於幾何準確率，後端求解與工作驗證仍需另行負責。",
+        "讀圖：相容extractor → LightGlue更新配對 → 點對交幾何估計"
+      ],
+      "stages": [
+        {
+          "title": "相容extractor",
+          "body": "輸入：兩圖的點與描述；核對extractor／matcher權重"
+        },
+        {
+          "title": "LightGlue更新配對",
+          "body": "有預訓練權重；圖內與跨圖上下文"
+        },
+        {
+          "title": "點對交幾何估計",
+          "body": "交付匹配與信心；另接幾何求解、取樣"
+        }
+      ],
+      "misconception": "示意只解釋本步驟，不可當作模型實測或省略後續核對。",
+      "alt": "配對器前後各有負責的步驟。LightGlue不取代找點，也不直接給工站姿態。 教學示意，非本輪模型實測。",
+      "mobile_image": "roadmap-model-selection/geometry-alignment-measurement/lightglue/images/final/WI032-LIGHTGLUE-01-r04-mobile.png",
+      "mobile_width": 768,
+      "mobile_height": 2770,
+      "engineering": {
+        "takeaway": "LightGlue不取代找點，也不直接給工站姿態。",
+        "nextAction": "選相容extractor與LightGlue預訓練權重，準備有重疊且可獨立核對的影像對；先保存點與描述，再觀察匹配如何改變，最後接合適的幾何模型。",
+        "redLine": "碰到少重疊、重複結構、遮擋或取像品質差時，查看原始對應與幾何驗證，必要時補拍或改取像。不要把matcher信心當作量測準確率。"
+      },
+      "source": "https://github.com/cvg/LightGlue"
+    },
+    {
+      "title": "圖內關係與跨圖關係，一起更新表示",
+      "question": "不是每個點都必須硬配到另一張圖。",
+      "plain": {
+        "look": "先看圖內注意力，再看跨圖注意力，最後核對可匹配性與分配。",
+        "relation": "LightGlue交替使用self-/cross-attention更新局部表示，再結合匹配分配與matchability；一些點沒有可靠對應時允許不匹配。圖為機制示意，無真實注意力或信心數值。",
+        "takeaway": "不是每個點都必須硬配到另一張圖。"
+      },
+      "terms": [
+        "圖內注意力：同圖點之間交換資訊；局部描述加入上下文",
+        "跨圖注意力：另一張圖提供候選關係；更新點的表示"
+      ],
+      "guide": [
+        "LightGlue交替使用self-/cross-attention更新局部表示，再結合匹配分配與matchability；一些點沒有可靠對應時允許不匹配。圖為機制示意，無真實注意力或信心數值。",
+        "讀圖：圖內注意力 → 跨圖注意力 → 可匹配性與分配"
+      ],
+      "stages": [
+        {
+          "title": "圖內注意力",
+          "body": "同圖點之間交換資訊；局部描述加入上下文"
+        },
+        {
+          "title": "跨圖注意力",
+          "body": "另一張圖提供候選關係；更新點的表示"
+        },
+        {
+          "title": "可匹配性與分配",
+          "body": "部分點可不匹配；輸出點對仍需幾何核對"
+        }
+      ],
+      "misconception": "示意只解釋本步驟，不可當作模型實測或省略後續核對。",
+      "alt": "圖內關係與跨圖關係，一起更新表示。不是每個點都必須硬配到另一張圖。 教學示意，非本輪模型實測。",
+      "mobile_image": "roadmap-model-selection/geometry-alignment-measurement/lightglue/images/final/WI032-LIGHTGLUE-02-r04-mobile.png",
+      "mobile_width": 768,
+      "mobile_height": 2770,
+      "engineering": {
+        "takeaway": "不是每個點都必須硬配到另一張圖。",
+        "nextAction": "選相容extractor與LightGlue預訓練權重，準備有重疊且可獨立核對的影像對；先保存點與描述，再觀察匹配如何改變，最後接合適的幾何模型。",
+        "redLine": "碰到少重疊、重複結構、遮擋或取像品質差時，查看原始對應與幾何驗證，必要時補拍或改取像。不要把matcher信心當作量測準確率。"
+      },
+      "source": "https://github.com/cvg/LightGlue"
+    },
+    {
+      "title": "自適應計算：少算什麼，要分清楚",
+      "question": "自適應不是每張圖都更快的保證。",
+      "plain": {
+        "look": "先看深度：可能提早停止，再看寬度：修剪部分點，最後核對量完整處理鏈。",
+        "relation": "自適應深度依信心提前停止，寬度修剪部分低可匹配點以減少後續計算；實際門檻與后端實現有關。完整時間包含extractor、資料搬移、matcher及幾何估計，不能只用名稱宣稱更快。",
+        "takeaway": "自適應不是每張圖都更快的保證。"
+      },
+      "terms": [
+        "深度：可能提早停止：容易的配對可少跑層；困難影像可能仍需更多層",
+        "寬度：修剪部分點：依判斷移除部分計算候選；不是刪掉原圖的像素"
+      ],
+      "guide": [
+        "自適應深度依信心提前停止，寬度修剪部分低可匹配點以減少後續計算；實際門檻與后端實現有關。完整時間包含extractor、資料搬移、matcher及幾何估計，不能只用名稱宣稱更快。",
+        "讀圖：深度：可能提早停止 → 寬度：修剪部分點 → 量完整處理鏈"
+      ],
+      "stages": [
+        {
+          "title": "深度：可能提早停止",
+          "body": "容易的配對可少跑層；困難影像可能仍需更多層"
+        },
+        {
+          "title": "寬度：修剪部分點",
+          "body": "依判斷移除部分計算候選；不是刪掉原圖的像素"
+        },
+        {
+          "title": "量完整處理鏈",
+          "body": "extractor＋matcher＋幾何；同硬體、同影像才可比"
+        }
+      ],
+      "misconception": "示意只解釋本步驟，不可當作模型實測或省略後續核對。",
+      "alt": "自適應計算：少算什麼，要分清楚。自適應不是每張圖都更快的保證。 教學示意，非本輪模型實測。",
+      "mobile_image": "roadmap-model-selection/geometry-alignment-measurement/lightglue/images/final/WI032-LIGHTGLUE-03-r04-mobile.png",
+      "mobile_width": 768,
+      "mobile_height": 2770,
+      "engineering": {
+        "takeaway": "自適應不是每張圖都更快的保證。",
+        "nextAction": "選相容extractor與LightGlue預訓練權重，準備有重疊且可獨立核對的影像對；先保存點與描述，再觀察匹配如何改變，最後接合適的幾何模型。",
+        "redLine": "碰到少重疊、重複結構、遮擋或取像品質差時，查看原始對應與幾何驗證，必要時補拍或改取像。不要把matcher信心當作量測準確率。"
+      },
+      "source": "https://github.com/cvg/LightGlue"
+    },
+    {
+      "title": "少重疊或對稱物，先確認是否有線索",
+      "question": "看不見或分不出的部分，不能要求模型猜對。",
+      "plain": {
+        "look": "先看少重疊，再看對稱與重複，最後核對補資料再比較。",
+        "relation": "用相同影像與獨立幾何證據比較傳統matcher及LightGlue；無法觀測的獨特細節不是換配對器一定能補回。優先核對重疊、紋理與遮擋，再決定是否換算法。",
+        "takeaway": "看不見或分不出的部分，不能要求模型猜對。"
+      },
+      "terms": [
+        "少重疊：兩圖共有可見區域有限；可用點對可能不足",
+        "對稱與重複：不同孔位可能很像；信心不是實體身份真值"
+      ],
+      "guide": [
+        "用相同影像與獨立幾何證據比較傳統matcher及LightGlue；無法觀測的獨特細節不是換配對器一定能補回。優先核對重疊、紋理與遮擋，再決定是否換算法。",
+        "讀圖：少重疊 → 對稱與重複 → 補資料再比較"
+      ],
+      "stages": [
+        {
+          "title": "少重疊",
+          "body": "兩圖共有可見區域有限；可用點對可能不足"
+        },
+        {
+          "title": "對稱與重複",
+          "body": "不同孔位可能很像；信心不是實體身份真值"
+        },
+        {
+          "title": "補資料再比較",
+          "body": "補視角或已知定位點；固定資料比較完整成本"
+        }
+      ],
+      "misconception": "當獨特缺口被遮住，兩個可見孔又很相似，上下文可能仍不足。模型不能憑空知道被遮住的外觀；保留不確定並補視角或定位特徵，比把某條高信心線直接當幾何真值更可靠。",
+      "alt": "少重疊或對稱物，先確認是否有線索。看不見或分不出的部分，不能要求模型猜對。 教學示意，非本輪模型實測。",
+      "mobile_image": "roadmap-model-selection/geometry-alignment-measurement/lightglue/images/final/WI032-LIGHTGLUE-04-r04-mobile.png",
+      "mobile_width": 768,
+      "mobile_height": 2770,
+      "engineering": {
+        "takeaway": "看不見或分不出的部分，不能要求模型猜對。",
+        "nextAction": "選相容extractor與LightGlue預訓練權重，準備有重疊且可獨立核對的影像對；先保存點與描述，再觀察匹配如何改變，最後接合適的幾何模型。",
+        "redLine": "碰到少重疊、重複結構、遮擋或取像品質差時，查看原始對應與幾何驗證，必要時補拍或改取像。不要把matcher信心當作量測準確率。"
+      },
+      "source": "https://github.com/cvg/LightGlue"
+    }
+  ]
+}

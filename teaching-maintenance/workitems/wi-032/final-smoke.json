@@ -1,0 +1,196 @@
+[
+  {
+    "slug": "charuco",
+    "route": "interactive-learning.html",
+    "width": 390,
+    "deep_link_visible": true,
+    "zoom_prev_next_escape": true,
+    "retained_links": [],
+    "legacy_fallback": false,
+    "errors": []
+  },
+  {
+    "slug": "charuco",
+    "route": "docs/index.html",
+    "width": 390,
+    "deep_link_visible": true,
+    "zoom_prev_next_escape": true,
+    "retained_links": [],
+    "legacy_fallback": false,
+    "errors": []
+  },
+  {
+    "slug": "ecc",
+    "route": "interactive-learning.html",
+    "width": 390,
+    "deep_link_visible": true,
+    "zoom_prev_next_escape": true,
+    "retained_links": [
+      "http://127.0.0.1:8000/roadmap-model-selection/geometry-alignment-measurement/ecc/images/final/ECC-04-selection-boundary_v03-r04.png",
+      "http://127.0.0.1:8000/roadmap-model-selection/geometry-alignment-measurement/ecc/images/final/WI032-retained-ecc-r06-c3-get.png",
+      "http://127.0.0.1:8000/roadmap-model-selection/geometry-alignment-measurement/ecc/images/final/WI032-retained-ecc-r06-d4-stop.png"
+    ],
+    "legacy_fallback": false,
+    "errors": []
+  },
+  {
+    "slug": "ecc",
+    "route": "docs/index.html",
+    "width": 390,
+    "deep_link_visible": true,
+    "zoom_prev_next_escape": true,
+    "retained_links": [
+      "http://127.0.0.1:8000/docs/roadmap-model-selection/geometry-alignment-measurement/ecc/images/final/ECC-04-selection-boundary_v03-r04.png",
+      "http://127.0.0.1:8000/docs/roadmap-model-selection/geometry-alignment-measurement/ecc/images/final/WI032-retained-ecc-r06-c3-get.png",
+      "http://127.0.0.1:8000/docs/roadmap-model-selection/geometry-alignment-measurement/ecc/images/final/WI032-retained-ecc-r06-d4-stop.png"
+    ],
+    "legacy_fallback": false,
+    "errors": []
+  },
+  {
+    "slug": "sift",
+    "route": "interactive-learning.html",
+    "width": 390,
+    "deep_link_visible": true,
+    "zoom_prev_next_escape": true,
+    "retained_links": [
+      "http://127.0.0.1:8000/roadmap-model-selection/geometry-alignment-measurement/sift/images/final/WI032-retained-sift-r06-c2-how.png",
+      "http://127.0.0.1:8000/roadmap-model-selection/geometry-alignment-measurement/sift/images/final/WI032-retained-sift-r06-d4-stop.png"
+    ],
+    "legacy_fallback": false,
+    "errors": []
+  },
+  {
+    "slug": "sift",
+    "route": "docs/index.html",
+    "width": 390,
+    "deep_link_visible": true,
+    "zoom_prev_next_escape": true,
+    "retained_links": [
+      "http://127.0.0.1:8000/docs/roadmap-model-selection/geometry-alignment-measurement/sift/images/final/WI032-retained-sift-r06-c2-how.png",
+      "http://127.0.0.1:8000/docs/roadmap-model-selection/geometry-alignment-measurement/sift/images/final/WI032-retained-sift-r06-d4-stop.png"
+    ],
+    "legacy_fallback": false,
+    "errors": []
+  },
+  {
+    "slug": "lightglue",
+    "route": "interactive-learning.html",
+    "width": 390,
+    "deep_link_visible": true,
+    "zoom_prev_next_escape": true,
+    "retained_links": [],
+    "legacy_fallback": false,
+    "errors": []
+  },
+  {
+    "slug": "lightglue",
+    "route": "docs/index.html",
+    "width": 390,
+    "deep_link_visible": true,
+    "zoom_prev_next_escape": true,
+    "retained_links": [],
+    "legacy_fallback": false,
+    "errors": []
+  },
+  {
+    "slug": "det-dino-detector",
+    "route": "interactive-learning.html",
+    "width": 390,
+    "deep_link_visible": true,
+    "zoom_prev_next_escape": true,
+    "retained_links": [],
+    "legacy_fallback": false,
+    "errors": []
+  },
+  {
+    "slug": "det-dino-detector",
+    "route": "docs/index.html",
+    "width": 390,
+    "deep_link_visible": true,
+    "zoom_prev_next_escape": true,
+    "retained_links": [],
+    "legacy_fallback": false,
+    "errors": []
+  },
+  {
+    "slug": "yolo-world",
+    "route": "interactive-learning.html",
+    "width": 390,
+    "deep_link_visible": true,
+    "zoom_prev_next_escape": true,
+    "retained_links": [],
+    "legacy_fallback": false,
+    "errors": []
+  },
+  {
+    "slug": "yolo-world",
+    "route": "docs/index.html",
+    "width": 390,
+    "deep_link_visible": true,
+    "zoom_prev_next_escape": true,
+    "retained_links": [],
+    "legacy_fallback": false,
+    "errors": []
+  },
+  {
+    "slug": "resnet",
+    "route": "interactive-learning.html",
+    "width": 390,
+    "deep_link_visible": true,
+    "zoom_prev_next_escape": true,
+    "retained_links": [],
+    "legacy_fallback": true,
+    "errors": []
+  },
+  {
+    "slug": "resnet",
+    "route": "docs/index.html",
+    "width": 390,
+    "deep_link_visible": true,
+    "zoom_prev_next_escape": true,
+    "retained_links": [],
+    "legacy_fallback": true,
+    "errors": []
+  },
+  {
+    "slug": "raft",
+    "route": "interactive-learning.html",
+    "width": 390,
+    "deep_link_visible": true,
+    "zoom_prev_next_escape": true,
+    "retained_links": [],
+    "legacy_fallback": true,
+    "errors": []
+  },
+  {
+    "slug": "raft",
+    "route": "docs/index.html",
+    "width": 390,
+    "deep_link_visible": true,
+    "zoom_prev_next_escape": true,
+    "retained_links": [],
+    "legacy_fallback": true,
+    "errors": []
+  },
+  {
+    "slug": "ad-patchcore",
+    "route": "interactive-learning.html",
+    "width": 390,
+    "deep_link_visible": true,
+    "zoom_prev_next_escape": true,
+    "retained_links": [],
+    "legacy_fallback": true,
+    "errors": []
+  },
+  {
+    "slug": "ad-patchcore",
+    "route": "docs/index.html",
+    "width": 390,
+    "deep_link_visible": true,
+    "zoom_prev_next_escape": true,
+    "retained_links": [],
+    "legacy_fallback": true,
+    "errors": []
+  }
+]

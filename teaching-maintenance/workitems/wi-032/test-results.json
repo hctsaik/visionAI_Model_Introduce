@@ -1,0 +1,21 @@
+{
+  "pytest": {
+    "tests": 14,
+    "subtests": 130,
+    "result": "passed",
+    "duration_seconds": 76.47,
+    "files": [
+      "test_github_pages_bundle.py",
+      "test_engineering_mobile_pages.py",
+      "test_collapsed_deep_dive.py",
+      "test_tall_mobile_artwork.py",
+      "test_deep_dive_mobile_steps.py",
+      "test_interactive_navigation.py"
+    ]
+  },
+  "preflight": "38 passed",
+  "svg_layout": "64 checked; no final errors; initial false positive retained",
+  "inference": "not run",
+  "human_learning_test": "not run",
+  "user_approval": "pending"
+}

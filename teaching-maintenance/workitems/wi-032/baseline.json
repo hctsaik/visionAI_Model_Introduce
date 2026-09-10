@@ -1,0 +1,72 @@
+{
+  "files": [
+    {
+      "path": "_course_content/learner-briefs.json",
+      "sha256": "e9f6337c43f681f493804e842e5cfe5977eb7bc0612493c90519bac868c395fc"
+    },
+    {
+      "path": "interactive-learning.html",
+      "sha256": "5019330b5bb83f0f053087f8ca71f99b4c99928a64009ceb79db5a14d9999620"
+    },
+    {
+      "path": "docs/index.html",
+      "sha256": "5019330b5bb83f0f053087f8ca71f99b4c99928a64009ceb79db5a14d9999620"
+    },
+    {
+      "path": "_course_content/topics/charuco.json",
+      "sha256": "0cd6cc85c9434339196414b151fef401c435802b3ad66533674449dd4d0f0bfb"
+    },
+    {
+      "path": "roadmap-model-selection/geometry-alignment-measurement/charuco/model.md",
+      "sha256": "41c5f36859b05a31b1917386cc3c727a8ab926030bf674b100c91bbb462a5586"
+    },
+    {
+      "path": "_course_content/topics/ecc.json",
+      "sha256": "97fcf5fbc588b68b8c4ec13a2861ed44ae96b17096a72f5c2dd700aeea35d6bd"
+    },
+    {
+      "path": "roadmap-model-selection/geometry-alignment-measurement/ecc/model.md",
+      "sha256": "b3eb83b7e083f0b1bdd5d5411408ccf9cb56ad53dc076aa8d05acfcf7b808b58"
+    },
+    {
+      "path": "_course_content/topics/sift.json",
+      "sha256": "0d0e09718e471b07d068ababfc7fd92b23a97e6c517dd24322f36b889da27db9"
+    },
+    {
+      "path": "roadmap-model-selection/geometry-alignment-measurement/sift/model.md",
+      "sha256": "5e31f374648b52baaf9ca725b481d4ac9611cbe5384a6e88496934a88e9a98db"
+    },
+    {
+      "path": "_course_content/topics/lightglue.json",
+      "sha256": "88e9dea4680c475b72a1728e09a244b493156e42ecba38cad9d07ce077d941a8"
+    },
+    {
+      "path": "roadmap-model-selection/geometry-alignment-measurement/lightglue/model.md",
+      "sha256": "6fafb3c36997518e68b2e8cff5f5598ec30d084a5ee0df794ed5d1a9ccdc8569"
+    },
+    {
+      "path": "_course_content/topics/det-dino-detector.json",
+      "sha256": "ed1a45501c9b5fcac9303b9e5de331756b112fccb9c71b5a046e7583dbcb5f8e"
+    },
+    {
+      "path": "roadmap-model-selection/detector/det-dino-detector/model.md",
+      "sha256": "bc2c1aaf05fe69cdf40b80b69c6d1422df5de08b5085020cf29b849cdd8c2be8"
+    },
+    {
+      "path": "_course_content/topics/yolo-world.json",
+      "sha256": "0cbeeb3a53780fd5101000468f582128cda80d11ce33093e7fa43fbd39513b9d"
+    },
+    {
+      "path": "roadmap-model-selection/detector/yolo-world/model.md",
+      "sha256": "aea8a6383c645052b7016c284048df9efe81dcbc6d3f87d98b3e6924fd31f9e4"
+    }
+  ],
+  "commit": "79364cf0fb82ed7c016092f30ba68771578bcb01",
+  "rules": {
+    "CLAUDE.md": "41cfdb2d4f257063bbe452c9e3897684f20ea1c7416dede32eb3f7315df86804",
+    "IMAGE_STYLE_GUIDE.md": "c7df3d71c4fd594bfe77afb39f297529e43dc077749f1c3bd21d4fc10090fced",
+    "TEACHING_WEBPAGE_GUIDE.md": "adb6334a93deb3269554ad5a7d84d71b2164d1b8cb46476bd7acb6c7e53c6fdb",
+    "TEACHING_SCORING_RUBRIC.md": "e2e40652a4e57b2dc4437d9b280835babb8ce23181073781eb1fd2a2e00fdcff",
+    "TEACHING_REVIEW_LOG.md": "7bd62bc23709dae96dc638d81126fcd1e9bf7cec33fe70e849a0b77bf2b71fd1"
+  }
+}

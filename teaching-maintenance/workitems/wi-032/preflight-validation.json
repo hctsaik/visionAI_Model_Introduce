@@ -1,0 +1,212 @@
+[
+  {
+    "brief": "C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-032/charuco-core-r01.md",
+    "objective": "先用多視角建立內參；已知內參後才另外求姿態。",
+    "page_type": "C — 以具體機制或同條件對照說明工作選擇。",
+    "node_count": 3,
+    "reference": "teaching-images/vision-ai-model-selection/course-delivery/section-pages/01-geometry-alignment-measurement/images/final/GEO-02-common-contract_v01.png",
+    "takeaway": "#FFF4CC：先用多視角建立內參；已知內參後才另外求姿態。",
+    "required_files_present": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "brief": "C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-032/charuco-failure-r01.md",
+    "objective": "校正要涵蓋位置與傾角；再用獨立視角查邊角誤差。",
+    "page_type": "D — 以具體機制或同條件對照說明工作選擇。",
+    "node_count": 3,
+    "reference": "teaching-images/vision-ai-model-selection/course-delivery/section-pages/01-geometry-alignment-measurement/images/final/GEO-02-common-contract_v01.png",
+    "takeaway": "#FFF4CC：校正要涵蓋位置與傾角；再用獨立視角查邊角誤差。",
+    "required_files_present": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "brief": "C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-032/ecc-failure-r01.md",
+    "objective": "ECC需要合理起點；對不上就先找粗定位。",
+    "page_type": "D — 以具體機制或同條件對照說明工作選擇。",
+    "node_count": 3,
+    "reference": "teaching-images/vision-ai-model-selection/course-delivery/section-pages/01-geometry-alignment-measurement/images/final/GEO-02-common-contract_v01.png",
+    "takeaway": "#FFF4CC：ECC需要合理起點；對不上就先找粗定位。",
+    "required_files_present": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "brief": "C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-032/sift-core-r01.md",
+    "objective": "SIFT找的是對應點；幾何變換還要另行估計與驗證。",
+    "page_type": "C — 以具體機制或同條件對照說明工作選擇。",
+    "node_count": 3,
+    "reference": "teaching-images/vision-ai-model-selection/course-delivery/section-pages/01-geometry-alignment-measurement/images/final/GEO-02-common-contract_v01.png",
+    "takeaway": "#FFF4CC：SIFT找的是對應點；幾何變換還要另行估計與驗證。",
+    "required_files_present": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "brief": "C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-032/sift-failure-r01.md",
+    "objective": "局部線索消失時，先改善影像，再談匹配數量。",
+    "page_type": "D — 以具體機制或同條件對照說明工作選擇。",
+    "node_count": 3,
+    "reference": "teaching-images/vision-ai-model-selection/course-delivery/section-pages/01-geometry-alignment-measurement/images/final/GEO-02-common-contract_v01.png",
+    "takeaway": "#FFF4CC：局部線索消失時，先改善影像，再談匹配數量。",
+    "required_files_present": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "brief": "C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-032/lightglue-core-r01.md",
+    "objective": "LightGlue學的是配對；找點與求變換仍各有負責者。",
+    "page_type": "C — 以具體機制或同條件對照說明工作選擇。",
+    "node_count": 3,
+    "reference": "teaching-images/vision-ai-model-selection/course-delivery/section-pages/01-geometry-alignment-measurement/images/final/GEO-02-common-contract_v01.png",
+    "takeaway": "#FFF4CC：LightGlue學的是配對；找點與求變換仍各有負責者。",
+    "required_files_present": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "brief": "C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-032/lightglue-failure-r01.md",
+    "objective": "學習配對不能憑空補線索；含糊時要補視角或定位特徵。",
+    "page_type": "D — 以具體機制或同條件對照說明工作選擇。",
+    "node_count": 3,
+    "reference": "teaching-images/vision-ai-model-selection/course-delivery/section-pages/01-geometry-alignment-measurement/images/final/GEO-02-common-contract_v01.png",
+    "takeaway": "#FFF4CC：學習配對不能憑空補線索；含糊時要補視角或定位特徵。",
+    "required_files_present": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "brief": "C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-032/geometry-compare-r01.md",
+    "objective": "先分清校正、找對應與微調，再安排自己的定位流程。",
+    "page_type": "D — 以具體機制或同條件對照說明工作選擇。",
+    "node_count": 3,
+    "reference": "teaching-images/vision-ai-model-selection/course-delivery/section-pages/01-geometry-alignment-measurement/images/final/GEO-02-common-contract_v01.png",
+    "takeaway": "#FFF4CC：先分清校正、找對應與微調，再安排自己的定位流程。",
+    "required_files_present": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "brief": "C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-032/dino-core-r01.md",
+    "objective": "帶噪真值只幫助訓練；正式出框時沒有真值可偷看。",
+    "page_type": "C — 以具體機制或同條件對照說明工作選擇。",
+    "node_count": 3,
+    "reference": "teaching-images/vision-ai-model-selection/course-delivery/section-pages/01-geometry-alignment-measurement/images/final/GEO-02-common-contract_v01.png",
+    "takeaway": "#FFF4CC：帶噪真值只幫助訓練；正式出框時沒有真值可偷看。",
+    "required_files_present": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "brief": "C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-032/dino-failure-r01.md",
+    "objective": "去噪訓練改善學習訊號；現場遮擋與漏檢仍要實測。",
+    "page_type": "D — 以具體機制或同條件對照說明工作選擇。",
+    "node_count": 3,
+    "reference": "teaching-images/vision-ai-model-selection/course-delivery/section-pages/01-geometry-alignment-measurement/images/final/GEO-02-common-contract_v01.png",
+    "takeaway": "#FFF4CC：去噪訓練改善學習訊號；現場遮擋與漏檢仍要實測。",
+    "required_files_present": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "brief": "C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-032/world-core-r01.md",
+    "objective": "詞彙可預先編碼；能否找到現場物件仍要驗證。",
+    "page_type": "C — 以具體機制或同條件對照說明工作選擇。",
+    "node_count": 3,
+    "reference": "teaching-images/vision-ai-model-selection/course-delivery/section-pages/01-geometry-alignment-measurement/images/final/GEO-02-common-contract_v01.png",
+    "takeaway": "#FFF4CC：詞彙可預先編碼；能否找到現場物件仍要驗證。",
+    "required_files_present": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "brief": "C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-032/world-failure-r01.md",
+    "objective": "提示詞不能補回缺失像素；先確認缺陷看得見。",
+    "page_type": "D — 以具體機制或同條件對照說明工作選擇。",
+    "node_count": 3,
+    "reference": "teaching-images/vision-ai-model-selection/course-delivery/section-pages/01-geometry-alignment-measurement/images/final/GEO-02-common-contract_v01.png",
+    "takeaway": "#FFF4CC：提示詞不能補回缺失像素；先確認缺陷看得見。",
+    "required_files_present": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "brief": "C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-032/detector-compare-r01.md",
+    "objective": "用類別與資料維護需求選候選，再以同批影像比較。",
+    "page_type": "D — 以具體機制或同條件對照說明工作選擇。",
+    "node_count": 3,
+    "reference": "teaching-images/vision-ai-model-selection/course-delivery/section-pages/01-geometry-alignment-measurement/images/final/GEO-02-common-contract_v01.png",
+    "takeaway": "#FFF4CC：用類別與資料維護需求選候選，再以同批影像比較。",
+    "required_files_present": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "brief": "C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-032/ecc-core-r01.md",
+    "objective": "ECC反覆比較外觀相關並更新幾何變換，把已接近的兩張圖對齊；輸出變換，不判定缺陷。",
+    "page_type": "C — 以同一金屬支架的偏移、取樣比較、更新與交付呈現機制。",
+    "node_count": 3,
+    "reference": "teaching-images/vision-ai-model-selection/course-delivery/section-pages/01-geometry-alignment-measurement/images/final/GEO-02-common-contract_v01.png",
+    "takeaway": "#FFF4CC：ECC把已接近的影像微調對齊；缺陷仍要另外檢查。",
+    "required_files_present": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  }
+]

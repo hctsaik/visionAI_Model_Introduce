@@ -1,0 +1,502 @@
+{
+  "model": "ChArUco",
+  "beginner_path": {
+    "title": "先用五張大圖建立 ChArUco 的幾何心智模型",
+    "intro": "先看為什麼需要、三個核心設計，再沿原有細節與反例核對。F02 核心圖是機制示意；實測和作者案例另行標示。",
+    "visuals": [
+      {
+        "id": "id-corners-to-board",
+        "title": "ChArUco：已知標靶如何把相機幾何變成可驗證證據",
+        "prompt": "沿著四個節點找答案：角點如何有身份？2D 點如何接回板座標？回投影 residual 如何被量出？為什麼中心單張只能 HOLD？",
+        "caption": "R07 candidate preserves the four-step ChArUco path: real marker identity and chessboard corner, explicit image q / board P correspondence, calibration versus one-image PnP, then visible counterfactual and REVIEW/HOLD evidence gate.",
+        "image": "_course_content/generated-concepts/charuco/charuco-r07-core.png",
+        "alt": "ChArUco R07 candidate: generated DICT_4X4_50 board with m17 and m23 marker identities, c17 chessboard corner callout, image q / board P correspondences, calibration versus PnP, visible counterfactual, and REVIEW/HOLD gate.",
+        "callouts": [
+          {
+            "title": "先用 marker ID 找到有身份的角點",
+            "body": "ChArUco 的價值是把影像角點接到板上已知位置；不是對產品紋理做無約束猜測。"
+          },
+          {
+            "title": "回投影把 pose 變成可量的證據",
+            "body": "觀測角點與 predicted corner 的距離是 residual；要保留 P50／P95，不只看一個漂亮平均值。"
+          },
+          {
+            "title": "未覆蓋的 FOV 不算已驗證",
+            "body": "中心一張可以很清楚仍必須 HOLD；全視野、多姿態與重裝一致性才支持放行。"
+          }
+        ],
+        "core_ideas": true,
+        "reading_views": [
+          {
+            "title": "ChArUco：已知標靶如何把相機幾何變成可驗證證據",
+            "image": "_course_content/generated-concepts/charuco/charuco-r07-core.png",
+            "mobile_image": "_course_content/generated-concepts/charuco/charuco-r07-core-mobile.png",
+            "mobile_crop": [
+              0,
+              0,
+              720,
+              1660
+            ],
+            "alt": "ChArUco R07 candidate desktop/mobile core prototype.",
+            "mobile_display_mode": "full-mobile",
+            "mobile_intrinsic_width": 720,
+            "mobile_intrinsic_height": 1660,
+            "desktop_intrinsic_width": 1600,
+            "desktop_intrinsic_height": 1080
+          }
+        ]
+      },
+      {
+        "id": "pose-and-reprojection",
+        "title": "從 correspondence 解 pose，再把預測點投回影像",
+        "prompt": "右側 cyan observed 與 orange predicted 只差一小段時，這段距離在驗證什麼？為什麼它不是漂亮的對齊圖而已？",
+        "caption": "已知 board plane 與 image corners 讓 calibration/PnP 解出 intrinsics、extrinsics 與 camera pose。把 board points 重新投回影像，觀測點與預測點的距離才是 residual；pose 必須能被這條回投證據支持。",
+        "image": "_course_content/generated-concepts/charuco/charuco-beginner-02-pose-and-reprojection_v01.svg",
+        "alt": "全幅 ChArUco 因果圖：相機從有 ID 的傾斜 board 取得 correspondence，經 calibration/PnP 解出 pose 和座標軸，再把 cyan observed corner 與 orange predicted corner 放進 reprojection 區域比較 residual。",
+        "callouts": [
+          {
+            "title": "pose 是可回投的幾何假設",
+            "body": "若已解出的相機參數無法讓已知 board point 回到實際 image corner，不能把它當成可信 station baseline。"
+          },
+          {
+            "title": "residual 要看分布，不只單一平均",
+            "body": "後續要保留 P50/P95、有效 corner count、姿態與 FOV coverage；一張成功畫面不代表全域可靠。"
+          }
+        ]
+      },
+      {
+        "id": "coverage-p95-review",
+        "title": "同一塊板要走到全 FOV、不同姿態，才能看 P95 tail",
+        "prompt": "左邊五個 board pose 與右邊 residual tail 有什麼關係？為什麼低 P50 仍可能不能放行？",
+        "caption": "同一個 camera/board workcell 下，刻意把板移到視野各處並改變姿態，才會暴露邊角與重裝時的 residual tail。qualification 要同時看有效 corner、FOV coverage、pose diversity、P50/P95 與 repeatability。",
+        "image": "_course_content/generated-concepts/charuco/charuco-beginner-03-coverage-p95-review_v01.svg",
+        "alt": "全幅 ChArUco qualification 圖：同一相機看到五個分散於 full FOV 的 ChArUco board pose，右側以 residual distribution 對比 P50 和 P95，並列出 coverage 與 pose diversity gate。",
+        "callouts": [
+          {
+            "title": "coverage 是測過的位置與姿態",
+            "body": "中心清楚不代表四角、不同距離或傾角都可靠；資料必須實際覆蓋要部署的工作空間。"
+          },
+          {
+            "title": "P95 把尾端風險留在證據中",
+            "body": "不能讓好看的平均 residual 蓋住少數邊角、反光或重裝後的壞 case。"
+          }
+        ]
+      },
+      {
+        "id": "center-only-counterfactual",
+        "title": "中心一張成功，不能證明整個 FOV 都可放行",
+        "prompt": "兩邊使用同一相機與同一板；右邊到底多了什麼證據，左邊為何必須 HOLD？",
+        "caption": "左邊只在畫面中央放一張板，即使平均 residual 低，邊角與重裝風險仍未被量測。右邊只改 board 的位置與姿態，就能檢查 coverage 和 residual tail，才有資格進入 P95/reject-rate review。",
+        "image": "_course_content/generated-concepts/charuco/charuco-beginner-04-center-only-counterfactual_v01.svg",
+        "alt": "全幅 ChArUco 反事實圖：左側中央單一大 board 的 qualification 顯示 HOLD，右側同一板分布於五個 FOV 位置與姿態，標示可以再審核 P95 和 reject rate。",
+        "callouts": [
+          {
+            "title": "反事實只改 coverage",
+            "body": "不是換模型或換板，而是固定相機與 board，只改真正要驗收的視野位置和姿態。"
+          },
+          {
+            "title": "未測到的區域不是通過",
+            "body": "coverage 缺口應被記錄為 HOLD，不能由一個中心平均值推論成 station 已合格。"
+          }
+        ]
+      },
+      {
+        "id": "geometry-baseline-boundary",
+        "title": "ChArUco 建立 geometry baseline，不替每日產品自動對位",
+        "prompt": "上半部的已知 board 與下半部沒有 marker 的 product wafer ROI，有哪個關鍵輸入契約不同？",
+        "caption": "setup/maintenance 時可控制地放入 ChArUco board，建立可信的 camera/station frame。每日產品畫面沒有 board，不能假裝仍能解同一個幾何問題；它需要另行驗證的 ECC、feature initialization 或其他 alignment 路徑。",
+        "image": "_course_content/generated-concepts/charuco/charuco-beginner-05-geometry-baseline-not-registration_v01.svg",
+        "alt": "全幅 ChArUco 責任邊界圖：上半部相機、已知 ChArUco board 與 station coordinate frame 建立 calibration baseline；下半部 product wafer ROI 沒有 marker，箭頭通往另驗的 ECC 或 feature initialization，旁邊有 HOLD gate。",
+        "callouts": [
+          {
+            "title": "標靶存在是 ChArUco 輸入的一部分",
+            "body": "沒有已知 board、ID 與可見 corners，就不能把每日 product ROI 當成可重新解同一個 pose 的資料。"
+          },
+          {
+            "title": "baseline 與產品對位是兩條責任線",
+            "body": "先用 ChArUco 建立和監測幾何基準；產品 registration 再選擇符合其移動、外觀與平面假設的受控方法。"
+          }
+        ]
+      }
+    ]
+  },
+  "badge": "F02｜先說清楚模型中心思想",
+  "title": "ChArUco：為什麼需要、如何作用、少了核心會怎樣",
+  "scenario": {
+    "title": "為什麼需要這個方法？",
+    "body": "你能在建置或維修時控制地放入一塊尺寸已知的 ChArUco 標定板。你需要知道相機看到的像素和工站座標如何對應，並留下可追溯的相機姿態；這不是每天拿產品影像硬做對位。"
+  },
+  "promise": {
+    "title": "它真正交付的東西",
+    "body": "ChArUco 交付經過角點數、視野覆蓋與 reprojection residual 驗證的 calibration 或 pose；不是產品缺陷分類、日常 registration、量產品質判定或自動放行。"
+  },
+  "mental_model": {
+    "title": "ChArUco 的核心設計與限制",
+    "body": "相機先偵測 ArUco marker ID，再插值出棋盤角點的 2D image corners。\n\n每個 2D corner 與標靶尺寸、平面度所定義的 3D 或平面 object point 配成 correspondence。\n\ncalibration 或 PnP 用多組 correspondence 求出 intrinsics、extrinsics 或 pose，並把預測角點回投影到影像。",
+    "limit": "這把尺是可控制放入的實體標靶；它建立相機基準，不會自動替每一張產品影像完成日常對位，也不證明產品本身合格。"
+  },
+  "micro_example": {
+    "title": "拿掉核心設計，再換一個工作情境",
+    "setup": "鏡頭重新裝回後，你拍到一張清楚、只覆蓋畫面中央的 ChArUco 板；另一組資料則在全 FOV、不同距離與姿態都拍到清楚角點。",
+    "prediction": "先猜：哪一組比較能暴露邊角區域的幾何誤差？為什麼只看一個平均 residual 不夠？",
+    "reveal": "全 FOV、多姿態資料能讓解算看到不同區域與姿態的誤差；中心單張即使平均 residual 小，也可能掩蓋邊角、重裝或尾端失敗。"
+  },
+  "mechanism_steps": [
+    {
+      "title": "在板上找出有身份的 marker 與角點",
+      "body": "相機先偵測 ArUco marker ID，再插值出棋盤角點的 2D image corners。",
+      "why": "唯一 ID 和規則角點讓系統知道「這個畫面點」對應標靶上的哪個已知位置，而不是只看到一堆相似方格。",
+      "anchor": "工程圖核對：marker detection／interpolated chessboard corners",
+      "diagram": {
+        "title": "辨識 marker 與角點",
+        "body": "找出帶唯一 ID 的 marker，再插值棋盤角點。",
+        "why": "身份讓影像角點能對到板上已知位置。",
+        "anchor": "marker／corners"
+      }
+    },
+    {
+      "title": "把畫面角點接回已知標靶座標",
+      "body": "每個 2D corner 與標靶尺寸、平面度所定義的 3D 或平面 object point 配成 correspondence。",
+      "why": "只有同時知道像素位置和實體標靶位置，calibration 或 PnP 才有可解的幾何關係。",
+      "anchor": "工程圖核對：2D／3D correspondence",
+      "diagram": {
+        "title": "建立 2D／3D 配對",
+        "body": "把影像角點連到已知尺寸的標靶座標。",
+        "why": "像素與實體位置同時已知才可解幾何。",
+        "anchor": "2D／3D correspondence"
+      }
+    },
+    {
+      "title": "求出相機參數或當下姿態",
+      "body": "calibration 或 PnP 用多組 correspondence 求出 intrinsics、extrinsics 或 pose，並把預測角點回投影到影像。",
+      "why": "回投影把抽象參數變成可檢查的像素誤差；沒有這一步，不能知道求出的 pose 是否與觀測一致。",
+      "anchor": "工程圖核對：calibration／PnP → intrinsics、extrinsics、pose",
+      "diagram": {
+        "title": "分開 calibration 與當下 PnP pose",
+        "body": "多姿態 board 做 calibration；已知 intrinsics 才以 correspondence 解 PnP pose。",
+        "why": "兩者回答不同問題；不要把單次 pose 當成完整 calibration。",
+        "anchor": "calibration → intrinsics；PnP → pose"
+      }
+    },
+    {
+      "title": "用覆蓋與尾端 residual 決定能否採用",
+      "body": "保存有效 corner count、FOV coverage、pose diversity 與 reprojection residual 的 P50/P95，必要時以重裝後 repeatability 再驗一次。",
+      "why": "一個漂亮的平均值可能遮住邊角或少數姿態的失敗；拒用不足的標靶影像，才能避免把不可靠幾何送給下游。",
+      "anchor": "工程圖核對：coverage／reprojection residual／reject gate",
+      "diagram": {
+        "title": "以覆蓋與殘差 gate",
+        "body": "量 corner count、FOV coverage 與 P95 residual。",
+        "why": "平均值可能藏住邊角和重裝的尾端失敗。",
+        "anchor": "coverage／residual gate"
+      }
+    }
+  ],
+  "visual_intro": "現在才拿四張工程圖核對：先找 marker/corner correspondence，再找 calibration 或 PnP、reprojection residual，以及 coverage/reject gate。圖是工程證據，不是第一次認識座標關係的老師。",
+  "concept_visuals": [
+    {
+      "id": "causal-chain",
+      "placement": "after_causal_chain",
+      "title": "ChArUco：已知標靶如何把相機幾何變成可驗證證據",
+      "prompt": "沿著四個節點找答案：角點如何有身份？2D 點如何接回板座標？回投影 residual 如何被量出？為什麼中心單張只能 HOLD？",
+      "caption": "這張 prototype 把 ChArUco 的工程因果鏈畫成一條路徑：相機看見 marker ID 與角點，建立 2D↔已知板座標 correspondence，解出 pose 後回投影，最後以全 FOV、P95 與重裝一致性決定 PASS／HOLD。圖中數字是教學設定，不是本站推論。",
+      "image": "_course_content/generated-concepts/charuco/charuco-r02-core.png",
+      "alt": "ChArUco R02 C 型工程故事圖：相機看到帶 marker ID 的標定板，角點連到已知板座標，calibration 或 PnP 解出 pose 並比較觀測與回投影點，最後以全 FOV coverage、P95 residual 與 repeatability 決定 PASS 或 HOLD。",
+      "callouts": [
+        {
+          "title": "先用 marker ID 找到有身份的角點",
+          "body": "ChArUco 的價值是把影像角點接到板上已知位置；不是對產品紋理做無約束猜測。"
+        },
+        {
+          "title": "回投影把 pose 變成可量的證據",
+          "body": "觀測角點與 predicted corner 的距離是 residual；要保留 P50／P95，不只看一個漂亮平均值。"
+        },
+        {
+          "title": "未覆蓋的 FOV 不算已驗證",
+          "body": "中心一張可以很清楚仍必須 HOLD；全視野、多姿態與重裝一致性才支持放行。"
+        }
+      ]
+    },
+    {
+      "id": "worked-example",
+      "placement": "after_micro_example",
+      "title": "中心一張好看，不代表全視野可信",
+      "prompt": "同一台相機有兩組標靶資料：一組只拍中央，另一組覆蓋全 FOV、不同距離與姿態。哪一組能看見邊角與重裝風險？",
+      "caption": "左側只有中央角點，可能得到好看的平均 residual 卻看不到邊角；右側以多位置、多姿態覆蓋整個視野，才能檢查 residual tail 與重裝 repeatability。",
+      "image": "_course_content/generated-concepts/charuco/charuco-worked-example_v01.svg",
+      "alt": "左右對照概念圖：左邊標定板只在相機畫面中央，右邊標定板在全視野多個位置和姿態，右邊有殘差分布與重裝圖示。",
+      "callouts": [
+        {
+          "title": "左：覆蓋不足",
+          "body": "中央的一次成功不能證明畫面邊角也正確。"
+        },
+        {
+          "title": "右：看分布，不只看平均",
+          "body": "P95 residual 與各區域角點覆蓋才會顯示尾端風險。"
+        },
+        {
+          "title": "重裝也要再驗",
+          "body": "mount、focus 或標靶狀態改變後，舊參數不能自動沿用。"
+        }
+      ]
+    },
+    {
+      "id": "comparison",
+      "placement": "after_comparison",
+      "title": "先分清：建立基準、微調，還是找對應點",
+      "prompt": "三種方法都可能輸出變換或座標；先看它們依賴的是已知標靶、像素相關，還是產品紋理。",
+      "caption": "ChArUco 用可放置、已知尺寸的標靶建立相機基準；ECC 用穩定 template 的外觀做小位移微調；SIFT 用可觀測紋理找 correspondence 作幾何初始化。它們的輸入條件不同，不能用同一個「accuracy」混在一起排名。",
+      "image": "_course_content/generated-concepts/charuco/charuco-comparison_v01.svg",
+      "alt": "三欄比較圖：ChArUco 標定板連到相機姿態，ECC 的 template 和 moving ROI 連到小位移 warp，SIFT 的兩張紋理影像以特徵點連線。",
+      "callouts": [
+        {
+          "title": "ChArUco：已知標靶",
+          "body": "回答的是相機幾何基準是否可追溯。"
+        },
+        {
+          "title": "ECC：穩定外觀的微調",
+          "body": "回答的是初始位置已接近時，能否再做連續 warp 校正。"
+        },
+        {
+          "title": "SIFT：紋理對應",
+          "body": "回答的是兩張有紋理的畫面能否找到可信 correspondence。"
+        }
+      ]
+    },
+    {
+      "id": "boundary-cases-explainer",
+      "placement": "before_boundary_cases",
+      "title": "同一條因果鏈，在哪裡會被破壞？",
+      "prompt": "不要只記住風險名詞；先預測條件一變，畫面或候選結果會怎麼變，再決定何時應 HOLD。",
+      "caption": "ChArUco 的三個模型專屬反事實：每欄把條件、可觀察後果與正確下一步放在一起。它們不是自動修正規則；遇到條件超出驗證範圍時，先保存原始證據並進入 HOLD／REVIEW。",
+      "image": "_course_content/generated-concepts/charuco/charuco-boundary-cases_v01.svg",
+      "alt": "ChArUco 的三欄反事實說明圖：每欄依序說明一個失效條件、可能看到的候選或量測後果，以及應進入 HOLD、重驗或改選方法的安全下一步。",
+      "callouts": [
+        {
+          "title": "先看條件，而不是先改門檻",
+          "body": "候選改變可能是資料、取像、設定或模型假設被破壞，不能立刻解讀成產品真相。"
+        },
+        {
+          "title": "把可觀察後果說出來",
+          "body": "誤報、漏檢、整片異常或時間失序都需要回到原始資料與版本追查。"
+        },
+        {
+          "title": "HOLD 是設計的一部分",
+          "body": "先停止自動往下走、保存 evidence，確認條件後才重新 qualification 或交給適合的方法。"
+        }
+      ]
+    }
+  ],
+  "boundary_cases": [
+    {
+      "condition": "角點只落在小區域，或有效 corner count 不足",
+      "effect": "求解可能看似成功，但畫面邊角與未見姿態的 residual 風險被藏起來。",
+      "action": "HOLD；補足全 FOV、距離與姿態覆蓋，檢查 P95 residual 和拒用率後再 qualification。"
+    },
+    {
+      "condition": "標靶尺寸／平面度、焦點、mount 或板面狀態改變",
+      "effect": "2D／3D correspondence 的基準已變，舊 calibration 可能把系統性誤差帶進下游。",
+      "action": "HOLD；保存並核對 board、mount、camera/lens/focus 版本，重拍並檢查重裝 repeatability。"
+    },
+    {
+      "condition": "遮擋、反光、模糊或要處理的是每天的產品 registration",
+      "effect": "marker/corner 會失效，或問題根本不是建立一次性的相機基準。",
+      "action": "拒用該影像；日常產品對位改評估 ECC、feature initialization 或其他有對應輸入條件的方法。"
+    }
+  ],
+  "comparison": [
+    {
+      "model": "ChArUco",
+      "normality": "依據：可控制放入、尺寸與角點身份已知的實體標靶",
+      "candidate": "可用輸出：coverage 與 reprojection residual 合格的 calibration／pose"
+    },
+    {
+      "model": "ECC",
+      "normality": "依據：template 與 moving ROI 的外觀在小位移下仍可直接相關",
+      "candidate": "可用輸出：收斂且 residual 合格的微調 warp／inverse transform"
+    },
+    {
+      "model": "SIFT",
+      "normality": "依據：兩張產品影像有足夠穩定、可觀測的局部紋理",
+      "candidate": "可用輸出：coverage 與 RANSAC residual 合格的 correspondence／初始化"
+    }
+  ],
+  "selection": "能受控放入已知標靶、需要可追溯相機幾何基準時，先選 ChArUco。固定標靶尺寸、平面度、mount、camera/lens/focus 與 capture coverage，並以不同位置、姿態和重裝後的 P95 reprojection 及下游 residual qualification；不要以單次平均誤差放行。",
+  "poc": {
+    "title": "POC 第一件事：證明幾何基準不是只在中央看起來好",
+    "steps": [
+      "鎖定 ChArUco board 版型、實測尺寸／平面度、mount、camera/lens/focus 與影像取得 recipe。",
+      "在全 FOV、不同距離和姿態拍攝清晰標靶，保存 marker/corner count、coverage、pose diversity 與拒用影像。",
+      "比較 P50/P95 reprojection residual、重裝 repeatability 與 downstream registration residual；任何 coverage 或 tail 不合格都維持 HOLD。"
+    ],
+    "hold": "標靶遮擋、反光、模糊、板面彎曲、尺寸不明、mount/focus 改變或 coverage 不足時，先不要把 pose 交給量產流程。",
+    "acceptance": {
+      "baseline": "以已 qualification 的 camera／board station 對照重裝或新 station；固定 board 版型與實測尺寸、mount、lens/focus、capture recipe 和 full-FOV pose protocol。",
+      "measure": "按 FOV cell、距離、姿態與重裝分層量 corner count、coverage、pose diversity、P50/P95 reprojection residual、reject rate、repeatability 與 downstream registration residual。",
+      "negative_control": "只在畫面中央拍一張清楚 board，且刻意不覆蓋邊角與不同姿態；預期平均 residual 仍可能漂亮，但 coverage／P95／重裝 repeatability 無法證明，必須 HOLD。",
+      "owner": "由 camera／fixture owner 保存 board、mount 與 optics revision；幾何／CV owner 簽核 residual 與 coverage evidence，製程 owner 才決定是否採用 pose。"
+    }
+  },
+  "teach_back": {
+    "question": "你只有一張在畫面中央拍得很清楚的標靶影像，平均 reprojection residual 很小。可以直接宣布整個 FOV 的 calibration 合格嗎？",
+    "answer": "不可以。中央單張沒有驗到邊角、距離、姿態與重裝後的尾端誤差。先補足全 FOV 的角點 coverage 與 pose diversity，檢查 P95 residual、拒用率和 repeatability；小平均值不是全域幾何證明。"
+  },
+  "slide_reading": [
+    {
+      "title": "先找：標靶上的角點為何不是普通方格？",
+      "question": "哪兩種資訊讓一個畫面角點可以連到板上的已知位置？",
+      "look": "找 marker ID、chessboard corners、已知 board geometry 與相機畫面。",
+      "relation": "ID 辨認角點身份；board geometry 提供 object point；兩者才形成 correspondence。",
+      "takeaway": "ChArUco 的起點是可追溯的實體標靶，不是從產品影像猜座標。",
+      "terms": [
+        "correspondence：同一個角點的影像位置與標靶位置配對",
+        "object point：標靶上已知尺寸所定義的實體座標"
+      ]
+    },
+    {
+      "title": "這張圖要核對：pose 怎麼被解出來？",
+      "question": "為什麼 calibration 或 PnP 後還要把角點投回影像？",
+      "look": "找 2D corners、3D／plane points、calibration/PnP、camera pose 與回投影點。",
+      "relation": "求解器讓相機模型同時解釋多個 correspondence；回投影差距就是可觀察 residual。",
+      "takeaway": "pose 不是憑圖形看起來對齊，而是用可量的角點誤差檢查。",
+      "terms": [
+        "PnP：由已知物點與影像點求相機姿態的幾何求解",
+        "reprojection residual：把求得姿態預測回影像後的角點差距"
+      ]
+    },
+    {
+      "title": "先鎖住標靶與拍攝契約，才談 calibration",
+      "question": "哪些設定一變，就等於改了這次幾何基準？",
+      "look": "找 board/mount、camera/lens/focus、corner coverage、FOV 與姿態樣本。",
+      "relation": "標靶幾何與相機設定共同定義 2D／3D 配對；coverage 決定哪些區域真正被驗到。",
+      "takeaway": "標靶、mount、optics 與 capture coverage 都是可重播的工程契約。",
+      "terms": [
+        "FOV coverage：角點在整個視野中的分布範圍",
+        "pose diversity：標靶距離與姿態的多樣性"
+      ]
+    },
+    {
+      "title": "最後看：何時該拒用這個 pose？",
+      "question": "遮擋、反光或只剩中央角點時，為什麼不能只看平均 residual？",
+      "look": "找 corner count、P50/P95 residual、coverage、reject 與重裝 repeatability。",
+      "relation": "單次平均會把少數嚴重誤差平均掉；P95 和拒用樣本才會顯示可靠邊界。",
+      "takeaway": "ChArUco 是建立幾何基準的工具；證據不足時要拒用，不是硬交給下游。",
+      "terms": [
+        "P95 residual：較差尾端案例的回投影誤差尺度",
+        "repeatability：重裝或重拍後能否維持一致結果"
+      ]
+    }
+  ],
+  "comparison_headers": {
+    "title": "不要比名稱；比成立所需的幾何輸入",
+    "basis": "成立所需的幾何輸入／假設",
+    "output": "可採用的幾何輸出／驗證 gate"
+  },
+  "transfer_check": {
+    "title": "邊角尚未驗過，可以沿用嗎？",
+    "scenario": "維修後換了同型鏡頭與 mount；中心位置的一張 board image 平均 residual 很小，但產品會使用整個 FOV。",
+    "question": "可以沿用舊 calibration／pose 交給量產嗎？指出至少兩個還沒被證明的條件與下一步。",
+    "answer": "不可以。mount、lens/focus revision 與 full-FOV／pose coverage 都已改變或尚未驗證；重拍多位置、多姿態 board，檢查 corner count、P95 residual、reject rate、重裝 repeatability 與 downstream registration residual。完成前 HOLD。"
+  },
+  "review_trace": {
+    "authority": "roadmap-model-selection/geometry-alignment-measurement/charuco/model.md",
+    "scope": "F02 先讀契約：為什麼需要、三個模型核心設計、移除核心的自測與選型；既有後續細節、反例與工程驗證原樣保留。",
+    "claims": [
+      {
+        "id": "visual-1",
+        "field": "beginner_path.visuals[id-corners-to-board]",
+        "source": "模型定位 / architecture_path"
+      },
+      {
+        "id": "visual-2",
+        "field": "beginner_path.visuals[pose-and-reprojection]",
+        "source": "architecture_path"
+      },
+      {
+        "id": "visual-3",
+        "field": "beginner_path.visuals[coverage-p95-review]",
+        "source": "representation_or_score"
+      },
+      {
+        "id": "visual-4",
+        "field": "beginner_path.visuals[center-only-counterfactual]",
+        "source": "failure_boundary"
+      },
+      {
+        "id": "visual-5",
+        "field": "beginner_path.visuals[geometry-baseline-boundary]",
+        "source": "selection_gate / evidence_bundle"
+      },
+      {
+        "id": "promise",
+        "field": "promise",
+        "source": "模型定位 / representation_or_score"
+      },
+      {
+        "id": "mechanism",
+        "field": "mechanism_steps",
+        "source": "architecture_path / representation_or_score"
+      },
+      {
+        "id": "boundaries",
+        "field": "boundary_cases",
+        "source": "failure_boundary / selection_gate"
+      },
+      {
+        "id": "comparison",
+        "field": "comparison + selection",
+        "source": "selection_gate"
+      },
+      {
+        "id": "poc",
+        "field": "poc + acceptance",
+        "source": "cost_and_operating_point / evidence_bundle"
+      },
+      {
+        "id": "transfer",
+        "field": "transfer_check",
+        "source": "failure_boundary / selection_gate"
+      },
+      {
+        "id": "f02-core",
+        "field": "beginner_path.visuals[0] + scenario + mental_model",
+        "source": "tmp/charuco-r02/brief.md + charuco-r02-manifest.json"
+      },
+      {
+        "id": "f02-transfer",
+        "field": "micro_example + transfer_check + selection",
+        "source": "roadmap-model-selection/geometry-alignment-measurement/charuco/model.md"
+      }
+    ]
+  },
+  "quality_status": {
+    "label": "待修訂",
+    "state": "needs_revision",
+    "round": "WI-012 F02",
+    "reason": "舊 WI-012 F02 被使用者判定不可用；R02 已依五份指定 Markdown 重做，仍須使用者確認意義與風格。",
+    "current_revision": "R09 integrated candidate; pending live runtime and user review",
+    "current_asset": "_course_content/generated-concepts/charuco/charuco-r07-core.png",
+    "current_mobile_asset": "_course_content/generated-concepts/charuco/charuco-r07-core-mobile.png"
+  },
+  "teaching_preflight": {
+    "version": "R09 integrated candidate",
+    "source_files": [
+      "CLAUDE.md",
+      "IMAGE_STYLE_GUIDE.md",
+      "TEACHING_REVIEW_LOG.md",
+      "TEACHING_SCORING_RUBRIC.md",
+      "TEACHING_WEBPAGE_GUIDE.md"
+    ],
+    "brief": "tmp/charuco-r07/brief.md",
+    "story": "C",
+    "major_visual_nodes": 4,
+    "reference_page": "teaching-images/vision-ai-model-selection/course-delivery/section-pages/01-geometry-alignment-measurement/images/final/GEOREF-01-14-story_v03.png",
+    "takeaway": "先用有身份的角點建立 2D↔已知板座標，再用全 FOV 的回投影尾端與重裝證據決定是否放行。",
+    "visual_status": "prototype_pending_user_review",
+    "actual_png_review": {
+      "desktop": "tmp/charuco-r07/final/desktop.png",
+      "mobile": "tmp/charuco-r07/final/mobile.png",
+      "reviewed_at": "2026-09-06",
+      "result": "R07 PNG prototype Sol-passed; R09 static integration passed; live browser runtime unavailable; user review pending"
+    }
+  }
+}

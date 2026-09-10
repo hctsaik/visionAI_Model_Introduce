@@ -1,0 +1,587 @@
+{
+  "model": "LightGlue",
+  "badge": "R06｜學習配對器不是偵測器",
+  "title": "LightGlue：學習配對，不是找點、也不是對位",
+  "scenario": {
+    "title": "為什麼需要這個方法？",
+    "body": "你有同一工件的兩張 ROI，希望由局部特徵建立幾何初始化；某些表面讓傳統 descriptor 不夠穩，因此考慮 learned matcher。你仍必須明確選上游 extractor、固定輸入契約，並把結果交給 RANSAC/pose/warp solver 驗證。"
+  },
+  "promise": {
+    "title": "它真正交付的東西",
+    "body": "LightGlue 交付從外部 extractor 的 keypoints/descriptors 中選出的 correspondences、confidence、adaptive pruning 與 early stopping 狀態；不是 detector、不是 transform solver，也不是已驗證的量測結果。"
+  },
+  "mental_model": {
+    "title": "先把它看成學習配對器，不是偵測器、也不是對位器",
+    "body": "image A/B 先經 SuperPoint、DISK 或 ALIKED 等指定 extractor，產生 keypoints 和 descriptors。\n\nself/cross-attention matching 將兩張圖的 descriptor tokens 互動，形成對應候選與 confidence。\n\n低可信或不必要的候選被 adaptive pruning，滿足條件時 early stopping，保留 matches 與 confidence。",
+    "limit": "配對員沒有量尺或幾何求解器。confidence 是 matcher 的訊號，不等於 transform 正確、inlier coverage 足夠或座標量測已校準。"
+  },
+  "micro_example": {
+    "title": "拿掉核心設計，再換一個工作情境",
+    "setup": "兩張 ROI 有週期性金屬格紋。LightGlue 產生多條高 confidence matches，但其中一些在相似格子間互相錯位。",
+    "prediction": "先猜：高 confidence 是否能單獨證明這些線支持同一個 warp？還缺少哪一層檢查？",
+    "reveal": "不能。confidence 反映 learned matching 的可信訊號；重複結構仍可能讓看似強的 matches 沒有共同幾何意義。RANSAC/pose solver、inlier coverage 和 residual 才決定能否形成 transform。"
+  },
+  "mechanism_steps": [
+    {
+      "title": "先由外部 extractor 產生特徵 token",
+      "body": "image A/B 先經 SuperPoint、DISK 或 ALIKED 等指定 extractor，產生 keypoints 和 descriptors。",
+      "why": "LightGlue 的輸入不是原圖直接變成 box；它依賴上游特徵，extractor、weights、resize 和 keypoint budget 會改變它能比較什麼。",
+      "anchor": "工程圖核對：external extractor → keypoints + descriptor tokens",
+      "diagram": {
+        "title": "先取出特徵 tokens",
+        "body": "外部 extractor 為兩張圖產生 keypoints 與 descriptors。",
+        "why": "LightGlue 比的是上游特徵，不是原圖直接成框。",
+        "anchor": "external extractor"
+      }
+    },
+    {
+      "title": "讓 token 在圖內與跨圖互相參考",
+      "body": "self/cross-attention matching 將兩張圖的 descriptor tokens 互動，形成對應候選與 confidence。",
+      "why": "局部名片不只單獨比距離；跨圖關係可幫助 matcher 判斷哪個候選較一致，但仍不是幾何保證。",
+      "anchor": "工程圖核對：self-attention／cross-attention matching",
+      "diagram": {
+        "title": "讓 tokens 互相配對",
+        "body": "以 self/cross attention 形成 matches 與 confidence。",
+        "why": "跨圖關係能選候選，卻不是幾何保證。",
+        "anchor": "self/cross attention"
+      }
+    },
+    {
+      "title": "用 pruning 和 early stopping 控制計算",
+      "body": "低可信或不必要的候選被 adaptive pruning，滿足條件時 early stopping，保留 matches 與 confidence。",
+      "why": "keypoint budget 和保留策略同時影響 latency 與 recall；快不是固定屬性，而是這些 operating knobs 的結果。",
+      "anchor": "工程圖核對：confidence／adaptive pruning／early stopping",
+      "diagram": {
+        "title": "剪枝控制計算",
+        "body": "低價值候選被 pruning，條件足夠就 early stop。",
+        "why": "budget 和保留策略同時改變 latency 與 recall。",
+        "anchor": "pruning／early stop"
+      }
+    },
+    {
+      "title": "把 matches 交給幾何 solver 再決定",
+      "body": "RANSAC、pose 或 warp solver 使用 matches，檢查 inlier coverage 和 residual，才輸出可採用的 transform。",
+      "why": "LightGlue 的責任停在 correspondence；沒有 solver 與幾何 gate，任何高 confidence 線條都不能替代可驗證的幾何。",
+      "anchor": "工程圖核對：matches → RANSAC／pose／warp → inlier/residual gate",
+      "diagram": {
+        "title": "交給 solver 驗幾何",
+        "body": "用 RANSAC、pose 或 warp 檢查 inliers 與 residual。",
+        "why": "matcher 止於 correspondence，幾何仍需另證。",
+        "anchor": "solver／inlier-residual gate"
+      }
+    }
+  ],
+  "visual_intro": "現在才拿四張工程圖核對：先確認 external extractor 的責任邊界，再看 token matching、confidence/pruning，最後找 RANSAC/inlier/residual gate。不要把 matcher 中間的 confidence 當作終點。",
+  "concept_visuals": [
+    {
+      "id": "causal-chain",
+      "placement": "after_causal_chain",
+      "title": "LightGlue 是學習配對器，不是偵測器",
+      "prompt": "它有權重，但權重學的是找點、配對，還是把圖對齊？",
+      "caption": "同一金屬件兩視角。點來自上游 extractor。LightGlue 只負責學習配對，不輸出 warp。本圖未跑 LightGlue 權重。教學示意。",
+      "image": "_course_content/generated-concepts/lightglue/lightglue-r06-c1-what.png",
+      "alt": "LightGlue 是 matcher：點來自 extractor，不是偵測器或對位器。",
+      "callouts": [
+        {
+          "title": "是學習配對器",
+          "body": "有權重，職責停在 matches 與 confidence。"
+        },
+        {
+          "title": "不是 detector",
+          "body": "點與描述子由 SuperPoint／DISK 等先產生。"
+        },
+        {
+          "title": "不是 transform",
+          "body": "幾何仍要 RANSAC／pose／warp solver。"
+        }
+      ]
+    },
+    {
+      "id": "worked-example",
+      "placement": "after_micro_example",
+      "title": "信心高也可能一起錯配，仍要 HOLD",
+      "prompt": "線又密又漂亮，可以不看空間覆蓋就送進 production warp 嗎？",
+      "caption": "重複紋理或線擠在一角時，高信心仍可能沒有共同幾何。沒過 inlier／residual 就 HOLD。教學示意。",
+      "image": "_course_content/generated-concepts/lightglue/lightglue-r06-d4-stop.png",
+      "alt": "高信心連線仍可能錯配，應 HOLD。",
+      "callouts": [
+        {
+          "title": "看起來很密不夠",
+          "body": "數量與信心不能代替覆蓋。"
+        },
+        {
+          "title": "相似格子會一起錯",
+          "body": "learned matching 仍會被重複圖樣騙。"
+        },
+        {
+          "title": "正確下一步是停",
+          "body": "鎖 extractor 契約，或改方法。"
+        }
+      ]
+    },
+    {
+      "id": "comparison",
+      "placement": "after_comparison",
+      "title": "傳統描述子夠用就 SIFT，難配再考慮 LightGlue",
+      "prompt": "缺的是可解釋的點、學習配對，還是最後幾個像素的微調？",
+      "caption": "同一工件。SIFT 是可解釋對應基線；LightGlue 補難配的匹配；ECC 只做已接近微調；能放標靶用 ChArUco。教學示意。",
+      "image": "_course_content/generated-concepts/lightglue/lightglue-r06-d5-pick.png",
+      "alt": "SIFT、LightGlue、ECC、ChArUco 分工。",
+      "callouts": [
+        {
+          "title": "SIFT 先當基線",
+          "body": "紋理清楚、要可追查對應時。"
+        },
+        {
+          "title": "LightGlue 補配對",
+          "body": "描述子不穩且可接受權重與 extractor 契約時。"
+        },
+        {
+          "title": "ECC 只做微調",
+          "body": "已經很接近、外觀穩定才交給它。"
+        }
+      ]
+    },
+    {
+      "id": "boundary-cases-explainer",
+      "placement": "before_boundary_cases",
+      "title": "同一條因果鏈，在哪裡會被破壞？",
+      "prompt": "不要只記住風險名詞；先預測條件一變，畫面或候選結果會怎麼變，再決定何時應 HOLD。",
+      "caption": "LightGlue 的三個模型專屬反事實：每欄把條件、可觀察後果與正確下一步放在一起。它們不是自動修正規則；遇到條件超出驗證範圍時，先保存原始證據並進入 HOLD／REVIEW。",
+      "image": "_course_content/generated-concepts/lightglue/lightglue-boundary-cases_v01.svg",
+      "alt": "LightGlue 的三欄反事實說明圖：每欄依序說明一個失效條件、可能看到的候選或量測後果，以及應進入 HOLD、重驗或改選方法的安全下一步。",
+      "callouts": [
+        {
+          "title": "先看條件，而不是先改門檻",
+          "body": "候選改變可能是資料、取像、設定或模型假設被破壞，不能立刻解讀成產品真相。"
+        },
+        {
+          "title": "把可觀察後果說出來",
+          "body": "誤報、漏檢、整片異常或時間失序都需要回到原始資料與版本追查。"
+        },
+        {
+          "title": "HOLD 是設計的一部分",
+          "body": "先停止自動往下走、保存 evidence，確認條件後才重新 qualification 或交給適合的方法。"
+        }
+      ]
+    }
+  ],
+  "boundary_cases": [
+    {
+      "condition": "extractor、weights、resize、keypoint budget 或 confidence/early-stop 改變",
+      "effect": "輸入 token、pruning 行為、recall 與 latency 都改變，舊結果無法直接比較。",
+      "action": "鎖所有 upstream/matcher contract，分開量 extractor、matcher、geometry solver 和端到端 P95。"
+    },
+    {
+      "condition": "不可觀測表面、重複結構、非剛性變化或 domain shift",
+      "effect": "learned descriptor 的 confidence 可能失去幾何意義，造成錯配或 coverage 不足。",
+      "action": "以 surface/domain split 驗證，檢查 inlier coverage/residual/failure pairs；不足時 reject，不可硬湊 transform。"
+    },
+    {
+      "condition": "把 demo pair 的漂亮 matches 當量產證據",
+      "effect": "公開範例未必包含實際 surface texture、反光、失焦、速度與產品變異，P95 也可能被忽略。",
+      "action": "用本地真實 pairs 做 qualification，記錄 confidence 分布、reject rate、registration tail 和端到端 P95。"
+    }
+  ],
+  "comparison": [
+    {
+      "model": "LightGlue",
+      "normality": "依據：外部 extractor 的 learned keypoint/descriptor tokens，加上 attention matching",
+      "candidate": "可用輸出：confidence/pruning 後、仍待 RANSAC/solver 驗證的 correspondence"
+    },
+    {
+      "model": "SIFT",
+      "normality": "依據：image pyramid 上的尺度/方向 local keypoints 與 gradient descriptors",
+      "candidate": "可用輸出：ratio/RANSAC、coverage、residual 合格的 correspondence／初始化"
+    },
+    {
+      "model": "ECC",
+      "normality": "依據：初始位置已接近、外觀穩定的 template/moving ROI",
+      "candidate": "可用輸出：收斂與 residual 合格的連續 micro-alignment warp"
+    }
+  ],
+  "selection": "傳統 descriptor 不穩、但可接受 extractor/weights 依賴並仍需要 correspondence 時，才評估 LightGlue。固定 extractor、image scale、keypoint budget、confidence threshold、early stop、RANSAC 和 input contract，與 SIFT 比較 inlier coverage、registration tail、reject rate 和 P95；低 confidence 或幾何 gate 不足時拒用。",
+  "poc": {
+    "title": "POC 第一件事：把 matcher、extractor 與 solver 拆開量",
+    "steps": [
+      "鎖 extractor/weights、resize、keypoint budget、LightGlue weights、confidence/early-stop、RANSAC/pose/warp solver 和 input surface contract。",
+      "以真實 product/domain split 蒐集穩定、重複、低紋理、反光、模糊與非剛性 pairs，保存 token/match/confidence、inlier coverage、residual 和 reject cases。",
+      "分別量 extractor、matcher、solver 和整條端到端 P95，並比較 SIFT 的 coverage、registration tail、reject rate 與下游 evidence。"
+    ],
+    "hold": "上游 extractor 未鎖定、confidence 不足、inliers 集中於重複區、residual 偏大、surface 不可觀測或 domain shift 未驗證時，先 HOLD/REJECT。",
+    "acceptance": {
+      "baseline": "以固定 external extractor/weights、resize、keypoint budget、LightGlue weights、confidence/early-stop 和 geometry solver 的同一 pairs，與 SIFT initialization baseline 對照。",
+      "measure": "依 surface/domain split 量 extractor、matcher、solver 與端到端 P95；另保存 token/match/confidence、inlier coverage、residual tail、reject rate、registration tail 與 failure pairs。",
+      "negative_control": "在重複格紋 pair 中改動 resize 或 keypoint budget，保留高 confidence 但集中在一小區的 matches；預期 geometry solver 的 coverage／residual gate 拒用它，而非以 confidence 放行。",
+      "owner": "由產品／資料 owner 管 surface/domain split；CV owner 鎖 extractor-matcher-solver contract 並簽核 correspondence evidence，geometry/downstream owner 決定 transform 是否可採用。"
+    }
+  },
+  "teach_back": {
+    "question": "LightGlue 對一組重複格紋輸出多條高 confidence matches。你為什麼仍不能直接把它們轉成 production warp？",
+    "answer": "LightGlue 的責任是 learned correspondence，不是幾何求解。重複結構可能讓高 confidence lines 一起錯；先用 RANSAC/pose/warp solver 檢查 inlier spatial coverage 與 residual，不足就拒用並回查 extractor/input contract。"
+  },
+  "slide_reading": [
+    {
+      "title": "先找：LightGlue 的輸入其實來自哪裡？",
+      "question": "它為何不能在沒有 extractor 的情況下直接從兩張原圖輸出 transform？",
+      "look": "找 image A/B、SuperPoint/DISK/ALIKED 等 external extractor、keypoints 與 descriptor tokens。",
+      "relation": "extractor 先決定哪些局部與數字描述進入 matcher；LightGlue 再處理這些 token。",
+      "takeaway": "extractor 是模型責任邊界的一部分，不是可忽略的前處理。",
+      "terms": [
+        "extractor：從影像產生 keypoints 與 descriptors 的上游模型或管線",
+        "descriptor token：代表一個局部特徵的數字向量"
+      ]
+    },
+    {
+      "title": "這張圖要核對：attention matching 做了什麼？",
+      "question": "self/cross attention 為何能改變候選配對，而不等於幾何求解？",
+      "look": "找 self-attention、cross-attention、兩組 tokens、matches 和 confidence。",
+      "relation": "token 在同圖與跨圖關係中互相參考，產生較有根據的配對與 confidence。",
+      "takeaway": "attention 幫助 matcher 選線；它沒有取代 transform 的幾何驗證。",
+      "terms": [
+        "self-attention：同一張圖內 token 彼此參考的機制",
+        "cross-attention：兩張圖 token 彼此參考以建立配對的機制"
+      ]
+    },
+    {
+      "title": "先看：快是怎麼被做出來的？",
+      "question": "keypoint budget、pruning 和 early stopping 為何會同時改變 latency 與 recall？",
+      "look": "找 keypoint budget、confidence、adaptive pruning、early stopping 和保留的 matches。",
+      "relation": "減少候選會降低計算，但也可能丟掉原本可用的 correspondence。",
+      "takeaway": "速度是指定 operating point 的量測結果，不是 LightGlue 名字自帶的保證。",
+      "terms": [
+        "adaptive pruning：依匹配狀態移除不必要候選以減少計算",
+        "early stopping：在條件滿足時提早停止 matcher 計算"
+      ]
+    },
+    {
+      "title": "最後找：哪一段真正判定幾何可用？",
+      "question": "為什麼 confidence 高仍要看 inlier coverage 和 residual？",
+      "look": "找 matches、RANSAC/pose/warp solver、inliers、spatial coverage、residual 和 reject gate。",
+      "relation": "solver 檢查多條線能否支持同一 transform；coverage/residual 揭露是否只在局部或根本錯配。",
+      "takeaway": "LightGlue 的輸出要送進幾何 gate；低信心或不一致時要拒用。",
+      "terms": [
+        "inlier coverage：支持同一 transform 的點在影像中的空間分布",
+        "geometry solver：由 correspondence 求 pose 或 warp 並檢查幾何一致性的模組"
+      ]
+    }
+  ],
+  "beginner_path": {
+    "title": "先分清它是 matcher，再看 extractor、attention、何時停",
+    "intro": "LightGlue 有權重，但只負責配對。點來自上游 extractor；幾何仍要 solver。配對圖為教學示意，不是本機權重推論。",
+    "visuals": [
+      {
+        "id": "pcb-pair-anchor",
+        "title": "LightGlue 是學習配對器，不是偵測器",
+        "prompt": "它有權重，但權重學的是找點、配對，還是把圖對齊？",
+        "caption": "同一金屬件兩視角。點來自上游 extractor。LightGlue 只負責學習配對，不輸出 warp。本圖未跑 LightGlue 權重。教學示意。",
+        "image": "_course_content/generated-concepts/lightglue/lightglue-r06-c1-what.png",
+        "alt": "LightGlue 是 matcher：點來自 extractor，不是偵測器或對位器。",
+        "callouts": [
+          {
+            "title": "是學習配對器",
+            "body": "有權重，職責停在 matches 與 confidence。"
+          },
+          {
+            "title": "不是 detector",
+            "body": "點與描述子由 SuperPoint／DISK 等先產生。"
+          },
+          {
+            "title": "不是 transform",
+            "body": "幾何仍要 RANSAC／pose／warp solver。"
+          }
+        ],
+        "reading_views": [
+          {
+            "title": "LightGlue 是學習配對器，不是偵測器",
+            "image": "_course_content/generated-concepts/lightglue/lightglue-r06-c1-what.png",
+            "mobile_image": "_course_content/generated-concepts/lightglue/lightglue-r06-c1-what-mobile.png",
+            "alt": "LightGlue 是 matcher：點來自 extractor，不是偵測器或對位器。",
+            "mobile_crop": [
+              0,
+              0,
+              720,
+              1280
+            ],
+            "mobile_display_mode": "full-mobile",
+            "mobile_intrinsic_width": 720,
+            "mobile_intrinsic_height": 1280,
+            "desktop_intrinsic_width": 1600,
+            "desktop_intrinsic_height": 900
+          }
+        ],
+        "core_ideas": true
+      },
+      {
+        "id": "extractor-contract",
+        "title": "怎麼做：extractor 出點，attention 來配，再修剪",
+        "prompt": "沒有自己找點時，LightGlue 怎麼從兩張圖得到候選線？",
+        "caption": "教學示意，點用 OpenCV SIFT 代替上游特徵。流程是上游 tokens → self/cross-attention → pruning。還不是幾何。",
+        "image": "_course_content/generated-concepts/lightglue/lightglue-r06-c2-how.png",
+        "alt": "上游出點、attention 配對、修剪低價值線。",
+        "callouts": [
+          {
+            "title": "1 上游出 tokens",
+            "body": "extractor、resize、點數預算會改變它能比什麼。"
+          },
+          {
+            "title": "2 圖內／跨圖注意",
+            "body": "形成對應候選與信心，不是量測。"
+          },
+          {
+            "title": "3 修剪控制計算量",
+            "body": "快來自 pruning／early stop，不是固定屬性。"
+          }
+        ],
+        "reading_views": [
+          {
+            "title": "怎麼做：extractor 出點，attention 來配，再修剪",
+            "image": "_course_content/generated-concepts/lightglue/lightglue-r06-c2-how.png",
+            "mobile_image": "_course_content/generated-concepts/lightglue/lightglue-r06-c2-how-mobile.png",
+            "alt": "上游出點、attention 配對、修剪低價值線。",
+            "mobile_crop": [
+              0,
+              0,
+              720,
+              1280
+            ],
+            "mobile_display_mode": "full-mobile",
+            "mobile_intrinsic_width": 720,
+            "mobile_intrinsic_height": 1280,
+            "desktop_intrinsic_width": 1600,
+            "desktop_intrinsic_height": 900
+          }
+        ]
+      },
+      {
+        "id": "attention-pruning",
+        "title": "交出 matches 與信心，不是已驗證的 warp",
+        "prompt": "高 confidence 能不能單獨當成對位成功？",
+        "caption": "輸出是 correspondence 與 confidence。本圖未跑 LightGlue 權重。高信心仍要交給幾何 gate。教學示意。",
+        "image": "_course_content/generated-concepts/lightglue/lightglue-r06-c3-get.png",
+        "alt": "LightGlue 輸出連線與信心，標示還不是 warp。",
+        "callouts": [
+          {
+            "title": "輸出是線與信心",
+            "body": "可以回查兩個像素位置。"
+          },
+          {
+            "title": "信心不是 PASS",
+            "body": "重複結構仍可能一起錯配。"
+          },
+          {
+            "title": "幾何是下一步",
+            "body": "RANSAC、coverage、residual 才決定能否用。"
+          }
+        ],
+        "reading_views": [
+          {
+            "title": "交出 matches 與信心，不是已驗證的 warp",
+            "image": "_course_content/generated-concepts/lightglue/lightglue-r06-c3-get.png",
+            "mobile_image": "_course_content/generated-concepts/lightglue/lightglue-r06-c3-get-mobile.png",
+            "alt": "LightGlue 輸出連線與信心，標示還不是 warp。",
+            "mobile_crop": [
+              0,
+              0,
+              720,
+              1280
+            ],
+            "mobile_display_mode": "full-mobile",
+            "mobile_intrinsic_width": 720,
+            "mobile_intrinsic_height": 1280,
+            "desktop_intrinsic_width": 1600,
+            "desktop_intrinsic_height": 900
+          }
+        ]
+      },
+      {
+        "id": "geometry-gate",
+        "title": "信心高也可能一起錯配，仍要 HOLD",
+        "prompt": "線又密又漂亮，可以不看空間覆蓋就送進 production warp 嗎？",
+        "caption": "重複紋理或線擠在一角時，高信心仍可能沒有共同幾何。沒過 inlier／residual 就 HOLD。教學示意。",
+        "image": "_course_content/generated-concepts/lightglue/lightglue-r06-d4-stop.png",
+        "alt": "高信心連線仍可能錯配，應 HOLD。",
+        "callouts": [
+          {
+            "title": "看起來很密不夠",
+            "body": "數量與信心不能代替覆蓋。"
+          },
+          {
+            "title": "相似格子會一起錯",
+            "body": "learned matching 仍會被重複圖樣騙。"
+          },
+          {
+            "title": "正確下一步是停",
+            "body": "鎖 extractor 契約，或改方法。"
+          }
+        ],
+        "reading_views": [
+          {
+            "title": "信心高也可能一起錯配，仍要 HOLD",
+            "image": "_course_content/generated-concepts/lightglue/lightglue-r06-d4-stop.png",
+            "mobile_image": "_course_content/generated-concepts/lightglue/lightglue-r06-d4-stop-mobile.png",
+            "alt": "高信心連線仍可能錯配，應 HOLD。",
+            "mobile_crop": [
+              0,
+              0,
+              720,
+              1280
+            ],
+            "mobile_display_mode": "full-mobile",
+            "mobile_intrinsic_width": 720,
+            "mobile_intrinsic_height": 1280,
+            "desktop_intrinsic_width": 1600,
+            "desktop_intrinsic_height": 900
+          }
+        ]
+      },
+      {
+        "id": "operating-boundary",
+        "title": "傳統描述子夠用就 SIFT，難配再考慮 LightGlue",
+        "prompt": "缺的是可解釋的點、學習配對，還是最後幾個像素的微調？",
+        "caption": "同一工件。SIFT 是可解釋對應基線；LightGlue 補難配的匹配；ECC 只做已接近微調；能放標靶用 ChArUco。教學示意。",
+        "image": "_course_content/generated-concepts/lightglue/lightglue-r06-d5-pick.png",
+        "alt": "SIFT、LightGlue、ECC、ChArUco 分工。",
+        "callouts": [
+          {
+            "title": "SIFT 先當基線",
+            "body": "紋理清楚、要可追查對應時。"
+          },
+          {
+            "title": "LightGlue 補配對",
+            "body": "描述子不穩且可接受權重與 extractor 契約時。"
+          },
+          {
+            "title": "ECC 只做微調",
+            "body": "已經很接近、外觀穩定才交給它。"
+          }
+        ],
+        "reading_views": [
+          {
+            "title": "傳統描述子夠用就 SIFT，難配再考慮 LightGlue",
+            "image": "_course_content/generated-concepts/lightglue/lightglue-r06-d5-pick.png",
+            "mobile_image": "_course_content/generated-concepts/lightglue/lightglue-r06-d5-pick-mobile.png",
+            "alt": "SIFT、LightGlue、ECC、ChArUco 分工。",
+            "mobile_crop": [
+              0,
+              0,
+              720,
+              1280
+            ],
+            "mobile_display_mode": "full-mobile",
+            "mobile_intrinsic_width": 720,
+            "mobile_intrinsic_height": 1280,
+            "desktop_intrinsic_width": 1600,
+            "desktop_intrinsic_height": 900
+          }
+        ]
+      }
+    ]
+  },
+  "comparison_headers": {
+    "title": "不要比名稱；比匹配表示與上游契約",
+    "basis": "匹配表示與上游 extractor 契約",
+    "output": "可採用的 correspondence／geometry gate"
+  },
+  "transfer_check": {
+    "title": "高 confidence 但集中在重複格紋，能直接 fit warp 嗎？",
+    "scenario": "新 PCB 有週期性格紋，resize 與 keypoint budget 也被調過；LightGlue 的高 confidence matches 都集中在一小塊。",
+    "question": "可以只因 confidence 高就送進 production warp 嗎？",
+    "answer": "不可以。extractor、resize、budget 改變即改變輸入契約；重複格紋也可使高 confidence 線一起錯配。先鎖完整 upstream contract，再用 RANSAC／solver 的 inlier spatial coverage、residual tail 與 reject rate 決定，不足即 HOLD。"
+  },
+  "review_trace": {
+    "authority": "roadmap-model-selection/geometry-alignment-measurement/lightglue/model.md",
+    "scope": "F02 先讀契約：為什麼需要、三個模型核心設計、移除核心的自測與選型；既有後續細節、反例與工程驗證原樣保留。",
+    "claims": [
+      {
+        "id": "visual-1",
+        "field": "beginner_path.visuals[pcb-pair-anchor]",
+        "source": "模型定位 / architecture_path"
+      },
+      {
+        "id": "visual-2",
+        "field": "beginner_path.visuals[extractor-contract]",
+        "source": "architecture_path"
+      },
+      {
+        "id": "visual-3",
+        "field": "beginner_path.visuals[attention-pruning]",
+        "source": "representation_or_score"
+      },
+      {
+        "id": "visual-4",
+        "field": "beginner_path.visuals[geometry-gate]",
+        "source": "failure_boundary"
+      },
+      {
+        "id": "visual-5",
+        "field": "beginner_path.visuals[operating-boundary]",
+        "source": "selection_gate / evidence_bundle"
+      },
+      {
+        "id": "promise",
+        "field": "promise",
+        "source": "模型定位 / representation_or_score"
+      },
+      {
+        "id": "mechanism",
+        "field": "mechanism_steps",
+        "source": "architecture_path / representation_or_score"
+      },
+      {
+        "id": "boundaries",
+        "field": "boundary_cases",
+        "source": "failure_boundary / selection_gate"
+      },
+      {
+        "id": "comparison",
+        "field": "comparison + selection",
+        "source": "selection_gate"
+      },
+      {
+        "id": "poc",
+        "field": "poc + acceptance",
+        "source": "cost_and_operating_point / evidence_bundle"
+      },
+      {
+        "id": "transfer",
+        "field": "transfer_check",
+        "source": "failure_boundary / selection_gate"
+      },
+      {
+        "id": "f02-core",
+        "field": "beginner_path.visuals[0] + scenario + mental_model",
+        "source": "roadmap-model-selection/geometry-alignment-measurement/lightglue/model.md"
+      },
+      {
+        "id": "f02-transfer",
+        "field": "micro_example + transfer_check + selection",
+        "source": "roadmap-model-selection/geometry-alignment-measurement/lightglue/model.md"
+      }
+    ]
+  },
+  "quality_status": {
+    "label": "待使用者審閱",
+    "state": "needs_revision",
+    "round": "WI-017 LightGlue R06",
+    "reason": "第一遍依 C1–D5 重產；圖標示非 LightGlue 權重推論。使用者核准 pending。",
+    "current_revision": "R06 first-read",
+    "current_asset": "_course_content/generated-concepts/lightglue/lightglue-r06-c1-what.png"
+  },
+  "teaching_preflight": {
+    "version": "R06 C1",
+    "source_files": [
+      "CLAUDE.md",
+      "IMAGE_STYLE_GUIDE.md",
+      "TEACHING_REVIEW_LOG.md",
+      "TEACHING_SCORING_RUBRIC.md",
+      "TEACHING_WEBPAGE_GUIDE.md"
+    ],
+    "brief": "tmp/sift-lg-r06/brief-lg-c1.md",
+    "story": "C",
+    "major_visual_nodes": 4,
+    "reference_page": "teaching-images/vision-ai-model-selection/roadmap-model-selection/foundation-vlm-open-world/clip/images/final/CLIP-01-positioning_v01.png",
+    "takeaway": "LightGlue 是學習配對器；不是偵測器，也不是對位器。",
+    "visual_status": "prototype_pending_user_review"
+  }
+}

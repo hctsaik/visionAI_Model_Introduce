@@ -4,7 +4,7 @@
 - roadmap 節點：`ECC`
 - 講義對照：`01-07`～`01-10`
 - 內容覆蓋狀態：`complete`
-- 產生狀態：`ready-for-visual-production`
+- 產生狀態：`self-reviewed-tested; user-approval-pending`
 
 <!-- topic-learning-bridge:start -->
 ## 先讀這 90 秒
@@ -12,48 +12,42 @@
 > 本段由 `_course_content/topics/ecc.json` 產生，供首次讀者建立正確邊界；下方工程契約仍是實作與驗證依據。
 
 ### 現場問題
-你有固定 template ROI，也有一張外觀相近、初始位置已接近的 moving ROI。你想在下游 AOI 前把小平移、旋轉或近似平面變形校正回來；你不是要解決任意大位移、視差或產品結構改變。
+治具已把同一金屬件放到大致位置，但每次仍有小偏移。若直接做固定ROI檢查，孔邊緣的位置差會混進結果；ECC用模板與待對圖的外觀，微調它們的幾何對齊。
 
 ### 它交出什麼，也不交出什麼
-ECC 交付迭代求得的 warp θ、aligned ROI、inverse transform、objective/residual 與收斂旗標；不是產品品質分數、缺陷遮罩，也不是所有場景都能收斂的萬用對位器。
+交付帶方向定義的warp、相關值及對齊取樣設定；另保存獨立殘差與原圖。後續ROI檢查接對齊影像，但不能把warp或相關分數當成缺陷標記。
 
 ### 一句心智模型
-先鎖 template、mask、pyramid、initial transform 與可使用的 ROI，再選 translation、euclidean、affine 或 homography warp family。
+每輪依目前幾何變換把待對圖重採樣到可比較的座標，再比較與模板的外觀相關，計算變換更新並繼續迭代。圖中同孔的雙邊與強度曲線由錯位變接近，解釋它靠什麼調整；不是逐點描述子匹配，也不是缺陷分類。
 
-目前的參數 θ 將 moving ROI warp 到 template 參考座標，並做對應的 photometric normalization。
-
-coarse-to-fine pyramid 中，ECC objective 指引每輪更新 warp parameter，直到滿足停止條件或到達最大迭代。
-
-**限制：** 透明片比喻假設兩張畫面外觀穩定、初始位置接近且幾何近似平面。反光、視差、大缺陷或錯初值會讓「看起來相關」不等於真的對齊。
+**限制：** 同一兩孔件若從太遠的位置開始，局部孔緣相似可能產生錯誤解；必須同時看整件外框與同身份孔位。局部重合不代表整件對齊，相關值也不能取代獨立幾何核對。
 
 ### 換一個現場再推理
-新治具使 current ROI 比 template 有大位移與非平面視差，局部還有強反光。
+同一產線95%的工件已由治具放得很接近，另外5%會偏移很遠；每件容許的完整處理時間有限。
 
-**問題：** 若 ECC 跑出高 objective，你會直接把 warp 送往下游嗎？
+**問題：** 全部增加ECC迭代，與先判起點／必要時做粗定位，兩條路各有什麼條件？
 
-**核對：** 不會。它已超出可靠初值、穩定外觀與近似平面的假設；高 objective 可能是錯收斂。先 HOLD，重新建立可驗證 initialization／幾何條件，或改選適合視差與大位移的方法，再以 residual tail、inverse map 與下游結果驗證。
+**核對：** 若失敗主要來自近起點但迭代尚未收斂，可在時間預算內比較較多迭代；不能預設它會救回遠起點。若遠移動是主要失敗來源，可用粗定位或特徵匹配先建立合理起點，再接ECC；增加的前處理要與漏對、錯收斂及覆核成本一起量。用相同測試影像核對完整時間和獨立殘差後再選，不憑相關值最高就放行。
 <!-- topic-learning-bridge:end -->
-<!-- f02-model-core:start -->
-## F02 模型中心思想與來源核對
+<!-- wi032-model-core:start -->
+## WI-032 核心做法與工作取捨
 
-**為什麼需要：** 你有固定 template ROI，也有一張外觀相近、初始位置已接近的 moving ROI。你想在下游 AOI 前把小平移、旋轉或近似平面變形校正回來；你不是要解決任意大位移、視差或產品結構改變。
+每輪依目前幾何變換把待對圖重採樣到可比較的座標，再比較與模板的外觀相關，計算變換更新並繼續迭代。圖中同孔的雙邊與強度曲線由錯位變接近，解釋它靠什麼調整；不是逐點描述子匹配，也不是缺陷分類。
 
-**固定 template、moving ROI 與起始位置**：先鎖 template、mask、pyramid、initial transform 與可使用的 ROI，再選 translation、euclidean、affine 或 homography warp family。
+同一兩孔件若從太遠的位置開始，局部孔緣相似可能產生錯誤解；必須同時看整件外框與同身份孔位。局部重合不代表整件對齊，相關值也不能取代獨立幾何核對。
 
-**先用 warp 把 moving ROI 映到 template 座標**：目前的參數 θ 將 moving ROI warp 到 template 參考座標，並做對應的 photometric normalization。
+已經接近且外觀穩定時，可先用ECC微調；有可區分局部且需要較大範圍定位時，可先試SIFT匹配再做幾何估計，含糊匹配可評估LightGlue及相容extractor。ChArUco負責相機幾何，並非這些逐件定位的直接替代品。
 
-**由 ECC objective 反覆更新 θ**：coarse-to-fine pyramid 中，ECC objective 指引每輪更新 warp parameter，直到滿足停止條件或到達最大迭代。
+換產品時要換模板、ROI／mask並重新驗證變換模型與起點範圍；固定相機也可能因光照或遮擋增加錯收斂。比較成本要包含粗定位、ECC迭代、重採樣與失敗覆核，不只計單次函式耗時。
 
-**移除核心設計自測：** 先猜：哪一張比較適合從目前位置開始迭代 warp？另一張若硬跑，可能會出現什麼危險？
+準備同工作座標下的模板與待對圖，選平移／剛性／仿射或單應模型及合理起點，確認灰階、mask、解析度與重採樣方向一致。
 
-**自測核對：** 小位移且外觀穩定的 ROI 有機會收斂到可信 micro-alignment；錯初值或強反光可能錯收斂到表面上相關的錯誤位置，所以必須看 residual、convergence 與下游 gate。
+保存原圖、初始／最終warp、相關值、迭代設定及獨立地標殘差，測不同起點、光照、遮擋與重拍。既有32/12位移與遠起點失敗資料保留來源；本輪新圖是概念示意，不是新跑的ECC結果。
 
-**選型線索：** 固定 template、外觀穩定、初始位置可靠且場景近似平面時，才把 ECC 放入候選。鎖 template/mask、pyramid、initial transform、warp family、最大迭代和停止條件；以 residual tail、錯收斂率、reject rate、下游 registration evidence 與 P95 判定，不以高相關或單一收斂旗標放行。
+來源：https://docs.opencv.org/4.13.0/dc/d6b/group__video__track.html
 
-**來源：** [roadmap-model-selection/geometry-alignment-measurement/ecc/model.md](roadmap-model-selection/geometry-alignment-measurement/ecc/model.md)
-
-F02 核心圖 `_course_content/generated-concepts/ecc/ecc-f02-core.svg` 是機制與案例素材的教學示意，不是模型推論輸出。
-<!-- f02-model-core:end -->
+版本及示意界線見工作項目 sources.md。使用者成品核准pending。
+<!-- wi032-model-core:end -->
 ## 模型定位
 
 ECC（Enhanced Correlation Coefficient）是直接影像配準最佳化，不是 learned model。它在 template 與 moving ROI 外觀穩定、初始位姿接近時，以 iteratively updated warp 做連續校正；它不是大位移、視差或結構變化的萬用對位器。
@@ -91,3 +85,49 @@ illumination drift、反光、dirty/defect 大範圍改變、錯初值、非平�
 - `calibration_or_registration`：pyramid、warp、objective 與 iterative update。
 - `measurement_output`：aligned ROI、residual、iteration、convergence。
 - `uncertainty_gate`：錯初值、反光、視差、結構變化與 reject gate。
+
+<!-- wi032-engineering:start -->
+## 工程層：輸入、機制、部署與限制
+
+### ECC交付的是warp與相關值
+
+OpenCV findTransformECC回傳相關值並更新warpMatrix。對齊影像需另行warp，獨立地標殘差與下游檢查也需另外計算；不把概念曲線當真實迭代紀錄。
+
+相關值不是缺陷標記，也不是獨立定位誤差。
+
+來源：https://docs.opencv.org/4.13.0/dc/d6b/group__video__track.html
+
+### 一輪ECC：取樣、比較、更新
+
+同一物件的強度曲線僅用來顯示錯位如何影響比較。ECC局部最優化依照當前幾何和強度計算參數更新；過遠初始位置、遮擋或模型不適用仍可能失敗。
+
+靠密集外觀更新幾何，不靠逐點描述子。
+
+來源：https://docs.opencv.org/4.13.0/dc/d6b/group__video__track.html
+
+### warp方向錯了，影像就會往反方向移
+
+OpenCV findTransformECC的warp常配warpAffine/warpPerspective及WARP_INVERSE_MAP，把input重採樣至template座標。若交換角色或自行取逆矩陣，旗標也必須一致；用已知平移點做驗證，不憑圖看起來像就認為方向正確。
+
+先寫清楚映射方向，再決定反矩陣與取樣設定。
+
+來源：https://docs.opencv.org/4.13.0/dc/d6b/group__video__track.html
+
+### 局部相關高，整件仍可能對錯
+
+既有32/12平移及遠起點失敗案例保留在舊正式圖及來源紀錄，並非本輪重新執行。這張圖補說如何核對孔位身份、外框與失敗處理，不用單一相關值放行。
+
+用獨立幾何與完整失敗成本決定是否採用。
+
+來源：https://docs.opencv.org/4.13.0/dc/d6b/group__video__track.html
+
+<!-- wi032-engineering:end -->
+
+
+## WI-032 歷史案例的證據範圍
+
+R06原圖標示「教學示意，非實測」。原圖數字可用於查閱既有教學案例；本輪沒有重跑產生程序，也不以此宣稱現場性能。圖內舊簡寫不取代本輪機制與條件说明。
+
+- [保留的反光／遮擋／視差案例原圖（依原圖標示判讀，本輪未重跑）](images/final/ECC-04-selection-boundary_v03-r04.png)
+- [歷史R06教學示意原圖：位移與起點案例（非本輪實測）](images/final/WI032-retained-ecc-r06-c3-get.png)
+- [歷史R06教學示意原圖：位移與起點案例（非本輪實測）](images/final/WI032-retained-ecc-r06-d4-stop.png)

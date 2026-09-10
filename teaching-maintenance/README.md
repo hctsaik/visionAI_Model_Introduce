@@ -1,6 +1,18 @@
+## WI-032：Overall Review第一部分（本機完成、未發布）
+
+[總計畫](project/Overall_Review.md)將58課分成6課重建與52課局部修正；前6課已完成主線、工程層、手機圖、自測與交付。[報告](workitems/wi-032/REPORT.md)、[學習](project/TEACHING_REVIEW_LOG.md)、[驗證](workitems/wi-032/final-verification.json)與全部brief已保存。使用者核准pending。
+
+authoring保存六課來源與builder／測試；native保存64個選定SVG，baseline保存22份改前來源。啟用PNG在docs對應路徑；原型、截圖與失敗稿的完整本機紀錄在專案workitems/wi-032。快照內報告的本機相對截圖／頁面連結需回到原工作項目查看；本資料夾不宣稱包含所有歷史圖片。不要重跑製作脚本覆蓋最終版本，先從PLAN及啟用manifest核對接續狀態。
+
 # Teaching maintenance snapshots
 
-## Latest: WI-030
+## Local audit: WI-031 (2026-09-11)
+
+All 58 topics were re-audited, including engineering figures and five sets of eight advanced chapters: 0 fully compliant, 52 targeted revisions, 6 main-story rebuilds. This is a diagnostic audit, not a new production release or per-asset numeric scoring.
+
+The [full audit report](../workitems/wi-031/REPORT.md), 58-row results, screenshots and verification remain in the local authoring workspace. They are not included in this preservation snapshot or the published site; the relative report link requires that workspace. Current reusable learning is synchronized in `project/`. WI-030 below remains the latest production snapshot.
+
+## Latest production: WI-030
 
 Twelve lessons were rebuilt: PatchCore, PaDiM, AnomalyDINO, EfficientAD,
 ResNet, ConvNeXt, ViT, U-Net, SegFormer, YOLO-Seg, Keypoint R-CNN and Pose Pipeline.

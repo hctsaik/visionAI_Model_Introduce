@@ -1,0 +1,502 @@
+[
+  {
+    "topic": "lightglue",
+    "route": "interactive-learning.html",
+    "width": 1440,
+    "errors": [],
+    "images": [
+      {
+        "src": "http://127.0.0.1:8000/_course_content/generated-concepts/lightglue/wi032-lightglue-core-native-r05-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 404.1875,
+          "y": 401.921875,
+          "width": 935.625,
+          "height": 526.5625,
+          "top": 401.921875,
+          "right": 1339.8125,
+          "bottom": 928.484375,
+          "left": 404.1875
+        },
+        "kind": "main-1"
+      },
+      {
+        "src": "http://127.0.0.1:8000/_course_content/generated-concepts/lightglue/wi032-lightglue-failure-native-r05-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 404.1875,
+          "y": 201.03125,
+          "width": 935.625,
+          "height": 526.5625,
+          "top": 201.03125,
+          "right": 1339.8125,
+          "bottom": 727.59375,
+          "left": 404.1875
+        },
+        "kind": "main-2"
+      },
+      {
+        "src": "http://127.0.0.1:8000/_course_content/generated-concepts/ecc/wi032-geometry-compare-native-r05-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 404.1875,
+          "y": 201.34375,
+          "width": 935.625,
+          "height": 526.5625,
+          "top": 201.34375,
+          "right": 1339.8125,
+          "bottom": 727.90625,
+          "left": 404.1875
+        },
+        "kind": "main-3"
+      },
+      {
+        "src": "http://127.0.0.1:8000/roadmap-model-selection/geometry-alignment-measurement/lightglue/images/final/WI032-LIGHTGLUE-01-r04-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 367.1875,
+          "y": 196.296875,
+          "width": 1009.625,
+          "height": 568.203125,
+          "top": 196.296875,
+          "right": 1376.8125,
+          "bottom": 764.5,
+          "left": 367.1875
+        },
+        "kind": "engineering-1"
+      },
+      {
+        "src": "http://127.0.0.1:8000/roadmap-model-selection/geometry-alignment-measurement/lightglue/images/final/WI032-LIGHTGLUE-02-r04-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 367.1875,
+          "y": 196.171875,
+          "width": 1009.625,
+          "height": 568.203125,
+          "top": 196.171875,
+          "right": 1376.8125,
+          "bottom": 764.375,
+          "left": 367.1875
+        },
+        "kind": "engineering-2"
+      },
+      {
+        "src": "http://127.0.0.1:8000/roadmap-model-selection/geometry-alignment-measurement/lightglue/images/final/WI032-LIGHTGLUE-03-r04-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 367.1875,
+          "y": 196.046875,
+          "width": 1009.625,
+          "height": 568.203125,
+          "top": 196.046875,
+          "right": 1376.8125,
+          "bottom": 764.25,
+          "left": 367.1875
+        },
+        "kind": "engineering-3"
+      },
+      {
+        "src": "http://127.0.0.1:8000/roadmap-model-selection/geometry-alignment-measurement/lightglue/images/final/WI032-LIGHTGLUE-04-r04-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 367.1875,
+          "y": 195.578125,
+          "width": 1009.625,
+          "height": 568.203125,
+          "top": 195.578125,
+          "right": 1376.8125,
+          "bottom": 763.78125,
+          "left": 367.1875
+        },
+        "kind": "engineering-4"
+      }
+    ],
+    "zoom_checks": 7,
+    "answer": true,
+    "overflow": false,
+    "navigation": true,
+    "complete": true
+  },
+  {
+    "topic": "lightglue",
+    "route": "interactive-learning.html",
+    "width": 360,
+    "errors": [],
+    "images": [
+      {
+        "src": "http://127.0.0.1:8000/_course_content/generated-concepts/lightglue/wi032-lightglue-core-native-r05-mobile.png",
+        "nw": 768,
+        "nh": 3050,
+        "box": {
+          "x": 17,
+          "y": -292.578125,
+          "width": 326,
+          "height": 1294.65625,
+          "top": -292.578125,
+          "right": 343,
+          "bottom": 1002.078125,
+          "left": 17
+        },
+        "kind": "main-1"
+      },
+      {
+        "src": "http://127.0.0.1:8000/_course_content/generated-concepts/lightglue/wi032-lightglue-failure-native-r05-mobile.png",
+        "nw": 768,
+        "nh": 3050,
+        "box": {
+          "x": 17,
+          "y": -292.890625,
+          "width": 326,
+          "height": 1294.65625,
+          "top": -292.890625,
+          "right": 343,
+          "bottom": 1001.765625,
+          "left": 17
+        },
+        "kind": "main-2"
+      },
+      {
+        "src": "http://127.0.0.1:8000/_course_content/generated-concepts/ecc/wi032-geometry-compare-native-r05-mobile.png",
+        "nw": 768,
+        "nh": 3050,
+        "box": {
+          "x": 17,
+          "y": -282.765625,
+          "width": 326,
+          "height": 1294.65625,
+          "top": -282.765625,
+          "right": 343,
+          "bottom": 1011.890625,
+          "left": 17
+        },
+        "kind": "main-3"
+      },
+      {
+        "src": "http://127.0.0.1:8000/roadmap-model-selection/geometry-alignment-measurement/lightglue/images/final/WI032-LIGHTGLUE-01-r04-mobile.png",
+        "nw": 768,
+        "nh": 2770,
+        "box": {
+          "x": 34,
+          "y": -158.015625,
+          "width": 292,
+          "height": 1053.171875,
+          "top": -158.015625,
+          "right": 326,
+          "bottom": 895.15625,
+          "left": 34
+        },
+        "kind": "engineering-1"
+      },
+      {
+        "src": "http://127.0.0.1:8000/roadmap-model-selection/geometry-alignment-measurement/lightglue/images/final/WI032-LIGHTGLUE-02-r04-mobile.png",
+        "nw": 768,
+        "nh": 2770,
+        "box": {
+          "x": 34,
+          "y": -157.609375,
+          "width": 292,
+          "height": 1053.171875,
+          "top": -157.609375,
+          "right": 326,
+          "bottom": 895.5625,
+          "left": 34
+        },
+        "kind": "engineering-2"
+      },
+      {
+        "src": "http://127.0.0.1:8000/roadmap-model-selection/geometry-alignment-measurement/lightglue/images/final/WI032-LIGHTGLUE-03-r04-mobile.png",
+        "nw": 768,
+        "nh": 2770,
+        "box": {
+          "x": 34,
+          "y": -158.015625,
+          "width": 292,
+          "height": 1053.171875,
+          "top": -158.015625,
+          "right": 326,
+          "bottom": 895.15625,
+          "left": 34
+        },
+        "kind": "engineering-3"
+      },
+      {
+        "src": "http://127.0.0.1:8000/roadmap-model-selection/geometry-alignment-measurement/lightglue/images/final/WI032-LIGHTGLUE-04-r04-mobile.png",
+        "nw": 768,
+        "nh": 2770,
+        "box": {
+          "x": 34,
+          "y": -158.40625,
+          "width": 292,
+          "height": 1053.171875,
+          "top": -158.40625,
+          "right": 326,
+          "bottom": 894.765625,
+          "left": 34
+        },
+        "kind": "engineering-4"
+      }
+    ],
+    "zoom_checks": 7,
+    "answer": true,
+    "overflow": false,
+    "navigation": true,
+    "complete": true
+  },
+  {
+    "topic": "lightglue",
+    "route": "docs/index.html",
+    "width": 1440,
+    "errors": [],
+    "images": [
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/lightglue/wi032-lightglue-core-native-r05-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 404.1875,
+          "y": 401.921875,
+          "width": 935.625,
+          "height": 526.5625,
+          "top": 401.921875,
+          "right": 1339.8125,
+          "bottom": 928.484375,
+          "left": 404.1875
+        },
+        "kind": "main-1"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/lightglue/wi032-lightglue-failure-native-r05-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 404.1875,
+          "y": 201.03125,
+          "width": 935.625,
+          "height": 526.5625,
+          "top": 201.03125,
+          "right": 1339.8125,
+          "bottom": 727.59375,
+          "left": 404.1875
+        },
+        "kind": "main-2"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/ecc/wi032-geometry-compare-native-r05-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 404.1875,
+          "y": 201.34375,
+          "width": 935.625,
+          "height": 526.5625,
+          "top": 201.34375,
+          "right": 1339.8125,
+          "bottom": 727.90625,
+          "left": 404.1875
+        },
+        "kind": "main-3"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/geometry-alignment-measurement/lightglue/images/final/WI032-LIGHTGLUE-01-r04-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 367.1875,
+          "y": 196.296875,
+          "width": 1009.625,
+          "height": 568.203125,
+          "top": 196.296875,
+          "right": 1376.8125,
+          "bottom": 764.5,
+          "left": 367.1875
+        },
+        "kind": "engineering-1"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/geometry-alignment-measurement/lightglue/images/final/WI032-LIGHTGLUE-02-r04-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 367.1875,
+          "y": 196.171875,
+          "width": 1009.625,
+          "height": 568.203125,
+          "top": 196.171875,
+          "right": 1376.8125,
+          "bottom": 764.375,
+          "left": 367.1875
+        },
+        "kind": "engineering-2"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/geometry-alignment-measurement/lightglue/images/final/WI032-LIGHTGLUE-03-r04-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 367.1875,
+          "y": 196.046875,
+          "width": 1009.625,
+          "height": 568.203125,
+          "top": 196.046875,
+          "right": 1376.8125,
+          "bottom": 764.25,
+          "left": 367.1875
+        },
+        "kind": "engineering-3"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/geometry-alignment-measurement/lightglue/images/final/WI032-LIGHTGLUE-04-r04-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 367.1875,
+          "y": 195.578125,
+          "width": 1009.625,
+          "height": 568.203125,
+          "top": 195.578125,
+          "right": 1376.8125,
+          "bottom": 763.78125,
+          "left": 367.1875
+        },
+        "kind": "engineering-4"
+      }
+    ],
+    "zoom_checks": 7,
+    "answer": true,
+    "overflow": false,
+    "navigation": true,
+    "complete": true
+  },
+  {
+    "topic": "lightglue",
+    "route": "docs/index.html",
+    "width": 360,
+    "errors": [],
+    "images": [
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/lightglue/wi032-lightglue-core-native-r05-mobile.png",
+        "nw": 768,
+        "nh": 3050,
+        "box": {
+          "x": 17,
+          "y": -292.578125,
+          "width": 326,
+          "height": 1294.65625,
+          "top": -292.578125,
+          "right": 343,
+          "bottom": 1002.078125,
+          "left": 17
+        },
+        "kind": "main-1"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/lightglue/wi032-lightglue-failure-native-r05-mobile.png",
+        "nw": 768,
+        "nh": 3050,
+        "box": {
+          "x": 17,
+          "y": -292.890625,
+          "width": 326,
+          "height": 1294.65625,
+          "top": -292.890625,
+          "right": 343,
+          "bottom": 1001.765625,
+          "left": 17
+        },
+        "kind": "main-2"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/ecc/wi032-geometry-compare-native-r05-mobile.png",
+        "nw": 768,
+        "nh": 3050,
+        "box": {
+          "x": 17,
+          "y": -282.765625,
+          "width": 326,
+          "height": 1294.65625,
+          "top": -282.765625,
+          "right": 343,
+          "bottom": 1011.890625,
+          "left": 17
+        },
+        "kind": "main-3"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/geometry-alignment-measurement/lightglue/images/final/WI032-LIGHTGLUE-01-r04-mobile.png",
+        "nw": 768,
+        "nh": 2770,
+        "box": {
+          "x": 34,
+          "y": -158.015625,
+          "width": 292,
+          "height": 1053.171875,
+          "top": -158.015625,
+          "right": 326,
+          "bottom": 895.15625,
+          "left": 34
+        },
+        "kind": "engineering-1"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/geometry-alignment-measurement/lightglue/images/final/WI032-LIGHTGLUE-02-r04-mobile.png",
+        "nw": 768,
+        "nh": 2770,
+        "box": {
+          "x": 34,
+          "y": -157.609375,
+          "width": 292,
+          "height": 1053.171875,
+          "top": -157.609375,
+          "right": 326,
+          "bottom": 895.5625,
+          "left": 34
+        },
+        "kind": "engineering-2"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/geometry-alignment-measurement/lightglue/images/final/WI032-LIGHTGLUE-03-r04-mobile.png",
+        "nw": 768,
+        "nh": 2770,
+        "box": {
+          "x": 34,
+          "y": -158.015625,
+          "width": 292,
+          "height": 1053.171875,
+          "top": -158.015625,
+          "right": 326,
+          "bottom": 895.15625,
+          "left": 34
+        },
+        "kind": "engineering-3"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/geometry-alignment-measurement/lightglue/images/final/WI032-LIGHTGLUE-04-r04-mobile.png",
+        "nw": 768,
+        "nh": 2770,
+        "box": {
+          "x": 34,
+          "y": -158.40625,
+          "width": 292,
+          "height": 1053.171875,
+          "top": -158.40625,
+          "right": 326,
+          "bottom": 894.765625,
+          "left": 34
+        },
+        "kind": "engineering-4"
+      }
+    ],
+    "zoom_checks": 7,
+    "answer": true,
+    "overflow": false,
+    "navigation": true,
+    "complete": true
+  }
+]

@@ -1,0 +1,13 @@
+# WI-032 sift-engineering-2 r01
+- lesson objective: ratio test篩含糊候選，不是幾何真值證明。
+- page type: C
+- primary reading path: 把梯度放進局部格 → 組成描述向量 → 比較第一與第二候選 → 工作核對與接手
+- major visual nodes:
+  1. 把梯度放進局部格
+  2. 組成描述向量
+  3. 比較第一與第二候選
+- named guide-conformant reference page: `teaching-images/vision-ai-model-selection/course-delivery/section-pages/01-geometry-alignment-measurement/images/final/GEO-21-alignment-to-measurement_v01.png`
+- pale-yellow takeaway: #FFF4CC：ratio test篩含糊候選，不是幾何真值證明。
+- generation: 新建精確SVG→PNG，桌機1672×941、手機直向；actual PNG review pending，user approval pending。與首讀PNG分開。
+- source: https://docs.opencv.org/4.13.0/da/df5/tutorial_py_sift_intro.html
+- evidence: 標準SIFT描述子為4×4空間格、每格8方向，共128維；實作含加權、正規化及截斷等步驟。最近與次近描述子距離比可用來篩掉含糊候選，但閾值須用目標資料验证。

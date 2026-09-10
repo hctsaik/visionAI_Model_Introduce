@@ -1,0 +1,576 @@
+{
+  "model": "ChArUco",
+  "beginner_path": {
+    "title": "從必要原理、具體反例到工作取捨",
+    "intro": "同一工件換到畫面邊角後，看起來的比例與位置不一樣。先用尺寸已知的ChArUco板建立相機幾何，才能分清鏡頭投影與工件本身的變化。 下列圖像、特徵及回答為教學示意，不是模型實測。",
+    "visuals": [
+      {
+        "id": "wi032-charuco-core",
+        "title": "ChArUco：用已知角點，建立相機幾何",
+        "prompt": "同一工件換到畫面邊角後，看起來的比例與位置不一樣。先用尺寸已知的ChArUco板建立相機幾何，才能分清鏡頭投影與工件本身的變化。",
+        "caption": "ChArUco結合可辨識的ArUco標記與棋盤交點。標記協助辨認板上位置，精細棋盤角點提供影像座標；同一角點在多個位置與傾角被看見後，配合已知板上座標估計相機內參及畸變。單張姿態是另一個問題：已知內參／畸變，再由板上3D點與影像2D點求板相對相機的R/t。",
+        "image": "_course_content/generated-concepts/charuco/wi032-charuco-core-r05-desktop.png",
+        "alt": "ChArUco：用已知角點，建立相機幾何。ChArUco結合可辨識的ArUco標記與棋盤交點。標記協助辨認板上位置，精細棋盤角點提供影像座標；同一角點在多個位置與傾角被看見後，配合已知板上座標估計相機內參及畸變。單張姿態是另一個問題：已知內參／畸變，再由板上3D點與影像2D點求板相對相機的R/t。 教學示意，非模型實測。",
+        "callouts": [
+          {
+            "title": "點要有固定身份",
+            "body": "圖中A在每個視角都是同一個棋盤交點；不能把標記中心或旁邊另一格當成A。"
+          },
+          {
+            "title": "多視角約束相機",
+            "body": "改變板的位置與傾角，讓相機模型同時解釋多組板上點到像素的對應；只在中心拍很多近似照片仍可能漏掉邊角。"
+          },
+          {
+            "title": "校正與姿態分開",
+            "body": "校正要估內參與畸變；姿態估計把它們當已知輸入。重投影差異是核對證據，不是尺寸準確的完整保證。"
+          }
+        ],
+        "reading_views": [
+          {
+            "title": "ChArUco：用已知角點，建立相機幾何",
+            "image": "_course_content/generated-concepts/charuco/wi032-charuco-core-r05-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/charuco/wi032-charuco-core-r05-mobile.png",
+            "alt": "ChArUco：用已知角點，建立相機幾何。ChArUco結合可辨識的ArUco標記與棋盤交點。標記協助辨認板上位置，精細棋盤角點提供影像座標；同一角點在多個位置與傾角被看見後，配合已知板上座標估計相機內參及畸變。單張姿態是另一個問題：已知內參／畸變，再由板上3D點與影像2D點求板相對相機的R/t。 教學示意，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              768,
+              2304
+            ],
+            "mobile_display_mode": "full-mobile",
+            "desktop_intrinsic_width": 1672,
+            "desktop_intrinsic_height": 941,
+            "mobile_intrinsic_width": 768,
+            "mobile_intrinsic_height": 2304
+          }
+        ],
+        "core_ideas": true
+      },
+      {
+        "id": "wi032-charuco-failure",
+        "title": "只拍中心，邊角誤差可能沒有被看見",
+        "prompt": "觀察哪個條件改變，讓原本的結果不夠可靠？",
+        "caption": "若校正資料只覆蓋畫面中心，中心重投影看起來不錯也不能保證邊角可靠。用未參與估計的邊角與傾斜視角核對，再決定補拍；不是只增加照片張數。",
+        "image": "_course_content/generated-concepts/charuco/wi032-charuco-failure-native-r05-desktop.png",
+        "alt": "只拍中心，邊角誤差可能沒有被看見。若校正資料只覆蓋畫面中心，中心重投影看起來不錯也不能保證邊角可靠。用未參與估計的邊角與傾斜視角核對，再決定補拍；不是只增加照片張數。 教學示意，非模型實測。",
+        "callouts": [
+          {
+            "title": "看哪裡",
+            "body": "若校正資料只覆蓋畫面中心，中心重投影看起來不錯也不能保證邊角可靠。用未參與估計的邊角與傾斜視角核對，再決定補拍；不是只增加照片張數。"
+          },
+          {
+            "title": "接著怎麼做",
+            "body": "找不到足夠可靠角點、實體板尺寸不符或邊角偏差超出工作預算時，先核對取像、標靶與模型，再補拍。不要把低平均重投影誤差直接換成量測合格。"
+          }
+        ],
+        "reading_views": [
+          {
+            "title": "只拍中心，邊角誤差可能沒有被看見",
+            "image": "_course_content/generated-concepts/charuco/wi032-charuco-failure-native-r05-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/charuco/wi032-charuco-failure-native-r05-mobile.png",
+            "alt": "只拍中心，邊角誤差可能沒有被看見。若校正資料只覆蓋畫面中心，中心重投影看起來不錯也不能保證邊角可靠。用未參與估計的邊角與傾斜視角核對，再決定補拍；不是只增加照片張數。 教學示意，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              768,
+              3050
+            ],
+            "mobile_display_mode": "full-mobile",
+            "desktop_intrinsic_width": 1672,
+            "desktop_intrinsic_height": 941,
+            "mobile_intrinsic_width": 768,
+            "mobile_intrinsic_height": 3050
+          }
+        ],
+        "core_ideas": false
+      },
+      {
+        "id": "wi032-geometry-compare",
+        "title": "幾何四種工具，負責的工作不同",
+        "prompt": "相同工作需求下，資料、輸出與成本如何取捨？",
+        "caption": "ChArUco解決已知標靶的相機幾何；SIFT與LightGlue處理影像間的對應點；ECC在合理起點附近微調外觀對齊。要逐件找位置不能只靠一次ChArUco校正，要校正相機也不能拿一般工件匹配取代已知幾何。",
+        "image": "_course_content/generated-concepts/ecc/wi032-geometry-compare-native-r05-desktop.png",
+        "alt": "幾何四種工具，負責的工作不同。ChArUco解決已知標靶的相機幾何；SIFT與LightGlue處理影像間的對應點；ECC在合理起點附近微調外觀對齊。要逐件找位置不能只靠一次ChArUco校正，要校正相機也不能拿一般工件匹配取代已知幾何。 教學示意，非模型實測。",
+        "callouts": [
+          {
+            "title": "怎麼選",
+            "body": "ChArUco解決已知標靶的相機幾何；SIFT與LightGlue處理影像間的對應點；ECC在合理起點附近微調外觀對齊。要逐件找位置不能只靠一次ChArUco校正，要校正相機也不能拿一般工件匹配取代已知幾何。"
+          },
+          {
+            "title": "資料與完整成本",
+            "body": "換鏡頭、焦距、對焦、影像裁切或解析度時重查內參適用性；換治具時核對座標關係。保留多位置／傾角影像、角點ID、板的尺寸與字典設定，重新拍攝的成本往往比算法執行更關鍵。"
+          }
+        ],
+        "reading_views": [
+          {
+            "title": "幾何四種工具，負責的工作不同",
+            "image": "_course_content/generated-concepts/ecc/wi032-geometry-compare-native-r05-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/ecc/wi032-geometry-compare-native-r05-mobile.png",
+            "alt": "幾何四種工具，負責的工作不同。ChArUco解決已知標靶的相機幾何；SIFT與LightGlue處理影像間的對應點；ECC在合理起點附近微調外觀對齊。要逐件找位置不能只靠一次ChArUco校正，要校正相機也不能拿一般工件匹配取代已知幾何。 教學示意，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              768,
+              3050
+            ],
+            "mobile_display_mode": "full-mobile",
+            "desktop_intrinsic_width": 1672,
+            "desktop_intrinsic_height": 941,
+            "mobile_intrinsic_width": 768,
+            "mobile_intrinsic_height": 3050
+          }
+        ],
+        "core_ideas": false
+      }
+    ]
+  },
+  "badge": "已知標靶的幾何算法，不需訓練權重",
+  "title": "用已知標靶，建立可核對的相機幾何",
+  "scenario": {
+    "title": "同一工件換到畫面邊角後，看起來的比例與位置不一樣。先用尺寸已知的ChArUco板建立相機幾何，才能分清鏡頭投影與工件本身的變化。",
+    "body": "同一工件換到畫面邊角後，看起來的比例與位置不一樣。先用尺寸已知的ChArUco板建立相機幾何，才能分清鏡頭投影與工件本身的變化。"
+  },
+  "promise": {
+    "title": "交付結果與接手工作",
+    "body": "交付內參、畸變模型與係數、相機／鏡頭／解析度條件和核對紀錄；需要姿態時另交付清楚方向與單位的R/t。日常工件對位、尺寸量測及工站座標轉換仍各需對應流程。"
+  },
+  "mental_model": {
+    "title": "已知標靶的幾何算法，不需訓練權重",
+    "body": "ChArUco結合可辨識的ArUco標記與棋盤交點。標記協助辨認板上位置，精細棋盤角點提供影像座標；同一角點在多個位置與傾角被看見後，配合已知板上座標估計相機內參及畸變。單張姿態是另一個問題：已知內參／畸變，再由板上3D點與影像2D點求板相對相機的R/t。",
+    "limit": "若校正資料只覆蓋畫面中心，中心重投影看起來不錯也不能保證邊角可靠。用未參與估計的邊角與傾斜視角核對，再決定補拍；不是只增加照片張數。"
+  },
+  "micro_example": {
+    "title": "換工站後，該重校正還是只重對位？",
+    "setup": "相機與鏡頭沒有更換，但工件治具平移；另一條線則換了鏡頭並把輸出解析度減半。",
+    "prediction": "兩條線都直接重跑ECC就足夠嗎？各先核對什麼？",
+    "reveal": "治具平移那條線先確認取像條件與既有內參仍適用，再重建工件／工站座標關係或做逐件定位；不必只因平移就盲目重校正。換鏡頭與解析度那條線先核對並重新估計或正確換算相機參數，再用獨立資料驗證。ECC可以協助接近位置的影像對齊，但不提供新鏡頭的完整校正或毫米準確保證。"
+  },
+  "mechanism_steps": [
+    {
+      "title": "已知標靶",
+      "body": "圖中A在每個視角都是同一個棋盤交點；不能把標記中心或旁邊另一格當成A。",
+      "why": "由本課核心機制連接工作用途",
+      "anchor": "WI032-1",
+      "diagram": {
+        "title": "已知標靶",
+        "body": "圖中A在每個視角都是同一個棋盤交點；不能把標記中心或旁邊另一格當成A。",
+        "why": "詳見本課版本與來源",
+        "anchor": "WI032-1"
+      }
+    },
+    {
+      "title": "跨視角對應",
+      "body": "改變板的位置與傾角，讓相機模型同時解釋多組板上點到像素的對應；只在中心拍很多近似照片仍可能漏掉邊角。",
+      "why": "由本課核心機制連接工作用途",
+      "anchor": "WI032-2",
+      "diagram": {
+        "title": "跨視角對應",
+        "body": "改變板的位置與傾角，讓相機模型同時解釋多組板上點到像素的對應；只在中心拍很多近似照片仍可能漏掉邊角。",
+        "why": "詳見本課版本與來源",
+        "anchor": "WI032-2"
+      }
+    },
+    {
+      "title": "估參數與驗證",
+      "body": "交付內參、畸變模型與係數、相機／鏡頭／解析度條件和核對紀錄；需要姿態時另交付清楚方向與單位的R/t。日常工件對位、尺寸量測及工站座標轉換仍各需對應流程。",
+      "why": "由本課核心機制連接工作用途",
+      "anchor": "WI032-3",
+      "diagram": {
+        "title": "估參數與驗證",
+        "body": "交付內參、畸變模型與係數、相機／鏡頭／解析度條件和核對紀錄；需要姿態時另交付清楚方向與單位的R/t。日常工件對位、尺寸量測及工站座標轉換仍各需對應流程。",
+        "why": "詳見本課版本與來源",
+        "anchor": "WI032-3"
+      }
+    },
+    {
+      "title": "工作核對與接手",
+      "body": "保存輸入影像、角點ID／座標、設定、參數與每視角重投影分布；以獨立視角、重裝重拍及工作位置查穩定性。若要毫米量測，還需獨立尺寸基準與誤差預算。本頁新圖為受控示意，不是新相機校正實測。",
+      "why": "由本課核心機制連接工作用途",
+      "anchor": "WI032-4",
+      "diagram": {
+        "title": "工作核對與接手",
+        "body": "保存輸入影像、角點ID／座標、設定、參數與每視角重投影分布；以獨立視角、重裝重拍及工作位置查穩定性。若要毫米量測，還需獨立尺寸基準與誤差預算。本頁新圖為受控示意，不是新相機校正實測。",
+        "why": "詳見本課版本與來源",
+        "anchor": "WI032-4"
+      }
+    }
+  ],
+  "visual_intro": "ChArUco結合可辨識的ArUco標記與棋盤交點。標記協助辨認板上位置，精細棋盤角點提供影像座標；同一角點在多個位置與傾角被看見後，配合已知板上座標估計相機內參及畸變。單張姿態是另一個問題：已知內參／畸變，再由板上3D點與影像2D點求板相對相機的R/t。",
+  "concept_visuals": [],
+  "boundary_cases": [
+    {
+      "condition": "本課具體反例",
+      "effect": "若校正資料只覆蓋畫面中心，中心重投影看起來不錯也不能保證邊角可靠。用未參與估計的邊角與傾斜視角核對，再決定補拍；不是只增加照片張數。",
+      "action": "找不到足夠可靠角點、實體板尺寸不符或邊角偏差超出工作預算時，先核對取像、標靶與模型，再補拍。不要把低平均重投影誤差直接換成量測合格。"
+    },
+    {
+      "condition": "更換產品、模型或輸入設定",
+      "effect": "換鏡頭、焦距、對焦、影像裁切或解析度時重查內參適用性；換治具時核對座標關係。保留多位置／傾角影像、角點ID、板的尺寸與字典設定，重新拍攝的成本往往比算法執行更關鍵。",
+      "action": "先確定相機模型、實體標靶尺寸／方格與標記設定；固定影像解析度與光學條件，採集涵蓋中心、邊角及傾角的清楚影像，另留獨立核對組。"
+    },
+    {
+      "condition": "把示意當成實際推論",
+      "effect": "本課特徵、排序、回答及圖像僅用於解釋，不支持現場準確率或耗時結論。",
+      "action": "保存輸入影像、角點ID／座標、設定、參數與每視角重投影分布；以獨立視角、重裝重拍及工作位置查穩定性。若要毫米量測，還需獨立尺寸基準與誤差預算。本頁新圖為受控示意，不是新相機校正實測。"
+    }
+  ],
+  "comparison": [
+    {
+      "model": "ChArUco",
+      "normality": "已知尺寸標靶、多位置與傾角觀測",
+      "candidate": "內參／畸變；姿態與工站關係另求"
+    },
+    {
+      "model": "SIFT＋matcher",
+      "normality": "局部紋理清楚；尺度方向描述與比對",
+      "candidate": "影像點對；幾何估計與驗證另接"
+    },
+    {
+      "model": "LightGlue＋extractor",
+      "normality": "相容預訓練權重、點與描述；上下文配對",
+      "candidate": "點對與信心；納入完整計算成本"
+    },
+    {
+      "model": "ECC",
+      "normality": "合理起點、外觀穩定；密集相關迭代",
+      "candidate": "warp與相關值；獨立殘差另驗"
+    }
+  ],
+  "selection": "ChArUco解決已知標靶的相機幾何；SIFT與LightGlue處理影像間的對應點；ECC在合理起點附近微調外觀對齊。要逐件找位置不能只靠一次ChArUco校正，要校正相機也不能拿一般工件匹配取代已知幾何。 換鏡頭、焦距、對焦、影像裁切或解析度時重查內參適用性；換治具時核對座標關係。保留多位置／傾角影像、角點ID、板的尺寸與字典設定，重新拍攝的成本往往比算法執行更關鍵。",
+  "poc": {
+    "title": "以真實工作資料做小規模比較",
+    "steps": [
+      "先確定相機模型、實體標靶尺寸／方格與標記設定；固定影像解析度與光學條件，採集涵蓋中心、邊角及傾角的清楚影像，另留獨立核對組。",
+      "換鏡頭、焦距、對焦、影像裁切或解析度時重查內參適用性；換治具時核對座標關係。保留多位置／傾角影像、角點ID、板的尺寸與字典設定，重新拍攝的成本往往比算法執行更關鍵。",
+      "保存輸入影像、角點ID／座標、設定、參數與每視角重投影分布；以獨立視角、重裝重拍及工作位置查穩定性。若要毫米量測，還需獨立尺寸基準與誤差預算。本頁新圖為受控示意，不是新相機校正實測。"
+    ],
+    "hold": "找不到足夠可靠角點、實體板尺寸不符或邊角偏差超出工作預算時，先核對取像、標靶與模型，再補拍。不要把低平均重投影誤差直接換成量測合格。",
+    "acceptance": {
+      "baseline": "既有流程或最簡單可行方法",
+      "measure": "保存輸入影像、角點ID／座標、設定、參數與每視角重投影分布；以獨立視角、重裝重拍及工作位置查穩定性。若要毫米量測，還需獨立尺寸基準與誤差預算。本頁新圖為受控示意，不是新相機校正實測。",
+      "negative_control": "若校正資料只覆蓋畫面中心，中心重投影看起來不錯也不能保證邊角可靠。用未參與估計的邊角與傾斜視角核對，再決定補拍；不是只增加照片張數。",
+      "owner": "實作與影像核對負責人"
+    }
+  },
+  "teach_back": {
+    "question": "它改變什麼？何時選另一種做法？",
+    "answer": "ChArUco結合可辨識的ArUco標記與棋盤交點。標記協助辨認板上位置，精細棋盤角點提供影像座標；同一角點在多個位置與傾角被看見後，配合已知板上座標估計相機內參及畸變。單張姿態是另一個問題：已知內參／畸變，再由板上3D點與影像2D點求板相對相機的R/t。 ChArUco解決已知標靶的相機幾何；SIFT與LightGlue處理影像間的對應點；ECC在合理起點附近微調外觀對齊。要逐件找位置不能只靠一次ChArUco校正，要校正相機也不能拿一般工件匹配取代已知幾何。"
+  },
+  "slide_reading": [
+    {
+      "title": "ChArUco：把板上點連到影像點",
+      "question": "建立的是相機幾何，不是每天工件的定位結果。",
+      "look": "先看已知板上座標，再看多視角觀測，最後核對估相機模型。",
+      "relation": "以標靶已知3D平面座標與各視角2D點估計相機模型；板上Z=0不等於影像是正視投影。校正需要合適視角、模型及品質核對，不能把固定工件對位當成校正。",
+      "takeaway": "建立的是相機幾何，不是每天工件的定位結果。",
+      "terms": [
+        "已知板上座標：角點ID固定；實體尺寸與單位已知",
+        "多視角觀測：同一角點跨影像對應；涵蓋位置與傾角"
+      ]
+    },
+    {
+      "title": "辨認標記與精細棋盤角點，各有任務",
+      "question": "ID解決身份，棋盤角點提供精細影像位置。",
+      "look": "先看標記辨認位置，再看棋盤交點供定位，最後核對同ID連回板座標。",
+      "relation": "偵測到ArUco標記之後，ChArUco流程估計及細化棋盤交點位置；實際可用角點取決於清晰度、視角、遮擋與設定。不能把marker中心替換成棋盤角點。",
+      "takeaway": "ID解決身份，棋盤角點提供精細影像位置。",
+      "terms": [
+        "標記辨認位置：字典與標記ID對上標靶；先知道看見板上哪一區",
+        "棋盤交點供定位：角點在黑白格交界；不是ArUco圖樣的中心"
+      ]
+    },
+    {
+      "title": "已知內參後，才另外解單張姿態",
+      "question": "姿態、相機校正與工站轉換，是不同的交付。",
+      "look": "先看板上3D與影像2D點，再看求板到相機的R/t，最後核對重投影與多解核對。",
+      "relation": "solvePnP把板上物體座標轉到相機座標。平面與特定求解器可能涉及多解；需結合可見性、重投影和工作約束核對，單一低誤差不自動保證工站量測。",
+      "takeaway": "姿態、相機校正與工站轉換，是不同的交付。",
+      "terms": [
+        "板上3D與影像2D點：同名點、足夠幾何約束；K／畸變已知且適用",
+        "求板到相機的R/t：X相機 = R × X板 + t；方向與長度單位都要寫清楚"
+      ]
+    },
+    {
+      "title": "相機設定變了，舊參數還能用嗎？",
+      "question": "把參數與取像條件綁定，改條件就重新核對。",
+      "look": "先看光學與影像條件，再看改條件後重查投影，最後核對量測另有尺寸基準。",
+      "relation": "更換鏡頭、對焦或解析度後應重新確認參數適用性；已知縮放／裁切可換算像素內參但仍需驗證。毫米準確還涉及外參、工作平面、標靶真實尺寸和誤差預算。",
+      "takeaway": "把參數與取像條件綁定，改條件就重新核對。",
+      "terms": [
+        "光學與影像條件：鏡頭／對焦／解析度；裁切也會改變像素座標",
+        "改條件後重查投影：不能只沿用舊K；參數換算仍需獨立驗證"
+      ]
+    }
+  ],
+  "comparison_headers": {
+    "title": "幾何四種工具，負責的工作不同",
+    "basis": "所需資料與方法差異",
+    "output": "輸出與維護責任"
+  },
+  "transfer_check": {
+    "title": "換工站後，該重校正還是只重對位？",
+    "scenario": "相機與鏡頭沒有更換，但工件治具平移；另一條線則換了鏡頭並把輸出解析度減半。",
+    "question": "兩條線都直接重跑ECC就足夠嗎？各先核對什麼？",
+    "answer": "治具平移那條線先確認取像條件與既有內參仍適用，再重建工件／工站座標關係或做逐件定位；不必只因平移就盲目重校正。換鏡頭與解析度那條線先核對並重新估計或正確換算相機參數，再用獨立資料驗證。ECC可以協助接近位置的影像對齊，但不提供新鏡頭的完整校正或毫米準確保證。"
+  },
+  "review_trace": {
+    "authority": "roadmap-model-selection/geometry-alignment-measurement/charuco/model.md",
+    "scope": "WI-032：六課主線及工程層圖文重建；既有ECC案例保留。頁內驗證與使用者核准另記。",
+    "claims": [
+      {
+        "id": "visual-1",
+        "field": "beginner_path.visuals[id-corners-to-board]",
+        "source": "模型定位 / architecture_path"
+      },
+      {
+        "id": "visual-2",
+        "field": "beginner_path.visuals[pose-and-reprojection]",
+        "source": "architecture_path"
+      },
+      {
+        "id": "visual-3",
+        "field": "beginner_path.visuals[coverage-p95-review]",
+        "source": "representation_or_score"
+      },
+      {
+        "id": "visual-4",
+        "field": "beginner_path.visuals[center-only-counterfactual]",
+        "source": "failure_boundary"
+      },
+      {
+        "id": "visual-5",
+        "field": "beginner_path.visuals[geometry-baseline-boundary]",
+        "source": "selection_gate / evidence_bundle"
+      },
+      {
+        "id": "promise",
+        "field": "promise",
+        "source": "模型定位 / representation_or_score"
+      },
+      {
+        "id": "mechanism",
+        "field": "mechanism_steps",
+        "source": "architecture_path / representation_or_score"
+      },
+      {
+        "id": "boundaries",
+        "field": "boundary_cases",
+        "source": "failure_boundary / selection_gate"
+      },
+      {
+        "id": "comparison",
+        "field": "comparison + selection",
+        "source": "selection_gate"
+      },
+      {
+        "id": "poc",
+        "field": "poc + acceptance",
+        "source": "cost_and_operating_point / evidence_bundle"
+      },
+      {
+        "id": "transfer",
+        "field": "transfer_check",
+        "source": "failure_boundary / selection_gate"
+      },
+      {
+        "id": "f02-core",
+        "field": "beginner_path.visuals[0] + scenario + mental_model",
+        "source": "tmp/charuco-r02/brief.md + charuco-r02-manifest.json"
+      },
+      {
+        "id": "f02-transfer",
+        "field": "micro_example + transfer_check + selection",
+        "source": "roadmap-model-selection/geometry-alignment-measurement/charuco/model.md"
+      },
+      {
+        "id": "wi032-first-read",
+        "field": "beginner_path + core + selection + transfer",
+        "source": "https://docs.opencv.org/4.13.0/da/d13/tutorial_aruco_calibration.html"
+      }
+    ]
+  },
+  "quality_status": {
+    "label": "本機重建、自評與驗證完成",
+    "state": "self_reviewed",
+    "round": "WI-032",
+    "reason": "逐圖及整頁自評、實頁操作與必要回歸已完成；使用者成品核准pending，未發布。"
+  },
+  "teaching_preflight": {
+    "brief": "teaching-images/vision-ai-model-selection/workitems/wi-032/charuco-core-r05.md",
+    "mobile_brief": "teaching-images/vision-ai-model-selection/workitems/wi-032/charuco-core-r05.md",
+    "story": "C",
+    "major_visual_nodes": 3,
+    "visual_status": "self-reviewed",
+    "user_review": "pending"
+  },
+  "engineering_slides": [
+    {
+      "title": "ChArUco：把板上點連到影像點",
+      "question": "建立的是相機幾何，不是每天工件的定位結果。",
+      "plain": {
+        "look": "先看已知板上座標，再看多視角觀測，最後核對估相機模型。",
+        "relation": "以標靶已知3D平面座標與各視角2D點估計相機模型；板上Z=0不等於影像是正視投影。校正需要合適視角、模型及品質核對，不能把固定工件對位當成校正。",
+        "takeaway": "建立的是相機幾何，不是每天工件的定位結果。"
+      },
+      "terms": [
+        "已知板上座標：角點ID固定；實體尺寸與單位已知",
+        "多視角觀測：同一角點跨影像對應；涵蓋位置與傾角"
+      ],
+      "guide": [
+        "以標靶已知3D平面座標與各視角2D點估計相機模型；板上Z=0不等於影像是正視投影。校正需要合適視角、模型及品質核對，不能把固定工件對位當成校正。",
+        "讀圖：已知板上座標 → 多視角觀測 → 估相機模型"
+      ],
+      "stages": [
+        {
+          "title": "已知板上座標",
+          "body": "角點ID固定；實體尺寸與單位已知"
+        },
+        {
+          "title": "多視角觀測",
+          "body": "同一角點跨影像對應；涵蓋位置與傾角"
+        },
+        {
+          "title": "估相機模型",
+          "body": "內參K＋畸變參數；保存解析度與鏡頭條件"
+        }
+      ],
+      "misconception": "示意只解釋本步驟，不可當作模型實測或省略後續核對。",
+      "alt": "ChArUco：把板上點連到影像點。建立的是相機幾何，不是每天工件的定位結果。 教學示意，非本輪模型實測。",
+      "mobile_image": "roadmap-model-selection/geometry-alignment-measurement/charuco/images/final/WI032-CHARUCO-01-r04-mobile.png",
+      "mobile_width": 768,
+      "mobile_height": 2770,
+      "engineering": {
+        "takeaway": "建立的是相機幾何，不是每天工件的定位結果。",
+        "nextAction": "先確定相機模型、實體標靶尺寸／方格與標記設定；固定影像解析度與光學條件，採集涵蓋中心、邊角及傾角的清楚影像，另留獨立核對組。",
+        "redLine": "找不到足夠可靠角點、實體板尺寸不符或邊角偏差超出工作預算時，先核對取像、標靶與模型，再補拍。不要把低平均重投影誤差直接換成量測合格。"
+      },
+      "source": "https://docs.opencv.org/4.13.0/da/d13/tutorial_aruco_calibration.html"
+    },
+    {
+      "title": "辨認標記與精細棋盤角點，各有任務",
+      "question": "ID解決身份，棋盤角點提供精細影像位置。",
+      "plain": {
+        "look": "先看標記辨認位置，再看棋盤交點供定位，最後核對同ID連回板座標。",
+        "relation": "偵測到ArUco標記之後，ChArUco流程估計及細化棋盤交點位置；實際可用角點取決於清晰度、視角、遮擋與設定。不能把marker中心替換成棋盤角點。",
+        "takeaway": "ID解決身份，棋盤角點提供精細影像位置。"
+      },
+      "terms": [
+        "標記辨認位置：字典與標記ID對上標靶；先知道看見板上哪一區",
+        "棋盤交點供定位：角點在黑白格交界；不是ArUco圖樣的中心"
+      ],
+      "guide": [
+        "偵測到ArUco標記之後，ChArUco流程估計及細化棋盤交點位置；實際可用角點取決於清晰度、視角、遮擋與設定。不能把marker中心替換成棋盤角點。",
+        "讀圖：標記辨認位置 → 棋盤交點供定位 → 同ID連回板座標"
+      ],
+      "stages": [
+        {
+          "title": "標記辨認位置",
+          "body": "字典與標記ID對上標靶；先知道看見板上哪一區"
+        },
+        {
+          "title": "棋盤交點供定位",
+          "body": "角點在黑白格交界；不是ArUco圖樣的中心"
+        },
+        {
+          "title": "同ID連回板座標",
+          "body": "保存ID、影像座標；與已知板上點逐一配對"
+        }
+      ],
+      "misconception": "示意只解釋本步驟，不可當作模型實測或省略後續核對。",
+      "alt": "辨認標記與精細棋盤角點，各有任務。ID解決身份，棋盤角點提供精細影像位置。 教學示意，非本輪模型實測。",
+      "mobile_image": "roadmap-model-selection/geometry-alignment-measurement/charuco/images/final/WI032-CHARUCO-02-r04-mobile.png",
+      "mobile_width": 768,
+      "mobile_height": 2770,
+      "engineering": {
+        "takeaway": "ID解決身份，棋盤角點提供精細影像位置。",
+        "nextAction": "先確定相機模型、實體標靶尺寸／方格與標記設定；固定影像解析度與光學條件，採集涵蓋中心、邊角及傾角的清楚影像，另留獨立核對組。",
+        "redLine": "找不到足夠可靠角點、實體板尺寸不符或邊角偏差超出工作預算時，先核對取像、標靶與模型，再補拍。不要把低平均重投影誤差直接換成量測合格。"
+      },
+      "source": "https://docs.opencv.org/4.13.0/da/d13/tutorial_aruco_calibration.html"
+    },
+    {
+      "title": "已知內參後，才另外解單張姿態",
+      "question": "姿態、相機校正與工站轉換，是不同的交付。",
+      "plain": {
+        "look": "先看板上3D與影像2D點，再看求板到相機的R/t，最後核對重投影與多解核對。",
+        "relation": "solvePnP把板上物體座標轉到相機座標。平面與特定求解器可能涉及多解；需結合可見性、重投影和工作約束核對，單一低誤差不自動保證工站量測。",
+        "takeaway": "姿態、相機校正與工站轉換，是不同的交付。"
+      },
+      "terms": [
+        "板上3D與影像2D點：同名點、足夠幾何約束；K／畸變已知且適用",
+        "求板到相機的R/t：X相機 = R × X板 + t；方向與長度單位都要寫清楚"
+      ],
+      "guide": [
+        "solvePnP把板上物體座標轉到相機座標。平面與特定求解器可能涉及多解；需結合可見性、重投影和工作約束核對，單一低誤差不自動保證工站量測。",
+        "讀圖：板上3D與影像2D點 → 求板到相機的R/t → 重投影與多解核對"
+      ],
+      "stages": [
+        {
+          "title": "板上3D與影像2D點",
+          "body": "同名點、足夠幾何約束；K／畸變已知且適用"
+        },
+        {
+          "title": "求板到相機的R/t",
+          "body": "X相機 = R × X板 + t；方向與長度單位都要寫清楚"
+        },
+        {
+          "title": "重投影與多解核對",
+          "body": "檢查重投影與合理姿態；工站座標還需另一個轉換"
+        }
+      ],
+      "misconception": "示意只解釋本步驟，不可當作模型實測或省略後續核對。",
+      "alt": "已知內參後，才另外解單張姿態。姿態、相機校正與工站轉換，是不同的交付。 教學示意，非本輪模型實測。",
+      "mobile_image": "roadmap-model-selection/geometry-alignment-measurement/charuco/images/final/WI032-CHARUCO-03-r04-mobile.png",
+      "mobile_width": 768,
+      "mobile_height": 2770,
+      "engineering": {
+        "takeaway": "姿態、相機校正與工站轉換，是不同的交付。",
+        "nextAction": "先確定相機模型、實體標靶尺寸／方格與標記設定；固定影像解析度與光學條件，採集涵蓋中心、邊角及傾角的清楚影像，另留獨立核對組。",
+        "redLine": "找不到足夠可靠角點、實體板尺寸不符或邊角偏差超出工作預算時，先核對取像、標靶與模型，再補拍。不要把低平均重投影誤差直接換成量測合格。"
+      },
+      "source": "https://docs.opencv.org/4.13.0/da/d13/tutorial_aruco_calibration.html"
+    },
+    {
+      "title": "相機設定變了，舊參數還能用嗎？",
+      "question": "把參數與取像條件綁定，改條件就重新核對。",
+      "plain": {
+        "look": "先看光學與影像條件，再看改條件後重查投影，最後核對量測另有尺寸基準。",
+        "relation": "更換鏡頭、對焦或解析度後應重新確認參數適用性；已知縮放／裁切可換算像素內參但仍需驗證。毫米準確還涉及外參、工作平面、標靶真實尺寸和誤差預算。",
+        "takeaway": "把參數與取像條件綁定，改條件就重新核對。"
+      },
+      "terms": [
+        "光學與影像條件：鏡頭／對焦／解析度；裁切也會改變像素座標",
+        "改條件後重查投影：不能只沿用舊K；參數換算仍需獨立驗證"
+      ],
+      "guide": [
+        "更換鏡頭、對焦或解析度後應重新確認參數適用性；已知縮放／裁切可換算像素內參但仍需驗證。毫米準確還涉及外參、工作平面、標靶真實尺寸和誤差預算。",
+        "讀圖：光學與影像條件 → 改條件後重查投影 → 量測另有尺寸基準"
+      ],
+      "stages": [
+        {
+          "title": "光學與影像條件",
+          "body": "鏡頭／對焦／解析度；裁切也會改變像素座標"
+        },
+        {
+          "title": "改條件後重查投影",
+          "body": "不能只沿用舊K；參數換算仍需獨立驗證"
+        },
+        {
+          "title": "量測另有尺寸基準",
+          "body": "校正誤差不是毫米保證；重拍、邊角與尺度另核對"
+        }
+      ],
+      "misconception": "若校正資料只覆蓋畫面中心，中心重投影看起來不錯也不能保證邊角可靠。用未參與估計的邊角與傾斜視角核對，再決定補拍；不是只增加照片張數。",
+      "alt": "相機設定變了，舊參數還能用嗎？。把參數與取像條件綁定，改條件就重新核對。 教學示意，非本輪模型實測。",
+      "mobile_image": "roadmap-model-selection/geometry-alignment-measurement/charuco/images/final/WI032-CHARUCO-04-r04-mobile.png",
+      "mobile_width": 768,
+      "mobile_height": 2770,
+      "engineering": {
+        "takeaway": "把參數與取像條件綁定，改條件就重新核對。",
+        "nextAction": "先確定相機模型、實體標靶尺寸／方格與標記設定；固定影像解析度與光學條件，採集涵蓋中心、邊角及傾角的清楚影像，另留獨立核對組。",
+        "redLine": "找不到足夠可靠角點、實體板尺寸不符或邊角偏差超出工作預算時，先核對取像、標靶與模型，再補拍。不要把低平均重投影誤差直接換成量測合格。"
+      },
+      "source": "https://docs.opencv.org/4.13.0/da/d13/tutorial_aruco_calibration.html"
+    }
+  ]
+}

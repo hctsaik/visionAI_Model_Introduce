@@ -1,0 +1,587 @@
+{
+  "model": "SIFT",
+  "badge": "R06｜算法不是學習模型",
+  "title": "SIFT：在紋理上找點，不是要訓練的模型",
+  "scenario": {
+    "title": "為什麼需要這個方法？",
+    "body": "你有 reference ROI 和 current ROI，無法每次放 ChArUco 標靶；表面卻有穩定紋理、孔洞或局部細節可供辨識。你要找的是可追查的 correspondence，幫助估計幾何初始化或 warp，而不是分類產品品質。"
+  },
+  "promise": {
+    "title": "它真正交付的東西",
+    "body": "SIFT 交付帶位置、尺度與方向的 local keypoints/descriptors，以及經 ratio test、RANSAC、inlier coverage 和 residual 驗證後的 correspondence 或 transform；不是類別分數、缺陷候選或最終 registration 保證。"
+  },
+  "mental_model": {
+    "title": "先把它看成找地標與做名片的算法，不是學習模型",
+    "body": "image pyramid 產生多尺度影像，DoG extrema 找 candidate keypoints，再做 localization 與 contrast/edge rejection。\n\n保留 keypoint 的位置、尺度、orientation，並從周圍梯度形成 descriptor。\n\nreference 與 current descriptors 以 nearest-neighbor 比對，再用 ratio test 排除不夠明確的鄰居。",
+    "limit": "名片相近不等於幾何一定正確。低紋理、鏡面、週期重複圖樣或太小 ROI 會讓候選連線不足或集中錯配，仍要用 RANSAC、空間 coverage 和 residual 篩選。"
+  },
+  "beginner_path": {
+    "title": "先分清它不是學習模型，再看找點、配對、何時停",
+    "intro": "SIFT 沒有訓練權重。同一金屬件上用 OpenCV 真實找點與配對：找點、做描述子、比近鄰。教學示意。",
+    "visuals": [
+      {
+        "id": "reference-current-anchor",
+        "title": "SIFT 不是要訓練的模型",
+        "prompt": "它在圖上找的是什麼？有沒有要先訓練、再載入的權重？",
+        "caption": "同一金屬件。SIFT 沒有訓練權重。它在紋理上找可重複的點並做成描述子，供後面配對。OpenCV 本圖找到 120 個點。教學示意。",
+        "image": "_course_content/generated-concepts/sift/sift-r06-c1-what.png",
+        "alt": "SIFT 不是學習模型：同一金屬件上標出局部點。",
+        "callouts": [
+          {
+            "title": "不是學習模型",
+            "body": "沒有正常品庫，也沒有要載入的網路權重。"
+          },
+          {
+            "title": "在紋理上找點",
+            "body": "孔洞、邊緣這類可重複局部才會留下 keypoint。"
+          },
+          {
+            "title": "任務是對應點",
+            "body": "不是缺陷分數，也還不是最終 warp。"
+          }
+        ],
+        "reading_views": [
+          {
+            "title": "SIFT 不是要訓練的模型",
+            "image": "_course_content/generated-concepts/sift/sift-r06-c1-what.png",
+            "mobile_image": "_course_content/generated-concepts/sift/sift-r06-c1-what-mobile.png",
+            "alt": "SIFT 不是學習模型：同一金屬件上標出局部點。",
+            "mobile_crop": [
+              0,
+              0,
+              720,
+              1280
+            ],
+            "mobile_display_mode": "full-mobile",
+            "mobile_intrinsic_width": 720,
+            "mobile_intrinsic_height": 1280,
+            "desktop_intrinsic_width": 1600,
+            "desktop_intrinsic_height": 900
+          }
+        ],
+        "core_ideas": true
+      },
+      {
+        "id": "scale-space-keypoints",
+        "title": "算法怎麼跑：找點、做名片、再配對",
+        "prompt": "沒有神經網路時，這三步如何從兩張圖得到候選連線？",
+        "caption": "同一金屬件。OpenCV SIFT 找點、做梯度描述子、近鄰加 ratio test 後留下 104 條候選。數量多還不是幾何通過。教學示意。",
+        "image": "_course_content/generated-concepts/sift/sift-r06-c2-how.png",
+        "alt": "SIFT 找點、描述、配對三步。",
+        "callouts": [
+          {
+            "title": "1 找可重複的點",
+            "body": "多尺度上找穩定局部，不是畫缺陷框。"
+          },
+          {
+            "title": "2 做成梯度名片",
+            "body": "每個點帶位置、尺度、方向與描述子。"
+          },
+          {
+            "title": "3 近鄰再過濾",
+            "body": "ratio test 排除不夠明確的鄰居。"
+          }
+        ],
+        "reading_views": [
+          {
+            "title": "算法怎麼跑：找點、做名片、再配對",
+            "image": "_course_content/generated-concepts/sift/sift-r06-c2-how.png",
+            "mobile_image": "_course_content/generated-concepts/sift/sift-r06-c2-how-mobile.png",
+            "alt": "SIFT 找點、描述、配對三步。",
+            "mobile_crop": [
+              0,
+              0,
+              720,
+              1280
+            ],
+            "mobile_display_mode": "full-mobile",
+            "mobile_intrinsic_width": 720,
+            "mobile_intrinsic_height": 1280,
+            "desktop_intrinsic_width": 1600,
+            "desktop_intrinsic_height": 900
+          }
+        ]
+      },
+      {
+        "id": "descriptor-ratio-match",
+        "title": "交出可檢查的對應點，不是產品分數",
+        "prompt": "這些連線是缺陷、是對位結果，還是還要再檢查的 correspondence？",
+        "caption": "每條線都可以回到兩個像素。還要 RANSAC 與空間覆蓋。連線不是熱圖，也不是最終 warp。教學示意。",
+        "image": "_course_content/generated-concepts/sift/sift-r06-c3-get.png",
+        "alt": "SIFT 對應點連線，標示還不是 warp。",
+        "callouts": [
+          {
+            "title": "輸出是 correspondence",
+            "body": "位置可回查，才能做後面的幾何。"
+          },
+          {
+            "title": "還要幾何門檻",
+            "body": "名片相近仍可能是錯配。"
+          },
+          {
+            "title": "不是檢驗分數",
+            "body": "這些圈不是刮痕，也不是 PASS。"
+          }
+        ],
+        "reading_views": [
+          {
+            "title": "交出可檢查的對應點，不是產品分數",
+            "image": "_course_content/generated-concepts/sift/sift-r06-c3-get.png",
+            "mobile_image": "_course_content/generated-concepts/sift/sift-r06-c3-get-mobile.png",
+            "alt": "SIFT 對應點連線，標示還不是 warp。",
+            "mobile_crop": [
+              0,
+              0,
+              720,
+              1280
+            ],
+            "mobile_display_mode": "full-mobile",
+            "mobile_intrinsic_width": 720,
+            "mobile_intrinsic_height": 1280,
+            "desktop_intrinsic_width": 1600,
+            "desktop_intrinsic_height": 900
+          }
+        ]
+      },
+      {
+        "id": "ransac-geometry-gate",
+        "title": "紋理不夠時，放寬門檻也要 HOLD",
+        "prompt": "同一張模板被模糊後幾乎沒有穩定點，可以放寬 ratio 硬求 transform 嗎？",
+        "caption": "清楚時 120 點、104 條配對；模糊後只剩 4 條。缺少可觀測紋理時應 HOLD，不要用少數錯配硬求幾何。教學示意。",
+        "image": "_course_content/generated-concepts/sift/sift-r06-d4-stop.png",
+        "alt": "模糊後 SIFT 點與配對塌掉，應 HOLD。",
+        "callouts": [
+          {
+            "title": "反事實只破壞紋理",
+            "body": "工件沒換，只是局部變得不可觀測。"
+          },
+          {
+            "title": "點不夠就不能求",
+            "body": "4 條線約束不住整張圖。"
+          },
+          {
+            "title": "下一步不是放寬",
+            "body": "改取像、ROI，或改用標靶／其他方法。"
+          }
+        ],
+        "reading_views": [
+          {
+            "title": "紋理不夠時，放寬門檻也要 HOLD",
+            "image": "_course_content/generated-concepts/sift/sift-r06-d4-stop.png",
+            "mobile_image": "_course_content/generated-concepts/sift/sift-r06-d4-stop-mobile.png",
+            "alt": "模糊後 SIFT 點與配對塌掉，應 HOLD。",
+            "mobile_crop": [
+              0,
+              0,
+              720,
+              1280
+            ],
+            "mobile_display_mode": "full-mobile",
+            "mobile_intrinsic_width": 720,
+            "mobile_intrinsic_height": 1280,
+            "desktop_intrinsic_width": 1600,
+            "desktop_intrinsic_height": 900
+          }
+        ]
+      },
+      {
+        "id": "coverage-drift-hold",
+        "title": "有紋理找點，已接近做 ECC，難配再用學習配對",
+        "prompt": "缺的是可解釋對應點、最後幾個像素，還是學習配對器？",
+        "caption": "同一金屬件。SIFT 是紋理上的對應基線；已接近才 ECC；描述子不穩才考慮 LightGlue；能放標靶則 ChArUco。教學示意。",
+        "image": "_course_content/generated-concepts/sift/sift-r06-d5-pick.png",
+        "alt": "SIFT、ECC、LightGlue、ChArUco 分工。",
+        "callouts": [
+          {
+            "title": "SIFT：對應點",
+            "body": "不能放標靶、又有穩定紋理時的基線。"
+          },
+          {
+            "title": "ECC：微調",
+            "body": "外觀穩定且已接近才交給它。"
+          },
+          {
+            "title": "LightGlue：學習配對",
+            "body": "傳統描述子不穩、可接受權重依賴時。"
+          }
+        ],
+        "reading_views": [
+          {
+            "title": "有紋理找點，已接近做 ECC，難配再用學習配對",
+            "image": "_course_content/generated-concepts/sift/sift-r06-d5-pick.png",
+            "mobile_image": "_course_content/generated-concepts/sift/sift-r06-d5-pick-mobile.png",
+            "alt": "SIFT、ECC、LightGlue、ChArUco 分工。",
+            "mobile_crop": [
+              0,
+              0,
+              720,
+              1280
+            ],
+            "mobile_display_mode": "full-mobile",
+            "mobile_intrinsic_width": 720,
+            "mobile_intrinsic_height": 1280,
+            "desktop_intrinsic_width": 1600,
+            "desktop_intrinsic_height": 900
+          }
+        ]
+      }
+    ]
+  },
+  "micro_example": {
+    "title": "拿掉核心設計，再換一個工作情境",
+    "setup": "reference/current ROI 都有一排重複螺絲孔。matcher 找到 20 條很像的連線，但全部集中在左上角；另一組較少的 inliers 分布在整個工件。",
+    "prediction": "先猜：哪一組比較能約束整個 transform？為什麼 match 數量不是唯一證據？",
+    "reveal": "分散的 inliers 才會約束不同位置的幾何；大量集中在重複圖樣的 match 可能是同一種錯配重複出現。SIFT 的工程價值是可檢查 correspondence，不是累計連線數。"
+  },
+  "mechanism_steps": [
+    {
+      "title": "在不同尺度找候選局部地標",
+      "body": "image pyramid 產生多尺度影像，DoG extrema 找 candidate keypoints，再做 localization 與 contrast/edge rejection。",
+      "why": "同一個可觀測紋理可能因距離或成像大小改變；多尺度偵測先讓候選地標不只依賴單一像素大小。",
+      "anchor": "工程圖核對：image pyramid／DoG extrema／contrast-edge rejection",
+      "diagram": {
+        "title": "找多尺度局部地標",
+        "body": "在 image pyramid 找 DoG keypoints，去掉不穩定點。",
+        "why": "同一紋理大小改變時，仍有機會被找到。",
+        "anchor": "pyramid／DoG keypoints"
+      }
+    },
+    {
+      "title": "為每個地標建立方向化 descriptor",
+      "body": "保留 keypoint 的位置、尺度、orientation，並從周圍梯度形成 descriptor。",
+      "why": "比對不是只看一個亮點，而是比較它附近的局部結構；位置、尺度與方向也讓候選連線可被回查。",
+      "anchor": "工程圖核對：keypoint location + scale + orientation／gradient descriptor",
+      "diagram": {
+        "title": "建立方向化 descriptor",
+        "body": "記錄位置、尺度、方向與周圍梯度描述。",
+        "why": "比對的是局部結構，不是一個孤立亮點。",
+        "anchor": "keypoint／descriptor"
+      }
+    },
+    {
+      "title": "先把相似 descriptor 變成候選 match",
+      "body": "reference 與 current descriptors 以 nearest-neighbor 比對，再用 ratio test 排除不夠明確的鄰居。",
+      "why": "重複或相似紋理會產生多個看似合理的配對；ratio test 的角色是減少曖昧候選，不是證明幾何。",
+      "anchor": "工程圖核對：nearest-neighbor matches／ratio test",
+      "diagram": {
+        "title": "產生候選 matches",
+        "body": "比最近 descriptor，並以 ratio test 排除曖昧者。",
+        "why": "相似紋理會有多個候選，還未證明幾何。",
+        "anchor": "nearest match／ratio test"
+      }
+    },
+    {
+      "title": "用 RANSAC 和分布驗證 transform",
+      "body": "RANSAC 選出能共同支持某個 transform 的 inliers，再量 inlier count、spatial coverage 和 reprojection residual。",
+      "why": "真正有用的是共同幾何關係，不是孤立的相似描述子；coverage 和 residual 可揭露 match 是否只集中在錯誤小區域。",
+      "anchor": "工程圖核對：RANSAC inliers／spatial coverage／reprojection residual",
+      "diagram": {
+        "title": "以幾何驗證 transform",
+        "body": "RANSAC 篩 inliers，再量 coverage 與 residual。",
+        "why": "共同幾何而非 match 數，才支持可用 transform。",
+        "anchor": "RANSAC／coverage／residual"
+      }
+    }
+  ],
+  "visual_intro": "現在才拿四張工程圖核對：從 pyramid/DoG 找 keypoints，再看 descriptor、ratio test、RANSAC inliers、coverage 和 residual。先理解每條線只是候選，再判斷整組線是否支持一個 transform。",
+  "concept_visuals": [
+    {
+      "id": "causal-chain",
+      "placement": "after_causal_chain",
+      "title": "SIFT 不是要訓練的模型",
+      "prompt": "它在圖上找的是什麼？有沒有要先訓練、再載入的權重？",
+      "caption": "同一金屬件。SIFT 沒有訓練權重。它在紋理上找可重複的點並做成描述子，供後面配對。OpenCV 本圖找到 120 個點。教學示意。",
+      "image": "_course_content/generated-concepts/sift/sift-r06-c1-what.png",
+      "alt": "SIFT 不是學習模型：同一金屬件上標出局部點。",
+      "callouts": [
+        {
+          "title": "不是學習模型",
+          "body": "沒有正常品庫，也沒有要載入的網路權重。"
+        },
+        {
+          "title": "在紋理上找點",
+          "body": "孔洞、邊緣這類可重複局部才會留下 keypoint。"
+        },
+        {
+          "title": "任務是對應點",
+          "body": "不是缺陷分數，也還不是最終 warp。"
+        }
+      ]
+    },
+    {
+      "id": "worked-example",
+      "placement": "after_micro_example",
+      "title": "紋理不夠時，放寬門檻也要 HOLD",
+      "prompt": "同一張模板被模糊後幾乎沒有穩定點，可以放寬 ratio 硬求 transform 嗎？",
+      "caption": "清楚時 120 點、104 條配對；模糊後只剩 4 條。缺少可觀測紋理時應 HOLD，不要用少數錯配硬求幾何。教學示意。",
+      "image": "_course_content/generated-concepts/sift/sift-r06-d4-stop.png",
+      "alt": "模糊後 SIFT 點與配對塌掉，應 HOLD。",
+      "callouts": [
+        {
+          "title": "反事實只破壞紋理",
+          "body": "工件沒換，只是局部變得不可觀測。"
+        },
+        {
+          "title": "點不夠就不能求",
+          "body": "4 條線約束不住整張圖。"
+        },
+        {
+          "title": "下一步不是放寬",
+          "body": "改取像、ROI，或改用標靶／其他方法。"
+        }
+      ]
+    },
+    {
+      "id": "comparison",
+      "placement": "after_comparison",
+      "title": "有紋理找點，已接近做 ECC，難配再用學習配對",
+      "prompt": "缺的是可解釋對應點、最後幾個像素，還是學習配對器？",
+      "caption": "同一金屬件。SIFT 是紋理上的對應基線；已接近才 ECC；描述子不穩才考慮 LightGlue；能放標靶則 ChArUco。教學示意。",
+      "image": "_course_content/generated-concepts/sift/sift-r06-d5-pick.png",
+      "alt": "SIFT、ECC、LightGlue、ChArUco 分工。",
+      "callouts": [
+        {
+          "title": "SIFT：對應點",
+          "body": "不能放標靶、又有穩定紋理時的基線。"
+        },
+        {
+          "title": "ECC：微調",
+          "body": "外觀穩定且已接近才交給它。"
+        },
+        {
+          "title": "LightGlue：學習配對",
+          "body": "傳統描述子不穩、可接受權重依賴時。"
+        }
+      ]
+    },
+    {
+      "id": "boundary-cases-explainer",
+      "placement": "before_boundary_cases",
+      "title": "同一條因果鏈，在哪裡會被破壞？",
+      "prompt": "不要只記住風險名詞；先預測條件一變，畫面或候選結果會怎麼變，再決定何時應 HOLD。",
+      "caption": "SIFT 的三個模型專屬反事實：每欄把條件、可觀察後果與正確下一步放在一起。它們不是自動修正規則；遇到條件超出驗證範圍時，先保存原始證據並進入 HOLD／REVIEW。",
+      "image": "_course_content/generated-concepts/sift/sift-boundary-cases_v01.svg",
+      "alt": "SIFT 的三欄反事實說明圖：每欄依序說明一個失效條件、可能看到的候選或量測後果，以及應進入 HOLD、重驗或改選方法的安全下一步。",
+      "callouts": [
+        {
+          "title": "先看條件，而不是先改門檻",
+          "body": "候選改變可能是資料、取像、設定或模型假設被破壞，不能立刻解讀成產品真相。"
+        },
+        {
+          "title": "把可觀察後果說出來",
+          "body": "誤報、漏檢、整片異常或時間失序都需要回到原始資料與版本追查。"
+        },
+        {
+          "title": "HOLD 是設計的一部分",
+          "body": "先停止自動往下走、保存 evidence，確認條件後才重新 qualification 或交給適合的方法。"
+        }
+      ]
+    }
+  ],
+  "boundary_cases": [
+    {
+      "condition": "低紋理、鏡面、模糊或 tiny ROI",
+      "effect": "沒有足夠穩定的 keypoints/descriptors，match 和 coverage 會不足。",
+      "action": "拒用或改變取像／ROI；不要硬用少數點求 transform，再把結果當穩定 registration。"
+    },
+    {
+      "condition": "週期重複圖樣或大視角變化",
+      "effect": "許多 descriptor 可能同時相似，造成集中錯配、錯 inliers 或不代表真實幾何的 transform。",
+      "action": "檢查 ratio test、inlier spatial coverage、residual tail 與 failure pairs；集中於重複區域時拒用。"
+    },
+    {
+      "condition": "position-sensitive AOI 直接把 SIFT transform 當最後證據",
+      "effect": "SIFT 常只提供 initialization；殘留小誤差仍可能在位置敏感的下游 anomaly task 造成假差異。",
+      "action": "先 HOLD 下游 anomaly 判定，將 SIFT warp 明確標為初始化；另接並驗證 finer registration gate（例如適用時的 ECC），殘差與 coverage 通過前不可把 warp 當最後證據。"
+    }
+  ],
+  "comparison": [
+    {
+      "model": "SIFT",
+      "normality": "依據：影像中可觀測、具有位置/尺度/方向的 local texture descriptor",
+      "candidate": "可用輸出：ratio/RANSAC、spatial coverage、residual 合格的 correspondence／初始化"
+    },
+    {
+      "model": "LightGlue",
+      "normality": "依據：外部 extractor 提供的 learned keypoint/descriptor tokens",
+      "candidate": "可用輸出：confidence/pruning 後仍須幾何 solver 驗證的 correspondence"
+    },
+    {
+      "model": "ECC",
+      "normality": "依據：template 與 moving ROI 在可靠初值附近的直接影像外觀",
+      "candidate": "可用輸出：收斂且 residual 合格的微調 warp／inverse transform"
+    }
+  ],
+  "selection": "無法放置標靶、表面又有穩定可觀測紋理且需要可解釋 correspondence 時，SIFT 是合理基線。固定 detector threshold、matcher、ratio test、RANSAC model 和 inlier gate，量 inlier coverage、residual tail、reject rate 和 P95；不要只用 match 數或把它當最後 registration。",
+  "poc": {
+    "title": "POC 第一件事：驗證對應點是否真的覆蓋工件",
+    "steps": [
+      "鎖 reference image、曝光/focus、產品版本、ROI、SIFT detector/descriptor、matcher、ratio test 和 RANSAC model。",
+      "按低紋理、鏡面、重複圖樣、模糊、視角差、tiny ROI 與正常 production pairs 分組，保存 keypoint distribution、matches、inliers、coverage、residual 和拒用結果。",
+      "比較 transform 後的 downstream registration residual、coverage/reject rate 與 P95；position-sensitive 任務再接 finer registration qualification。"
+    ],
+    "hold": "keypoint 太少、inliers 集中在重複區、residual tail 偏大、畫面模糊／反光或 ROI 太小時，先拒用，不要硬湊 transform。",
+    "acceptance": {
+      "baseline": "以固定 reference image、曝光/focus、ROI、SIFT detector/descriptor、matcher、ratio test 與 RANSAC model 的既有初始化流程為基準。",
+      "measure": "按低紋理、鏡面、重複圖樣、模糊、視角差、tiny ROI 與正常 production pairs 分層量 keypoint distribution、match/inlier count、spatial coverage、residual tail、reject rate、downstream registration residual 與 P95。",
+      "negative_control": "在平滑鏡面或週期孔洞 ROI 中刻意保留少量但集中的 matches；預期 coverage 或 RANSAC residual 不足，即使 match 數量看似很多也必須拒用。",
+      "owner": "由產品／取像 owner 管 reference 與 optics revision；geometry/CV owner 簽核 correspondence、coverage 和 transform evidence，position-sensitive 下游 owner 再決定是否採用初始化。"
+    }
+  },
+  "teach_back": {
+    "question": "某 pair 有很多 SIFT matches，但全都集中在一排重複孔洞。你會直接用它求 transform 嗎？",
+    "answer": "不會。大量 match 只代表局部 descriptor 相似；重複圖樣可能讓它們一起錯配。先看 ratio/RANSAC 後的 inlier spatial coverage 與 residual，若沒有覆蓋工件或 tail 不可靠就拒用或改善 initialization。"
+  },
+  "slide_reading": [
+    {
+      "title": "先找：SIFT 為什麼先做多尺度？",
+      "question": "同一個局部紋理在畫面中變大或變小時，哪個設計幫它仍有機會被找到？",
+      "look": "找 image pyramid、DoG extrema、localization 和 contrast/edge rejection。",
+      "relation": "pyramid 讓候選特徵可在不同尺度出現；rejection 去掉不夠穩定的點。",
+      "takeaway": "SIFT 的第一步是在可觀測紋理中找可重複辨認的地標。",
+      "terms": [
+        "image pyramid：同一影像的多個解析度層級",
+        "keypoint：可被定位、描述並用來比對的局部地標"
+      ]
+    },
+    {
+      "title": "這張圖要核對：descriptor 和 match 各代表什麼？",
+      "question": "為什麼兩個 descriptor 相近還只能叫候選連線？",
+      "look": "找 position、scale、orientation、gradient descriptor、nearest-neighbor 與 ratio test。",
+      "relation": "descriptor 比較的是局部梯度外觀；ratio test 降低曖昧匹配，但尚未檢查整體幾何。",
+      "takeaway": "相似是候選的理由，不是 transform 正確的證明。",
+      "terms": [
+        "descriptor：局部紋理的數字描述",
+        "ratio test：比較最近與次近候選的明確性篩選"
+      ]
+    },
+    {
+      "title": "先看 RANSAC 如何把線條變成幾何假設",
+      "question": "哪些 matches 會成為 inliers，為什麼？",
+      "look": "找 candidate matches、RANSAC model、inliers、transform 與 reprojection residual。",
+      "relation": "inliers 是能共同支持同一幾何 transform 的連線；不一致者被當作 outliers。",
+      "takeaway": "SIFT 的工程輸出是經幾何驗證的 correspondence，不是未篩選連線圖。",
+      "terms": [
+        "RANSAC：用多次抽樣尋找共同幾何模型的穩健方法",
+        "inlier：與同一個 transform 一致的配對點"
+      ]
+    },
+    {
+      "title": "最後看：為什麼 coverage 比 match 數重要？",
+      "question": "若所有 inlier 都在一個角落，整體 ROI 的 warp 為何仍不可信？",
+      "look": "找 inlier count、spatial coverage、重複圖樣、residual tail 和 reject gate。",
+      "relation": "集中連線只能約束小區域；分散 coverage 與 residual 才能測到整體幾何是否合理。",
+      "takeaway": "缺少 coverage、residual 或 reject gate 的 match 數，不能當作 production evidence。",
+      "terms": [
+        "spatial coverage：inliers 在 ROI 中的分布範圍",
+        "outlier：不支持共同 transform 的錯配或不一致配對"
+      ]
+    }
+  ],
+  "comparison_headers": {
+    "title": "不要比名稱；比局部對應的表示與前提",
+    "basis": "局部對應的表示／成立前提",
+    "output": "可採用的初始化輸出／驗證 gate"
+  },
+  "transfer_check": {
+    "title": "鏡面無紋理表面，能靠放寬 ratio test 補救嗎？",
+    "scenario": "新產品表面平滑且鏡面，reference/current pair 幾乎沒有穩定局部紋理。",
+    "question": "可以放寬 ratio test、用少數 match 硬求 transform 嗎？為什麼？",
+    "answer": "不可以。SIFT 缺少足夠可觀測的 keypoints 時，放寬門檻只會增加不受幾何支持的錯配。應拒用或調整 ROI／取像；若可放標靶可考慮 ChArUco，若已有可靠小位移初值才另驗 ECC。"
+  },
+  "review_trace": {
+    "authority": "roadmap-model-selection/geometry-alignment-measurement/sift/model.md",
+    "scope": "F02 先讀契約：為什麼需要、三個模型核心設計、移除核心的自測與選型；既有後續細節、反例與工程驗證原樣保留。",
+    "claims": [
+      {
+        "id": "visual-1",
+        "field": "beginner_path.visuals[reference-current-anchor]",
+        "source": "模型定位 / architecture_path"
+      },
+      {
+        "id": "visual-2",
+        "field": "beginner_path.visuals[scale-space-keypoints]",
+        "source": "architecture_path"
+      },
+      {
+        "id": "visual-3",
+        "field": "beginner_path.visuals[descriptor-ratio-match]",
+        "source": "representation_or_score"
+      },
+      {
+        "id": "visual-4",
+        "field": "beginner_path.visuals[ransac-geometry-gate]",
+        "source": "failure_boundary"
+      },
+      {
+        "id": "visual-5",
+        "field": "beginner_path.visuals[coverage-drift-hold]",
+        "source": "selection_gate / evidence_bundle"
+      },
+      {
+        "id": "promise",
+        "field": "promise",
+        "source": "模型定位 / representation_or_score"
+      },
+      {
+        "id": "mechanism",
+        "field": "mechanism_steps",
+        "source": "architecture_path / representation_or_score"
+      },
+      {
+        "id": "boundaries",
+        "field": "boundary_cases",
+        "source": "failure_boundary / selection_gate"
+      },
+      {
+        "id": "comparison",
+        "field": "comparison + selection",
+        "source": "selection_gate"
+      },
+      {
+        "id": "poc",
+        "field": "poc + acceptance",
+        "source": "cost_and_operating_point / evidence_bundle"
+      },
+      {
+        "id": "transfer",
+        "field": "transfer_check",
+        "source": "failure_boundary / selection_gate"
+      },
+      {
+        "id": "f02-core",
+        "field": "beginner_path.visuals[0] + scenario + mental_model",
+        "source": "roadmap-model-selection/geometry-alignment-measurement/sift/model.md"
+      },
+      {
+        "id": "f02-transfer",
+        "field": "micro_example + transfer_check + selection",
+        "source": "roadmap-model-selection/geometry-alignment-measurement/sift/model.md"
+      }
+    ]
+  },
+  "quality_status": {
+    "label": "待使用者審閱",
+    "state": "needs_revision",
+    "round": "WI-017 SIFT R06",
+    "reason": "第一遍依 C1–D5 與「不是學習模型」重產。使用者核准 pending。",
+    "current_revision": "R06 first-read",
+    "current_asset": "_course_content/generated-concepts/sift/sift-r06-c1-what.png"
+  },
+  "teaching_preflight": {
+    "version": "R06 C1",
+    "source_files": [
+      "CLAUDE.md",
+      "IMAGE_STYLE_GUIDE.md",
+      "TEACHING_REVIEW_LOG.md",
+      "TEACHING_SCORING_RUBRIC.md",
+      "TEACHING_WEBPAGE_GUIDE.md"
+    ],
+    "brief": "tmp/sift-lg-r06/brief-sift-c1.md",
+    "story": "C",
+    "major_visual_nodes": 4,
+    "reference_page": "teaching-images/vision-ai-model-selection/roadmap-model-selection/foundation-vlm-open-world/clip/images/final/CLIP-01-positioning_v01.png",
+    "takeaway": "SIFT 不是學習模型；它在紋理上找點、做名片，供後面配對。",
+    "visual_status": "prototype_pending_user_review"
+  }
+}

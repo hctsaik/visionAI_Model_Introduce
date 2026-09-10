@@ -1,0 +1,502 @@
+[
+  {
+    "topic": "yolo-world",
+    "route": "interactive-learning.html",
+    "width": 1440,
+    "errors": [],
+    "images": [
+      {
+        "src": "http://127.0.0.1:8000/_course_content/generated-concepts/yolo-world/wi032-world-core-r01-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 404.1875,
+          "y": 402.421875,
+          "width": 935.625,
+          "height": 526.5625,
+          "top": 402.421875,
+          "right": 1339.8125,
+          "bottom": 928.984375,
+          "left": 404.1875
+        },
+        "kind": "main-1"
+      },
+      {
+        "src": "http://127.0.0.1:8000/_course_content/generated-concepts/yolo-world/wi032-world-failure-r03-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 404.1875,
+          "y": 200.9375,
+          "width": 935.625,
+          "height": 526.5625,
+          "top": 200.9375,
+          "right": 1339.8125,
+          "bottom": 727.5,
+          "left": 404.1875
+        },
+        "kind": "main-2"
+      },
+      {
+        "src": "http://127.0.0.1:8000/_course_content/generated-concepts/det-dino-detector/wi032-detector-compare-r01-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 404.1875,
+          "y": 201.125,
+          "width": 935.625,
+          "height": 526.5625,
+          "top": 201.125,
+          "right": 1339.8125,
+          "bottom": 727.6875,
+          "left": 404.1875
+        },
+        "kind": "main-3"
+      },
+      {
+        "src": "http://127.0.0.1:8000/roadmap-model-selection/detector/yolo-world/images/final/WI032-YOLOWORLD-01-r04-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 367.1875,
+          "y": 196.25,
+          "width": 1009.625,
+          "height": 568.203125,
+          "top": 196.25,
+          "right": 1376.8125,
+          "bottom": 764.453125,
+          "left": 367.1875
+        },
+        "kind": "engineering-1"
+      },
+      {
+        "src": "http://127.0.0.1:8000/roadmap-model-selection/detector/yolo-world/images/final/WI032-YOLOWORLD-02-r05-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 367.1875,
+          "y": 196.125,
+          "width": 1009.625,
+          "height": 568.203125,
+          "top": 196.125,
+          "right": 1376.8125,
+          "bottom": 764.328125,
+          "left": 367.1875
+        },
+        "kind": "engineering-2"
+      },
+      {
+        "src": "http://127.0.0.1:8000/roadmap-model-selection/detector/yolo-world/images/final/WI032-YOLOWORLD-03-r07-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 367.1875,
+          "y": 195.6875,
+          "width": 1009.625,
+          "height": 568.203125,
+          "top": 195.6875,
+          "right": 1376.8125,
+          "bottom": 763.890625,
+          "left": 367.1875
+        },
+        "kind": "engineering-3"
+      },
+      {
+        "src": "http://127.0.0.1:8000/roadmap-model-selection/detector/yolo-world/images/final/WI032-YOLOWORLD-04-r04-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 367.1875,
+          "y": 195.71875,
+          "width": 1009.625,
+          "height": 568.203125,
+          "top": 195.71875,
+          "right": 1376.8125,
+          "bottom": 763.921875,
+          "left": 367.1875
+        },
+        "kind": "engineering-4"
+      }
+    ],
+    "zoom_checks": 7,
+    "answer": true,
+    "overflow": false,
+    "navigation": true,
+    "complete": true
+  },
+  {
+    "topic": "yolo-world",
+    "route": "interactive-learning.html",
+    "width": 360,
+    "errors": [],
+    "images": [
+      {
+        "src": "http://127.0.0.1:8000/_course_content/generated-concepts/yolo-world/wi032-world-core-r02-mobile.png",
+        "nw": 1024,
+        "nh": 1536,
+        "box": {
+          "x": 17,
+          "y": 110.328125,
+          "width": 326,
+          "height": 489,
+          "top": 110.328125,
+          "right": 343,
+          "bottom": 599.328125,
+          "left": 17
+        },
+        "kind": "main-1"
+      },
+      {
+        "src": "http://127.0.0.1:8000/_course_content/generated-concepts/yolo-world/wi032-world-failure-r03-mobile.png",
+        "nw": 1024,
+        "nh": 1536,
+        "box": {
+          "x": 17,
+          "y": 110.171875,
+          "width": 326,
+          "height": 489,
+          "top": 110.171875,
+          "right": 343,
+          "bottom": 599.171875,
+          "left": 17
+        },
+        "kind": "main-2"
+      },
+      {
+        "src": "http://127.0.0.1:8000/_course_content/generated-concepts/det-dino-detector/wi032-detector-compare-r02-mobile.png",
+        "nw": 1024,
+        "nh": 1536,
+        "box": {
+          "x": 17,
+          "y": 119.640625,
+          "width": 326,
+          "height": 489,
+          "top": 119.640625,
+          "right": 343,
+          "bottom": 608.640625,
+          "left": 17
+        },
+        "kind": "main-3"
+      },
+      {
+        "src": "http://127.0.0.1:8000/roadmap-model-selection/detector/yolo-world/images/final/WI032-YOLOWORLD-01-r04-mobile.png",
+        "nw": 768,
+        "nh": 2770,
+        "box": {
+          "x": 34,
+          "y": -157.890625,
+          "width": 292,
+          "height": 1053.171875,
+          "top": -157.890625,
+          "right": 326,
+          "bottom": 895.28125,
+          "left": 34
+        },
+        "kind": "engineering-1"
+      },
+      {
+        "src": "http://127.0.0.1:8000/roadmap-model-selection/detector/yolo-world/images/final/WI032-YOLOWORLD-02-r05-mobile.png",
+        "nw": 768,
+        "nh": 2770,
+        "box": {
+          "x": 34,
+          "y": -157.734375,
+          "width": 292,
+          "height": 1053.171875,
+          "top": -157.734375,
+          "right": 326,
+          "bottom": 895.4375,
+          "left": 34
+        },
+        "kind": "engineering-2"
+      },
+      {
+        "src": "http://127.0.0.1:8000/roadmap-model-selection/detector/yolo-world/images/final/WI032-YOLOWORLD-03-r07-mobile.png",
+        "nw": 768,
+        "nh": 2770,
+        "box": {
+          "x": 34,
+          "y": -158.203125,
+          "width": 292,
+          "height": 1053.171875,
+          "top": -158.203125,
+          "right": 326,
+          "bottom": 894.96875,
+          "left": 34
+        },
+        "kind": "engineering-3"
+      },
+      {
+        "src": "http://127.0.0.1:8000/roadmap-model-selection/detector/yolo-world/images/final/WI032-YOLOWORLD-04-r04-mobile.png",
+        "nw": 768,
+        "nh": 2770,
+        "box": {
+          "x": 34,
+          "y": -158.046875,
+          "width": 292,
+          "height": 1053.171875,
+          "top": -158.046875,
+          "right": 326,
+          "bottom": 895.125,
+          "left": 34
+        },
+        "kind": "engineering-4"
+      }
+    ],
+    "zoom_checks": 7,
+    "answer": true,
+    "overflow": false,
+    "navigation": true,
+    "complete": true
+  },
+  {
+    "topic": "yolo-world",
+    "route": "docs/index.html",
+    "width": 1440,
+    "errors": [],
+    "images": [
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/yolo-world/wi032-world-core-r01-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 404.1875,
+          "y": 402.421875,
+          "width": 935.625,
+          "height": 526.5625,
+          "top": 402.421875,
+          "right": 1339.8125,
+          "bottom": 928.984375,
+          "left": 404.1875
+        },
+        "kind": "main-1"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/yolo-world/wi032-world-failure-r03-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 404.1875,
+          "y": 200.9375,
+          "width": 935.625,
+          "height": 526.5625,
+          "top": 200.9375,
+          "right": 1339.8125,
+          "bottom": 727.5,
+          "left": 404.1875
+        },
+        "kind": "main-2"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/det-dino-detector/wi032-detector-compare-r01-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 404.1875,
+          "y": 201.125,
+          "width": 935.625,
+          "height": 526.5625,
+          "top": 201.125,
+          "right": 1339.8125,
+          "bottom": 727.6875,
+          "left": 404.1875
+        },
+        "kind": "main-3"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/detector/yolo-world/images/final/WI032-YOLOWORLD-01-r04-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 367.1875,
+          "y": 196.25,
+          "width": 1009.625,
+          "height": 568.203125,
+          "top": 196.25,
+          "right": 1376.8125,
+          "bottom": 764.453125,
+          "left": 367.1875
+        },
+        "kind": "engineering-1"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/detector/yolo-world/images/final/WI032-YOLOWORLD-02-r05-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 367.1875,
+          "y": 196.125,
+          "width": 1009.625,
+          "height": 568.203125,
+          "top": 196.125,
+          "right": 1376.8125,
+          "bottom": 764.328125,
+          "left": 367.1875
+        },
+        "kind": "engineering-2"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/detector/yolo-world/images/final/WI032-YOLOWORLD-03-r07-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 367.1875,
+          "y": 195.6875,
+          "width": 1009.625,
+          "height": 568.203125,
+          "top": 195.6875,
+          "right": 1376.8125,
+          "bottom": 763.890625,
+          "left": 367.1875
+        },
+        "kind": "engineering-3"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/detector/yolo-world/images/final/WI032-YOLOWORLD-04-r04-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 367.1875,
+          "y": 195.71875,
+          "width": 1009.625,
+          "height": 568.203125,
+          "top": 195.71875,
+          "right": 1376.8125,
+          "bottom": 763.921875,
+          "left": 367.1875
+        },
+        "kind": "engineering-4"
+      }
+    ],
+    "zoom_checks": 7,
+    "answer": true,
+    "overflow": false,
+    "navigation": true,
+    "complete": true
+  },
+  {
+    "topic": "yolo-world",
+    "route": "docs/index.html",
+    "width": 360,
+    "errors": [],
+    "images": [
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/yolo-world/wi032-world-core-r02-mobile.png",
+        "nw": 1024,
+        "nh": 1536,
+        "box": {
+          "x": 17,
+          "y": 110.328125,
+          "width": 326,
+          "height": 489,
+          "top": 110.328125,
+          "right": 343,
+          "bottom": 599.328125,
+          "left": 17
+        },
+        "kind": "main-1"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/yolo-world/wi032-world-failure-r03-mobile.png",
+        "nw": 1024,
+        "nh": 1536,
+        "box": {
+          "x": 17,
+          "y": 110.171875,
+          "width": 326,
+          "height": 489,
+          "top": 110.171875,
+          "right": 343,
+          "bottom": 599.171875,
+          "left": 17
+        },
+        "kind": "main-2"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/det-dino-detector/wi032-detector-compare-r02-mobile.png",
+        "nw": 1024,
+        "nh": 1536,
+        "box": {
+          "x": 17,
+          "y": 119.640625,
+          "width": 326,
+          "height": 489,
+          "top": 119.640625,
+          "right": 343,
+          "bottom": 608.640625,
+          "left": 17
+        },
+        "kind": "main-3"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/detector/yolo-world/images/final/WI032-YOLOWORLD-01-r04-mobile.png",
+        "nw": 768,
+        "nh": 2770,
+        "box": {
+          "x": 34,
+          "y": -157.890625,
+          "width": 292,
+          "height": 1053.171875,
+          "top": -157.890625,
+          "right": 326,
+          "bottom": 895.28125,
+          "left": 34
+        },
+        "kind": "engineering-1"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/detector/yolo-world/images/final/WI032-YOLOWORLD-02-r05-mobile.png",
+        "nw": 768,
+        "nh": 2770,
+        "box": {
+          "x": 34,
+          "y": -157.734375,
+          "width": 292,
+          "height": 1053.171875,
+          "top": -157.734375,
+          "right": 326,
+          "bottom": 895.4375,
+          "left": 34
+        },
+        "kind": "engineering-2"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/detector/yolo-world/images/final/WI032-YOLOWORLD-03-r07-mobile.png",
+        "nw": 768,
+        "nh": 2770,
+        "box": {
+          "x": 34,
+          "y": -158.203125,
+          "width": 292,
+          "height": 1053.171875,
+          "top": -158.203125,
+          "right": 326,
+          "bottom": 894.96875,
+          "left": 34
+        },
+        "kind": "engineering-3"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/detector/yolo-world/images/final/WI032-YOLOWORLD-04-r04-mobile.png",
+        "nw": 768,
+        "nh": 2770,
+        "box": {
+          "x": 34,
+          "y": -158.046875,
+          "width": 292,
+          "height": 1053.171875,
+          "top": -158.046875,
+          "right": 326,
+          "bottom": 895.125,
+          "left": 34
+        },
+        "kind": "engineering-4"
+      }
+    ],
+    "zoom_checks": 7,
+    "answer": true,
+    "overflow": false,
+    "navigation": true,
+    "complete": true
+  }
+]

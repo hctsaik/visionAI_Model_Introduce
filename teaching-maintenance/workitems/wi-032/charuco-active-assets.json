@@ -1,0 +1,86 @@
+[
+  {
+    "id": "charuco-core",
+    "mode": "desktop",
+    "image": "_course_content/generated-concepts/charuco/wi032-charuco-core-r05-desktop.png",
+    "size": [
+      1672,
+      941
+    ],
+    "sha256": "ec556aafa483ea41185391772564503c4cdfeedee09b2bc0d444e63e826ab031",
+    "generation": "native SVG rendered by browser",
+    "evidence": "illustrative, not model inference",
+    "user_review": "pending",
+    "page_review": "self-reviewed; interaction checks passed"
+  },
+  {
+    "id": "charuco-core",
+    "mode": "mobile",
+    "image": "_course_content/generated-concepts/charuco/wi032-charuco-core-r05-mobile.png",
+    "size": [
+      768,
+      2304
+    ],
+    "sha256": "95bb73a62dc1309afd629c56ecd2340533650d5b955ba29bb5ff29424cebb8ab",
+    "generation": "native SVG rendered by browser",
+    "evidence": "illustrative, not model inference",
+    "user_review": "pending",
+    "page_review": "self-reviewed; interaction checks passed"
+  },
+  {
+    "id": "charuco-failure",
+    "mode": "desktop",
+    "image": "_course_content/generated-concepts/charuco/wi032-charuco-failure-native-r05-desktop.png",
+    "size": [
+      1672,
+      941
+    ],
+    "sha256": "5155d66bf96ce9ff6bc097827b458924c18906490483a539170527da965eb03b",
+    "generation": "native SVG rendered by browser",
+    "evidence": "illustrative, not model inference",
+    "user_review": "pending",
+    "page_review": "self-reviewed; interaction checks passed"
+  },
+  {
+    "id": "charuco-failure",
+    "mode": "mobile",
+    "image": "_course_content/generated-concepts/charuco/wi032-charuco-failure-native-r05-mobile.png",
+    "size": [
+      768,
+      3050
+    ],
+    "sha256": "1f8f10df6aed95c5974764b173f4c50184c63d984392c7c4246107ef37021f71",
+    "generation": "native SVG rendered by browser",
+    "evidence": "illustrative, not model inference",
+    "user_review": "pending",
+    "page_review": "self-reviewed; interaction checks passed"
+  },
+  {
+    "id": "geometry-compare",
+    "mode": "desktop",
+    "image": "_course_content/generated-concepts/ecc/wi032-geometry-compare-native-r05-desktop.png",
+    "size": [
+      1672,
+      941
+    ],
+    "sha256": "0b132dd65ec7c19f69d865093c3ea413d07035599e329102460d486c8ccb3eb3",
+    "generation": "native SVG rendered by browser",
+    "evidence": "illustrative, not model inference",
+    "user_review": "pending",
+    "page_review": "self-reviewed; interaction checks passed"
+  },
+  {
+    "id": "geometry-compare",
+    "mode": "mobile",
+    "image": "_course_content/generated-concepts/ecc/wi032-geometry-compare-native-r05-mobile.png",
+    "size": [
+      768,
+      3050
+    ],
+    "sha256": "a544bd14044783a58188eaebadf51d6495355cd7646b40ffb07fd8b39eeba2be",
+    "generation": "native SVG rendered by browser",
+    "evidence": "illustrative, not model inference",
+    "user_review": "pending",
+    "page_review": "self-reviewed; interaction checks passed"
+  }
+]

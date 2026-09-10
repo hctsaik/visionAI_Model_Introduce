@@ -1,0 +1,587 @@
+{
+  "model": "ECC",
+  "beginner_path": {
+    "title": "先看它做什麼、怎麼做、交出什麼，再看何時停、何時改方法",
+    "intro": "ECC 不是要訓練的學習模型。它是每次拿模板與待對圖、現場迭代的對位算法：比外觀相關，交出位移與殘差。同一金屬件 A-01。教學示意。",
+    "visuals": [
+      {
+        "id": "reference-and-moving-roi",
+        "title": "ECC 不是要訓練的模型",
+        "prompt": "AnomalyDINO 有預訓練網路和正常品庫。ECC 有要載入的權重嗎？它在算什麼？",
+        "caption": "同一金屬件 A-01。ECC 沒有訓練權重、也沒有正常品記憶庫。每次對位都是拿模板與待對圖，現場迭代把畫面微調重合。它不是缺陷偵測模型。教學示意。",
+        "image": "_course_content/generated-concepts/ecc/ecc-r06-c1-what.png",
+        "alt": "ECC 不是學習模型：同一金屬件小偏移，沒有要訓練的權重。",
+        "callouts": [
+          {
+            "title": "不是學習模型",
+            "body": "沒有 DINOv2 這類預訓練網路，也沒有要蒐集的正常品庫。"
+          },
+          {
+            "title": "是對位算法",
+            "body": "每次打開兩張已接近的圖，現場反覆算該移動多少。"
+          },
+          {
+            "title": "也不是缺陷偵測",
+            "body": "交出的是位移，不能當成刮痕或 PASS／FAIL。"
+          }
+        ],
+        "reading_views": [
+          {
+            "title": "ECC 不是要訓練的模型",
+            "image": "_course_content/generated-concepts/ecc/ecc-r06-c1-what.png",
+            "mobile_image": "_course_content/generated-concepts/ecc/ecc-r06-c1-what-mobile.png",
+            "alt": "ECC 不是學習模型：同一金屬件小偏移，沒有要訓練的權重。",
+            "mobile_crop": [
+              0,
+              0,
+              720,
+              1280
+            ],
+            "mobile_display_mode": "full-mobile",
+            "mobile_intrinsic_width": 720,
+            "mobile_intrinsic_height": 1280,
+            "desktop_intrinsic_width": 1600,
+            "desktop_intrinsic_height": 900
+          }
+        ],
+        "core_ideas": true
+      },
+      {
+        "id": "warp-and-objective",
+        "title": "算法怎麼跑：warp、比相關、更新位移",
+        "prompt": "沒有神經網路要推論時，這三步怎麼讓兩張圖重合？",
+        "caption": "沒有模型推論。每一輪先把待對區 warp 到模板，再比外觀相關，相關變高才更新位移。紅藍疊圖從錯開變成重合。教學示意。",
+        "image": "_course_content/generated-concepts/ecc/ecc-r06-c2-how.png",
+        "alt": "對齊前紅藍錯開；warp、比相關、更新後疊圖重合。",
+        "callouts": [
+          {
+            "title": "1 先 warp",
+            "body": "用目前位移把待對區映到模板座標，才能比外觀。"
+          },
+          {
+            "title": "2 比外觀相關",
+            "body": "這就是 Enhanced Correlation Coefficient；不是分類分數。"
+          },
+          {
+            "title": "3 更新位移再重來",
+            "body": "只在起點附近迭代，直到重合或必須停下。"
+          }
+        ],
+        "reading_views": [
+          {
+            "title": "算法怎麼跑：warp、比相關、更新位移",
+            "image": "_course_content/generated-concepts/ecc/ecc-r06-c2-how.png",
+            "mobile_image": "_course_content/generated-concepts/ecc/ecc-r06-c2-how-mobile.png",
+            "alt": "對齊前紅藍錯開；warp、比相關、更新後疊圖重合。",
+            "mobile_crop": [
+              0,
+              0,
+              720,
+              1280
+            ],
+            "mobile_display_mode": "full-mobile",
+            "mobile_intrinsic_width": 720,
+            "mobile_intrinsic_height": 1280,
+            "desktop_intrinsic_width": 1600,
+            "desktop_intrinsic_height": 900
+          }
+        ]
+      },
+      {
+        "id": "residual-convergence-review",
+        "title": "交出位移與殘差，不是產品分數",
+        "prompt": "對齊後你真正拿到什麼？為什麼不能把它當成檢驗結果？",
+        "caption": "同一張對齊後的 A-01。殘差變薄、估得位移可對回原圖，才是可用的對位輸出。紅疊是對位殘差，不是缺陷熱圖。教學示意。",
+        "image": "_course_content/generated-concepts/ecc/ecc-r06-c3-get.png",
+        "alt": "對齊畫面、殘差變薄、位移數字，並標示不是缺陷分數。",
+        "callouts": [
+          {
+            "title": "輸出是 warp 與殘差",
+            "body": "還有反變換，讓下游能回到原圖座標。"
+          },
+          {
+            "title": "殘差變薄才表示對上了",
+            "body": "只有收斂旗標不夠。"
+          },
+          {
+            "title": "不是 PASS／FAIL",
+            "body": "對位成功仍要交給後面的檢驗與人。"
+          }
+        ],
+        "reading_views": [
+          {
+            "title": "交出位移與殘差，不是產品分數",
+            "image": "_course_content/generated-concepts/ecc/ecc-r06-c3-get.png",
+            "mobile_image": "_course_content/generated-concepts/ecc/ecc-r06-c3-get-mobile.png",
+            "alt": "對齊畫面、殘差變薄、位移數字，並標示不是缺陷分數。",
+            "mobile_crop": [
+              0,
+              0,
+              720,
+              1280
+            ],
+            "mobile_display_mode": "full-mobile",
+            "mobile_intrinsic_width": 720,
+            "mobile_intrinsic_height": 1280,
+            "desktop_intrinsic_width": 1600,
+            "desktop_intrinsic_height": 900
+          }
+        ]
+      },
+      {
+        "id": "initialization-counterfactual",
+        "title": "起點太遠仍會吐出 warp，必須 HOLD",
+        "prompt": "同一對影像，只改起始位移，為什麼一邊對回、一邊必須停？",
+        "caption": "同一對 A-01，只改 ECC 起點。靠近時對回約 0.2 px；起點給到 220、80 時仍輸出 warp，對回約 217 px，必須 HOLD。教學示意。",
+        "image": "_course_content/generated-concepts/ecc/ecc-r06-d4-stop.png",
+        "alt": "同一對影像：起點靠近對回，起點太遠仍有 warp 但偏離。",
+        "callouts": [
+          {
+            "title": "反事實只改起點",
+            "body": "模板、待對、焊墊都沒換。"
+          },
+          {
+            "title": "局部搜尋仍會吐出數字",
+            "body": "有 warp 不是對齊成功。"
+          },
+          {
+            "title": "對不回就 HOLD",
+            "body": "改初始化或換方法，不要硬送下游。"
+          }
+        ],
+        "reading_views": [
+          {
+            "title": "起點太遠仍會吐出 warp，必須 HOLD",
+            "image": "_course_content/generated-concepts/ecc/ecc-r06-d4-stop.png",
+            "mobile_image": "_course_content/generated-concepts/ecc/ecc-r06-d4-stop-mobile.png",
+            "alt": "同一對影像：起點靠近對回，起點太遠仍有 warp 但偏離。",
+            "mobile_crop": [
+              0,
+              0,
+              720,
+              1280
+            ],
+            "mobile_display_mode": "full-mobile",
+            "mobile_intrinsic_width": 720,
+            "mobile_intrinsic_height": 1280,
+            "desktop_intrinsic_width": 1600,
+            "desktop_intrinsic_height": 900
+          }
+        ]
+      },
+      {
+        "id": "drift-parallax-boundary",
+        "title": "三個方法各管一段，不要互相比快",
+        "prompt": "缺的是相機基準、可靠起點，還是最後幾個像素的微調？",
+        "caption": "同一塊金屬件。ChArUco 有標靶時建基準；特徵對應在大位移時給起點；ECC 只做已接近後的連續微調。可串接，不能互相假裝。教學示意。",
+        "image": "_course_content/generated-concepts/ecc/ecc-r06-d5-pick.png",
+        "alt": "ChArUco、特徵對應、ECC 三欄各管一段幾何工作。",
+        "callouts": [
+          {
+            "title": "ChArUco：先建基準",
+            "body": "有已知標靶時用來建立相機或姿態。"
+          },
+          {
+            "title": "特徵對應：先給起點",
+            "body": "有紋理、位移較大時先靠近。"
+          },
+          {
+            "title": "ECC：再做微調",
+            "body": "外觀穩定且已接近，才用連續小幅 warp。"
+          }
+        ],
+        "reading_views": [
+          {
+            "title": "三個方法各管一段，不要互相比快",
+            "image": "_course_content/generated-concepts/ecc/ecc-r06-d5-pick.png",
+            "mobile_image": "_course_content/generated-concepts/ecc/ecc-r06-d5-pick-mobile.png",
+            "alt": "ChArUco、特徵對應、ECC 三欄各管一段幾何工作。",
+            "mobile_crop": [
+              0,
+              0,
+              720,
+              1280
+            ],
+            "mobile_display_mode": "full-mobile",
+            "mobile_intrinsic_width": 720,
+            "mobile_intrinsic_height": 1280,
+            "desktop_intrinsic_width": 1600,
+            "desktop_intrinsic_height": 900
+          }
+        ]
+      }
+    ]
+  },
+  "badge": "R06｜C1–D5 第一遍",
+  "title": "ECC：把已接近的畫面微調重合",
+  "scenario": {
+    "title": "什麼工作會用到它？",
+    "body": "你已經有固定模板，也有一張外觀接近、位置也接近的待對檢查區，想在下游 AOI 前把幾個像素的平移校正回來。它不是缺陷偵測，也不是拿來解大位移、視差或產品結構改變。"
+  },
+  "promise": {
+    "title": "它真正交付的東西",
+    "body": "迭代得到的位移、對齊後檢查區、殘差與反變換。不是產品分數，也不是任何兩張圖都能對齊的保證。"
+  },
+  "mental_model": {
+    "title": "先把它看成現場迭代的對位算法，不是學習模型",
+    "body": "模板是底下那張參考圖，待對區是蓋上去、還沒對齊的透明片。\\n\\n沒有要訓練的權重。ECC 反覆：warp → 比外觀相關 → 更新位移。\\n\\n外觀對上了，殘差變薄，才把估得的位移交給下游。",
+    "limit": "假設外觀穩定、起點接近、場景近似平面。反光、視差、結構被改或起點太遠時，有 warp 仍要 HOLD。"
+  },
+  "micro_example": {
+    "title": "拿掉「靠近的起點」，再換一個現場",
+    "setup": "同一對 A-01：左邊起始位移 0；右邊起始給到 220、80 px。",
+    "prediction": "兩邊都會輸出 warp。哪一邊可以覆核？哪一邊必須 HOLD？",
+    "reveal": "起始靠近時對回約 0.2 px，可以覆核。起始給遠時仍有 warp，對回約 217 px，必須 HOLD 並改初始化。"
+  },
+  "mechanism_steps": [
+    {
+      "title": "鎖同一檢查區與可靠起點",
+      "body": "固定模板、待對區、遮罩與起始位移，再決定這次只用平移這類小自由度。",
+      "why": "ECC 只在起點附近微調；起點或自由度一換，結果就不能拿來比較。",
+      "anchor": "工程圖核對：template + moving ROI／initial transform／warp family",
+      "diagram": {
+        "title": "先鎖契約",
+        "body": "同一檢查區、同一模板、可靠起點。",
+        "why": "ECC 只能在明確起點附近做局部微調。",
+        "anchor": "template／initial transform"
+      }
+    },
+    {
+      "title": "把待對區 warp 到模板座標",
+      "body": "用目前位移把待對區映到模板，再比較外觀。",
+      "why": "先在同一座標比，才不會把位置差和內容差混在一起。",
+      "anchor": "工程圖核對：warp moving ROI／photometric normalization",
+      "diagram": {
+        "title": "以目前 θ warp",
+        "body": "把 moving ROI 映到 template 的參考座標。",
+        "why": "先在同一座標比較，才不會混淆位置與內容差。",
+        "anchor": "warp／normalization"
+      }
+    },
+    {
+      "title": "看殘差，更新位移",
+      "body": "在起點附近更新位移，直到殘差變薄、焊墊對回，或必須停止。",
+      "why": "這是局部搜尋；起點太遠不保證找對。",
+      "anchor": "工程圖核對：ECC objective／iterative update／pyramid",
+      "diagram": {
+        "title": "迭代更新 θ",
+        "body": "由粗到細用 ECC objective 微調 warp。",
+        "why": "它是局部搜尋，錯初值不保證找對解。",
+        "anchor": "ECC objective／pyramid"
+      }
+    },
+    {
+      "title": "反變換與殘差決定覆核或 HOLD",
+      "body": "留下對齊圖、殘差、反變換。焊墊對回且殘差薄才覆核；否則 HOLD。",
+      "why": "有 warp 不是真對齊；下游必須能回到原圖座標。",
+      "anchor": "工程圖核對：aligned ROI／inverse transform／residual + convergence gate",
+      "diagram": {
+        "title": "回映並決定接受",
+        "body": "輸出 aligned ROI、inverse map、residual 與收斂旗標。",
+        "why": "有 transform 不等於真對齊，仍須看殘差尾端。",
+        "anchor": "inverse map／residual gate"
+      }
+    }
+  ],
+  "visual_intro": "先分清：ECC 不是學習模型。再看算法三步、輸出、何時停、何時改方法。工程參考只留文字核對。",
+  "concept_visuals": [
+    {
+      "id": "causal-chain",
+      "placement": "after_causal_chain",
+      "title": "ECC 不是要訓練的模型",
+      "prompt": "AnomalyDINO 有預訓練網路和正常品庫。ECC 有要載入的權重嗎？它在算什麼？",
+      "caption": "同一金屬件 A-01。ECC 沒有訓練權重、也沒有正常品記憶庫。每次對位都是拿模板與待對圖，現場迭代把畫面微調重合。它不是缺陷偵測模型。教學示意。",
+      "image": "_course_content/generated-concepts/ecc/ecc-r06-c1-what.png",
+      "alt": "ECC 不是學習模型：同一金屬件小偏移，沒有要訓練的權重。",
+      "callouts": [
+        {
+          "title": "不是學習模型",
+          "body": "沒有 DINOv2 這類預訓練網路，也沒有要蒐集的正常品庫。"
+        },
+        {
+          "title": "是對位算法",
+          "body": "每次打開兩張已接近的圖，現場反覆算該移動多少。"
+        },
+        {
+          "title": "也不是缺陷偵測",
+          "body": "交出的是位移，不能當成刮痕或 PASS／FAIL。"
+        }
+      ]
+    },
+    {
+      "id": "worked-example",
+      "placement": "after_micro_example",
+      "title": "起點太遠仍會吐出 warp，必須 HOLD",
+      "prompt": "同一對影像，只改起始位移，為什麼一邊對回、一邊必須停？",
+      "caption": "同一對 A-01，只改 ECC 起點。靠近時對回約 0.2 px；起點給到 220、80 時仍輸出 warp，對回約 217 px，必須 HOLD。教學示意。",
+      "image": "_course_content/generated-concepts/ecc/ecc-r06-d4-stop.png",
+      "alt": "同一對影像：起點靠近對回，起點太遠仍有 warp 但偏離。",
+      "callouts": [
+        {
+          "title": "反事實只改起點",
+          "body": "模板、待對、焊墊都沒換。"
+        },
+        {
+          "title": "局部搜尋仍會吐出數字",
+          "body": "有 warp 不是對齊成功。"
+        },
+        {
+          "title": "對不回就 HOLD",
+          "body": "改初始化或換方法，不要硬送下游。"
+        }
+      ]
+    },
+    {
+      "id": "comparison",
+      "placement": "after_comparison",
+      "title": "三個方法各管一段，不要互相比快",
+      "prompt": "缺的是相機基準、可靠起點，還是最後幾個像素的微調？",
+      "caption": "同一塊金屬件。ChArUco 有標靶時建基準；特徵對應在大位移時給起點；ECC 只做已接近後的連續微調。可串接，不能互相假裝。教學示意。",
+      "image": "_course_content/generated-concepts/ecc/ecc-r06-d5-pick.png",
+      "alt": "ChArUco、特徵對應、ECC 三欄各管一段幾何工作。",
+      "callouts": [
+        {
+          "title": "ChArUco：先建基準",
+          "body": "有已知標靶時用來建立相機或姿態。"
+        },
+        {
+          "title": "特徵對應：先給起點",
+          "body": "有紋理、位移較大時先靠近。"
+        },
+        {
+          "title": "ECC：再做微調",
+          "body": "外觀穩定且已接近，才用連續小幅 warp。"
+        }
+      ]
+    },
+    {
+      "id": "boundary-cases-explainer",
+      "placement": "before_boundary_cases",
+      "title": "外觀或平面假設被破壞時，正確輸出是 HOLD",
+      "prompt": "反光、結構被改、左右平面不一致，各破壞哪一個假設？",
+      "caption": "同一張模板 A-01。反光破壞穩定外觀，結構被改讓可比較內容消失，視差破壞單一平面 warp。三種壞條件都應 HOLD，不要放寬 warp 硬解。",
+      "image": "_course_content/generated-concepts/ecc/ecc-r04-v5-boundary.png",
+      "alt": "三種壞條件：反光、結構被改、視差，皆 HOLD。",
+      "callouts": [
+        {
+          "title": "壞的是假設，不是門檻太嚴",
+          "body": "外觀不穩或不是單一平面時，ECC 會把內容差當成幾何差。"
+        },
+        {
+          "title": "HOLD 是設計輸出",
+          "body": "保存原圖，改取像、初始化或方法；不要偷偷加大自由度。"
+        },
+        {
+          "title": "三種壞條件共用同一模板",
+          "body": "不是換了三個產品；只破壞外觀、內容或平面假設。"
+        }
+      ]
+    }
+  ],
+  "boundary_cases": [
+    {
+      "condition": "初始位置遠、位移太大或 warp family 選錯",
+      "effect": "局部最佳化可能往錯方向收斂，得到一個有數值卻不代表正確幾何的 θ。",
+      "action": "HOLD；先改善 initialization，例如以標靶或 feature correspondence 建立較可靠起點，再重驗。"
+    },
+    {
+      "condition": "反光、照明 drift、污染／缺陷大範圍改變外觀，或存在非平面視差",
+      "effect": "ECC objective 可能把內容或光度差誤解成幾何差，出現錯收斂或高相關的錯 alignment。",
+      "action": "拒用該對位；檢查 acquisition state、mask 與近似平面假設，不可把錯對齊送進 anomaly heatmap。"
+    },
+    {
+      "condition": "只報 convergence 或單一 objective，卻沒有 inverse mapping 和 residual tail",
+      "effect": "下游候選無法追溯 raw coordinates，少數錯對齊也可能被平均分數掩蓋。",
+      "action": "鎖 residual、iteration、convergence、inverse transform 與 failure images；以錯收斂率、reject rate、P95 一起 qualification。"
+    }
+  ],
+  "comparison": [
+    {
+      "model": "ECC",
+      "normality": "依據：template/moving ROI 的外觀穩定，且初始位姿已接近",
+      "candidate": "可用輸出：收斂且 residual 合格的局部 warp／inverse transform"
+    },
+    {
+      "model": "SIFT",
+      "normality": "依據：image pair 有足夠穩定紋理可形成 local correspondence",
+      "candidate": "可用輸出：coverage 與 RANSAC residual 合格的幾何初始化"
+    },
+    {
+      "model": "ChArUco",
+      "normality": "依據：已知尺寸、可控制放入的 marker/棋盤標靶",
+      "candidate": "可用輸出：coverage 與 reprojection residual 合格的相機基準／pose"
+    }
+  ],
+  "selection": "固定 template、外觀穩定、初始位置可靠且場景近似平面時，才把 ECC 放入候選。鎖 template/mask、pyramid、initial transform、warp family、最大迭代和停止條件；以 residual tail、錯收斂率、reject rate、下游 registration evidence 與 P95 判定，不以高相關或單一收斂旗標放行。",
+  "poc": {
+    "title": "POC 第一件事：先證明它不會漂亮地對齊到錯地方",
+    "steps": [
+      "固定 template、mask、ROI、hardware/optics、pyramid、initial transform、warp family、最大迭代和停止條件。",
+      "蒐集小位移、錯初值、反光、照明 drift、結構改變與非平面視差的 image pairs，保存每次 objective、iteration、residual、convergence 和 inverse transform。",
+      "在下游任務上量 residual tail、錯收斂率、reject rate、inverse-map 可追溯性與端到端 P95；不通過就換 initialization 或方法。"
+    ],
+    "hold": "初值不可靠、畫面有大位移／視差／結構變化、illumination 不穩，或 residual/convergence 不足以證明對齊時，先 HOLD。",
+    "acceptance": {
+      "baseline": "以鎖定 template、mask、pyramid、warp family 與可靠 initialization 的現行對位流程為基準；同時保留人工／標靶或 feature initialization 的對照。",
+      "measure": "按小位移、錯初值、照明 drift、反光、結構改變與視差分層量 convergence、objective/residual tail、錯收斂率、inverse-map 可追溯性、downstream registration residual、reject rate 與端到端 P95。",
+      "negative_control": "固定同一對 ROI，只把 initial transform 移到錯峰或加入強反光／非平面視差；預期可能出現表面高相關卻錯位的 warp，必須被 residual、回映和 reject gate 擋下。",
+      "owner": "由 AOI／optics owner 管 template 與取像狀態；registration/CV owner 簽核 warp、residual 和錯收斂 evidence，製程 owner 決定是否把 aligned ROI 交下游。"
+    }
+  },
+  "teach_back": {
+    "question": "某張待對區跑完 ECC 顯示已收斂，但它有強反光且起始位置明顯偏遠。能立刻送進下游缺陷熱圖嗎？",
+    "answer": "不能。先 HOLD，看殘差與反變換能不能回到原圖；必要時改初始化或方法。有 warp 不是放行。"
+  },
+  "slide_reading": [
+    {
+      "title": "先找：哪些東西必須在跑 ECC 前固定？",
+      "question": "為什麼 template、mask、起始 transform 和 warp family 不能每張任意換？",
+      "look": "找 template ROI、moving ROI、mask、pyramid、initial transform 與 warp 選擇。",
+      "relation": "這些設定定義 ECC 能比較哪裡、從哪裡開始、允許怎麼變形。",
+      "takeaway": "ECC 的結果是固定 input contract 下的局部微調，不是任何兩張圖的通用對位。",
+      "terms": [
+        "warp：把 moving ROI 映到 template 座標的變形規則",
+        "initial transform：迭代開始前對位置的已知或估計起點"
+      ]
+    },
+    {
+      "title": "這張圖要核對：θ 如何一步步更新？",
+      "question": "為什麼需要 coarse-to-fine 與停止條件？",
+      "look": "找 warped ROI、photometric normalization、ECC objective、pyramid 和 θ update。",
+      "relation": "每輪在目前 θ 附近改善可比較外觀；pyramid 先解較粗的位移，再收斂到細節。",
+      "takeaway": "迭代更新是局部搜尋，因此起點和外觀假設直接決定成敗。",
+      "terms": [
+        "ECC objective：用來衡量 warp 後兩張 ROI 可比較程度的目標",
+        "coarse-to-fine：由低解析到高解析逐步微調的策略"
+      ]
+    },
+    {
+      "title": "對齊後，為什麼還要保存 inverse transform？",
+      "question": "下游在 aligned ROI 找到一個可疑位置時，要如何回到原始影像？",
+      "look": "找 aligned ROI、raw coordinates、inverse transform 和下游 ROI/heatmap 箭頭。",
+      "relation": "warp 把 moving ROI 帶到 template 座標；inverse transform 才把後續結果帶回可追溯的原圖座標。",
+      "takeaway": "沒有 inverse mapping 的對齊結果，不足以支撐可回查的 AOI 證據。",
+      "terms": [
+        "inverse transform：把對齊座標映回原始 moving image 座標的反向變換",
+        "raw coordinates：未經對齊處理的原始影像座標"
+      ]
+    },
+    {
+      "title": "最後看：高相關為何仍可能要拒用？",
+      "question": "哪些現象會讓 objective 看似好，卻不是正確 alignment？",
+      "look": "找 convergence、residual、錯初值、反光、視差、結構改變與 reject gate。",
+      "relation": "ECC 只知道直接影像外觀；它不會自己辨識反光、視差或錯起點造成的假解。",
+      "takeaway": "收斂是需要檢查的訊號，不是自動通過；以 tail、failure images 與下游證據決定。",
+      "terms": [
+        "錯收斂：迭代停止但落在錯誤幾何對齊的位置",
+        "residual tail：少數困難案例的較大對齊誤差分布"
+      ]
+    }
+  ],
+  "comparison_headers": {
+    "title": "不要比名稱；比可成立的取像與幾何假設",
+    "basis": "可成立的取像／幾何假設",
+    "output": "可採用的對位輸出／驗證 gate"
+  },
+  "transfer_check": {
+    "title": "有視差的新工件，還能直接跑 ECC 嗎？",
+    "scenario": "新治具使 current ROI 比 template 有大位移與非平面視差，局部還有強反光。",
+    "question": "若 ECC 跑出高 objective，你會直接把 warp 送往下游嗎？",
+    "answer": "不會。它已超出可靠初值、穩定外觀與近似平面的假設；高 objective 可能是錯收斂。先 HOLD，重新建立可驗證 initialization／幾何條件，或改選適合視差與大位移的方法，再以 residual tail、inverse map 與下游結果驗證。"
+  },
+  "review_trace": {
+    "authority": "roadmap-model-selection/geometry-alignment-measurement/ecc/model.md",
+    "scope": "F02 先讀契約：為什麼需要、三個模型核心設計、移除核心的自測與選型；既有後續細節、反例與工程驗證原樣保留。",
+    "claims": [
+      {
+        "id": "visual-1",
+        "field": "beginner_path.visuals[reference-and-moving-roi]",
+        "source": "模型定位 / architecture_path"
+      },
+      {
+        "id": "visual-2",
+        "field": "beginner_path.visuals[warp-and-objective]",
+        "source": "architecture_path"
+      },
+      {
+        "id": "visual-3",
+        "field": "beginner_path.visuals[residual-convergence-review]",
+        "source": "representation_or_score"
+      },
+      {
+        "id": "visual-4",
+        "field": "beginner_path.visuals[initialization-counterfactual]",
+        "source": "failure_boundary"
+      },
+      {
+        "id": "visual-5",
+        "field": "beginner_path.visuals[drift-parallax-boundary]",
+        "source": "selection_gate / evidence_bundle"
+      },
+      {
+        "id": "promise",
+        "field": "promise",
+        "source": "模型定位 / representation_or_score"
+      },
+      {
+        "id": "mechanism",
+        "field": "mechanism_steps",
+        "source": "architecture_path / representation_or_score"
+      },
+      {
+        "id": "boundaries",
+        "field": "boundary_cases",
+        "source": "failure_boundary / selection_gate"
+      },
+      {
+        "id": "comparison",
+        "field": "comparison + selection",
+        "source": "selection_gate"
+      },
+      {
+        "id": "poc",
+        "field": "poc + acceptance",
+        "source": "cost_and_operating_point / evidence_bundle"
+      },
+      {
+        "id": "transfer",
+        "field": "transfer_check",
+        "source": "failure_boundary / selection_gate"
+      },
+      {
+        "id": "f02-core",
+        "field": "beginner_path.visuals[0] + scenario + mental_model",
+        "source": "roadmap-model-selection/geometry-alignment-measurement/ecc/model.md"
+      },
+      {
+        "id": "f02-transfer",
+        "field": "micro_example + transfer_check + selection",
+        "source": "roadmap-model-selection/geometry-alignment-measurement/ecc/model.md"
+      }
+    ]
+  },
+  "quality_status": {
+    "label": "待使用者審閱",
+    "state": "needs_revision",
+    "round": "WI-016 ECC R06 C1-D5",
+    "reason": "第一遍五張已依閱讀層契約重產；工程參考維持文字。使用者核准仍 pending。",
+    "current_revision": "R06 first-read",
+    "current_asset": "_course_content/generated-concepts/ecc/ecc-r06-c1-what.png"
+  },
+  "teaching_preflight": {
+    "version": "R06 C1–D5",
+    "source_files": [
+      "CLAUDE.md",
+      "IMAGE_STYLE_GUIDE.md",
+      "TEACHING_REVIEW_LOG.md",
+      "TEACHING_SCORING_RUBRIC.md",
+      "TEACHING_WEBPAGE_GUIDE.md"
+    ],
+    "brief": "tmp/ecc-r06/brief-c1.md",
+    "story": "C",
+    "major_visual_nodes": 4,
+    "reference_page": "teaching-images/vision-ai-model-selection/roadmap-model-selection/foundation-vlm-open-world/clip/images/final/CLIP-01-positioning_v01.png",
+    "takeaway": "ECC 處理的是同一塊板差幾個像素；它不是缺陷偵測。",
+    "visual_status": "prototype_pending_user_review"
+  }
+}

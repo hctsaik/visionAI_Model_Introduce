@@ -1,0 +1,288 @@
+[
+  {
+    "topic": "charuco",
+    "rubric": "v1.0",
+    "scores": [
+      19,
+      19,
+      19,
+      18,
+      8,
+      9
+    ],
+    "total": 92,
+    "scope": "完整首讀、展開工程4圖及交付；course/docs桌機1440與手機360，390深連結補測。",
+    "image_evidence": [
+      "pages/charuco/docs-1440-main-1.png",
+      "pages/charuco/docs-360-main-1.png",
+      "pages/charuco/docs-1440-main-2.png",
+      "pages/charuco/docs-360-main-2.png",
+      "pages/charuco/docs-1440-main-3.png",
+      "pages/charuco/docs-360-main-3.png",
+      "pages/charuco/docs-1440-engineering-1.png",
+      "pages/charuco/docs-360-engineering-1.png",
+      "pages/charuco/docs-1440-engineering-2.png",
+      "pages/charuco/docs-360-engineering-2.png",
+      "pages/charuco/docs-1440-engineering-3.png",
+      "pages/charuco/docs-360-engineering-3.png",
+      "pages/charuco/docs-1440-engineering-4.png",
+      "pages/charuco/docs-360-engineering-4.png"
+    ],
+    "criteria_evidence": [
+      "同一工件換到畫面邊角後，看起來的比例與位置不一樣。先用尺寸已知的ChArUco板建立相機幾何，才能分清鏡頭投影與工件本身的變化。",
+      "ChArUco結合可辨識的ArUco標記與棋盤交點。標記協助辨認板上位置，精細棋盤角點提供影像座標；同一角點在多個位置與傾角被看見後，配合已知板上座標估計相機內參及畸變。單張姿態是另一個問題：已知內參／畸變，再由板上3D點與影像2D點求板相對相機的R/t。",
+      "交付內參、畸變模型與係數、相機／鏡頭／解析度條件和核對紀錄；需要姿態時另交付清楚方向與單位的R/t。日常工件對位、尺寸量測及工站座標轉換仍各需對應流程。 先確定相機模型、實體標靶尺寸／方格與標記設定；固定影像解析度與光學條件，採集涵蓋中心、邊角及傾角的清楚影像，另留獨立核對組。",
+      "ChArUco解決已知標靶的相機幾何；SIFT與LightGlue處理影像間的對應點；ECC在合理起點附近微調外觀對齊。要逐件找位置不能只靠一次ChArUco校正，要校正相機也不能拿一般工件匹配取代已知幾何。 換鏡頭、焦距、對焦、影像裁切或解析度時重查內參適用性；換治具時核對座標關係。保留多位置／傾角影像、角點ID、板的尺寸與字典設定，重新拍攝的成本往往比算法執行更關鍵。",
+      "首讀3圖後接遷移自測，工程4圖折疊；手機使用直向圖，工程放大保留可捲動全尺寸。",
+      "相機與鏡頭沒有更換，但工件治具平移；另一條線則換了鏡頭並把輸出解析度減半。 → 治具平移那條線先確認取像條件與既有內參仍適用，再重建工件／工站座標關係或做逐件定位；不必只因平移就盲目重校正。換鏡頭與解析度那條線先核對並重新估計或正確換算相機參數，再用獨立資料驗證。ECC可以協助接近位置的影像對齊，但不提供新鏡頭的完整校正或毫米準確保證。"
+    ],
+    "deductions": [
+      "案例為教學示意，未覆蓋不同現場的全部工件。",
+      "必要原理有可見中間關係，精細求解／網路結構在工程層仍有簡化。",
+      "已有輸入、輸出與核對責任；未提供可直接運行的模型操作範例。",
+      "資料、輸出與完整成本都有條件比較；没有同硬體的實測優劣證據。",
+      "手機需要較長縱向捲動，少數次要英文字例仍小；未因此假定真人理解。",
+      "新條件有合理替代解答，但沒有真人學習測試。"
+    ],
+    "vetoes": [],
+    "user_review": "pending",
+    "status": "self-reviewed; user approval pending"
+  },
+  {
+    "topic": "ecc",
+    "rubric": "v1.0",
+    "scores": [
+      19,
+      19,
+      19,
+      18,
+      8,
+      9
+    ],
+    "total": 92,
+    "scope": "完整首讀、展開工程4圖及交付；course/docs桌機1440與手機360，390深連結補測。",
+    "image_evidence": [
+      "pages/ecc/docs-1440-main-1.png",
+      "pages/ecc/docs-360-main-1.png",
+      "pages/ecc/docs-1440-main-2.png",
+      "pages/ecc/docs-360-main-2.png",
+      "pages/ecc/docs-1440-engineering-1.png",
+      "pages/ecc/docs-360-engineering-1.png",
+      "pages/ecc/docs-1440-engineering-2.png",
+      "pages/ecc/docs-360-engineering-2.png",
+      "pages/ecc/docs-1440-engineering-3.png",
+      "pages/ecc/docs-360-engineering-3.png",
+      "pages/ecc/docs-1440-engineering-4.png",
+      "pages/ecc/docs-360-engineering-4.png"
+    ],
+    "criteria_evidence": [
+      "治具已把同一金屬件放到大致位置，但每次仍有小偏移。若直接做固定ROI檢查，孔邊緣的位置差會混進結果；ECC用模板與待對圖的外觀，微調它們的幾何對齊。",
+      "每輪依目前幾何變換把待對圖重採樣到可比較的座標，再比較與模板的外觀相關，計算變換更新並繼續迭代。圖中同孔的雙邊與強度曲線由錯位變接近，解釋它靠什麼調整；不是逐點描述子匹配，也不是缺陷分類。",
+      "交付帶方向定義的warp、相關值及對齊取樣設定；另保存獨立殘差與原圖。後續ROI檢查接對齊影像，但不能把warp或相關分數當成缺陷標記。 準備同工作座標下的模板與待對圖，選平移／剛性／仿射或單應模型及合理起點，確認灰階、mask、解析度與重採樣方向一致。",
+      "已經接近且外觀穩定時，可先用ECC微調；有可區分局部且需要較大範圍定位時，可先試SIFT匹配再做幾何估計，含糊匹配可評估LightGlue及相容extractor。ChArUco負責相機幾何，並非這些逐件定位的直接替代品。 換產品時要換模板、ROI／mask並重新驗證變換模型與起點範圍；固定相機也可能因光照或遮擋增加錯收斂。比較成本要包含粗定位、ECC迭代、重採樣與失敗覆核，不只計單次函式耗時。",
+      "首讀3圖後接遷移自測，工程4圖折疊；手機使用直向圖，工程放大保留可捲動全尺寸。",
+      "同一產線95%的工件已由治具放得很接近，另外5%會偏移很遠；每件容許的完整處理時間有限。 → 若失敗主要來自近起點但迭代尚未收斂，可在時間預算內比較較多迭代；不能預設它會救回遠起點。若遠移動是主要失敗來源，可用粗定位或特徵匹配先建立合理起點，再接ECC；增加的前處理要與漏對、錯收斂及覆核成本一起量。用相同測試影像核對完整時間和獨立殘差後再選，不憑相關值最高就放行。"
+    ],
+    "deductions": [
+      "案例為教學示意，未覆蓋不同現場的全部工件。",
+      "必要原理有可見中間關係，精細求解／網路結構在工程層仍有簡化。",
+      "已有輸入、輸出與核對責任；未提供可直接運行的模型操作範例。",
+      "資料、輸出與完整成本都有條件比較；没有同硬體的實測優劣證據。",
+      "手機需要較長縱向捲動，少數次要英文字例仍小；未因此假定真人理解。",
+      "新條件有合理替代解答，但沒有真人學習測試。"
+    ],
+    "vetoes": [],
+    "user_review": "pending",
+    "status": "self-reviewed; user approval pending"
+  },
+  {
+    "topic": "sift",
+    "rubric": "v1.0",
+    "scores": [
+      19,
+      19,
+      19,
+      18,
+      8,
+      9
+    ],
+    "total": 92,
+    "scope": "完整首讀、展開工程4圖及交付；course/docs桌機1440與手機360，390深連結補測。",
+    "image_evidence": [
+      "pages/sift/docs-1440-main-1.png",
+      "pages/sift/docs-360-main-1.png",
+      "pages/sift/docs-1440-main-2.png",
+      "pages/sift/docs-360-main-2.png",
+      "pages/sift/docs-1440-engineering-1.png",
+      "pages/sift/docs-360-engineering-1.png",
+      "pages/sift/docs-1440-engineering-2.png",
+      "pages/sift/docs-360-engineering-2.png",
+      "pages/sift/docs-1440-engineering-3.png",
+      "pages/sift/docs-360-engineering-3.png",
+      "pages/sift/docs-1440-engineering-4.png",
+      "pages/sift/docs-360-engineering-4.png"
+    ],
+    "criteria_evidence": [
+      "同一金屬件在兩張圖裡旋轉、縮放或位置改變，整張外觀不容易直接重疊。SIFT先尋找有辨識力的局部，再把局部變成可比較的描述，提供幾何定位所需的點對。",
+      "SIFT跨尺度尋找穩定局部，為關鍵點選擇尺度與主方向；在相對主方向的局部座標裡彙整梯度方向分布，形成描述子。兩張圖的描述子再經匹配與含糊候選篩選，得到對應點；幾何求解與驗證是後一步。",
+      "SIFT交付關鍵點、尺度／方向與描述子；搭配matcher得到點對。需要平面單應、相機運動或工件定位時，另外選合適的幾何模型與求解器；描述子本身不交付warp。 準備同工件不同視角與合理重疊的清楚影像，固定前處理；先看關鍵點能否覆蓋要定位的區域，再選匹配與幾何驗證方式。",
+      "無需訓練且局部紋理可區分時，SIFT配傳統匹配可作起點；含糊候選需更多上下文時可試LightGlue及相容extractor。ECC適合有起點後依密集外觀微調；ChArUco提供已知標靶的相機幾何。這些工具可分工，不能直接用不同任務分數排名。 換工件時通常不用訓練SIFT，但仍需新參考影像、尺度／取像與匹配門檻驗證；若改用LightGlue，須核對extractor與matcher權重相容性。比較完整找點、描述、配對、幾何估計與覆核成本。",
+      "首讀3圖後接遷移自測，工程4圖折疊；手機使用直向圖，工程放大保留可捲動全尺寸。",
+      "新工件有規則排列的相同圓孔，另一件只有少量但獨特的缺口。兩者都要找平面位置。 → 重複圓孔可能給很多相似描述，線多卻錯；少量獨特缺口若正確且分布非退化，反而可能提供較有用幾何約束。先固定兩組影像，檢查對應身份、空間分布與幾何誤差，再比較SIFT匹配和相容LightGlue流程的完整成本。若影像本身無可區分線索，補取像或標靶可能比換matcher更有效。"
+    ],
+    "deductions": [
+      "案例為教學示意，未覆蓋不同現場的全部工件。",
+      "必要原理有可見中間關係，精細求解／網路結構在工程層仍有簡化。",
+      "已有輸入、輸出與核對責任；未提供可直接運行的模型操作範例。",
+      "資料、輸出與完整成本都有條件比較；没有同硬體的實測優劣證據。",
+      "手機需要較長縱向捲動，少數次要英文字例仍小；未因此假定真人理解。",
+      "新條件有合理替代解答，但沒有真人學習測試。"
+    ],
+    "vetoes": [],
+    "user_review": "pending",
+    "status": "self-reviewed; user approval pending"
+  },
+  {
+    "topic": "lightglue",
+    "rubric": "v1.0",
+    "scores": [
+      19,
+      19,
+      18,
+      18,
+      8,
+      9
+    ],
+    "total": 91,
+    "scope": "完整首讀、展開工程4圖及交付；course/docs桌機1440與手機360，390深連結補測。",
+    "image_evidence": [
+      "pages/lightglue/docs-1440-main-1.png",
+      "pages/lightglue/docs-360-main-1.png",
+      "pages/lightglue/docs-1440-main-2.png",
+      "pages/lightglue/docs-360-main-2.png",
+      "pages/lightglue/docs-1440-engineering-1.png",
+      "pages/lightglue/docs-360-engineering-1.png",
+      "pages/lightglue/docs-1440-engineering-2.png",
+      "pages/lightglue/docs-360-engineering-2.png",
+      "pages/lightglue/docs-1440-engineering-3.png",
+      "pages/lightglue/docs-360-engineering-3.png",
+      "pages/lightglue/docs-1440-engineering-4.png",
+      "pages/lightglue/docs-360-engineering-4.png"
+    ],
+    "criteria_evidence": [
+      "兩個孔看起來很像，只比較各自局部描述可能把孔位配錯。LightGlue接收上游找到的點和描述，讓同圖與跨圖訊息共同更新配對，幫助分辨含糊候選。",
+      "先由相容extractor提供關鍵點與描述；LightGlue以圖內與跨圖注意力更新表示，再估計點對與可匹配性。圖中缺口A的對應提供上下文，使孔B的兩條候選線收斂為較明確的配對。可可靠判斷的低可匹配點可被修剪，容易的配對也可提早停止；配對後仍需幾何求解與驗證。",
+      "交付點對、匹配信心等配對結果；上游找點、後端RANSAC／幾何變換與對齊取樣另有負責者。孔位身份、單應適用性與工站誤差仍由後續流程驗證。 選相容extractor與LightGlue預訓練權重，準備有重疊且可獨立核對的影像對；先保存點與描述，再觀察匹配如何改變，最後接合適的幾何模型。",
+      "局部特徵已能分清時，可先用SIFT搭傳統matching減少部署複雜度；候選含糊時再以同資料評估LightGlue及其相容extractor。ECC使用的是密集外觀的局部對齊，ChArUco提供已知幾何校正，不能互換角色。 換工件需重查重疊、紋理與幾何結果，未必需要重訓，但也不能假設預訓練配對器可直接保證工業件準確。記錄extractor與matcher權重、影像縮放及停止／修剪設定，測CPU/GPU和完整鏈成本。",
+      "首讀3圖後接遷移自測，工程4圖折疊；手機使用直向圖，工程放大保留可捲動全尺寸。",
+      "相同孔位工件只露出兩個很像的孔；另一組影像保留了獨特缺口，但傳統描述子仍有含糊候選。 → 只有兩個相似孔且缺乏其他線索時，先補視角、解除遮擋或增加已知定位點，不能要求配對器猜出身份。保留獨特缺口但傳統匹配含糊的那組，可以比較相容LightGlue流程與傳統matcher；固定影像與幾何核對，量錯配、定位誤差和完整成本。若原流程已穩定且成本低，保留傳統方法也是合理選擇。"
+    ],
+    "deductions": [
+      "案例為教學示意，未覆蓋不同現場的全部工件。",
+      "必要原理有可見中間關係，精細求解／網路結構在工程層仍有簡化。",
+      "已有輸入、輸出與核對責任；未提供可直接運行的模型操作範例。",
+      "資料、輸出與完整成本都有條件比較；没有同硬體的實測優劣證據。",
+      "手機需要較長縱向捲動，少數次要英文字例仍小；未因此假定真人理解。",
+      "新條件有合理替代解答，但沒有真人學習測試。"
+    ],
+    "vetoes": [],
+    "user_review": "pending",
+    "status": "self-reviewed; user approval pending"
+  },
+  {
+    "topic": "det-dino-detector",
+    "rubric": "v1.0",
+    "scores": [
+      19,
+      19,
+      19,
+      18,
+      8,
+      9
+    ],
+    "total": 92,
+    "scope": "完整首讀、展開工程4圖及交付；course/docs桌機1440與手機360，390深連結補測。",
+    "image_evidence": [
+      "pages/det-dino-detector/docs-1440-main-1.png",
+      "pages/det-dino-detector/docs-360-main-1.png",
+      "pages/det-dino-detector/docs-1440-main-2.png",
+      "pages/det-dino-detector/docs-360-main-2.png",
+      "pages/det-dino-detector/docs-1440-main-3.png",
+      "pages/det-dino-detector/docs-360-main-3.png",
+      "pages/det-dino-detector/docs-1440-engineering-1.png",
+      "pages/det-dino-detector/docs-360-engineering-1.png",
+      "pages/det-dino-detector/docs-1440-engineering-2.png",
+      "pages/det-dino-detector/docs-360-engineering-2.png",
+      "pages/det-dino-detector/docs-1440-engineering-3.png",
+      "pages/det-dino-detector/docs-360-engineering-3.png",
+      "pages/det-dino-detector/docs-1440-engineering-4.png",
+      "pages/det-dino-detector/docs-360-engineering-4.png"
+    ],
+    "criteria_evidence": [
+      "要在料盤裡找出每顆螺栓與墊圈，需要物件框和類別。DINO detector在DETR式查詢出框的基礎上改善訓練訊號；它不是拿正常品特徵查庫的DINOv2骨幹。",
+      "DINO detector的對比去噪訓練，從人工真值產生帶噪查詢：較接近的正樣本學還原物件框／類別，較偏離的負樣本學無物件，提供辨別訊號。這些真值帶噪查詢只存在訓練；推論由影像特徵選取初始框位置並經decoder查詢更新，交出已學類別與框，不會拿到真值。",
+      "每個候選物件的框、類別與分數；工件計數、是否漏裝、尺寸與品質判定是後續規則與驗證。需要精確輪廓時另選分割流程，框不能當mask。 定義螺栓／墊圈等類別和每件框標註，依實體工件與拍攝批次隔離訓練／驗證／測試；選明確DINO版本與預訓練checkpoint，再評估是否微調。",
+      "DINO detector通常由固定類別的監督訓練建立分類頭；YOLO-World用預訓練視覺語言表示和文字詞彙產生候選。固定少數類別且能準備標註時，可比較DINO與既有YOLO／RT-DETR；類別詞彙經常變更可試YOLO-World，但仍要驗證現場資料，不能只按新舊或論文成績選。 換固定類別通常涉及標註／模型頭與微調流程，換拍攝條件也需重新驗證。DINO的訓練成本、輸入尺寸與查詢數會影響部署取捨；比較需包含前後處理及人工覆核，不借用跨硬體FPS排名。",
+      "首讀3圖後接遷移自測，工程4圖折疊；手機使用直向圖，工程放大保留可捲動全尺寸。",
+      "A線只找三種固定零件且有完整框標註；B線每週新增零件名稱，但幾乎沒有目標場景標註。 → A線可比較DINO與既有固定類別偵測器，用同資料看漏檢和完整成本；有現成標註讓微調較可行。B線可先用YOLO-World的文字詞彙測候選，但仍需建立獨立核對集；如果新零件外觀太相近或是細缺陷，提示詞未必足夠，可能仍需取像改善與標註微調。沒有目標資料時不能替任一方法承諾現場準確率。"
+    ],
+    "deductions": [
+      "案例為教學示意，未覆蓋不同現場的全部工件。",
+      "必要原理有可見中間關係，精細求解／網路結構在工程層仍有簡化。",
+      "已有輸入、輸出與核對責任；未提供可直接運行的模型操作範例。",
+      "資料、輸出與完整成本都有條件比較；没有同硬體的實測優劣證據。",
+      "手機需要較長縱向捲動，少數次要英文字例仍小；未因此假定真人理解。",
+      "新條件有合理替代解答，但沒有真人學習測試。"
+    ],
+    "vetoes": [],
+    "user_review": "pending",
+    "status": "self-reviewed; user approval pending"
+  },
+  {
+    "topic": "yolo-world",
+    "rubric": "v1.0",
+    "scores": [
+      19,
+      19,
+      19,
+      18,
+      8,
+      9
+    ],
+    "total": 92,
+    "scope": "完整首讀、展開工程4圖及交付；course/docs桌機1440與手機360，390深連結補測。",
+    "image_evidence": [
+      "pages/yolo-world/docs-1440-main-1.png",
+      "pages/yolo-world/docs-360-main-1.png",
+      "pages/yolo-world/docs-1440-main-2.png",
+      "pages/yolo-world/docs-360-main-2.png",
+      "pages/yolo-world/docs-1440-engineering-1.png",
+      "pages/yolo-world/docs-360-engineering-1.png",
+      "pages/yolo-world/docs-1440-engineering-2.png",
+      "pages/yolo-world/docs-360-engineering-2.png",
+      "pages/yolo-world/docs-1440-engineering-3.png",
+      "pages/yolo-world/docs-360-engineering-3.png",
+      "pages/yolo-world/docs-1440-engineering-4.png",
+      "pages/yolo-world/docs-360-engineering-4.png"
+    ],
+    "criteria_evidence": [
+      "料盤需要找的零件名稱會變，重做固定類別訓練未必是每次試做的起點。YOLO-World讓文字詞彙參與偵測，但找到一個叫作螺栓的區域，仍不等於證明它無裂紋。",
+      "文字先經編碼器成為詞彙表示，影像經視覺骨幹成為多尺度特徵；視覺語言路徑讓兩者互動，再以區域與詞彙表示的相似關係產生類別分數和框。固定詞彙可預先編碼／快取，部分實作可進一步重參數化，減少每張圖重做文字處理。",
+      "相對選定詞彙的物件候選框、類別與分數；若要品質分類、根因、尺寸或輪廓，還需要對應方法與驗證。提示詞不是完整業務規則。 選明確YOLO-World版本與預訓練checkpoint，準備具體類別詞彙和代表性影像，先做獨立人工標註核對集，再評估快取或重參數化部署。",
+      "文字詞彙常變且要快速試候選時，YOLO-World提供與固定類別偵測不同的準備路線；類別穩定且已有標註時，DINO或既有固定類別偵測器也值得比較。開放詞彙不等於無限制辨識，固定類別也不等於不能重新訓練擴充。 換詞彙需更新文字表示／重參數化產物並重新核對；換產品或取像可能仍需標註與微調。測試要固定模型版本、詞彙、相容前處理與硬體，納入文字準備攤提、線上推論、後處理及覆核成本。",
+      "首讀3圖後接遷移自測，工程4圖折疊；手機使用直向圖，工程放大保留可捲動全尺寸。",
+      "系統能找到螺栓，卻分不清頭部細裂紋；另一組需求只是每週換一批外觀明顯不同的零件名稱。 → 細裂紋先確認原始像素與光照能看見，再用缺陷標註比較專用檢測、分類或分割；框到螺栓不等於辨出裂紋。外觀明顯、詞彙常變的零件可先試更新YOLO-World詞彙和表示，再做獨立場景驗證；若詞彙更新仍常錯類，可比較補標註微調或固定類別模型。以資料、輸出目的和完整成本選擇，不以提示長度選擇。"
+    ],
+    "deductions": [
+      "案例為教學示意，未覆蓋不同現場的全部工件。",
+      "必要原理有可見中間關係，精細求解／網路結構在工程層仍有簡化。",
+      "已有輸入、輸出與核對責任；未提供可直接運行的模型操作範例。",
+      "資料、輸出與完整成本都有條件比較；没有同硬體的實測優劣證據。",
+      "手機需要較長縱向捲動，少數次要英文字例仍小；未因此假定真人理解。",
+      "新條件有合理替代解答，但沒有真人學習測試。"
+    ],
+    "vetoes": [],
+    "user_review": "pending",
+    "status": "self-reviewed; user approval pending"
+  }
+]

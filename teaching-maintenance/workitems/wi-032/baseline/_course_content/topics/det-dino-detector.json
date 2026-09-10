@@ -1,0 +1,457 @@
+{
+  "model": "DINO detector",
+  "beginner_path": {
+    "title": "DINO detector：用框的去噪練習改善集合偵測",
+    "intro": "先理解為什麼需要，再沿核心圖記住三個要點；接著用移除設計的反例及共同決策比較檢查理解。",
+    "visuals": [
+      {
+        "id": "d01-core",
+        "title": "DINO detector：用框的去噪練習改善集合偵測",
+        "prompt": "先看圖說明：輸入是什麼、哪一步改變、為什麼有用？",
+        "caption": "DETR式偵測要同時學會找物件、定位置和分配預測責任，訓練不容易。DINO detector用帶噪標註的輔助練習、較好的框起點與逐層修正改善學習。這裡的DINO是有監督物件偵測器，不是自監督DINO或DINOv2。",
+        "image": "_course_content/generated-concepts/det-dino-detector/det-dino-detector-d01-core.png",
+        "alt": "DINO detector的核心因果；同PCB素材與設定框，非模型推論。",
+        "callouts": [
+          {
+            "title": "對比去噪，練習辨認接近與偏離的框",
+            "body": "訓練時由GT類別與框製造擾動：正例學恢復目標，負例學無物件，幫助辨別同物件附近的重複候選。去噪指標註／框練習，不是把影像變乾淨；推論不用GT或去噪queries。"
+          },
+          {
+            "title": "Mixed query selection分開位置與內容",
+            "body": "從encoder選出的框提供位置起點，content query仍使用可學習表示。不是把所有query內容都直接複製影像特徵，也不是每個query預先綁定某類別。"
+          },
+          {
+            "title": "逐層改框，改善修正的學習",
+            "body": "decoder逐步更新參考框；look-forward-twice在訓練讓後續框損失也幫助前一階段框更新學習。它不是測試時看兩張未來影像，也不是去噪必然令本站更準的保證。"
+          }
+        ],
+        "reading_views": [
+          {
+            "title": "DINO detector：用框的去噪練習改善集合偵測",
+            "image": "_course_content/generated-concepts/det-dino-detector/det-dino-detector-d01-core.png",
+            "mobile_image": "_course_content/generated-concepts/det-dino-detector/det-dino-detector-d01-core-mobile.svg",
+            "mobile_crop": [
+              0,
+              0,
+              720,
+              941
+            ],
+            "alt": "DINO detector的核心因果；同PCB素材與設定框，非模型推論。"
+          }
+        ],
+        "core_ideas": true
+      },
+      {
+        "id": "d01-failure",
+        "title": "訓練用GT練習，正式推論不用GT",
+        "prompt": "如果正式檢查時沒有GT框，就不能使用DINO detector嗎？拿掉訓練去噪分支又少了什麼？",
+        "caption": "上路的GT擾動只在訓練存在，下路的推論只有待測影像。用這個分流檢查是否把「denoising」誤解成測試影像去噪，或把真值洩漏進正式檢查。",
+        "image": "_course_content/generated-concepts/det-dino-detector/det-dino-detector-d01-failure.svg",
+        "alt": "DINO detector的反事實；同PCB素材與設定框，非模型推論。",
+        "callouts": [
+          {
+            "title": "理解這一步",
+            "body": "正式推論本來就不需要GT，走影像、queries與框修正路徑。拿掉的是訓練期間有標註依據的恢復／排除輔助練習，不是測試功能；其學習速度或準確率影響要以受控訓練比較，不能捏造曲線。"
+          },
+          {
+            "title": "資料、輸出與下一步",
+            "body": "需要框與類別監督資料；換缺陷定義或產品後重查標註並視需要重訓。量漏件、重複、訓練成本和完整P95；不以DINO名稱推定比RT-DETR或YOLO更適合本站。"
+          }
+        ],
+        "reading_views": [
+          {
+            "title": "訓練用GT練習，正式推論不用GT",
+            "image": "_course_content/generated-concepts/det-dino-detector/det-dino-detector-d01-failure.svg",
+            "mobile_image": "_course_content/generated-concepts/det-dino-detector/det-dino-detector-d01-failure-mobile.svg",
+            "mobile_crop": [
+              0,
+              0,
+              720,
+              941
+            ],
+            "alt": "DINO detector的反事實；同PCB素材與設定框，非模型推論。"
+          }
+        ]
+      },
+      {
+        "id": "d01-compare-known",
+        "title": "已知類別：YOLO／RT-DETR／DINO",
+        "prompt": "同一工作條件下，你需要固定類別框、文字搜尋、視覺範例，還是物件輪廓？",
+        "caption": "先固定要找的物件與輸出：前三者需已知類別框監督；後三者借助預訓練與提示探索。開放詞彙不等於免驗證，只有正常品時先做物件探索與覆核，不能宣稱已建立未知缺陷偵測。",
+        "image": "_course_content/generated-concepts/det-yolo-dense/det-yolo-dense-d01-compare-known.svg",
+        "alt": "六模型共同決策；同PCB素材，比較資料與模型資訊路徑，不是性能排名。",
+        "callouts": [
+          {
+            "title": "資料與輸出責任",
+            "body": "先固定要找的物件與輸出：前三者需已知類別框監督；後三者借助預訓練與提示探索。開放詞彙不等於免驗證，只有正常品時先做物件探索與覆核，不能宣稱已建立未知缺陷偵測。"
+          },
+          {
+            "title": "換產品與公平比較",
+            "body": "同一資料切分、輸入像素、硬體與漏件容許量下，量漏件／重複／誤框、P95、記憶體及人工覆核。換產品要重查標註、詞彙／範例與門檻；需要輪廓時選支援mask的checkpoint或另接分割，不把box當輪廓。"
+          }
+        ],
+        "reading_views": [
+          {
+            "title": "已知類別：YOLO／RT-DETR／DINO",
+            "image": "_course_content/generated-concepts/det-yolo-dense/det-yolo-dense-d01-compare-known.svg",
+            "mobile_image": "_course_content/generated-concepts/det-yolo-dense/det-yolo-dense-d01-compare-known-mobile.svg",
+            "mobile_crop": [
+              0,
+              0,
+              720,
+              941
+            ],
+            "alt": "六模型共同決策；同PCB素材，比較資料與模型資訊路徑，不是性能排名。"
+          }
+        ]
+      },
+      {
+        "id": "d01-compare-prompt",
+        "title": "可變提示：Grounding DINO／YOLO-World／YOLOE",
+        "prompt": "同一工作條件下，你需要固定類別框、文字搜尋、視覺範例，還是物件輪廓？",
+        "caption": "同一資料切分、輸入像素、硬體與漏件容許量下，量漏件／重複／誤框、P95、記憶體及人工覆核。換產品要重查標註、詞彙／範例與門檻；需要輪廓時選支援mask的checkpoint或另接分割，不把box當輪廓。",
+        "image": "_course_content/generated-concepts/det-yolo-dense/det-yolo-dense-d01-compare-prompt.svg",
+        "alt": "六模型共同決策；同PCB素材，比較資料與模型資訊路徑，不是性能排名。",
+        "callouts": [
+          {
+            "title": "資料與輸出責任",
+            "body": "先固定要找的物件與輸出：前三者需已知類別框監督；後三者借助預訓練與提示探索。開放詞彙不等於免驗證，只有正常品時先做物件探索與覆核，不能宣稱已建立未知缺陷偵測。"
+          },
+          {
+            "title": "換產品與公平比較",
+            "body": "同一資料切分、輸入像素、硬體與漏件容許量下，量漏件／重複／誤框、P95、記憶體及人工覆核。換產品要重查標註、詞彙／範例與門檻；需要輪廓時選支援mask的checkpoint或另接分割，不把box當輪廓。"
+          }
+        ],
+        "reading_views": [
+          {
+            "title": "可變提示：Grounding DINO／YOLO-World／YOLOE",
+            "image": "_course_content/generated-concepts/det-yolo-dense/det-yolo-dense-d01-compare-prompt.svg",
+            "mobile_image": "_course_content/generated-concepts/det-yolo-dense/det-yolo-dense-d01-compare-prompt-mobile.svg",
+            "mobile_crop": [
+              0,
+              0,
+              720,
+              941
+            ],
+            "alt": "六模型共同決策；同PCB素材，比較資料與模型資訊路徑，不是性能排名。"
+          }
+        ]
+      }
+    ]
+  },
+  "badge": "D01｜先理解核心，再看反例與選型",
+  "title": "DINO detector：用框的去噪練習改善集合偵測",
+  "scenario": {
+    "title": "先說明原本的困難",
+    "body": "DETR式偵測要同時學會找物件、定位置和分配預測責任，訓練不容易。DINO detector用帶噪標註的輔助練習、較好的框起點與逐層修正改善學習。這裡的DINO是有監督物件偵測器，不是自監督DINO或DINOv2。"
+  },
+  "promise": {
+    "title": "它真正交付的東西",
+    "body": "模型交出物件候選框與相關分數；需回映原圖供後續確認。 需要框與類別監督資料；換缺陷定義或產品後重查標註並視需要重訓。量漏件、重複、訓練成本和完整P95；不以DINO名稱推定比RT-DETR或YOLO更適合本站。"
+  },
+  "mental_model": {
+    "title": "DINO detector：用框的去噪練習改善集合偵測",
+    "body": "DETR式偵測要同時學會找物件、定位置和分配預測責任，訓練不容易。DINO detector用帶噪標註的輔助練習、較好的框起點與逐層修正改善學習。這裡的DINO是有監督物件偵測器，不是自監督DINO或DINOv2。",
+    "limit": "需要框與類別監督資料；換缺陷定義或產品後重查標註並視需要重訓。量漏件、重複、訓練成本和完整P95；不以DINO名稱推定比RT-DETR或YOLO更適合本站。"
+  },
+  "micro_example": {
+    "title": "先想拿掉核心的後果，再換一個現場",
+    "setup": "新產品只有正常影像；要先找元件位置，未來還想取得輪廓。本站另有固定節拍與漏件容許量。",
+    "prediction": "如果正式檢查時沒有GT框，就不能使用DINO detector嗎？拿掉訓練去噪分支又少了什麼？ 接著選擇新工件的起步方法，說明標註／提示準備及輪廓需求。",
+    "reveal": "正式推論本來就不需要GT，走影像、queries與框修正路徑。拿掉的是訓練期間有標註依據的恢復／排除輔助練習，不是測試功能；其學習速度或準確率影響要以受控訓練比較，不能捏造曲線。 先固定要找的物件與輸出：前三者需已知類別框監督；後三者借助預訓練與提示探索。開放詞彙不等於免驗證，只有正常品時先做物件探索與覆核，不能宣稱已建立未知缺陷偵測。 同一資料切分、輸入像素、硬體與漏件容許量下，量漏件／重複／誤框、P95、記憶體及人工覆核。換產品要重查標註、詞彙／範例與門檻；需要輪廓時選支援mask的checkpoint或另接分割，不把box當輪廓。 可先用提示模型探索並人工确认，或標註框後訓練已知類別模型；方案取決於目標、資料及驗證，不只一個正確模型名稱。"
+  },
+  "mechanism_steps": [
+    {
+      "title": "對比去噪，練習辨認接近與偏離的框",
+      "body": "訓練時由GT類別與框製造擾動：正例學恢復目標，負例學無物件，幫助辨別同物件附近的重複候選。去噪指標註／框練習，不是把影像變乾淨；推論不用GT或去噪queries。",
+      "why": "DETR式偵測要同時學會找物件、定位置和分配預測責任，訓練不容易。DINO detector用帶噪標註的輔助練習、較好的框起點與逐層修正改善學習。這裡的DINO是有監督物件偵測器，不是自監督DINO或DINOv2。",
+      "anchor": "D01核心／反例／共同決策；依原論文核對",
+      "diagram": {
+        "title": "對比去噪，練習辨認接近與偏離的框",
+        "body": "訓練時由GT類別與框製造擾動：正例學恢復目標，負例學無物件，幫助辨別同物件附近的重複候選。去噪指標註／框練習，不是把影像變乾淨；推論不用GT或去噪queries。",
+        "why": "DETR式偵測要同時學會找物件、定位置和分配預測責任，訓練不容易。DINO detector用帶噪標註的輔助練習、較好的框起點與逐層修正改善學習。這裡的DINO是有監督物件偵測器，不是自監督DINO或DINOv2。",
+        "anchor": "D01核心／反例／共同決策；依原論文核對"
+      }
+    },
+    {
+      "title": "Mixed query selection分開位置與內容",
+      "body": "從encoder選出的框提供位置起點，content query仍使用可學習表示。不是把所有query內容都直接複製影像特徵，也不是每個query預先綁定某類別。",
+      "why": "這一步提供下游所需的資訊；核心原理與工程驗證不可互相替代。",
+      "anchor": "D01核心／反例／共同決策；依原論文核對",
+      "diagram": {
+        "title": "Mixed query selection分開位置與內容",
+        "body": "從encoder選出的框提供位置起點，content query仍使用可學習表示。不是把所有query內容都直接複製影像特徵，也不是每個query預先綁定某類別。",
+        "why": "這一步提供下游所需的資訊；核心原理與工程驗證不可互相替代。",
+        "anchor": "D01核心／反例／共同決策；依原論文核對"
+      }
+    },
+    {
+      "title": "逐層改框，改善修正的學習",
+      "body": "decoder逐步更新參考框；look-forward-twice在訓練讓後續框損失也幫助前一階段框更新學習。它不是測試時看兩張未來影像，也不是去噪必然令本站更準的保證。",
+      "why": "這一步提供下游所需的資訊；核心原理與工程驗證不可互相替代。",
+      "anchor": "D01核心／反例／共同決策；依原論文核對",
+      "diagram": {
+        "title": "逐層改框，改善修正的學習",
+        "body": "decoder逐步更新參考框；look-forward-twice在訓練讓後續框損失也幫助前一階段框更新學習。它不是測試時看兩張未來影像，也不是去噪必然令本站更準的保證。",
+        "why": "這一步提供下游所需的資訊；核心原理與工程驗證不可互相替代。",
+        "anchor": "D01核心／反例／共同決策；依原論文核對"
+      }
+    },
+    {
+      "title": "回原圖確認並驗證",
+      "body": "需要框與類別監督資料；換缺陷定義或產品後重查標註並視需要重訓。量漏件、重複、訓練成本和完整P95；不以DINO名稱推定比RT-DETR或YOLO更適合本站。",
+      "why": "正式推論本來就不需要GT，走影像、queries與框修正路徑。拿掉的是訓練期間有標註依據的恢復／排除輔助練習，不是測試功能；其學習速度或準確率影響要以受控訓練比較，不能捏造曲線。",
+      "anchor": "D01核心／反例／共同決策；依原論文核對",
+      "diagram": {
+        "title": "回原圖確認並驗證",
+        "body": "需要框與類別監督資料；換缺陷定義或產品後重查標註並視需要重訓。量漏件、重複、訓練成本和完整P95；不以DINO名稱推定比RT-DETR或YOLO更適合本站。",
+        "why": "正式推論本來就不需要GT，走影像、queries與框修正路徑。拿掉的是訓練期間有標註依據的恢復／排除輔助練習，不是測試功能；其學習速度或準確率影響要以受控訓練比較，不能捏造曲線。",
+        "anchor": "D01核心／反例／共同決策；依原論文核對"
+      }
+    }
+  ],
+  "visual_intro": "以下補充圖沿用D01核心、反例及共同選型；詳讀原理後再核對工程條件。",
+  "concept_visuals": [
+    {
+      "id": "causal-chain",
+      "placement": "after_causal_chain",
+      "title": "DINO detector：用框的去噪練習改善集合偵測",
+      "prompt": "先看圖說明：輸入是什麼、哪一步改變、為什麼有用？",
+      "caption": "DETR式偵測要同時學會找物件、定位置和分配預測責任，訓練不容易。DINO detector用帶噪標註的輔助練習、較好的框起點與逐層修正改善學習。這裡的DINO是有監督物件偵測器，不是自監督DINO或DINOv2。",
+      "image": "_course_content/generated-concepts/det-dino-detector/det-dino-detector-d01-core.png",
+      "alt": "DINO detector的核心因果；同PCB素材與設定框，非模型推論。",
+      "callouts": [
+        {
+          "title": "對比去噪，練習辨認接近與偏離的框",
+          "body": "訓練時由GT類別與框製造擾動：正例學恢復目標，負例學無物件，幫助辨別同物件附近的重複候選。去噪指標註／框練習，不是把影像變乾淨；推論不用GT或去噪queries。"
+        },
+        {
+          "title": "Mixed query selection分開位置與內容",
+          "body": "從encoder選出的框提供位置起點，content query仍使用可學習表示。不是把所有query內容都直接複製影像特徵，也不是每個query預先綁定某類別。"
+        },
+        {
+          "title": "逐層改框，改善修正的學習",
+          "body": "decoder逐步更新參考框；look-forward-twice在訓練讓後續框損失也幫助前一階段框更新學習。它不是測試時看兩張未來影像，也不是去噪必然令本站更準的保證。"
+        }
+      ]
+    },
+    {
+      "id": "worked-example",
+      "placement": "after_micro_example",
+      "title": "訓練用GT練習，正式推論不用GT",
+      "prompt": "如果正式檢查時沒有GT框，就不能使用DINO detector嗎？拿掉訓練去噪分支又少了什麼？",
+      "caption": "上路的GT擾動只在訓練存在，下路的推論只有待測影像。用這個分流檢查是否把「denoising」誤解成測試影像去噪，或把真值洩漏進正式檢查。",
+      "image": "_course_content/generated-concepts/det-dino-detector/det-dino-detector-d01-failure.svg",
+      "alt": "DINO detector的反事實；同PCB素材與設定框，非模型推論。",
+      "callouts": [
+        {
+          "title": "理解這一步",
+          "body": "正式推論本來就不需要GT，走影像、queries與框修正路徑。拿掉的是訓練期間有標註依據的恢復／排除輔助練習，不是測試功能；其學習速度或準確率影響要以受控訓練比較，不能捏造曲線。"
+        },
+        {
+          "title": "資料、輸出與下一步",
+          "body": "需要框與類別監督資料；換缺陷定義或產品後重查標註並視需要重訓。量漏件、重複、訓練成本和完整P95；不以DINO名稱推定比RT-DETR或YOLO更適合本站。"
+        },
+        {
+          "title": "本題核心與證據範圍",
+          "body": "DETR式偵測要同時學會找物件、定位置和分配預測責任，訓練不容易。DINO detector用帶噪標註的輔助練習、較好的框起點與逐層修正改善學習。這裡的DINO是有監督物件偵測器，不是自監督DINO或DINOv2。 圖中候選是教學設定，效果須以本地樣本驗證。"
+        }
+      ]
+    },
+    {
+      "id": "comparison",
+      "placement": "after_comparison",
+      "title": "已知類別：YOLO／RT-DETR／DINO",
+      "prompt": "同一工作條件下，你需要固定類別框、文字搜尋、視覺範例，還是物件輪廓？",
+      "caption": "先固定要找的物件與輸出：前三者需已知類別框監督；後三者借助預訓練與提示探索。開放詞彙不等於免驗證，只有正常品時先做物件探索與覆核，不能宣稱已建立未知缺陷偵測。",
+      "image": "_course_content/generated-concepts/det-yolo-dense/det-yolo-dense-d01-compare-known.svg",
+      "alt": "六模型共同決策；同PCB素材，比較資料與模型資訊路徑，不是性能排名。",
+      "callouts": [
+        {
+          "title": "資料與輸出責任",
+          "body": "先固定要找的物件與輸出：前三者需已知類別框監督；後三者借助預訓練與提示探索。開放詞彙不等於免驗證，只有正常品時先做物件探索與覆核，不能宣稱已建立未知缺陷偵測。"
+        },
+        {
+          "title": "換產品與公平比較",
+          "body": "同一資料切分、輸入像素、硬體與漏件容許量下，量漏件／重複／誤框、P95、記憶體及人工覆核。換產品要重查標註、詞彙／範例與門檻；需要輪廓時選支援mask的checkpoint或另接分割，不把box當輪廓。"
+        },
+        {
+          "title": "本題核心與證據範圍",
+          "body": "DETR式偵測要同時學會找物件、定位置和分配預測責任，訓練不容易。DINO detector用帶噪標註的輔助練習、較好的框起點與逐層修正改善學習。這裡的DINO是有監督物件偵測器，不是自監督DINO或DINOv2。 圖中候選是教學設定，效果須以本地樣本驗證。"
+        }
+      ]
+    },
+    {
+      "id": "boundary-cases-explainer",
+      "placement": "before_boundary_cases",
+      "title": "可變提示：Grounding DINO／YOLO-World／YOLOE",
+      "prompt": "同一工作條件下，你需要固定類別框、文字搜尋、視覺範例，還是物件輪廓？",
+      "caption": "同一資料切分、輸入像素、硬體與漏件容許量下，量漏件／重複／誤框、P95、記憶體及人工覆核。換產品要重查標註、詞彙／範例與門檻；需要輪廓時選支援mask的checkpoint或另接分割，不把box當輪廓。",
+      "image": "_course_content/generated-concepts/det-yolo-dense/det-yolo-dense-d01-compare-prompt.svg",
+      "alt": "六模型共同決策；同PCB素材，比較資料與模型資訊路徑，不是性能排名。",
+      "callouts": [
+        {
+          "title": "資料與輸出責任",
+          "body": "先固定要找的物件與輸出：前三者需已知類別框監督；後三者借助預訓練與提示探索。開放詞彙不等於免驗證，只有正常品時先做物件探索與覆核，不能宣稱已建立未知缺陷偵測。"
+        },
+        {
+          "title": "換產品與公平比較",
+          "body": "同一資料切分、輸入像素、硬體與漏件容許量下，量漏件／重複／誤框、P95、記憶體及人工覆核。換產品要重查標註、詞彙／範例與門檻；需要輪廓時選支援mask的checkpoint或另接分割，不把box當輪廓。"
+        },
+        {
+          "title": "本題核心與證據範圍",
+          "body": "DETR式偵測要同時學會找物件、定位置和分配預測責任，訓練不容易。DINO detector用帶噪標註的輔助練習、較好的框起點與逐層修正改善學習。這裡的DINO是有監督物件偵測器，不是自監督DINO或DINOv2。 圖中候選是教學設定，效果須以本地樣本驗證。"
+        }
+      ]
+    }
+  ],
+  "boundary_cases": [
+    {
+      "condition": "把 DINO detector 當 DINOv2/DINOv3 backbone、VLM 或 inference-time anomaly detector",
+      "effect": "會選錯資料、輸出與驗證方式，把 supervised box set 和 feature/anomaly/prompt 路徑混為一談。",
+      "action": "HOLD；先確認此頁的輸入是 supervised boxes/labels，denoising 是 training-only，production output 是 known-class boxes。"
+    },
+    {
+      "condition": "tiny object 欠採樣、query capacity/密集 overlap、labels/ignore contract 或 schedule/memory/export 不足",
+      "visual_condition": "tiny object 欠採樣、query capacity 不足或 labels/ignore 契約改變",
+      "effect": "queries/refinement 不能補回不存在的像素或未標註的真值，會出現 miss、錯類或不可部署。",
+      "action": "鎖 levels/query/denoising/schedule/export，按 size/product/ROI 量 critical recall、overlap misses、VRAM、training cost 和 P95。",
+      "visual_action": "鎖 levels/query/denoising/schedule/export；量 critical recall、overlap miss、VRAM 與 P95。"
+    },
+    {
+      "condition": "以 COCO AP 或 training loss 代替 fab qualification，忽略 domain/taxonomy/OOD",
+      "effect": "公開成績不揭露本地 size-bin、false HOLD、review load 或 deployment tail，closed-set boxes也不保證未知。",
+      "action": "用本地 product/lot/ROI split、calibration、OOD/review、inverse mapping 和 camera-to-decision P95 做 gate。"
+    }
+  ],
+  "comparison": [
+    {
+      "model": "DINO detector",
+      "normality": "依據：supervised boxes/labels、multi-scale encoded features、mixed detection queries 和 set matching",
+      "candidate": "可用輸出：iterative refined known-class box set；contrastive denoising groups 只在 training"
+    },
+    {
+      "model": "RT-DETR",
+      "normality": "依據：hybrid encoder、selected queries/reference points、decoder-depth operating point 和 set labels",
+      "candidate": "可用輸出：class/box set；每個 depth/export 需獨立驗 P95/recall"
+    },
+    {
+      "model": "YOLO dense detector",
+      "normality": "依據：multi-scale feature locations 的 dense candidates、版本指定 assignment/decode/NMS",
+      "candidate": "可用輸出：decode/NMS 後 boxes；raw grid scores 不是 final output"
+    }
+  ],
+  "selection": "先固定要找的物件與輸出：前三者需已知類別框監督；後三者借助預訓練與提示探索。開放詞彙不等於免驗證，只有正常品時先做物件探索與覆核，不能宣稱已建立未知缺陷偵測。 需要框與類別監督資料；換缺陷定義或產品後重查標註並視需要重訓。量漏件、重複、訓練成本和完整P95；不以DINO名稱推定比RT-DETR或YOLO更適合本站。 同一資料切分、輸入像素、硬體與漏件容許量下，量漏件／重複／誤框、P95、記憶體及人工覆核。換產品要重查標註、詞彙／範例與門檻；需要輪廓時選支援mask的checkpoint或另接分割，不把box當輪廓。",
+  "poc": {
+    "title": "POC 第一件事：先把 training denoising 與 production detection path 分開驗",
+    "steps": [
+      "鎖 implementation/checkpoint、backbone/levels、query count/mixed selection、denoising configuration、decoder/refinement、matching/loss、schedule/augmentation、input/padding、labels/ignore、precision/export/runtime。",
+      "以 size/product/ROI/overlap/lot/OOD split 保存 training state 與 production box outputs，分別記錄 denoising/schedule、query capacity、critical recall、miss/false alarm、VRAM、export graph 和 P95。",
+      "確認 inference artifact 不含 training-only denoising inputs，並以本地 calibration、inverse mapping、camera-to-decision P95、review/false HOLD 對比 YOLO/RT-DETR。"
+    ],
+    "hold": "模型身份被混同、training-only branch 未分開、tiny/overlap/labels/shift gate 未通過、memory/export/P95 不可接受時，先 HOLD/REVIEW。",
+    "acceptance": {
+      "baseline": "以固定 supervised boxes/classes/ignore zones、effective pixels、query/mixed selection、denoising training config、decoder/refinement、schedule、export/runtime 和人工 ROI review 的 DINO detector baseline 對照。",
+      "measure": "分開記錄 training denoising/schedule/memory 與 production inference，按 size/product/ROI/overlap/lot/OOD 分層量 critical recall、miss/false alarm、calibration、VRAM、training cost、camera-to-decision P95、review load。",
+      "negative_control": "在 production image 嘗試加入 noisy ground-truth boxes/labels 作 denoising；預期 inference artifact 不應含 training-only group，且未知 anomaly 不能被偽裝成 DINO denoising 功能。",
+      "owner": "由標註／製程 owner 簽核 supervised box contract；CV owner 簽核 training-versus-inference isolation、query/memory/export evidence，品質/review owner 決定 box candidate 後續處置。"
+    }
+  },
+  "teach_back": {
+    "question": "DINO detector 的 denoising groups 在訓練中使用。為什麼不能把它解讀成部署時會自動發現未知 anomaly 的功能？",
+    "answer": "因為 denoising groups 由 noisy ground-truth labels/boxes 形成，只是訓練輔助；推論時它們被移除，主路徑輸出的是 supervised known-class box set。未知 defect、tiny sampling、query capacity、OOD 和 release 仍要用各自的 evidence/review gate 處理。"
+  },
+  "slide_reading": [
+    {
+      "title": "DINO detector：用框的去噪練習改善集合偵測",
+      "question": "先看圖說明：輸入是什麼、哪一步改變、為什麼有用？",
+      "look": "DINO detector的核心因果；同PCB素材與設定框，非模型推論。",
+      "relation": "DETR式偵測要同時學會找物件、定位置和分配預測責任，訓練不容易。DINO detector用帶噪標註的輔助練習、較好的框起點與逐層修正改善學習。這裡的DINO是有監督物件偵測器，不是自監督DINO或DINOv2。",
+      "takeaway": "需要框與類別監督資料；換缺陷定義或產品後重查標註並視需要重訓。量漏件、重複、訓練成本和完整P95；不以DINO名稱推定比RT-DETR或YOLO更適合本站。",
+      "terms": [
+        "GT：訓練或獨立驗證的標註，不是正式推論的輸入",
+        "候選：需回到原圖核對的位置或區域"
+      ]
+    },
+    {
+      "title": "訓練用GT練習，正式推論不用GT",
+      "question": "如果正式檢查時沒有GT框，就不能使用DINO detector嗎？拿掉訓練去噪分支又少了什麼？",
+      "look": "DINO detector的反事實；同PCB素材與設定框，非模型推論。",
+      "relation": "上路的GT擾動只在訓練存在，下路的推論只有待測影像。用這個分流檢查是否把「denoising」誤解成測試影像去噪，或把真值洩漏進正式檢查。",
+      "takeaway": "正式推論本來就不需要GT，走影像、queries與框修正路徑。拿掉的是訓練期間有標註依據的恢復／排除輔助練習，不是測試功能；其學習速度或準確率影響要以受控訓練比較，不能捏造曲線。",
+      "terms": [
+        "GT：訓練或獨立驗證的標註，不是正式推論的輸入",
+        "候選：需回到原圖核對的位置或區域"
+      ]
+    },
+    {
+      "title": "已知類別：YOLO／RT-DETR／DINO",
+      "question": "同一工作條件下，你需要固定類別框、文字搜尋、視覺範例，還是物件輪廓？",
+      "look": "六模型共同決策；同PCB素材，比較資料與模型資訊路徑，不是性能排名。",
+      "relation": "先固定要找的物件與輸出：前三者需已知類別框監督；後三者借助預訓練與提示探索。開放詞彙不等於免驗證，只有正常品時先做物件探索與覆核，不能宣稱已建立未知缺陷偵測。",
+      "takeaway": "需要框與類別監督資料；換缺陷定義或產品後重查標註並視需要重訓。量漏件、重複、訓練成本和完整P95；不以DINO名稱推定比RT-DETR或YOLO更適合本站。",
+      "terms": [
+        "GT：訓練或獨立驗證的標註，不是正式推論的輸入",
+        "候選：需回到原圖核對的位置或區域"
+      ]
+    },
+    {
+      "title": "可變提示：Grounding DINO／YOLO-World／YOLOE",
+      "question": "同一工作條件下，你需要固定類別框、文字搜尋、視覺範例，還是物件輪廓？",
+      "look": "六模型共同決策；同PCB素材，比較資料與模型資訊路徑，不是性能排名。",
+      "relation": "同一資料切分、輸入像素、硬體與漏件容許量下，量漏件／重複／誤框、P95、記憶體及人工覆核。換產品要重查標註、詞彙／範例與門檻；需要輪廓時選支援mask的checkpoint或另接分割，不把box當輪廓。",
+      "takeaway": "需要框與類別監督資料；換缺陷定義或產品後重查標註並視需要重訓。量漏件、重複、訓練成本和完整P95；不以DINO名稱推定比RT-DETR或YOLO更適合本站。",
+      "terms": [
+        "GT：訓練或獨立驗證的標註，不是正式推論的輸入",
+        "候選：需回到原圖核對的位置或區域"
+      ]
+    }
+  ],
+  "comparison_headers": {
+    "title": "不要比名稱；比分開的 query training 與 inference path",
+    "basis": "query training／inference path",
+    "output": "known-class box set／evidence gate"
+  },
+  "transfer_check": {
+    "title": "新工件，該怎麼選偵測流程？",
+    "scenario": "新產品只有正常影像；要先找元件位置，未來還想取得輪廓。本站另有固定節拍與漏件容許量。",
+    "question": "能直接用模型名稱宣稱找出未知缺陷嗎？你會如何起步，還需要哪些資料與驗證？",
+    "answer": "先固定要找的物件與輸出：前三者需已知類別框監督；後三者借助預訓練與提示探索。開放詞彙不等於免驗證，只有正常品時先做物件探索與覆核，不能宣稱已建立未知缺陷偵測。 同一資料切分、輸入像素、硬體與漏件容許量下，量漏件／重複／誤框、P95、記憶體及人工覆核。換產品要重查標註、詞彙／範例與門檻；需要輪廓時選支援mask的checkpoint或另接分割，不把box當輪廓。 可先用提示模型探索並人工确认，或標註框後訓練已知類別模型；方案取決於目標、資料及驗證，不只一個正確模型名稱。"
+  },
+  "review_trace": {
+    "authority": "roadmap-model-selection/detector/det-dino-detector/model.md",
+    "scope": "D01主線依原論文／官方文件及model.md的D01補正核對；圖中的框與相似度為教學設定，非模型推論。",
+    "claims": [
+      {
+        "id": "d01-visual-1",
+        "field": "beginner_path.visuals[d01-core]",
+        "source": "D01核心、反例與共同決策；https://arxiv.org/abs/2203.03605"
+      },
+      {
+        "id": "d01-visual-2",
+        "field": "beginner_path.visuals[d01-failure]",
+        "source": "D01核心、反例與共同決策；https://arxiv.org/abs/2203.03605"
+      },
+      {
+        "id": "d01-visual-3",
+        "field": "beginner_path.visuals[d01-compare-known]",
+        "source": "D01核心、反例與共同決策；https://arxiv.org/abs/2203.03605"
+      },
+      {
+        "id": "d01-visual-4",
+        "field": "beginner_path.visuals[d01-compare-prompt]",
+        "source": "D01核心、反例與共同決策；https://arxiv.org/abs/2203.03605"
+      },
+      {
+        "id": "d01-contract",
+        "field": "promise + mechanism_steps",
+        "source": "D01來源補正及工程輸出責任"
+      },
+      {
+        "id": "d01-transfer",
+        "field": "transfer_check",
+        "source": "D01資料、輸出與公平比較"
+      }
+    ]
+  }
+}

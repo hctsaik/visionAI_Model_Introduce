@@ -1,0 +1,3398 @@
+[
+  {
+    "id": "charuco-core",
+    "mode": "desktop",
+    "image": "charuco-core-r05-desktop.png",
+    "size": [
+      1672,
+      941
+    ],
+    "sha256": "ec556aafa483ea41185391772564503c4cdfeedee09b2bc0d444e63e826ab031",
+    "rubric": "v1.0",
+    "scores": [
+      23,
+      23,
+      19,
+      18,
+      10
+    ],
+    "total": 93,
+    "completion": [
+      8,
+      9,
+      9,
+      8,
+      9
+    ],
+    "observations": "同一棋盤交點A共用座標，多視角與重投影分明；手機獨立加大標註。仿射視角示意，不是校正結果。",
+    "deductions": "示意不提供現場性能證据；局部放大／表示有意簡化，詳細設定由正文補足。原生可讀性不是實頁通過。",
+    "scope": "原生PNG與1440px桌機／360px手機實頁；共用圖按相同hash引用，各課放置另驗",
+    "page_review": "self-reviewed",
+    "user_review": "pending",
+    "screenshot": "pages/charuco/docs-1440-main-1.png",
+    "completion_evidence": [
+      "案例／線索具可辨識形狀、留白與對比；原生幾何較簡筆。",
+      "物件、處理／比較、結果與下一步均在圖中；同一棋盤交點A共用座標，多視角與重投影分明；手機獨立加大標註。仿射視角示意，不是校正結果。",
+      "身份、方向與示意界線已核對；不把示意當模型性能。",
+      "手機改縱向大主體；小圖例和縱向長度仍是閱讀成本。",
+      "三至四大節點及單一淡黃結論；主體先於補充文字。"
+    ]
+  },
+  {
+    "id": "charuco-core",
+    "mode": "mobile",
+    "image": "charuco-core-r05-mobile.png",
+    "size": [
+      768,
+      2304
+    ],
+    "sha256": "95bb73a62dc1309afd629c56ecd2340533650d5b955ba29bb5ff29424cebb8ab",
+    "rubric": "v1.0",
+    "scores": [
+      23,
+      23,
+      19,
+      18,
+      10
+    ],
+    "total": 93,
+    "completion": [
+      8,
+      9,
+      9,
+      8,
+      9
+    ],
+    "observations": "同一棋盤交點A共用座標，多視角與重投影分明；手機獨立加大標註。仿射視角示意，不是校正結果。",
+    "deductions": "示意不提供現場性能證据；局部放大／表示有意簡化，詳細設定由正文補足。原生可讀性不是實頁通過。",
+    "scope": "原生PNG與1440px桌機／360px手機實頁；共用圖按相同hash引用，各課放置另驗",
+    "page_review": "self-reviewed",
+    "user_review": "pending",
+    "screenshot": "pages/charuco/docs-360-main-1.png",
+    "completion_evidence": [
+      "案例／線索具可辨識形狀、留白與對比；原生幾何較簡筆。",
+      "物件、處理／比較、結果與下一步均在圖中；同一棋盤交點A共用座標，多視角與重投影分明；手機獨立加大標註。仿射視角示意，不是校正結果。",
+      "身份、方向與示意界線已核對；不把示意當模型性能。",
+      "手機改縱向大主體；小圖例和縱向長度仍是閱讀成本。",
+      "三至四大節點及單一淡黃結論；主體先於補充文字。"
+    ]
+  },
+  {
+    "id": "ecc-core",
+    "mode": "desktop",
+    "image": "ecc-core-r01-desktop.png",
+    "size": [
+      1672,
+      941
+    ],
+    "sha256": "5345d7e79d2a05260fdd15b486552bdc105ca2637987da9db40072c6194e2b9d",
+    "rubric": "v1.0",
+    "scores": [
+      23,
+      23,
+      19,
+      19,
+      9
+    ],
+    "total": 93,
+    "completion": [
+      8,
+      9,
+      9,
+      8,
+      9
+    ],
+    "observations": "同孔雙邊及强度曲線錯位變接近，warp與獨立殘差分開；手機第三區仍需實頁核對。",
+    "deductions": "示意不提供現場性能證据；局部放大／表示有意簡化，詳細設定由正文補足。原生可讀性不是實頁通過。",
+    "scope": "原生PNG與1440px桌機／360px手機實頁；共用圖按相同hash引用，各課放置另驗",
+    "page_review": "self-reviewed",
+    "user_review": "pending",
+    "screenshot": "pages/ecc/docs-1440-main-1.png",
+    "completion_evidence": [
+      "案例／線索具可辨識形狀、留白與對比；原生幾何較簡筆。",
+      "物件、處理／比較、結果與下一步均在圖中；同孔雙邊及强度曲線錯位變接近，warp與獨立殘差分開；手機第三區仍需實頁核對。",
+      "身份、方向與示意界線已核對；不把示意當模型性能。",
+      "手機改縱向大主體；小圖例和縱向長度仍是閱讀成本。",
+      "三至四大節點及單一淡黃結論；主體先於補充文字。"
+    ]
+  },
+  {
+    "id": "ecc-core",
+    "mode": "mobile",
+    "image": "ecc-core-r01-mobile.png",
+    "size": [
+      941,
+      1672
+    ],
+    "sha256": "a69ed9f2781682f76a01d2d2b284f462f4004dfedbf4a88bfd9add46c5e1ffe0",
+    "rubric": "v1.0",
+    "scores": [
+      23,
+      23,
+      19,
+      18,
+      9
+    ],
+    "total": 92,
+    "completion": [
+      8,
+      9,
+      9,
+      8,
+      9
+    ],
+    "observations": "同孔雙邊及强度曲線錯位變接近，warp與獨立殘差分開；手機第三區仍需實頁核對。",
+    "deductions": "示意不提供現場性能證据；局部放大／表示有意簡化，詳細設定由正文補足。原生可讀性不是實頁通過。",
+    "scope": "原生PNG與1440px桌機／360px手機實頁；共用圖按相同hash引用，各課放置另驗",
+    "page_review": "self-reviewed",
+    "user_review": "pending",
+    "screenshot": "pages/ecc/docs-360-main-1.png",
+    "completion_evidence": [
+      "案例／線索具可辨識形狀、留白與對比；原生幾何較簡筆。",
+      "物件、處理／比較、結果與下一步均在圖中；同孔雙邊及强度曲線錯位變接近，warp與獨立殘差分開；手機第三區仍需實頁核對。",
+      "身份、方向與示意界線已核對；不把示意當模型性能。",
+      "手機改縱向大主體；小圖例和縱向長度仍是閱讀成本。",
+      "三至四大節點及單一淡黃結論；主體先於補充文字。"
+    ]
+  },
+  {
+    "id": "dino-core",
+    "mode": "desktop",
+    "image": "dino-core-r01-desktop.png",
+    "size": [
+      1672,
+      941
+    ],
+    "sha256": "e3ecb4fa1a59b8e0582ce4133c9716fa51b6a445adf98b77490105b6850ba848",
+    "rubric": "v1.0",
+    "scores": [
+      23,
+      23,
+      19,
+      18,
+      9
+    ],
+    "total": 92,
+    "completion": [
+      8,
+      9,
+      9,
+      8,
+      9
+    ],
+    "observations": "GT帶噪近正樣本與遠負樣本不同目標，推論新圖不接GT；手機減字後保留分流。",
+    "deductions": "示意不提供現場性能證据；局部放大／表示有意簡化，詳細設定由正文補足。原生可讀性不是實頁通過。",
+    "scope": "原生PNG與1440px桌機／360px手機實頁；共用圖按相同hash引用，各課放置另驗",
+    "page_review": "self-reviewed",
+    "user_review": "pending",
+    "screenshot": "pages/det-dino-detector/docs-1440-main-1.png",
+    "completion_evidence": [
+      "案例／線索具可辨識形狀、留白與對比；原生幾何較簡筆。",
+      "物件、處理／比較、結果與下一步均在圖中；GT帶噪近正樣本與遠負樣本不同目標，推論新圖不接GT；手機減字後保留分流。",
+      "身份、方向與示意界線已核對；不把示意當模型性能。",
+      "手機改縱向大主體；小圖例和縱向長度仍是閱讀成本。",
+      "三至四大節點及單一淡黃結論；主體先於補充文字。"
+    ]
+  },
+  {
+    "id": "dino-core",
+    "mode": "mobile",
+    "image": "dino-core-r02-mobile.png",
+    "size": [
+      1024,
+      1536
+    ],
+    "sha256": "73959c039ec4ad64ff9bda8bc1e7189be229bc0a7aaa41b49acf6e9308c96afa",
+    "rubric": "v1.0",
+    "scores": [
+      23,
+      23,
+      19,
+      18,
+      9
+    ],
+    "total": 92,
+    "completion": [
+      8,
+      9,
+      9,
+      8,
+      9
+    ],
+    "observations": "GT帶噪近正樣本與遠負樣本不同目標，推論新圖不接GT；手機減字後保留分流。",
+    "deductions": "示意不提供現場性能證据；局部放大／表示有意簡化，詳細設定由正文補足。原生可讀性不是實頁通過。",
+    "scope": "原生PNG與1440px桌機／360px手機實頁；共用圖按相同hash引用，各課放置另驗",
+    "page_review": "self-reviewed",
+    "user_review": "pending",
+    "screenshot": "pages/det-dino-detector/docs-360-main-1.png",
+    "completion_evidence": [
+      "案例／線索具可辨識形狀、留白與對比；原生幾何較簡筆。",
+      "物件、處理／比較、結果與下一步均在圖中；GT帶噪近正樣本與遠負樣本不同目標，推論新圖不接GT；手機減字後保留分流。",
+      "身份、方向與示意界線已核對；不把示意當模型性能。",
+      "手機改縱向大主體；小圖例和縱向長度仍是閱讀成本。",
+      "三至四大節點及單一淡黃結論；主體先於補充文字。"
+    ]
+  },
+  {
+    "id": "world-core",
+    "mode": "desktop",
+    "image": "world-core-r01-desktop.png",
+    "size": [
+      1672,
+      941
+    ],
+    "sha256": "9eff4ccc8083c901eccaf352fa3ff77aeed3611f57cdc30ab7e68197203fd47a",
+    "rubric": "v1.0",
+    "scores": [
+      23,
+      23,
+      19,
+      17,
+      9
+    ],
+    "total": 91,
+    "completion": [
+      8,
+      9,
+      9,
+      8,
+      9
+    ],
+    "observations": "離線詞彙與線上影像兩種表示有不同來源，區域與詞彙比較後出框；手機只保留必要標註，正文補文字引導路徑。",
+    "deductions": "示意不提供現場性能證据；局部放大／表示有意簡化，詳細設定由正文補足。原生可讀性不是實頁通過。",
+    "scope": "原生PNG與1440px桌機／360px手機實頁；共用圖按相同hash引用，各課放置另驗",
+    "page_review": "self-reviewed",
+    "user_review": "pending",
+    "screenshot": "pages/yolo-world/docs-1440-main-1.png",
+    "completion_evidence": [
+      "案例／線索具可辨識形狀、留白與對比；原生幾何較簡筆。",
+      "物件、處理／比較、結果與下一步均在圖中；離線詞彙與線上影像兩種表示有不同來源，區域與詞彙比較後出框；手機只保留必要標註，正文補文字引導路徑。",
+      "身份、方向與示意界線已核對；不把示意當模型性能。",
+      "手機改縱向大主體；小圖例和縱向長度仍是閱讀成本。",
+      "三至四大節點及單一淡黃結論；主體先於補充文字。"
+    ]
+  },
+  {
+    "id": "world-core",
+    "mode": "mobile",
+    "image": "world-core-r02-mobile.png",
+    "size": [
+      1024,
+      1536
+    ],
+    "sha256": "9f2e69509108dafa50307493d151c6b74cbbbcae3afa33abd766f6916e79bb61",
+    "rubric": "v1.0",
+    "scores": [
+      23,
+      23,
+      19,
+      18,
+      9
+    ],
+    "total": 92,
+    "completion": [
+      8,
+      9,
+      9,
+      8,
+      9
+    ],
+    "observations": "離線詞彙與線上影像兩種表示有不同來源，區域與詞彙比較後出框；手機只保留必要標註，正文補文字引導路徑。",
+    "deductions": "示意不提供現場性能證据；局部放大／表示有意簡化，詳細設定由正文補足。原生可讀性不是實頁通過。",
+    "scope": "原生PNG與1440px桌機／360px手機實頁；共用圖按相同hash引用，各課放置另驗",
+    "page_review": "self-reviewed",
+    "user_review": "pending",
+    "screenshot": "pages/yolo-world/docs-360-main-1.png",
+    "completion_evidence": [
+      "案例／線索具可辨識形狀、留白與對比；原生幾何較簡筆。",
+      "物件、處理／比較、結果與下一步均在圖中；離線詞彙與線上影像兩種表示有不同來源，區域與詞彙比較後出框；手機只保留必要標註，正文補文字引導路徑。",
+      "身份、方向與示意界線已核對；不把示意當模型性能。",
+      "手機改縱向大主體；小圖例和縱向長度仍是閱讀成本。",
+      "三至四大節點及單一淡黃結論；主體先於補充文字。"
+    ]
+  },
+  {
+    "id": "dino-failure",
+    "mode": "desktop",
+    "image": "dino-failure-r02-desktop.png",
+    "size": [
+      1672,
+      941
+    ],
+    "sha256": "543c0ec17d6d681c209b8f4ff84ac989941041dbcdb05a31f8a1f29ed2f89534",
+    "rubric": "v1.0",
+    "scores": [
+      23,
+      23,
+      19,
+      18,
+      9
+    ],
+    "total": 92,
+    "completion": [
+      8,
+      9,
+      9,
+      8,
+      9
+    ],
+    "observations": "同一螺栓與墊圈，夾具實際遮住後者；手機最後改物件清單，未冒稱模型會刪除原圖物件。",
+    "deductions": "示意不提供現場性能證据；局部放大／表示有意簡化，詳細設定由正文補足。原生可讀性不是實頁通過。",
+    "scope": "原生PNG與1440px桌機／360px手機實頁；共用圖按相同hash引用，各課放置另驗",
+    "page_review": "self-reviewed",
+    "user_review": "pending",
+    "screenshot": "pages/det-dino-detector/docs-1440-main-2.png",
+    "completion_evidence": [
+      "案例／線索具可辨識形狀、留白與對比；原生幾何較簡筆。",
+      "物件、處理／比較、結果與下一步均在圖中；同一螺栓與墊圈，夾具實際遮住後者；手機最後改物件清單，未冒稱模型會刪除原圖物件。",
+      "身份、方向與示意界線已核對；不把示意當模型性能。",
+      "手機改縱向大主體；小圖例和縱向長度仍是閱讀成本。",
+      "三至四大節點及單一淡黃結論；主體先於補充文字。"
+    ]
+  },
+  {
+    "id": "dino-failure",
+    "mode": "mobile",
+    "image": "dino-failure-r04-mobile.png",
+    "size": [
+      1024,
+      1536
+    ],
+    "sha256": "8958052f9df4d741a7d71afd21ef424fbf5d45f3ef424974fc7dbe6b0a518913",
+    "rubric": "v1.0",
+    "scores": [
+      23,
+      23,
+      19,
+      18,
+      9
+    ],
+    "total": 92,
+    "completion": [
+      8,
+      9,
+      9,
+      8,
+      9
+    ],
+    "observations": "同一螺栓與墊圈，夾具實際遮住後者；手機最後改物件清單，未冒稱模型會刪除原圖物件。",
+    "deductions": "示意不提供現場性能證据；局部放大／表示有意簡化，詳細設定由正文補足。原生可讀性不是實頁通過。",
+    "scope": "原生PNG與1440px桌機／360px手機實頁；共用圖按相同hash引用，各課放置另驗",
+    "page_review": "self-reviewed",
+    "user_review": "pending",
+    "screenshot": "pages/det-dino-detector/docs-360-main-2.png",
+    "completion_evidence": [
+      "案例／線索具可辨識形狀、留白與對比；原生幾何較簡筆。",
+      "物件、處理／比較、結果與下一步均在圖中；同一螺栓與墊圈，夾具實際遮住後者；手機最後改物件清單，未冒稱模型會刪除原圖物件。",
+      "身份、方向與示意界線已核對；不把示意當模型性能。",
+      "手機改縱向大主體；小圖例和縱向長度仍是閱讀成本。",
+      "三至四大節點及單一淡黃結論；主體先於補充文字。"
+    ]
+  },
+  {
+    "id": "world-failure",
+    "mode": "desktop",
+    "image": "world-failure-r03-desktop.png",
+    "size": [
+      1672,
+      941
+    ],
+    "sha256": "cf7e236d51dfe4bb0e3a8ec6920346136d288bfd19ce4669edc4cec37c5b3b11",
+    "rubric": "v1.0",
+    "scores": [
+      23,
+      23,
+      19,
+      19,
+      9
+    ],
+    "total": 93,
+    "completion": [
+      8,
+      9,
+      9,
+      8,
+      9
+    ],
+    "observations": "同一螺栓頭部裂紋與低解析局部相比，改善原始取像另核對；觀測限制示意，非模型結果。",
+    "deductions": "示意不提供現場性能證据；局部放大／表示有意簡化，詳細設定由正文補足。原生可讀性不是實頁通過。",
+    "scope": "原生PNG與1440px桌機／360px手機實頁；共用圖按相同hash引用，各課放置另驗",
+    "page_review": "self-reviewed",
+    "user_review": "pending",
+    "screenshot": "pages/yolo-world/docs-1440-main-2.png",
+    "completion_evidence": [
+      "案例／線索具可辨識形狀、留白與對比；原生幾何較簡筆。",
+      "物件、處理／比較、結果與下一步均在圖中；同一螺栓頭部裂紋與低解析局部相比，改善原始取像另核對；觀測限制示意，非模型結果。",
+      "身份、方向與示意界線已核對；不把示意當模型性能。",
+      "手機改縱向大主體；小圖例和縱向長度仍是閱讀成本。",
+      "三至四大節點及單一淡黃結論；主體先於補充文字。"
+    ]
+  },
+  {
+    "id": "world-failure",
+    "mode": "mobile",
+    "image": "world-failure-r03-mobile.png",
+    "size": [
+      1024,
+      1536
+    ],
+    "sha256": "89ab0e8455fafd29cdf547d71b2eecb740306cceb2efa1fc94d9e6bca96600fb",
+    "rubric": "v1.0",
+    "scores": [
+      23,
+      23,
+      19,
+      19,
+      9
+    ],
+    "total": 93,
+    "completion": [
+      8,
+      9,
+      9,
+      8,
+      9
+    ],
+    "observations": "同一螺栓頭部裂紋與低解析局部相比，改善原始取像另核對；觀測限制示意，非模型結果。",
+    "deductions": "示意不提供現場性能證据；局部放大／表示有意簡化，詳細設定由正文補足。原生可讀性不是實頁通過。",
+    "scope": "原生PNG與1440px桌機／360px手機實頁；共用圖按相同hash引用，各課放置另驗",
+    "page_review": "self-reviewed",
+    "user_review": "pending",
+    "screenshot": "pages/yolo-world/docs-360-main-2.png",
+    "completion_evidence": [
+      "案例／線索具可辨識形狀、留白與對比；原生幾何較簡筆。",
+      "物件、處理／比較、結果與下一步均在圖中；同一螺栓頭部裂紋與低解析局部相比，改善原始取像另核對；觀測限制示意，非模型結果。",
+      "身份、方向與示意界線已核對；不把示意當模型性能。",
+      "手機改縱向大主體；小圖例和縱向長度仍是閱讀成本。",
+      "三至四大節點及單一淡黃結論；主體先於補充文字。"
+    ]
+  },
+  {
+    "id": "detector-compare",
+    "mode": "desktop",
+    "image": "detector-compare-r01-desktop.png",
+    "size": [
+      1672,
+      941
+    ],
+    "sha256": "3578ba3370635cf640fe13c4677d024ffc18065a0ac4413787c50904b14e7ea3",
+    "rubric": "v1.0",
+    "scores": [
+      23,
+      23,
+      19,
+      18,
+      9
+    ],
+    "total": 92,
+    "completion": [
+      8,
+      9,
+      9,
+      8,
+      9
+    ],
+    "observations": "DINO標註類別訓練與YOLO-World預訓練詞彙路線並列，以同資料核對漏檢／錯類／時間。",
+    "deductions": "示意不提供現場性能證据；局部放大／表示有意簡化，詳細設定由正文補足。原生可讀性不是實頁通過。",
+    "scope": "原生PNG與1440px桌機／360px手機實頁；共用圖按相同hash引用，各課放置另驗",
+    "page_review": "self-reviewed",
+    "user_review": "pending",
+    "screenshot": "pages/det-dino-detector/docs-1440-main-3.png",
+    "completion_evidence": [
+      "案例／線索具可辨識形狀、留白與對比；原生幾何較簡筆。",
+      "物件、處理／比較、結果與下一步均在圖中；DINO標註類別訓練與YOLO-World預訓練詞彙路線並列，以同資料核對漏檢／錯類／時間。",
+      "身份、方向與示意界線已核對；不把示意當模型性能。",
+      "手機改縱向大主體；小圖例和縱向長度仍是閱讀成本。",
+      "三至四大節點及單一淡黃結論；主體先於補充文字。"
+    ]
+  },
+  {
+    "id": "detector-compare",
+    "mode": "mobile",
+    "image": "detector-compare-r02-mobile.png",
+    "size": [
+      1024,
+      1536
+    ],
+    "sha256": "7519591799fa36ae21d4640d66efb1af292685d71985e8d784640fd318aa37e6",
+    "rubric": "v1.0",
+    "scores": [
+      23,
+      23,
+      19,
+      18,
+      9
+    ],
+    "total": 92,
+    "completion": [
+      8,
+      9,
+      9,
+      8,
+      9
+    ],
+    "observations": "DINO標註類別訓練與YOLO-World預訓練詞彙路線並列，以同資料核對漏檢／錯類／時間。",
+    "deductions": "示意不提供現場性能證据；局部放大／表示有意簡化，詳細設定由正文補足。原生可讀性不是實頁通過。",
+    "scope": "原生PNG與1440px桌機／360px手機實頁；共用圖按相同hash引用，各課放置另驗",
+    "page_review": "self-reviewed",
+    "user_review": "pending",
+    "screenshot": "pages/det-dino-detector/docs-360-main-3.png",
+    "completion_evidence": [
+      "案例／線索具可辨識形狀、留白與對比；原生幾何較簡筆。",
+      "物件、處理／比較、結果與下一步均在圖中；DINO標註類別訓練與YOLO-World預訓練詞彙路線並列，以同資料核對漏檢／錯類／時間。",
+      "身份、方向與示意界線已核對；不把示意當模型性能。",
+      "手機改縱向大主體；小圖例和縱向長度仍是閱讀成本。",
+      "三至四大節點及單一淡黃結論；主體先於補充文字。"
+    ]
+  },
+  {
+    "id": "charuco-failure",
+    "mode": "desktop",
+    "image": "charuco-failure-native-r05-desktop.png",
+    "size": [
+      1672,
+      941
+    ],
+    "sha256": "5155d66bf96ce9ff6bc097827b458924c18906490483a539170527da965eb03b",
+    "rubric": "v1.0",
+    "scores": [
+      22,
+      23,
+      19,
+      18,
+      10
+    ],
+    "total": 92,
+    "completion": [
+      8,
+      9,
+      9,
+      8,
+      9
+    ],
+    "observations": "同板五視角中心集中與廣泛覆蓋不同，獨立邊角觀測／重投影核對；r03標題間距已修。",
+    "deductions": "示意不提供現場性能證据；局部放大／表示有意簡化，詳細設定由正文補足。原生可讀性不是實頁通過。",
+    "scope": "原生PNG與1440px桌機／360px手機實頁；共用圖按相同hash引用，各課放置另驗",
+    "page_review": "self-reviewed",
+    "user_review": "pending",
+    "screenshot": "pages/charuco/docs-1440-main-2.png",
+    "completion_evidence": [
+      "案例／線索具可辨識形狀、留白與對比；原生幾何較簡筆。",
+      "物件、處理／比較、結果與下一步均在圖中；同板五視角中心集中與廣泛覆蓋不同，獨立邊角觀測／重投影核對；r03標題間距已修。",
+      "身份、方向與示意界線已核對；不把示意當模型性能。",
+      "手機改縱向大主體；小圖例和縱向長度仍是閱讀成本。",
+      "三至四大節點及單一淡黃結論；主體先於補充文字。"
+    ]
+  },
+  {
+    "id": "charuco-failure",
+    "mode": "mobile",
+    "image": "charuco-failure-native-r05-mobile.png",
+    "size": [
+      768,
+      3050
+    ],
+    "sha256": "1f8f10df6aed95c5974764b173f4c50184c63d984392c7c4246107ef37021f71",
+    "rubric": "v1.0",
+    "scores": [
+      22,
+      23,
+      19,
+      18,
+      10
+    ],
+    "total": 92,
+    "completion": [
+      8,
+      9,
+      9,
+      8,
+      9
+    ],
+    "observations": "同板五視角中心集中與廣泛覆蓋不同，獨立邊角觀測／重投影核對；r03標題間距已修。",
+    "deductions": "示意不提供現場性能證据；局部放大／表示有意簡化，詳細設定由正文補足。原生可讀性不是實頁通過。",
+    "scope": "原生PNG與1440px桌機／360px手機實頁；共用圖按相同hash引用，各課放置另驗",
+    "page_review": "self-reviewed",
+    "user_review": "pending",
+    "screenshot": "pages/charuco/docs-360-main-2.png",
+    "completion_evidence": [
+      "案例／線索具可辨識形狀、留白與對比；原生幾何較簡筆。",
+      "物件、處理／比較、結果與下一步均在圖中；同板五視角中心集中與廣泛覆蓋不同，獨立邊角觀測／重投影核對；r03標題間距已修。",
+      "身份、方向與示意界線已核對；不把示意當模型性能。",
+      "手機改縱向大主體；小圖例和縱向長度仍是閱讀成本。",
+      "三至四大節點及單一淡黃結論；主體先於補充文字。"
+    ]
+  },
+  {
+    "id": "ecc-failure",
+    "mode": "desktop",
+    "image": "ecc-failure-native-r05-desktop.png",
+    "size": [
+      1672,
+      941
+    ],
+    "sha256": "36f9ab8cb729cc2a8dbb2cdfe7df3f7ae07a92edf9dec824d00ba870261ad3c3",
+    "rubric": "v1.0",
+    "scores": [
+      22,
+      23,
+      19,
+      18,
+      10
+    ],
+    "total": 92,
+    "completion": [
+      8,
+      9,
+      9,
+      8,
+      9
+    ],
+    "observations": "精確平面兩孔件示意，整件橘線平移與孔距一致；單孔錯對時外框不合，明示錯解非實測。",
+    "deductions": "示意不提供現場性能證据；局部放大／表示有意簡化，詳細設定由正文補足。原生可讀性不是實頁通過。",
+    "scope": "原生PNG與1440px桌機／360px手機實頁；共用圖按相同hash引用，各課放置另驗",
+    "page_review": "self-reviewed",
+    "user_review": "pending",
+    "screenshot": "pages/ecc/docs-1440-main-2.png",
+    "completion_evidence": [
+      "案例／線索具可辨識形狀、留白與對比；原生幾何較簡筆。",
+      "物件、處理／比較、結果與下一步均在圖中；精確平面兩孔件示意，整件橘線平移與孔距一致；單孔錯對時外框不合，明示錯解非實測。",
+      "身份、方向與示意界線已核對；不把示意當模型性能。",
+      "手機改縱向大主體；小圖例和縱向長度仍是閱讀成本。",
+      "三至四大節點及單一淡黃結論；主體先於補充文字。"
+    ]
+  },
+  {
+    "id": "ecc-failure",
+    "mode": "mobile",
+    "image": "ecc-failure-native-r05-mobile.png",
+    "size": [
+      768,
+      3050
+    ],
+    "sha256": "335562deda970a4d6c8cb239eb951fa0a8b1776d33c0bb5ef61a09ff6abd5d24",
+    "rubric": "v1.0",
+    "scores": [
+      22,
+      23,
+      19,
+      18,
+      10
+    ],
+    "total": 92,
+    "completion": [
+      8,
+      9,
+      9,
+      8,
+      9
+    ],
+    "observations": "精確平面兩孔件示意，整件橘線平移與孔距一致；單孔錯對時外框不合，明示錯解非實測。",
+    "deductions": "示意不提供現場性能證据；局部放大／表示有意簡化，詳細設定由正文補足。原生可讀性不是實頁通過。",
+    "scope": "原生PNG與1440px桌機／360px手機實頁；共用圖按相同hash引用，各課放置另驗",
+    "page_review": "self-reviewed",
+    "user_review": "pending",
+    "screenshot": "pages/ecc/docs-360-main-2.png",
+    "completion_evidence": [
+      "案例／線索具可辨識形狀、留白與對比；原生幾何較簡筆。",
+      "物件、處理／比較、結果與下一步均在圖中；精確平面兩孔件示意，整件橘線平移與孔距一致；單孔錯對時外框不合，明示錯解非實測。",
+      "身份、方向與示意界線已核對；不把示意當模型性能。",
+      "手機改縱向大主體；小圖例和縱向長度仍是閱讀成本。",
+      "三至四大節點及單一淡黃結論；主體先於補充文字。"
+    ]
+  },
+  {
+    "id": "sift-core",
+    "mode": "desktop",
+    "image": "sift-core-native-r05-desktop.png",
+    "size": [
+      1672,
+      941
+    ],
+    "sha256": "1712a061122299d59f47ede3dd83aa643f8900b16410e880c0d5144c11a43ccd",
+    "rubric": "v1.0",
+    "scores": [
+      22,
+      23,
+      19,
+      18,
+      10
+    ],
+    "total": 92,
+    "completion": [
+      8,
+      9,
+      9,
+      8,
+      9
+    ],
+    "observations": "同點A變尺度方向，局部梯度到描述再到代表點對；模型几何另接，不把三條線宣稱足夠求單應。",
+    "deductions": "示意不提供現場性能證据；局部放大／表示有意簡化，詳細設定由正文補足。原生可讀性不是實頁通過。",
+    "scope": "原生PNG與1440px桌機／360px手機實頁；共用圖按相同hash引用，各課放置另驗",
+    "page_review": "self-reviewed",
+    "user_review": "pending",
+    "screenshot": "pages/sift/docs-1440-main-1.png",
+    "completion_evidence": [
+      "案例／線索具可辨識形狀、留白與對比；原生幾何較簡筆。",
+      "物件、處理／比較、結果與下一步均在圖中；同點A變尺度方向，局部梯度到描述再到代表點對；模型几何另接，不把三條線宣稱足夠求單應。",
+      "身份、方向與示意界線已核對；不把示意當模型性能。",
+      "手機改縱向大主體；小圖例和縱向長度仍是閱讀成本。",
+      "三至四大節點及單一淡黃結論；主體先於補充文字。"
+    ]
+  },
+  {
+    "id": "sift-core",
+    "mode": "mobile",
+    "image": "sift-core-native-r05-mobile.png",
+    "size": [
+      768,
+      3050
+    ],
+    "sha256": "f3820d2c6aa950b0d81446b4d4a1ca1b28ba4e8b1df729350a0a5c8a9f7ead02",
+    "rubric": "v1.0",
+    "scores": [
+      22,
+      23,
+      19,
+      18,
+      10
+    ],
+    "total": 92,
+    "completion": [
+      8,
+      9,
+      9,
+      8,
+      9
+    ],
+    "observations": "同點A變尺度方向，局部梯度到描述再到代表點對；模型几何另接，不把三條線宣稱足夠求單應。",
+    "deductions": "示意不提供現場性能證据；局部放大／表示有意簡化，詳細設定由正文補足。原生可讀性不是實頁通過。",
+    "scope": "原生PNG與1440px桌機／360px手機實頁；共用圖按相同hash引用，各課放置另驗",
+    "page_review": "self-reviewed",
+    "user_review": "pending",
+    "screenshot": "pages/sift/docs-360-main-1.png",
+    "completion_evidence": [
+      "案例／線索具可辨識形狀、留白與對比；原生幾何較簡筆。",
+      "物件、處理／比較、結果與下一步均在圖中；同點A變尺度方向，局部梯度到描述再到代表點對；模型几何另接，不把三條線宣稱足夠求單應。",
+      "身份、方向與示意界線已核對；不把示意當模型性能。",
+      "手機改縱向大主體；小圖例和縱向長度仍是閱讀成本。",
+      "三至四大節點及單一淡黃結論；主體先於補充文字。"
+    ]
+  },
+  {
+    "id": "sift-failure",
+    "mode": "desktop",
+    "image": "sift-failure-native-r05-desktop.png",
+    "size": [
+      1672,
+      941
+    ],
+    "sha256": "92c20ce75e699972e436cc2e6d34703af077fc94040771e46d0479ff3097611c",
+    "rubric": "v1.0",
+    "scores": [
+      22,
+      23,
+      19,
+      18,
+      10
+    ],
+    "total": 92,
+    "completion": [
+      8,
+      9,
+      9,
+      8,
+      9
+    ],
+    "observations": "同一圖形只改模糊，梯度線索示意變弱；沒有用任意直方圖冒稱實際SIFT輸出。",
+    "deductions": "示意不提供現場性能證据；局部放大／表示有意簡化，詳細設定由正文補足。原生可讀性不是實頁通過。",
+    "scope": "原生PNG與1440px桌機／360px手機實頁；共用圖按相同hash引用，各課放置另驗",
+    "page_review": "self-reviewed",
+    "user_review": "pending",
+    "screenshot": "pages/sift/docs-1440-main-2.png",
+    "completion_evidence": [
+      "案例／線索具可辨識形狀、留白與對比；原生幾何較簡筆。",
+      "物件、處理／比較、結果與下一步均在圖中；同一圖形只改模糊，梯度線索示意變弱；沒有用任意直方圖冒稱實際SIFT輸出。",
+      "身份、方向與示意界線已核對；不把示意當模型性能。",
+      "手機改縱向大主體；小圖例和縱向長度仍是閱讀成本。",
+      "三至四大節點及單一淡黃結論；主體先於補充文字。"
+    ]
+  },
+  {
+    "id": "sift-failure",
+    "mode": "mobile",
+    "image": "sift-failure-native-r05-mobile.png",
+    "size": [
+      768,
+      3050
+    ],
+    "sha256": "8757ed745e12ccb2c6f20c962c27f4bdd969733c94bec0c6b6c87e8b417adca0",
+    "rubric": "v1.0",
+    "scores": [
+      22,
+      23,
+      19,
+      18,
+      10
+    ],
+    "total": 92,
+    "completion": [
+      8,
+      9,
+      9,
+      8,
+      9
+    ],
+    "observations": "同一圖形只改模糊，梯度線索示意變弱；沒有用任意直方圖冒稱實際SIFT輸出。",
+    "deductions": "示意不提供現場性能證据；局部放大／表示有意簡化，詳細設定由正文補足。原生可讀性不是實頁通過。",
+    "scope": "原生PNG與1440px桌機／360px手機實頁；共用圖按相同hash引用，各課放置另驗",
+    "page_review": "self-reviewed",
+    "user_review": "pending",
+    "screenshot": "pages/sift/docs-360-main-2.png",
+    "completion_evidence": [
+      "案例／線索具可辨識形狀、留白與對比；原生幾何較簡筆。",
+      "物件、處理／比較、結果與下一步均在圖中；同一圖形只改模糊，梯度線索示意變弱；沒有用任意直方圖冒稱實際SIFT輸出。",
+      "身份、方向與示意界線已核對；不把示意當模型性能。",
+      "手機改縱向大主體；小圖例和縱向長度仍是閱讀成本。",
+      "三至四大節點及單一淡黃結論；主體先於補充文字。"
+    ]
+  },
+  {
+    "id": "lightglue-core",
+    "mode": "desktop",
+    "image": "lightglue-core-native-r05-desktop.png",
+    "size": [
+      1672,
+      941
+    ],
+    "sha256": "904d0708c634300227d0136dcc3a1e6d8da799690550425f352a8d709e2dc43d",
+    "rubric": "v1.0",
+    "scores": [
+      22,
+      23,
+      19,
+      18,
+      10
+    ],
+    "total": 92,
+    "completion": [
+      8,
+      9,
+      9,
+      8,
+      9
+    ],
+    "observations": "兩個視角A/B/C同身份，含糊虛線到明確點對；上游extractor與後端幾何分工清楚。",
+    "deductions": "示意不提供現場性能證据；局部放大／表示有意簡化，詳細設定由正文補足。原生可讀性不是實頁通過。",
+    "scope": "原生PNG與1440px桌機／360px手機實頁；共用圖按相同hash引用，各課放置另驗",
+    "page_review": "self-reviewed",
+    "user_review": "pending",
+    "screenshot": "pages/lightglue/docs-1440-main-1.png",
+    "completion_evidence": [
+      "案例／線索具可辨識形狀、留白與對比；原生幾何較簡筆。",
+      "物件、處理／比較、結果與下一步均在圖中；兩個視角A/B/C同身份，含糊虛線到明確點對；上游extractor與後端幾何分工清楚。",
+      "身份、方向與示意界線已核對；不把示意當模型性能。",
+      "手機改縱向大主體；小圖例和縱向長度仍是閱讀成本。",
+      "三至四大節點及單一淡黃結論；主體先於補充文字。"
+    ]
+  },
+  {
+    "id": "lightglue-core",
+    "mode": "mobile",
+    "image": "lightglue-core-native-r05-mobile.png",
+    "size": [
+      768,
+      3050
+    ],
+    "sha256": "5135b1b5c433c674ff68807e83a948d0e707ea4b26fa61d6de59b81656e9d920",
+    "rubric": "v1.0",
+    "scores": [
+      22,
+      23,
+      19,
+      18,
+      10
+    ],
+    "total": 92,
+    "completion": [
+      8,
+      9,
+      9,
+      8,
+      9
+    ],
+    "observations": "兩個視角A/B/C同身份，含糊虛線到明確點對；上游extractor與後端幾何分工清楚。",
+    "deductions": "示意不提供現場性能證据；局部放大／表示有意簡化，詳細設定由正文補足。原生可讀性不是實頁通過。",
+    "scope": "原生PNG與1440px桌機／360px手機實頁；共用圖按相同hash引用，各課放置另驗",
+    "page_review": "self-reviewed",
+    "user_review": "pending",
+    "screenshot": "pages/lightglue/docs-360-main-1.png",
+    "completion_evidence": [
+      "案例／線索具可辨識形狀、留白與對比；原生幾何較簡筆。",
+      "物件、處理／比較、結果與下一步均在圖中；兩個視角A/B/C同身份，含糊虛線到明確點對；上游extractor與後端幾何分工清楚。",
+      "身份、方向與示意界線已核對；不把示意當模型性能。",
+      "手機改縱向大主體；小圖例和縱向長度仍是閱讀成本。",
+      "三至四大節點及單一淡黃結論；主體先於補充文字。"
+    ]
+  },
+  {
+    "id": "lightglue-failure",
+    "mode": "desktop",
+    "image": "lightglue-failure-native-r05-desktop.png",
+    "size": [
+      1672,
+      941
+    ],
+    "sha256": "ce01796293c9442ab1a4d82b87a348e5922c4efdcd6e9d5fa2dbb4e9199a04b6",
+    "rubric": "v1.0",
+    "scores": [
+      22,
+      23,
+      19,
+      18,
+      10
+    ],
+    "total": 92,
+    "completion": [
+      8,
+      9,
+      9,
+      8,
+      9
+    ],
+    "observations": "只遮住獨特缺口，孔位不移動；不可觀測A與含糊B/C明示，不假造正確線或信心。",
+    "deductions": "示意不提供現場性能證据；局部放大／表示有意簡化，詳細設定由正文補足。原生可讀性不是實頁通過。",
+    "scope": "原生PNG與1440px桌機／360px手機實頁；共用圖按相同hash引用，各課放置另驗",
+    "page_review": "self-reviewed",
+    "user_review": "pending",
+    "screenshot": "pages/lightglue/docs-1440-main-2.png",
+    "completion_evidence": [
+      "案例／線索具可辨識形狀、留白與對比；原生幾何較簡筆。",
+      "物件、處理／比較、結果與下一步均在圖中；只遮住獨特缺口，孔位不移動；不可觀測A與含糊B/C明示，不假造正確線或信心。",
+      "身份、方向與示意界線已核對；不把示意當模型性能。",
+      "手機改縱向大主體；小圖例和縱向長度仍是閱讀成本。",
+      "三至四大節點及單一淡黃結論；主體先於補充文字。"
+    ]
+  },
+  {
+    "id": "lightglue-failure",
+    "mode": "mobile",
+    "image": "lightglue-failure-native-r05-mobile.png",
+    "size": [
+      768,
+      3050
+    ],
+    "sha256": "fb6f94bfb0c84ce4f8e1cc89e51213a1bda111d46ed7fd887fc8bcc80bf652c5",
+    "rubric": "v1.0",
+    "scores": [
+      22,
+      23,
+      19,
+      18,
+      10
+    ],
+    "total": 92,
+    "completion": [
+      8,
+      9,
+      9,
+      8,
+      9
+    ],
+    "observations": "只遮住獨特缺口，孔位不移動；不可觀測A與含糊B/C明示，不假造正確線或信心。",
+    "deductions": "示意不提供現場性能證据；局部放大／表示有意簡化，詳細設定由正文補足。原生可讀性不是實頁通過。",
+    "scope": "原生PNG與1440px桌機／360px手機實頁；共用圖按相同hash引用，各課放置另驗",
+    "page_review": "self-reviewed",
+    "user_review": "pending",
+    "screenshot": "pages/lightglue/docs-360-main-2.png",
+    "completion_evidence": [
+      "案例／線索具可辨識形狀、留白與對比；原生幾何較簡筆。",
+      "物件、處理／比較、結果與下一步均在圖中；只遮住獨特缺口，孔位不移動；不可觀測A與含糊B/C明示，不假造正確線或信心。",
+      "身份、方向與示意界線已核對；不把示意當模型性能。",
+      "手機改縱向大主體；小圖例和縱向長度仍是閱讀成本。",
+      "三至四大節點及單一淡黃結論；主體先於補充文字。"
+    ]
+  },
+  {
+    "id": "geometry-compare",
+    "mode": "desktop",
+    "image": "geometry-compare-native-r05-desktop.png",
+    "size": [
+      1672,
+      941
+    ],
+    "sha256": "0b132dd65ec7c19f69d865093c3ea413d07035599e329102460d486c8ccb3eb3",
+    "rubric": "v1.0",
+    "scores": [
+      22,
+      23,
+      19,
+      18,
+      10
+    ],
+    "total": 92,
+    "completion": [
+      8,
+      9,
+      9,
+      8,
+      9
+    ],
+    "observations": "已知板建立相機幾何、局部描述／學習上下文找點對、ECC外觀微調分開；不以不同行為分數排名。",
+    "deductions": "示意不提供現場性能證据；局部放大／表示有意簡化，詳細設定由正文補足。原生可讀性不是實頁通過。",
+    "scope": "原生PNG與1440px桌機／360px手機實頁；共用圖按相同hash引用，各課放置另驗",
+    "page_review": "self-reviewed",
+    "user_review": "pending",
+    "screenshot": "pages/charuco/docs-1440-main-3.png",
+    "completion_evidence": [
+      "案例／線索具可辨識形狀、留白與對比；原生幾何較簡筆。",
+      "物件、處理／比較、結果與下一步均在圖中；已知板建立相機幾何、局部描述／學習上下文找點對、ECC外觀微調分開；不以不同行為分數排名。",
+      "身份、方向與示意界線已核對；不把示意當模型性能。",
+      "手機改縱向大主體；小圖例和縱向長度仍是閱讀成本。",
+      "三至四大節點及單一淡黃結論；主體先於補充文字。"
+    ]
+  },
+  {
+    "id": "geometry-compare",
+    "mode": "mobile",
+    "image": "geometry-compare-native-r05-mobile.png",
+    "size": [
+      768,
+      3050
+    ],
+    "sha256": "a544bd14044783a58188eaebadf51d6495355cd7646b40ffb07fd8b39eeba2be",
+    "rubric": "v1.0",
+    "scores": [
+      22,
+      23,
+      19,
+      18,
+      10
+    ],
+    "total": 92,
+    "completion": [
+      8,
+      9,
+      9,
+      8,
+      9
+    ],
+    "observations": "已知板建立相機幾何、局部描述／學習上下文找點對、ECC外觀微調分開；不以不同行為分數排名。",
+    "deductions": "示意不提供現場性能證据；局部放大／表示有意簡化，詳細設定由正文補足。原生可讀性不是實頁通過。",
+    "scope": "原生PNG與1440px桌機／360px手機實頁；共用圖按相同hash引用，各課放置另驗",
+    "page_review": "self-reviewed",
+    "user_review": "pending",
+    "screenshot": "pages/charuco/docs-360-main-3.png",
+    "completion_evidence": [
+      "案例／線索具可辨識形狀、留白與對比；原生幾何較簡筆。",
+      "物件、處理／比較、結果與下一步均在圖中；已知板建立相機幾何、局部描述／學習上下文找點對、ECC外觀微調分開；不以不同行為分數排名。",
+      "身份、方向與示意界線已核對；不把示意當模型性能。",
+      "手機改縱向大主體；小圖例和縱向長度仍是閱讀成本。",
+      "三至四大節點及單一淡黃結論；主體先於補充文字。"
+    ]
+  },
+  {
+    "id": "charuco-engineering-1",
+    "mode": "desktop",
+    "image": "roadmap-model-selection/geometry-alignment-measurement/charuco/images/final/WI032-CHARUCO-01-r04-desktop.png",
+    "size": [
+      1672,
+      941
+    ],
+    "sha256": "ba918f945402ee32243a406c2d1a43043aecd73b49d486e05f5549f6fd41901d",
+    "generation": "new SVG rendered by browser",
+    "evidence": "illustrative, not model inference",
+    "actual_page_review": "self-reviewed",
+    "user_review": "pending",
+    "rubric": "v1.0",
+    "scores": [
+      23,
+      23,
+      19,
+      18,
+      10
+    ],
+    "total": 93,
+    "observations": "同一已知棋盤A跨視角，再連板上點與影像點；圖內交代內參／畸變交付。",
+    "deductions": "板角點、姿態覆蓋、投影輸出可追蹤；保留精簡示意，不呈現數值求解。",
+    "screenshot": "pages/charuco/docs-1440-engineering-1.png",
+    "scope": "圖片像素及圖內標籤；正文不作圖片加分",
+    "criteria_evidence": {
+      "case": "同一已知棋盤A跨視角，再連板上點與影像點；圖內交代內參／畸變交付。",
+      "meaning": "板角點、姿態覆蓋、投影輸出可追蹤；保留精簡示意，不呈現數值求解。",
+      "action": "建立的是相機幾何，不是每天工件的定位結果。",
+      "reading": "三個主要節點，各有獨立圖形及兩行判讀；桌機橫讀、手机縱讀。次要英文／圖例較小，故不給滿分。",
+      "consistency": "依此圖同件、配色、箭頭與角色核對；板角點、姿態覆蓋、投影輸出可追蹤；保留精簡示意，不呈現數值求解。"
+    },
+    "completion": [
+      8,
+      9,
+      9,
+      8,
+      9
+    ],
+    "completion_evidence": [
+      "留白、框距與藍灰配色穩定；原生工程圖造型較簡筆，8分。",
+      "三個節點及結論完整；建立的是相機幾何，不是每天工件的定位結果。",
+      "箭頭、角色與示意界線已核對；同一已知棋盤A跨視角，再連板上點與影像點；圖內交代內參／畸變交付。",
+      "必要標籤可讀，手機仍需縱向捲動；次要說明稍密，8分。",
+      "主標題、節點、圖形到單一淡黃結論依序；未放第二個搶焦點的總結。"
+    ]
+  },
+  {
+    "id": "charuco-engineering-1",
+    "mode": "mobile",
+    "image": "roadmap-model-selection/geometry-alignment-measurement/charuco/images/final/WI032-CHARUCO-01-r04-mobile.png",
+    "size": [
+      768,
+      2770
+    ],
+    "sha256": "25f6d0bd26cc4864abd47bfc870379d644b216bbbb0aa05bff72bec06a85c062",
+    "generation": "new SVG rendered by browser",
+    "evidence": "illustrative, not model inference",
+    "actual_page_review": "self-reviewed",
+    "user_review": "pending",
+    "rubric": "v1.0",
+    "scores": [
+      23,
+      23,
+      19,
+      18,
+      10
+    ],
+    "total": 93,
+    "observations": "同一已知棋盤A跨視角，再連板上點與影像點；圖內交代內參／畸變交付。",
+    "deductions": "板角點、姿態覆蓋、投影輸出可追蹤；保留精簡示意，不呈現數值求解。",
+    "screenshot": "pages/charuco/docs-360-engineering-1.png",
+    "scope": "圖片像素及圖內標籤；正文不作圖片加分",
+    "criteria_evidence": {
+      "case": "同一已知棋盤A跨視角，再連板上點與影像點；圖內交代內參／畸變交付。",
+      "meaning": "板角點、姿態覆蓋、投影輸出可追蹤；保留精簡示意，不呈現數值求解。",
+      "action": "建立的是相機幾何，不是每天工件的定位結果。",
+      "reading": "三個主要節點，各有獨立圖形及兩行判讀；桌機橫讀、手机縱讀。次要英文／圖例較小，故不給滿分。",
+      "consistency": "依此圖同件、配色、箭頭與角色核對；板角點、姿態覆蓋、投影輸出可追蹤；保留精簡示意，不呈現數值求解。"
+    },
+    "completion": [
+      8,
+      9,
+      9,
+      8,
+      9
+    ],
+    "completion_evidence": [
+      "留白、框距與藍灰配色穩定；原生工程圖造型較簡筆，8分。",
+      "三個節點及結論完整；建立的是相機幾何，不是每天工件的定位結果。",
+      "箭頭、角色與示意界線已核對；同一已知棋盤A跨視角，再連板上點與影像點；圖內交代內參／畸變交付。",
+      "必要標籤可讀，手機仍需縱向捲動；次要說明稍密，8分。",
+      "主標題、節點、圖形到單一淡黃結論依序；未放第二個搶焦點的總結。"
+    ]
+  },
+  {
+    "id": "charuco-engineering-2",
+    "mode": "desktop",
+    "image": "roadmap-model-selection/geometry-alignment-measurement/charuco/images/final/WI032-CHARUCO-02-r04-desktop.png",
+    "size": [
+      1672,
+      941
+    ],
+    "sha256": "1d195fd706ad59e7bf2d8f966242ebb05df6fbabc76c9147b3e8b1aa92bf929b",
+    "generation": "new SVG rendered by browser",
+    "evidence": "illustrative, not model inference",
+    "actual_page_review": "self-reviewed",
+    "user_review": "pending",
+    "rubric": "v1.0",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      10
+    ],
+    "total": 93,
+    "observations": "標記區框選、兩黑兩白交點放大、ID／板座標／影像座標三欄有不同責任。",
+    "deductions": "角點非標記中心可直接看出；座標表是結構示意，未給實際數值。",
+    "screenshot": "pages/charuco/docs-1440-engineering-2.png",
+    "scope": "圖片像素及圖內標籤；正文不作圖片加分",
+    "criteria_evidence": {
+      "case": "標記區框選、兩黑兩白交點放大、ID／板座標／影像座標三欄有不同責任。",
+      "meaning": "角點非標記中心可直接看出；座標表是結構示意，未給實際數值。",
+      "action": "ID解決身份，棋盤角點提供精細影像位置。",
+      "reading": "三個主要節點，各有獨立圖形及兩行判讀；桌機橫讀、手机縱讀。次要英文／圖例較小，故不給滿分。",
+      "consistency": "依此圖同件、配色、箭頭與角色核對；角點非標記中心可直接看出；座標表是結構示意，未給實際數值。"
+    },
+    "completion": [
+      8,
+      9,
+      9,
+      8,
+      9
+    ],
+    "completion_evidence": [
+      "留白、框距與藍灰配色穩定；原生工程圖造型較簡筆，8分。",
+      "三個節點及結論完整；ID解決身份，棋盤角點提供精細影像位置。",
+      "箭頭、角色與示意界線已核對；標記區框選、兩黑兩白交點放大、ID／板座標／影像座標三欄有不同責任。",
+      "必要標籤可讀，手機仍需縱向捲動；次要說明稍密，8分。",
+      "主標題、節點、圖形到單一淡黃結論依序；未放第二個搶焦點的總結。"
+    ]
+  },
+  {
+    "id": "charuco-engineering-2",
+    "mode": "mobile",
+    "image": "roadmap-model-selection/geometry-alignment-measurement/charuco/images/final/WI032-CHARUCO-02-r04-mobile.png",
+    "size": [
+      768,
+      2770
+    ],
+    "sha256": "dcaa444f2c2a9b32d16195c141b7516fe34f01d5b9956f9f22e2a5a3ff584c80",
+    "generation": "new SVG rendered by browser",
+    "evidence": "illustrative, not model inference",
+    "actual_page_review": "self-reviewed",
+    "user_review": "pending",
+    "rubric": "v1.0",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      10
+    ],
+    "total": 93,
+    "observations": "標記區框選、兩黑兩白交點放大、ID／板座標／影像座標三欄有不同責任。",
+    "deductions": "角點非標記中心可直接看出；座標表是結構示意，未給實際數值。",
+    "screenshot": "pages/charuco/docs-360-engineering-2.png",
+    "scope": "圖片像素及圖內標籤；正文不作圖片加分",
+    "criteria_evidence": {
+      "case": "標記區框選、兩黑兩白交點放大、ID／板座標／影像座標三欄有不同責任。",
+      "meaning": "角點非標記中心可直接看出；座標表是結構示意，未給實際數值。",
+      "action": "ID解決身份，棋盤角點提供精細影像位置。",
+      "reading": "三個主要節點，各有獨立圖形及兩行判讀；桌機橫讀、手机縱讀。次要英文／圖例較小，故不給滿分。",
+      "consistency": "依此圖同件、配色、箭頭與角色核對；角點非標記中心可直接看出；座標表是結構示意，未給實際數值。"
+    },
+    "completion": [
+      8,
+      9,
+      9,
+      8,
+      9
+    ],
+    "completion_evidence": [
+      "留白、框距與藍灰配色穩定；原生工程圖造型較簡筆，8分。",
+      "三個節點及結論完整；ID解決身份，棋盤角點提供精細影像位置。",
+      "箭頭、角色與示意界線已核對；標記區框選、兩黑兩白交點放大、ID／板座標／影像座標三欄有不同責任。",
+      "必要標籤可讀，手機仍需縱向捲動；次要說明稍密，8分。",
+      "主標題、節點、圖形到單一淡黃結論依序；未放第二個搶焦點的總結。"
+    ]
+  },
+  {
+    "id": "charuco-engineering-3",
+    "mode": "desktop",
+    "image": "roadmap-model-selection/geometry-alignment-measurement/charuco/images/final/WI032-CHARUCO-03-r04-desktop.png",
+    "size": [
+      1672,
+      941
+    ],
+    "sha256": "1c85f04d6fd19625c0d4d6224f0a6f67d41db73ec822410f74de30453e52cfb3",
+    "generation": "new SVG rendered by browser",
+    "evidence": "illustrative, not model inference",
+    "actual_page_review": "self-reviewed",
+    "user_review": "pending",
+    "rubric": "v1.0",
+    "scores": [
+      23,
+      24,
+      19,
+      18,
+      9
+    ],
+    "total": 93,
+    "observations": "同標靶從已知內參配對到R/t，再以橙實心／藍空心點看重投影偏差。",
+    "deductions": "物體到相機方向與相機y向下可核對；座標架為簡化圖，並非實際姿態估计。",
+    "screenshot": "pages/charuco/docs-1440-engineering-3.png",
+    "scope": "圖片像素及圖內標籤；正文不作圖片加分",
+    "criteria_evidence": {
+      "case": "同標靶從已知內參配對到R/t，再以橙實心／藍空心點看重投影偏差。",
+      "meaning": "物體到相機方向與相機y向下可核對；座標架為簡化圖，並非實際姿態估计。",
+      "action": "姿態、相機校正與工站轉換，是不同的交付。",
+      "reading": "三個主要節點，各有獨立圖形及兩行判讀；桌機橫讀、手机縱讀。次要英文／圖例較小，故不給滿分。",
+      "consistency": "依此圖同件、配色、箭頭與角色核對；物體到相機方向與相機y向下可核對；座標架為簡化圖，並非實際姿態估计。"
+    },
+    "completion": [
+      8,
+      9,
+      9,
+      8,
+      9
+    ],
+    "completion_evidence": [
+      "留白、框距與藍灰配色穩定；原生工程圖造型較簡筆，8分。",
+      "三個節點及結論完整；姿態、相機校正與工站轉換，是不同的交付。",
+      "箭頭、角色與示意界線已核對；同標靶從已知內參配對到R/t，再以橙實心／藍空心點看重投影偏差。",
+      "必要標籤可讀，手機仍需縱向捲動；次要說明稍密，8分。",
+      "主標題、節點、圖形到單一淡黃結論依序；未放第二個搶焦點的總結。"
+    ]
+  },
+  {
+    "id": "charuco-engineering-3",
+    "mode": "mobile",
+    "image": "roadmap-model-selection/geometry-alignment-measurement/charuco/images/final/WI032-CHARUCO-03-r04-mobile.png",
+    "size": [
+      768,
+      2770
+    ],
+    "sha256": "8f4e928c3b3b27ee8ce898781e144a953613181bdbd196e7b6c3597c13442385",
+    "generation": "new SVG rendered by browser",
+    "evidence": "illustrative, not model inference",
+    "actual_page_review": "self-reviewed",
+    "user_review": "pending",
+    "rubric": "v1.0",
+    "scores": [
+      23,
+      24,
+      19,
+      18,
+      9
+    ],
+    "total": 93,
+    "observations": "同標靶從已知內參配對到R/t，再以橙實心／藍空心點看重投影偏差。",
+    "deductions": "物體到相機方向與相機y向下可核對；座標架為簡化圖，並非實際姿態估计。",
+    "screenshot": "pages/charuco/docs-360-engineering-3.png",
+    "scope": "圖片像素及圖內標籤；正文不作圖片加分",
+    "criteria_evidence": {
+      "case": "同標靶從已知內參配對到R/t，再以橙實心／藍空心點看重投影偏差。",
+      "meaning": "物體到相機方向與相機y向下可核對；座標架為簡化圖，並非實際姿態估计。",
+      "action": "姿態、相機校正與工站轉換，是不同的交付。",
+      "reading": "三個主要節點，各有獨立圖形及兩行判讀；桌機橫讀、手机縱讀。次要英文／圖例較小，故不給滿分。",
+      "consistency": "依此圖同件、配色、箭頭與角色核對；物體到相機方向與相機y向下可核對；座標架為簡化圖，並非實際姿態估计。"
+    },
+    "completion": [
+      8,
+      9,
+      9,
+      8,
+      9
+    ],
+    "completion_evidence": [
+      "留白、框距與藍灰配色穩定；原生工程圖造型較簡筆，8分。",
+      "三個節點及結論完整；姿態、相機校正與工站轉換，是不同的交付。",
+      "箭頭、角色與示意界線已核對；同標靶從已知內參配對到R/t，再以橙實心／藍空心點看重投影偏差。",
+      "必要標籤可讀，手機仍需縱向捲動；次要說明稍密，8分。",
+      "主標題、節點、圖形到單一淡黃結論依序；未放第二個搶焦點的總結。"
+    ]
+  },
+  {
+    "id": "charuco-engineering-4",
+    "mode": "desktop",
+    "image": "roadmap-model-selection/geometry-alignment-measurement/charuco/images/final/WI032-CHARUCO-04-r04-desktop.png",
+    "size": [
+      1672,
+      941
+    ],
+    "sha256": "420ae0430b1f6c1d64de3c0a42d781bb28c5240f6162d6ebd9d767c9adfd641e",
+    "generation": "new SVG rendered by browser",
+    "evidence": "illustrative, not model inference",
+    "actual_page_review": "self-reviewed",
+    "user_review": "pending",
+    "rubric": "v1.0",
+    "scores": [
+      23,
+      23,
+      19,
+      18,
+      9
+    ],
+    "total": 92,
+    "observations": "相機條件、扭曲／規則網格、工件與獨立尺度依序對應重新核對。",
+    "deductions": "把像素投影與尺寸基準分開；相機採簡筆外觀，光學調整未逐件畫出。",
+    "screenshot": "pages/charuco/docs-1440-engineering-4.png",
+    "scope": "圖片像素及圖內標籤；正文不作圖片加分",
+    "criteria_evidence": {
+      "case": "相機條件、扭曲／規則網格、工件與獨立尺度依序對應重新核對。",
+      "meaning": "把像素投影與尺寸基準分開；相機採簡筆外觀，光學調整未逐件畫出。",
+      "action": "把參數與取像條件綁定，改條件就重新核對。",
+      "reading": "三個主要節點，各有獨立圖形及兩行判讀；桌機橫讀、手机縱讀。次要英文／圖例較小，故不給滿分。",
+      "consistency": "依此圖同件、配色、箭頭與角色核對；把像素投影與尺寸基準分開；相機採簡筆外觀，光學調整未逐件畫出。"
+    },
+    "completion": [
+      8,
+      9,
+      9,
+      8,
+      9
+    ],
+    "completion_evidence": [
+      "留白、框距與藍灰配色穩定；原生工程圖造型較簡筆，8分。",
+      "三個節點及結論完整；把參數與取像條件綁定，改條件就重新核對。",
+      "箭頭、角色與示意界線已核對；相機條件、扭曲／規則網格、工件與獨立尺度依序對應重新核對。",
+      "必要標籤可讀，手機仍需縱向捲動；次要說明稍密，8分。",
+      "主標題、節點、圖形到單一淡黃結論依序；未放第二個搶焦點的總結。"
+    ]
+  },
+  {
+    "id": "charuco-engineering-4",
+    "mode": "mobile",
+    "image": "roadmap-model-selection/geometry-alignment-measurement/charuco/images/final/WI032-CHARUCO-04-r04-mobile.png",
+    "size": [
+      768,
+      2770
+    ],
+    "sha256": "6209f1dfd1c8602094acb3603bd861741abc3ef9e8b6bc8a7d921cd3b5204e2b",
+    "generation": "new SVG rendered by browser",
+    "evidence": "illustrative, not model inference",
+    "actual_page_review": "self-reviewed",
+    "user_review": "pending",
+    "rubric": "v1.0",
+    "scores": [
+      23,
+      23,
+      19,
+      18,
+      9
+    ],
+    "total": 92,
+    "observations": "相機條件、扭曲／規則網格、工件與獨立尺度依序對應重新核對。",
+    "deductions": "把像素投影與尺寸基準分開；相機採簡筆外觀，光學調整未逐件畫出。",
+    "screenshot": "pages/charuco/docs-360-engineering-4.png",
+    "scope": "圖片像素及圖內標籤；正文不作圖片加分",
+    "criteria_evidence": {
+      "case": "相機條件、扭曲／規則網格、工件與獨立尺度依序對應重新核對。",
+      "meaning": "把像素投影與尺寸基準分開；相機採簡筆外觀，光學調整未逐件畫出。",
+      "action": "把參數與取像條件綁定，改條件就重新核對。",
+      "reading": "三個主要節點，各有獨立圖形及兩行判讀；桌機橫讀、手机縱讀。次要英文／圖例較小，故不給滿分。",
+      "consistency": "依此圖同件、配色、箭頭與角色核對；把像素投影與尺寸基準分開；相機採簡筆外觀，光學調整未逐件畫出。"
+    },
+    "completion": [
+      8,
+      9,
+      9,
+      8,
+      9
+    ],
+    "completion_evidence": [
+      "留白、框距與藍灰配色穩定；原生工程圖造型較簡筆，8分。",
+      "三個節點及結論完整；把參數與取像條件綁定，改條件就重新核對。",
+      "箭頭、角色與示意界線已核對；相機條件、扭曲／規則網格、工件與獨立尺度依序對應重新核對。",
+      "必要標籤可讀，手機仍需縱向捲動；次要說明稍密，8分。",
+      "主標題、節點、圖形到單一淡黃結論依序；未放第二個搶焦點的總結。"
+    ]
+  },
+  {
+    "id": "ecc-engineering-1",
+    "mode": "desktop",
+    "image": "roadmap-model-selection/geometry-alignment-measurement/ecc/images/final/WI032-ECC-01-r04-desktop.png",
+    "size": [
+      1672,
+      941
+    ],
+    "sha256": "f72bbb3eae3d082ea7c2cd0f40c43d1c82301869fab738914e0574918d38f815",
+    "generation": "new SVG rendered by browser",
+    "evidence": "illustrative, not model inference",
+    "actual_page_review": "self-reviewed",
+    "user_review": "pending",
+    "rubric": "v1.0",
+    "scores": [
+      23,
+      23,
+      19,
+      18,
+      10
+    ],
+    "total": 93,
+    "observations": "模板與待對件、錯位／接近曲線、warp矩陣分成輸入、變化與交付。",
+    "deductions": "相關值不同於獨立殘差有直接對照；曲線為強度機制示意而非真實曲線。",
+    "screenshot": "pages/ecc/docs-1440-engineering-1.png",
+    "scope": "圖片像素及圖內標籤；正文不作圖片加分",
+    "criteria_evidence": {
+      "case": "模板與待對件、錯位／接近曲線、warp矩陣分成輸入、變化與交付。",
+      "meaning": "相關值不同於獨立殘差有直接對照；曲線為強度機制示意而非真實曲線。",
+      "action": "相關值不是缺陷標記，也不是獨立定位誤差。",
+      "reading": "三個主要節點，各有獨立圖形及兩行判讀；桌機橫讀、手机縱讀。次要英文／圖例較小，故不給滿分。",
+      "consistency": "依此圖同件、配色、箭頭與角色核對；相關值不同於獨立殘差有直接對照；曲線為強度機制示意而非真實曲線。"
+    },
+    "completion": [
+      8,
+      9,
+      9,
+      8,
+      9
+    ],
+    "completion_evidence": [
+      "留白、框距與藍灰配色穩定；原生工程圖造型較簡筆，8分。",
+      "三個節點及結論完整；相關值不是缺陷標記，也不是獨立定位誤差。",
+      "箭頭、角色與示意界線已核對；模板與待對件、錯位／接近曲線、warp矩陣分成輸入、變化與交付。",
+      "必要標籤可讀，手機仍需縱向捲動；次要說明稍密，8分。",
+      "主標題、節點、圖形到單一淡黃結論依序；未放第二個搶焦點的總結。"
+    ]
+  },
+  {
+    "id": "ecc-engineering-1",
+    "mode": "mobile",
+    "image": "roadmap-model-selection/geometry-alignment-measurement/ecc/images/final/WI032-ECC-01-r04-mobile.png",
+    "size": [
+      768,
+      2770
+    ],
+    "sha256": "626133810381ff79c3c451a4cf6206caff883a91d2e19fe5378cfe1c939cf424",
+    "generation": "new SVG rendered by browser",
+    "evidence": "illustrative, not model inference",
+    "actual_page_review": "self-reviewed",
+    "user_review": "pending",
+    "rubric": "v1.0",
+    "scores": [
+      23,
+      23,
+      19,
+      18,
+      10
+    ],
+    "total": 93,
+    "observations": "模板與待對件、錯位／接近曲線、warp矩陣分成輸入、變化與交付。",
+    "deductions": "相關值不同於獨立殘差有直接對照；曲線為強度機制示意而非真實曲線。",
+    "screenshot": "pages/ecc/docs-360-engineering-1.png",
+    "scope": "圖片像素及圖內標籤；正文不作圖片加分",
+    "criteria_evidence": {
+      "case": "模板與待對件、錯位／接近曲線、warp矩陣分成輸入、變化與交付。",
+      "meaning": "相關值不同於獨立殘差有直接對照；曲線為強度機制示意而非真實曲線。",
+      "action": "相關值不是缺陷標記，也不是獨立定位誤差。",
+      "reading": "三個主要節點，各有獨立圖形及兩行判讀；桌機橫讀、手机縱讀。次要英文／圖例較小，故不給滿分。",
+      "consistency": "依此圖同件、配色、箭頭與角色核對；相關值不同於獨立殘差有直接對照；曲線為強度機制示意而非真實曲線。"
+    },
+    "completion": [
+      8,
+      9,
+      9,
+      8,
+      9
+    ],
+    "completion_evidence": [
+      "留白、框距與藍灰配色穩定；原生工程圖造型較簡筆，8分。",
+      "三個節點及結論完整；相關值不是缺陷標記，也不是獨立定位誤差。",
+      "箭頭、角色與示意界線已核對；模板與待對件、錯位／接近曲線、warp矩陣分成輸入、變化與交付。",
+      "必要標籤可讀，手機仍需縱向捲動；次要說明稍密，8分。",
+      "主標題、節點、圖形到單一淡黃結論依序；未放第二個搶焦點的總結。"
+    ]
+  },
+  {
+    "id": "ecc-engineering-2",
+    "mode": "desktop",
+    "image": "roadmap-model-selection/geometry-alignment-measurement/ecc/images/final/WI032-ECC-02-r04-desktop.png",
+    "size": [
+      1672,
+      941
+    ],
+    "sha256": "db35989bf5f127a3bd13a1b39db32e8de84d5474f7bf08fc553b750a49341f20",
+    "generation": "new SVG rendered by browser",
+    "evidence": "illustrative, not model inference",
+    "actual_page_review": "self-reviewed",
+    "user_review": "pending",
+    "rubric": "v1.0",
+    "scores": [
+      23,
+      24,
+      19,
+      18,
+      9
+    ],
+    "total": 93,
+    "observations": "四像素中心插值100、曲線變近、同輪廓更新前後看得到實際中間變化。",
+    "deductions": "40/80/120/160中心平均可核對；沒有宣稱每步必然改善，並省略優化器公式。",
+    "screenshot": "pages/ecc/docs-1440-engineering-2.png",
+    "scope": "圖片像素及圖內標籤；正文不作圖片加分",
+    "criteria_evidence": {
+      "case": "四像素中心插值100、曲線變近、同輪廓更新前後看得到實際中間變化。",
+      "meaning": "40/80/120/160中心平均可核對；沒有宣稱每步必然改善，並省略優化器公式。",
+      "action": "靠密集外觀更新幾何，不靠逐點描述子。",
+      "reading": "三個主要節點，各有獨立圖形及兩行判讀；桌機橫讀、手机縱讀。次要英文／圖例較小，故不給滿分。",
+      "consistency": "依此圖同件、配色、箭頭與角色核對；40/80/120/160中心平均可核對；沒有宣稱每步必然改善，並省略優化器公式。"
+    },
+    "completion": [
+      8,
+      9,
+      9,
+      8,
+      9
+    ],
+    "completion_evidence": [
+      "留白、框距與藍灰配色穩定；原生工程圖造型較簡筆，8分。",
+      "三個節點及結論完整；靠密集外觀更新幾何，不靠逐點描述子。",
+      "箭頭、角色與示意界線已核對；四像素中心插值100、曲線變近、同輪廓更新前後看得到實際中間變化。",
+      "必要標籤可讀，手機仍需縱向捲動；次要說明稍密，8分。",
+      "主標題、節點、圖形到單一淡黃結論依序；未放第二個搶焦點的總結。"
+    ]
+  },
+  {
+    "id": "ecc-engineering-2",
+    "mode": "mobile",
+    "image": "roadmap-model-selection/geometry-alignment-measurement/ecc/images/final/WI032-ECC-02-r04-mobile.png",
+    "size": [
+      768,
+      2770
+    ],
+    "sha256": "5bb46938747992046f159d7c8e4a4702c8fe0113aacbd25b347ba2df8e47cb1b",
+    "generation": "new SVG rendered by browser",
+    "evidence": "illustrative, not model inference",
+    "actual_page_review": "self-reviewed",
+    "user_review": "pending",
+    "rubric": "v1.0",
+    "scores": [
+      23,
+      24,
+      19,
+      18,
+      9
+    ],
+    "total": 93,
+    "observations": "四像素中心插值100、曲線變近、同輪廓更新前後看得到實際中間變化。",
+    "deductions": "40/80/120/160中心平均可核對；沒有宣稱每步必然改善，並省略優化器公式。",
+    "screenshot": "pages/ecc/docs-360-engineering-2.png",
+    "scope": "圖片像素及圖內標籤；正文不作圖片加分",
+    "criteria_evidence": {
+      "case": "四像素中心插值100、曲線變近、同輪廓更新前後看得到實際中間變化。",
+      "meaning": "40/80/120/160中心平均可核對；沒有宣稱每步必然改善，並省略優化器公式。",
+      "action": "靠密集外觀更新幾何，不靠逐點描述子。",
+      "reading": "三個主要節點，各有獨立圖形及兩行判讀；桌機橫讀、手机縱讀。次要英文／圖例較小，故不給滿分。",
+      "consistency": "依此圖同件、配色、箭頭與角色核對；40/80/120/160中心平均可核對；沒有宣稱每步必然改善，並省略優化器公式。"
+    },
+    "completion": [
+      8,
+      9,
+      9,
+      8,
+      9
+    ],
+    "completion_evidence": [
+      "留白、框距與藍灰配色穩定；原生工程圖造型較簡筆，8分。",
+      "三個節點及結論完整；靠密集外觀更新幾何，不靠逐點描述子。",
+      "箭頭、角色與示意界線已核對；四像素中心插值100、曲線變近、同輪廓更新前後看得到實際中間變化。",
+      "必要標籤可讀，手機仍需縱向捲動；次要說明稍密，8分。",
+      "主標題、節點、圖形到單一淡黃結論依序；未放第二個搶焦點的總結。"
+    ]
+  },
+  {
+    "id": "ecc-engineering-3",
+    "mode": "desktop",
+    "image": "roadmap-model-selection/geometry-alignment-measurement/ecc/images/final/WI032-ECC-03-r04-desktop.png",
+    "size": [
+      1672,
+      941
+    ],
+    "sha256": "0bab5ca10926ff8e74df590d7b940421006ac71f2c78e49147e2d9e25a9ddabf",
+    "generation": "new SVG rendered by browser",
+    "evidence": "illustrative, not model inference",
+    "actual_page_review": "self-reviewed",
+    "user_review": "pending",
+    "rubric": "v1.0",
+    "scores": [
+      22,
+      24,
+      19,
+      19,
+      9
+    ],
+    "total": 93,
+    "observations": "兩套2D影像座標、W方向與四像素取樣共同解釋為何旗標不能亂設。",
+    "deductions": "xI=W(xT)與逆映射取樣責任一致；示意未提供可直接複製執行的API例程。",
+    "screenshot": "pages/ecc/docs-1440-engineering-3.png",
+    "scope": "圖片像素及圖內標籤；正文不作圖片加分",
+    "criteria_evidence": {
+      "case": "兩套2D影像座標、W方向與四像素取樣共同解釋為何旗標不能亂設。",
+      "meaning": "xI=W(xT)與逆映射取樣責任一致；示意未提供可直接複製執行的API例程。",
+      "action": "先寫清楚映射方向，再決定反矩陣與取樣設定。",
+      "reading": "三個主要節點，各有獨立圖形及兩行判讀；桌機橫讀、手机縱讀。次要英文／圖例較小，故不給滿分。",
+      "consistency": "依此圖同件、配色、箭頭與角色核對；xI=W(xT)與逆映射取樣責任一致；示意未提供可直接複製執行的API例程。"
+    },
+    "completion": [
+      8,
+      9,
+      9,
+      8,
+      9
+    ],
+    "completion_evidence": [
+      "留白、框距與藍灰配色穩定；原生工程圖造型較簡筆，8分。",
+      "三個節點及結論完整；先寫清楚映射方向，再決定反矩陣與取樣設定。",
+      "箭頭、角色與示意界線已核對；兩套2D影像座標、W方向與四像素取樣共同解釋為何旗標不能亂設。",
+      "必要標籤可讀，手機仍需縱向捲動；次要說明稍密，8分。",
+      "主標題、節點、圖形到單一淡黃結論依序；未放第二個搶焦點的總結。"
+    ]
+  },
+  {
+    "id": "ecc-engineering-3",
+    "mode": "mobile",
+    "image": "roadmap-model-selection/geometry-alignment-measurement/ecc/images/final/WI032-ECC-03-r04-mobile.png",
+    "size": [
+      768,
+      2770
+    ],
+    "sha256": "3cf89fa49467a7e38704088365cf312ffd3b90ceaec352e08a8a96834cba9181",
+    "generation": "new SVG rendered by browser",
+    "evidence": "illustrative, not model inference",
+    "actual_page_review": "self-reviewed",
+    "user_review": "pending",
+    "rubric": "v1.0",
+    "scores": [
+      22,
+      24,
+      19,
+      19,
+      9
+    ],
+    "total": 93,
+    "observations": "兩套2D影像座標、W方向與四像素取樣共同解釋為何旗標不能亂設。",
+    "deductions": "xI=W(xT)與逆映射取樣責任一致；示意未提供可直接複製執行的API例程。",
+    "screenshot": "pages/ecc/docs-360-engineering-3.png",
+    "scope": "圖片像素及圖內標籤；正文不作圖片加分",
+    "criteria_evidence": {
+      "case": "兩套2D影像座標、W方向與四像素取樣共同解釋為何旗標不能亂設。",
+      "meaning": "xI=W(xT)與逆映射取樣責任一致；示意未提供可直接複製執行的API例程。",
+      "action": "先寫清楚映射方向，再決定反矩陣與取樣設定。",
+      "reading": "三個主要節點，各有獨立圖形及兩行判讀；桌機橫讀、手机縱讀。次要英文／圖例較小，故不給滿分。",
+      "consistency": "依此圖同件、配色、箭頭與角色核對；xI=W(xT)與逆映射取樣責任一致；示意未提供可直接複製執行的API例程。"
+    },
+    "completion": [
+      8,
+      9,
+      9,
+      8,
+      9
+    ],
+    "completion_evidence": [
+      "留白、框距與藍灰配色穩定；原生工程圖造型較簡筆，8分。",
+      "三個節點及結論完整；先寫清楚映射方向，再決定反矩陣與取樣設定。",
+      "箭頭、角色與示意界線已核對；兩套2D影像座標、W方向與四像素取樣共同解釋為何旗標不能亂設。",
+      "必要標籤可讀，手機仍需縱向捲動；次要說明稍密，8分。",
+      "主標題、節點、圖形到單一淡黃結論依序；未放第二個搶焦點的總結。"
+    ]
+  },
+  {
+    "id": "ecc-engineering-4",
+    "mode": "desktop",
+    "image": "roadmap-model-selection/geometry-alignment-measurement/ecc/images/final/WI032-ECC-04-r04-desktop.png",
+    "size": [
+      1672,
+      941
+    ],
+    "sha256": "a6dfe7ac997521bf81974cd51a37e41c0531eb9bdf671e759db7b2d84df3e439",
+    "generation": "new SVG rendered by browser",
+    "evidence": "illustrative, not model inference",
+    "actual_page_review": "self-reviewed",
+    "user_review": "pending",
+    "rubric": "v1.0",
+    "scores": [
+      23,
+      23,
+      19,
+      18,
+      9
+    ],
+    "total": 92,
+    "observations": "同件A/B/C偏差與遮擋可見；最後列應留原圖、warp、設定及獨立殘差。",
+    "deductions": "可從孔與外框回到獨立驗證；保存紀錄節點偏文字，未畫出完整檔案包。",
+    "screenshot": "pages/ecc/docs-1440-engineering-4.png",
+    "scope": "圖片像素及圖內標籤；正文不作圖片加分",
+    "criteria_evidence": {
+      "case": "同件A/B/C偏差與遮擋可見；最後列應留原圖、warp、設定及獨立殘差。",
+      "meaning": "可從孔與外框回到獨立驗證；保存紀錄節點偏文字，未畫出完整檔案包。",
+      "action": "用獨立幾何與完整失敗成本決定是否採用。",
+      "reading": "三個主要節點，各有獨立圖形及兩行判讀；桌機橫讀、手机縱讀。次要英文／圖例較小，故不給滿分。",
+      "consistency": "依此圖同件、配色、箭頭與角色核對；可從孔與外框回到獨立驗證；保存紀錄節點偏文字，未畫出完整檔案包。"
+    },
+    "completion": [
+      8,
+      9,
+      9,
+      8,
+      9
+    ],
+    "completion_evidence": [
+      "留白、框距與藍灰配色穩定；原生工程圖造型較簡筆，8分。",
+      "三個節點及結論完整；用獨立幾何與完整失敗成本決定是否採用。",
+      "箭頭、角色與示意界線已核對；同件A/B/C偏差與遮擋可見；最後列應留原圖、warp、設定及獨立殘差。",
+      "必要標籤可讀，手機仍需縱向捲動；次要說明稍密，8分。",
+      "主標題、節點、圖形到單一淡黃結論依序；未放第二個搶焦點的總結。"
+    ]
+  },
+  {
+    "id": "ecc-engineering-4",
+    "mode": "mobile",
+    "image": "roadmap-model-selection/geometry-alignment-measurement/ecc/images/final/WI032-ECC-04-r04-mobile.png",
+    "size": [
+      768,
+      2770
+    ],
+    "sha256": "0e2e28f088602c66a5114dc7139c395f1213b7f221e37734572b9ea8f1baad6b",
+    "generation": "new SVG rendered by browser",
+    "evidence": "illustrative, not model inference",
+    "actual_page_review": "self-reviewed",
+    "user_review": "pending",
+    "rubric": "v1.0",
+    "scores": [
+      23,
+      23,
+      19,
+      18,
+      9
+    ],
+    "total": 92,
+    "observations": "同件A/B/C偏差與遮擋可見；最後列應留原圖、warp、設定及獨立殘差。",
+    "deductions": "可從孔與外框回到獨立驗證；保存紀錄節點偏文字，未畫出完整檔案包。",
+    "screenshot": "pages/ecc/docs-360-engineering-4.png",
+    "scope": "圖片像素及圖內標籤；正文不作圖片加分",
+    "criteria_evidence": {
+      "case": "同件A/B/C偏差與遮擋可見；最後列應留原圖、warp、設定及獨立殘差。",
+      "meaning": "可從孔與外框回到獨立驗證；保存紀錄節點偏文字，未畫出完整檔案包。",
+      "action": "用獨立幾何與完整失敗成本決定是否採用。",
+      "reading": "三個主要節點，各有獨立圖形及兩行判讀；桌機橫讀、手机縱讀。次要英文／圖例較小，故不給滿分。",
+      "consistency": "依此圖同件、配色、箭頭與角色核對；可從孔與外框回到獨立驗證；保存紀錄節點偏文字，未畫出完整檔案包。"
+    },
+    "completion": [
+      8,
+      9,
+      9,
+      8,
+      9
+    ],
+    "completion_evidence": [
+      "留白、框距與藍灰配色穩定；原生工程圖造型較簡筆，8分。",
+      "三個節點及結論完整；用獨立幾何與完整失敗成本決定是否採用。",
+      "箭頭、角色與示意界線已核對；同件A/B/C偏差與遮擋可見；最後列應留原圖、warp、設定及獨立殘差。",
+      "必要標籤可讀，手機仍需縱向捲動；次要說明稍密，8分。",
+      "主標題、節點、圖形到單一淡黃結論依序；未放第二個搶焦點的總結。"
+    ]
+  },
+  {
+    "id": "sift-engineering-1",
+    "mode": "desktop",
+    "image": "roadmap-model-selection/geometry-alignment-measurement/sift/images/final/WI032-SIFT-01-r06-desktop.png",
+    "size": [
+      1672,
+      941
+    ],
+    "sha256": "d0e9fb8cd37fa4eae1100d28ebcef01c482c53c15af0f7bd1c895315be272aef",
+    "generation": "new SVG rendered by browser",
+    "evidence": "illustrative, not model inference",
+    "actual_page_review": "self-reviewed",
+    "user_review": "pending",
+    "rubric": "v1.0",
+    "scores": [
+      23,
+      23,
+      19,
+      18,
+      9
+    ],
+    "total": 92,
+    "observations": "同缺口跨尺度、局部方向視窗與梯度描述條，輸出不畫成warp。",
+    "deductions": "r06標題完整不拆matcher；梯度長條為概念表示，沒有冒稱真實128維輸出。",
+    "screenshot": "pages/sift/docs-1440-engineering-1.png",
+    "scope": "圖片像素及圖內標籤；正文不作圖片加分",
+    "criteria_evidence": {
+      "case": "同缺口跨尺度、局部方向視窗與梯度描述條，輸出不畫成warp。",
+      "meaning": "r06標題完整不拆matcher；梯度長條為概念表示，沒有冒稱真實128維輸出。",
+      "action": "SIFT特徵、matcher點對與幾何變換分開。",
+      "reading": "三個主要節點，各有獨立圖形及兩行判讀；桌機橫讀、手机縱讀。次要英文／圖例較小，故不給滿分。",
+      "consistency": "依此圖同件、配色、箭頭與角色核對；r06標題完整不拆matcher；梯度長條為概念表示，沒有冒稱真實128維輸出。"
+    },
+    "completion": [
+      8,
+      9,
+      9,
+      8,
+      9
+    ],
+    "completion_evidence": [
+      "留白、框距與藍灰配色穩定；原生工程圖造型較簡筆，8分。",
+      "三個節點及結論完整；SIFT特徵、matcher點對與幾何變換分開。",
+      "箭頭、角色與示意界線已核對；同缺口跨尺度、局部方向視窗與梯度描述條，輸出不畫成warp。",
+      "必要標籤可讀，手機仍需縱向捲動；次要說明稍密，8分。",
+      "主標題、節點、圖形到單一淡黃結論依序；未放第二個搶焦點的總結。"
+    ]
+  },
+  {
+    "id": "sift-engineering-1",
+    "mode": "mobile",
+    "image": "roadmap-model-selection/geometry-alignment-measurement/sift/images/final/WI032-SIFT-01-r06-mobile.png",
+    "size": [
+      768,
+      2770
+    ],
+    "sha256": "956ffadd453b895932d804abfdec55a175280ededd609f2bd484b591242edc77",
+    "generation": "new SVG rendered by browser",
+    "evidence": "illustrative, not model inference",
+    "actual_page_review": "self-reviewed",
+    "user_review": "pending",
+    "rubric": "v1.0",
+    "scores": [
+      23,
+      23,
+      19,
+      18,
+      9
+    ],
+    "total": 92,
+    "observations": "同缺口跨尺度、局部方向視窗與梯度描述條，輸出不畫成warp。",
+    "deductions": "r06標題完整不拆matcher；梯度長條為概念表示，沒有冒稱真實128維輸出。",
+    "screenshot": "pages/sift/docs-360-engineering-1.png",
+    "scope": "圖片像素及圖內標籤；正文不作圖片加分",
+    "criteria_evidence": {
+      "case": "同缺口跨尺度、局部方向視窗與梯度描述條，輸出不畫成warp。",
+      "meaning": "r06標題完整不拆matcher；梯度長條為概念表示，沒有冒稱真實128維輸出。",
+      "action": "SIFT特徵、matcher點對與幾何變換分開。",
+      "reading": "三個主要節點，各有獨立圖形及兩行判讀；桌機橫讀、手机縱讀。次要英文／圖例較小，故不給滿分。",
+      "consistency": "依此圖同件、配色、箭頭與角色核對；r06標題完整不拆matcher；梯度長條為概念表示，沒有冒稱真實128維輸出。"
+    },
+    "completion": [
+      8,
+      9,
+      9,
+      8,
+      9
+    ],
+    "completion_evidence": [
+      "留白、框距與藍灰配色穩定；原生工程圖造型較簡筆，8分。",
+      "三個節點及結論完整；SIFT特徵、matcher點對與幾何變換分開。",
+      "箭頭、角色與示意界線已核對；同缺口跨尺度、局部方向視窗與梯度描述條，輸出不畫成warp。",
+      "必要標籤可讀，手機仍需縱向捲動；次要說明稍密，8分。",
+      "主標題、節點、圖形到單一淡黃結論依序；未放第二個搶焦點的總結。"
+    ]
+  },
+  {
+    "id": "sift-engineering-2",
+    "mode": "desktop",
+    "image": "roadmap-model-selection/geometry-alignment-measurement/sift/images/final/WI032-SIFT-02-r04-desktop.png",
+    "size": [
+      1672,
+      941
+    ],
+    "sha256": "15cf9fe7cedac029b8d4a567b3272e448feebd0ad7319c5db83a5bb752eaad52",
+    "generation": "new SVG rendered by browser",
+    "evidence": "illustrative, not model inference",
+    "actual_page_review": "self-reviewed",
+    "user_review": "pending",
+    "rubric": "v1.0",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      10
+    ],
+    "total": 93,
+    "observations": "4×4格各8方向、向量表示與兩候選距離，可看出描述與ratio的不同責任。",
+    "deductions": "方向數與128一致；只解釋本步，不把距離條當成幾何驗證。",
+    "screenshot": "pages/sift/docs-1440-engineering-2.png",
+    "scope": "圖片像素及圖內標籤；正文不作圖片加分",
+    "criteria_evidence": {
+      "case": "4×4格各8方向、向量表示與兩候選距離，可看出描述與ratio的不同責任。",
+      "meaning": "方向數與128一致；只解釋本步，不把距離條當成幾何驗證。",
+      "action": "ratio test篩含糊候選，不是幾何真值證明。",
+      "reading": "三個主要節點，各有獨立圖形及兩行判讀；桌機橫讀、手机縱讀。次要英文／圖例較小，故不給滿分。",
+      "consistency": "依此圖同件、配色、箭頭與角色核對；方向數與128一致；只解釋本步，不把距離條當成幾何驗證。"
+    },
+    "completion": [
+      8,
+      9,
+      9,
+      8,
+      9
+    ],
+    "completion_evidence": [
+      "留白、框距與藍灰配色穩定；原生工程圖造型較簡筆，8分。",
+      "三個節點及結論完整；ratio test篩含糊候選，不是幾何真值證明。",
+      "箭頭、角色與示意界線已核對；4×4格各8方向、向量表示與兩候選距離，可看出描述與ratio的不同責任。",
+      "必要標籤可讀，手機仍需縱向捲動；次要說明稍密，8分。",
+      "主標題、節點、圖形到單一淡黃結論依序；未放第二個搶焦點的總結。"
+    ]
+  },
+  {
+    "id": "sift-engineering-2",
+    "mode": "mobile",
+    "image": "roadmap-model-selection/geometry-alignment-measurement/sift/images/final/WI032-SIFT-02-r04-mobile.png",
+    "size": [
+      768,
+      2770
+    ],
+    "sha256": "393c7f58807e157ff9ec4bd88134d5938da55c30ea92e8ef40cc7032d079e79f",
+    "generation": "new SVG rendered by browser",
+    "evidence": "illustrative, not model inference",
+    "actual_page_review": "self-reviewed",
+    "user_review": "pending",
+    "rubric": "v1.0",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      10
+    ],
+    "total": 93,
+    "observations": "4×4格各8方向、向量表示與兩候選距離，可看出描述與ratio的不同責任。",
+    "deductions": "方向數與128一致；只解釋本步，不把距離條當成幾何驗證。",
+    "screenshot": "pages/sift/docs-360-engineering-2.png",
+    "scope": "圖片像素及圖內標籤；正文不作圖片加分",
+    "criteria_evidence": {
+      "case": "4×4格各8方向、向量表示與兩候選距離，可看出描述與ratio的不同責任。",
+      "meaning": "方向數與128一致；只解釋本步，不把距離條當成幾何驗證。",
+      "action": "ratio test篩含糊候選，不是幾何真值證明。",
+      "reading": "三個主要節點，各有獨立圖形及兩行判讀；桌機橫讀、手机縱讀。次要英文／圖例較小，故不給滿分。",
+      "consistency": "依此圖同件、配色、箭頭與角色核對；方向數與128一致；只解釋本步，不把距離條當成幾何驗證。"
+    },
+    "completion": [
+      8,
+      9,
+      9,
+      8,
+      9
+    ],
+    "completion_evidence": [
+      "留白、框距與藍灰配色穩定；原生工程圖造型較簡筆，8分。",
+      "三個節點及結論完整；ratio test篩含糊候選，不是幾何真值證明。",
+      "箭頭、角色與示意界線已核對；4×4格各8方向、向量表示與兩候選距離，可看出描述與ratio的不同責任。",
+      "必要標籤可讀，手機仍需縱向捲動；次要說明稍密，8分。",
+      "主標題、節點、圖形到單一淡黃結論依序；未放第二個搶焦點的總結。"
+    ]
+  },
+  {
+    "id": "sift-engineering-3",
+    "mode": "desktop",
+    "image": "roadmap-model-selection/geometry-alignment-measurement/sift/images/final/WI032-SIFT-03-r04-desktop.png",
+    "size": [
+      1672,
+      941
+    ],
+    "sha256": "78de41ecd1903f0425a8494d6f27b388339cd0617ce76b1a233405781ab18605",
+    "generation": "new SVG rendered by browser",
+    "evidence": "illustrative, not model inference",
+    "actual_page_review": "self-reviewed",
+    "user_review": "pending",
+    "rubric": "v1.0",
+    "scores": [
+      23,
+      24,
+      19,
+      18,
+      9
+    ],
+    "total": 93,
+    "observations": "四組非退化點對、單應四邊形加候選外點、獨立地標偏差三者不同。",
+    "deductions": "修正少於很多點必失敗的說法；示意未演示RANSAC抽樣迭代。",
+    "screenshot": "pages/sift/docs-1440-engineering-3.png",
+    "scope": "圖片像素及圖內標籤；正文不作圖片加分",
+    "criteria_evidence": {
+      "case": "四組非退化點對、單應四邊形加候選外點、獨立地標偏差三者不同。",
+      "meaning": "修正少於很多點必失敗的說法；示意未演示RANSAC抽樣迭代。",
+      "action": "數量、正確性與分布要一起看。",
+      "reading": "三個主要節點，各有獨立圖形及兩行判讀；桌機橫讀、手机縱讀。次要英文／圖例較小，故不給滿分。",
+      "consistency": "依此圖同件、配色、箭頭與角色核對；修正少於很多點必失敗的說法；示意未演示RANSAC抽樣迭代。"
+    },
+    "completion": [
+      8,
+      9,
+      9,
+      8,
+      9
+    ],
+    "completion_evidence": [
+      "留白、框距與藍灰配色穩定；原生工程圖造型較簡筆，8分。",
+      "三個節點及結論完整；數量、正確性與分布要一起看。",
+      "箭頭、角色與示意界線已核對；四組非退化點對、單應四邊形加候選外點、獨立地標偏差三者不同。",
+      "必要標籤可讀，手機仍需縱向捲動；次要說明稍密，8分。",
+      "主標題、節點、圖形到單一淡黃結論依序；未放第二個搶焦點的總結。"
+    ]
+  },
+  {
+    "id": "sift-engineering-3",
+    "mode": "mobile",
+    "image": "roadmap-model-selection/geometry-alignment-measurement/sift/images/final/WI032-SIFT-03-r04-mobile.png",
+    "size": [
+      768,
+      2770
+    ],
+    "sha256": "42e98c0ff6907c327bee45ef4972737ddabfea7112254efb7aefbf69e50aa5fa",
+    "generation": "new SVG rendered by browser",
+    "evidence": "illustrative, not model inference",
+    "actual_page_review": "self-reviewed",
+    "user_review": "pending",
+    "rubric": "v1.0",
+    "scores": [
+      23,
+      24,
+      19,
+      18,
+      9
+    ],
+    "total": 93,
+    "observations": "四組非退化點對、單應四邊形加候選外點、獨立地標偏差三者不同。",
+    "deductions": "修正少於很多點必失敗的說法；示意未演示RANSAC抽樣迭代。",
+    "screenshot": "pages/sift/docs-360-engineering-3.png",
+    "scope": "圖片像素及圖內標籤；正文不作圖片加分",
+    "criteria_evidence": {
+      "case": "四組非退化點對、單應四邊形加候選外點、獨立地標偏差三者不同。",
+      "meaning": "修正少於很多點必失敗的說法；示意未演示RANSAC抽樣迭代。",
+      "action": "數量、正確性與分布要一起看。",
+      "reading": "三個主要節點，各有獨立圖形及兩行判讀；桌機橫讀、手机縱讀。次要英文／圖例較小，故不給滿分。",
+      "consistency": "依此圖同件、配色、箭頭與角色核對；修正少於很多點必失敗的說法；示意未演示RANSAC抽樣迭代。"
+    },
+    "completion": [
+      8,
+      9,
+      9,
+      8,
+      9
+    ],
+    "completion_evidence": [
+      "留白、框距與藍灰配色穩定；原生工程圖造型較簡筆，8分。",
+      "三個節點及結論完整；數量、正確性與分布要一起看。",
+      "箭頭、角色與示意界線已核對；四組非退化點對、單應四邊形加候選外點、獨立地標偏差三者不同。",
+      "必要標籤可讀，手機仍需縱向捲動；次要說明稍密，8分。",
+      "主標題、節點、圖形到單一淡黃結論依序；未放第二個搶焦點的總結。"
+    ]
+  },
+  {
+    "id": "sift-engineering-4",
+    "mode": "desktop",
+    "image": "roadmap-model-selection/geometry-alignment-measurement/sift/images/final/WI032-SIFT-04-r04-desktop.png",
+    "size": [
+      1672,
+      941
+    ],
+    "sha256": "8f5bde9194d513384930c7f5a3e5bb38e6bfe054b6fe4071d91989a72ba9c067",
+    "generation": "new SVG rendered by browser",
+    "evidence": "illustrative, not model inference",
+    "actual_page_review": "self-reviewed",
+    "user_review": "pending",
+    "rubric": "v1.0",
+    "scores": [
+      23,
+      23,
+      19,
+      18,
+      9
+    ],
+    "total": 92,
+    "observations": "近件與遠背景位移不同，點對仍可正確，兩平面分別H1/H2。",
+    "deductions": "用可見前景／背景分開匹配與模型適用性；3D替代只留行動提示。",
+    "screenshot": "pages/sift/docs-1440-engineering-4.png",
+    "scope": "圖片像素及圖內標籤；正文不作圖片加分",
+    "criteria_evidence": {
+      "case": "近件與遠背景位移不同，點對仍可正確，兩平面分別H1/H2。",
+      "meaning": "用可見前景／背景分開匹配與模型適用性；3D替代只留行動提示。",
+      "action": "匹配失敗與幾何模型不適用，要分開診斷。",
+      "reading": "三個主要節點，各有獨立圖形及兩行判讀；桌機橫讀、手机縱讀。次要英文／圖例較小，故不給滿分。",
+      "consistency": "依此圖同件、配色、箭頭與角色核對；用可見前景／背景分開匹配與模型適用性；3D替代只留行動提示。"
+    },
+    "completion": [
+      8,
+      9,
+      9,
+      8,
+      9
+    ],
+    "completion_evidence": [
+      "留白、框距與藍灰配色穩定；原生工程圖造型較簡筆，8分。",
+      "三個節點及結論完整；匹配失敗與幾何模型不適用，要分開診斷。",
+      "箭頭、角色與示意界線已核對；近件與遠背景位移不同，點對仍可正確，兩平面分別H1/H2。",
+      "必要標籤可讀，手機仍需縱向捲動；次要說明稍密，8分。",
+      "主標題、節點、圖形到單一淡黃結論依序；未放第二個搶焦點的總結。"
+    ]
+  },
+  {
+    "id": "sift-engineering-4",
+    "mode": "mobile",
+    "image": "roadmap-model-selection/geometry-alignment-measurement/sift/images/final/WI032-SIFT-04-r04-mobile.png",
+    "size": [
+      768,
+      2770
+    ],
+    "sha256": "b769e3b65a1368128dd9a21120ce93d43221032ca35b12c4b490c2fe56984426",
+    "generation": "new SVG rendered by browser",
+    "evidence": "illustrative, not model inference",
+    "actual_page_review": "self-reviewed",
+    "user_review": "pending",
+    "rubric": "v1.0",
+    "scores": [
+      23,
+      23,
+      19,
+      18,
+      9
+    ],
+    "total": 92,
+    "observations": "近件與遠背景位移不同，點對仍可正確，兩平面分別H1/H2。",
+    "deductions": "用可見前景／背景分開匹配與模型適用性；3D替代只留行動提示。",
+    "screenshot": "pages/sift/docs-360-engineering-4.png",
+    "scope": "圖片像素及圖內標籤；正文不作圖片加分",
+    "criteria_evidence": {
+      "case": "近件與遠背景位移不同，點對仍可正確，兩平面分別H1/H2。",
+      "meaning": "用可見前景／背景分開匹配與模型適用性；3D替代只留行動提示。",
+      "action": "匹配失敗與幾何模型不適用，要分開診斷。",
+      "reading": "三個主要節點，各有獨立圖形及兩行判讀；桌機橫讀、手机縱讀。次要英文／圖例較小，故不給滿分。",
+      "consistency": "依此圖同件、配色、箭頭與角色核對；用可見前景／背景分開匹配與模型適用性；3D替代只留行動提示。"
+    },
+    "completion": [
+      8,
+      9,
+      9,
+      8,
+      9
+    ],
+    "completion_evidence": [
+      "留白、框距與藍灰配色穩定；原生工程圖造型較簡筆，8分。",
+      "三個節點及結論完整；匹配失敗與幾何模型不適用，要分開診斷。",
+      "箭頭、角色與示意界線已核對；近件與遠背景位移不同，點對仍可正確，兩平面分別H1/H2。",
+      "必要標籤可讀，手機仍需縱向捲動；次要說明稍密，8分。",
+      "主標題、節點、圖形到單一淡黃結論依序；未放第二個搶焦點的總結。"
+    ]
+  },
+  {
+    "id": "lightglue-engineering-1",
+    "mode": "desktop",
+    "image": "roadmap-model-selection/geometry-alignment-measurement/lightglue/images/final/WI032-LIGHTGLUE-01-r04-desktop.png",
+    "size": [
+      1672,
+      941
+    ],
+    "sha256": "25f5bfe2f586bd8c674992c287a89a32f0cceb93e5faed4887f8d9ac5c3bb3b3",
+    "generation": "new SVG rendered by browser",
+    "evidence": "illustrative, not model inference",
+    "actual_page_review": "self-reviewed",
+    "user_review": "pending",
+    "rubric": "v1.0",
+    "scores": [
+      23,
+      23,
+      19,
+      18,
+      9
+    ],
+    "total": 92,
+    "observations": "兩圖點／描述、交叉候選與最後A-A/B-B/C-C點對可見前後差別。",
+    "deductions": "extractor／matcher／幾何分工不重複交付；描述值與候選為示意。",
+    "screenshot": "pages/lightglue/docs-1440-engineering-1.png",
+    "scope": "圖片像素及圖內標籤；正文不作圖片加分",
+    "criteria_evidence": {
+      "case": "兩圖點／描述、交叉候選與最後A-A/B-B/C-C點對可見前後差別。",
+      "meaning": "extractor／matcher／幾何分工不重複交付；描述值與候選為示意。",
+      "action": "LightGlue不取代找點，也不直接給工站姿態。",
+      "reading": "三個主要節點，各有獨立圖形及兩行判讀；桌機橫讀、手机縱讀。次要英文／圖例較小，故不給滿分。",
+      "consistency": "依此圖同件、配色、箭頭與角色核對；extractor／matcher／幾何分工不重複交付；描述值與候選為示意。"
+    },
+    "completion": [
+      8,
+      9,
+      9,
+      8,
+      9
+    ],
+    "completion_evidence": [
+      "留白、框距與藍灰配色穩定；原生工程圖造型較簡筆，8分。",
+      "三個節點及結論完整；LightGlue不取代找點，也不直接給工站姿態。",
+      "箭頭、角色與示意界線已核對；兩圖點／描述、交叉候選與最後A-A/B-B/C-C點對可見前後差別。",
+      "必要標籤可讀，手機仍需縱向捲動；次要說明稍密，8分。",
+      "主標題、節點、圖形到單一淡黃結論依序；未放第二個搶焦點的總結。"
+    ]
+  },
+  {
+    "id": "lightglue-engineering-1",
+    "mode": "mobile",
+    "image": "roadmap-model-selection/geometry-alignment-measurement/lightglue/images/final/WI032-LIGHTGLUE-01-r04-mobile.png",
+    "size": [
+      768,
+      2770
+    ],
+    "sha256": "c5f3bad0e032487aacfcbc3fb2703c03bf14e8cab61b70fd0f56ce850538dd88",
+    "generation": "new SVG rendered by browser",
+    "evidence": "illustrative, not model inference",
+    "actual_page_review": "self-reviewed",
+    "user_review": "pending",
+    "rubric": "v1.0",
+    "scores": [
+      23,
+      23,
+      19,
+      18,
+      9
+    ],
+    "total": 92,
+    "observations": "兩圖點／描述、交叉候選與最後A-A/B-B/C-C點對可見前後差別。",
+    "deductions": "extractor／matcher／幾何分工不重複交付；描述值與候選為示意。",
+    "screenshot": "pages/lightglue/docs-360-engineering-1.png",
+    "scope": "圖片像素及圖內標籤；正文不作圖片加分",
+    "criteria_evidence": {
+      "case": "兩圖點／描述、交叉候選與最後A-A/B-B/C-C點對可見前後差別。",
+      "meaning": "extractor／matcher／幾何分工不重複交付；描述值與候選為示意。",
+      "action": "LightGlue不取代找點，也不直接給工站姿態。",
+      "reading": "三個主要節點，各有獨立圖形及兩行判讀；桌機橫讀、手机縱讀。次要英文／圖例較小，故不給滿分。",
+      "consistency": "依此圖同件、配色、箭頭與角色核對；extractor／matcher／幾何分工不重複交付；描述值與候選為示意。"
+    },
+    "completion": [
+      8,
+      9,
+      9,
+      8,
+      9
+    ],
+    "completion_evidence": [
+      "留白、框距與藍灰配色穩定；原生工程圖造型較簡筆，8分。",
+      "三個節點及結論完整；LightGlue不取代找點，也不直接給工站姿態。",
+      "箭頭、角色與示意界線已核對；兩圖點／描述、交叉候選與最後A-A/B-B/C-C點對可見前後差別。",
+      "必要標籤可讀，手機仍需縱向捲動；次要說明稍密，8分。",
+      "主標題、節點、圖形到單一淡黃結論依序；未放第二個搶焦點的總結。"
+    ]
+  },
+  {
+    "id": "lightglue-engineering-2",
+    "mode": "desktop",
+    "image": "roadmap-model-selection/geometry-alignment-measurement/lightglue/images/final/WI032-LIGHTGLUE-02-r04-desktop.png",
+    "size": [
+      1672,
+      941
+    ],
+    "sha256": "cfcd5ed38d3f801d0051518a206924bd15d7f916aa40fddd30e74c852daa2814",
+    "generation": "new SVG rendered by browser",
+    "evidence": "illustrative, not model inference",
+    "actual_page_review": "self-reviewed",
+    "user_review": "pending",
+    "rubric": "v1.0",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      10
+    ],
+    "total": 93,
+    "observations": "圖內三角連線與跨圖連線不同，未匹配A及含糊B/C不被硬連成確定結果。",
+    "deductions": "關係範圍與未匹配狀態可直接辨認；未畫注意力權重數值。",
+    "screenshot": "pages/lightglue/docs-1440-engineering-2.png",
+    "scope": "圖片像素及圖內標籤；正文不作圖片加分",
+    "criteria_evidence": {
+      "case": "圖內三角連線與跨圖連線不同，未匹配A及含糊B/C不被硬連成確定結果。",
+      "meaning": "關係範圍與未匹配狀態可直接辨認；未畫注意力權重數值。",
+      "action": "不是每個點都必須硬配到另一張圖。",
+      "reading": "三個主要節點，各有獨立圖形及兩行判讀；桌機橫讀、手机縱讀。次要英文／圖例較小，故不給滿分。",
+      "consistency": "依此圖同件、配色、箭頭與角色核對；關係範圍與未匹配狀態可直接辨認；未畫注意力權重數值。"
+    },
+    "completion": [
+      8,
+      9,
+      9,
+      8,
+      9
+    ],
+    "completion_evidence": [
+      "留白、框距與藍灰配色穩定；原生工程圖造型較簡筆，8分。",
+      "三個節點及結論完整；不是每個點都必須硬配到另一張圖。",
+      "箭頭、角色與示意界線已核對；圖內三角連線與跨圖連線不同，未匹配A及含糊B/C不被硬連成確定結果。",
+      "必要標籤可讀，手機仍需縱向捲動；次要說明稍密，8分。",
+      "主標題、節點、圖形到單一淡黃結論依序；未放第二個搶焦點的總結。"
+    ]
+  },
+  {
+    "id": "lightglue-engineering-2",
+    "mode": "mobile",
+    "image": "roadmap-model-selection/geometry-alignment-measurement/lightglue/images/final/WI032-LIGHTGLUE-02-r04-mobile.png",
+    "size": [
+      768,
+      2770
+    ],
+    "sha256": "892c8b8fae425aa2f7c25506711882e5da4f89976384e0bf6de51a5ac7a4efe4",
+    "generation": "new SVG rendered by browser",
+    "evidence": "illustrative, not model inference",
+    "actual_page_review": "self-reviewed",
+    "user_review": "pending",
+    "rubric": "v1.0",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      10
+    ],
+    "total": 93,
+    "observations": "圖內三角連線與跨圖連線不同，未匹配A及含糊B/C不被硬連成確定結果。",
+    "deductions": "關係範圍與未匹配狀態可直接辨認；未畫注意力權重數值。",
+    "screenshot": "pages/lightglue/docs-360-engineering-2.png",
+    "scope": "圖片像素及圖內標籤；正文不作圖片加分",
+    "criteria_evidence": {
+      "case": "圖內三角連線與跨圖連線不同，未匹配A及含糊B/C不被硬連成確定結果。",
+      "meaning": "關係範圍與未匹配狀態可直接辨認；未畫注意力權重數值。",
+      "action": "不是每個點都必須硬配到另一張圖。",
+      "reading": "三個主要節點，各有獨立圖形及兩行判讀；桌機橫讀、手机縱讀。次要英文／圖例較小，故不給滿分。",
+      "consistency": "依此圖同件、配色、箭頭與角色核對；關係範圍與未匹配狀態可直接辨認；未畫注意力權重數值。"
+    },
+    "completion": [
+      8,
+      9,
+      9,
+      8,
+      9
+    ],
+    "completion_evidence": [
+      "留白、框距與藍灰配色穩定；原生工程圖造型較簡筆，8分。",
+      "三個節點及結論完整；不是每個點都必須硬配到另一張圖。",
+      "箭頭、角色與示意界線已核對；圖內三角連線與跨圖連線不同，未匹配A及含糊B/C不被硬連成確定結果。",
+      "必要標籤可讀，手機仍需縱向捲動；次要說明稍密，8分。",
+      "主標題、節點、圖形到單一淡黃結論依序；未放第二個搶焦點的總結。"
+    ]
+  },
+  {
+    "id": "lightglue-engineering-3",
+    "mode": "desktop",
+    "image": "roadmap-model-selection/geometry-alignment-measurement/lightglue/images/final/WI032-LIGHTGLUE-03-r04-desktop.png",
+    "size": [
+      1672,
+      941
+    ],
+    "sha256": "857c8ff0efb84ed50def437f2d226533660b54858e9d593ece25da83931aed7e",
+    "generation": "new SVG rendered by browser",
+    "evidence": "illustrative, not model inference",
+    "actual_page_review": "self-reviewed",
+    "user_review": "pending",
+    "rubric": "v1.0",
+    "scores": [
+      22,
+      24,
+      19,
+      18,
+      9
+    ],
+    "total": 92,
+    "observations": "Layer2早停與後層虛線、灰C不再連邊，清楚區分少層與少點。",
+    "deductions": "修剪沒有刪原影像；最後流程表示完整成本，無具體速度數字。",
+    "screenshot": "pages/lightglue/docs-1440-engineering-3.png",
+    "scope": "圖片像素及圖內標籤；正文不作圖片加分",
+    "criteria_evidence": {
+      "case": "Layer2早停與後層虛線、灰C不再連邊，清楚區分少層與少點。",
+      "meaning": "修剪沒有刪原影像；最後流程表示完整成本，無具體速度數字。",
+      "action": "自適應不是每張圖都更快的保證。",
+      "reading": "三個主要節點，各有獨立圖形及兩行判讀；桌機橫讀、手机縱讀。次要英文／圖例較小，故不給滿分。",
+      "consistency": "依此圖同件、配色、箭頭與角色核對；修剪沒有刪原影像；最後流程表示完整成本，無具體速度數字。"
+    },
+    "completion": [
+      8,
+      9,
+      9,
+      8,
+      9
+    ],
+    "completion_evidence": [
+      "留白、框距與藍灰配色穩定；原生工程圖造型較簡筆，8分。",
+      "三個節點及結論完整；自適應不是每張圖都更快的保證。",
+      "箭頭、角色與示意界線已核對；Layer2早停與後層虛線、灰C不再連邊，清楚區分少層與少點。",
+      "必要標籤可讀，手機仍需縱向捲動；次要說明稍密，8分。",
+      "主標題、節點、圖形到單一淡黃結論依序；未放第二個搶焦點的總結。"
+    ]
+  },
+  {
+    "id": "lightglue-engineering-3",
+    "mode": "mobile",
+    "image": "roadmap-model-selection/geometry-alignment-measurement/lightglue/images/final/WI032-LIGHTGLUE-03-r04-mobile.png",
+    "size": [
+      768,
+      2770
+    ],
+    "sha256": "50705829a71b08875286953eaaec36b440be5a70e53ef198569d71b0918f1484",
+    "generation": "new SVG rendered by browser",
+    "evidence": "illustrative, not model inference",
+    "actual_page_review": "self-reviewed",
+    "user_review": "pending",
+    "rubric": "v1.0",
+    "scores": [
+      22,
+      24,
+      19,
+      18,
+      9
+    ],
+    "total": 92,
+    "observations": "Layer2早停與後層虛線、灰C不再連邊，清楚區分少層與少點。",
+    "deductions": "修剪沒有刪原影像；最後流程表示完整成本，無具體速度數字。",
+    "screenshot": "pages/lightglue/docs-360-engineering-3.png",
+    "scope": "圖片像素及圖內標籤；正文不作圖片加分",
+    "criteria_evidence": {
+      "case": "Layer2早停與後層虛線、灰C不再連邊，清楚區分少層與少點。",
+      "meaning": "修剪沒有刪原影像；最後流程表示完整成本，無具體速度數字。",
+      "action": "自適應不是每張圖都更快的保證。",
+      "reading": "三個主要節點，各有獨立圖形及兩行判讀；桌機橫讀、手机縱讀。次要英文／圖例較小，故不給滿分。",
+      "consistency": "依此圖同件、配色、箭頭與角色核對；修剪沒有刪原影像；最後流程表示完整成本，無具體速度數字。"
+    },
+    "completion": [
+      8,
+      9,
+      9,
+      8,
+      9
+    ],
+    "completion_evidence": [
+      "留白、框距與藍灰配色穩定；原生工程圖造型較簡筆，8分。",
+      "三個節點及結論完整；自適應不是每張圖都更快的保證。",
+      "箭頭、角色與示意界線已核對；Layer2早停與後層虛線、灰C不再連邊，清楚區分少層與少點。",
+      "必要標籤可讀，手機仍需縱向捲動；次要說明稍密，8分。",
+      "主標題、節點、圖形到單一淡黃結論依序；未放第二個搶焦點的總結。"
+    ]
+  },
+  {
+    "id": "lightglue-engineering-4",
+    "mode": "desktop",
+    "image": "roadmap-model-selection/geometry-alignment-measurement/lightglue/images/final/WI032-LIGHTGLUE-04-r04-desktop.png",
+    "size": [
+      1672,
+      941
+    ],
+    "sha256": "d822d885d07e9011bb25f7114d577586a520383c84d7fbcd34e7b34bbc57ea32",
+    "generation": "new SVG rendered by browser",
+    "evidence": "illustrative, not model inference",
+    "actual_page_review": "self-reviewed",
+    "user_review": "pending",
+    "rubric": "v1.0",
+    "scores": [
+      23,
+      23,
+      19,
+      18,
+      9
+    ],
+    "total": 92,
+    "observations": "有限重疊區、三個相似孔、重新取像行動，限制來源可見。",
+    "deductions": "共享區與相似孔為兩類限制；相機圖示較抽象，未演示完整新視角拍攝。",
+    "screenshot": "pages/lightglue/docs-1440-engineering-4.png",
+    "scope": "圖片像素及圖內標籤；正文不作圖片加分",
+    "criteria_evidence": {
+      "case": "有限重疊區、三個相似孔、重新取像行動，限制來源可見。",
+      "meaning": "共享區與相似孔為兩類限制；相機圖示較抽象，未演示完整新視角拍攝。",
+      "action": "看不見或分不出的部分，不能要求模型猜對。",
+      "reading": "三個主要節點，各有獨立圖形及兩行判讀；桌機橫讀、手机縱讀。次要英文／圖例較小，故不給滿分。",
+      "consistency": "依此圖同件、配色、箭頭與角色核對；共享區與相似孔為兩類限制；相機圖示較抽象，未演示完整新視角拍攝。"
+    },
+    "completion": [
+      8,
+      9,
+      9,
+      8,
+      9
+    ],
+    "completion_evidence": [
+      "留白、框距與藍灰配色穩定；原生工程圖造型較簡筆，8分。",
+      "三個節點及結論完整；看不見或分不出的部分，不能要求模型猜對。",
+      "箭頭、角色與示意界線已核對；有限重疊區、三個相似孔、重新取像行動，限制來源可見。",
+      "必要標籤可讀，手機仍需縱向捲動；次要說明稍密，8分。",
+      "主標題、節點、圖形到單一淡黃結論依序；未放第二個搶焦點的總結。"
+    ]
+  },
+  {
+    "id": "lightglue-engineering-4",
+    "mode": "mobile",
+    "image": "roadmap-model-selection/geometry-alignment-measurement/lightglue/images/final/WI032-LIGHTGLUE-04-r04-mobile.png",
+    "size": [
+      768,
+      2770
+    ],
+    "sha256": "7134530ad70cdb01d4fb8e5a9fa42803c807757283ee3c7183f9ef5aaf07f647",
+    "generation": "new SVG rendered by browser",
+    "evidence": "illustrative, not model inference",
+    "actual_page_review": "self-reviewed",
+    "user_review": "pending",
+    "rubric": "v1.0",
+    "scores": [
+      23,
+      23,
+      19,
+      18,
+      9
+    ],
+    "total": 92,
+    "observations": "有限重疊區、三個相似孔、重新取像行動，限制來源可見。",
+    "deductions": "共享區與相似孔為兩類限制；相機圖示較抽象，未演示完整新視角拍攝。",
+    "screenshot": "pages/lightglue/docs-360-engineering-4.png",
+    "scope": "圖片像素及圖內標籤；正文不作圖片加分",
+    "criteria_evidence": {
+      "case": "有限重疊區、三個相似孔、重新取像行動，限制來源可見。",
+      "meaning": "共享區與相似孔為兩類限制；相機圖示較抽象，未演示完整新視角拍攝。",
+      "action": "看不見或分不出的部分，不能要求模型猜對。",
+      "reading": "三個主要節點，各有獨立圖形及兩行判讀；桌機橫讀、手机縱讀。次要英文／圖例較小，故不給滿分。",
+      "consistency": "依此圖同件、配色、箭頭與角色核對；共享區與相似孔為兩類限制；相機圖示較抽象，未演示完整新視角拍攝。"
+    },
+    "completion": [
+      8,
+      9,
+      9,
+      8,
+      9
+    ],
+    "completion_evidence": [
+      "留白、框距與藍灰配色穩定；原生工程圖造型較簡筆，8分。",
+      "三個節點及結論完整；看不見或分不出的部分，不能要求模型猜對。",
+      "箭頭、角色與示意界線已核對；有限重疊區、三個相似孔、重新取像行動，限制來源可見。",
+      "必要標籤可讀，手機仍需縱向捲動；次要說明稍密，8分。",
+      "主標題、節點、圖形到單一淡黃結論依序；未放第二個搶焦點的總結。"
+    ]
+  },
+  {
+    "id": "det-dino-detector-engineering-1",
+    "mode": "desktop",
+    "image": "roadmap-model-selection/detector/det-dino-detector/images/final/WI032-DINO-DET-01-r04-desktop.png",
+    "size": [
+      1672,
+      941
+    ],
+    "sha256": "b8809f0226e2c48ce10e51122a6aba827502333eaf1b6104aa1c23e958964b34",
+    "generation": "new SVG rendered by browser",
+    "evidence": "illustrative, not model inference",
+    "actual_page_review": "self-reviewed",
+    "user_review": "pending",
+    "rubric": "v1.0",
+    "scores": [
+      24,
+      23,
+      19,
+      18,
+      9
+    ],
+    "total": 93,
+    "observations": "螺栓墊圈框標註、三次框位置更新、兩物件類別框對應完整交付。",
+    "deductions": "訓練標註與推論框角色分開；框更新為概念示意，不是實際decoder輸出。",
+    "screenshot": "pages/det-dino-detector/docs-1440-engineering-1.png",
+    "scope": "圖片像素及圖內標籤；正文不作圖片加分",
+    "criteria_evidence": {
+      "case": "螺栓墊圈框標註、三次框位置更新、兩物件類別框對應完整交付。",
+      "meaning": "訓練標註與推論框角色分開；框更新為概念示意，不是實際decoder輸出。",
+      "action": "DINO detector是偵測器，不是DINOv2特徵骨幹。",
+      "reading": "三個主要節點，各有獨立圖形及兩行判讀；桌機橫讀、手机縱讀。次要英文／圖例較小，故不給滿分。",
+      "consistency": "依此圖同件、配色、箭頭與角色核對；訓練標註與推論框角色分開；框更新為概念示意，不是實際decoder輸出。"
+    },
+    "completion": [
+      8,
+      9,
+      9,
+      8,
+      9
+    ],
+    "completion_evidence": [
+      "留白、框距與藍灰配色穩定；原生工程圖造型較簡筆，8分。",
+      "三個節點及結論完整；DINO detector是偵測器，不是DINOv2特徵骨幹。",
+      "箭頭、角色與示意界線已核對；螺栓墊圈框標註、三次框位置更新、兩物件類別框對應完整交付。",
+      "必要標籤可讀，手機仍需縱向捲動；次要說明稍密，8分。",
+      "主標題、節點、圖形到單一淡黃結論依序；未放第二個搶焦點的總結。"
+    ]
+  },
+  {
+    "id": "det-dino-detector-engineering-1",
+    "mode": "mobile",
+    "image": "roadmap-model-selection/detector/det-dino-detector/images/final/WI032-DINO-DET-01-r04-mobile.png",
+    "size": [
+      768,
+      2770
+    ],
+    "sha256": "4d0a403b2f648d8ad28b23ed4ba20908af657d638cbfa651243944daa0afca7f",
+    "generation": "new SVG rendered by browser",
+    "evidence": "illustrative, not model inference",
+    "actual_page_review": "self-reviewed",
+    "user_review": "pending",
+    "rubric": "v1.0",
+    "scores": [
+      24,
+      23,
+      19,
+      18,
+      9
+    ],
+    "total": 93,
+    "observations": "螺栓墊圈框標註、三次框位置更新、兩物件類別框對應完整交付。",
+    "deductions": "訓練標註與推論框角色分開；框更新為概念示意，不是實際decoder輸出。",
+    "screenshot": "pages/det-dino-detector/docs-360-engineering-1.png",
+    "scope": "圖片像素及圖內標籤；正文不作圖片加分",
+    "criteria_evidence": {
+      "case": "螺栓墊圈框標註、三次框位置更新、兩物件類別框對應完整交付。",
+      "meaning": "訓練標註與推論框角色分開；框更新為概念示意，不是實際decoder輸出。",
+      "action": "DINO detector是偵測器，不是DINOv2特徵骨幹。",
+      "reading": "三個主要節點，各有獨立圖形及兩行判讀；桌機橫讀、手机縱讀。次要英文／圖例較小，故不給滿分。",
+      "consistency": "依此圖同件、配色、箭頭與角色核對；訓練標註與推論框角色分開；框更新為概念示意，不是實際decoder輸出。"
+    },
+    "completion": [
+      8,
+      9,
+      9,
+      8,
+      9
+    ],
+    "completion_evidence": [
+      "留白、框距與藍灰配色穩定；原生工程圖造型較簡筆，8分。",
+      "三個節點及結論完整；DINO detector是偵測器，不是DINOv2特徵骨幹。",
+      "箭頭、角色與示意界線已核對；螺栓墊圈框標註、三次框位置更新、兩物件類別框對應完整交付。",
+      "必要標籤可讀，手機仍需縱向捲動；次要說明稍密，8分。",
+      "主標題、節點、圖形到單一淡黃結論依序；未放第二個搶焦點的總結。"
+    ]
+  },
+  {
+    "id": "det-dino-detector-engineering-2",
+    "mode": "desktop",
+    "image": "roadmap-model-selection/detector/det-dino-detector/images/final/WI032-DINO-DET-02-r04-desktop.png",
+    "size": [
+      1672,
+      941
+    ],
+    "sha256": "5240e0cb44d3e176f1ba8bbc9180e0e905d4dadc84bfc06fc537bbc347e7c94c",
+    "generation": "new SVG rendered by browser",
+    "evidence": "illustrative, not model inference",
+    "actual_page_review": "self-reviewed",
+    "user_review": "pending",
+    "rubric": "v1.0",
+    "scores": [
+      23,
+      24,
+      19,
+      18,
+      9
+    ],
+    "total": 93,
+    "observations": "影像候選選位置、位置框加可學內容向量、decoder框更新三個步驟不同。",
+    "deductions": "mixed query兩部分來源可追蹤；未畫每層attention細節。",
+    "screenshot": "pages/det-dino-detector/docs-1440-engineering-2.png",
+    "scope": "圖片像素及圖內標籤；正文不作圖片加分",
+    "criteria_evidence": {
+      "case": "影像候選選位置、位置框加可學內容向量、decoder框更新三個步驟不同。",
+      "meaning": "mixed query兩部分來源可追蹤；未畫每層attention細節。",
+      "action": "推論起點來自影像，不是人工真值框。",
+      "reading": "三個主要節點，各有獨立圖形及兩行判讀；桌機橫讀、手机縱讀。次要英文／圖例較小，故不給滿分。",
+      "consistency": "依此圖同件、配色、箭頭與角色核對；mixed query兩部分來源可追蹤；未畫每層attention細節。"
+    },
+    "completion": [
+      8,
+      9,
+      9,
+      8,
+      9
+    ],
+    "completion_evidence": [
+      "留白、框距與藍灰配色穩定；原生工程圖造型較簡筆，8分。",
+      "三個節點及結論完整；推論起點來自影像，不是人工真值框。",
+      "箭頭、角色與示意界線已核對；影像候選選位置、位置框加可學內容向量、decoder框更新三個步驟不同。",
+      "必要標籤可讀，手機仍需縱向捲動；次要說明稍密，8分。",
+      "主標題、節點、圖形到單一淡黃結論依序；未放第二個搶焦點的總結。"
+    ]
+  },
+  {
+    "id": "det-dino-detector-engineering-2",
+    "mode": "mobile",
+    "image": "roadmap-model-selection/detector/det-dino-detector/images/final/WI032-DINO-DET-02-r04-mobile.png",
+    "size": [
+      768,
+      2770
+    ],
+    "sha256": "3c740f3475a4f6e67c907014513eb99700e25b14d2e4efa2e3943a81d7bc5e09",
+    "generation": "new SVG rendered by browser",
+    "evidence": "illustrative, not model inference",
+    "actual_page_review": "self-reviewed",
+    "user_review": "pending",
+    "rubric": "v1.0",
+    "scores": [
+      23,
+      24,
+      19,
+      18,
+      9
+    ],
+    "total": 93,
+    "observations": "影像候選選位置、位置框加可學內容向量、decoder框更新三個步驟不同。",
+    "deductions": "mixed query兩部分來源可追蹤；未畫每層attention細節。",
+    "screenshot": "pages/det-dino-detector/docs-360-engineering-2.png",
+    "scope": "圖片像素及圖內標籤；正文不作圖片加分",
+    "criteria_evidence": {
+      "case": "影像候選選位置、位置框加可學內容向量、decoder框更新三個步驟不同。",
+      "meaning": "mixed query兩部分來源可追蹤；未畫每層attention細節。",
+      "action": "推論起點來自影像，不是人工真值框。",
+      "reading": "三個主要節點，各有獨立圖形及兩行判讀；桌機橫讀、手机縱讀。次要英文／圖例較小，故不給滿分。",
+      "consistency": "依此圖同件、配色、箭頭與角色核對；mixed query兩部分來源可追蹤；未畫每層attention細節。"
+    },
+    "completion": [
+      8,
+      9,
+      9,
+      8,
+      9
+    ],
+    "completion_evidence": [
+      "留白、框距與藍灰配色穩定；原生工程圖造型較簡筆，8分。",
+      "三個節點及結論完整；推論起點來自影像，不是人工真值框。",
+      "箭頭、角色與示意界線已核對；影像候選選位置、位置框加可學內容向量、decoder框更新三個步驟不同。",
+      "必要標籤可讀，手機仍需縱向捲動；次要說明稍密，8分。",
+      "主標題、節點、圖形到單一淡黃結論依序；未放第二個搶焦點的總結。"
+    ]
+  },
+  {
+    "id": "det-dino-detector-engineering-3",
+    "mode": "desktop",
+    "image": "roadmap-model-selection/detector/det-dino-detector/images/final/WI032-DINO-DET-03-r04-desktop.png",
+    "size": [
+      1672,
+      941
+    ],
+    "sha256": "a05f26d23ad7e8df91cbeaef7c60dd5abe7a58eaf48ff19621c56dfde6d767ad",
+    "generation": "new SVG rendered by browser",
+    "evidence": "illustrative, not model inference",
+    "actual_page_review": "self-reviewed",
+    "user_review": "pending",
+    "rubric": "v1.0",
+    "scores": [
+      24,
+      24,
+      19,
+      18,
+      9
+    ],
+    "total": 94,
+    "observations": "同螺栓真值、近正框還原與遠負框無物件目標並列；負例沒有刪物件。",
+    "deductions": "正負是學習目標而非時序；僅展開一個GT，細部loss未畫。",
+    "screenshot": "pages/det-dino-detector/docs-1440-engineering-3.png",
+    "scope": "圖片像素及圖內標籤；正文不作圖片加分",
+    "criteria_evidence": {
+      "case": "同螺栓真值、近正框還原與遠負框無物件目標並列；負例沒有刪物件。",
+      "meaning": "正負是學習目標而非時序；僅展開一個GT，細部loss未畫。",
+      "action": "帶噪查詢是訓練輔助，正式推論不用真值。",
+      "reading": "三個主要節點，各有獨立圖形及兩行判讀；桌機橫讀、手机縱讀。次要英文／圖例較小，故不給滿分。",
+      "consistency": "依此圖同件、配色、箭頭與角色核對；正負是學習目標而非時序；僅展開一個GT，細部loss未畫。"
+    },
+    "completion": [
+      8,
+      9,
+      9,
+      8,
+      9
+    ],
+    "completion_evidence": [
+      "留白、框距與藍灰配色穩定；原生工程圖造型較簡筆，8分。",
+      "三個節點及結論完整；帶噪查詢是訓練輔助，正式推論不用真值。",
+      "箭頭、角色與示意界線已核對；同螺栓真值、近正框還原與遠負框無物件目標並列；負例沒有刪物件。",
+      "必要標籤可讀，手機仍需縱向捲動；次要說明稍密，8分。",
+      "主標題、節點、圖形到單一淡黃結論依序；未放第二個搶焦點的總結。"
+    ]
+  },
+  {
+    "id": "det-dino-detector-engineering-3",
+    "mode": "mobile",
+    "image": "roadmap-model-selection/detector/det-dino-detector/images/final/WI032-DINO-DET-03-r04-mobile.png",
+    "size": [
+      768,
+      2770
+    ],
+    "sha256": "21010713ba6b65b87da485e040870bad02c7e306284948932db01b6811325436",
+    "generation": "new SVG rendered by browser",
+    "evidence": "illustrative, not model inference",
+    "actual_page_review": "self-reviewed",
+    "user_review": "pending",
+    "rubric": "v1.0",
+    "scores": [
+      24,
+      24,
+      19,
+      18,
+      9
+    ],
+    "total": 94,
+    "observations": "同螺栓真值、近正框還原與遠負框無物件目標並列；負例沒有刪物件。",
+    "deductions": "正負是學習目標而非時序；僅展開一個GT，細部loss未畫。",
+    "screenshot": "pages/det-dino-detector/docs-360-engineering-3.png",
+    "scope": "圖片像素及圖內標籤；正文不作圖片加分",
+    "criteria_evidence": {
+      "case": "同螺栓真值、近正框還原與遠負框無物件目標並列；負例沒有刪物件。",
+      "meaning": "正負是學習目標而非時序；僅展開一個GT，細部loss未畫。",
+      "action": "帶噪查詢是訓練輔助，正式推論不用真值。",
+      "reading": "三個主要節點，各有獨立圖形及兩行判讀；桌機橫讀、手机縱讀。次要英文／圖例較小，故不給滿分。",
+      "consistency": "依此圖同件、配色、箭頭與角色核對；正負是學習目標而非時序；僅展開一個GT，細部loss未畫。"
+    },
+    "completion": [
+      8,
+      9,
+      9,
+      8,
+      9
+    ],
+    "completion_evidence": [
+      "留白、框距與藍灰配色穩定；原生工程圖造型較簡筆，8分。",
+      "三個節點及結論完整；帶噪查詢是訓練輔助，正式推論不用真值。",
+      "箭頭、角色與示意界線已核對；同螺栓真值、近正框還原與遠負框無物件目標並列；負例沒有刪物件。",
+      "必要標籤可讀，手機仍需縱向捲動；次要說明稍密，8分。",
+      "主標題、節點、圖形到單一淡黃結論依序；未放第二個搶焦點的總結。"
+    ]
+  },
+  {
+    "id": "det-dino-detector-engineering-4",
+    "mode": "desktop",
+    "image": "roadmap-model-selection/detector/det-dino-detector/images/final/WI032-DINO-DET-04-r04-desktop.png",
+    "size": [
+      1672,
+      941
+    ],
+    "sha256": "c8942447bca766e39e697d7a7c809e9beefab560b4e6e4e2a7ecf52031b57b48",
+    "generation": "new SVG rendered by browser",
+    "evidence": "illustrative, not model inference",
+    "actual_page_review": "self-reviewed",
+    "user_review": "pending",
+    "rubric": "v1.0",
+    "scores": [
+      23,
+      23,
+      19,
+      18,
+      9
+    ],
+    "total": 92,
+    "observations": "舊兩類框、新零件問號與完整處理鏈，指出改名稱不等於學會外觀。",
+    "deductions": "類別維護、標註與成本連到選擇；成本僅流程，沒有實測比較。",
+    "screenshot": "pages/det-dino-detector/docs-1440-engineering-4.png",
+    "scope": "圖片像素及圖內標籤；正文不作圖片加分",
+    "criteria_evidence": {
+      "case": "舊兩類框、新零件問號與完整處理鏈，指出改名稱不等於學會外觀。",
+      "meaning": "類別維護、標註與成本連到選擇；成本僅流程，沒有實測比較。",
+      "action": "按類別變更與資料成本選方法，不按模型新舊。",
+      "reading": "三個主要節點，各有獨立圖形及兩行判讀；桌機橫讀、手机縱讀。次要英文／圖例較小，故不給滿分。",
+      "consistency": "依此圖同件、配色、箭頭與角色核對；類別維護、標註與成本連到選擇；成本僅流程，沒有實測比較。"
+    },
+    "completion": [
+      8,
+      9,
+      9,
+      8,
+      9
+    ],
+    "completion_evidence": [
+      "留白、框距與藍灰配色穩定；原生工程圖造型較簡筆，8分。",
+      "三個節點及結論完整；按類別變更與資料成本選方法，不按模型新舊。",
+      "箭頭、角色與示意界線已核對；舊兩類框、新零件問號與完整處理鏈，指出改名稱不等於學會外觀。",
+      "必要標籤可讀，手機仍需縱向捲動；次要說明稍密，8分。",
+      "主標題、節點、圖形到單一淡黃結論依序；未放第二個搶焦點的總結。"
+    ]
+  },
+  {
+    "id": "det-dino-detector-engineering-4",
+    "mode": "mobile",
+    "image": "roadmap-model-selection/detector/det-dino-detector/images/final/WI032-DINO-DET-04-r04-mobile.png",
+    "size": [
+      768,
+      2770
+    ],
+    "sha256": "0633a61086fcab32490a3293f3a650cfb9b213933e18c52bae1fda02e56b54f6",
+    "generation": "new SVG rendered by browser",
+    "evidence": "illustrative, not model inference",
+    "actual_page_review": "self-reviewed",
+    "user_review": "pending",
+    "rubric": "v1.0",
+    "scores": [
+      23,
+      23,
+      19,
+      18,
+      9
+    ],
+    "total": 92,
+    "observations": "舊兩類框、新零件問號與完整處理鏈，指出改名稱不等於學會外觀。",
+    "deductions": "類別維護、標註與成本連到選擇；成本僅流程，沒有實測比較。",
+    "screenshot": "pages/det-dino-detector/docs-360-engineering-4.png",
+    "scope": "圖片像素及圖內標籤；正文不作圖片加分",
+    "criteria_evidence": {
+      "case": "舊兩類框、新零件問號與完整處理鏈，指出改名稱不等於學會外觀。",
+      "meaning": "類別維護、標註與成本連到選擇；成本僅流程，沒有實測比較。",
+      "action": "按類別變更與資料成本選方法，不按模型新舊。",
+      "reading": "三個主要節點，各有獨立圖形及兩行判讀；桌機橫讀、手机縱讀。次要英文／圖例較小，故不給滿分。",
+      "consistency": "依此圖同件、配色、箭頭與角色核對；類別維護、標註與成本連到選擇；成本僅流程，沒有實測比較。"
+    },
+    "completion": [
+      8,
+      9,
+      9,
+      8,
+      9
+    ],
+    "completion_evidence": [
+      "留白、框距與藍灰配色穩定；原生工程圖造型較簡筆，8分。",
+      "三個節點及結論完整；按類別變更與資料成本選方法，不按模型新舊。",
+      "箭頭、角色與示意界線已核對；舊兩類框、新零件問號與完整處理鏈，指出改名稱不等於學會外觀。",
+      "必要標籤可讀，手機仍需縱向捲動；次要說明稍密，8分。",
+      "主標題、節點、圖形到單一淡黃結論依序；未放第二個搶焦點的總結。"
+    ]
+  },
+  {
+    "id": "yolo-world-engineering-1",
+    "mode": "desktop",
+    "image": "roadmap-model-selection/detector/yolo-world/images/final/WI032-YOLOWORLD-01-r04-desktop.png",
+    "size": [
+      1672,
+      941
+    ],
+    "sha256": "35151b1249411a6200ce153ab0a719633e34240c53388d7b416556bbd79b56f0",
+    "generation": "new SVG rendered by browser",
+    "evidence": "illustrative, not model inference",
+    "actual_page_review": "self-reviewed",
+    "user_review": "pending",
+    "rubric": "v1.0",
+    "scores": [
+      24,
+      23,
+      19,
+      18,
+      9
+    ],
+    "total": 93,
+    "observations": "兩詞向量、具螺栓／墊圈行列的相似矩陣與兩類框可追蹤。",
+    "deductions": "列為影像區域、欄為詞彙，深色對角具語意；相似度是示意值。",
+    "screenshot": "pages/yolo-world/docs-1440-engineering-1.png",
+    "scope": "圖片像素及圖內標籤；正文不作圖片加分",
+    "criteria_evidence": {
+      "case": "兩詞向量、具螺栓／墊圈行列的相似矩陣與兩類框可追蹤。",
+      "meaning": "列為影像區域、欄為詞彙，深色對角具語意；相似度是示意值。",
+      "action": "詞彙可變，但現場辨識能力仍需驗證。",
+      "reading": "三個主要節點，各有獨立圖形及兩行判讀；桌機橫讀、手机縱讀。次要英文／圖例較小，故不給滿分。",
+      "consistency": "依此圖同件、配色、箭頭與角色核對；列為影像區域、欄為詞彙，深色對角具語意；相似度是示意值。"
+    },
+    "completion": [
+      8,
+      9,
+      9,
+      8,
+      9
+    ],
+    "completion_evidence": [
+      "留白、框距與藍灰配色穩定；原生工程圖造型較簡筆，8分。",
+      "三個節點及結論完整；詞彙可變，但現場辨識能力仍需驗證。",
+      "箭頭、角色與示意界線已核對；兩詞向量、具螺栓／墊圈行列的相似矩陣與兩類框可追蹤。",
+      "必要標籤可讀，手機仍需縱向捲動；次要說明稍密，8分。",
+      "主標題、節點、圖形到單一淡黃結論依序；未放第二個搶焦點的總結。"
+    ]
+  },
+  {
+    "id": "yolo-world-engineering-1",
+    "mode": "mobile",
+    "image": "roadmap-model-selection/detector/yolo-world/images/final/WI032-YOLOWORLD-01-r04-mobile.png",
+    "size": [
+      768,
+      2770
+    ],
+    "sha256": "5a50d9fb4fe22cf87946090892a27977a91f1839313d827700adee951376ca96",
+    "generation": "new SVG rendered by browser",
+    "evidence": "illustrative, not model inference",
+    "actual_page_review": "self-reviewed",
+    "user_review": "pending",
+    "rubric": "v1.0",
+    "scores": [
+      24,
+      23,
+      19,
+      18,
+      9
+    ],
+    "total": 93,
+    "observations": "兩詞向量、具螺栓／墊圈行列的相似矩陣與兩類框可追蹤。",
+    "deductions": "列為影像區域、欄為詞彙，深色對角具語意；相似度是示意值。",
+    "screenshot": "pages/yolo-world/docs-360-engineering-1.png",
+    "scope": "圖片像素及圖內標籤；正文不作圖片加分",
+    "criteria_evidence": {
+      "case": "兩詞向量、具螺栓／墊圈行列的相似矩陣與兩類框可追蹤。",
+      "meaning": "列為影像區域、欄為詞彙，深色對角具語意；相似度是示意值。",
+      "action": "詞彙可變，但現場辨識能力仍需驗證。",
+      "reading": "三個主要節點，各有獨立圖形及兩行判讀；桌機橫讀、手机縱讀。次要英文／圖例較小，故不給滿分。",
+      "consistency": "依此圖同件、配色、箭頭與角色核對；列為影像區域、欄為詞彙，深色對角具語意；相似度是示意值。"
+    },
+    "completion": [
+      8,
+      9,
+      9,
+      8,
+      9
+    ],
+    "completion_evidence": [
+      "留白、框距與藍灰配色穩定；原生工程圖造型較簡筆，8分。",
+      "三個節點及結論完整；詞彙可變，但現場辨識能力仍需驗證。",
+      "箭頭、角色與示意界線已核對；兩詞向量、具螺栓／墊圈行列的相似矩陣與兩類框可追蹤。",
+      "必要標籤可讀，手機仍需縱向捲動；次要說明稍密，8分。",
+      "主標題、節點、圖形到單一淡黃結論依序；未放第二個搶焦點的總結。"
+    ]
+  },
+  {
+    "id": "yolo-world-engineering-2",
+    "mode": "desktop",
+    "image": "roadmap-model-selection/detector/yolo-world/images/final/WI032-YOLOWORLD-02-r05-desktop.png",
+    "size": [
+      1672,
+      941
+    ],
+    "sha256": "d16289d9826f9d18187c4a4f366939863d9ac5235a8d957a3652bf1dcf15274a",
+    "generation": "new SVG rendered by browser",
+    "evidence": "illustrative, not model inference",
+    "actual_page_review": "self-reviewed",
+    "user_review": "pending",
+    "rubric": "v1.0",
+    "scores": [
+      23,
+      24,
+      19,
+      18,
+      9
+    ],
+    "total": 93,
+    "observations": "多尺度圖、影像／詞彙兩路進入權重格、具標籤區域詞彙矩陣。",
+    "deductions": "r05綠箭頭繞開max/sigmoid字；保留最必要權重路徑，ImagePooling細節在正文而不計入本圖加分。",
+    "screenshot": "pages/yolo-world/docs-1440-engineering-2.png",
+    "scope": "圖片像素及圖內標籤；正文不作圖片加分",
+    "criteria_evidence": {
+      "case": "多尺度圖、影像／詞彙兩路進入權重格、具標籤區域詞彙矩陣。",
+      "meaning": "r05綠箭頭繞開max/sigmoid字；保留最必要權重路徑，ImagePooling細節在正文而不計入本圖加分。",
+      "action": "保留影像與文字兩條來源，才看得懂比對。",
+      "reading": "三個主要節點，各有獨立圖形及兩行判讀；桌機橫讀、手机縱讀。次要英文／圖例較小，故不給滿分。",
+      "consistency": "依此圖同件、配色、箭頭與角色核對；r05綠箭頭繞開max/sigmoid字；保留最必要權重路徑，ImagePooling細節在正文而不計入本圖加分。"
+    },
+    "completion": [
+      8,
+      9,
+      9,
+      8,
+      9
+    ],
+    "completion_evidence": [
+      "留白、框距與藍灰配色穩定；原生工程圖造型較簡筆，8分。",
+      "三個節點及結論完整；保留影像與文字兩條來源，才看得懂比對。",
+      "箭頭、角色與示意界線已核對；多尺度圖、影像／詞彙兩路進入權重格、具標籤區域詞彙矩陣。",
+      "必要標籤可讀，手機仍需縱向捲動；次要說明稍密，8分。",
+      "主標題、節點、圖形到單一淡黃結論依序；未放第二個搶焦點的總結。"
+    ]
+  },
+  {
+    "id": "yolo-world-engineering-2",
+    "mode": "mobile",
+    "image": "roadmap-model-selection/detector/yolo-world/images/final/WI032-YOLOWORLD-02-r05-mobile.png",
+    "size": [
+      768,
+      2770
+    ],
+    "sha256": "4441b65ac4745e87f63c4dadf9c4063d1a53730e506818a47a0a962d3ad9f718",
+    "generation": "new SVG rendered by browser",
+    "evidence": "illustrative, not model inference",
+    "actual_page_review": "self-reviewed",
+    "user_review": "pending",
+    "rubric": "v1.0",
+    "scores": [
+      23,
+      24,
+      19,
+      18,
+      9
+    ],
+    "total": 93,
+    "observations": "多尺度圖、影像／詞彙兩路進入權重格、具標籤區域詞彙矩陣。",
+    "deductions": "r05綠箭頭繞開max/sigmoid字；保留最必要權重路徑，ImagePooling細節在正文而不計入本圖加分。",
+    "screenshot": "pages/yolo-world/docs-360-engineering-2.png",
+    "scope": "圖片像素及圖內標籤；正文不作圖片加分",
+    "criteria_evidence": {
+      "case": "多尺度圖、影像／詞彙兩路進入權重格、具標籤區域詞彙矩陣。",
+      "meaning": "r05綠箭頭繞開max/sigmoid字；保留最必要權重路徑，ImagePooling細節在正文而不計入本圖加分。",
+      "action": "保留影像與文字兩條來源，才看得懂比對。",
+      "reading": "三個主要節點，各有獨立圖形及兩行判讀；桌機橫讀、手机縱讀。次要英文／圖例較小，故不給滿分。",
+      "consistency": "依此圖同件、配色、箭頭與角色核對；r05綠箭頭繞開max/sigmoid字；保留最必要權重路徑，ImagePooling細節在正文而不計入本圖加分。"
+    },
+    "completion": [
+      8,
+      9,
+      9,
+      8,
+      9
+    ],
+    "completion_evidence": [
+      "留白、框距與藍灰配色穩定；原生工程圖造型較簡筆，8分。",
+      "三個節點及結論完整；保留影像與文字兩條來源，才看得懂比對。",
+      "箭頭、角色與示意界線已核對；多尺度圖、影像／詞彙兩路進入權重格、具標籤區域詞彙矩陣。",
+      "必要標籤可讀，手機仍需縱向捲動；次要說明稍密，8分。",
+      "主標題、節點、圖形到單一淡黃結論依序；未放第二個搶焦點的總結。"
+    ]
+  },
+  {
+    "id": "yolo-world-engineering-3",
+    "mode": "desktop",
+    "image": "roadmap-model-selection/detector/yolo-world/images/final/WI032-YOLOWORLD-03-r07-desktop.png",
+    "size": [
+      1672,
+      941
+    ],
+    "sha256": "ec1a74b708a4ebeee848b80972dd8da2927a8c7290d671da1e0e4b10542a9c8e",
+    "generation": "new SVG rendered by browser",
+    "evidence": "illustrative, not model inference",
+    "actual_page_review": "self-reviewed",
+    "user_review": "pending",
+    "rubric": "v1.0",
+    "scores": [
+      23,
+      24,
+      19,
+      18,
+      9
+    ],
+    "total": 93,
+    "observations": "兩類詞彙向量以相同顏色轉為1×1分類頭參數，影像特徵通過此頭產生類別分數；與外存快取分開。",
+    "deductions": "r04部署方框不足以説明轉換，r07依官方分類頭例補可見結構；只示範head，不當作所有neck與head的完整架構。",
+    "screenshot": "pages/yolo-world/docs-1440-engineering-3.png",
+    "scope": "圖片像素及圖內標籤；正文不作圖片加分",
+    "criteria_evidence": {
+      "case": "兩類詞彙向量以相同顏色轉為1×1分類頭參數，影像特徵通過此頭產生類別分數；與外存快取分開。",
+      "meaning": "r04部署方框不足以説明轉換，r07依官方分類頭例補可見結構；只示範head，不當作所有neck與head的完整架構。",
+      "action": "快取向量不等於已完成模型重參數化。",
+      "reading": "三個主要節點，各有獨立圖形及兩行判讀；桌機橫讀、手机縱讀。次要英文／圖例較小，故不給滿分。",
+      "consistency": "依此圖同件、配色、箭頭與角色核對；r04部署方框不足以説明轉換，r07依官方分類頭例補可見結構；只示範head，不當作所有neck與head的完整架構。"
+    },
+    "completion": [
+      8,
+      9,
+      9,
+      8,
+      9
+    ],
+    "completion_evidence": [
+      "留白、框距與藍灰配色穩定；原生工程圖造型較簡筆，8分。",
+      "三個節點及結論完整；快取向量不等於已完成模型重參數化。",
+      "箭頭、角色與示意界線已核對；兩類詞彙向量以相同顏色轉為1×1分類頭參數，影像特徵通過此頭產生類別分數；與外存快取分開。",
+      "必要標籤可讀，手機仍需縱向捲動；次要說明稍密，8分。",
+      "主標題、節點、圖形到單一淡黃結論依序；未放第二個搶焦點的總結。"
+    ]
+  },
+  {
+    "id": "yolo-world-engineering-3",
+    "mode": "mobile",
+    "image": "roadmap-model-selection/detector/yolo-world/images/final/WI032-YOLOWORLD-03-r07-mobile.png",
+    "size": [
+      768,
+      2770
+    ],
+    "sha256": "f0008c3335f45b7b1920ab0014f67ca8e903eedf0db898a6434b1f0349e9e177",
+    "generation": "new SVG rendered by browser",
+    "evidence": "illustrative, not model inference",
+    "actual_page_review": "self-reviewed",
+    "user_review": "pending",
+    "rubric": "v1.0",
+    "scores": [
+      23,
+      24,
+      19,
+      18,
+      9
+    ],
+    "total": 93,
+    "observations": "兩類詞彙向量以相同顏色轉為1×1分類頭參數，影像特徵通過此頭產生類別分數；與外存快取分開。",
+    "deductions": "r04部署方框不足以説明轉換，r07依官方分類頭例補可見結構；只示範head，不當作所有neck與head的完整架構。",
+    "screenshot": "pages/yolo-world/docs-360-engineering-3.png",
+    "scope": "圖片像素及圖內標籤；正文不作圖片加分",
+    "criteria_evidence": {
+      "case": "兩類詞彙向量以相同顏色轉為1×1分類頭參數，影像特徵通過此頭產生類別分數；與外存快取分開。",
+      "meaning": "r04部署方框不足以説明轉換，r07依官方分類頭例補可見結構；只示範head，不當作所有neck與head的完整架構。",
+      "action": "快取向量不等於已完成模型重參數化。",
+      "reading": "三個主要節點，各有獨立圖形及兩行判讀；桌機橫讀、手机縱讀。次要英文／圖例較小，故不給滿分。",
+      "consistency": "依此圖同件、配色、箭頭與角色核對；r04部署方框不足以説明轉換，r07依官方分類頭例補可見結構；只示範head，不當作所有neck與head的完整架構。"
+    },
+    "completion": [
+      8,
+      9,
+      9,
+      8,
+      9
+    ],
+    "completion_evidence": [
+      "留白、框距與藍灰配色穩定；原生工程圖造型較簡筆，8分。",
+      "三個節點及結論完整；快取向量不等於已完成模型重參數化。",
+      "箭頭、角色與示意界線已核對；兩類詞彙向量以相同顏色轉為1×1分類頭參數，影像特徵通過此頭產生類別分數；與外存快取分開。",
+      "必要標籤可讀，手機仍需縱向捲動；次要說明稍密，8分。",
+      "主標題、節點、圖形到單一淡黃結論依序；未放第二個搶焦點的總結。"
+    ]
+  },
+  {
+    "id": "yolo-world-engineering-4",
+    "mode": "desktop",
+    "image": "roadmap-model-selection/detector/yolo-world/images/final/WI032-YOLOWORLD-04-r04-desktop.png",
+    "size": [
+      1672,
+      941
+    ],
+    "sha256": "04ff5c9fcda8d7da4585cc88a1337075f65f442be7403c78d7ce78beb26eb828",
+    "generation": "new SVG rendered by browser",
+    "evidence": "illustrative, not model inference",
+    "actual_page_review": "self-reviewed",
+    "user_review": "pending",
+    "rubric": "v1.0",
+    "scores": [
+      23,
+      23,
+      19,
+      18,
+      9
+    ],
+    "total": 92,
+    "observations": "詞彙、可識別的低解析螺栓形狀、頭部框接專用檢查，不把格子當缺陷熱圖。",
+    "deductions": "觀測限制與後续工作相接；未宣稱示意框是裂紋真值。",
+    "screenshot": "pages/yolo-world/docs-1440-engineering-4.png",
+    "scope": "圖片像素及圖內標籤；正文不作圖片加分",
+    "criteria_evidence": {
+      "case": "詞彙、可識別的低解析螺栓形狀、頭部框接專用檢查，不把格子當缺陷熱圖。",
+      "meaning": "觀測限制與後续工作相接；未宣稱示意框是裂紋真值。",
+      "action": "先定義要框物件還是判缺陷，再選後續流程。",
+      "reading": "三個主要節點，各有獨立圖形及兩行判讀；桌機橫讀、手机縱讀。次要英文／圖例較小，故不給滿分。",
+      "consistency": "依此圖同件、配色、箭頭與角色核對；觀測限制與後续工作相接；未宣稱示意框是裂紋真值。"
+    },
+    "completion": [
+      8,
+      9,
+      9,
+      8,
+      9
+    ],
+    "completion_evidence": [
+      "留白、框距與藍灰配色穩定；原生工程圖造型較簡筆，8分。",
+      "三個節點及結論完整；先定義要框物件還是判缺陷，再選後續流程。",
+      "箭頭、角色與示意界線已核對；詞彙、可識別的低解析螺栓形狀、頭部框接專用檢查，不把格子當缺陷熱圖。",
+      "必要標籤可讀，手機仍需縱向捲動；次要說明稍密，8分。",
+      "主標題、節點、圖形到單一淡黃結論依序；未放第二個搶焦點的總結。"
+    ]
+  },
+  {
+    "id": "yolo-world-engineering-4",
+    "mode": "mobile",
+    "image": "roadmap-model-selection/detector/yolo-world/images/final/WI032-YOLOWORLD-04-r04-mobile.png",
+    "size": [
+      768,
+      2770
+    ],
+    "sha256": "4958f75fe510b322714a0697b800796436a068fb8b442d6360a5ec5c2495da24",
+    "generation": "new SVG rendered by browser",
+    "evidence": "illustrative, not model inference",
+    "actual_page_review": "self-reviewed",
+    "user_review": "pending",
+    "rubric": "v1.0",
+    "scores": [
+      23,
+      23,
+      19,
+      18,
+      9
+    ],
+    "total": 92,
+    "observations": "詞彙、可識別的低解析螺栓形狀、頭部框接專用檢查，不把格子當缺陷熱圖。",
+    "deductions": "觀測限制與後续工作相接；未宣稱示意框是裂紋真值。",
+    "screenshot": "pages/yolo-world/docs-360-engineering-4.png",
+    "scope": "圖片像素及圖內標籤；正文不作圖片加分",
+    "criteria_evidence": {
+      "case": "詞彙、可識別的低解析螺栓形狀、頭部框接專用檢查，不把格子當缺陷熱圖。",
+      "meaning": "觀測限制與後续工作相接；未宣稱示意框是裂紋真值。",
+      "action": "先定義要框物件還是判缺陷，再選後續流程。",
+      "reading": "三個主要節點，各有獨立圖形及兩行判讀；桌機橫讀、手机縱讀。次要英文／圖例較小，故不給滿分。",
+      "consistency": "依此圖同件、配色、箭頭與角色核對；觀測限制與後续工作相接；未宣稱示意框是裂紋真值。"
+    },
+    "completion": [
+      8,
+      9,
+      9,
+      8,
+      9
+    ],
+    "completion_evidence": [
+      "留白、框距與藍灰配色穩定；原生工程圖造型較簡筆，8分。",
+      "三個節點及結論完整；先定義要框物件還是判缺陷，再選後續流程。",
+      "箭頭、角色與示意界線已核對；詞彙、可識別的低解析螺栓形狀、頭部框接專用檢查，不把格子當缺陷熱圖。",
+      "必要標籤可讀，手機仍需縱向捲動；次要說明稍密，8分。",
+      "主標題、節點、圖形到單一淡黃結論依序；未放第二個搶焦點的總結。"
+    ]
+  }
+]

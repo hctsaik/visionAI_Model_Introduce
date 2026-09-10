@@ -1,0 +1,128 @@
+{
+  "charuco-core": {
+    "desktop": "charuco-core-r05-desktop.png",
+    "desktop_reviewed": true,
+    "page_review": "self-reviewed; interaction checks passed",
+    "user_review": "pending",
+    "mobile": "charuco-core-r05-mobile.png",
+    "mobile_reviewed": true,
+    "brief": "charuco-core-r05.md"
+  },
+  "ecc-core": {
+    "desktop": "ecc-core-r01-desktop.png",
+    "desktop_reviewed": true,
+    "page_review": "self-reviewed; interaction checks passed",
+    "user_review": "pending",
+    "mobile": "ecc-core-r01-mobile.png",
+    "mobile_reviewed": true,
+    "brief": "ecc-core-r01.md"
+  },
+  "dino-core": {
+    "desktop": "dino-core-r01-desktop.png",
+    "desktop_reviewed": true,
+    "page_review": "self-reviewed; interaction checks passed",
+    "user_review": "pending",
+    "mobile": "dino-core-r02-mobile.png",
+    "mobile_reviewed": true,
+    "brief": "dino-core-r01.md"
+  },
+  "world-core": {
+    "desktop": "world-core-r01-desktop.png",
+    "desktop_reviewed": true,
+    "page_review": "self-reviewed; interaction checks passed",
+    "user_review": "pending",
+    "mobile": "world-core-r02-mobile.png",
+    "mobile_reviewed": true,
+    "brief": "world-core-r01.md"
+  },
+  "dino-failure": {
+    "desktop": "dino-failure-r02-desktop.png",
+    "desktop_reviewed": true,
+    "page_review": "self-reviewed; interaction checks passed",
+    "user_review": "pending",
+    "mobile": "dino-failure-r04-mobile.png",
+    "mobile_reviewed": true,
+    "brief": "dino-failure-r01.md"
+  },
+  "world-failure": {
+    "desktop": "world-failure-r03-desktop.png",
+    "desktop_reviewed": true,
+    "page_review": "self-reviewed; interaction checks passed",
+    "user_review": "pending",
+    "mobile": "world-failure-r03-mobile.png",
+    "mobile_reviewed": true,
+    "brief": "world-failure-r01.md"
+  },
+  "detector-compare": {
+    "desktop": "detector-compare-r01-desktop.png",
+    "desktop_reviewed": true,
+    "page_review": "self-reviewed; interaction checks passed",
+    "user_review": "pending",
+    "mobile": "detector-compare-r02-mobile.png",
+    "mobile_reviewed": true,
+    "brief": "detector-compare-r01.md"
+  },
+  "charuco-failure": {
+    "desktop": "charuco-failure-native-r05-desktop.png",
+    "desktop_reviewed": true,
+    "page_review": "self-reviewed; interaction checks passed",
+    "user_review": "pending",
+    "mobile": "charuco-failure-native-r05-mobile.png",
+    "mobile_reviewed": true,
+    "brief": "charuco-failure-native-r05.md"
+  },
+  "ecc-failure": {
+    "desktop": "ecc-failure-native-r05-desktop.png",
+    "desktop_reviewed": true,
+    "page_review": "self-reviewed; interaction checks passed",
+    "user_review": "pending",
+    "mobile": "ecc-failure-native-r05-mobile.png",
+    "mobile_reviewed": true,
+    "brief": "ecc-failure-native-r05.md"
+  },
+  "sift-core": {
+    "desktop": "sift-core-native-r05-desktop.png",
+    "desktop_reviewed": true,
+    "page_review": "self-reviewed; interaction checks passed",
+    "user_review": "pending",
+    "mobile": "sift-core-native-r05-mobile.png",
+    "mobile_reviewed": true,
+    "brief": "sift-core-native-r05.md"
+  },
+  "sift-failure": {
+    "desktop": "sift-failure-native-r05-desktop.png",
+    "desktop_reviewed": true,
+    "page_review": "self-reviewed; interaction checks passed",
+    "user_review": "pending",
+    "mobile": "sift-failure-native-r05-mobile.png",
+    "mobile_reviewed": true,
+    "brief": "sift-failure-native-r05.md"
+  },
+  "lightglue-core": {
+    "desktop": "lightglue-core-native-r05-desktop.png",
+    "desktop_reviewed": true,
+    "page_review": "self-reviewed; interaction checks passed",
+    "user_review": "pending",
+    "mobile": "lightglue-core-native-r05-mobile.png",
+    "mobile_reviewed": true,
+    "brief": "lightglue-core-native-r05.md"
+  },
+  "lightglue-failure": {
+    "desktop": "lightglue-failure-native-r05-desktop.png",
+    "desktop_reviewed": true,
+    "page_review": "self-reviewed; interaction checks passed",
+    "user_review": "pending",
+    "mobile": "lightglue-failure-native-r05-mobile.png",
+    "mobile_reviewed": true,
+    "brief": "lightglue-failure-native-r05.md"
+  },
+  "geometry-compare": {
+    "desktop": "geometry-compare-native-r05-desktop.png",
+    "desktop_reviewed": true,
+    "page_review": "self-reviewed; interaction checks passed",
+    "user_review": "pending",
+    "mobile": "geometry-compare-native-r05-mobile.png",
+    "mobile_reviewed": true,
+    "brief": "geometry-compare-native-r05.md"
+  }
+}

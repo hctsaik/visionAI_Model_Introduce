@@ -1,15 +1,15 @@
 {
-  "workitem": "WI-030",
+  "workitem": "WI-032",
   "files": [
     {
       "snapshot": "project/IMAGE_STYLE_GUIDE.md",
       "source": "C:\\code\\claude\\visionAI\\IMAGE_STYLE_GUIDE.md",
-      "sha256": "798d87438415c61fd2c17923edbeb8e4929783bced683422be433b19c9566040"
+      "sha256": "fcc31bea7946da6e39a138dca946ddee7671348fcd4501291cab2c53bb11a29d"
     },
     {
       "snapshot": "project/TEACHING_REVIEW_LOG.md",
       "source": "C:\\code\\claude\\visionAI\\TEACHING_REVIEW_LOG.md",
-      "sha256": "55f504adda921f1205ef4c2353b42f77d14b88f7c6c49a9c0775ada3d6ff1256"
+      "sha256": "9a7623ae73633dae2bcacbb9a34c5cad636214daa3e6c97361e6b10f69279b50"
     },
     {
       "snapshot": "project/TEACHING_SCORING_RUBRIC.md",
@@ -19,7 +19,7 @@
     {
       "snapshot": "project/TEACHING_WEBPAGE_GUIDE.md",
       "source": "C:\\code\\claude\\visionAI\\TEACHING_WEBPAGE_GUIDE.md",
-      "sha256": "1c7b9332a68ea2cc1050e9577f0bf011104ab1f47c4d76fa9ab1e011069e0978"
+      "sha256": "ff978d3cf4a29e2b4aec4ec61f0e4f4b166cb0986f256496f3671c1b8b64cd46"
     },
     {
       "snapshot": "skills/teaching-review-cycle/SKILL.md",
@@ -3140,6 +3140,1792 @@
       "snapshot": "workitems/wi-030/authoring/workitems/wi-030/deployment_status.py",
       "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\deployment_status.py",
       "sha256": "f3d0ebf42bec1759efb1b7ae7326dda19ed407086e055341f34f0ab13b33c2cd"
+    },
+    {
+      "snapshot": "workitems/wi-032/charuco-core-r01.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\charuco-core-r01.md",
+      "sha256": "37e7b14733c4be484783f411dd49c8e2005158673c0921df6d63ec6407f0cb77"
+    },
+    {
+      "snapshot": "workitems/wi-032/charuco-core-r02.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\charuco-core-r02.md",
+      "sha256": "c9429c0ed0a832ff0e2f358ab8cea51437594e4f763826106c318b316e07fca7"
+    },
+    {
+      "snapshot": "workitems/wi-032/charuco-core-r03.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\charuco-core-r03.md",
+      "sha256": "40e859fd5eaff73fe8261392a3990ceaf116499bbb921af3cd1cfd5fdaf51d96"
+    },
+    {
+      "snapshot": "workitems/wi-032/charuco-core-r04.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\charuco-core-r04.md",
+      "sha256": "40e859fd5eaff73fe8261392a3990ceaf116499bbb921af3cd1cfd5fdaf51d96"
+    },
+    {
+      "snapshot": "workitems/wi-032/charuco-core-r05.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\charuco-core-r05.md",
+      "sha256": "04dc719ddd2e906a66f13edbce4db36fbdee09dfb749427b78ed3981f63268bb"
+    },
+    {
+      "snapshot": "workitems/wi-032/charuco-engineering-1-r01.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\charuco-engineering-1-r01.md",
+      "sha256": "72ba8f088ef8c6ab5d3213b8597ea58e5be440021f01e6fd307cdb2d8b191999"
+    },
+    {
+      "snapshot": "workitems/wi-032/charuco-engineering-1-r02.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\charuco-engineering-1-r02.md",
+      "sha256": "dc379fc7b7f7b537bf10fbb969736b2303954ed4ca4d4f4f090f4d38ad5a41ab"
+    },
+    {
+      "snapshot": "workitems/wi-032/charuco-engineering-1-r03.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\charuco-engineering-1-r03.md",
+      "sha256": "022fe1284235410bb25da272dea50fca79fedbbcbc6d87fb8907ac00616e1a01"
+    },
+    {
+      "snapshot": "workitems/wi-032/charuco-engineering-1-r04.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\charuco-engineering-1-r04.md",
+      "sha256": "d3ce51f822c40f5e6ac7eeff45ce946e5b46de1a9b9a252c3e42472854d72f44"
+    },
+    {
+      "snapshot": "workitems/wi-032/charuco-engineering-2-r01.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\charuco-engineering-2-r01.md",
+      "sha256": "5021b00a6fe2e654d961edea981301183b4e29431dbdc5f43dc44f993738925b"
+    },
+    {
+      "snapshot": "workitems/wi-032/charuco-engineering-2-r02.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\charuco-engineering-2-r02.md",
+      "sha256": "274b220bd0b715c08fcb9adef337ffa0ac6f59609f28661b88a7a0309dfc0491"
+    },
+    {
+      "snapshot": "workitems/wi-032/charuco-engineering-2-r03.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\charuco-engineering-2-r03.md",
+      "sha256": "6cb2e66f620f4087387fa61631d9b40e9fde7ceaff98e67b3fd5921ea6a100e0"
+    },
+    {
+      "snapshot": "workitems/wi-032/charuco-engineering-2-r04.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\charuco-engineering-2-r04.md",
+      "sha256": "ac325c1c7881e354edc7a6f439152ded7f73ef3a5d2326a1c68bd0272c526de4"
+    },
+    {
+      "snapshot": "workitems/wi-032/charuco-engineering-3-r01.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\charuco-engineering-3-r01.md",
+      "sha256": "3de6e8ca984297a0b4f7df6d597cb172526cd15f34516454696f4bcc5a695117"
+    },
+    {
+      "snapshot": "workitems/wi-032/charuco-engineering-3-r02.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\charuco-engineering-3-r02.md",
+      "sha256": "b23605f3846e1c8bb6acb97d8a3b1b54820348bd7782492de61b7a61965048b5"
+    },
+    {
+      "snapshot": "workitems/wi-032/charuco-engineering-3-r03.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\charuco-engineering-3-r03.md",
+      "sha256": "cee2b3381f0eb6a81ebcb5d885c0c339984d4fe0829a719ced2fddc0320b69f8"
+    },
+    {
+      "snapshot": "workitems/wi-032/charuco-engineering-3-r04.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\charuco-engineering-3-r04.md",
+      "sha256": "9b6fec45d086c16cc946dacf73aee152b20a9ebffde8cc74214258199138360f"
+    },
+    {
+      "snapshot": "workitems/wi-032/charuco-engineering-4-r01.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\charuco-engineering-4-r01.md",
+      "sha256": "c4143cf0ec8240d42c29fac066c2cdcffff8f0396d095b01ba095b30d12f594a"
+    },
+    {
+      "snapshot": "workitems/wi-032/charuco-engineering-4-r02.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\charuco-engineering-4-r02.md",
+      "sha256": "8ea1079210c9768991f6f3c7c3cd26c8748de1e836cb83d707bc9b8215727a65"
+    },
+    {
+      "snapshot": "workitems/wi-032/charuco-engineering-4-r03.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\charuco-engineering-4-r03.md",
+      "sha256": "35d786c7de8868e3269819a75d8e5930ceaaa4e85f6510073c0b7d699fed2ba1"
+    },
+    {
+      "snapshot": "workitems/wi-032/charuco-engineering-4-r04.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\charuco-engineering-4-r04.md",
+      "sha256": "407f7e80182df7f543439c86fb3132ba3ea15d547f8d983134289aa657b7a352"
+    },
+    {
+      "snapshot": "workitems/wi-032/charuco-failure-native-r03.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\charuco-failure-native-r03.md",
+      "sha256": "bb3876c399fb5c0b3254ef6cdd012839775a4ecf6472504477b3af16fefd1a82"
+    },
+    {
+      "snapshot": "workitems/wi-032/charuco-failure-native-r04.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\charuco-failure-native-r04.md",
+      "sha256": "bb3876c399fb5c0b3254ef6cdd012839775a4ecf6472504477b3af16fefd1a82"
+    },
+    {
+      "snapshot": "workitems/wi-032/charuco-failure-native-r05.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\charuco-failure-native-r05.md",
+      "sha256": "bb3876c399fb5c0b3254ef6cdd012839775a4ecf6472504477b3af16fefd1a82"
+    },
+    {
+      "snapshot": "workitems/wi-032/charuco-failure-r01.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\charuco-failure-r01.md",
+      "sha256": "cf9ab968e7f54a1558f0d34331902fb02c7dbe97bc001b1968bc496000b069c3"
+    },
+    {
+      "snapshot": "workitems/wi-032/det-dino-detector-engineering-1-r01.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\det-dino-detector-engineering-1-r01.md",
+      "sha256": "8eb0045631077c22a6fc810eae8ee48b11e890daf4621265853ac9d8790859ba"
+    },
+    {
+      "snapshot": "workitems/wi-032/det-dino-detector-engineering-1-r02.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\det-dino-detector-engineering-1-r02.md",
+      "sha256": "0d539934429e6f4b6e7b44323cd536297b226ee2a3a13868ae1045ce5c26bd10"
+    },
+    {
+      "snapshot": "workitems/wi-032/det-dino-detector-engineering-1-r03.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\det-dino-detector-engineering-1-r03.md",
+      "sha256": "51ea4b5f2d9984ff74b20daae328d14b6bead24179070ca35f0d10abb8d460c6"
+    },
+    {
+      "snapshot": "workitems/wi-032/det-dino-detector-engineering-1-r04.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\det-dino-detector-engineering-1-r04.md",
+      "sha256": "e0411f3fe2f73d733f109c7d1a6eac256945d7303fb380addbdbb42385367847"
+    },
+    {
+      "snapshot": "workitems/wi-032/det-dino-detector-engineering-2-r01.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\det-dino-detector-engineering-2-r01.md",
+      "sha256": "6ada8d83124eff511338bb7525ca6cf0656ca1154846d1b97b863f39af50ede0"
+    },
+    {
+      "snapshot": "workitems/wi-032/det-dino-detector-engineering-2-r02.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\det-dino-detector-engineering-2-r02.md",
+      "sha256": "6c00ef4aa98a9c6c3d9182c789d2783ed3d01b5aa285ce4cb1cea91a0bb967c0"
+    },
+    {
+      "snapshot": "workitems/wi-032/det-dino-detector-engineering-2-r03.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\det-dino-detector-engineering-2-r03.md",
+      "sha256": "e5b65d608183b3394af9a69797016766b80900817f570b5f45cd7ae584bb548f"
+    },
+    {
+      "snapshot": "workitems/wi-032/det-dino-detector-engineering-2-r04.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\det-dino-detector-engineering-2-r04.md",
+      "sha256": "3c2ab354e0015ca13c9487e6a06ecf6496580fa519cd250306bdfb46d876940c"
+    },
+    {
+      "snapshot": "workitems/wi-032/det-dino-detector-engineering-3-r01.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\det-dino-detector-engineering-3-r01.md",
+      "sha256": "dd4494dbd4c3a63c6c8332160200b2c9fec2e815764d6a908fb709a4d5d909ec"
+    },
+    {
+      "snapshot": "workitems/wi-032/det-dino-detector-engineering-3-r02.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\det-dino-detector-engineering-3-r02.md",
+      "sha256": "dfd76c83732fe024a30bb3e5879fe07ecfe159bc06f0ff1644705c37b47c3a06"
+    },
+    {
+      "snapshot": "workitems/wi-032/det-dino-detector-engineering-3-r03.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\det-dino-detector-engineering-3-r03.md",
+      "sha256": "80a08736a6d6380b2515c77775528ed1db1a3775894c91ad35563c1f66b8a837"
+    },
+    {
+      "snapshot": "workitems/wi-032/det-dino-detector-engineering-3-r04.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\det-dino-detector-engineering-3-r04.md",
+      "sha256": "141ba1c476e2d1e11bba49a8034d49bf6bee762f8ac5268b47516ef008aea85b"
+    },
+    {
+      "snapshot": "workitems/wi-032/det-dino-detector-engineering-4-r01.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\det-dino-detector-engineering-4-r01.md",
+      "sha256": "362c9f0443824e9c04f418fdadf795cfdb852bb7b4c87d460c904f13611f8c62"
+    },
+    {
+      "snapshot": "workitems/wi-032/det-dino-detector-engineering-4-r02.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\det-dino-detector-engineering-4-r02.md",
+      "sha256": "5931d8657e66b0231026289e8792b54ec30e675af464092ac8fca94a7cbd31de"
+    },
+    {
+      "snapshot": "workitems/wi-032/det-dino-detector-engineering-4-r03.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\det-dino-detector-engineering-4-r03.md",
+      "sha256": "d9866d66225c494477e0dbaea76713b054d5383126db953aea560f5dc54eee0e"
+    },
+    {
+      "snapshot": "workitems/wi-032/det-dino-detector-engineering-4-r04.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\det-dino-detector-engineering-4-r04.md",
+      "sha256": "69a7144064e178b2662ac7c0b135b7c9a215d342264a07945b90eeb1f8e4fb29"
+    },
+    {
+      "snapshot": "workitems/wi-032/detector-compare-r01-mobile.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\detector-compare-r01-mobile.md",
+      "sha256": "89817856287af6b7feebe132b5490dad3fa240cfec382cf6d90a9030d8d169c9"
+    },
+    {
+      "snapshot": "workitems/wi-032/detector-compare-r01.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\detector-compare-r01.md",
+      "sha256": "8bddd2462c8ce12d532c980ef479fad886e6323b0ec551ac3e3055abb9e71c56"
+    },
+    {
+      "snapshot": "workitems/wi-032/detector-compare-r02-mobile.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\detector-compare-r02-mobile.md",
+      "sha256": "d3874073ffef99c385f148de9c184ee88c6d91ccd29aae10ac120b10653abe4c"
+    },
+    {
+      "snapshot": "workitems/wi-032/dino-core-r01-mobile.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\dino-core-r01-mobile.md",
+      "sha256": "b2923978283e67005589dd25eead6e28dfcfec1c667591b94b8141659e64aa35"
+    },
+    {
+      "snapshot": "workitems/wi-032/dino-core-r01.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\dino-core-r01.md",
+      "sha256": "6fc55420f1967001f33a19baf7ac0dc2c38fd8aa08d32bd62790fd66c17c2718"
+    },
+    {
+      "snapshot": "workitems/wi-032/dino-core-r02-mobile.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\dino-core-r02-mobile.md",
+      "sha256": "534299a4991d1764495adae36c29fabeafbe37b8c9da46a4a64af714646ee79c"
+    },
+    {
+      "snapshot": "workitems/wi-032/dino-failure-r01.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\dino-failure-r01.md",
+      "sha256": "4ad2544f4f4e83b66f42cbc076533d25174e474b96a67c4a023f6266615e9c34"
+    },
+    {
+      "snapshot": "workitems/wi-032/dino-failure-r02.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\dino-failure-r02.md",
+      "sha256": "844bc8e76c25179ea18252c7ee8b831ce56c4b223fc1c7e6d04dc71829953f3c"
+    },
+    {
+      "snapshot": "workitems/wi-032/dino-failure-r03-mobile.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\dino-failure-r03-mobile.md",
+      "sha256": "f7d9c941f2776a54b166e21d03d0a9947ae9be228d1b32909d92cd2b76d564e0"
+    },
+    {
+      "snapshot": "workitems/wi-032/dino-failure-r04-mobile.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\dino-failure-r04-mobile.md",
+      "sha256": "d286bf6783abacd3a566733b8db4895083efa45041ad611535c47f87d1f72a38"
+    },
+    {
+      "snapshot": "workitems/wi-032/ecc-core-r01-mobile.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\ecc-core-r01-mobile.md",
+      "sha256": "fa0b523aafbb8907fa0293f4eb16998451a4c6bbace6f506fb41e0479326de68"
+    },
+    {
+      "snapshot": "workitems/wi-032/ecc-core-r01.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\ecc-core-r01.md",
+      "sha256": "26c71eba314f272c97d23474e649db08953a428ce282a8cf8b13f4e7fdb02cfe"
+    },
+    {
+      "snapshot": "workitems/wi-032/ecc-engineering-1-r01.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\ecc-engineering-1-r01.md",
+      "sha256": "e82c2ac55c95149cfca600b9005e50b89a919d1c0bd816186016bb2c35703738"
+    },
+    {
+      "snapshot": "workitems/wi-032/ecc-engineering-1-r02.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\ecc-engineering-1-r02.md",
+      "sha256": "504510b01545bf183ea2bd3750d028ea88ddf5a9853731bfbd3c5efc7582fa50"
+    },
+    {
+      "snapshot": "workitems/wi-032/ecc-engineering-1-r03.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\ecc-engineering-1-r03.md",
+      "sha256": "c79c99244ad32bdcdbe8af01728b00f68db4efed677a0f1f24137e080a4e0723"
+    },
+    {
+      "snapshot": "workitems/wi-032/ecc-engineering-1-r04.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\ecc-engineering-1-r04.md",
+      "sha256": "c5e493d7b63caedb5dce67f9a93e20cc5c9f3f7469dd219b49e4b0fddde25904"
+    },
+    {
+      "snapshot": "workitems/wi-032/ecc-engineering-2-r01.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\ecc-engineering-2-r01.md",
+      "sha256": "cb3a4672e5c315b4f84210426ce790248927921102e092cb2cf8ae8d063f75f4"
+    },
+    {
+      "snapshot": "workitems/wi-032/ecc-engineering-2-r02.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\ecc-engineering-2-r02.md",
+      "sha256": "32b211f1929f7d3d0e5c9c42e894fb1267759769c7677fd5a7d992af67db903d"
+    },
+    {
+      "snapshot": "workitems/wi-032/ecc-engineering-2-r03.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\ecc-engineering-2-r03.md",
+      "sha256": "23e6f8f1a84a9ee010b71587e9ee31f72a1457a768d14254fa4fa73df698e256"
+    },
+    {
+      "snapshot": "workitems/wi-032/ecc-engineering-2-r04.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\ecc-engineering-2-r04.md",
+      "sha256": "3e18cccab8285f65cd7d2ca69baa15325b1870bb3e302a81302852e6162fa321"
+    },
+    {
+      "snapshot": "workitems/wi-032/ecc-engineering-3-r01.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\ecc-engineering-3-r01.md",
+      "sha256": "1c468c6844579c64f745be8dca22d0c8c3adef273afd9d615faeffda7b86169c"
+    },
+    {
+      "snapshot": "workitems/wi-032/ecc-engineering-3-r02.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\ecc-engineering-3-r02.md",
+      "sha256": "4579d94886016ba51a2514cf806cc534faf71885f779d3a538d74f89ade7b6ff"
+    },
+    {
+      "snapshot": "workitems/wi-032/ecc-engineering-3-r03.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\ecc-engineering-3-r03.md",
+      "sha256": "4b42a0beaefb04006bd248c690f6bb771f005774db32d57f50004853514b0acb"
+    },
+    {
+      "snapshot": "workitems/wi-032/ecc-engineering-3-r04.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\ecc-engineering-3-r04.md",
+      "sha256": "4e35e4049e351f0da4be13f11c3510841ca9e553c21dd8fc0125ebf50ca83cd9"
+    },
+    {
+      "snapshot": "workitems/wi-032/ecc-engineering-4-r01.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\ecc-engineering-4-r01.md",
+      "sha256": "2bcf037c14ad82bbfa56572457a7b77a2c728f8abd201f0b884a26b178e66ec5"
+    },
+    {
+      "snapshot": "workitems/wi-032/ecc-engineering-4-r02.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\ecc-engineering-4-r02.md",
+      "sha256": "4ee0bff400f3cddd4a461743b1d925fb20276e276c671589a36d7ba542189ceb"
+    },
+    {
+      "snapshot": "workitems/wi-032/ecc-engineering-4-r03.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\ecc-engineering-4-r03.md",
+      "sha256": "0dd7ecc0650f40adeb233d2b0b367005949e234c6458f96a8de2be940cf95ff4"
+    },
+    {
+      "snapshot": "workitems/wi-032/ecc-engineering-4-r04.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\ecc-engineering-4-r04.md",
+      "sha256": "e0802ae0b4a64c7dd2f73334981de56a9b3c6dec81815d988bc04ca36485a75f"
+    },
+    {
+      "snapshot": "workitems/wi-032/ecc-failure-native-r03.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\ecc-failure-native-r03.md",
+      "sha256": "44b8cecb1f3c343df051aea47e8e498a3a2a9e620938dc24bf19480029270cb3"
+    },
+    {
+      "snapshot": "workitems/wi-032/ecc-failure-native-r04.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\ecc-failure-native-r04.md",
+      "sha256": "44b8cecb1f3c343df051aea47e8e498a3a2a9e620938dc24bf19480029270cb3"
+    },
+    {
+      "snapshot": "workitems/wi-032/ecc-failure-native-r05.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\ecc-failure-native-r05.md",
+      "sha256": "44b8cecb1f3c343df051aea47e8e498a3a2a9e620938dc24bf19480029270cb3"
+    },
+    {
+      "snapshot": "workitems/wi-032/ecc-failure-r01.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\ecc-failure-r01.md",
+      "sha256": "39b2efacb1306ad183a35c33efb7a073853e91a2faca63979abbf8e001839a22"
+    },
+    {
+      "snapshot": "workitems/wi-032/ecc-failure-r02.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\ecc-failure-r02.md",
+      "sha256": "c85747a2c5947f92cdbe5703285bb9fabc6e3f8b02ee7ebf4e2de0d0ec560977"
+    },
+    {
+      "snapshot": "workitems/wi-032/geometry-compare-native-r03.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\geometry-compare-native-r03.md",
+      "sha256": "5ba1cbaf8eb8a07e4a69dc3933c3c25356c791e96b69da8d357117a5c976ea30"
+    },
+    {
+      "snapshot": "workitems/wi-032/geometry-compare-native-r04.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\geometry-compare-native-r04.md",
+      "sha256": "5ba1cbaf8eb8a07e4a69dc3933c3c25356c791e96b69da8d357117a5c976ea30"
+    },
+    {
+      "snapshot": "workitems/wi-032/geometry-compare-native-r05.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\geometry-compare-native-r05.md",
+      "sha256": "5ba1cbaf8eb8a07e4a69dc3933c3c25356c791e96b69da8d357117a5c976ea30"
+    },
+    {
+      "snapshot": "workitems/wi-032/geometry-compare-r01.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\geometry-compare-r01.md",
+      "sha256": "9568a5666d002cb9f31e79fdaf56d0aa924bc257086bdfe7605fcfe3649b6e91"
+    },
+    {
+      "snapshot": "workitems/wi-032/lightglue-core-native-r03.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\lightglue-core-native-r03.md",
+      "sha256": "000ba2b23c553867327cc781c26a9d908cb5564e3d54f4e6184680ef9a00f1ea"
+    },
+    {
+      "snapshot": "workitems/wi-032/lightglue-core-native-r04.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\lightglue-core-native-r04.md",
+      "sha256": "000ba2b23c553867327cc781c26a9d908cb5564e3d54f4e6184680ef9a00f1ea"
+    },
+    {
+      "snapshot": "workitems/wi-032/lightglue-core-native-r05.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\lightglue-core-native-r05.md",
+      "sha256": "000ba2b23c553867327cc781c26a9d908cb5564e3d54f4e6184680ef9a00f1ea"
+    },
+    {
+      "snapshot": "workitems/wi-032/lightglue-core-r01.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\lightglue-core-r01.md",
+      "sha256": "d3786e862f3c64a88b95814892c22636c2b9e9df76b6b2ccf5e1f9b1baf0a82e"
+    },
+    {
+      "snapshot": "workitems/wi-032/lightglue-core-r02.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\lightglue-core-r02.md",
+      "sha256": "de330c3ad9b8152613b8245d4c8e032d997d85906ac693525effe7a612f7b48e"
+    },
+    {
+      "snapshot": "workitems/wi-032/lightglue-engineering-1-r01.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\lightglue-engineering-1-r01.md",
+      "sha256": "70184951653ed6612aedaea8928649fc8fda74682680f44f27a8c648f09df0ac"
+    },
+    {
+      "snapshot": "workitems/wi-032/lightglue-engineering-1-r02.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\lightglue-engineering-1-r02.md",
+      "sha256": "f61228034d2ce0087c99a5535204470d91bad19362f5c4b78dd9fe0e458ed363"
+    },
+    {
+      "snapshot": "workitems/wi-032/lightglue-engineering-1-r03.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\lightglue-engineering-1-r03.md",
+      "sha256": "08661d12108c5ee1bd47b0dcd7734099d5907abcf7520e2e44d97991740bf0d3"
+    },
+    {
+      "snapshot": "workitems/wi-032/lightglue-engineering-1-r04.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\lightglue-engineering-1-r04.md",
+      "sha256": "acdd7bf2634eaeae9125964a8ac053fcb9ca84a4330b1fe9df83532acd4ecfd0"
+    },
+    {
+      "snapshot": "workitems/wi-032/lightglue-engineering-2-r01.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\lightglue-engineering-2-r01.md",
+      "sha256": "1c9f7eac3e3103911af36a7abdcd985e427bca9288c024525ff68d0385f43bb0"
+    },
+    {
+      "snapshot": "workitems/wi-032/lightglue-engineering-2-r02.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\lightglue-engineering-2-r02.md",
+      "sha256": "ffa17e27f44e376a3480ccdc6e027554cffcfb2918944f0cc492397d9262e24a"
+    },
+    {
+      "snapshot": "workitems/wi-032/lightglue-engineering-2-r03.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\lightglue-engineering-2-r03.md",
+      "sha256": "ed59428877652ae494a05b116a0b78e8910688f0a768ea3bf8063786fd752d93"
+    },
+    {
+      "snapshot": "workitems/wi-032/lightglue-engineering-2-r04.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\lightglue-engineering-2-r04.md",
+      "sha256": "c505de2afb7d1d1c67098f9e0b38d9e66afcea5e9f0bfd60d9a889d3197ffe2c"
+    },
+    {
+      "snapshot": "workitems/wi-032/lightglue-engineering-3-r01.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\lightglue-engineering-3-r01.md",
+      "sha256": "2a14ff905b8ad46e5889c0ad8e40135c704240359445ac1c0a05242c5ac49a86"
+    },
+    {
+      "snapshot": "workitems/wi-032/lightglue-engineering-3-r02.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\lightglue-engineering-3-r02.md",
+      "sha256": "84584642ef1189ab7f1d5947b3a6037752cbf21e36e6db52ded1be86ba1dd110"
+    },
+    {
+      "snapshot": "workitems/wi-032/lightglue-engineering-3-r03.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\lightglue-engineering-3-r03.md",
+      "sha256": "fbbd9016dee3560a393932fdee82c24d97f61833d40e1dfb0584231974b9e50d"
+    },
+    {
+      "snapshot": "workitems/wi-032/lightglue-engineering-3-r04.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\lightglue-engineering-3-r04.md",
+      "sha256": "688351c7bcbc5cb98d8512389b07ed5a4bb9985b7dfd8d83155db68b2163053c"
+    },
+    {
+      "snapshot": "workitems/wi-032/lightglue-engineering-4-r01.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\lightglue-engineering-4-r01.md",
+      "sha256": "2227b90e09311a479975943fedeca2295204ffcc0dfebda5584a23d8fdce9f8e"
+    },
+    {
+      "snapshot": "workitems/wi-032/lightglue-engineering-4-r02.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\lightglue-engineering-4-r02.md",
+      "sha256": "a37ea08c7690cf754936544bf8f5ece696f7cdf2f63f9ff9b52117ed2c6134a4"
+    },
+    {
+      "snapshot": "workitems/wi-032/lightglue-engineering-4-r03.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\lightglue-engineering-4-r03.md",
+      "sha256": "c78a47e5dc975795e146e5f80a2f916e062a7e78ccd792929a1046cb79ed71cb"
+    },
+    {
+      "snapshot": "workitems/wi-032/lightglue-engineering-4-r04.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\lightglue-engineering-4-r04.md",
+      "sha256": "d936d20a4f0d31935b6ac2b04e7bdaeef337eba1152539dd5df720577a149d36"
+    },
+    {
+      "snapshot": "workitems/wi-032/lightglue-failure-native-r03.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\lightglue-failure-native-r03.md",
+      "sha256": "08c679ade67bb0f497f689720bfcfce637c822849e556ebce62cf1d040acb12c"
+    },
+    {
+      "snapshot": "workitems/wi-032/lightglue-failure-native-r04.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\lightglue-failure-native-r04.md",
+      "sha256": "08c679ade67bb0f497f689720bfcfce637c822849e556ebce62cf1d040acb12c"
+    },
+    {
+      "snapshot": "workitems/wi-032/lightglue-failure-native-r05.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\lightglue-failure-native-r05.md",
+      "sha256": "08c679ade67bb0f497f689720bfcfce637c822849e556ebce62cf1d040acb12c"
+    },
+    {
+      "snapshot": "workitems/wi-032/lightglue-failure-r01.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\lightglue-failure-r01.md",
+      "sha256": "a137be5ecd669eca334fa1f01d4d6d76dba812fdb3230fb1ce3d957616a433b7"
+    },
+    {
+      "snapshot": "workitems/wi-032/PLAN.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\PLAN.md",
+      "sha256": "25f20b58cca4ec34314cf3c0989460cfea7578d45611d5934ac44e5b6e6c3c85"
+    },
+    {
+      "snapshot": "workitems/wi-032/prototype-review.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\prototype-review.md",
+      "sha256": "56d3246a583a222093812ee1d9a8e1f43a6fc1172a5d5ea6fa19e2064bfbf7f4"
+    },
+    {
+      "snapshot": "workitems/wi-032/REPORT.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\REPORT.md",
+      "sha256": "827650811da18229ea47f6961fdb485d4dab2aea0a0f9856ec83dc8c2c0a6bdc"
+    },
+    {
+      "snapshot": "workitems/wi-032/sift-core-native-r03.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\sift-core-native-r03.md",
+      "sha256": "77f218ae868e9dd793aba50997b65c67ba49a120f2603c349eacce7b80d05e0a"
+    },
+    {
+      "snapshot": "workitems/wi-032/sift-core-native-r04.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\sift-core-native-r04.md",
+      "sha256": "77f218ae868e9dd793aba50997b65c67ba49a120f2603c349eacce7b80d05e0a"
+    },
+    {
+      "snapshot": "workitems/wi-032/sift-core-native-r05.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\sift-core-native-r05.md",
+      "sha256": "77f218ae868e9dd793aba50997b65c67ba49a120f2603c349eacce7b80d05e0a"
+    },
+    {
+      "snapshot": "workitems/wi-032/sift-core-r01.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\sift-core-r01.md",
+      "sha256": "06adabdab07d3fb89d0ba54620c7ee23d020c78e81df15ef38eb4dd8550f3e3b"
+    },
+    {
+      "snapshot": "workitems/wi-032/sift-core-r02.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\sift-core-r02.md",
+      "sha256": "4bc5b02c5ac0f1c922eb1bc88debf0615f0a21571badeb70e1bde25002d5461f"
+    },
+    {
+      "snapshot": "workitems/wi-032/sift-engineering-1-r01.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\sift-engineering-1-r01.md",
+      "sha256": "3871a5aa148f0743222b53ef85a63ec54d2e2b06ba1561652c47da55bd2ba00e"
+    },
+    {
+      "snapshot": "workitems/wi-032/sift-engineering-1-r02.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\sift-engineering-1-r02.md",
+      "sha256": "f5f887401f83db6ecf7329929288fc54bac03c1aa1aa8459cfb393de9b3944c5"
+    },
+    {
+      "snapshot": "workitems/wi-032/sift-engineering-1-r03.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\sift-engineering-1-r03.md",
+      "sha256": "14122983d7f672f43cf7d269d6b67ffab8b084f6be8a1d675bcf05241bc6c9ee"
+    },
+    {
+      "snapshot": "workitems/wi-032/sift-engineering-1-r04.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\sift-engineering-1-r04.md",
+      "sha256": "ba37d4ee6fe9680a3740294a0b89aef0024552c286373ced4423ef281f8d6593"
+    },
+    {
+      "snapshot": "workitems/wi-032/sift-engineering-1-r06.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\sift-engineering-1-r06.md",
+      "sha256": "414db47f6ecab94b94e9ceabf70ad042cbb2f658f2294222b12b691971469d12"
+    },
+    {
+      "snapshot": "workitems/wi-032/sift-engineering-2-r01.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\sift-engineering-2-r01.md",
+      "sha256": "dae87d8a7e9bdecc027f65f86206a02f199af0cb274b8a14e7f72863f635c1a7"
+    },
+    {
+      "snapshot": "workitems/wi-032/sift-engineering-2-r02.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\sift-engineering-2-r02.md",
+      "sha256": "8ab1118ffb7c6bfc6418fc364fbf01481a99e67b71fd19b1a212d4ef9ded5ead"
+    },
+    {
+      "snapshot": "workitems/wi-032/sift-engineering-2-r03.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\sift-engineering-2-r03.md",
+      "sha256": "3452e10f7ab43217c7f1efe63512a02030cf93664939b8c55733325dd9630a7c"
+    },
+    {
+      "snapshot": "workitems/wi-032/sift-engineering-2-r04.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\sift-engineering-2-r04.md",
+      "sha256": "e98395edcc64784c3f35174e5cd696277ee1910e65989cd5f4ccc6363d823ced"
+    },
+    {
+      "snapshot": "workitems/wi-032/sift-engineering-3-r01.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\sift-engineering-3-r01.md",
+      "sha256": "3bddaf81d25de7a540b7f7743dc506245c74e5d3ce659a3138b8e83078fe2e7c"
+    },
+    {
+      "snapshot": "workitems/wi-032/sift-engineering-3-r02.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\sift-engineering-3-r02.md",
+      "sha256": "ca7d8314a18e0989fffdf92f0f504e66fcca962535a0a35eeefe8d65abf99bd2"
+    },
+    {
+      "snapshot": "workitems/wi-032/sift-engineering-3-r03.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\sift-engineering-3-r03.md",
+      "sha256": "a346367575ce1848b5450cc75984e1bbd4808cab0030cf185f50527e300e710b"
+    },
+    {
+      "snapshot": "workitems/wi-032/sift-engineering-3-r04.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\sift-engineering-3-r04.md",
+      "sha256": "2086eaded4a2bef3abecb03ac23a95f4dce182e2c4d36f51e32ecd45e1624ecd"
+    },
+    {
+      "snapshot": "workitems/wi-032/sift-engineering-4-r01.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\sift-engineering-4-r01.md",
+      "sha256": "bd4e7d67b1db26bcf26c1390ee84b8363ceea2723efb00a8177c3bbfc82d8d2c"
+    },
+    {
+      "snapshot": "workitems/wi-032/sift-engineering-4-r02.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\sift-engineering-4-r02.md",
+      "sha256": "8f1180dc78fbc6a93b3838614e8bea167768494f05c4e0e66666bb94035795bd"
+    },
+    {
+      "snapshot": "workitems/wi-032/sift-engineering-4-r03.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\sift-engineering-4-r03.md",
+      "sha256": "c6834e777ec1f62eb01a7d3d241060ea4cb945ea88b728c78456648cba950cff"
+    },
+    {
+      "snapshot": "workitems/wi-032/sift-engineering-4-r04.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\sift-engineering-4-r04.md",
+      "sha256": "48d42a9270304d27d5350ed4f3fe85ba824ca3d5b82b995c6ad2869fc74d656f"
+    },
+    {
+      "snapshot": "workitems/wi-032/sift-failure-native-r03.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\sift-failure-native-r03.md",
+      "sha256": "41dbba001f687a1cbb5ce1e7b9813700131bb4cc793f3efff098847c5bfb069e"
+    },
+    {
+      "snapshot": "workitems/wi-032/sift-failure-native-r04.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\sift-failure-native-r04.md",
+      "sha256": "41dbba001f687a1cbb5ce1e7b9813700131bb4cc793f3efff098847c5bfb069e"
+    },
+    {
+      "snapshot": "workitems/wi-032/sift-failure-native-r05.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\sift-failure-native-r05.md",
+      "sha256": "41dbba001f687a1cbb5ce1e7b9813700131bb4cc793f3efff098847c5bfb069e"
+    },
+    {
+      "snapshot": "workitems/wi-032/sift-failure-r01.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\sift-failure-r01.md",
+      "sha256": "2d44cbc1e1183fbea1915740fc52b43cd6fdbb82516e0168e6bf4845dbdc5d14"
+    },
+    {
+      "snapshot": "workitems/wi-032/sources.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\sources.md",
+      "sha256": "1c7f8dd287b89e5a69f49364c3c8e76227e7b93e461435597ee3908896b89a03"
+    },
+    {
+      "snapshot": "workitems/wi-032/world-core-r01-mobile.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\world-core-r01-mobile.md",
+      "sha256": "ec9a3df5538cc18759ef59e07edb15ad10c7e6078affb165802187c8b17f246c"
+    },
+    {
+      "snapshot": "workitems/wi-032/world-core-r01.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\world-core-r01.md",
+      "sha256": "2fd2f5c961b1bf7ce97f2de3f53a7694d9531b82cf95dd55f7fc66b01fd0ac28"
+    },
+    {
+      "snapshot": "workitems/wi-032/world-core-r02-mobile.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\world-core-r02-mobile.md",
+      "sha256": "79e097e156d45f7254c6d86c343255863a97255e0d3a21e970b3ff8d9cd5ae52"
+    },
+    {
+      "snapshot": "workitems/wi-032/world-failure-r01.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\world-failure-r01.md",
+      "sha256": "80beaa65f2a4e8a8fc3b5eefe51e8f12cee7612d6afee73d4668c167e4ba586f"
+    },
+    {
+      "snapshot": "workitems/wi-032/world-failure-r02.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\world-failure-r02.md",
+      "sha256": "7792eadcfe633f8864966b4ba575b4f4c7ce4c3c7a6a202ddbcf9778a1058a2a"
+    },
+    {
+      "snapshot": "workitems/wi-032/world-failure-r03-desktop.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\world-failure-r03-desktop.md",
+      "sha256": "15b23c2d750d890259982fdf8c8655050bde1d1eac700e1ef618423170a109be"
+    },
+    {
+      "snapshot": "workitems/wi-032/world-failure-r03-mobile.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\world-failure-r03-mobile.md",
+      "sha256": "4073baceb179ea7bea5c1e9ab901a9689985b3829a1b77a9904d2905598b568c"
+    },
+    {
+      "snapshot": "workitems/wi-032/yolo-world-engineering-1-r01.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\yolo-world-engineering-1-r01.md",
+      "sha256": "ae82ffe9dcc28b362bba68b8a9d383478cd48f09f3ba649be32dcafcd43073ab"
+    },
+    {
+      "snapshot": "workitems/wi-032/yolo-world-engineering-1-r02.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\yolo-world-engineering-1-r02.md",
+      "sha256": "f1c8964fe9f002f406f16d4478279f82bef6064b868ecde1e3283f5a7b18f94a"
+    },
+    {
+      "snapshot": "workitems/wi-032/yolo-world-engineering-1-r03.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\yolo-world-engineering-1-r03.md",
+      "sha256": "63897c4371a50e6dce418e29e0582424221b4beade381ee6026f0b41cfcce4a4"
+    },
+    {
+      "snapshot": "workitems/wi-032/yolo-world-engineering-1-r04.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\yolo-world-engineering-1-r04.md",
+      "sha256": "4850f69400ac4aae925fc870977cedfd4abf6111517f9d01dc07e5fe7664ecce"
+    },
+    {
+      "snapshot": "workitems/wi-032/yolo-world-engineering-2-r01.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\yolo-world-engineering-2-r01.md",
+      "sha256": "ea5d886e070584d88c3fa73254c4c7d8dd73614bb75069d740323307a1e42f8f"
+    },
+    {
+      "snapshot": "workitems/wi-032/yolo-world-engineering-2-r02.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\yolo-world-engineering-2-r02.md",
+      "sha256": "23ed8410f19dc61d9e9e04472c40fede0bfeddbd2935cda4c5c62119024f3523"
+    },
+    {
+      "snapshot": "workitems/wi-032/yolo-world-engineering-2-r03.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\yolo-world-engineering-2-r03.md",
+      "sha256": "adb29ef85bd8eb90d64b3dc068094fa3dc194f0cda7648edaf8b0f78a03b1e4b"
+    },
+    {
+      "snapshot": "workitems/wi-032/yolo-world-engineering-2-r04.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\yolo-world-engineering-2-r04.md",
+      "sha256": "899f50f02025163b120d112fd177015b96b4a4e11432398f17a549c51d6abe1c"
+    },
+    {
+      "snapshot": "workitems/wi-032/yolo-world-engineering-2-r05.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\yolo-world-engineering-2-r05.md",
+      "sha256": "f0c0be428b75be33bf47c4cd467e9de38adb1c4e07f207b114f93024e72f2aa5"
+    },
+    {
+      "snapshot": "workitems/wi-032/yolo-world-engineering-3-r01.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\yolo-world-engineering-3-r01.md",
+      "sha256": "732a3256ddba7c22f2f8f480a3f94d5a3e935057f023c47d4aaf055cfd63fe7f"
+    },
+    {
+      "snapshot": "workitems/wi-032/yolo-world-engineering-3-r02.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\yolo-world-engineering-3-r02.md",
+      "sha256": "489bc1e37359419e452965de2b860d7cff568a1c39fce66b1b46b48d60b3bc53"
+    },
+    {
+      "snapshot": "workitems/wi-032/yolo-world-engineering-3-r03.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\yolo-world-engineering-3-r03.md",
+      "sha256": "d53b820f3b578c32f1a3ad5d6dee649b8ef202fc39e57a18c0b222cb29992d4a"
+    },
+    {
+      "snapshot": "workitems/wi-032/yolo-world-engineering-3-r04.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\yolo-world-engineering-3-r04.md",
+      "sha256": "a80cfa01f0a2ff53f2001b2cc8c1069d97365bedc296ba37135b674ad6e9e671"
+    },
+    {
+      "snapshot": "workitems/wi-032/yolo-world-engineering-3-r07.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\yolo-world-engineering-3-r07.md",
+      "sha256": "b1d8518ab74b11e2b1a12cfb76c7a6c9aabfd2b3e5dbd5ea088ce152633bb924"
+    },
+    {
+      "snapshot": "workitems/wi-032/yolo-world-engineering-4-r01.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\yolo-world-engineering-4-r01.md",
+      "sha256": "d4a3e5cd5f457fa449b6c3b68c52dd5eee1c3209af5bb1f9e45e64d30e68d454"
+    },
+    {
+      "snapshot": "workitems/wi-032/yolo-world-engineering-4-r02.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\yolo-world-engineering-4-r02.md",
+      "sha256": "3befd0ae76531d66a102dda0be7d2a032b42af5d35c71ff13603cc81e40461b3"
+    },
+    {
+      "snapshot": "workitems/wi-032/yolo-world-engineering-4-r03.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\yolo-world-engineering-4-r03.md",
+      "sha256": "f45574db07b1a6d637835fe0178519c1219c69ab1af3c4b3e85809ed0a361c6d"
+    },
+    {
+      "snapshot": "workitems/wi-032/yolo-world-engineering-4-r04.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\yolo-world-engineering-4-r04.md",
+      "sha256": "29f0e47215b044bfd2312c1de00f8ade81797039e0b8aa30fdb7d4ed12e23477"
+    },
+    {
+      "snapshot": "workitems/wi-032/baseline.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\baseline.json",
+      "sha256": "167c11d6aefd12688ad4f7c04934a629483f44152ff9c100c8de1df6950792d4"
+    },
+    {
+      "snapshot": "workitems/wi-032/charuco-active-assets.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\charuco-active-assets.json",
+      "sha256": "d897c4c46bd6a493886d511acb840c15856ee376667cb126011be3a2d1169740"
+    },
+    {
+      "snapshot": "workitems/wi-032/charuco-core-r01-desktop-prompt.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\charuco-core-r01-desktop-prompt.json",
+      "sha256": "a577a39e7affab57618cefbd3a8d57b77b4bdd8ad5442f5e9fc4295695485423"
+    },
+    {
+      "snapshot": "workitems/wi-032/charuco-core-r02-desktop-prompt.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\charuco-core-r02-desktop-prompt.json",
+      "sha256": "5cf1c98229d912ca5291b45ed2d786300fdc477a8c4f60f371fabb4ad7ff7fb8"
+    },
+    {
+      "snapshot": "workitems/wi-032/compact-briefs.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\compact-briefs.json",
+      "sha256": "20ce3e02a591991e4289cd73559bbae24e36e517b646744e8e301975f75dce8f"
+    },
+    {
+      "snapshot": "workitems/wi-032/det-dino-detector-active-assets.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\det-dino-detector-active-assets.json",
+      "sha256": "38b58713b04df1c70355c51bedd76f5c1d9de3fc7c70eb3361b4dbd2d98e102e"
+    },
+    {
+      "snapshot": "workitems/wi-032/detector-compare-r01-desktop-prompt.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\detector-compare-r01-desktop-prompt.json",
+      "sha256": "8891fc90cf0b9c4ac188dc7a5a7b189db0ec4eb9eeb6065a4a8cd24239f6ce8a"
+    },
+    {
+      "snapshot": "workitems/wi-032/dino-core-r01-desktop-prompt.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\dino-core-r01-desktop-prompt.json",
+      "sha256": "2cb8062c1a7165c3fdb83838b4bd89f404eeb4accce2abf71da05a1445f24427"
+    },
+    {
+      "snapshot": "workitems/wi-032/dino-failure-r01-desktop-prompt.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\dino-failure-r01-desktop-prompt.json",
+      "sha256": "6577bdbd552f501d8c0a13e48fb0132c7f737ea828870289dabfe198937218c0"
+    },
+    {
+      "snapshot": "workitems/wi-032/ecc-active-assets.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\ecc-active-assets.json",
+      "sha256": "54b1f4279027b0b1c6a8a3067ced997a05ee840f57e6685d39c55d8166b1e146"
+    },
+    {
+      "snapshot": "workitems/wi-032/ecc-core-r01-desktop-prompt.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\ecc-core-r01-desktop-prompt.json",
+      "sha256": "2291b316668b98f77ae34712a7ccfb677cca6e572ffe1a03828e63c0ceb50f22"
+    },
+    {
+      "snapshot": "workitems/wi-032/ecc-core-r01-mobile-prompt.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\ecc-core-r01-mobile-prompt.json",
+      "sha256": "806eb8cdb15679ec47cd4843c0cd2f67c8a92c5acb82ca8f156897f5ad0c92ec"
+    },
+    {
+      "snapshot": "workitems/wi-032/ecc-failure-r01-desktop-prompt.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\ecc-failure-r01-desktop-prompt.json",
+      "sha256": "0955603376bc024e36b4c57f21ddae0d96318fae6dde7aac786f0c280683344a"
+    },
+    {
+      "snapshot": "workitems/wi-032/engineering-active-assets.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\engineering-active-assets.json",
+      "sha256": "1192a6fca678108467b0c3359402370ba22ae4c920708ec22f5457db3953fe1c"
+    },
+    {
+      "snapshot": "workitems/wi-032/engineering-assessment.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\engineering-assessment.json",
+      "sha256": "eb6bb6b917f426321a803b3b10caff2afa9a1bbb1688b02c8b83c912659d3084"
+    },
+    {
+      "snapshot": "workitems/wi-032/engineering-plan.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\engineering-plan.json",
+      "sha256": "b62f9ee3a3b680c6669604fe4fbb99832f48623e5e242675a9d3230bd53864c1"
+    },
+    {
+      "snapshot": "workitems/wi-032/engineering-review-notes.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\engineering-review-notes.json",
+      "sha256": "3b82ef1e0037452b2706adfed6d2dded19552c42879a583facf171f5ae1050e0"
+    },
+    {
+      "snapshot": "workitems/wi-032/failure-final-prompts.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\failure-final-prompts.json",
+      "sha256": "88d301dca7d4d6aac051ffeaf5d54f10c56ab3cab766a30d86ebd892ddd23fad"
+    },
+    {
+      "snapshot": "workitems/wi-032/final-smoke.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\final-smoke.json",
+      "sha256": "95b87a70fea4d42e9e4d82334a94d6af39cfd71410b891b1320e148a195c5420"
+    },
+    {
+      "snapshot": "workitems/wi-032/final-verification.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\final-verification.json",
+      "sha256": "e502792d14b085281c28a96fc1f2beea9cbc25ad604709d79d8465ba50967117"
+    },
+    {
+      "snapshot": "workitems/wi-032/image-assessment.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\image-assessment.json",
+      "sha256": "b78dd9a701191f5cdd47e62367582bb458a061f68b30746c68dc78d2f8130a86"
+    },
+    {
+      "snapshot": "workitems/wi-032/label-correction-plan.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\label-correction-plan.json",
+      "sha256": "4d9769407e5a1b0b57d9a5df5077fd85eb6b653ac28deadf15ca26471e40a094"
+    },
+    {
+      "snapshot": "workitems/wi-032/lesson-content.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\lesson-content.json",
+      "sha256": "c6dfe302c10e6ff99a2522a202242634915db9fb86fe0d038452952e2eee9694"
+    },
+    {
+      "snapshot": "workitems/wi-032/lightglue-active-assets.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\lightglue-active-assets.json",
+      "sha256": "accd52f873714f713044ec748acbed03cd5e44016a05f3e37318b3380f0b8ebd"
+    },
+    {
+      "snapshot": "workitems/wi-032/lightglue-core-r01-desktop-prompt.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\lightglue-core-r01-desktop-prompt.json",
+      "sha256": "97e6161fde344f264ea963fe722a2e36a79db52d59c6ae628cba0361e2476a4a"
+    },
+    {
+      "snapshot": "workitems/wi-032/main-original-assessment.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\main-original-assessment.json",
+      "sha256": "6c433bb8dca0b838ebbdd54053d151f42382a3629c3e7a6c283386f198f9b8b0"
+    },
+    {
+      "snapshot": "workitems/wi-032/mobile-prompts.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\mobile-prompts.json",
+      "sha256": "c7645bbdf9e68ec7767aca8d805b1e7c28b0b10a63cd96b797009a5f2e5bf297"
+    },
+    {
+      "snapshot": "workitems/wi-032/page-assessment.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\page-assessment.json",
+      "sha256": "714ad875d5076bb9c8f2eb46322e1f6a2fa0dbb91ebb8001e6618c3a6dbf361f"
+    },
+    {
+      "snapshot": "workitems/wi-032/preflight-validation.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\preflight-validation.json",
+      "sha256": "a0909328853e5abfd057091e7a9428a1a646e64c45226ea7ab0e4db431369500"
+    },
+    {
+      "snapshot": "workitems/wi-032/retained-evidence.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\retained-evidence.json",
+      "sha256": "273b4d9e1b3c21f3d2fdcc94cfccdc3dfedad7a0d770abfb5e645a674f08c8c2"
+    },
+    {
+      "snapshot": "workitems/wi-032/selected-assets.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\selected-assets.json",
+      "sha256": "64c7576b3075d63210e484abafbf1149547ba485068986665cfb9b5838d9a8f1"
+    },
+    {
+      "snapshot": "workitems/wi-032/selected-preflight-validation.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\selected-preflight-validation.json",
+      "sha256": "3c272c9819084c24b85f28d33e597736eaa0d69b5774ba16767163bb18abb6d1"
+    },
+    {
+      "snapshot": "workitems/wi-032/sift-active-assets.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\sift-active-assets.json",
+      "sha256": "ed615c2ed84e5c5793d19629ec7299f1bc32cd2d127f321ee2805ad8fb136423"
+    },
+    {
+      "snapshot": "workitems/wi-032/sift-core-r01-desktop-prompt.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\sift-core-r01-desktop-prompt.json",
+      "sha256": "6cb22f3d78ceceb8eccfabaf4c94ca8fd97d6346208d8b57edf4be83f4244bdf"
+    },
+    {
+      "snapshot": "workitems/wi-032/svg-layout-check.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\svg-layout-check.json",
+      "sha256": "9d8b488ce75fe10f5ce3d039dd808381a9ce375e41797e0cdcb3a5969409ed6f"
+    },
+    {
+      "snapshot": "workitems/wi-032/svg-layout-false-positive.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\svg-layout-false-positive.json",
+      "sha256": "ad34ff0b39a1a4cc940ea8deb2b83a205a4488a798911f0c2b9f513a701e3c3d"
+    },
+    {
+      "snapshot": "workitems/wi-032/test-results.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\test-results.json",
+      "sha256": "96beefee09665691524b85b0bf7eb9f95b079d91ca8441b9193f9d0a7dd53a1c"
+    },
+    {
+      "snapshot": "workitems/wi-032/visual-plan.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\visual-plan.json",
+      "sha256": "53e525b6f1f89ab13fa2bc98d3376f3144c521735f67ccc22e767475f90a8330"
+    },
+    {
+      "snapshot": "workitems/wi-032/world-core-r01-desktop-prompt.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\world-core-r01-desktop-prompt.json",
+      "sha256": "33d6adfc55f7eca209557239972774bae0f51715e42ae47fbff69bf76a53efe3"
+    },
+    {
+      "snapshot": "workitems/wi-032/world-failure-r01-desktop-prompt.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\world-failure-r01-desktop-prompt.json",
+      "sha256": "37613505e5ded40418d6170ae4257edd99c396f24e86185c12ac46d548bfc2f8"
+    },
+    {
+      "snapshot": "workitems/wi-032/yolo-world-active-assets.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\yolo-world-active-assets.json",
+      "sha256": "5c71dcaa087d8632b7fc368c0ea5a4bb7a549dfffa9c8426056f7b0303b85cb7"
+    },
+    {
+      "snapshot": "workitems/wi-032/baseline.py",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\baseline.py",
+      "sha256": "c0b0949df3aaa3e8de5771e5a3628c7742ef2325d63e1736e67bef77d68c4757"
+    },
+    {
+      "snapshot": "workitems/wi-032/check-svg.py",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\check-svg.py",
+      "sha256": "5fb604c34f8854489167f10dc3f10b2cd74ad186954df40517e1faef7fa5f4ef"
+    },
+    {
+      "snapshot": "workitems/wi-032/checkpoint-current.py",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\checkpoint-current.py",
+      "sha256": "27e5f1ef654c1d1529acef6f46708dc955947072cac9fc104ed6b9c301016626"
+    },
+    {
+      "snapshot": "workitems/wi-032/checkpoint.py",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\checkpoint.py",
+      "sha256": "e063c7753a899a81afeeecb876d1e7f91008e941e34273d5abb4f10a62551519"
+    },
+    {
+      "snapshot": "workitems/wi-032/compile-review.py",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\compile-review.py",
+      "sha256": "5aaa9adcd16fb6780b7579c48e79ff11accefaee214e52b188b4e89eb34d165a"
+    },
+    {
+      "snapshot": "workitems/wi-032/engineering-plan.py",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\engineering-plan.py",
+      "sha256": "07cd111a92093c3d88cf4fb5480c8d27933039135efd47b5d018e8e0eabdcc78"
+    },
+    {
+      "snapshot": "workitems/wi-032/final-corrections.py",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\final-corrections.py",
+      "sha256": "c9e2b600b26f096d49deef5d06752bccbbc560c3e84ea62507187b7007cf9bf8"
+    },
+    {
+      "snapshot": "workitems/wi-032/final-spacing.py",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\final-spacing.py",
+      "sha256": "2df6b24ed155294cb5318d3f06024849250b20f7c48083b282622ca736d56d13"
+    },
+    {
+      "snapshot": "workitems/wi-032/final-verification.py",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\final-verification.py",
+      "sha256": "1795c13606a9b137446b02c22fc4cbc947092e1ac8c679514fe3a831584e4898"
+    },
+    {
+      "snapshot": "workitems/wi-032/finalize-candidates.py",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\finalize-candidates.py",
+      "sha256": "ef2423730cfb4b34f99e50494018d1edebddb49b74f123f610e1760333aa884e"
+    },
+    {
+      "snapshot": "workitems/wi-032/finish.py",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\finish.py",
+      "sha256": "1957585f043c5b78bb7613ce3b64e0ab0113937651a3b6427894d055171fdf19"
+    },
+    {
+      "snapshot": "workitems/wi-032/fix-briefs.py",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\fix-briefs.py",
+      "sha256": "6bc97c04c59cbb126d04cc0f33413cc2dba58e9ceb1421dd2872d8e51665f317"
+    },
+    {
+      "snapshot": "workitems/wi-032/integrate-engineering.py",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\integrate-engineering.py",
+      "sha256": "1cb25b16d396e4b763651cbf8034a68b2d8658e58a90ef89e8df1eef766d0d5f"
+    },
+    {
+      "snapshot": "workitems/wi-032/integrate-main.py",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\integrate-main.py",
+      "sha256": "04684fa59f7af3db7330cae1740cf64df60ef016494e52ae2371ef516ae5e788"
+    },
+    {
+      "snapshot": "workitems/wi-032/native-main.py",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\native-main.py",
+      "sha256": "4727666f6a3fe19956e8bc84d8f4e0ce9cf78c0a85421059fe7c8d74ec91ecf4"
+    },
+    {
+      "snapshot": "workitems/wi-032/prepare-integration.py",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\prepare-integration.py",
+      "sha256": "c73637dd002b85af4b4feb04c91c045ce7ce1b2b434d22075e758064727d14a3"
+    },
+    {
+      "snapshot": "workitems/wi-032/prepare-next.py",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\prepare-next.py",
+      "sha256": "65d39b1b0f0bf0db0926898882bfeb4f4fecb5af774c8814ee1007a361999163"
+    },
+    {
+      "snapshot": "workitems/wi-032/preserve-evidence.py",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\preserve-evidence.py",
+      "sha256": "ed42b26fa112eae4142d13c7c3a67bc06a240b7936af673c6461e348be9bb466"
+    },
+    {
+      "snapshot": "workitems/wi-032/qa-final-smoke.py",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\qa-final-smoke.py",
+      "sha256": "36e23c5d4010698f310dd9714c04d74a539842479392be26c48af285baffaa92"
+    },
+    {
+      "snapshot": "workitems/wi-032/qa-pages.py",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\qa-pages.py",
+      "sha256": "6d8c8b3e513176c4200d0cd28c5129224c52ea57ab01beac2bec67bab9a6d4ec"
+    },
+    {
+      "snapshot": "workitems/wi-032/refine-integrated-copy.py",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\refine-integrated-copy.py",
+      "sha256": "082594f7d5ad68997ab8d093c1f7887ea08e745cdc0af454a9aa5aa8be787510"
+    },
+    {
+      "snapshot": "workitems/wi-032/refine-layout-check.py",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\refine-layout-check.py",
+      "sha256": "cb84a95ed2e20b74196e529c6df1e2f3b5249df5ffae8b0c97fa2b9f258872a5"
+    },
+    {
+      "snapshot": "workitems/wi-032/refine-world-reparameterization.py",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\refine-world-reparameterization.py",
+      "sha256": "ec8f1c78581b771d4bdba33bbca4438a2e609dc3eb042534b8c2bc1b402083a6"
+    },
+    {
+      "snapshot": "workitems/wi-032/render-engineering.py",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\render-engineering.py",
+      "sha256": "9c6ab5665c2dbb07fe738380954ad274a80f135543cab27d2538a9090a91ec14"
+    },
+    {
+      "snapshot": "workitems/wi-032/render_charuco.py",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\render_charuco.py",
+      "sha256": "ef52de673af0feac3fe2b0bdfad7ff95eb19d43095e20b3e400c5606b23b119d"
+    },
+    {
+      "snapshot": "workitems/wi-032/select-main.py",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\select-main.py",
+      "sha256": "fb79f33837cf5ba94e1f2079c8c840bb8c1b768f1c5194bdc75a0b8e0076c4bc"
+    },
+    {
+      "snapshot": "workitems/wi-032/start.py",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\start.py",
+      "sha256": "0f42b249e5bb2f0f5790de08994fbde816af2ca3ddbfd56e4ae385383f691451"
+    },
+    {
+      "snapshot": "workitems/wi-032/sync-maintenance.py",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\sync-maintenance.py",
+      "sha256": "9fa1a8cc109bf95eb8e5396f3f6bb6dcddfe69f1ccf671e0d85008ec6a8d3f1a"
+    },
+    {
+      "snapshot": "workitems/wi-032/update-renderer.py",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\update-renderer.py",
+      "sha256": "755c7c54eed4a9b39935276371cf2b7cc0a2a7275f5b08ac6969ac663072a6d7"
+    },
+    {
+      "snapshot": "workitems/wi-032/validate-selected-briefs.py",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\validate-selected-briefs.py",
+      "sha256": "db9df97ed31326f030ec81dfa3ba33f4dadf969d9955d57dea575324bf194375"
+    },
+    {
+      "snapshot": "workitems/wi-032/visuals.py",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\visuals.py",
+      "sha256": "dc037d319475666aa2315bd3abf8265e6c27ef5b52e35b0e78789e1a66ed99bd"
+    },
+    {
+      "snapshot": "workitems/wi-032/write-final-learning.py",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\write-final-learning.py",
+      "sha256": "80381e9294f12bdffcdbab687808d3bc7d47635cad4f0f195ae01f0b77876ef6"
+    },
+    {
+      "snapshot": "workitems/wi-032/pages/charuco/report.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\pages\\charuco\\report.json",
+      "sha256": "804a64eef53b3f137b275744c239a9a419e0ccc6558e220f166bbc07d93c5f7d"
+    },
+    {
+      "snapshot": "workitems/wi-032/pages/det-dino-detector/report.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\pages\\det-dino-detector\\report.json",
+      "sha256": "9fd0b9d4eefab119ec824eaf8253f6f6c0254281909efe1cccd4749a456b463b"
+    },
+    {
+      "snapshot": "workitems/wi-032/pages/ecc/report.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\pages\\ecc\\report.json",
+      "sha256": "d9074dfc9ddda0e73daf5ef58b566ef7ecc53e8c6534bdb29697e7cceee59675"
+    },
+    {
+      "snapshot": "workitems/wi-032/pages/lightglue/report.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\pages\\lightglue\\report.json",
+      "sha256": "1b5bd5cb37aee662423d8aa791dfc913e0f553bc3e2d6ab2651b47c27ce5db91"
+    },
+    {
+      "snapshot": "workitems/wi-032/pages/sift/report.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\pages\\sift\\report.json",
+      "sha256": "8bedab533589386df6d3308db37a6fbe15ee2bc980ad97b24d4982a7e7d04840"
+    },
+    {
+      "snapshot": "workitems/wi-032/pages/yolo-world/report.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\pages\\yolo-world\\report.json",
+      "sha256": "967156eae86a098abef50921222c8048b0b6458125810e15af951b3ac2bf3c85"
+    },
+    {
+      "snapshot": "workitems/wi-032/baseline/interactive-learning.html",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\baseline\\interactive-learning.html",
+      "sha256": "5019330b5bb83f0f053087f8ca71f99b4c99928a64009ceb79db5a14d9999620"
+    },
+    {
+      "snapshot": "workitems/wi-032/baseline/docs/index.html",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\baseline\\docs\\index.html",
+      "sha256": "5019330b5bb83f0f053087f8ca71f99b4c99928a64009ceb79db5a14d9999620"
+    },
+    {
+      "snapshot": "workitems/wi-032/baseline/tools/build_interactive_learning_html.py",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\baseline\\tools\\build_interactive_learning_html.py",
+      "sha256": "afb195f8e5b855f42b6c5b00b5fd3fc176ef4dc11c008b72148eaa65189f9c65"
+    },
+    {
+      "snapshot": "workitems/wi-032/baseline/_course_content/learner-briefs.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\baseline\\_course_content\\learner-briefs.json",
+      "sha256": "e9f6337c43f681f493804e842e5cfe5977eb7bc0612493c90519bac868c395fc"
+    },
+    {
+      "snapshot": "workitems/wi-032/baseline/_course_content/topics/charuco.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\baseline\\_course_content\\topics\\charuco.json",
+      "sha256": "0cd6cc85c9434339196414b151fef401c435802b3ad66533674449dd4d0f0bfb"
+    },
+    {
+      "snapshot": "workitems/wi-032/baseline/_course_content/topics/det-dino-detector.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\baseline\\_course_content\\topics\\det-dino-detector.json",
+      "sha256": "ed1a45501c9b5fcac9303b9e5de331756b112fccb9c71b5a046e7583dbcb5f8e"
+    },
+    {
+      "snapshot": "workitems/wi-032/baseline/_course_content/topics/ecc.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\baseline\\_course_content\\topics\\ecc.json",
+      "sha256": "97fcf5fbc588b68b8c4ec13a2861ed44ae96b17096a72f5c2dd700aeea35d6bd"
+    },
+    {
+      "snapshot": "workitems/wi-032/baseline/_course_content/topics/lightglue.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\baseline\\_course_content\\topics\\lightglue.json",
+      "sha256": "88e9dea4680c475b72a1728e09a244b493156e42ecba38cad9d07ce077d941a8"
+    },
+    {
+      "snapshot": "workitems/wi-032/baseline/_course_content/topics/sift.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\baseline\\_course_content\\topics\\sift.json",
+      "sha256": "0d0e09718e471b07d068ababfc7fd92b23a97e6c517dd24322f36b889da27db9"
+    },
+    {
+      "snapshot": "workitems/wi-032/baseline/_course_content/topics/yolo-world.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\baseline\\_course_content\\topics\\yolo-world.json",
+      "sha256": "0cbeeb3a53780fd5101000468f582128cda80d11ce33093e7fa43fbd39513b9d"
+    },
+    {
+      "snapshot": "workitems/wi-032/baseline/roadmap-model-selection/geometry-alignment-measurement/charuco/model.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\baseline\\roadmap-model-selection\\geometry-alignment-measurement\\charuco\\model.md",
+      "sha256": "41c5f36859b05a31b1917386cc3c727a8ab926030bf674b100c91bbb462a5586"
+    },
+    {
+      "snapshot": "workitems/wi-032/baseline/roadmap-model-selection/geometry-alignment-measurement/charuco/slide-manifest.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\baseline\\roadmap-model-selection\\geometry-alignment-measurement\\charuco\\slide-manifest.md",
+      "sha256": "b7a8290230d1094ab2b3239d9f739ed192340e8751591812bab1d34485101523"
+    },
+    {
+      "snapshot": "workitems/wi-032/baseline/roadmap-model-selection/geometry-alignment-measurement/ecc/model.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\baseline\\roadmap-model-selection\\geometry-alignment-measurement\\ecc\\model.md",
+      "sha256": "b3eb83b7e083f0b1bdd5d5411408ccf9cb56ad53dc076aa8d05acfcf7b808b58"
+    },
+    {
+      "snapshot": "workitems/wi-032/baseline/roadmap-model-selection/geometry-alignment-measurement/ecc/slide-manifest.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\baseline\\roadmap-model-selection\\geometry-alignment-measurement\\ecc\\slide-manifest.md",
+      "sha256": "a6472448c29fa8b3fe24b74e1e2c7e604800b081db6018e69cc5a685a56f8ed5"
+    },
+    {
+      "snapshot": "workitems/wi-032/baseline/roadmap-model-selection/geometry-alignment-measurement/lightglue/model.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\baseline\\roadmap-model-selection\\geometry-alignment-measurement\\lightglue\\model.md",
+      "sha256": "6fafb3c36997518e68b2e8cff5f5598ec30d084a5ee0df794ed5d1a9ccdc8569"
+    },
+    {
+      "snapshot": "workitems/wi-032/baseline/roadmap-model-selection/geometry-alignment-measurement/lightglue/slide-manifest.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\baseline\\roadmap-model-selection\\geometry-alignment-measurement\\lightglue\\slide-manifest.md",
+      "sha256": "dfc2b08b3eda532d1630a986d46eadad1529aa2e6f43951222ed75da0a0e1374"
+    },
+    {
+      "snapshot": "workitems/wi-032/baseline/roadmap-model-selection/geometry-alignment-measurement/sift/model.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\baseline\\roadmap-model-selection\\geometry-alignment-measurement\\sift\\model.md",
+      "sha256": "5e31f374648b52baaf9ca725b481d4ac9611cbe5384a6e88496934a88e9a98db"
+    },
+    {
+      "snapshot": "workitems/wi-032/baseline/roadmap-model-selection/geometry-alignment-measurement/sift/slide-manifest.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\baseline\\roadmap-model-selection\\geometry-alignment-measurement\\sift\\slide-manifest.md",
+      "sha256": "9f8ba827b611be9ad984e71309d3e020a5090dbb6e76c9888743cba836c6d4df"
+    },
+    {
+      "snapshot": "workitems/wi-032/baseline/roadmap-model-selection/detector/det-dino-detector/model.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\baseline\\roadmap-model-selection\\detector\\det-dino-detector\\model.md",
+      "sha256": "bc2c1aaf05fe69cdf40b80b69c6d1422df5de08b5085020cf29b849cdd8c2be8"
+    },
+    {
+      "snapshot": "workitems/wi-032/baseline/roadmap-model-selection/detector/det-dino-detector/slide-manifest.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\baseline\\roadmap-model-selection\\detector\\det-dino-detector\\slide-manifest.md",
+      "sha256": "1c4af32a76bdf151deb0ef1bed2dea7380729a8166880d03c09dd8b0099ad515"
+    },
+    {
+      "snapshot": "workitems/wi-032/baseline/roadmap-model-selection/detector/yolo-world/model.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\baseline\\roadmap-model-selection\\detector\\yolo-world\\model.md",
+      "sha256": "aea8a6383c645052b7016c284048df9efe81dcbc6d3f87d98b3e6924fd31f9e4"
+    },
+    {
+      "snapshot": "workitems/wi-032/baseline/roadmap-model-selection/detector/yolo-world/slide-manifest.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\baseline\\roadmap-model-selection\\detector\\yolo-world\\slide-manifest.md",
+      "sha256": "abe06f812654ab18ab48bf47dc773738cacd79401a8b12ff7f283b62eda48a3f"
+    },
+    {
+      "snapshot": "workitems/wi-032/WORKITEMS.md",
+      "source": "C:\\code\\claude\\visionAI\\WORKITEMS.md",
+      "sha256": "0871ea477b5bf76a3e78835a96175ecf496891bdca75e71b8669cd9f1a7665e8"
+    },
+    {
+      "snapshot": "workitems/wi-032/BEGINNER_VISUAL_TODO.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\BEGINNER_VISUAL_TODO.md",
+      "sha256": "0783c4be2f3bd86e020cd9ba8f83fb57e0b74c8daa94fb2c46d7c9e8717d2301"
+    },
+    {
+      "snapshot": "workitems/wi-032/BEGINNER_VISUAL_STATUS.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\BEGINNER_VISUAL_STATUS.md",
+      "sha256": "2b9fcfb31e3366577eb0a02267b7d348546b4f74d536502d71e5c854803dd36f"
+    },
+    {
+      "snapshot": "project/Overall_Review.md",
+      "source": "C:\\code\\claude\\visionAI\\Overall_Review.md",
+      "sha256": "5c9552fe76d5db133e5e310126358e709b0434ca1bda00d2b157972586e45df0"
+    },
+    {
+      "snapshot": "workitems/wi-032/authoring/_course_content/topics/charuco.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\_course_content\\topics\\charuco.json",
+      "sha256": "19f5f0965f788026e42e12600eac183ad15860c4ecc2647dc3cee6b0a91ab81b"
+    },
+    {
+      "snapshot": "workitems/wi-032/authoring/roadmap-model-selection/geometry-alignment-measurement/charuco/model.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\roadmap-model-selection\\geometry-alignment-measurement\\charuco\\model.md",
+      "sha256": "d8dce1ca4783be77121f51d40b53f06493d54b43835781fce27e27971de757ed"
+    },
+    {
+      "snapshot": "workitems/wi-032/authoring/roadmap-model-selection/geometry-alignment-measurement/charuco/slide-manifest.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\roadmap-model-selection\\geometry-alignment-measurement\\charuco\\slide-manifest.md",
+      "sha256": "06ab6d5d4a397ea6499b0500cc2aeb1d831adb58eb84e43b569f3932bd540f89"
+    },
+    {
+      "snapshot": "workitems/wi-032/authoring/_course_content/topics/ecc.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\_course_content\\topics\\ecc.json",
+      "sha256": "c11bfcc45947dc37b257b6bcadff148c3ebd6f10100e83c689f9d690a95916e7"
+    },
+    {
+      "snapshot": "workitems/wi-032/authoring/roadmap-model-selection/geometry-alignment-measurement/ecc/model.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\roadmap-model-selection\\geometry-alignment-measurement\\ecc\\model.md",
+      "sha256": "72d7a87da5f377921cfc7e26154f4bcd98de27e5ec61a259b9fc4dbbfff1361d"
+    },
+    {
+      "snapshot": "workitems/wi-032/authoring/roadmap-model-selection/geometry-alignment-measurement/ecc/slide-manifest.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\roadmap-model-selection\\geometry-alignment-measurement\\ecc\\slide-manifest.md",
+      "sha256": "17bd94798850885daa2886e906801b04b2753869172cee8a70ca304f5ae5998d"
+    },
+    {
+      "snapshot": "workitems/wi-032/authoring/_course_content/topics/sift.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\_course_content\\topics\\sift.json",
+      "sha256": "1468f884012fdbd9d855f94dd932d55fa775f10dff0da3cee46b103dfceda8c8"
+    },
+    {
+      "snapshot": "workitems/wi-032/authoring/roadmap-model-selection/geometry-alignment-measurement/sift/model.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\roadmap-model-selection\\geometry-alignment-measurement\\sift\\model.md",
+      "sha256": "5389377ea80eec8a41359c057b6a01faf27ddb004b77c80edf336b2679199f26"
+    },
+    {
+      "snapshot": "workitems/wi-032/authoring/roadmap-model-selection/geometry-alignment-measurement/sift/slide-manifest.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\roadmap-model-selection\\geometry-alignment-measurement\\sift\\slide-manifest.md",
+      "sha256": "b4a57d2439797571497a8ecbbecb7eaea2a8f657cf9e04648cfa53566da18b66"
+    },
+    {
+      "snapshot": "workitems/wi-032/authoring/_course_content/topics/lightglue.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\_course_content\\topics\\lightglue.json",
+      "sha256": "c2d20513abdad6c62954a7b47c76ed058925b48e31ace62812824c8f295e27db"
+    },
+    {
+      "snapshot": "workitems/wi-032/authoring/roadmap-model-selection/geometry-alignment-measurement/lightglue/model.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\roadmap-model-selection\\geometry-alignment-measurement\\lightglue\\model.md",
+      "sha256": "0d36170fb5f47441da6594f4c02c41cf092d558aee96cf9e5143083fe5427b08"
+    },
+    {
+      "snapshot": "workitems/wi-032/authoring/roadmap-model-selection/geometry-alignment-measurement/lightglue/slide-manifest.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\roadmap-model-selection\\geometry-alignment-measurement\\lightglue\\slide-manifest.md",
+      "sha256": "4d71dea573fff913dd03646701f3be15a079330bfc6cedfb0b75fb10891f6b18"
+    },
+    {
+      "snapshot": "workitems/wi-032/authoring/_course_content/topics/det-dino-detector.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\_course_content\\topics\\det-dino-detector.json",
+      "sha256": "d1ac861daad83f4176f023da91596232a0eab2bc1860318f0bb1137fb9e0d371"
+    },
+    {
+      "snapshot": "workitems/wi-032/authoring/roadmap-model-selection/detector/det-dino-detector/model.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\roadmap-model-selection\\detector\\det-dino-detector\\model.md",
+      "sha256": "51c7566a447c9ad68da953bac21c6b079342ea150d656e9b29fac7aae6668c13"
+    },
+    {
+      "snapshot": "workitems/wi-032/authoring/roadmap-model-selection/detector/det-dino-detector/slide-manifest.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\roadmap-model-selection\\detector\\det-dino-detector\\slide-manifest.md",
+      "sha256": "9444fb4d3dbd3506ac58f8cc20b9ac9ce03e9d57a2e61fd207772f0672df9f13"
+    },
+    {
+      "snapshot": "workitems/wi-032/authoring/_course_content/topics/yolo-world.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\_course_content\\topics\\yolo-world.json",
+      "sha256": "bfce0599b7b5ca0b5c8bd8bb41c28915cce0c9a96a9deeb9b64f524566d55f6f"
+    },
+    {
+      "snapshot": "workitems/wi-032/authoring/roadmap-model-selection/detector/yolo-world/model.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\roadmap-model-selection\\detector\\yolo-world\\model.md",
+      "sha256": "c420400c2e1106f0b13b18cac5b7e96e4f8e3afe1f95935b702b5a90caab302c"
+    },
+    {
+      "snapshot": "workitems/wi-032/authoring/roadmap-model-selection/detector/yolo-world/slide-manifest.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\roadmap-model-selection\\detector\\yolo-world\\slide-manifest.md",
+      "sha256": "3dd3c05999b1f87b373a3a6713db305c1bbbe565de5dad7c8d7729d5402454a9"
+    },
+    {
+      "snapshot": "workitems/wi-032/authoring/_course_content/learner-briefs.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\_course_content\\learner-briefs.json",
+      "sha256": "41d6fbabb9e3472ae2d1944cbc392b5d2192b29ea266c838b1c11b33e0aac440"
+    },
+    {
+      "snapshot": "workitems/wi-032/authoring/tools/build_interactive_learning_html.py",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\tools\\build_interactive_learning_html.py",
+      "sha256": "df8e597f5f5b5efcc7b2ed7e27160035f7ac0de7d7a2553c27ffe2cb441795be"
+    },
+    {
+      "snapshot": "workitems/wi-032/authoring/tools/build_github_pages_site.py",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\tools\\build_github_pages_site.py",
+      "sha256": "9d3bfe2178113f150e16ba6d2f1096fb98a426ff7d715ab27f3efea19824c56c"
+    },
+    {
+      "snapshot": "workitems/wi-032/authoring/tests/test_engineering_mobile_pages.py",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\tests\\test_engineering_mobile_pages.py",
+      "sha256": "477c1e7f25fd6880f78c58df1e64c13d28ee742d62ebd96deecf45734bfe9e55"
+    },
+    {
+      "snapshot": "workitems/wi-032/authoring/tests/test_tall_mobile_artwork.py",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\tests\\test_tall_mobile_artwork.py",
+      "sha256": "e765dc12b7985298567b46727e078c49eba42fa964d18fd9aeab08542cc22fe1"
+    },
+    {
+      "snapshot": "workitems/wi-032/authoring/tests/test_collapsed_deep_dive.py",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\tests\\test_collapsed_deep_dive.py",
+      "sha256": "e4632250df23b60dc981318661a6d5a68ddcada68a4cc689e6b1a35d33d17dd1"
+    },
+    {
+      "snapshot": "workitems/wi-032/authoring/tests/test_github_pages_bundle.py",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\tests\\test_github_pages_bundle.py",
+      "sha256": "7f98db01e94c1e1983776ee8cf8d292fa7fff8ca17fabb6af84e789ce91c102e"
+    },
+    {
+      "snapshot": "workitems/wi-032/authoring/tests/test_deep_dive_mobile_steps.py",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\tests\\test_deep_dive_mobile_steps.py",
+      "sha256": "8aba359dde274c886f9a117ae5040bd023a5fa5778e8592ec1e20dded573c7af"
+    },
+    {
+      "snapshot": "workitems/wi-032/authoring/tests/test_interactive_navigation.py",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\tests\\test_interactive_navigation.py",
+      "sha256": "7cdb355ee5b2c5bfc453c7eb4afc5f1f345b5f0621232f4dc65996c716881144"
+    },
+    {
+      "snapshot": "workitems/wi-032/native/charuco-engineering-1-r04-desktop.svg",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\charuco-engineering-1-r04-desktop.svg",
+      "sha256": "3b4186f8ad72d59291d27bba026a75a2f2ab6c40ff568b6688d243f0c54327bc"
+    },
+    {
+      "snapshot": "workitems/wi-032/native/charuco-engineering-1-r04-mobile.svg",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\charuco-engineering-1-r04-mobile.svg",
+      "sha256": "4c86953be69e93e4fd26ad8425f1044a5936a0b0fd43ebb8201ed60604050297"
+    },
+    {
+      "snapshot": "workitems/wi-032/native/charuco-engineering-2-r04-desktop.svg",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\charuco-engineering-2-r04-desktop.svg",
+      "sha256": "22e5dcf4a870435dd6b8476a668b5f533a6cbb6c416f1ffee88f057db87b017c"
+    },
+    {
+      "snapshot": "workitems/wi-032/native/charuco-engineering-2-r04-mobile.svg",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\charuco-engineering-2-r04-mobile.svg",
+      "sha256": "fc00e26bba8a1816b4e1937a2102e49cde4eade3c1a0e4cfe333e56925fae08e"
+    },
+    {
+      "snapshot": "workitems/wi-032/native/charuco-engineering-3-r04-desktop.svg",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\charuco-engineering-3-r04-desktop.svg",
+      "sha256": "ff9e4494a0718ae68e21c075a0f012d6627800201568a6c4c9b07b2868a4db7a"
+    },
+    {
+      "snapshot": "workitems/wi-032/native/charuco-engineering-3-r04-mobile.svg",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\charuco-engineering-3-r04-mobile.svg",
+      "sha256": "f61b066ceebf20c0bec1f8ee24b9f941a92e86063be211c254e4c13da61b9b4b"
+    },
+    {
+      "snapshot": "workitems/wi-032/native/charuco-engineering-4-r04-desktop.svg",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\charuco-engineering-4-r04-desktop.svg",
+      "sha256": "178a2646f5b22c83e92dc26489d1c84977f652962bcb45969746fdea703469a4"
+    },
+    {
+      "snapshot": "workitems/wi-032/native/charuco-engineering-4-r04-mobile.svg",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\charuco-engineering-4-r04-mobile.svg",
+      "sha256": "cd019aefbe9ccbaf391539b843e422901f48c26e8130a28d7fd3c4a333c3ebc6"
+    },
+    {
+      "snapshot": "workitems/wi-032/native/ecc-engineering-1-r04-desktop.svg",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\ecc-engineering-1-r04-desktop.svg",
+      "sha256": "d6d530648b783910b10c0ceef9f6bb4f3a7d837789df354eda92d0b1ee7dc2de"
+    },
+    {
+      "snapshot": "workitems/wi-032/native/ecc-engineering-1-r04-mobile.svg",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\ecc-engineering-1-r04-mobile.svg",
+      "sha256": "4e29d0c7a1523613d95c056c42ec8bd4cd84a519c016dad06e4ad8414f676449"
+    },
+    {
+      "snapshot": "workitems/wi-032/native/ecc-engineering-2-r04-desktop.svg",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\ecc-engineering-2-r04-desktop.svg",
+      "sha256": "d1771ea80ee0e66a9c7b7b45c9e4aa775d70f43273fd371b6b64027bce479ee6"
+    },
+    {
+      "snapshot": "workitems/wi-032/native/ecc-engineering-2-r04-mobile.svg",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\ecc-engineering-2-r04-mobile.svg",
+      "sha256": "556758c04433304d670f22df52bd6435f0c9c1601dc68b2243f6f312a6f44039"
+    },
+    {
+      "snapshot": "workitems/wi-032/native/ecc-engineering-3-r04-desktop.svg",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\ecc-engineering-3-r04-desktop.svg",
+      "sha256": "a0dc3a49209cd85646044073a1a68cf4350436cfc666bcc5d564fdb902f8339d"
+    },
+    {
+      "snapshot": "workitems/wi-032/native/ecc-engineering-3-r04-mobile.svg",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\ecc-engineering-3-r04-mobile.svg",
+      "sha256": "9df0210c01573e4a70b2884652ebe76831a795d842341f80ce8507245aa894fe"
+    },
+    {
+      "snapshot": "workitems/wi-032/native/ecc-engineering-4-r04-desktop.svg",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\ecc-engineering-4-r04-desktop.svg",
+      "sha256": "9275aa087aed68586737f4c55a857812edb1f760c4c0b3b7971593122b2c8905"
+    },
+    {
+      "snapshot": "workitems/wi-032/native/ecc-engineering-4-r04-mobile.svg",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\ecc-engineering-4-r04-mobile.svg",
+      "sha256": "86e6756e8a952a974695fd44f17500c93268fc1a667ba6522397c58ed6a0e7d2"
+    },
+    {
+      "snapshot": "workitems/wi-032/native/sift-engineering-1-r06-desktop.svg",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\sift-engineering-1-r06-desktop.svg",
+      "sha256": "63be1526afb6581745c70e6932415a453ca3cdff69b555e42a6b936c86799147"
+    },
+    {
+      "snapshot": "workitems/wi-032/native/sift-engineering-1-r06-mobile.svg",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\sift-engineering-1-r06-mobile.svg",
+      "sha256": "6a9c7ed91cc05e007299683ea9eb47ee807145b2a2cacec50b69ed80d87d509d"
+    },
+    {
+      "snapshot": "workitems/wi-032/native/sift-engineering-2-r04-desktop.svg",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\sift-engineering-2-r04-desktop.svg",
+      "sha256": "ba45766cad80154d013d382065d53310cc9cbca072f275d6a289d44cd35fb114"
+    },
+    {
+      "snapshot": "workitems/wi-032/native/sift-engineering-2-r04-mobile.svg",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\sift-engineering-2-r04-mobile.svg",
+      "sha256": "965674e630c4cba5fd857a622522657a516f6d3625df88d7ae049f219cbc4c46"
+    },
+    {
+      "snapshot": "workitems/wi-032/native/sift-engineering-3-r04-desktop.svg",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\sift-engineering-3-r04-desktop.svg",
+      "sha256": "a8754be7e2b1493fc0b452b784993be66a92fb79e64af87a1f78c0d766ea22db"
+    },
+    {
+      "snapshot": "workitems/wi-032/native/sift-engineering-3-r04-mobile.svg",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\sift-engineering-3-r04-mobile.svg",
+      "sha256": "9d984d1b0caab84c1b0a7f7c9016dd128c0c3ce034f84a8de0b0e2a6b9d14d48"
+    },
+    {
+      "snapshot": "workitems/wi-032/native/sift-engineering-4-r04-desktop.svg",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\sift-engineering-4-r04-desktop.svg",
+      "sha256": "dde2a3bbbb44ea99632aae60e041d2e9b19f03e1e2bda73f4ef6dedc6ccf9b2f"
+    },
+    {
+      "snapshot": "workitems/wi-032/native/sift-engineering-4-r04-mobile.svg",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\sift-engineering-4-r04-mobile.svg",
+      "sha256": "b16df33bd9207f93942e79e23e72ad920a5b94277afef798c5daabcbf2f7619b"
+    },
+    {
+      "snapshot": "workitems/wi-032/native/lightglue-engineering-1-r04-desktop.svg",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\lightglue-engineering-1-r04-desktop.svg",
+      "sha256": "aa8addfe7b40757f05fa86f23f25b2526a5b4fd3b57e0e2bd0d71c7cad66b18e"
+    },
+    {
+      "snapshot": "workitems/wi-032/native/lightglue-engineering-1-r04-mobile.svg",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\lightglue-engineering-1-r04-mobile.svg",
+      "sha256": "9bbf1c22c167b12c7d02a412c621e8ed8e29cd2385da2b4d5bad055c1ad70c2c"
+    },
+    {
+      "snapshot": "workitems/wi-032/native/lightglue-engineering-2-r04-desktop.svg",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\lightglue-engineering-2-r04-desktop.svg",
+      "sha256": "f357a845c958d3d1f5ad31e357b14fd5ceb84a7598613433b40e88a7d8be9c43"
+    },
+    {
+      "snapshot": "workitems/wi-032/native/lightglue-engineering-2-r04-mobile.svg",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\lightglue-engineering-2-r04-mobile.svg",
+      "sha256": "e8066c076a27ed2af33ecefdde1d91b55895f7a38eba1a6a659aa5df849378e4"
+    },
+    {
+      "snapshot": "workitems/wi-032/native/lightglue-engineering-3-r04-desktop.svg",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\lightglue-engineering-3-r04-desktop.svg",
+      "sha256": "2412184f78381182c2fc589a5cbbeb6891e98de9540e4c9486dea8bbbb2cc1cd"
+    },
+    {
+      "snapshot": "workitems/wi-032/native/lightglue-engineering-3-r04-mobile.svg",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\lightglue-engineering-3-r04-mobile.svg",
+      "sha256": "38630cd6411d09e4a80f47e7b479eedbaa4524c37c8b146a85fc91d223e1197d"
+    },
+    {
+      "snapshot": "workitems/wi-032/native/lightglue-engineering-4-r04-desktop.svg",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\lightglue-engineering-4-r04-desktop.svg",
+      "sha256": "ad1aa4ff4ca89f1bf4fc3f535ee49136e73f05f03addf65b60e70b8900960abc"
+    },
+    {
+      "snapshot": "workitems/wi-032/native/lightglue-engineering-4-r04-mobile.svg",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\lightglue-engineering-4-r04-mobile.svg",
+      "sha256": "eb5205f62676d5eed861d4fe84a780db652bef0fcf6322e88c80bd8c344d0695"
+    },
+    {
+      "snapshot": "workitems/wi-032/native/det-dino-detector-engineering-1-r04-desktop.svg",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\det-dino-detector-engineering-1-r04-desktop.svg",
+      "sha256": "43d540e704a61fe64f96d85a1b6b9c68726ca369e0215f9ff6cd1e4d443508bd"
+    },
+    {
+      "snapshot": "workitems/wi-032/native/det-dino-detector-engineering-1-r04-mobile.svg",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\det-dino-detector-engineering-1-r04-mobile.svg",
+      "sha256": "3c5bf83c15770a34e69fb95c6a17188f2c2eeaa882fb2dd11dba8b2ef289d212"
+    },
+    {
+      "snapshot": "workitems/wi-032/native/det-dino-detector-engineering-2-r04-desktop.svg",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\det-dino-detector-engineering-2-r04-desktop.svg",
+      "sha256": "253c1a3e986a0b1c7311c9c3f14f5e614bdd011b5e33240fa71e4f5e74d090dc"
+    },
+    {
+      "snapshot": "workitems/wi-032/native/det-dino-detector-engineering-2-r04-mobile.svg",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\det-dino-detector-engineering-2-r04-mobile.svg",
+      "sha256": "d1379997f364b23ceedb488e12056e42cd73111877bf5e4666f997d58627f5b5"
+    },
+    {
+      "snapshot": "workitems/wi-032/native/det-dino-detector-engineering-3-r04-desktop.svg",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\det-dino-detector-engineering-3-r04-desktop.svg",
+      "sha256": "ec132c710600b42a065bf63183f20e4168521906106470fff4452fa01a748351"
+    },
+    {
+      "snapshot": "workitems/wi-032/native/det-dino-detector-engineering-3-r04-mobile.svg",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\det-dino-detector-engineering-3-r04-mobile.svg",
+      "sha256": "c390796f424f8567f22468b1b92167c934a7541c05162a263e471c9f6e219de6"
+    },
+    {
+      "snapshot": "workitems/wi-032/native/det-dino-detector-engineering-4-r04-desktop.svg",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\det-dino-detector-engineering-4-r04-desktop.svg",
+      "sha256": "629007937824639e2ecc565e8329e27bb70adea5c232e606e212b54e4bbae56b"
+    },
+    {
+      "snapshot": "workitems/wi-032/native/det-dino-detector-engineering-4-r04-mobile.svg",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\det-dino-detector-engineering-4-r04-mobile.svg",
+      "sha256": "e2140584c8bacfd651f55d4acdf2c1e1003bf53ba656f0cdf409a2bdc14496ae"
+    },
+    {
+      "snapshot": "workitems/wi-032/native/yolo-world-engineering-1-r04-desktop.svg",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\yolo-world-engineering-1-r04-desktop.svg",
+      "sha256": "08a5a11712c14e2f6e1ab0de84b6ecddbafeb2580ae642c82cf45a75e2bd4245"
+    },
+    {
+      "snapshot": "workitems/wi-032/native/yolo-world-engineering-1-r04-mobile.svg",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\yolo-world-engineering-1-r04-mobile.svg",
+      "sha256": "eb6241d285135457608934c507b459e794c3122fe6d893a25a610ec9a5de0ab5"
+    },
+    {
+      "snapshot": "workitems/wi-032/native/yolo-world-engineering-2-r05-desktop.svg",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\yolo-world-engineering-2-r05-desktop.svg",
+      "sha256": "56c24eb0febd245c8bc5d7d3b5c9db7d7db749a49f674393d3b5dd847ee535a1"
+    },
+    {
+      "snapshot": "workitems/wi-032/native/yolo-world-engineering-2-r05-mobile.svg",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\yolo-world-engineering-2-r05-mobile.svg",
+      "sha256": "08aeec651a1c473a283ee689f2f764fab9508ebb00dc9312b774ea4ce159d186"
+    },
+    {
+      "snapshot": "workitems/wi-032/native/yolo-world-engineering-3-r07-desktop.svg",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\yolo-world-engineering-3-r07-desktop.svg",
+      "sha256": "c53e55e2002f6a106f185da058e65fb5aa893b3be7bcfc6a6b637ecce161aea7"
+    },
+    {
+      "snapshot": "workitems/wi-032/native/yolo-world-engineering-3-r07-mobile.svg",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\yolo-world-engineering-3-r07-mobile.svg",
+      "sha256": "6f5c2456f6bb5fbd3b9611f6f39a677ba31286742d6bfd8aad1d9a50d8ade8a7"
+    },
+    {
+      "snapshot": "workitems/wi-032/native/yolo-world-engineering-4-r04-desktop.svg",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\yolo-world-engineering-4-r04-desktop.svg",
+      "sha256": "6aa1c8b46afe59bb2d34d3e24e50d9d40cac154fd97161dbbd0bd070247d8a99"
+    },
+    {
+      "snapshot": "workitems/wi-032/native/yolo-world-engineering-4-r04-mobile.svg",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\yolo-world-engineering-4-r04-mobile.svg",
+      "sha256": "f96b1df3c0144ee182dac4d2569b201f31317aefcba74dc591a35a42ec7ef347"
+    },
+    {
+      "snapshot": "workitems/wi-032/native/charuco-core-r05-desktop.svg",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\charuco-core-r05-desktop.svg",
+      "sha256": "4ca968fca23c0d2bb2fb79d4a4a549afe6ad76feaa0995d4b265ffb8ccb0947f"
+    },
+    {
+      "snapshot": "workitems/wi-032/native/charuco-core-r05-mobile.svg",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\charuco-core-r05-mobile.svg",
+      "sha256": "6bf7f4155211c8a868c00cb5be1e11b4ec1bca781c553a359695759b57fbc208"
+    },
+    {
+      "snapshot": "workitems/wi-032/native/charuco-failure-native-r05-desktop.svg",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\charuco-failure-native-r05-desktop.svg",
+      "sha256": "41d5f8dbb973f8f5209d7cfffa32131439dd54b96b80a54e3d85c462e6fb5b8f"
+    },
+    {
+      "snapshot": "workitems/wi-032/native/charuco-failure-native-r05-mobile.svg",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\charuco-failure-native-r05-mobile.svg",
+      "sha256": "e6c015a44136324206b95c48462577ab26f2c604491115c9f8fe9877142e3220"
+    },
+    {
+      "snapshot": "workitems/wi-032/native/ecc-failure-native-r05-desktop.svg",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\ecc-failure-native-r05-desktop.svg",
+      "sha256": "7b2335ae80e7fff301feb4da2c9775b0db80a4d4b3744271645e4988ce8e83b0"
+    },
+    {
+      "snapshot": "workitems/wi-032/native/ecc-failure-native-r05-mobile.svg",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\ecc-failure-native-r05-mobile.svg",
+      "sha256": "6461eb508ac6e4c0a2d768f1dc35ce7ec8a7b918b27e1db82386a0ff65e3b084"
+    },
+    {
+      "snapshot": "workitems/wi-032/native/sift-core-native-r05-desktop.svg",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\sift-core-native-r05-desktop.svg",
+      "sha256": "ac3f2fa77604d523cdaae3f588f9eb564b2c45eb1a3b48a3b1386720a62113b6"
+    },
+    {
+      "snapshot": "workitems/wi-032/native/sift-core-native-r05-mobile.svg",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\sift-core-native-r05-mobile.svg",
+      "sha256": "bb085e7f20be09317838a1af83388bb9a0689aa228a854fc732c2feddad1714c"
+    },
+    {
+      "snapshot": "workitems/wi-032/native/sift-failure-native-r05-desktop.svg",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\sift-failure-native-r05-desktop.svg",
+      "sha256": "ebafc6ec72c8bc2222df27b84cc88ae4afe895965ee23504c376661a46ab8a1d"
+    },
+    {
+      "snapshot": "workitems/wi-032/native/sift-failure-native-r05-mobile.svg",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\sift-failure-native-r05-mobile.svg",
+      "sha256": "644503263c5ec8bf81673e8115717803d34ee59ad4ba4b033ab3cfb3a197e1f2"
+    },
+    {
+      "snapshot": "workitems/wi-032/native/lightglue-core-native-r05-desktop.svg",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\lightglue-core-native-r05-desktop.svg",
+      "sha256": "56acc35eeb5af87c2874be6eec90a72858521db943509c3cdb5524dc543159e8"
+    },
+    {
+      "snapshot": "workitems/wi-032/native/lightglue-core-native-r05-mobile.svg",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\lightglue-core-native-r05-mobile.svg",
+      "sha256": "b2feb1e8b14512ffa2ce1b27965393a1b1ce9ec4df9e2d1197ca3534c18ccb83"
+    },
+    {
+      "snapshot": "workitems/wi-032/native/lightglue-failure-native-r05-desktop.svg",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\lightglue-failure-native-r05-desktop.svg",
+      "sha256": "39de98277fb939c9c394e1edb9cdbc7c4cb80885945340cd8df061a01ae36cd4"
+    },
+    {
+      "snapshot": "workitems/wi-032/native/lightglue-failure-native-r05-mobile.svg",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\lightglue-failure-native-r05-mobile.svg",
+      "sha256": "08e8826441772e240f3bdcbbeac30a58a550d01d7cba554012e007c12cde3c13"
+    },
+    {
+      "snapshot": "workitems/wi-032/native/geometry-compare-native-r05-desktop.svg",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\geometry-compare-native-r05-desktop.svg",
+      "sha256": "05e23d9a1d75f017eee284022b12d051fac089db11430defecffb477953d5139"
+    },
+    {
+      "snapshot": "workitems/wi-032/native/geometry-compare-native-r05-mobile.svg",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\geometry-compare-native-r05-mobile.svg",
+      "sha256": "9ebc224b14c7e308d965a9a42bba20c6e75c6033852bdf9fe5bfc9b0366ebb0e"
+    },
+    {
+      "snapshot": "workitems/wi-032/freeze-reviewed-html.py",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\freeze-reviewed-html.py",
+      "sha256": "65985c7933f5e0ff258ddd77c7f295cf43a518687508560b46711ddcbe6fb08b"
+    },
+    {
+      "snapshot": "workitems/wi-032/release-precheck.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\release-precheck.json",
+      "sha256": "71dddd8bd166e70b4af8a549ab3edfed0ad3f7a70f110475101d01a2b2d5339f"
+    },
+    {
+      "snapshot": "workitems/wi-032/release.py",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-032\\release.py",
+      "sha256": "78e7deb3e48a44e7050390ce5baca4c73333579c3b394f777902cd3f2fa8868d"
     }
-  ]
+  ],
+  "latest_local_audit": "WI-031; audit evidence remains at workitems/wi-031 in authoring workspace; not published"
 }

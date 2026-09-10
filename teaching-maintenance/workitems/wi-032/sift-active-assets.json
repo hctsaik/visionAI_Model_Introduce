@@ -1,0 +1,86 @@
+[
+  {
+    "id": "sift-core",
+    "mode": "desktop",
+    "image": "_course_content/generated-concepts/sift/wi032-sift-core-native-r05-desktop.png",
+    "size": [
+      1672,
+      941
+    ],
+    "sha256": "1712a061122299d59f47ede3dd83aa643f8900b16410e880c0d5144c11a43ccd",
+    "generation": "native SVG rendered by browser",
+    "evidence": "illustrative, not model inference",
+    "user_review": "pending",
+    "page_review": "self-reviewed; interaction checks passed"
+  },
+  {
+    "id": "sift-core",
+    "mode": "mobile",
+    "image": "_course_content/generated-concepts/sift/wi032-sift-core-native-r05-mobile.png",
+    "size": [
+      768,
+      3050
+    ],
+    "sha256": "f3820d2c6aa950b0d81446b4d4a1ca1b28ba4e8b1df729350a0a5c8a9f7ead02",
+    "generation": "native SVG rendered by browser",
+    "evidence": "illustrative, not model inference",
+    "user_review": "pending",
+    "page_review": "self-reviewed; interaction checks passed"
+  },
+  {
+    "id": "sift-failure",
+    "mode": "desktop",
+    "image": "_course_content/generated-concepts/sift/wi032-sift-failure-native-r05-desktop.png",
+    "size": [
+      1672,
+      941
+    ],
+    "sha256": "92c20ce75e699972e436cc2e6d34703af077fc94040771e46d0479ff3097611c",
+    "generation": "native SVG rendered by browser",
+    "evidence": "illustrative, not model inference",
+    "user_review": "pending",
+    "page_review": "self-reviewed; interaction checks passed"
+  },
+  {
+    "id": "sift-failure",
+    "mode": "mobile",
+    "image": "_course_content/generated-concepts/sift/wi032-sift-failure-native-r05-mobile.png",
+    "size": [
+      768,
+      3050
+    ],
+    "sha256": "8757ed745e12ccb2c6f20c962c27f4bdd969733c94bec0c6b6c87e8b417adca0",
+    "generation": "native SVG rendered by browser",
+    "evidence": "illustrative, not model inference",
+    "user_review": "pending",
+    "page_review": "self-reviewed; interaction checks passed"
+  },
+  {
+    "id": "geometry-compare",
+    "mode": "desktop",
+    "image": "_course_content/generated-concepts/ecc/wi032-geometry-compare-native-r05-desktop.png",
+    "size": [
+      1672,
+      941
+    ],
+    "sha256": "0b132dd65ec7c19f69d865093c3ea413d07035599e329102460d486c8ccb3eb3",
+    "generation": "native SVG rendered by browser",
+    "evidence": "illustrative, not model inference",
+    "user_review": "pending",
+    "page_review": "self-reviewed; interaction checks passed"
+  },
+  {
+    "id": "geometry-compare",
+    "mode": "mobile",
+    "image": "_course_content/generated-concepts/ecc/wi032-geometry-compare-native-r05-mobile.png",
+    "size": [
+      768,
+      3050
+    ],
+    "sha256": "a544bd14044783a58188eaebadf51d6495355cd7646b40ffb07fd8b39eeba2be",
+    "generation": "native SVG rendered by browser",
+    "evidence": "illustrative, not model inference",
+    "user_review": "pending",
+    "page_review": "self-reviewed; interaction checks passed"
+  }
+]

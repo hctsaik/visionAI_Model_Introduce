@@ -1,0 +1,502 @@
+[
+  {
+    "topic": "charuco",
+    "route": "interactive-learning.html",
+    "width": 1440,
+    "errors": [],
+    "images": [
+      {
+        "src": "http://127.0.0.1:8000/_course_content/generated-concepts/charuco/wi032-charuco-core-r05-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 404.1875,
+          "y": 401.921875,
+          "width": 935.625,
+          "height": 526.5625,
+          "top": 401.921875,
+          "right": 1339.8125,
+          "bottom": 928.484375,
+          "left": 404.1875
+        },
+        "kind": "main-1"
+      },
+      {
+        "src": "http://127.0.0.1:8000/_course_content/generated-concepts/charuco/wi032-charuco-failure-native-r05-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 404.1875,
+          "y": 201.03125,
+          "width": 935.625,
+          "height": 526.5625,
+          "top": 201.03125,
+          "right": 1339.8125,
+          "bottom": 727.59375,
+          "left": 404.1875
+        },
+        "kind": "main-2"
+      },
+      {
+        "src": "http://127.0.0.1:8000/_course_content/generated-concepts/ecc/wi032-geometry-compare-native-r05-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 404.1875,
+          "y": 201.34375,
+          "width": 935.625,
+          "height": 526.5625,
+          "top": 201.34375,
+          "right": 1339.8125,
+          "bottom": 727.90625,
+          "left": 404.1875
+        },
+        "kind": "main-3"
+      },
+      {
+        "src": "http://127.0.0.1:8000/roadmap-model-selection/geometry-alignment-measurement/charuco/images/final/WI032-CHARUCO-01-r04-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 367.1875,
+          "y": 195.46875,
+          "width": 1009.625,
+          "height": 568.203125,
+          "top": 195.46875,
+          "right": 1376.8125,
+          "bottom": 763.671875,
+          "left": 367.1875
+        },
+        "kind": "engineering-1"
+      },
+      {
+        "src": "http://127.0.0.1:8000/roadmap-model-selection/geometry-alignment-measurement/charuco/images/final/WI032-CHARUCO-02-r04-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 367.1875,
+          "y": 196.34375,
+          "width": 1009.625,
+          "height": 568.203125,
+          "top": 196.34375,
+          "right": 1376.8125,
+          "bottom": 764.546875,
+          "left": 367.1875
+        },
+        "kind": "engineering-2"
+      },
+      {
+        "src": "http://127.0.0.1:8000/roadmap-model-selection/geometry-alignment-measurement/charuco/images/final/WI032-CHARUCO-03-r04-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 367.1875,
+          "y": 196.21875,
+          "width": 1009.625,
+          "height": 568.203125,
+          "top": 196.21875,
+          "right": 1376.8125,
+          "bottom": 764.421875,
+          "left": 367.1875
+        },
+        "kind": "engineering-3"
+      },
+      {
+        "src": "http://127.0.0.1:8000/roadmap-model-selection/geometry-alignment-measurement/charuco/images/final/WI032-CHARUCO-04-r04-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 367.1875,
+          "y": 196.25,
+          "width": 1009.625,
+          "height": 568.203125,
+          "top": 196.25,
+          "right": 1376.8125,
+          "bottom": 764.453125,
+          "left": 367.1875
+        },
+        "kind": "engineering-4"
+      }
+    ],
+    "zoom_checks": 7,
+    "answer": true,
+    "overflow": false,
+    "navigation": true,
+    "complete": true
+  },
+  {
+    "topic": "charuco",
+    "route": "interactive-learning.html",
+    "width": 360,
+    "errors": [],
+    "images": [
+      {
+        "src": "http://127.0.0.1:8000/_course_content/generated-concepts/charuco/wi032-charuco-core-r05-mobile.png",
+        "nw": 768,
+        "nh": 2304,
+        "box": {
+          "x": 17,
+          "y": -134.453125,
+          "width": 326,
+          "height": 978,
+          "top": -134.453125,
+          "right": 343,
+          "bottom": 843.546875,
+          "left": 17
+        },
+        "kind": "main-1"
+      },
+      {
+        "src": "http://127.0.0.1:8000/_course_content/generated-concepts/charuco/wi032-charuco-failure-native-r05-mobile.png",
+        "nw": 768,
+        "nh": 3050,
+        "box": {
+          "x": 17,
+          "y": -292.421875,
+          "width": 326,
+          "height": 1294.65625,
+          "top": -292.421875,
+          "right": 343,
+          "bottom": 1002.234375,
+          "left": 17
+        },
+        "kind": "main-2"
+      },
+      {
+        "src": "http://127.0.0.1:8000/_course_content/generated-concepts/ecc/wi032-geometry-compare-native-r05-mobile.png",
+        "nw": 768,
+        "nh": 3050,
+        "box": {
+          "x": 17,
+          "y": -283.171875,
+          "width": 326,
+          "height": 1294.65625,
+          "top": -283.171875,
+          "right": 343,
+          "bottom": 1011.484375,
+          "left": 17
+        },
+        "kind": "main-3"
+      },
+      {
+        "src": "http://127.0.0.1:8000/roadmap-model-selection/geometry-alignment-measurement/charuco/images/final/WI032-CHARUCO-01-r04-mobile.png",
+        "nw": 768,
+        "nh": 2770,
+        "box": {
+          "x": 34,
+          "y": -157.546875,
+          "width": 292,
+          "height": 1053.171875,
+          "top": -157.546875,
+          "right": 326,
+          "bottom": 895.625,
+          "left": 34
+        },
+        "kind": "engineering-1"
+      },
+      {
+        "src": "http://127.0.0.1:8000/roadmap-model-selection/geometry-alignment-measurement/charuco/images/final/WI032-CHARUCO-02-r04-mobile.png",
+        "nw": 768,
+        "nh": 2770,
+        "box": {
+          "x": 34,
+          "y": -157.90625,
+          "width": 292,
+          "height": 1053.171875,
+          "top": -157.90625,
+          "right": 326,
+          "bottom": 895.265625,
+          "left": 34
+        },
+        "kind": "engineering-2"
+      },
+      {
+        "src": "http://127.0.0.1:8000/roadmap-model-selection/geometry-alignment-measurement/charuco/images/final/WI032-CHARUCO-03-r04-mobile.png",
+        "nw": 768,
+        "nh": 2770,
+        "box": {
+          "x": 34,
+          "y": -158,
+          "width": 292,
+          "height": 1053.171875,
+          "top": -158,
+          "right": 326,
+          "bottom": 895.171875,
+          "left": 34
+        },
+        "kind": "engineering-3"
+      },
+      {
+        "src": "http://127.0.0.1:8000/roadmap-model-selection/geometry-alignment-measurement/charuco/images/final/WI032-CHARUCO-04-r04-mobile.png",
+        "nw": 768,
+        "nh": 2770,
+        "box": {
+          "x": 34,
+          "y": -157.84375,
+          "width": 292,
+          "height": 1053.171875,
+          "top": -157.84375,
+          "right": 326,
+          "bottom": 895.328125,
+          "left": 34
+        },
+        "kind": "engineering-4"
+      }
+    ],
+    "zoom_checks": 7,
+    "answer": true,
+    "overflow": false,
+    "navigation": true,
+    "complete": true
+  },
+  {
+    "topic": "charuco",
+    "route": "docs/index.html",
+    "width": 1440,
+    "errors": [],
+    "images": [
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/charuco/wi032-charuco-core-r05-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 404.1875,
+          "y": 401.921875,
+          "width": 935.625,
+          "height": 526.5625,
+          "top": 401.921875,
+          "right": 1339.8125,
+          "bottom": 928.484375,
+          "left": 404.1875
+        },
+        "kind": "main-1"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/charuco/wi032-charuco-failure-native-r05-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 404.1875,
+          "y": 201.03125,
+          "width": 935.625,
+          "height": 526.5625,
+          "top": 201.03125,
+          "right": 1339.8125,
+          "bottom": 727.59375,
+          "left": 404.1875
+        },
+        "kind": "main-2"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/ecc/wi032-geometry-compare-native-r05-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 404.1875,
+          "y": 201.34375,
+          "width": 935.625,
+          "height": 526.5625,
+          "top": 201.34375,
+          "right": 1339.8125,
+          "bottom": 727.90625,
+          "left": 404.1875
+        },
+        "kind": "main-3"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/geometry-alignment-measurement/charuco/images/final/WI032-CHARUCO-01-r04-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 367.1875,
+          "y": 195.46875,
+          "width": 1009.625,
+          "height": 568.203125,
+          "top": 195.46875,
+          "right": 1376.8125,
+          "bottom": 763.671875,
+          "left": 367.1875
+        },
+        "kind": "engineering-1"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/geometry-alignment-measurement/charuco/images/final/WI032-CHARUCO-02-r04-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 367.1875,
+          "y": 196.34375,
+          "width": 1009.625,
+          "height": 568.203125,
+          "top": 196.34375,
+          "right": 1376.8125,
+          "bottom": 764.546875,
+          "left": 367.1875
+        },
+        "kind": "engineering-2"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/geometry-alignment-measurement/charuco/images/final/WI032-CHARUCO-03-r04-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 367.1875,
+          "y": 196.21875,
+          "width": 1009.625,
+          "height": 568.203125,
+          "top": 196.21875,
+          "right": 1376.8125,
+          "bottom": 764.421875,
+          "left": 367.1875
+        },
+        "kind": "engineering-3"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/geometry-alignment-measurement/charuco/images/final/WI032-CHARUCO-04-r04-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 367.1875,
+          "y": 196.25,
+          "width": 1009.625,
+          "height": 568.203125,
+          "top": 196.25,
+          "right": 1376.8125,
+          "bottom": 764.453125,
+          "left": 367.1875
+        },
+        "kind": "engineering-4"
+      }
+    ],
+    "zoom_checks": 7,
+    "answer": true,
+    "overflow": false,
+    "navigation": true,
+    "complete": true
+  },
+  {
+    "topic": "charuco",
+    "route": "docs/index.html",
+    "width": 360,
+    "errors": [],
+    "images": [
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/charuco/wi032-charuco-core-r05-mobile.png",
+        "nw": 768,
+        "nh": 2304,
+        "box": {
+          "x": 17,
+          "y": -134.453125,
+          "width": 326,
+          "height": 978,
+          "top": -134.453125,
+          "right": 343,
+          "bottom": 843.546875,
+          "left": 17
+        },
+        "kind": "main-1"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/charuco/wi032-charuco-failure-native-r05-mobile.png",
+        "nw": 768,
+        "nh": 3050,
+        "box": {
+          "x": 17,
+          "y": -292.421875,
+          "width": 326,
+          "height": 1294.65625,
+          "top": -292.421875,
+          "right": 343,
+          "bottom": 1002.234375,
+          "left": 17
+        },
+        "kind": "main-2"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/ecc/wi032-geometry-compare-native-r05-mobile.png",
+        "nw": 768,
+        "nh": 3050,
+        "box": {
+          "x": 17,
+          "y": -283.171875,
+          "width": 326,
+          "height": 1294.65625,
+          "top": -283.171875,
+          "right": 343,
+          "bottom": 1011.484375,
+          "left": 17
+        },
+        "kind": "main-3"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/geometry-alignment-measurement/charuco/images/final/WI032-CHARUCO-01-r04-mobile.png",
+        "nw": 768,
+        "nh": 2770,
+        "box": {
+          "x": 34,
+          "y": -157.546875,
+          "width": 292,
+          "height": 1053.171875,
+          "top": -157.546875,
+          "right": 326,
+          "bottom": 895.625,
+          "left": 34
+        },
+        "kind": "engineering-1"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/geometry-alignment-measurement/charuco/images/final/WI032-CHARUCO-02-r04-mobile.png",
+        "nw": 768,
+        "nh": 2770,
+        "box": {
+          "x": 34,
+          "y": -157.90625,
+          "width": 292,
+          "height": 1053.171875,
+          "top": -157.90625,
+          "right": 326,
+          "bottom": 895.265625,
+          "left": 34
+        },
+        "kind": "engineering-2"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/geometry-alignment-measurement/charuco/images/final/WI032-CHARUCO-03-r04-mobile.png",
+        "nw": 768,
+        "nh": 2770,
+        "box": {
+          "x": 34,
+          "y": -158,
+          "width": 292,
+          "height": 1053.171875,
+          "top": -158,
+          "right": 326,
+          "bottom": 895.171875,
+          "left": 34
+        },
+        "kind": "engineering-3"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/geometry-alignment-measurement/charuco/images/final/WI032-CHARUCO-04-r04-mobile.png",
+        "nw": 768,
+        "nh": 2770,
+        "box": {
+          "x": 34,
+          "y": -157.84375,
+          "width": 292,
+          "height": 1053.171875,
+          "top": -157.84375,
+          "right": 326,
+          "bottom": 895.328125,
+          "left": 34
+        },
+        "kind": "engineering-4"
+      }
+    ],
+    "zoom_checks": 7,
+    "answer": true,
+    "overflow": false,
+    "navigation": true,
+    "complete": true
+  }
+]

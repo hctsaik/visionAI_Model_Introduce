@@ -1,0 +1,86 @@
+[
+  {
+    "id": "dino-core",
+    "mode": "desktop",
+    "image": "_course_content/generated-concepts/det-dino-detector/wi032-dino-core-r01-desktop.png",
+    "size": [
+      1672,
+      941
+    ],
+    "sha256": "e3ecb4fa1a59b8e0582ce4133c9716fa51b6a445adf98b77490105b6850ba848",
+    "generation": "built-in imagegen",
+    "evidence": "illustrative, not model inference",
+    "user_review": "pending",
+    "page_review": "self-reviewed; interaction checks passed"
+  },
+  {
+    "id": "dino-core",
+    "mode": "mobile",
+    "image": "_course_content/generated-concepts/det-dino-detector/wi032-dino-core-r02-mobile.png",
+    "size": [
+      1024,
+      1536
+    ],
+    "sha256": "73959c039ec4ad64ff9bda8bc1e7189be229bc0a7aaa41b49acf6e9308c96afa",
+    "generation": "built-in imagegen",
+    "evidence": "illustrative, not model inference",
+    "user_review": "pending",
+    "page_review": "self-reviewed; interaction checks passed"
+  },
+  {
+    "id": "dino-failure",
+    "mode": "desktop",
+    "image": "_course_content/generated-concepts/det-dino-detector/wi032-dino-failure-r02-desktop.png",
+    "size": [
+      1672,
+      941
+    ],
+    "sha256": "543c0ec17d6d681c209b8f4ff84ac989941041dbcdb05a31f8a1f29ed2f89534",
+    "generation": "built-in imagegen",
+    "evidence": "illustrative, not model inference",
+    "user_review": "pending",
+    "page_review": "self-reviewed; interaction checks passed"
+  },
+  {
+    "id": "dino-failure",
+    "mode": "mobile",
+    "image": "_course_content/generated-concepts/det-dino-detector/wi032-dino-failure-r04-mobile.png",
+    "size": [
+      1024,
+      1536
+    ],
+    "sha256": "8958052f9df4d741a7d71afd21ef424fbf5d45f3ef424974fc7dbe6b0a518913",
+    "generation": "built-in imagegen",
+    "evidence": "illustrative, not model inference",
+    "user_review": "pending",
+    "page_review": "self-reviewed; interaction checks passed"
+  },
+  {
+    "id": "detector-compare",
+    "mode": "desktop",
+    "image": "_course_content/generated-concepts/det-dino-detector/wi032-detector-compare-r01-desktop.png",
+    "size": [
+      1672,
+      941
+    ],
+    "sha256": "3578ba3370635cf640fe13c4677d024ffc18065a0ac4413787c50904b14e7ea3",
+    "generation": "built-in imagegen",
+    "evidence": "illustrative, not model inference",
+    "user_review": "pending",
+    "page_review": "self-reviewed; interaction checks passed"
+  },
+  {
+    "id": "detector-compare",
+    "mode": "mobile",
+    "image": "_course_content/generated-concepts/det-dino-detector/wi032-detector-compare-r02-mobile.png",
+    "size": [
+      1024,
+      1536
+    ],
+    "sha256": "7519591799fa36ae21d4640d66efb1af292685d71985e8d784640fd318aa37e6",
+    "generation": "built-in imagegen",
+    "evidence": "illustrative, not model inference",
+    "user_review": "pending",
+    "page_review": "self-reviewed; interaction checks passed"
+  }
+]

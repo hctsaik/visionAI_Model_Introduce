@@ -1,0 +1,457 @@
+{
+  "model": "YOLO-World",
+  "badge": "D01｜先理解核心，再看反例與選型",
+  "title": "YOLO-World：先準備詞彙，再快速比對區域",
+  "scenario": {
+    "title": "先說明原本的困難",
+    "body": "傳統YOLO的類別隨訓練固定，臨時換要找的物件不方便。YOLO-World以區域與文字對齊的預訓練，讓dense偵測可以使用可更換詞彙；prompt-then-detect把固定詞彙先準備好，減少重複編碼文字的工作。"
+  },
+  "promise": {
+    "title": "它真正交付的東西",
+    "body": "模型交出物件候選框與相關分數；需回映原圖供後續確認。 保存詞表、embedding／部署權重版本與框覆核結果。詞表大、詞義相近或工件很小都需測召回／誤框；量文字準備與每影像推論成本，不把跨硬體FPS當本站節拍。"
+  },
+  "mental_model": {
+    "title": "YOLO-World：先準備詞彙，再快速比對區域",
+    "body": "傳統YOLO的類別隨訓練固定，臨時換要找的物件不方便。YOLO-World以區域與文字對齊的預訓練，讓dense偵測可以使用可更換詞彙；prompt-then-detect把固定詞彙先準備好，減少重複編碼文字的工作。",
+    "limit": "保存詞表、embedding／部署權重版本與框覆核結果。詞表大、詞義相近或工件很小都需測召回／誤框；量文字準備與每影像推論成本，不把跨硬體FPS當本站節拍。"
+  },
+  "micro_example": {
+    "title": "先想拿掉核心的後果，再換一個現場",
+    "setup": "新產品只有正常影像；要先找元件位置，未來還想取得輪廓。本站另有固定節拍與漏件容許量。",
+    "prediction": "介面把「元件」改成「連接器」，卻沿用舊詞彙embedding；模型真的已換成新的查詢了嗎？ 接著選擇新工件的起步方法，說明標註／提示準備及輪廓需求。",
+    "reveal": "沒有。模型實際比對的仍是舊表示；只改顯示文字不會更新cache或重參數化權重。需重新準備詞彙表示並核對版本，再以新詞與代表樣本重驗。這也說明預先算的是文字條件，不是未來影像的偵測結果。 先固定要找的物件與輸出：前三者需已知類別框監督；後三者借助預訓練與提示探索。開放詞彙不等於免驗證，只有正常品時先做物件探索與覆核，不能宣稱已建立未知缺陷偵測。 同一資料切分、輸入像素、硬體與漏件容許量下，量漏件／重複／誤框、P95、記憶體及人工覆核。換產品要重查標註、詞彙／範例與門檻；需要輪廓時選支援mask的checkpoint或另接分割，不把box當輪廓。 可先用提示模型探索並人工确认，或標註框後訓練已知類別模型；方案取決於目標、資料及驗證，不只一個正確模型名稱。"
+  },
+  "mechanism_steps": [
+    {
+      "title": "區域與文字共同學習",
+      "body": "區域文字對比目標讓區域表示對應詞語，而不只對應固定類別編號。能力來自預訓練資料與對齊，輸入新名稱不等於模型已學會新的製程缺陷。",
+      "why": "傳統YOLO的類別隨訓練固定，臨時換要找的物件不方便。YOLO-World以區域與文字對齊的預訓練，讓dense偵測可以使用可更換詞彙；prompt-then-detect把固定詞彙先準備好，減少重複編碼文字的工作。",
+      "anchor": "D01核心／反例／共同決策；依原論文核對",
+      "diagram": {
+        "title": "區域與文字共同學習",
+        "body": "區域文字對比目標讓區域表示對應詞語，而不只對應固定類別編號。能力來自預訓練資料與對齊，輸入新名稱不等於模型已學會新的製程缺陷。",
+        "why": "傳統YOLO的類別隨訓練固定，臨時換要找的物件不方便。YOLO-World以區域與文字對齊的預訓練，讓dense偵測可以使用可更換詞彙；prompt-then-detect把固定詞彙先準備好，減少重複編碼文字的工作。",
+        "anchor": "D01核心／反例／共同決策；依原論文核對"
+      }
+    },
+    {
+      "title": "RepVL-PAN交換視覺與語言資訊",
+      "body": "可重參數化的視覺語言neck在多尺度中融合圖與詞，再由dense頭產生框與詞彙相關分數。它不是單純對全圖做一次CLIP分類。",
+      "why": "這一步提供下游所需的資訊；核心原理與工程驗證不可互相替代。",
+      "anchor": "D01核心／反例／共同決策；依原論文核對",
+      "diagram": {
+        "title": "RepVL-PAN交換視覺與語言資訊",
+        "body": "可重參數化的視覺語言neck在多尺度中融合圖與詞，再由dense頭產生框與詞彙相關分數。它不是單純對全圖做一次CLIP分類。",
+        "why": "這一步提供下游所需的資訊；核心原理與工程驗證不可互相替代。",
+        "anchor": "D01核心／反例／共同決策；依原論文核對"
+      }
+    },
+    {
+      "title": "先編碼詞彙，重用於多張影像",
+      "body": "可先將離線詞彙編碼／重參數化供部署使用；影像仍逐張處理。換詞要更新相應表示與驗證，快取不等於無成本；自然語言not也不是通用布林排除運算。",
+      "why": "這一步提供下游所需的資訊；核心原理與工程驗證不可互相替代。",
+      "anchor": "D01核心／反例／共同決策；依原論文核對",
+      "diagram": {
+        "title": "先編碼詞彙，重用於多張影像",
+        "body": "可先將離線詞彙編碼／重參數化供部署使用；影像仍逐張處理。換詞要更新相應表示與驗證，快取不等於無成本；自然語言not也不是通用布林排除運算。",
+        "why": "這一步提供下游所需的資訊；核心原理與工程驗證不可互相替代。",
+        "anchor": "D01核心／反例／共同決策；依原論文核對"
+      }
+    },
+    {
+      "title": "回原圖確認並驗證",
+      "body": "保存詞表、embedding／部署權重版本與框覆核結果。詞表大、詞義相近或工件很小都需測召回／誤框；量文字準備與每影像推論成本，不把跨硬體FPS當本站節拍。",
+      "why": "沒有。模型實際比對的仍是舊表示；只改顯示文字不會更新cache或重參數化權重。需重新準備詞彙表示並核對版本，再以新詞與代表樣本重驗。這也說明預先算的是文字條件，不是未來影像的偵測結果。",
+      "anchor": "D01核心／反例／共同決策；依原論文核對",
+      "diagram": {
+        "title": "回原圖確認並驗證",
+        "body": "保存詞表、embedding／部署權重版本與框覆核結果。詞表大、詞義相近或工件很小都需測召回／誤框；量文字準備與每影像推論成本，不把跨硬體FPS當本站節拍。",
+        "why": "沒有。模型實際比對的仍是舊表示；只改顯示文字不會更新cache或重參數化權重。需重新準備詞彙表示並核對版本，再以新詞與代表樣本重驗。這也說明預先算的是文字條件，不是未來影像的偵測結果。",
+        "anchor": "D01核心／反例／共同決策；依原論文核對"
+      }
+    }
+  ],
+  "visual_intro": "以下補充圖沿用D01核心、反例及共同選型；詳讀原理後再核對工程條件。",
+  "beginner_path": {
+    "title": "YOLO-World：先準備詞彙，再快速比對區域",
+    "intro": "先理解為什麼需要，再沿核心圖記住三個要點；接著用移除設計的反例及共同決策比較檢查理解。",
+    "visuals": [
+      {
+        "id": "d01-core",
+        "title": "YOLO-World：先準備詞彙，再快速比對區域",
+        "prompt": "先看圖說明：輸入是什麼、哪一步改變、為什麼有用？",
+        "caption": "傳統YOLO的類別隨訓練固定，臨時換要找的物件不方便。YOLO-World以區域與文字對齊的預訓練，讓dense偵測可以使用可更換詞彙；prompt-then-detect把固定詞彙先準備好，減少重複編碼文字的工作。",
+        "image": "_course_content/generated-concepts/yolo-world/yolo-world-d01-core.png",
+        "alt": "YOLO-World的核心因果；同PCB素材與設定框，非模型推論。",
+        "callouts": [
+          {
+            "title": "區域與文字共同學習",
+            "body": "區域文字對比目標讓區域表示對應詞語，而不只對應固定類別編號。能力來自預訓練資料與對齊，輸入新名稱不等於模型已學會新的製程缺陷。"
+          },
+          {
+            "title": "RepVL-PAN交換視覺與語言資訊",
+            "body": "可重參數化的視覺語言neck在多尺度中融合圖與詞，再由dense頭產生框與詞彙相關分數。它不是單純對全圖做一次CLIP分類。"
+          },
+          {
+            "title": "先編碼詞彙，重用於多張影像",
+            "body": "可先將離線詞彙編碼／重參數化供部署使用；影像仍逐張處理。換詞要更新相應表示與驗證，快取不等於無成本；自然語言not也不是通用布林排除運算。"
+          }
+        ],
+        "reading_views": [
+          {
+            "title": "YOLO-World：先準備詞彙，再快速比對區域",
+            "image": "_course_content/generated-concepts/yolo-world/yolo-world-d01-core.png",
+            "mobile_image": "_course_content/generated-concepts/yolo-world/yolo-world-d01-core-mobile.svg",
+            "mobile_crop": [
+              0,
+              0,
+              720,
+              941
+            ],
+            "alt": "YOLO-World的核心因果；同PCB素材與設定框，非模型推論。"
+          }
+        ],
+        "core_ideas": true
+      },
+      {
+        "id": "d01-failure",
+        "title": "畫面改詞，不代表模型的詞彙已更新",
+        "prompt": "介面把「元件」改成「連接器」，卻沿用舊詞彙embedding；模型真的已換成新的查詢了嗎？",
+        "caption": "同一PCB、同一影像路徑，僅比較新詞配舊cache和新詞配新cache。這是輸入契約的可追反例，不預先指定真實分數必然升降。",
+        "image": "_course_content/generated-concepts/yolo-world/yolo-world-d01-failure.svg",
+        "alt": "YOLO-World的反事實；同PCB素材與設定框，非模型推論。",
+        "callouts": [
+          {
+            "title": "理解這一步",
+            "body": "沒有。模型實際比對的仍是舊表示；只改顯示文字不會更新cache或重參數化權重。需重新準備詞彙表示並核對版本，再以新詞與代表樣本重驗。這也說明預先算的是文字條件，不是未來影像的偵測結果。"
+          },
+          {
+            "title": "資料、輸出與下一步",
+            "body": "保存詞表、embedding／部署權重版本與框覆核結果。詞表大、詞義相近或工件很小都需測召回／誤框；量文字準備與每影像推論成本，不把跨硬體FPS當本站節拍。"
+          }
+        ],
+        "reading_views": [
+          {
+            "title": "畫面改詞，不代表模型的詞彙已更新",
+            "image": "_course_content/generated-concepts/yolo-world/yolo-world-d01-failure.svg",
+            "mobile_image": "_course_content/generated-concepts/yolo-world/yolo-world-d01-failure-mobile.svg",
+            "mobile_crop": [
+              0,
+              0,
+              720,
+              941
+            ],
+            "alt": "YOLO-World的反事實；同PCB素材與設定框，非模型推論。"
+          }
+        ]
+      },
+      {
+        "id": "d01-compare-known",
+        "title": "已知類別：YOLO／RT-DETR／DINO",
+        "prompt": "同一工作條件下，你需要固定類別框、文字搜尋、視覺範例，還是物件輪廓？",
+        "caption": "先固定要找的物件與輸出：前三者需已知類別框監督；後三者借助預訓練與提示探索。開放詞彙不等於免驗證，只有正常品時先做物件探索與覆核，不能宣稱已建立未知缺陷偵測。",
+        "image": "_course_content/generated-concepts/det-yolo-dense/det-yolo-dense-d01-compare-known.svg",
+        "alt": "六模型共同決策；同PCB素材，比較資料與模型資訊路徑，不是性能排名。",
+        "callouts": [
+          {
+            "title": "資料與輸出責任",
+            "body": "先固定要找的物件與輸出：前三者需已知類別框監督；後三者借助預訓練與提示探索。開放詞彙不等於免驗證，只有正常品時先做物件探索與覆核，不能宣稱已建立未知缺陷偵測。"
+          },
+          {
+            "title": "換產品與公平比較",
+            "body": "同一資料切分、輸入像素、硬體與漏件容許量下，量漏件／重複／誤框、P95、記憶體及人工覆核。換產品要重查標註、詞彙／範例與門檻；需要輪廓時選支援mask的checkpoint或另接分割，不把box當輪廓。"
+          }
+        ],
+        "reading_views": [
+          {
+            "title": "已知類別：YOLO／RT-DETR／DINO",
+            "image": "_course_content/generated-concepts/det-yolo-dense/det-yolo-dense-d01-compare-known.svg",
+            "mobile_image": "_course_content/generated-concepts/det-yolo-dense/det-yolo-dense-d01-compare-known-mobile.svg",
+            "mobile_crop": [
+              0,
+              0,
+              720,
+              941
+            ],
+            "alt": "六模型共同決策；同PCB素材，比較資料與模型資訊路徑，不是性能排名。"
+          }
+        ]
+      },
+      {
+        "id": "d01-compare-prompt",
+        "title": "可變提示：Grounding DINO／YOLO-World／YOLOE",
+        "prompt": "同一工作條件下，你需要固定類別框、文字搜尋、視覺範例，還是物件輪廓？",
+        "caption": "同一資料切分、輸入像素、硬體與漏件容許量下，量漏件／重複／誤框、P95、記憶體及人工覆核。換產品要重查標註、詞彙／範例與門檻；需要輪廓時選支援mask的checkpoint或另接分割，不把box當輪廓。",
+        "image": "_course_content/generated-concepts/det-yolo-dense/det-yolo-dense-d01-compare-prompt.svg",
+        "alt": "六模型共同決策；同PCB素材，比較資料與模型資訊路徑，不是性能排名。",
+        "callouts": [
+          {
+            "title": "資料與輸出責任",
+            "body": "先固定要找的物件與輸出：前三者需已知類別框監督；後三者借助預訓練與提示探索。開放詞彙不等於免驗證，只有正常品時先做物件探索與覆核，不能宣稱已建立未知缺陷偵測。"
+          },
+          {
+            "title": "換產品與公平比較",
+            "body": "同一資料切分、輸入像素、硬體與漏件容許量下，量漏件／重複／誤框、P95、記憶體及人工覆核。換產品要重查標註、詞彙／範例與門檻；需要輪廓時選支援mask的checkpoint或另接分割，不把box當輪廓。"
+          }
+        ],
+        "reading_views": [
+          {
+            "title": "可變提示：Grounding DINO／YOLO-World／YOLOE",
+            "image": "_course_content/generated-concepts/det-yolo-dense/det-yolo-dense-d01-compare-prompt.svg",
+            "mobile_image": "_course_content/generated-concepts/det-yolo-dense/det-yolo-dense-d01-compare-prompt-mobile.svg",
+            "mobile_crop": [
+              0,
+              0,
+              720,
+              941
+            ],
+            "alt": "六模型共同決策；同PCB素材，比較資料與模型資訊路徑，不是性能排名。"
+          }
+        ]
+      }
+    ]
+  },
+  "concept_visuals": [
+    {
+      "id": "causal-chain",
+      "placement": "after_causal_chain",
+      "title": "YOLO-World：先準備詞彙，再快速比對區域",
+      "prompt": "先看圖說明：輸入是什麼、哪一步改變、為什麼有用？",
+      "caption": "傳統YOLO的類別隨訓練固定，臨時換要找的物件不方便。YOLO-World以區域與文字對齊的預訓練，讓dense偵測可以使用可更換詞彙；prompt-then-detect把固定詞彙先準備好，減少重複編碼文字的工作。",
+      "image": "_course_content/generated-concepts/yolo-world/yolo-world-d01-core.png",
+      "alt": "YOLO-World的核心因果；同PCB素材與設定框，非模型推論。",
+      "callouts": [
+        {
+          "title": "區域與文字共同學習",
+          "body": "區域文字對比目標讓區域表示對應詞語，而不只對應固定類別編號。能力來自預訓練資料與對齊，輸入新名稱不等於模型已學會新的製程缺陷。"
+        },
+        {
+          "title": "RepVL-PAN交換視覺與語言資訊",
+          "body": "可重參數化的視覺語言neck在多尺度中融合圖與詞，再由dense頭產生框與詞彙相關分數。它不是單純對全圖做一次CLIP分類。"
+        },
+        {
+          "title": "先編碼詞彙，重用於多張影像",
+          "body": "可先將離線詞彙編碼／重參數化供部署使用；影像仍逐張處理。換詞要更新相應表示與驗證，快取不等於無成本；自然語言not也不是通用布林排除運算。"
+        }
+      ]
+    },
+    {
+      "id": "worked-example",
+      "placement": "after_micro_example",
+      "title": "畫面改詞，不代表模型的詞彙已更新",
+      "prompt": "介面把「元件」改成「連接器」，卻沿用舊詞彙embedding；模型真的已換成新的查詢了嗎？",
+      "caption": "同一PCB、同一影像路徑，僅比較新詞配舊cache和新詞配新cache。這是輸入契約的可追反例，不預先指定真實分數必然升降。",
+      "image": "_course_content/generated-concepts/yolo-world/yolo-world-d01-failure.svg",
+      "alt": "YOLO-World的反事實；同PCB素材與設定框，非模型推論。",
+      "callouts": [
+        {
+          "title": "理解這一步",
+          "body": "沒有。模型實際比對的仍是舊表示；只改顯示文字不會更新cache或重參數化權重。需重新準備詞彙表示並核對版本，再以新詞與代表樣本重驗。這也說明預先算的是文字條件，不是未來影像的偵測結果。"
+        },
+        {
+          "title": "資料、輸出與下一步",
+          "body": "保存詞表、embedding／部署權重版本與框覆核結果。詞表大、詞義相近或工件很小都需測召回／誤框；量文字準備與每影像推論成本，不把跨硬體FPS當本站節拍。"
+        },
+        {
+          "title": "本題核心與證據範圍",
+          "body": "傳統YOLO的類別隨訓練固定，臨時換要找的物件不方便。YOLO-World以區域與文字對齊的預訓練，讓dense偵測可以使用可更換詞彙；prompt-then-detect把固定詞彙先準備好，減少重複編碼文字的工作。 圖中候選是教學設定，效果須以本地樣本驗證。"
+        }
+      ]
+    },
+    {
+      "id": "comparison",
+      "placement": "after_comparison",
+      "title": "已知類別：YOLO／RT-DETR／DINO",
+      "prompt": "同一工作條件下，你需要固定類別框、文字搜尋、視覺範例，還是物件輪廓？",
+      "caption": "先固定要找的物件與輸出：前三者需已知類別框監督；後三者借助預訓練與提示探索。開放詞彙不等於免驗證，只有正常品時先做物件探索與覆核，不能宣稱已建立未知缺陷偵測。",
+      "image": "_course_content/generated-concepts/det-yolo-dense/det-yolo-dense-d01-compare-known.svg",
+      "alt": "六模型共同決策；同PCB素材，比較資料與模型資訊路徑，不是性能排名。",
+      "callouts": [
+        {
+          "title": "資料與輸出責任",
+          "body": "先固定要找的物件與輸出：前三者需已知類別框監督；後三者借助預訓練與提示探索。開放詞彙不等於免驗證，只有正常品時先做物件探索與覆核，不能宣稱已建立未知缺陷偵測。"
+        },
+        {
+          "title": "換產品與公平比較",
+          "body": "同一資料切分、輸入像素、硬體與漏件容許量下，量漏件／重複／誤框、P95、記憶體及人工覆核。換產品要重查標註、詞彙／範例與門檻；需要輪廓時選支援mask的checkpoint或另接分割，不把box當輪廓。"
+        },
+        {
+          "title": "本題核心與證據範圍",
+          "body": "傳統YOLO的類別隨訓練固定，臨時換要找的物件不方便。YOLO-World以區域與文字對齊的預訓練，讓dense偵測可以使用可更換詞彙；prompt-then-detect把固定詞彙先準備好，減少重複編碼文字的工作。 圖中候選是教學設定，效果須以本地樣本驗證。"
+        }
+      ]
+    },
+    {
+      "id": "boundary-cases-explainer",
+      "placement": "before_boundary_cases",
+      "title": "可變提示：Grounding DINO／YOLO-World／YOLOE",
+      "prompt": "同一工作條件下，你需要固定類別框、文字搜尋、視覺範例，還是物件輪廓？",
+      "caption": "同一資料切分、輸入像素、硬體與漏件容許量下，量漏件／重複／誤框、P95、記憶體及人工覆核。換產品要重查標註、詞彙／範例與門檻；需要輪廓時選支援mask的checkpoint或另接分割，不把box當輪廓。",
+      "image": "_course_content/generated-concepts/det-yolo-dense/det-yolo-dense-d01-compare-prompt.svg",
+      "alt": "六模型共同決策；同PCB素材，比較資料與模型資訊路徑，不是性能排名。",
+      "callouts": [
+        {
+          "title": "資料與輸出責任",
+          "body": "先固定要找的物件與輸出：前三者需已知類別框監督；後三者借助預訓練與提示探索。開放詞彙不等於免驗證，只有正常品時先做物件探索與覆核，不能宣稱已建立未知缺陷偵測。"
+        },
+        {
+          "title": "換產品與公平比較",
+          "body": "同一資料切分、輸入像素、硬體與漏件容許量下，量漏件／重複／誤框、P95、記憶體及人工覆核。換產品要重查標註、詞彙／範例與門檻；需要輪廓時選支援mask的checkpoint或另接分割，不把box當輪廓。"
+        },
+        {
+          "title": "本題核心與證據範圍",
+          "body": "傳統YOLO的類別隨訓練固定，臨時換要找的物件不方便。YOLO-World以區域與文字對齊的預訓練，讓dense偵測可以使用可更換詞彙；prompt-then-detect把固定詞彙先準備好，減少重複編碼文字的工作。 圖中候選是教學設定，效果須以本地樣本驗證。"
+        }
+      ]
+    }
+  ],
+  "boundary_cases": [
+    {
+      "condition": "vocabulary/synonym/negative phrase/template、embedding cache 或 normalization 改變",
+      "effect": "text representation 和 dense score space 改變，同一個 score 不能跨 prompt bundle 當成同一可靠度。",
+      "action": "版本化完整 prompt bundle/cache/normalization，量 seen/unseen candidate recall、prompt stability、calibration 和 specialist confirmation。",
+      "visual_action": "版本化 prompt bundle/cache/normalization，量 prompt stability、candidate recall 與專家確認率。"
+    },
+    {
+      "condition": "tiny ROI、語意相近類、domain shift、calibration、NMS/inverse map 或 export 差異",
+      "effect": "dense boxes 可能漏失、定位錯誤或分數不穩；快的 forward 不能代表實際 P95 或產品可用性。",
+      "action": "固定 ROI/pixels/threshold/NMS/hardware，分開量 embedding、forward、postprocess 和 end-to-end P95，保存 failure images。",
+      "visual_action": "固定 ROI/pixels/threshold/NMS/hardware，分開量 embedding、forward、postprocess 與 end-to-end P95。"
+    },
+    {
+      "condition": "把 zero-shot dense score 當 defect probability 或直接 PASS/FAIL",
+      "effect": "忽略詞彙偏差、候選不確定性與後續 raw evidence，造成語意分數被誤用成製程事實。",
+      "action": "先 HOLD release，只讓固定且已 qualification 的 vocabulary 進 candidate-to-specialist workflow；由 downstream detector／AD／人工 owner 以 raw evidence 確認 defect，未確認不得把 zero-shot score 當 PASS/FAIL。"
+    }
+  ],
+  "comparison": [
+    {
+      "model": "YOLO-World",
+      "normality": "依據：vocabulary/prompt ensemble 的 text embeddings/cache 與 YOLO-like dense visual features fusion",
+      "candidate": "可用輸出：prompt-conditioned dense scores/boxes 經 NMS 的 candidate ROIs；非 defect probability"
+    },
+    {
+      "model": "Grounding DINO",
+      "normality": "依據：phrase tokens、image features、feature enhancer 和 language-guided query selection",
+      "candidate": "可用輸出：phrase-conditioned boxes/scores/inverse ROIs，交 specialist confirmation"
+    },
+    {
+      "model": "YOLOE",
+      "normality": "依據：text/visual prompt representation、選定 mode、prompt-aware detection/segmentation head",
+      "candidate": "可用輸出：mode-specific boxes/masks/scores；每個 mode 都需個別 qualification"
+    }
+  ],
+  "selection": "先固定要找的物件與輸出：前三者需已知類別框監督；後三者借助預訓練與提示探索。開放詞彙不等於免驗證，只有正常品時先做物件探索與覆核，不能宣稱已建立未知缺陷偵測。 保存詞表、embedding／部署權重版本與框覆核結果。詞表大、詞義相近或工件很小都需測召回／誤框；量文字準備與每影像推論成本，不把跨硬體FPS當本站節拍。 同一資料切分、輸入像素、硬體與漏件容許量下，量漏件／重複／誤框、P95、記憶體及人工覆核。換產品要重查標註、詞彙／範例與門檻；需要輪廓時選支援mask的checkpoint或另接分割，不把box當輪廓。",
+  "poc": {
+    "title": "POC 第一件事：證明詞彙改動不會偷偷改變你的候選語意",
+    "steps": [
+      "鎖 vocabulary、synonyms、negative phrases、templates、text/image normalization、embedding/cache version、ROI/pixels、dense head、calibration、decode/NMS/inverse map、export/hardware 和 specialist owner。",
+      "以 seen/unseen terms、語意近似、tiny ROI、domain/product/recipe shift 和 OOD split 蒐集 prompt bundles、scores/boxes、candidate recall、stability、confirmations 和 failure images。",
+      "分開量 embedding build/cache、forward、postprocess、camera-to-review P95，並將 final defect/release 與 zero-shot score 分離。"
+    ],
+    "hold": "vocabulary/cache/normalization 未鎖、prompt stability/tiny/localization 未驗、calibration/OOD/P95 不足、或 specialist owner 未定義時，先 HOLD。",
+    "acceptance": {
+      "baseline": "以固定 AOI/pixels、vocabulary/synonyms/negative phrases/templates、embedding cache/normalization、dense head、calibration、decode/NMS/inverse map 和 specialist workflow 為 baseline。",
+      "measure": "按 seen/unseen terms、semantic-near classes、tiny ROI、domain/product/recipe shift、OOD 分層量 candidate recall、prompt stability、calibration、confirmation rate、embedding/forward/postprocess 及 camera-to-review P95。",
+      "negative_control": "只修改 negative phrase 或重建 embedding cache，保留同一 pixels；預期 dense score landscape/boxes 可改變，因此新版不可和舊 score 當同一 defect probability，必須重新 qualification。",
+      "owner": "由工程 vocabulary owner 管 prompt/cache revision；CV owner 簽核 dense/calibration/P95 evidence，specialist owner 確認 raw ROI，release owner 仍保有最終決策。"
+    }
+  },
+  "teach_back": {
+    "question": "YOLO-World 對同一 AOI 使用兩個相近詞彙，第二個詞得到更高 dense score。你可以說第二個候選的 defect 機率更高嗎？",
+    "answer": "不可以直接這樣說。text embedding、詞彙、negative phrase 和 cache 定義 score space，換詞就可能改變比較尺。先固定並量 prompt stability/candidate recall/calibration，將 boxes inverse map 後交 specialist；zero-shot score 只用來排序候選。"
+  },
+  "slide_reading": [
+    {
+      "title": "YOLO-World：先準備詞彙，再快速比對區域",
+      "question": "先看圖說明：輸入是什麼、哪一步改變、為什麼有用？",
+      "look": "YOLO-World的核心因果；同PCB素材與設定框，非模型推論。",
+      "relation": "傳統YOLO的類別隨訓練固定，臨時換要找的物件不方便。YOLO-World以區域與文字對齊的預訓練，讓dense偵測可以使用可更換詞彙；prompt-then-detect把固定詞彙先準備好，減少重複編碼文字的工作。",
+      "takeaway": "保存詞表、embedding／部署權重版本與框覆核結果。詞表大、詞義相近或工件很小都需測召回／誤框；量文字準備與每影像推論成本，不把跨硬體FPS當本站節拍。",
+      "terms": [
+        "GT：訓練或獨立驗證的標註，不是正式推論的輸入",
+        "候選：需回到原圖核對的位置或區域"
+      ]
+    },
+    {
+      "title": "畫面改詞，不代表模型的詞彙已更新",
+      "question": "介面把「元件」改成「連接器」，卻沿用舊詞彙embedding；模型真的已換成新的查詢了嗎？",
+      "look": "YOLO-World的反事實；同PCB素材與設定框，非模型推論。",
+      "relation": "同一PCB、同一影像路徑，僅比較新詞配舊cache和新詞配新cache。這是輸入契約的可追反例，不預先指定真實分數必然升降。",
+      "takeaway": "沒有。模型實際比對的仍是舊表示；只改顯示文字不會更新cache或重參數化權重。需重新準備詞彙表示並核對版本，再以新詞與代表樣本重驗。這也說明預先算的是文字條件，不是未來影像的偵測結果。",
+      "terms": [
+        "GT：訓練或獨立驗證的標註，不是正式推論的輸入",
+        "候選：需回到原圖核對的位置或區域"
+      ]
+    },
+    {
+      "title": "已知類別：YOLO／RT-DETR／DINO",
+      "question": "同一工作條件下，你需要固定類別框、文字搜尋、視覺範例，還是物件輪廓？",
+      "look": "六模型共同決策；同PCB素材，比較資料與模型資訊路徑，不是性能排名。",
+      "relation": "先固定要找的物件與輸出：前三者需已知類別框監督；後三者借助預訓練與提示探索。開放詞彙不等於免驗證，只有正常品時先做物件探索與覆核，不能宣稱已建立未知缺陷偵測。",
+      "takeaway": "保存詞表、embedding／部署權重版本與框覆核結果。詞表大、詞義相近或工件很小都需測召回／誤框；量文字準備與每影像推論成本，不把跨硬體FPS當本站節拍。",
+      "terms": [
+        "GT：訓練或獨立驗證的標註，不是正式推論的輸入",
+        "候選：需回到原圖核對的位置或區域"
+      ]
+    },
+    {
+      "title": "可變提示：Grounding DINO／YOLO-World／YOLOE",
+      "question": "同一工作條件下，你需要固定類別框、文字搜尋、視覺範例，還是物件輪廓？",
+      "look": "六模型共同決策；同PCB素材，比較資料與模型資訊路徑，不是性能排名。",
+      "relation": "同一資料切分、輸入像素、硬體與漏件容許量下，量漏件／重複／誤框、P95、記憶體及人工覆核。換產品要重查標註、詞彙／範例與門檻；需要輪廓時選支援mask的checkpoint或另接分割，不把box當輪廓。",
+      "takeaway": "保存詞表、embedding／部署權重版本與框覆核結果。詞表大、詞義相近或工件很小都需測召回／誤框；量文字準備與每影像推論成本，不把跨硬體FPS當本站節拍。",
+      "terms": [
+        "GT：訓練或獨立驗證的標註，不是正式推論的輸入",
+        "候選：需回到原圖核對的位置或區域"
+      ]
+    }
+  ],
+  "comparison_headers": {
+    "title": "不要比名稱；比 vocabulary／embedding 如何定義候選",
+    "basis": "vocabulary／embedding 如何定義候選",
+    "output": "open-vocabulary ROI／確認邊界"
+  },
+  "transfer_check": {
+    "title": "新工件，該怎麼選偵測流程？",
+    "scenario": "新產品只有正常影像；要先找元件位置，未來還想取得輪廓。本站另有固定節拍與漏件容許量。",
+    "question": "能直接用模型名稱宣稱找出未知缺陷嗎？你會如何起步，還需要哪些資料與驗證？",
+    "answer": "先固定要找的物件與輸出：前三者需已知類別框監督；後三者借助預訓練與提示探索。開放詞彙不等於免驗證，只有正常品時先做物件探索與覆核，不能宣稱已建立未知缺陷偵測。 同一資料切分、輸入像素、硬體與漏件容許量下，量漏件／重複／誤框、P95、記憶體及人工覆核。換產品要重查標註、詞彙／範例與門檻；需要輪廓時選支援mask的checkpoint或另接分割，不把box當輪廓。 可先用提示模型探索並人工确认，或標註框後訓練已知類別模型；方案取決於目標、資料及驗證，不只一個正確模型名稱。"
+  },
+  "review_trace": {
+    "authority": "roadmap-model-selection/detector/yolo-world/model.md",
+    "scope": "D01主線依原論文／官方文件及model.md的D01補正核對；圖中的框與相似度為教學設定，非模型推論。",
+    "claims": [
+      {
+        "id": "d01-visual-1",
+        "field": "beginner_path.visuals[d01-core]",
+        "source": "D01核心、反例與共同決策；https://arxiv.org/abs/2401.17270"
+      },
+      {
+        "id": "d01-visual-2",
+        "field": "beginner_path.visuals[d01-failure]",
+        "source": "D01核心、反例與共同決策；https://arxiv.org/abs/2401.17270"
+      },
+      {
+        "id": "d01-visual-3",
+        "field": "beginner_path.visuals[d01-compare-known]",
+        "source": "D01核心、反例與共同決策；https://arxiv.org/abs/2401.17270"
+      },
+      {
+        "id": "d01-visual-4",
+        "field": "beginner_path.visuals[d01-compare-prompt]",
+        "source": "D01核心、反例與共同決策；https://arxiv.org/abs/2401.17270"
+      },
+      {
+        "id": "d01-contract",
+        "field": "promise + mechanism_steps",
+        "source": "D01來源補正及工程輸出責任"
+      },
+      {
+        "id": "d01-transfer",
+        "field": "transfer_check",
+        "source": "D01資料、輸出與公平比較"
+      }
+    ]
+  }
+}

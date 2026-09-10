@@ -1,0 +1,586 @@
+{
+  "model": "SIFT",
+  "badge": "局部特徵算法，不需訓練權重",
+  "title": "從局部方向線索，找到兩張圖的對應點",
+  "scenario": {
+    "title": "同一金屬件在兩張圖裡旋轉、縮放或位置改變，整張外觀不容易直接重疊。SIFT先尋找有辨識力的局部，再把局部變成可比較的描述，提供幾何定位所需的點對。",
+    "body": "同一金屬件在兩張圖裡旋轉、縮放或位置改變，整張外觀不容易直接重疊。SIFT先尋找有辨識力的局部，再把局部變成可比較的描述，提供幾何定位所需的點對。"
+  },
+  "promise": {
+    "title": "交付結果與接手工作",
+    "body": "SIFT交付關鍵點、尺度／方向與描述子；搭配matcher得到點對。需要平面單應、相機運動或工件定位時，另外選合適的幾何模型與求解器；描述子本身不交付warp。"
+  },
+  "mental_model": {
+    "title": "局部特徵算法，不需訓練權重",
+    "body": "SIFT跨尺度尋找穩定局部，為關鍵點選擇尺度與主方向；在相對主方向的局部座標裡彙整梯度方向分布，形成描述子。兩張圖的描述子再經匹配與含糊候選篩選，得到對應點；幾何求解與驗證是後一步。",
+    "limit": "同一缺口被模糊後，局部方向與細節變弱，原本可區分的候選可能混在一起。更多點或更多線不必然更可靠；要看正確對應、幾何分布及獨立核對。"
+  },
+  "beginner_path": {
+    "title": "從必要原理、具體反例到工作取捨",
+    "intro": "同一金屬件在兩張圖裡旋轉、縮放或位置改變，整張外觀不容易直接重疊。SIFT先尋找有辨識力的局部，再把局部變成可比較的描述，提供幾何定位所需的點對。 下列圖像、特徵及回答為教學示意，不是模型實測。",
+    "visuals": [
+      {
+        "id": "wi032-sift-core",
+        "title": "SIFT：用局部方向線索，找兩張圖的對應",
+        "prompt": "同一金屬件在兩張圖裡旋轉、縮放或位置改變，整張外觀不容易直接重疊。SIFT先尋找有辨識力的局部，再把局部變成可比較的描述，提供幾何定位所需的點對。",
+        "caption": "SIFT跨尺度尋找穩定局部，為關鍵點選擇尺度與主方向；在相對主方向的局部座標裡彙整梯度方向分布，形成描述子。兩張圖的描述子再經匹配與含糊候選篩選，得到對應點；幾何求解與驗證是後一步。",
+        "image": "_course_content/generated-concepts/sift/wi032-sift-core-native-r05-desktop.png",
+        "alt": "SIFT：用局部方向線索，找兩張圖的對應。SIFT跨尺度尋找穩定局部，為關鍵點選擇尺度與主方向；在相對主方向的局部座標裡彙整梯度方向分布，形成描述子。兩張圖的描述子再經匹配與含糊候選篩選，得到對應點；幾何求解與驗證是後一步。 教學示意，非模型實測。",
+        "callouts": [
+          {
+            "title": "尺度與方向是比較的基準",
+            "body": "關鍵點附近的局部視窗隨尺度與主方向對齊，減少同一紋理因旋轉／尺寸變化而完全不像的問題。"
+          },
+          {
+            "title": "描述子保留局部梯度分布",
+            "body": "描述不是只記一個點座標。圖中局部邊緣、方向分布與描述條是同一局部的不同表示；不是把整張照片轉正。"
+          },
+          {
+            "title": "匹配不是幾何真值",
+            "body": "相似描述仍可能來自重複孔位。ratio test等篩選減少含糊點對，再依工作幾何用RANSAC等方法估計並檢查內點與分布。"
+          }
+        ],
+        "reading_views": [
+          {
+            "title": "SIFT：用局部方向線索，找兩張圖的對應",
+            "image": "_course_content/generated-concepts/sift/wi032-sift-core-native-r05-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/sift/wi032-sift-core-native-r05-mobile.png",
+            "alt": "SIFT：用局部方向線索，找兩張圖的對應。SIFT跨尺度尋找穩定局部，為關鍵點選擇尺度與主方向；在相對主方向的局部座標裡彙整梯度方向分布，形成描述子。兩張圖的描述子再經匹配與含糊候選篩選，得到對應點；幾何求解與驗證是後一步。 教學示意，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              768,
+              3050
+            ],
+            "mobile_display_mode": "full-mobile",
+            "desktop_intrinsic_width": 1672,
+            "desktop_intrinsic_height": 941,
+            "mobile_intrinsic_width": 768,
+            "mobile_intrinsic_height": 3050
+          }
+        ],
+        "core_ideas": true
+      },
+      {
+        "id": "wi032-sift-failure",
+        "title": "模糊會抹掉SIFT需要的局部線索",
+        "prompt": "觀察哪個條件改變，讓原本的結果不夠可靠？",
+        "caption": "同一缺口被模糊後，局部方向與細節變弱，原本可區分的候選可能混在一起。更多點或更多線不必然更可靠；要看正確對應、幾何分布及獨立核對。",
+        "image": "_course_content/generated-concepts/sift/wi032-sift-failure-native-r05-desktop.png",
+        "alt": "模糊會抹掉SIFT需要的局部線索。同一缺口被模糊後，局部方向與細節變弱，原本可區分的候選可能混在一起。更多點或更多線不必然更可靠；要看正確對應、幾何分布及獨立核對。 教學示意，非模型實測。",
+        "callouts": [
+          {
+            "title": "看哪裡",
+            "body": "同一缺口被模糊後，局部方向與細節變弱，原本可區分的候選可能混在一起。更多點或更多線不必然更可靠；要看正確對應、幾何分布及獨立核對。"
+          },
+          {
+            "title": "接著怎麼做",
+            "body": "模糊、無紋理或重複圖樣使局部難分時，先改善取像、增加定位線索，或評估相容學習配對器；不只降低匹配門檻收更多錯線。"
+          }
+        ],
+        "reading_views": [
+          {
+            "title": "模糊會抹掉SIFT需要的局部線索",
+            "image": "_course_content/generated-concepts/sift/wi032-sift-failure-native-r05-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/sift/wi032-sift-failure-native-r05-mobile.png",
+            "alt": "模糊會抹掉SIFT需要的局部線索。同一缺口被模糊後，局部方向與細節變弱，原本可區分的候選可能混在一起。更多點或更多線不必然更可靠；要看正確對應、幾何分布及獨立核對。 教學示意，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              768,
+              3050
+            ],
+            "mobile_display_mode": "full-mobile",
+            "desktop_intrinsic_width": 1672,
+            "desktop_intrinsic_height": 941,
+            "mobile_intrinsic_width": 768,
+            "mobile_intrinsic_height": 3050
+          }
+        ],
+        "core_ideas": false
+      },
+      {
+        "id": "wi032-geometry-compare",
+        "title": "幾何四種工具，負責的工作不同",
+        "prompt": "相同工作需求下，資料、輸出與成本如何取捨？",
+        "caption": "無需訓練且局部紋理可區分時，SIFT配傳統匹配可作起點；含糊候選需更多上下文時可試LightGlue及相容extractor。ECC適合有起點後依密集外觀微調；ChArUco提供已知標靶的相機幾何。這些工具可分工，不能直接用不同任務分數排名。",
+        "image": "_course_content/generated-concepts/ecc/wi032-geometry-compare-native-r05-desktop.png",
+        "alt": "幾何四種工具，負責的工作不同。無需訓練且局部紋理可區分時，SIFT配傳統匹配可作起點；含糊候選需更多上下文時可試LightGlue及相容extractor。ECC適合有起點後依密集外觀微調；ChArUco提供已知標靶的相機幾何。這些工具可分工，不能直接用不同任務分數排名。 教學示意，非模型實測。",
+        "callouts": [
+          {
+            "title": "怎麼選",
+            "body": "無需訓練且局部紋理可區分時，SIFT配傳統匹配可作起點；含糊候選需更多上下文時可試LightGlue及相容extractor。ECC適合有起點後依密集外觀微調；ChArUco提供已知標靶的相機幾何。這些工具可分工，不能直接用不同任務分數排名。"
+          },
+          {
+            "title": "資料與完整成本",
+            "body": "換工件時通常不用訓練SIFT，但仍需新參考影像、尺度／取像與匹配門檻驗證；若改用LightGlue，須核對extractor與matcher權重相容性。比較完整找點、描述、配對、幾何估計與覆核成本。"
+          }
+        ],
+        "reading_views": [
+          {
+            "title": "幾何四種工具，負責的工作不同",
+            "image": "_course_content/generated-concepts/ecc/wi032-geometry-compare-native-r05-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/ecc/wi032-geometry-compare-native-r05-mobile.png",
+            "alt": "幾何四種工具，負責的工作不同。無需訓練且局部紋理可區分時，SIFT配傳統匹配可作起點；含糊候選需更多上下文時可試LightGlue及相容extractor。ECC適合有起點後依密集外觀微調；ChArUco提供已知標靶的相機幾何。這些工具可分工，不能直接用不同任務分數排名。 教學示意，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              768,
+              3050
+            ],
+            "mobile_display_mode": "full-mobile",
+            "desktop_intrinsic_width": 1672,
+            "desktop_intrinsic_height": 941,
+            "mobile_intrinsic_width": 768,
+            "mobile_intrinsic_height": 3050
+          }
+        ],
+        "core_ideas": false
+      }
+    ]
+  },
+  "micro_example": {
+    "title": "找到很多孔位，為什麼還不能放心對位？",
+    "setup": "新工件有規則排列的相同圓孔，另一件只有少量但獨特的缺口。兩者都要找平面位置。",
+    "prediction": "應直接選匹配線比較多的一件作為可靠案例嗎？傳統匹配與學習配對怎麼比較？",
+    "reveal": "重複圓孔可能給很多相似描述，線多卻錯；少量獨特缺口若正確且分布非退化，反而可能提供較有用幾何約束。先固定兩組影像，檢查對應身份、空間分布與幾何誤差，再比較SIFT匹配和相容LightGlue流程的完整成本。若影像本身無可區分線索，補取像或標靶可能比換matcher更有效。"
+  },
+  "mechanism_steps": [
+    {
+      "title": "找穩定局部",
+      "body": "關鍵點附近的局部視窗隨尺度與主方向對齊，減少同一紋理因旋轉／尺寸變化而完全不像的問題。",
+      "why": "由本課核心機制連接工作用途",
+      "anchor": "WI032-1",
+      "diagram": {
+        "title": "找穩定局部",
+        "body": "關鍵點附近的局部視窗隨尺度與主方向對齊，減少同一紋理因旋轉／尺寸變化而完全不像的問題。",
+        "why": "詳見本課版本與來源",
+        "anchor": "WI032-1"
+      }
+    },
+    {
+      "title": "方向描述與比對",
+      "body": "描述不是只記一個點座標。圖中局部邊緣、方向分布與描述條是同一局部的不同表示；不是把整張照片轉正。",
+      "why": "由本課核心機制連接工作用途",
+      "anchor": "WI032-2",
+      "diagram": {
+        "title": "方向描述與比對",
+        "body": "描述不是只記一個點座標。圖中局部邊緣、方向分布與描述條是同一局部的不同表示；不是把整張照片轉正。",
+        "why": "詳見本課版本與來源",
+        "anchor": "WI032-2"
+      }
+    },
+    {
+      "title": "交出匹配點",
+      "body": "SIFT交付關鍵點、尺度／方向與描述子；搭配matcher得到點對。需要平面單應、相機運動或工件定位時，另外選合適的幾何模型與求解器；描述子本身不交付warp。",
+      "why": "由本課核心機制連接工作用途",
+      "anchor": "WI032-3",
+      "diagram": {
+        "title": "交出匹配點",
+        "body": "SIFT交付關鍵點、尺度／方向與描述子；搭配matcher得到點對。需要平面單應、相機運動或工件定位時，另外選合適的幾何模型與求解器；描述子本身不交付warp。",
+        "why": "詳見本課版本與來源",
+        "anchor": "WI032-3"
+      }
+    },
+    {
+      "title": "工作核對與接手",
+      "body": "保存關鍵點、描述子設定、候選／篩選後點對、幾何內點與誤差；另測模糊及重複紋理。平面單應可由4組合適的非退化正確點對求解，但點少、錯配或分布退化仍需警惕，不能單憑數量下結論。本輪插圖是示意，既有120點／104匹配記錄不冒稱本輪新實測。",
+      "why": "由本課核心機制連接工作用途",
+      "anchor": "WI032-4",
+      "diagram": {
+        "title": "工作核對與接手",
+        "body": "保存關鍵點、描述子設定、候選／篩選後點對、幾何內點與誤差；另測模糊及重複紋理。平面單應可由4組合適的非退化正確點對求解，但點少、錯配或分布退化仍需警惕，不能單憑數量下結論。本輪插圖是示意，既有120點／104匹配記錄不冒稱本輪新實測。",
+        "why": "詳見本課版本與來源",
+        "anchor": "WI032-4"
+      }
+    }
+  ],
+  "visual_intro": "SIFT跨尺度尋找穩定局部，為關鍵點選擇尺度與主方向；在相對主方向的局部座標裡彙整梯度方向分布，形成描述子。兩張圖的描述子再經匹配與含糊候選篩選，得到對應點；幾何求解與驗證是後一步。",
+  "concept_visuals": [],
+  "boundary_cases": [
+    {
+      "condition": "本課具體反例",
+      "effect": "同一缺口被模糊後，局部方向與細節變弱，原本可區分的候選可能混在一起。更多點或更多線不必然更可靠；要看正確對應、幾何分布及獨立核對。",
+      "action": "模糊、無紋理或重複圖樣使局部難分時，先改善取像、增加定位線索，或評估相容學習配對器；不只降低匹配門檻收更多錯線。"
+    },
+    {
+      "condition": "更換產品、模型或輸入設定",
+      "effect": "換工件時通常不用訓練SIFT，但仍需新參考影像、尺度／取像與匹配門檻驗證；若改用LightGlue，須核對extractor與matcher權重相容性。比較完整找點、描述、配對、幾何估計與覆核成本。",
+      "action": "準備同工件不同視角與合理重疊的清楚影像，固定前處理；先看關鍵點能否覆蓋要定位的區域，再選匹配與幾何驗證方式。"
+    },
+    {
+      "condition": "把示意當成實際推論",
+      "effect": "本課特徵、排序、回答及圖像僅用於解釋，不支持現場準確率或耗時結論。",
+      "action": "保存關鍵點、描述子設定、候選／篩選後點對、幾何內點與誤差；另測模糊及重複紋理。平面單應可由4組合適的非退化正確點對求解，但點少、錯配或分布退化仍需警惕，不能單憑數量下結論。本輪插圖是示意，既有120點／104匹配記錄不冒稱本輪新實測。"
+    }
+  ],
+  "comparison": [
+    {
+      "model": "ChArUco",
+      "normality": "已知尺寸標靶、多位置與傾角觀測",
+      "candidate": "內參／畸變；姿態與工站關係另求"
+    },
+    {
+      "model": "SIFT＋matcher",
+      "normality": "局部紋理清楚；尺度方向描述與比對",
+      "candidate": "影像點對；幾何估計與驗證另接"
+    },
+    {
+      "model": "LightGlue＋extractor",
+      "normality": "相容預訓練權重、點與描述；上下文配對",
+      "candidate": "點對與信心；納入完整計算成本"
+    },
+    {
+      "model": "ECC",
+      "normality": "合理起點、外觀穩定；密集相關迭代",
+      "candidate": "warp與相關值；獨立殘差另驗"
+    }
+  ],
+  "selection": "無需訓練且局部紋理可區分時，SIFT配傳統匹配可作起點；含糊候選需更多上下文時可試LightGlue及相容extractor。ECC適合有起點後依密集外觀微調；ChArUco提供已知標靶的相機幾何。這些工具可分工，不能直接用不同任務分數排名。 換工件時通常不用訓練SIFT，但仍需新參考影像、尺度／取像與匹配門檻驗證；若改用LightGlue，須核對extractor與matcher權重相容性。比較完整找點、描述、配對、幾何估計與覆核成本。",
+  "poc": {
+    "title": "以真實工作資料做小規模比較",
+    "steps": [
+      "準備同工件不同視角與合理重疊的清楚影像，固定前處理；先看關鍵點能否覆蓋要定位的區域，再選匹配與幾何驗證方式。",
+      "換工件時通常不用訓練SIFT，但仍需新參考影像、尺度／取像與匹配門檻驗證；若改用LightGlue，須核對extractor與matcher權重相容性。比較完整找點、描述、配對、幾何估計與覆核成本。",
+      "保存關鍵點、描述子設定、候選／篩選後點對、幾何內點與誤差；另測模糊及重複紋理。平面單應可由4組合適的非退化正確點對求解，但點少、錯配或分布退化仍需警惕，不能單憑數量下結論。本輪插圖是示意，既有120點／104匹配記錄不冒稱本輪新實測。"
+    ],
+    "hold": "模糊、無紋理或重複圖樣使局部難分時，先改善取像、增加定位線索，或評估相容學習配對器；不只降低匹配門檻收更多錯線。",
+    "acceptance": {
+      "baseline": "既有流程或最簡單可行方法",
+      "measure": "保存關鍵點、描述子設定、候選／篩選後點對、幾何內點與誤差；另測模糊及重複紋理。平面單應可由4組合適的非退化正確點對求解，但點少、錯配或分布退化仍需警惕，不能單憑數量下結論。本輪插圖是示意，既有120點／104匹配記錄不冒稱本輪新實測。",
+      "negative_control": "同一缺口被模糊後，局部方向與細節變弱，原本可區分的候選可能混在一起。更多點或更多線不必然更可靠；要看正確對應、幾何分布及獨立核對。",
+      "owner": "實作與影像核對負責人"
+    }
+  },
+  "teach_back": {
+    "question": "它改變什麼？何時選另一種做法？",
+    "answer": "SIFT跨尺度尋找穩定局部，為關鍵點選擇尺度與主方向；在相對主方向的局部座標裡彙整梯度方向分布，形成描述子。兩張圖的描述子再經匹配與含糊候選篩選，得到對應點；幾何求解與驗證是後一步。 無需訓練且局部紋理可區分時，SIFT配傳統匹配可作起點；含糊候選需更多上下文時可試LightGlue及相容extractor。ECC適合有起點後依密集外觀微調；ChArUco提供已知標靶的相機幾何。這些工具可分工，不能直接用不同任務分數排名。"
+  },
+  "slide_reading": [
+    {
+      "title": "SIFT先找特徵，再交給配對器",
+      "question": "SIFT特徵、matcher點對與幾何變換分開。",
+      "look": "先看跨尺度找局部，再看尺度與主方向，最後核對關鍵點與描述子。",
+      "relation": "SIFT透過尺度空間極值與局部定位找點，分配主方向後計算局部梯度描述子。匹配器以描述子尋找點對；單應、姿態或對齊並不是SIFT本身的輸出。",
+      "takeaway": "SIFT特徵、matcher點對與幾何變換分開。",
+      "terms": [
+        "跨尺度找局部：圖像金字塔尋找穩定局部；排除不穩定候選",
+        "尺度與主方向：每點附自己的局部座標；不是把整張照片轉正"
+      ]
+    },
+    {
+      "title": "描述子比較的是局部方向分布",
+      "question": "ratio test篩含糊候選，不是幾何真值證明。",
+      "look": "先看把梯度放進局部格，再看組成描述向量，最後核對比較第一與第二候選。",
+      "relation": "標準SIFT描述子為4×4空間格、每格8方向，共128維；實作含加權、正規化及截斷等步驟。最近與次近描述子距離比可用來篩掉含糊候選，但閾值須用目標資料驗證。",
+      "takeaway": "ratio test篩含糊候選，不是幾何真值證明。",
+      "terms": [
+        "把梯度放進局部格：相對主方向的視窗；標準例：4×4個空間格",
+        "組成描述向量：每格8個方向分量；4 × 4 × 8 = 128"
+      ]
+    },
+    {
+      "title": "點對夠多，仍要看幾何分布",
+      "question": "數量、正確性與分布要一起看。",
+      "look": "先看正確且分散的點對，再看幾何估計與內點，最後核對獨立位置再核對。",
+      "relation": "四組合適的非退化平面對應可求單應；大量共線或錯配點仍可能不可用。需要按工作選模型，RANSAC篩選內點后仍看空間覆蓋與獨立地標誤差。",
+      "takeaway": "數量、正確性與分布要一起看。",
+      "terms": [
+        "正確且分散的點對：平面單應最少4組；還要非退化且對應正確",
+        "幾何估計與內點：選適用幾何模型；RANSAC也不是免驗證"
+      ]
+    },
+    {
+      "title": "有視差時，一張平面warp未必夠",
+      "question": "匹配失敗與幾何模型不適用，要分開診斷。",
+      "look": "先看同場景不同深度，再看點對可能仍正確，最後核對改選幾何假設。",
+      "relation": "SIFT可提供局部對應，但場景有非平面視差時，單一單應未必能同時對齊全部深度。不能把此時的殘差全部解釋成特徵錯配，需檢查模型適用范圍。",
+      "takeaway": "匹配失敗與幾何模型不適用，要分開診斷。",
+      "terms": [
+        "同場景不同深度：前景與背景不在同平面；視點改變產生不同位移",
+        "點對可能仍正確：找對點不等於模型適用；不要直接怪matcher"
+      ]
+    }
+  ],
+  "comparison_headers": {
+    "title": "幾何四種工具，負責的工作不同",
+    "basis": "所需資料與方法差異",
+    "output": "輸出與維護責任"
+  },
+  "transfer_check": {
+    "title": "找到很多孔位，為什麼還不能放心對位？",
+    "scenario": "新工件有規則排列的相同圓孔，另一件只有少量但獨特的缺口。兩者都要找平面位置。",
+    "question": "應直接選匹配線比較多的一件作為可靠案例嗎？傳統匹配與學習配對怎麼比較？",
+    "answer": "重複圓孔可能給很多相似描述，線多卻錯；少量獨特缺口若正確且分布非退化，反而可能提供較有用幾何約束。先固定兩組影像，檢查對應身份、空間分布與幾何誤差，再比較SIFT匹配和相容LightGlue流程的完整成本。若影像本身無可區分線索，補取像或標靶可能比換matcher更有效。"
+  },
+  "review_trace": {
+    "authority": "roadmap-model-selection/geometry-alignment-measurement/sift/model.md",
+    "scope": "WI-032：六課主線及工程層圖文重建；既有ECC案例保留。頁內驗證與使用者核准另記。",
+    "claims": [
+      {
+        "id": "visual-1",
+        "field": "beginner_path.visuals[reference-current-anchor]",
+        "source": "模型定位 / architecture_path"
+      },
+      {
+        "id": "visual-2",
+        "field": "beginner_path.visuals[scale-space-keypoints]",
+        "source": "architecture_path"
+      },
+      {
+        "id": "visual-3",
+        "field": "beginner_path.visuals[descriptor-ratio-match]",
+        "source": "representation_or_score"
+      },
+      {
+        "id": "visual-4",
+        "field": "beginner_path.visuals[ransac-geometry-gate]",
+        "source": "failure_boundary"
+      },
+      {
+        "id": "visual-5",
+        "field": "beginner_path.visuals[coverage-drift-hold]",
+        "source": "selection_gate / evidence_bundle"
+      },
+      {
+        "id": "promise",
+        "field": "promise",
+        "source": "模型定位 / representation_or_score"
+      },
+      {
+        "id": "mechanism",
+        "field": "mechanism_steps",
+        "source": "architecture_path / representation_or_score"
+      },
+      {
+        "id": "boundaries",
+        "field": "boundary_cases",
+        "source": "failure_boundary / selection_gate"
+      },
+      {
+        "id": "comparison",
+        "field": "comparison + selection",
+        "source": "selection_gate"
+      },
+      {
+        "id": "poc",
+        "field": "poc + acceptance",
+        "source": "cost_and_operating_point / evidence_bundle"
+      },
+      {
+        "id": "transfer",
+        "field": "transfer_check",
+        "source": "failure_boundary / selection_gate"
+      },
+      {
+        "id": "f02-core",
+        "field": "beginner_path.visuals[0] + scenario + mental_model",
+        "source": "roadmap-model-selection/geometry-alignment-measurement/sift/model.md"
+      },
+      {
+        "id": "f02-transfer",
+        "field": "micro_example + transfer_check + selection",
+        "source": "roadmap-model-selection/geometry-alignment-measurement/sift/model.md"
+      },
+      {
+        "id": "wi032-first-read",
+        "field": "beginner_path + core + selection + transfer",
+        "source": "https://docs.opencv.org/4.13.0/da/df5/tutorial_py_sift_intro.html"
+      }
+    ]
+  },
+  "quality_status": {
+    "label": "本機重建、自評與驗證完成",
+    "state": "self_reviewed",
+    "round": "WI-032",
+    "reason": "逐圖及整頁自評、實頁操作與必要回歸已完成；使用者成品核准pending，未發布。"
+  },
+  "teaching_preflight": {
+    "brief": "teaching-images/vision-ai-model-selection/workitems/wi-032/sift-core-native-r05.md",
+    "mobile_brief": "teaching-images/vision-ai-model-selection/workitems/wi-032/sift-core-native-r05.md",
+    "story": "C",
+    "major_visual_nodes": 3,
+    "visual_status": "self-reviewed",
+    "user_review": "pending"
+  },
+  "engineering_slides": [
+    {
+      "title": "SIFT先找特徵，再交給配對器",
+      "question": "SIFT特徵、matcher點對與幾何變換分開。",
+      "plain": {
+        "look": "先看跨尺度找局部，再看尺度與主方向，最後核對關鍵點與描述子。",
+        "relation": "SIFT透過尺度空間極值與局部定位找點，分配主方向後計算局部梯度描述子。匹配器以描述子尋找點對；單應、姿態或對齊並不是SIFT本身的輸出。",
+        "takeaway": "SIFT特徵、matcher點對與幾何變換分開。"
+      },
+      "terms": [
+        "跨尺度找局部：圖像金字塔尋找穩定局部；排除不穩定候選",
+        "尺度與主方向：每點附自己的局部座標；不是把整張照片轉正"
+      ],
+      "guide": [
+        "SIFT透過尺度空間極值與局部定位找點，分配主方向後計算局部梯度描述子。匹配器以描述子尋找點對；單應、姿態或對齊並不是SIFT本身的輸出。",
+        "讀圖：跨尺度找局部 → 尺度與主方向 → 關鍵點與描述子"
+      ],
+      "stages": [
+        {
+          "title": "跨尺度找局部",
+          "body": "圖像金字塔尋找穩定局部；排除不穩定候選"
+        },
+        {
+          "title": "尺度與主方向",
+          "body": "每點附自己的局部座標；不是把整張照片轉正"
+        },
+        {
+          "title": "關鍵點與描述子",
+          "body": "點：位置、尺度、方向；描述：局部梯度分布"
+        }
+      ],
+      "misconception": "示意只解釋本步驟，不可當作模型實測或省略後續核對。",
+      "alt": "SIFT先找特徵，再交給配對器。SIFT特徵、matcher點對與幾何變換分開。 教學示意，非本輪模型實測。",
+      "mobile_image": "roadmap-model-selection/geometry-alignment-measurement/sift/images/final/WI032-SIFT-01-r06-mobile.png",
+      "mobile_width": 768,
+      "mobile_height": 2770,
+      "engineering": {
+        "takeaway": "SIFT特徵、matcher點對與幾何變換分開。",
+        "nextAction": "準備同工件不同視角與合理重疊的清楚影像，固定前處理；先看關鍵點能否覆蓋要定位的區域，再選匹配與幾何驗證方式。",
+        "redLine": "模糊、無紋理或重複圖樣使局部難分時，先改善取像、增加定位線索，或評估相容學習配對器；不只降低匹配門檻收更多錯線。"
+      },
+      "source": "https://docs.opencv.org/4.13.0/da/df5/tutorial_py_sift_intro.html"
+    },
+    {
+      "title": "描述子比較的是局部方向分布",
+      "question": "ratio test篩含糊候選，不是幾何真值證明。",
+      "plain": {
+        "look": "先看把梯度放進局部格，再看組成描述向量，最後核對比較第一與第二候選。",
+        "relation": "標準SIFT描述子為4×4空間格、每格8方向，共128維；實作含加權、正規化及截斷等步驟。最近與次近描述子距離比可用來篩掉含糊候選，但閾值須用目標資料驗證。",
+        "takeaway": "ratio test篩含糊候選，不是幾何真值證明。"
+      },
+      "terms": [
+        "把梯度放進局部格：相對主方向的視窗；標準例：4×4個空間格",
+        "組成描述向量：每格8個方向分量；4 × 4 × 8 = 128"
+      ],
+      "guide": [
+        "標準SIFT描述子為4×4空間格、每格8方向，共128維；實作含加權、正規化及截斷等步驟。最近與次近描述子距離比可用來篩掉含糊候選，但閾值須用目標資料驗證。",
+        "讀圖：把梯度放進局部格 → 組成描述向量 → 比較第一與第二候選"
+      ],
+      "stages": [
+        {
+          "title": "把梯度放進局部格",
+          "body": "相對主方向的視窗；標準例：4×4個空間格"
+        },
+        {
+          "title": "組成描述向量",
+          "body": "每格8個方向分量；4 × 4 × 8 = 128"
+        },
+        {
+          "title": "比較第一與第二候選",
+          "body": "最近候選要夠獨特；相近兩名代表含糊"
+        }
+      ],
+      "misconception": "示意只解釋本步驟，不可當作模型實測或省略後續核對。",
+      "alt": "描述子比較的是局部方向分布。ratio test篩含糊候選，不是幾何真值證明。 教學示意，非本輪模型實測。",
+      "mobile_image": "roadmap-model-selection/geometry-alignment-measurement/sift/images/final/WI032-SIFT-02-r04-mobile.png",
+      "mobile_width": 768,
+      "mobile_height": 2770,
+      "engineering": {
+        "takeaway": "ratio test篩含糊候選，不是幾何真值證明。",
+        "nextAction": "準備同工件不同視角與合理重疊的清楚影像，固定前處理；先看關鍵點能否覆蓋要定位的區域，再選匹配與幾何驗證方式。",
+        "redLine": "模糊、無紋理或重複圖樣使局部難分時，先改善取像、增加定位線索，或評估相容學習配對器；不只降低匹配門檻收更多錯線。"
+      },
+      "source": "https://docs.opencv.org/4.13.0/da/df5/tutorial_py_sift_intro.html"
+    },
+    {
+      "title": "點對夠多，仍要看幾何分布",
+      "question": "數量、正確性與分布要一起看。",
+      "plain": {
+        "look": "先看正確且分散的點對，再看幾何估計與內點，最後核對獨立位置再核對。",
+        "relation": "四組合適的非退化平面對應可求單應；大量共線或錯配點仍可能不可用。需要按工作選模型，RANSAC篩選內點后仍看空間覆蓋與獨立地標誤差。",
+        "takeaway": "數量、正確性與分布要一起看。"
+      },
+      "terms": [
+        "正確且分散的點對：平面單應最少4組；還要非退化且對應正確",
+        "幾何估計與內點：選適用幾何模型；RANSAC也不是免驗證"
+      ],
+      "guide": [
+        "四組合適的非退化平面對應可求單應；大量共線或錯配點仍可能不可用。需要按工作選模型，RANSAC篩選內點后仍看空間覆蓋與獨立地標誤差。",
+        "讀圖：正確且分散的點對 → 幾何估計與內點 → 獨立位置再核對"
+      ],
+      "stages": [
+        {
+          "title": "正確且分散的點對",
+          "body": "平面單應最少4組；還要非退化且對應正確"
+        },
+        {
+          "title": "幾何估計與內點",
+          "body": "選適用幾何模型；RANSAC也不是免驗證"
+        },
+        {
+          "title": "獨立位置再核對",
+          "body": "看內點分布及誤差；保存原圖與錯配"
+        }
+      ],
+      "misconception": "示意只解釋本步驟，不可當作模型實測或省略後續核對。",
+      "alt": "點對夠多，仍要看幾何分布。數量、正確性與分布要一起看。 教學示意，非本輪模型實測。",
+      "mobile_image": "roadmap-model-selection/geometry-alignment-measurement/sift/images/final/WI032-SIFT-03-r04-mobile.png",
+      "mobile_width": 768,
+      "mobile_height": 2770,
+      "engineering": {
+        "takeaway": "數量、正確性與分布要一起看。",
+        "nextAction": "準備同工件不同視角與合理重疊的清楚影像，固定前處理；先看關鍵點能否覆蓋要定位的區域，再選匹配與幾何驗證方式。",
+        "redLine": "模糊、無紋理或重複圖樣使局部難分時，先改善取像、增加定位線索，或評估相容學習配對器；不只降低匹配門檻收更多錯線。"
+      },
+      "source": "https://docs.opencv.org/4.13.0/da/df5/tutorial_py_sift_intro.html"
+    },
+    {
+      "title": "有視差時，一張平面warp未必夠",
+      "question": "匹配失敗與幾何模型不適用，要分開診斷。",
+      "plain": {
+        "look": "先看同場景不同深度，再看點對可能仍正確，最後核對改選幾何假設。",
+        "relation": "SIFT可提供局部對應，但場景有非平面視差時，單一單應未必能同時對齊全部深度。不能把此時的殘差全部解釋成特徵錯配，需檢查模型適用范圍。",
+        "takeaway": "匹配失敗與幾何模型不適用，要分開診斷。"
+      },
+      "terms": [
+        "同場景不同深度：前景與背景不在同平面；視點改變產生不同位移",
+        "點對可能仍正確：找對點不等於模型適用；不要直接怪matcher"
+      ],
+      "guide": [
+        "SIFT可提供局部對應，但場景有非平面視差時，單一單應未必能同時對齊全部深度。不能把此時的殘差全部解釋成特徵錯配，需檢查模型適用范圍。",
+        "讀圖：同場景不同深度 → 點對可能仍正確 → 改選幾何假設"
+      ],
+      "stages": [
+        {
+          "title": "同場景不同深度",
+          "body": "前景與背景不在同平面；視點改變產生不同位移"
+        },
+        {
+          "title": "點對可能仍正確",
+          "body": "找對點不等於模型適用；不要直接怪matcher"
+        },
+        {
+          "title": "改選幾何假設",
+          "body": "分平面或改3D方法；以工作誤差重新核對"
+        }
+      ],
+      "misconception": "同一缺口被模糊後，局部方向與細節變弱，原本可區分的候選可能混在一起。更多點或更多線不必然更可靠；要看正確對應、幾何分布及獨立核對。",
+      "alt": "有視差時，一張平面warp未必夠。匹配失敗與幾何模型不適用，要分開診斷。 教學示意，非本輪模型實測。",
+      "mobile_image": "roadmap-model-selection/geometry-alignment-measurement/sift/images/final/WI032-SIFT-04-r04-mobile.png",
+      "mobile_width": 768,
+      "mobile_height": 2770,
+      "engineering": {
+        "takeaway": "匹配失敗與幾何模型不適用，要分開診斷。",
+        "nextAction": "準備同工件不同視角與合理重疊的清楚影像，固定前處理；先看關鍵點能否覆蓋要定位的區域，再選匹配與幾何驗證方式。",
+        "redLine": "模糊、無紋理或重複圖樣使局部難分時，先改善取像、增加定位線索，或評估相容學習配對器；不只降低匹配門檻收更多錯線。"
+      },
+      "source": "https://docs.opencv.org/4.13.0/da/df5/tutorial_py_sift_intro.html",
+      "evidence_links": [
+        {
+          "title": "歷史R06教學示意原圖：配對數與模糊案例（非本輪實測）",
+          "image": "roadmap-model-selection/geometry-alignment-measurement/sift/images/final/WI032-retained-sift-r06-c2-how.png"
+        },
+        {
+          "title": "歷史R06教學示意原圖：配對數與模糊案例（非本輪實測）",
+          "image": "roadmap-model-selection/geometry-alignment-measurement/sift/images/final/WI032-retained-sift-r06-d4-stop.png"
+        }
+      ]
+    }
+  ]
+}
