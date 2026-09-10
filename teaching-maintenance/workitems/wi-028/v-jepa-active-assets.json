@@ -1,0 +1,80 @@
+[
+  {
+    "id": "jepa-c1",
+    "mode": "desktop",
+    "image": "_course_content/generated-concepts/v-jepa/wi028-jepa-c1-r02-desktop.png",
+    "size": [
+      1672,
+      941
+    ],
+    "sha256": "16479abe145492d839e78e87bab209ae74c78a93c762c50b3a8960dd094965cb",
+    "generation": "built-in imagegen",
+    "evidence": "illustrative, not model inference",
+    "user_review": "pending"
+  },
+  {
+    "id": "jepa-c1",
+    "mode": "mobile",
+    "image": "_course_content/generated-concepts/v-jepa/wi028-jepa-c1-r02-mobile.png",
+    "size": [
+      881,
+      1785
+    ],
+    "sha256": "820f25110a0875287541cf2f967b04b907c65e38042f8e438ddee144d7d9d416",
+    "generation": "built-in imagegen",
+    "evidence": "illustrative, not model inference",
+    "user_review": "pending"
+  },
+  {
+    "id": "video-d2",
+    "mode": "desktop",
+    "image": "_course_content/generated-concepts/videomae/wi028-video-d2-r01-desktop.png",
+    "size": [
+      1672,
+      941
+    ],
+    "sha256": "8eb9ac44384a45b9e3ef0361c0168cc578dc4a35ce3e8334266cbbefc9758990",
+    "generation": "built-in imagegen",
+    "evidence": "illustrative, not model inference",
+    "user_review": "pending"
+  },
+  {
+    "id": "video-d2",
+    "mode": "mobile",
+    "image": "_course_content/generated-concepts/videomae/wi028-video-d2-r01-mobile.png",
+    "size": [
+      1024,
+      1536
+    ],
+    "sha256": "47dfbd9913e9c8e8d8cae39b4445f4f0081e66218b440aed90d28c3d21e83148",
+    "generation": "built-in imagegen",
+    "evidence": "illustrative, not model inference",
+    "user_review": "pending"
+  },
+  {
+    "id": "video-d3",
+    "mode": "desktop",
+    "image": "_course_content/generated-concepts/convlstm/wi028-video-d3-r02-desktop.png",
+    "size": [
+      1672,
+      941
+    ],
+    "sha256": "dfa827840e1e26fb21ab641bddb7c4ff17576610c24dbb7a08bd7a7939c939c3",
+    "generation": "built-in imagegen",
+    "evidence": "illustrative, not model inference",
+    "user_review": "pending"
+  },
+  {
+    "id": "video-d3",
+    "mode": "mobile",
+    "image": "_course_content/generated-concepts/convlstm/wi028-video-d3-r02-mobile.png",
+    "size": [
+      887,
+      1774
+    ],
+    "sha256": "410d1219d2f877283173afdce1d15760ea626e21ae4878b76bd55f0c1f175df5",
+    "generation": "built-in imagegen",
+    "evidence": "illustrative, not model inference",
+    "user_review": "pending"
+  }
+]

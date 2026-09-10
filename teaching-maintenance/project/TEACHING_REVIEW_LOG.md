@@ -2628,3 +2628,13 @@ WI-023版本保存補充：使用者後續授權commit＋push；本文件與其�
 - WI029最終本機審查：兩入口本機重製與驗證完成：6故事／12PNG，Markdown實際驅動頁面；12狀態36圖放大與解析、24PNG HTTP hash及4Markdown HTTP通過，8最終狀態正文一致與圖首可達，9回歸PASS，1303引用檔course/docs一致。圖自評92–94、頁93–94，使用者核准pending。學習回寫三份共用Markdown，正在保存副本／commit＋push；公開核對尚未執行。
 
 - 最終發布：WI-029兩入口重製及發布完成：內容commit `c6c32a4bad797a0c1bebb5287db6f95c5ffd0b95` 已push，Pages run 34415751416 success；公開HTML、12張PNG及2份Markdown全部一致。六案例由Markdown驅動，12狀態36次放大／自測、8最終狀態、9項回歸、1303資產course/docs一致；圖自評92–94、兩頁94，使用者成品核准pending，未做真人學習測試。 詳見WI029 RELEASE.md。
+## WI-028 八題時序：生成前學習（2026-09-10）
+- 現版 F02 首讀包含大量 contract／gate 詞；本輪先用畫面變化、位移、物件編號與影片特徵分清用途，再接資料與驗證。
+- 已實看 WI-025 首選 GEO-02／GEO-21，沿用金屬物件、淡細框及就近對應。參考中的頁碼／舊文案不搬入新圖。
+- 每圖特定風險：差分不是完整輪廓；背景模型會更新；光流不是物件ID；低分偵測僅作有條件關聯；ConvLSTM記憶不是原始影格；VideoMAE重建像素、V-JEPA預測特徵屬預訓練，下游判斷另有責任。
+- 原型 brief：`teaching-images/vision-ai-model-selection/workitems/wi-028/frame-c1-r01.md`。先原型、逐圖看成品與分項證據，再擴展；尚未生成／評分／整合。
+
+## WI-028 最終逐圖核對（2026-09-10）
+- 36張首讀PNG已逐張看原生與936/328px。實際分項及限制見 workitems/wi-028/image-review.md，精確版本見selected-assets.json。
+- 修正證據：差分照片位移與簡圖不符、剛體箭頭方向不一、遮住角點仍有向量、ByteTrack預測框錯位、手機最後影格退回計數線左側、背景參考被補回工件、遮罩透明／跨幀位置變動、V-JEPA訓練與部署誤接。保留舊版本，不沿用舊候選評分。
+- 修正後仍保留限制：抽象特徵與狀態非實測、手机次要小字／縮圖較密、無真人理解驗證。此時已整合八課，網站測試正在進行；使用者核准pending。

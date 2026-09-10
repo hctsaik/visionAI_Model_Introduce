@@ -1,0 +1,10 @@
+{
+  "states": 48,
+  "zooms": 144,
+  "final_page_states": 16,
+  "http_png_checks": 72,
+  "pytest": "7 tests + 4 subtests; bundle 1 test passed",
+  "legacy_verifier": "FAIL existing charuco inline visual 1 schema; see WI-018 history",
+  "user_review": "pending",
+  "model_inference": "not performed; educational illustrations"
+}

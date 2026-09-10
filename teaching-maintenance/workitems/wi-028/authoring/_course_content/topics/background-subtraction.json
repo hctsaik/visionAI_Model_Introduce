@@ -1,0 +1,498 @@
+{
+  "model": "Background Subtraction",
+  "badge": "背景模型與前景候選",
+  "title": "Background Subtraction：從常態背景找新前景",
+  "scenario": {
+    "title": "固定相機監看工位，工件進入後可能停一下；你想知道哪些區域不同於平常，而不只知道它剛剛有沒有動。",
+    "body": "固定相機監看工位，工件進入後可能停一下；你想知道哪些區域不同於平常，而不只知道它剛剛有沒有動。"
+  },
+  "promise": {
+    "title": "交付結果與接手工作",
+    "body": "相對背景模型的前景候選遮罩。下游可另做區域、占位或停留判定；遮罩本身不是產品種類、缺陷或物件編號。"
+  },
+  "mental_model": {
+    "title": "背景模型與前景候選",
+    "body": "背景相減先用一段影片累積各位置常見的外觀，再拿目前影格和背景模型比較，找出不符合常態的前景。以 MOG2 為例，背景是會更新的統計模型，不只是永遠不變的一張空景照片；這讓它能適應緩慢變化，也會帶來把停住物件學成背景的風險。",
+    "limit": "一片金屬停在同一位置，模型持續更新後可能逐漸把它學成背景，前景減少；工件實際仍在。反光、陰影或相機移動也會干擾前景。"
+  },
+  "micro_example": {
+    "title": "換一個經常改布局的工位",
+    "setup": "每天治具位置都會調整，工件常常放著不動。",
+    "prediction": "要直接沿用昨天的背景嗎？",
+    "reveal": "不宜直接沿用；先重建背景並測初始化，另外設計停留狀態。若布局改動頻繁且目標類別固定，可比較偵測器或占位感測器，以維護量和漏報決定。"
+  },
+  "mechanism_steps": [
+    {
+      "title": "累積固定場景",
+      "body": "在固定視角下完成初始化；背景需要涵蓋現場可接受變化，剛啟動的結果可能尚不穩定。",
+      "why": "由本課核心機制連接工作用途",
+      "anchor": "WI028-1",
+      "diagram": {
+        "title": "累積固定場景",
+        "body": "在固定視角下完成初始化；背景需要涵蓋現場可接受變化，剛啟動的結果可能尚不穩定。",
+        "why": "詳見本課版本與來源",
+        "anchor": "WI028-1"
+      }
+    },
+    {
+      "title": "目前畫面對照背景",
+      "body": "更新快有助適應外觀變化，但持續停留物件可能更快成為常態。圖中白色是二值前景示意；MOG2陰影值需另處理。",
+      "why": "由本課核心機制連接工作用途",
+      "anchor": "WI028-2",
+      "diagram": {
+        "title": "目前畫面對照背景",
+        "body": "更新快有助適應外觀變化，但持續停留物件可能更快成為常態。圖中白色是二值前景示意；MOG2陰影值需另處理。",
+        "why": "詳見本課版本與來源",
+        "anchor": "WI028-2"
+      }
+    },
+    {
+      "title": "前景候選與回看",
+      "body": "相對背景模型的前景候選遮罩。下游可另做區域、占位或停留判定；遮罩本身不是產品種類、缺陷或物件編號。",
+      "why": "由本課核心機制連接工作用途",
+      "anchor": "WI028-3",
+      "diagram": {
+        "title": "前景候選與回看",
+        "body": "相對背景模型的前景候選遮罩。下游可另做區域、占位或停留判定；遮罩本身不是產品種類、缺陷或物件編號。",
+        "why": "詳見本課版本與來源",
+        "anchor": "WI028-3"
+      }
+    },
+    {
+      "title": "工作核對與接手",
+      "body": "按完整事件比較前景與人工占位紀錄，測短停／長停、光照和啟動期，記錄誤報、漏報及重建背景的成本。",
+      "why": "由本課核心機制連接工作用途",
+      "anchor": "WI028-4",
+      "diagram": {
+        "title": "工作核對與接手",
+        "body": "按完整事件比較前景與人工占位紀錄，測短停／長停、光照和啟動期，記錄誤報、漏報及重建背景的成本。",
+        "why": "詳見本課版本與來源",
+        "anchor": "WI028-4"
+      }
+    }
+  ],
+  "visual_intro": "背景相減先用一段影片累積各位置常見的外觀，再拿目前影格和背景模型比較，找出不符合常態的前景。以 MOG2 為例，背景是會更新的統計模型，不只是永遠不變的一張空景照片；這讓它能適應緩慢變化，也會帶來把停住物件學成背景的風險。",
+  "beginner_path": {
+    "title": "從必要原理、具體反例到工作取捨",
+    "intro": "固定相機監看工位，工件進入後可能停一下；你想知道哪些區域不同於平常，而不只知道它剛剛有沒有動。 下列圖像、特徵及回答為教學示意，不是模型實測。",
+    "visuals": [
+      {
+        "id": "wi028-bg-c1",
+        "title": "背景相減：先記住背景，再找出新來的工件",
+        "prompt": "固定相機監看工位，工件進入後可能停一下；你想知道哪些區域不同於平常，而不只知道它剛剛有沒有動。",
+        "caption": "背景相減先用一段影片累積各位置常見的外觀，再拿目前影格和背景模型比較，找出不符合常態的前景。以 MOG2 為例，背景是會更新的統計模型，不只是永遠不變的一張空景照片；這讓它能適應緩慢變化，也會帶來把停住物件學成背景的風險。",
+        "image": "_course_content/generated-concepts/background-subtraction/wi028-bg-c1-r01-desktop.png",
+        "alt": "背景相減：先記住背景，再找出新來的工件。背景相減先用一段影片累積各位置常見的外觀，再拿目前影格和背景模型比較，找出不符合常態的前景。以 MOG2 為例，背景是會更新的統計模型，不只是永遠不變的一張空景照片；這讓它能適應緩慢變化，也會帶來把停住物件學成背景的風險。 AI生成教學示意，非模型實測。",
+        "callouts": [
+          {
+            "title": "先建立常態",
+            "body": "在固定視角下完成初始化；背景需要涵蓋現場可接受變化，剛啟動的結果可能尚不穩定。"
+          },
+          {
+            "title": "更新也是取捨",
+            "body": "更新快有助適應外觀變化，但持續停留物件可能更快成為常態。圖中白色是二值前景示意；MOG2陰影值需另處理。"
+          },
+          {
+            "title": "交付與接手",
+            "body": "相對背景模型的前景候選遮罩。下游可另做區域、占位或停留判定；遮罩本身不是產品種類、缺陷或物件編號。"
+          }
+        ],
+        "reading_views": [
+          {
+            "title": "背景相減：先記住背景，再找出新來的工件",
+            "image": "_course_content/generated-concepts/background-subtraction/wi028-bg-c1-r01-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/background-subtraction/wi028-bg-c1-r01-mobile.png",
+            "alt": "背景相減：先記住背景，再找出新來的工件。背景相減先用一段影片累積各位置常見的外觀，再拿目前影格和背景模型比較，找出不符合常態的前景。以 MOG2 為例，背景是會更新的統計模型，不只是永遠不變的一張空景照片；這讓它能適應緩慢變化，也會帶來把停住物件學成背景的風險。 AI生成教學示意，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              955,
+              1647
+            ],
+            "mobile_display_mode": "full-mobile",
+            "desktop_intrinsic_width": 1672,
+            "desktop_intrinsic_height": 941,
+            "mobile_intrinsic_width": 955,
+            "mobile_intrinsic_height": 1647
+          }
+        ],
+        "core_ideas": true
+      },
+      {
+        "id": "wi028-bg-d2",
+        "title": "停住太久的工件，可能被學進背景",
+        "prompt": "觀察哪個條件改變，讓原本的結果不夠可靠？",
+        "caption": "一片金屬停在同一位置，模型持續更新後可能逐漸把它學成背景，前景減少；工件實際仍在。反光、陰影或相機移動也會干擾前景。",
+        "image": "_course_content/generated-concepts/background-subtraction/wi028-bg-d2-r01-desktop.png",
+        "alt": "停住太久的工件，可能被學進背景。一片金屬停在同一位置，模型持續更新後可能逐漸把它學成背景，前景減少；工件實際仍在。反光、陰影或相機移動也會干擾前景。 AI生成教學示意，非模型實測。",
+        "callouts": [
+          {
+            "title": "看哪裡",
+            "body": "一片金屬停在同一位置，模型持續更新後可能逐漸把它學成背景，前景減少；工件實際仍在。反光、陰影或相機移動也會干擾前景。"
+          },
+          {
+            "title": "接著怎麼做",
+            "body": "檢查啟動與更新策略，停留事件另記時間；若需長期占位判斷，比較可保留占位狀態的偵測器或實體感測器。"
+          }
+        ],
+        "reading_views": [
+          {
+            "title": "停住太久的工件，可能被學進背景",
+            "image": "_course_content/generated-concepts/background-subtraction/wi028-bg-d2-r01-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/background-subtraction/wi028-bg-d2-r01-mobile.png",
+            "alt": "停住太久的工件，可能被學進背景。一片金屬停在同一位置，模型持續更新後可能逐漸把它學成背景，前景減少；工件實際仍在。反光、陰影或相機移動也會干擾前景。 AI生成教學示意，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              1024,
+              1536
+            ],
+            "mobile_display_mode": "full-mobile",
+            "desktop_intrinsic_width": 1672,
+            "desktop_intrinsic_height": 941,
+            "mobile_intrinsic_width": 1024,
+            "mobile_intrinsic_height": 1536
+          }
+        ],
+        "core_ideas": false
+      },
+      {
+        "id": "wi028-change-d3",
+        "title": "找變化還是找前景？先決定參考是誰",
+        "prompt": "相同工作需求下，資料、輸出與成本如何取捨？",
+        "caption": "相鄰影格差分適合瞬間改變；背景相減能以常態為參考看新前景，但要維護背景更新。要知道是哪一類工件，仍需另加分類或偵測。",
+        "image": "_course_content/generated-concepts/frame-difference/wi028-change-d3-r02-desktop.png",
+        "alt": "找變化還是找前景？先決定參考是誰。相鄰影格差分適合瞬間改變；背景相減能以常態為參考看新前景，但要維護背景更新。要知道是哪一類工件，仍需另加分類或偵測。 AI生成教學示意，非模型實測。",
+        "callouts": [
+          {
+            "title": "怎麼選",
+            "body": "相鄰影格差分適合瞬間改變；背景相減能以常態為參考看新前景，但要維護背景更新。要知道是哪一類工件，仍需另加分類或偵測。"
+          },
+          {
+            "title": "資料與完整成本",
+            "body": "不需先為神經網路標註訓練，仍要代表性啟動片、正常背景與事件標記。換視角通常要重建背景；同測陰影誤報、停留漏報、恢復時間和維護成本。"
+          }
+        ],
+        "reading_views": [
+          {
+            "title": "找變化還是找前景？先決定參考是誰",
+            "image": "_course_content/generated-concepts/frame-difference/wi028-change-d3-r02-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/frame-difference/wi028-change-d3-r03-mobile.png",
+            "alt": "找變化還是找前景？先決定參考是誰。相鄰影格差分適合瞬間改變；背景相減能以常態為參考看新前景，但要維護背景更新。要知道是哪一類工件，仍需另加分類或偵測。 AI生成教學示意，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              1024,
+              1536
+            ],
+            "mobile_display_mode": "full-mobile",
+            "desktop_intrinsic_width": 1672,
+            "desktop_intrinsic_height": 941,
+            "mobile_intrinsic_width": 1024,
+            "mobile_intrinsic_height": 1536
+          }
+        ],
+        "core_ideas": false
+      }
+    ]
+  },
+  "concept_visuals": [
+    {
+      "id": "causal-chain",
+      "placement": "after_causal_chain",
+      "title": "Background Subtraction：先懂中心，再看細節",
+      "prompt": "若看到前景遮罩，它足以斷言是某個物件、或保證停留盒子不會被背景吸收嗎？先預測 learning-rate 過快時會發生什麼。",
+      "caption": "相機、ROI 與取像條件大致固定；你要在長時間影像流中找出突然出現、移動或停留的區域，並把它們送往事件檢視。",
+      "image": "_course_content/generated-concepts/background-subtraction/background-subtraction-f02-core.png",
+      "alt": "Background Subtraction 的 F02 核心機制圖：案例輸入、模型專屬轉換、可交付線索與人的接手動作；非模型推論。",
+      "callouts": [
+        {
+          "title": "建立可追溯背景狀態",
+          "body": "用已宣告空場景建立 running statistics、GMM-style modes 或指定實作，連同來源與更新規則保存。"
+        },
+        {
+          "title": "把新影格放入同一取像契約",
+          "body": "固定 timestamp、ROI、可選 registration 與光度前處理，再和背景狀態比對。"
+        },
+        {
+          "title": "從距離形成前景候選",
+          "body": "計算 foreground likelihood／distance，套用 threshold、shadow rule、morphology 與 connected components。"
+        }
+      ]
+    },
+    {
+      "id": "worked-example",
+      "placement": "after_micro_example",
+      "title": "Background Subtraction：同一案例的反事實",
+      "prompt": "同一盒子停在輸送帶上：低更新率保留候選但有舊背景鬼影；高更新率逐漸吸收盒子。標示以停留時間 challenge data 決定 update policy。",
+      "caption": "用同一案例看清楚參數或假設如何改變輸出，才知道何時該 HOLD。",
+      "image": "_course_content/generated-concepts/background-subtraction/background-subtraction-worked-example_v01.svg",
+      "alt": "Background Subtraction 的教學因果圖：輸入、轉換、輸出及其不可推論的界線。",
+      "callouts": [
+        {
+          "title": "情境",
+          "body": "先用空輸送帶初始化背景；之後一個盒子進入固定 ROI 並停住。"
+        },
+        {
+          "title": "直覺陷阱",
+          "body": "看到前景遮罩，能否斷言它是某個物件、或保證它不會被背景吸收？"
+        },
+        {
+          "title": "揭示",
+          "body": "不能。遮罩只表示相對目前背景不尋常；更新率過快會吸收停留盒子，過慢又會留下舊背景鬼影。保存背景快照、更新規則、元件與事件窗口。"
+        },
+        {
+          "title": "POC 檢查",
+          "body": "同一影格／ROI／event truth 下，比較更新策略與事件行為，不是比較遮罩是否好看。"
+        }
+      ]
+    },
+    {
+      "id": "comparison",
+      "placement": "after_comparison",
+      "title": "Background Subtraction：和鄰近路徑的責任差異",
+      "prompt": "受控比較：Frame Difference 比兩個指定影格；Background Subtraction 比目前影格與版本化背景 state。固定相同 capture、ROI、event truth、aggregation 與 hardware。",
+      "caption": "比較時固定輸入、真值、硬體與 action contract；不要從單張視覺化決定排名。",
+      "image": "_course_content/generated-concepts/background-subtraction/background-subtraction-comparison_v01.svg",
+      "alt": "Background Subtraction 的教學因果圖：輸入、轉換、輸出及其不可推論的界線。",
+      "callouts": [
+        {
+          "title": "本模型",
+          "body": "版本化長期 background state 與 update rule；輸出 不符合背景的前景元件／時間事件。"
+        },
+        {
+          "title": "對照：Frame Difference",
+          "body": "指定 reference frame I(t-k)；輸出 兩影格變化元件。"
+        },
+        {
+          "title": "選型結論",
+          "body": "當視角與 ROI 相對穩定、需要長序列前景候選、且背景初始化與 reset/HOLD 有 owner 時，可考慮此路徑。若相機運動未受控、長停留物很關鍵、光線漂移主導，或需要類別／身分，就先 HOLD 或改走其他有責任歸屬的路徑。"
+        }
+      ]
+    },
+    {
+      "id": "boundary-cases-explainer",
+      "placement": "before_boundary_cases",
+      "title": "同一條因果鏈，在哪裡會被破壞？",
+      "prompt": "不要只記住風險名詞；先預測條件一變，畫面或候選結果會怎麼變，再決定何時應 HOLD。",
+      "caption": "Background Subtraction 的三個模型專屬反事實：每欄把條件、可觀察後果與正確下一步放在一起。它們不是自動修正規則；遇到條件超出驗證範圍時，先保存原始證據並進入 HOLD／REVIEW。",
+      "image": "_course_content/generated-concepts/background-subtraction/background-subtraction-boundary-cases_v01.svg",
+      "alt": "Background Subtraction 的三欄反事實說明圖：每欄依序說明一個失效條件、可能看到的候選或量測後果，以及應進入 HOLD、重驗或改選方法的安全下一步。",
+      "callouts": [
+        {
+          "title": "先看條件，而不是先改門檻",
+          "body": "候選改變可能是資料、取像、設定或模型假設被破壞，不能立刻解讀成產品真相。"
+        },
+        {
+          "title": "把可觀察後果說出來",
+          "body": "誤報、漏檢、整片異常或時間失序都需要回到原始資料與版本追查。"
+        },
+        {
+          "title": "HOLD 是設計的一部分",
+          "body": "先停止自動往下走、保存 evidence，確認條件後才重新 qualification 或交給適合的方法。"
+        }
+      ]
+    }
+  ],
+  "boundary_cases": [
+    {
+      "condition": "本課具體反例",
+      "effect": "一片金屬停在同一位置，模型持續更新後可能逐漸把它學成背景，前景減少；工件實際仍在。反光、陰影或相機移動也會干擾前景。",
+      "action": "檢查啟動與更新策略，停留事件另記時間；若需長期占位判斷，比較可保留占位狀態的偵測器或實體感測器。"
+    },
+    {
+      "condition": "更換產品、模型或輸入設定",
+      "effect": "不需先為神經網路標註訓練，仍要代表性啟動片、正常背景與事件標記。換視角通常要重建背景；同測陰影誤報、停留漏報、恢復時間和維護成本。",
+      "action": "先保存空工位、工件進入／停留／離開及光照變化影片，固定相機，再決定初始化和背景更新設定。"
+    },
+    {
+      "condition": "把示意當成實際推論",
+      "effect": "本課特徵、排序、回答及圖像僅用於解釋，不支持現場準確率或耗時結論。",
+      "action": "按完整事件比較前景與人工占位紀錄，測短停／長停、光照和啟動期，記錄誤報、漏報及重建背景的成本。"
+    }
+  ],
+  "comparison": [
+    {
+      "model": "Frame Difference",
+      "normality": "前一影格或指定時刻；選取間隔、門檻和事件規則",
+      "candidate": "像素變化；停住後可能消失"
+    },
+    {
+      "model": "背景相減",
+      "normality": "初始化和更新背景模型；處理光照／陰影",
+      "candidate": "相對常態的前景；停久可能被吸收"
+    },
+    {
+      "model": "工件偵測／占位感測",
+      "normality": "偵測需相應類別資料，感測器需現場安裝與驗證",
+      "candidate": "類別框或占位訊號；代價依任務比較"
+    }
+  ],
+  "selection": "相鄰影格差分適合瞬間改變；背景相減能以常態為參考看新前景，但要維護背景更新。要知道是哪一類工件，仍需另加分類或偵測。 不需先為神經網路標註訓練，仍要代表性啟動片、正常背景與事件標記。換視角通常要重建背景；同測陰影誤報、停留漏報、恢復時間和維護成本。",
+  "poc": {
+    "title": "以真實工作資料做小規模比較",
+    "steps": [
+      "先保存空工位、工件進入／停留／離開及光照變化影片，固定相機，再決定初始化和背景更新設定。",
+      "不需先為神經網路標註訓練，仍要代表性啟動片、正常背景與事件標記。換視角通常要重建背景；同測陰影誤報、停留漏報、恢復時間和維護成本。",
+      "按完整事件比較前景與人工占位紀錄，測短停／長停、光照和啟動期，記錄誤報、漏報及重建背景的成本。"
+    ],
+    "hold": "檢查啟動與更新策略，停留事件另記時間；若需長期占位判斷，比較可保留占位狀態的偵測器或實體感測器。",
+    "acceptance": {
+      "baseline": "既有流程或最簡單可行方法",
+      "measure": "按完整事件比較前景與人工占位紀錄，測短停／長停、光照和啟動期，記錄誤報、漏報及重建背景的成本。",
+      "negative_control": "一片金屬停在同一位置，模型持續更新後可能逐漸把它學成背景，前景減少；工件實際仍在。反光、陰影或相機移動也會干擾前景。",
+      "owner": "實作與影像核對負責人"
+    }
+  },
+  "teach_back": {
+    "question": "它改變什麼？何時選另一種做法？",
+    "answer": "背景相減先用一段影片累積各位置常見的外觀，再拿目前影格和背景模型比較，找出不符合常態的前景。以 MOG2 為例，背景是會更新的統計模型，不只是永遠不變的一張空景照片；這讓它能適應緩慢變化，也會帶來把停住物件學成背景的風險。 相鄰影格差分適合瞬間改變；背景相減能以常態為參考看新前景，但要維護背景更新。要知道是哪一類工件，仍需另加分類或偵測。"
+  },
+  "slide_reading": [
+    {
+      "title": "Background Subtraction 先輸出什麼？",
+      "question": "它真正回答的問題",
+      "look": "看 Background state 到 Foreground candidate。",
+      "relation": "目前畫面中，哪些像素不符合已宣告的背景狀態？輸出是前景候選、連通元件與時間事件，不是物件類別、身分、缺陷機率或物理原因。",
+      "takeaway": "把它想成「會更新的背景帳本」",
+      "terms": [
+        "background state",
+        "learning rate / update mask"
+      ]
+    },
+    {
+      "title": "核心機制：Foreground candidate",
+      "question": "為何「從距離形成前景候選」不是最後決策？",
+      "look": "Background state → Frame contract → Foreground candidate → Event gate",
+      "relation": "每個門檻與形態學規則都改變候選，並非附屬細節。",
+      "takeaway": "候選須回到 Event gate。",
+      "terms": [
+        "foreground likelihood",
+        "connected component"
+      ]
+    },
+    {
+      "title": "邊界：什麼情況該停下來？",
+      "question": "哪個輸入或假設一變，輸出不再可解讀？",
+      "look": "初始化空場景被污染；長停留物或漸進製程改變；相機、場景或光線大幅改變",
+      "relation": "重要結構從開始就被視為背景，後續可能完全沒有候選。；更新率快時被吸收；慢時可能留下 stale ghost。；廣泛前景可能只反映 vibration、zoom、scene change、陰影或 auto-exposure。",
+      "takeaway": "先保留證據並進 REVIEW/HOLD。",
+      "terms": [
+        "event aggregation",
+        "reset / HOLD"
+      ]
+    },
+    {
+      "title": "選型：何時值得用 Background Subtraction？",
+      "question": "要鎖定哪些條件才能公平比較？",
+      "look": "Background Subtraction / Frame Difference / ByteTrack",
+      "relation": "當視角與 ROI 相對穩定、需要長序列前景候選、且背景初始化與 reset/HOLD 有 owner 時，可考慮此路徑。若相機運動未受控、長停留物很關鍵、光線漂移主導，或需要類別／身分，就先 HOLD 或改走其他有責任歸屬的路徑。",
+      "takeaway": "POC：證明背景狀態不會悄悄改寫事件",
+      "terms": [
+        "evidence bundle",
+        "complete P95/P99"
+      ]
+    }
+  ],
+  "comparison_headers": {
+    "title": "找變化還是找前景？先決定參考是誰",
+    "basis": "所需資料與方法差異",
+    "output": "輸出與維護責任"
+  },
+  "transfer_check": {
+    "title": "換一個經常改布局的工位",
+    "scenario": "每天治具位置都會調整，工件常常放著不動。",
+    "question": "要直接沿用昨天的背景嗎？",
+    "answer": "不宜直接沿用；先重建背景並測初始化，另外設計停留狀態。若布局改動頻繁且目標類別固定，可比較偵測器或占位感測器，以維護量和漏報決定。"
+  },
+  "review_trace": {
+    "authority": "roadmap-model-selection/video-temporal/background-subtraction/model.md",
+    "scope": "WI-028 八個時序主題首讀圖文與手機PNG、反例、比較及自測；原工程slide保留，未以首讀評分代替工程圖審查。",
+    "claims": [
+      {
+        "id": "visual-1",
+        "field": "beginner_path.visuals[fixed-conveyor-background-history]",
+        "source": "模型定位 / architecture_path"
+      },
+      {
+        "id": "visual-2",
+        "field": "beginner_path.visuals[declared-background-state]",
+        "source": "architecture_path"
+      },
+      {
+        "id": "visual-3",
+        "field": "beginner_path.visuals[foreground-residual-component]",
+        "source": "representation_or_score"
+      },
+      {
+        "id": "visual-4",
+        "field": "beginner_path.visuals[update-absorption-review]",
+        "source": "failure_boundary"
+      },
+      {
+        "id": "visual-5",
+        "field": "beginner_path.visuals[hold-reset-contract-change]",
+        "source": "selection_gate / evidence_bundle"
+      },
+      {
+        "id": "promise",
+        "field": "promise",
+        "source": "模型定位 / representation_or_score"
+      },
+      {
+        "id": "mechanism",
+        "field": "mechanism_steps",
+        "source": "architecture_path / representation_or_score"
+      },
+      {
+        "id": "boundaries",
+        "field": "boundary_cases",
+        "source": "failure_boundary / selection_gate"
+      },
+      {
+        "id": "comparison",
+        "field": "comparison + selection",
+        "source": "selection_gate"
+      },
+      {
+        "id": "poc",
+        "field": "poc + acceptance",
+        "source": "cost_and_operating_point / evidence_bundle"
+      },
+      {
+        "id": "transfer",
+        "field": "transfer_check",
+        "source": "failure_boundary / selection_gate"
+      },
+      {
+        "id": "f02-core",
+        "field": "beginner_path.visuals[0] + scenario + mental_model",
+        "source": "roadmap-model-selection/video-temporal/background-subtraction/model.md"
+      },
+      {
+        "id": "f02-transfer",
+        "field": "micro_example + transfer_check + selection",
+        "source": "roadmap-model-selection/video-temporal/background-subtraction/model.md"
+      },
+      {
+        "id": "wi028-first-read",
+        "field": "beginner_path + core + selection + transfer",
+        "source": "https://docs.opencv.org/4.13.0/d1/dc5/tutorial_background_subtraction.html"
+      }
+    ]
+  },
+  "quality_status": {
+    "label": "首讀圖文已核對",
+    "state": "self-reviewed",
+    "round": "WI-028",
+    "reason": "新版首讀逐圖與整頁自評、桌機手機互動驗證完成；使用者核准pending。原工程圖未納入本輪分數。"
+  },
+  "teaching_preflight": {
+    "brief": "teaching-images/vision-ai-model-selection/workitems/wi-028/bg-c1-r01.md",
+    "mobile_brief": "teaching-images/vision-ai-model-selection/workitems/wi-028/bg-c1-r01.md",
+    "story": "C",
+    "major_visual_nodes": 3,
+    "visual_status": "self-reviewed",
+    "user_review": "pending"
+  }
+}

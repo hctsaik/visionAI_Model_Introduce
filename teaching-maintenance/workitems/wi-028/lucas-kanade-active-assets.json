@@ -1,0 +1,80 @@
+[
+  {
+    "id": "lk-c1",
+    "mode": "desktop",
+    "image": "_course_content/generated-concepts/lucas-kanade/wi028-lk-c1-r02-desktop.png",
+    "size": [
+      1672,
+      941
+    ],
+    "sha256": "8bfc8f5d76b7fe49b0ac00e369d62485957084b50190289260849be1ee1dd21b",
+    "generation": "built-in imagegen",
+    "evidence": "illustrative, not model inference",
+    "user_review": "pending"
+  },
+  {
+    "id": "lk-c1",
+    "mode": "mobile",
+    "image": "_course_content/generated-concepts/lucas-kanade/wi028-lk-c1-r03-mobile.png",
+    "size": [
+      1024,
+      1536
+    ],
+    "sha256": "f997f89684c77db8e600d782e44e71010a940bd2eab70f15c88bcae7df400e5b",
+    "generation": "built-in imagegen",
+    "evidence": "illustrative, not model inference",
+    "user_review": "pending"
+  },
+  {
+    "id": "flow-d2",
+    "mode": "desktop",
+    "image": "_course_content/generated-concepts/lucas-kanade/wi028-flow-d2-r03-desktop.png",
+    "size": [
+      1672,
+      941
+    ],
+    "sha256": "cae83ca570d6f86c4103c4e9a7e4ff0e61b9b55f18d48a47f27781c7a2cd87dd",
+    "generation": "built-in imagegen",
+    "evidence": "illustrative, not model inference",
+    "user_review": "pending"
+  },
+  {
+    "id": "flow-d2",
+    "mode": "mobile",
+    "image": "_course_content/generated-concepts/lucas-kanade/wi028-flow-d2-r03-mobile.png",
+    "size": [
+      768,
+      2048
+    ],
+    "sha256": "bb27ec22d5e7f8fa796e50f47df823518e5b5b487ce2359ef09c8decd42f63ac",
+    "generation": "built-in imagegen",
+    "evidence": "illustrative, not model inference",
+    "user_review": "pending"
+  },
+  {
+    "id": "flow-d3",
+    "mode": "desktop",
+    "image": "_course_content/generated-concepts/lucas-kanade/wi028-flow-d3-r01-desktop.png",
+    "size": [
+      1672,
+      941
+    ],
+    "sha256": "fbd02d803658dd4200d35dc6a6a888cf4eab37cd27bc56b3a7d265dc0a659e98",
+    "generation": "built-in imagegen",
+    "evidence": "illustrative, not model inference",
+    "user_review": "pending"
+  },
+  {
+    "id": "flow-d3",
+    "mode": "mobile",
+    "image": "_course_content/generated-concepts/lucas-kanade/wi028-flow-d3-r01-mobile.png",
+    "size": [
+      1024,
+      1536
+    ],
+    "sha256": "2e01d29715e1a93faa4d069f15dc140f8a6d3d747f705785844f94eaa66d2635",
+    "generation": "built-in imagegen",
+    "evidence": "illustrative, not model inference",
+    "user_review": "pending"
+  }
+]

@@ -1,0 +1,362 @@
+[
+  {
+    "route": "interactive-learning.html",
+    "viewport": [
+      1440,
+      1000
+    ],
+    "images": [
+      {
+        "src": "http://127.0.0.1:8000/_course_content/generated-concepts/bytetrack/wi028-byte-c1-r02-desktop.png",
+        "width": 1672,
+        "height": 941,
+        "box": {
+          "x": 404.1875,
+          "y": 100.515625,
+          "width": 935.625,
+          "height": 526.5625,
+          "top": 100.515625,
+          "right": 1339.8125,
+          "bottom": 627.078125,
+          "left": 404.1875
+        }
+      },
+      {
+        "src": "http://127.0.0.1:8000/_course_content/generated-concepts/bytetrack/wi028-byte-d2-r01-desktop.png",
+        "width": 1672,
+        "height": 941,
+        "box": {
+          "x": 404.1875,
+          "y": 101.03125,
+          "width": 935.625,
+          "height": 526.5625,
+          "top": 101.03125,
+          "right": 1339.8125,
+          "bottom": 627.59375,
+          "left": 404.1875
+        }
+      },
+      {
+        "src": "http://127.0.0.1:8000/_course_content/generated-concepts/bytetrack/wi028-track-d3-r01-desktop.png",
+        "width": 1672,
+        "height": 941,
+        "box": {
+          "x": 404.1875,
+          "y": 100.609375,
+          "width": 935.625,
+          "height": 526.5625,
+          "top": 100.609375,
+          "right": 1339.8125,
+          "bottom": 627.171875,
+          "left": 404.1875
+        }
+      }
+    ],
+    "zoom_loaded_escape": 3,
+    "answer": true,
+    "engineering_images": 0,
+    "navigation": true,
+    "page_errors": [],
+    "overflow": false
+  },
+  {
+    "route": "interactive-learning.html",
+    "viewport": [
+      390,
+      844
+    ],
+    "images": [
+      {
+        "src": "http://127.0.0.1:8000/_course_content/generated-concepts/bytetrack/wi028-byte-c1-r03-mobile.png",
+        "width": 768,
+        "height": 2046,
+        "box": {
+          "x": 17,
+          "y": 100.703125,
+          "width": 356,
+          "height": 948.40625,
+          "top": 100.703125,
+          "right": 373,
+          "bottom": 1049.109375,
+          "left": 17
+        }
+      },
+      {
+        "src": "http://127.0.0.1:8000/_course_content/generated-concepts/bytetrack/wi028-byte-d2-r01-mobile.png",
+        "width": 887,
+        "height": 1774,
+        "box": {
+          "x": 17,
+          "y": 101.1875,
+          "width": 356,
+          "height": 712,
+          "top": 101.1875,
+          "right": 373,
+          "bottom": 813.1875,
+          "left": 17
+        }
+      },
+      {
+        "src": "http://127.0.0.1:8000/_course_content/generated-concepts/bytetrack/wi028-track-d3-r02-mobile.png",
+        "width": 1024,
+        "height": 1536,
+        "box": {
+          "x": 17,
+          "y": 100.53125,
+          "width": 356,
+          "height": 534,
+          "top": 100.53125,
+          "right": 373,
+          "bottom": 634.53125,
+          "left": 17
+        }
+      }
+    ],
+    "zoom_loaded_escape": 3,
+    "answer": true,
+    "engineering_images": 0,
+    "navigation": true,
+    "page_errors": [],
+    "overflow": false
+  },
+  {
+    "route": "interactive-learning.html",
+    "viewport": [
+      360,
+      800
+    ],
+    "images": [
+      {
+        "src": "http://127.0.0.1:8000/_course_content/generated-concepts/bytetrack/wi028-byte-c1-r03-mobile.png",
+        "width": 768,
+        "height": 2046,
+        "box": {
+          "x": 17,
+          "y": 101.203125,
+          "width": 326,
+          "height": 868.484375,
+          "top": 101.203125,
+          "right": 343,
+          "bottom": 969.6875,
+          "left": 17
+        }
+      },
+      {
+        "src": "http://127.0.0.1:8000/_course_content/generated-concepts/bytetrack/wi028-byte-d2-r01-mobile.png",
+        "width": 887,
+        "height": 1774,
+        "box": {
+          "x": 17,
+          "y": 100.53125,
+          "width": 326,
+          "height": 652,
+          "top": 100.53125,
+          "right": 343,
+          "bottom": 752.53125,
+          "left": 17
+        }
+      },
+      {
+        "src": "http://127.0.0.1:8000/_course_content/generated-concepts/bytetrack/wi028-track-d3-r02-mobile.png",
+        "width": 1024,
+        "height": 1536,
+        "box": {
+          "x": 17,
+          "y": 100.875,
+          "width": 326,
+          "height": 489,
+          "top": 100.875,
+          "right": 343,
+          "bottom": 589.875,
+          "left": 17
+        }
+      }
+    ],
+    "zoom_loaded_escape": 3,
+    "answer": true,
+    "engineering_images": 0,
+    "navigation": true,
+    "page_errors": [],
+    "overflow": false
+  },
+  {
+    "route": "docs/index.html",
+    "viewport": [
+      1440,
+      1000
+    ],
+    "images": [
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/bytetrack/wi028-byte-c1-r02-desktop.png",
+        "width": 1672,
+        "height": 941,
+        "box": {
+          "x": 404.1875,
+          "y": 100.515625,
+          "width": 935.625,
+          "height": 526.5625,
+          "top": 100.515625,
+          "right": 1339.8125,
+          "bottom": 627.078125,
+          "left": 404.1875
+        }
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/bytetrack/wi028-byte-d2-r01-desktop.png",
+        "width": 1672,
+        "height": 941,
+        "box": {
+          "x": 404.1875,
+          "y": 101.03125,
+          "width": 935.625,
+          "height": 526.5625,
+          "top": 101.03125,
+          "right": 1339.8125,
+          "bottom": 627.59375,
+          "left": 404.1875
+        }
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/bytetrack/wi028-track-d3-r01-desktop.png",
+        "width": 1672,
+        "height": 941,
+        "box": {
+          "x": 404.1875,
+          "y": 100.609375,
+          "width": 935.625,
+          "height": 526.5625,
+          "top": 100.609375,
+          "right": 1339.8125,
+          "bottom": 627.171875,
+          "left": 404.1875
+        }
+      }
+    ],
+    "zoom_loaded_escape": 3,
+    "answer": true,
+    "engineering_images": 0,
+    "navigation": true,
+    "page_errors": [],
+    "overflow": false
+  },
+  {
+    "route": "docs/index.html",
+    "viewport": [
+      390,
+      844
+    ],
+    "images": [
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/bytetrack/wi028-byte-c1-r03-mobile.png",
+        "width": 768,
+        "height": 2046,
+        "box": {
+          "x": 17,
+          "y": 100.703125,
+          "width": 356,
+          "height": 948.40625,
+          "top": 100.703125,
+          "right": 373,
+          "bottom": 1049.109375,
+          "left": 17
+        }
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/bytetrack/wi028-byte-d2-r01-mobile.png",
+        "width": 887,
+        "height": 1774,
+        "box": {
+          "x": 17,
+          "y": 101.1875,
+          "width": 356,
+          "height": 712,
+          "top": 101.1875,
+          "right": 373,
+          "bottom": 813.1875,
+          "left": 17
+        }
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/bytetrack/wi028-track-d3-r02-mobile.png",
+        "width": 1024,
+        "height": 1536,
+        "box": {
+          "x": 17,
+          "y": 100.53125,
+          "width": 356,
+          "height": 534,
+          "top": 100.53125,
+          "right": 373,
+          "bottom": 634.53125,
+          "left": 17
+        }
+      }
+    ],
+    "zoom_loaded_escape": 3,
+    "answer": true,
+    "engineering_images": 0,
+    "navigation": true,
+    "page_errors": [],
+    "overflow": false
+  },
+  {
+    "route": "docs/index.html",
+    "viewport": [
+      360,
+      800
+    ],
+    "images": [
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/bytetrack/wi028-byte-c1-r03-mobile.png",
+        "width": 768,
+        "height": 2046,
+        "box": {
+          "x": 17,
+          "y": 101.203125,
+          "width": 326,
+          "height": 868.484375,
+          "top": 101.203125,
+          "right": 343,
+          "bottom": 969.6875,
+          "left": 17
+        }
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/bytetrack/wi028-byte-d2-r01-mobile.png",
+        "width": 887,
+        "height": 1774,
+        "box": {
+          "x": 17,
+          "y": 100.53125,
+          "width": 326,
+          "height": 652,
+          "top": 100.53125,
+          "right": 343,
+          "bottom": 752.53125,
+          "left": 17
+        }
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/bytetrack/wi028-track-d3-r02-mobile.png",
+        "width": 1024,
+        "height": 1536,
+        "box": {
+          "x": 17,
+          "y": 100.875,
+          "width": 326,
+          "height": 489,
+          "top": 100.875,
+          "right": 343,
+          "bottom": 589.875,
+          "left": 17
+        }
+      }
+    ],
+    "zoom_loaded_escape": 3,
+    "answer": true,
+    "engineering_images": 0,
+    "navigation": true,
+    "page_errors": [],
+    "overflow": false
+  }
+]

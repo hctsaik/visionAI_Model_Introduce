@@ -1,0 +1,498 @@
+{
+  "model": "ByteTrack",
+  "badge": "偵測後的多物件追蹤",
+  "title": "ByteTrack：把每張框接成物件軌跡",
+  "scenario": {
+    "title": "輸送帶上同一工件連續出現很多張，遮擋時偵測分數又會下降；你要維持它的軌跡，避免跨線計數時重複。",
+    "body": "輸送帶上同一工件連續出現很多張，遮擋時偵測分數又會下降；你要維持它的軌跡，避免跨線計數時重複。"
+  },
+  "promise": {
+    "title": "交付結果與接手工作",
+    "body": "帶追蹤編號的框與軌跡。跨線、停留和去重計數是應用另外設定的事件規則；ID只表示追蹤關聯，不是永久實體序號。"
+  },
+  "mental_model": {
+    "title": "偵測後的多物件追蹤",
+    "body": "ByteTrack 接收偵測器交出的框，先用高分框和既有軌跡做關聯，再拿低分框和仍未配對的軌跡比較。被遮一部分的真工件可能分數低，但位置仍符合預測；保留這條線索有機會接回同一軌跡，無法合理配對的低分噪聲則捨棄。",
+    "limit": "工件完全躲進遮擋後沒有任何偵測框，追蹤只能暫時預測位置；時間太久或多件交會後再出現，可能斷軌或換ID。"
+  },
+  "micro_example": {
+    "title": "換成長時間完全遮擋",
+    "setup": "工件進入不透明隧道，十秒後才再出現，而且外觀都一樣。",
+    "prediction": "把低分門檻再降低就能保證原ID嗎？",
+    "reveal": "不能；沒有框就沒有可關聯觀測。可先改善視角或增加感測／編碼標記，也可用已知通道順序設計額外規則，但要測交會和丟件；不能讓追蹤器保證永久身分。"
+  },
+  "mechanism_steps": [
+    {
+      "title": "偵測器交出高低分框",
+      "body": "偵測器負責每張找框；追蹤器結合運動預測與框關係維持軌跡。原始方法不靠另加外觀ReID網路作核心要求。",
+      "why": "由本課核心機制連接工作用途",
+      "anchor": "WI028-1",
+      "diagram": {
+        "title": "偵測器交出高低分框",
+        "body": "偵測器負責每張找框；追蹤器結合運動預測與框關係維持軌跡。原始方法不靠另加外觀ReID網路作核心要求。",
+        "why": "詳見本課版本與來源",
+        "anchor": "WI028-1"
+      }
+    },
+    {
+      "title": "先高分再低分關聯",
+      "body": "第二次關聯針對未配對軌跡，不表示任何低分框都變成新物件，也不保證所有遮擋都能恢復。",
+      "why": "由本課核心機制連接工作用途",
+      "anchor": "WI028-2",
+      "diagram": {
+        "title": "先高分再低分關聯",
+        "body": "第二次關聯針對未配對軌跡，不表示任何低分框都變成新物件，也不保證所有遮擋都能恢復。",
+        "why": "詳見本課版本與來源",
+        "anchor": "WI028-2"
+      }
+    },
+    {
+      "title": "維持軌跡並計數",
+      "body": "帶追蹤編號的框與軌跡。跨線、停留和去重計數是應用另外設定的事件規則；ID只表示追蹤關聯，不是永久實體序號。",
+      "why": "由本課核心機制連接工作用途",
+      "anchor": "WI028-3",
+      "diagram": {
+        "title": "維持軌跡並計數",
+        "body": "帶追蹤編號的框與軌跡。跨線、停留和去重計數是應用另外設定的事件規則；ID只表示追蹤關聯，不是永久實體序號。",
+        "why": "詳見本課版本與來源",
+        "anchor": "WI028-3"
+      }
+    },
+    {
+      "title": "工作核對與接手",
+      "body": "固定同一偵測器，比較既有追蹤或SORT與ByteTrack的斷軌、ID切換、重複／漏計及端到端耗時；不只看偵測框是否存在。",
+      "why": "由本課核心機制連接工作用途",
+      "anchor": "WI028-4",
+      "diagram": {
+        "title": "工作核對與接手",
+        "body": "固定同一偵測器，比較既有追蹤或SORT與ByteTrack的斷軌、ID切換、重複／漏計及端到端耗時；不只看偵測框是否存在。",
+        "why": "詳見本課版本與來源",
+        "anchor": "WI028-4"
+      }
+    }
+  ],
+  "visual_intro": "ByteTrack 接收偵測器交出的框，先用高分框和既有軌跡做關聯，再拿低分框和仍未配對的軌跡比較。被遮一部分的真工件可能分數低，但位置仍符合預測；保留這條線索有機會接回同一軌跡，無法合理配對的低分噪聲則捨棄。",
+  "beginner_path": {
+    "title": "從必要原理、具體反例到工作取捨",
+    "intro": "輸送帶上同一工件連續出現很多張，遮擋時偵測分數又會下降；你要維持它的軌跡，避免跨線計數時重複。 下列圖像、特徵及回答為教學示意，不是模型實測。",
+    "visuals": [
+      {
+        "id": "wi028-byte-c1",
+        "title": "ByteTrack：低分框也可能接回同一個工件",
+        "prompt": "輸送帶上同一工件連續出現很多張，遮擋時偵測分數又會下降；你要維持它的軌跡，避免跨線計數時重複。",
+        "caption": "ByteTrack 接收偵測器交出的框，先用高分框和既有軌跡做關聯，再拿低分框和仍未配對的軌跡比較。被遮一部分的真工件可能分數低，但位置仍符合預測；保留這條線索有機會接回同一軌跡，無法合理配對的低分噪聲則捨棄。",
+        "image": "_course_content/generated-concepts/bytetrack/wi028-byte-c1-r02-desktop.png",
+        "alt": "ByteTrack：低分框也可能接回同一個工件。ByteTrack 接收偵測器交出的框，先用高分框和既有軌跡做關聯，再拿低分框和仍未配對的軌跡比較。被遮一部分的真工件可能分數低，但位置仍符合預測；保留這條線索有機會接回同一軌跡，無法合理配對的低分噪聲則捨棄。 AI生成教學示意，非模型實測。",
+        "callouts": [
+          {
+            "title": "先偵測，再關聯",
+            "body": "偵測器負責每張找框；追蹤器結合運動預測與框關係維持軌跡。原始方法不靠另加外觀ReID網路作核心要求。"
+          },
+          {
+            "title": "低分不是全部保留",
+            "body": "第二次關聯針對未配對軌跡，不表示任何低分框都變成新物件，也不保證所有遮擋都能恢復。"
+          },
+          {
+            "title": "交付與接手",
+            "body": "帶追蹤編號的框與軌跡。跨線、停留和去重計數是應用另外設定的事件規則；ID只表示追蹤關聯，不是永久實體序號。"
+          }
+        ],
+        "reading_views": [
+          {
+            "title": "ByteTrack：低分框也可能接回同一個工件",
+            "image": "_course_content/generated-concepts/bytetrack/wi028-byte-c1-r02-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/bytetrack/wi028-byte-c1-r03-mobile.png",
+            "alt": "ByteTrack：低分框也可能接回同一個工件。ByteTrack 接收偵測器交出的框，先用高分框和既有軌跡做關聯，再拿低分框和仍未配對的軌跡比較。被遮一部分的真工件可能分數低，但位置仍符合預測；保留這條線索有機會接回同一軌跡，無法合理配對的低分噪聲則捨棄。 AI生成教學示意，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              768,
+              2046
+            ],
+            "mobile_display_mode": "full-mobile",
+            "desktop_intrinsic_width": 1672,
+            "desktop_intrinsic_height": 941,
+            "mobile_intrinsic_width": 768,
+            "mobile_intrinsic_height": 2046
+          }
+        ],
+        "core_ideas": true
+      },
+      {
+        "id": "wi028-byte-d2",
+        "title": "完全漏檢時，追蹤器也會失去身分",
+        "prompt": "觀察哪個條件改變，讓原本的結果不夠可靠？",
+        "caption": "工件完全躲進遮擋後沒有任何偵測框，追蹤只能暫時預測位置；時間太久或多件交會後再出現，可能斷軌或換ID。",
+        "image": "_course_content/generated-concepts/bytetrack/wi028-byte-d2-r01-desktop.png",
+        "alt": "完全漏檢時，追蹤器也會失去身分。工件完全躲進遮擋後沒有任何偵測框，追蹤只能暫時預測位置；時間太久或多件交會後再出現，可能斷軌或換ID。 AI生成教學示意，非模型實測。",
+        "callouts": [
+          {
+            "title": "看哪裡",
+            "body": "工件完全躲進遮擋後沒有任何偵測框，追蹤只能暫時預測位置；時間太久或多件交會後再出現，可能斷軌或換ID。"
+          },
+          {
+            "title": "接著怎麼做",
+            "body": "按影片回查漏檢、斷軌與ID切換，改善偵測和視角，再調關聯／保留設定；跨線計數需另外對照人工紀錄。"
+          }
+        ],
+        "reading_views": [
+          {
+            "title": "完全漏檢時，追蹤器也會失去身分",
+            "image": "_course_content/generated-concepts/bytetrack/wi028-byte-d2-r01-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/bytetrack/wi028-byte-d2-r01-mobile.png",
+            "alt": "完全漏檢時，追蹤器也會失去身分。工件完全躲進遮擋後沒有任何偵測框，追蹤只能暫時預測位置；時間太久或多件交會後再出現，可能斷軌或換ID。 AI生成教學示意，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              887,
+              1774
+            ],
+            "mobile_display_mode": "full-mobile",
+            "desktop_intrinsic_width": 1672,
+            "desktop_intrinsic_height": 941,
+            "mobile_intrinsic_width": 887,
+            "mobile_intrinsic_height": 1774
+          }
+        ],
+        "core_ideas": false
+      },
+      {
+        "id": "wi028-track-d3",
+        "title": "框出工件，和認出同一段軌跡，是兩件事",
+        "prompt": "相同工作需求下，資料、輸出與成本如何取捨？",
+        "caption": "只需單幀有沒有工件，可先用偵測；需要跨幀身分再加ByteTrack。SORT可作較簡單關聯基準，ByteTrack的差別在利用部分低分框補回線索；效果仍受偵測器影響。",
+        "image": "_course_content/generated-concepts/bytetrack/wi028-track-d3-r01-desktop.png",
+        "alt": "框出工件，和認出同一段軌跡，是兩件事。只需單幀有沒有工件，可先用偵測；需要跨幀身分再加ByteTrack。SORT可作較簡單關聯基準，ByteTrack的差別在利用部分低分框補回線索；效果仍受偵測器影響。 AI生成教學示意，非模型實測。",
+        "callouts": [
+          {
+            "title": "怎麼選",
+            "body": "只需單幀有沒有工件，可先用偵測；需要跨幀身分再加ByteTrack。SORT可作較簡單關聯基準，ByteTrack的差別在利用部分低分框補回線索；效果仍受偵測器影響。"
+          },
+          {
+            "title": "資料與完整成本",
+            "body": "追蹤器本身可直接套設定，但工件偵測器可能需要框標註與訓練。換產品要重驗偵測；換速度、幀率和遮擋要重驗關聯，總成本包含偵測和追蹤。"
+          }
+        ],
+        "reading_views": [
+          {
+            "title": "框出工件，和認出同一段軌跡，是兩件事",
+            "image": "_course_content/generated-concepts/bytetrack/wi028-track-d3-r01-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/bytetrack/wi028-track-d3-r02-mobile.png",
+            "alt": "框出工件，和認出同一段軌跡，是兩件事。只需單幀有沒有工件，可先用偵測；需要跨幀身分再加ByteTrack。SORT可作較簡單關聯基準，ByteTrack的差別在利用部分低分框補回線索；效果仍受偵測器影響。 AI生成教學示意，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              1024,
+              1536
+            ],
+            "mobile_display_mode": "full-mobile",
+            "desktop_intrinsic_width": 1672,
+            "desktop_intrinsic_height": 941,
+            "mobile_intrinsic_width": 1024,
+            "mobile_intrinsic_height": 1536
+          }
+        ],
+        "core_ideas": false
+      }
+    ]
+  },
+  "concept_visuals": [
+    {
+      "id": "causal-chain",
+      "placement": "after_causal_chain",
+      "title": "ByteTrack：先懂中心，再看細節",
+      "prompt": "把低分 box 接回既有 track，是否表示 detector 變得更準或工件身分已被證明？",
+      "caption": "上游 detector 已輸出每幀 boxes 與 scores；你要在遮擋、低分影格與 crossing 中維持連續軌跡，供 dwell 或 trajectory 事件使用。",
+      "image": "_course_content/generated-concepts/bytetrack/bytetrack-f02-core.png",
+      "alt": "ByteTrack 的 F02 核心機制圖：案例輸入、模型專屬轉換、可交付線索與人的接手動作；非模型推論。",
+      "callouts": [
+        {
+          "title": "固定上游偵測與時間輸入",
+          "body": "保存 timestamp、ROI、detector version、classes、NMS、boxes 與 scores。"
+        },
+        {
+          "title": "區分高分與低分候選",
+          "body": "用已宣告 score thresholds 分成 high／low detections。"
+        },
+        {
+          "title": "用 prediction 做兩階段關聯",
+          "body": "以 Kalman prediction 與 IoU／motion／配置的 cost gate 先關聯高分，再讓低分候選嘗試 recovery。"
+        }
+      ]
+    },
+    {
+      "id": "worked-example",
+      "placement": "after_micro_example",
+      "title": "ByteTrack：同一案例的反事實",
+      "prompt": "連續三幀：工件 track、遮擋、低分 box 重現。high-only 形成 fragment；low-score recovery 可續接，但用橘色顯示 clutter 錯接與 REVIEW。",
+      "caption": "用同一案例看清楚參數或假設如何改變輸出，才知道何時該 HOLD。",
+      "image": "_course_content/generated-concepts/bytetrack/bytetrack-worked-example_v01.svg",
+      "alt": "ByteTrack 的教學因果圖：輸入、轉換、輸出及其不可推論的界線。",
+      "callouts": [
+        {
+          "title": "情境",
+          "body": "一個工件被短暫遮擋；下一幀 detector 給出低分但位置相容的 box。"
+        },
+        {
+          "title": "直覺陷阱",
+          "body": "把低分 box 接回既有 track，是否表示 detector 變得更準或工件身分已被證明？"
+        },
+        {
+          "title": "揭示",
+          "body": "不是。它只是在既定 IoU／motion gate 下維持軌跡連續；保存 high/low partition、prediction、association cost、match 與 lifecycle。"
+        },
+        {
+          "title": "POC 檢查",
+          "body": "在相同 detector 與事件規則下，檢查低分回補的 continuity 是否也增加錯接。"
+        }
+      ]
+    },
+    {
+      "id": "comparison",
+      "placement": "after_comparison",
+      "title": "ByteTrack：和鄰近路徑的責任差異",
+      "prompt": "三欄：Detector 產生 boxes/class score；ByteTrack 對 boxes 維持 track history；Optical Flow 估 motion vectors。共同標示皆需事件規則。",
+      "caption": "比較時固定輸入、真值、硬體與 action contract；不要從單張視覺化決定排名。",
+      "image": "_course_content/generated-concepts/bytetrack/bytetrack-comparison_v01.svg",
+      "alt": "ByteTrack 的教學因果圖：輸入、轉換、輸出及其不可推論的界線。",
+      "callouts": [
+        {
+          "title": "本模型",
+          "body": "detector boxes、scores、Kalman track state；輸出關聯後的 track state／history；dwell/event 需由另一條版本化規則聚合。"
+        },
+        {
+          "title": "對照：Detector",
+          "body": "單幀影像與 detector head；輸出 box、class score；無長期 ID。"
+        },
+        {
+          "title": "選型結論",
+          "body": "只在上游 detector 在目標視角已有足夠 coverage，且決策真的需要 dwell、trajectory 或連續性時選用。若 detector coverage 未證明、遮擋／crossing 主導、相機運動未治理或需要語意因果，就 HOLD 或先補強上游路徑。"
+        }
+      ]
+    },
+    {
+      "id": "boundary-cases-explainer",
+      "placement": "before_boundary_cases",
+      "title": "同一條因果鏈，在哪裡會被破壞？",
+      "prompt": "不要只記住風險名詞；先預測條件一變，畫面或候選結果會怎麼變，再決定何時應 HOLD。",
+      "caption": "ByteTrack 的三個模型專屬反事實：每欄把條件、可觀察後果與正確下一步放在一起。它們不是自動修正規則；遇到條件超出驗證範圍時，先保存原始證據並進入 HOLD／REVIEW。",
+      "image": "_course_content/generated-concepts/bytetrack/bytetrack-boundary-cases_v01.svg",
+      "alt": "ByteTrack 的三欄反事實說明圖：每欄依序說明一個失效條件、可能看到的候選或量測後果，以及應進入 HOLD、重驗或改選方法的安全下一步。",
+      "callouts": [
+        {
+          "title": "先看條件，而不是先改門檻",
+          "body": "候選改變可能是資料、取像、設定或模型假設被破壞，不能立刻解讀成產品真相。"
+        },
+        {
+          "title": "把可觀察後果說出來",
+          "body": "誤報、漏檢、整片異常或時間失序都需要回到原始資料與版本追查。"
+        },
+        {
+          "title": "HOLD 是設計的一部分",
+          "body": "先停止自動往下走、保存 evidence，確認條件後才重新 qualification 或交給適合的方法。"
+        }
+      ]
+    }
+  ],
+  "boundary_cases": [
+    {
+      "condition": "本課具體反例",
+      "effect": "工件完全躲進遮擋後沒有任何偵測框，追蹤只能暫時預測位置；時間太久或多件交會後再出現，可能斷軌或換ID。",
+      "action": "按影片回查漏檢、斷軌與ID切換，改善偵測和視角，再調關聯／保留設定；跨線計數需另外對照人工紀錄。"
+    },
+    {
+      "condition": "更換產品、模型或輸入設定",
+      "effect": "追蹤器本身可直接套設定，但工件偵測器可能需要框標註與訓練。換產品要重驗偵測；換速度、幀率和遮擋要重驗關聯，總成本包含偵測和追蹤。",
+      "action": "先準備含交會、部分／完全遮擋的工件影片，確認偵測器，人工標記一批跨幀ID與跨線事件。"
+    },
+    {
+      "condition": "把示意當成實際推論",
+      "effect": "本課特徵、排序、回答及圖像僅用於解釋，不支持現場準確率或耗時結論。",
+      "action": "固定同一偵測器，比較既有追蹤或SORT與ByteTrack的斷軌、ID切換、重複／漏計及端到端耗時；不只看偵測框是否存在。"
+    }
+  ],
+  "comparison": [
+    {
+      "model": "逐幀偵測",
+      "normality": "相應類別框標註與偵測器；先測漏檢",
+      "candidate": "每張框；不直接維持身分"
+    },
+    {
+      "model": "偵測＋SORT基準",
+      "normality": "相同偵測框、運動預測與關聯設定",
+      "candidate": "軌跡ID；遮擋及漏檢可能斷軌"
+    },
+    {
+      "model": "偵測＋ByteTrack",
+      "normality": "相同偵測器；先高分、再低分補未配對軌跡",
+      "candidate": "軌跡ID；計數另設規則並測ID切換"
+    }
+  ],
+  "selection": "只需單幀有沒有工件，可先用偵測；需要跨幀身分再加ByteTrack。SORT可作較簡單關聯基準，ByteTrack的差別在利用部分低分框補回線索；效果仍受偵測器影響。 追蹤器本身可直接套設定，但工件偵測器可能需要框標註與訓練。換產品要重驗偵測；換速度、幀率和遮擋要重驗關聯，總成本包含偵測和追蹤。",
+  "poc": {
+    "title": "以真實工作資料做小規模比較",
+    "steps": [
+      "先準備含交會、部分／完全遮擋的工件影片，確認偵測器，人工標記一批跨幀ID與跨線事件。",
+      "追蹤器本身可直接套設定，但工件偵測器可能需要框標註與訓練。換產品要重驗偵測；換速度、幀率和遮擋要重驗關聯，總成本包含偵測和追蹤。",
+      "固定同一偵測器，比較既有追蹤或SORT與ByteTrack的斷軌、ID切換、重複／漏計及端到端耗時；不只看偵測框是否存在。"
+    ],
+    "hold": "按影片回查漏檢、斷軌與ID切換，改善偵測和視角，再調關聯／保留設定；跨線計數需另外對照人工紀錄。",
+    "acceptance": {
+      "baseline": "既有流程或最簡單可行方法",
+      "measure": "固定同一偵測器，比較既有追蹤或SORT與ByteTrack的斷軌、ID切換、重複／漏計及端到端耗時；不只看偵測框是否存在。",
+      "negative_control": "工件完全躲進遮擋後沒有任何偵測框，追蹤只能暫時預測位置；時間太久或多件交會後再出現，可能斷軌或換ID。",
+      "owner": "實作與影像核對負責人"
+    }
+  },
+  "teach_back": {
+    "question": "它改變什麼？何時選另一種做法？",
+    "answer": "ByteTrack 接收偵測器交出的框，先用高分框和既有軌跡做關聯，再拿低分框和仍未配對的軌跡比較。被遮一部分的真工件可能分數低，但位置仍符合預測；保留這條線索有機會接回同一軌跡，無法合理配對的低分噪聲則捨棄。 只需單幀有沒有工件，可先用偵測；需要跨幀身分再加ByteTrack。SORT可作較簡單關聯基準，ByteTrack的差別在利用部分低分框補回線索；效果仍受偵測器影響。"
+  },
+  "slide_reading": [
+    {
+      "title": "ByteTrack 先輸出什麼？",
+      "question": "它真正回答的問題",
+      "look": "看 Detector contract 到 Association evidence。",
+      "relation": "在既定 detector、時間採樣與關聯門檻下，哪個 box 最能接續既有 track？輸出是版本化 track ID、box history、association evidence 與 lifecycle，不會提升 detector recall 或驗證物理身分。",
+      "takeaway": "把它想成「先接清楚候選，再用低分候選補接」",
+      "terms": [
+        "detector box / score",
+        "high-low partition"
+      ]
+    },
+    {
+      "title": "核心機制：Association evidence",
+      "question": "為何「用 prediction 做兩階段關聯」不是最後決策？",
+      "look": "Detector contract → Score partition → Association evidence → Track-to-event gate",
+      "relation": "低分回補可減少 fragment，也可能把 clutter 接到錯誤軌跡。",
+      "takeaway": "候選須回到 Track-to-event gate。",
+      "terms": [
+        "Kalman prediction",
+        "association cost"
+      ]
+    },
+    {
+      "title": "邊界：什麼情況該停下來？",
+      "question": "哪個輸入或假設一變，輸出不再可解讀？",
+      "look": "detector 沒有可用 box；長遮擋、crossing 或相似外觀；score／IoU／buffer／採樣改變",
+      "relation": "沒有候選可關聯；track continuity 無法憑空恢復。；可能發生 ID switch、merge 或 fragment。；association 和 lifecycle 被改寫，舊結果不再同一 operating point。",
+      "takeaway": "先保留證據並進 REVIEW/HOLD。",
+      "terms": [
+        "lifecycle",
+        "ID switch / fragmentation"
+      ]
+    },
+    {
+      "title": "選型：何時值得用 ByteTrack？",
+      "question": "要鎖定哪些條件才能公平比較？",
+      "look": "ByteTrack / Detector / RAFT / Lucas–Kanade",
+      "relation": "只在上游 detector 在目標視角已有足夠 coverage，且決策真的需要 dwell、trajectory 或連續性時選用。若 detector coverage 未證明、遮擋／crossing 主導、相機運動未治理或需要語意因果，就 HOLD 或先補強上游路徑。",
+      "takeaway": "POC：先拆開偵測品質與追蹤品質",
+      "terms": [
+        "evidence bundle",
+        "complete P95/P99"
+      ]
+    }
+  ],
+  "comparison_headers": {
+    "title": "框出工件，和認出同一段軌跡，是兩件事",
+    "basis": "所需資料與方法差異",
+    "output": "輸出與維護責任"
+  },
+  "transfer_check": {
+    "title": "換成長時間完全遮擋",
+    "scenario": "工件進入不透明隧道，十秒後才再出現，而且外觀都一樣。",
+    "question": "把低分門檻再降低就能保證原ID嗎？",
+    "answer": "不能；沒有框就沒有可關聯觀測。可先改善視角或增加感測／編碼標記，也可用已知通道順序設計額外規則，但要測交會和丟件；不能讓追蹤器保證永久身分。"
+  },
+  "review_trace": {
+    "authority": "roadmap-model-selection/video-temporal/bytetrack/model.md",
+    "scope": "WI-028 八個時序主題首讀圖文與手機PNG、反例、比較及自測；原工程slide保留，未以首讀評分代替工程圖審查。",
+    "claims": [
+      {
+        "id": "visual-1",
+        "field": "beginner_path.visuals[same-conveyor-three-frames]",
+        "source": "模型定位 / architecture_path"
+      },
+      {
+        "id": "visual-2",
+        "field": "beginner_path.visuals[detector-frame-contract]",
+        "source": "architecture_path"
+      },
+      {
+        "id": "visual-3",
+        "field": "beginner_path.visuals[high-low-association]",
+        "source": "representation_or_score"
+      },
+      {
+        "id": "visual-4",
+        "field": "beginner_path.visuals[lifecycle-and-event]",
+        "source": "failure_boundary"
+      },
+      {
+        "id": "visual-5",
+        "field": "beginner_path.visuals[hold-and-output-choice]",
+        "source": "selection_gate / evidence_bundle"
+      },
+      {
+        "id": "promise",
+        "field": "promise",
+        "source": "模型定位 / representation_or_score"
+      },
+      {
+        "id": "mechanism",
+        "field": "mechanism_steps",
+        "source": "architecture_path / representation_or_score"
+      },
+      {
+        "id": "boundaries",
+        "field": "boundary_cases",
+        "source": "failure_boundary / selection_gate"
+      },
+      {
+        "id": "comparison",
+        "field": "comparison + selection",
+        "source": "selection_gate"
+      },
+      {
+        "id": "poc",
+        "field": "poc + acceptance",
+        "source": "cost_and_operating_point / evidence_bundle"
+      },
+      {
+        "id": "transfer",
+        "field": "transfer_check",
+        "source": "failure_boundary / selection_gate"
+      },
+      {
+        "id": "f02-core",
+        "field": "beginner_path.visuals[0] + scenario + mental_model",
+        "source": "roadmap-model-selection/video-temporal/bytetrack/model.md"
+      },
+      {
+        "id": "f02-transfer",
+        "field": "micro_example + transfer_check + selection",
+        "source": "roadmap-model-selection/video-temporal/bytetrack/model.md"
+      },
+      {
+        "id": "wi028-first-read",
+        "field": "beginner_path + core + selection + transfer",
+        "source": "https://arxiv.org/abs/2110.06864"
+      }
+    ]
+  },
+  "quality_status": {
+    "label": "首讀圖文已核對",
+    "state": "self-reviewed",
+    "round": "WI-028",
+    "reason": "新版首讀逐圖與整頁自評、桌機手機互動驗證完成；使用者核准pending。原工程圖未納入本輪分數。"
+  },
+  "teaching_preflight": {
+    "brief": "teaching-images/vision-ai-model-selection/workitems/wi-028/byte-c1-r02.md",
+    "mobile_brief": "teaching-images/vision-ai-model-selection/workitems/wi-028/byte-c1-r03.md",
+    "story": "C",
+    "major_visual_nodes": 3,
+    "visual_status": "self-reviewed",
+    "user_review": "pending"
+  }
+}

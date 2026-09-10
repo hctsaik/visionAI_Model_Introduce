@@ -1,0 +1,257 @@
+[
+  {
+    "brief": "C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-028/bg-c1-r01.md",
+    "objective": "背景模型記住常態，前景只是需要查看的候選。",
+    "page_type": "C — 依解釋或對照責任選擇。",
+    "node_count": 3,
+    "reference": "teaching-images/vision-ai-model-selection/course-delivery/section-pages/01-geometry-alignment-measurement/images/final/GEO-02-common-contract_v01.png",
+    "takeaway": "#FFF4CC：背景模型記住常態，前景只是需要查看的候選。",
+    "required_files_present": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "brief": "C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-028/lk-c1-r01.md",
+    "objective": "追得到的角點提供位移，追丟的點要重新確認。",
+    "page_type": "C — 依解釋或對照責任選擇。",
+    "node_count": 3,
+    "reference": "teaching-images/vision-ai-model-selection/course-delivery/section-pages/01-geometry-alignment-measurement/images/final/GEO-02-common-contract_v01.png",
+    "takeaway": "#FFF4CC：追得到的角點提供位移，追丟的點要重新確認。",
+    "required_files_present": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "brief": "C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-028/raft-c1-r01.md",
+    "objective": "光流是像素位移估計，遮擋與反光仍要另查。",
+    "page_type": "C — 依解釋或對照責任選擇。",
+    "node_count": 3,
+    "reference": "teaching-images/vision-ai-model-selection/course-delivery/section-pages/01-geometry-alignment-measurement/images/final/GEO-02-common-contract_v01.png",
+    "takeaway": "#FFF4CC：光流是像素位移估計，遮擋與反光仍要另查。",
+    "required_files_present": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "brief": "C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-028/byte-c1-r01.md",
+    "objective": "先匹配高分框，再用低分框補回有依據的軌跡。",
+    "page_type": "C — 依解釋或對照責任選擇。",
+    "node_count": 3,
+    "reference": "teaching-images/vision-ai-model-selection/course-delivery/section-pages/01-geometry-alignment-measurement/images/final/GEO-02-common-contract_v01.png",
+    "takeaway": "#FFF4CC：先匹配高分框，再用低分框補回有依據的軌跡。",
+    "required_files_present": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "brief": "C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-028/conv-c1-r01.md",
+    "objective": "新影格與舊狀態一起更新，任務輸出仍需專門訓練。",
+    "page_type": "C — 依解釋或對照責任選擇。",
+    "node_count": 3,
+    "reference": "teaching-images/vision-ai-model-selection/course-delivery/section-pages/01-geometry-alignment-measurement/images/final/GEO-02-common-contract_v01.png",
+    "takeaway": "#FFF4CC：新影格與舊狀態一起更新，任務輸出仍需專門訓練。",
+    "required_files_present": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "brief": "C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-028/mae-c1-r01.md",
+    "objective": "補像素是預訓練練習，工作判斷要另接任務頭。",
+    "page_type": "C — 依解釋或對照責任選擇。",
+    "node_count": 3,
+    "reference": "teaching-images/vision-ai-model-selection/course-delivery/section-pages/01-geometry-alignment-measurement/images/final/GEO-02-common-contract_v01.png",
+    "takeaway": "#FFF4CC：補像素是預訓練練習，工作判斷要另接任務頭。",
+    "required_files_present": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "brief": "C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-028/jepa-c1-r01.md",
+    "objective": "預測的是特徵，不是重畫影片；任務判斷另行學習。",
+    "page_type": "C — 依解釋或對照責任選擇。",
+    "node_count": 3,
+    "reference": "teaching-images/vision-ai-model-selection/course-delivery/section-pages/01-geometry-alignment-measurement/images/final/GEO-02-common-contract_v01.png",
+    "takeaway": "#FFF4CC：預測的是特徵，不是重畫影片；任務判斷另行學習。",
+    "required_files_present": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "brief": "C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-028/frame-d2-r01.md",
+    "objective": "大片變化先查光照與相機，不能直接當作工件移動。",
+    "page_type": "D — 依解釋或對照責任選擇。",
+    "node_count": 3,
+    "reference": "teaching-images/vision-ai-model-selection/course-delivery/section-pages/01-geometry-alignment-measurement/images/final/GEO-02-common-contract_v01.png",
+    "takeaway": "#FFF4CC：大片變化先查光照與相機，不能直接當作工件移動。",
+    "required_files_present": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "brief": "C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-028/bg-d2-r01.md",
+    "objective": "背景更新會改變常態，停留事件要有自己的時間規則。",
+    "page_type": "D — 依解釋或對照責任選擇。",
+    "node_count": 3,
+    "reference": "teaching-images/vision-ai-model-selection/course-delivery/section-pages/01-geometry-alignment-measurement/images/final/GEO-02-common-contract_v01.png",
+    "takeaway": "#FFF4CC：背景更新會改變常態，停留事件要有自己的時間規則。",
+    "required_files_present": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "brief": "C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-028/flow-d2-r01.md",
+    "objective": "先看對應是否可信，再把位移交給後續量測。",
+    "page_type": "D — 依解釋或對照責任選擇。",
+    "node_count": 3,
+    "reference": "teaching-images/vision-ai-model-selection/course-delivery/section-pages/01-geometry-alignment-measurement/images/final/GEO-02-common-contract_v01.png",
+    "takeaway": "#FFF4CC：先看對應是否可信，再把位移交給後續量測。",
+    "required_files_present": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "brief": "C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-028/byte-d2-r01.md",
+    "objective": "低分框能補線索，完全沒有框時仍可能斷軌。",
+    "page_type": "D — 依解釋或對照責任選擇。",
+    "node_count": 3,
+    "reference": "teaching-images/vision-ai-model-selection/course-delivery/section-pages/01-geometry-alignment-measurement/images/final/GEO-02-common-contract_v01.png",
+    "takeaway": "#FFF4CC：低分框能補線索，完全沒有框時仍可能斷軌。",
+    "required_files_present": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "brief": "C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-028/conv-d2-r01.md",
+    "objective": "記憶需要正確時間順序，換片段時要處理狀態邊界。",
+    "page_type": "D — 依解釋或對照責任選擇。",
+    "node_count": 3,
+    "reference": "teaching-images/vision-ai-model-selection/course-delivery/section-pages/01-geometry-alignment-measurement/images/final/GEO-02-common-contract_v01.png",
+    "takeaway": "#FFF4CC：記憶需要正確時間順序，換片段時要處理狀態邊界。",
+    "required_files_present": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "brief": "C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-028/video-d2-r01.md",
+    "objective": "先讓關鍵動作進入輸入，再驗證影片模型的判斷。",
+    "page_type": "D — 依解釋或對照責任選擇。",
+    "node_count": 3,
+    "reference": "teaching-images/vision-ai-model-selection/course-delivery/section-pages/01-geometry-alignment-measurement/images/final/GEO-02-common-contract_v01.png",
+    "takeaway": "#FFF4CC：先讓關鍵動作進入輸入，再驗證影片模型的判斷。",
+    "required_files_present": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "brief": "C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-028/change-d3-r01.md",
+    "objective": "參考不同，答案就不同；先決定你要監看的事件。",
+    "page_type": "D — 依解釋或對照責任選擇。",
+    "node_count": 3,
+    "reference": "teaching-images/vision-ai-model-selection/course-delivery/section-pages/01-geometry-alignment-measurement/images/final/GEO-02-common-contract_v01.png",
+    "takeaway": "#FFF4CC：參考不同，答案就不同；先決定你要監看的事件。",
+    "required_files_present": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "brief": "C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-028/flow-d3-r01.md",
+    "objective": "只需少量穩定點可先追點，需要全圖位移再比較稠密光流。",
+    "page_type": "D — 依解釋或對照責任選擇。",
+    "node_count": 3,
+    "reference": "teaching-images/vision-ai-model-selection/course-delivery/section-pages/01-geometry-alignment-measurement/images/final/GEO-02-common-contract_v01.png",
+    "takeaway": "#FFF4CC：只需少量穩定點可先追點，需要全圖位移再比較稠密光流。",
+    "required_files_present": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "brief": "C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-028/track-d3-r01.md",
+    "objective": "需要跨幀計數時，先有可靠偵測，再驗證身分關聯。",
+    "page_type": "D — 依解釋或對照責任選擇。",
+    "node_count": 3,
+    "reference": "teaching-images/vision-ai-model-selection/course-delivery/section-pages/01-geometry-alignment-measurement/images/final/GEO-02-common-contract_v01.png",
+    "takeaway": "#FFF4CC：需要跨幀計數時，先有可靠偵測，再驗證身分關聯。",
+    "required_files_present": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "brief": "C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-028/video-d3-r01.md",
+    "objective": "先對齊工作任務，再比較訓練資料、輸出與維護成本。",
+    "page_type": "D — 依解釋或對照責任選擇。",
+    "node_count": 3,
+    "reference": "teaching-images/vision-ai-model-selection/course-delivery/section-pages/01-geometry-alignment-measurement/images/final/GEO-02-common-contract_v01.png",
+    "takeaway": "#FFF4CC：先對齊工作任務，再比較訓練資料、輸出與維護成本。",
+    "required_files_present": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  }
+]

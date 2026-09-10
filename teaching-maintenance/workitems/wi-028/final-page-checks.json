@@ -1,0 +1,418 @@
+[
+  {
+    "slug": "frame-difference",
+    "width": 1440,
+    "core_comparison_and_cost_visible": true,
+    "first_and_evidence_visible": true,
+    "three_core_callouts": true,
+    "images": [
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/frame-difference/wi028-frame-c1-r02-desktop.png",
+        "width": 935.625,
+        "height": 526.5625
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/frame-difference/wi028-frame-d2-r01-desktop.png",
+        "width": 935.625,
+        "height": 526.5625
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/frame-difference/wi028-change-d3-r02-desktop.png",
+        "width": 935.625,
+        "height": 526.5625
+      }
+    ],
+    "overflow": false,
+    "errors": []
+  },
+  {
+    "slug": "frame-difference",
+    "width": 360,
+    "core_comparison_and_cost_visible": true,
+    "first_and_evidence_visible": true,
+    "three_core_callouts": true,
+    "images": [
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/frame-difference/wi028-frame-c1-r02-mobile.png",
+        "width": 326,
+        "height": 652
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/frame-difference/wi028-frame-d2-r01-mobile.png",
+        "width": 326,
+        "height": 652
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/frame-difference/wi028-change-d3-r03-mobile.png",
+        "width": 326,
+        "height": 489
+      }
+    ],
+    "overflow": false,
+    "errors": []
+  },
+  {
+    "slug": "background-subtraction",
+    "width": 1440,
+    "core_comparison_and_cost_visible": true,
+    "first_and_evidence_visible": true,
+    "three_core_callouts": true,
+    "images": [
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/background-subtraction/wi028-bg-c1-r01-desktop.png",
+        "width": 935.625,
+        "height": 526.5625
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/background-subtraction/wi028-bg-d2-r01-desktop.png",
+        "width": 935.625,
+        "height": 526.5625
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/frame-difference/wi028-change-d3-r02-desktop.png",
+        "width": 935.625,
+        "height": 526.5625
+      }
+    ],
+    "overflow": false,
+    "errors": []
+  },
+  {
+    "slug": "background-subtraction",
+    "width": 360,
+    "core_comparison_and_cost_visible": true,
+    "first_and_evidence_visible": true,
+    "three_core_callouts": true,
+    "images": [
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/background-subtraction/wi028-bg-c1-r01-mobile.png",
+        "width": 326,
+        "height": 562.21875
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/background-subtraction/wi028-bg-d2-r01-mobile.png",
+        "width": 326,
+        "height": 489
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/frame-difference/wi028-change-d3-r03-mobile.png",
+        "width": 326,
+        "height": 489
+      }
+    ],
+    "overflow": false,
+    "errors": []
+  },
+  {
+    "slug": "lucas-kanade",
+    "width": 1440,
+    "core_comparison_and_cost_visible": true,
+    "first_and_evidence_visible": true,
+    "three_core_callouts": true,
+    "images": [
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/lucas-kanade/wi028-lk-c1-r02-desktop.png",
+        "width": 935.625,
+        "height": 526.5625
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/lucas-kanade/wi028-flow-d2-r03-desktop.png",
+        "width": 935.625,
+        "height": 526.5625
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/lucas-kanade/wi028-flow-d3-r01-desktop.png",
+        "width": 935.625,
+        "height": 526.5625
+      }
+    ],
+    "overflow": false,
+    "errors": []
+  },
+  {
+    "slug": "lucas-kanade",
+    "width": 360,
+    "core_comparison_and_cost_visible": true,
+    "first_and_evidence_visible": true,
+    "three_core_callouts": true,
+    "images": [
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/lucas-kanade/wi028-lk-c1-r03-mobile.png",
+        "width": 326,
+        "height": 489
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/lucas-kanade/wi028-flow-d2-r03-mobile.png",
+        "width": 326,
+        "height": 869.328125
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/lucas-kanade/wi028-flow-d3-r01-mobile.png",
+        "width": 326,
+        "height": 489
+      }
+    ],
+    "overflow": false,
+    "errors": []
+  },
+  {
+    "slug": "raft",
+    "width": 1440,
+    "core_comparison_and_cost_visible": true,
+    "first_and_evidence_visible": true,
+    "three_core_callouts": true,
+    "images": [
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/raft/wi028-raft-c1-r01-desktop.png",
+        "width": 935.625,
+        "height": 526.5625
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/lucas-kanade/wi028-flow-d2-r03-desktop.png",
+        "width": 935.625,
+        "height": 526.5625
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/lucas-kanade/wi028-flow-d3-r01-desktop.png",
+        "width": 935.625,
+        "height": 526.5625
+      }
+    ],
+    "overflow": false,
+    "errors": []
+  },
+  {
+    "slug": "raft",
+    "width": 360,
+    "core_comparison_and_cost_visible": true,
+    "first_and_evidence_visible": true,
+    "three_core_callouts": true,
+    "images": [
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/raft/wi028-raft-c1-r01-mobile.png",
+        "width": 326,
+        "height": 869.328125
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/lucas-kanade/wi028-flow-d2-r03-mobile.png",
+        "width": 326,
+        "height": 869.328125
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/lucas-kanade/wi028-flow-d3-r01-mobile.png",
+        "width": 326,
+        "height": 489
+      }
+    ],
+    "overflow": false,
+    "errors": []
+  },
+  {
+    "slug": "bytetrack",
+    "width": 1440,
+    "core_comparison_and_cost_visible": true,
+    "first_and_evidence_visible": true,
+    "three_core_callouts": true,
+    "images": [
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/bytetrack/wi028-byte-c1-r02-desktop.png",
+        "width": 935.625,
+        "height": 526.5625
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/bytetrack/wi028-byte-d2-r01-desktop.png",
+        "width": 935.625,
+        "height": 526.5625
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/bytetrack/wi028-track-d3-r01-desktop.png",
+        "width": 935.625,
+        "height": 526.5625
+      }
+    ],
+    "overflow": false,
+    "errors": []
+  },
+  {
+    "slug": "bytetrack",
+    "width": 360,
+    "core_comparison_and_cost_visible": true,
+    "first_and_evidence_visible": true,
+    "three_core_callouts": true,
+    "images": [
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/bytetrack/wi028-byte-c1-r03-mobile.png",
+        "width": 326,
+        "height": 868.484375
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/bytetrack/wi028-byte-d2-r01-mobile.png",
+        "width": 326,
+        "height": 652
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/bytetrack/wi028-track-d3-r02-mobile.png",
+        "width": 326,
+        "height": 489
+      }
+    ],
+    "overflow": false,
+    "errors": []
+  },
+  {
+    "slug": "convlstm",
+    "width": 1440,
+    "core_comparison_and_cost_visible": true,
+    "first_and_evidence_visible": true,
+    "three_core_callouts": true,
+    "images": [
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/convlstm/wi028-conv-c1-r01-desktop.png",
+        "width": 935.625,
+        "height": 526.5625
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/convlstm/wi028-conv-d2-r01-desktop.png",
+        "width": 935.625,
+        "height": 526.5625
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/convlstm/wi028-video-d3-r02-desktop.png",
+        "width": 935.625,
+        "height": 526.5625
+      }
+    ],
+    "overflow": false,
+    "errors": []
+  },
+  {
+    "slug": "convlstm",
+    "width": 360,
+    "core_comparison_and_cost_visible": true,
+    "first_and_evidence_visible": true,
+    "three_core_callouts": true,
+    "images": [
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/convlstm/wi028-conv-c1-r01-mobile.png",
+        "width": 326,
+        "height": 652
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/convlstm/wi028-conv-d2-r01-mobile.png",
+        "width": 326,
+        "height": 652
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/convlstm/wi028-video-d3-r02-mobile.png",
+        "width": 326,
+        "height": 652
+      }
+    ],
+    "overflow": false,
+    "errors": []
+  },
+  {
+    "slug": "videomae",
+    "width": 1440,
+    "core_comparison_and_cost_visible": true,
+    "first_and_evidence_visible": true,
+    "three_core_callouts": true,
+    "images": [
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/videomae/wi028-mae-c1-r02-desktop.png",
+        "width": 935.625,
+        "height": 526.5625
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/videomae/wi028-video-d2-r01-desktop.png",
+        "width": 935.625,
+        "height": 526.5625
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/convlstm/wi028-video-d3-r02-desktop.png",
+        "width": 935.625,
+        "height": 526.5625
+      }
+    ],
+    "overflow": false,
+    "errors": []
+  },
+  {
+    "slug": "videomae",
+    "width": 360,
+    "core_comparison_and_cost_visible": true,
+    "first_and_evidence_visible": true,
+    "three_core_callouts": true,
+    "images": [
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/videomae/wi028-mae-c1-r05-mobile.png",
+        "width": 326,
+        "height": 869.328125
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/videomae/wi028-video-d2-r01-mobile.png",
+        "width": 326,
+        "height": 489
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/convlstm/wi028-video-d3-r02-mobile.png",
+        "width": 326,
+        "height": 652
+      }
+    ],
+    "overflow": false,
+    "errors": []
+  },
+  {
+    "slug": "v-jepa",
+    "width": 1440,
+    "core_comparison_and_cost_visible": true,
+    "first_and_evidence_visible": true,
+    "three_core_callouts": true,
+    "images": [
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/v-jepa/wi028-jepa-c1-r02-desktop.png",
+        "width": 935.625,
+        "height": 526.5625
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/videomae/wi028-video-d2-r01-desktop.png",
+        "width": 935.625,
+        "height": 526.5625
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/convlstm/wi028-video-d3-r02-desktop.png",
+        "width": 935.625,
+        "height": 526.5625
+      }
+    ],
+    "overflow": false,
+    "errors": []
+  },
+  {
+    "slug": "v-jepa",
+    "width": 360,
+    "core_comparison_and_cost_visible": true,
+    "first_and_evidence_visible": true,
+    "three_core_callouts": true,
+    "images": [
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/v-jepa/wi028-jepa-c1-r02-mobile.png",
+        "width": 326,
+        "height": 660.5
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/videomae/wi028-video-d2-r01-mobile.png",
+        "width": 326,
+        "height": 489
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/convlstm/wi028-video-d3-r02-mobile.png",
+        "width": 326,
+        "height": 652
+      }
+    ],
+    "overflow": false,
+    "errors": []
+  }
+]

@@ -1,0 +1,80 @@
+[
+  {
+    "id": "frame-c1",
+    "mode": "desktop",
+    "image": "_course_content/generated-concepts/frame-difference/wi028-frame-c1-r02-desktop.png",
+    "size": [
+      1672,
+      941
+    ],
+    "sha256": "1c57ad4d7c778836bcdc4963b279ab60223ef2282683d1bebae2da18f93ac646",
+    "generation": "built-in imagegen",
+    "evidence": "illustrative, not model inference",
+    "user_review": "pending"
+  },
+  {
+    "id": "frame-c1",
+    "mode": "mobile",
+    "image": "_course_content/generated-concepts/frame-difference/wi028-frame-c1-r02-mobile.png",
+    "size": [
+      887,
+      1774
+    ],
+    "sha256": "9b9aadb26244fbd7d046c9156d4751d87c43ffe9c69531b75b7399dc2a0e46ac",
+    "generation": "built-in imagegen",
+    "evidence": "illustrative, not model inference",
+    "user_review": "pending"
+  },
+  {
+    "id": "frame-d2",
+    "mode": "desktop",
+    "image": "_course_content/generated-concepts/frame-difference/wi028-frame-d2-r01-desktop.png",
+    "size": [
+      1672,
+      941
+    ],
+    "sha256": "a4654638e7c84769fa9dfe325f6a542942b97761f6ce5adca0e1db7a6a05298d",
+    "generation": "built-in imagegen",
+    "evidence": "illustrative, not model inference",
+    "user_review": "pending"
+  },
+  {
+    "id": "frame-d2",
+    "mode": "mobile",
+    "image": "_course_content/generated-concepts/frame-difference/wi028-frame-d2-r01-mobile.png",
+    "size": [
+      887,
+      1774
+    ],
+    "sha256": "5bfc622032eac8c67685c7819876f5383c7298c668e1ddb5b822a27b2193e36d",
+    "generation": "built-in imagegen",
+    "evidence": "illustrative, not model inference",
+    "user_review": "pending"
+  },
+  {
+    "id": "change-d3",
+    "mode": "desktop",
+    "image": "_course_content/generated-concepts/frame-difference/wi028-change-d3-r02-desktop.png",
+    "size": [
+      1672,
+      941
+    ],
+    "sha256": "c29daf8a025c695fe0d4e8cfc0937fffa80a745452554f3b0ba952d344a560ea",
+    "generation": "built-in imagegen",
+    "evidence": "illustrative, not model inference",
+    "user_review": "pending"
+  },
+  {
+    "id": "change-d3",
+    "mode": "mobile",
+    "image": "_course_content/generated-concepts/frame-difference/wi028-change-d3-r03-mobile.png",
+    "size": [
+      1024,
+      1536
+    ],
+    "sha256": "4871d2649252eccb6845864b238508972dae6730083f572b8949bd74227d3c5d",
+    "generation": "built-in imagegen",
+    "evidence": "illustrative, not model inference",
+    "user_review": "pending"
+  }
+]

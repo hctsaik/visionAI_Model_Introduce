@@ -1,0 +1,362 @@
+[
+  {
+    "route": "interactive-learning.html",
+    "viewport": [
+      1440,
+      1000
+    ],
+    "images": [
+      {
+        "src": "http://127.0.0.1:8000/_course_content/generated-concepts/background-subtraction/wi028-bg-c1-r01-desktop.png",
+        "width": 1672,
+        "height": 941,
+        "box": {
+          "x": 404.1875,
+          "y": 100.515625,
+          "width": 935.625,
+          "height": 526.5625,
+          "top": 100.515625,
+          "right": 1339.8125,
+          "bottom": 627.078125,
+          "left": 404.1875
+        }
+      },
+      {
+        "src": "http://127.0.0.1:8000/_course_content/generated-concepts/background-subtraction/wi028-bg-d2-r01-desktop.png",
+        "width": 1672,
+        "height": 941,
+        "box": {
+          "x": 404.1875,
+          "y": 101.03125,
+          "width": 935.625,
+          "height": 526.5625,
+          "top": 101.03125,
+          "right": 1339.8125,
+          "bottom": 627.59375,
+          "left": 404.1875
+        }
+      },
+      {
+        "src": "http://127.0.0.1:8000/_course_content/generated-concepts/frame-difference/wi028-change-d3-r02-desktop.png",
+        "width": 1672,
+        "height": 941,
+        "box": {
+          "x": 404.1875,
+          "y": 101.34375,
+          "width": 935.625,
+          "height": 526.5625,
+          "top": 101.34375,
+          "right": 1339.8125,
+          "bottom": 627.90625,
+          "left": 404.1875
+        }
+      }
+    ],
+    "zoom_loaded_escape": 3,
+    "answer": true,
+    "engineering_images": 0,
+    "navigation": true,
+    "page_errors": [],
+    "overflow": false
+  },
+  {
+    "route": "interactive-learning.html",
+    "viewport": [
+      390,
+      844
+    ],
+    "images": [
+      {
+        "src": "http://127.0.0.1:8000/_course_content/generated-concepts/background-subtraction/wi028-bg-c1-r01-mobile.png",
+        "width": 955,
+        "height": 1647,
+        "box": {
+          "x": 17,
+          "y": 100.8125,
+          "width": 356,
+          "height": 613.953125,
+          "top": 100.8125,
+          "right": 373,
+          "bottom": 714.765625,
+          "left": 17
+        }
+      },
+      {
+        "src": "http://127.0.0.1:8000/_course_content/generated-concepts/background-subtraction/wi028-bg-d2-r01-mobile.png",
+        "width": 1024,
+        "height": 1536,
+        "box": {
+          "x": 17,
+          "y": 100.84375,
+          "width": 356,
+          "height": 534,
+          "top": 100.84375,
+          "right": 373,
+          "bottom": 634.84375,
+          "left": 17
+        }
+      },
+      {
+        "src": "http://127.0.0.1:8000/_course_content/generated-concepts/frame-difference/wi028-change-d3-r03-mobile.png",
+        "width": 1024,
+        "height": 1536,
+        "box": {
+          "x": 17,
+          "y": 101.1875,
+          "width": 356,
+          "height": 534,
+          "top": 101.1875,
+          "right": 373,
+          "bottom": 635.1875,
+          "left": 17
+        }
+      }
+    ],
+    "zoom_loaded_escape": 3,
+    "answer": true,
+    "engineering_images": 0,
+    "navigation": true,
+    "page_errors": [],
+    "overflow": false
+  },
+  {
+    "route": "interactive-learning.html",
+    "viewport": [
+      360,
+      800
+    ],
+    "images": [
+      {
+        "src": "http://127.0.0.1:8000/_course_content/generated-concepts/background-subtraction/wi028-bg-c1-r01-mobile.png",
+        "width": 955,
+        "height": 1647,
+        "box": {
+          "x": 17,
+          "y": 101.28125,
+          "width": 326,
+          "height": 562.21875,
+          "top": 101.28125,
+          "right": 343,
+          "bottom": 663.5,
+          "left": 17
+        }
+      },
+      {
+        "src": "http://127.0.0.1:8000/_course_content/generated-concepts/background-subtraction/wi028-bg-d2-r01-mobile.png",
+        "width": 1024,
+        "height": 1536,
+        "box": {
+          "x": 17,
+          "y": 100.53125,
+          "width": 326,
+          "height": 489,
+          "top": 100.53125,
+          "right": 343,
+          "bottom": 589.53125,
+          "left": 17
+        }
+      },
+      {
+        "src": "http://127.0.0.1:8000/_course_content/generated-concepts/frame-difference/wi028-change-d3-r03-mobile.png",
+        "width": 1024,
+        "height": 1536,
+        "box": {
+          "x": 17,
+          "y": 100.75,
+          "width": 326,
+          "height": 489,
+          "top": 100.75,
+          "right": 343,
+          "bottom": 589.75,
+          "left": 17
+        }
+      }
+    ],
+    "zoom_loaded_escape": 3,
+    "answer": true,
+    "engineering_images": 0,
+    "navigation": true,
+    "page_errors": [],
+    "overflow": false
+  },
+  {
+    "route": "docs/index.html",
+    "viewport": [
+      1440,
+      1000
+    ],
+    "images": [
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/background-subtraction/wi028-bg-c1-r01-desktop.png",
+        "width": 1672,
+        "height": 941,
+        "box": {
+          "x": 404.1875,
+          "y": 100.515625,
+          "width": 935.625,
+          "height": 526.5625,
+          "top": 100.515625,
+          "right": 1339.8125,
+          "bottom": 627.078125,
+          "left": 404.1875
+        }
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/background-subtraction/wi028-bg-d2-r01-desktop.png",
+        "width": 1672,
+        "height": 941,
+        "box": {
+          "x": 404.1875,
+          "y": 101.03125,
+          "width": 935.625,
+          "height": 526.5625,
+          "top": 101.03125,
+          "right": 1339.8125,
+          "bottom": 627.59375,
+          "left": 404.1875
+        }
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/frame-difference/wi028-change-d3-r02-desktop.png",
+        "width": 1672,
+        "height": 941,
+        "box": {
+          "x": 404.1875,
+          "y": 101.34375,
+          "width": 935.625,
+          "height": 526.5625,
+          "top": 101.34375,
+          "right": 1339.8125,
+          "bottom": 627.90625,
+          "left": 404.1875
+        }
+      }
+    ],
+    "zoom_loaded_escape": 3,
+    "answer": true,
+    "engineering_images": 0,
+    "navigation": true,
+    "page_errors": [],
+    "overflow": false
+  },
+  {
+    "route": "docs/index.html",
+    "viewport": [
+      390,
+      844
+    ],
+    "images": [
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/background-subtraction/wi028-bg-c1-r01-mobile.png",
+        "width": 955,
+        "height": 1647,
+        "box": {
+          "x": 17,
+          "y": 100.8125,
+          "width": 356,
+          "height": 613.953125,
+          "top": 100.8125,
+          "right": 373,
+          "bottom": 714.765625,
+          "left": 17
+        }
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/background-subtraction/wi028-bg-d2-r01-mobile.png",
+        "width": 1024,
+        "height": 1536,
+        "box": {
+          "x": 17,
+          "y": 100.84375,
+          "width": 356,
+          "height": 534,
+          "top": 100.84375,
+          "right": 373,
+          "bottom": 634.84375,
+          "left": 17
+        }
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/frame-difference/wi028-change-d3-r03-mobile.png",
+        "width": 1024,
+        "height": 1536,
+        "box": {
+          "x": 17,
+          "y": 101.1875,
+          "width": 356,
+          "height": 534,
+          "top": 101.1875,
+          "right": 373,
+          "bottom": 635.1875,
+          "left": 17
+        }
+      }
+    ],
+    "zoom_loaded_escape": 3,
+    "answer": true,
+    "engineering_images": 0,
+    "navigation": true,
+    "page_errors": [],
+    "overflow": false
+  },
+  {
+    "route": "docs/index.html",
+    "viewport": [
+      360,
+      800
+    ],
+    "images": [
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/background-subtraction/wi028-bg-c1-r01-mobile.png",
+        "width": 955,
+        "height": 1647,
+        "box": {
+          "x": 17,
+          "y": 101.28125,
+          "width": 326,
+          "height": 562.21875,
+          "top": 101.28125,
+          "right": 343,
+          "bottom": 663.5,
+          "left": 17
+        }
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/background-subtraction/wi028-bg-d2-r01-mobile.png",
+        "width": 1024,
+        "height": 1536,
+        "box": {
+          "x": 17,
+          "y": 100.53125,
+          "width": 326,
+          "height": 489,
+          "top": 100.53125,
+          "right": 343,
+          "bottom": 589.53125,
+          "left": 17
+        }
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/frame-difference/wi028-change-d3-r03-mobile.png",
+        "width": 1024,
+        "height": 1536,
+        "box": {
+          "x": 17,
+          "y": 100.75,
+          "width": 326,
+          "height": 489,
+          "top": 100.75,
+          "right": 343,
+          "bottom": 589.75,
+          "left": 17
+        }
+      }
+    ],
+    "zoom_loaded_escape": 3,
+    "answer": true,
+    "engineering_images": 0,
+    "navigation": true,
+    "page_errors": [],
+    "overflow": false
+  }
+]

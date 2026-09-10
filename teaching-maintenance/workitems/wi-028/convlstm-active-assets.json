@@ -1,0 +1,80 @@
+[
+  {
+    "id": "conv-c1",
+    "mode": "desktop",
+    "image": "_course_content/generated-concepts/convlstm/wi028-conv-c1-r01-desktop.png",
+    "size": [
+      1672,
+      941
+    ],
+    "sha256": "a3bc878924a39fbadfa0ef7f93d306cefb403d76b494b1268d3151ba9ac2392e",
+    "generation": "built-in imagegen",
+    "evidence": "illustrative, not model inference",
+    "user_review": "pending"
+  },
+  {
+    "id": "conv-c1",
+    "mode": "mobile",
+    "image": "_course_content/generated-concepts/convlstm/wi028-conv-c1-r01-mobile.png",
+    "size": [
+      887,
+      1774
+    ],
+    "sha256": "7c3f8692977ddb62fdf4e6834d461e942c1011cc110188c739af00c47cabf087",
+    "generation": "built-in imagegen",
+    "evidence": "illustrative, not model inference",
+    "user_review": "pending"
+  },
+  {
+    "id": "conv-d2",
+    "mode": "desktop",
+    "image": "_course_content/generated-concepts/convlstm/wi028-conv-d2-r01-desktop.png",
+    "size": [
+      1672,
+      941
+    ],
+    "sha256": "0b38a73f5108687ea3bf9cf48b3346b120b59907efc0f0208fd79f53701be9a3",
+    "generation": "built-in imagegen",
+    "evidence": "illustrative, not model inference",
+    "user_review": "pending"
+  },
+  {
+    "id": "conv-d2",
+    "mode": "mobile",
+    "image": "_course_content/generated-concepts/convlstm/wi028-conv-d2-r01-mobile.png",
+    "size": [
+      887,
+      1774
+    ],
+    "sha256": "38476414bc9305d148b3e75821777c8e71b44703a59e2c513b1b7988ddaf7d3b",
+    "generation": "built-in imagegen",
+    "evidence": "illustrative, not model inference",
+    "user_review": "pending"
+  },
+  {
+    "id": "video-d3",
+    "mode": "desktop",
+    "image": "_course_content/generated-concepts/convlstm/wi028-video-d3-r02-desktop.png",
+    "size": [
+      1672,
+      941
+    ],
+    "sha256": "dfa827840e1e26fb21ab641bddb7c4ff17576610c24dbb7a08bd7a7939c939c3",
+    "generation": "built-in imagegen",
+    "evidence": "illustrative, not model inference",
+    "user_review": "pending"
+  },
+  {
+    "id": "video-d3",
+    "mode": "mobile",
+    "image": "_course_content/generated-concepts/convlstm/wi028-video-d3-r02-mobile.png",
+    "size": [
+      887,
+      1774
+    ],
+    "sha256": "410d1219d2f877283173afdce1d15760ea626e21ae4878b76bd55f0c1f175df5",
+    "generation": "built-in imagegen",
+    "evidence": "illustrative, not model inference",
+    "user_review": "pending"
+  }
+]

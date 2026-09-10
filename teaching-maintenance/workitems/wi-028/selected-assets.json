@@ -1,0 +1,128 @@
+{
+  "frame-c1": {
+    "desktop": "frame-c1-r02-desktop.png",
+    "mobile": "frame-c1-r02-mobile.png",
+    "desktop_reviewed": true,
+    "mobile_reviewed": true,
+    "user_review": "pending"
+  },
+  "bg-c1": {
+    "desktop": "bg-c1-r01-desktop.png",
+    "mobile": "bg-c1-r01-mobile.png",
+    "desktop_reviewed": true,
+    "mobile_reviewed": true,
+    "user_review": "pending"
+  },
+  "lk-c1": {
+    "desktop": "lk-c1-r02-desktop.png",
+    "mobile": "lk-c1-r03-mobile.png",
+    "desktop_reviewed": true,
+    "mobile_reviewed": true,
+    "user_review": "pending"
+  },
+  "raft-c1": {
+    "desktop": "raft-c1-r01-desktop.png",
+    "mobile": "raft-c1-r01-mobile.png",
+    "desktop_reviewed": true,
+    "mobile_reviewed": true,
+    "user_review": "pending"
+  },
+  "byte-c1": {
+    "desktop": "byte-c1-r02-desktop.png",
+    "mobile": "byte-c1-r03-mobile.png",
+    "desktop_reviewed": true,
+    "mobile_reviewed": true,
+    "user_review": "pending"
+  },
+  "conv-c1": {
+    "desktop": "conv-c1-r01-desktop.png",
+    "mobile": "conv-c1-r01-mobile.png",
+    "desktop_reviewed": true,
+    "mobile_reviewed": true,
+    "user_review": "pending"
+  },
+  "mae-c1": {
+    "desktop": "mae-c1-r02-desktop.png",
+    "mobile": "mae-c1-r05-mobile.png",
+    "desktop_reviewed": true,
+    "mobile_reviewed": true,
+    "user_review": "pending"
+  },
+  "jepa-c1": {
+    "desktop": "jepa-c1-r02-desktop.png",
+    "mobile": "jepa-c1-r02-mobile.png",
+    "desktop_reviewed": true,
+    "mobile_reviewed": true,
+    "user_review": "pending"
+  },
+  "frame-d2": {
+    "desktop": "frame-d2-r01-desktop.png",
+    "mobile": "frame-d2-r01-mobile.png",
+    "desktop_reviewed": true,
+    "mobile_reviewed": true,
+    "user_review": "pending"
+  },
+  "bg-d2": {
+    "desktop": "bg-d2-r01-desktop.png",
+    "mobile": "bg-d2-r01-mobile.png",
+    "desktop_reviewed": true,
+    "mobile_reviewed": true,
+    "user_review": "pending"
+  },
+  "flow-d2": {
+    "desktop": "flow-d2-r03-desktop.png",
+    "mobile": "flow-d2-r03-mobile.png",
+    "desktop_reviewed": true,
+    "mobile_reviewed": true,
+    "user_review": "pending"
+  },
+  "byte-d2": {
+    "desktop": "byte-d2-r01-desktop.png",
+    "mobile": "byte-d2-r01-mobile.png",
+    "desktop_reviewed": true,
+    "mobile_reviewed": true,
+    "user_review": "pending"
+  },
+  "conv-d2": {
+    "desktop": "conv-d2-r01-desktop.png",
+    "mobile": "conv-d2-r01-mobile.png",
+    "desktop_reviewed": true,
+    "mobile_reviewed": true,
+    "user_review": "pending"
+  },
+  "video-d2": {
+    "desktop": "video-d2-r01-desktop.png",
+    "mobile": "video-d2-r01-mobile.png",
+    "desktop_reviewed": true,
+    "mobile_reviewed": true,
+    "user_review": "pending"
+  },
+  "change-d3": {
+    "desktop": "change-d3-r02-desktop.png",
+    "mobile": "change-d3-r03-mobile.png",
+    "desktop_reviewed": true,
+    "mobile_reviewed": true,
+    "user_review": "pending"
+  },
+  "flow-d3": {
+    "desktop": "flow-d3-r01-desktop.png",
+    "mobile": "flow-d3-r01-mobile.png",
+    "desktop_reviewed": true,
+    "mobile_reviewed": true,
+    "user_review": "pending"
+  },
+  "track-d3": {
+    "desktop": "track-d3-r01-desktop.png",
+    "mobile": "track-d3-r02-mobile.png",
+    "desktop_reviewed": true,
+    "mobile_reviewed": true,
+    "user_review": "pending"
+  },
+  "video-d3": {
+    "desktop": "video-d3-r02-desktop.png",
+    "mobile": "video-d3-r02-mobile.png",
+    "desktop_reviewed": true,
+    "mobile_reviewed": true,
+    "user_review": "pending"
+  }
+}

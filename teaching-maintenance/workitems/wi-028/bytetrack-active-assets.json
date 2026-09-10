@@ -1,0 +1,80 @@
+[
+  {
+    "id": "byte-c1",
+    "mode": "desktop",
+    "image": "_course_content/generated-concepts/bytetrack/wi028-byte-c1-r02-desktop.png",
+    "size": [
+      1672,
+      941
+    ],
+    "sha256": "94a7c84d0eb8cb07040b4d31b223eeb4dcee0e80556e0c2a420272a9efe18a8a",
+    "generation": "built-in imagegen",
+    "evidence": "illustrative, not model inference",
+    "user_review": "pending"
+  },
+  {
+    "id": "byte-c1",
+    "mode": "mobile",
+    "image": "_course_content/generated-concepts/bytetrack/wi028-byte-c1-r03-mobile.png",
+    "size": [
+      768,
+      2046
+    ],
+    "sha256": "e9ebc32a02b8136584917e3f0f8bd22ce7c01554423f9f727a5ff4441477f74a",
+    "generation": "built-in imagegen",
+    "evidence": "illustrative, not model inference",
+    "user_review": "pending"
+  },
+  {
+    "id": "byte-d2",
+    "mode": "desktop",
+    "image": "_course_content/generated-concepts/bytetrack/wi028-byte-d2-r01-desktop.png",
+    "size": [
+      1672,
+      941
+    ],
+    "sha256": "16d04b7a53cb36ee9d425cad455306a6dd0aaad6c2f080d048e98e1c00ad31ce",
+    "generation": "built-in imagegen",
+    "evidence": "illustrative, not model inference",
+    "user_review": "pending"
+  },
+  {
+    "id": "byte-d2",
+    "mode": "mobile",
+    "image": "_course_content/generated-concepts/bytetrack/wi028-byte-d2-r01-mobile.png",
+    "size": [
+      887,
+      1774
+    ],
+    "sha256": "799f2cebb770c03d88806c571cbd07a942d3df16019e89f3de7d513945a37360",
+    "generation": "built-in imagegen",
+    "evidence": "illustrative, not model inference",
+    "user_review": "pending"
+  },
+  {
+    "id": "track-d3",
+    "mode": "desktop",
+    "image": "_course_content/generated-concepts/bytetrack/wi028-track-d3-r01-desktop.png",
+    "size": [
+      1672,
+      941
+    ],
+    "sha256": "4091ab72b4a7a2d743d71871cd01827239bb333087e01813a3950c867038414c",
+    "generation": "built-in imagegen",
+    "evidence": "illustrative, not model inference",
+    "user_review": "pending"
+  },
+  {
+    "id": "track-d3",
+    "mode": "mobile",
+    "image": "_course_content/generated-concepts/bytetrack/wi028-track-d3-r02-mobile.png",
+    "size": [
+      1024,
+      1536
+    ],
+    "sha256": "3fc1fcd20b35caa078cc94b9e7ed32127d5676a8586edc54f4be03ed24347a6e",
+    "generation": "built-in imagegen",
+    "evidence": "illustrative, not model inference",
+    "user_review": "pending"
+  }
+]
