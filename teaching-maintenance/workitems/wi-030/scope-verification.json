@@ -1,0 +1,26 @@
+{
+  "baseline_commit": "12fc9ff5242b3a68f7e6269c5297262a8df0ca3f",
+  "changed_topics": [
+    "ad-anomalydino",
+    "ad-efficientad",
+    "ad-padim",
+    "ad-patchcore",
+    "convnext",
+    "keypoint-r-cnn",
+    "pose",
+    "resnet",
+    "segformer",
+    "u-net",
+    "vit-classifier",
+    "yolo-seg"
+  ],
+  "unchanged_topics": 46,
+  "preserved_advanced_data_except_opt_in_flag": [
+    "ad-anomalydino",
+    "ad-efficientad",
+    "ad-patchcore",
+    "resnet",
+    "segformer"
+  ],
+  "charuco_payload_unchanged": true
+}

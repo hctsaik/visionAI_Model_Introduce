@@ -1,0 +1,362 @@
+[
+  {
+    "route": "interactive-learning.html",
+    "viewport": [
+      1440,
+      1000
+    ],
+    "images": [
+      {
+        "src": "http://127.0.0.1:8000/_course_content/generated-concepts/pose/wi030-pose-c1-r03-desktop.png",
+        "width": 1670,
+        "height": 942,
+        "box": {
+          "x": 404.1875,
+          "y": 100.515625,
+          "width": 935.625,
+          "height": 526.5625,
+          "top": 100.515625,
+          "right": 1339.8125,
+          "bottom": 627.078125,
+          "left": 404.1875
+        }
+      },
+      {
+        "src": "http://127.0.0.1:8000/_course_content/generated-concepts/pose/wi030-pose-d2-r02-desktop.png",
+        "width": 1672,
+        "height": 941,
+        "box": {
+          "x": 404.1875,
+          "y": 101.03125,
+          "width": 935.625,
+          "height": 526.5625,
+          "top": 101.03125,
+          "right": 1339.8125,
+          "bottom": 627.59375,
+          "left": 404.1875
+        }
+      },
+      {
+        "src": "http://127.0.0.1:8000/_course_content/generated-concepts/pose/wi030-pose-d3-r03-desktop.png",
+        "width": 1670,
+        "height": 941,
+        "box": {
+          "x": 404.1875,
+          "y": 101.34375,
+          "width": 935.625,
+          "height": 526.5625,
+          "top": 101.34375,
+          "right": 1339.8125,
+          "bottom": 627.90625,
+          "left": 404.1875
+        }
+      }
+    ],
+    "zoom_loaded_escape": 3,
+    "answer": true,
+    "engineering_images": 0,
+    "navigation": true,
+    "page_errors": [],
+    "overflow": false
+  },
+  {
+    "route": "interactive-learning.html",
+    "viewport": [
+      390,
+      844
+    ],
+    "images": [
+      {
+        "src": "http://127.0.0.1:8000/_course_content/generated-concepts/pose/wi030-pose-c1-r04-mobile.png",
+        "width": 836,
+        "height": 1882,
+        "box": {
+          "x": 17,
+          "y": 100.703125,
+          "width": 356,
+          "height": 801.421875,
+          "top": 100.703125,
+          "right": 373,
+          "bottom": 902.125,
+          "left": 17
+        }
+      },
+      {
+        "src": "http://127.0.0.1:8000/_course_content/generated-concepts/pose/wi030-pose-d2-r02-mobile.png",
+        "width": 836,
+        "height": 1881,
+        "box": {
+          "x": 17,
+          "y": 101.375,
+          "width": 356,
+          "height": 801,
+          "top": 101.375,
+          "right": 373,
+          "bottom": 902.375,
+          "left": 17
+        }
+      },
+      {
+        "src": "http://127.0.0.1:8000/_course_content/generated-concepts/pose/wi030-pose-d3-r03-mobile.png",
+        "width": 724,
+        "height": 2172,
+        "box": {
+          "x": 17,
+          "y": 101.421875,
+          "width": 356,
+          "height": 1068,
+          "top": 101.421875,
+          "right": 373,
+          "bottom": 1169.421875,
+          "left": 17
+        }
+      }
+    ],
+    "zoom_loaded_escape": 3,
+    "answer": true,
+    "engineering_images": 0,
+    "navigation": true,
+    "page_errors": [],
+    "overflow": false
+  },
+  {
+    "route": "interactive-learning.html",
+    "viewport": [
+      360,
+      800
+    ],
+    "images": [
+      {
+        "src": "http://127.0.0.1:8000/_course_content/generated-concepts/pose/wi030-pose-c1-r04-mobile.png",
+        "width": 836,
+        "height": 1882,
+        "box": {
+          "x": 17,
+          "y": 100.8125,
+          "width": 326,
+          "height": 733.875,
+          "top": 100.8125,
+          "right": 343,
+          "bottom": 834.6875,
+          "left": 17
+        }
+      },
+      {
+        "src": "http://127.0.0.1:8000/_course_content/generated-concepts/pose/wi030-pose-d2-r02-mobile.png",
+        "width": 836,
+        "height": 1881,
+        "box": {
+          "x": 17,
+          "y": 101.125,
+          "width": 326,
+          "height": 733.5,
+          "top": 101.125,
+          "right": 343,
+          "bottom": 834.625,
+          "left": 17
+        }
+      },
+      {
+        "src": "http://127.0.0.1:8000/_course_content/generated-concepts/pose/wi030-pose-d3-r03-mobile.png",
+        "width": 724,
+        "height": 2172,
+        "box": {
+          "x": 17,
+          "y": 101.21875,
+          "width": 326,
+          "height": 978,
+          "top": 101.21875,
+          "right": 343,
+          "bottom": 1079.21875,
+          "left": 17
+        }
+      }
+    ],
+    "zoom_loaded_escape": 3,
+    "answer": true,
+    "engineering_images": 0,
+    "navigation": true,
+    "page_errors": [],
+    "overflow": false
+  },
+  {
+    "route": "docs/index.html",
+    "viewport": [
+      1440,
+      1000
+    ],
+    "images": [
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/pose/wi030-pose-c1-r03-desktop.png",
+        "width": 1670,
+        "height": 942,
+        "box": {
+          "x": 404.1875,
+          "y": 100.515625,
+          "width": 935.625,
+          "height": 526.5625,
+          "top": 100.515625,
+          "right": 1339.8125,
+          "bottom": 627.078125,
+          "left": 404.1875
+        }
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/pose/wi030-pose-d2-r02-desktop.png",
+        "width": 1672,
+        "height": 941,
+        "box": {
+          "x": 404.1875,
+          "y": 101.03125,
+          "width": 935.625,
+          "height": 526.5625,
+          "top": 101.03125,
+          "right": 1339.8125,
+          "bottom": 627.59375,
+          "left": 404.1875
+        }
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/pose/wi030-pose-d3-r03-desktop.png",
+        "width": 1670,
+        "height": 941,
+        "box": {
+          "x": 404.1875,
+          "y": 101.34375,
+          "width": 935.625,
+          "height": 526.5625,
+          "top": 101.34375,
+          "right": 1339.8125,
+          "bottom": 627.90625,
+          "left": 404.1875
+        }
+      }
+    ],
+    "zoom_loaded_escape": 3,
+    "answer": true,
+    "engineering_images": 0,
+    "navigation": true,
+    "page_errors": [],
+    "overflow": false
+  },
+  {
+    "route": "docs/index.html",
+    "viewport": [
+      390,
+      844
+    ],
+    "images": [
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/pose/wi030-pose-c1-r04-mobile.png",
+        "width": 836,
+        "height": 1882,
+        "box": {
+          "x": 17,
+          "y": 100.703125,
+          "width": 356,
+          "height": 801.421875,
+          "top": 100.703125,
+          "right": 373,
+          "bottom": 902.125,
+          "left": 17
+        }
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/pose/wi030-pose-d2-r02-mobile.png",
+        "width": 836,
+        "height": 1881,
+        "box": {
+          "x": 17,
+          "y": 101.375,
+          "width": 356,
+          "height": 801,
+          "top": 101.375,
+          "right": 373,
+          "bottom": 902.375,
+          "left": 17
+        }
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/pose/wi030-pose-d3-r03-mobile.png",
+        "width": 724,
+        "height": 2172,
+        "box": {
+          "x": 17,
+          "y": 101.421875,
+          "width": 356,
+          "height": 1068,
+          "top": 101.421875,
+          "right": 373,
+          "bottom": 1169.421875,
+          "left": 17
+        }
+      }
+    ],
+    "zoom_loaded_escape": 3,
+    "answer": true,
+    "engineering_images": 0,
+    "navigation": true,
+    "page_errors": [],
+    "overflow": false
+  },
+  {
+    "route": "docs/index.html",
+    "viewport": [
+      360,
+      800
+    ],
+    "images": [
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/pose/wi030-pose-c1-r04-mobile.png",
+        "width": 836,
+        "height": 1882,
+        "box": {
+          "x": 17,
+          "y": 100.8125,
+          "width": 326,
+          "height": 733.875,
+          "top": 100.8125,
+          "right": 343,
+          "bottom": 834.6875,
+          "left": 17
+        }
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/pose/wi030-pose-d2-r02-mobile.png",
+        "width": 836,
+        "height": 1881,
+        "box": {
+          "x": 17,
+          "y": 101.125,
+          "width": 326,
+          "height": 733.5,
+          "top": 101.125,
+          "right": 343,
+          "bottom": 834.625,
+          "left": 17
+        }
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/pose/wi030-pose-d3-r03-mobile.png",
+        "width": 724,
+        "height": 2172,
+        "box": {
+          "x": 17,
+          "y": 101.21875,
+          "width": 326,
+          "height": 978,
+          "top": 101.21875,
+          "right": 343,
+          "bottom": 1079.21875,
+          "left": 17
+        }
+      }
+    ],
+    "zoom_loaded_escape": 3,
+    "answer": true,
+    "engineering_images": 0,
+    "navigation": true,
+    "page_errors": [],
+    "overflow": false
+  }
+]

@@ -1,0 +1,1007 @@
+{
+  "model": "PatchCore",
+  "badge": "正常局部特徵查庫",
+  "title": "PatchCore：找不到相似正常局部，才值得回查",
+  "scenario": {
+    "title": "金屬板缺陷很少，你已有一批確認正常的影像，想先把沒有正常先例的局部交給人回查。",
+    "body": "金屬板缺陷很少，你已有一批確認正常的影像，想先把沒有正常先例的局部交給人回查。"
+  },
+  "promise": {
+    "title": "交付結果與接手工作",
+    "body": "局部可疑熱圖與影像異常分數，送人工覆核原圖；不直接交付缺陷種類、實體尺寸或允收結論。"
+  },
+  "mental_model": {
+    "title": "正常局部特徵查庫",
+    "body": "PatchCore用固定的預訓練CNN擷取局部特徵，從正常特徵中挑代表子集存成庫。待測局部與庫中最相近的正常特徵仍相差很大時，該位置就更值得回查。庫中存的是特徵，並非直接比原圖像素；代表子集減少查找負擔，也會影響正常外觀覆蓋。",
+    "limit": "同一片沒有刮傷的金屬板，換成斜照後出現亮帶，也可能被標成可疑。分數反映與既有正常的差異，不直接證明工件損壞。"
+  },
+  "micro_example": {
+    "title": "正常庫與節拍怎麼取捨？",
+    "setup": "新批次的允收紋理較多；小代表庫會誤報，較大的候選庫已改善誤報，但查詢時間超出你的節拍預算。",
+    "prediction": "你會調整代表子集、保留大庫做離線覆核，或改測另一方法？先說出不能犧牲的條件。",
+    "reveal": "三條路都可能合理。若線上節拍優先，先用涵蓋新正常變化的子集重測誤報與漏檢；若允許離線覆核，可保留大庫並計入等待成本。若仍不符合節拍，再比較其他方法的完整成本。已確認正常才可納入參考，所有候選都要用相同獨立正常／缺陷資料驗證。"
+  },
+  "mechanism_steps": [
+    {
+      "title": "建立正常參考",
+      "body": "完整正常影像進CNN；局部特徵綜合多層線索，再以代表子集保留正常變化。待測資料不加入正常庫。",
+      "why": "由本課核心機制連接工作用途",
+      "anchor": "WI030-1",
+      "diagram": {
+        "title": "建立正常參考",
+        "body": "完整正常影像進CNN；局部特徵綜合多層線索，再以代表子集保留正常變化。待測資料不加入正常庫。",
+        "why": "詳見本課版本與來源",
+        "anchor": "WI030-1"
+      }
+    },
+    {
+      "title": "待測局部查庫",
+      "body": "待測整圖使用同一特徵擷取器。局部最近鄰距離形成可疑圖；圖中條狀向量只示意特徵差異，不是實測數值。",
+      "why": "由本課核心機制連接工作用途",
+      "anchor": "WI030-2",
+      "diagram": {
+        "title": "待測局部查庫",
+        "body": "待測整圖使用同一特徵擷取器。局部最近鄰距離形成可疑圖；圖中條狀向量只示意特徵差異，不是實測數值。",
+        "why": "詳見本課版本與來源",
+        "anchor": "WI030-2"
+      }
+    },
+    {
+      "title": "回到可疑位置",
+      "body": "局部可疑熱圖與影像異常分數，送人工覆核原圖；不直接交付缺陷種類、實體尺寸或允收結論。",
+      "why": "由本課核心機制連接工作用途",
+      "anchor": "WI030-3",
+      "diagram": {
+        "title": "回到可疑位置",
+        "body": "局部可疑熱圖與影像異常分數，送人工覆核原圖；不直接交付缺陷種類、實體尺寸或允收結論。",
+        "why": "詳見本課版本與來源",
+        "anchor": "WI030-3"
+      }
+    },
+    {
+      "title": "工作核對與接手",
+      "body": "保存真實原圖、版本、正常資料切分、熱圖與覆核結果；同批獨立正常／缺陷樣本分開計誤報、漏檢，並量包含取像、前處理、模型與交接的耗時及記憶體。圖中熱區不是模型推論。",
+      "why": "由本課核心機制連接工作用途",
+      "anchor": "WI030-4",
+      "diagram": {
+        "title": "工作核對與接手",
+        "body": "保存真實原圖、版本、正常資料切分、熱圖與覆核結果；同批獨立正常／缺陷樣本分開計誤報、漏檢，並量包含取像、前處理、模型與交接的耗時及記憶體。圖中熱區不是模型推論。",
+        "why": "詳見本課版本與來源",
+        "anchor": "WI030-4"
+      }
+    }
+  ],
+  "visual_intro": "PatchCore用固定的預訓練CNN擷取局部特徵，從正常特徵中挑代表子集存成庫。待測局部與庫中最相近的正常特徵仍相差很大時，該位置就更值得回查。庫中存的是特徵，並非直接比原圖像素；代表子集減少查找負擔，也會影響正常外觀覆蓋。",
+  "beginner_path": {
+    "title": "從必要原理、具體反例到工作取捨",
+    "intro": "金屬板缺陷很少，你已有一批確認正常的影像，想先把沒有正常先例的局部交給人回查。 下列圖像、特徵及回答為教學示意，不是模型實測。",
+    "visuals": [
+      {
+        "id": "wi030-patch-c1",
+        "title": "PatchCore：找不到相似正常局部，才值得回查",
+        "prompt": "金屬板缺陷很少，你已有一批確認正常的影像，想先把沒有正常先例的局部交給人回查。",
+        "caption": "PatchCore用固定的預訓練CNN擷取局部特徵，從正常特徵中挑代表子集存成庫。待測局部與庫中最相近的正常特徵仍相差很大時，該位置就更值得回查。庫中存的是特徵，並非直接比原圖像素；代表子集減少查找負擔，也會影響正常外觀覆蓋。",
+        "image": "_course_content/generated-concepts/ad-patchcore/wi030-patch-c1-r04-desktop.png",
+        "alt": "PatchCore：找不到相似正常局部，才值得回查。PatchCore用固定的預訓練CNN擷取局部特徵，從正常特徵中挑代表子集存成庫。待測局部與庫中最相近的正常特徵仍相差很大時，該位置就更值得回查。庫中存的是特徵，並非直接比原圖像素；代表子集減少查找負擔，也會影響正常外觀覆蓋。 AI生成教學示意，非模型實測。",
+        "callouts": [
+          {
+            "title": "先建立正常庫",
+            "body": "完整正常影像進CNN；局部特徵綜合多層線索，再以代表子集保留正常變化。待測資料不加入正常庫。"
+          },
+          {
+            "title": "待測特徵查相似",
+            "body": "待測整圖使用同一特徵擷取器。局部最近鄰距離形成可疑圖；圖中條狀向量只示意特徵差異，不是實測數值。"
+          },
+          {
+            "title": "交付與接手",
+            "body": "局部可疑熱圖與影像異常分數，送人工覆核原圖；不直接交付缺陷種類、實體尺寸或允收結論。"
+          }
+        ],
+        "reading_views": [
+          {
+            "title": "PatchCore：找不到相似正常局部，才值得回查",
+            "image": "_course_content/generated-concepts/ad-patchcore/wi030-patch-c1-r04-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/ad-patchcore/wi030-patch-c1-r02-mobile.png",
+            "alt": "PatchCore：找不到相似正常局部，才值得回查。PatchCore用固定的預訓練CNN擷取局部特徵，從正常特徵中挑代表子集存成庫。待測局部與庫中最相近的正常特徵仍相差很大時，該位置就更值得回查。庫中存的是特徵，並非直接比原圖像素；代表子集減少查找負擔，也會影響正常外觀覆蓋。 AI生成教學示意，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              768,
+              2046
+            ],
+            "mobile_display_mode": "full-mobile",
+            "desktop_intrinsic_width": 1671,
+            "desktop_intrinsic_height": 941,
+            "mobile_intrinsic_width": 768,
+            "mobile_intrinsic_height": 2046
+          }
+        ],
+        "core_ideas": true
+      },
+      {
+        "id": "wi030-ad-d2",
+        "title": "正常改變了，異常分數也可能跟著變",
+        "prompt": "觀察哪個條件改變，讓原本的結果不夠可靠？",
+        "caption": "同一片沒有刮傷的金屬板，換成斜照後出現亮帶，也可能被標成可疑。分數反映與既有正常的差異，不直接證明工件損壞。",
+        "image": "_course_content/generated-concepts/ad-patchcore/wi030-ad-d2-r02-desktop.png",
+        "alt": "正常改變了，異常分數也可能跟著變。同一片沒有刮傷的金屬板，換成斜照後出現亮帶，也可能被標成可疑。分數反映與既有正常的差異，不直接證明工件損壞。 AI生成教學示意，非模型實測。",
+        "callouts": [
+          {
+            "title": "看哪裡",
+            "body": "同一片沒有刮傷的金屬板，換成斜照後出現亮帶，也可能被標成可疑。分數反映與既有正常的差異，不直接證明工件損壞。"
+          },
+          {
+            "title": "接著怎麼做",
+            "body": "先回看原圖、曝光與照明，穩定取像；新正常外觀須經允收確認，再以獨立正常與缺陷資料驗證，不能把高分樣本一律加進正常資料。"
+          }
+        ],
+        "reading_views": [
+          {
+            "title": "正常改變了，異常分數也可能跟著變",
+            "image": "_course_content/generated-concepts/ad-patchcore/wi030-ad-d2-r02-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/ad-patchcore/wi030-ad-d2-r02-mobile.png",
+            "alt": "正常改變了，異常分數也可能跟著變。同一片沒有刮傷的金屬板，換成斜照後出現亮帶，也可能被標成可疑。分數反映與既有正常的差異，不直接證明工件損壞。 AI生成教學示意，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              768,
+              2048
+            ],
+            "mobile_display_mode": "full-mobile",
+            "desktop_intrinsic_width": 1670,
+            "desktop_intrinsic_height": 941,
+            "mobile_intrinsic_width": 768,
+            "mobile_intrinsic_height": 2048
+          }
+        ],
+        "core_ideas": false
+      },
+      {
+        "id": "wi030-ad-d3",
+        "title": "正常資料相同，四種方法怎麼留下知識？",
+        "prompt": "相同工作需求下，資料、輸出與成本如何取捨？",
+        "caption": "PatchCore保存CNN代表局部供查找；PaDiM估計每個位置的正常分布；AnomalyDINO用DINOv2特徵建立參考；EfficientAD用正常資料學教師／學生與全域特徵關係。先固定取像與缺陷需求，再比錯誤與完整成本。",
+        "image": "_course_content/generated-concepts/ad-patchcore/wi030-ad-d3-r04-desktop.png",
+        "alt": "正常資料相同，四種方法怎麼留下知識？。PatchCore保存CNN代表局部供查找；PaDiM估計每個位置的正常分布；AnomalyDINO用DINOv2特徵建立參考；EfficientAD用正常資料學教師／學生與全域特徵關係。先固定取像與缺陷需求，再比錯誤與完整成本。 AI生成教學示意，非模型實測。",
+        "callouts": [
+          {
+            "title": "怎麼選",
+            "body": "PatchCore保存CNN代表局部供查找；PaDiM估計每個位置的正常分布；AnomalyDINO用DINOv2特徵建立參考；EfficientAD用正常資料學教師／學生與全域特徵關係。先固定取像與缺陷需求，再比錯誤與完整成本。"
+          },
+          {
+            "title": "資料與完整成本",
+            "body": "不需為本工作微調特徵網路，但要建立與維護正常庫；產品、前處理或骨幹改變時需重建並驗證。比較代表子集大小造成的覆蓋、記憶體和查詢時間取捨。"
+          }
+        ],
+        "reading_views": [
+          {
+            "title": "正常資料相同，四種方法怎麼留下知識？",
+            "image": "_course_content/generated-concepts/ad-patchcore/wi030-ad-d3-r04-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/ad-patchcore/wi030-ad-d3-r03-mobile.png",
+            "alt": "正常資料相同，四種方法怎麼留下知識？。PatchCore保存CNN代表局部供查找；PaDiM估計每個位置的正常分布；AnomalyDINO用DINOv2特徵建立參考；EfficientAD用正常資料學教師／學生與全域特徵關係。先固定取像與缺陷需求，再比錯誤與完整成本。 AI生成教學示意，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              768,
+              2048
+            ],
+            "mobile_display_mode": "full-mobile",
+            "desktop_intrinsic_width": 1672,
+            "desktop_intrinsic_height": 941,
+            "mobile_intrinsic_width": 768,
+            "mobile_intrinsic_height": 2048
+          }
+        ],
+        "core_ideas": false
+      }
+    ]
+  },
+  "concept_visuals": [
+    {
+      "id": "causal-chain",
+      "placement": "after_causal_chain",
+      "title": "PatchCore：先懂核心再看細節",
+      "prompt": "拿掉 coreset、保留全庫，還能判異常嗎？",
+      "caption": "缺陷種類列不完，卻有合格品可收集。PatchCore把正常局部的特徵留成參考，讓新局部找相似先例，不必先訓練每種缺陷分類器。",
+      "image": "_course_content/generated-concepts/ad-patchcore/ad-patchcore-f01-core.png",
+      "alt": "缺陷種類列不完，卻有合格品可收集。PatchCore把正常局部的特徵留成參考，讓新局部找相似先例，不必先訓練每種缺陷分類器。 圖為既有生成工件與機制設定，不是模型推論。",
+      "callouts": [
+        {
+          "title": "局部描述",
+          "body": "固定預訓練 CNN，把中間層的局部訊息組成特徵；比較的是特徵，原圖小片用來追查來源。"
+        },
+        {
+          "title": "代表子集",
+          "body": "Coreset 保留覆蓋不同正常外觀的代表，減少儲存及搜尋；不是只留平均樣本。"
+        },
+        {
+          "title": "最近鄰距離",
+          "body": "待測局部查整個參考庫，最像的仍差很多才可疑；位置圖回到待測影像，整圖分數另按實作聚合。"
+        }
+      ]
+    },
+    {
+      "id": "worked-example",
+      "placement": "after_micro_example",
+      "title": "同一道刮痕，為何 support coverage 會改答案？",
+      "prompt": "兩欄都使用同一測試 ROI；差別只在正常相簿是否涵蓋合法紋理或被過度壓縮。",
+      "caption": "左欄相簿涵蓋正常髮絲紋，正常局部距離小、刮痕距離大；右欄少了合法紋理範例，正常變化也變遠，會增加 false HOLD。這說明距離不是獨立於 support 的真相。",
+      "image": "_course_content/generated-concepts/ad-patchcore/ad-patchcore-worked-example_v01.svg",
+      "alt": "左右對照圖：同一含刮痕 ROI 在完整正常相簿與不足相簿下，左側只有刮痕格橘色，右側正常紋理與刮痕都被標為橘色。",
+      "callouts": [
+        {
+          "title": "完整 coverage",
+          "body": "合法正常局部能找到近鄰，才有空間讓刮痕距離突出。"
+        },
+        {
+          "title": "過度壓縮或少樣本",
+          "body": "正常相簿漏掉合法模式時，false reject 與 review load 會上升。"
+        },
+        {
+          "title": "要以 holdout 驗證",
+          "body": "不能憑漂亮 heatmap 選 coreset ratio 或 threshold。"
+        }
+      ]
+    },
+    {
+      "id": "comparison",
+      "placement": "after_comparison",
+      "title": "PatchCore 的「相像」不是 PaDiM 的「落在分布內」",
+      "prompt": "同一個 candidate 可以都變亮，但兩者判斷正常的方式不同。",
+      "caption": "PatchCore 查詢最近 normal exemplar；PaDiM 則比較同一位置是否偏離它的 Gaussian 分布。兩邊的橘色都只能觸發 evidence review。",
+      "image": "_course_content/generated-concepts/ad-patchcore/ad-patchcore-comparison_v01.svg",
+      "alt": "左右比較圖：左邊是查詢局部連到多張正常局部相簿卡片，右邊是同一位置的藍色高斯雲與橘色測試點，兩側下方皆有候選格和放大鏡。",
+      "callouts": [
+        {
+          "title": "PatchCore",
+          "body": "正常性來自最近的已保存 normal exemplar。"
+        },
+        {
+          "title": "PaDiM",
+          "body": "正常性來自固定位置的平均與共變異統計。"
+        },
+        {
+          "title": "共同安全邊界",
+          "body": "兩者輸出都要帶 raw ROI、recipe 與版本化門檻交由 review。"
+        }
+      ]
+    },
+    {
+      "id": "boundary-cases-explainer",
+      "placement": "before_boundary_cases",
+      "title": "coverage、contamination 與 patch 尺度怎麼改最近距離？",
+      "prompt": "PatchCore 的 candidate 來自最近 normal exemplar；先預測當 memory bank 或 feature 尺度改變時，最近距離如何會說錯話。",
+      "caption": "PatchCore 的三個模型專屬反事實：每欄把條件、可觀察後果與正確下一步放在一起。它們不是自動修正規則；遇到條件超出驗證範圍時，先保存原始證據並進入 HOLD／REVIEW。",
+      "image": "_course_content/generated-concepts/ad-patchcore/ad-patchcore-boundary-cases_v01.svg",
+      "alt": "PatchCore 的三欄反事實說明圖：每欄依序說明一個失效條件、可能看到的候選或量測後果，以及應進入 HOLD、重驗或改選方法的安全下一步。",
+      "callouts": [
+        {
+          "title": "coverage 不足或 coreset 壓太多",
+          "body": "合法新紋理找不到近鄰，distance 變大而 false HOLD；先查 support coverage／compression 與 future normal。"
+        },
+        {
+          "title": "memory bank 受污染",
+          "body": "缺陷 exemplar 進入 bank 後，真缺陷也可能變近而 escape；保留 support IDs、contamination audit 與 negative control。"
+        },
+        {
+          "title": "對齊或尺度不合",
+          "body": "misregistration、tiny defect 或 logical anomaly 可讓近鄰距離失去語意；先 HOLD，驗 ROI／effective pixels 或改選方法。"
+        }
+      ]
+    }
+  ],
+  "boundary_cases": [
+    {
+      "condition": "本課具體反例",
+      "effect": "同一片沒有刮傷的金屬板，換成斜照後出現亮帶，也可能被標成可疑。分數反映與既有正常的差異，不直接證明工件損壞。",
+      "action": "先回看原圖、曝光與照明，穩定取像；新正常外觀須經允收確認，再以獨立正常與缺陷資料驗證，不能把高分樣本一律加進正常資料。"
+    },
+    {
+      "condition": "更換產品、模型或輸入設定",
+      "effect": "不需為本工作微調特徵網路，但要建立與維護正常庫；產品、前處理或骨幹改變時需重建並驗證。比較代表子集大小造成的覆蓋、記憶體和查詢時間取捨。",
+      "action": "先確認正常資料含允收紋理和光照，另留完整批次測試，固定ROI、縮放與CNN版本後建立正常庫。"
+    },
+    {
+      "condition": "把示意當成實際推論",
+      "effect": "本課特徵、排序、回答及圖像僅用於解釋，不支持現場準確率或耗時結論。",
+      "action": "保存真實原圖、版本、正常資料切分、熱圖與覆核結果；同批獨立正常／缺陷樣本分開計誤報、漏檢，並量包含取像、前處理、模型與交接的耗時及記憶體。圖中熱區不是模型推論。"
+    }
+  ],
+  "comparison": [
+    {
+      "model": "PatchCore",
+      "normality": "正常CNN局部特徵＋代表子集庫",
+      "candidate": "局部最近鄰差異；維護庫大小與覆蓋"
+    },
+    {
+      "model": "PaDiM",
+      "normality": "每位置平均與共變異",
+      "candidate": "位置條件距離；維護對位與分布"
+    },
+    {
+      "model": "AnomalyDINO",
+      "normality": "DINOv2區塊特徵正常參考",
+      "candidate": "特徵相似度；維護表示與參考"
+    },
+    {
+      "model": "EfficientAD",
+      "normality": "正常訓練教師／學生與AE關係",
+      "candidate": "局部＋全域差；維護權重及校準"
+    }
+  ],
+  "selection": "PatchCore保存CNN代表局部供查找；PaDiM估計每個位置的正常分布；AnomalyDINO用DINOv2特徵建立參考；EfficientAD用正常資料學教師／學生與全域特徵關係。先固定取像與缺陷需求，再比錯誤與完整成本。 不需為本工作微調特徵網路，但要建立與維護正常庫；產品、前處理或骨幹改變時需重建並驗證。比較代表子集大小造成的覆蓋、記憶體和查詢時間取捨。",
+  "poc": {
+    "title": "以真實工作資料做小規模比較",
+    "steps": [
+      "先確認正常資料含允收紋理和光照，另留完整批次測試，固定ROI、縮放與CNN版本後建立正常庫。",
+      "不需為本工作微調特徵網路，但要建立與維護正常庫；產品、前處理或骨幹改變時需重建並驗證。比較代表子集大小造成的覆蓋、記憶體和查詢時間取捨。",
+      "保存真實原圖、版本、正常資料切分、熱圖與覆核結果；同批獨立正常／缺陷樣本分開計誤報、漏檢，並量包含取像、前處理、模型與交接的耗時及記憶體。圖中熱區不是模型推論。"
+    ],
+    "hold": "先回看原圖、曝光與照明，穩定取像；新正常外觀須經允收確認，再以獨立正常與缺陷資料驗證，不能把高分樣本一律加進正常資料。",
+    "acceptance": {
+      "baseline": "既有流程或最簡單可行方法",
+      "measure": "保存真實原圖、版本、正常資料切分、熱圖與覆核結果；同批獨立正常／缺陷樣本分開計誤報、漏檢，並量包含取像、前處理、模型與交接的耗時及記憶體。圖中熱區不是模型推論。",
+      "negative_control": "同一片沒有刮傷的金屬板，換成斜照後出現亮帶，也可能被標成可疑。分數反映與既有正常的差異，不直接證明工件損壞。",
+      "owner": "實作與影像核對負責人"
+    }
+  },
+  "teach_back": {
+    "question": "它改變什麼？何時選另一種做法？",
+    "answer": "PatchCore用固定的預訓練CNN擷取局部特徵，從正常特徵中挑代表子集存成庫。待測局部與庫中最相近的正常特徵仍相差很大時，該位置就更值得回查。庫中存的是特徵，並非直接比原圖像素；代表子集減少查找負擔，也會影響正常外觀覆蓋。 PatchCore保存CNN代表局部供查找；PaDiM估計每個位置的正常分布；AnomalyDINO用DINOv2特徵建立參考；EfficientAD用正常資料學教師／學生與全域特徵關係。先固定取像與缺陷需求，再比錯誤與完整成本。"
+  },
+  "slide_reading": [
+    {
+      "title": "先找：正常局部是如何變成相簿？",
+      "question": "哪個元件保存了代表性 normal patch，而不是所有原圖？",
+      "look": "找 frozen backbone、multi-layer features、coreset 與 memory bank。",
+      "relation": "ROI 經固定 feature recipe 後才可被局部比較；coreset 決定保留哪些正常變化。",
+      "takeaway": "PatchCore 的 normality 是 exemplar memory，不是生成模型或單一中心。",
+      "terms": [
+        "coreset：從許多正常特徵挑出代表性子集",
+        "memory bank：可查詢的正常局部特徵集合"
+      ]
+    },
+    {
+      "title": "這張圖要核對最近鄰距離怎麼產生",
+      "question": "測試 patch 是和什麼比，才得到 candidate score？",
+      "look": "找 test patch、index search、nearest normal exemplar 與 distance map。",
+      "relation": "每個測試局部對相簿做最近鄰搜尋，最小距離再排回 patch grid。",
+      "takeaway": "distance 大表示缺少相近正常範例，不等於已知缺陷類別。",
+      "terms": [
+        "nearest neighbour：距離最近的正常範例",
+        "feature distance：在模型特徵空間量到的差距"
+      ]
+    },
+    {
+      "title": "先鎖 memory 與 aggregation，才比較分數",
+      "question": "哪些設定一改，就改了『什麼叫相近正常』？",
+      "look": "找 layers、projection、coreset、index、search K、upsample 與 aggregation。",
+      "relation": "前段決定距離來源，後段決定距離如何變成整圖候選。",
+      "takeaway": "bank checksum、index 和 map rule 都屬可重播的工程契約。",
+      "terms": [
+        "ANN：近似最近鄰搜尋，速度與精度有取捨",
+        "aggregation：把局部 score 合成整圖 score 的規則"
+      ]
+    },
+    {
+      "title": "選它前，先看 coverage、contamination 與 drift",
+      "question": "哪三種情況會讓距離大卻未必是產品缺陷？",
+      "look": "看正常 coverage、support contamination、registration／drift 與 effective pixels。",
+      "relation": "memory bank 只能代表它收過的正常模式；取像條件與支援資料一變，距離的意義也會變。",
+      "takeaway": "條件不成立就 HOLD；不要讓一張漂亮熱圖取代 evidence review。",
+      "terms": [
+        "coverage：正常資料涵蓋的合法變化範圍",
+        "contamination：不該存在的缺陷混入 normal support"
+      ]
+    }
+  ],
+  "comparison_headers": {
+    "title": "正常資料相同，四種方法怎麼留下知識？",
+    "basis": "所需資料與方法差異",
+    "output": "輸出與維護責任"
+  },
+  "transfer_check": {
+    "title": "正常庫與節拍怎麼取捨？",
+    "scenario": "新批次的允收紋理較多；小代表庫會誤報，較大的候選庫已改善誤報，但查詢時間超出你的節拍預算。",
+    "question": "你會調整代表子集、保留大庫做離線覆核，或改測另一方法？先說出不能犧牲的條件。",
+    "answer": "三條路都可能合理。若線上節拍優先，先用涵蓋新正常變化的子集重測誤報與漏檢；若允許離線覆核，可保留大庫並計入等待成本。若仍不符合節拍，再比較其他方法的完整成本。已確認正常才可納入參考，所有候選都要用相同獨立正常／缺陷資料驗證。"
+  },
+  "review_trace": {
+    "authority": "roadmap-model-selection/anomaly-detection/ad-patchcore/model.md",
+    "scope": "WI-030 十二課首讀圖文與手機PNG、反例、比較及自測；原工程slide保留，未以首讀評分代替工程圖審查。",
+    "claims": [
+      {
+        "id": "visual-1",
+        "field": "beginner_path.visuals[normal-album]",
+        "source": "模型定位 / architecture_path"
+      },
+      {
+        "id": "visual-2",
+        "field": "beginner_path.visuals[feature-to-coreset]",
+        "source": "architecture_path"
+      },
+      {
+        "id": "visual-3",
+        "field": "beginner_path.visuals[distance-evidence]",
+        "source": "representation_or_score"
+      },
+      {
+        "id": "visual-4",
+        "field": "beginner_path.visuals[memory-counterfactual]",
+        "source": "failure_boundary"
+      },
+      {
+        "id": "visual-5",
+        "field": "beginner_path.visuals[representation-choice]",
+        "source": "selection_gate / evidence_bundle"
+      },
+      {
+        "id": "promise",
+        "field": "promise",
+        "source": "模型定位 / representation_or_score"
+      },
+      {
+        "id": "mechanism",
+        "field": "mechanism_steps",
+        "source": "architecture_path / representation_or_score"
+      },
+      {
+        "id": "boundaries",
+        "field": "boundary_cases",
+        "source": "failure_boundary / selection_gate"
+      },
+      {
+        "id": "comparison",
+        "field": "comparison + selection",
+        "source": "selection_gate"
+      },
+      {
+        "id": "poc",
+        "field": "poc + acceptance",
+        "source": "cost_and_operating_point / evidence_bundle"
+      },
+      {
+        "id": "transfer",
+        "field": "transfer_check",
+        "source": "failure_boundary / selection_gate"
+      },
+      {
+        "id": "f01-core",
+        "field": "beginner_path.visuals[0] + scenario + mental_model",
+        "source": "https://arxiv.org/abs/2106.08265"
+      },
+      {
+        "id": "f01-transfer",
+        "field": "micro_example + transfer_check",
+        "source": "由原論文機制推論移除後果；https://arxiv.org/abs/2106.08265"
+      },
+      {
+        "id": "wi030-first-read",
+        "field": "beginner_path + core + selection + transfer",
+        "source": "https://arxiv.org/abs/2106.08265"
+      }
+    ]
+  },
+  "deep_dive": {
+    "title": "PatchCore：從正常局部記憶到現場覆核",
+    "intro": "沿用A-01工件，把來源局部接到特徵、代表庫、最近鄰與人工覆核。第2章展示實際CNN特徵提取；二維教學點、方法示意、第三方重現與原作者案例各自標明證據範圍。",
+    "concept_path": "roadmap-model-selection/patchcore-workplace-deep-dive.md",
+    "chapters": [
+      {
+        "id": "patchcore-01",
+        "nav": "正常資料起步",
+        "title": "PatchCore：先懂核心，再準備資料",
+        "summary": "缺陷種類列不完，卻有合格品可收集。PatchCore把正常局部的特徵留成參考，讓新局部找相似先例，不必先訓練每種缺陷分類器。",
+        "image": "_course_content/generated-concepts/ad-patchcore/ad-patchcore-f01-core.svg",
+        "alt": "缺陷種類列不完，卻有合格品可收集。PatchCore把正常局部的特徵留成參考，讓新局部找相似先例，不必先訓練每種缺陷分類器。 圖為既有生成工件與機制設定，不是模型推論。",
+        "points": [
+          "局部描述：固定預訓練 CNN，把中間層的局部訊息組成特徵；比較的是特徵，原圖小片用來追查來源。",
+          "代表子集：Coreset 保留覆蓋不同正常外觀的代表，減少儲存及搜尋；不是只留平均樣本。",
+          "最近鄰距離：待測局部查整個參考庫，最像的仍差很多才可疑；位置圖回到待測影像，整圖分數另按實作聚合。"
+        ],
+        "check": {
+          "question": "拿掉 coreset、保留全庫，還能判異常嗎？",
+          "answer": "仍可最近鄰比較，但儲存與搜尋成本增加。若改成隨意刪到只剩一種紋理，原本允收的少見正常局部可能找不到近鄰。 已有涵蓋變化的正常品可先做建庫方法；換產品重建參考並留出正常／缺陷驗證。庫大小與搜尋耗時一起量。"
+        },
+        "source_ids": [
+          "paper",
+          "code",
+          "f01-paper"
+        ],
+        "reading_views": [
+          {
+            "title": "PatchCore：先懂核心再看細節",
+            "image": "_course_content/generated-concepts/ad-patchcore/ad-patchcore-f01-core.svg",
+            "mobile_image": "_course_content/generated-concepts/ad-patchcore/ad-patchcore-f01-core-mobile.svg",
+            "mobile_crop": [
+              0,
+              0,
+              720,
+              941
+            ],
+            "alt": "缺陷種類列不完，卻有合格品可收集。PatchCore把正常局部的特徵留成參考，讓新局部找相似先例，不必先訓練每種缺陷分類器。 圖為既有生成工件與機制設定，不是模型推論。"
+          },
+          {
+            "title": "來源與分流",
+            "image": "_course_content/generated-concepts/ad-patchcore/patchcore-work-01-prepare_p03.svg",
+            "mobile_image": "_course_content/generated-concepts/ad-patchcore/patchcore-work-01-prepare_p03-mobile.svg",
+            "mobile_crop": [
+              0,
+              0,
+              720,
+              941
+            ],
+            "alt": "來源與分流：同來源局部、方法操作與判讀結果的可見關係；示意與公開重現明確分列。"
+          }
+        ]
+      },
+      {
+        "id": "patchcore-02",
+        "nav": "CNN局部特徵",
+        "title": "正常外觀怎麼變成可比較的特徵？",
+        "summary": "整張工件進固定CNN，同位置的回應在鄰域聚合後形成局部描述；可以回查來源，而不是靠符號猜特徵。",
+        "image": "_course_content/generated-concepts/ad-patchcore/patchcore-work-02-features_p03.svg",
+        "alt": "實際CNN回應：同來源局部、方法操作與判讀結果的可見關係；示意與公開重現明確分列。",
+        "points": [
+          "第一視圖使用既有生成工件，實際執行ResNet50 IMAGENET1K_V2，取layer2的一個通道。原圖位置框、回應图的同位置框、3×3實際數值及平均4.70可以互相反查；這是描述的一個分量，不是異常分數。",
+          "第二視圖將同一待測位置的layer2與layer3回應並列。每層先作3×3鄰域平均，較深層再雙線性對齊，串接兩層描述；較深層涵蓋的影像範圍較大，但單一通道可能不回應某個缺陷。圖中只顯示少量分量，完整局部特徵還包含其他通道。",
+          "為可讀性，通道按正常圖的空間變異選定後固定，正常與待測共用模型、通道及前處理。兩張特徵圖各自正規化色階以顯示結構，不能把色深跨層比較成異常程度；標出的描述數值保留原尺度。",
+          "這次是可重跑的CNN提取教學，沒有訓練或執行PatchCore異常檢測，也不冒稱原論文的WideResNet50基準。輸入ROI直接雙線性縮為224×224，加ImageNet標準化，沒有採權重附帶的resize232與中心裁切。來源、權重SHA、版本、通道與完整數值保存在p03-sources/cnn-features.json。"
+        ],
+        "check": {
+          "question": "改成兩倍影像尺寸，正常庫可以完全不動嗎？",
+          "answer": "不能直接沿用驗收結果。解析度會改變特徵的有效感受範圍與局部外觀；用同一新版流程重建庫並驗正常和缺陷，再比較定位及耗時。"
+        },
+        "source_ids": [
+          "paper",
+          "code",
+          "cnn-demo"
+        ],
+        "reading_views": [
+          {
+            "title": "實際CNN回應",
+            "image": "_course_content/generated-concepts/ad-patchcore/patchcore-work-02-features_p03.svg",
+            "mobile_image": "_course_content/generated-concepts/ad-patchcore/patchcore-work-02-features_p03-mobile.svg",
+            "mobile_crop": [
+              0,
+              0,
+              720,
+              941
+            ],
+            "alt": "實際CNN回應：同來源局部、方法操作與判讀結果的可見關係；示意與公開重現明確分列。"
+          },
+          {
+            "title": "兩層附近結構",
+            "image": "_course_content/generated-concepts/ad-patchcore/patchcore-work-02-context_p03.svg",
+            "mobile_image": "_course_content/generated-concepts/ad-patchcore/patchcore-work-02-context_p03-mobile.svg",
+            "mobile_crop": [
+              0,
+              0,
+              720,
+              941
+            ],
+            "alt": "兩層附近結構：同來源局部、方法操作與判讀結果的可見關係；示意與公開重現明確分列。"
+          }
+        ]
+      },
+      {
+        "id": "patchcore-03",
+        "nav": "代表子集",
+        "title": "為什麼不把所有正常特徵都留下？",
+        "summary": "coreset用較少代表點保留正常特徵的涵蓋範圍，讓查庫負擔可控。",
+        "image": "_course_content/generated-concepts/ad-patchcore/patchcore-work-03-coreset_p03.svg",
+        "alt": "來源與代表：同來源局部、方法操作與判讀結果的可見關係；示意與公開重現明確分列。",
+        "points": [
+          "六個來源局部各綁A–F：A/B是表面，C/D是螺絲，E/F是直邊。圖把相同身分帶到二維教學點與保留框，讓被刪的B/C/F能回查代表A/D/E。二維座標為示例設定，沒有宣稱是這些照片或第2章CNN實測投影。",
+          "圖用六個二維點示範greedy選樣：先選A，再選離已選集合最近距離最大的點D，接著補E。其餘B、C、F各有近的保留代表；實際方法可先隨機投影降低選樣成本，圖不是高維特徵的實測投影。",
+          "可核算設定：A=(0,0)、B=(0.6,0)、C=(3.7,0.2)、D=(4.2,0.1)、E=(2,3)、F=(2.5,2.8)。此例保留A/D/E；6留3只為教學，不能當推薦比例。縮小庫後用同一留出正常與缺陷比較漏檢、誤報和成本。"
+        ],
+        "check": {
+          "question": "只看平均推論變快，就把保留比例從10%降到1%，合理嗎？",
+          "answer": "先固定同批測試和其他設定，比對罕見但合格的外觀是否被刪掉、缺陷是否仍能抓到，再看P95和記憶體。比例是待驗證的取捨，不能只按速度決定。"
+        },
+        "source_ids": [
+          "paper",
+          "sampler"
+        ],
+        "reading_views": [
+          {
+            "title": "來源與代表",
+            "image": "_course_content/generated-concepts/ad-patchcore/patchcore-work-03-coreset_p03.svg",
+            "mobile_image": "_course_content/generated-concepts/ad-patchcore/patchcore-work-03-coreset_p03-mobile.svg",
+            "mobile_crop": [
+              0,
+              0,
+              720,
+              941
+            ],
+            "alt": "來源與代表：同來源局部、方法操作與判讀結果的可見關係；示意與公開重現明確分列。"
+          }
+        ]
+      },
+      {
+        "id": "patchcore-04",
+        "nav": "最近鄰比較",
+        "title": "正常局部與刮傷，查同一個庫會怎樣？",
+        "summary": "每個待測局部搜尋整個保留庫；最近者可能仍然不夠近。",
+        "image": "_course_content/generated-concepts/ad-patchcore/patchcore-work-04-normal_p01.svg",
+        "alt": "PatchCore 正常對照：保留同一工作物件與對照；示意與作者證據分別標明。",
+        "points": [
+          "兩個視圖保留A-01原圖、來源放大和同一A/D/E庫。照片示意細紋、螺絲、直邊來源；距離是在特徵空間比較，不是照片像素相減，也不限制同一物理位置。",
+          "沿用二維L2設定：正常Q=(0.2,0)，到A/D/E約為0.20/4.00/3.50；刮傷Q=(2,5)，約為5.39/5.37/2.00。前者最近A，後者最近E；坐標是教學指定，非由工件照片或實際CNN算出。",
+          "正常局部很近只表示此局部與庫相似，不能推出整件合格。刮傷也有最近者，但距離可能仍高；後續需看整件分數、位置、原圖及規格。"
+        ],
+        "check": {
+          "question": "刮傷的最近參考是直邊，能因此認定刮傷正常嗎？",
+          "answer": "不能。最近只代表候選中相對最像，仍要看距離大小與同版本門檻，並回原圖確認外觀差異。兩個外觀都帶邊緣線索也不代表工件品質相同。"
+        },
+        "source_ids": [
+          "paper",
+          "faiss"
+        ],
+        "reading_views": [
+          {
+            "title": "正常對照",
+            "image": "_course_content/generated-concepts/ad-patchcore/patchcore-work-04-normal_p01.svg",
+            "mobile_image": "_course_content/generated-concepts/ad-patchcore/patchcore-work-04-normal_p01-mobile.svg",
+            "mobile_crop": [
+              0,
+              0,
+              720,
+              941
+            ],
+            "alt": "PatchCore 正常對照：保留同一工作物件與對照；示意與作者證據分別標明。"
+          },
+          {
+            "title": "刮傷查庫",
+            "image": "_course_content/generated-concepts/ad-patchcore/patchcore-work-04-scratch_p01.svg",
+            "mobile_image": "_course_content/generated-concepts/ad-patchcore/patchcore-work-04-scratch_p01-mobile.svg",
+            "mobile_crop": [
+              0,
+              0,
+              720,
+              941
+            ],
+            "alt": "PatchCore 刮傷查庫：保留同一工作物件與對照；示意與作者證據分別標明。"
+          }
+        ]
+      },
+      {
+        "id": "patchcore-05",
+        "nav": "分數與位置",
+        "title": "同一組局部距離，怎麼變成整件分數和熱圖？",
+        "summary": "分數用於分流，保留位置的距離圖用於回查；兩條輸出責任不同。",
+        "image": "_course_content/generated-concepts/ad-patchcore/patchcore-work-05-score_p03.svg",
+        "alt": "分數與參考支持：同來源局部、方法操作與判讀結果的可見關係；示意與公開重現明確分列。",
+        "points": [
+          "論文先取最大最近L2距離s*，再依最近正常參考附近的距離做鄰域加權。新圖固定s*=2，兩組Q到參考的距離是(2,2.1,2.2)與(2,4,5)，由Eq.7得到w約0.70/0.96、s約1.40/1.93。線長按距離畫；最接近E相同，其他參考遠近改變支持程度。這是獨立可驗算的教學例，不是照片實测或第3章A–F座標的延伸。",
+          "位置圖將局部距離排回原格，放大並平滑到影像大小。較亮區是回查线索，不能直接當精密缺陷輪廓或刮傷長度；要量尺寸須另做取像校正及邊界驗證。",
+          "版本差異要寫清：本次查閱作者程式common.py用FAISS IndexFlatL2，回傳平方L2；近鄰查詢可取多鄰居平均，再由patchcore.py取最大patch分數。它與論文的L2及鄰域加權不能混稱同一數值配方；例如本教學L2=2，其平方是4，門檻不能照搬。",
+          "本教材沒有使用AnomalyDINO的最高1%平均。現場保存距離度量、近鄰數、分數聚合、平滑及門檻版本，分開測誤報和漏檢。"
+        ],
+        "check": {
+          "question": "原門檻是按L2距離設定，程式改成FAISS平方L2，可以保留同一門檻數字嗎？",
+          "answer": "不能。最近鄰排序雖不因平方改變，分數尺度已變；還須確認聚合與加權是否相同。重新校準門檻、重跑留出資料，不能只憑名稱都叫L2就沿用。"
+        },
+        "source_ids": [
+          "paper",
+          "code",
+          "common",
+          "faiss"
+        ],
+        "reading_views": [
+          {
+            "title": "分數與參考支持",
+            "image": "_course_content/generated-concepts/ad-patchcore/patchcore-work-05-score_p03.svg",
+            "mobile_image": "_course_content/generated-concepts/ad-patchcore/patchcore-work-05-score_p03-mobile.svg",
+            "mobile_crop": [
+              0,
+              0,
+              720,
+              941
+            ],
+            "alt": "分數與參考支持：同來源局部、方法操作與判讀結果的可見關係；示意與公開重現明確分列。"
+          },
+          {
+            "title": "格點與熱區",
+            "image": "_course_content/generated-concepts/ad-patchcore/patchcore-work-05-location_p03.svg",
+            "mobile_image": "_course_content/generated-concepts/ad-patchcore/patchcore-work-05-location_p03-mobile.svg",
+            "mobile_crop": [
+              0,
+              0,
+              720,
+              941
+            ],
+            "alt": "格點與熱區：同來源局部、方法操作與判讀結果的可見關係；示意與公開重現明確分列。"
+          }
+        ]
+      },
+      {
+        "id": "patchcore-06",
+        "nav": "參考庫風險",
+        "title": "正常收太少，與缺陷收進去，後果相反",
+        "summary": "用同一待測與兩個庫狀態，分開看覆蓋不足造成的誤報風險，以及污染造成的漏檢風險。",
+        "image": "_course_content/generated-concepts/ad-patchcore/patchcore-work-06-coverage_p03.svg",
+        "alt": "刪掉正常代表：同來源局部、方法操作與判讀結果的可見關係；示意與公開重現明確分列。",
+        "points": [
+          "覆蓋不足示例：正常直邊E=(2,3)原本可在A/D/E找到自身，距離0；刪掉E後，最近只剩A，L2約3.61。這是特徵集合的反事實示意，不表示真正驗收可以拿同張建庫圖當測試圖。",
+          "污染示例：刮傷Q=(2,5)原最近E距離2.00，誤加入相似刮傷G=(2,4.9)後降到0.10。分數降低不一定好，可能是缺陷被當成正常。兩例均固定模型與既有座標，只改库內容。",
+          "修改庫之前確認參考合格及來源，保留庫版本；修改後正常品與已知缺陷都重測。若是照明、尺度或取像漂移，先修成像，不能將未知外觀全部收成正常。"
+        ],
+        "check": {
+          "question": "補了一批參考後，誤報下降，但某種刮傷也不再報警，下一步是什麼？",
+          "answer": "先隔離新庫與可疑參考，與旧庫跑同批留出影像，查是否混入缺陷、刪掉重要代表或調過門檻。恢復可驗證設定，再同時檢查漏檢、誤報與覆核量。"
+        },
+        "source_ids": [
+          "paper",
+          "code"
+        ],
+        "reading_views": [
+          {
+            "title": "刪掉正常代表",
+            "image": "_course_content/generated-concepts/ad-patchcore/patchcore-work-06-coverage_p03.svg",
+            "mobile_image": "_course_content/generated-concepts/ad-patchcore/patchcore-work-06-coverage_p03-mobile.svg",
+            "mobile_crop": [
+              0,
+              0,
+              720,
+              941
+            ],
+            "alt": "刪掉正常代表：同來源局部、方法操作與判讀結果的可見關係；示意與公開重現明確分列。"
+          },
+          {
+            "title": "誤收缺陷",
+            "image": "_course_content/generated-concepts/ad-patchcore/patchcore-work-06-contamination_p01.svg",
+            "mobile_image": "_course_content/generated-concepts/ad-patchcore/patchcore-work-06-contamination_p01-mobile.svg",
+            "mobile_crop": [
+              0,
+              0,
+              720,
+              941
+            ],
+            "alt": "PatchCore 誤收缺陷：保留同一工作物件與對照；示意與作者證據分別標明。"
+          }
+        ]
+      },
+      {
+        "id": "patchcore-07",
+        "nav": "同條件選型",
+        "title": "同一新產品，三種方法要重做哪些工作？",
+        "summary": "共用正常資料與留出測試，對照記憶庫、位置統計、訓練模型的維護差異。",
+        "image": "_course_content/generated-concepts/ad-patchcore/patchcore-work-07-patchcore_p03.svg",
+        "alt": "PatchCore查庫：同來源局部、方法操作與判讀結果的可見關係；示意與公開重現明確分列。",
+        "points": [
+          "三視圖都用A-01作為工作情境。PatchCore保留來源特徵與全庫查詢路徑；PaDiM以各位置正常特徵估計多變量高斯，按同位置Mahalanobis距離比較，圖中三張相同來源小圖代表多張正常影像的角色，不是三筆實測分布證據。換產品須更新庫／索引或重估各位置分布。",
+          "EfficientAD圖限定Teacher–Student局部分支：固定老師、正常資料回饋更新學生、調整後正常回應接近，待測回應差異成為疑點。波形是角色示意，不是實測激活；完整方法另有autoencoder全域分支。換產品需評估重訓與再驗證，速度優勢仍須用相同硬體和工作品質要求實測。",
+          "公平試做共用資料分割、輸出目的、影像尺度與硬體條件，完整記錄各方法必要設定。分開量建庫或訓練成本、峰值記憶體、暖機後批次1端到端P95、漏檢、誤報與人工覆核量。模型有不同特徵機制，不能假裝其設定完全相同。",
+          "局部相似不等於組裝順序正確；精密邊界或尺寸任務也不應只靠熱圖。另比較位置規則、監督式分割或校正量測，按真正輸出需求選方法。"
+        ],
+        "check": {
+          "question": "工廠每天換產品，但推論節拍很緊，應直接選不需重訓的PatchCore嗎？",
+          "answer": "把換線建置成本和每件推論成本分開。PatchCore可作快速建庫候選，EfficientAD可作推論效率候選；在同批正常/缺陷資料測品質、P95、記憶體與重建/重訓時間後決定，不只看是否訓練。"
+        },
+        "source_ids": [
+          "paper",
+          "padim",
+          "efficientad"
+        ],
+        "reading_views": [
+          {
+            "title": "PatchCore查庫",
+            "image": "_course_content/generated-concepts/ad-patchcore/patchcore-work-07-patchcore_p03.svg",
+            "mobile_image": "_course_content/generated-concepts/ad-patchcore/patchcore-work-07-patchcore_p03-mobile.svg",
+            "mobile_crop": [
+              0,
+              0,
+              720,
+              941
+            ],
+            "alt": "PatchCore查庫：同來源局部、方法操作與判讀結果的可見關係；示意與公開重現明確分列。"
+          },
+          {
+            "title": "PaDiM同位置",
+            "image": "_course_content/generated-concepts/ad-patchcore/patchcore-work-07-padim_p03.svg",
+            "mobile_image": "_course_content/generated-concepts/ad-patchcore/patchcore-work-07-padim_p03-mobile.svg",
+            "mobile_crop": [
+              0,
+              0,
+              720,
+              941
+            ],
+            "alt": "PaDiM同位置：同來源局部、方法操作與判讀結果的可見關係；示意與公開重現明確分列。"
+          },
+          {
+            "title": "EfficientAD師生比較",
+            "image": "_course_content/generated-concepts/ad-patchcore/patchcore-work-07-efficientad_p03.svg",
+            "mobile_image": "_course_content/generated-concepts/ad-patchcore/patchcore-work-07-efficientad_p03-mobile.svg",
+            "mobile_crop": [
+              0,
+              0,
+              720,
+              941
+            ],
+            "alt": "EfficientAD師生比較：同來源局部、方法操作與判讀結果的可見關係；示意與公開重現明確分列。"
+          }
+        ]
+      },
+      {
+        "id": "patchcore-08",
+        "nav": "公開案例與驗收",
+        "title": "公開定位案例、作者漏檢與誤報一起看",
+        "summary": "先拆原圖、人工標註、熱圖與疊圖，再核對整件分數；局部亮對不代表輪廓精確或整件分類正確。",
+        "image": "_course_content/generated-concepts/ad-patchcore/patchcore-work-08-success-a_p03.svg",
+        "alt": "重現案例一：同來源局部、方法操作與判讀結果的可見關係；示意與公開重現明確分列。",
+        "points": [
+          "前兩視圖來自mtaha-ai公開PatchCore重現的膠囊gallery第1／3行，逐欄保留同一行原像素：input、GT、heatmap、overlay。第一例左側缺陷與亮區對上，但上方另有亮區；第二例紅色半部上緣缺陷與亮區對上，熱區輪廓比標註寬。兩者只支持這些局部定位觀察，沒有可核對的整件分數／門檻，不能宣稱整件分類成功或整體準確率。",
+          "這是第三方重現，不是PatchCore原作者或本站推論。固定repository commit、原圖SHA與四欄裁切座標均保留；PNG未提供樣本ID及確切訓練配置，不能把README所有設定或指標套到它。後兩圖則是原論文的漏檢與誤報，來源分開。",
+          "FigureS2電纜例有對應局部熱區，但作者分數3.48低於其門檻3.56，所以整件仍為漏檢。熱圖看起來找到位置，不代表決策門檻已通過。S2原圖多個檔名字樣重複，教材不據該字樣宣稱樣本ID；只取同座標局部，數值與錯誤類型按圖說。",
+          "FigureS1正常膠囊例：分數1.22高於作者門檻1.19造成誤報。該類正常變化仍需納入驗證，不能把亮起直接當缺陷；作者圖的顏色與不同類別門檻不可用來排名。",
+          "後兩例引用原論文S1/S2原像素，未重繪、未補細節，且不是本站模型執行結果。其圖說採作者所述F1最佳門檻的分析；前兩例的第三方重現沒有提供可核對的整件門檻。現場按漏檢代價及覆核容量決定工作點，不直接沿用作者門檻。",
+          "現場保留參考庫來源/版本、原圖、整圖分數、熱圖與人工判定；跨批次正常及必抓缺陷都納入最後測試，再統計漏檢、誤報、覆核量、P95與記憶體。"
+        ],
+        "check": {
+          "question": "熱圖對到缺陷位置，但整圖分數低於門檻，算成功嗎？",
+          "answer": "若任務是自動把缺陷品送覆核，這仍是漏檢。定位可作診斷證據，但要檢查分數聚合與工作門檻；調整後同時重測正常誤報和缺陷漏檢，不能只挑漂亮熱圖。"
+        },
+        "source_ids": [
+          "paper",
+          "fn",
+          "fp",
+          "reproduction",
+          "reproduction-code"
+        ],
+        "reading_views": [
+          {
+            "title": "重現案例一",
+            "image": "_course_content/generated-concepts/ad-patchcore/patchcore-work-08-success-a_p03.svg",
+            "mobile_image": "_course_content/generated-concepts/ad-patchcore/patchcore-work-08-success-a_p03-mobile.svg",
+            "mobile_crop": [
+              0,
+              0,
+              720,
+              941
+            ],
+            "alt": "重現案例一：同來源局部、方法操作與判讀結果的可見關係；示意與公開重現明確分列。"
+          },
+          {
+            "title": "重現案例二",
+            "image": "_course_content/generated-concepts/ad-patchcore/patchcore-work-08-success-b_p03.svg",
+            "mobile_image": "_course_content/generated-concepts/ad-patchcore/patchcore-work-08-success-b_p03-mobile.svg",
+            "mobile_crop": [
+              0,
+              0,
+              720,
+              941
+            ],
+            "alt": "重現案例二：同來源局部、方法操作與判讀結果的可見關係；示意與公開重現明確分列。"
+          },
+          {
+            "title": "作者漏檢",
+            "image": "_course_content/generated-concepts/ad-patchcore/patchcore-work-08-fn_p01.svg",
+            "mobile_image": "_course_content/generated-concepts/ad-patchcore/patchcore-work-08-fn_p01-mobile.svg",
+            "mobile_crop": [
+              0,
+              0,
+              720,
+              941
+            ],
+            "alt": "PatchCore 作者漏檢：保留同一工作物件與對照；示意與作者證據分別標明。"
+          },
+          {
+            "title": "作者誤報",
+            "image": "_course_content/generated-concepts/ad-patchcore/patchcore-work-08-fp_p03.svg",
+            "mobile_image": "_course_content/generated-concepts/ad-patchcore/patchcore-work-08-fp_p03-mobile.svg",
+            "mobile_crop": [
+              0,
+              0,
+              720,
+              941
+            ],
+            "alt": "作者誤報：同來源局部、方法操作與判讀結果的可見關係；示意與公開重現明確分列。"
+          }
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "id": "paper",
+        "label": "PatchCore 原論文",
+        "url": "https://arxiv.org/html/2106.08265v2",
+        "scope": "§3局部特徵、coreset、分數與Figure1/S1/S2"
+      },
+      {
+        "id": "code",
+        "label": "作者程式：PatchCore",
+        "url": "https://github.com/amazon-science/patchcore-inspection/blob/fcaa92f124fb1ad74a7acf56726decd4b27cbcad/src/patchcore/patchcore.py",
+        "scope": "固定來源版本：特徵提取與最大patch分數"
+      },
+      {
+        "id": "common",
+        "label": "作者程式：距離搜尋",
+        "url": "https://github.com/amazon-science/patchcore-inspection/blob/fcaa92f124fb1ad74a7acf56726decd4b27cbcad/src/patchcore/common.py",
+        "scope": "IndexFlatL2與近鄰距離平均"
+      },
+      {
+        "id": "sampler",
+        "label": "作者程式：代表子集",
+        "url": "https://github.com/amazon-science/patchcore-inspection/blob/fcaa92f124fb1ad74a7acf56726decd4b27cbcad/src/patchcore/sampler.py",
+        "scope": "greedy及近似greedy選樣"
+      },
+      {
+        "id": "faiss",
+        "label": "FAISS 距離規則",
+        "url": "https://github.com/facebookresearch/faiss/wiki/MetricType-and-distances",
+        "scope": "L2索引回傳平方距離"
+      },
+      {
+        "id": "padim",
+        "label": "PaDiM 原論文",
+        "url": "https://arxiv.org/abs/2011.08785",
+        "scope": "各位置多變量高斯與Mahalanobis比較"
+      },
+      {
+        "id": "efficientad",
+        "label": "EfficientAD 原論文",
+        "url": "https://arxiv.org/abs/2303.14535",
+        "scope": "正常資料訓練與推論效率設計"
+      },
+      {
+        "id": "figure1",
+        "label": "作者原圖 Figure1",
+        "url": "https://arxiv.org/html/2106.08265v2/images/sample_segmentations.png",
+        "scope": "模型定位結果與缺陷輪廓"
+      },
+      {
+        "id": "fn",
+        "label": "作者原圖 FigureS2",
+        "url": "https://arxiv.org/html/2106.08265v2/images/false_negatives.png",
+        "scope": "整圖漏檢與局部定位、門檻關係"
+      },
+      {
+        "id": "fp",
+        "label": "作者原圖 FigureS1",
+        "url": "https://arxiv.org/html/2106.08265v2/images/false_positives.png",
+        "scope": "正常誤報與作者門檻"
+      },
+      {
+        "id": "reproduction",
+        "label": "第三方重現：原圖／GT／熱圖／疊圖",
+        "url": "https://github.com/mtaha-ai/industrial-anomaly-detection/blob/f19d2c6263d34c5755ab5ce7b0dbb9eb089eac88/results/figures/capsule_patchcore.png",
+        "scope": "固定commit gallery第1/3行；僅案例定位觀察"
+      },
+      {
+        "id": "reproduction-code",
+        "label": "第三方重現：輸出圖程式",
+        "url": "https://github.com/mtaha-ai/industrial-anomaly-detection/blob/f19d2c6263d34c5755ab5ce7b0dbb9eb089eac88/scripts/generate_figures.py",
+        "scope": "fit/predict與四欄輸出，並非本站執行"
+      },
+      {
+        "id": "cnn-demo",
+        "label": "Torchvision ResNet50 權重說明",
+        "url": "https://github.com/pytorch/vision/blob/v0.27.0/torchvision/models/resnet.py",
+        "scope": "CNN提取示範，實際套件版本另存；未採預設中心裁切"
+      },
+      {
+        "id": "f01-paper",
+        "label": "F01 核心原論文",
+        "url": "https://arxiv.org/abs/2106.08265",
+        "scope": "首章存在理由、核心及移除設計的概念推論；非實測消融"
+      }
+    ],
+    "default_collapsed": true
+  },
+  "quality_status": {
+    "label": "首讀圖文已核對",
+    "state": "self-reviewed",
+    "round": "WI-030",
+    "reason": "新版逐圖與整頁自評、桌機手機驗證完成；使用者成品核准pending。原工程圖未納入本輪分數。"
+  },
+  "teaching_preflight": {
+    "brief": "teaching-images/vision-ai-model-selection/workitems/wi-030/patch-c1-r04-desktop.md",
+    "mobile_brief": "teaching-images/vision-ai-model-selection/workitems/wi-030/patch-c1-r02-mobile.md",
+    "story": "C",
+    "major_visual_nodes": 3,
+    "visual_status": "self-reviewed",
+    "user_review": "pending"
+  }
+}

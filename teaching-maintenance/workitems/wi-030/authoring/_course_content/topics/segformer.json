@@ -1,0 +1,855 @@
+{
+  "model": "SegFormer",
+  "badge": "多尺度Transformer語意分割",
+  "title": "SegFormer：融合不同尺度，判斷每個位置",
+  "scenario": {
+    "title": "要把金屬板上的彎曲焊縫從背景分出來，交給區域覆核或後續量測。",
+    "body": "要把金屬板上的彎曲焊縫從背景分出來，交給區域覆核或後續量測。"
+  },
+  "promise": {
+    "title": "交付結果與接手工作",
+    "body": "逐像素類別與預測區域遮罩，交邊界核對或後續量測；實體尺寸需另外校正與驗證。"
+  },
+  "mental_model": {
+    "title": "多尺度Transformer語意分割",
+    "body": "SegFormer的階層Transformer產生多個尺度的特徵，再以輕量MLP解碼頭對齊尺度並融合，預測每個像素的類別。較大範圍提供上下文，較細尺度保留局部線索；仍需工作標註和細小邊界驗證。",
+    "limit": "同一條細焊縫在縮小輸入後只剩極少像素，預測遮罩可能斷裂；原始工件並沒有真的斷裂。背景細紋也可能造成誤分。"
+  },
+  "micro_example": {
+    "title": "語意區域能不能先計數？",
+    "setup": "現場多數墊圈彼此分開，少數會相接。現有語意遮罩已可用，改實例分割需要新增逐件標註。",
+    "prediction": "先用語意遮罩加連通區與人工例外，或直接建實例分割？說明可接受條件。",
+    "reveal": "若能保證分離條件並可靠識別例外，語意遮罩加連通區可作受限方案，需驗證相接件漏計與覆核量。若必須普遍處理相接、遮擋或逐件ID，應比較實例輸出及標註成本。換SegFormer骨幹本身不會把語意類別變成實例ID。"
+  },
+  "mechanism_steps": [
+    {
+      "title": "整體與局部都重要",
+      "body": "較细特徵保留局部，較粗特徵整合上下文；四尺度示意的是原方法層級，不是四張不同工件。",
+      "why": "由本課核心機制連接工作用途",
+      "anchor": "WI030-1",
+      "diagram": {
+        "title": "整體與局部都重要",
+        "body": "較细特徵保留局部，較粗特徵整合上下文；四尺度示意的是原方法層級，不是四張不同工件。",
+        "why": "詳見本課版本與來源",
+        "anchor": "WI030-1"
+      }
+    },
+    {
+      "title": "多尺度特徵融合",
+      "body": "各尺度投影並調到共同解析度，再融合分類。輕量指解碼設計，整體速度仍要含編碼器與前處理實測。",
+      "why": "由本課核心機制連接工作用途",
+      "anchor": "WI030-2",
+      "diagram": {
+        "title": "多尺度特徵融合",
+        "body": "各尺度投影並調到共同解析度，再融合分類。輕量指解碼設計，整體速度仍要含編碼器與前處理實測。",
+        "why": "詳見本課版本與來源",
+        "anchor": "WI030-2"
+      }
+    },
+    {
+      "title": "逐像素類別",
+      "body": "逐像素類別與預測區域遮罩，交邊界核對或後續量測；實體尺寸需另外校正與驗證。",
+      "why": "由本課核心機制連接工作用途",
+      "anchor": "WI030-3",
+      "diagram": {
+        "title": "逐像素類別",
+        "body": "逐像素類別與預測區域遮罩，交邊界核對或後續量測；實體尺寸需另外校正與驗證。",
+        "why": "詳見本課版本與來源",
+        "anchor": "WI030-3"
+      }
+    },
+    {
+      "title": "工作核對與接手",
+      "body": "用獨立影像和人工核對遮罩，分開量區域重疊、細焊縫漏失及邊界偏差；需尺寸時另做相機與尺度校正。記錄解析度、裁切、拼接與整段耗時。示意遮罩不是推論。",
+      "why": "由本課核心機制連接工作用途",
+      "anchor": "WI030-4",
+      "diagram": {
+        "title": "工作核對與接手",
+        "body": "用獨立影像和人工核對遮罩，分開量區域重疊、細焊縫漏失及邊界偏差；需尺寸時另做相機與尺度校正。記錄解析度、裁切、拼接與整段耗時。示意遮罩不是推論。",
+        "why": "詳見本課版本與來源",
+        "anchor": "WI030-4"
+      }
+    }
+  ],
+  "visual_intro": "SegFormer的階層Transformer產生多個尺度的特徵，再以輕量MLP解碼頭對齊尺度並融合，預測每個像素的類別。較大範圍提供上下文，較細尺度保留局部線索；仍需工作標註和細小邊界驗證。",
+  "beginner_path": {
+    "title": "從必要原理、具體反例到工作取捨",
+    "intro": "要把金屬板上的彎曲焊縫從背景分出來，交給區域覆核或後續量測。 下列圖像、特徵及回答為教學示意，不是模型實測。",
+    "visuals": [
+      {
+        "id": "wi030-segformer-c1",
+        "title": "SegFormer：融合不同尺度，判斷每個位置",
+        "prompt": "要把金屬板上的彎曲焊縫從背景分出來，交給區域覆核或後續量測。",
+        "caption": "SegFormer的階層Transformer產生多個尺度的特徵，再以輕量MLP解碼頭對齊尺度並融合，預測每個像素的類別。較大範圍提供上下文，較細尺度保留局部線索；仍需工作標註和細小邊界驗證。",
+        "image": "_course_content/generated-concepts/segformer/wi030-segformer-c1-r02-desktop.png",
+        "alt": "SegFormer：融合不同尺度，判斷每個位置。SegFormer的階層Transformer產生多個尺度的特徵，再以輕量MLP解碼頭對齊尺度並融合，預測每個像素的類別。較大範圍提供上下文，較細尺度保留局部線索；仍需工作標註和細小邊界驗證。 AI生成教學示意，非模型實測。",
+        "callouts": [
+          {
+            "title": "尺度提供不同線索",
+            "body": "較细特徵保留局部，較粗特徵整合上下文；四尺度示意的是原方法層級，不是四張不同工件。"
+          },
+          {
+            "title": "融合後逐像素判斷",
+            "body": "各尺度投影並調到共同解析度，再融合分類。輕量指解碼設計，整體速度仍要含編碼器與前處理實測。"
+          },
+          {
+            "title": "交付與接手",
+            "body": "逐像素類別與預測區域遮罩，交邊界核對或後續量測；實體尺寸需另外校正與驗證。"
+          }
+        ],
+        "reading_views": [
+          {
+            "title": "SegFormer：融合不同尺度，判斷每個位置",
+            "image": "_course_content/generated-concepts/segformer/wi030-segformer-c1-r02-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/segformer/wi030-segformer-c1-r02-mobile.png",
+            "alt": "SegFormer：融合不同尺度，判斷每個位置。SegFormer的階層Transformer產生多個尺度的特徵，再以輕量MLP解碼頭對齊尺度並融合，預測每個像素的類別。較大範圍提供上下文，較細尺度保留局部線索；仍需工作標註和細小邊界驗證。 AI生成教學示意，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              724,
+              2172
+            ],
+            "mobile_display_mode": "full-mobile",
+            "desktop_intrinsic_width": 1672,
+            "desktop_intrinsic_height": 941,
+            "mobile_intrinsic_width": 724,
+            "mobile_intrinsic_height": 2172
+          }
+        ],
+        "core_ideas": true
+      },
+      {
+        "id": "wi030-seg-d2",
+        "title": "輸入看不見細線，分割也可能漏掉",
+        "prompt": "觀察哪個條件改變，讓原本的結果不夠可靠？",
+        "caption": "同一條細焊縫在縮小輸入後只剩極少像素，預測遮罩可能斷裂；原始工件並沒有真的斷裂。背景細紋也可能造成誤分。",
+        "image": "_course_content/generated-concepts/u-net/wi030-seg-d2-r03-desktop.png",
+        "alt": "輸入看不見細線，分割也可能漏掉。同一條細焊縫在縮小輸入後只剩極少像素，預測遮罩可能斷裂；原始工件並沒有真的斷裂。背景細紋也可能造成誤分。 AI生成教學示意，非模型實測。",
+        "callouts": [
+          {
+            "title": "看哪裡",
+            "body": "同一條細焊縫在縮小輸入後只剩極少像素，預測遮罩可能斷裂；原始工件並沒有真的斷裂。背景細紋也可能造成誤分。"
+          },
+          {
+            "title": "接著怎麼做",
+            "body": "回看原解析度和標註邊界，檢查輸入縮放、局部裁切與拼接；以實際邊界誤差驗證，不把放大顯示當成恢復原本資訊。"
+          }
+        ],
+        "reading_views": [
+          {
+            "title": "輸入看不見細線，分割也可能漏掉",
+            "image": "_course_content/generated-concepts/u-net/wi030-seg-d2-r03-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/u-net/wi030-seg-d2-r03-mobile.png",
+            "alt": "輸入看不見細線，分割也可能漏掉。同一條細焊縫在縮小輸入後只剩極少像素，預測遮罩可能斷裂；原始工件並沒有真的斷裂。背景細紋也可能造成誤分。 AI生成教學示意，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              724,
+              2172
+            ],
+            "mobile_display_mode": "full-mobile",
+            "desktop_intrinsic_width": 1672,
+            "desktop_intrinsic_height": 941,
+            "mobile_intrinsic_width": 724,
+            "mobile_intrinsic_height": 2172
+          }
+        ],
+        "core_ideas": false
+      },
+      {
+        "id": "wi030-seg-d3",
+        "title": "要同類區域，還是每件各一張遮罩？",
+        "prompt": "相同工作需求下，資料、輸出與成本如何取捨？",
+        "caption": "U-Net和SegFormer提供語意分割：同類像素用同類標籤，未必區分每一件。YOLO-Seg提供實例分割：每件有自己的遮罩。先決定要量區域還是逐件計數，再比較模型與標註成本。",
+        "image": "_course_content/generated-concepts/u-net/wi030-seg-d3-r01-desktop.png",
+        "alt": "要同類區域，還是每件各一張遮罩？。U-Net和SegFormer提供語意分割：同類像素用同類標籤，未必區分每一件。YOLO-Seg提供實例分割：每件有自己的遮罩。先決定要量區域還是逐件計數，再比較模型與標註成本。 AI生成教學示意，非模型實測。",
+        "callouts": [
+          {
+            "title": "怎麼選",
+            "body": "U-Net和SegFormer提供語意分割：同類像素用同類標籤，未必區分每一件。YOLO-Seg提供實例分割：每件有自己的遮罩。先決定要量區域還是逐件計數，再比較模型與標註成本。"
+          },
+          {
+            "title": "資料與完整成本",
+            "body": "需像素標註；固定輸入解析度、增強和切分。更改縮放或裁切要重測細線及拼接邊界；同資料比較U-Net基準與SegFormer完整成本。"
+          }
+        ],
+        "reading_views": [
+          {
+            "title": "要同類區域，還是每件各一張遮罩？",
+            "image": "_course_content/generated-concepts/u-net/wi030-seg-d3-r01-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/u-net/wi030-seg-d3-r01-mobile.png",
+            "alt": "要同類區域，還是每件各一張遮罩？。U-Net和SegFormer提供語意分割：同類像素用同類標籤，未必區分每一件。YOLO-Seg提供實例分割：每件有自己的遮罩。先決定要量區域還是逐件計數，再比較模型與標註成本。 AI生成教學示意，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              887,
+              1774
+            ],
+            "mobile_display_mode": "full-mobile",
+            "desktop_intrinsic_width": 1672,
+            "desktop_intrinsic_height": 941,
+            "mobile_intrinsic_width": 887,
+            "mobile_intrinsic_height": 1774
+          }
+        ],
+        "core_ideas": false
+      }
+    ]
+  },
+  "deep_dive": {
+    "title": "SegFormer 八章完整導讀",
+    "intro": "先理解中心思想與三個核心設計，再沿各章看實際操作、資料與限制。MiT不是單一解析度的ViT；有效率的attention仍可取用遠處訊息；解码端把四尺度一起用。",
+    "concept_path": "roadmap-model-selection/known-target-classification/segformer/SEGFORMER_MODEL_CONCEPT.md",
+    "chapters": [
+      {
+        "id": "task-output",
+        "nav": "中心思想",
+        "title": "01｜SegFormer：用多尺度Transformer理解，再輕量融合",
+        "summary": "要把Transformer用於逐像素分割，不能只留下整圖分類表示。SegFormer讓MiT編碼器保留由細到粗的四尺度特徵，再用輕量MLP解碼器對齊融合，兼顧位置、脈絡與運算成本。",
+        "image": "_course_content/generated-concepts/segformer/segformer-e03-core.svg",
+        "alt": "segformer的工作困難、核心機制與結果；圖內標示概念或合成證據。",
+        "points": [
+          "MiT不是單一解析度的ViT：重疊patch嵌入與階層下採樣產生四尺度；較細層保留位置，較粗層整合範圍。原設計沒有固定位置編碼，Mix-FFN中的深度卷積引入局部位置線索。第2、3段展開。",
+          "有效率的attention仍可取用遠處訊息：編碼器保留query位置，先縮減key/value的空間位置數，減少每個query的比較對象。這不是完全放棄全域關係，也不代表延遲同比例降低。第4段核對。",
+          "解码端把四尺度一起用：每層投影到共同通道寬度、上採樣對齊，再拼接融合並輸出像素類別。它不是完整鏡像U-Net回程，也不是四張分割答案平均。第5段看真正被融合的是中間特徵。"
+        ],
+        "check": {
+          "question": "若只留下MiT最後一層，再把它放大成原尺寸，和完整SegFormer的四尺度解碼有何差別？",
+          "answer": "只放大最後一層會丟掉解碼器可直接利用的較細尺度定位線索。完整設計投影、對齊並融合四尺度特徵；粗細訊息各有作用。這不保證細線一定保留，仍受輸入解析度、標註和學習影響。"
+        },
+        "source_ids": [
+          "paper",
+          "hf-docs"
+        ],
+        "reading_views": [
+          {
+            "title": "核心思想：先看完整因果",
+            "image": "_course_content/generated-concepts/segformer/segformer-e03-core.svg",
+            "mobile_image": "_course_content/generated-concepts/segformer/segformer-e03-core-mobile.svg",
+            "mobile_crop": [
+              0,
+              0,
+              720,
+              941
+            ],
+            "alt": "segformer的工作困難、核心機制與結果；圖內標示概念或合成證據。"
+          },
+          {
+            "title": "從W-01亮線到像素候選",
+            "image": "_course_content/generated-concepts/segformer/segformer-e01-01-task.svg",
+            "mobile_image": "_course_content/generated-concepts/segformer/segformer-e01-01-task-mobile.svg",
+            "mobile_crop": [
+              0,
+              0,
+              720,
+              941
+            ],
+            "alt": "從W-01亮線到像素候選；同一案例的來源、處理、輸出與人的下一步。圖內列出證據範圍。"
+          }
+        ]
+      },
+      {
+        "id": "contract-overlap",
+        "nav": "輸入契約",
+        "title": "02｜相鄰窗口，共用哪些像素",
+        "summary": "重疊嵌入使相鄰token共享一些輸入，是MiT保留局部連續性的入口；不是工站切片的重疊設定。 第一階段7×7、步幅4的重疊嵌入，讓相鄰位置分享3列輸入。圖用同一局部的11列概念條带呈現共享範圍；不是這張原圖的真實7像素模型輸入。",
+        "image": "_course_content/generated-concepts/segformer/segformer-e01-02-overlap.svg",
+        "alt": "相鄰窗口的共同像素；同一案例的來源、處理、輸出與人的下一步。圖內列出證據範圍。",
+        "points": [
+          "重疊窗口在模型內做學習投影；工站的大圖切片、重疊與接縫融合是另一套輸入策略。",
+          "固定取像、ROI、縮放、padding、標註與checkpoint後再比較，避免把输入改動當模型改進。",
+          "重疊可保留鄰域連續性，但不能補回相機或縮圖已丟失的細線。"
+        ],
+        "check": {
+          "question": "若只把工站切片改成重疊，就等於已採用MiT的overlap embedding嗎？",
+          "answer": "不等於。切片決定模型收到哪些影像；overlap embedding在模型內轉換特徵。兩者都需記錄與驗證，但不能混為同一步。"
+        },
+        "source_ids": [
+          "official-code",
+          "hf-docs"
+        ],
+        "reading_views": [
+          {
+            "title": "相鄰窗口的共同像素",
+            "image": "_course_content/generated-concepts/segformer/segformer-e01-02-overlap.svg",
+            "mobile_image": "_course_content/generated-concepts/segformer/segformer-e01-02-overlap-mobile.svg",
+            "mobile_crop": [
+              0,
+              0,
+              720,
+              941
+            ],
+            "alt": "相鄰窗口的共同像素；同一案例的來源、處理、輸出與人的下一步。圖內列出證據範圍。"
+          }
+        ]
+      },
+      {
+        "id": "hierarchy-shapes",
+        "nav": "四尺度骨架",
+        "title": "03｜保留四尺度，讓細線與範圍一起參與",
+        "summary": "MiT的中心思想是階層特徵而非單一尺度token；decoder會使用四層，不只最後一層。 尺度示意把同一細亮線與大片範圍訊號逐次平均縮小，讓細線變模糊的代價可見。這不是MiT實際特徵；真正模型保留四階段，讓decoder同時使用。",
+        "image": "_course_content/generated-concepts/segformer/segformer-e01-03-scales.svg",
+        "alt": "同亮線的四尺度訊號；同一案例的來源、處理、輸出與人的下一步。圖內列出證據範圍。",
+        "points": [
+          "MiT輸出通常為輸入1/4、1/8、1/16、1/32尺度；精確shape依輸入與padding核對。",
+          "較細尺度保留位置線索，較深層整合上下文；不能把示意亮區命名為真正缺陷機率。",
+          "多尺度不保證最小缺陷可見，仍要對輸入細節、邊界與留出批次分層驗證。"
+        ],
+        "check": {
+          "question": "只保留最後尺度，再放大到原尺寸，是否等同使用四尺度？",
+          "answer": "不等同。放大只能對齊網格，不能自動恢復沒留下的細訊號。四尺度融合提供更多線索，實際邊界仍需驗證。"
+        },
+        "source_ids": [
+          "paper",
+          "backbone-code",
+          "decoder-code"
+        ],
+        "reading_views": [
+          {
+            "title": "同亮線的四尺度訊號",
+            "image": "_course_content/generated-concepts/segformer/segformer-e01-03-scales.svg",
+            "mobile_image": "_course_content/generated-concepts/segformer/segformer-e01-03-scales-mobile.svg",
+            "mobile_crop": [
+              0,
+              0,
+              720,
+              941
+            ],
+            "alt": "同亮線的四尺度訊號；同一案例的來源、處理、輸出與人的下一步。圖內列出證據範圍。"
+          }
+        ]
+      },
+      {
+        "id": "mit-internals",
+        "nav": "MiT 內部",
+        "title": "04｜Q保留位置，K/V先縮減候選數",
+        "summary": "以8×8位置示例：64個query保留，K/V每邊縮4倍後有4個位置。成對關係由4,096變256，減少16倍；這是關係數而非延遲比。",
+        "image": "_course_content/generated-concepts/segformer/segformer-e01-04-sr.svg",
+        "alt": "保留Q，縮減K/V候選位置；同一案例的來源、處理、輸出與人的下一步。圖內列出證據範圍。",
+        "points": [
+          "SR在共同來源特徵的K/V支路做空間縮減，不能把圖讀成將Q也縮成4個。",
+          "MiT的Mix-FFN另用3×3 depthwise卷積加入局部空間關係；沒有顯式位置嵌入不等於沒有空間資訊。",
+          "總延遲還包含投影、其他層、硬體、切片與後處理；按端到端P95和最小缺陷一起比較。"
+        ],
+        "check": {
+          "question": "K/V位置少16倍，能向產線保證整體延遲少16倍嗎？",
+          "answer": "不能。它只減少這一步的成對關係；其他計算與資料搬移仍存在。需同硬體與完整流程量測P95、記憶體和漏檢。"
+        },
+        "source_ids": [
+          "paper",
+          "backbone-code"
+        ],
+        "reading_views": [
+          {
+            "title": "保留Q，縮減K/V候選位置",
+            "image": "_course_content/generated-concepts/segformer/segformer-e01-04-sr.svg",
+            "mobile_image": "_course_content/generated-concepts/segformer/segformer-e01-04-sr-mobile.svg",
+            "mobile_crop": [
+              0,
+              0,
+              720,
+              941
+            ],
+            "alt": "保留Q，縮減K/V候選位置；同一案例的來源、處理、輸出與人的下一步。圖內列出證據範圍。"
+          }
+        ]
+      },
+      {
+        "id": "decoder",
+        "nav": "MLP Decoder",
+        "title": "05｜四尺度對齊，再按同位置融合",
+        "summary": "MLP decoder讓主要的語意理解留在encoder，解碼器以投影與對齊融合多尺度；重點是簡潔地接上密集像素預測。 四組中間特徵投影到共同通道寬度，resize到共同網格後，沿通道拼接。圖中四個圖層各自保留，再交由學習融合與分類產生逐像素候選。",
+        "image": "_course_content/generated-concepts/segformer/segformer-e01-05-decoder.svg",
+        "alt": "對齊後保留四組訊號再融合；同一案例的來源、處理、輸出與人的下一步。圖內列出證據範圍。",
+        "points": [
+          "不是把四張分割mask平均；輸入decoder的是中間特徵，最後才產生類別分數。",
+          "原實作對齊到第一階段尺度並融合，返回原圖還需resize、類別判讀和座標回映。",
+          "輕量decoder減少解碼端複雜度，但總成本與邊界品質仍要測；模型不能恢復取像未觀測到的細節。"
+        ],
+        "check": {
+          "question": "四張特徵對齊後形狀相同，能直接當四張答案取平均嗎？",
+          "answer": "不能。各尺度是不同的中間訊號，應依模型做通道拼接與學習融合；resize只是網格對齊，不是把特徵變成類別答案。"
+        },
+        "source_ids": [
+          "paper",
+          "decoder-code",
+          "hf-docs"
+        ],
+        "reading_views": [
+          {
+            "title": "對齊後保留四組訊號再融合",
+            "image": "_course_content/generated-concepts/segformer/segformer-e01-05-decoder.svg",
+            "mobile_image": "_course_content/generated-concepts/segformer/segformer-e01-05-decoder-mobile.svg",
+            "mobile_crop": [
+              0,
+              0,
+              720,
+              941
+            ],
+            "alt": "對齊後保留四組訊號再融合；同一案例的來源、處理、輸出與人的下一步。圖內列出證據範圍。"
+          }
+        ]
+      },
+      {
+        "id": "train-infer",
+        "nav": "訓練與推論",
+        "title": "06｜訓練更新權重，推論交付候選",
+        "summary": "用同一來源說明兩條資料流：訓練以人工像素標註比對預測邊界誤差並更新權重；推論則以固定權重處理新影像，輸出交人覆核。示例不代表本站已訓練模型。",
+        "image": "_course_content/generated-concepts/segformer/segformer-e01-06-train.svg",
+        "alt": "訓練與推論的不同資料責任；同一案例的來源、處理、輸出與人的下一步。圖內列出證據範圍。",
+        "points": [
+          "訓練、驗證與測試需按晶圓/批次切分，同一來源圖在此只用於流程解說。",
+          "訓練可用配對的影像與標註做一致增強；推論不拿GT當输入。",
+          "換產品或光學條件時重新檢查類別、邊界與分布，依留出資料決定是否重訓或重標。"
+        ],
+        "check": {
+          "question": "換新批次後候選mask很好看，是否可以省略新的像素真值驗證？",
+          "answer": "不能。外觀合理不等於邊界正確，應抽樣標註與分層檢查，並對比舊批次漏檢、誤報、P95及覆核成本。"
+        },
+        "source_ids": [
+          "official-code",
+          "hf-docs"
+        ],
+        "reading_views": [
+          {
+            "title": "訓練與推論的不同資料責任",
+            "image": "_course_content/generated-concepts/segformer/segformer-e01-06-train.svg",
+            "mobile_image": "_course_content/generated-concepts/segformer/segformer-e01-06-train-mobile.svg",
+            "mobile_crop": [
+              0,
+              0,
+              720,
+              941
+            ],
+            "alt": "訓練與推論的不同資料責任；同一案例的來源、處理、輸出與人的下一步。圖內列出證據範圍。"
+          }
+        ]
+      },
+      {
+        "id": "variants-evidence",
+        "nav": "B0–B5 與證據",
+        "title": "07｜先滿足工站限制，再選模型容量",
+        "summary": "同留出集與硬體的設定例：A為15ms、漏2件、覆核12件；B為28ms、漏1件、覆核7件。漏檢最多2件且P95最多25ms時選A；覆核上限改10件時兩者都不符。",
+        "image": "_course_content/generated-concepts/segformer/segformer-e01-07-selection.svg",
+        "alt": "同條件的節拍與漏檢取捨；同一案例的來源、處理、輸出與人的下一步。圖內列出證據範圍。",
+        "points": [
+          "數值是假設，不對應B0–B5實測排名；模型容量資訊保留在工程參考。",
+          "真正比較需固定標註、切分、解析度、預訓練/訓練預算與硬體，量最小缺陷及邊界。",
+          "較大模型可能改善部分錯誤，也可能超時；不能只以B編號或論文mIoU決定。"
+        ],
+        "check": {
+          "question": "如果允許30ms、但人工覆核最多10件，設定例中如何選？",
+          "answer": "B符合30ms、漏檢≤2及覆核≤10的設定限制；A的覆核12件不符。這只是展示條件改變會改選擇，不能推論真實B型號優勢。"
+        },
+        "source_ids": [
+          "paper",
+          "official-code",
+          "backbone-code"
+        ],
+        "reading_views": [
+          {
+            "title": "同條件的節拍與漏檢取捨",
+            "image": "_course_content/generated-concepts/segformer/segformer-e01-07-selection.svg",
+            "mobile_image": "_course_content/generated-concepts/segformer/segformer-e01-07-selection-mobile.svg",
+            "mobile_crop": [
+              0,
+              0,
+              720,
+              941
+            ],
+            "alt": "同條件的節拍與漏檢取捨；同一案例的來源、處理、輸出與人的下一步。圖內列出證據範圍。"
+          }
+        ]
+      },
+      {
+        "id": "comparison-decision",
+        "nav": "比較與決策",
+        "title": "08｜先按輸出需求，再比較分割方法",
+        "summary": "先看同PCB四焊墊：需要材料類別，還是每件ID？下方可切換三種模型的操作示意；案例各自標示，並非效能排名。",
+        "image": "_course_content/generated-concepts/segformer/segformer-e01-08-outputs.svg",
+        "alt": "同PCB的語意與實例輸出比較；同一案例的來源、處理、輸出與人的下一步。圖內列出證據範圍。",
+        "points": [
+          "U-Net逐級接回細特徵；SegFormer四尺度對齊融合，兩者都可產生語意候選，並非有保證的優劣排名。",
+          "YOLO-Seg對每件候選提供類別、框與mask；語意結果也可接經驗證的分離，但相碰與遮擋需特別檢查。",
+          "同資料與硬體比較邊界、漏檢、P95及覆核；只有正常資料時先補任務/驗證設計，換產品重查標註和允收。"
+        ],
+        "check": {
+          "question": "焊墊互相碰在一起但需要每件數量，是否只換更大的SegFormer即可？",
+          "answer": "未必。首先是輸出責任與分離問題，可比較實例分割或經驗證的分離流程；更大語意骨幹不自動產生每件ID。"
+        },
+        "source_ids": [
+          "paper",
+          "official-code"
+        ],
+        "reading_views": [
+          {
+            "title": "同PCB的語意與實例輸出比較",
+            "image": "_course_content/generated-concepts/segformer/segformer-e01-08-outputs.svg",
+            "mobile_image": "_course_content/generated-concepts/segformer/segformer-e01-08-outputs-mobile.svg",
+            "mobile_crop": [
+              0,
+              0,
+              720,
+              941
+            ],
+            "alt": "同PCB的語意與實例輸出比較；同一案例的來源、處理、輸出與人的下一步。圖內列出證據範圍。"
+          },
+          {
+            "title": "U-Net：粗細特徵接回融合",
+            "image": "_course_content/generated-concepts/u-net/u-net-e01-03-skip.svg",
+            "mobile_image": "_course_content/generated-concepts/u-net/u-net-e01-03-skip-mobile.svg",
+            "mobile_crop": [
+              0,
+              0,
+              720,
+              941
+            ],
+            "alt": "粗脈絡接回細位置；同一案例的來源、處理、輸出與人的下一步。圖內列出證據範圍。"
+          },
+          {
+            "title": "SegFormer：四尺度對齊融合",
+            "image": "_course_content/generated-concepts/segformer/segformer-e01-05-decoder.svg",
+            "mobile_image": "_course_content/generated-concepts/segformer/segformer-e01-05-decoder-mobile.svg",
+            "mobile_crop": [
+              0,
+              0,
+              720,
+              941
+            ],
+            "alt": "對齊後保留四組訊號再融合；同一案例的來源、處理、輸出與人的下一步。圖內列出證據範圍。"
+          },
+          {
+            "title": "YOLO-Seg：共享基底按件組合",
+            "image": "_course_content/generated-concepts/yolo-seg/yolo-seg-e01-03-compose.svg",
+            "mobile_image": "_course_content/generated-concepts/yolo-seg/yolo-seg-e01-03-compose-mobile.svg",
+            "mobile_crop": [
+              0,
+              0,
+              720,
+              941
+            ],
+            "alt": "不同係數組成各自mask；同一案例的來源、處理、輸出與人的下一步。圖內列出證據範圍。"
+          }
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "id": "paper",
+        "label": "SegFormer 論文（arXiv）",
+        "url": "https://arxiv.org/abs/2105.15203",
+        "scope": "架構主張、B0–B5、實驗與限制的第一來源"
+      },
+      {
+        "id": "official-code",
+        "label": "NVlabs 官方程式庫",
+        "url": "https://github.com/NVlabs/SegFormer",
+        "scope": "官方訓練／評估入口、checkpoint 與授權資訊"
+      },
+      {
+        "id": "backbone-code",
+        "label": "官方 MiT backbone 原始碼",
+        "url": "https://github.com/NVlabs/SegFormer/blob/master/mmseg/models/backbones/mix_transformer.py",
+        "scope": "B0–B5 stages、SR ratios、Overlap Patch 與 Mix-FFN 實作"
+      },
+      {
+        "id": "decoder-code",
+        "label": "官方 SegFormer head 原始碼",
+        "url": "https://github.com/NVlabs/SegFormer/blob/master/mmseg/models/decode_heads/segformer_head.py",
+        "scope": "四尺度 projection、resize、concatenate、fuse 與 classifier"
+      },
+      {
+        "id": "hf-docs",
+        "label": "Hugging Face SegFormer 文件",
+        "url": "https://huggingface.co/docs/transformers/model_doc/segformer",
+        "scope": "前處理、labels、logits shape 與推論介面"
+      }
+    ],
+    "default_collapsed": true
+  },
+  "concept_visuals": [
+    {
+      "id": "causal-chain",
+      "placement": "after_causal_chain",
+      "title": "四種尺度的 feature，如何變成同一張語意 mask？",
+      "prompt": "先預測：較粗和較細 feature maps 要先做哪兩件事，才能一起交給 segmentation head？",
+      "caption": "由左到右：重疊 patch 進入 hierarchical MiT，產生四個尺度的 features；每個尺度先經 MLP projection、再上採樣到共同格網，最後融合成 pixel logits。多尺度是因果鏈的一段，不是四張獨立 mask。",
+      "image": "_course_content/generated-concepts/segformer/segformer-causal-chain_v01.svg",
+      "alt": "四段概念圖：帶像素標籤的 ROI、重疊 patch 與階層 Transformer、四種解析度 feature maps 經 MLP 上採樣融合、輸出 semantic pixel mask。",
+      "callouts": [
+        {
+          "title": "① overlapping patch 是入口",
+          "body": "它和 input/crop resolution 一起決定最初可觀測的局部內容。"
+        },
+        {
+          "title": "② 四尺度不是四個最終答案",
+          "body": "它們是給 decoder 同時使用 local detail 和 global context 的中間表示。"
+        },
+        {
+          "title": "③ 融合後仍是 semantic logits",
+          "body": "mask 的 instance、尺寸與不確定性仍須在模型外明確治理。"
+        }
+      ]
+    },
+    {
+      "id": "worked-example",
+      "placement": "after_micro_example",
+      "title": "多尺度能帶來 context，但不能把 tile seam 變不見",
+      "prompt": "一條細邊界跨 tile 邊緣。哪一段提供較大脈絡，哪一段仍要以 overlap/stitch/boundary error 驗證？",
+      "caption": "左側粗尺度有助辨識大材料區，細尺度有助表達邊界；右側同一細邊界落在 tile border 時，若 crop/overlap/stitch 沒鎖定，融合後的 mask 仍可能斷裂或漂移。",
+      "image": "_course_content/generated-concepts/segformer/segformer-worked-example_v01.svg",
+      "alt": "左右概念圖：左邊同一 ROI 的粗尺度材料區和細尺度邊界特徵融合，右邊一條細邊界跨多個 tile 並顯示正確 overlap/stitch 與可能 seam 風險。",
+      "callouts": [
+        {
+          "title": "左：尺度互補",
+          "body": "粗 feature 提供 context，細 feature 協助 local semantic boundary。"
+        },
+        {
+          "title": "右：tile 邊界仍是工程問題",
+          "body": "sliding-window overlap、stitch 和 postprocess 會直接改變 mask 成品。"
+        },
+        {
+          "title": "要量真正的邊界行為",
+          "body": "paper mIoU 或輸出解析度不會直接證明 thin/tiny/seam 的可靠度。"
+        }
+      ]
+    },
+    {
+      "id": "comparison",
+      "placement": "after_comparison",
+      "title": "U-Net、SegFormer、YOLO-Seg 都畫區域，但責任不同",
+      "prompt": "若你要的是已知語意、每個 object instance，或不同多尺度表示，先用輸出單位而不是模型名決定。",
+      "caption": "U-Net 用 encoder-decoder/skip connections 產生 semantic mask；SegFormer 用 hierarchical Transformer/multi-scale MLP fusion 產生 semantic mask；YOLO-Seg 以 box/class、prototype 和 instance coefficients 輸出每個 known instance 的 mask。三種區域輸出不可互相代替。",
+      "image": "_course_content/generated-concepts/segformer/segformer-comparison_v01.svg",
+      "alt": "三欄比較圖：U-Net 的 encoder-decoder skip semantic mask，SegFormer 的四尺度 Transformer 融合 semantic mask，YOLO-Seg 的每個 box 與個別 instance masks。",
+      "callouts": [
+        {
+          "title": "U-Net：同尺度 skip",
+          "body": "輸出已知 semantic pixels，不天然區分相碰 instances。"
+        },
+        {
+          "title": "SegFormer：多尺度 token fusion",
+          "body": "decoder 融合不同 context；仍需治理 stride、crop、stitch 和 boundary。"
+        },
+        {
+          "title": "YOLO-Seg：instance mask",
+          "body": "box/NMS/prototype/overlap contract 是不同的輸出責任。"
+        }
+      ]
+    },
+    {
+      "id": "boundary-cases-explainer",
+      "placement": "before_boundary_cases",
+      "title": "同一條因果鏈，在哪裡會被破壞？",
+      "prompt": "不要只記住風險名詞；先預測條件一變，畫面或候選結果會怎麼變，再決定何時應 HOLD。",
+      "caption": "SegFormer 的三個模型專屬反事實：每欄把條件、可觀察後果與正確下一步放在一起。它們不是自動修正規則；遇到條件超出驗證範圍時，先保存原始證據並進入 HOLD／REVIEW。",
+      "image": "_course_content/generated-concepts/segformer/segformer-boundary-cases_v01.svg",
+      "alt": "SegFormer 的三欄反事實說明圖：每欄依序說明一個失效條件、可能看到的候選或量測後果，以及應進入 HOLD、重驗或改選方法的安全下一步。",
+      "callouts": [
+        {
+          "title": "先看條件，而不是先改門檻",
+          "body": "候選改變可能是資料、取像、設定或模型假設被破壞，不能立刻解讀成產品真相。"
+        },
+        {
+          "title": "把可觀察後果說出來",
+          "body": "誤報、漏檢、整片異常或時間失序都需要回到原始資料與版本追查。"
+        },
+        {
+          "title": "HOLD 是設計的一部分",
+          "body": "先停止自動往下走、保存 evidence，確認條件後才重新 qualification 或交給適合的方法。"
+        }
+      ]
+    }
+  ],
+  "boundary_cases": [
+    {
+      "condition": "本課具體反例",
+      "effect": "同一條細焊縫在縮小輸入後只剩極少像素，預測遮罩可能斷裂；原始工件並沒有真的斷裂。背景細紋也可能造成誤分。",
+      "action": "回看原解析度和標註邊界，檢查輸入縮放、局部裁切與拼接；以實際邊界誤差驗證，不把放大顯示當成恢復原本資訊。"
+    },
+    {
+      "condition": "更換產品、模型或輸入設定",
+      "effect": "需像素標註；固定輸入解析度、增強和切分。更改縮放或裁切要重測細線及拼接邊界；同資料比較U-Net基準與SegFormer完整成本。",
+      "action": "先定義焊縫標註邊界和最小可見寬度，保存原圖，分開完整批次作驗證。"
+    },
+    {
+      "condition": "把示意當成實際推論",
+      "effect": "本課特徵、排序、回答及圖像僅用於解釋，不支持現場準確率或耗時結論。",
+      "action": "用獨立影像和人工核對遮罩，分開量區域重疊、細焊縫漏失及邊界偏差；需尺寸時另做相機與尺度校正。記錄解析度、裁切、拼接與整段耗時。示意遮罩不是推論。"
+    }
+  ],
+  "comparison": [
+    {
+      "model": "U-Net",
+      "normality": "像素標註；編碼解碼同尺度跳接",
+      "candidate": "語意區域；邊界與尺度需另驗"
+    },
+    {
+      "model": "SegFormer",
+      "normality": "像素標註；階層特徵多尺度融合",
+      "candidate": "語意區域；不自動提供每件ID"
+    },
+    {
+      "model": "YOLOv8-seg例",
+      "normality": "每件標註；原型＋每件係數",
+      "candidate": "每件框與遮罩；漏檢重疊逐件驗"
+    }
+  ],
+  "selection": "U-Net和SegFormer提供語意分割：同類像素用同類標籤，未必區分每一件。YOLO-Seg提供實例分割：每件有自己的遮罩。先決定要量區域還是逐件計數，再比較模型與標註成本。 需像素標註；固定輸入解析度、增強和切分。更改縮放或裁切要重測細線及拼接邊界；同資料比較U-Net基準與SegFormer完整成本。",
+  "poc": {
+    "title": "以真實工作資料做小規模比較",
+    "steps": [
+      "先定義焊縫標註邊界和最小可見寬度，保存原圖，分開完整批次作驗證。",
+      "需像素標註；固定輸入解析度、增強和切分。更改縮放或裁切要重測細線及拼接邊界；同資料比較U-Net基準與SegFormer完整成本。",
+      "用獨立影像和人工核對遮罩，分開量區域重疊、細焊縫漏失及邊界偏差；需尺寸時另做相機與尺度校正。記錄解析度、裁切、拼接與整段耗時。示意遮罩不是推論。"
+    ],
+    "hold": "回看原解析度和標註邊界，檢查輸入縮放、局部裁切與拼接；以實際邊界誤差驗證，不把放大顯示當成恢復原本資訊。",
+    "acceptance": {
+      "baseline": "既有流程或最簡單可行方法",
+      "measure": "用獨立影像和人工核對遮罩，分開量區域重疊、細焊縫漏失及邊界偏差；需尺寸時另做相機與尺度校正。記錄解析度、裁切、拼接與整段耗時。示意遮罩不是推論。",
+      "negative_control": "同一條細焊縫在縮小輸入後只剩極少像素，預測遮罩可能斷裂；原始工件並沒有真的斷裂。背景細紋也可能造成誤分。",
+      "owner": "實作與影像核對負責人"
+    }
+  },
+  "teach_back": {
+    "question": "它改變什麼？何時選另一種做法？",
+    "answer": "SegFormer的階層Transformer產生多個尺度的特徵，再以輕量MLP解碼頭對齊尺度並融合，預測每個像素的類別。較大範圍提供上下文，較細尺度保留局部線索；仍需工作標註和細小邊界驗證。 U-Net和SegFormer提供語意分割：同類像素用同類標籤，未必區分每一件。YOLO-Seg提供實例分割：每件有自己的遮罩。先決定要量區域還是逐件計數，再比較模型與標註成本。"
+  },
+  "slide_reading": [
+    {
+      "title": "先找：SegFormer 的輸入與輸出契約在哪裡？",
+      "question": "為什麼 MiT variant、crop/tile、pixel labels 和 output resolution 都要同時固定？",
+      "look": "找 MiT B0–B5、pretraining、image/crop/tile、pixel masks/ignore、sliding-window 和 output resolution。",
+      "relation": "這些設定共同決定哪些 pixels/context 進 encoder，以及 logits 要在哪個座標與解析度交付。",
+      "takeaway": "SegFormer 不是固定 checkpoint；input/output contract 是模型的一部分。",
+      "terms": [
+        "MiT：SegFormer 使用的 hierarchical Transformer encoder family",
+        "sliding-window：用多個重疊 crop/tile 覆蓋大影像的推論方式"
+      ]
+    },
+    {
+      "title": "這張圖要核對：四尺度 features 從哪裡來？",
+      "question": "overlapping patch embedding 和 hierarchical stages 為何會產生不同解析度的表示？",
+      "look": "找 overlapping patches、MiT stages、downsampling、channels 和 four-scale feature maps。",
+      "relation": "每個 stage 逐步改變解析度和 channels，形成能表達不同 local/global 範圍的 feature maps。",
+      "takeaway": "多尺度是為了融合不同 context，不是保證所有尺度都同樣精確。",
+      "terms": [
+        "overlapping patch embedding：以可重疊區域將影像轉為 token/feature 的入口",
+        "multi-scale feature map：不同解析度、不同 context 範圍的中間表示"
+      ]
+    },
+    {
+      "title": "先看：MLP decoder 如何讓不同尺度能一起回答？",
+      "question": "為什麼每個 scale 要先 projection、再 upsample、再 fuse？",
+      "look": "找 per-scale MLP projection、upsample、common scale、concatenate/fuse 和 segmentation head。",
+      "relation": "各尺度 feature 的 channels/格網不同；decoder 先對齊再融合，才形成同一位置上的語意表示。",
+      "takeaway": "upsample 是對齊與重建步驟，不會自動創造未被採樣的邊界細節。",
+      "terms": [
+        "projection：將不同 feature 表示轉到可融合的通道空間",
+        "fuse：把多個對齊尺度的資訊合併成一個 segmentation representation"
+      ]
+    },
+    {
+      "title": "最後看：mask 為何還要檢查 stitch 與量測邊界？",
+      "question": "semantic logits 到原圖 mask 的哪幾步會改變 final boundary？",
+      "look": "找 argmax/threshold、stitch、inverse mapping、postprocess、boundary/seam error 和 uncertainty gate。",
+      "relation": "head 輸出 logits；後續閾值、窗口接合和後處理把它變成可見 mask；量測又是另一層責任。",
+      "takeaway": "不要由 mIoU、mask confidence 或細緻畫面直接推出 instance/CD/面積可信度。",
+      "terms": [
+        "tile-seam error：跨 crop/tile 接合處的預測不連續或偏差",
+        "inverse mapping：把 crop/tile 輸出映回原始影像座標的處理"
+      ]
+    }
+  ],
+  "comparison_headers": {
+    "title": "要同類區域，還是每件各一張遮罩？",
+    "basis": "所需資料與方法差異",
+    "output": "輸出與維護責任"
+  },
+  "transfer_check": {
+    "title": "語意區域能不能先計數？",
+    "scenario": "現場多數墊圈彼此分開，少數會相接。現有語意遮罩已可用，改實例分割需要新增逐件標註。",
+    "question": "先用語意遮罩加連通區與人工例外，或直接建實例分割？說明可接受條件。",
+    "answer": "若能保證分離條件並可靠識別例外，語意遮罩加連通區可作受限方案，需驗證相接件漏計與覆核量。若必須普遍處理相接、遮擋或逐件ID，應比較實例輸出及標註成本。換SegFormer骨幹本身不會把語意類別變成實例ID。"
+  },
+  "review_trace": {
+    "authority": "roadmap-model-selection/known-target-classification/segformer/model.md",
+    "scope": "WI-030 十二課首讀圖文與手機PNG、反例、比較及自測；原工程slide保留，未以首讀評分代替工程圖審查。",
+    "claims": [
+      {
+        "id": "visual-1",
+        "field": "beginner_path.visuals[wafer-contract]",
+        "source": "模型定位 / architecture_path"
+      },
+      {
+        "id": "visual-2",
+        "field": "beginner_path.visuals[contract-overlap-patches]",
+        "source": "architecture_path"
+      },
+      {
+        "id": "visual-3",
+        "field": "beginner_path.visuals[mit-four-scale-features]",
+        "source": "representation_or_score"
+      },
+      {
+        "id": "visual-4",
+        "field": "beginner_path.visuals[mlp-align-fuse-mask]",
+        "source": "failure_boundary"
+      },
+      {
+        "id": "visual-5",
+        "field": "beginner_path.visuals[boundary-seam-instance-hold]",
+        "source": "selection_gate / evidence_bundle"
+      },
+      {
+        "id": "promise",
+        "field": "promise",
+        "source": "模型定位 / representation_or_score"
+      },
+      {
+        "id": "mechanism",
+        "field": "mechanism_steps",
+        "source": "architecture_path / representation_or_score"
+      },
+      {
+        "id": "boundaries",
+        "field": "boundary_cases",
+        "source": "failure_boundary / selection_gate"
+      },
+      {
+        "id": "comparison",
+        "field": "comparison + selection",
+        "source": "selection_gate"
+      },
+      {
+        "id": "poc",
+        "field": "poc + acceptance",
+        "source": "cost_and_operating_point / evidence_bundle"
+      },
+      {
+        "id": "transfer",
+        "field": "transfer_check",
+        "source": "failure_boundary / selection_gate"
+      },
+      {
+        "id": "wi030-first-read",
+        "field": "beginner_path + core + selection + transfer",
+        "source": "https://arxiv.org/abs/2105.15203"
+      }
+    ]
+  },
+  "quality_status": {
+    "label": "首讀圖文已核對",
+    "state": "self-reviewed",
+    "round": "WI-030",
+    "reason": "新版逐圖與整頁自評、桌機手機驗證完成；使用者成品核准pending。原工程圖未納入本輪分數。"
+  },
+  "teaching_preflight": {
+    "brief": "teaching-images/vision-ai-model-selection/workitems/wi-030/segformer-c1-r02-desktop.md",
+    "mobile_brief": "teaching-images/vision-ai-model-selection/workitems/wi-030/segformer-c1-r02-mobile.md",
+    "story": "C",
+    "major_visual_nodes": 3,
+    "visual_status": "self-reviewed",
+    "user_review": "pending"
+  }
+}

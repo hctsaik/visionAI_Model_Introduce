@@ -1,0 +1,484 @@
+{
+  "model": "Keypoint R-CNN",
+  "badge": "物件內的2D關鍵點",
+  "title": "Keypoint R-CNN：先分物件，再找有名字的點",
+  "scenario": {
+    "title": "同張圖有兩塊L形件，要找出每件A、B、C孔中心，供對位或後續幾何求解。",
+    "body": "同張圖有兩塊L形件，要找出每件A、B、C孔中心，供對位或後續幾何求解。"
+  },
+  "promise": {
+    "title": "交付結果與接手工作",
+    "body": "每件的2D關鍵點、框及相應分數，交對位或幾何步驟；不直接交出3D旋轉和平移。"
+  },
+  "mental_model": {
+    "title": "物件內的2D關鍵點",
+    "body": "Keypoint R-CNN先偵測物件，以對齊的ROI特徵為每種關鍵點預測位置熱圖，再把框內位置映回原圖。A/B/C是定義好的點身分，每件都要一致；工業孔位需要相應訓練與標註，不能直接把COCO人體權重當孔位模型。",
+    "limit": "四孔板接近對稱，辨識方向的缺口又被遮住時，兩套點位對應可能都看似合理。錯誤身分可能得到看似小的重投影誤差；低誤差不能單獨證明姿態正確。"
+  },
+  "beginner_path": {
+    "title": "從必要原理、具體反例到工作取捨",
+    "intro": "同張圖有兩塊L形件，要找出每件A、B、C孔中心，供對位或後續幾何求解。 下列圖像、特徵及回答為教學示意，不是模型實測。",
+    "visuals": [
+      {
+        "id": "wi030-key-c1",
+        "title": "Keypoint R-CNN：先分物件，再找有名字的點",
+        "prompt": "同張圖有兩塊L形件，要找出每件A、B、C孔中心，供對位或後續幾何求解。",
+        "caption": "Keypoint R-CNN先偵測物件，以對齊的ROI特徵為每種關鍵點預測位置熱圖，再把框內位置映回原圖。A/B/C是定義好的點身分，每件都要一致；工業孔位需要相應訓練與標註，不能直接把COCO人體權重當孔位模型。",
+        "image": "_course_content/generated-concepts/keypoint-r-cnn/wi030-key-c1-r04-desktop.png",
+        "alt": "Keypoint R-CNN：先分物件，再找有名字的點。Keypoint R-CNN先偵測物件，以對齊的ROI特徵為每種關鍵點預測位置熱圖，再把框內位置映回原圖。A/B/C是定義好的點身分，每件都要一致；工業孔位需要相應訓練與標註，不能直接把COCO人體權重當孔位模型。 AI生成教學示意，非模型實測。",
+        "callouts": [
+          {
+            "title": "每件有自己的ROI",
+            "body": "共享影像特徵後，各個物件分開ROI處理；兩件的A點不能混成同一物件的一組點。"
+          },
+          {
+            "title": "點位需映回原圖",
+            "body": "熱圖位置經尺度與裁切座標還原成2D影像座標。可見性與置信判斷仍需實際驗證。"
+          },
+          {
+            "title": "交付與接手",
+            "body": "每件的2D關鍵點、框及相應分數，交對位或幾何步驟；不直接交出3D旋轉和平移。"
+          }
+        ],
+        "reading_views": [
+          {
+            "title": "Keypoint R-CNN：先分物件，再找有名字的點",
+            "image": "_course_content/generated-concepts/keypoint-r-cnn/wi030-key-c1-r04-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/keypoint-r-cnn/wi030-key-c1-r05-mobile.png",
+            "alt": "Keypoint R-CNN：先分物件，再找有名字的點。Keypoint R-CNN先偵測物件，以對齊的ROI特徵為每種關鍵點預測位置熱圖，再把框內位置映回原圖。A/B/C是定義好的點身分，每件都要一致；工業孔位需要相應訓練與標註，不能直接把COCO人體權重當孔位模型。 AI生成教學示意，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              887,
+              1774
+            ],
+            "mobile_display_mode": "full-mobile",
+            "desktop_intrinsic_width": 1672,
+            "desktop_intrinsic_height": 941,
+            "mobile_intrinsic_width": 887,
+            "mobile_intrinsic_height": 1774
+          }
+        ],
+        "core_ideas": true
+      },
+      {
+        "id": "wi030-pose-d2",
+        "title": "對稱或遮住時，完整的點也可能配錯",
+        "prompt": "觀察哪個條件改變，讓原本的結果不夠可靠？",
+        "caption": "四孔板接近對稱，辨識方向的缺口又被遮住時，兩套點位對應可能都看似合理。錯誤身分可能得到看似小的重投影誤差；低誤差不能單獨證明姿態正確。",
+        "image": "_course_content/generated-concepts/pose/wi030-pose-d2-r02-desktop.png",
+        "alt": "對稱或遮住時，完整的點也可能配錯。四孔板接近對稱，辨識方向的缺口又被遮住時，兩套點位對應可能都看似合理。錯誤身分可能得到看似小的重投影誤差；低誤差不能單獨證明姿態正確。 AI生成教學示意，非模型實測。",
+        "callouts": [
+          {
+            "title": "看哪裡",
+            "body": "四孔板接近對稱，辨識方向的缺口又被遮住時，兩套點位對應可能都看似合理。錯誤身分可能得到看似小的重投影誤差；低誤差不能單獨證明姿態正確。"
+          },
+          {
+            "title": "接著怎麼做",
+            "body": "先確認點的身分、可見性和工件幾何；必要時換視角或加入可驗證的不對稱標記，重查多解與座標鏈，不用猜測的解接動作。"
+          }
+        ],
+        "reading_views": [
+          {
+            "title": "對稱或遮住時，完整的點也可能配錯",
+            "image": "_course_content/generated-concepts/pose/wi030-pose-d2-r02-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/pose/wi030-pose-d2-r02-mobile.png",
+            "alt": "對稱或遮住時，完整的點也可能配錯。四孔板接近對稱，辨識方向的缺口又被遮住時，兩套點位對應可能都看似合理。錯誤身分可能得到看似小的重投影誤差；低誤差不能單獨證明姿態正確。 AI生成教學示意，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              836,
+              1881
+            ],
+            "mobile_display_mode": "full-mobile",
+            "desktop_intrinsic_width": 1672,
+            "desktop_intrinsic_height": 941,
+            "mobile_intrinsic_width": 836,
+            "mobile_intrinsic_height": 1881
+          }
+        ],
+        "core_ideas": false
+      },
+      {
+        "id": "wi030-pose-d3",
+        "title": "找點與求姿態，是不同的工作責任",
+        "prompt": "相同工作需求下，資料、輸出與成本如何取捨？",
+        "caption": "Keypoint R-CNN負責影像中的2D點及所屬物件；Pose Pipeline把這些同名點和已知3D幾何、相機校正接起來求姿態。它們可以串接，不是互相取代的模型排名。只需2D位置時不一定要增加3D求解。",
+        "image": "_course_content/generated-concepts/pose/wi030-pose-d3-r03-desktop.png",
+        "alt": "找點與求姿態，是不同的工作責任。Keypoint R-CNN負責影像中的2D點及所屬物件；Pose Pipeline把這些同名點和已知3D幾何、相機校正接起來求姿態。它們可以串接，不是互相取代的模型排名。只需2D位置時不一定要增加3D求解。 AI生成教學示意，非模型實測。",
+        "callouts": [
+          {
+            "title": "怎麼選",
+            "body": "Keypoint R-CNN負責影像中的2D點及所屬物件；Pose Pipeline把這些同名點和已知3D幾何、相機校正接起來求姿態。它們可以串接，不是互相取代的模型排名。只需2D位置時不一定要增加3D求解。"
+          },
+          {
+            "title": "資料與完整成本",
+            "body": "定義每種工件固定點名、可見性與遮擋標註；以適當任務頭訓練，固定ROI和座標還原流程。換點位定義或工件需重訓／重驗。"
+          }
+        ],
+        "reading_views": [
+          {
+            "title": "找點與求姿態，是不同的工作責任",
+            "image": "_course_content/generated-concepts/pose/wi030-pose-d3-r03-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/pose/wi030-pose-d3-r03-mobile.png",
+            "alt": "找點與求姿態，是不同的工作責任。Keypoint R-CNN負責影像中的2D點及所屬物件；Pose Pipeline把這些同名點和已知3D幾何、相機校正接起來求姿態。它們可以串接，不是互相取代的模型排名。只需2D位置時不一定要增加3D求解。 AI生成教學示意，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              724,
+              2172
+            ],
+            "mobile_display_mode": "full-mobile",
+            "desktop_intrinsic_width": 1670,
+            "desktop_intrinsic_height": 941,
+            "mobile_intrinsic_width": 724,
+            "mobile_intrinsic_height": 2172
+          }
+        ],
+        "core_ideas": false
+      }
+    ]
+  },
+  "micro_example": {
+    "title": "先交2D，還是接3D？",
+    "setup": "目前工站只需檢查孔中心是否落在影像允收區；未來另一工站想用相機姿態做對位。",
+    "prediction": "這輪先交2D點核對，或同時建立3D流程？各自還缺哪些資料？",
+    "reveal": "目前需求可先交逐件2D點與允收核對，驗證點名、遮擋與映回原圖誤差。若本輪已需3D接手，才同時準備足夠正確2D–3D對應、已知幾何、相機校正、多解檢查及必要外參。不能把2D分數當姿態精度，也不必為尚未需要的輸出先付全部成本。"
+  },
+  "mechanism_steps": [
+    {
+      "title": "每件定義相同點",
+      "body": "共享影像特徵後，各個物件分開ROI處理；兩件的A點不能混成同一物件的一組點。",
+      "why": "由本課核心機制連接工作用途",
+      "anchor": "WI030-1",
+      "diagram": {
+        "title": "每件定義相同點",
+        "body": "共享影像特徵後，各個物件分開ROI處理；兩件的A點不能混成同一物件的一組點。",
+        "why": "詳見本課版本與來源",
+        "anchor": "WI030-1"
+      }
+    },
+    {
+      "title": "框內預測位置",
+      "body": "熱圖位置經尺度與裁切座標還原成2D影像座標。可見性與置信判斷仍需實際驗證。",
+      "why": "由本課核心機制連接工作用途",
+      "anchor": "WI030-2",
+      "diagram": {
+        "title": "框內預測位置",
+        "body": "熱圖位置經尺度與裁切座標還原成2D影像座標。可見性與置信判斷仍需實際驗證。",
+        "why": "詳見本課版本與來源",
+        "anchor": "WI030-2"
+      }
+    },
+    {
+      "title": "映回原圖",
+      "body": "每件的2D關鍵點、框及相應分數，交對位或幾何步驟；不直接交出3D旋轉和平移。",
+      "why": "由本課核心機制連接工作用途",
+      "anchor": "WI030-3",
+      "diagram": {
+        "title": "映回原圖",
+        "body": "每件的2D關鍵點、框及相應分數，交對位或幾何步驟；不直接交出3D旋轉和平移。",
+        "why": "詳見本課版本與來源",
+        "anchor": "WI030-3"
+      }
+    },
+    {
+      "title": "工作核對與接手",
+      "body": "逐件量2D位置誤差、點名混淆、漏點與遮擋表現，核對ROI映回原圖。若再求姿態，另外量姿態誤差，不能只以點位分數代替。",
+      "why": "由本課核心機制連接工作用途",
+      "anchor": "WI030-4",
+      "diagram": {
+        "title": "工作核對與接手",
+        "body": "逐件量2D位置誤差、點名混淆、漏點與遮擋表現，核對ROI映回原圖。若再求姿態，另外量姿態誤差，不能只以點位分數代替。",
+        "why": "詳見本課版本與來源",
+        "anchor": "WI030-4"
+      }
+    }
+  ],
+  "visual_intro": "Keypoint R-CNN先偵測物件，以對齊的ROI特徵為每種關鍵點預測位置熱圖，再把框內位置映回原圖。A/B/C是定義好的點身分，每件都要一致；工業孔位需要相應訓練與標註，不能直接把COCO人體權重當孔位模型。",
+  "concept_visuals": [
+    {
+      "id": "causal-chain",
+      "placement": "after_causal_chain",
+      "title": "Keypoint R-CNN 的關鍵順序：先 proposal，才有 ROI 內的 K 點",
+      "prompt": "先預測：RPN 沒送出物件 box 時，ROIAlign 和 keypoint heatmaps 還有什麼輸入？",
+      "caption": "由左到右：FPN features 先由 RPN 提出 boxes，NMS 後的 proposal 才經 ROIAlign；每個 ROI 內產生 box/class 與 K 個熱圖，peak 再回映原圖。K 點不是直接從全圖自動出現。",
+      "image": "_course_content/generated-concepts/keypoint-r-cnn/keypoint-r-cnn-causal-chain_v01.svg",
+      "alt": "四段概念圖：多個小物件進入 FPN/RPN proposals，選中的 box 經 ROIAlign，ROI 內有 K 個不同顏色 heatmaps，峰值回映為每個 instance 的編號 keypoints。",
+      "callouts": [
+        {
+          "title": "① proposal 是入口門檻",
+          "body": "missed object 沒有 ROI，後面 keypoint head 無從工作。"
+        },
+        {
+          "title": "② ROIAlign 建立 instance 座標桌面",
+          "body": "每個 proposal 的 feature 被對齊到固定 ROI 格網。"
+        },
+        {
+          "title": "③ K 張 heatmap 對應 K 個有順序的點",
+          "body": "peak、visibility 和 inverse mapping 共同決定原圖座標。"
+        }
+      ]
+    },
+    {
+      "id": "worked-example",
+      "placement": "after_micro_example",
+      "title": "proposal 漏失，會讓 landmark recall 在第一關就歸零",
+      "prompt": "兩個零件中，一個因遮擋沒有 proposal。你應先優化 K 點 heatmap，還是先回查 proposal recall/effective pixels？",
+      "caption": "左側小/遮擋物件沒通過 RPN，沒有 ROI 供 K 點頭使用；右側已提出 box 的物件才有多張 landmark heatmaps。要提升 end-to-end keypoint recall，不能跳過 proposal、NMS、ROI 和 input observability。",
+      "image": "_course_content/generated-concepts/keypoint-r-cnn/keypoint-r-cnn-worked-example_v01.svg",
+      "alt": "左右對照概念圖：左邊一個被遮擋的小物件沒有 proposal 和後續 keypoints，右邊物件有 box、ROI heatmaps 和映回原圖的多個編號 landmarks。",
+      "callouts": [
+        {
+          "title": "左：沒有 proposal 就沒有後續 K 點",
+          "body": "keypoint heatmap 不能補救前面未被檢出的 instance。"
+        },
+        {
+          "title": "右：有 ROI 才能定位",
+          "body": "每個 landmark 在 instance-local heatmap 中找 peak。"
+        },
+        {
+          "title": "要量端到端錯誤",
+          "body": "proposal recall、missing rate、pixel error、association 和 P95 都需要一起看。"
+        }
+      ]
+    },
+    {
+      "id": "comparison",
+      "placement": "after_comparison",
+      "title": "landmark、pose、semantic mask 各自回答不同問題",
+      "prompt": "先分清：要的是每個物件的 K 點、由這些點解出的姿態，還是全圖語意區域？",
+      "caption": "Keypoint R-CNN 交 per-instance box/class/K landmarks；Pose Pipeline 將 keypoints、association、camera/geometry solver 接成 2D/3D pose+uncertainty；U-Net 交每個 pixel 的 semantic class。三者的 score、資料與 failure gate 不能混用。",
+      "image": "_course_content/generated-concepts/keypoint-r-cnn/keypoint-r-cnn-comparison_v01.svg",
+      "alt": "三欄比較圖：Keypoint R-CNN 對每個 box 輸出編號 landmarks，Pose Pipeline 將 landmarks 接到相機和幾何 solver 輸出方向，U-Net 輸出全圖 semantic mask。",
+      "callouts": [
+        {
+          "title": "Keypoint R-CNN：instance-aware landmarks",
+          "body": "責任止於每個 instance 的 ordered keypoints 與信心/可見性。"
+        },
+        {
+          "title": "Pose Pipeline：keypoints + solver",
+          "body": "orientation/2D-3D pose 還需要 camera、association、geometry 與 uncertainty。"
+        },
+        {
+          "title": "U-Net：semantic region",
+          "body": "像素區域不會自然給每個物件一組有順序 landmark。"
+        }
+      ]
+    },
+    {
+      "id": "boundary-cases-explainer",
+      "placement": "before_boundary_cases",
+      "title": "同一條因果鏈，在哪裡會被破壞？",
+      "prompt": "不要只記住風險名詞；先預測條件一變，畫面或候選結果會怎麼變，再決定何時應 HOLD。",
+      "caption": "Keypoint R-CNN 的三個模型專屬反事實：每欄把條件、可觀察後果與正確下一步放在一起。它們不是自動修正規則；遇到條件超出驗證範圍時，先保存原始證據並進入 HOLD／REVIEW。",
+      "image": "_course_content/generated-concepts/keypoint-r-cnn/keypoint-r-cnn-boundary-cases_v01.svg",
+      "alt": "Keypoint R-CNN 的三欄反事實說明圖：每欄依序說明一個失效條件、可能看到的候選或量測後果，以及應進入 HOLD、重驗或改選方法的安全下一步。",
+      "callouts": [
+        {
+          "title": "先看條件，而不是先改門檻",
+          "body": "候選改變可能是資料、取像、設定或模型假設被破壞，不能立刻解讀成產品真相。"
+        },
+        {
+          "title": "把可觀察後果說出來",
+          "body": "誤報、漏檢、整片異常或時間失序都需要回到原始資料與版本追查。"
+        },
+        {
+          "title": "HOLD 是設計的一部分",
+          "body": "先停止自動往下走、保存 evidence，確認條件後才重新 qualification 或交給適合的方法。"
+        }
+      ]
+    }
+  ],
+  "boundary_cases": [
+    {
+      "condition": "本課具體反例",
+      "effect": "四孔板接近對稱，辨識方向的缺口又被遮住時，兩套點位對應可能都看似合理。錯誤身分可能得到看似小的重投影誤差；低誤差不能單獨證明姿態正確。",
+      "action": "先確認點的身分、可見性和工件幾何；必要時換視角或加入可驗證的不對稱標記，重查多解與座標鏈，不用猜測的解接動作。"
+    },
+    {
+      "condition": "更換產品、模型或輸入設定",
+      "effect": "定義每種工件固定點名、可見性與遮擋標註；以適當任務頭訓練，固定ROI和座標還原流程。換點位定義或工件需重訓／重驗。",
+      "action": "先在不同旋轉和遮擋影像檢查人能否一致標A/B/C，再按批次分開訓練與測試。"
+    },
+    {
+      "condition": "把示意當成實際推論",
+      "effect": "本課特徵、排序、回答及圖像僅用於解釋，不支持現場準確率或耗時結論。",
+      "action": "逐件量2D位置誤差、點名混淆、漏點與遮擋表現，核對ROI映回原圖。若再求姿態，另外量姿態誤差，不能只以點位分數代替。"
+    }
+  ],
+  "comparison": [
+    {
+      "model": "Keypoint R-CNN",
+      "normality": "每件框與點名標註；工業任務訓練",
+      "candidate": "2D點及物件歸屬"
+    },
+    {
+      "model": "幾何與相機資料",
+      "normality": "同名3D點、內參畸變與一致單位",
+      "candidate": "把2D點接到幾何問題"
+    },
+    {
+      "model": "PnP姿態流程",
+      "normality": "足夠正確對應；適用求解與多解驗證",
+      "candidate": "物體→相機姿態；接工站需外參"
+    }
+  ],
+  "selection": "Keypoint R-CNN負責影像中的2D點及所屬物件；Pose Pipeline把這些同名點和已知3D幾何、相機校正接起來求姿態。它們可以串接，不是互相取代的模型排名。只需2D位置時不一定要增加3D求解。 定義每種工件固定點名、可見性與遮擋標註；以適當任務頭訓練，固定ROI和座標還原流程。換點位定義或工件需重訓／重驗。",
+  "poc": {
+    "title": "以真實工作資料做小規模比較",
+    "steps": [
+      "先在不同旋轉和遮擋影像檢查人能否一致標A/B/C，再按批次分開訓練與測試。",
+      "定義每種工件固定點名、可見性與遮擋標註；以適當任務頭訓練，固定ROI和座標還原流程。換點位定義或工件需重訓／重驗。",
+      "逐件量2D位置誤差、點名混淆、漏點與遮擋表現，核對ROI映回原圖。若再求姿態，另外量姿態誤差，不能只以點位分數代替。"
+    ],
+    "hold": "先確認點的身分、可見性和工件幾何；必要時換視角或加入可驗證的不對稱標記，重查多解與座標鏈，不用猜測的解接動作。",
+    "acceptance": {
+      "baseline": "既有流程或最簡單可行方法",
+      "measure": "逐件量2D位置誤差、點名混淆、漏點與遮擋表現，核對ROI映回原圖。若再求姿態，另外量姿態誤差，不能只以點位分數代替。",
+      "negative_control": "四孔板接近對稱，辨識方向的缺口又被遮住時，兩套點位對應可能都看似合理。錯誤身分可能得到看似小的重投影誤差；低誤差不能單獨證明姿態正確。",
+      "owner": "實作與影像核對負責人"
+    }
+  },
+  "teach_back": {
+    "question": "它改變什麼？何時選另一種做法？",
+    "answer": "Keypoint R-CNN先偵測物件，以對齊的ROI特徵為每種關鍵點預測位置熱圖，再把框內位置映回原圖。A/B/C是定義好的點身分，每件都要一致；工業孔位需要相應訓練與標註，不能直接把COCO人體權重當孔位模型。 Keypoint R-CNN負責影像中的2D點及所屬物件；Pose Pipeline把這些同名點和已知3D幾何、相機校正接起來求姿態。它們可以串接，不是互相取代的模型排名。只需2D位置時不一定要增加3D求解。"
+  },
+  "slide_reading": [
+    {
+      "title": "先找：每個 landmark 的身份如何被定義？",
+      "question": "為什麼 boxes、K/order、visibility/occlusion、symmetry 和 ignore labels 不能少？",
+      "look": "找 known instances、box labels、K keypoints、順序編號、visibility/occlusion、symmetry 和 ignore/crowd。",
+      "relation": "這些標籤定義模型要找哪個 instance、哪一個點、看不見時怎麼評分、對稱時如何避免 swap。",
+      "takeaway": "Keypoint 任務的第一份契約不是模型名，而是可審計的 landmark ontology。",
+      "terms": [
+        "keypoint ontology：landmarks 的名稱、順序與語意定義",
+        "visibility：某個 landmark 是否可見、可標註或應被忽略的規則"
+      ]
+    },
+    {
+      "title": "這張圖要核對：為何 proposal 先於 heatmap？",
+      "question": "FPN、RPN、NMS、ROIAlign 的因果順序是什麼？",
+      "look": "找 backbone/FPN multi-scale features、RPN objectness/boxes、proposal filter/NMS、ROIAlign。",
+      "relation": "RPN 從 features 提出 object boxes；NMS 留下 proposals；ROIAlign 才為每個 proposal 抽取對齊 feature。",
+      "takeaway": "proposal 被漏掉時，後段 K 點 head 無法挽回；要先看 proposal recall。",
+      "terms": [
+        "RPN：提出候選 object regions 的 proposal network",
+        "ROIAlign：從 feature map 對齊抽取某個 proposal 區域特徵的操作"
+      ]
+    },
+    {
+      "title": "先看：K 張 heatmaps 如何變成有順序座標？",
+      "question": "為什麼每個 point 有自己的 heatmap，peak 又不能直接當原圖座標？",
+      "look": "找 ROI-local heatmaps、K channels、spatial argmax/soft-argmax、confidence/visibility 和 inverse mapping。",
+      "relation": "每個 heatmap 對應一個 landmark；peak 先在 ROI 座標，再經 box/ROI/inverse transform 回到原圖。",
+      "takeaway": "heatmap peak、box score、visibility 是不同訊號，坐標誤差由整條映射共同決定。",
+      "terms": [
+        "heatmap：每個 landmark 在 ROI 格網中可能位置的分數圖",
+        "inverse mapping：把 ROI-local peak 轉回原始影像座標的處理"
+      ]
+    },
+    {
+      "title": "最後看：何時 landmark 不能直接進量測或動作？",
+      "question": "peak 高、box 高時，還缺哪些 tail/uncertainty 證據？",
+      "look": "找 proposal recall、pixel error/OKS、missing/swap/association、camera calibration、repeatability、uncertainty 和 review。",
+      "relation": "位置鏈上任一段錯誤都會影響終點；calibration/repeatability 才把像素點接到物理/動作風險。",
+      "takeaway": "Keypoint R-CNN 提供 landmark candidates；量測或控制需要額外的座標與不確定性 gate。",
+      "terms": [
+        "OKS：評估 keypoint 位置相對尺度的相似度指標",
+        "association error：keypoints 被配到錯誤 instance 或錯誤身份的錯誤"
+      ]
+    }
+  ],
+  "comparison_headers": {
+    "title": "找點與求姿態，是不同的工作責任",
+    "basis": "所需資料與方法差異",
+    "output": "輸出與維護責任"
+  },
+  "transfer_check": {
+    "title": "先交2D，還是接3D？",
+    "scenario": "目前工站只需檢查孔中心是否落在影像允收區；未來另一工站想用相機姿態做對位。",
+    "question": "這輪先交2D點核對，或同時建立3D流程？各自還缺哪些資料？",
+    "answer": "目前需求可先交逐件2D點與允收核對，驗證點名、遮擋與映回原圖誤差。若本輪已需3D接手，才同時準備足夠正確2D–3D對應、已知幾何、相機校正、多解檢查及必要外參。不能把2D分數當姿態精度，也不必為尚未需要的輸出先付全部成本。"
+  },
+  "review_trace": {
+    "authority": "roadmap-model-selection/known-target-classification/keypoint-r-cnn/model.md",
+    "scope": "WI-030 十二課首讀圖文與手機PNG、反例、比較及自測；原工程slide保留，未以首讀評分代替工程圖審查。",
+    "claims": [
+      {
+        "id": "visual-1",
+        "field": "beginner_path.visuals[instance-landmark-contract]",
+        "source": "模型定位 / architecture_path"
+      },
+      {
+        "id": "visual-2",
+        "field": "beginner_path.visuals[rpn-roialign-dependency]",
+        "source": "architecture_path"
+      },
+      {
+        "id": "visual-3",
+        "field": "beginner_path.visuals[ordered-heatmaps-decode]",
+        "source": "representation_or_score"
+      },
+      {
+        "id": "visual-4",
+        "field": "beginner_path.visuals[inverse-map-evidence-review]",
+        "source": "failure_boundary"
+      },
+      {
+        "id": "visual-5",
+        "field": "beginner_path.visuals[observability-hold-boundary]",
+        "source": "selection_gate / evidence_bundle"
+      },
+      {
+        "id": "promise",
+        "field": "promise",
+        "source": "模型定位 / representation_or_score"
+      },
+      {
+        "id": "mechanism",
+        "field": "mechanism_steps",
+        "source": "architecture_path / representation_or_score"
+      },
+      {
+        "id": "boundaries",
+        "field": "boundary_cases",
+        "source": "failure_boundary / selection_gate"
+      },
+      {
+        "id": "comparison",
+        "field": "comparison + selection",
+        "source": "selection_gate"
+      },
+      {
+        "id": "poc",
+        "field": "poc + acceptance",
+        "source": "cost_and_operating_point / evidence_bundle"
+      },
+      {
+        "id": "transfer",
+        "field": "transfer_check",
+        "source": "failure_boundary / selection_gate"
+      },
+      {
+        "id": "wi030-first-read",
+        "field": "beginner_path + core + selection + transfer",
+        "source": "https://docs.pytorch.org/vision/main/_modules/torchvision/models/detection/keypoint_rcnn.html"
+      }
+    ]
+  },
+  "quality_status": {
+    "label": "首讀圖文已核對",
+    "state": "self-reviewed",
+    "round": "WI-030",
+    "reason": "新版逐圖與整頁自評、桌機手機驗證完成；使用者成品核准pending。原工程圖未納入本輪分數。"
+  },
+  "teaching_preflight": {
+    "brief": "teaching-images/vision-ai-model-selection/workitems/wi-030/key-c1-r04-desktop.md",
+    "mobile_brief": "teaching-images/vision-ai-model-selection/workitems/wi-030/key-c1-r05-mobile.md",
+    "story": "C",
+    "major_visual_nodes": 3,
+    "visual_status": "self-reviewed",
+    "user_review": "pending"
+  }
+}

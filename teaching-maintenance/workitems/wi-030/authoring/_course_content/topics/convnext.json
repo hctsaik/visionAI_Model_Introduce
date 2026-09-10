@@ -1,0 +1,484 @@
+{
+  "model": "ConvNeXt",
+  "badge": "現代卷積影像分類",
+  "title": "ConvNeXt：用現代卷積整理局部與通道線索",
+  "scenario": {
+    "title": "固定相機拍螺絲頭，要把十字、一字與內六角分流到不同料盒。",
+    "body": "固定相機拍螺絲頭，要把十字、一字與內六角分流到不同料盒。"
+  },
+  "promise": {
+    "title": "交付結果與接手工作",
+    "body": "已知類別與模型分數，交分流規則或人工覆核；未知產品、輪廓與3D姿態另行處理。"
+  },
+  "mental_model": {
+    "title": "現代卷積影像分類",
+    "body": "ConvNeXt把卷積網路現代化：較大視窗的depthwise卷積先讓每個通道整理周圍空間線索，再用通道混合交換資訊，搭配殘差及其他設計。分類工作仍是從影像特徵得到已知類別；它不是因名稱新就一定較省或較準。",
+    "limit": "訓練照片中十字螺絲總在藍墊、內六角總在橘墊，模型可能學到背景捷徑。把同一十字螺絲換到橘墊後，可能誤判內六角；工件本身沒有改變。"
+  },
+  "micro_example": {
+    "title": "值得換掉穩定基準嗎？",
+    "setup": "ResNet已符合現行需求；ConvNeXt候選在困難類別較好，但部署記憶體較高，且需要重新驗證。",
+    "prediction": "你會維持ResNet、全面換成ConvNeXt，或只讓困難樣本走新模型？要補哪些成本證據？",
+    "reveal": "若困難類別的漏分成本足以抵銷資源與驗證成本，可以換；若收益很小，保留穩定基準合理。分流方案也可測，但要驗證分流漏接、兩模型維護及最壞延遲。同資料、硬體、輸入和門檻比較，不能只按模型年代決定。"
+  },
+  "mechanism_steps": [
+    {
+      "title": "有標註的工件",
+      "body": "depthwise操作逐通道看鄰域，後續點式操作混合通道；圖中的特徵平面不是原始彩色通道。",
+      "why": "由本課核心機制連接工作用途",
+      "anchor": "WI030-1",
+      "diagram": {
+        "title": "有標註的工件",
+        "body": "depthwise操作逐通道看鄰域，後續點式操作混合通道；圖中的特徵平面不是原始彩色通道。",
+        "why": "詳見本課版本與來源",
+        "anchor": "WI030-1"
+      }
+    },
+    {
+      "title": "空間與通道分工",
+      "body": "設計把不同運算角色分開，不代表每種尺寸和硬體都更快。比較同解析度、批量及完整前後處理。",
+      "why": "由本課核心機制連接工作用途",
+      "anchor": "WI030-2",
+      "diagram": {
+        "title": "空間與通道分工",
+        "body": "設計把不同運算角色分開，不代表每種尺寸和硬體都更快。比較同解析度、批量及完整前後處理。",
+        "why": "詳見本課版本與來源",
+        "anchor": "WI030-2"
+      }
+    },
+    {
+      "title": "分類與成本核對",
+      "body": "已知類別與模型分數，交分流規則或人工覆核；未知產品、輪廓與3D姿態另行處理。",
+      "why": "由本課核心機制連接工作用途",
+      "anchor": "WI030-3",
+      "diagram": {
+        "title": "分類與成本核對",
+        "body": "已知類別與模型分數，交分流規則或人工覆核；未知產品、輪廓與3D姿態另行處理。",
+        "why": "詳見本課版本與來源",
+        "anchor": "WI030-3"
+      }
+    },
+    {
+      "title": "工作核對與接手",
+      "body": "用未見批次逐類核對真實輸入、標籤、預測及信心，列混淆矩陣與背景／反光失敗例；記錄整段耗時、記憶體與人工覆核量。教學圖的分類結果不是實測。",
+      "why": "由本課核心機制連接工作用途",
+      "anchor": "WI030-4",
+      "diagram": {
+        "title": "工作核對與接手",
+        "body": "用未見批次逐類核對真實輸入、標籤、預測及信心，列混淆矩陣與背景／反光失敗例；記錄整段耗時、記憶體與人工覆核量。教學圖的分類結果不是實測。",
+        "why": "詳見本課版本與來源",
+        "anchor": "WI030-4"
+      }
+    }
+  ],
+  "visual_intro": "ConvNeXt把卷積網路現代化：較大視窗的depthwise卷積先讓每個通道整理周圍空間線索，再用通道混合交換資訊，搭配殘差及其他設計。分類工作仍是從影像特徵得到已知類別；它不是因名稱新就一定較省或較準。",
+  "concept_visuals": [
+    {
+      "id": "causal-chain",
+      "placement": "after_causal_chain",
+      "title": "ConvNeXt 怎麼把空間混合與通道混合分開？",
+      "prompt": "先預測：large-kernel depthwise convolution 主要混合的是鄰近位置，還是不同 channels？",
+      "caption": "由左到右：固定 ROI 經 patchify-like stem 進入階層 stage；每個 block 先用 large-kernel depthwise convolution 混合空間，再以 LayerNorm/pointwise layers 混合 channels，最後 pooling/head 輸出 known-class logits。",
+      "image": "_course_content/generated-concepts/convnext/convnext-causal-chain_v01.svg",
+      "alt": "四段概念圖：ROI 進入 patchify convolution stem，large-kernel depthwise 卷積跨較大鄰域，pointwise channel mixing 與 residual merge，最後 pooled 已知類別 logits。",
+      "callouts": [
+        {
+          "title": "① stem 和 stage 建立層級",
+          "body": "解析度逐 stage 降低，context 逐步整合。"
+        },
+        {
+          "title": "② 空間與 channel 是兩段工作",
+          "body": "depthwise conv 主要處理位置鄰域，pointwise layers 再整理 channels。"
+        },
+        {
+          "title": "③ 最後仍是 closed-set head",
+          "body": "global logits 不是局部 mask，也不是未知 defect guarantee。"
+        }
+      ]
+    },
+    {
+      "id": "worked-example",
+      "placement": "after_micro_example",
+      "title": "同一個跨邊界 defect，不同 tile contract 可能給不同答案",
+      "prompt": "同一張 die 被切成 tiles；若 overlap 和 border policy 改變，哪一段有效像素與整圖分數會跟著改？",
+      "caption": "左側缺陷落在 tile 邊界、沒有足夠 overlap，訊號可能被切開；右側使用固定 overlap、border handling 與 aggregation，才使同一 die 的 score 可重播。不是只比較一次 backbone forward。",
+      "image": "_course_content/generated-concepts/convnext/convnext-worked-example_v01.svg",
+      "alt": "左右對照概念圖：左邊一個小缺陷被兩個無重疊 tile 切開，右邊用有固定重疊和融合規則的 tiles 覆蓋同一缺陷並輸出整圖候選。",
+      "callouts": [
+        {
+          "title": "左：邊界會改變看到的像素",
+          "body": "同一缺陷可能在任一 tile 中都不完整。"
+        },
+        {
+          "title": "右：tile 規則是模型的一部分",
+          "body": "size、overlap、border 與 aggregation 都要版本化。"
+        },
+        {
+          "title": "分數要回到整體決策契約",
+          "body": "端到端 P95、critical recall、calibration 和 review 不能只量 backbone。"
+        }
+      ]
+    },
+    {
+      "id": "comparison",
+      "placement": "after_comparison",
+      "title": "三種分類 backbone，先固定共同輸入再比較",
+      "prompt": "ResNet、ConvNeXt、ViT 的內部表示不同，但公平比較前哪些條件不能變？",
+      "caption": "ResNet 的核心是 residual CNN，ConvNeXt 用 large-kernel depthwise/channel mixing 的現代 ConvNet，ViT 用 patch tokens/self-attention。它們都需要同一 ROI、labels、effective pixels、pretraining policy、tile aggregation、hardware 與 reject policy 才能比較。",
+      "image": "_course_content/generated-concepts/convnext/convnext-comparison_v01.svg",
+      "alt": "三欄比較圖：ResNet shortcut CNN、ConvNeXt large-kernel depthwise 和 channel mixing、ViT patch tokens attention，底部有共同 ROI/labels/pixels/tile/review 契約。",
+      "callouts": [
+        {
+          "title": "ResNet：殘差 CNN",
+          "body": "保留 shortcut 的成熟 closed-set 分類基線。"
+        },
+        {
+          "title": "ConvNeXt：現代卷積設計",
+          "body": "large kernel 不等於會定位 tiny defect 或恢復遺失訊號。"
+        },
+        {
+          "title": "ViT：token 全域關係",
+          "body": "patch size、token cost 和 pretraining 會改變它的 operating point。"
+        }
+      ]
+    },
+    {
+      "id": "boundary-cases-explainer",
+      "placement": "before_boundary_cases",
+      "title": "同一條因果鏈，在哪裡會被破壞？",
+      "prompt": "不要只記住風險名詞；先預測條件一變，畫面或候選結果會怎麼變，再決定何時應 HOLD。",
+      "caption": "ConvNeXt 的三個模型專屬反事實：每欄把條件、可觀察後果與正確下一步放在一起。它們不是自動修正規則；遇到條件超出驗證範圍時，先保存原始證據並進入 HOLD／REVIEW。",
+      "image": "_course_content/generated-concepts/convnext/convnext-boundary-cases_v01.svg",
+      "alt": "ConvNeXt 的三欄反事實說明圖：每欄依序說明一個失效條件、可能看到的候選或量測後果，以及應進入 HOLD、重驗或改選方法的安全下一步。",
+      "callouts": [
+        {
+          "title": "先看條件，而不是先改門檻",
+          "body": "候選改變可能是資料、取像、設定或模型假設被破壞，不能立刻解讀成產品真相。"
+        },
+        {
+          "title": "把可觀察後果說出來",
+          "body": "誤報、漏檢、整片異常或時間失序都需要回到原始資料與版本追查。"
+        },
+        {
+          "title": "HOLD 是設計的一部分",
+          "body": "先停止自動往下走、保存 evidence，確認條件後才重新 qualification 或交給適合的方法。"
+        }
+      ]
+    }
+  ],
+  "beginner_path": {
+    "title": "從必要原理、具體反例到工作取捨",
+    "intro": "固定相機拍螺絲頭，要把十字、一字與內六角分流到不同料盒。 下列圖像、特徵及回答為教學示意，不是模型實測。",
+    "visuals": [
+      {
+        "id": "wi030-convnext-c1",
+        "title": "ConvNeXt：用現代卷積整理局部與通道線索",
+        "prompt": "固定相機拍螺絲頭，要把十字、一字與內六角分流到不同料盒。",
+        "caption": "ConvNeXt把卷積網路現代化：較大視窗的depthwise卷積先讓每個通道整理周圍空間線索，再用通道混合交換資訊，搭配殘差及其他設計。分類工作仍是從影像特徵得到已知類別；它不是因名稱新就一定較省或較準。",
+        "image": "_course_content/generated-concepts/convnext/wi030-convnext-c1-r02-desktop.png",
+        "alt": "ConvNeXt：用現代卷積整理局部與通道線索。ConvNeXt把卷積網路現代化：較大視窗的depthwise卷積先讓每個通道整理周圍空間線索，再用通道混合交換資訊，搭配殘差及其他設計。分類工作仍是從影像特徵得到已知類別；它不是因名稱新就一定較省或較準。 AI生成教學示意，非模型實測。",
+        "callouts": [
+          {
+            "title": "空間與通道分工",
+            "body": "depthwise操作逐通道看鄰域，後續點式操作混合通道；圖中的特徵平面不是原始彩色通道。"
+          },
+          {
+            "title": "完整成本要共同測",
+            "body": "設計把不同運算角色分開，不代表每種尺寸和硬體都更快。比較同解析度、批量及完整前後處理。"
+          },
+          {
+            "title": "交付與接手",
+            "body": "已知類別與模型分數，交分流規則或人工覆核；未知產品、輪廓與3D姿態另行處理。"
+          }
+        ],
+        "reading_views": [
+          {
+            "title": "ConvNeXt：用現代卷積整理局部與通道線索",
+            "image": "_course_content/generated-concepts/convnext/wi030-convnext-c1-r02-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/convnext/wi030-convnext-c1-r02-mobile.png",
+            "alt": "ConvNeXt：用現代卷積整理局部與通道線索。ConvNeXt把卷積網路現代化：較大視窗的depthwise卷積先讓每個通道整理周圍空間線索，再用通道混合交換資訊，搭配殘差及其他設計。分類工作仍是從影像特徵得到已知類別；它不是因名稱新就一定較省或較準。 AI生成教學示意，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              768,
+              2048
+            ],
+            "mobile_display_mode": "full-mobile",
+            "desktop_intrinsic_width": 1672,
+            "desktop_intrinsic_height": 941,
+            "mobile_intrinsic_width": 768,
+            "mobile_intrinsic_height": 2048
+          }
+        ],
+        "core_ideas": true
+      },
+      {
+        "id": "wi030-class-d2",
+        "title": "模型認的是工件，還是拍攝背景？",
+        "prompt": "觀察哪個條件改變，讓原本的結果不夠可靠？",
+        "caption": "訓練照片中十字螺絲總在藍墊、內六角總在橘墊，模型可能學到背景捷徑。把同一十字螺絲換到橘墊後，可能誤判內六角；工件本身沒有改變。",
+        "image": "_course_content/generated-concepts/resnet/wi030-class-d2-r01-desktop.png",
+        "alt": "模型認的是工件，還是拍攝背景？。訓練照片中十字螺絲總在藍墊、內六角總在橘墊，模型可能學到背景捷徑。把同一十字螺絲換到橘墊後，可能誤判內六角；工件本身沒有改變。 AI生成教學示意，非模型實測。",
+        "callouts": [
+          {
+            "title": "看哪裡",
+            "body": "訓練照片中十字螺絲總在藍墊、內六角總在橘墊，模型可能學到背景捷徑。把同一十字螺絲換到橘墊後，可能誤判內六角；工件本身沒有改變。"
+          },
+          {
+            "title": "接著怎麼做",
+            "body": "讓各類工件都跨背景、批次與允收光照取樣；以未參與訓練的批次驗證，分析各類混淆與低信心案例，再決定是否重新訓練。"
+          }
+        ],
+        "reading_views": [
+          {
+            "title": "模型認的是工件，還是拍攝背景？",
+            "image": "_course_content/generated-concepts/resnet/wi030-class-d2-r01-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/resnet/wi030-class-d2-r03-mobile.png",
+            "alt": "模型認的是工件，還是拍攝背景？。訓練照片中十字螺絲總在藍墊、內六角總在橘墊，模型可能學到背景捷徑。把同一十字螺絲換到橘墊後，可能誤判內六角；工件本身沒有改變。 AI生成教學示意，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              887,
+              1774
+            ],
+            "mobile_display_mode": "full-mobile",
+            "desktop_intrinsic_width": 1672,
+            "desktop_intrinsic_height": 941,
+            "mobile_intrinsic_width": 887,
+            "mobile_intrinsic_height": 1774
+          }
+        ],
+        "core_ideas": false
+      },
+      {
+        "id": "wi030-class-d3",
+        "title": "同一分類工作，三種特徵整理方式",
+        "prompt": "相同工作需求下，資料、輸出與成本如何取捨？",
+        "caption": "ResNet用殘差相加傳遞特徵；ConvNeXt仍以卷積作空間與通道處理；ViT讓區塊特徵互相參照。三者都可接分類頭；用相同標註、資料切分、前處理與硬體比較錯誤、耗時和記憶體，不能只看模型新舊。",
+        "image": "_course_content/generated-concepts/resnet/wi030-class-d3-r05-desktop.png",
+        "alt": "同一分類工作，三種特徵整理方式。ResNet用殘差相加傳遞特徵；ConvNeXt仍以卷積作空間與通道處理；ViT讓區塊特徵互相參照。三者都可接分類頭；用相同標註、資料切分、前處理與硬體比較錯誤、耗時和記憶體，不能只看模型新舊。 AI生成教學示意，非模型實測。",
+        "callouts": [
+          {
+            "title": "怎麼選",
+            "body": "ResNet用殘差相加傳遞特徵；ConvNeXt仍以卷積作空間與通道處理；ViT讓區塊特徵互相參照。三者都可接分類頭；用相同標註、資料切分、前處理與硬體比較錯誤、耗時和記憶體，不能只看模型新舊。"
+          },
+          {
+            "title": "資料與完整成本",
+            "body": "需各類工作標註和未見批次測試；選預訓練權重後調整任務頭。換類別、背景或拍攝條件重新核對，不能只沿用原測試準確率。"
+          }
+        ],
+        "reading_views": [
+          {
+            "title": "同一分類工作，三種特徵整理方式",
+            "image": "_course_content/generated-concepts/resnet/wi030-class-d3-r05-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/resnet/wi030-class-d3-r06-mobile.png",
+            "alt": "同一分類工作，三種特徵整理方式。ResNet用殘差相加傳遞特徵；ConvNeXt仍以卷積作空間與通道處理；ViT讓區塊特徵互相參照。三者都可接分類頭；用相同標註、資料切分、前處理與硬體比較錯誤、耗時和記憶體，不能只看模型新舊。 AI生成教學示意，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              724,
+              2172
+            ],
+            "mobile_display_mode": "full-mobile",
+            "desktop_intrinsic_width": 1672,
+            "desktop_intrinsic_height": 941,
+            "mobile_intrinsic_width": 724,
+            "mobile_intrinsic_height": 2172
+          }
+        ],
+        "core_ideas": false
+      }
+    ]
+  },
+  "boundary_cases": [
+    {
+      "condition": "本課具體反例",
+      "effect": "訓練照片中十字螺絲總在藍墊、內六角總在橘墊，模型可能學到背景捷徑。把同一十字螺絲換到橘墊後，可能誤判內六角；工件本身沒有改變。",
+      "action": "讓各類工件都跨背景、批次與允收光照取樣；以未參與訓練的批次驗證，分析各類混淆與低信心案例，再決定是否重新訓練。"
+    },
+    {
+      "condition": "更換產品、模型或輸入設定",
+      "effect": "需各類工作標註和未見批次測試；選預訓練權重後調整任務頭。換類別、背景或拍攝條件重新核對，不能只沿用原測試準確率。",
+      "action": "先定義各類與未知品接手規則，讓每類跨背景拍攝，按批次切開訓練和測試。"
+    },
+    {
+      "condition": "把示意當成實際推論",
+      "effect": "本課特徵、排序、回答及圖像僅用於解釋，不支持現場準確率或耗時結論。",
+      "action": "用未見批次逐類核對真實輸入、標籤、預測及信心，列混淆矩陣與背景／反光失敗例；記錄整段耗時、記憶體與人工覆核量。教學圖的分類結果不是實測。"
+    }
+  ],
+  "comparison": [
+    {
+      "model": "ResNet",
+      "normality": "類別標註；殘差特徵相加",
+      "candidate": "已知類別；同資料測錯誤與成本"
+    },
+    {
+      "model": "ConvNeXt",
+      "normality": "類別標註；現代空間／通道卷積",
+      "candidate": "已知類別；不能以模型新舊排名"
+    },
+    {
+      "model": "ViT",
+      "normality": "類別標註；區塊表示與注意力",
+      "candidate": "已知類別；注意力不是輪廓真值"
+    }
+  ],
+  "selection": "ResNet用殘差相加傳遞特徵；ConvNeXt仍以卷積作空間與通道處理；ViT讓區塊特徵互相參照。三者都可接分類頭；用相同標註、資料切分、前處理與硬體比較錯誤、耗時和記憶體，不能只看模型新舊。 需各類工作標註和未見批次測試；選預訓練權重後調整任務頭。換類別、背景或拍攝條件重新核對，不能只沿用原測試準確率。",
+  "poc": {
+    "title": "以真實工作資料做小規模比較",
+    "steps": [
+      "先定義各類與未知品接手規則，讓每類跨背景拍攝，按批次切開訓練和測試。",
+      "需各類工作標註和未見批次測試；選預訓練權重後調整任務頭。換類別、背景或拍攝條件重新核對，不能只沿用原測試準確率。",
+      "用未見批次逐類核對真實輸入、標籤、預測及信心，列混淆矩陣與背景／反光失敗例；記錄整段耗時、記憶體與人工覆核量。教學圖的分類結果不是實測。"
+    ],
+    "hold": "讓各類工件都跨背景、批次與允收光照取樣；以未參與訓練的批次驗證，分析各類混淆與低信心案例，再決定是否重新訓練。",
+    "acceptance": {
+      "baseline": "既有流程或最簡單可行方法",
+      "measure": "用未見批次逐類核對真實輸入、標籤、預測及信心，列混淆矩陣與背景／反光失敗例；記錄整段耗時、記憶體與人工覆核量。教學圖的分類結果不是實測。",
+      "negative_control": "訓練照片中十字螺絲總在藍墊、內六角總在橘墊，模型可能學到背景捷徑。把同一十字螺絲換到橘墊後，可能誤判內六角；工件本身沒有改變。",
+      "owner": "實作與影像核對負責人"
+    }
+  },
+  "teach_back": {
+    "question": "它改變什麼？何時選另一種做法？",
+    "answer": "ConvNeXt把卷積網路現代化：較大視窗的depthwise卷積先讓每個通道整理周圍空間線索，再用通道混合交換資訊，搭配殘差及其他設計。分類工作仍是從影像特徵得到已知類別；它不是因名稱新就一定較省或較準。 ResNet用殘差相加傳遞特徵；ConvNeXt仍以卷積作空間與通道處理；ViT讓區塊特徵互相參照。三者都可接分類頭；用相同標註、資料切分、前處理與硬體比較錯誤、耗時和記憶體，不能只看模型新舊。"
+  },
+  "slide_reading": [
+    {
+      "title": "先找：ConvNeXt 是哪一個具體 operating point？",
+      "question": "為什麼只說「用 ConvNeXt」還不足以比較或部署？",
+      "look": "找 Tiny/Small/Base、weights/pretraining、resolution、resize、tile/overlap 和 labels。",
+      "relation": "variant、pixels、pretraining 與 tiling 一起決定 feature、成本和 decision unit。",
+      "takeaway": "ConvNeXt 是架構族；需要指定 checkpoint 和完整 input/output contract。",
+      "terms": [
+        "variant：同一架構家族中深度、寬度或成本不同的具體版本",
+        "effective pixels：實際被模型在 ROI/tile 中看見、可支持任務的像素資訊"
+      ]
+    },
+    {
+      "title": "這張圖要核對：空間與 channel 怎麼分工？",
+      "question": "large-kernel depthwise convolution 和 pointwise layers 分別改變什麼？",
+      "look": "找 depthwise convolution、large kernel、LayerNorm、pointwise expansion/GELU/projection 和 residual merge。",
+      "relation": "depthwise convolution 在每個 channel 的空間鄰域混合；pointwise layers 再在 channels 間重新組合訊息。",
+      "takeaway": "這是 ConvNeXt 的特定因果路徑，不是抽象的「更強卷積」。",
+      "terms": [
+        "depthwise convolution：各 channel 分開進行空間卷積的操作",
+        "pointwise mixing：在同一位置跨 channels 組合特徵的操作"
+      ]
+    },
+    {
+      "title": "先找：為什麼 tile contract 會進入分類結果？",
+      "question": "缺陷跨 tile 邊界時，哪些設定改變模型真正看見的內容？",
+      "look": "找 tile size、overlap、border handling、tile logits 和 image aggregation。",
+      "relation": "切圖規則決定每次 forward 的有效 context；aggregation 再決定多個 tile 如何變成單一決策。",
+      "takeaway": "tile/merge 不是純工程雜項，而是分類輸出的一部分。",
+      "terms": [
+        "tile overlap：相鄰 tiles 重疊的像素範圍，用以減少邊界訊號被切斷",
+        "aggregation：把多個 tile 分數合成 image/die 決策的規則"
+      ]
+    },
+    {
+      "title": "最後看：logit 為何仍需 calibration 與 OOD gate？",
+      "question": "large receptive field 或高 confidence 能否取代未知／shift 的安全檢查？",
+      "look": "找 global pooling、linear head、calibration、OOD reject、critical recall 和 REVIEW。",
+      "relation": "head 仍只在已知 labels 中輸出；shift/OOD 會讓分數與可靠度脫鉤。",
+      "takeaway": "ConvNeXt 的最後輸出是 closed-set candidate，安全行為由 reject/review contract 補上。",
+      "terms": [
+        "receptive field：一個 feature 會整合到的輸入空間範圍",
+        "review load：因 gate 或候選而需要人工覆核的工作量"
+      ]
+    }
+  ],
+  "comparison_headers": {
+    "title": "同一分類工作，三種特徵整理方式",
+    "basis": "所需資料與方法差異",
+    "output": "輸出與維護責任"
+  },
+  "transfer_check": {
+    "title": "值得換掉穩定基準嗎？",
+    "scenario": "ResNet已符合現行需求；ConvNeXt候選在困難類別較好，但部署記憶體較高，且需要重新驗證。",
+    "question": "你會維持ResNet、全面換成ConvNeXt，或只讓困難樣本走新模型？要補哪些成本證據？",
+    "answer": "若困難類別的漏分成本足以抵銷資源與驗證成本，可以換；若收益很小，保留穩定基準合理。分流方案也可測，但要驗證分流漏接、兩模型維護及最壞延遲。同資料、硬體、輸入和門檻比較，不能只按模型年代決定。"
+  },
+  "review_trace": {
+    "authority": "roadmap-model-selection/known-target-classification/convnext/model.md",
+    "scope": "WI-030 十二課首讀圖文與手機PNG、反例、比較及自測；原工程slide保留，未以首讀評分代替工程圖審查。",
+    "claims": [
+      {
+        "id": "visual-1",
+        "field": "beginner_path.visuals[tile-contract-workpiece]",
+        "source": "模型定位 / architecture_path"
+      },
+      {
+        "id": "visual-2",
+        "field": "beginner_path.visuals[hierarchical-stages]",
+        "source": "architecture_path"
+      },
+      {
+        "id": "visual-3",
+        "field": "beginner_path.visuals[depthwise-channel-residual]",
+        "source": "representation_or_score"
+      },
+      {
+        "id": "visual-4",
+        "field": "beginner_path.visuals[closed-set-logits]",
+        "source": "failure_boundary"
+      },
+      {
+        "id": "visual-5",
+        "field": "beginner_path.visuals[fair-backbone-choice]",
+        "source": "selection_gate / evidence_bundle"
+      },
+      {
+        "id": "promise",
+        "field": "promise",
+        "source": "模型定位 / representation_or_score"
+      },
+      {
+        "id": "mechanism",
+        "field": "mechanism_steps",
+        "source": "architecture_path / representation_or_score"
+      },
+      {
+        "id": "boundaries",
+        "field": "boundary_cases",
+        "source": "failure_boundary / selection_gate"
+      },
+      {
+        "id": "comparison",
+        "field": "comparison + selection",
+        "source": "selection_gate"
+      },
+      {
+        "id": "poc",
+        "field": "poc + acceptance",
+        "source": "cost_and_operating_point / evidence_bundle"
+      },
+      {
+        "id": "transfer",
+        "field": "transfer_check",
+        "source": "failure_boundary / selection_gate"
+      },
+      {
+        "id": "wi030-first-read",
+        "field": "beginner_path + core + selection + transfer",
+        "source": "https://arxiv.org/abs/2201.03545"
+      }
+    ]
+  },
+  "quality_status": {
+    "label": "首讀圖文已核對",
+    "state": "self-reviewed",
+    "round": "WI-030",
+    "reason": "新版逐圖與整頁自評、桌機手機驗證完成；使用者成品核准pending。原工程圖未納入本輪分數。"
+  },
+  "teaching_preflight": {
+    "brief": "teaching-images/vision-ai-model-selection/workitems/wi-030/convnext-c1-r02-desktop.md",
+    "mobile_brief": "teaching-images/vision-ai-model-selection/workitems/wi-030/convnext-c1-r02-mobile.md",
+    "story": "C",
+    "major_visual_nodes": 3,
+    "visual_status": "self-reviewed",
+    "user_review": "pending"
+  }
+}

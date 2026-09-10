@@ -1,0 +1,362 @@
+[
+  {
+    "route": "interactive-learning.html",
+    "viewport": [
+      1440,
+      1000
+    ],
+    "images": [
+      {
+        "src": "http://127.0.0.1:8000/_course_content/generated-concepts/yolo-seg/wi030-yoloseg-c1-r07-desktop.png",
+        "width": 1672,
+        "height": 941,
+        "box": {
+          "x": 404.1875,
+          "y": 100.640625,
+          "width": 935.625,
+          "height": 526.5625,
+          "top": 100.640625,
+          "right": 1339.8125,
+          "bottom": 627.203125,
+          "left": 404.1875
+        }
+      },
+      {
+        "src": "http://127.0.0.1:8000/_course_content/generated-concepts/yolo-seg/wi030-instance-d2-r02-desktop.png",
+        "width": 1672,
+        "height": 941,
+        "box": {
+          "x": 404.1875,
+          "y": 101.15625,
+          "width": 935.625,
+          "height": 526.5625,
+          "top": 101.15625,
+          "right": 1339.8125,
+          "bottom": 627.71875,
+          "left": 404.1875
+        }
+      },
+      {
+        "src": "http://127.0.0.1:8000/_course_content/generated-concepts/u-net/wi030-seg-d3-r01-desktop.png",
+        "width": 1672,
+        "height": 941,
+        "box": {
+          "x": 404.1875,
+          "y": 100.734375,
+          "width": 935.625,
+          "height": 526.5625,
+          "top": 100.734375,
+          "right": 1339.8125,
+          "bottom": 627.296875,
+          "left": 404.1875
+        }
+      }
+    ],
+    "zoom_loaded_escape": 3,
+    "answer": true,
+    "engineering_images": 0,
+    "navigation": true,
+    "page_errors": [],
+    "overflow": false
+  },
+  {
+    "route": "interactive-learning.html",
+    "viewport": [
+      390,
+      844
+    ],
+    "images": [
+      {
+        "src": "http://127.0.0.1:8000/_course_content/generated-concepts/yolo-seg/wi030-yoloseg-c1-r06-mobile.png",
+        "width": 724,
+        "height": 2172,
+        "box": {
+          "x": 17,
+          "y": 100.984375,
+          "width": 356,
+          "height": 1068,
+          "top": 100.984375,
+          "right": 373,
+          "bottom": 1168.984375,
+          "left": 17
+        }
+      },
+      {
+        "src": "http://127.0.0.1:8000/_course_content/generated-concepts/yolo-seg/wi030-instance-d2-r04-mobile.png",
+        "width": 724,
+        "height": 2172,
+        "box": {
+          "x": 17,
+          "y": 100.734375,
+          "width": 356,
+          "height": 1068,
+          "top": 100.734375,
+          "right": 373,
+          "bottom": 1168.734375,
+          "left": 17
+        }
+      },
+      {
+        "src": "http://127.0.0.1:8000/_course_content/generated-concepts/u-net/wi030-seg-d3-r01-mobile.png",
+        "width": 887,
+        "height": 1774,
+        "box": {
+          "x": 17,
+          "y": 101.078125,
+          "width": 356,
+          "height": 712,
+          "top": 101.078125,
+          "right": 373,
+          "bottom": 813.078125,
+          "left": 17
+        }
+      }
+    ],
+    "zoom_loaded_escape": 3,
+    "answer": true,
+    "engineering_images": 0,
+    "navigation": true,
+    "page_errors": [],
+    "overflow": false
+  },
+  {
+    "route": "interactive-learning.html",
+    "viewport": [
+      360,
+      800
+    ],
+    "images": [
+      {
+        "src": "http://127.0.0.1:8000/_course_content/generated-concepts/yolo-seg/wi030-yoloseg-c1-r06-mobile.png",
+        "width": 724,
+        "height": 2172,
+        "box": {
+          "x": 17,
+          "y": 100.859375,
+          "width": 326,
+          "height": 978,
+          "top": 100.859375,
+          "right": 343,
+          "bottom": 1078.859375,
+          "left": 17
+        }
+      },
+      {
+        "src": "http://127.0.0.1:8000/_course_content/generated-concepts/yolo-seg/wi030-instance-d2-r04-mobile.png",
+        "width": 724,
+        "height": 2172,
+        "box": {
+          "x": 17,
+          "y": 101.109375,
+          "width": 326,
+          "height": 978,
+          "top": 101.109375,
+          "right": 343,
+          "bottom": 1079.109375,
+          "left": 17
+        }
+      },
+      {
+        "src": "http://127.0.0.1:8000/_course_content/generated-concepts/u-net/wi030-seg-d3-r01-mobile.png",
+        "width": 887,
+        "height": 1774,
+        "box": {
+          "x": 17,
+          "y": 100.953125,
+          "width": 326,
+          "height": 652,
+          "top": 100.953125,
+          "right": 343,
+          "bottom": 752.953125,
+          "left": 17
+        }
+      }
+    ],
+    "zoom_loaded_escape": 3,
+    "answer": true,
+    "engineering_images": 0,
+    "navigation": true,
+    "page_errors": [],
+    "overflow": false
+  },
+  {
+    "route": "docs/index.html",
+    "viewport": [
+      1440,
+      1000
+    ],
+    "images": [
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/yolo-seg/wi030-yoloseg-c1-r07-desktop.png",
+        "width": 1672,
+        "height": 941,
+        "box": {
+          "x": 404.1875,
+          "y": 100.640625,
+          "width": 935.625,
+          "height": 526.5625,
+          "top": 100.640625,
+          "right": 1339.8125,
+          "bottom": 627.203125,
+          "left": 404.1875
+        }
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/yolo-seg/wi030-instance-d2-r02-desktop.png",
+        "width": 1672,
+        "height": 941,
+        "box": {
+          "x": 404.1875,
+          "y": 101.15625,
+          "width": 935.625,
+          "height": 526.5625,
+          "top": 101.15625,
+          "right": 1339.8125,
+          "bottom": 627.71875,
+          "left": 404.1875
+        }
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/u-net/wi030-seg-d3-r01-desktop.png",
+        "width": 1672,
+        "height": 941,
+        "box": {
+          "x": 404.1875,
+          "y": 100.734375,
+          "width": 935.625,
+          "height": 526.5625,
+          "top": 100.734375,
+          "right": 1339.8125,
+          "bottom": 627.296875,
+          "left": 404.1875
+        }
+      }
+    ],
+    "zoom_loaded_escape": 3,
+    "answer": true,
+    "engineering_images": 0,
+    "navigation": true,
+    "page_errors": [],
+    "overflow": false
+  },
+  {
+    "route": "docs/index.html",
+    "viewport": [
+      390,
+      844
+    ],
+    "images": [
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/yolo-seg/wi030-yoloseg-c1-r06-mobile.png",
+        "width": 724,
+        "height": 2172,
+        "box": {
+          "x": 17,
+          "y": 100.984375,
+          "width": 356,
+          "height": 1068,
+          "top": 100.984375,
+          "right": 373,
+          "bottom": 1168.984375,
+          "left": 17
+        }
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/yolo-seg/wi030-instance-d2-r04-mobile.png",
+        "width": 724,
+        "height": 2172,
+        "box": {
+          "x": 17,
+          "y": 100.734375,
+          "width": 356,
+          "height": 1068,
+          "top": 100.734375,
+          "right": 373,
+          "bottom": 1168.734375,
+          "left": 17
+        }
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/u-net/wi030-seg-d3-r01-mobile.png",
+        "width": 887,
+        "height": 1774,
+        "box": {
+          "x": 17,
+          "y": 101.078125,
+          "width": 356,
+          "height": 712,
+          "top": 101.078125,
+          "right": 373,
+          "bottom": 813.078125,
+          "left": 17
+        }
+      }
+    ],
+    "zoom_loaded_escape": 3,
+    "answer": true,
+    "engineering_images": 0,
+    "navigation": true,
+    "page_errors": [],
+    "overflow": false
+  },
+  {
+    "route": "docs/index.html",
+    "viewport": [
+      360,
+      800
+    ],
+    "images": [
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/yolo-seg/wi030-yoloseg-c1-r06-mobile.png",
+        "width": 724,
+        "height": 2172,
+        "box": {
+          "x": 17,
+          "y": 100.859375,
+          "width": 326,
+          "height": 978,
+          "top": 100.859375,
+          "right": 343,
+          "bottom": 1078.859375,
+          "left": 17
+        }
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/yolo-seg/wi030-instance-d2-r04-mobile.png",
+        "width": 724,
+        "height": 2172,
+        "box": {
+          "x": 17,
+          "y": 101.109375,
+          "width": 326,
+          "height": 978,
+          "top": 101.109375,
+          "right": 343,
+          "bottom": 1079.109375,
+          "left": 17
+        }
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/u-net/wi030-seg-d3-r01-mobile.png",
+        "width": 887,
+        "height": 1774,
+        "box": {
+          "x": 17,
+          "y": 100.953125,
+          "width": 326,
+          "height": 652,
+          "top": 100.953125,
+          "right": 343,
+          "bottom": 752.953125,
+          "left": 17
+        }
+      }
+    ],
+    "zoom_loaded_escape": 3,
+    "answer": true,
+    "engineering_images": 0,
+    "navigation": true,
+    "page_errors": [],
+    "overflow": false
+  }
+]

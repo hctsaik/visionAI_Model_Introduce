@@ -1,0 +1,84 @@
+{
+  "workitem": "WI-030",
+  "html_sha256": "5019330b5bb83f0f053087f8ca71f99b4c99928a64009ceb79db5a14d9999620",
+  "ui_states": 72,
+  "zoom_decode_escape": 216,
+  "final_reading_and_revised_quiz_states": 24,
+  "pngs": 42,
+  "stories": 21,
+  "local_http_hash_checks": 84,
+  "image_score_range": [
+    91,
+    96
+  ],
+  "page_score_range": [
+    92,
+    93
+  ],
+  "selected_preflights": {
+    "count": 42,
+    "result": "passed before integration; per-version files retained"
+  },
+  "focused_pytest": {
+    "result": "passed",
+    "tests": 9,
+    "subtests": 10,
+    "files": [
+      "test_collapsed_deep_dive.py",
+      "test_tall_mobile_artwork.py",
+      "test_deep_dive_mobile_steps.py",
+      "test_interactive_navigation.py"
+    ],
+    "evidence": "actual completed session 48486 before quiz-only and self-review metadata changes"
+  },
+  "bundle_pytest": {
+    "result": "passed",
+    "tests": 2,
+    "subtests": 116,
+    "file": "test_github_pages_bundle.py",
+    "evidence": "completed session 73750 after fixing handoff document inclusion; earlier one-test result retained in checkpoint history"
+  },
+  "handoff_document_http_hash_checks": 24,
+  "legacy_full_verifier": {
+    "result": "failed",
+    "message": "ValueError: charuco: invalid inline mechanism visual 1",
+    "scope": "existing unchanged ChArUco; not counted as passing"
+  },
+  "scope": {
+    "baseline_commit": "12fc9ff5242b3a68f7e6269c5297262a8df0ca3f",
+    "changed_topics": [
+      "ad-anomalydino",
+      "ad-efficientad",
+      "ad-padim",
+      "ad-patchcore",
+      "convnext",
+      "keypoint-r-cnn",
+      "pose",
+      "resnet",
+      "segformer",
+      "u-net",
+      "vit-classifier",
+      "yolo-seg"
+    ],
+    "unchanged_topics": 46,
+    "preserved_advanced_data_except_opt_in_flag": [
+      "ad-anomalydino",
+      "ad-efficientad",
+      "ad-patchcore",
+      "resnet",
+      "segformer"
+    ],
+    "charuco_payload_unchanged": true
+  },
+  "bundle": {
+    "assets": 1347,
+    "all_source_docs_hashes_match": true,
+    "html_hash_matches": true,
+    "removed_unreferenced_files": []
+  },
+  "public_release": "pending separate public-release-verification.json",
+  "user_approval": "pending",
+  "model_inference_performed": false,
+  "human_learning_test_performed": false,
+  "evidence_scope": "72-state interaction covers unchanged PNG/UI; final 24-state run covers revised quiz and final metadata. Legacy engineering images were preserved, not rerated."
+}

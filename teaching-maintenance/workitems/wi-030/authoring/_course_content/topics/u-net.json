@@ -1,0 +1,484 @@
+{
+  "model": "U-Net",
+  "badge": "跳接式語意分割",
+  "title": "U-Net：把整體線索和細節接回像素",
+  "scenario": {
+    "title": "要把金屬板上的彎曲焊縫從背景分出來，交給區域覆核或後續量測。",
+    "body": "要把金屬板上的彎曲焊縫從背景分出來，交給區域覆核或後續量測。"
+  },
+  "promise": {
+    "title": "交付結果與接手工作",
+    "body": "逐像素類別與預測區域遮罩，交邊界核對或後續量測；實體尺寸需另外校正與驗證。"
+  },
+  "mental_model": {
+    "title": "跳接式語意分割",
+    "body": "U-Net先縮小特徵以整合較大範圍，再逐步上採樣恢復輸出解析度。同尺度跳接把編碼側的細節送到解碼側，與較深層線索合併，協助預測每個像素的類別。跳接傳遞特徵，並非直接把原圖當答案貼回。",
+    "limit": "同一條細焊縫在縮小輸入後只剩極少像素，預測遮罩可能斷裂；原始工件並沒有真的斷裂。背景細紋也可能造成誤分。"
+  },
+  "micro_example": {
+    "title": "保細縫，還是保節拍？",
+    "setup": "完整高解析度影像能保留細焊縫，但耗時較長；切圖可聚焦局部，卻會失去部分上下文並增加拼接邊界。",
+    "prediction": "你先測高解析度整圖，還是重疊切圖？驗收不能只看哪個指標？",
+    "reveal": "兩者都值得用相同保留影像比較。整體形狀很重要時先保留上下文；局部細線主導且可處理拼接時可試重疊切圖。除區域重疊外，另看細線召回、斷裂、邊界偏移與完整耗時。要交毫米尺寸仍需尺度與透視校正。"
+  },
+  "mechanism_steps": [
+    {
+      "title": "像素標註教任務",
+      "body": "下採樣讓表示整合更大範圍，但細節會變粗；圖中同一彎焊縫在不同尺度追蹤。",
+      "why": "由本課核心機制連接工作用途",
+      "anchor": "WI030-1",
+      "diagram": {
+        "title": "像素標註教任務",
+        "body": "下採樣讓表示整合更大範圍，但細節會變粗；圖中同一彎焊縫在不同尺度追蹤。",
+        "why": "詳見本課版本與來源",
+        "anchor": "WI030-1"
+      }
+    },
+    {
+      "title": "縮小理解，再接回細節",
+      "body": "對應尺度特徵在解碼側合併，再產生語意遮罩。能保留線索不代表邊界自動精準。",
+      "why": "由本課核心機制連接工作用途",
+      "anchor": "WI030-2",
+      "diagram": {
+        "title": "縮小理解，再接回細節",
+        "body": "對應尺度特徵在解碼側合併，再產生語意遮罩。能保留線索不代表邊界自動精準。",
+        "why": "詳見本課版本與來源",
+        "anchor": "WI030-2"
+      }
+    },
+    {
+      "title": "交出區域遮罩",
+      "body": "逐像素類別與預測區域遮罩，交邊界核對或後續量測；實體尺寸需另外校正與驗證。",
+      "why": "由本課核心機制連接工作用途",
+      "anchor": "WI030-3",
+      "diagram": {
+        "title": "交出區域遮罩",
+        "body": "逐像素類別與預測區域遮罩，交邊界核對或後續量測；實體尺寸需另外校正與驗證。",
+        "why": "詳見本課版本與來源",
+        "anchor": "WI030-3"
+      }
+    },
+    {
+      "title": "工作核對與接手",
+      "body": "用獨立影像和人工核對遮罩，分開量區域重疊、細焊縫漏失及邊界偏差；需尺寸時另做相機與尺度校正。記錄解析度、裁切、拼接與整段耗時。示意遮罩不是推論。",
+      "why": "由本課核心機制連接工作用途",
+      "anchor": "WI030-4",
+      "diagram": {
+        "title": "工作核對與接手",
+        "body": "用獨立影像和人工核對遮罩，分開量區域重疊、細焊縫漏失及邊界偏差；需尺寸時另做相機與尺度校正。記錄解析度、裁切、拼接與整段耗時。示意遮罩不是推論。",
+        "why": "詳見本課版本與來源",
+        "anchor": "WI030-4"
+      }
+    }
+  ],
+  "visual_intro": "U-Net先縮小特徵以整合較大範圍，再逐步上採樣恢復輸出解析度。同尺度跳接把編碼側的細節送到解碼側，與較深層線索合併，協助預測每個像素的類別。跳接傳遞特徵，並非直接把原圖當答案貼回。",
+  "beginner_path": {
+    "title": "從必要原理、具體反例到工作取捨",
+    "intro": "要把金屬板上的彎曲焊縫從背景分出來，交給區域覆核或後續量測。 下列圖像、特徵及回答為教學示意，不是模型實測。",
+    "visuals": [
+      {
+        "id": "wi030-unet-c1",
+        "title": "U-Net：把整體線索和細節接回像素",
+        "prompt": "要把金屬板上的彎曲焊縫從背景分出來，交給區域覆核或後續量測。",
+        "caption": "U-Net先縮小特徵以整合較大範圍，再逐步上採樣恢復輸出解析度。同尺度跳接把編碼側的細節送到解碼側，與較深層線索合併，協助預測每個像素的類別。跳接傳遞特徵，並非直接把原圖當答案貼回。",
+        "image": "_course_content/generated-concepts/u-net/wi030-unet-c1-r04-desktop.png",
+        "alt": "U-Net：把整體線索和細節接回像素。U-Net先縮小特徵以整合較大範圍，再逐步上採樣恢復輸出解析度。同尺度跳接把編碼側的細節送到解碼側，與較深層線索合併，協助預測每個像素的類別。跳接傳遞特徵，並非直接把原圖當答案貼回。 AI生成教學示意，非模型實測。",
+        "callouts": [
+          {
+            "title": "先看整體",
+            "body": "下採樣讓表示整合更大範圍，但細節會變粗；圖中同一彎焊縫在不同尺度追蹤。"
+          },
+          {
+            "title": "細節接回來",
+            "body": "對應尺度特徵在解碼側合併，再產生語意遮罩。能保留線索不代表邊界自動精準。"
+          },
+          {
+            "title": "交付與接手",
+            "body": "逐像素類別與預測區域遮罩，交邊界核對或後續量測；實體尺寸需另外校正與驗證。"
+          }
+        ],
+        "reading_views": [
+          {
+            "title": "U-Net：把整體線索和細節接回像素",
+            "image": "_course_content/generated-concepts/u-net/wi030-unet-c1-r04-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/u-net/wi030-unet-c1-r04-mobile.png",
+            "alt": "U-Net：把整體線索和細節接回像素。U-Net先縮小特徵以整合較大範圍，再逐步上採樣恢復輸出解析度。同尺度跳接把編碼側的細節送到解碼側，與較深層線索合併，協助預測每個像素的類別。跳接傳遞特徵，並非直接把原圖當答案貼回。 AI生成教學示意，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              887,
+              1774
+            ],
+            "mobile_display_mode": "full-mobile",
+            "desktop_intrinsic_width": 1672,
+            "desktop_intrinsic_height": 941,
+            "mobile_intrinsic_width": 887,
+            "mobile_intrinsic_height": 1774
+          }
+        ],
+        "core_ideas": true
+      },
+      {
+        "id": "wi030-seg-d2",
+        "title": "輸入看不見細線，分割也可能漏掉",
+        "prompt": "觀察哪個條件改變，讓原本的結果不夠可靠？",
+        "caption": "同一條細焊縫在縮小輸入後只剩極少像素，預測遮罩可能斷裂；原始工件並沒有真的斷裂。背景細紋也可能造成誤分。",
+        "image": "_course_content/generated-concepts/u-net/wi030-seg-d2-r03-desktop.png",
+        "alt": "輸入看不見細線，分割也可能漏掉。同一條細焊縫在縮小輸入後只剩極少像素，預測遮罩可能斷裂；原始工件並沒有真的斷裂。背景細紋也可能造成誤分。 AI生成教學示意，非模型實測。",
+        "callouts": [
+          {
+            "title": "看哪裡",
+            "body": "同一條細焊縫在縮小輸入後只剩極少像素，預測遮罩可能斷裂；原始工件並沒有真的斷裂。背景細紋也可能造成誤分。"
+          },
+          {
+            "title": "接著怎麼做",
+            "body": "回看原解析度和標註邊界，檢查輸入縮放、局部裁切與拼接；以實際邊界誤差驗證，不把放大顯示當成恢復原本資訊。"
+          }
+        ],
+        "reading_views": [
+          {
+            "title": "輸入看不見細線，分割也可能漏掉",
+            "image": "_course_content/generated-concepts/u-net/wi030-seg-d2-r03-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/u-net/wi030-seg-d2-r03-mobile.png",
+            "alt": "輸入看不見細線，分割也可能漏掉。同一條細焊縫在縮小輸入後只剩極少像素，預測遮罩可能斷裂；原始工件並沒有真的斷裂。背景細紋也可能造成誤分。 AI生成教學示意，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              724,
+              2172
+            ],
+            "mobile_display_mode": "full-mobile",
+            "desktop_intrinsic_width": 1672,
+            "desktop_intrinsic_height": 941,
+            "mobile_intrinsic_width": 724,
+            "mobile_intrinsic_height": 2172
+          }
+        ],
+        "core_ideas": false
+      },
+      {
+        "id": "wi030-seg-d3",
+        "title": "要同類區域，還是每件各一張遮罩？",
+        "prompt": "相同工作需求下，資料、輸出與成本如何取捨？",
+        "caption": "U-Net和SegFormer提供語意分割：同類像素用同類標籤，未必區分每一件。YOLO-Seg提供實例分割：每件有自己的遮罩。先決定要量區域還是逐件計數，再比較模型與標註成本。",
+        "image": "_course_content/generated-concepts/u-net/wi030-seg-d3-r01-desktop.png",
+        "alt": "要同類區域，還是每件各一張遮罩？。U-Net和SegFormer提供語意分割：同類像素用同類標籤，未必區分每一件。YOLO-Seg提供實例分割：每件有自己的遮罩。先決定要量區域還是逐件計數，再比較模型與標註成本。 AI生成教學示意，非模型實測。",
+        "callouts": [
+          {
+            "title": "怎麼選",
+            "body": "U-Net和SegFormer提供語意分割：同類像素用同類標籤，未必區分每一件。YOLO-Seg提供實例分割：每件有自己的遮罩。先決定要量區域還是逐件計數，再比較模型與標註成本。"
+          },
+          {
+            "title": "資料與完整成本",
+            "body": "需像素標註；固定輸入解析度、增強和切分。更改縮放或裁切要重測細線及拼接邊界；同資料比較U-Net基準與SegFormer完整成本。"
+          }
+        ],
+        "reading_views": [
+          {
+            "title": "要同類區域，還是每件各一張遮罩？",
+            "image": "_course_content/generated-concepts/u-net/wi030-seg-d3-r01-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/u-net/wi030-seg-d3-r01-mobile.png",
+            "alt": "要同類區域，還是每件各一張遮罩？。U-Net和SegFormer提供語意分割：同類像素用同類標籤，未必區分每一件。YOLO-Seg提供實例分割：每件有自己的遮罩。先決定要量區域還是逐件計數，再比較模型與標註成本。 AI生成教學示意，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              887,
+              1774
+            ],
+            "mobile_display_mode": "full-mobile",
+            "desktop_intrinsic_width": 1672,
+            "desktop_intrinsic_height": 941,
+            "mobile_intrinsic_width": 887,
+            "mobile_intrinsic_height": 1774
+          }
+        ],
+        "core_ideas": false
+      }
+    ]
+  },
+  "concept_visuals": [
+    {
+      "id": "causal-chain",
+      "placement": "after_causal_chain",
+      "title": "U-Net 為何同時需要 bottleneck 和 skip connection？",
+      "prompt": "先預測：只留下深層 bottleneck 的大 context，會少了什麼；只保留淺層細節，又少了什麼？",
+      "caption": "由左到右：encoder 往下縮小以取得 context，bottleneck 連接兩側，decoder 往上還原時接回同尺度 skip features，segmentation head 才輸出每個像素的 semantic logits。U 形路徑不是兩條獨立模型。",
+      "image": "_course_content/generated-concepts/u-net/u-net-causal-chain_v01.svg",
+      "alt": "四段概念圖：帶 pixel labels 的輸入影像，向下縮小的 encoder，bottleneck 和橫向 skip connections，向上放大的 decoder 輸出語意像素 mask。",
+      "callouts": [
+        {
+          "title": "① encoder 取得 context",
+          "body": "下採樣讓較深層能看見較大範圍，但解析度降低。"
+        },
+        {
+          "title": "② skip 接回同尺度細節",
+          "body": "decoder 不必只從壓縮 bottleneck 猜回局部位置。"
+        },
+        {
+          "title": "③ head 輸出語意類別",
+          "body": "每個像素的 class 不等於每個 object 都有獨立 ID。"
+        }
+      ]
+    },
+    {
+      "id": "worked-example",
+      "placement": "after_micro_example",
+      "title": "兩個相碰物件，semantic mask 為何可能連成一片？",
+      "prompt": "標籤只說兩個區域都屬同一 class。模型最直接學到的是哪個像素語意，不是什麼 object 身份？",
+      "caption": "左側兩個 instance 接觸，但訓練 label 對每個像素只給同一 semantic class；右側 U-Net 合理輸出一個連通區域。若需要逐一計數或分開量測，要在模型外加入並驗證 instance split，不能假裝 mask 自帶 ID。",
+      "image": "_course_content/generated-concepts/u-net/u-net-worked-example_v01.svg",
+      "alt": "左右對照概念圖：左邊兩個相碰同類元件的像素標籤，右邊 U-Net 輸出一整片同色 semantic mask，旁邊標示 instance split 在模型外。",
+      "callouts": [
+        {
+          "title": "左：label 定義的是語意",
+          "body": "每個 pixel 的類別相同，並沒有提供兩個物件的區分規則。"
+        },
+        {
+          "title": "右：連通 mask 是合理輸出",
+          "body": "semantic segmentation 不承諾 touching instances 天然分開。"
+        },
+        {
+          "title": "需要 instance 時另接規則",
+          "body": "connected components/split 必須是版本化、可驗證的模型外流程。"
+        }
+      ]
+    },
+    {
+      "id": "comparison",
+      "placement": "after_comparison",
+      "title": "需要的是語意區域、instance，還是多尺度 Transformer context？",
+      "prompt": "U-Net、SegFormer、YOLO-Seg 都會畫出區域，但它們交付的單位和內部路徑不同。",
+      "caption": "U-Net 用 encoder-decoder 與 same-scale skip 產生 semantic mask；SegFormer 用 hierarchical Transformer features 和 MLP decoder 融合多尺度語意 mask；YOLO-Seg 對每個已知 instance 交 box/class 和各自 mask。不要把三種 mask 當同一責任。",
+      "image": "_course_content/generated-concepts/u-net/u-net-comparison_v01.svg",
+      "alt": "三欄比較圖：U-Net U 形 encoder-decoder semantic mask、SegFormer 多尺度 token 特徵融合 semantic mask、YOLO-Seg 個別框和 instance masks。",
+      "callouts": [
+        {
+          "title": "U-Net：semantic pixels + skips",
+          "body": "適合一致 pixel labels 下的已知語意區域。"
+        },
+        {
+          "title": "SegFormer：multi-scale token fusion",
+          "body": "同樣輸出 semantic mask，不自帶 instance/量測能力。"
+        },
+        {
+          "title": "YOLO-Seg：每個 instance",
+          "body": "需要 instance masks、box/class、overlap/NMS 等不同 label/output contract。"
+        }
+      ]
+    },
+    {
+      "id": "boundary-cases-explainer",
+      "placement": "before_boundary_cases",
+      "title": "同一條因果鏈，在哪裡會被破壞？",
+      "prompt": "不要只記住風險名詞；先預測條件一變，畫面或候選結果會怎麼變，再決定何時應 HOLD。",
+      "caption": "U-Net 的三個模型專屬反事實：每欄把條件、可觀察後果與正確下一步放在一起。它們不是自動修正規則；遇到條件超出驗證範圍時，先保存原始證據並進入 HOLD／REVIEW。",
+      "image": "_course_content/generated-concepts/u-net/u-net-boundary-cases_v01.svg",
+      "alt": "U-Net 的三欄反事實說明圖：每欄依序說明一個失效條件、可能看到的候選或量測後果，以及應進入 HOLD、重驗或改選方法的安全下一步。",
+      "callouts": [
+        {
+          "title": "先看條件，而不是先改門檻",
+          "body": "候選改變可能是資料、取像、設定或模型假設被破壞，不能立刻解讀成產品真相。"
+        },
+        {
+          "title": "把可觀察後果說出來",
+          "body": "誤報、漏檢、整片異常或時間失序都需要回到原始資料與版本追查。"
+        },
+        {
+          "title": "HOLD 是設計的一部分",
+          "body": "先停止自動往下走、保存 evidence，確認條件後才重新 qualification 或交給適合的方法。"
+        }
+      ]
+    }
+  ],
+  "boundary_cases": [
+    {
+      "condition": "本課具體反例",
+      "effect": "同一條細焊縫在縮小輸入後只剩極少像素，預測遮罩可能斷裂；原始工件並沒有真的斷裂。背景細紋也可能造成誤分。",
+      "action": "回看原解析度和標註邊界，檢查輸入縮放、局部裁切與拼接；以實際邊界誤差驗證，不把放大顯示當成恢復原本資訊。"
+    },
+    {
+      "condition": "更換產品、模型或輸入設定",
+      "effect": "需像素標註；固定輸入解析度、增強和切分。更改縮放或裁切要重測細線及拼接邊界；同資料比較U-Net基準與SegFormer完整成本。",
+      "action": "先定義焊縫標註邊界和最小可見寬度，保存原圖，分開完整批次作驗證。"
+    },
+    {
+      "condition": "把示意當成實際推論",
+      "effect": "本課特徵、排序、回答及圖像僅用於解釋，不支持現場準確率或耗時結論。",
+      "action": "用獨立影像和人工核對遮罩，分開量區域重疊、細焊縫漏失及邊界偏差；需尺寸時另做相機與尺度校正。記錄解析度、裁切、拼接與整段耗時。示意遮罩不是推論。"
+    }
+  ],
+  "comparison": [
+    {
+      "model": "U-Net",
+      "normality": "像素標註；編碼解碼同尺度跳接",
+      "candidate": "語意區域；邊界與尺度需另驗"
+    },
+    {
+      "model": "SegFormer",
+      "normality": "像素標註；階層特徵多尺度融合",
+      "candidate": "語意區域；不自動提供每件ID"
+    },
+    {
+      "model": "YOLOv8-seg例",
+      "normality": "每件標註；原型＋每件係數",
+      "candidate": "每件框與遮罩；漏檢重疊逐件驗"
+    }
+  ],
+  "selection": "U-Net和SegFormer提供語意分割：同類像素用同類標籤，未必區分每一件。YOLO-Seg提供實例分割：每件有自己的遮罩。先決定要量區域還是逐件計數，再比較模型與標註成本。 需像素標註；固定輸入解析度、增強和切分。更改縮放或裁切要重測細線及拼接邊界；同資料比較U-Net基準與SegFormer完整成本。",
+  "poc": {
+    "title": "以真實工作資料做小規模比較",
+    "steps": [
+      "先定義焊縫標註邊界和最小可見寬度，保存原圖，分開完整批次作驗證。",
+      "需像素標註；固定輸入解析度、增強和切分。更改縮放或裁切要重測細線及拼接邊界；同資料比較U-Net基準與SegFormer完整成本。",
+      "用獨立影像和人工核對遮罩，分開量區域重疊、細焊縫漏失及邊界偏差；需尺寸時另做相機與尺度校正。記錄解析度、裁切、拼接與整段耗時。示意遮罩不是推論。"
+    ],
+    "hold": "回看原解析度和標註邊界，檢查輸入縮放、局部裁切與拼接；以實際邊界誤差驗證，不把放大顯示當成恢復原本資訊。",
+    "acceptance": {
+      "baseline": "既有流程或最簡單可行方法",
+      "measure": "用獨立影像和人工核對遮罩，分開量區域重疊、細焊縫漏失及邊界偏差；需尺寸時另做相機與尺度校正。記錄解析度、裁切、拼接與整段耗時。示意遮罩不是推論。",
+      "negative_control": "同一條細焊縫在縮小輸入後只剩極少像素，預測遮罩可能斷裂；原始工件並沒有真的斷裂。背景細紋也可能造成誤分。",
+      "owner": "實作與影像核對負責人"
+    }
+  },
+  "teach_back": {
+    "question": "它改變什麼？何時選另一種做法？",
+    "answer": "U-Net先縮小特徵以整合較大範圍，再逐步上採樣恢復輸出解析度。同尺度跳接把編碼側的細節送到解碼側，與較深層線索合併，協助預測每個像素的類別。跳接傳遞特徵，並非直接把原圖當答案貼回。 U-Net和SegFormer提供語意分割：同類像素用同類標籤，未必區分每一件。YOLO-Seg提供實例分割：每件有自己的遮罩。先決定要量區域還是逐件計數，再比較模型與標註成本。"
+  },
+  "slide_reading": [
+    {
+      "title": "先找：mask 裡每個顏色到底代表什麼？",
+      "question": "pixel label、ignore/void、boundary policy 為什麼都要先定義？",
+      "look": "找 input image/tiles、semantic classes、pixel masks、ignore/void 和 boundary labels。",
+      "relation": "訓練目標告訴模型每個 pixel 的語意；沒有 instance order 或量測定義，就不能在輸出端自行補上。",
+      "takeaway": "U-Net 最先要鎖的是語意 label contract，不是只選一個 U 形網路。",
+      "terms": [
+        "semantic mask：每個像素的類別標記，不保證區分同類物件",
+        "ignore/void：不納入訓練或評估、需明確標記的像素區域"
+      ]
+    },
+    {
+      "title": "這張圖要核對：為何先縮小再放大？",
+      "question": "encoder、bottleneck、decoder 分別提供什麼資訊？",
+      "look": "找 downsampling encoder stages、bottleneck、upsampling decoder 和 segmentation head。",
+      "relation": "encoder 逐步取得較大 context；decoder 將判斷帶回高解析輸出座標。",
+      "takeaway": "U-Net 的局部化不是只靠上採樣，還靠後續的同尺度 skip features。",
+      "terms": [
+        "bottleneck：U 形網路最深、解析度較低但 context 較大的表示",
+        "upsampling：將較低解析特徵帶回較高解析尺度的處理"
+      ]
+    },
+    {
+      "title": "先找：skip connection 如何補回局部細節？",
+      "question": "為什麼 decoder 要接同尺度 encoder feature，而不是只看 bottleneck？",
+      "look": "找左右對稱尺度、same-scale skip concatenate、decoder fusion 和 pixel logits。",
+      "relation": "bottleneck 提供 context；skip 保留較早的局部位置線索；fuse 後才能輸出更有定位性的 pixel logits。",
+      "takeaway": "skip connection 不是另一個獨立預測，而是 decoder 重建語意邊界的資訊來源。",
+      "terms": [
+        "skip concatenate：將 encoder 同尺度 feature 接到 decoder 的融合方式",
+        "pixel logits：每個像素在各已知類別上的未校正分數"
+      ]
+    },
+    {
+      "title": "最後看：mask 成品為什麼不只由模型決定？",
+      "question": "threshold、tile blend/stitch、instance split 和 measurement 分別在哪裡介入？",
+      "look": "找 threshold/argmax、semantic mask、tile blend/stitch、connected components、inverse mapping 和 measurement rules。",
+      "relation": "head 先給 logits；後處理決定二值邊界與 tile 接合；instance/量測是明確的模型外責任。",
+      "takeaway": "raw probability 或 mask 不是自帶 instance identity、CD/area accuracy 或 release decision。",
+      "terms": [
+        "stitch：把多個 tile 的輸出接回原影像的處理",
+        "boundary error：預測 mask 邊界相對標註邊界的偏差"
+      ]
+    }
+  ],
+  "comparison_headers": {
+    "title": "要同類區域，還是每件各一張遮罩？",
+    "basis": "所需資料與方法差異",
+    "output": "輸出與維護責任"
+  },
+  "transfer_check": {
+    "title": "保細縫，還是保節拍？",
+    "scenario": "完整高解析度影像能保留細焊縫，但耗時較長；切圖可聚焦局部，卻會失去部分上下文並增加拼接邊界。",
+    "question": "你先測高解析度整圖，還是重疊切圖？驗收不能只看哪個指標？",
+    "answer": "兩者都值得用相同保留影像比較。整體形狀很重要時先保留上下文；局部細線主導且可處理拼接時可試重疊切圖。除區域重疊外，另看細線召回、斷裂、邊界偏移與完整耗時。要交毫米尺寸仍需尺度與透視校正。"
+  },
+  "review_trace": {
+    "authority": "roadmap-model-selection/known-target-classification/u-net/model.md",
+    "scope": "WI-030 十二課首讀圖文與手機PNG、反例、比較及自測；原工程slide保留，未以首讀評分代替工程圖審查。",
+    "claims": [
+      {
+        "id": "visual-1",
+        "field": "beginner_path.visuals[same-pcb-anchor]",
+        "source": "模型定位 / architecture_path"
+      },
+      {
+        "id": "visual-2",
+        "field": "beginner_path.visuals[pixel-label-contract]",
+        "source": "architecture_path"
+      },
+      {
+        "id": "visual-3",
+        "field": "beginner_path.visuals[u-path-skip-merge]",
+        "source": "representation_or_score"
+      },
+      {
+        "id": "visual-4",
+        "field": "beginner_path.visuals[mask-candidate-review]",
+        "source": "failure_boundary"
+      },
+      {
+        "id": "visual-5",
+        "field": "beginner_path.visuals[tiny-label-instance-hold]",
+        "source": "selection_gate / evidence_bundle"
+      },
+      {
+        "id": "promise",
+        "field": "promise",
+        "source": "模型定位 / representation_or_score"
+      },
+      {
+        "id": "mechanism",
+        "field": "mechanism_steps",
+        "source": "architecture_path / representation_or_score"
+      },
+      {
+        "id": "boundaries",
+        "field": "boundary_cases",
+        "source": "failure_boundary / selection_gate"
+      },
+      {
+        "id": "comparison",
+        "field": "comparison + selection",
+        "source": "selection_gate"
+      },
+      {
+        "id": "poc",
+        "field": "poc + acceptance",
+        "source": "cost_and_operating_point / evidence_bundle"
+      },
+      {
+        "id": "transfer",
+        "field": "transfer_check",
+        "source": "failure_boundary / selection_gate"
+      },
+      {
+        "id": "wi030-first-read",
+        "field": "beginner_path + core + selection + transfer",
+        "source": "https://arxiv.org/abs/1505.04597"
+      }
+    ]
+  },
+  "quality_status": {
+    "label": "首讀圖文已核對",
+    "state": "self-reviewed",
+    "round": "WI-030",
+    "reason": "新版逐圖與整頁自評、桌機手機驗證完成；使用者成品核准pending。原工程圖未納入本輪分數。"
+  },
+  "teaching_preflight": {
+    "brief": "teaching-images/vision-ai-model-selection/workitems/wi-030/unet-c1-r04-desktop.md",
+    "mobile_brief": "teaching-images/vision-ai-model-selection/workitems/wi-030/unet-c1-r04-mobile.md",
+    "story": "C",
+    "major_visual_nodes": 3,
+    "visual_status": "self-reviewed",
+    "user_review": "pending"
+  }
+}

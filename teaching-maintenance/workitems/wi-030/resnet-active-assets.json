@@ -1,0 +1,80 @@
+[
+  {
+    "id": "resnet-c1",
+    "mode": "desktop",
+    "image": "_course_content/generated-concepts/resnet/wi030-resnet-c1-r02-desktop.png",
+    "size": [
+      1672,
+      941
+    ],
+    "sha256": "4cb3974ecac5a761d8c94310d418e99b6b525911cddb14977226ec0077765898",
+    "generation": "built-in imagegen",
+    "evidence": "illustrative, not model inference",
+    "user_review": "pending"
+  },
+  {
+    "id": "resnet-c1",
+    "mode": "mobile",
+    "image": "_course_content/generated-concepts/resnet/wi030-resnet-c1-r02-mobile.png",
+    "size": [
+      768,
+      2048
+    ],
+    "sha256": "e18918663fcf360abdedf699633ce41deea80a4536eae128702c0b077bf5e244",
+    "generation": "built-in imagegen",
+    "evidence": "illustrative, not model inference",
+    "user_review": "pending"
+  },
+  {
+    "id": "class-d2",
+    "mode": "desktop",
+    "image": "_course_content/generated-concepts/resnet/wi030-class-d2-r01-desktop.png",
+    "size": [
+      1672,
+      941
+    ],
+    "sha256": "f0054b55869a84d56759e3d7b67db20dd7253e91e0e40bad93b8a1209df33c4e",
+    "generation": "built-in imagegen",
+    "evidence": "illustrative, not model inference",
+    "user_review": "pending"
+  },
+  {
+    "id": "class-d2",
+    "mode": "mobile",
+    "image": "_course_content/generated-concepts/resnet/wi030-class-d2-r03-mobile.png",
+    "size": [
+      887,
+      1774
+    ],
+    "sha256": "0e936426ea17b9a7e109c37ba65293ba4fa52b3c0ace8eed2a4a8664be553ee0",
+    "generation": "built-in imagegen",
+    "evidence": "illustrative, not model inference",
+    "user_review": "pending"
+  },
+  {
+    "id": "class-d3",
+    "mode": "desktop",
+    "image": "_course_content/generated-concepts/resnet/wi030-class-d3-r05-desktop.png",
+    "size": [
+      1672,
+      941
+    ],
+    "sha256": "5897e2daac5efbeb76c7ab6be78ed196ce664352dbad4b0ae884970fbc2f7e5a",
+    "generation": "built-in imagegen",
+    "evidence": "illustrative, not model inference",
+    "user_review": "pending"
+  },
+  {
+    "id": "class-d3",
+    "mode": "mobile",
+    "image": "_course_content/generated-concepts/resnet/wi030-class-d3-r06-mobile.png",
+    "size": [
+      724,
+      2172
+    ],
+    "sha256": "b835049c82e7c394d524e5e957deb785c3498947c09055bdf483d001c62ffada",
+    "generation": "built-in imagegen",
+    "evidence": "illustrative, not model inference",
+    "user_review": "pending"
+  }
+]

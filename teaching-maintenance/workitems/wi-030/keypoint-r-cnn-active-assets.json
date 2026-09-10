@@ -1,0 +1,80 @@
+[
+  {
+    "id": "key-c1",
+    "mode": "desktop",
+    "image": "_course_content/generated-concepts/keypoint-r-cnn/wi030-key-c1-r04-desktop.png",
+    "size": [
+      1672,
+      941
+    ],
+    "sha256": "897d74cb4708e9071374373eff0b11b45a04955878b3d2c7e23c2823bc691df8",
+    "generation": "built-in imagegen",
+    "evidence": "illustrative, not model inference",
+    "user_review": "pending"
+  },
+  {
+    "id": "key-c1",
+    "mode": "mobile",
+    "image": "_course_content/generated-concepts/keypoint-r-cnn/wi030-key-c1-r05-mobile.png",
+    "size": [
+      887,
+      1774
+    ],
+    "sha256": "8d1b0f4373a9e72aa396ff124b5bc589c107ac62479d5e18e4b8cdca13a52041",
+    "generation": "built-in imagegen",
+    "evidence": "illustrative, not model inference",
+    "user_review": "pending"
+  },
+  {
+    "id": "pose-d2",
+    "mode": "desktop",
+    "image": "_course_content/generated-concepts/pose/wi030-pose-d2-r02-desktop.png",
+    "size": [
+      1672,
+      941
+    ],
+    "sha256": "9ae272c90dd2bc31e387a5aa7795c9d3db52c49648d069924aff94ae20492005",
+    "generation": "built-in imagegen",
+    "evidence": "illustrative, not model inference",
+    "user_review": "pending"
+  },
+  {
+    "id": "pose-d2",
+    "mode": "mobile",
+    "image": "_course_content/generated-concepts/pose/wi030-pose-d2-r02-mobile.png",
+    "size": [
+      836,
+      1881
+    ],
+    "sha256": "26f117b04fae08da4a385547947d1177cf1c5bdf46259a2fbc8def5309136405",
+    "generation": "built-in imagegen",
+    "evidence": "illustrative, not model inference",
+    "user_review": "pending"
+  },
+  {
+    "id": "pose-d3",
+    "mode": "desktop",
+    "image": "_course_content/generated-concepts/pose/wi030-pose-d3-r03-desktop.png",
+    "size": [
+      1670,
+      941
+    ],
+    "sha256": "b98525406995d0f18378c44ed1aa01a904022b8384b58c5ea3595177f33cb928",
+    "generation": "built-in imagegen",
+    "evidence": "illustrative, not model inference",
+    "user_review": "pending"
+  },
+  {
+    "id": "pose-d3",
+    "mode": "mobile",
+    "image": "_course_content/generated-concepts/pose/wi030-pose-d3-r03-mobile.png",
+    "size": [
+      724,
+      2172
+    ],
+    "sha256": "133661e1880292f9d4bd064739352251af7ee7c3ddbd60106ef7a3a9e91d72c9",
+    "generation": "built-in imagegen",
+    "evidence": "illustrative, not model inference",
+    "user_review": "pending"
+  }
+]

@@ -1,0 +1,80 @@
+[
+  {
+    "id": "yoloseg-c1",
+    "mode": "desktop",
+    "image": "_course_content/generated-concepts/yolo-seg/wi030-yoloseg-c1-r07-desktop.png",
+    "size": [
+      1672,
+      941
+    ],
+    "sha256": "e9b7dae1e1449d0a981c2c4e26378963ad6d9ca092fcd5321d94dd27c83f94e1",
+    "generation": "built-in imagegen",
+    "evidence": "illustrative, not model inference",
+    "user_review": "pending"
+  },
+  {
+    "id": "yoloseg-c1",
+    "mode": "mobile",
+    "image": "_course_content/generated-concepts/yolo-seg/wi030-yoloseg-c1-r06-mobile.png",
+    "size": [
+      724,
+      2172
+    ],
+    "sha256": "e0c468639533c4a826a8102ed242ce43d25bed6c30bc31b331eb40abb5a6b761",
+    "generation": "built-in imagegen",
+    "evidence": "illustrative, not model inference",
+    "user_review": "pending"
+  },
+  {
+    "id": "instance-d2",
+    "mode": "desktop",
+    "image": "_course_content/generated-concepts/yolo-seg/wi030-instance-d2-r02-desktop.png",
+    "size": [
+      1672,
+      941
+    ],
+    "sha256": "40b7364bd361303140153708abe891b0887de488f6b3f06f6970806ea6a87ada",
+    "generation": "built-in imagegen",
+    "evidence": "illustrative, not model inference",
+    "user_review": "pending"
+  },
+  {
+    "id": "instance-d2",
+    "mode": "mobile",
+    "image": "_course_content/generated-concepts/yolo-seg/wi030-instance-d2-r04-mobile.png",
+    "size": [
+      724,
+      2172
+    ],
+    "sha256": "c60b297bcc75b99b4ea514b7c478e0f96b9d964f815ee2700b3653a62f17b227",
+    "generation": "built-in imagegen",
+    "evidence": "illustrative, not model inference",
+    "user_review": "pending"
+  },
+  {
+    "id": "seg-d3",
+    "mode": "desktop",
+    "image": "_course_content/generated-concepts/u-net/wi030-seg-d3-r01-desktop.png",
+    "size": [
+      1672,
+      941
+    ],
+    "sha256": "f3da268f1b33baca27ebf9ade64db6cf7882d1d43669842c734b456578287031",
+    "generation": "built-in imagegen",
+    "evidence": "illustrative, not model inference",
+    "user_review": "pending"
+  },
+  {
+    "id": "seg-d3",
+    "mode": "mobile",
+    "image": "_course_content/generated-concepts/u-net/wi030-seg-d3-r01-mobile.png",
+    "size": [
+      887,
+      1774
+    ],
+    "sha256": "d8ae4673b02e0dfe097adbc4ebc13d512b7c8ec3cf4c3e453c11aa5f0f39a4d7",
+    "generation": "built-in imagegen",
+    "evidence": "illustrative, not model inference",
+    "user_review": "pending"
+  }
+]

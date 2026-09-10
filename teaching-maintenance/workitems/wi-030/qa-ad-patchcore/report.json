@@ -1,0 +1,362 @@
+[
+  {
+    "route": "interactive-learning.html",
+    "viewport": [
+      1440,
+      1000
+    ],
+    "images": [
+      {
+        "src": "http://127.0.0.1:8000/_course_content/generated-concepts/ad-patchcore/wi030-patch-c1-r04-desktop.png",
+        "width": 1671,
+        "height": 941,
+        "box": {
+          "x": 404.1875,
+          "y": 100.515625,
+          "width": 935.625,
+          "height": 526.5625,
+          "top": 100.515625,
+          "right": 1339.8125,
+          "bottom": 627.078125,
+          "left": 404.1875
+        }
+      },
+      {
+        "src": "http://127.0.0.1:8000/_course_content/generated-concepts/ad-patchcore/wi030-ad-d2-r02-desktop.png",
+        "width": 1670,
+        "height": 941,
+        "box": {
+          "x": 404.1875,
+          "y": 101.03125,
+          "width": 935.625,
+          "height": 526.5625,
+          "top": 101.03125,
+          "right": 1339.8125,
+          "bottom": 627.59375,
+          "left": 404.1875
+        }
+      },
+      {
+        "src": "http://127.0.0.1:8000/_course_content/generated-concepts/ad-patchcore/wi030-ad-d3-r04-desktop.png",
+        "width": 1672,
+        "height": 941,
+        "box": {
+          "x": 404.1875,
+          "y": 101.34375,
+          "width": 935.625,
+          "height": 526.5625,
+          "top": 101.34375,
+          "right": 1339.8125,
+          "bottom": 627.90625,
+          "left": 404.1875
+        }
+      }
+    ],
+    "zoom_loaded_escape": 3,
+    "answer": true,
+    "engineering_images": 0,
+    "navigation": true,
+    "page_errors": [],
+    "overflow": false
+  },
+  {
+    "route": "interactive-learning.html",
+    "viewport": [
+      390,
+      844
+    ],
+    "images": [
+      {
+        "src": "http://127.0.0.1:8000/_course_content/generated-concepts/ad-patchcore/wi030-patch-c1-r02-mobile.png",
+        "width": 768,
+        "height": 2046,
+        "box": {
+          "x": 17,
+          "y": 101.265625,
+          "width": 356,
+          "height": 948.40625,
+          "top": 101.265625,
+          "right": 373,
+          "bottom": 1049.671875,
+          "left": 17
+        }
+      },
+      {
+        "src": "http://127.0.0.1:8000/_course_content/generated-concepts/ad-patchcore/wi030-ad-d2-r02-mobile.png",
+        "width": 768,
+        "height": 2048,
+        "box": {
+          "x": 17,
+          "y": 100.921875,
+          "width": 356,
+          "height": 949.328125,
+          "top": 100.921875,
+          "right": 373,
+          "bottom": 1050.25,
+          "left": 17
+        }
+      },
+      {
+        "src": "http://127.0.0.1:8000/_course_content/generated-concepts/ad-patchcore/wi030-ad-d3-r03-mobile.png",
+        "width": 768,
+        "height": 2048,
+        "box": {
+          "x": 17,
+          "y": 100.59375,
+          "width": 356,
+          "height": 949.328125,
+          "top": 100.59375,
+          "right": 373,
+          "bottom": 1049.921875,
+          "left": 17
+        }
+      }
+    ],
+    "zoom_loaded_escape": 3,
+    "answer": true,
+    "engineering_images": 0,
+    "navigation": true,
+    "page_errors": [],
+    "overflow": false
+  },
+  {
+    "route": "interactive-learning.html",
+    "viewport": [
+      360,
+      800
+    ],
+    "images": [
+      {
+        "src": "http://127.0.0.1:8000/_course_content/generated-concepts/ad-patchcore/wi030-patch-c1-r02-mobile.png",
+        "width": 768,
+        "height": 2046,
+        "box": {
+          "x": 17,
+          "y": 101.203125,
+          "width": 326,
+          "height": 868.484375,
+          "top": 101.203125,
+          "right": 343,
+          "bottom": 969.6875,
+          "left": 17
+        }
+      },
+      {
+        "src": "http://127.0.0.1:8000/_course_content/generated-concepts/ad-patchcore/wi030-ad-d2-r02-mobile.png",
+        "width": 768,
+        "height": 2048,
+        "box": {
+          "x": 17,
+          "y": 100.53125,
+          "width": 326,
+          "height": 869.328125,
+          "top": 100.53125,
+          "right": 343,
+          "bottom": 969.859375,
+          "left": 17
+        }
+      },
+      {
+        "src": "http://127.0.0.1:8000/_course_content/generated-concepts/ad-patchcore/wi030-ad-d3-r03-mobile.png",
+        "width": 768,
+        "height": 2048,
+        "box": {
+          "x": 17,
+          "y": 100.578125,
+          "width": 326,
+          "height": 869.328125,
+          "top": 100.578125,
+          "right": 343,
+          "bottom": 969.90625,
+          "left": 17
+        }
+      }
+    ],
+    "zoom_loaded_escape": 3,
+    "answer": true,
+    "engineering_images": 0,
+    "navigation": true,
+    "page_errors": [],
+    "overflow": false
+  },
+  {
+    "route": "docs/index.html",
+    "viewport": [
+      1440,
+      1000
+    ],
+    "images": [
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/ad-patchcore/wi030-patch-c1-r04-desktop.png",
+        "width": 1671,
+        "height": 941,
+        "box": {
+          "x": 404.1875,
+          "y": 100.515625,
+          "width": 935.625,
+          "height": 526.5625,
+          "top": 100.515625,
+          "right": 1339.8125,
+          "bottom": 627.078125,
+          "left": 404.1875
+        }
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/ad-patchcore/wi030-ad-d2-r02-desktop.png",
+        "width": 1670,
+        "height": 941,
+        "box": {
+          "x": 404.1875,
+          "y": 101.03125,
+          "width": 935.625,
+          "height": 526.5625,
+          "top": 101.03125,
+          "right": 1339.8125,
+          "bottom": 627.59375,
+          "left": 404.1875
+        }
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/ad-patchcore/wi030-ad-d3-r04-desktop.png",
+        "width": 1672,
+        "height": 941,
+        "box": {
+          "x": 404.1875,
+          "y": 101.34375,
+          "width": 935.625,
+          "height": 526.5625,
+          "top": 101.34375,
+          "right": 1339.8125,
+          "bottom": 627.90625,
+          "left": 404.1875
+        }
+      }
+    ],
+    "zoom_loaded_escape": 3,
+    "answer": true,
+    "engineering_images": 0,
+    "navigation": true,
+    "page_errors": [],
+    "overflow": false
+  },
+  {
+    "route": "docs/index.html",
+    "viewport": [
+      390,
+      844
+    ],
+    "images": [
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/ad-patchcore/wi030-patch-c1-r02-mobile.png",
+        "width": 768,
+        "height": 2046,
+        "box": {
+          "x": 17,
+          "y": 101.265625,
+          "width": 356,
+          "height": 948.40625,
+          "top": 101.265625,
+          "right": 373,
+          "bottom": 1049.671875,
+          "left": 17
+        }
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/ad-patchcore/wi030-ad-d2-r02-mobile.png",
+        "width": 768,
+        "height": 2048,
+        "box": {
+          "x": 17,
+          "y": 100.921875,
+          "width": 356,
+          "height": 949.328125,
+          "top": 100.921875,
+          "right": 373,
+          "bottom": 1050.25,
+          "left": 17
+        }
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/ad-patchcore/wi030-ad-d3-r03-mobile.png",
+        "width": 768,
+        "height": 2048,
+        "box": {
+          "x": 17,
+          "y": 100.59375,
+          "width": 356,
+          "height": 949.328125,
+          "top": 100.59375,
+          "right": 373,
+          "bottom": 1049.921875,
+          "left": 17
+        }
+      }
+    ],
+    "zoom_loaded_escape": 3,
+    "answer": true,
+    "engineering_images": 0,
+    "navigation": true,
+    "page_errors": [],
+    "overflow": false
+  },
+  {
+    "route": "docs/index.html",
+    "viewport": [
+      360,
+      800
+    ],
+    "images": [
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/ad-patchcore/wi030-patch-c1-r02-mobile.png",
+        "width": 768,
+        "height": 2046,
+        "box": {
+          "x": 17,
+          "y": 101.203125,
+          "width": 326,
+          "height": 868.484375,
+          "top": 101.203125,
+          "right": 343,
+          "bottom": 969.6875,
+          "left": 17
+        }
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/ad-patchcore/wi030-ad-d2-r02-mobile.png",
+        "width": 768,
+        "height": 2048,
+        "box": {
+          "x": 17,
+          "y": 100.53125,
+          "width": 326,
+          "height": 869.328125,
+          "top": 100.53125,
+          "right": 343,
+          "bottom": 969.859375,
+          "left": 17
+        }
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/ad-patchcore/wi030-ad-d3-r03-mobile.png",
+        "width": 768,
+        "height": 2048,
+        "box": {
+          "x": 17,
+          "y": 100.578125,
+          "width": 326,
+          "height": 869.328125,
+          "top": 100.578125,
+          "right": 343,
+          "bottom": 969.90625,
+          "left": 17
+        }
+      }
+    ],
+    "zoom_loaded_escape": 3,
+    "answer": true,
+    "engineering_images": 0,
+    "navigation": true,
+    "page_errors": [],
+    "overflow": false
+  }
+]

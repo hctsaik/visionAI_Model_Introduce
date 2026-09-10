@@ -1,0 +1,149 @@
+{
+  "patch-c1": {
+    "desktop": "patch-c1-r04-desktop.png",
+    "mobile": "patch-c1-r02-mobile.png",
+    "desktop_reviewed": true,
+    "mobile_reviewed": true,
+    "user_review": "pending"
+  },
+  "resnet-c1": {
+    "desktop": "resnet-c1-r02-desktop.png",
+    "mobile": "resnet-c1-r02-mobile.png",
+    "desktop_reviewed": true,
+    "mobile_reviewed": true,
+    "user_review": "pending"
+  },
+  "unet-c1": {
+    "desktop": "unet-c1-r04-desktop.png",
+    "mobile": "unet-c1-r04-mobile.png",
+    "desktop_reviewed": true,
+    "mobile_reviewed": true,
+    "user_review": "pending"
+  },
+  "padim-c1": {
+    "desktop": "padim-c1-r02-desktop.png",
+    "mobile": "padim-c1-r03-mobile.png",
+    "desktop_reviewed": true,
+    "mobile_reviewed": true,
+    "user_review": "pending"
+  },
+  "ad-d2": {
+    "desktop": "ad-d2-r02-desktop.png",
+    "mobile": "ad-d2-r02-mobile.png",
+    "desktop_reviewed": true,
+    "mobile_reviewed": true,
+    "user_review": "pending"
+  },
+  "key-c1": {
+    "desktop": "key-c1-r04-desktop.png",
+    "mobile": "key-c1-r05-mobile.png",
+    "desktop_reviewed": true,
+    "mobile_reviewed": true,
+    "user_review": "pending"
+  },
+  "dino-c1": {
+    "desktop": "dino-c1-r03-desktop.png",
+    "mobile": "dino-c1-r05-mobile.png",
+    "desktop_reviewed": true,
+    "mobile_reviewed": true,
+    "user_review": "pending"
+  },
+  "convnext-c1": {
+    "desktop": "convnext-c1-r02-desktop.png",
+    "mobile": "convnext-c1-r02-mobile.png",
+    "desktop_reviewed": true,
+    "mobile_reviewed": true,
+    "user_review": "pending"
+  },
+  "vit-c1": {
+    "desktop": "vit-c1-r02-desktop.png",
+    "mobile": "vit-c1-r02-mobile.png",
+    "desktop_reviewed": true,
+    "mobile_reviewed": true,
+    "user_review": "pending"
+  },
+  "class-d2": {
+    "desktop": "class-d2-r01-desktop.png",
+    "mobile": "class-d2-r03-mobile.png",
+    "desktop_reviewed": true,
+    "mobile_reviewed": true,
+    "user_review": "pending"
+  },
+  "seg-d3": {
+    "desktop": "seg-d3-r01-desktop.png",
+    "mobile": "seg-d3-r01-mobile.png",
+    "desktop_reviewed": true,
+    "mobile_reviewed": true,
+    "user_review": "pending"
+  },
+  "efficient-c1": {
+    "desktop": "efficient-c1-r06-desktop.png",
+    "mobile": "efficient-c1-r05-mobile.png",
+    "desktop_reviewed": true,
+    "mobile_reviewed": true,
+    "user_review": "pending"
+  },
+  "ad-d3": {
+    "desktop": "ad-d3-r04-desktop.png",
+    "mobile": "ad-d3-r03-mobile.png",
+    "desktop_reviewed": true,
+    "mobile_reviewed": true,
+    "user_review": "pending"
+  },
+  "segformer-c1": {
+    "desktop": "segformer-c1-r02-desktop.png",
+    "mobile": "segformer-c1-r02-mobile.png",
+    "desktop_reviewed": true,
+    "mobile_reviewed": true,
+    "user_review": "pending"
+  },
+  "seg-d2": {
+    "desktop": "seg-d2-r03-desktop.png",
+    "mobile": "seg-d2-r03-mobile.png",
+    "desktop_reviewed": true,
+    "mobile_reviewed": true,
+    "user_review": "pending"
+  },
+  "class-d3": {
+    "desktop": "class-d3-r05-desktop.png",
+    "mobile": "class-d3-r06-mobile.png",
+    "desktop_reviewed": true,
+    "mobile_reviewed": true,
+    "user_review": "pending"
+  },
+  "pose-d2": {
+    "desktop": "pose-d2-r02-desktop.png",
+    "mobile": "pose-d2-r02-mobile.png",
+    "desktop_reviewed": true,
+    "mobile_reviewed": true,
+    "user_review": "pending"
+  },
+  "instance-d2": {
+    "desktop": "instance-d2-r02-desktop.png",
+    "mobile": "instance-d2-r04-mobile.png",
+    "desktop_reviewed": true,
+    "mobile_reviewed": true,
+    "user_review": "pending"
+  },
+  "pose-d3": {
+    "desktop": "pose-d3-r03-desktop.png",
+    "mobile": "pose-d3-r03-mobile.png",
+    "desktop_reviewed": true,
+    "mobile_reviewed": true,
+    "user_review": "pending"
+  },
+  "pose-c1": {
+    "desktop": "pose-c1-r03-desktop.png",
+    "mobile": "pose-c1-r04-mobile.png",
+    "desktop_reviewed": true,
+    "mobile_reviewed": true,
+    "user_review": "pending"
+  },
+  "yoloseg-c1": {
+    "desktop": "yoloseg-c1-r07-desktop.png",
+    "mobile": "yoloseg-c1-r06-mobile.png",
+    "desktop_reviewed": true,
+    "mobile_reviewed": true,
+    "user_review": "pending"
+  }
+}

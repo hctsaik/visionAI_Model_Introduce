@@ -1,0 +1,499 @@
+{
+  "model": "PaDiM",
+  "badge": "位置條件的正常分布",
+  "title": "PaDiM：每個位置，都有自己的正常範圍",
+  "scenario": {
+    "title": "相機和治具固定，板上孔口與平面本來就不同；你希望每個位置和自己的正常變化比較。",
+    "body": "相機和治具固定，板上孔口與平面本來就不同；你希望每個位置和自己的正常變化比較。"
+  },
+  "promise": {
+    "title": "交付結果與接手工作",
+    "body": "每個位置的異常距離、可疑圖與影像分數，交原圖覆核；不自動辨認缺陷名稱。"
+  },
+  "mental_model": {
+    "title": "位置條件的正常分布",
+    "body": "PaDiM對正常影像的每個空間位置，收集CNN局部特徵並估計多變量高斯分布。待測同位置特徵以馬氏距離對照該位置的平均與相關性：沿常見變化方向的偏移，和跨出狹窄正常範圍的偏移，意義不同。這是位置分布比較，不是找一張最像的正常片。",
+    "limit": "同一片沒有刮傷的金屬板，換成斜照後出現亮帶，也可能被標成可疑。分數反映與既有正常的差異，不直接證明工件損壞。 工件偏移也會讓孔口落到原本平面的位置。"
+  },
+  "micro_example": {
+    "title": "固定位置，還是放寬取像？",
+    "setup": "治具更換後板子會小幅旋轉。你可以增加對位步驟，也可以維持自由取像並比較查找式正常參考。",
+    "prediction": "保留PaDiM加對位，或比較PatchCore／AnomalyDINO？哪種現場條件會讓你改選？",
+    "reveal": "若幾何可穩定對位且新增耗時可接受，保留PaDiM並重估位置分布合理。若遮擋或姿態使對位不可靠，可比較查找式參考，但它們也不保證旋轉不變。用同批影像量對位失敗、誤報、漏檢與總耗時；不能把位置錯配一律當正常變化吸收。"
+  },
+  "mechanism_steps": [
+    {
+      "title": "同位置累積正常",
+      "body": "孔口位置與平面位置分開估計平均與共變異；圖中的橢圓是特徵空間，不是影像座標。",
+      "why": "由本課核心機制連接工作用途",
+      "anchor": "WI030-1",
+      "diagram": {
+        "title": "同位置累積正常",
+        "body": "孔口位置與平面位置分開估計平均與共變異；圖中的橢圓是特徵空間，不是影像座標。",
+        "why": "詳見本課版本與來源",
+        "anchor": "WI030-1"
+      }
+    },
+    {
+      "title": "比較位置特徵",
+      "body": "特徵維度間的正常相關性會改變距離尺度；同樣長度的偏移，不一定有相同可疑程度。",
+      "why": "由本課核心機制連接工作用途",
+      "anchor": "WI030-2",
+      "diagram": {
+        "title": "比較位置特徵",
+        "body": "特徵維度間的正常相關性會改變距離尺度；同樣長度的偏移，不一定有相同可疑程度。",
+        "why": "詳見本課版本與來源",
+        "anchor": "WI030-2"
+      }
+    },
+    {
+      "title": "回到原圖覆核",
+      "body": "每個位置的異常距離、可疑圖與影像分數，交原圖覆核；不自動辨認缺陷名稱。",
+      "why": "由本課核心機制連接工作用途",
+      "anchor": "WI030-3",
+      "diagram": {
+        "title": "回到原圖覆核",
+        "body": "每個位置的異常距離、可疑圖與影像分數，交原圖覆核；不自動辨認缺陷名稱。",
+        "why": "詳見本課版本與來源",
+        "anchor": "WI030-3"
+      }
+    },
+    {
+      "title": "工作核對與接手",
+      "body": "保存真實原圖、版本、正常資料切分、熱圖與覆核結果；同批獨立正常／缺陷樣本分開計誤報、漏檢，並量包含取像、前處理、模型與交接的耗時及記憶體。圖中熱區不是模型推論。",
+      "why": "由本課核心機制連接工作用途",
+      "anchor": "WI030-4",
+      "diagram": {
+        "title": "工作核對與接手",
+        "body": "保存真實原圖、版本、正常資料切分、熱圖與覆核結果；同批獨立正常／缺陷樣本分開計誤報、漏檢，並量包含取像、前處理、模型與交接的耗時及記憶體。圖中熱區不是模型推論。",
+        "why": "詳見本課版本與來源",
+        "anchor": "WI030-4"
+      }
+    }
+  ],
+  "visual_intro": "PaDiM對正常影像的每個空間位置，收集CNN局部特徵並估計多變量高斯分布。待測同位置特徵以馬氏距離對照該位置的平均與相關性：沿常見變化方向的偏移，和跨出狹窄正常範圍的偏移，意義不同。這是位置分布比較，不是找一張最像的正常片。",
+  "beginner_path": {
+    "title": "從必要原理、具體反例到工作取捨",
+    "intro": "相機和治具固定，板上孔口與平面本來就不同；你希望每個位置和自己的正常變化比較。 下列圖像、特徵及回答為教學示意，不是模型實測。",
+    "visuals": [
+      {
+        "id": "wi030-padim-c1",
+        "title": "PaDiM：每個位置，都有自己的正常範圍",
+        "prompt": "相機和治具固定，板上孔口與平面本來就不同；你希望每個位置和自己的正常變化比較。",
+        "caption": "PaDiM對正常影像的每個空間位置，收集CNN局部特徵並估計多變量高斯分布。待測同位置特徵以馬氏距離對照該位置的平均與相關性：沿常見變化方向的偏移，和跨出狹窄正常範圍的偏移，意義不同。這是位置分布比較，不是找一張最像的正常片。",
+        "image": "_course_content/generated-concepts/ad-padim/wi030-padim-c1-r02-desktop.png",
+        "alt": "PaDiM：每個位置，都有自己的正常範圍。PaDiM對正常影像的每個空間位置，收集CNN局部特徵並估計多變量高斯分布。待測同位置特徵以馬氏距離對照該位置的平均與相關性：沿常見變化方向的偏移，和跨出狹窄正常範圍的偏移，意義不同。這是位置分布比較，不是找一張最像的正常片。 AI生成教學示意，非模型實測。",
+        "callouts": [
+          {
+            "title": "位置有自己的常態",
+            "body": "孔口位置與平面位置分開估計平均與共變異；圖中的橢圓是特徵空間，不是影像座標。"
+          },
+          {
+            "title": "方向也影響距離",
+            "body": "特徵維度間的正常相關性會改變距離尺度；同樣長度的偏移，不一定有相同可疑程度。"
+          },
+          {
+            "title": "交付與接手",
+            "body": "每個位置的異常距離、可疑圖與影像分數，交原圖覆核；不自動辨認缺陷名稱。"
+          }
+        ],
+        "reading_views": [
+          {
+            "title": "PaDiM：每個位置，都有自己的正常範圍",
+            "image": "_course_content/generated-concepts/ad-padim/wi030-padim-c1-r02-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/ad-padim/wi030-padim-c1-r03-mobile.png",
+            "alt": "PaDiM：每個位置，都有自己的正常範圍。PaDiM對正常影像的每個空間位置，收集CNN局部特徵並估計多變量高斯分布。待測同位置特徵以馬氏距離對照該位置的平均與相關性：沿常見變化方向的偏移，和跨出狹窄正常範圍的偏移，意義不同。這是位置分布比較，不是找一張最像的正常片。 AI生成教學示意，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              887,
+              1774
+            ],
+            "mobile_display_mode": "full-mobile",
+            "desktop_intrinsic_width": 1672,
+            "desktop_intrinsic_height": 941,
+            "mobile_intrinsic_width": 887,
+            "mobile_intrinsic_height": 1774
+          }
+        ],
+        "core_ideas": true
+      },
+      {
+        "id": "wi030-ad-d2",
+        "title": "正常改變了，異常分數也可能跟著變",
+        "prompt": "觀察哪個條件改變，讓原本的結果不夠可靠？",
+        "caption": "同一片沒有刮傷的金屬板，換成斜照後出現亮帶，也可能被標成可疑。分數反映與既有正常的差異，不直接證明工件損壞。 工件偏移也會讓孔口落到原本平面的位置。",
+        "image": "_course_content/generated-concepts/ad-patchcore/wi030-ad-d2-r02-desktop.png",
+        "alt": "正常改變了，異常分數也可能跟著變。同一片沒有刮傷的金屬板，換成斜照後出現亮帶，也可能被標成可疑。分數反映與既有正常的差異，不直接證明工件損壞。 工件偏移也會讓孔口落到原本平面的位置。 AI生成教學示意，非模型實測。",
+        "callouts": [
+          {
+            "title": "看哪裡",
+            "body": "同一片沒有刮傷的金屬板，換成斜照後出現亮帶，也可能被標成可疑。分數反映與既有正常的差異，不直接證明工件損壞。 工件偏移也會讓孔口落到原本平面的位置。"
+          },
+          {
+            "title": "接著怎麼做",
+            "body": "先回看原圖、曝光與照明，穩定取像；新正常外觀須經允收確認，再以獨立正常與缺陷資料驗證，不能把高分樣本一律加進正常資料。"
+          }
+        ],
+        "reading_views": [
+          {
+            "title": "正常改變了，異常分數也可能跟著變",
+            "image": "_course_content/generated-concepts/ad-patchcore/wi030-ad-d2-r02-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/ad-patchcore/wi030-ad-d2-r02-mobile.png",
+            "alt": "正常改變了，異常分數也可能跟著變。同一片沒有刮傷的金屬板，換成斜照後出現亮帶，也可能被標成可疑。分數反映與既有正常的差異，不直接證明工件損壞。 工件偏移也會讓孔口落到原本平面的位置。 AI生成教學示意，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              768,
+              2048
+            ],
+            "mobile_display_mode": "full-mobile",
+            "desktop_intrinsic_width": 1670,
+            "desktop_intrinsic_height": 941,
+            "mobile_intrinsic_width": 768,
+            "mobile_intrinsic_height": 2048
+          }
+        ],
+        "core_ideas": false
+      },
+      {
+        "id": "wi030-ad-d3",
+        "title": "正常資料相同，四種方法怎麼留下知識？",
+        "prompt": "相同工作需求下，資料、輸出與成本如何取捨？",
+        "caption": "PatchCore保存CNN代表局部供查找；PaDiM估計每個位置的正常分布；AnomalyDINO用DINOv2特徵建立參考；EfficientAD用正常資料學教師／學生與全域特徵關係。先固定取像與缺陷需求，再比錯誤與完整成本。",
+        "image": "_course_content/generated-concepts/ad-patchcore/wi030-ad-d3-r04-desktop.png",
+        "alt": "正常資料相同，四種方法怎麼留下知識？。PatchCore保存CNN代表局部供查找；PaDiM估計每個位置的正常分布；AnomalyDINO用DINOv2特徵建立參考；EfficientAD用正常資料學教師／學生與全域特徵關係。先固定取像與缺陷需求，再比錯誤與完整成本。 AI生成教學示意，非模型實測。",
+        "callouts": [
+          {
+            "title": "怎麼選",
+            "body": "PatchCore保存CNN代表局部供查找；PaDiM估計每個位置的正常分布；AnomalyDINO用DINOv2特徵建立參考；EfficientAD用正常資料學教師／學生與全域特徵關係。先固定取像與缺陷需求，再比錯誤與完整成本。"
+          },
+          {
+            "title": "資料與完整成本",
+            "body": "正常資料需涵蓋各位置的允收變化；更換視角、尺寸或對位後需重估位置分布。比較特徵維度、位置數的儲存與計算成本。"
+          }
+        ],
+        "reading_views": [
+          {
+            "title": "正常資料相同，四種方法怎麼留下知識？",
+            "image": "_course_content/generated-concepts/ad-patchcore/wi030-ad-d3-r04-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/ad-patchcore/wi030-ad-d3-r03-mobile.png",
+            "alt": "正常資料相同，四種方法怎麼留下知識？。PatchCore保存CNN代表局部供查找；PaDiM估計每個位置的正常分布；AnomalyDINO用DINOv2特徵建立參考；EfficientAD用正常資料學教師／學生與全域特徵關係。先固定取像與缺陷需求，再比錯誤與完整成本。 AI生成教學示意，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              768,
+              2048
+            ],
+            "mobile_display_mode": "full-mobile",
+            "desktop_intrinsic_width": 1672,
+            "desktop_intrinsic_height": 941,
+            "mobile_intrinsic_width": 768,
+            "mobile_intrinsic_height": 2048
+          }
+        ],
+        "core_ideas": false
+      }
+    ]
+  },
+  "concept_visuals": [
+    {
+      "id": "causal-chain",
+      "placement": "after_causal_chain",
+      "title": "PaDiM：先懂核心再看細節",
+      "prompt": "把每個位置的分布混成全圖一份，會失去什麼？",
+      "caption": "同樣的亮點，在孔邊可能正常，在平面卻可能異常。PaDiM替每個影像位置記住正常特徵的中心、變動幅度與共同變動方向。",
+      "image": "_course_content/generated-concepts/ad-padim/ad-padim-f01-core.png",
+      "alt": "同樣的亮點，在孔邊可能正常，在平面卻可能異常。PaDiM替每個影像位置記住正常特徵的中心、變動幅度與共同變動方向。 圖為既有生成工件與機制設定，不是模型推論。",
+      "callouts": [
+        {
+          "title": "每個位置一份正常分布",
+          "body": "正常影像經固定 CNN 抽取並組合多層特徵；每個網格位置各自估計均值與共變異數。"
+        },
+        {
+          "title": "考慮變動方向",
+          "body": "Mahalanobis 距離會考慮正常分布的寬窄；常見方向的變動與罕見方向的變動，不因像素距離相等就同分。"
+        },
+        {
+          "title": "回到同一位置",
+          "body": "待測位置和該位置的分布比較，再組成位置圖。對位漂移會改變比較對象，需另外驗證。"
+        }
+      ]
+    },
+    {
+      "id": "worked-example",
+      "placement": "after_micro_example",
+      "title": "同一顆正常孔洞，對位錯一格就可能被誤判",
+      "prompt": "兩欄都放同一張正常零件圖；右欄只讓 ROI 向旁邊位移一格。",
+      "caption": "左欄中孔洞邊緣與自己的位置 Gaussian 比較，距離小；右欄錯位後，正常孔邊被比到平坦背景的 Gaussian，距離變大。這是 acquisition／registration 問題，不是自動的產品缺陷證明。",
+      "image": "_course_content/generated-concepts/ad-padim/ad-padim-worked-example_v01.svg",
+      "alt": "左右對照圖：左邊正常孔洞對齊到正確格點而呈藍色，右邊同一孔洞錯位到鄰近背景統計而產生一圈橘色候選。",
+      "callouts": [
+        {
+          "title": "正確對齊",
+          "body": "同一物理結構比自己的正常統計，合法變化才被正確容納。"
+        },
+        {
+          "title": "錯位",
+          "body": "正常結構被拿去比錯的 μ_p、Σ_p，熱圖也會亮。"
+        },
+        {
+          "title": "先查量測狀態",
+          "body": "先 HOLD 並核對 ROI、mask、registration、焦距與照明，不要先把閾值拉高。"
+        }
+      ]
+    },
+    {
+      "id": "comparison",
+      "placement": "after_comparison",
+      "title": "位置分布不是 PatchCore 的最近範例",
+      "prompt": "兩種方法都能看局部，但它們保存正常性的方式不同。",
+      "caption": "PaDiM 在每個固定位置保存 Gaussian 統計；PatchCore 則在記憶庫查找最相近 normal patch。兩種候選都需接受同一套 evidence review。",
+      "image": "_course_content/generated-concepts/ad-padim/ad-padim-comparison_v01.svg",
+      "alt": "左右比較圖：左側為固定位置格點連到藍色高斯橢圓，右側為測試 patch 連到多張正常 exemplar 卡片，底部皆是橘色候選格與放大鏡。",
+      "callouts": [
+        {
+          "title": "PaDiM",
+          "body": "比較同位置是否落在 μ_p、Σ_p 定義的正常範圍。"
+        },
+        {
+          "title": "PatchCore",
+          "body": "查詢是否存在相近的正常局部範例。"
+        },
+        {
+          "title": "共同條件",
+          "body": "兩者都對 ROI、feature recipe、support 與後處理敏感。"
+        }
+      ]
+    },
+    {
+      "id": "boundary-cases-explainer",
+      "placement": "before_boundary_cases",
+      "title": "對齊、covariance 與多峰 normal 各會怎麼讓距離失真？",
+      "prompt": "PaDiM 比的是同位置 normal distribution；當位置不再對齊或分布估計失真時，distance map 在回答什麼？",
+      "caption": "PaDiM 的三個模型專屬反事實：每欄把條件、可觀察後果與正確下一步放在一起。它們不是自動修正規則；遇到條件超出驗證範圍時，先保存原始證據並進入 HOLD／REVIEW。",
+      "image": "_course_content/generated-concepts/ad-padim/ad-padim-boundary-cases_v01.svg",
+      "alt": "PaDiM 的三欄反事實說明圖：每欄依序說明一個失效條件、可能看到的候選或量測後果，以及應進入 HOLD、重驗或改選方法的安全下一步。",
+      "callouts": [
+        {
+          "title": "registration 位移",
+          "body": "同一合法孔洞被拿去和錯位置分布比，distance 會亮；先查 pose／ROI 對齊，再談門檻。"
+        },
+        {
+          "title": "covariance 不穩或 support 太少",
+          "body": "Mahalanobis 距離可被估計噪聲重寫；保留 covariance policy、support IDs、shrinkage／reduction 與 seed evidence。"
+        },
+        {
+          "title": "多峰 normal 或 tiny／logic task",
+          "body": "單一同位置高斯未必容納多種合法模式，也不保證看見微缺陷或關係錯誤；先 HOLD 或改選方法。"
+        }
+      ]
+    }
+  ],
+  "boundary_cases": [
+    {
+      "condition": "本課具體反例",
+      "effect": "同一片沒有刮傷的金屬板，換成斜照後出現亮帶，也可能被標成可疑。分數反映與既有正常的差異，不直接證明工件損壞。 工件偏移也會讓孔口落到原本平面的位置。",
+      "action": "先回看原圖、曝光與照明，穩定取像；新正常外觀須經允收確認，再以獨立正常與缺陷資料驗證，不能把高分樣本一律加進正常資料。"
+    },
+    {
+      "condition": "更換產品、模型或輸入設定",
+      "effect": "正常資料需涵蓋各位置的允收變化；更換視角、尺寸或對位後需重估位置分布。比較特徵維度、位置數的儲存與計算成本。",
+      "action": "先測治具與對位是否讓相同位置對得上，再收正常批次，分開估計和驗證資料。"
+    },
+    {
+      "condition": "把示意當成實際推論",
+      "effect": "本課特徵、排序、回答及圖像僅用於解釋，不支持現場準確率或耗時結論。",
+      "action": "保存真實原圖、版本、正常資料切分、熱圖與覆核結果；同批獨立正常／缺陷樣本分開計誤報、漏檢，並量包含取像、前處理、模型與交接的耗時及記憶體。圖中熱區不是模型推論。"
+    }
+  ],
+  "comparison": [
+    {
+      "model": "PatchCore",
+      "normality": "正常CNN局部特徵＋代表子集庫",
+      "candidate": "局部最近鄰差異；維護庫大小與覆蓋"
+    },
+    {
+      "model": "PaDiM",
+      "normality": "每位置平均與共變異",
+      "candidate": "位置條件距離；維護對位與分布"
+    },
+    {
+      "model": "AnomalyDINO",
+      "normality": "DINOv2區塊特徵正常參考",
+      "candidate": "特徵相似度；維護表示與參考"
+    },
+    {
+      "model": "EfficientAD",
+      "normality": "正常訓練教師／學生與AE關係",
+      "candidate": "局部＋全域差；維護權重及校準"
+    }
+  ],
+  "selection": "PatchCore保存CNN代表局部供查找；PaDiM估計每個位置的正常分布；AnomalyDINO用DINOv2特徵建立參考；EfficientAD用正常資料學教師／學生與全域特徵關係。先固定取像與缺陷需求，再比錯誤與完整成本。 正常資料需涵蓋各位置的允收變化；更換視角、尺寸或對位後需重估位置分布。比較特徵維度、位置數的儲存與計算成本。",
+  "poc": {
+    "title": "以真實工作資料做小規模比較",
+    "steps": [
+      "先測治具與對位是否讓相同位置對得上，再收正常批次，分開估計和驗證資料。",
+      "正常資料需涵蓋各位置的允收變化；更換視角、尺寸或對位後需重估位置分布。比較特徵維度、位置數的儲存與計算成本。",
+      "保存真實原圖、版本、正常資料切分、熱圖與覆核結果；同批獨立正常／缺陷樣本分開計誤報、漏檢，並量包含取像、前處理、模型與交接的耗時及記憶體。圖中熱區不是模型推論。"
+    ],
+    "hold": "先回看原圖、曝光與照明，穩定取像；新正常外觀須經允收確認，再以獨立正常與缺陷資料驗證，不能把高分樣本一律加進正常資料。",
+    "acceptance": {
+      "baseline": "既有流程或最簡單可行方法",
+      "measure": "保存真實原圖、版本、正常資料切分、熱圖與覆核結果；同批獨立正常／缺陷樣本分開計誤報、漏檢，並量包含取像、前處理、模型與交接的耗時及記憶體。圖中熱區不是模型推論。",
+      "negative_control": "同一片沒有刮傷的金屬板，換成斜照後出現亮帶，也可能被標成可疑。分數反映與既有正常的差異，不直接證明工件損壞。 工件偏移也會讓孔口落到原本平面的位置。",
+      "owner": "實作與影像核對負責人"
+    }
+  },
+  "teach_back": {
+    "question": "它改變什麼？何時選另一種做法？",
+    "answer": "PaDiM對正常影像的每個空間位置，收集CNN局部特徵並估計多變量高斯分布。待測同位置特徵以馬氏距離對照該位置的平均與相關性：沿常見變化方向的偏移，和跨出狹窄正常範圍的偏移，意義不同。這是位置分布比較，不是找一張最像的正常片。 PatchCore保存CNN代表局部供查找；PaDiM估計每個位置的正常分布；AnomalyDINO用DINOv2特徵建立參考；EfficientAD用正常資料學教師／學生與全域特徵關係。先固定取像與缺陷需求，再比錯誤與完整成本。"
+  },
+  "slide_reading": [
+    {
+      "title": "先找：每個位置的正常狀態在哪裡建立？",
+      "question": "為什麼 PaDiM 需要 position alignment？",
+      "look": "找 aligned ROI、multi-level features 與每格的 μ_p、Σ_p。",
+      "relation": "只有對齊後，p 才能持續代表同一物理局部；各格再各自估正常統計。",
+      "takeaway": "PaDiM 不是全圖一個 Gaussian，而是位置條件化的分布。",
+      "terms": [
+        "μ_p：位置 p 的正常 feature 平均",
+        "Σ_p：位置 p 正常 feature 的共變異"
+      ]
+    },
+    {
+      "title": "這張圖要核對 Mahalanobis 距離",
+      "question": "測試 feature 為何不能只算到平均值的直線距離？",
+      "look": "找 z_p、μ_p、Σ_p 與 same-position score。",
+      "relation": "Mahalanobis 距離會考慮各方向的正常變異寬度與相關性。",
+      "takeaway": "候選是偏離該位置統計的證據，不是精確像素真值。",
+      "terms": [
+        "Mahalanobis distance：考慮 covariance 的統計距離",
+        "conditioning：covariance 是否穩定可用的數值狀態"
+      ]
+    },
+    {
+      "title": "先鎖 covariance recipe，才比較分數",
+      "question": "哪些設定會讓同一點的距離改變？",
+      "look": "找 support count、dimension subset、regularization、inversion、smoothing 與 aggregation。",
+      "relation": "前段決定 μ_p、Σ_p 的形狀，後段決定候選圖怎麼變整圖分數。",
+      "takeaway": "統計估計與後處理都是可重播的 score contract。",
+      "terms": [
+        "regularization：讓 covariance 避免病態的約束",
+        "aggregation：把位置分數合成整圖候選分數"
+      ]
+    },
+    {
+      "title": "選它前，先看 alignment、多峰與有效解析度",
+      "question": "錯位、正常多模式與微小缺陷時，能直接相信亮格嗎？",
+      "look": "看 registration、support／covariance、effective pixels 與 drift。",
+      "relation": "亮格可能代表產品異常、錯位、估計不穩或看不見的尺度限制，需要先分辨原因。",
+      "takeaway": "前提不成立就 HOLD；Gaussian heatmap 不會自行修正量測問題。",
+      "terms": [
+        "misregistration：物理結構沒有落在同一 grid position",
+        "effective pixels：模型實際可分辨的局部尺度"
+      ]
+    }
+  ],
+  "comparison_headers": {
+    "title": "正常資料相同，四種方法怎麼留下知識？",
+    "basis": "所需資料與方法差異",
+    "output": "輸出與維護責任"
+  },
+  "transfer_check": {
+    "title": "固定位置，還是放寬取像？",
+    "scenario": "治具更換後板子會小幅旋轉。你可以增加對位步驟，也可以維持自由取像並比較查找式正常參考。",
+    "question": "保留PaDiM加對位，或比較PatchCore／AnomalyDINO？哪種現場條件會讓你改選？",
+    "answer": "若幾何可穩定對位且新增耗時可接受，保留PaDiM並重估位置分布合理。若遮擋或姿態使對位不可靠，可比較查找式參考，但它們也不保證旋轉不變。用同批影像量對位失敗、誤報、漏檢與總耗時；不能把位置錯配一律當正常變化吸收。"
+  },
+  "review_trace": {
+    "authority": "roadmap-model-selection/anomaly-detection/ad-padim/model.md",
+    "scope": "WI-030 十二課首讀圖文與手機PNG、反例、比較及自測；原工程slide保留，未以首讀評分代替工程圖審查。",
+    "claims": [
+      {
+        "id": "visual-1",
+        "field": "beginner_path.visuals[same-position-workpiece]",
+        "source": "模型定位 / architecture_path"
+      },
+      {
+        "id": "visual-2",
+        "field": "beginner_path.visuals[position-gaussian]",
+        "source": "architecture_path"
+      },
+      {
+        "id": "visual-3",
+        "field": "beginner_path.visuals[mahalanobis-evidence]",
+        "source": "representation_or_score"
+      },
+      {
+        "id": "visual-4",
+        "field": "beginner_path.visuals[alignment-covariance-counterfactual]",
+        "source": "failure_boundary"
+      },
+      {
+        "id": "visual-5",
+        "field": "beginner_path.visuals[position-model-choice]",
+        "source": "selection_gate / evidence_bundle"
+      },
+      {
+        "id": "promise",
+        "field": "promise",
+        "source": "模型定位 / representation_or_score"
+      },
+      {
+        "id": "mechanism",
+        "field": "mechanism_steps",
+        "source": "architecture_path / representation_or_score"
+      },
+      {
+        "id": "boundaries",
+        "field": "boundary_cases",
+        "source": "failure_boundary / selection_gate"
+      },
+      {
+        "id": "comparison",
+        "field": "comparison + selection",
+        "source": "selection_gate"
+      },
+      {
+        "id": "poc",
+        "field": "poc + acceptance",
+        "source": "cost_and_operating_point / evidence_bundle"
+      },
+      {
+        "id": "transfer",
+        "field": "transfer_check",
+        "source": "failure_boundary / selection_gate"
+      },
+      {
+        "id": "f01-core",
+        "field": "beginner_path.visuals[0] + scenario + mental_model",
+        "source": "https://arxiv.org/abs/2011.08785"
+      },
+      {
+        "id": "f01-transfer",
+        "field": "micro_example + transfer_check",
+        "source": "由原論文機制推論移除後果；https://arxiv.org/abs/2011.08785"
+      },
+      {
+        "id": "wi030-first-read",
+        "field": "beginner_path + core + selection + transfer",
+        "source": "https://arxiv.org/abs/2011.08785"
+      }
+    ]
+  },
+  "quality_status": {
+    "label": "首讀圖文已核對",
+    "state": "self-reviewed",
+    "round": "WI-030",
+    "reason": "新版逐圖與整頁自評、桌機手機驗證完成；使用者成品核准pending。原工程圖未納入本輪分數。"
+  },
+  "teaching_preflight": {
+    "brief": "teaching-images/vision-ai-model-selection/workitems/wi-030/padim-c1-r02-desktop.md",
+    "mobile_brief": "teaching-images/vision-ai-model-selection/workitems/wi-030/padim-c1-r03-mobile.md",
+    "story": "C",
+    "major_visual_nodes": 3,
+    "visual_status": "self-reviewed",
+    "user_review": "pending"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "ad-patchcore": "https://arxiv.org/abs/2106.08265",
+  "ad-padim": "https://arxiv.org/abs/2011.08785",
+  "ad-anomalydino": "https://arxiv.org/abs/2405.14529",
+  "ad-efficientad": "https://arxiv.org/abs/2303.14535",
+  "resnet": "https://arxiv.org/abs/1512.03385",
+  "convnext": "https://arxiv.org/abs/2201.03545",
+  "vit-classifier": "https://arxiv.org/abs/2010.11929",
+  "u-net": "https://arxiv.org/abs/1505.04597",
+  "segformer": "https://arxiv.org/abs/2105.15203",
+  "yolo-seg": "https://github.com/ultralytics/ultralytics/blob/v8.3.0/ultralytics/nn/modules/head.py",
+  "keypoint-r-cnn": "https://docs.pytorch.org/vision/main/_modules/torchvision/models/detection/keypoint_rcnn.html",
+  "pose": "https://docs.opencv.org/4.13.0/d5/d1f/calib3d_solvePnP.html"
+}

@@ -1,0 +1,884 @@
+[
+  {
+    "id": "patch-c1",
+    "mode": "desktop",
+    "file": "patch-c1-r04-desktop.png",
+    "size": [
+      1671,
+      941
+    ],
+    "sha256": "c4be9a04f99b1dc3fc92c476ea418848e317c700d2aea169e9516bf91c1d433d",
+    "scores": [
+      23,
+      23,
+      19,
+      19,
+      9
+    ],
+    "total": 93,
+    "evidence": "prototype-review.md",
+    "native_and_display_reviewed": true,
+    "user_review": "pending"
+  },
+  {
+    "id": "patch-c1",
+    "mode": "mobile",
+    "file": "patch-c1-r02-mobile.png",
+    "size": [
+      768,
+      2046
+    ],
+    "sha256": "cdcae1045f2e3ab4dbfe666b63c3bfb7c667dd3c81805fb22ac39104d53840c2",
+    "scores": [
+      22,
+      23,
+      19,
+      18,
+      9
+    ],
+    "total": 91,
+    "evidence": "prototype-review.md",
+    "native_and_display_reviewed": true,
+    "user_review": "pending"
+  },
+  {
+    "id": "resnet-c1",
+    "mode": "desktop",
+    "file": "resnet-c1-r02-desktop.png",
+    "size": [
+      1672,
+      941
+    ],
+    "sha256": "4cb3974ecac5a761d8c94310d418e99b6b525911cddb14977226ec0077765898",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": "prototype-review.md",
+    "native_and_display_reviewed": true,
+    "user_review": "pending"
+  },
+  {
+    "id": "resnet-c1",
+    "mode": "mobile",
+    "file": "resnet-c1-r02-mobile.png",
+    "size": [
+      768,
+      2048
+    ],
+    "sha256": "e18918663fcf360abdedf699633ce41deea80a4536eae128702c0b077bf5e244",
+    "scores": [
+      22,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 91,
+    "evidence": "prototype-review.md",
+    "native_and_display_reviewed": true,
+    "user_review": "pending"
+  },
+  {
+    "id": "unet-c1",
+    "mode": "desktop",
+    "file": "unet-c1-r04-desktop.png",
+    "size": [
+      1672,
+      941
+    ],
+    "sha256": "add3cc25c222434ce64692cdf87be423c99b19294085098bc4385e373cc685db",
+    "scores": [
+      23,
+      24,
+      18,
+      19,
+      9
+    ],
+    "total": 93,
+    "evidence": "prototype-review.md",
+    "native_and_display_reviewed": true,
+    "user_review": "pending"
+  },
+  {
+    "id": "unet-c1",
+    "mode": "mobile",
+    "file": "unet-c1-r04-mobile.png",
+    "size": [
+      887,
+      1774
+    ],
+    "sha256": "335b8f2ee3ed4f7f5a9c0b98714f4cb716f706ea6ef2cc71c78d63820cbb1be7",
+    "scores": [
+      22,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 91,
+    "evidence": "prototype-review.md",
+    "native_and_display_reviewed": true,
+    "user_review": "pending"
+  },
+  {
+    "id": "padim-c1",
+    "mode": "desktop",
+    "file": "padim-c1-r02-desktop.png",
+    "size": [
+      1672,
+      941
+    ],
+    "sha256": "01c30239814f135a173548b31f82a449f4aa46574a9745336f27c14996d6e4d8",
+    "scores": [
+      23,
+      24,
+      19,
+      18,
+      9
+    ],
+    "total": 93,
+    "evidence": "prototype-review.md",
+    "native_and_display_reviewed": true,
+    "user_review": "pending"
+  },
+  {
+    "id": "padim-c1",
+    "mode": "mobile",
+    "file": "padim-c1-r03-mobile.png",
+    "size": [
+      887,
+      1774
+    ],
+    "sha256": "e838777887f5df55899d84a000b3b6daac7a6b76b8aefc291c954dd7c6ee87b8",
+    "scores": [
+      22,
+      24,
+      19,
+      17,
+      9
+    ],
+    "total": 91,
+    "evidence": "prototype-review.md",
+    "native_and_display_reviewed": true,
+    "user_review": "pending"
+  },
+  {
+    "id": "ad-d2",
+    "mode": "desktop",
+    "file": "ad-d2-r02-desktop.png",
+    "size": [
+      1670,
+      941
+    ],
+    "sha256": "d56c08d7588472f11713eac0dab1ca34422786a397efdcac25d1e403fda4a6fa",
+    "scores": [
+      24,
+      23,
+      20,
+      19,
+      9
+    ],
+    "total": 95,
+    "evidence": "prototype-review.md",
+    "native_and_display_reviewed": true,
+    "user_review": "pending"
+  },
+  {
+    "id": "ad-d2",
+    "mode": "mobile",
+    "file": "ad-d2-r02-mobile.png",
+    "size": [
+      768,
+      2048
+    ],
+    "sha256": "3be092ace4a2ad992abb639f4488633f9b2bdf46406bb0f4c40f2b278ddf053c",
+    "scores": [
+      23,
+      23,
+      20,
+      18,
+      9
+    ],
+    "total": 93,
+    "evidence": "prototype-review.md",
+    "native_and_display_reviewed": true,
+    "user_review": "pending"
+  },
+  {
+    "id": "key-c1",
+    "mode": "desktop",
+    "file": "key-c1-r04-desktop.png",
+    "size": [
+      1672,
+      941
+    ],
+    "sha256": "897d74cb4708e9071374373eff0b11b45a04955878b3d2c7e23c2823bc691df8",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": "prototype-review.md",
+    "native_and_display_reviewed": true,
+    "user_review": "pending"
+  },
+  {
+    "id": "key-c1",
+    "mode": "mobile",
+    "file": "key-c1-r05-mobile.png",
+    "size": [
+      887,
+      1774
+    ],
+    "sha256": "8d1b0f4373a9e72aa396ff124b5bc589c107ac62479d5e18e4b8cdca13a52041",
+    "scores": [
+      22,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 91,
+    "evidence": "prototype-review.md",
+    "native_and_display_reviewed": true,
+    "user_review": "pending"
+  },
+  {
+    "id": "dino-c1",
+    "mode": "desktop",
+    "file": "dino-c1-r03-desktop.png",
+    "size": [
+      1672,
+      941
+    ],
+    "sha256": "6d58b027c00c6d3c8ffdc7505304d80aebb7afb54a6e3f075991472d71b77ba1",
+    "scores": [
+      23,
+      23,
+      19,
+      19,
+      9
+    ],
+    "total": 93,
+    "evidence": "prototype-review.md",
+    "native_and_display_reviewed": true,
+    "user_review": "pending"
+  },
+  {
+    "id": "dino-c1",
+    "mode": "mobile",
+    "file": "dino-c1-r05-mobile.png",
+    "size": [
+      768,
+      2048
+    ],
+    "sha256": "b6e70d569d12948b2dce19e58797ea0f02df89639d6786244b05d5abf0cdf0e8",
+    "scores": [
+      23,
+      23,
+      19,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": "prototype-review.md",
+    "native_and_display_reviewed": true,
+    "user_review": "pending"
+  },
+  {
+    "id": "convnext-c1",
+    "mode": "desktop",
+    "file": "convnext-c1-r02-desktop.png",
+    "size": [
+      1672,
+      941
+    ],
+    "sha256": "4aff15ad564a07ff02b18ac434dc50ec5865b9fd22a1926de20a740d42cd192b",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": "prototype-review.md",
+    "native_and_display_reviewed": true,
+    "user_review": "pending"
+  },
+  {
+    "id": "convnext-c1",
+    "mode": "mobile",
+    "file": "convnext-c1-r02-mobile.png",
+    "size": [
+      768,
+      2048
+    ],
+    "sha256": "a5db80e7130603fe70d7b697b17c1f7e4bd192a0ec36901268395f2f18370abe",
+    "scores": [
+      23,
+      24,
+      18,
+      17,
+      9
+    ],
+    "total": 91,
+    "evidence": "prototype-review.md",
+    "native_and_display_reviewed": true,
+    "user_review": "pending"
+  },
+  {
+    "id": "vit-c1",
+    "mode": "desktop",
+    "file": "vit-c1-r02-desktop.png",
+    "size": [
+      1672,
+      941
+    ],
+    "sha256": "fa59ab1b59fc517b234d8e96e72f424016dc023369ee0d126d0b584bcbbb10a9",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": "prototype-review.md",
+    "native_and_display_reviewed": true,
+    "user_review": "pending"
+  },
+  {
+    "id": "vit-c1",
+    "mode": "mobile",
+    "file": "vit-c1-r02-mobile.png",
+    "size": [
+      916,
+      1717
+    ],
+    "sha256": "d87807002708b4d4c4459d94c4b3ef7abc2e48256aa19ef338f91bf9cc77702f",
+    "scores": [
+      23,
+      24,
+      18,
+      17,
+      9
+    ],
+    "total": 91,
+    "evidence": "prototype-review.md",
+    "native_and_display_reviewed": true,
+    "user_review": "pending"
+  },
+  {
+    "id": "class-d2",
+    "mode": "desktop",
+    "file": "class-d2-r01-desktop.png",
+    "size": [
+      1672,
+      941
+    ],
+    "sha256": "f0054b55869a84d56759e3d7b67db20dd7253e91e0e40bad93b8a1209df33c4e",
+    "scores": [
+      25,
+      23,
+      20,
+      19,
+      9
+    ],
+    "total": 96,
+    "evidence": "prototype-review.md",
+    "native_and_display_reviewed": true,
+    "user_review": "pending"
+  },
+  {
+    "id": "class-d2",
+    "mode": "mobile",
+    "file": "class-d2-r03-mobile.png",
+    "size": [
+      887,
+      1774
+    ],
+    "sha256": "0e936426ea17b9a7e109c37ba65293ba4fa52b3c0ace8eed2a4a8664be553ee0",
+    "scores": [
+      24,
+      23,
+      20,
+      18,
+      9
+    ],
+    "total": 94,
+    "evidence": "prototype-review.md",
+    "native_and_display_reviewed": true,
+    "user_review": "pending"
+  },
+  {
+    "id": "seg-d3",
+    "mode": "desktop",
+    "file": "seg-d3-r01-desktop.png",
+    "size": [
+      1672,
+      941
+    ],
+    "sha256": "f3da268f1b33baca27ebf9ade64db6cf7882d1d43669842c734b456578287031",
+    "scores": [
+      24,
+      23,
+      19,
+      19,
+      9
+    ],
+    "total": 94,
+    "evidence": "prototype-review.md",
+    "native_and_display_reviewed": true,
+    "user_review": "pending"
+  },
+  {
+    "id": "seg-d3",
+    "mode": "mobile",
+    "file": "seg-d3-r01-mobile.png",
+    "size": [
+      887,
+      1774
+    ],
+    "sha256": "d8ae4673b02e0dfe097adbc4ebc13d512b7c8ec3cf4c3e453c11aa5f0f39a4d7",
+    "scores": [
+      24,
+      23,
+      19,
+      18,
+      9
+    ],
+    "total": 93,
+    "evidence": "prototype-review.md",
+    "native_and_display_reviewed": true,
+    "user_review": "pending"
+  },
+  {
+    "id": "efficient-c1",
+    "mode": "desktop",
+    "file": "efficient-c1-r06-desktop.png",
+    "size": [
+      1672,
+      941
+    ],
+    "sha256": "d2944ee11e772219a692c5a05321c91fe3860f6c4acfddfd7fed83a163f922f3",
+    "scores": [
+      24,
+      23,
+      19,
+      17,
+      9
+    ],
+    "total": 92,
+    "evidence": "prototype-review.md",
+    "native_and_display_reviewed": true,
+    "user_review": "pending"
+  },
+  {
+    "id": "efficient-c1",
+    "mode": "mobile",
+    "file": "efficient-c1-r05-mobile.png",
+    "size": [
+      724,
+      2172
+    ],
+    "sha256": "5daf214bec6d4fb965798005ed03b8d672a219ef965dced625935944e00b4cdd",
+    "scores": [
+      24,
+      23,
+      19,
+      17,
+      9
+    ],
+    "total": 92,
+    "evidence": "prototype-review.md",
+    "native_and_display_reviewed": true,
+    "user_review": "pending"
+  },
+  {
+    "id": "ad-d3",
+    "mode": "desktop",
+    "file": "ad-d3-r04-desktop.png",
+    "size": [
+      1672,
+      941
+    ],
+    "sha256": "9e48067e72008111295867622d66457e6a03e8d08526021f24813f4826b5aa1b",
+    "scores": [
+      23,
+      23,
+      19,
+      19,
+      9
+    ],
+    "total": 93,
+    "evidence": "prototype-review.md",
+    "native_and_display_reviewed": true,
+    "user_review": "pending"
+  },
+  {
+    "id": "ad-d3",
+    "mode": "mobile",
+    "file": "ad-d3-r03-mobile.png",
+    "size": [
+      768,
+      2048
+    ],
+    "sha256": "59a2b3f67f7c57a03c44f9afbaf7661635abc687988178198d25d458852e445b",
+    "scores": [
+      23,
+      23,
+      19,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": "prototype-review.md",
+    "native_and_display_reviewed": true,
+    "user_review": "pending"
+  },
+  {
+    "id": "segformer-c1",
+    "mode": "desktop",
+    "file": "segformer-c1-r02-desktop.png",
+    "size": [
+      1672,
+      941
+    ],
+    "sha256": "d5c26114934009bde7a57e29b959ebd219948d03bb981f503b435bbb9b84f5d4",
+    "scores": [
+      24,
+      23,
+      19,
+      19,
+      9
+    ],
+    "total": 94,
+    "evidence": "prototype-review.md",
+    "native_and_display_reviewed": true,
+    "user_review": "pending"
+  },
+  {
+    "id": "segformer-c1",
+    "mode": "mobile",
+    "file": "segformer-c1-r02-mobile.png",
+    "size": [
+      724,
+      2172
+    ],
+    "sha256": "d2acada7e49be344ce23b6737e29501463c73797562d4cd1ab766ff8dbaa5914",
+    "scores": [
+      24,
+      23,
+      19,
+      18,
+      9
+    ],
+    "total": 93,
+    "evidence": "prototype-review.md",
+    "native_and_display_reviewed": true,
+    "user_review": "pending"
+  },
+  {
+    "id": "seg-d2",
+    "mode": "desktop",
+    "file": "seg-d2-r03-desktop.png",
+    "size": [
+      1672,
+      941
+    ],
+    "sha256": "68cd03a376c8090acadcfdfdc83d9ce02b4224f5d340970a16cf9abf938499d4",
+    "scores": [
+      25,
+      23,
+      20,
+      18,
+      9
+    ],
+    "total": 95,
+    "evidence": "prototype-review.md",
+    "native_and_display_reviewed": true,
+    "user_review": "pending"
+  },
+  {
+    "id": "seg-d2",
+    "mode": "mobile",
+    "file": "seg-d2-r03-mobile.png",
+    "size": [
+      724,
+      2172
+    ],
+    "sha256": "550c509766ae8fec1575f550f5638c4e55ec3dc4b464442e3a48aeb938afe06a",
+    "scores": [
+      24,
+      23,
+      20,
+      18,
+      9
+    ],
+    "total": 94,
+    "evidence": "prototype-review.md",
+    "native_and_display_reviewed": true,
+    "user_review": "pending"
+  },
+  {
+    "id": "class-d3",
+    "mode": "desktop",
+    "file": "class-d3-r05-desktop.png",
+    "size": [
+      1672,
+      941
+    ],
+    "sha256": "5897e2daac5efbeb76c7ab6be78ed196ce664352dbad4b0ae884970fbc2f7e5a",
+    "scores": [
+      23,
+      24,
+      19,
+      18,
+      9
+    ],
+    "total": 93,
+    "evidence": "prototype-review.md",
+    "native_and_display_reviewed": true,
+    "user_review": "pending"
+  },
+  {
+    "id": "class-d3",
+    "mode": "mobile",
+    "file": "class-d3-r06-mobile.png",
+    "size": [
+      724,
+      2172
+    ],
+    "sha256": "b835049c82e7c394d524e5e957deb785c3498947c09055bdf483d001c62ffada",
+    "scores": [
+      23,
+      24,
+      19,
+      18,
+      9
+    ],
+    "total": 93,
+    "evidence": "prototype-review.md",
+    "native_and_display_reviewed": true,
+    "user_review": "pending"
+  },
+  {
+    "id": "pose-d2",
+    "mode": "desktop",
+    "file": "pose-d2-r02-desktop.png",
+    "size": [
+      1672,
+      941
+    ],
+    "sha256": "9ae272c90dd2bc31e387a5aa7795c9d3db52c49648d069924aff94ae20492005",
+    "scores": [
+      25,
+      23,
+      20,
+      18,
+      9
+    ],
+    "total": 95,
+    "evidence": "prototype-review.md",
+    "native_and_display_reviewed": true,
+    "user_review": "pending"
+  },
+  {
+    "id": "pose-d2",
+    "mode": "mobile",
+    "file": "pose-d2-r02-mobile.png",
+    "size": [
+      836,
+      1881
+    ],
+    "sha256": "26f117b04fae08da4a385547947d1177cf1c5bdf46259a2fbc8def5309136405",
+    "scores": [
+      25,
+      23,
+      20,
+      18,
+      9
+    ],
+    "total": 95,
+    "evidence": "prototype-review.md",
+    "native_and_display_reviewed": true,
+    "user_review": "pending"
+  },
+  {
+    "id": "instance-d2",
+    "mode": "desktop",
+    "file": "instance-d2-r02-desktop.png",
+    "size": [
+      1672,
+      941
+    ],
+    "sha256": "40b7364bd361303140153708abe891b0887de488f6b3f06f6970806ea6a87ada",
+    "scores": [
+      25,
+      23,
+      20,
+      18,
+      9
+    ],
+    "total": 95,
+    "evidence": "prototype-review.md",
+    "native_and_display_reviewed": true,
+    "user_review": "pending"
+  },
+  {
+    "id": "instance-d2",
+    "mode": "mobile",
+    "file": "instance-d2-r04-mobile.png",
+    "size": [
+      724,
+      2172
+    ],
+    "sha256": "c60b297bcc75b99b4ea514b7c478e0f96b9d964f815ee2700b3653a62f17b227",
+    "scores": [
+      25,
+      23,
+      20,
+      19,
+      9
+    ],
+    "total": 96,
+    "evidence": "prototype-review.md",
+    "native_and_display_reviewed": true,
+    "user_review": "pending"
+  },
+  {
+    "id": "pose-d3",
+    "mode": "desktop",
+    "file": "pose-d3-r03-desktop.png",
+    "size": [
+      1670,
+      941
+    ],
+    "sha256": "b98525406995d0f18378c44ed1aa01a904022b8384b58c5ea3595177f33cb928",
+    "scores": [
+      24,
+      24,
+      19,
+      18,
+      9
+    ],
+    "total": 94,
+    "evidence": "prototype-review.md",
+    "native_and_display_reviewed": true,
+    "user_review": "pending"
+  },
+  {
+    "id": "pose-d3",
+    "mode": "mobile",
+    "file": "pose-d3-r03-mobile.png",
+    "size": [
+      724,
+      2172
+    ],
+    "sha256": "133661e1880292f9d4bd064739352251af7ee7c3ddbd60106ef7a3a9e91d72c9",
+    "scores": [
+      24,
+      23,
+      19,
+      18,
+      9
+    ],
+    "total": 93,
+    "evidence": "prototype-review.md",
+    "native_and_display_reviewed": true,
+    "user_review": "pending"
+  },
+  {
+    "id": "pose-c1",
+    "mode": "desktop",
+    "file": "pose-c1-r03-desktop.png",
+    "size": [
+      1670,
+      942
+    ],
+    "sha256": "220d9ef760ea49b655c4358b6af7db075f73e382b36a0ed40fb3168f71776561",
+    "scores": [
+      24,
+      24,
+      19,
+      18,
+      9
+    ],
+    "total": 94,
+    "evidence": "prototype-review.md",
+    "native_and_display_reviewed": true,
+    "user_review": "pending"
+  },
+  {
+    "id": "pose-c1",
+    "mode": "mobile",
+    "file": "pose-c1-r04-mobile.png",
+    "size": [
+      836,
+      1882
+    ],
+    "sha256": "4e7535ae0eddfc681fbffb9be439dbef8a26219f65bc6a14facb7dd693355ee0",
+    "scores": [
+      23,
+      24,
+      19,
+      17,
+      9
+    ],
+    "total": 92,
+    "evidence": "prototype-review.md",
+    "native_and_display_reviewed": true,
+    "user_review": "pending"
+  },
+  {
+    "id": "yoloseg-c1",
+    "mode": "desktop",
+    "file": "yoloseg-c1-r07-desktop.png",
+    "size": [
+      1672,
+      941
+    ],
+    "sha256": "e9b7dae1e1449d0a981c2c4e26378963ad6d9ca092fcd5321d94dd27c83f94e1",
+    "scores": [
+      24,
+      24,
+      19,
+      18,
+      9
+    ],
+    "total": 94,
+    "evidence": "prototype-review.md",
+    "native_and_display_reviewed": true,
+    "user_review": "pending"
+  },
+  {
+    "id": "yoloseg-c1",
+    "mode": "mobile",
+    "file": "yoloseg-c1-r06-mobile.png",
+    "size": [
+      724,
+      2172
+    ],
+    "sha256": "e0c468639533c4a826a8102ed242ce43d25bed6c30bc31b331eb40abb5a6b761",
+    "scores": [
+      24,
+      24,
+      19,
+      18,
+      9
+    ],
+    "total": 94,
+    "evidence": "prototype-review.md",
+    "native_and_display_reviewed": true,
+    "user_review": "pending"
+  }
+]

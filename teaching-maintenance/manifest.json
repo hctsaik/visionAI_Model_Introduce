@@ -1,15 +1,15 @@
 {
-  "workitem": "WI-028",
+  "workitem": "WI-030",
   "files": [
     {
       "snapshot": "project/IMAGE_STYLE_GUIDE.md",
       "source": "C:\\code\\claude\\visionAI\\IMAGE_STYLE_GUIDE.md",
-      "sha256": "04a1f76fc676242d8541eebe0c60ee3a8ed81216fab23982004e5bbed338fa31"
+      "sha256": "798d87438415c61fd2c17923edbeb8e4929783bced683422be433b19c9566040"
     },
     {
       "snapshot": "project/TEACHING_REVIEW_LOG.md",
       "source": "C:\\code\\claude\\visionAI\\TEACHING_REVIEW_LOG.md",
-      "sha256": "3bea91cede8b610c35d70b3f050769932b4f0ff22288c2e5d5d1da2b65b92df9"
+      "sha256": "0b4ea4383a590e4e7406a3117fb363a495582e941c3463143947981744ab920f"
     },
     {
       "snapshot": "project/TEACHING_SCORING_RUBRIC.md",
@@ -19,7 +19,7 @@
     {
       "snapshot": "project/TEACHING_WEBPAGE_GUIDE.md",
       "source": "C:\\code\\claude\\visionAI\\TEACHING_WEBPAGE_GUIDE.md",
-      "sha256": "81368f512dfc294964b72afdb8597045558f219a38b0d8dded32d7edd30b1021"
+      "sha256": "1c7b9332a68ea2cc1050e9577f0bf011104ab1f47c4d76fa9ab1e011069e0978"
     },
     {
       "snapshot": "skills/teaching-review-cycle/SKILL.md",
@@ -1475,6 +1475,1651 @@
       "snapshot": "workitems/wi-028/authoring/workitems/wi-028/verify_scope.py",
       "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-028\\verify_scope.py",
       "sha256": "72535b4d17990bd048e04b137459e6d342975f787ce89bb700a3f765a90b8295"
+    },
+    {
+      "snapshot": "workitems/wi-030/qa-ad-anomalydino/report.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\qa-ad-anomalydino\\report.json",
+      "sha256": "cc63e3a6f02b894a2204359096873f479f9c44fd4b9a2811b2fa40ea5a035599"
+    },
+    {
+      "snapshot": "workitems/wi-030/qa-ad-efficientad/report.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\qa-ad-efficientad\\report.json",
+      "sha256": "ddf3eed18b516c5135fd688c7203b06901571c2200041c26f4325f61fb3c07b4"
+    },
+    {
+      "snapshot": "workitems/wi-030/qa-ad-padim/report.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\qa-ad-padim\\report.json",
+      "sha256": "e5e1452083f5383962b7be8eb67b02bf399b6082b0789427e7e1f3feecf9d8de"
+    },
+    {
+      "snapshot": "workitems/wi-030/qa-ad-patchcore/report.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\qa-ad-patchcore\\report.json",
+      "sha256": "5a4af4f32e4f987d4182c82ae4e2e1193c62dc75e0285fba483ae78642f8d1c4"
+    },
+    {
+      "snapshot": "workitems/wi-030/qa-convnext/report.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\qa-convnext\\report.json",
+      "sha256": "9aff06a27e927724dced876af180012fec885b9119281b55911766ecc85a5d14"
+    },
+    {
+      "snapshot": "workitems/wi-030/qa-keypoint-r-cnn/report.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\qa-keypoint-r-cnn\\report.json",
+      "sha256": "538068b73f7c8c8935a6904c98a687ca789f0ba2b9a6aa4f6fa165d13247fae1"
+    },
+    {
+      "snapshot": "workitems/wi-030/qa-pose/report.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\qa-pose\\report.json",
+      "sha256": "887ef0a4bc2391a08e777de6dfcd652437588872bc06afab026ce5f56ccda437"
+    },
+    {
+      "snapshot": "workitems/wi-030/qa-resnet/report.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\qa-resnet\\report.json",
+      "sha256": "f2b8903ea48e8cd6ec7d522082336fa6ce082bd29e8b652a6e2a1c83f877e941"
+    },
+    {
+      "snapshot": "workitems/wi-030/qa-segformer/report.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\qa-segformer\\report.json",
+      "sha256": "9c8e0fe373a3a0a5c20a0a8a7e896c49f2db94aa1cea92603c7063a41711f620"
+    },
+    {
+      "snapshot": "workitems/wi-030/qa-u-net/report.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\qa-u-net\\report.json",
+      "sha256": "aa526446e72d8d896f2fb493e8696fe058d876e3ae512af3b66658bc72cd34cd"
+    },
+    {
+      "snapshot": "workitems/wi-030/qa-vit-classifier/report.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\qa-vit-classifier\\report.json",
+      "sha256": "431373a425037b1dc684d0dc2f047580655385ad65c78d2b5c6a3f753eefdde6"
+    },
+    {
+      "snapshot": "workitems/wi-030/qa-yolo-seg/report.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\qa-yolo-seg\\report.json",
+      "sha256": "ece8aeb6a151133cb274ed5168e4c9eab25b7ddc235e5befca6e9605f666125e"
+    },
+    {
+      "snapshot": "workitems/wi-030/ad-d2-r01.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\ad-d2-r01.md",
+      "sha256": "7c4c526883a3a7c6883e4c76a4596eaf208ffff0c755f95053fe8990c7f36fda"
+    },
+    {
+      "snapshot": "workitems/wi-030/ad-d2-r02-desktop.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\ad-d2-r02-desktop.md",
+      "sha256": "77e37e90980f4aa53e73050096279cabf52a8e12893a84fd2836c35a73841811"
+    },
+    {
+      "snapshot": "workitems/wi-030/ad-d2-r02-mobile.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\ad-d2-r02-mobile.md",
+      "sha256": "ea9bccec4d1c7ab7db0507640cf557786d54d51d820ac354b3925f8560d160b6"
+    },
+    {
+      "snapshot": "workitems/wi-030/ad-d2-r02.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\ad-d2-r02.md",
+      "sha256": "7c4c526883a3a7c6883e4c76a4596eaf208ffff0c755f95053fe8990c7f36fda"
+    },
+    {
+      "snapshot": "workitems/wi-030/ad-d3-r01.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\ad-d3-r01.md",
+      "sha256": "6658242dd1927f13a99460315f85945e43cf413be720e8e95acfcae89e03d66d"
+    },
+    {
+      "snapshot": "workitems/wi-030/ad-d3-r02-mobile.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\ad-d3-r02-mobile.md",
+      "sha256": "6658242dd1927f13a99460315f85945e43cf413be720e8e95acfcae89e03d66d"
+    },
+    {
+      "snapshot": "workitems/wi-030/ad-d3-r02.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\ad-d3-r02.md",
+      "sha256": "6658242dd1927f13a99460315f85945e43cf413be720e8e95acfcae89e03d66d"
+    },
+    {
+      "snapshot": "workitems/wi-030/ad-d3-r03-mobile.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\ad-d3-r03-mobile.md",
+      "sha256": "1516f1c50b7fc5f3ac6a4810d0cb939b72eeb65f9b09ef06ff29f57cdc6a94d6"
+    },
+    {
+      "snapshot": "workitems/wi-030/ad-d3-r04-desktop.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\ad-d3-r04-desktop.md",
+      "sha256": "c27f08e8100ac9fea63e086d09f9e0e04740566499bd0b255fd9a05b4d6094d6"
+    },
+    {
+      "snapshot": "workitems/wi-030/class-d2-r01-desktop.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\class-d2-r01-desktop.md",
+      "sha256": "d01faf87042aa97814240d03ea80489bcd6a4cedae0ab436780904ac86022b18"
+    },
+    {
+      "snapshot": "workitems/wi-030/class-d2-r01-mobile.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\class-d2-r01-mobile.md",
+      "sha256": "2aa2c6b1e1d5551bc0c356d980015e5ed5763b2631f8ee4307586a3d468bccad"
+    },
+    {
+      "snapshot": "workitems/wi-030/class-d2-r01.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\class-d2-r01.md",
+      "sha256": "2aa2c6b1e1d5551bc0c356d980015e5ed5763b2631f8ee4307586a3d468bccad"
+    },
+    {
+      "snapshot": "workitems/wi-030/class-d2-r02-mobile.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\class-d2-r02-mobile.md",
+      "sha256": "2aa2c6b1e1d5551bc0c356d980015e5ed5763b2631f8ee4307586a3d468bccad"
+    },
+    {
+      "snapshot": "workitems/wi-030/class-d2-r03-mobile.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\class-d2-r03-mobile.md",
+      "sha256": "acfc889098ca9e78c481c237c52399bf73e2f4c9c641d9ee74ded98c29f50bd9"
+    },
+    {
+      "snapshot": "workitems/wi-030/class-d3-r01.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\class-d3-r01.md",
+      "sha256": "b676a18420e1f79487a1ac6b40c35e933f89765e23159eca55b2ceea49d7fa3a"
+    },
+    {
+      "snapshot": "workitems/wi-030/class-d3-r02-desktop.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\class-d3-r02-desktop.md",
+      "sha256": "b676a18420e1f79487a1ac6b40c35e933f89765e23159eca55b2ceea49d7fa3a"
+    },
+    {
+      "snapshot": "workitems/wi-030/class-d3-r03-desktop.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\class-d3-r03-desktop.md",
+      "sha256": "b676a18420e1f79487a1ac6b40c35e933f89765e23159eca55b2ceea49d7fa3a"
+    },
+    {
+      "snapshot": "workitems/wi-030/class-d3-r04-desktop.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\class-d3-r04-desktop.md",
+      "sha256": "b676a18420e1f79487a1ac6b40c35e933f89765e23159eca55b2ceea49d7fa3a"
+    },
+    {
+      "snapshot": "workitems/wi-030/class-d3-r04-mobile.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\class-d3-r04-mobile.md",
+      "sha256": "b676a18420e1f79487a1ac6b40c35e933f89765e23159eca55b2ceea49d7fa3a"
+    },
+    {
+      "snapshot": "workitems/wi-030/class-d3-r05-desktop.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\class-d3-r05-desktop.md",
+      "sha256": "f03214a9f64a0c1b0d412ae25f419162205fa4f14e92150be37be0b1a91ed8de"
+    },
+    {
+      "snapshot": "workitems/wi-030/class-d3-r05-mobile.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\class-d3-r05-mobile.md",
+      "sha256": "b676a18420e1f79487a1ac6b40c35e933f89765e23159eca55b2ceea49d7fa3a"
+    },
+    {
+      "snapshot": "workitems/wi-030/class-d3-r06-mobile.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\class-d3-r06-mobile.md",
+      "sha256": "0b17b69fbfc14baa92563850537002ac3da417eb97dd3a6acf1e3e1311019565"
+    },
+    {
+      "snapshot": "workitems/wi-030/convnext-c1-r01.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\convnext-c1-r01.md",
+      "sha256": "e9cead12624dd887f4e0f4d0138f880d3db731b5be110b1471b69866cd4d684f"
+    },
+    {
+      "snapshot": "workitems/wi-030/convnext-c1-r02-desktop.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\convnext-c1-r02-desktop.md",
+      "sha256": "9e6e0cd445979a2fce68d09de8b7c5292d818c00b54503c0a0461eb822a5cebc"
+    },
+    {
+      "snapshot": "workitems/wi-030/convnext-c1-r02-mobile.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\convnext-c1-r02-mobile.md",
+      "sha256": "e0886e88eddb92a129b6e5550fcd965b26b14dd2d7990ed7a1d8cb384ff0fcbe"
+    },
+    {
+      "snapshot": "workitems/wi-030/dino-c1-r01.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\dino-c1-r01.md",
+      "sha256": "1fadcda1b1b3ab8d61f6388be8ee7cb1b12eeee807872996aa8d70dd33f6a648"
+    },
+    {
+      "snapshot": "workitems/wi-030/dino-c1-r02.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\dino-c1-r02.md",
+      "sha256": "1fadcda1b1b3ab8d61f6388be8ee7cb1b12eeee807872996aa8d70dd33f6a648"
+    },
+    {
+      "snapshot": "workitems/wi-030/dino-c1-r03-desktop.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\dino-c1-r03-desktop.md",
+      "sha256": "0d2e8b6a33fdcc5865802524c3580bf4ae1f3dfc78c8045191cfb993937d2cfc"
+    },
+    {
+      "snapshot": "workitems/wi-030/dino-c1-r03-mobile.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\dino-c1-r03-mobile.md",
+      "sha256": "1fadcda1b1b3ab8d61f6388be8ee7cb1b12eeee807872996aa8d70dd33f6a648"
+    },
+    {
+      "snapshot": "workitems/wi-030/dino-c1-r03.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\dino-c1-r03.md",
+      "sha256": "1fadcda1b1b3ab8d61f6388be8ee7cb1b12eeee807872996aa8d70dd33f6a648"
+    },
+    {
+      "snapshot": "workitems/wi-030/dino-c1-r04-mobile.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\dino-c1-r04-mobile.md",
+      "sha256": "1fadcda1b1b3ab8d61f6388be8ee7cb1b12eeee807872996aa8d70dd33f6a648"
+    },
+    {
+      "snapshot": "workitems/wi-030/dino-c1-r05-mobile.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\dino-c1-r05-mobile.md",
+      "sha256": "e4b71ece6a3e3f1f7b242f769ad3070d8744a40cf5f40fbce6e27b8165603298"
+    },
+    {
+      "snapshot": "workitems/wi-030/efficient-c1-r01.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\efficient-c1-r01.md",
+      "sha256": "db116fab0b28c04f1b23a843e59a375052323b9c4686385d41ac3cbbe369df1c"
+    },
+    {
+      "snapshot": "workitems/wi-030/efficient-c1-r02.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\efficient-c1-r02.md",
+      "sha256": "db116fab0b28c04f1b23a843e59a375052323b9c4686385d41ac3cbbe369df1c"
+    },
+    {
+      "snapshot": "workitems/wi-030/efficient-c1-r03-mobile.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\efficient-c1-r03-mobile.md",
+      "sha256": "db116fab0b28c04f1b23a843e59a375052323b9c4686385d41ac3cbbe369df1c"
+    },
+    {
+      "snapshot": "workitems/wi-030/efficient-c1-r03.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\efficient-c1-r03.md",
+      "sha256": "db116fab0b28c04f1b23a843e59a375052323b9c4686385d41ac3cbbe369df1c"
+    },
+    {
+      "snapshot": "workitems/wi-030/efficient-c1-r04-mobile.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\efficient-c1-r04-mobile.md",
+      "sha256": "db116fab0b28c04f1b23a843e59a375052323b9c4686385d41ac3cbbe369df1c"
+    },
+    {
+      "snapshot": "workitems/wi-030/efficient-c1-r05-mobile.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\efficient-c1-r05-mobile.md",
+      "sha256": "43cabd7b0605fdcb31a0a04b804d3a6b7db31219169ea6dcafebb79b75a576d2"
+    },
+    {
+      "snapshot": "workitems/wi-030/efficient-c1-r06-desktop.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\efficient-c1-r06-desktop.md",
+      "sha256": "28b70d509888f878cbe008f9becea16b2692fc1fb70dbe8490fe6d85e2a06257"
+    },
+    {
+      "snapshot": "workitems/wi-030/image-review.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\image-review.md",
+      "sha256": "9fbb221d9a0b3a47e709e02731d45ef7163bc9582a8c3160e4d7847cad058255"
+    },
+    {
+      "snapshot": "workitems/wi-030/instance-d2-r01.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\instance-d2-r01.md",
+      "sha256": "18d7e81cb5497fcb1daec0df735495e9072ecf973e02074cee9d63f5ee38856f"
+    },
+    {
+      "snapshot": "workitems/wi-030/instance-d2-r02-desktop.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\instance-d2-r02-desktop.md",
+      "sha256": "8f06c371758fe679e414b246ff6e33d7c8a8ddc8f565b3123b8954223f64c8f1"
+    },
+    {
+      "snapshot": "workitems/wi-030/instance-d2-r02-mobile.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\instance-d2-r02-mobile.md",
+      "sha256": "18d7e81cb5497fcb1daec0df735495e9072ecf973e02074cee9d63f5ee38856f"
+    },
+    {
+      "snapshot": "workitems/wi-030/instance-d2-r03-mobile.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\instance-d2-r03-mobile.md",
+      "sha256": "18d7e81cb5497fcb1daec0df735495e9072ecf973e02074cee9d63f5ee38856f"
+    },
+    {
+      "snapshot": "workitems/wi-030/instance-d2-r04-mobile.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\instance-d2-r04-mobile.md",
+      "sha256": "9da4186865de645e4d868224f9485e6f0a6aba2ed7be0d2abd43b6de360972f2"
+    },
+    {
+      "snapshot": "workitems/wi-030/key-c1-r01.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\key-c1-r01.md",
+      "sha256": "15dba1d3cc88e1c31812e684c670ce53462088c9703662e3e4d2774a02e692d4"
+    },
+    {
+      "snapshot": "workitems/wi-030/key-c1-r02.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\key-c1-r02.md",
+      "sha256": "7da558892b36a0db1f2b58e70a70b3975ec0a06e999c76e7d464a37eab495f86"
+    },
+    {
+      "snapshot": "workitems/wi-030/key-c1-r03-mobile.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\key-c1-r03-mobile.md",
+      "sha256": "7da558892b36a0db1f2b58e70a70b3975ec0a06e999c76e7d464a37eab495f86"
+    },
+    {
+      "snapshot": "workitems/wi-030/key-c1-r03.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\key-c1-r03.md",
+      "sha256": "7da558892b36a0db1f2b58e70a70b3975ec0a06e999c76e7d464a37eab495f86"
+    },
+    {
+      "snapshot": "workitems/wi-030/key-c1-r04-desktop.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\key-c1-r04-desktop.md",
+      "sha256": "490a9e19c09877c155bff8c4354fbd329e68c467db2c38f05cdd28026d55eed6"
+    },
+    {
+      "snapshot": "workitems/wi-030/key-c1-r04-mobile.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\key-c1-r04-mobile.md",
+      "sha256": "15dba1d3cc88e1c31812e684c670ce53462088c9703662e3e4d2774a02e692d4"
+    },
+    {
+      "snapshot": "workitems/wi-030/key-c1-r05-mobile.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\key-c1-r05-mobile.md",
+      "sha256": "e3785c63e4df2eb3629b1a86c4fcb576941017f948bb7b764a1e2da60b40b434"
+    },
+    {
+      "snapshot": "workitems/wi-030/padim-c1-r01.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\padim-c1-r01.md",
+      "sha256": "cb4e092b2110d87beaf1391317187f54ec475349290e6bdd21355aa38c270d63"
+    },
+    {
+      "snapshot": "workitems/wi-030/padim-c1-r02-desktop.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\padim-c1-r02-desktop.md",
+      "sha256": "4a718b7cad5d50a42fb794e2172e17842b1475dd8c74d3136af9ccb4c44a1215"
+    },
+    {
+      "snapshot": "workitems/wi-030/padim-c1-r02-mobile.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\padim-c1-r02-mobile.md",
+      "sha256": "cb4e092b2110d87beaf1391317187f54ec475349290e6bdd21355aa38c270d63"
+    },
+    {
+      "snapshot": "workitems/wi-030/padim-c1-r02.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\padim-c1-r02.md",
+      "sha256": "cb4e092b2110d87beaf1391317187f54ec475349290e6bdd21355aa38c270d63"
+    },
+    {
+      "snapshot": "workitems/wi-030/padim-c1-r03-mobile.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\padim-c1-r03-mobile.md",
+      "sha256": "2d815a70c7059239060a922dae3486183a758c1f38fde9d19761f2239bc86542"
+    },
+    {
+      "snapshot": "workitems/wi-030/page-review.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\page-review.md",
+      "sha256": "72865c8c09841d51d585285cda1ccf85a7983e28d982de0a7268f163d02c3573"
+    },
+    {
+      "snapshot": "workitems/wi-030/patch-c1-r01.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\patch-c1-r01.md",
+      "sha256": "0d8e60d40f20e5b8c3994fb043addbad8005e4e8157086f42faa2a19ecfee86b"
+    },
+    {
+      "snapshot": "workitems/wi-030/patch-c1-r02-mobile.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\patch-c1-r02-mobile.md",
+      "sha256": "b032e204b6bbda221e9aa48e0c4867b191fe5a6fd33c0cc9be68fd12f2889cf7"
+    },
+    {
+      "snapshot": "workitems/wi-030/patch-c1-r02.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\patch-c1-r02.md",
+      "sha256": "4cea8be2c6fbc5b81513607d494afb43f8f573512113993aac5471ad4ae79633"
+    },
+    {
+      "snapshot": "workitems/wi-030/patch-c1-r03.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\patch-c1-r03.md",
+      "sha256": "013d303ede6e85660deb9820446fc7452f4eac97ab808e897e91c10ee533d400"
+    },
+    {
+      "snapshot": "workitems/wi-030/patch-c1-r04-desktop.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\patch-c1-r04-desktop.md",
+      "sha256": "1e934fcad79e4ca2a301471255cae9f6e87a2cdf9fd434b4b3b4b357165a49c2"
+    },
+    {
+      "snapshot": "workitems/wi-030/patch-c1-r04.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\patch-c1-r04.md",
+      "sha256": "013d303ede6e85660deb9820446fc7452f4eac97ab808e897e91c10ee533d400"
+    },
+    {
+      "snapshot": "workitems/wi-030/PLAN.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\PLAN.md",
+      "sha256": "062bfb923fcca37d5fbfa6366745f59b54e88dd099396a750bbde88e39af53a4"
+    },
+    {
+      "snapshot": "workitems/wi-030/pose-c1-r01.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\pose-c1-r01.md",
+      "sha256": "51f3cc6610a05990bf95049a6ca5faebc52e28c119f1d4a22fd393da8794bf48"
+    },
+    {
+      "snapshot": "workitems/wi-030/pose-c1-r02-desktop.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\pose-c1-r02-desktop.md",
+      "sha256": "51f3cc6610a05990bf95049a6ca5faebc52e28c119f1d4a22fd393da8794bf48"
+    },
+    {
+      "snapshot": "workitems/wi-030/pose-c1-r03-desktop.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\pose-c1-r03-desktop.md",
+      "sha256": "fcae97b66654f182dffb3e9a827733ccee992e7168df76d0564689942a20ef35"
+    },
+    {
+      "snapshot": "workitems/wi-030/pose-c1-r03-mobile.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\pose-c1-r03-mobile.md",
+      "sha256": "51f3cc6610a05990bf95049a6ca5faebc52e28c119f1d4a22fd393da8794bf48"
+    },
+    {
+      "snapshot": "workitems/wi-030/pose-c1-r04-mobile.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\pose-c1-r04-mobile.md",
+      "sha256": "17968c580c5455b8890ba635ad5fe74540205eda9da492de2565ec66b0d0d591"
+    },
+    {
+      "snapshot": "workitems/wi-030/pose-d2-r01.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\pose-d2-r01.md",
+      "sha256": "0968825a7ef4bce521e4f19684ad9bf1349bf1c32d1d6dc301f1ec3c2c983ef1"
+    },
+    {
+      "snapshot": "workitems/wi-030/pose-d2-r02-desktop.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\pose-d2-r02-desktop.md",
+      "sha256": "dad102828d29a28341643877e55a7bc80d12355870d00e883f6b843f9eaa6525"
+    },
+    {
+      "snapshot": "workitems/wi-030/pose-d2-r02-mobile.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\pose-d2-r02-mobile.md",
+      "sha256": "742ecdcfba5a08dbb4338cf2be57070bdd209e0777ab7951d20934c750f4ede1"
+    },
+    {
+      "snapshot": "workitems/wi-030/pose-d3-r01.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\pose-d3-r01.md",
+      "sha256": "9a3da9f39e10b3309e88b68ac546c4a198b655b16d43d52552e54916d3c05963"
+    },
+    {
+      "snapshot": "workitems/wi-030/pose-d3-r02-desktop.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\pose-d3-r02-desktop.md",
+      "sha256": "9a3da9f39e10b3309e88b68ac546c4a198b655b16d43d52552e54916d3c05963"
+    },
+    {
+      "snapshot": "workitems/wi-030/pose-d3-r03-desktop.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\pose-d3-r03-desktop.md",
+      "sha256": "8852bfc6f696d087306e283393df3d2b8fb63676674bb69be942853ddaa404ea"
+    },
+    {
+      "snapshot": "workitems/wi-030/pose-d3-r03-mobile.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\pose-d3-r03-mobile.md",
+      "sha256": "584c0a9e1eb4d48610ce11ce1447298fb9a7d7a173278fc3af181b532b4dd47f"
+    },
+    {
+      "snapshot": "workitems/wi-030/prototype-review.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\prototype-review.md",
+      "sha256": "c95af968042c3c75d5e466104b4aeb5998b0f2771b194e91f514eb3a33bf1e08"
+    },
+    {
+      "snapshot": "workitems/wi-030/resnet-c1-r01.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\resnet-c1-r01.md",
+      "sha256": "4a26c3c25bd0a6c4d8b93bf8edd94e0cf72cd54c62642e10a88d1cb9a20021b0"
+    },
+    {
+      "snapshot": "workitems/wi-030/resnet-c1-r02-desktop.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\resnet-c1-r02-desktop.md",
+      "sha256": "0b88c8c1fcbcf877b3f7202a04e8c7289783d38337fa94086c1ab9a4d2412be7"
+    },
+    {
+      "snapshot": "workitems/wi-030/resnet-c1-r02-mobile.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\resnet-c1-r02-mobile.md",
+      "sha256": "84491247354d87bef26aa4e3b509fe4ed82a3f633f2d4c50e2dd7d53e1e40b4a"
+    },
+    {
+      "snapshot": "workitems/wi-030/resnet-c1-r02.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\resnet-c1-r02.md",
+      "sha256": "fdd52b0a5819ce6debe451b7ca38f91a69ced5948961bf099912cd4f64f7b802"
+    },
+    {
+      "snapshot": "workitems/wi-030/seg-d2-r01.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\seg-d2-r01.md",
+      "sha256": "49224f14f97188f8322f939135bef329ce4972357d46be1d6ebc290694f7308d"
+    },
+    {
+      "snapshot": "workitems/wi-030/seg-d2-r02-desktop.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\seg-d2-r02-desktop.md",
+      "sha256": "49224f14f97188f8322f939135bef329ce4972357d46be1d6ebc290694f7308d"
+    },
+    {
+      "snapshot": "workitems/wi-030/seg-d2-r03-desktop.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\seg-d2-r03-desktop.md",
+      "sha256": "0d3a9c5b86e0b5dd54480ccd03546eaec9e7c586918826e4774f207ba8b885e2"
+    },
+    {
+      "snapshot": "workitems/wi-030/seg-d2-r03-mobile.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\seg-d2-r03-mobile.md",
+      "sha256": "6365536abccc8d520ad7a5741e9a9f41b606cd23dd4e6fa61a54f57754dcf5e3"
+    },
+    {
+      "snapshot": "workitems/wi-030/seg-d3-r01-desktop.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\seg-d3-r01-desktop.md",
+      "sha256": "779ff1de07978d38f7d4d88a5b2491eb8b8655c335c4531ba19b632110b4c781"
+    },
+    {
+      "snapshot": "workitems/wi-030/seg-d3-r01-mobile.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\seg-d3-r01-mobile.md",
+      "sha256": "6cf1883a37e302636e05bda6adc00594d9da65ea7f09bcdcc8ec5a16bbad6bd3"
+    },
+    {
+      "snapshot": "workitems/wi-030/seg-d3-r01.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\seg-d3-r01.md",
+      "sha256": "dad219c62d8ca7962c06d603610d18324bd093a1bd8ef3d8431bf7c7a5d5d234"
+    },
+    {
+      "snapshot": "workitems/wi-030/segformer-c1-r01.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\segformer-c1-r01.md",
+      "sha256": "7283037885c8f5f7d144dd73140cde1bef67a02718193617f2d0ba36cae42293"
+    },
+    {
+      "snapshot": "workitems/wi-030/segformer-c1-r02-desktop.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\segformer-c1-r02-desktop.md",
+      "sha256": "0534df16d684a6e8be4ab193d24acee662cf2f9eecea83bb48b69017fd15dc37"
+    },
+    {
+      "snapshot": "workitems/wi-030/segformer-c1-r02-mobile.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\segformer-c1-r02-mobile.md",
+      "sha256": "676f9a7c67016a951f994ba74eb5350f0cb826407f7a4da944b33ce49e3fb2d6"
+    },
+    {
+      "snapshot": "workitems/wi-030/sources.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\sources.md",
+      "sha256": "0c62d735f98e6396976f24ceb3e2fa997dab82eda3e96cee164feec7bee85e99"
+    },
+    {
+      "snapshot": "workitems/wi-030/unet-c1-r01.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\unet-c1-r01.md",
+      "sha256": "58275271f7b5acc924324663c17c5af7bf3ae4022bd47d7e839d9495a1e13efc"
+    },
+    {
+      "snapshot": "workitems/wi-030/unet-c1-r02.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\unet-c1-r02.md",
+      "sha256": "9ca68195234a0d7d93f25bcd283355f2775aff8e1f32e158e98eb6bf6440845a"
+    },
+    {
+      "snapshot": "workitems/wi-030/unet-c1-r03.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\unet-c1-r03.md",
+      "sha256": "9ca68195234a0d7d93f25bcd283355f2775aff8e1f32e158e98eb6bf6440845a"
+    },
+    {
+      "snapshot": "workitems/wi-030/unet-c1-r04-desktop.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\unet-c1-r04-desktop.md",
+      "sha256": "8b28c2463d5abd50acf4b1c0d9ceed09e873633f7a8ff1f75e39772642f0b169"
+    },
+    {
+      "snapshot": "workitems/wi-030/unet-c1-r04-mobile.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\unet-c1-r04-mobile.md",
+      "sha256": "515f87b241920593c2130682c4677ffef1c97986c12528609a1fb3c6e45ba63f"
+    },
+    {
+      "snapshot": "workitems/wi-030/unet-c1-r04.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\unet-c1-r04.md",
+      "sha256": "9ca68195234a0d7d93f25bcd283355f2775aff8e1f32e158e98eb6bf6440845a"
+    },
+    {
+      "snapshot": "workitems/wi-030/vit-c1-r01.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\vit-c1-r01.md",
+      "sha256": "efe703bd674c4455cddd33663ffc712398f7048430fb9aeec846171743142c93"
+    },
+    {
+      "snapshot": "workitems/wi-030/vit-c1-r02-desktop.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\vit-c1-r02-desktop.md",
+      "sha256": "8dcf8c20ac2307827f1ff99707aba4b9be4f5396448221721205c9bceb73300e"
+    },
+    {
+      "snapshot": "workitems/wi-030/vit-c1-r02-mobile.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\vit-c1-r02-mobile.md",
+      "sha256": "16cd07fa07be47810eeac624325ea4a418d6251cc8b72d4b369320ec00f6ec36"
+    },
+    {
+      "snapshot": "workitems/wi-030/yoloseg-c1-r01.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\yoloseg-c1-r01.md",
+      "sha256": "263867573d7227e22788553a24260bb4879db1102f3d8d56ccd936dd85fbda9f"
+    },
+    {
+      "snapshot": "workitems/wi-030/yoloseg-c1-r02-desktop.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\yoloseg-c1-r02-desktop.md",
+      "sha256": "263867573d7227e22788553a24260bb4879db1102f3d8d56ccd936dd85fbda9f"
+    },
+    {
+      "snapshot": "workitems/wi-030/yoloseg-c1-r02-mobile.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\yoloseg-c1-r02-mobile.md",
+      "sha256": "263867573d7227e22788553a24260bb4879db1102f3d8d56ccd936dd85fbda9f"
+    },
+    {
+      "snapshot": "workitems/wi-030/yoloseg-c1-r03-desktop.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\yoloseg-c1-r03-desktop.md",
+      "sha256": "263867573d7227e22788553a24260bb4879db1102f3d8d56ccd936dd85fbda9f"
+    },
+    {
+      "snapshot": "workitems/wi-030/yoloseg-c1-r04-desktop.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\yoloseg-c1-r04-desktop.md",
+      "sha256": "263867573d7227e22788553a24260bb4879db1102f3d8d56ccd936dd85fbda9f"
+    },
+    {
+      "snapshot": "workitems/wi-030/yoloseg-c1-r05-desktop.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\yoloseg-c1-r05-desktop.md",
+      "sha256": "263867573d7227e22788553a24260bb4879db1102f3d8d56ccd936dd85fbda9f"
+    },
+    {
+      "snapshot": "workitems/wi-030/yoloseg-c1-r05-mobile.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\yoloseg-c1-r05-mobile.md",
+      "sha256": "263867573d7227e22788553a24260bb4879db1102f3d8d56ccd936dd85fbda9f"
+    },
+    {
+      "snapshot": "workitems/wi-030/yoloseg-c1-r06-desktop.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\yoloseg-c1-r06-desktop.md",
+      "sha256": "263867573d7227e22788553a24260bb4879db1102f3d8d56ccd936dd85fbda9f"
+    },
+    {
+      "snapshot": "workitems/wi-030/yoloseg-c1-r06-mobile.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\yoloseg-c1-r06-mobile.md",
+      "sha256": "a36ad840a549c310b772345b94075ea536452653cdfaf26ffdd590e6ac5dcf39"
+    },
+    {
+      "snapshot": "workitems/wi-030/yoloseg-c1-r07-desktop.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\yoloseg-c1-r07-desktop.md",
+      "sha256": "d04147492a8e00b9101a6c7f04d5f61f1ca17c0f8becfb191b49fd98d1858c23"
+    },
+    {
+      "snapshot": "workitems/wi-030/ad-anomalydino-active-assets.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\ad-anomalydino-active-assets.json",
+      "sha256": "fac4f2d7243169119c57ee0d9cf85ee4ffe70b3bb99472b56924993fb28ce4a6"
+    },
+    {
+      "snapshot": "workitems/wi-030/ad-d2-r01-desktop-prompt.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\ad-d2-r01-desktop-prompt.json",
+      "sha256": "a88c2b78bc10e8861719ff7217801b062b4c5d097b92144463520cbafb4e15c3"
+    },
+    {
+      "snapshot": "workitems/wi-030/ad-d2-r02-desktop-prompt.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\ad-d2-r02-desktop-prompt.json",
+      "sha256": "2e1af97931466708154fb1dd6f9c326deaa17cdb1557ad9b907f8685ca53f133"
+    },
+    {
+      "snapshot": "workitems/wi-030/ad-d2-r02-mobile-prompt.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\ad-d2-r02-mobile-prompt.json",
+      "sha256": "83569f30a1b755562e9943c4baa1850108b874411a6cbfd40e2bb5f001699204"
+    },
+    {
+      "snapshot": "workitems/wi-030/ad-d3-r01-desktop-prompt.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\ad-d3-r01-desktop-prompt.json",
+      "sha256": "46a7aa2e8c30d1d77dbb7d116a10ba38bf75e666b76e71c6fe58a54c8711db7a"
+    },
+    {
+      "snapshot": "workitems/wi-030/ad-d3-r02-desktop-prompt.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\ad-d3-r02-desktop-prompt.json",
+      "sha256": "32d66808c1508b1d53935c567ff97fd773791be3db0db5e9cf692e8b3f566770"
+    },
+    {
+      "snapshot": "workitems/wi-030/ad-d3-r02-mobile-prompt.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\ad-d3-r02-mobile-prompt.json",
+      "sha256": "b15f89f704480d9fcdc57be8d9d0335eaaaa0de50970febe180fd8a5472a9f25"
+    },
+    {
+      "snapshot": "workitems/wi-030/ad-d3-r03-mobile-prompt.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\ad-d3-r03-mobile-prompt.json",
+      "sha256": "9cf5bea82966aa9abe5f4d42b37068cc689dca77e3adb349cbbd89b7cf55e556"
+    },
+    {
+      "snapshot": "workitems/wi-030/ad-d3-r04-desktop-prompt.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\ad-d3-r04-desktop-prompt.json",
+      "sha256": "4b98a4665d8c466abe777351c253e53f49a628a193850a5e3331c76067f4f000"
+    },
+    {
+      "snapshot": "workitems/wi-030/ad-efficientad-active-assets.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\ad-efficientad-active-assets.json",
+      "sha256": "eb05a540a061271e29bf0a5abe5c443582679abde0a7bccb8cd129677217673b"
+    },
+    {
+      "snapshot": "workitems/wi-030/ad-padim-active-assets.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\ad-padim-active-assets.json",
+      "sha256": "4df97c114d4db5875722c875515c3772f028a493da09f2b65732be1d56ba50ff"
+    },
+    {
+      "snapshot": "workitems/wi-030/ad-patchcore-active-assets.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\ad-patchcore-active-assets.json",
+      "sha256": "08e70a0e8350173b9e3c5e087c89be45cde58f0e8c8ee93fa5a1edff827b1c8e"
+    },
+    {
+      "snapshot": "workitems/wi-030/bundle-verification.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\bundle-verification.json",
+      "sha256": "6a4d24c0ed197ac3b29e37a870177189a7d35dfdf6fff38a51aba4c6cf17d0aa"
+    },
+    {
+      "snapshot": "workitems/wi-030/class-d2-r01-desktop-prompt.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\class-d2-r01-desktop-prompt.json",
+      "sha256": "defb3614d3ea4e3a834be3d8888939dfb52e705afe7300fe9576dd6161d15b0b"
+    },
+    {
+      "snapshot": "workitems/wi-030/class-d2-r01-mobile-prompt.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\class-d2-r01-mobile-prompt.json",
+      "sha256": "7545389372ba8070bdff4e6f39074ebebddcd8df2856ab7a11c3c5e0ff2cdb63"
+    },
+    {
+      "snapshot": "workitems/wi-030/class-d2-r02-mobile-prompt.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\class-d2-r02-mobile-prompt.json",
+      "sha256": "d76801d4eba36ac9cd99b4bbeacf9b618268eb44271372e8c91db901697749ef"
+    },
+    {
+      "snapshot": "workitems/wi-030/class-d2-r03-mobile-prompt.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\class-d2-r03-mobile-prompt.json",
+      "sha256": "58de142e118657084dfecb40431dddf5149e3ee8ff434a3d9652ba8d99a2844e"
+    },
+    {
+      "snapshot": "workitems/wi-030/class-d3-r01-desktop-prompt.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\class-d3-r01-desktop-prompt.json",
+      "sha256": "010f72cf5829f4e1a335c40dd345a943f4c910cc1aeea596999cdd5ae30973e7"
+    },
+    {
+      "snapshot": "workitems/wi-030/class-d3-r02-desktop-prompt.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\class-d3-r02-desktop-prompt.json",
+      "sha256": "e72197da0035d1198a7a327c808a30eb457525ef09981464fad964b4b7743db8"
+    },
+    {
+      "snapshot": "workitems/wi-030/class-d3-r03-desktop-prompt.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\class-d3-r03-desktop-prompt.json",
+      "sha256": "06e4c35121956223df246da2ee426bc0c858c7664a4c0594f2cb06273c11ecc4"
+    },
+    {
+      "snapshot": "workitems/wi-030/class-d3-r04-desktop-prompt.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\class-d3-r04-desktop-prompt.json",
+      "sha256": "3f26df21a1785951b54f1f90e335c750353028cec40e690a6b76513c80f09d24"
+    },
+    {
+      "snapshot": "workitems/wi-030/class-d3-r04-mobile-prompt.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\class-d3-r04-mobile-prompt.json",
+      "sha256": "6c2cba4263e528c915f5158b3b76c1cbf0e666eccb9d3aa7b5420a42d0a708e1"
+    },
+    {
+      "snapshot": "workitems/wi-030/class-d3-r05-desktop-prompt.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\class-d3-r05-desktop-prompt.json",
+      "sha256": "500c9358b185802e6343d7ced687a25282554d8d853084d016e0da3716503eb6"
+    },
+    {
+      "snapshot": "workitems/wi-030/class-d3-r05-mobile-prompt.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\class-d3-r05-mobile-prompt.json",
+      "sha256": "a786e82599696de5ac49abcf728eca54b0eb962adc4e5de23762008c1c104f1b"
+    },
+    {
+      "snapshot": "workitems/wi-030/class-d3-r06-mobile-prompt.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\class-d3-r06-mobile-prompt.json",
+      "sha256": "e5772d4ef7f41e56f3ba394320a6dc62ac6d2a3dbeb897101695e27242d98d51"
+    },
+    {
+      "snapshot": "workitems/wi-030/convnext-active-assets.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\convnext-active-assets.json",
+      "sha256": "8507e44839b6f247c82e88cea715d7a82d23c6da7bd53b38165106d77089710e"
+    },
+    {
+      "snapshot": "workitems/wi-030/convnext-c1-r01-desktop-prompt.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\convnext-c1-r01-desktop-prompt.json",
+      "sha256": "414d6998f5c36e814ba572faefc2c11f2d2f205640574b8eebcbbadba6ea6af0"
+    },
+    {
+      "snapshot": "workitems/wi-030/convnext-c1-r02-desktop-prompt.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\convnext-c1-r02-desktop-prompt.json",
+      "sha256": "54146681ef7c17f5b61588eab80de6ecf8e7d8b91b6d16e5e9415b11c8b63501"
+    },
+    {
+      "snapshot": "workitems/wi-030/convnext-c1-r02-mobile-prompt.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\convnext-c1-r02-mobile-prompt.json",
+      "sha256": "b50ed3c06e57cdaa646fa11acd823c64ab0152c359b7640e257c5167b4679b5b"
+    },
+    {
+      "snapshot": "workitems/wi-030/core-design.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\core-design.json",
+      "sha256": "aecb826e154bcb7992bf679394a57b1793c808704cfbcc4fe7645c6179596623"
+    },
+    {
+      "snapshot": "workitems/wi-030/dino-c1-r01-desktop-prompt.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\dino-c1-r01-desktop-prompt.json",
+      "sha256": "89b4b12a8ee39ee0f6c5a1baba2518dbe096ed1524e80a032d561bba7cf4efed"
+    },
+    {
+      "snapshot": "workitems/wi-030/dino-c1-r02-desktop-prompt.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\dino-c1-r02-desktop-prompt.json",
+      "sha256": "adc263c4bb28cf6e6a0e4b53f7faade17f2adced2058dc2bc29591bb4f7c2492"
+    },
+    {
+      "snapshot": "workitems/wi-030/dino-c1-r03-desktop-prompt.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\dino-c1-r03-desktop-prompt.json",
+      "sha256": "2f9d18b5f1b4345b83c371ca3a0560afb22fc79b94a33ca7fb0542a2afd49503"
+    },
+    {
+      "snapshot": "workitems/wi-030/dino-c1-r03-mobile-prompt.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\dino-c1-r03-mobile-prompt.json",
+      "sha256": "bbf1dd42f9a9214c5f27bcdde55ec5bb0783c69556a73084ce88c68660a8b464"
+    },
+    {
+      "snapshot": "workitems/wi-030/dino-c1-r04-mobile-prompt.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\dino-c1-r04-mobile-prompt.json",
+      "sha256": "79bfb9082824e81b10df950e48cd194269e44c4205b92ccdac9d5dff263c34fc"
+    },
+    {
+      "snapshot": "workitems/wi-030/dino-c1-r05-mobile-prompt.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\dino-c1-r05-mobile-prompt.json",
+      "sha256": "edfc41088bd517457021ea77b14fac029c5ea2202b616f388acec27f61c2f1a1"
+    },
+    {
+      "snapshot": "workitems/wi-030/efficient-c1-r01-desktop-prompt.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\efficient-c1-r01-desktop-prompt.json",
+      "sha256": "f4dbc9c06624d7bb3338b8be3cac1c87d3975987ca25311e4452e46ebaf1c1d9"
+    },
+    {
+      "snapshot": "workitems/wi-030/efficient-c1-r02-desktop-prompt.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\efficient-c1-r02-desktop-prompt.json",
+      "sha256": "ccd1178bf1fd6caf77352ef93a96325b7c9dca16d32fd1a0cebe71fef21378d9"
+    },
+    {
+      "snapshot": "workitems/wi-030/efficient-c1-r03-desktop-prompt.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\efficient-c1-r03-desktop-prompt.json",
+      "sha256": "d02e6b697ee9e0fd83e6ed46ec0b6e29bef6abc2e591f726c2df7070810230e3"
+    },
+    {
+      "snapshot": "workitems/wi-030/efficient-c1-r03-mobile-prompt.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\efficient-c1-r03-mobile-prompt.json",
+      "sha256": "e49b44a144e14560d8c31e275283e4c700b87720244b883463dd5cd0c9c86e51"
+    },
+    {
+      "snapshot": "workitems/wi-030/efficient-c1-r04-mobile-prompt.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\efficient-c1-r04-mobile-prompt.json",
+      "sha256": "3e72183bdeadcf36ebe2b4707dbcbd71908419df7b23dea6b6259a6fe382bd34"
+    },
+    {
+      "snapshot": "workitems/wi-030/efficient-c1-r05-mobile-prompt.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\efficient-c1-r05-mobile-prompt.json",
+      "sha256": "3dbf17165f988f1c1e4a712bc6f092036aeae6dcd1126a382223d7d02a8a542d"
+    },
+    {
+      "snapshot": "workitems/wi-030/efficient-c1-r06-desktop-prompt.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\efficient-c1-r06-desktop-prompt.json",
+      "sha256": "2b399f05bc91e9b867c59f49f5eaf78f4d44eae0c86d5ab443d7aa1d15382cf8"
+    },
+    {
+      "snapshot": "workitems/wi-030/final-page-checks.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\final-page-checks.json",
+      "sha256": "e33404b64e15b0d9b62313b37ad47ed3fe89d8197d72dfbb17267dabb7153ad3"
+    },
+    {
+      "snapshot": "workitems/wi-030/handoff-http.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\handoff-http.json",
+      "sha256": "f23b92fc929e87e660ac54824e0d0cc2f20d6d7c0768f82860ad42aca613a4c5"
+    },
+    {
+      "snapshot": "workitems/wi-030/http-assets.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\http-assets.json",
+      "sha256": "fadf6cd42d528882fe74b1ece708e4c935e06742d069bf6f118a20b3d34e75f9"
+    },
+    {
+      "snapshot": "workitems/wi-030/image-review.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\image-review.json",
+      "sha256": "a69bc701fc176cbfa97efffdbeb964ce9261fceee05af08af7e451f0d3292cbe"
+    },
+    {
+      "snapshot": "workitems/wi-030/instance-d2-r01-desktop-prompt.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\instance-d2-r01-desktop-prompt.json",
+      "sha256": "82306a8c7ecd728d176053a984b17b7c58cbd05ae7ce799a9392e84503239582"
+    },
+    {
+      "snapshot": "workitems/wi-030/instance-d2-r02-desktop-prompt.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\instance-d2-r02-desktop-prompt.json",
+      "sha256": "f815050b21b6a32f8063c413ff902f02f31ab51ae7bac38b663190c3fe7f1b08"
+    },
+    {
+      "snapshot": "workitems/wi-030/instance-d2-r02-mobile-prompt.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\instance-d2-r02-mobile-prompt.json",
+      "sha256": "a3c0efa0fa5b7ac6313265f2622df20630b52eea5a1431c9ee36c787c1efaa46"
+    },
+    {
+      "snapshot": "workitems/wi-030/instance-d2-r03-mobile-prompt.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\instance-d2-r03-mobile-prompt.json",
+      "sha256": "4c19293af3b205fd4815d8312c1aea7164905618ae53c7314fd569f69b763693"
+    },
+    {
+      "snapshot": "workitems/wi-030/instance-d2-r04-mobile-prompt.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\instance-d2-r04-mobile-prompt.json",
+      "sha256": "54be66c68a672e692d8e9a31dd2746ccfc78b72c39d8a39856a187082b32ad5f"
+    },
+    {
+      "snapshot": "workitems/wi-030/key-c1-r01-desktop-prompt.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\key-c1-r01-desktop-prompt.json",
+      "sha256": "e32a8940d5e49f751070ce7c9f47bdf83fc3b117e5fc2e1703339ff6c408808e"
+    },
+    {
+      "snapshot": "workitems/wi-030/key-c1-r02-desktop-prompt.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\key-c1-r02-desktop-prompt.json",
+      "sha256": "b8446638dd9876cb8a17bb0002efa286ef0e97994462062d808370d6f855ade3"
+    },
+    {
+      "snapshot": "workitems/wi-030/key-c1-r03-desktop-prompt.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\key-c1-r03-desktop-prompt.json",
+      "sha256": "b3731fbb83ea988de3f7c1843c61065306b9bfc4bbc0b15a5afa86463d9d44d7"
+    },
+    {
+      "snapshot": "workitems/wi-030/key-c1-r03-mobile-prompt.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\key-c1-r03-mobile-prompt.json",
+      "sha256": "a8e693d40bbbc87e1c530970d8c47a11947cab158451353fa0fc885799cf1211"
+    },
+    {
+      "snapshot": "workitems/wi-030/key-c1-r04-desktop-prompt.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\key-c1-r04-desktop-prompt.json",
+      "sha256": "c5fc052bc872f579af637e6b0cec5464cfa669257b0bae224310e77f34ab63f2"
+    },
+    {
+      "snapshot": "workitems/wi-030/key-c1-r04-mobile-prompt.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\key-c1-r04-mobile-prompt.json",
+      "sha256": "580d8b2c192785ac4a95058b1bc6fe302fc2329019fc4de62213bdd410d25dc9"
+    },
+    {
+      "snapshot": "workitems/wi-030/key-c1-r05-mobile-prompt.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\key-c1-r05-mobile-prompt.json",
+      "sha256": "18b6bda85c2f60b8a071741aae650c3af15d808e02959822936031134cfcec50"
+    },
+    {
+      "snapshot": "workitems/wi-030/keypoint-r-cnn-active-assets.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\keypoint-r-cnn-active-assets.json",
+      "sha256": "a1d511a1012410bcf9549460d875c68bd404b598002c91108f3d6b670101ce09"
+    },
+    {
+      "snapshot": "workitems/wi-030/lesson-content.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\lesson-content.json",
+      "sha256": "347e5073ab7a85b44b92d2f7c640ea0126efea41241ec691d0b4eb79461cde08"
+    },
+    {
+      "snapshot": "workitems/wi-030/padim-c1-r01-desktop-prompt.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\padim-c1-r01-desktop-prompt.json",
+      "sha256": "048b4321825c1f9324e978e8e78d3582e581bece5e8b2eb11dbf1367d51a414c"
+    },
+    {
+      "snapshot": "workitems/wi-030/padim-c1-r02-desktop-prompt.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\padim-c1-r02-desktop-prompt.json",
+      "sha256": "8f4189a73afdb54278bf9f3afe28a8bb8a3af66be6c2ddf43ba86a4ba6ba8e14"
+    },
+    {
+      "snapshot": "workitems/wi-030/padim-c1-r02-mobile-prompt.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\padim-c1-r02-mobile-prompt.json",
+      "sha256": "57721a5b1535feae56a58473cdbd29882cf2958e7c3cdf6809ae1352d27628d0"
+    },
+    {
+      "snapshot": "workitems/wi-030/padim-c1-r03-mobile-prompt.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\padim-c1-r03-mobile-prompt.json",
+      "sha256": "212aaa851e30b2250c619223ce0a5e0ff9b0fd371a361ed98b4dd8bb64c2e7da"
+    },
+    {
+      "snapshot": "workitems/wi-030/page-review.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\page-review.json",
+      "sha256": "3dc3e1e932d68f54559b3b14c893101690f494f03415c71006ea8000a2657113"
+    },
+    {
+      "snapshot": "workitems/wi-030/patch-c1-r01-desktop-prompt.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\patch-c1-r01-desktop-prompt.json",
+      "sha256": "9c03fd908cdc4729e7e1974f9910c045278503b752926a6e8e6272298fdaf9d5"
+    },
+    {
+      "snapshot": "workitems/wi-030/patch-c1-r02-desktop-prompt.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\patch-c1-r02-desktop-prompt.json",
+      "sha256": "083fc4bba2389ab2d8cc9acb50376a589a8afadb46633e7cf7912f8d34eb1031"
+    },
+    {
+      "snapshot": "workitems/wi-030/patch-c1-r02-mobile-prompt.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\patch-c1-r02-mobile-prompt.json",
+      "sha256": "84364c635e99ced2007108d3470787da02d3b70e06a5ddb5c03724508afdde45"
+    },
+    {
+      "snapshot": "workitems/wi-030/patch-c1-r03-desktop-prompt.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\patch-c1-r03-desktop-prompt.json",
+      "sha256": "f8eda42cbd75cd638e8b1ee5ba5d01e662a419e4bef3fec5d9b8f920c0f2b47e"
+    },
+    {
+      "snapshot": "workitems/wi-030/patch-c1-r04-desktop-prompt.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\patch-c1-r04-desktop-prompt.json",
+      "sha256": "e719d3108ef9be3b5825455654dfed070e26d0e445bb3fbfdfb04bc72de72b11"
+    },
+    {
+      "snapshot": "workitems/wi-030/pose-active-assets.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\pose-active-assets.json",
+      "sha256": "c2dbe6dd920f69f79318bf07be04d65cffa7de568e0b1dc2ebe5152a91588ff9"
+    },
+    {
+      "snapshot": "workitems/wi-030/pose-c1-r01-desktop-prompt.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\pose-c1-r01-desktop-prompt.json",
+      "sha256": "e70a95d989f6a15c01467ad1e7641bd5197250ada652152ee832d39bc9521146"
+    },
+    {
+      "snapshot": "workitems/wi-030/pose-c1-r02-desktop-prompt.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\pose-c1-r02-desktop-prompt.json",
+      "sha256": "8b8f59686b60c18cee8c53671e8dda34440362c09dfee921d87f57adabf1ffa4"
+    },
+    {
+      "snapshot": "workitems/wi-030/pose-c1-r03-desktop-prompt.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\pose-c1-r03-desktop-prompt.json",
+      "sha256": "c60618cc94fd893034627880b8a4cb1cfba8b449655920b9b8764730cdc28cc1"
+    },
+    {
+      "snapshot": "workitems/wi-030/pose-c1-r03-mobile-prompt.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\pose-c1-r03-mobile-prompt.json",
+      "sha256": "2cae09f3248bd39a0e70c77acb4682e17e1899b227064c077cf23d9c442a6d4e"
+    },
+    {
+      "snapshot": "workitems/wi-030/pose-c1-r04-mobile-prompt.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\pose-c1-r04-mobile-prompt.json",
+      "sha256": "a16c009b659ba555c8c332c0bd0fb981a286cf3d505e4d70423b9ff6f80b9656"
+    },
+    {
+      "snapshot": "workitems/wi-030/pose-d2-r01-desktop-prompt.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\pose-d2-r01-desktop-prompt.json",
+      "sha256": "fb4bcb31ad596a4ee68bf4d9bbca9946173a2e18abae0746fa1cc0b80dd421d7"
+    },
+    {
+      "snapshot": "workitems/wi-030/pose-d2-r02-desktop-prompt.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\pose-d2-r02-desktop-prompt.json",
+      "sha256": "1701a475478a2cc9ec873689ca04e4dd62091a215b7afc546c98280de5ddf6e5"
+    },
+    {
+      "snapshot": "workitems/wi-030/pose-d2-r02-mobile-prompt.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\pose-d2-r02-mobile-prompt.json",
+      "sha256": "eecd83e7387f38d50c1e4f7fd2fd3015643933842cb748fbcbfebc29c2e0766b"
+    },
+    {
+      "snapshot": "workitems/wi-030/pose-d3-r01-desktop-prompt.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\pose-d3-r01-desktop-prompt.json",
+      "sha256": "11e4b013a2b1723d24efa892e70b6739b5a5aa7fead1be77e37a39709a1507e7"
+    },
+    {
+      "snapshot": "workitems/wi-030/pose-d3-r02-desktop-prompt.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\pose-d3-r02-desktop-prompt.json",
+      "sha256": "c7a9ad17b62080cebd93e20c0f95452ef7a2397d14da81f2f08270485251210c"
+    },
+    {
+      "snapshot": "workitems/wi-030/pose-d3-r03-desktop-prompt.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\pose-d3-r03-desktop-prompt.json",
+      "sha256": "a2b7413e954ce36b5546486926b089c7c7aa73c380d821ec115b443faed48910"
+    },
+    {
+      "snapshot": "workitems/wi-030/pose-d3-r03-mobile-prompt.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\pose-d3-r03-mobile-prompt.json",
+      "sha256": "c1eb3fe898dffcde9eda3516c657aafccceaec3c81128251a47d031f95ab7301"
+    },
+    {
+      "snapshot": "workitems/wi-030/pre-quiz-validation.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\pre-quiz-validation.json",
+      "sha256": "5507585f103edd166f8d8763b3d88e9852fb1f775280a4e8fea7c64f5847995b"
+    },
+    {
+      "snapshot": "workitems/wi-030/resnet-active-assets.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\resnet-active-assets.json",
+      "sha256": "ce2f80a932af031ce1fab64b69525e8e3550f0121e0bbc7ed46d8700b7183537"
+    },
+    {
+      "snapshot": "workitems/wi-030/resnet-c1-r01-desktop-prompt.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\resnet-c1-r01-desktop-prompt.json",
+      "sha256": "e146a663fdfcca9e490f7070cea8c999fdcec339d7dd87ac033ea065caacab0f"
+    },
+    {
+      "snapshot": "workitems/wi-030/resnet-c1-r02-desktop-prompt.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\resnet-c1-r02-desktop-prompt.json",
+      "sha256": "f476882e0a9f9b6e4ce3ea3a9db3a6edd713f601e94086e90a6a66d789e68589"
+    },
+    {
+      "snapshot": "workitems/wi-030/resnet-c1-r02-mobile-prompt.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\resnet-c1-r02-mobile-prompt.json",
+      "sha256": "5a6ea8bee5a96d5eaf0be3eb4b9ef71983ac7f6602fc16a403306a2dc9c4ccf1"
+    },
+    {
+      "snapshot": "workitems/wi-030/scope-verification.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\scope-verification.json",
+      "sha256": "c9f7f58ccc9badc7deef9707065364b5186b17cda536fd34cf0eb0d946d511b5"
+    },
+    {
+      "snapshot": "workitems/wi-030/seg-d2-r01-desktop-prompt.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\seg-d2-r01-desktop-prompt.json",
+      "sha256": "1e3d35c4843b3b655236b32dc252498cf7b5d0cc8b0bf2d552e676e8990bd825"
+    },
+    {
+      "snapshot": "workitems/wi-030/seg-d2-r02-desktop-prompt.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\seg-d2-r02-desktop-prompt.json",
+      "sha256": "9729321b7736ccc685fe77266363f18dcfc2be939c51d389f2a543cfe89f05fe"
+    },
+    {
+      "snapshot": "workitems/wi-030/seg-d2-r03-desktop-prompt.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\seg-d2-r03-desktop-prompt.json",
+      "sha256": "5ad5c8c0b7a20a7b853e2bdec74eab5d7f42812e62206a81f9fdf6343eadc924"
+    },
+    {
+      "snapshot": "workitems/wi-030/seg-d2-r03-mobile-prompt.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\seg-d2-r03-mobile-prompt.json",
+      "sha256": "6677436ddc247b3c84dd0bc09c344fe3b7d07e6219903b2b13a4a1fa45c1e658"
+    },
+    {
+      "snapshot": "workitems/wi-030/seg-d3-r01-desktop-prompt.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\seg-d3-r01-desktop-prompt.json",
+      "sha256": "5f1c3946ad748d21b34fc5df6e16a4ad80a51b924b4615c6ad9d85db4c4f4a55"
+    },
+    {
+      "snapshot": "workitems/wi-030/seg-d3-r01-mobile-prompt.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\seg-d3-r01-mobile-prompt.json",
+      "sha256": "0dd5a623858382dd5a1a510a31512aa05641bd2ddb4c65034c1a185b1e3975a7"
+    },
+    {
+      "snapshot": "workitems/wi-030/segformer-active-assets.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\segformer-active-assets.json",
+      "sha256": "de560f49185f90ac3d7b497e987822d31414f0ba07fc662edb67cd5d8f8bc18a"
+    },
+    {
+      "snapshot": "workitems/wi-030/segformer-c1-r01-desktop-prompt.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\segformer-c1-r01-desktop-prompt.json",
+      "sha256": "cd53d88dae6e3a5b75f8cca74ac160243ff95cc6042825f9e79da634b0017a2b"
+    },
+    {
+      "snapshot": "workitems/wi-030/segformer-c1-r02-desktop-prompt.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\segformer-c1-r02-desktop-prompt.json",
+      "sha256": "a30fa2a1712ec6f0605fce243d5884bff80177e511d97e7aca0f326715cfdd9c"
+    },
+    {
+      "snapshot": "workitems/wi-030/segformer-c1-r02-mobile-prompt.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\segformer-c1-r02-mobile-prompt.json",
+      "sha256": "56c30f161da671b636aa08a9e4e0ddb3ef3898b92fcaf61444cff5b9a13fd0c5"
+    },
+    {
+      "snapshot": "workitems/wi-030/selected-assets.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\selected-assets.json",
+      "sha256": "7a4fda88e58c12925c60f5c56df99bf3bf08dcb2016409ed55b0a6c228b1a4c6"
+    },
+    {
+      "snapshot": "workitems/wi-030/sources.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\sources.json",
+      "sha256": "c3f935fedaa39bbf39a2fbec1f6adf7e3ff88081903d106d290548d5c7171951"
+    },
+    {
+      "snapshot": "workitems/wi-030/u-net-active-assets.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\u-net-active-assets.json",
+      "sha256": "cc7fab30225c7f6c3e9f4ddbb8ec224ddeec8f8688729dfd971cd5c0d778412d"
+    },
+    {
+      "snapshot": "workitems/wi-030/unet-c1-r01-desktop-prompt.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\unet-c1-r01-desktop-prompt.json",
+      "sha256": "ff2c78104887f820ec1860ce0a04be1d3cae32c2d8442bdd07c63dda3a16e2bd"
+    },
+    {
+      "snapshot": "workitems/wi-030/unet-c1-r02-desktop-prompt.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\unet-c1-r02-desktop-prompt.json",
+      "sha256": "298b7d8ace728e8a20d71bdfc230a07cbeb97f4fd346581103a53a40bb4addae"
+    },
+    {
+      "snapshot": "workitems/wi-030/unet-c1-r03-desktop-prompt.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\unet-c1-r03-desktop-prompt.json",
+      "sha256": "5bf9d055669ba54f9c6b2df94917c9623e27a1b21cf84838339fa073495c8d80"
+    },
+    {
+      "snapshot": "workitems/wi-030/unet-c1-r04-desktop-prompt.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\unet-c1-r04-desktop-prompt.json",
+      "sha256": "654da88232c570c8394e3fa5ed2196d5b83bce6a89cdd1d698f5ef4bfde1f797"
+    },
+    {
+      "snapshot": "workitems/wi-030/unet-c1-r04-mobile-prompt.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\unet-c1-r04-mobile-prompt.json",
+      "sha256": "4833d760dd934372431d8073d9121f609b0a9a3b8859f50dcc3ae640b2fefeb5"
+    },
+    {
+      "snapshot": "workitems/wi-030/validation-summary.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\validation-summary.json",
+      "sha256": "95a3046e0a5d398f6aaa959bc869936593bb288021a68e61897d280348d5dfcc"
+    },
+    {
+      "snapshot": "workitems/wi-030/visual-plan.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\visual-plan.json",
+      "sha256": "b9bbccf2e69d6faae39153c22f79d465ec8b75bc9ca477ed3609a024334f463d"
+    },
+    {
+      "snapshot": "workitems/wi-030/vit-c1-r01-desktop-prompt.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\vit-c1-r01-desktop-prompt.json",
+      "sha256": "900b26a4d99618dc3ff16bde90abb6aea46816da12adf5e651872139425b89ce"
+    },
+    {
+      "snapshot": "workitems/wi-030/vit-c1-r02-desktop-prompt.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\vit-c1-r02-desktop-prompt.json",
+      "sha256": "0034ab81dd814e40102a78d088a34d3e5b2198d890331ec1f612625ff0e5cdcb"
+    },
+    {
+      "snapshot": "workitems/wi-030/vit-c1-r02-mobile-prompt.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\vit-c1-r02-mobile-prompt.json",
+      "sha256": "681f08154ed3d54f0e68897fae920bbb6f37cc14fec5b8a4e726b03742f5707d"
+    },
+    {
+      "snapshot": "workitems/wi-030/vit-classifier-active-assets.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\vit-classifier-active-assets.json",
+      "sha256": "73be6cafb00d3be5945867c4d7ef0674cbe0d1fa569728f18d82125c4b0f7d78"
+    },
+    {
+      "snapshot": "workitems/wi-030/yolo-seg-active-assets.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\yolo-seg-active-assets.json",
+      "sha256": "e9c59400b464da049eba3929e5a1cc8672156afc353fe458d168ebb265682ec0"
+    },
+    {
+      "snapshot": "workitems/wi-030/yoloseg-c1-r01-desktop-prompt.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\yoloseg-c1-r01-desktop-prompt.json",
+      "sha256": "a2f5eb05f8f9032698ec40ca8a25245ef2c5a699543bd3f92343f3800c4144d3"
+    },
+    {
+      "snapshot": "workitems/wi-030/yoloseg-c1-r02-desktop-prompt.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\yoloseg-c1-r02-desktop-prompt.json",
+      "sha256": "1cc018401846cd6a7e33aa0bdea8a87f83126c24c865a2943333c6337df14976"
+    },
+    {
+      "snapshot": "workitems/wi-030/yoloseg-c1-r02-mobile-prompt.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\yoloseg-c1-r02-mobile-prompt.json",
+      "sha256": "757b2912cf610c173d0ebf6e1e545e5bd232261ab0c4502cd8824215fec9959e"
+    },
+    {
+      "snapshot": "workitems/wi-030/yoloseg-c1-r03-desktop-prompt.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\yoloseg-c1-r03-desktop-prompt.json",
+      "sha256": "932a2f72aa10d92e0b035347da458d7af2ae3a75fc310e94bfdb51bab35327f5"
+    },
+    {
+      "snapshot": "workitems/wi-030/yoloseg-c1-r04-desktop-prompt.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\yoloseg-c1-r04-desktop-prompt.json",
+      "sha256": "bb7a5e86fee775d2882e895769ec6d3d1573273c6b691402248803a50673eb40"
+    },
+    {
+      "snapshot": "workitems/wi-030/yoloseg-c1-r05-desktop-prompt.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\yoloseg-c1-r05-desktop-prompt.json",
+      "sha256": "ecb3cea3574a6fa73d018d1bba86d786fb5ef8e90b580ac0c890b9fda2804bf7"
+    },
+    {
+      "snapshot": "workitems/wi-030/yoloseg-c1-r05-mobile-prompt.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\yoloseg-c1-r05-mobile-prompt.json",
+      "sha256": "1f40be22949a79e768a65b094e1f34f596223f5e9e7c701ea59f842b8e8d1807"
+    },
+    {
+      "snapshot": "workitems/wi-030/yoloseg-c1-r06-desktop-prompt.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\yoloseg-c1-r06-desktop-prompt.json",
+      "sha256": "5ca7296f176b5d75b142edd804d259cae8c54f65fd47e112de07f786ae158f1b"
+    },
+    {
+      "snapshot": "workitems/wi-030/yoloseg-c1-r06-mobile-prompt.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\yoloseg-c1-r06-mobile-prompt.json",
+      "sha256": "0a028b6ff65b8b93134594e3c30273d348eabeae481fa2031299ff284657c3d1"
+    },
+    {
+      "snapshot": "workitems/wi-030/yoloseg-c1-r07-desktop-prompt.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\yoloseg-c1-r07-desktop-prompt.json",
+      "sha256": "063313998c1a9193885eddfa4962d9ee4f93926a4ab268203fbd04c754e7eae7"
+    },
+    {
+      "snapshot": "workitems/wi-030/final-page-reading-ad-anomalydino.txt",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\final-page-reading-ad-anomalydino.txt",
+      "sha256": "b8772a7494fdd286f3c0f7087ef75e8a483ca1d6b45b9bacc42d51d36a948ca0"
+    },
+    {
+      "snapshot": "workitems/wi-030/final-page-reading-ad-efficientad.txt",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\final-page-reading-ad-efficientad.txt",
+      "sha256": "2589bfe57ae23006fd6ec02001005c204ec5633e382f9e98ee69b3fbd872b2fc"
+    },
+    {
+      "snapshot": "workitems/wi-030/final-page-reading-ad-padim.txt",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\final-page-reading-ad-padim.txt",
+      "sha256": "1545f5e99a533d6abcf2d413fd442560b52031b98a7c7cadbdf61df2e64d3c5a"
+    },
+    {
+      "snapshot": "workitems/wi-030/final-page-reading-ad-patchcore.txt",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\final-page-reading-ad-patchcore.txt",
+      "sha256": "4403531e569972a9ba2b5d75b774258a0d34e719ea69227231fa3220d2b40034"
+    },
+    {
+      "snapshot": "workitems/wi-030/final-page-reading-convnext.txt",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\final-page-reading-convnext.txt",
+      "sha256": "55e462e4a7e76f8d2cecf1c9c5ca6b262168ff70940adc4a4a3638ff66c18241"
+    },
+    {
+      "snapshot": "workitems/wi-030/final-page-reading-keypoint-r-cnn.txt",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\final-page-reading-keypoint-r-cnn.txt",
+      "sha256": "e7532f30748ca3d983f4e29444ce96952761f846215038463e2a0d3e24e00103"
+    },
+    {
+      "snapshot": "workitems/wi-030/final-page-reading-pose.txt",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\final-page-reading-pose.txt",
+      "sha256": "f306db4c2986629419c9bff741ffef2f78d0956a6c2f64495ae94998af48fada"
+    },
+    {
+      "snapshot": "workitems/wi-030/final-page-reading-resnet.txt",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\final-page-reading-resnet.txt",
+      "sha256": "b7b5d941f24889e9e86a3acaa2256a557bfed67d983b8bd8eb5869ce9f3dbf3c"
+    },
+    {
+      "snapshot": "workitems/wi-030/final-page-reading-segformer.txt",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\final-page-reading-segformer.txt",
+      "sha256": "a23405b1fb889b796b55aaca2fc996ebac397eadefb7e1edce36702e70cf3537"
+    },
+    {
+      "snapshot": "workitems/wi-030/final-page-reading-u-net.txt",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\final-page-reading-u-net.txt",
+      "sha256": "ff0a21c8b3a4a031e299b3a0b53fd48fe24fe0eaedb76824eca95990d17590d4"
+    },
+    {
+      "snapshot": "workitems/wi-030/final-page-reading-vit-classifier.txt",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\final-page-reading-vit-classifier.txt",
+      "sha256": "53eb3ee1e76143597c3a9d3010c26feac413c84da309b3a0fde48718c564daee"
+    },
+    {
+      "snapshot": "workitems/wi-030/final-page-reading-yolo-seg.txt",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\final-page-reading-yolo-seg.txt",
+      "sha256": "a23a4a4df8015cc40b011fb8136ca8fe9618f6e811118636bcd3d7578e25f58b"
+    },
+    {
+      "snapshot": "workitems/wi-030/WORKITEMS.md",
+      "source": "C:\\code\\claude\\visionAI\\WORKITEMS.md",
+      "sha256": "44206536e062a045926e5046617983a552923cbb567f49388695235442bcd7d2"
+    },
+    {
+      "snapshot": "workitems/wi-030/BEGINNER_VISUAL_TODO.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\BEGINNER_VISUAL_TODO.md",
+      "sha256": "38f29c40725de747df8e72badff1d53899f7235bef49c9a49a62dd0cc007ac39"
+    },
+    {
+      "snapshot": "workitems/wi-030/BEGINNER_VISUAL_STATUS.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\BEGINNER_VISUAL_STATUS.md",
+      "sha256": "152d046d29ef24ed3fde20ad5cab9dacf7b2cd9e61c5ab6529aebe8de26f8064"
+    },
+    {
+      "snapshot": "workitems/wi-030/authoring/_course_content/topics/ad-patchcore.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\_course_content\\topics\\ad-patchcore.json",
+      "sha256": "6f510142dee2f795d44f6a9dab2976ed451f424cd4773b16515a834112c0567d"
+    },
+    {
+      "snapshot": "workitems/wi-030/authoring/roadmap-model-selection/anomaly-detection/ad-patchcore/model.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\roadmap-model-selection\\anomaly-detection\\ad-patchcore\\model.md",
+      "sha256": "4185db6f02206e6f587ad2f3089bed4edd5039d26e87e8de94b99e6b33606276"
+    },
+    {
+      "snapshot": "workitems/wi-030/authoring/_course_content/topics/ad-padim.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\_course_content\\topics\\ad-padim.json",
+      "sha256": "43c058febef2058467b366261a27d124eb484b15c17272db6eab00c97cf7cd1b"
+    },
+    {
+      "snapshot": "workitems/wi-030/authoring/roadmap-model-selection/anomaly-detection/ad-padim/model.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\roadmap-model-selection\\anomaly-detection\\ad-padim\\model.md",
+      "sha256": "c40250ed05eeb66a8c25aff33a99a0bb2bf04b43fc1ec48887de0252ed1de434"
+    },
+    {
+      "snapshot": "workitems/wi-030/authoring/_course_content/topics/ad-anomalydino.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\_course_content\\topics\\ad-anomalydino.json",
+      "sha256": "af7cd1c4667edb8741036ebf4d0283a3cf9284ed44100d91c7a9b18941db4e18"
+    },
+    {
+      "snapshot": "workitems/wi-030/authoring/roadmap-model-selection/anomaly-detection/ad-anomalydino/model.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\roadmap-model-selection\\anomaly-detection\\ad-anomalydino\\model.md",
+      "sha256": "fb13507637740e315a9c1cebaeff834112af1f36855b2f6bc13cbe2e9587dd78"
+    },
+    {
+      "snapshot": "workitems/wi-030/authoring/_course_content/topics/ad-efficientad.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\_course_content\\topics\\ad-efficientad.json",
+      "sha256": "ce86f1dc6b513f96d442da656d887125fd784b28216c54ea0ec0ccd7097a1fe6"
+    },
+    {
+      "snapshot": "workitems/wi-030/authoring/roadmap-model-selection/anomaly-detection/ad-efficientad/model.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\roadmap-model-selection\\anomaly-detection\\ad-efficientad\\model.md",
+      "sha256": "75f57320c2a2a4293291c2a7cba3406152b2cf2b94c02ece8b26b54ff2de76f1"
+    },
+    {
+      "snapshot": "workitems/wi-030/authoring/_course_content/topics/resnet.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\_course_content\\topics\\resnet.json",
+      "sha256": "162c2cf02be7322890f04593d4f1e106ea34cd0718008b34a41611ebaefad18f"
+    },
+    {
+      "snapshot": "workitems/wi-030/authoring/roadmap-model-selection/known-target-classification/resnet/model.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\roadmap-model-selection\\known-target-classification\\resnet\\model.md",
+      "sha256": "bc575a18fe792d9a987a1b8eb56ffe95ca9d58406486e6fb86233daa448ff274"
+    },
+    {
+      "snapshot": "workitems/wi-030/authoring/_course_content/topics/convnext.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\_course_content\\topics\\convnext.json",
+      "sha256": "3ee46157675672259741ee948a78847ed909872efc6f79d446e54438e2e969fb"
+    },
+    {
+      "snapshot": "workitems/wi-030/authoring/roadmap-model-selection/known-target-classification/convnext/model.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\roadmap-model-selection\\known-target-classification\\convnext\\model.md",
+      "sha256": "3d093012bde295de46cf407f208ed3c2f8581d8489ac2f97ce5388054e9ed088"
+    },
+    {
+      "snapshot": "workitems/wi-030/authoring/_course_content/topics/vit-classifier.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\_course_content\\topics\\vit-classifier.json",
+      "sha256": "23b372c88a15ed82c6e3a132dc45d9da12b65998a2b443566ef248d931dbb278"
+    },
+    {
+      "snapshot": "workitems/wi-030/authoring/roadmap-model-selection/known-target-classification/vit-classifier/model.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\roadmap-model-selection\\known-target-classification\\vit-classifier\\model.md",
+      "sha256": "758fa9eb408c23296621106958e1a440cd82a70bdb67f84efde57341e49df2dd"
+    },
+    {
+      "snapshot": "workitems/wi-030/authoring/_course_content/topics/u-net.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\_course_content\\topics\\u-net.json",
+      "sha256": "2108c7463efadbb9e11384ff3292471630d7571eeff1680301124942be9e1d07"
+    },
+    {
+      "snapshot": "workitems/wi-030/authoring/roadmap-model-selection/known-target-classification/u-net/model.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\roadmap-model-selection\\known-target-classification\\u-net\\model.md",
+      "sha256": "618b3fec3b48eee6c6d3d4d9ea2e3f88ea87ecd25a82929a03ae59f5792c38db"
+    },
+    {
+      "snapshot": "workitems/wi-030/authoring/_course_content/topics/segformer.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\_course_content\\topics\\segformer.json",
+      "sha256": "071516220ea021f8601244bfc111979c6dd85754375d93f3f86861bdca6ec1c4"
+    },
+    {
+      "snapshot": "workitems/wi-030/authoring/roadmap-model-selection/known-target-classification/segformer/model.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\roadmap-model-selection\\known-target-classification\\segformer\\model.md",
+      "sha256": "3f53a937753d3599d3b3e1db371c0b61cd17691215b5756741cd0aa727af90e2"
+    },
+    {
+      "snapshot": "workitems/wi-030/authoring/_course_content/topics/yolo-seg.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\_course_content\\topics\\yolo-seg.json",
+      "sha256": "97351317cc40c6e375cf421b9833ca478b883b5be136479cfe8a7f98f4e3aba3"
+    },
+    {
+      "snapshot": "workitems/wi-030/authoring/roadmap-model-selection/known-target-classification/yolo-seg/model.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\roadmap-model-selection\\known-target-classification\\yolo-seg\\model.md",
+      "sha256": "31f0a4892edeacc176baa83a3a2b2c728b5036165bd2ce923e4a232bcd1a9525"
+    },
+    {
+      "snapshot": "workitems/wi-030/authoring/_course_content/topics/keypoint-r-cnn.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\_course_content\\topics\\keypoint-r-cnn.json",
+      "sha256": "235f1ff639b23911e666252f35245b2b1ed2c1794759b7d7874eca0d36b51b30"
+    },
+    {
+      "snapshot": "workitems/wi-030/authoring/roadmap-model-selection/known-target-classification/keypoint-r-cnn/model.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\roadmap-model-selection\\known-target-classification\\keypoint-r-cnn\\model.md",
+      "sha256": "7498d03bf359d9a5092bc22e8d7970a9637c4b32e2bde71aada7a14d3830ca24"
+    },
+    {
+      "snapshot": "workitems/wi-030/authoring/_course_content/topics/pose.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\_course_content\\topics\\pose.json",
+      "sha256": "61618c56f2d8503f1d4b523e61adc3bea235c72e529dc29f0aabc4e1105abd58"
+    },
+    {
+      "snapshot": "workitems/wi-030/authoring/roadmap-model-selection/known-target-classification/pose/model.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\roadmap-model-selection\\known-target-classification\\pose\\model.md",
+      "sha256": "aa1d4b1a1d1a26187a3daf74caade71fae850efa7b83d0ee06bcdd9135638068"
+    },
+    {
+      "snapshot": "workitems/wi-030/authoring/_course_content/learner-briefs.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\_course_content\\learner-briefs.json",
+      "sha256": "e9f6337c43f681f493804e842e5cfe5977eb7bc0612493c90519bac868c395fc"
+    },
+    {
+      "snapshot": "workitems/wi-030/authoring/tools/build_interactive_learning_html.py",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\tools\\build_interactive_learning_html.py",
+      "sha256": "afb195f8e5b855f42b6c5b00b5fd3fc176ef4dc11c008b72148eaa65189f9c65"
+    },
+    {
+      "snapshot": "workitems/wi-030/authoring/tools/build_github_pages_site.py",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\tools\\build_github_pages_site.py",
+      "sha256": "9d3bfe2178113f150e16ba6d2f1096fb98a426ff7d715ab27f3efea19824c56c"
+    },
+    {
+      "snapshot": "workitems/wi-030/authoring/tests/test_tall_mobile_artwork.py",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\tests\\test_tall_mobile_artwork.py",
+      "sha256": "3a15f4c8863fad683012c963adfee80fbf22a69baaae6dc33ed382f7e9d4b31f"
+    },
+    {
+      "snapshot": "workitems/wi-030/authoring/tests/test_collapsed_deep_dive.py",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\tests\\test_collapsed_deep_dive.py",
+      "sha256": "e4632250df23b60dc981318661a6d5a68ddcada68a4cc689e6b1a35d33d17dd1"
+    },
+    {
+      "snapshot": "workitems/wi-030/authoring/tests/test_github_pages_bundle.py",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\tests\\test_github_pages_bundle.py",
+      "sha256": "7f98db01e94c1e1983776ee8cf8d292fa7fff8ca17fabb6af84e789ce91c102e"
+    },
+    {
+      "snapshot": "workitems/wi-030/authoring/workitems/wi-030/baseline_views.py",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\baseline_views.py",
+      "sha256": "74f12104c28b3903e4cef96907412ba01890996714f6818ffe8eb5f8e7f0412a"
+    },
+    {
+      "snapshot": "workitems/wi-030/authoring/workitems/wi-030/checkpoint_images.py",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\checkpoint_images.py",
+      "sha256": "3fe0b3102b33b474837676c33a881746d4183e63746154d73e22af04a213b0af"
+    },
+    {
+      "snapshot": "workitems/wi-030/authoring/workitems/wi-030/compile_image_review.py",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\compile_image_review.py",
+      "sha256": "f4af5a6080d5983ca3353d3da9832b1350869f2ae7e29acc8da54d177250c504"
+    },
+    {
+      "snapshot": "workitems/wi-030/authoring/workitems/wi-030/content.py",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\content.py",
+      "sha256": "7f8a8caabbce20d5fc56ab7cf22d25ea88c8bcc9a6214c496a726e85bef9b089"
+    },
+    {
+      "snapshot": "workitems/wi-030/authoring/workitems/wi-030/finalize_preflights.py",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\finalize_preflights.py",
+      "sha256": "50aac6401c2c2655ab97fc5538128b05afe25acab77ebc405428293492f295c7"
+    },
+    {
+      "snapshot": "workitems/wi-030/authoring/workitems/wi-030/finalize_review.py",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\finalize_review.py",
+      "sha256": "320a65efa17708655531bda72b9ad0b9b95cafff6ca8674b73f062648dbd0cad"
+    },
+    {
+      "snapshot": "workitems/wi-030/authoring/workitems/wi-030/final_pages.py",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\final_pages.py",
+      "sha256": "6e4f755bcd2c38e15ba6d773455fcedacec10132ce795d43bba38674c0ff10bb"
+    },
+    {
+      "snapshot": "workitems/wi-030/authoring/workitems/wi-030/handoff_http.py",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\handoff_http.py",
+      "sha256": "9b60a95fc50edce0fd7afe14399c1157604c681872e2615c3c798e777f66c002"
+    },
+    {
+      "snapshot": "workitems/wi-030/authoring/workitems/wi-030/http_assets.py",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\http_assets.py",
+      "sha256": "20cb8a2d074ea2f04e682ab3dbdaa7e1068a7e9631ff4b6d0231b992d192a031"
+    },
+    {
+      "snapshot": "workitems/wi-030/authoring/workitems/wi-030/improve_quizzes.py",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\improve_quizzes.py",
+      "sha256": "01bca583b3594e8f12d5fee9ecea46a23b606d1f63cc08852781b1eb7aac63b7"
+    },
+    {
+      "snapshot": "workitems/wi-030/authoring/workitems/wi-030/inspect_page.py",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\inspect_page.py",
+      "sha256": "b59609b9522b259e4b5b5e6caa0cce0e9efb5b2626d023f313952ddb1678d4ff"
+    },
+    {
+      "snapshot": "workitems/wi-030/authoring/workitems/wi-030/integrate.py",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\integrate.py",
+      "sha256": "86d435344948780931a71659e7212a3d512b16e0127f6aeb30cc6cac089bbf6b"
+    },
+    {
+      "snapshot": "workitems/wi-030/authoring/workitems/wi-030/normalize_copy.py",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\normalize_copy.py",
+      "sha256": "17ed9b61746afa1d8e85d288a45cfc15a4ecc1e1db0d0d85a6722787e581a52a"
+    },
+    {
+      "snapshot": "workitems/wi-030/authoring/workitems/wi-030/page_review_panels.py",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\page_review_panels.py",
+      "sha256": "672bef063fcb638d753d39a68deb856a0e06f246a5b7f905ce08dc4c28940a44"
+    },
+    {
+      "snapshot": "workitems/wi-030/authoring/workitems/wi-030/prepare.py",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\prepare.py",
+      "sha256": "606555f79c2cc1a69f920c9fa34f62d737e306e0a8fc229357382de8836df11e"
+    },
+    {
+      "snapshot": "workitems/wi-030/authoring/workitems/wi-030/prepare_integration.py",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\prepare_integration.py",
+      "sha256": "293f563fcbc13e7721e3bd6204e76c690ffac67e6258c483cfd92515abe96c9e"
+    },
+    {
+      "snapshot": "workitems/wi-030/authoring/workitems/wi-030/prepare_qa.py",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\prepare_qa.py",
+      "sha256": "a1433749011f35ed44c136df3ac07cc8a313fee72e36c884687753ef7eaf69f3"
+    },
+    {
+      "snapshot": "workitems/wi-030/authoring/workitems/wi-030/prepublish_checkpoint.py",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\prepublish_checkpoint.py",
+      "sha256": "afedeb249b36c77e2eaab7abfb5bcfcf38fd8db95c1c3a177c262930b95a4709"
+    },
+    {
+      "snapshot": "workitems/wi-030/authoring/workitems/wi-030/publish_check.py",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\publish_check.py",
+      "sha256": "e9423ef966fa23b623a7aefe3290cff3859e246324a5b147cc1e612fd72c4361"
+    },
+    {
+      "snapshot": "workitems/wi-030/authoring/workitems/wi-030/qa_lesson.py",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\qa_lesson.py",
+      "sha256": "c69bfc72c1b23c25fe16841b26e7373d553f621791689b8c5b7772dc50fa9bcd"
+    },
+    {
+      "snapshot": "workitems/wi-030/authoring/workitems/wi-030/record_page_review.py",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\record_page_review.py",
+      "sha256": "5eee7ba4937b147559e6ba63d58686e6cac515bde542b114b6f95739d69106c7"
+    },
+    {
+      "snapshot": "workitems/wi-030/authoring/workitems/wi-030/record_pose_core.py",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\record_pose_core.py",
+      "sha256": "f9e9116215fb871185574212f34431c45bb191dcc4f87c48da72edc956b1b692"
+    },
+    {
+      "snapshot": "workitems/wi-030/authoring/workitems/wi-030/record_review.py",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\record_review.py",
+      "sha256": "5cd4b33a43cf2d6e4ec7f1c0caa3b961946962e44c9cadd8852f585904057cb6"
+    },
+    {
+      "snapshot": "workitems/wi-030/authoring/workitems/wi-030/record_review_b.py",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\record_review_b.py",
+      "sha256": "ec8c2286ba5ce2a4308751bddbfbc1ea9d806d5f07055cbd734a8187eb55a8ec"
+    },
+    {
+      "snapshot": "workitems/wi-030/authoring/workitems/wi-030/record_review_c.py",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\record_review_c.py",
+      "sha256": "257cf067d002fca70ac51969f095df4b3c9c480c3d4ac0449ce5d5477159df0d"
+    },
+    {
+      "snapshot": "workitems/wi-030/authoring/workitems/wi-030/record_yolo.py",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\record_yolo.py",
+      "sha256": "4cdbdd2ae35d504d8d95ea3e0c3c4f9b395118c87a7676e7e99866d8866402a9"
+    },
+    {
+      "snapshot": "workitems/wi-030/authoring/workitems/wi-030/reference_checkpoint.py",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\reference_checkpoint.py",
+      "sha256": "b5fb5ba1c33ae3f14fc4ed9d196efacf0bc84739a5fba37fd325d85ba5c59b69"
+    },
+    {
+      "snapshot": "workitems/wi-030/authoring/workitems/wi-030/repair_pose_review.py",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\repair_pose_review.py",
+      "sha256": "c6ec7387c37f5b324d0e950a7557ea5503390ab7fdc7398c3536a9a7b055bcc3"
+    },
+    {
+      "snapshot": "workitems/wi-030/authoring/workitems/wi-030/run_qa.py",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\run_qa.py",
+      "sha256": "aa6c87216b06f30ed31a414accf6df25f1a405017382496922c5ed5bb08bbafe"
+    },
+    {
+      "snapshot": "workitems/wi-030/authoring/workitems/wi-030/sync_maintenance.py",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\sync_maintenance.py",
+      "sha256": "8896cf12543bd4c9bf56951a73c2b7764429331e6fc1f63f8866d697e4cc8e29"
+    },
+    {
+      "snapshot": "workitems/wi-030/authoring/workitems/wi-030/validation_summary.py",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\validation_summary.py",
+      "sha256": "2de216d588e7d3435276c2ca61cb9b4b33fda58ee30cea5075971080d4fa54a1"
+    },
+    {
+      "snapshot": "workitems/wi-030/authoring/workitems/wi-030/verify_bundle.py",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\verify_bundle.py",
+      "sha256": "83fa3b9e84b4c7a84ee551f357f1a6fda2d2013b0a1ae0b06286470a3ee7443c"
+    },
+    {
+      "snapshot": "workitems/wi-030/authoring/workitems/wi-030/verify_scope.py",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\verify_scope.py",
+      "sha256": "c8fb32524b16b0a292eab3f50c416f2fe9e0a6fe1e12e98a49f86b52a5e1bc44"
+    },
+    {
+      "snapshot": "workitems/wi-030/authoring/workitems/wi-030/write_learning.py",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\write_learning.py",
+      "sha256": "07c5a01b5277cf2d64ac3c72802f8c45dc6702e749316bdf090d884e3bb17c2e"
+    },
+    {
+      "snapshot": "workitems/wi-030/authoring/workitems/wi-030/write_preflights.py",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\write_preflights.py",
+      "sha256": "274489b5e577ec37a9af0e74b66e314062af069331760ca2f0e401ec664c81ec"
     }
   ]
 }

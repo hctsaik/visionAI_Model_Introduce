@@ -1,0 +1,146 @@
+[
+  {
+    "topic": "resnet",
+    "path": "roadmap-model-selection/known-target-classification/resnet/model.md",
+    "status": 200,
+    "sha256": "bc575a18fe792d9a987a1b8eb56ffe95ca9d58406486e6fb86233daa448ff274"
+  },
+  {
+    "topic": "resnet",
+    "path": "roadmap-model-selection/known-target-classification/resnet/slide-manifest.md",
+    "status": 200,
+    "sha256": "d211cd3a29f49500b4e05edaf7c5a935eba653a6c13ff647ab003d9fc4d9ef30"
+  },
+  {
+    "topic": "convnext",
+    "path": "roadmap-model-selection/known-target-classification/convnext/model.md",
+    "status": 200,
+    "sha256": "3d093012bde295de46cf407f208ed3c2f8581d8489ac2f97ce5388054e9ed088"
+  },
+  {
+    "topic": "convnext",
+    "path": "roadmap-model-selection/known-target-classification/convnext/slide-manifest.md",
+    "status": 200,
+    "sha256": "ddaa374e4e7de6a9b74cc819fb2e5dea8e867646e96a1cb2f74d7fb4cceb01d8"
+  },
+  {
+    "topic": "vit-classifier",
+    "path": "roadmap-model-selection/known-target-classification/vit-classifier/model.md",
+    "status": 200,
+    "sha256": "758fa9eb408c23296621106958e1a440cd82a70bdb67f84efde57341e49df2dd"
+  },
+  {
+    "topic": "vit-classifier",
+    "path": "roadmap-model-selection/known-target-classification/vit-classifier/slide-manifest.md",
+    "status": 200,
+    "sha256": "a731d5161321b7481e0915f42c5f3f781be715397ed0e9e05893d2993e585caa"
+  },
+  {
+    "topic": "u-net",
+    "path": "roadmap-model-selection/known-target-classification/u-net/model.md",
+    "status": 200,
+    "sha256": "618b3fec3b48eee6c6d3d4d9ea2e3f88ea87ecd25a82929a03ae59f5792c38db"
+  },
+  {
+    "topic": "u-net",
+    "path": "roadmap-model-selection/known-target-classification/u-net/slide-manifest.md",
+    "status": 200,
+    "sha256": "b6b5d6f16ba943a65f07d654084a0426be66f6aafed68e91695b682382863f84"
+  },
+  {
+    "topic": "segformer",
+    "path": "roadmap-model-selection/known-target-classification/segformer/model.md",
+    "status": 200,
+    "sha256": "3f53a937753d3599d3b3e1db371c0b61cd17691215b5756741cd0aa727af90e2"
+  },
+  {
+    "topic": "segformer",
+    "path": "roadmap-model-selection/known-target-classification/segformer/slide-manifest.md",
+    "status": 200,
+    "sha256": "0828cf377f0ceeb095be8c7bda8a3a1ffa3a88f05c2bb4b280172d04f6eb758a"
+  },
+  {
+    "topic": "yolo-seg",
+    "path": "roadmap-model-selection/known-target-classification/yolo-seg/model.md",
+    "status": 200,
+    "sha256": "31f0a4892edeacc176baa83a3a2b2c728b5036165bd2ce923e4a232bcd1a9525"
+  },
+  {
+    "topic": "yolo-seg",
+    "path": "roadmap-model-selection/known-target-classification/yolo-seg/slide-manifest.md",
+    "status": 200,
+    "sha256": "7a955a24f662f92c353337b759fde09cab62c019392f90cc1684a4f3753c6ae6"
+  },
+  {
+    "topic": "keypoint-r-cnn",
+    "path": "roadmap-model-selection/known-target-classification/keypoint-r-cnn/model.md",
+    "status": 200,
+    "sha256": "7498d03bf359d9a5092bc22e8d7970a9637c4b32e2bde71aada7a14d3830ca24"
+  },
+  {
+    "topic": "keypoint-r-cnn",
+    "path": "roadmap-model-selection/known-target-classification/keypoint-r-cnn/slide-manifest.md",
+    "status": 200,
+    "sha256": "518e97981a432dc712e7be970ad9aa472f48374a7ef72fe6162fb98db9160a7c"
+  },
+  {
+    "topic": "pose",
+    "path": "roadmap-model-selection/known-target-classification/pose/model.md",
+    "status": 200,
+    "sha256": "aa1d4b1a1d1a26187a3daf74caade71fae850efa7b83d0ee06bcdd9135638068"
+  },
+  {
+    "topic": "pose",
+    "path": "roadmap-model-selection/known-target-classification/pose/slide-manifest.md",
+    "status": 200,
+    "sha256": "9e9d2da64ea59d29e87f3c4e30bf6cae6356e00e8efdd98b4947d6bb8e090135"
+  },
+  {
+    "topic": "ad-patchcore",
+    "path": "roadmap-model-selection/anomaly-detection/ad-patchcore/model.md",
+    "status": 200,
+    "sha256": "4185db6f02206e6f587ad2f3089bed4edd5039d26e87e8de94b99e6b33606276"
+  },
+  {
+    "topic": "ad-patchcore",
+    "path": "roadmap-model-selection/anomaly-detection/ad-patchcore/slide-manifest.md",
+    "status": 200,
+    "sha256": "c55592a1308f7a48cf0560724087e4d5d904adf795b870201fdf46c9a5f172e5"
+  },
+  {
+    "topic": "ad-padim",
+    "path": "roadmap-model-selection/anomaly-detection/ad-padim/model.md",
+    "status": 200,
+    "sha256": "c40250ed05eeb66a8c25aff33a99a0bb2bf04b43fc1ec48887de0252ed1de434"
+  },
+  {
+    "topic": "ad-padim",
+    "path": "roadmap-model-selection/anomaly-detection/ad-padim/slide-manifest.md",
+    "status": 200,
+    "sha256": "564bad41b603b041aed3a1a08c0230754d0123b56da10b91e44a0d8385dc7d5f"
+  },
+  {
+    "topic": "ad-anomalydino",
+    "path": "roadmap-model-selection/anomaly-detection/ad-anomalydino/model.md",
+    "status": 200,
+    "sha256": "fb13507637740e315a9c1cebaeff834112af1f36855b2f6bc13cbe2e9587dd78"
+  },
+  {
+    "topic": "ad-anomalydino",
+    "path": "roadmap-model-selection/anomaly-detection/ad-anomalydino/slide-manifest.md",
+    "status": 200,
+    "sha256": "07824fbe6cc61f57b6e8fe2cfa4f66ba9e74de8f8fba73226de12243a0ec7d14"
+  },
+  {
+    "topic": "ad-efficientad",
+    "path": "roadmap-model-selection/anomaly-detection/ad-efficientad/model.md",
+    "status": 200,
+    "sha256": "75f57320c2a2a4293291c2a7cba3406152b2cf2b94c02ece8b26b54ff2de76f1"
+  },
+  {
+    "topic": "ad-efficientad",
+    "path": "roadmap-model-selection/anomaly-detection/ad-efficientad/slide-manifest.md",
+    "status": 200,
+    "sha256": "17d2949153621f219295ea8171296fe410f6736c8c924ef8493c5691c3b6916f"
+  }
+]

@@ -1,0 +1,80 @@
+[
+  {
+    "id": "patch-c1",
+    "mode": "desktop",
+    "image": "_course_content/generated-concepts/ad-patchcore/wi030-patch-c1-r04-desktop.png",
+    "size": [
+      1671,
+      941
+    ],
+    "sha256": "c4be9a04f99b1dc3fc92c476ea418848e317c700d2aea169e9516bf91c1d433d",
+    "generation": "built-in imagegen",
+    "evidence": "illustrative, not model inference",
+    "user_review": "pending"
+  },
+  {
+    "id": "patch-c1",
+    "mode": "mobile",
+    "image": "_course_content/generated-concepts/ad-patchcore/wi030-patch-c1-r02-mobile.png",
+    "size": [
+      768,
+      2046
+    ],
+    "sha256": "cdcae1045f2e3ab4dbfe666b63c3bfb7c667dd3c81805fb22ac39104d53840c2",
+    "generation": "built-in imagegen",
+    "evidence": "illustrative, not model inference",
+    "user_review": "pending"
+  },
+  {
+    "id": "ad-d2",
+    "mode": "desktop",
+    "image": "_course_content/generated-concepts/ad-patchcore/wi030-ad-d2-r02-desktop.png",
+    "size": [
+      1670,
+      941
+    ],
+    "sha256": "d56c08d7588472f11713eac0dab1ca34422786a397efdcac25d1e403fda4a6fa",
+    "generation": "built-in imagegen",
+    "evidence": "illustrative, not model inference",
+    "user_review": "pending"
+  },
+  {
+    "id": "ad-d2",
+    "mode": "mobile",
+    "image": "_course_content/generated-concepts/ad-patchcore/wi030-ad-d2-r02-mobile.png",
+    "size": [
+      768,
+      2048
+    ],
+    "sha256": "3be092ace4a2ad992abb639f4488633f9b2bdf46406bb0f4c40f2b278ddf053c",
+    "generation": "built-in imagegen",
+    "evidence": "illustrative, not model inference",
+    "user_review": "pending"
+  },
+  {
+    "id": "ad-d3",
+    "mode": "desktop",
+    "image": "_course_content/generated-concepts/ad-patchcore/wi030-ad-d3-r04-desktop.png",
+    "size": [
+      1672,
+      941
+    ],
+    "sha256": "9e48067e72008111295867622d66457e6a03e8d08526021f24813f4826b5aa1b",
+    "generation": "built-in imagegen",
+    "evidence": "illustrative, not model inference",
+    "user_review": "pending"
+  },
+  {
+    "id": "ad-d3",
+    "mode": "mobile",
+    "image": "_course_content/generated-concepts/ad-patchcore/wi030-ad-d3-r03-mobile.png",
+    "size": [
+      768,
+      2048
+    ],
+    "sha256": "59a2b3f67f7c57a03c44f9afbaf7661635abc687988178198d25d458852e445b",
+    "generation": "built-in imagegen",
+    "evidence": "illustrative, not model inference",
+    "user_review": "pending"
+  }
+]

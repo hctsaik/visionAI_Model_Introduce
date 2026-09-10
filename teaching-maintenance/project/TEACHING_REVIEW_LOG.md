@@ -2648,3 +2648,31 @@ WI-023版本保存補充：使用者後續授權commit＋push；本文件與其�
 - 範圍確認：僅八課改動，其他50課相同。全站legacy verifier既有ChArUco inline schema失敗仍存在，未算通過；原工程圖未納入這輪首讀評分。
 - 啟用：selected-assets.json；實證：image-review.md、page-review.md、validation-summary.json、scope-verification.json、public-release-verification.json。公開入口 https://hctsaik.github.io/visionAI_Model_Introduce/#view=lesson&lesson=frame-difference&slide=1 。
 - 使用者成品核准：pending。圖像為教學示意，無模型推論／現場效能或真人學習測試。下一步僅依使用者成品回饋開新修訂，保留本輪版本與證據。
+
+## WI-030 十二課生成前學習
+- 已讀上一輪位置、遮蔽、訓練／推論路徑與手機重新核對規則；本輪逐圖預先列不變量。
+- 現版四個AD預設deep_dive覆蓋beginner_path，初次基準截圖定位失敗因此找出實際主線；改以真實main figure保存，不能只改未顯示欄位。
+- 本輪重作首讀案例與取捨，既有實際特徵／作者輸出作進階證據保留，不用生成示意替換實測。PatchCore原型workitems/wi-030/patch-c1-r01.md，先原生及顯示尺寸審查再擴展。
+
+## WI-030 原型學習與進行中證據（2026-09-11）
+- 範圍12課，基準與來源保存在workitems/wi-030；21故事preflight通過。正文草稿已寫，正式引用尚未更新。
+- 原型問題與取捨：資料入口錯接、正常／待測混線、ROI粒度錯誤、旋轉變鏡射、邊界誤差變物體寬度，皆採納修正。詳細逐版見workitems/wi-030/prototype-review.md與prompt JSON；未達標版本不採用。
+- 共用規則寫回IMAGE_STYLE_GUIDE.md既有生成後一致性段落；下一輪逐箭頭、逐ROI、逐邊界與未指定修改縮圖重驗。EfficientAD r02修路徑時正常托盤少了一顆，已否決並重畫第一區。
+- 程式增加可選舊章收合與工程／章節導覽分流，聚焦型別及章節保存測試1+4subtests通過；整合頁面測試未跑。
+- 未評分，不以生成成功或工具測試代替PNG和整頁審查。使用者核准pending。
+
+
+### WI-030 本輪學習與驗證追蹤（2026-09-11）
+逐圖證據：teaching-images/vision-ai-model-selection/workitems/wi-030/prototype-review.md。旋轉與鏡射、分支來源逐線核對、手機重排後核對計算責任已併入IMAGE_STYLE_GUIDE.md。下輪逐線問「誰產生誰」，依像素核對，不以正文補足。
+建置發現：build_github_pages_site.py只打包既有HTML，不能代表教材重建。先build_interactive_learning_html.py，再打包及查入口。collapsed UI初次失敗揭露舊HTML，後兩次是測試selector選到多個合法入口，已用工程jump-step容器與首個章節按鈕精確定位；collapsed＋tall 3 tests/4 subtests、舊deep mobile＋navigation 6 tests/6 subtests通過。全十二課頁面QA尚未完成，不宣稱發布或使用者核准。
+
+
+### WI-030 自測與入口驗證（2026-09-11）
+沿用既有自測規則：題目不能只把「錯誤捷徑」對上顯而易見的正解；提供至少兩條在不同工作條件下成立的路線，讓讀者說明先核對的限制、資料與完整成本。解答必須寫出替代路線何時成立，而非只加一句「也可以」。本輪十二課已重寫並在24個實際桌機手機狀態展開核對；這是內容與介面證據，尚非真人學習成效。
+建置經驗：複製發布bundle成功不代表HTML已由新來源重建；先build_interactive_learning_html，再build_github_pages_site，並核對實際預設可見內容。舊進階章節收合後，仍需驗證章節2→1、直接hash與工程圖導覽，不能因首圖可见就略過。失敗與修正保留在WI-030 PLAN及測試證據。
+
+
+### WI-030 發布文件缺漏修正
+最後查操作卡時發現本機docs缺少model.md／slide-manifest.md，原因是bundle只選圖與concept_path，未收modelPath／manifestPath。HTML雖有連結，但發布目標不存在；不是瀏覽器快取。已補builder依現有課程連結打包文件，會使其餘課程既有文件也可到達，不改其教材JSON。即將重建docs、測全部文件的來源／打包位元一致及十二課24個HTTP連結；原1231資產數屬修正前歷史，新總數待實際建置確認。公開部署尚未執行。
+
+文件連結也是交付內容：除了圖片HTTP，需檢查操作卡引用的Markdown是否隨發布包存在，來源與發布版本一致。
