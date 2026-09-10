@@ -1,0 +1,24 @@
+{
+  "commit": "79364cf0fb82ed7c016092f30ba68771578bcb01",
+  "git_status": "",
+  "html_sha256": "5019330b5bb83f0f053087f8ca71f99b4c99928a64009ceb79db5a14d9999620",
+  "course_docs_equal": true,
+  "topics": 58,
+  "family_counts": {
+    "geometry": 4,
+    "classification": 8,
+    "detector": 6,
+    "anomaly": 17,
+    "video": 8,
+    "foundation": 7,
+    "diffusion": 8
+  },
+  "unique_active_images": 644,
+  "rules": {
+    "CLAUDE.md": "41cfdb2d4f257063bbe452c9e3897684f20ea1c7416dede32eb3f7315df86804",
+    "IMAGE_STYLE_GUIDE.md": "798d87438415c61fd2c17923edbeb8e4929783bced683422be433b19c9566040",
+    "TEACHING_WEBPAGE_GUIDE.md": "1c7b9332a68ea2cc1050e9577f0bf011104ab1f47c4d76fa9ab1e011069e0978",
+    "TEACHING_SCORING_RUBRIC.md": "e2e40652a4e57b2dc4437d9b280835babb8ce23181073781eb1fd2a2e00fdcff",
+    "TEACHING_REVIEW_LOG.md": "7de05af909083c9b94e50f865882c3edf466156179a389c02a7a996e05ceabb8"
+  }
+}

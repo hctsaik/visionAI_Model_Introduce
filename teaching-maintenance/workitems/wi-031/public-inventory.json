@@ -1,0 +1,3871 @@
+{
+  "html_matches": true,
+  "normalized_html_sha256": "5019330b5bb83f0f053087f8ca71f99b4c99928a64009ceb79db5a14d9999620",
+  "assets": [
+    {
+      "path": "_course_content/generated-concepts/charuco/charuco-r07-core.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/charuco/charuco-r07-core-mobile.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/charuco/charuco-beginner-02-pose-and-reprojection_v01.svg",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/svg+xml"
+    },
+    {
+      "path": "_course_content/generated-concepts/charuco/charuco-beginner-03-coverage-p95-review_v01.svg",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/svg+xml"
+    },
+    {
+      "path": "_course_content/generated-concepts/charuco/charuco-beginner-04-center-only-counterfactual_v01.svg",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/svg+xml"
+    },
+    {
+      "path": "_course_content/generated-concepts/charuco/charuco-beginner-05-geometry-baseline-not-registration_v01.svg",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/svg+xml"
+    },
+    {
+      "path": "roadmap-model-selection/geometry-alignment-measurement/charuco/images/final/CHARUCO-01-positioning_v02-ppt-master-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/geometry-alignment-measurement/charuco/images/final/CHARUCO-02-architecture_v02-ppt-master-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/geometry-alignment-measurement/charuco/images/final/CHARUCO-03-build-inference_v02-ppt-master-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/geometry-alignment-measurement/charuco/images/final/CHARUCO-04-selection-boundary_v02-ppt-comparison-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/ecc/ecc-r06-c1-what.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/ecc/ecc-r06-c1-what-mobile.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/ecc/ecc-r06-c2-how.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/ecc/ecc-r06-c2-how-mobile.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/ecc/ecc-r06-c3-get.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/ecc/ecc-r06-c3-get-mobile.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/ecc/ecc-r06-d4-stop.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/ecc/ecc-r06-d4-stop-mobile.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/ecc/ecc-r06-d5-pick.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/ecc/ecc-r06-d5-pick-mobile.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/geometry-alignment-measurement/ecc/images/final/ECC-01-positioning_v03-r04.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/geometry-alignment-measurement/ecc/images/final/ECC-02-architecture_v03-r04.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/geometry-alignment-measurement/ecc/images/final/ECC-03-build-inference_v03-r04.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/geometry-alignment-measurement/ecc/images/final/ECC-04-selection-boundary_v03-r04.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/sift/sift-r06-c1-what.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/sift/sift-r06-c1-what-mobile.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/sift/sift-r06-c2-how.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/sift/sift-r06-c2-how-mobile.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/sift/sift-r06-c3-get.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/sift/sift-r06-c3-get-mobile.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/sift/sift-r06-d4-stop.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/sift/sift-r06-d4-stop-mobile.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/sift/sift-r06-d5-pick.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/sift/sift-r06-d5-pick-mobile.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/geometry-alignment-measurement/sift/images/final/SIFT-01-positioning_v02-ppt-master-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/geometry-alignment-measurement/sift/images/final/SIFT-02-architecture_v02-ppt-master-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/geometry-alignment-measurement/sift/images/final/SIFT-03-build-inference_v02-ppt-master-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/geometry-alignment-measurement/sift/images/final/SIFT-04-selection-boundary_v02-ppt-comparison-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/lightglue/lightglue-r06-c1-what.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/lightglue/lightglue-r06-c1-what-mobile.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/lightglue/lightglue-r06-c2-how.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/lightglue/lightglue-r06-c2-how-mobile.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/lightglue/lightglue-r06-c3-get.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/lightglue/lightglue-r06-c3-get-mobile.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/lightglue/lightglue-r06-d4-stop.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/lightglue/lightglue-r06-d4-stop-mobile.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/lightglue/lightglue-r06-d5-pick.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/lightglue/lightglue-r06-d5-pick-mobile.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/geometry-alignment-measurement/lightglue/images/final/LIGHTGLUE-01-positioning_v02-ppt-master-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/geometry-alignment-measurement/lightglue/images/final/LIGHTGLUE-02-architecture_v02-ppt-master-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/geometry-alignment-measurement/lightglue/images/final/LIGHTGLUE-03-build-inference_v02-ppt-master-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/geometry-alignment-measurement/lightglue/images/final/LIGHTGLUE-04-selection-boundary_v02-ppt-comparison-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/resnet/wi030-resnet-c1-r02-desktop.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/resnet/wi030-resnet-c1-r02-mobile.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/resnet/wi030-class-d2-r01-desktop.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/resnet/wi030-class-d2-r03-mobile.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/resnet/wi030-class-d3-r05-desktop.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/resnet/wi030-class-d3-r06-mobile.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/known-target-classification/resnet/images/final/RESNET-01-positioning_v02-ppt-master-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/known-target-classification/resnet/images/final/RESNET-02-architecture_v02-ppt-master-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/known-target-classification/resnet/images/final/RESNET-03-build-inference_v02-ppt-master-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/known-target-classification/resnet/images/final/RESNET-04-selection-boundary_v02-ppt-comparison-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/resnet/resnet-e02-why.svg",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/svg+xml"
+    },
+    {
+      "path": "_course_content/generated-concepts/resnet/resnet-e02-why-mobile.svg",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/svg+xml"
+    },
+    {
+      "path": "_course_content/generated-concepts/resnet/resnet-e01-01-task.svg",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/svg+xml"
+    },
+    {
+      "path": "_course_content/generated-concepts/resnet/resnet-e01-01-task-mobile.svg",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/svg+xml"
+    },
+    {
+      "path": "_course_content/generated-concepts/resnet/resnet-e02-skip.svg",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/svg+xml"
+    },
+    {
+      "path": "_course_content/generated-concepts/resnet/resnet-e02-skip-mobile.svg",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/svg+xml"
+    },
+    {
+      "path": "_course_content/generated-concepts/resnet/resnet-e01-02-residual.svg",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/svg+xml"
+    },
+    {
+      "path": "_course_content/generated-concepts/resnet/resnet-e01-02-residual-mobile.svg",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/svg+xml"
+    },
+    {
+      "path": "_course_content/generated-concepts/resnet/resnet-e01-03-stages.svg",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/svg+xml"
+    },
+    {
+      "path": "_course_content/generated-concepts/resnet/resnet-e01-03-stages-mobile.svg",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/svg+xml"
+    },
+    {
+      "path": "_course_content/generated-concepts/resnet/resnet-e01-04-bn.svg",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/svg+xml"
+    },
+    {
+      "path": "_course_content/generated-concepts/resnet/resnet-e01-04-bn-mobile.svg",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/svg+xml"
+    },
+    {
+      "path": "_course_content/generated-concepts/resnet/resnet-e01-05-pooling.svg",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/svg+xml"
+    },
+    {
+      "path": "_course_content/generated-concepts/resnet/resnet-e01-05-pooling-mobile.svg",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/svg+xml"
+    },
+    {
+      "path": "_course_content/generated-concepts/resnet/resnet-e01-06-gate.svg",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/svg+xml"
+    },
+    {
+      "path": "_course_content/generated-concepts/resnet/resnet-e01-06-gate-mobile.svg",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/svg+xml"
+    },
+    {
+      "path": "_course_content/generated-concepts/resnet/resnet-e01-07-variants.svg",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/svg+xml"
+    },
+    {
+      "path": "_course_content/generated-concepts/resnet/resnet-e01-07-variants-mobile.svg",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/svg+xml"
+    },
+    {
+      "path": "_course_content/generated-concepts/convnext/convnext-e01-03-spatial.svg",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/svg+xml"
+    },
+    {
+      "path": "_course_content/generated-concepts/convnext/convnext-e01-03-spatial-mobile.svg",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/svg+xml"
+    },
+    {
+      "path": "_course_content/generated-concepts/convnext/convnext-e01-03-channels.svg",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/svg+xml"
+    },
+    {
+      "path": "_course_content/generated-concepts/convnext/convnext-e01-03-channels-mobile.svg",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/svg+xml"
+    },
+    {
+      "path": "_course_content/generated-concepts/vit-classifier/vit-classifier-e01-06-r01-attention.svg",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/svg+xml"
+    },
+    {
+      "path": "_course_content/generated-concepts/vit-classifier/vit-classifier-e01-06-r01-attention-mobile.svg",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/svg+xml"
+    },
+    {
+      "path": "_course_content/generated-concepts/convnext/wi030-convnext-c1-r02-desktop.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/convnext/wi030-convnext-c1-r02-mobile.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/known-target-classification/convnext/images/final/CONVNEXT-01-positioning_v02-ppt-master-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/known-target-classification/convnext/images/final/CONVNEXT-02-architecture_v02-ppt-master-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/known-target-classification/convnext/images/final/CONVNEXT-03-build-inference_v02-ppt-master-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/known-target-classification/convnext/images/final/CONVNEXT-04-selection-boundary_v02-ppt-comparison-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/vit-classifier/wi030-vit-c1-r02-desktop.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/vit-classifier/wi030-vit-c1-r02-mobile.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/known-target-classification/vit-classifier/images/final/VIT-01-positioning_v02-ppt-master-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/known-target-classification/vit-classifier/images/final/VIT-02-architecture_v02-ppt-master-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/known-target-classification/vit-classifier/images/final/VIT-03-build-inference_v02-ppt-master-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/known-target-classification/vit-classifier/images/final/VIT-04-selection-boundary_v02-ppt-comparison-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/u-net/wi030-unet-c1-r04-desktop.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/u-net/wi030-unet-c1-r04-mobile.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/u-net/wi030-seg-d2-r03-desktop.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/u-net/wi030-seg-d2-r03-mobile.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/u-net/wi030-seg-d3-r01-desktop.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/u-net/wi030-seg-d3-r01-mobile.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/known-target-classification/u-net/images/final/UNET-01-positioning_v02-ppt-master-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/known-target-classification/u-net/images/final/UNET-02-architecture_v02-ppt-master-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/known-target-classification/u-net/images/final/UNET-03-build-inference_v02-ppt-master-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/known-target-classification/u-net/images/final/UNET-04-selection-boundary_v02-ppt-comparison-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/segformer/wi030-segformer-c1-r02-desktop.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/segformer/wi030-segformer-c1-r02-mobile.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/known-target-classification/segformer/images/final/SEGFORMER-01-positioning_v02-ppt-master-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/known-target-classification/segformer/images/final/SEGFORMER-02-architecture_v02-ppt-master-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/known-target-classification/segformer/images/final/SEGFORMER-03-build-inference_v02-ppt-master-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/known-target-classification/segformer/images/final/SEGFORMER-04-selection-boundary_v02-ppt-comparison-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/segformer/segformer-e03-core.svg",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/svg+xml"
+    },
+    {
+      "path": "_course_content/generated-concepts/segformer/segformer-e03-core-mobile.svg",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/svg+xml"
+    },
+    {
+      "path": "_course_content/generated-concepts/segformer/segformer-e01-01-task.svg",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/svg+xml"
+    },
+    {
+      "path": "_course_content/generated-concepts/segformer/segformer-e01-01-task-mobile.svg",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/svg+xml"
+    },
+    {
+      "path": "_course_content/generated-concepts/segformer/segformer-e01-02-overlap.svg",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/svg+xml"
+    },
+    {
+      "path": "_course_content/generated-concepts/segformer/segformer-e01-02-overlap-mobile.svg",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/svg+xml"
+    },
+    {
+      "path": "_course_content/generated-concepts/segformer/segformer-e01-03-scales.svg",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/svg+xml"
+    },
+    {
+      "path": "_course_content/generated-concepts/segformer/segformer-e01-03-scales-mobile.svg",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/svg+xml"
+    },
+    {
+      "path": "_course_content/generated-concepts/segformer/segformer-e01-04-sr.svg",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/svg+xml"
+    },
+    {
+      "path": "_course_content/generated-concepts/segformer/segformer-e01-04-sr-mobile.svg",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/svg+xml"
+    },
+    {
+      "path": "_course_content/generated-concepts/segformer/segformer-e01-05-decoder.svg",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/svg+xml"
+    },
+    {
+      "path": "_course_content/generated-concepts/segformer/segformer-e01-05-decoder-mobile.svg",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/svg+xml"
+    },
+    {
+      "path": "_course_content/generated-concepts/segformer/segformer-e01-06-train.svg",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/svg+xml"
+    },
+    {
+      "path": "_course_content/generated-concepts/segformer/segformer-e01-06-train-mobile.svg",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/svg+xml"
+    },
+    {
+      "path": "_course_content/generated-concepts/segformer/segformer-e01-07-selection.svg",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/svg+xml"
+    },
+    {
+      "path": "_course_content/generated-concepts/segformer/segformer-e01-07-selection-mobile.svg",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/svg+xml"
+    },
+    {
+      "path": "_course_content/generated-concepts/segformer/segformer-e01-08-outputs.svg",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/svg+xml"
+    },
+    {
+      "path": "_course_content/generated-concepts/segformer/segformer-e01-08-outputs-mobile.svg",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/svg+xml"
+    },
+    {
+      "path": "_course_content/generated-concepts/u-net/u-net-e01-03-skip.svg",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/svg+xml"
+    },
+    {
+      "path": "_course_content/generated-concepts/u-net/u-net-e01-03-skip-mobile.svg",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/svg+xml"
+    },
+    {
+      "path": "_course_content/generated-concepts/yolo-seg/yolo-seg-e01-03-compose.svg",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/svg+xml"
+    },
+    {
+      "path": "_course_content/generated-concepts/yolo-seg/yolo-seg-e01-03-compose-mobile.svg",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/svg+xml"
+    },
+    {
+      "path": "_course_content/generated-concepts/yolo-seg/wi030-yoloseg-c1-r07-desktop.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/yolo-seg/wi030-yoloseg-c1-r06-mobile.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/yolo-seg/wi030-instance-d2-r02-desktop.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/yolo-seg/wi030-instance-d2-r04-mobile.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/known-target-classification/yolo-seg/images/final/YOLOSEG-01-positioning_v02-ppt-master-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/known-target-classification/yolo-seg/images/final/YOLOSEG-02-architecture_v02-ppt-master-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/known-target-classification/yolo-seg/images/final/YOLOSEG-03-build-inference_v02-ppt-master-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/known-target-classification/yolo-seg/images/final/YOLOSEG-04-selection-boundary_v02-ppt-comparison-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/keypoint-r-cnn/wi030-key-c1-r04-desktop.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/keypoint-r-cnn/wi030-key-c1-r05-mobile.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/pose/wi030-pose-d2-r02-desktop.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/pose/wi030-pose-d2-r02-mobile.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/pose/wi030-pose-d3-r03-desktop.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/pose/wi030-pose-d3-r03-mobile.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/known-target-classification/keypoint-r-cnn/images/final/KPRCNN-01-positioning_v02-ppt-master-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/known-target-classification/keypoint-r-cnn/images/final/KPRCNN-02-architecture_v02-ppt-master-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/known-target-classification/keypoint-r-cnn/images/final/KPRCNN-03-build-inference_v02-ppt-master-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/known-target-classification/keypoint-r-cnn/images/final/KPRCNN-04-selection-boundary_v02-ppt-comparison-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/pose/wi030-pose-c1-r03-desktop.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/pose/wi030-pose-c1-r04-mobile.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/known-target-classification/pose/images/final/POSE-01-positioning_v02-ppt-master-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/known-target-classification/pose/images/final/POSE-02-architecture_v02-ppt-master-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/known-target-classification/pose/images/final/POSE-03-build-inference_v02-ppt-master-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/known-target-classification/pose/images/final/POSE-04-selection-boundary_v02-ppt-comparison-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/det-yolo-dense/wi024-yolo-c1-r01-desktop.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/det-yolo-dense/wi024-yolo-c1-r01-mobile.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/det-yolo-dense/wi024-yolo-d2-r02-desktop.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/det-yolo-dense/wi024-yolo-d2-r01-mobile.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/det-yolo-dense/wi024-known-d3-r02-desktop.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/det-yolo-dense/wi024-known-d3-r01-mobile.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/detector/det-yolo-dense/images/final/YOLO-01-positioning_v02-ppt-master-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/detector/det-yolo-dense/images/final/YOLO-02-architecture_v02-ppt-master-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/detector/det-yolo-dense/images/final/YOLO-03-build-inference_v02-ppt-master-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/detector/det-yolo-dense/images/final/YOLO-04-selection-boundary_v02-ppt-comparison-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/det-rtdetr/wi024-rtdetr-c1-r02-desktop.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/det-rtdetr/wi024-rtdetr-c1-r01-mobile.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/det-rtdetr/wi024-rtdetr-d2-r01-desktop.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/det-rtdetr/wi024-rtdetr-d2-r02-mobile.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/detector/det-rtdetr/images/final/RTDETR-01-positioning_v02-ppt-master-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/detector/det-rtdetr/images/final/RTDETR-02-architecture_v02-ppt-master-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/detector/det-rtdetr/images/final/RTDETR-03-build-inference_v02-ppt-master-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/detector/det-rtdetr/images/final/RTDETR-04-selection-boundary_v02-ppt-comparison-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/det-dino-detector/det-dino-detector-d01-core.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/det-dino-detector/det-dino-detector-d01-core-mobile.svg",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/svg+xml"
+    },
+    {
+      "path": "_course_content/generated-concepts/det-dino-detector/det-dino-detector-d01-failure.svg",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/svg+xml"
+    },
+    {
+      "path": "_course_content/generated-concepts/det-dino-detector/det-dino-detector-d01-failure-mobile.svg",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/svg+xml"
+    },
+    {
+      "path": "_course_content/generated-concepts/det-yolo-dense/det-yolo-dense-d01-compare-known.svg",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/svg+xml"
+    },
+    {
+      "path": "_course_content/generated-concepts/det-yolo-dense/det-yolo-dense-d01-compare-known-mobile.svg",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/svg+xml"
+    },
+    {
+      "path": "_course_content/generated-concepts/det-yolo-dense/det-yolo-dense-d01-compare-prompt.svg",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/svg+xml"
+    },
+    {
+      "path": "_course_content/generated-concepts/det-yolo-dense/det-yolo-dense-d01-compare-prompt-mobile.svg",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/svg+xml"
+    },
+    {
+      "path": "roadmap-model-selection/detector/det-dino-detector/images/final/DINO-DET-01-positioning_v02-ppt-master-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/detector/det-dino-detector/images/final/DINO-DET-02-architecture_v02-ppt-master-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/detector/det-dino-detector/images/final/DINO-DET-03-build-inference_v02-ppt-master-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/detector/det-dino-detector/images/final/DINO-DET-04-selection-boundary_v02-ppt-comparison-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/det-grounding-dino-interface/wi024-grounding-c1-r03-desktop.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/det-grounding-dino-interface/wi024-grounding-c1-r01-mobile.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/det-grounding-dino-interface/wi024-grounding-d2-r01-desktop.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/det-grounding-dino-interface/wi024-grounding-d2-r01-mobile.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/det-grounding-dino-interface/wi024-prompt-d3-r01-desktop.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/det-grounding-dino-interface/wi024-prompt-d3-r01-mobile.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/detector/det-grounding-dino-interface/images/final/GROUNDING-DINO-01-positioning_v02-ppt-master-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/detector/det-grounding-dino-interface/images/final/GROUNDING-DINO-02-architecture_v02-ppt-master-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/detector/det-grounding-dino-interface/images/final/GROUNDING-DINO-03-build-inference_v02-ppt-master-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/detector/det-grounding-dino-interface/images/final/GROUNDING-DINO-04-selection-boundary_v02-ppt-comparison-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/yolo-world/yolo-world-d01-core.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/yolo-world/yolo-world-d01-core-mobile.svg",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/svg+xml"
+    },
+    {
+      "path": "_course_content/generated-concepts/yolo-world/yolo-world-d01-failure.svg",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/svg+xml"
+    },
+    {
+      "path": "_course_content/generated-concepts/yolo-world/yolo-world-d01-failure-mobile.svg",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/svg+xml"
+    },
+    {
+      "path": "roadmap-model-selection/detector/yolo-world/images/final/YOLOWORLD-01-positioning_v02-ppt-master-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/detector/yolo-world/images/final/YOLOWORLD-02-architecture_v02-ppt-master-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/detector/yolo-world/images/final/YOLOWORLD-03-build-inference_v02-ppt-master-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/detector/yolo-world/images/final/YOLOWORLD-04-selection-boundary_v02-ppt-comparison-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/yoloe/wi024-yoloe-c1-r02-desktop.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/yoloe/wi024-yoloe-c1-r01-mobile.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/yoloe/wi024-yoloe-d2-r01-desktop.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/yoloe/wi024-yoloe-d2-r01-mobile.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/detector/yoloe/images/final/YOLOE-01-positioning_v02-ppt-master-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/detector/yoloe/images/final/YOLOE-02-architecture_v02-ppt-master-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/detector/yoloe/images/final/YOLOE-03-build-inference_v02-ppt-master-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/detector/yoloe/images/final/YOLOE-04-selection-boundary_v02-ppt-comparison-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/ad-patchcore/wi030-patch-c1-r04-desktop.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/ad-patchcore/wi030-patch-c1-r02-mobile.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/ad-patchcore/wi030-ad-d2-r02-desktop.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/ad-patchcore/wi030-ad-d2-r02-mobile.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/ad-patchcore/wi030-ad-d3-r04-desktop.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/ad-patchcore/wi030-ad-d3-r03-mobile.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-patchcore/images/final/PATCHCORE-01-positioning_v02-ppt-master-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-patchcore/images/final/PATCHCORE-02-architecture_v02-ppt-master-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-patchcore/images/final/PATCHCORE-03-build-inference_v02-ppt-master-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-patchcore/images/final/PATCHCORE-04-selection-boundary_v02-ppt-comparison-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/ad-patchcore/ad-patchcore-f01-core.svg",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/svg+xml"
+    },
+    {
+      "path": "_course_content/generated-concepts/ad-patchcore/ad-patchcore-f01-core-mobile.svg",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/svg+xml"
+    },
+    {
+      "path": "_course_content/generated-concepts/ad-patchcore/patchcore-work-01-prepare_p03.svg",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/svg+xml"
+    },
+    {
+      "path": "_course_content/generated-concepts/ad-patchcore/patchcore-work-01-prepare_p03-mobile.svg",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/svg+xml"
+    },
+    {
+      "path": "_course_content/generated-concepts/ad-patchcore/patchcore-work-02-features_p03.svg",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/svg+xml"
+    },
+    {
+      "path": "_course_content/generated-concepts/ad-patchcore/patchcore-work-02-features_p03-mobile.svg",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/svg+xml"
+    },
+    {
+      "path": "_course_content/generated-concepts/ad-patchcore/patchcore-work-02-context_p03.svg",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/svg+xml"
+    },
+    {
+      "path": "_course_content/generated-concepts/ad-patchcore/patchcore-work-02-context_p03-mobile.svg",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/svg+xml"
+    },
+    {
+      "path": "_course_content/generated-concepts/ad-patchcore/patchcore-work-03-coreset_p03.svg",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/svg+xml"
+    },
+    {
+      "path": "_course_content/generated-concepts/ad-patchcore/patchcore-work-03-coreset_p03-mobile.svg",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/svg+xml"
+    },
+    {
+      "path": "_course_content/generated-concepts/ad-patchcore/patchcore-work-04-normal_p01.svg",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/svg+xml"
+    },
+    {
+      "path": "_course_content/generated-concepts/ad-patchcore/patchcore-work-04-normal_p01-mobile.svg",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/svg+xml"
+    },
+    {
+      "path": "_course_content/generated-concepts/ad-patchcore/patchcore-work-04-scratch_p01.svg",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/svg+xml"
+    },
+    {
+      "path": "_course_content/generated-concepts/ad-patchcore/patchcore-work-04-scratch_p01-mobile.svg",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/svg+xml"
+    },
+    {
+      "path": "_course_content/generated-concepts/ad-patchcore/patchcore-work-05-score_p03.svg",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/svg+xml"
+    },
+    {
+      "path": "_course_content/generated-concepts/ad-patchcore/patchcore-work-05-score_p03-mobile.svg",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/svg+xml"
+    },
+    {
+      "path": "_course_content/generated-concepts/ad-patchcore/patchcore-work-05-location_p03.svg",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/svg+xml"
+    },
+    {
+      "path": "_course_content/generated-concepts/ad-patchcore/patchcore-work-05-location_p03-mobile.svg",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/svg+xml"
+    },
+    {
+      "path": "_course_content/generated-concepts/ad-patchcore/patchcore-work-06-coverage_p03.svg",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/svg+xml"
+    },
+    {
+      "path": "_course_content/generated-concepts/ad-patchcore/patchcore-work-06-coverage_p03-mobile.svg",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/svg+xml"
+    },
+    {
+      "path": "_course_content/generated-concepts/ad-patchcore/patchcore-work-06-contamination_p01.svg",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/svg+xml"
+    },
+    {
+      "path": "_course_content/generated-concepts/ad-patchcore/patchcore-work-06-contamination_p01-mobile.svg",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/svg+xml"
+    },
+    {
+      "path": "_course_content/generated-concepts/ad-patchcore/patchcore-work-07-patchcore_p03.svg",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/svg+xml"
+    },
+    {
+      "path": "_course_content/generated-concepts/ad-patchcore/patchcore-work-07-patchcore_p03-mobile.svg",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/svg+xml"
+    },
+    {
+      "path": "_course_content/generated-concepts/ad-patchcore/patchcore-work-07-padim_p03.svg",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/svg+xml"
+    },
+    {
+      "path": "_course_content/generated-concepts/ad-patchcore/patchcore-work-07-padim_p03-mobile.svg",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/svg+xml"
+    },
+    {
+      "path": "_course_content/generated-concepts/ad-patchcore/patchcore-work-07-efficientad_p03.svg",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/svg+xml"
+    },
+    {
+      "path": "_course_content/generated-concepts/ad-patchcore/patchcore-work-07-efficientad_p03-mobile.svg",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/svg+xml"
+    },
+    {
+      "path": "_course_content/generated-concepts/ad-patchcore/patchcore-work-08-success-a_p03.svg",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/svg+xml"
+    },
+    {
+      "path": "_course_content/generated-concepts/ad-patchcore/patchcore-work-08-success-a_p03-mobile.svg",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/svg+xml"
+    },
+    {
+      "path": "_course_content/generated-concepts/ad-patchcore/patchcore-work-08-success-b_p03.svg",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/svg+xml"
+    },
+    {
+      "path": "_course_content/generated-concepts/ad-patchcore/patchcore-work-08-success-b_p03-mobile.svg",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/svg+xml"
+    },
+    {
+      "path": "_course_content/generated-concepts/ad-patchcore/patchcore-work-08-fn_p01.svg",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/svg+xml"
+    },
+    {
+      "path": "_course_content/generated-concepts/ad-patchcore/patchcore-work-08-fn_p01-mobile.svg",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/svg+xml"
+    },
+    {
+      "path": "_course_content/generated-concepts/ad-patchcore/patchcore-work-08-fp_p03.svg",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/svg+xml"
+    },
+    {
+      "path": "_course_content/generated-concepts/ad-patchcore/patchcore-work-08-fp_p03-mobile.svg",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/svg+xml"
+    },
+    {
+      "path": "_course_content/generated-concepts/ad-padim/wi030-padim-c1-r02-desktop.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/ad-padim/wi030-padim-c1-r03-mobile.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-padim/images/final/PADIM-01-positioning_v02-ppt-master-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-padim/images/final/PADIM-02-architecture_v02-ppt-master-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-padim/images/final/PADIM-03-build-inference_v02-ppt-master-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-padim/images/final/PADIM-04-selection-boundary_v02-ppt-comparison-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/ad-anomalydino/wi030-dino-c1-r03-desktop.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/ad-anomalydino/wi030-dino-c1-r05-mobile.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-anomalydino/images/final/ANOMALYDINO-01-positioning_v02-ppt-master-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-anomalydino/images/final/ANOMALYDINO-02-architecture_v02-ppt-master-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-anomalydino/images/final/ANOMALYDINO-03-build-inference_v02-ppt-master-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-anomalydino/images/final/ANOMALYDINO-04-selection-boundary_v02-ppt-comparison-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/ad-anomalydino/ad-anomalydino-f01-core.svg",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/svg+xml"
+    },
+    {
+      "path": "_course_content/generated-concepts/ad-anomalydino/ad-anomalydino-f01-core-mobile.svg",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/svg+xml"
+    },
+    {
+      "path": "_course_content/generated-concepts/ad-anomalydino/anomalydino-01-prepare_a14.svg",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/svg+xml"
+    },
+    {
+      "path": "_course_content/generated-concepts/ad-anomalydino/anomalydino-01-prepare_a14-mobile.svg",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/svg+xml"
+    },
+    {
+      "path": "_course_content/generated-concepts/ad-anomalydino/anomalydino-01-interpret_a14.svg",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/svg+xml"
+    },
+    {
+      "path": "_course_content/generated-concepts/ad-anomalydino/anomalydino-01-interpret_a14-mobile.svg",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/svg+xml"
+    },
+    {
+      "path": "_course_content/generated-concepts/ad-anomalydino/anomalydino-02-store_a09.svg",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/svg+xml"
+    },
+    {
+      "path": "_course_content/generated-concepts/ad-anomalydino/anomalydino-02-store_a10-mobile.svg",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/svg+xml"
+    },
+    {
+      "path": "_course_content/generated-concepts/ad-anomalydino/anomalydino-02-query_a14.svg",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/svg+xml"
+    },
+    {
+      "path": "_course_content/generated-concepts/ad-anomalydino/anomalydino-02-query_a10-mobile.svg",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/svg+xml"
+    },
+    {
+      "path": "_course_content/generated-concepts/ad-anomalydino/anomalydino-03-scratch_a09.svg",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/svg+xml"
+    },
+    {
+      "path": "_course_content/generated-concepts/ad-anomalydino/anomalydino-03-scratch_a09-mobile.svg",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/svg+xml"
+    },
+    {
+      "path": "_course_content/generated-concepts/ad-anomalydino/anomalydino-03-normal_a13.svg",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/svg+xml"
+    },
+    {
+      "path": "_course_content/generated-concepts/ad-anomalydino/anomalydino-03-normal_a13-mobile.svg",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/svg+xml"
+    },
+    {
+      "path": "_course_content/generated-concepts/ad-anomalydino/anomalydino-04-score_a09.svg",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/svg+xml"
+    },
+    {
+      "path": "_course_content/generated-concepts/ad-anomalydino/anomalydino-04-score_a09-mobile.svg",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/svg+xml"
+    },
+    {
+      "path": "_course_content/generated-concepts/ad-anomalydino/anomalydino-04-location_a10.svg",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/svg+xml"
+    },
+    {
+      "path": "_course_content/generated-concepts/ad-anomalydino/anomalydino-04-location_a10-mobile.svg",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/svg+xml"
+    },
+    {
+      "path": "_course_content/generated-concepts/ad-anomalydino/anomalydino-04-arithmetic_a10.svg",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/svg+xml"
+    },
+    {
+      "path": "_course_content/generated-concepts/ad-anomalydino/anomalydino-04-arithmetic_a10-mobile.svg",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/svg+xml"
+    },
+    {
+      "path": "_course_content/generated-concepts/ad-anomalydino/anomalydino-05-clean_a14.svg",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/svg+xml"
+    },
+    {
+      "path": "_course_content/generated-concepts/ad-anomalydino/anomalydino-05-clean_a14-mobile.svg",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/svg+xml"
+    },
+    {
+      "path": "_course_content/generated-concepts/ad-anomalydino/anomalydino-05-contaminated_a14.svg",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/svg+xml"
+    },
+    {
+      "path": "_course_content/generated-concepts/ad-anomalydino/anomalydino-05-contaminated_a14-mobile.svg",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/svg+xml"
+    },
+    {
+      "path": "_course_content/generated-concepts/ad-anomalydino/anomalydino-06-rotation_a09.svg",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/svg+xml"
+    },
+    {
+      "path": "_course_content/generated-concepts/ad-anomalydino/anomalydino-06-rotation_a09-mobile.svg",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/svg+xml"
+    },
+    {
+      "path": "_course_content/generated-concepts/ad-anomalydino/anomalydino-06-mask_a09.svg",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/svg+xml"
+    },
+    {
+      "path": "_course_content/generated-concepts/ad-anomalydino/anomalydino-06-mask_a09-mobile.svg",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/svg+xml"
+    },
+    {
+      "path": "_course_content/generated-concepts/ad-anomalydino/anomalydino-06-wiring_a09.svg",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/svg+xml"
+    },
+    {
+      "path": "_course_content/generated-concepts/ad-anomalydino/anomalydino-06-wiring_a09-mobile.svg",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/svg+xml"
+    },
+    {
+      "path": "_course_content/generated-concepts/ad-anomalydino/anomalydino-07-0_a09.svg",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/svg+xml"
+    },
+    {
+      "path": "_course_content/generated-concepts/ad-anomalydino/anomalydino-07-0_a09-mobile.svg",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/svg+xml"
+    },
+    {
+      "path": "_course_content/generated-concepts/ad-anomalydino/anomalydino-07-patch_a13.svg",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/svg+xml"
+    },
+    {
+      "path": "_course_content/generated-concepts/ad-anomalydino/anomalydino-07-patch_a13-mobile.svg",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/svg+xml"
+    },
+    {
+      "path": "_course_content/generated-concepts/ad-anomalydino/anomalydino-07-efficient_a13.svg",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/svg+xml"
+    },
+    {
+      "path": "_course_content/generated-concepts/ad-anomalydino/anomalydino-07-efficient_a13-mobile.svg",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/svg+xml"
+    },
+    {
+      "path": "_course_content/generated-concepts/ad-anomalydino/anomalydino-08-bottle_a14.svg",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/svg+xml"
+    },
+    {
+      "path": "_course_content/generated-concepts/ad-anomalydino/anomalydino-08-bottle_a14-mobile.svg",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/svg+xml"
+    },
+    {
+      "path": "_course_content/generated-concepts/ad-anomalydino/anomalydino-08-tile_a14.svg",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/svg+xml"
+    },
+    {
+      "path": "_course_content/generated-concepts/ad-anomalydino/anomalydino-08-tile_a14-mobile.svg",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/svg+xml"
+    },
+    {
+      "path": "_course_content/generated-concepts/ad-anomalydino/anomalydino-08-cable_a09.svg",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/svg+xml"
+    },
+    {
+      "path": "_course_content/generated-concepts/ad-anomalydino/anomalydino-08-cable_a09-mobile.svg",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/svg+xml"
+    },
+    {
+      "path": "_course_content/generated-concepts/ad-anomalydino/anomalydino-08-capsule_a09.svg",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/svg+xml"
+    },
+    {
+      "path": "_course_content/generated-concepts/ad-anomalydino/anomalydino-08-capsule_a09-mobile.svg",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/svg+xml"
+    },
+    {
+      "path": "_course_content/generated-concepts/ad-subspacead/wi021-subspacead-c1-r03-desktop.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/ad-subspacead/wi021-subspacead-c1-r02-mobile.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/ad-subspacead/wi021-subspacead-d2-r01-desktop.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/ad-subspacead/wi021-subspacead-d2-r01-mobile.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/ad-stfpm/wi021-feature-methods-d3-r02-desktop.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/ad-stfpm/wi021-feature-methods-d3-r03-mobile.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-subspacead/images/final/SUBSPACEAD-01-positioning_v02-ppt-master-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-subspacead/images/final/SUBSPACEAD-02-architecture_v02-ppt-master-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-subspacead/images/final/SUBSPACEAD-03-build-inference_v02-ppt-master-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-subspacead/images/final/SUBSPACEAD-04-selection-boundary_v02-ppt-comparison-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/ad-stfpm/wi021-stfpm-c1-r02-desktop.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/ad-stfpm/wi021-stfpm-c1-r01-mobile.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/ad-stfpm/wi021-stfpm-d2-r02-desktop.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/ad-stfpm/wi021-stfpm-d2-r01-mobile.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-stfpm/images/final/STFPM-01-positioning_v02-ppt-master-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-stfpm/images/final/STFPM-02-architecture_v02-ppt-master-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-stfpm/images/final/STFPM-03-build-inference_v02-ppt-master-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-stfpm/images/final/STFPM-04-selection-boundary_v02-ppt-comparison-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/ad-rd4ad/wi021-rd4ad-c1-r04-desktop.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/ad-rd4ad/wi021-rd4ad-c1-r01-mobile.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/ad-rd4ad/wi021-rd4ad-c2-r02-desktop.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/ad-rd4ad/wi021-rd4ad-c2-r01-mobile.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/ad-rd4ad/wi021-rd4ad-d3-r01-desktop.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/ad-rd4ad/wi021-rd4ad-d3-r01-mobile.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/ad-ae/wi021-ae-d5-r02-desktop.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/ad-ae/wi021-ae-d5-r02-mobile.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-rd4ad/images/final/RD4AD-01-positioning_v02-ppt-master-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-rd4ad/images/final/RD4AD-02-architecture_v02-ppt-master-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-rd4ad/images/final/RD4AD-03-build-inference_v02-ppt-master-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-rd4ad/images/final/RD4AD-04-selection-boundary_v02-ppt-comparison-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/ad-efficientad/wi030-efficient-c1-r06-desktop.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/ad-efficientad/wi030-efficient-c1-r05-mobile.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-efficientad/images/final/EFFICIENTAD-01-positioning_v02-ppt-master-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-efficientad/images/final/EFFICIENTAD-02-architecture_v02-ppt-master-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-efficientad/images/final/EFFICIENTAD-03-build-inference_v02-ppt-master-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-efficientad/images/final/EFFICIENTAD-04-selection-boundary_v02-ppt-comparison-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/ad-efficientad/ad-efficientad-f01-core.svg",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/svg+xml"
+    },
+    {
+      "path": "_course_content/generated-concepts/ad-efficientad/ad-efficientad-f01-core-mobile.svg",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/svg+xml"
+    },
+    {
+      "path": "_course_content/generated-concepts/ad-efficientad/efficientad-work-01-work_v11.svg",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/svg+xml"
+    },
+    {
+      "path": "_course_content/generated-concepts/ad-efficientad/efficientad-work-02-data_v11.svg",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/svg+xml"
+    },
+    {
+      "path": "_course_content/generated-concepts/ad-efficientad/efficientad-work-03-meaning_v11.svg",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/svg+xml"
+    },
+    {
+      "path": "_course_content/generated-concepts/ad-efficientad/efficientad-work-04-output_v11.svg",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/svg+xml"
+    },
+    {
+      "path": "_course_content/generated-concepts/ad-efficientad/efficientad-work-05-limits_v11.svg",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/svg+xml"
+    },
+    {
+      "path": "_course_content/generated-concepts/ad-efficientad/efficientad-work-06-workflow_v11.svg",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/svg+xml"
+    },
+    {
+      "path": "_course_content/generated-concepts/ad-efficientad/efficientad-work-07-comparison_v11.svg",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/svg+xml"
+    },
+    {
+      "path": "_course_content/generated-concepts/ad-efficientad/efficientad-work-08-transfer_v11.svg",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/svg+xml"
+    },
+    {
+      "path": "_course_content/generated-concepts/ad-ae/wi021-ae-c1-r02.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/ad-ae/wi021-ae-c1-r04-mobile.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/ad-ae/wi021-ae-c2-r02-desktop.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/ad-ae/wi021-ae-c2-r02-mobile.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/ad-ae/wi021-ae-c3-r02-desktop.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/ad-ae/wi021-ae-c3-r01-mobile.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/ad-ae/wi021-ae-d4-r02-desktop.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/ad-ae/wi021-ae-d4-r01-mobile.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-ae/images/final/AE-01-positioning_v02-ppt-master-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-ae/images/final/AE-02-architecture_v02-ppt-master-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-ae/images/final/AE-03-build-inference_v02-ppt-master-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-ae/images/final/AE-04-selection-boundary_v02-ppt-comparison-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/ad-draem/wi021-draem-c1-r01-desktop.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/ad-draem/wi021-draem-c1-r01-mobile.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/ad-draem/wi021-draem-c2-r01-desktop.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/ad-draem/wi021-draem-c2-r03-mobile.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/ad-draem/wi021-draem-d3-r02-desktop.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/ad-draem/wi021-draem-d3-r01-mobile.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-draem/images/final/DRAEM-01-positioning_v02-ppt-master-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-draem/images/final/DRAEM-02-architecture_v02-ppt-master-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-draem/images/final/DRAEM-03-build-inference_v02-ppt-master-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-draem/images/final/DRAEM-04-selection-boundary_v02-ppt-comparison-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/ad-uniad/wi021-uniad-c1-r02-desktop.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/ad-uniad/wi021-uniad-c1-r02-mobile.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/ad-dinomaly/wi021-multi-reconstruction-d2-r02-desktop.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/ad-dinomaly/wi021-multi-reconstruction-d2-r03-mobile.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/ad-dinomaly/wi021-multi-reconstruction-d3-r02-desktop.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/ad-dinomaly/wi021-multi-reconstruction-d3-r02-mobile.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-uniad/images/final/UNIAD-01-positioning_v02-ppt-master-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-uniad/images/final/UNIAD-02-architecture_v02-ppt-master-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-uniad/images/final/UNIAD-03-build-inference_v02-ppt-master-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-uniad/images/final/UNIAD-04-selection-boundary_v02-ppt-comparison-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/ad-dinomaly/wi021-dinomaly-c1-r04-desktop.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/ad-dinomaly/wi021-dinomaly-c1-r01-mobile.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-dinomaly/images/final/DINOMALY-01-positioning_v02-ppt-master-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-dinomaly/images/final/DINOMALY-02-architecture_v02-ppt-master-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-dinomaly/images/final/DINOMALY-03-build-inference_v02-ppt-master-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-dinomaly/images/final/DINOMALY-04-selection-boundary_v02-ppt-comparison-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/ad-invad/wi021-invad-c1-r01-desktop.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/ad-invad/wi021-invad-c1-r03-mobile.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-invad/images/final/INVAD-01-positioning_v02-ppt-master-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-invad/images/final/INVAD-02-architecture_v02-ppt-master-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-invad/images/final/INVAD-03-build-inference_v02-ppt-master-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-invad/images/final/INVAD-04-selection-boundary_v02-ppt-comparison-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/ad-diffad/wi021-diffusionad-c1-r04-desktop.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/ad-diffad/wi021-diffusionad-c1-r03-mobile.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/ad-ddad/wi021-diffusion-methods-d2-r02-desktop.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/ad-ddad/wi021-diffusion-methods-d2-r03-mobile.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/ad-ddad/wi021-diffusion-methods-d3-r02-desktop.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/ad-ddad/wi021-diffusion-methods-d3-r04-mobile.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-diffad/images/final/DIFFAD-01-positioning_v02-ppt-master-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-diffad/images/final/DIFFAD-02-architecture_v02-ppt-master-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-diffad/images/final/DIFFAD-03-build-inference_v02-ppt-master-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-diffad/images/final/DIFFAD-04-selection-boundary_v02-ppt-comparison-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/ad-ddad/wi021-ddad-c1-r01-desktop.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/ad-ddad/wi021-ddad-c1-r02-mobile.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-ddad/images/final/DDAD-01-positioning_v02-ppt-master-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-ddad/images/final/DDAD-02-architecture_v02-ppt-master-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-ddad/images/final/DDAD-03-build-inference_v02-ppt-master-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-ddad/images/final/DDAD-04-selection-boundary_v02-ppt-comparison-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/ad-winclip/wi021-winclip-c1-r02-desktop.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/ad-winclip/wi021-winclip-c1-r01-mobile.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/ad-anomalyclip/wi021-clip-methods-d2-r02-desktop.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/ad-anomalyclip/wi021-clip-methods-d2-r01-mobile.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/ad-anomalyclip/wi021-clip-methods-d3-r04-desktop.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/ad-anomalyclip/wi021-clip-methods-d3-r07-mobile.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-winclip/images/final/WINCLIP-01-positioning_v02-ppt-master-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-winclip/images/final/WINCLIP-02-architecture_v02-ppt-master-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-winclip/images/final/WINCLIP-03-build-inference_v02-ppt-master-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-winclip/images/final/WINCLIP-04-selection-boundary_v02-ppt-comparison-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/ad-anomalyclip/wi021-anomalyclip-c1-r02-desktop.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/ad-anomalyclip/wi021-anomalyclip-c1-r02-mobile.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-anomalyclip/images/final/ANOCLIP-01-positioning_v02-ppt-master-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-anomalyclip/images/final/ANOCLIP-02-architecture_v02-ppt-master-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-anomalyclip/images/final/ANOCLIP-03-build-inference_v02-ppt-master-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-anomalyclip/images/final/ANOCLIP-04-selection-boundary_v02-ppt-comparison-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/ad-anomalygpt/wi021-anomalygpt-c1-r02-desktop.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/ad-anomalygpt/wi021-anomalygpt-c1-r04-mobile.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/ad-anomalygpt/wi021-anomalygpt-d2-r01-desktop.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/ad-anomalygpt/wi021-anomalygpt-d2-r01-mobile.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-anomalygpt/images/final/ANOGPT-01-positioning_v02-ppt-master-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-anomalygpt/images/final/ANOGPT-02-architecture_v02-ppt-master-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-anomalygpt/images/final/ANOGPT-03-build-inference_v02-ppt-master-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-anomalygpt/images/final/ANOGPT-04-selection-boundary_v02-ppt-comparison-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/frame-difference/wi028-frame-c1-r02-desktop.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/frame-difference/wi028-frame-c1-r02-mobile.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/frame-difference/wi028-frame-d2-r01-desktop.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/frame-difference/wi028-frame-d2-r01-mobile.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/frame-difference/wi028-change-d3-r02-desktop.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/frame-difference/wi028-change-d3-r03-mobile.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/video-temporal/frame-difference/images/final/FRAMEDIFF-01-positioning_v02-ppt-master-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/video-temporal/frame-difference/images/final/FRAMEDIFF-02-architecture_v02-ppt-master-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/video-temporal/frame-difference/images/final/FRAMEDIFF-03-build-inference_v02-ppt-master-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/video-temporal/frame-difference/images/final/FRAMEDIFF-04-selection-boundary_v02-ppt-comparison-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/background-subtraction/wi028-bg-c1-r01-desktop.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/background-subtraction/wi028-bg-c1-r01-mobile.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/background-subtraction/wi028-bg-d2-r01-desktop.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/background-subtraction/wi028-bg-d2-r01-mobile.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/video-temporal/background-subtraction/images/final/BGSUB-01-positioning_v02-ppt-master-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/video-temporal/background-subtraction/images/final/BGSUB-02-architecture_v02-ppt-master-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/video-temporal/background-subtraction/images/final/BGSUB-03-build-inference_v02-ppt-master-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/video-temporal/background-subtraction/images/final/BGSUB-04-selection-boundary_v02-ppt-comparison-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/lucas-kanade/wi028-lk-c1-r02-desktop.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/lucas-kanade/wi028-lk-c1-r03-mobile.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/lucas-kanade/wi028-flow-d2-r03-desktop.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/lucas-kanade/wi028-flow-d2-r03-mobile.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/lucas-kanade/wi028-flow-d3-r01-desktop.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/lucas-kanade/wi028-flow-d3-r01-mobile.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/video-temporal/lucas-kanade/images/final/LK-01-positioning_v02-ppt-master-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/video-temporal/lucas-kanade/images/final/LK-02-architecture_v02-ppt-master-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/video-temporal/lucas-kanade/images/final/LK-03-build-inference_v02-ppt-master-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/video-temporal/lucas-kanade/images/final/LK-04-selection-boundary_v02-ppt-comparison-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/raft/wi028-raft-c1-r01-desktop.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/raft/wi028-raft-c1-r01-mobile.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/video-temporal/raft/images/final/RAFT-01-positioning_v02-ppt-master-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/video-temporal/raft/images/final/RAFT-02-architecture_v02-ppt-master-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/video-temporal/raft/images/final/RAFT-03-build-inference_v02-ppt-master-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/video-temporal/raft/images/final/RAFT-04-selection-boundary_v02-ppt-comparison-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/bytetrack/wi028-byte-c1-r02-desktop.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/bytetrack/wi028-byte-c1-r03-mobile.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/bytetrack/wi028-byte-d2-r01-desktop.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/bytetrack/wi028-byte-d2-r01-mobile.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/bytetrack/wi028-track-d3-r01-desktop.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/bytetrack/wi028-track-d3-r02-mobile.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/video-temporal/bytetrack/images/final/BYTETRACK-01-positioning_v02-ppt-master-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/video-temporal/bytetrack/images/final/BYTETRACK-02-architecture_v02-ppt-master-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/video-temporal/bytetrack/images/final/BYTETRACK-03-build-inference_v02-ppt-master-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/video-temporal/bytetrack/images/final/BYTETRACK-04-selection-boundary_v02-ppt-comparison-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/convlstm/wi028-conv-c1-r01-desktop.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/convlstm/wi028-conv-c1-r01-mobile.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/convlstm/wi028-conv-d2-r01-desktop.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/convlstm/wi028-conv-d2-r01-mobile.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/convlstm/wi028-video-d3-r02-desktop.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/convlstm/wi028-video-d3-r02-mobile.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/video-temporal/convlstm/images/final/CONVLSTM-01-positioning_v02-ppt-master-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/video-temporal/convlstm/images/final/CONVLSTM-02-architecture_v02-ppt-master-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/video-temporal/convlstm/images/final/CONVLSTM-03-build-inference_v02-ppt-master-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/video-temporal/convlstm/images/final/CONVLSTM-04-selection-boundary_v02-ppt-comparison-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/videomae/wi028-mae-c1-r02-desktop.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/videomae/wi028-mae-c1-r05-mobile.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/videomae/wi028-video-d2-r01-desktop.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/videomae/wi028-video-d2-r01-mobile.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/video-temporal/videomae/images/final/VIDEOMAE-01-positioning_v02-ppt-master-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/video-temporal/videomae/images/final/VIDEOMAE-02-architecture_v02-ppt-master-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/video-temporal/videomae/images/final/VIDEOMAE-03-build-inference_v02-ppt-master-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/video-temporal/videomae/images/final/VIDEOMAE-04-selection-boundary_v02-ppt-comparison-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/v-jepa/wi028-jepa-c1-r02-desktop.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/v-jepa/wi028-jepa-c1-r02-mobile.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/video-temporal/v-jepa/images/final/VJEPA-01-positioning_v02-ppt-master-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/video-temporal/v-jepa/images/final/VJEPA-02-architecture_v02-ppt-master-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/video-temporal/v-jepa/images/final/VJEPA-03-build-inference_v02-ppt-master-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/video-temporal/v-jepa/images/final/VJEPA-04-selection-boundary_v02-ppt-comparison-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/dinov2/wi027-dinov2-c1-r02-desktop.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/dinov2/wi027-dinov2-c1-r01-mobile.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/dinov2/wi027-dino-d2-r03-desktop.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/dinov2/wi027-dino-d2-r03-mobile.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/dinov2/wi027-features-d3-r02-desktop.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/dinov2/wi027-features-d3-r03-mobile.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/foundation-vlm-open-world/dinov2/images/final/DINOV2-01-positioning_v02-ppt-master-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/foundation-vlm-open-world/dinov2/images/final/DINOV2-02-architecture_v02-ppt-master-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/foundation-vlm-open-world/dinov2/images/final/DINOV2-03-build-inference_v02-ppt-master-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/foundation-vlm-open-world/dinov2/images/final/DINOV2-04-selection-boundary_v02-ppt-comparison-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/dinov3/wi027-dinov3-c1-r02-desktop.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/dinov3/wi027-dinov3-c1-r02-mobile.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/foundation-vlm-open-world/dinov3/images/final/DINOV3-01-positioning_v02-ppt-master-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/foundation-vlm-open-world/dinov3/images/final/DINOV3-02-architecture_v02-ppt-master-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/foundation-vlm-open-world/dinov3/images/final/DINOV3-03-build-inference_v02-ppt-master-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/foundation-vlm-open-world/dinov3/images/final/DINOV3-04-selection-boundary_v02-ppt-comparison-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/clip/wi027-clip-c1-r01-desktop.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/clip/wi027-clip-c1-r01-mobile.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/clip/wi027-alignment-d2-r01-desktop.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/clip/wi027-alignment-d2-r01-mobile.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/clip/wi027-alignment-d3-r03-desktop.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/clip/wi027-alignment-d3-r03-mobile.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/foundation-vlm-open-world/clip/images/final/CLIP-01-positioning_v02-ppt-master-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/foundation-vlm-open-world/clip/images/final/CLIP-02-architecture_v02-ppt-master-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/foundation-vlm-open-world/clip/images/final/CLIP-03-build-inference_v02-ppt-master-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/foundation-vlm-open-world/clip/images/final/CLIP-04-selection-boundary_v02-ppt-comparison-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/siglip/wi027-siglip-c1-r03-desktop.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/siglip/wi027-siglip-c1-r05-mobile.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/foundation-vlm-open-world/siglip/images/final/SIGLIP-01-positioning_v02-ppt-master-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/foundation-vlm-open-world/siglip/images/final/SIGLIP-02-architecture_v02-ppt-master-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/foundation-vlm-open-world/siglip/images/final/SIGLIP-03-build-inference_v02-ppt-master-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/foundation-vlm-open-world/siglip/images/final/SIGLIP-04-selection-boundary_v02-ppt-comparison-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/llava/wi027-llava-c1-r02-desktop.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/llava/wi027-llava-c1-r03-mobile.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/llava/wi027-llava-d2-r02-desktop.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/llava/wi027-llava-d2-r02-mobile.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/llava/wi027-vlm-d3-r03-desktop.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/llava/wi027-vlm-d3-r03-mobile.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/foundation-vlm-open-world/llava/images/final/LLAVA-01-positioning_v02-ppt-master-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/foundation-vlm-open-world/llava/images/final/LLAVA-02-architecture_v02-ppt-master-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/foundation-vlm-open-world/llava/images/final/LLAVA-03-build-inference_v02-ppt-master-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/foundation-vlm-open-world/llava/images/final/LLAVA-04-selection-boundary_v02-ppt-comparison-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/qwen-vl/wi027-qwen-vl-c1-r03-desktop.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/qwen-vl/wi027-qwen-vl-c1-r03-mobile.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/qwen-vl/wi027-qwen-vl-d2-r03-desktop.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/qwen-vl/wi027-qwen-vl-d2-r03-mobile.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/foundation-vlm-open-world/qwen-vl/images/final/QWEN-01-positioning_v02-ppt-master-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/foundation-vlm-open-world/qwen-vl/images/final/QWEN-02-architecture_v02-ppt-master-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/foundation-vlm-open-world/qwen-vl/images/final/QWEN-03-build-inference_v02-ppt-master-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/foundation-vlm-open-world/qwen-vl/images/final/QWEN-04-selection-boundary_v02-ppt-comparison-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/gemini-vision/wi027-gemini-vision-c1-r02-desktop.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/gemini-vision/wi027-gemini-vision-c1-r02-mobile.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/gemini-vision/wi027-gemini-d2-r02-desktop.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/gemini-vision/wi027-gemini-d2-r02-mobile.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/foundation-vlm-open-world/gemini-vision/images/final/GEMINI-01-positioning_v02-ppt-master-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/foundation-vlm-open-world/gemini-vision/images/final/GEMINI-02-architecture_v02-ppt-master-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/foundation-vlm-open-world/gemini-vision/images/final/GEMINI-03-build-inference_v02-ppt-master-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/foundation-vlm-open-world/gemini-vision/images/final/GEMINI-04-selection-boundary_v02-ppt-comparison-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/defectfill/wi026-defectfill-c1-r03-desktop.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/defectfill/wi026-defectfill-c1-r02-mobile.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/defectfill/wi026-defectfill-d2-r02-desktop.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/defectfill/wi026-defectfill-d2-r01-mobile.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/defectfill/wi026-generation-d3-r02-desktop.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/defectfill/wi026-generation-d3-r01-mobile.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/diffusion-restoration/defectfill/images/final/DEFECTFILL-01-positioning_v02-ppt-master-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/diffusion-restoration/defectfill/images/final/DEFECTFILL-02-architecture_v02-ppt-master-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/diffusion-restoration/defectfill/images/final/DEFECTFILL-03-build-inference_v02-ppt-master-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/diffusion-restoration/defectfill/images/final/DEFECTFILL-04-selection-boundary_v02-ppt-comparison-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/anomalydiffusion/wi026-anomalydiffusion-c1-r01-desktop.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/anomalydiffusion/wi026-anomalydiffusion-c1-r01-mobile.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/anomalydiffusion/wi026-anomalydiffusion-d2-r02-desktop.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/anomalydiffusion/wi026-anomalydiffusion-d2-r01-mobile.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/diffusion-restoration/anomalydiffusion/images/final/ANOMALYDIFFUSION-01-positioning_v02-ppt-master-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/diffusion-restoration/anomalydiffusion/images/final/ANOMALYDIFFUSION-02-architecture_v02-ppt-master-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/diffusion-restoration/anomalydiffusion/images/final/ANOMALYDIFFUSION-03-build-inference_v02-ppt-master-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/diffusion-restoration/anomalydiffusion/images/final/ANOMALYDIFFUSION-04-selection-boundary_v02-ppt-comparison-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/tf-idg/wi026-tf-idg-c1-r02-desktop.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/tf-idg/wi026-tf-idg-c1-r03-mobile.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/tf-idg/wi026-tf-idg-d2-r02-desktop.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/tf-idg/wi026-tf-idg-d2-r01-mobile.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/diffusion-restoration/tf-idg/images/final/TFIDG-01-positioning_v02-ppt-master-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/diffusion-restoration/tf-idg/images/final/TFIDG-02-architecture_v02-ppt-master-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/diffusion-restoration/tf-idg/images/final/TFIDG-03-build-inference_v02-ppt-master-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/diffusion-restoration/tf-idg/images/final/TFIDG-04-selection-boundary_v02-ppt-comparison-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/controlnet/wi026-controlnet-c1-r02-desktop.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/controlnet/wi026-controlnet-c1-r01-mobile.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/controlnet/wi026-controlnet-d2-r01-desktop.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/controlnet/wi026-controlnet-d2-r01-mobile.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/controlnet/wi026-editing-d3-r02-desktop.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/controlnet/wi026-editing-d3-r02-mobile.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/diffusion-restoration/controlnet/images/final/CONTROLNET-01-positioning_v02-ppt-master-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/diffusion-restoration/controlnet/images/final/CONTROLNET-02-architecture_v02-ppt-master-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/diffusion-restoration/controlnet/images/final/CONTROLNET-03-build-inference_v02-ppt-master-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/diffusion-restoration/controlnet/images/final/CONTROLNET-04-selection-boundary_v02-ppt-comparison-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/inpainting/wi026-inpainting-c1-r02-desktop.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/inpainting/wi026-inpainting-c1-r01-mobile.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/inpainting/wi026-inpainting-d2-r01-desktop.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/inpainting/wi026-inpainting-d2-r01-mobile.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/diffusion-restoration/inpainting/images/final/INPAINTING-01-positioning_v02-ppt-master-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/diffusion-restoration/inpainting/images/final/INPAINTING-02-architecture_v02-ppt-master-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/diffusion-restoration/inpainting/images/final/INPAINTING-03-build-inference_v02-ppt-master-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/diffusion-restoration/inpainting/images/final/INPAINTING-04-selection-boundary_v02-ppt-comparison-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/diffusion-restoration/wi026-diffusion-restoration-c1-r01-desktop.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/diffusion-restoration/wi026-diffusion-restoration-c1-r02-mobile.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/diffusion-restoration/wi026-restoration-d2-r02-desktop.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/diffusion-restoration/wi026-restoration-d2-r02-mobile.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/diffusion-restoration/wi026-restoration-d3-r01-desktop.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/diffusion-restoration/wi026-restoration-d3-r01-mobile.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/diffusion-restoration/diffusion-restoration/images/final/DIFFUSION-RESTORATION-01-positioning_v02-ppt-master-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/diffusion-restoration/diffusion-restoration/images/final/DIFFUSION-RESTORATION-02-architecture_v02-ppt-master-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/diffusion-restoration/diffusion-restoration/images/final/DIFFUSION-RESTORATION-03-build-inference_v02-ppt-master-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/diffusion-restoration/diffusion-restoration/images/final/DIFFUSION-RESTORATION-04-selection-boundary_v02-ppt-comparison-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/deblur/wi026-deblur-c1-r02-desktop.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/deblur/wi026-deblur-c1-r02-mobile.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/deblur/wi026-deblur-d2-r01-desktop.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/deblur/wi026-deblur-d2-r01-mobile.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/diffusion-restoration/deblur/images/final/DEBLUR-01-positioning_v02-ppt-master-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/diffusion-restoration/deblur/images/final/DEBLUR-02-architecture_v02-ppt-master-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/diffusion-restoration/deblur/images/final/DEBLUR-03-build-inference_v02-ppt-master-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/diffusion-restoration/deblur/images/final/DEBLUR-04-selection-boundary_v02-ppt-comparison-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/super-resolution/wi026-super-resolution-c1-r02-desktop.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/super-resolution/wi026-super-resolution-c1-r01-mobile.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/super-resolution/wi026-sr-d2-r02-desktop.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "_course_content/generated-concepts/super-resolution/wi026-sr-d2-r01-mobile.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/diffusion-restoration/super-resolution/images/final/SUPERRES-01-positioning_v02-ppt-master-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/diffusion-restoration/super-resolution/images/final/SUPERRES-02-architecture_v02-ppt-master-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/diffusion-restoration/super-resolution/images/final/SUPERRES-03-build-inference_v02-ppt-master-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    },
+    {
+      "path": "roadmap-model-selection/diffusion-restoration/super-resolution/images/final/SUPERRES-04-selection-boundary_v02-ppt-comparison-style.png",
+      "status": 200,
+      "method": "HEAD",
+      "content_type": "image/png"
+    }
+  ],
+  "scope": "HEAD verifies availability only, not image hash or visual correctness"
+}

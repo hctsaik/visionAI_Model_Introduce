@@ -1,0 +1,6770 @@
+[
+  {
+    "topic": "charuco",
+    "figure": 1,
+    "text": "ChArUco：已知標靶如何把相機幾何變成可驗證證據",
+    "overlap_chars": "",
+    "strong": {
+      "x": 32,
+      "y": 2165.890625,
+      "width": 289.125,
+      "height": 57.5,
+      "top": 2165.890625,
+      "right": 321.125,
+      "bottom": 2223.390625,
+      "left": 32
+    },
+    "button": {
+      "x": 45,
+      "y": 2194.390625,
+      "width": 91,
+      "height": 39.5,
+      "top": 2194.390625,
+      "right": 136,
+      "bottom": 2233.890625,
+      "left": 45
+    },
+    "caption": {
+      "x": 17,
+      "y": 2153.890625,
+      "width": 326,
+      "height": 91,
+      "top": 2153.890625,
+      "right": 343,
+      "bottom": 2244.890625,
+      "left": 17
+    }
+  },
+  {
+    "topic": "charuco",
+    "figure": 2,
+    "text": "白話重點：",
+    "overlap_chars": "",
+    "strong": {
+      "x": 69,
+      "y": 3871.09375,
+      "width": 80,
+      "height": 24,
+      "top": 3871.09375,
+      "right": 149,
+      "bottom": 3895.09375,
+      "left": 69
+    },
+    "button": {
+      "x": 69,
+      "y": 3934.125,
+      "width": 117,
+      "height": 42.359375,
+      "top": 3934.125,
+      "right": 186,
+      "bottom": 3976.484375,
+      "left": 69
+    },
+    "caption": {
+      "x": 51,
+      "y": 3858.09375,
+      "width": 258,
+      "height": 118.390625,
+      "top": 3858.09375,
+      "right": 309,
+      "bottom": 3976.484375,
+      "left": 51
+    }
+  },
+  {
+    "topic": "charuco",
+    "figure": 3,
+    "text": "白話重點：",
+    "overlap_chars": "",
+    "strong": {
+      "x": 69,
+      "y": 5158.890625,
+      "width": 80,
+      "height": 24,
+      "top": 5158.890625,
+      "right": 149,
+      "bottom": 5182.890625,
+      "left": 69
+    },
+    "button": {
+      "x": 69,
+      "y": 5221.921875,
+      "width": 117,
+      "height": 42.359375,
+      "top": 5221.921875,
+      "right": 186,
+      "bottom": 5264.28125,
+      "left": 69
+    },
+    "caption": {
+      "x": 51,
+      "y": 5145.890625,
+      "width": 258,
+      "height": 118.390625,
+      "top": 5145.890625,
+      "right": 309,
+      "bottom": 5264.28125,
+      "left": 51
+    }
+  },
+  {
+    "topic": "charuco",
+    "figure": 4,
+    "text": "白話重點：",
+    "overlap_chars": "",
+    "strong": {
+      "x": 69,
+      "y": 6413.515625,
+      "width": 80,
+      "height": 24,
+      "top": 6413.515625,
+      "right": 149,
+      "bottom": 6437.515625,
+      "left": 69
+    },
+    "button": {
+      "x": 69,
+      "y": 6504.0625,
+      "width": 117,
+      "height": 42.359375,
+      "top": 6504.0625,
+      "right": 186,
+      "bottom": 6546.421875,
+      "left": 69
+    },
+    "caption": {
+      "x": 51,
+      "y": 6400.515625,
+      "width": 258,
+      "height": 145.90625,
+      "top": 6400.515625,
+      "right": 309,
+      "bottom": 6546.421875,
+      "left": 51
+    }
+  },
+  {
+    "topic": "charuco",
+    "figure": 5,
+    "text": "白話重點：",
+    "overlap_chars": "",
+    "strong": {
+      "x": 69,
+      "y": 7695.65625,
+      "width": 80,
+      "height": 24,
+      "top": 7695.65625,
+      "right": 149,
+      "bottom": 7719.65625,
+      "left": 69
+    },
+    "button": {
+      "x": 69,
+      "y": 7786.203125,
+      "width": 117,
+      "height": 42.359375,
+      "top": 7786.203125,
+      "right": 186,
+      "bottom": 7828.5625,
+      "left": 69
+    },
+    "caption": {
+      "x": 51,
+      "y": 7682.65625,
+      "width": 258,
+      "height": 145.90625,
+      "top": 7682.65625,
+      "right": 309,
+      "bottom": 7828.5625,
+      "left": 51
+    }
+  },
+  {
+    "topic": "ecc",
+    "figure": 1,
+    "text": "ECC 不是要訓練的模型",
+    "overlap_chars": "",
+    "strong": {
+      "x": 32,
+      "y": 1606.046875,
+      "width": 131.4375,
+      "height": 19,
+      "top": 1606.046875,
+      "right": 163.4375,
+      "bottom": 1625.046875,
+      "left": 32
+    },
+    "button": {
+      "x": 163.4375,
+      "y": 1596.046875,
+      "width": 91,
+      "height": 39.5,
+      "top": 1596.046875,
+      "right": 254.4375,
+      "bottom": 1635.546875,
+      "left": 163.4375
+    },
+    "caption": {
+      "x": 17,
+      "y": 1575.046875,
+      "width": 326,
+      "height": 71.5,
+      "top": 1575.046875,
+      "right": 343,
+      "bottom": 1646.546875,
+      "left": 17
+    }
+  },
+  {
+    "topic": "ecc",
+    "figure": 2,
+    "text": "算法怎麼跑：warp、比相關、更新位移",
+    "overlap_chars": "",
+    "strong": {
+      "x": 32,
+      "y": 3126.375,
+      "width": 227.734375,
+      "height": 19,
+      "top": 3126.375,
+      "right": 259.734375,
+      "bottom": 3145.375,
+      "left": 32
+    },
+    "button": {
+      "x": 32,
+      "y": 3154.875,
+      "width": 91,
+      "height": 39.5,
+      "top": 3154.875,
+      "right": 123,
+      "bottom": 3194.375,
+      "left": 32
+    },
+    "caption": {
+      "x": 17,
+      "y": 3114.375,
+      "width": 326,
+      "height": 91,
+      "top": 3114.375,
+      "right": 343,
+      "bottom": 3205.375,
+      "left": 17
+    }
+  },
+  {
+    "topic": "ecc",
+    "figure": 3,
+    "text": "交出位移與殘差，不是產品分數",
+    "overlap_chars": "",
+    "strong": {
+      "x": 32,
+      "y": 4447.90625,
+      "width": 182,
+      "height": 19,
+      "top": 4447.90625,
+      "right": 214,
+      "bottom": 4466.90625,
+      "left": 32
+    },
+    "button": {
+      "x": 214,
+      "y": 4437.90625,
+      "width": 91,
+      "height": 39.5,
+      "top": 4437.90625,
+      "right": 305,
+      "bottom": 4477.40625,
+      "left": 214
+    },
+    "caption": {
+      "x": 17,
+      "y": 4416.90625,
+      "width": 326,
+      "height": 71.5,
+      "top": 4416.90625,
+      "right": 343,
+      "bottom": 4488.40625,
+      "left": 17
+    }
+  },
+  {
+    "topic": "ecc",
+    "figure": 4,
+    "text": "起點太遠仍會吐出 warp，必須 HOLD",
+    "overlap_chars": "",
+    "strong": {
+      "x": 32,
+      "y": 5711.9375,
+      "width": 218.28125,
+      "height": 19,
+      "top": 5711.9375,
+      "right": 250.28125,
+      "bottom": 5730.9375,
+      "left": 32
+    },
+    "button": {
+      "x": 32,
+      "y": 5740.4375,
+      "width": 91,
+      "height": 39.5,
+      "top": 5740.4375,
+      "right": 123,
+      "bottom": 5779.9375,
+      "left": 32
+    },
+    "caption": {
+      "x": 17,
+      "y": 5699.9375,
+      "width": 326,
+      "height": 91,
+      "top": 5699.9375,
+      "right": 343,
+      "bottom": 5790.9375,
+      "left": 17
+    }
+  },
+  {
+    "topic": "ecc",
+    "figure": 5,
+    "text": "三個方法各管一段，不要互相比快",
+    "overlap_chars": "",
+    "strong": {
+      "x": 32,
+      "y": 7033.46875,
+      "width": 195,
+      "height": 19,
+      "top": 7033.46875,
+      "right": 227,
+      "bottom": 7052.46875,
+      "left": 32
+    },
+    "button": {
+      "x": 227,
+      "y": 7023.46875,
+      "width": 91,
+      "height": 39.5,
+      "top": 7023.46875,
+      "right": 318,
+      "bottom": 7062.96875,
+      "left": 227
+    },
+    "caption": {
+      "x": 17,
+      "y": 7002.46875,
+      "width": 326,
+      "height": 71.5,
+      "top": 7002.46875,
+      "right": 343,
+      "bottom": 7073.96875,
+      "left": 17
+    }
+  },
+  {
+    "topic": "sift",
+    "figure": 1,
+    "text": "SIFT 不是要訓練的模型",
+    "overlap_chars": "",
+    "strong": {
+      "x": 32,
+      "y": 1515.359375,
+      "width": 135.09375,
+      "height": 19,
+      "top": 1515.359375,
+      "right": 167.09375,
+      "bottom": 1534.359375,
+      "left": 32
+    },
+    "button": {
+      "x": 167.09375,
+      "y": 1505.359375,
+      "width": 91,
+      "height": 39.5,
+      "top": 1505.359375,
+      "right": 258.09375,
+      "bottom": 1544.859375,
+      "left": 167.09375
+    },
+    "caption": {
+      "x": 17,
+      "y": 1484.359375,
+      "width": 326,
+      "height": 71.5,
+      "top": 1484.359375,
+      "right": 343,
+      "bottom": 1555.859375,
+      "left": 17
+    }
+  },
+  {
+    "topic": "sift",
+    "figure": 2,
+    "text": "算法怎麼跑：找點、做名片、再配對",
+    "overlap_chars": "",
+    "strong": {
+      "x": 32,
+      "y": 3035.6875,
+      "width": 208,
+      "height": 19,
+      "top": 3035.6875,
+      "right": 240,
+      "bottom": 3054.6875,
+      "left": 32
+    },
+    "button": {
+      "x": 32,
+      "y": 3064.1875,
+      "width": 91,
+      "height": 39.5,
+      "top": 3064.1875,
+      "right": 123,
+      "bottom": 3103.6875,
+      "left": 32
+    },
+    "caption": {
+      "x": 17,
+      "y": 3023.6875,
+      "width": 326,
+      "height": 91,
+      "top": 3023.6875,
+      "right": 343,
+      "bottom": 3114.6875,
+      "left": 17
+    }
+  },
+  {
+    "topic": "sift",
+    "figure": 3,
+    "text": "交出可檢查的對應點，不是產品分數",
+    "overlap_chars": "",
+    "strong": {
+      "x": 32,
+      "y": 4338.21875,
+      "width": 208,
+      "height": 19,
+      "top": 4338.21875,
+      "right": 240,
+      "bottom": 4357.21875,
+      "left": 32
+    },
+    "button": {
+      "x": 32,
+      "y": 4366.71875,
+      "width": 91,
+      "height": 39.5,
+      "top": 4366.71875,
+      "right": 123,
+      "bottom": 4406.21875,
+      "left": 32
+    },
+    "caption": {
+      "x": 17,
+      "y": 4326.21875,
+      "width": 326,
+      "height": 91,
+      "top": 4326.21875,
+      "right": 343,
+      "bottom": 4417.21875,
+      "left": 17
+    }
+  },
+  {
+    "topic": "sift",
+    "figure": 4,
+    "text": "紋理不夠時，放寬門檻也要 HOLD",
+    "overlap_chars": "",
+    "strong": {
+      "x": 32,
+      "y": 5632.875,
+      "width": 195.609375,
+      "height": 19,
+      "top": 5632.875,
+      "right": 227.609375,
+      "bottom": 5651.875,
+      "left": 32
+    },
+    "button": {
+      "x": 227.609375,
+      "y": 5622.875,
+      "width": 91,
+      "height": 39.5,
+      "top": 5622.875,
+      "right": 318.609375,
+      "bottom": 5662.375,
+      "left": 227.609375
+    },
+    "caption": {
+      "x": 17,
+      "y": 5601.875,
+      "width": 326,
+      "height": 71.5,
+      "top": 5601.875,
+      "right": 343,
+      "bottom": 5673.375,
+      "left": 17
+    }
+  },
+  {
+    "topic": "sift",
+    "figure": 5,
+    "text": "有紋理找點，已接近做 ECC，難配再用學習配對",
+    "overlap_chars": "",
+    "strong": {
+      "x": 32,
+      "y": 6870.03125,
+      "width": 274.4375,
+      "height": 19,
+      "top": 6870.03125,
+      "right": 306.4375,
+      "bottom": 6889.03125,
+      "left": 32
+    },
+    "button": {
+      "x": 32,
+      "y": 6898.53125,
+      "width": 91,
+      "height": 39.5,
+      "top": 6898.53125,
+      "right": 123,
+      "bottom": 6938.03125,
+      "left": 32
+    },
+    "caption": {
+      "x": 17,
+      "y": 6858.03125,
+      "width": 326,
+      "height": 91,
+      "top": 6858.03125,
+      "right": 343,
+      "bottom": 6949.03125,
+      "left": 17
+    }
+  },
+  {
+    "topic": "lightglue",
+    "figure": 1,
+    "text": "LightGlue 是學習配對器，不是偵測器",
+    "overlap_chars": "",
+    "strong": {
+      "x": 32,
+      "y": 1567.4375,
+      "width": 221.234375,
+      "height": 19,
+      "top": 1567.4375,
+      "right": 253.234375,
+      "bottom": 1586.4375,
+      "left": 32
+    },
+    "button": {
+      "x": 32,
+      "y": 1595.9375,
+      "width": 91,
+      "height": 39.5,
+      "top": 1595.9375,
+      "right": 123,
+      "bottom": 1635.4375,
+      "left": 32
+    },
+    "caption": {
+      "x": 17,
+      "y": 1555.4375,
+      "width": 326,
+      "height": 91,
+      "top": 1555.4375,
+      "right": 343,
+      "bottom": 1646.4375,
+      "left": 17
+    }
+  },
+  {
+    "topic": "lightglue",
+    "figure": 2,
+    "text": "怎麼做：extractor 出點，attention 來配，再修剪",
+    "overlap_chars": "",
+    "strong": {
+      "x": 32,
+      "y": 3126.265625,
+      "width": 292.375,
+      "height": 19,
+      "top": 3126.265625,
+      "right": 324.375,
+      "bottom": 3145.265625,
+      "left": 32
+    },
+    "button": {
+      "x": 32,
+      "y": 3154.765625,
+      "width": 91,
+      "height": 39.5,
+      "top": 3154.765625,
+      "right": 123,
+      "bottom": 3194.265625,
+      "left": 32
+    },
+    "caption": {
+      "x": 17,
+      "y": 3114.265625,
+      "width": 326,
+      "height": 91,
+      "top": 3114.265625,
+      "right": 343,
+      "bottom": 3205.265625,
+      "left": 17
+    }
+  },
+  {
+    "topic": "lightglue",
+    "figure": 3,
+    "text": "交出 matches 與信心，不是已驗證的 warp",
+    "overlap_chars": "",
+    "strong": {
+      "x": 32,
+      "y": 4401.921875,
+      "width": 251.78125,
+      "height": 19,
+      "top": 4401.921875,
+      "right": 283.78125,
+      "bottom": 4420.921875,
+      "left": 32
+    },
+    "button": {
+      "x": 32,
+      "y": 4430.421875,
+      "width": 91,
+      "height": 39.5,
+      "top": 4430.421875,
+      "right": 123,
+      "bottom": 4469.921875,
+      "left": 32
+    },
+    "caption": {
+      "x": 17,
+      "y": 4389.921875,
+      "width": 326,
+      "height": 91,
+      "top": 4389.921875,
+      "right": 343,
+      "bottom": 4480.921875,
+      "left": 17
+    }
+  },
+  {
+    "topic": "lightglue",
+    "figure": 4,
+    "text": "信心高也可能一起錯配，仍要 HOLD",
+    "overlap_chars": "",
+    "strong": {
+      "x": 32,
+      "y": 5677.578125,
+      "width": 208.609375,
+      "height": 19,
+      "top": 5677.578125,
+      "right": 240.609375,
+      "bottom": 5696.578125,
+      "left": 32
+    },
+    "button": {
+      "x": 32,
+      "y": 5706.078125,
+      "width": 91,
+      "height": 39.5,
+      "top": 5706.078125,
+      "right": 123,
+      "bottom": 5745.578125,
+      "left": 32
+    },
+    "caption": {
+      "x": 17,
+      "y": 5665.578125,
+      "width": 326,
+      "height": 91,
+      "top": 5665.578125,
+      "right": 343,
+      "bottom": 5756.578125,
+      "left": 17
+    }
+  },
+  {
+    "topic": "lightglue",
+    "figure": 5,
+    "text": "傳統描述子夠用就 SIFT，難配再考慮 LightGlue",
+    "overlap_chars": "",
+    "strong": {
+      "x": 32,
+      "y": 6953.234375,
+      "width": 278.3125,
+      "height": 19,
+      "top": 6953.234375,
+      "right": 310.3125,
+      "bottom": 6972.234375,
+      "left": 32
+    },
+    "button": {
+      "x": 32,
+      "y": 6981.734375,
+      "width": 91,
+      "height": 39.5,
+      "top": 6981.734375,
+      "right": 123,
+      "bottom": 7021.234375,
+      "left": 32
+    },
+    "caption": {
+      "x": 17,
+      "y": 6941.234375,
+      "width": 326,
+      "height": 91,
+      "top": 6941.234375,
+      "right": 343,
+      "bottom": 7032.234375,
+      "left": 17
+    }
+  },
+  {
+    "topic": "resnet",
+    "figure": 1,
+    "text": "ResNet：保留原有線索，再學需要的修正",
+    "overlap_chars": "",
+    "strong": {
+      "x": 32,
+      "y": 1838.8125,
+      "width": 240.171875,
+      "height": 19,
+      "top": 1838.8125,
+      "right": 272.171875,
+      "bottom": 1857.8125,
+      "left": 32
+    },
+    "button": {
+      "x": 32,
+      "y": 1867.3125,
+      "width": 91,
+      "height": 39.5,
+      "top": 1867.3125,
+      "right": 123,
+      "bottom": 1906.8125,
+      "left": 32
+    },
+    "caption": {
+      "x": 17,
+      "y": 1826.8125,
+      "width": 326,
+      "height": 91,
+      "top": 1826.8125,
+      "right": 343,
+      "bottom": 1917.8125,
+      "left": 17
+    }
+  },
+  {
+    "topic": "resnet",
+    "figure": 2,
+    "text": "模型認的是工件，還是拍攝背景？",
+    "overlap_chars": "",
+    "strong": {
+      "x": 32,
+      "y": 3637.0625,
+      "width": 195,
+      "height": 19,
+      "top": 3637.0625,
+      "right": 227,
+      "bottom": 3656.0625,
+      "left": 32
+    },
+    "button": {
+      "x": 227,
+      "y": 3627.0625,
+      "width": 91,
+      "height": 39.5,
+      "top": 3627.0625,
+      "right": 318,
+      "bottom": 3666.5625,
+      "left": 227
+    },
+    "caption": {
+      "x": 17,
+      "y": 3606.0625,
+      "width": 326,
+      "height": 71.5,
+      "top": 3606.0625,
+      "right": 343,
+      "bottom": 3677.5625,
+      "left": 17
+    }
+  },
+  {
+    "topic": "resnet",
+    "figure": 3,
+    "text": "同一分類工作，三種特徵整理方式",
+    "overlap_chars": "",
+    "strong": {
+      "x": 32,
+      "y": 5353.15625,
+      "width": 195,
+      "height": 19,
+      "top": 5353.15625,
+      "right": 227,
+      "bottom": 5372.15625,
+      "left": 32
+    },
+    "button": {
+      "x": 227,
+      "y": 5343.15625,
+      "width": 91,
+      "height": 39.5,
+      "top": 5343.15625,
+      "right": 318,
+      "bottom": 5382.65625,
+      "left": 227
+    },
+    "caption": {
+      "x": 17,
+      "y": 5322.15625,
+      "width": 326,
+      "height": 71.5,
+      "top": 5322.15625,
+      "right": 343,
+      "bottom": 5393.65625,
+      "left": 17
+    }
+  },
+  {
+    "topic": "convnext",
+    "figure": 1,
+    "text": "ConvNeXt：用現代卷積整理局部與通道線索",
+    "overlap_chars": "",
+    "strong": {
+      "x": 32,
+      "y": 1838.8125,
+      "width": 257.984375,
+      "height": 19,
+      "top": 1838.8125,
+      "right": 289.984375,
+      "bottom": 1857.8125,
+      "left": 32
+    },
+    "button": {
+      "x": 32,
+      "y": 1867.3125,
+      "width": 91,
+      "height": 39.5,
+      "top": 1867.3125,
+      "right": 123,
+      "bottom": 1906.8125,
+      "left": 32
+    },
+    "caption": {
+      "x": 17,
+      "y": 1826.8125,
+      "width": 326,
+      "height": 91,
+      "top": 1826.8125,
+      "right": 343,
+      "bottom": 1917.8125,
+      "left": 17
+    }
+  },
+  {
+    "topic": "convnext",
+    "figure": 2,
+    "text": "模型認的是工件，還是拍攝背景？",
+    "overlap_chars": "",
+    "strong": {
+      "x": 32,
+      "y": 3637.0625,
+      "width": 195,
+      "height": 19,
+      "top": 3637.0625,
+      "right": 227,
+      "bottom": 3656.0625,
+      "left": 32
+    },
+    "button": {
+      "x": 227,
+      "y": 3627.0625,
+      "width": 91,
+      "height": 39.5,
+      "top": 3627.0625,
+      "right": 318,
+      "bottom": 3666.5625,
+      "left": 227
+    },
+    "caption": {
+      "x": 17,
+      "y": 3606.0625,
+      "width": 326,
+      "height": 71.5,
+      "top": 3606.0625,
+      "right": 343,
+      "bottom": 3677.5625,
+      "left": 17
+    }
+  },
+  {
+    "topic": "convnext",
+    "figure": 3,
+    "text": "同一分類工作，三種特徵整理方式",
+    "overlap_chars": "",
+    "strong": {
+      "x": 32,
+      "y": 5353.15625,
+      "width": 195,
+      "height": 19,
+      "top": 5353.15625,
+      "right": 227,
+      "bottom": 5372.15625,
+      "left": 32
+    },
+    "button": {
+      "x": 227,
+      "y": 5343.15625,
+      "width": 91,
+      "height": 39.5,
+      "top": 5343.15625,
+      "right": 318,
+      "bottom": 5382.65625,
+      "left": 227
+    },
+    "caption": {
+      "x": 17,
+      "y": 5322.15625,
+      "width": 326,
+      "height": 71.5,
+      "top": 5322.15625,
+      "right": 343,
+      "bottom": 5393.65625,
+      "left": 17
+    }
+  },
+  {
+    "topic": "vit-classifier",
+    "figure": 1,
+    "text": "ViT：把影像變成可互相參照的區塊",
+    "overlap_chars": "",
+    "strong": {
+      "x": 32,
+      "y": 1599.546875,
+      "width": 202.125,
+      "height": 19,
+      "top": 1599.546875,
+      "right": 234.125,
+      "bottom": 1618.546875,
+      "left": 32
+    },
+    "button": {
+      "x": 234.125,
+      "y": 1589.546875,
+      "width": 91,
+      "height": 39.5,
+      "top": 1589.546875,
+      "right": 325.125,
+      "bottom": 1629.046875,
+      "left": 234.125
+    },
+    "caption": {
+      "x": 17,
+      "y": 1568.546875,
+      "width": 326,
+      "height": 71.5,
+      "top": 1568.546875,
+      "right": 343,
+      "bottom": 1640.046875,
+      "left": 17
+    }
+  },
+  {
+    "topic": "vit-classifier",
+    "figure": 2,
+    "text": "模型認的是工件，還是拍攝背景？",
+    "overlap_chars": "",
+    "strong": {
+      "x": 32,
+      "y": 3359.296875,
+      "width": 195,
+      "height": 19,
+      "top": 3359.296875,
+      "right": 227,
+      "bottom": 3378.296875,
+      "left": 32
+    },
+    "button": {
+      "x": 227,
+      "y": 3349.296875,
+      "width": 91,
+      "height": 39.5,
+      "top": 3349.296875,
+      "right": 318,
+      "bottom": 3388.796875,
+      "left": 227
+    },
+    "caption": {
+      "x": 17,
+      "y": 3328.296875,
+      "width": 326,
+      "height": 71.5,
+      "top": 3328.296875,
+      "right": 343,
+      "bottom": 3399.796875,
+      "left": 17
+    }
+  },
+  {
+    "topic": "vit-classifier",
+    "figure": 3,
+    "text": "同一分類工作，三種特徵整理方式",
+    "overlap_chars": "",
+    "strong": {
+      "x": 32,
+      "y": 5075.390625,
+      "width": 195,
+      "height": 19,
+      "top": 5075.390625,
+      "right": 227,
+      "bottom": 5094.390625,
+      "left": 32
+    },
+    "button": {
+      "x": 227,
+      "y": 5065.390625,
+      "width": 91,
+      "height": 39.5,
+      "top": 5065.390625,
+      "right": 318,
+      "bottom": 5104.890625,
+      "left": 227
+    },
+    "caption": {
+      "x": 17,
+      "y": 5044.390625,
+      "width": 326,
+      "height": 71.5,
+      "top": 5044.390625,
+      "right": 343,
+      "bottom": 5115.890625,
+      "left": 17
+    }
+  },
+  {
+    "topic": "u-net",
+    "figure": 1,
+    "text": "U-Net：把整體線索和細節接回像素",
+    "overlap_chars": "",
+    "strong": {
+      "x": 32,
+      "y": 1621.484375,
+      "width": 206.078125,
+      "height": 19,
+      "top": 1621.484375,
+      "right": 238.078125,
+      "bottom": 1640.484375,
+      "left": 32
+    },
+    "button": {
+      "x": 32,
+      "y": 1649.984375,
+      "width": 91,
+      "height": 39.5,
+      "top": 1649.984375,
+      "right": 123,
+      "bottom": 1689.484375,
+      "left": 32
+    },
+    "caption": {
+      "x": 17,
+      "y": 1609.484375,
+      "width": 326,
+      "height": 91,
+      "top": 1609.484375,
+      "right": 343,
+      "bottom": 1700.484375,
+      "left": 17
+    }
+  },
+  {
+    "topic": "u-net",
+    "figure": 2,
+    "text": "輸入看不見細線，分割也可能漏掉",
+    "overlap_chars": "",
+    "strong": {
+      "x": 32,
+      "y": 3745.734375,
+      "width": 195,
+      "height": 19,
+      "top": 3745.734375,
+      "right": 227,
+      "bottom": 3764.734375,
+      "left": 32
+    },
+    "button": {
+      "x": 227,
+      "y": 3735.734375,
+      "width": 91,
+      "height": 39.5,
+      "top": 3735.734375,
+      "right": 318,
+      "bottom": 3775.234375,
+      "left": 227
+    },
+    "caption": {
+      "x": 17,
+      "y": 3714.734375,
+      "width": 326,
+      "height": 71.5,
+      "top": 3714.734375,
+      "right": 343,
+      "bottom": 3786.234375,
+      "left": 17
+    }
+  },
+  {
+    "topic": "u-net",
+    "figure": 3,
+    "text": "要同類區域，還是每件各一張遮罩？",
+    "overlap_chars": "",
+    "strong": {
+      "x": 32,
+      "y": 5063.078125,
+      "width": 208,
+      "height": 19,
+      "top": 5063.078125,
+      "right": 240,
+      "bottom": 5082.078125,
+      "left": 32
+    },
+    "button": {
+      "x": 32,
+      "y": 5091.578125,
+      "width": 91,
+      "height": 39.5,
+      "top": 5091.578125,
+      "right": 123,
+      "bottom": 5131.078125,
+      "left": 32
+    },
+    "caption": {
+      "x": 17,
+      "y": 5051.078125,
+      "width": 326,
+      "height": 91,
+      "top": 5051.078125,
+      "right": 343,
+      "bottom": 5142.078125,
+      "left": 17
+    }
+  },
+  {
+    "topic": "segformer",
+    "figure": 1,
+    "text": "SegFormer：融合不同尺度，判斷每個位置",
+    "overlap_chars": "",
+    "strong": {
+      "x": 32,
+      "y": 1947.484375,
+      "width": 252.078125,
+      "height": 19,
+      "top": 1947.484375,
+      "right": 284.078125,
+      "bottom": 1966.484375,
+      "left": 32
+    },
+    "button": {
+      "x": 32,
+      "y": 1975.984375,
+      "width": 91,
+      "height": 39.5,
+      "top": 1975.984375,
+      "right": 123,
+      "bottom": 2015.484375,
+      "left": 32
+    },
+    "caption": {
+      "x": 17,
+      "y": 1935.484375,
+      "width": 326,
+      "height": 91,
+      "top": 1935.484375,
+      "right": 343,
+      "bottom": 2026.484375,
+      "left": 17
+    }
+  },
+  {
+    "topic": "segformer",
+    "figure": 2,
+    "text": "輸入看不見細線，分割也可能漏掉",
+    "overlap_chars": "",
+    "strong": {
+      "x": 32,
+      "y": 4071.734375,
+      "width": 195,
+      "height": 19,
+      "top": 4071.734375,
+      "right": 227,
+      "bottom": 4090.734375,
+      "left": 32
+    },
+    "button": {
+      "x": 227,
+      "y": 4061.734375,
+      "width": 91,
+      "height": 39.5,
+      "top": 4061.734375,
+      "right": 318,
+      "bottom": 4101.234375,
+      "left": 227
+    },
+    "caption": {
+      "x": 17,
+      "y": 4040.734375,
+      "width": 326,
+      "height": 71.5,
+      "top": 4040.734375,
+      "right": 343,
+      "bottom": 4112.234375,
+      "left": 17
+    }
+  },
+  {
+    "topic": "segformer",
+    "figure": 3,
+    "text": "要同類區域，還是每件各一張遮罩？",
+    "overlap_chars": "",
+    "strong": {
+      "x": 32,
+      "y": 5389.078125,
+      "width": 208,
+      "height": 19,
+      "top": 5389.078125,
+      "right": 240,
+      "bottom": 5408.078125,
+      "left": 32
+    },
+    "button": {
+      "x": 32,
+      "y": 5417.578125,
+      "width": 91,
+      "height": 39.5,
+      "top": 5417.578125,
+      "right": 123,
+      "bottom": 5457.078125,
+      "left": 32
+    },
+    "caption": {
+      "x": 17,
+      "y": 5377.078125,
+      "width": 326,
+      "height": 91,
+      "top": 5377.078125,
+      "right": 343,
+      "bottom": 5468.078125,
+      "left": 17
+    }
+  },
+  {
+    "topic": "yolo-seg",
+    "figure": 1,
+    "text": "YOLO-Seg：每個物件，都有自己的遮罩",
+    "overlap_chars": "",
+    "strong": {
+      "x": 32,
+      "y": 1993.859375,
+      "width": 230.78125,
+      "height": 19,
+      "top": 1993.859375,
+      "right": 262.78125,
+      "bottom": 2012.859375,
+      "left": 32
+    },
+    "button": {
+      "x": 32,
+      "y": 2022.359375,
+      "width": 91,
+      "height": 39.5,
+      "top": 2022.359375,
+      "right": 123,
+      "bottom": 2061.859375,
+      "left": 32
+    },
+    "caption": {
+      "x": 17,
+      "y": 1981.859375,
+      "width": 326,
+      "height": 91,
+      "top": 1981.859375,
+      "right": 343,
+      "bottom": 2072.859375,
+      "left": 17
+    }
+  },
+  {
+    "topic": "yolo-seg",
+    "figure": 2,
+    "text": "兩件靠在一起，遮罩可能合錯或漏掉",
+    "overlap_chars": "",
+    "strong": {
+      "x": 32,
+      "y": 4099.109375,
+      "width": 208,
+      "height": 19,
+      "top": 4099.109375,
+      "right": 240,
+      "bottom": 4118.109375,
+      "left": 32
+    },
+    "button": {
+      "x": 32,
+      "y": 4127.609375,
+      "width": 91,
+      "height": 39.5,
+      "top": 4127.609375,
+      "right": 123,
+      "bottom": 4167.109375,
+      "left": 32
+    },
+    "caption": {
+      "x": 17,
+      "y": 4087.109375,
+      "width": 326,
+      "height": 91,
+      "top": 4087.109375,
+      "right": 343,
+      "bottom": 4178.109375,
+      "left": 17
+    }
+  },
+  {
+    "topic": "yolo-seg",
+    "figure": 3,
+    "text": "要同類區域，還是每件各一張遮罩？",
+    "overlap_chars": "",
+    "strong": {
+      "x": 32,
+      "y": 5454.953125,
+      "width": 208,
+      "height": 19,
+      "top": 5454.953125,
+      "right": 240,
+      "bottom": 5473.953125,
+      "left": 32
+    },
+    "button": {
+      "x": 32,
+      "y": 5483.453125,
+      "width": 91,
+      "height": 39.5,
+      "top": 5483.453125,
+      "right": 123,
+      "bottom": 5522.953125,
+      "left": 32
+    },
+    "caption": {
+      "x": 17,
+      "y": 5442.953125,
+      "width": 326,
+      "height": 91,
+      "top": 5442.953125,
+      "right": 343,
+      "bottom": 5533.953125,
+      "left": 17
+    }
+  },
+  {
+    "topic": "keypoint-r-cnn",
+    "figure": 1,
+    "text": "Keypoint R-CNN：先分物件，再找有名字的點",
+    "overlap_chars": "",
+    "strong": {
+      "x": 32,
+      "y": 1717.96875,
+      "width": 270.984375,
+      "height": 19,
+      "top": 1717.96875,
+      "right": 302.984375,
+      "bottom": 1736.96875,
+      "left": 32
+    },
+    "button": {
+      "x": 32,
+      "y": 1746.46875,
+      "width": 91,
+      "height": 39.5,
+      "top": 1746.46875,
+      "right": 123,
+      "bottom": 1785.96875,
+      "left": 32
+    },
+    "caption": {
+      "x": 17,
+      "y": 1705.96875,
+      "width": 326,
+      "height": 91,
+      "top": 1705.96875,
+      "right": 343,
+      "bottom": 1796.96875,
+      "left": 17
+    }
+  },
+  {
+    "topic": "keypoint-r-cnn",
+    "figure": 2,
+    "text": "對稱或遮住時，完整的點也可能配錯",
+    "overlap_chars": "",
+    "strong": {
+      "x": 32,
+      "y": 3578.71875,
+      "width": 208,
+      "height": 19,
+      "top": 3578.71875,
+      "right": 240,
+      "bottom": 3597.71875,
+      "left": 32
+    },
+    "button": {
+      "x": 32,
+      "y": 3607.21875,
+      "width": 91,
+      "height": 39.5,
+      "top": 3607.21875,
+      "right": 123,
+      "bottom": 3646.71875,
+      "left": 32
+    },
+    "caption": {
+      "x": 17,
+      "y": 3566.71875,
+      "width": 326,
+      "height": 91,
+      "top": 3566.71875,
+      "right": 343,
+      "bottom": 3657.71875,
+      "left": 17
+    }
+  },
+  {
+    "topic": "keypoint-r-cnn",
+    "figure": 3,
+    "text": "找點與求姿態，是不同的工作責任",
+    "overlap_chars": "",
+    "strong": {
+      "x": 32,
+      "y": 5333.3125,
+      "width": 195,
+      "height": 19,
+      "top": 5333.3125,
+      "right": 227,
+      "bottom": 5352.3125,
+      "left": 32
+    },
+    "button": {
+      "x": 227,
+      "y": 5323.3125,
+      "width": 91,
+      "height": 39.5,
+      "top": 5323.3125,
+      "right": 318,
+      "bottom": 5362.8125,
+      "left": 227
+    },
+    "caption": {
+      "x": 17,
+      "y": 5302.3125,
+      "width": 326,
+      "height": 71.5,
+      "top": 5302.3125,
+      "right": 343,
+      "bottom": 5373.8125,
+      "left": 17
+    }
+  },
+  {
+    "topic": "pose",
+    "figure": 1,
+    "text": "Pose Pipeline：點、幾何與相機一起求姿態",
+    "overlap_chars": "",
+    "strong": {
+      "x": 32,
+      "y": 1873.6875,
+      "width": 254.703125,
+      "height": 19,
+      "top": 1873.6875,
+      "right": 286.703125,
+      "bottom": 1892.6875,
+      "left": 32
+    },
+    "button": {
+      "x": 32,
+      "y": 1902.1875,
+      "width": 91,
+      "height": 39.5,
+      "top": 1902.1875,
+      "right": 123,
+      "bottom": 1941.6875,
+      "left": 32
+    },
+    "caption": {
+      "x": 17,
+      "y": 1861.6875,
+      "width": 326,
+      "height": 91,
+      "top": 1861.6875,
+      "right": 343,
+      "bottom": 1952.6875,
+      "left": 17
+    }
+  },
+  {
+    "topic": "pose",
+    "figure": 2,
+    "text": "對稱或遮住時，完整的點也可能配錯",
+    "overlap_chars": "",
+    "strong": {
+      "x": 32,
+      "y": 3793.625,
+      "width": 208,
+      "height": 19,
+      "top": 3793.625,
+      "right": 240,
+      "bottom": 3812.625,
+      "left": 32
+    },
+    "button": {
+      "x": 32,
+      "y": 3822.125,
+      "width": 91,
+      "height": 39.5,
+      "top": 3822.125,
+      "right": 123,
+      "bottom": 3861.625,
+      "left": 32
+    },
+    "caption": {
+      "x": 17,
+      "y": 3781.625,
+      "width": 326,
+      "height": 91,
+      "top": 3781.625,
+      "right": 343,
+      "bottom": 3872.625,
+      "left": 17
+    }
+  },
+  {
+    "topic": "pose",
+    "figure": 3,
+    "text": "找點與求姿態，是不同的工作責任",
+    "overlap_chars": "",
+    "strong": {
+      "x": 32,
+      "y": 5548.21875,
+      "width": 195,
+      "height": 19,
+      "top": 5548.21875,
+      "right": 227,
+      "bottom": 5567.21875,
+      "left": 32
+    },
+    "button": {
+      "x": 227,
+      "y": 5538.21875,
+      "width": 91,
+      "height": 39.5,
+      "top": 5538.21875,
+      "right": 318,
+      "bottom": 5577.71875,
+      "left": 227
+    },
+    "caption": {
+      "x": 17,
+      "y": 5517.21875,
+      "width": 326,
+      "height": 71.5,
+      "top": 5517.21875,
+      "right": 343,
+      "bottom": 5588.71875,
+      "left": 17
+    }
+  },
+  {
+    "topic": "det-yolo-dense",
+    "figure": 1,
+    "text": "許多位置一起找框，再整理重複",
+    "overlap_chars": "",
+    "strong": {
+      "x": 32,
+      "y": 1989.71875,
+      "width": 182,
+      "height": 19,
+      "top": 1989.71875,
+      "right": 214,
+      "bottom": 2008.71875,
+      "left": 32
+    },
+    "button": {
+      "x": 214,
+      "y": 1979.71875,
+      "width": 91,
+      "height": 39.5,
+      "top": 1979.71875,
+      "right": 305,
+      "bottom": 2019.21875,
+      "left": 214
+    },
+    "caption": {
+      "x": 17,
+      "y": 1958.71875,
+      "width": 326,
+      "height": 71.5,
+      "top": 1958.71875,
+      "right": 343,
+      "bottom": 2030.21875,
+      "left": 17
+    }
+  },
+  {
+    "topic": "det-yolo-dense",
+    "figure": 2,
+    "text": "NMS 去重，也可能刪掉真正的鄰件",
+    "overlap_chars": "",
+    "strong": {
+      "x": 32,
+      "y": 4134.65625,
+      "width": 200.890625,
+      "height": 19,
+      "top": 4134.65625,
+      "right": 232.890625,
+      "bottom": 4153.65625,
+      "left": 32
+    },
+    "button": {
+      "x": 232.890625,
+      "y": 4124.65625,
+      "width": 91,
+      "height": 39.5,
+      "top": 4124.65625,
+      "right": 323.890625,
+      "bottom": 4164.15625,
+      "left": 232.890625
+    },
+    "caption": {
+      "x": 17,
+      "y": 4103.65625,
+      "width": 326,
+      "height": 71.5,
+      "top": 4103.65625,
+      "right": 343,
+      "bottom": 4175.15625,
+      "left": 17
+    }
+  },
+  {
+    "topic": "det-yolo-dense",
+    "figure": 3,
+    "text": "同樣要框，YOLO 與 RT-DETR 怎麼選？",
+    "overlap_chars": "",
+    "strong": {
+      "x": 32,
+      "y": 5885.5,
+      "width": 227.75,
+      "height": 19,
+      "top": 5885.5,
+      "right": 259.75,
+      "bottom": 5904.5,
+      "left": 32
+    },
+    "button": {
+      "x": 32,
+      "y": 5914,
+      "width": 91,
+      "height": 39.5,
+      "top": 5914,
+      "right": 123,
+      "bottom": 5953.5,
+      "left": 32
+    },
+    "caption": {
+      "x": 17,
+      "y": 5873.5,
+      "width": 326,
+      "height": 91,
+      "top": 5873.5,
+      "right": 343,
+      "bottom": 5964.5,
+      "left": 17
+    }
+  },
+  {
+    "topic": "det-rtdetr",
+    "figure": 1,
+    "text": "讓查詢逐步定位物件",
+    "overlap_chars": "",
+    "strong": {
+      "x": 32,
+      "y": 1886.484375,
+      "width": 117,
+      "height": 19,
+      "top": 1886.484375,
+      "right": 149,
+      "bottom": 1905.484375,
+      "left": 32
+    },
+    "button": {
+      "x": 149,
+      "y": 1876.484375,
+      "width": 91,
+      "height": 39.5,
+      "top": 1876.484375,
+      "right": 240,
+      "bottom": 1915.984375,
+      "left": 149
+    },
+    "caption": {
+      "x": 17,
+      "y": 1855.484375,
+      "width": 326,
+      "height": 71.5,
+      "top": 1855.484375,
+      "right": 343,
+      "bottom": 1926.984375,
+      "left": 17
+    }
+  },
+  {
+    "topic": "det-rtdetr",
+    "figure": 2,
+    "text": "查詢少，不代表自然不重複",
+    "overlap_chars": "",
+    "strong": {
+      "x": 32,
+      "y": 4027.84375,
+      "width": 156,
+      "height": 19,
+      "top": 4027.84375,
+      "right": 188,
+      "bottom": 4046.84375,
+      "left": 32
+    },
+    "button": {
+      "x": 188,
+      "y": 4017.84375,
+      "width": 91,
+      "height": 39.5,
+      "top": 4017.84375,
+      "right": 279,
+      "bottom": 4057.34375,
+      "left": 188
+    },
+    "caption": {
+      "x": 17,
+      "y": 3996.84375,
+      "width": 326,
+      "height": 71.5,
+      "top": 3996.84375,
+      "right": 343,
+      "bottom": 4068.34375,
+      "left": 17
+    }
+  },
+  {
+    "topic": "det-rtdetr",
+    "figure": 3,
+    "text": "同樣要框，YOLO 與 RT-DETR 怎麼選？",
+    "overlap_chars": "",
+    "strong": {
+      "x": 32,
+      "y": 5778.6875,
+      "width": 227.75,
+      "height": 19,
+      "top": 5778.6875,
+      "right": 259.75,
+      "bottom": 5797.6875,
+      "left": 32
+    },
+    "button": {
+      "x": 32,
+      "y": 5807.1875,
+      "width": 91,
+      "height": 39.5,
+      "top": 5807.1875,
+      "right": 123,
+      "bottom": 5846.6875,
+      "left": 32
+    },
+    "caption": {
+      "x": 17,
+      "y": 5766.6875,
+      "width": 326,
+      "height": 91,
+      "top": 5766.6875,
+      "right": 343,
+      "bottom": 5857.6875,
+      "left": 17
+    }
+  },
+  {
+    "topic": "det-dino-detector",
+    "figure": 1,
+    "text": "DINO detector：用框的去噪練習改善集合偵測",
+    "overlap_chars": "",
+    "strong": {
+      "x": 32,
+      "y": 1415.546875,
+      "width": 272.265625,
+      "height": 19,
+      "top": 1415.546875,
+      "right": 304.265625,
+      "bottom": 1434.546875,
+      "left": 32
+    },
+    "button": {
+      "x": 32,
+      "y": 1444.046875,
+      "width": 91,
+      "height": 39.5,
+      "top": 1444.046875,
+      "right": 123,
+      "bottom": 1483.546875,
+      "left": 32
+    },
+    "caption": {
+      "x": 17,
+      "y": 1403.546875,
+      "width": 326,
+      "height": 91,
+      "top": 1403.546875,
+      "right": 343,
+      "bottom": 1494.546875,
+      "left": 17
+    }
+  },
+  {
+    "topic": "det-dino-detector",
+    "figure": 2,
+    "text": "訓練用GT練習，正式推論不用GT",
+    "overlap_chars": "",
+    "strong": {
+      "x": 32,
+      "y": 3220.921875,
+      "width": 190.171875,
+      "height": 19,
+      "top": 3220.921875,
+      "right": 222.171875,
+      "bottom": 3239.921875,
+      "left": 32
+    },
+    "button": {
+      "x": 222.171875,
+      "y": 3210.921875,
+      "width": 91,
+      "height": 39.5,
+      "top": 3210.921875,
+      "right": 313.171875,
+      "bottom": 3250.421875,
+      "left": 222.171875
+    },
+    "caption": {
+      "x": 17,
+      "y": 3189.921875,
+      "width": 326,
+      "height": 71.5,
+      "top": 3189.921875,
+      "right": 343,
+      "bottom": 3261.421875,
+      "left": 17
+    }
+  },
+  {
+    "topic": "det-dino-detector",
+    "figure": 3,
+    "text": "已知類別：YOLO／RT-DETR／DINO",
+    "overlap_chars": "",
+    "strong": {
+      "x": 32,
+      "y": 4366.078125,
+      "width": 213.21875,
+      "height": 19,
+      "top": 4366.078125,
+      "right": 245.21875,
+      "bottom": 4385.078125,
+      "left": 32
+    },
+    "button": {
+      "x": 32,
+      "y": 4394.578125,
+      "width": 91,
+      "height": 39.5,
+      "top": 4394.578125,
+      "right": 123,
+      "bottom": 4434.078125,
+      "left": 32
+    },
+    "caption": {
+      "x": 17,
+      "y": 4354.078125,
+      "width": 326,
+      "height": 91,
+      "top": 4354.078125,
+      "right": 343,
+      "bottom": 4445.078125,
+      "left": 17
+    }
+  },
+  {
+    "topic": "det-dino-detector",
+    "figure": 4,
+    "text": "可變提示：Grounding DINO／YOLO-World／YOLOE",
+    "overlap_chars": "",
+    "strong": {
+      "x": 32,
+      "y": 5630.359375,
+      "width": 272.171875,
+      "height": 57.5,
+      "top": 5630.359375,
+      "right": 304.171875,
+      "bottom": 5687.859375,
+      "left": 32
+    },
+    "button": {
+      "x": 74.1875,
+      "y": 5658.859375,
+      "width": 91,
+      "height": 39.5,
+      "top": 5658.859375,
+      "right": 165.1875,
+      "bottom": 5698.359375,
+      "left": 74.1875
+    },
+    "caption": {
+      "x": 17,
+      "y": 5618.359375,
+      "width": 326,
+      "height": 91,
+      "top": 5618.359375,
+      "right": 343,
+      "bottom": 5709.359375,
+      "left": 17
+    }
+  },
+  {
+    "topic": "det-grounding-dino-interface",
+    "figure": 1,
+    "text": "文字一路參與定位，不只是最後貼標籤",
+    "overlap_chars": "",
+    "strong": {
+      "x": 32,
+      "y": 1967.03125,
+      "width": 221,
+      "height": 19,
+      "top": 1967.03125,
+      "right": 253,
+      "bottom": 1986.03125,
+      "left": 32
+    },
+    "button": {
+      "x": 32,
+      "y": 1995.53125,
+      "width": 91,
+      "height": 39.5,
+      "top": 1995.53125,
+      "right": 123,
+      "bottom": 2035.03125,
+      "left": 32
+    },
+    "caption": {
+      "x": 17,
+      "y": 1955.03125,
+      "width": 326,
+      "height": 91,
+      "top": 1955.03125,
+      "right": 343,
+      "bottom": 2046.03125,
+      "left": 17
+    }
+  },
+  {
+    "topic": "det-grounding-dino-interface",
+    "figure": 2,
+    "text": "候選為空，先回原圖核對",
+    "overlap_chars": "",
+    "strong": {
+      "x": 32,
+      "y": 4146.890625,
+      "width": 143,
+      "height": 19,
+      "top": 4146.890625,
+      "right": 175,
+      "bottom": 4165.890625,
+      "left": 32
+    },
+    "button": {
+      "x": 175,
+      "y": 4136.890625,
+      "width": 91,
+      "height": 39.5,
+      "top": 4136.890625,
+      "right": 266,
+      "bottom": 4176.390625,
+      "left": 175
+    },
+    "caption": {
+      "x": 17,
+      "y": 4115.890625,
+      "width": 326,
+      "height": 71.5,
+      "top": 4115.890625,
+      "right": 343,
+      "bottom": 4187.390625,
+      "left": 17
+    }
+  },
+  {
+    "topic": "det-grounding-dino-interface",
+    "figure": 3,
+    "text": "先選提示與交付物，再比較現場代價",
+    "overlap_chars": "",
+    "strong": {
+      "x": 32,
+      "y": 5863.234375,
+      "width": 208,
+      "height": 19,
+      "top": 5863.234375,
+      "right": 240,
+      "bottom": 5882.234375,
+      "left": 32
+    },
+    "button": {
+      "x": 32,
+      "y": 5891.734375,
+      "width": 91,
+      "height": 39.5,
+      "top": 5891.734375,
+      "right": 123,
+      "bottom": 5931.234375,
+      "left": 32
+    },
+    "caption": {
+      "x": 17,
+      "y": 5851.234375,
+      "width": 326,
+      "height": 91,
+      "top": 5851.234375,
+      "right": 343,
+      "bottom": 5942.234375,
+      "left": 17
+    }
+  },
+  {
+    "topic": "yolo-world",
+    "figure": 1,
+    "text": "YOLO-World：先準備詞彙，再快速比對區域",
+    "overlap_chars": "",
+    "strong": {
+      "x": 32,
+      "y": 1376.046875,
+      "width": 258.953125,
+      "height": 19,
+      "top": 1376.046875,
+      "right": 290.953125,
+      "bottom": 1395.046875,
+      "left": 32
+    },
+    "button": {
+      "x": 32,
+      "y": 1404.546875,
+      "width": 91,
+      "height": 39.5,
+      "top": 1404.546875,
+      "right": 123,
+      "bottom": 1444.046875,
+      "left": 32
+    },
+    "caption": {
+      "x": 17,
+      "y": 1364.046875,
+      "width": 326,
+      "height": 91,
+      "top": 1364.046875,
+      "right": 343,
+      "bottom": 1455.046875,
+      "left": 17
+    }
+  },
+  {
+    "topic": "yolo-world",
+    "figure": 2,
+    "text": "畫面改詞，不代表模型的詞彙已更新",
+    "overlap_chars": "",
+    "strong": {
+      "x": 32,
+      "y": 3073.640625,
+      "width": 208,
+      "height": 19,
+      "top": 3073.640625,
+      "right": 240,
+      "bottom": 3092.640625,
+      "left": 32
+    },
+    "button": {
+      "x": 32,
+      "y": 3102.140625,
+      "width": 91,
+      "height": 39.5,
+      "top": 3102.140625,
+      "right": 123,
+      "bottom": 3141.640625,
+      "left": 32
+    },
+    "caption": {
+      "x": 17,
+      "y": 3061.640625,
+      "width": 326,
+      "height": 91,
+      "top": 3061.640625,
+      "right": 343,
+      "bottom": 3152.640625,
+      "left": 17
+    }
+  },
+  {
+    "topic": "yolo-world",
+    "figure": 3,
+    "text": "已知類別：YOLO／RT-DETR／DINO",
+    "overlap_chars": "",
+    "strong": {
+      "x": 32,
+      "y": 4284.171875,
+      "width": 213.21875,
+      "height": 19,
+      "top": 4284.171875,
+      "right": 245.21875,
+      "bottom": 4303.171875,
+      "left": 32
+    },
+    "button": {
+      "x": 32,
+      "y": 4312.671875,
+      "width": 91,
+      "height": 39.5,
+      "top": 4312.671875,
+      "right": 123,
+      "bottom": 4352.171875,
+      "left": 32
+    },
+    "caption": {
+      "x": 17,
+      "y": 4272.171875,
+      "width": 326,
+      "height": 91,
+      "top": 4272.171875,
+      "right": 343,
+      "bottom": 4363.171875,
+      "left": 17
+    }
+  },
+  {
+    "topic": "yolo-world",
+    "figure": 4,
+    "text": "可變提示：Grounding DINO／YOLO-World／YOLOE",
+    "overlap_chars": "",
+    "strong": {
+      "x": 32,
+      "y": 5548.453125,
+      "width": 272.171875,
+      "height": 57.5,
+      "top": 5548.453125,
+      "right": 304.171875,
+      "bottom": 5605.953125,
+      "left": 32
+    },
+    "button": {
+      "x": 74.1875,
+      "y": 5576.953125,
+      "width": 91,
+      "height": 39.5,
+      "top": 5576.953125,
+      "right": 165.1875,
+      "bottom": 5616.453125,
+      "left": 74.1875
+    },
+    "caption": {
+      "x": 17,
+      "y": 5536.453125,
+      "width": 326,
+      "height": 91,
+      "top": 5536.453125,
+      "right": 343,
+      "bottom": 5627.453125,
+      "left": 17
+    }
+  },
+  {
+    "topic": "yoloe",
+    "figure": 1,
+    "text": "圈出的範例，怎麼成為比對線索？",
+    "overlap_chars": "",
+    "strong": {
+      "x": 32,
+      "y": 1946.984375,
+      "width": 195,
+      "height": 19,
+      "top": 1946.984375,
+      "right": 227,
+      "bottom": 1965.984375,
+      "left": 32
+    },
+    "button": {
+      "x": 227,
+      "y": 1936.984375,
+      "width": 91,
+      "height": 39.5,
+      "top": 1936.984375,
+      "right": 318,
+      "bottom": 1976.484375,
+      "left": 227
+    },
+    "caption": {
+      "x": 17,
+      "y": 1915.984375,
+      "width": 326,
+      "height": 71.5,
+      "top": 1915.984375,
+      "right": 343,
+      "bottom": 1987.484375,
+      "left": 17
+    }
+  },
+  {
+    "topic": "yoloe",
+    "figure": 2,
+    "text": "有遮罩，邊界仍可能不準",
+    "overlap_chars": "",
+    "strong": {
+      "x": 32,
+      "y": 4206.71875,
+      "width": 143,
+      "height": 19,
+      "top": 4206.71875,
+      "right": 175,
+      "bottom": 4225.71875,
+      "left": 32
+    },
+    "button": {
+      "x": 175,
+      "y": 4196.71875,
+      "width": 91,
+      "height": 39.5,
+      "top": 4196.71875,
+      "right": 266,
+      "bottom": 4236.21875,
+      "left": 175
+    },
+    "caption": {
+      "x": 17,
+      "y": 4175.71875,
+      "width": 326,
+      "height": 71.5,
+      "top": 4175.71875,
+      "right": 343,
+      "bottom": 4247.21875,
+      "left": 17
+    }
+  },
+  {
+    "topic": "yoloe",
+    "figure": 3,
+    "text": "先選提示與交付物，再比較現場代價",
+    "overlap_chars": "",
+    "strong": {
+      "x": 32,
+      "y": 5949.9375,
+      "width": 208,
+      "height": 19,
+      "top": 5949.9375,
+      "right": 240,
+      "bottom": 5968.9375,
+      "left": 32
+    },
+    "button": {
+      "x": 32,
+      "y": 5978.4375,
+      "width": 91,
+      "height": 39.5,
+      "top": 5978.4375,
+      "right": 123,
+      "bottom": 6017.9375,
+      "left": 32
+    },
+    "caption": {
+      "x": 17,
+      "y": 5937.9375,
+      "width": 326,
+      "height": 91,
+      "top": 5937.9375,
+      "right": 343,
+      "bottom": 6028.9375,
+      "left": 17
+    }
+  },
+  {
+    "topic": "ad-patchcore",
+    "figure": 1,
+    "text": "PatchCore：找不到相似正常局部，才值得回查",
+    "overlap_chars": "",
+    "strong": {
+      "x": 32,
+      "y": 1938.6875,
+      "width": 273.421875,
+      "height": 19,
+      "top": 1938.6875,
+      "right": 305.421875,
+      "bottom": 1957.6875,
+      "left": 32
+    },
+    "button": {
+      "x": 32,
+      "y": 1967.1875,
+      "width": 91,
+      "height": 39.5,
+      "top": 1967.1875,
+      "right": 123,
+      "bottom": 2006.6875,
+      "left": 32
+    },
+    "caption": {
+      "x": 17,
+      "y": 1926.6875,
+      "width": 326,
+      "height": 91,
+      "top": 1926.6875,
+      "right": 343,
+      "bottom": 2017.6875,
+      "left": 17
+    }
+  },
+  {
+    "topic": "ad-patchcore",
+    "figure": 2,
+    "text": "正常改變了，異常分數也可能跟著變",
+    "overlap_chars": "",
+    "strong": {
+      "x": 32,
+      "y": 3964.859375,
+      "width": 208,
+      "height": 19,
+      "top": 3964.859375,
+      "right": 240,
+      "bottom": 3983.859375,
+      "left": 32
+    },
+    "button": {
+      "x": 32,
+      "y": 3993.359375,
+      "width": 91,
+      "height": 39.5,
+      "top": 3993.359375,
+      "right": 123,
+      "bottom": 4032.859375,
+      "left": 32
+    },
+    "caption": {
+      "x": 17,
+      "y": 3952.859375,
+      "width": 326,
+      "height": 91,
+      "top": 3952.859375,
+      "right": 343,
+      "bottom": 4043.859375,
+      "left": 17
+    }
+  },
+  {
+    "topic": "ad-patchcore",
+    "figure": 3,
+    "text": "正常資料相同，四種方法怎麼留下知識？",
+    "overlap_chars": "",
+    "strong": {
+      "x": 32,
+      "y": 5564.90625,
+      "width": 234,
+      "height": 19,
+      "top": 5564.90625,
+      "right": 266,
+      "bottom": 5583.90625,
+      "left": 32
+    },
+    "button": {
+      "x": 32,
+      "y": 5593.40625,
+      "width": 91,
+      "height": 39.5,
+      "top": 5593.40625,
+      "right": 123,
+      "bottom": 5632.90625,
+      "left": 32
+    },
+    "caption": {
+      "x": 17,
+      "y": 5552.90625,
+      "width": 326,
+      "height": 91,
+      "top": 5552.90625,
+      "right": 343,
+      "bottom": 5643.90625,
+      "left": 17
+    }
+  },
+  {
+    "topic": "ad-padim",
+    "figure": 1,
+    "text": "PaDiM：每個位置，都有自己的正常範圍",
+    "overlap_chars": "",
+    "strong": {
+      "x": 32,
+      "y": 1702.703125,
+      "width": 235.078125,
+      "height": 19,
+      "top": 1702.703125,
+      "right": 267.078125,
+      "bottom": 1721.703125,
+      "left": 32
+    },
+    "button": {
+      "x": 32,
+      "y": 1731.203125,
+      "width": 91,
+      "height": 39.5,
+      "top": 1731.203125,
+      "right": 123,
+      "bottom": 1770.703125,
+      "left": 32
+    },
+    "caption": {
+      "x": 17,
+      "y": 1690.703125,
+      "width": 326,
+      "height": 91,
+      "top": 1690.703125,
+      "right": 343,
+      "bottom": 1781.703125,
+      "left": 17
+    }
+  },
+  {
+    "topic": "ad-padim",
+    "figure": 2,
+    "text": "正常改變了，異常分數也可能跟著變",
+    "overlap_chars": "",
+    "strong": {
+      "x": 32,
+      "y": 3728.875,
+      "width": 208,
+      "height": 19,
+      "top": 3728.875,
+      "right": 240,
+      "bottom": 3747.875,
+      "left": 32
+    },
+    "button": {
+      "x": 32,
+      "y": 3757.375,
+      "width": 91,
+      "height": 39.5,
+      "top": 3757.375,
+      "right": 123,
+      "bottom": 3796.875,
+      "left": 32
+    },
+    "caption": {
+      "x": 17,
+      "y": 3716.875,
+      "width": 326,
+      "height": 91,
+      "top": 3716.875,
+      "right": 343,
+      "bottom": 3807.875,
+      "left": 17
+    }
+  },
+  {
+    "topic": "ad-padim",
+    "figure": 3,
+    "text": "正常資料相同，四種方法怎麼留下知識？",
+    "overlap_chars": "",
+    "strong": {
+      "x": 32,
+      "y": 5382.671875,
+      "width": 234,
+      "height": 19,
+      "top": 5382.671875,
+      "right": 266,
+      "bottom": 5401.671875,
+      "left": 32
+    },
+    "button": {
+      "x": 32,
+      "y": 5411.171875,
+      "width": 91,
+      "height": 39.5,
+      "top": 5411.171875,
+      "right": 123,
+      "bottom": 5450.671875,
+      "left": 32
+    },
+    "caption": {
+      "x": 17,
+      "y": 5370.671875,
+      "width": 326,
+      "height": 91,
+      "top": 5370.671875,
+      "right": 343,
+      "bottom": 5461.671875,
+      "left": 17
+    }
+  },
+  {
+    "topic": "ad-anomalydino",
+    "figure": 1,
+    "text": "AnomalyDINO：用預訓練特徵找正常先例",
+    "overlap_chars": "",
+    "strong": {
+      "x": 32,
+      "y": 1905.1875,
+      "width": 245.90625,
+      "height": 19,
+      "top": 1905.1875,
+      "right": 277.90625,
+      "bottom": 1924.1875,
+      "left": 32
+    },
+    "button": {
+      "x": 32,
+      "y": 1933.6875,
+      "width": 91,
+      "height": 39.5,
+      "top": 1933.6875,
+      "right": 123,
+      "bottom": 1973.1875,
+      "left": 32
+    },
+    "caption": {
+      "x": 17,
+      "y": 1893.1875,
+      "width": 326,
+      "height": 91,
+      "top": 1893.1875,
+      "right": 343,
+      "bottom": 1984.1875,
+      "left": 17
+    }
+  },
+  {
+    "topic": "ad-anomalydino",
+    "figure": 2,
+    "text": "正常改變了，異常分數也可能跟著變",
+    "overlap_chars": "",
+    "strong": {
+      "x": 32,
+      "y": 3931.359375,
+      "width": 208,
+      "height": 19,
+      "top": 3931.359375,
+      "right": 240,
+      "bottom": 3950.359375,
+      "left": 32
+    },
+    "button": {
+      "x": 32,
+      "y": 3959.859375,
+      "width": 91,
+      "height": 39.5,
+      "top": 3959.859375,
+      "right": 123,
+      "bottom": 3999.359375,
+      "left": 32
+    },
+    "caption": {
+      "x": 17,
+      "y": 3919.359375,
+      "width": 326,
+      "height": 91,
+      "top": 3919.359375,
+      "right": 343,
+      "bottom": 4010.359375,
+      "left": 17
+    }
+  },
+  {
+    "topic": "ad-anomalydino",
+    "figure": 3,
+    "text": "正常資料相同，四種方法怎麼留下知識？",
+    "overlap_chars": "",
+    "strong": {
+      "x": 32,
+      "y": 5531.40625,
+      "width": 234,
+      "height": 19,
+      "top": 5531.40625,
+      "right": 266,
+      "bottom": 5550.40625,
+      "left": 32
+    },
+    "button": {
+      "x": 32,
+      "y": 5559.90625,
+      "width": 91,
+      "height": 39.5,
+      "top": 5559.90625,
+      "right": 123,
+      "bottom": 5599.40625,
+      "left": 32
+    },
+    "caption": {
+      "x": 17,
+      "y": 5519.40625,
+      "width": 326,
+      "height": 91,
+      "top": 5519.40625,
+      "right": 343,
+      "bottom": 5610.40625,
+      "left": 17
+    }
+  },
+  {
+    "topic": "ad-subspacead",
+    "figure": 1,
+    "text": "SubspaceAD：正常變化解釋不了的部分，就是線索",
+    "overlap_chars": "",
+    "strong": {
+      "x": 32,
+      "y": 1927.984375,
+      "width": 286.421875,
+      "height": 57.5,
+      "top": 1927.984375,
+      "right": 318.421875,
+      "bottom": 1985.484375,
+      "left": 32
+    },
+    "button": {
+      "x": 45,
+      "y": 1956.484375,
+      "width": 91,
+      "height": 39.5,
+      "top": 1956.484375,
+      "right": 136,
+      "bottom": 1995.984375,
+      "left": 45
+    },
+    "caption": {
+      "x": 17,
+      "y": 1915.984375,
+      "width": 326,
+      "height": 91,
+      "top": 1915.984375,
+      "right": 343,
+      "bottom": 2006.984375,
+      "left": 17
+    }
+  },
+  {
+    "topic": "ad-subspacead",
+    "figure": 2,
+    "text": "SubspaceAD 的正常子空間，也會失準",
+    "overlap_chars": "",
+    "strong": {
+      "x": 32,
+      "y": 4003.640625,
+      "width": 224.375,
+      "height": 19,
+      "top": 4003.640625,
+      "right": 256.375,
+      "bottom": 4022.640625,
+      "left": 32
+    },
+    "button": {
+      "x": 32,
+      "y": 4032.140625,
+      "width": 91,
+      "height": 39.5,
+      "top": 4032.140625,
+      "right": 123,
+      "bottom": 4071.640625,
+      "left": 32
+    },
+    "caption": {
+      "x": 17,
+      "y": 3991.640625,
+      "width": 326,
+      "height": 91,
+      "top": 3991.640625,
+      "right": 343,
+      "bottom": 4082.640625,
+      "left": 17
+    }
+  },
+  {
+    "topic": "ad-subspacead",
+    "figure": 3,
+    "text": "SubspaceAD 與教師學生方法，差在哪裡？",
+    "overlap_chars": "",
+    "strong": {
+      "x": 32,
+      "y": 5712.359375,
+      "width": 250.375,
+      "height": 19,
+      "top": 5712.359375,
+      "right": 282.375,
+      "bottom": 5731.359375,
+      "left": 32
+    },
+    "button": {
+      "x": 32,
+      "y": 5740.859375,
+      "width": 91,
+      "height": 39.5,
+      "top": 5740.859375,
+      "right": 123,
+      "bottom": 5780.359375,
+      "left": 32
+    },
+    "caption": {
+      "x": 17,
+      "y": 5700.359375,
+      "width": 326,
+      "height": 91,
+      "top": 5700.359375,
+      "right": 343,
+      "bottom": 5791.359375,
+      "left": 17
+    }
+  },
+  {
+    "topic": "ad-stfpm",
+    "figure": 1,
+    "text": "STFPM：同一張圖，教師和學生怎麼看？",
+    "overlap_chars": "",
+    "strong": {
+      "x": 32,
+      "y": 1927.53125,
+      "width": 238.25,
+      "height": 19,
+      "top": 1927.53125,
+      "right": 270.25,
+      "bottom": 1946.53125,
+      "left": 32
+    },
+    "button": {
+      "x": 32,
+      "y": 1956.03125,
+      "width": 91,
+      "height": 39.5,
+      "top": 1956.03125,
+      "right": 123,
+      "bottom": 1995.53125,
+      "left": 32
+    },
+    "caption": {
+      "x": 17,
+      "y": 1915.53125,
+      "width": 326,
+      "height": 91,
+      "top": 1915.53125,
+      "right": 343,
+      "bottom": 2006.53125,
+      "left": 17
+    }
+  },
+  {
+    "topic": "ad-stfpm",
+    "figure": 2,
+    "text": "STFPM 正常學得像，缺陷就一定不同嗎？",
+    "overlap_chars": "",
+    "strong": {
+      "x": 32,
+      "y": 4003.1875,
+      "width": 241.1875,
+      "height": 19,
+      "top": 4003.1875,
+      "right": 273.1875,
+      "bottom": 4022.1875,
+      "left": 32
+    },
+    "button": {
+      "x": 32,
+      "y": 4031.6875,
+      "width": 91,
+      "height": 39.5,
+      "top": 4031.6875,
+      "right": 123,
+      "bottom": 4071.1875,
+      "left": 32
+    },
+    "caption": {
+      "x": 17,
+      "y": 3991.1875,
+      "width": 326,
+      "height": 91,
+      "top": 3991.1875,
+      "right": 343,
+      "bottom": 4082.1875,
+      "left": 17
+    }
+  },
+  {
+    "topic": "ad-stfpm",
+    "figure": 3,
+    "text": "STFPM、RD4AD、SubspaceAD：差異從哪裡來？",
+    "overlap_chars": "",
+    "strong": {
+      "x": 32,
+      "y": 5745.078125,
+      "width": 295.09375,
+      "height": 19,
+      "top": 5745.078125,
+      "right": 327.09375,
+      "bottom": 5764.078125,
+      "left": 32
+    },
+    "button": {
+      "x": 32,
+      "y": 5773.578125,
+      "width": 91,
+      "height": 39.5,
+      "top": 5773.578125,
+      "right": 123,
+      "bottom": 5813.078125,
+      "left": 32
+    },
+    "caption": {
+      "x": 17,
+      "y": 5733.078125,
+      "width": 326,
+      "height": 91,
+      "top": 5733.078125,
+      "right": 343,
+      "bottom": 5824.078125,
+      "left": 17
+    }
+  },
+  {
+    "topic": "ad-rd4ad",
+    "figure": 1,
+    "text": "RD4AD 把教師特徵，與重建特徵相比",
+    "overlap_chars": "",
+    "strong": {
+      "x": 32,
+      "y": 1927.984375,
+      "width": 215.390625,
+      "height": 19,
+      "top": 1927.984375,
+      "right": 247.390625,
+      "bottom": 1946.984375,
+      "left": 32
+    },
+    "button": {
+      "x": 32,
+      "y": 1956.484375,
+      "width": 91,
+      "height": 39.5,
+      "top": 1956.484375,
+      "right": 123,
+      "bottom": 1995.984375,
+      "left": 32
+    },
+    "caption": {
+      "x": 17,
+      "y": 1915.984375,
+      "width": 326,
+      "height": 91,
+      "top": 1915.984375,
+      "right": 343,
+      "bottom": 2006.984375,
+      "left": 17
+    }
+  },
+  {
+    "topic": "ad-rd4ad",
+    "figure": 2,
+    "text": "RD4AD 訓練時，誰的權重會改？",
+    "overlap_chars": "",
+    "strong": {
+      "x": 32,
+      "y": 3993.046875,
+      "width": 189.390625,
+      "height": 19,
+      "top": 3993.046875,
+      "right": 221.390625,
+      "bottom": 4012.046875,
+      "left": 32
+    },
+    "button": {
+      "x": 221.390625,
+      "y": 3983.046875,
+      "width": 91,
+      "height": 39.5,
+      "top": 3983.046875,
+      "right": 312.390625,
+      "bottom": 4022.546875,
+      "left": 221.390625
+    },
+    "caption": {
+      "x": 17,
+      "y": 3962.046875,
+      "width": 326,
+      "height": 71.5,
+      "top": 3962.046875,
+      "right": 343,
+      "bottom": 4033.546875,
+      "left": 17
+    }
+  },
+  {
+    "topic": "ad-rd4ad",
+    "figure": 3,
+    "text": "RD4AD 熱圖沒亮，就能放行嗎？",
+    "overlap_chars": "",
+    "strong": {
+      "x": 32,
+      "y": 5674.53125,
+      "width": 189.390625,
+      "height": 19,
+      "top": 5674.53125,
+      "right": 221.390625,
+      "bottom": 5693.53125,
+      "left": 32
+    },
+    "button": {
+      "x": 221.390625,
+      "y": 5664.53125,
+      "width": 91,
+      "height": 39.5,
+      "top": 5664.53125,
+      "right": 312.390625,
+      "bottom": 5704.03125,
+      "left": 221.390625
+    },
+    "caption": {
+      "x": 17,
+      "y": 5643.53125,
+      "width": 326,
+      "height": 71.5,
+      "top": 5643.53125,
+      "right": 343,
+      "bottom": 5715.03125,
+      "left": 17
+    }
+  },
+  {
+    "topic": "ad-rd4ad",
+    "figure": 4,
+    "text": "AE、RD4AD、DRAEM 的線索從哪裡來？",
+    "overlap_chars": "",
+    "strong": {
+      "x": 32,
+      "y": 7318.84375,
+      "width": 238.109375,
+      "height": 19,
+      "top": 7318.84375,
+      "right": 270.109375,
+      "bottom": 7337.84375,
+      "left": 32
+    },
+    "button": {
+      "x": 32,
+      "y": 7347.34375,
+      "width": 91,
+      "height": 39.5,
+      "top": 7347.34375,
+      "right": 123,
+      "bottom": 7386.84375,
+      "left": 32
+    },
+    "caption": {
+      "x": 17,
+      "y": 7306.84375,
+      "width": 326,
+      "height": 91,
+      "top": 7306.84375,
+      "right": 343,
+      "bottom": 7397.84375,
+      "left": 17
+    }
+  },
+  {
+    "topic": "ad-efficientad",
+    "figure": 1,
+    "text": "EfficientAD：學正常回應，再查兩種落差",
+    "overlap_chars": "",
+    "strong": {
+      "x": 32,
+      "y": 1974.359375,
+      "width": 240.09375,
+      "height": 19,
+      "top": 1974.359375,
+      "right": 272.09375,
+      "bottom": 1993.359375,
+      "left": 32
+    },
+    "button": {
+      "x": 32,
+      "y": 2002.859375,
+      "width": 91,
+      "height": 39.5,
+      "top": 2002.859375,
+      "right": 123,
+      "bottom": 2042.359375,
+      "left": 32
+    },
+    "caption": {
+      "x": 17,
+      "y": 1962.359375,
+      "width": 326,
+      "height": 91,
+      "top": 1962.359375,
+      "right": 343,
+      "bottom": 2053.359375,
+      "left": 17
+    }
+  },
+  {
+    "topic": "ad-efficientad",
+    "figure": 2,
+    "text": "正常改變了，異常分數也可能跟著變",
+    "overlap_chars": "",
+    "strong": {
+      "x": 32,
+      "y": 4059.71875,
+      "width": 208,
+      "height": 19,
+      "top": 4059.71875,
+      "right": 240,
+      "bottom": 4078.71875,
+      "left": 32
+    },
+    "button": {
+      "x": 32,
+      "y": 4088.21875,
+      "width": 91,
+      "height": 39.5,
+      "top": 4088.21875,
+      "right": 123,
+      "bottom": 4127.71875,
+      "left": 32
+    },
+    "caption": {
+      "x": 17,
+      "y": 4047.71875,
+      "width": 326,
+      "height": 91,
+      "top": 4047.71875,
+      "right": 343,
+      "bottom": 4138.71875,
+      "left": 17
+    }
+  },
+  {
+    "topic": "ad-efficientad",
+    "figure": 3,
+    "text": "正常資料相同，四種方法怎麼留下知識？",
+    "overlap_chars": "",
+    "strong": {
+      "x": 32,
+      "y": 5659.765625,
+      "width": 234,
+      "height": 19,
+      "top": 5659.765625,
+      "right": 266,
+      "bottom": 5678.765625,
+      "left": 32
+    },
+    "button": {
+      "x": 32,
+      "y": 5688.265625,
+      "width": 91,
+      "height": 39.5,
+      "top": 5688.265625,
+      "right": 123,
+      "bottom": 5727.765625,
+      "left": 32
+    },
+    "caption": {
+      "x": 17,
+      "y": 5647.765625,
+      "width": 326,
+      "height": 91,
+      "top": 5647.765625,
+      "right": 343,
+      "bottom": 5738.765625,
+      "left": 17
+    }
+  },
+  {
+    "topic": "ad-ae",
+    "figure": 1,
+    "text": "AE 如何從重建差異找刮傷？",
+    "overlap_chars": "",
+    "strong": {
+      "x": 32,
+      "y": 1934.90625,
+      "width": 162.28125,
+      "height": 19,
+      "top": 1934.90625,
+      "right": 194.28125,
+      "bottom": 1953.90625,
+      "left": 32
+    },
+    "button": {
+      "x": 194.28125,
+      "y": 1924.90625,
+      "width": 91,
+      "height": 39.5,
+      "top": 1924.90625,
+      "right": 285.28125,
+      "bottom": 1964.40625,
+      "left": 194.28125
+    },
+    "caption": {
+      "x": 17,
+      "y": 1903.90625,
+      "width": 326,
+      "height": 71.5,
+      "top": 1903.90625,
+      "right": 343,
+      "bottom": 1975.40625,
+      "left": 17
+    }
+  },
+  {
+    "topic": "ad-ae",
+    "figure": 2,
+    "text": "AE 的正常知識，從哪裡來？",
+    "overlap_chars": "",
+    "strong": {
+      "x": 32,
+      "y": 3869.109375,
+      "width": 162.28125,
+      "height": 19,
+      "top": 3869.109375,
+      "right": 194.28125,
+      "bottom": 3888.109375,
+      "left": 32
+    },
+    "button": {
+      "x": 194.28125,
+      "y": 3859.109375,
+      "width": 91,
+      "height": 39.5,
+      "top": 3859.109375,
+      "right": 285.28125,
+      "bottom": 3898.609375,
+      "left": 194.28125
+    },
+    "caption": {
+      "x": 17,
+      "y": 3838.109375,
+      "width": 326,
+      "height": 71.5,
+      "top": 3838.109375,
+      "right": 343,
+      "bottom": 3909.609375,
+      "left": 17
+    }
+  },
+  {
+    "topic": "ad-ae",
+    "figure": 3,
+    "text": "紅色位置，為什麼值得回看？",
+    "overlap_chars": "",
+    "strong": {
+      "x": 32,
+      "y": 5517.421875,
+      "width": 169,
+      "height": 19,
+      "top": 5517.421875,
+      "right": 201,
+      "bottom": 5536.421875,
+      "left": 32
+    },
+    "button": {
+      "x": 201,
+      "y": 5507.421875,
+      "width": 91,
+      "height": 39.5,
+      "top": 5507.421875,
+      "right": 292,
+      "bottom": 5546.921875,
+      "left": 201
+    },
+    "caption": {
+      "x": 17,
+      "y": 5486.421875,
+      "width": 326,
+      "height": 71.5,
+      "top": 5486.421875,
+      "right": 343,
+      "bottom": 5557.921875,
+      "left": 17
+    }
+  },
+  {
+    "topic": "ad-ae",
+    "figure": 4,
+    "text": "重建得越像，就越會抓缺陷嗎？",
+    "overlap_chars": "",
+    "strong": {
+      "x": 32,
+      "y": 7198.90625,
+      "width": 182,
+      "height": 19,
+      "top": 7198.90625,
+      "right": 214,
+      "bottom": 7217.90625,
+      "left": 32
+    },
+    "button": {
+      "x": 214,
+      "y": 7188.90625,
+      "width": 91,
+      "height": 39.5,
+      "top": 7188.90625,
+      "right": 305,
+      "bottom": 7228.40625,
+      "left": 214
+    },
+    "caption": {
+      "x": 17,
+      "y": 7167.90625,
+      "width": 326,
+      "height": 71.5,
+      "top": 7167.90625,
+      "right": 343,
+      "bottom": 7239.40625,
+      "left": 17
+    }
+  },
+  {
+    "topic": "ad-ae",
+    "figure": 5,
+    "text": "AE、RD4AD、DRAEM 比較的是什麼？",
+    "overlap_chars": "",
+    "strong": {
+      "x": 32,
+      "y": 8861.390625,
+      "width": 225.109375,
+      "height": 19,
+      "top": 8861.390625,
+      "right": 257.109375,
+      "bottom": 8880.390625,
+      "left": 32
+    },
+    "button": {
+      "x": 32,
+      "y": 8889.890625,
+      "width": 91,
+      "height": 39.5,
+      "top": 8889.890625,
+      "right": 123,
+      "bottom": 8929.390625,
+      "left": 32
+    },
+    "caption": {
+      "x": 17,
+      "y": 8849.390625,
+      "width": 326,
+      "height": 91,
+      "top": 8849.390625,
+      "right": 343,
+      "bottom": 8940.390625,
+      "left": 17
+    }
+  },
+  {
+    "topic": "ad-draem",
+    "figure": 1,
+    "text": "DRAEM：原圖與重建，一起交給判別器",
+    "overlap_chars": "",
+    "strong": {
+      "x": 32,
+      "y": 1927.984375,
+      "width": 227.390625,
+      "height": 19,
+      "top": 1927.984375,
+      "right": 259.390625,
+      "bottom": 1946.984375,
+      "left": 32
+    },
+    "button": {
+      "x": 32,
+      "y": 1956.484375,
+      "width": 91,
+      "height": 39.5,
+      "top": 1956.484375,
+      "right": 123,
+      "bottom": 1995.984375,
+      "left": 32
+    },
+    "caption": {
+      "x": 17,
+      "y": 1915.984375,
+      "width": 326,
+      "height": 91,
+      "top": 1915.984375,
+      "right": 343,
+      "bottom": 2006.984375,
+      "left": 17
+    }
+  },
+  {
+    "topic": "ad-draem",
+    "figure": 2,
+    "text": "DRAEM 兩個學習目標，答案從哪裡來？",
+    "overlap_chars": "",
+    "strong": {
+      "x": 32,
+      "y": 3944.453125,
+      "width": 230.34375,
+      "height": 19,
+      "top": 3944.453125,
+      "right": 262.34375,
+      "bottom": 3963.453125,
+      "left": 32
+    },
+    "button": {
+      "x": 32,
+      "y": 3972.953125,
+      "width": 91,
+      "height": 39.5,
+      "top": 3972.953125,
+      "right": 123,
+      "bottom": 4012.453125,
+      "left": 32
+    },
+    "caption": {
+      "x": 17,
+      "y": 3932.453125,
+      "width": 326,
+      "height": 91,
+      "top": 3932.453125,
+      "right": 343,
+      "bottom": 4023.453125,
+      "left": 17
+    }
+  },
+  {
+    "topic": "ad-draem",
+    "figure": 3,
+    "text": "DRAEM 合成題會做，真刮傷也會嗎？",
+    "overlap_chars": "",
+    "strong": {
+      "x": 32,
+      "y": 5645.4375,
+      "width": 217.34375,
+      "height": 19,
+      "top": 5645.4375,
+      "right": 249.34375,
+      "bottom": 5664.4375,
+      "left": 32
+    },
+    "button": {
+      "x": 32,
+      "y": 5673.9375,
+      "width": 91,
+      "height": 39.5,
+      "top": 5673.9375,
+      "right": 123,
+      "bottom": 5713.4375,
+      "left": 32
+    },
+    "caption": {
+      "x": 17,
+      "y": 5633.4375,
+      "width": 326,
+      "height": 91,
+      "top": 5633.4375,
+      "right": 343,
+      "bottom": 5724.4375,
+      "left": 17
+    }
+  },
+  {
+    "topic": "ad-draem",
+    "figure": 4,
+    "text": "AE、RD4AD、DRAEM 的結果來源有何不同？",
+    "overlap_chars": "",
+    "strong": {
+      "x": 32,
+      "y": 7346.421875,
+      "width": 264.109375,
+      "height": 19,
+      "top": 7346.421875,
+      "right": 296.109375,
+      "bottom": 7365.421875,
+      "left": 32
+    },
+    "button": {
+      "x": 32,
+      "y": 7374.921875,
+      "width": 91,
+      "height": 39.5,
+      "top": 7374.921875,
+      "right": 123,
+      "bottom": 7414.421875,
+      "left": 32
+    },
+    "caption": {
+      "x": 17,
+      "y": 7334.421875,
+      "width": 326,
+      "height": 91,
+      "top": 7334.421875,
+      "right": 343,
+      "bottom": 7425.421875,
+      "left": 17
+    }
+  },
+  {
+    "topic": "ad-uniad",
+    "figure": 1,
+    "text": "UniAD：多類正常，共用一個重建模型",
+    "overlap_chars": "",
+    "strong": {
+      "x": 32,
+      "y": 1901.109375,
+      "width": 221.625,
+      "height": 19,
+      "top": 1901.109375,
+      "right": 253.625,
+      "bottom": 1920.109375,
+      "left": 32
+    },
+    "button": {
+      "x": 32,
+      "y": 1929.609375,
+      "width": 91,
+      "height": 39.5,
+      "top": 1929.609375,
+      "right": 123,
+      "bottom": 1969.109375,
+      "left": 32
+    },
+    "caption": {
+      "x": 17,
+      "y": 1889.109375,
+      "width": 326,
+      "height": 91,
+      "top": 1889.109375,
+      "right": 343,
+      "bottom": 1980.109375,
+      "left": 17
+    }
+  },
+  {
+    "topic": "ad-uniad",
+    "figure": 2,
+    "text": "共用模型，不能只看平均結果",
+    "overlap_chars": "",
+    "strong": {
+      "x": 32,
+      "y": 4021.78125,
+      "width": 169,
+      "height": 19,
+      "top": 4021.78125,
+      "right": 201,
+      "bottom": 4040.78125,
+      "left": 32
+    },
+    "button": {
+      "x": 201,
+      "y": 4011.78125,
+      "width": 91,
+      "height": 39.5,
+      "top": 4011.78125,
+      "right": 292,
+      "bottom": 4051.28125,
+      "left": 201
+    },
+    "caption": {
+      "x": 17,
+      "y": 3990.78125,
+      "width": 326,
+      "height": 71.5,
+      "top": 3990.78125,
+      "right": 343,
+      "bottom": 4062.28125,
+      "left": 17
+    }
+  },
+  {
+    "topic": "ad-uniad",
+    "figure": 3,
+    "text": "三種多類重建，差異在哪裡？",
+    "overlap_chars": "",
+    "strong": {
+      "x": 32,
+      "y": 5704.703125,
+      "width": 169,
+      "height": 19,
+      "top": 5704.703125,
+      "right": 201,
+      "bottom": 5723.703125,
+      "left": 32
+    },
+    "button": {
+      "x": 201,
+      "y": 5694.703125,
+      "width": 91,
+      "height": 39.5,
+      "top": 5694.703125,
+      "right": 292,
+      "bottom": 5734.203125,
+      "left": 201
+    },
+    "caption": {
+      "x": 17,
+      "y": 5673.703125,
+      "width": 326,
+      "height": 71.5,
+      "top": 5673.703125,
+      "right": 343,
+      "bottom": 5745.203125,
+      "left": 17
+    }
+  },
+  {
+    "topic": "ad-dinomaly",
+    "figure": 1,
+    "text": "Dinomaly：正常特徵重建，避免逐點照抄",
+    "overlap_chars": "",
+    "strong": {
+      "x": 32,
+      "y": 1901.109375,
+      "width": 243.484375,
+      "height": 19,
+      "top": 1901.109375,
+      "right": 275.484375,
+      "bottom": 1920.109375,
+      "left": 32
+    },
+    "button": {
+      "x": 32,
+      "y": 1929.609375,
+      "width": 91,
+      "height": 39.5,
+      "top": 1929.609375,
+      "right": 123,
+      "bottom": 1969.109375,
+      "left": 32
+    },
+    "caption": {
+      "x": 17,
+      "y": 1889.109375,
+      "width": 326,
+      "height": 91,
+      "top": 1889.109375,
+      "right": 343,
+      "bottom": 1980.109375,
+      "left": 17
+    }
+  },
+  {
+    "topic": "ad-dinomaly",
+    "figure": 2,
+    "text": "共用模型，不能只看平均結果",
+    "overlap_chars": "",
+    "strong": {
+      "x": 32,
+      "y": 4021.78125,
+      "width": 169,
+      "height": 19,
+      "top": 4021.78125,
+      "right": 201,
+      "bottom": 4040.78125,
+      "left": 32
+    },
+    "button": {
+      "x": 201,
+      "y": 4011.78125,
+      "width": 91,
+      "height": 39.5,
+      "top": 4011.78125,
+      "right": 292,
+      "bottom": 4051.28125,
+      "left": 201
+    },
+    "caption": {
+      "x": 17,
+      "y": 3990.78125,
+      "width": 326,
+      "height": 71.5,
+      "top": 3990.78125,
+      "right": 343,
+      "bottom": 4062.28125,
+      "left": 17
+    }
+  },
+  {
+    "topic": "ad-dinomaly",
+    "figure": 3,
+    "text": "三種多類重建，差異在哪裡？",
+    "overlap_chars": "",
+    "strong": {
+      "x": 32,
+      "y": 5704.703125,
+      "width": 169,
+      "height": 19,
+      "top": 5704.703125,
+      "right": 201,
+      "bottom": 5723.703125,
+      "left": 32
+    },
+    "button": {
+      "x": 201,
+      "y": 5694.703125,
+      "width": 91,
+      "height": 39.5,
+      "top": 5694.703125,
+      "right": 292,
+      "bottom": 5734.203125,
+      "left": 201
+    },
+    "caption": {
+      "x": 17,
+      "y": 5673.703125,
+      "width": 326,
+      "height": 71.5,
+      "top": 5673.703125,
+      "right": 343,
+      "bottom": 5745.203125,
+      "left": 17
+    }
+  },
+  {
+    "topic": "ad-invad",
+    "figure": 1,
+    "text": "InvAD：用輸入條件，引導特徵重建",
+    "overlap_chars": "",
+    "strong": {
+      "x": 32,
+      "y": 1900.65625,
+      "width": 206.484375,
+      "height": 19,
+      "top": 1900.65625,
+      "right": 238.484375,
+      "bottom": 1919.65625,
+      "left": 32
+    },
+    "button": {
+      "x": 32,
+      "y": 1929.15625,
+      "width": 91,
+      "height": 39.5,
+      "top": 1929.15625,
+      "right": 123,
+      "bottom": 1968.65625,
+      "left": 32
+    },
+    "caption": {
+      "x": 17,
+      "y": 1888.65625,
+      "width": 326,
+      "height": 91,
+      "top": 1888.65625,
+      "right": 343,
+      "bottom": 1979.65625,
+      "left": 17
+    }
+  },
+  {
+    "topic": "ad-invad",
+    "figure": 2,
+    "text": "共用模型，不能只看平均結果",
+    "overlap_chars": "",
+    "strong": {
+      "x": 32,
+      "y": 4080.515625,
+      "width": 169,
+      "height": 19,
+      "top": 4080.515625,
+      "right": 201,
+      "bottom": 4099.515625,
+      "left": 32
+    },
+    "button": {
+      "x": 201,
+      "y": 4070.515625,
+      "width": 91,
+      "height": 39.5,
+      "top": 4070.515625,
+      "right": 292,
+      "bottom": 4110.015625,
+      "left": 201
+    },
+    "caption": {
+      "x": 17,
+      "y": 4049.515625,
+      "width": 326,
+      "height": 71.5,
+      "top": 4049.515625,
+      "right": 343,
+      "bottom": 4121.015625,
+      "left": 17
+    }
+  },
+  {
+    "topic": "ad-invad",
+    "figure": 3,
+    "text": "三種多類重建，差異在哪裡？",
+    "overlap_chars": "",
+    "strong": {
+      "x": 32,
+      "y": 5763.4375,
+      "width": 169,
+      "height": 19,
+      "top": 5763.4375,
+      "right": 201,
+      "bottom": 5782.4375,
+      "left": 32
+    },
+    "button": {
+      "x": 201,
+      "y": 5753.4375,
+      "width": 91,
+      "height": 39.5,
+      "top": 5753.4375,
+      "right": 292,
+      "bottom": 5792.9375,
+      "left": 201
+    },
+    "caption": {
+      "x": 17,
+      "y": 5732.4375,
+      "width": 326,
+      "height": 71.5,
+      "top": 5732.4375,
+      "right": 343,
+      "bottom": 5803.9375,
+      "left": 17
+    }
+  },
+  {
+    "topic": "ad-diffad",
+    "figure": 1,
+    "text": "DiffusionAD：兩尺度恢復，再學習定位",
+    "overlap_chars": "",
+    "strong": {
+      "x": 32,
+      "y": 1855.25,
+      "width": 231.359375,
+      "height": 19,
+      "top": 1855.25,
+      "right": 263.359375,
+      "bottom": 1874.25,
+      "left": 32
+    },
+    "button": {
+      "x": 32,
+      "y": 1883.75,
+      "width": 91,
+      "height": 39.5,
+      "top": 1883.75,
+      "right": 123,
+      "bottom": 1923.25,
+      "left": 32
+    },
+    "caption": {
+      "x": 17,
+      "y": 1843.25,
+      "width": 326,
+      "height": 91,
+      "top": 1843.25,
+      "right": 343,
+      "bottom": 1934.25,
+      "left": 17
+    }
+  },
+  {
+    "topic": "ad-diffad",
+    "figure": 2,
+    "text": "恢復得像，不代表檢測得好",
+    "overlap_chars": "",
+    "strong": {
+      "x": 32,
+      "y": 3944.078125,
+      "width": 156,
+      "height": 19,
+      "top": 3944.078125,
+      "right": 188,
+      "bottom": 3963.078125,
+      "left": 32
+    },
+    "button": {
+      "x": 188,
+      "y": 3934.078125,
+      "width": 91,
+      "height": 39.5,
+      "top": 3934.078125,
+      "right": 279,
+      "bottom": 3973.578125,
+      "left": 188
+    },
+    "caption": {
+      "x": 17,
+      "y": 3913.078125,
+      "width": 326,
+      "height": 71.5,
+      "top": 3913.078125,
+      "right": 343,
+      "bottom": 3984.578125,
+      "left": 17
+    }
+  },
+  {
+    "topic": "ad-diffad",
+    "figure": 3,
+    "text": "恢復以後，誰來判斷異常？",
+    "overlap_chars": "",
+    "strong": {
+      "x": 32,
+      "y": 5626.546875,
+      "width": 156,
+      "height": 19,
+      "top": 5626.546875,
+      "right": 188,
+      "bottom": 5645.546875,
+      "left": 32
+    },
+    "button": {
+      "x": 188,
+      "y": 5616.546875,
+      "width": 91,
+      "height": 39.5,
+      "top": 5616.546875,
+      "right": 279,
+      "bottom": 5656.046875,
+      "left": 188
+    },
+    "caption": {
+      "x": 17,
+      "y": 5595.546875,
+      "width": 326,
+      "height": 71.5,
+      "top": 5595.546875,
+      "right": 343,
+      "bottom": 5667.046875,
+      "left": 17
+    }
+  },
+  {
+    "topic": "ad-ddad",
+    "figure": 1,
+    "text": "DDAD：原圖引導多步恢復，整合兩種差異",
+    "overlap_chars": "",
+    "strong": {
+      "x": 32,
+      "y": 1855.703125,
+      "width": 243.96875,
+      "height": 19,
+      "top": 1855.703125,
+      "right": 275.96875,
+      "bottom": 1874.703125,
+      "left": 32
+    },
+    "button": {
+      "x": 32,
+      "y": 1884.203125,
+      "width": 91,
+      "height": 39.5,
+      "top": 1884.203125,
+      "right": 123,
+      "bottom": 1923.703125,
+      "left": 32
+    },
+    "caption": {
+      "x": 17,
+      "y": 1843.703125,
+      "width": 326,
+      "height": 91,
+      "top": 1843.703125,
+      "right": 343,
+      "bottom": 1934.703125,
+      "left": 17
+    }
+  },
+  {
+    "topic": "ad-ddad",
+    "figure": 2,
+    "text": "恢復得像，不代表檢測得好",
+    "overlap_chars": "",
+    "strong": {
+      "x": 32,
+      "y": 4003.71875,
+      "width": 156,
+      "height": 19,
+      "top": 4003.71875,
+      "right": 188,
+      "bottom": 4022.71875,
+      "left": 32
+    },
+    "button": {
+      "x": 188,
+      "y": 3993.71875,
+      "width": 91,
+      "height": 39.5,
+      "top": 3993.71875,
+      "right": 279,
+      "bottom": 4033.21875,
+      "left": 188
+    },
+    "caption": {
+      "x": 17,
+      "y": 3972.71875,
+      "width": 326,
+      "height": 71.5,
+      "top": 3972.71875,
+      "right": 343,
+      "bottom": 4044.21875,
+      "left": 17
+    }
+  },
+  {
+    "topic": "ad-ddad",
+    "figure": 3,
+    "text": "恢復以後，誰來判斷異常？",
+    "overlap_chars": "",
+    "strong": {
+      "x": 32,
+      "y": 5686.1875,
+      "width": 156,
+      "height": 19,
+      "top": 5686.1875,
+      "right": 188,
+      "bottom": 5705.1875,
+      "left": 32
+    },
+    "button": {
+      "x": 188,
+      "y": 5676.1875,
+      "width": 91,
+      "height": 39.5,
+      "top": 5676.1875,
+      "right": 279,
+      "bottom": 5715.6875,
+      "left": 188
+    },
+    "caption": {
+      "x": 17,
+      "y": 5655.1875,
+      "width": 326,
+      "height": 71.5,
+      "top": 5655.1875,
+      "right": 343,
+      "bottom": 5726.6875,
+      "left": 17
+    }
+  },
+  {
+    "topic": "ad-winclip",
+    "figure": 1,
+    "text": "WinCLIP：文字給語意，視窗保留位置",
+    "overlap_chars": "",
+    "strong": {
+      "x": 32,
+      "y": 1881.609375,
+      "width": 222.1875,
+      "height": 19,
+      "top": 1881.609375,
+      "right": 254.1875,
+      "bottom": 1900.609375,
+      "left": 32
+    },
+    "button": {
+      "x": 32,
+      "y": 1910.109375,
+      "width": 91,
+      "height": 39.5,
+      "top": 1910.109375,
+      "right": 123,
+      "bottom": 1949.609375,
+      "left": 32
+    },
+    "caption": {
+      "x": 17,
+      "y": 1869.609375,
+      "width": 326,
+      "height": 91,
+      "top": 1869.609375,
+      "right": 343,
+      "bottom": 1960.609375,
+      "left": 17
+    }
+  },
+  {
+    "topic": "ad-winclip",
+    "figure": 2,
+    "text": "文字懂異常，仍可能看錯細節",
+    "overlap_chars": "",
+    "strong": {
+      "x": 32,
+      "y": 4090.609375,
+      "width": 169,
+      "height": 19,
+      "top": 4090.609375,
+      "right": 201,
+      "bottom": 4109.609375,
+      "left": 32
+    },
+    "button": {
+      "x": 201,
+      "y": 4080.609375,
+      "width": 91,
+      "height": 39.5,
+      "top": 4080.609375,
+      "right": 292,
+      "bottom": 4120.109375,
+      "left": 201
+    },
+    "caption": {
+      "x": 17,
+      "y": 4059.609375,
+      "width": 326,
+      "height": 71.5,
+      "top": 4059.609375,
+      "right": 343,
+      "bottom": 4131.109375,
+      "left": 17
+    }
+  },
+  {
+    "topic": "ad-winclip",
+    "figure": 3,
+    "text": "三種圖文方法，先選工作結果",
+    "overlap_chars": "",
+    "strong": {
+      "x": 32,
+      "y": 5770.828125,
+      "width": 169,
+      "height": 19,
+      "top": 5770.828125,
+      "right": 201,
+      "bottom": 5789.828125,
+      "left": 32
+    },
+    "button": {
+      "x": 201,
+      "y": 5760.828125,
+      "width": 91,
+      "height": 39.5,
+      "top": 5760.828125,
+      "right": 292,
+      "bottom": 5800.328125,
+      "left": 201
+    },
+    "caption": {
+      "x": 17,
+      "y": 5739.828125,
+      "width": 326,
+      "height": 71.5,
+      "top": 5739.828125,
+      "right": 343,
+      "bottom": 5811.328125,
+      "left": 17
+    }
+  },
+  {
+    "topic": "ad-anomalyclip",
+    "figure": 1,
+    "text": "AnomalyCLIP：先學狀態提示，再看新產品",
+    "overlap_chars": "",
+    "strong": {
+      "x": 32,
+      "y": 1918.859375,
+      "width": 254.59375,
+      "height": 19,
+      "top": 1918.859375,
+      "right": 286.59375,
+      "bottom": 1937.859375,
+      "left": 32
+    },
+    "button": {
+      "x": 32,
+      "y": 1947.359375,
+      "width": 91,
+      "height": 39.5,
+      "top": 1947.359375,
+      "right": 123,
+      "bottom": 1986.859375,
+      "left": 32
+    },
+    "caption": {
+      "x": 17,
+      "y": 1906.859375,
+      "width": 326,
+      "height": 91,
+      "top": 1906.859375,
+      "right": 343,
+      "bottom": 1997.859375,
+      "left": 17
+    }
+  },
+  {
+    "topic": "ad-anomalyclip",
+    "figure": 2,
+    "text": "文字懂異常，仍可能看錯細節",
+    "overlap_chars": "",
+    "strong": {
+      "x": 32,
+      "y": 4157.453125,
+      "width": 169,
+      "height": 19,
+      "top": 4157.453125,
+      "right": 201,
+      "bottom": 4176.453125,
+      "left": 32
+    },
+    "button": {
+      "x": 201,
+      "y": 4147.453125,
+      "width": 91,
+      "height": 39.5,
+      "top": 4147.453125,
+      "right": 292,
+      "bottom": 4186.953125,
+      "left": 201
+    },
+    "caption": {
+      "x": 17,
+      "y": 4126.453125,
+      "width": 326,
+      "height": 71.5,
+      "top": 4126.453125,
+      "right": 343,
+      "bottom": 4197.953125,
+      "left": 17
+    }
+  },
+  {
+    "topic": "ad-anomalyclip",
+    "figure": 3,
+    "text": "三種圖文方法，先選工作結果",
+    "overlap_chars": "",
+    "strong": {
+      "x": 32,
+      "y": 5837.671875,
+      "width": 169,
+      "height": 19,
+      "top": 5837.671875,
+      "right": 201,
+      "bottom": 5856.671875,
+      "left": 32
+    },
+    "button": {
+      "x": 201,
+      "y": 5827.671875,
+      "width": 91,
+      "height": 39.5,
+      "top": 5827.671875,
+      "right": 292,
+      "bottom": 5867.171875,
+      "left": 201
+    },
+    "caption": {
+      "x": 17,
+      "y": 5806.671875,
+      "width": 326,
+      "height": 71.5,
+      "top": 5806.671875,
+      "right": 343,
+      "bottom": 5878.171875,
+      "left": 17
+    }
+  },
+  {
+    "topic": "ad-anomalygpt",
+    "figure": 1,
+    "text": "AnomalyGPT：定位線索接進看圖對話",
+    "overlap_chars": "",
+    "strong": {
+      "x": 32,
+      "y": 1881.609375,
+      "width": 225.375,
+      "height": 19,
+      "top": 1881.609375,
+      "right": 257.375,
+      "bottom": 1900.609375,
+      "left": 32
+    },
+    "button": {
+      "x": 32,
+      "y": 1910.109375,
+      "width": 91,
+      "height": 39.5,
+      "top": 1910.109375,
+      "right": 123,
+      "bottom": 1949.609375,
+      "left": 32
+    },
+    "caption": {
+      "x": 17,
+      "y": 1869.609375,
+      "width": 326,
+      "height": 91,
+      "top": 1869.609375,
+      "right": 343,
+      "bottom": 1960.609375,
+      "left": 17
+    }
+  },
+  {
+    "topic": "ad-anomalygpt",
+    "figure": 2,
+    "text": "覆核練習：回答肯定，位置卻不一致",
+    "overlap_chars": "",
+    "strong": {
+      "x": 32,
+      "y": 4105.234375,
+      "width": 208,
+      "height": 19,
+      "top": 4105.234375,
+      "right": 240,
+      "bottom": 4124.234375,
+      "left": 32
+    },
+    "button": {
+      "x": 32,
+      "y": 4133.734375,
+      "width": 91,
+      "height": 39.5,
+      "top": 4133.734375,
+      "right": 123,
+      "bottom": 4173.234375,
+      "left": 32
+    },
+    "caption": {
+      "x": 17,
+      "y": 4093.234375,
+      "width": 326,
+      "height": 91,
+      "top": 4093.234375,
+      "right": 343,
+      "bottom": 4184.234375,
+      "left": 17
+    }
+  },
+  {
+    "topic": "ad-anomalygpt",
+    "figure": 3,
+    "text": "三種圖文方法，先選工作結果",
+    "overlap_chars": "",
+    "strong": {
+      "x": 32,
+      "y": 5823.953125,
+      "width": 169,
+      "height": 19,
+      "top": 5823.953125,
+      "right": 201,
+      "bottom": 5842.953125,
+      "left": 32
+    },
+    "button": {
+      "x": 201,
+      "y": 5813.953125,
+      "width": 91,
+      "height": 39.5,
+      "top": 5813.953125,
+      "right": 292,
+      "bottom": 5853.453125,
+      "left": 201
+    },
+    "caption": {
+      "x": 17,
+      "y": 5792.953125,
+      "width": 326,
+      "height": 71.5,
+      "top": 5792.953125,
+      "right": 343,
+      "bottom": 5864.453125,
+      "left": 17
+    }
+  },
+  {
+    "topic": "frame-difference",
+    "figure": 1,
+    "text": "Frame Difference：找出兩張畫面的變化",
+    "overlap_chars": "",
+    "strong": {
+      "x": 32,
+      "y": 1791.8125,
+      "width": 238.390625,
+      "height": 19,
+      "top": 1791.8125,
+      "right": 270.390625,
+      "bottom": 1810.8125,
+      "left": 32
+    },
+    "button": {
+      "x": 32,
+      "y": 1820.3125,
+      "width": 91,
+      "height": 39.5,
+      "top": 1820.3125,
+      "right": 123,
+      "bottom": 1859.8125,
+      "left": 32
+    },
+    "caption": {
+      "x": 17,
+      "y": 1779.8125,
+      "width": 326,
+      "height": 91,
+      "top": 1779.8125,
+      "right": 343,
+      "bottom": 1870.8125,
+      "left": 17
+    }
+  },
+  {
+    "topic": "frame-difference",
+    "figure": 2,
+    "text": "工件沒動，亮度變了也會觸發差分",
+    "overlap_chars": "",
+    "strong": {
+      "x": 32,
+      "y": 3708.4375,
+      "width": 195,
+      "height": 19,
+      "top": 3708.4375,
+      "right": 227,
+      "bottom": 3727.4375,
+      "left": 32
+    },
+    "button": {
+      "x": 227,
+      "y": 3698.4375,
+      "width": 91,
+      "height": 39.5,
+      "top": 3698.4375,
+      "right": 318,
+      "bottom": 3737.9375,
+      "left": 227
+    },
+    "caption": {
+      "x": 17,
+      "y": 3677.4375,
+      "width": 326,
+      "height": 71.5,
+      "top": 3677.4375,
+      "right": 343,
+      "bottom": 3748.9375,
+      "left": 17
+    }
+  },
+  {
+    "topic": "frame-difference",
+    "figure": 3,
+    "text": "找變化還是找前景？先決定參考是誰",
+    "overlap_chars": "",
+    "strong": {
+      "x": 32,
+      "y": 4889.65625,
+      "width": 208,
+      "height": 19,
+      "top": 4889.65625,
+      "right": 240,
+      "bottom": 4908.65625,
+      "left": 32
+    },
+    "button": {
+      "x": 32,
+      "y": 4918.15625,
+      "width": 91,
+      "height": 39.5,
+      "top": 4918.15625,
+      "right": 123,
+      "bottom": 4957.65625,
+      "left": 32
+    },
+    "caption": {
+      "x": 17,
+      "y": 4877.65625,
+      "width": 326,
+      "height": 91,
+      "top": 4877.65625,
+      "right": 343,
+      "bottom": 4968.65625,
+      "left": 17
+    }
+  },
+  {
+    "topic": "background-subtraction",
+    "figure": 1,
+    "text": "背景相減：先記住背景，再找出新來的工件",
+    "overlap_chars": "",
+    "strong": {
+      "x": 32,
+      "y": 1735.5,
+      "width": 247,
+      "height": 19,
+      "top": 1735.5,
+      "right": 279,
+      "bottom": 1754.5,
+      "left": 32
+    },
+    "button": {
+      "x": 32,
+      "y": 1764,
+      "width": 91,
+      "height": 39.5,
+      "top": 1764,
+      "right": 123,
+      "bottom": 1803.5,
+      "left": 32
+    },
+    "caption": {
+      "x": 17,
+      "y": 1723.5,
+      "width": 326,
+      "height": 91,
+      "top": 1723.5,
+      "right": 343,
+      "bottom": 1814.5,
+      "left": 17
+    }
+  },
+  {
+    "topic": "background-subtraction",
+    "figure": 2,
+    "text": "停住太久的工件，可能被學進背景",
+    "overlap_chars": "",
+    "strong": {
+      "x": 32,
+      "y": 3459.53125,
+      "width": 195,
+      "height": 19,
+      "top": 3459.53125,
+      "right": 227,
+      "bottom": 3478.53125,
+      "left": 32
+    },
+    "button": {
+      "x": 227,
+      "y": 3449.53125,
+      "width": 91,
+      "height": 39.5,
+      "top": 3449.53125,
+      "right": 318,
+      "bottom": 3489.03125,
+      "left": 227
+    },
+    "caption": {
+      "x": 17,
+      "y": 3428.53125,
+      "width": 326,
+      "height": 71.5,
+      "top": 3428.53125,
+      "right": 343,
+      "bottom": 3500.03125,
+      "left": 17
+    }
+  },
+  {
+    "topic": "background-subtraction",
+    "figure": 3,
+    "text": "找變化還是找前景？先決定參考是誰",
+    "overlap_chars": "",
+    "strong": {
+      "x": 32,
+      "y": 4640.75,
+      "width": 208,
+      "height": 19,
+      "top": 4640.75,
+      "right": 240,
+      "bottom": 4659.75,
+      "left": 32
+    },
+    "button": {
+      "x": 32,
+      "y": 4669.25,
+      "width": 91,
+      "height": 39.5,
+      "top": 4669.25,
+      "right": 123,
+      "bottom": 4708.75,
+      "left": 32
+    },
+    "caption": {
+      "x": 17,
+      "y": 4628.75,
+      "width": 326,
+      "height": 91,
+      "top": 4628.75,
+      "right": 343,
+      "bottom": 4719.75,
+      "left": 17
+    }
+  },
+  {
+    "topic": "lucas-kanade",
+    "figure": 1,
+    "text": "Lucas–Kanade：用局部紋理追住同一個點",
+    "overlap_chars": "",
+    "strong": {
+      "x": 32,
+      "y": 1628.8125,
+      "width": 248.015625,
+      "height": 19,
+      "top": 1628.8125,
+      "right": 280.015625,
+      "bottom": 1647.8125,
+      "left": 32
+    },
+    "button": {
+      "x": 32,
+      "y": 1657.3125,
+      "width": 91,
+      "height": 39.5,
+      "top": 1657.3125,
+      "right": 123,
+      "bottom": 1696.8125,
+      "left": 32
+    },
+    "caption": {
+      "x": 17,
+      "y": 1616.8125,
+      "width": 326,
+      "height": 91,
+      "top": 1616.8125,
+      "right": 343,
+      "bottom": 1707.8125,
+      "left": 17
+    }
+  },
+  {
+    "topic": "lucas-kanade",
+    "figure": 2,
+    "text": "沒有可靠對應，位移圖也可能猜錯",
+    "overlap_chars": "",
+    "strong": {
+      "x": 32,
+      "y": 3644.390625,
+      "width": 195,
+      "height": 19,
+      "top": 3644.390625,
+      "right": 227,
+      "bottom": 3663.390625,
+      "left": 32
+    },
+    "button": {
+      "x": 227,
+      "y": 3634.390625,
+      "width": 91,
+      "height": 39.5,
+      "top": 3634.390625,
+      "right": 318,
+      "bottom": 3673.890625,
+      "left": 227
+    },
+    "caption": {
+      "x": 17,
+      "y": 3613.390625,
+      "width": 326,
+      "height": 71.5,
+      "top": 3613.390625,
+      "right": 343,
+      "bottom": 3684.890625,
+      "left": 17
+    }
+  },
+  {
+    "topic": "lucas-kanade",
+    "figure": 3,
+    "text": "少量追點，還是整張位移？",
+    "overlap_chars": "",
+    "strong": {
+      "x": 32,
+      "y": 4784.5625,
+      "width": 156,
+      "height": 19,
+      "top": 4784.5625,
+      "right": 188,
+      "bottom": 4803.5625,
+      "left": 32
+    },
+    "button": {
+      "x": 188,
+      "y": 4774.5625,
+      "width": 91,
+      "height": 39.5,
+      "top": 4774.5625,
+      "right": 279,
+      "bottom": 4814.0625,
+      "left": 188
+    },
+    "caption": {
+      "x": 17,
+      "y": 4753.5625,
+      "width": 326,
+      "height": 71.5,
+      "top": 4753.5625,
+      "right": 343,
+      "bottom": 4825.0625,
+      "left": 17
+    }
+  },
+  {
+    "topic": "raft",
+    "figure": 1,
+    "text": "RAFT：反覆查找對應，估計整張位移",
+    "overlap_chars": "",
+    "strong": {
+      "x": 32,
+      "y": 1939.53125,
+      "width": 214.75,
+      "height": 19,
+      "top": 1939.53125,
+      "right": 246.75,
+      "bottom": 1958.53125,
+      "left": 32
+    },
+    "button": {
+      "x": 32,
+      "y": 1968.03125,
+      "width": 91,
+      "height": 39.5,
+      "top": 1968.03125,
+      "right": 123,
+      "bottom": 2007.53125,
+      "left": 32
+    },
+    "caption": {
+      "x": 17,
+      "y": 1927.53125,
+      "width": 326,
+      "height": 91,
+      "top": 1927.53125,
+      "right": 343,
+      "bottom": 2018.53125,
+      "left": 17
+    }
+  },
+  {
+    "topic": "raft",
+    "figure": 2,
+    "text": "沒有可靠對應，位移圖也可能猜錯",
+    "overlap_chars": "",
+    "strong": {
+      "x": 32,
+      "y": 3984.703125,
+      "width": 195,
+      "height": 19,
+      "top": 3984.703125,
+      "right": 227,
+      "bottom": 4003.703125,
+      "left": 32
+    },
+    "button": {
+      "x": 227,
+      "y": 3974.703125,
+      "width": 91,
+      "height": 39.5,
+      "top": 3974.703125,
+      "right": 318,
+      "bottom": 4014.203125,
+      "left": 227
+    },
+    "caption": {
+      "x": 17,
+      "y": 3953.703125,
+      "width": 326,
+      "height": 71.5,
+      "top": 3953.703125,
+      "right": 343,
+      "bottom": 4025.203125,
+      "left": 17
+    }
+  },
+  {
+    "topic": "raft",
+    "figure": 3,
+    "text": "少量追點，還是整張位移？",
+    "overlap_chars": "",
+    "strong": {
+      "x": 32,
+      "y": 5124.875,
+      "width": 156,
+      "height": 19,
+      "top": 5124.875,
+      "right": 188,
+      "bottom": 5143.875,
+      "left": 32
+    },
+    "button": {
+      "x": 188,
+      "y": 5114.875,
+      "width": 91,
+      "height": 39.5,
+      "top": 5114.875,
+      "right": 279,
+      "bottom": 5154.375,
+      "left": 188
+    },
+    "caption": {
+      "x": 17,
+      "y": 5093.875,
+      "width": 326,
+      "height": 71.5,
+      "top": 5093.875,
+      "right": 343,
+      "bottom": 5165.375,
+      "left": 17
+    }
+  },
+  {
+    "topic": "bytetrack",
+    "figure": 1,
+    "text": "ByteTrack：低分框也可能接回同一個工件",
+    "overlap_chars": "",
+    "strong": {
+      "x": 32,
+      "y": 1938.6875,
+      "width": 245.25,
+      "height": 19,
+      "top": 1938.6875,
+      "right": 277.25,
+      "bottom": 1957.6875,
+      "left": 32
+    },
+    "button": {
+      "x": 32,
+      "y": 1967.1875,
+      "width": 91,
+      "height": 39.5,
+      "top": 1967.1875,
+      "right": 123,
+      "bottom": 2006.6875,
+      "left": 32
+    },
+    "caption": {
+      "x": 17,
+      "y": 1926.6875,
+      "width": 326,
+      "height": 91,
+      "top": 1926.6875,
+      "right": 343,
+      "bottom": 2017.6875,
+      "left": 17
+    }
+  },
+  {
+    "topic": "bytetrack",
+    "figure": 2,
+    "text": "完全漏檢時，追蹤器也會失去身分",
+    "overlap_chars": "",
+    "strong": {
+      "x": 32,
+      "y": 3766.53125,
+      "width": 195,
+      "height": 19,
+      "top": 3766.53125,
+      "right": 227,
+      "bottom": 3785.53125,
+      "left": 32
+    },
+    "button": {
+      "x": 227,
+      "y": 3756.53125,
+      "width": 91,
+      "height": 39.5,
+      "top": 3756.53125,
+      "right": 318,
+      "bottom": 3796.03125,
+      "left": 227
+    },
+    "caption": {
+      "x": 17,
+      "y": 3735.53125,
+      "width": 326,
+      "height": 71.5,
+      "top": 3735.53125,
+      "right": 343,
+      "bottom": 3807.03125,
+      "left": 17
+    }
+  },
+  {
+    "topic": "bytetrack",
+    "figure": 3,
+    "text": "框出工件，和認出同一段軌跡，是兩件事",
+    "overlap_chars": "",
+    "strong": {
+      "x": 32,
+      "y": 4920.875,
+      "width": 234,
+      "height": 19,
+      "top": 4920.875,
+      "right": 266,
+      "bottom": 4939.875,
+      "left": 32
+    },
+    "button": {
+      "x": 32,
+      "y": 4949.375,
+      "width": 91,
+      "height": 39.5,
+      "top": 4949.375,
+      "right": 123,
+      "bottom": 4988.875,
+      "left": 32
+    },
+    "caption": {
+      "x": 17,
+      "y": 4908.875,
+      "width": 326,
+      "height": 91,
+      "top": 4908.875,
+      "right": 343,
+      "bottom": 4999.875,
+      "left": 17
+    }
+  },
+  {
+    "topic": "convlstm",
+    "figure": 1,
+    "text": "ConvLSTM：把位置與時間一起留在記憶裡",
+    "overlap_chars": "",
+    "strong": {
+      "x": 32,
+      "y": 1722.203125,
+      "width": 248.5,
+      "height": 19,
+      "top": 1722.203125,
+      "right": 280.5,
+      "bottom": 1741.203125,
+      "left": 32
+    },
+    "button": {
+      "x": 32,
+      "y": 1750.703125,
+      "width": 91,
+      "height": 39.5,
+      "top": 1750.703125,
+      "right": 123,
+      "bottom": 1790.203125,
+      "left": 32
+    },
+    "caption": {
+      "x": 17,
+      "y": 1710.203125,
+      "width": 326,
+      "height": 91,
+      "top": 1710.203125,
+      "right": 343,
+      "bottom": 1801.203125,
+      "left": 17
+    }
+  },
+  {
+    "topic": "convlstm",
+    "figure": 2,
+    "text": "時間接錯，記憶就會帶著舊狀態",
+    "overlap_chars": "",
+    "strong": {
+      "x": 32,
+      "y": 3550.046875,
+      "width": 182,
+      "height": 19,
+      "top": 3550.046875,
+      "right": 214,
+      "bottom": 3569.046875,
+      "left": 32
+    },
+    "button": {
+      "x": 214,
+      "y": 3540.046875,
+      "width": 91,
+      "height": 39.5,
+      "top": 3540.046875,
+      "right": 305,
+      "bottom": 3579.546875,
+      "left": 214
+    },
+    "caption": {
+      "x": 17,
+      "y": 3519.046875,
+      "width": 326,
+      "height": 71.5,
+      "top": 3519.046875,
+      "right": 343,
+      "bottom": 3590.546875,
+      "left": 17
+    }
+  },
+  {
+    "topic": "convlstm",
+    "figure": 3,
+    "text": "記住序列、補像素、預測特徵：學習方式不同",
+    "overlap_chars": "",
+    "strong": {
+      "x": 32,
+      "y": 4948.015625,
+      "width": 260,
+      "height": 19,
+      "top": 4948.015625,
+      "right": 292,
+      "bottom": 4967.015625,
+      "left": 32
+    },
+    "button": {
+      "x": 32,
+      "y": 4976.515625,
+      "width": 91,
+      "height": 39.5,
+      "top": 4976.515625,
+      "right": 123,
+      "bottom": 5016.015625,
+      "left": 32
+    },
+    "caption": {
+      "x": 17,
+      "y": 4936.015625,
+      "width": 326,
+      "height": 91,
+      "top": 4936.015625,
+      "right": 343,
+      "bottom": 5027.015625,
+      "left": 17
+    }
+  },
+  {
+    "topic": "videomae",
+    "figure": 1,
+    "text": "VideoMAE：遮住影片，學會補回像素線索",
+    "overlap_chars": "",
+    "strong": {
+      "x": 32,
+      "y": 1939.53125,
+      "width": 245.484375,
+      "height": 19,
+      "top": 1939.53125,
+      "right": 277.484375,
+      "bottom": 1958.53125,
+      "left": 32
+    },
+    "button": {
+      "x": 32,
+      "y": 1968.03125,
+      "width": 91,
+      "height": 39.5,
+      "top": 1968.03125,
+      "right": 123,
+      "bottom": 2007.53125,
+      "left": 32
+    },
+    "caption": {
+      "x": 17,
+      "y": 1927.53125,
+      "width": 326,
+      "height": 91,
+      "top": 1927.53125,
+      "right": 343,
+      "bottom": 2018.53125,
+      "left": 17
+    }
+  },
+  {
+    "topic": "videomae",
+    "figure": 2,
+    "text": "關鍵動作沒拍進去，影片特徵也不夠",
+    "overlap_chars": "",
+    "strong": {
+      "x": 32,
+      "y": 3585.375,
+      "width": 208,
+      "height": 19,
+      "top": 3585.375,
+      "right": 240,
+      "bottom": 3604.375,
+      "left": 32
+    },
+    "button": {
+      "x": 32,
+      "y": 3613.875,
+      "width": 91,
+      "height": 39.5,
+      "top": 3613.875,
+      "right": 123,
+      "bottom": 3653.375,
+      "left": 32
+    },
+    "caption": {
+      "x": 17,
+      "y": 3573.375,
+      "width": 326,
+      "height": 91,
+      "top": 3573.375,
+      "right": 343,
+      "bottom": 3664.375,
+      "left": 17
+    }
+  },
+  {
+    "topic": "videomae",
+    "figure": 3,
+    "text": "記住序列、補像素、預測特徵：學習方式不同",
+    "overlap_chars": "",
+    "strong": {
+      "x": 32,
+      "y": 4968.09375,
+      "width": 260,
+      "height": 19,
+      "top": 4968.09375,
+      "right": 292,
+      "bottom": 4987.09375,
+      "left": 32
+    },
+    "button": {
+      "x": 32,
+      "y": 4996.59375,
+      "width": 91,
+      "height": 39.5,
+      "top": 4996.59375,
+      "right": 123,
+      "bottom": 5036.09375,
+      "left": 32
+    },
+    "caption": {
+      "x": 17,
+      "y": 4956.09375,
+      "width": 326,
+      "height": 91,
+      "top": 4956.09375,
+      "right": 343,
+      "bottom": 5047.09375,
+      "left": 17
+    }
+  },
+  {
+    "topic": "v-jepa",
+    "figure": 1,
+    "text": "V-JEPA：預測被遮住部分的特徵",
+    "overlap_chars": "",
+    "strong": {
+      "x": 32,
+      "y": 1757.078125,
+      "width": 186.71875,
+      "height": 19,
+      "top": 1757.078125,
+      "right": 218.71875,
+      "bottom": 1776.078125,
+      "left": 32
+    },
+    "button": {
+      "x": 218.71875,
+      "y": 1747.078125,
+      "width": 91,
+      "height": 39.5,
+      "top": 1747.078125,
+      "right": 309.71875,
+      "bottom": 1786.578125,
+      "left": 218.71875
+    },
+    "caption": {
+      "x": 17,
+      "y": 1726.078125,
+      "width": 326,
+      "height": 71.5,
+      "top": 1726.078125,
+      "right": 343,
+      "bottom": 1797.578125,
+      "left": 17
+    }
+  },
+  {
+    "topic": "v-jepa",
+    "figure": 2,
+    "text": "關鍵動作沒拍進去，影片特徵也不夠",
+    "overlap_chars": "",
+    "strong": {
+      "x": 32,
+      "y": 3394.015625,
+      "width": 208,
+      "height": 19,
+      "top": 3394.015625,
+      "right": 240,
+      "bottom": 3413.015625,
+      "left": 32
+    },
+    "button": {
+      "x": 32,
+      "y": 3422.515625,
+      "width": 91,
+      "height": 39.5,
+      "top": 3422.515625,
+      "right": 123,
+      "bottom": 3462.015625,
+      "left": 32
+    },
+    "caption": {
+      "x": 17,
+      "y": 3382.015625,
+      "width": 326,
+      "height": 91,
+      "top": 3382.015625,
+      "right": 343,
+      "bottom": 3473.015625,
+      "left": 17
+    }
+  },
+  {
+    "topic": "v-jepa",
+    "figure": 3,
+    "text": "記住序列、補像素、預測特徵：學習方式不同",
+    "overlap_chars": "",
+    "strong": {
+      "x": 32,
+      "y": 4749.859375,
+      "width": 260,
+      "height": 19,
+      "top": 4749.859375,
+      "right": 292,
+      "bottom": 4768.859375,
+      "left": 32
+    },
+    "button": {
+      "x": 32,
+      "y": 4778.359375,
+      "width": 91,
+      "height": 39.5,
+      "top": 4778.359375,
+      "right": 123,
+      "bottom": 4817.859375,
+      "left": 32
+    },
+    "caption": {
+      "x": 17,
+      "y": 4737.859375,
+      "width": 326,
+      "height": 91,
+      "top": 4737.859375,
+      "right": 343,
+      "bottom": 4828.859375,
+      "left": 17
+    }
+  },
+  {
+    "topic": "dinov2",
+    "figure": 1,
+    "text": "DINOv2：先學影像特徵，再找相似工件",
+    "overlap_chars": "",
+    "strong": {
+      "x": 32,
+      "y": 2114.265625,
+      "width": 230.484375,
+      "height": 19,
+      "top": 2114.265625,
+      "right": 262.484375,
+      "bottom": 2133.265625,
+      "left": 32
+    },
+    "button": {
+      "x": 32,
+      "y": 2142.765625,
+      "width": 91,
+      "height": 39.5,
+      "top": 2142.765625,
+      "right": 123,
+      "bottom": 2182.265625,
+      "left": 32
+    },
+    "caption": {
+      "x": 17,
+      "y": 2102.265625,
+      "width": 326,
+      "height": 91,
+      "top": 2102.265625,
+      "right": 343,
+      "bottom": 2193.265625,
+      "left": 17
+    }
+  },
+  {
+    "topic": "dinov2",
+    "figure": 2,
+    "text": "特徵很相近，仍可能漏掉小缺口",
+    "overlap_chars": "",
+    "strong": {
+      "x": 32,
+      "y": 4295,
+      "width": 182,
+      "height": 19,
+      "top": 4295,
+      "right": 214,
+      "bottom": 4314,
+      "left": 32
+    },
+    "button": {
+      "x": 214,
+      "y": 4285,
+      "width": 91,
+      "height": 39.5,
+      "top": 4285,
+      "right": 305,
+      "bottom": 4324.5,
+      "left": 214
+    },
+    "caption": {
+      "x": 17,
+      "y": 4264,
+      "width": 326,
+      "height": 71.5,
+      "top": 4264,
+      "right": 343,
+      "bottom": 4335.5,
+      "left": 17
+    }
+  },
+  {
+    "topic": "dinov2",
+    "figure": 3,
+    "text": "DINOv2 與 DINOv3：比較的是整套用途",
+    "overlap_chars": "",
+    "strong": {
+      "x": 32,
+      "y": 5964.765625,
+      "width": 232.859375,
+      "height": 19,
+      "top": 5964.765625,
+      "right": 264.859375,
+      "bottom": 5983.765625,
+      "left": 32
+    },
+    "button": {
+      "x": 32,
+      "y": 5993.265625,
+      "width": 91,
+      "height": 39.5,
+      "top": 5993.265625,
+      "right": 123,
+      "bottom": 6032.765625,
+      "left": 32
+    },
+    "caption": {
+      "x": 17,
+      "y": 5952.765625,
+      "width": 326,
+      "height": 91,
+      "top": 5952.765625,
+      "right": 343,
+      "bottom": 6043.765625,
+      "left": 17
+    }
+  },
+  {
+    "topic": "dinov3",
+    "figure": 1,
+    "text": "DINOv3：把局部之間的關係學穩",
+    "overlap_chars": "",
+    "strong": {
+      "x": 32,
+      "y": 2111.515625,
+      "width": 191.484375,
+      "height": 19,
+      "top": 2111.515625,
+      "right": 223.484375,
+      "bottom": 2130.515625,
+      "left": 32
+    },
+    "button": {
+      "x": 223.484375,
+      "y": 2101.515625,
+      "width": 91,
+      "height": 39.5,
+      "top": 2101.515625,
+      "right": 314.484375,
+      "bottom": 2141.015625,
+      "left": 223.484375
+    },
+    "caption": {
+      "x": 17,
+      "y": 2080.515625,
+      "width": 326,
+      "height": 71.5,
+      "top": 2080.515625,
+      "right": 343,
+      "bottom": 2152.015625,
+      "left": 17
+    }
+  },
+  {
+    "topic": "dinov3",
+    "figure": 2,
+    "text": "特徵很相近，仍可能漏掉小缺口",
+    "overlap_chars": "",
+    "strong": {
+      "x": 32,
+      "y": 4372.125,
+      "width": 182,
+      "height": 19,
+      "top": 4372.125,
+      "right": 214,
+      "bottom": 4391.125,
+      "left": 32
+    },
+    "button": {
+      "x": 214,
+      "y": 4362.125,
+      "width": 91,
+      "height": 39.5,
+      "top": 4362.125,
+      "right": 305,
+      "bottom": 4401.625,
+      "left": 214
+    },
+    "caption": {
+      "x": 17,
+      "y": 4341.125,
+      "width": 326,
+      "height": 71.5,
+      "top": 4341.125,
+      "right": 343,
+      "bottom": 4412.625,
+      "left": 17
+    }
+  },
+  {
+    "topic": "dinov3",
+    "figure": 3,
+    "text": "DINOv2 與 DINOv3：比較的是整套用途",
+    "overlap_chars": "",
+    "strong": {
+      "x": 32,
+      "y": 6041.890625,
+      "width": 232.859375,
+      "height": 19,
+      "top": 6041.890625,
+      "right": 264.859375,
+      "bottom": 6060.890625,
+      "left": 32
+    },
+    "button": {
+      "x": 32,
+      "y": 6070.390625,
+      "width": 91,
+      "height": 39.5,
+      "top": 6070.390625,
+      "right": 123,
+      "bottom": 6109.890625,
+      "left": 32
+    },
+    "caption": {
+      "x": 17,
+      "y": 6029.890625,
+      "width": 326,
+      "height": 91,
+      "top": 6029.890625,
+      "right": 343,
+      "bottom": 6120.890625,
+      "left": 17
+    }
+  },
+  {
+    "topic": "clip",
+    "figure": 1,
+    "text": "CLIP：讓影像和文字可以比相似",
+    "overlap_chars": "",
+    "strong": {
+      "x": 32,
+      "y": 2160.140625,
+      "width": 185.015625,
+      "height": 19,
+      "top": 2160.140625,
+      "right": 217.015625,
+      "bottom": 2179.140625,
+      "left": 32
+    },
+    "button": {
+      "x": 217.015625,
+      "y": 2150.140625,
+      "width": 91,
+      "height": 39.5,
+      "top": 2150.140625,
+      "right": 308.015625,
+      "bottom": 2189.640625,
+      "left": 217.015625
+    },
+    "caption": {
+      "x": 17,
+      "y": 2129.140625,
+      "width": 326,
+      "height": 71.5,
+      "top": 2129.140625,
+      "right": 343,
+      "bottom": 2200.640625,
+      "left": 17
+    }
+  },
+  {
+    "topic": "clip",
+    "figure": 2,
+    "text": "候選沒有正確答案，第一名也可能錯",
+    "overlap_chars": "",
+    "strong": {
+      "x": 32,
+      "y": 4256.484375,
+      "width": 208,
+      "height": 19,
+      "top": 4256.484375,
+      "right": 240,
+      "bottom": 4275.484375,
+      "left": 32
+    },
+    "button": {
+      "x": 32,
+      "y": 4284.984375,
+      "width": 91,
+      "height": 39.5,
+      "top": 4284.984375,
+      "right": 123,
+      "bottom": 4324.484375,
+      "left": 32
+    },
+    "caption": {
+      "x": 17,
+      "y": 4244.484375,
+      "width": 326,
+      "height": 91,
+      "top": 4244.484375,
+      "right": 343,
+      "bottom": 4335.484375,
+      "left": 17
+    }
+  },
+  {
+    "topic": "clip",
+    "figure": 3,
+    "text": "CLIP 與 SigLIP：訓練不同，選型要同題",
+    "overlap_chars": "",
+    "strong": {
+      "x": 32,
+      "y": 5961.59375,
+      "width": 231.21875,
+      "height": 19,
+      "top": 5961.59375,
+      "right": 263.21875,
+      "bottom": 5980.59375,
+      "left": 32
+    },
+    "button": {
+      "x": 32,
+      "y": 5990.09375,
+      "width": 91,
+      "height": 39.5,
+      "top": 5990.09375,
+      "right": 123,
+      "bottom": 6029.59375,
+      "left": 32
+    },
+    "caption": {
+      "x": 17,
+      "y": 5949.59375,
+      "width": 326,
+      "height": 91,
+      "top": 5949.59375,
+      "right": 343,
+      "bottom": 6040.59375,
+      "left": 17
+    }
+  },
+  {
+    "topic": "siglip",
+    "figure": 1,
+    "text": "SigLIP：逐對學會圖文是否配合",
+    "overlap_chars": "",
+    "strong": {
+      "x": 32,
+      "y": 1873.890625,
+      "width": 183.3125,
+      "height": 19,
+      "top": 1873.890625,
+      "right": 215.3125,
+      "bottom": 1892.890625,
+      "left": 32
+    },
+    "button": {
+      "x": 215.3125,
+      "y": 1863.890625,
+      "width": 91,
+      "height": 39.5,
+      "top": 1863.890625,
+      "right": 306.3125,
+      "bottom": 1903.390625,
+      "left": 215.3125
+    },
+    "caption": {
+      "x": 17,
+      "y": 1842.890625,
+      "width": 326,
+      "height": 71.5,
+      "top": 1842.890625,
+      "right": 343,
+      "bottom": 1914.390625,
+      "left": 17
+    }
+  },
+  {
+    "topic": "siglip",
+    "figure": 2,
+    "text": "候選沒有正確答案，第一名也可能錯",
+    "overlap_chars": "",
+    "strong": {
+      "x": 32,
+      "y": 4059.015625,
+      "width": 208,
+      "height": 19,
+      "top": 4059.015625,
+      "right": 240,
+      "bottom": 4078.015625,
+      "left": 32
+    },
+    "button": {
+      "x": 32,
+      "y": 4087.515625,
+      "width": 91,
+      "height": 39.5,
+      "top": 4087.515625,
+      "right": 123,
+      "bottom": 4127.015625,
+      "left": 32
+    },
+    "caption": {
+      "x": 17,
+      "y": 4047.015625,
+      "width": 326,
+      "height": 91,
+      "top": 4047.015625,
+      "right": 343,
+      "bottom": 4138.015625,
+      "left": 17
+    }
+  },
+  {
+    "topic": "siglip",
+    "figure": 3,
+    "text": "CLIP 與 SigLIP：訓練不同，選型要同題",
+    "overlap_chars": "",
+    "strong": {
+      "x": 32,
+      "y": 5764.125,
+      "width": 231.21875,
+      "height": 19,
+      "top": 5764.125,
+      "right": 263.21875,
+      "bottom": 5783.125,
+      "left": 32
+    },
+    "button": {
+      "x": 32,
+      "y": 5792.625,
+      "width": 91,
+      "height": 39.5,
+      "top": 5792.625,
+      "right": 123,
+      "bottom": 5832.125,
+      "left": 32
+    },
+    "caption": {
+      "x": 17,
+      "y": 5752.125,
+      "width": 326,
+      "height": 91,
+      "top": 5752.125,
+      "right": 343,
+      "bottom": 5843.125,
+      "left": 17
+    }
+  },
+  {
+    "topic": "llava",
+    "figure": 1,
+    "text": "LLaVA：把看見的線索接進語言模型",
+    "overlap_chars": "",
+    "strong": {
+      "x": 32,
+      "y": 2114.265625,
+      "width": 207.359375,
+      "height": 19,
+      "top": 2114.265625,
+      "right": 239.359375,
+      "bottom": 2133.265625,
+      "left": 32
+    },
+    "button": {
+      "x": 32,
+      "y": 2142.765625,
+      "width": 91,
+      "height": 39.5,
+      "top": 2142.765625,
+      "right": 123,
+      "bottom": 2182.265625,
+      "left": 32
+    },
+    "caption": {
+      "x": 17,
+      "y": 2102.265625,
+      "width": 326,
+      "height": 91,
+      "top": 2102.265625,
+      "right": 343,
+      "bottom": 2193.265625,
+      "left": 17
+    }
+  },
+  {
+    "topic": "llava",
+    "figure": 2,
+    "text": "看到缺螺絲，推不出缺少的原因",
+    "overlap_chars": "",
+    "strong": {
+      "x": 32,
+      "y": 4386.484375,
+      "width": 182,
+      "height": 19,
+      "top": 4386.484375,
+      "right": 214,
+      "bottom": 4405.484375,
+      "left": 32
+    },
+    "button": {
+      "x": 214,
+      "y": 4376.484375,
+      "width": 91,
+      "height": 39.5,
+      "top": 4376.484375,
+      "right": 305,
+      "bottom": 4415.984375,
+      "left": 214
+    },
+    "caption": {
+      "x": 17,
+      "y": 4355.484375,
+      "width": 326,
+      "height": 71.5,
+      "top": 4355.484375,
+      "right": 343,
+      "bottom": 4426.984375,
+      "left": 17
+    }
+  },
+  {
+    "topic": "llava",
+    "figure": 3,
+    "text": "看圖回答：先選部署方式，再比實際工作",
+    "overlap_chars": "",
+    "strong": {
+      "x": 32,
+      "y": 6056.703125,
+      "width": 234,
+      "height": 19,
+      "top": 6056.703125,
+      "right": 266,
+      "bottom": 6075.703125,
+      "left": 32
+    },
+    "button": {
+      "x": 32,
+      "y": 6085.203125,
+      "width": 91,
+      "height": 39.5,
+      "top": 6085.203125,
+      "right": 123,
+      "bottom": 6124.703125,
+      "left": 32
+    },
+    "caption": {
+      "x": 17,
+      "y": 6044.703125,
+      "width": 326,
+      "height": 91,
+      "top": 6044.703125,
+      "right": 343,
+      "bottom": 6135.703125,
+      "left": 17
+    }
+  },
+  {
+    "topic": "qwen-vl",
+    "figure": 1,
+    "text": "Qwen-VL：依影像形狀保留閱讀線索",
+    "overlap_chars": "",
+    "strong": {
+      "x": 32,
+      "y": 2138.890625,
+      "width": 212.953125,
+      "height": 19,
+      "top": 2138.890625,
+      "right": 244.953125,
+      "bottom": 2157.890625,
+      "left": 32
+    },
+    "button": {
+      "x": 32,
+      "y": 2167.390625,
+      "width": 91,
+      "height": 39.5,
+      "top": 2167.390625,
+      "right": 123,
+      "bottom": 2206.890625,
+      "left": 32
+    },
+    "caption": {
+      "x": 17,
+      "y": 2126.890625,
+      "width": 326,
+      "height": 91,
+      "top": 2126.890625,
+      "right": 343,
+      "bottom": 2217.890625,
+      "left": 17
+    }
+  },
+  {
+    "topic": "qwen-vl",
+    "figure": 2,
+    "text": "壓低像素預算，小字可能先消失",
+    "overlap_chars": "",
+    "strong": {
+      "x": 32,
+      "y": 4411.109375,
+      "width": 182,
+      "height": 19,
+      "top": 4411.109375,
+      "right": 214,
+      "bottom": 4430.109375,
+      "left": 32
+    },
+    "button": {
+      "x": 214,
+      "y": 4401.109375,
+      "width": 91,
+      "height": 39.5,
+      "top": 4401.109375,
+      "right": 305,
+      "bottom": 4440.609375,
+      "left": 214
+    },
+    "caption": {
+      "x": 17,
+      "y": 4380.109375,
+      "width": 326,
+      "height": 71.5,
+      "top": 4380.109375,
+      "right": 343,
+      "bottom": 4451.609375,
+      "left": 17
+    }
+  },
+  {
+    "topic": "qwen-vl",
+    "figure": 3,
+    "text": "看圖回答：先選部署方式，再比實際工作",
+    "overlap_chars": "",
+    "strong": {
+      "x": 32,
+      "y": 6054.453125,
+      "width": 234,
+      "height": 19,
+      "top": 6054.453125,
+      "right": 266,
+      "bottom": 6073.453125,
+      "left": 32
+    },
+    "button": {
+      "x": 32,
+      "y": 6082.953125,
+      "width": 91,
+      "height": 39.5,
+      "top": 6082.953125,
+      "right": 123,
+      "bottom": 6122.453125,
+      "left": 32
+    },
+    "caption": {
+      "x": 17,
+      "y": 6042.453125,
+      "width": 326,
+      "height": 91,
+      "top": 6042.453125,
+      "right": 343,
+      "bottom": 6133.453125,
+      "left": 17
+    }
+  },
+  {
+    "topic": "gemini-vision",
+    "figure": 1,
+    "text": "Gemini Vision：把影像與問題交給多模態服務",
+    "overlap_chars": "",
+    "strong": {
+      "x": 32,
+      "y": 2132.015625,
+      "width": 269.453125,
+      "height": 19,
+      "top": 2132.015625,
+      "right": 301.453125,
+      "bottom": 2151.015625,
+      "left": 32
+    },
+    "button": {
+      "x": 32,
+      "y": 2160.515625,
+      "width": 91,
+      "height": 39.5,
+      "top": 2160.515625,
+      "right": 123,
+      "bottom": 2200.015625,
+      "left": 32
+    },
+    "caption": {
+      "x": 17,
+      "y": 2120.015625,
+      "width": 326,
+      "height": 91,
+      "top": 2120.015625,
+      "right": 343,
+      "bottom": 2211.015625,
+      "left": 17
+    }
+  },
+  {
+    "topic": "gemini-vision",
+    "figure": 2,
+    "text": "JSON 格式正確，內容仍可能看錯",
+    "overlap_chars": "",
+    "strong": {
+      "x": 32,
+      "y": 4374.640625,
+      "width": 194.203125,
+      "height": 19,
+      "top": 4374.640625,
+      "right": 226.203125,
+      "bottom": 4393.640625,
+      "left": 32
+    },
+    "button": {
+      "x": 226.203125,
+      "y": 4364.640625,
+      "width": 91,
+      "height": 39.5,
+      "top": 4364.640625,
+      "right": 317.203125,
+      "bottom": 4404.140625,
+      "left": 226.203125
+    },
+    "caption": {
+      "x": 17,
+      "y": 4343.640625,
+      "width": 326,
+      "height": 71.5,
+      "top": 4343.640625,
+      "right": 343,
+      "bottom": 4415.140625,
+      "left": 17
+    }
+  },
+  {
+    "topic": "gemini-vision",
+    "figure": 3,
+    "text": "看圖回答：先選部署方式，再比實際工作",
+    "overlap_chars": "",
+    "strong": {
+      "x": 32,
+      "y": 6044.859375,
+      "width": 234,
+      "height": 19,
+      "top": 6044.859375,
+      "right": 266,
+      "bottom": 6063.859375,
+      "left": 32
+    },
+    "button": {
+      "x": 32,
+      "y": 6073.359375,
+      "width": 91,
+      "height": 39.5,
+      "top": 6073.359375,
+      "right": 123,
+      "bottom": 6112.859375,
+      "left": 32
+    },
+    "caption": {
+      "x": 17,
+      "y": 6032.859375,
+      "width": 326,
+      "height": 91,
+      "top": 6032.859375,
+      "right": 343,
+      "bottom": 6123.859375,
+      "left": 17
+    }
+  },
+  {
+    "topic": "defectfill",
+    "figure": 1,
+    "text": "DefectFill：把少量缺陷，學成可填入的外觀",
+    "overlap_chars": "",
+    "strong": {
+      "x": 32,
+      "y": 1990.8125,
+      "width": 255.71875,
+      "height": 19,
+      "top": 1990.8125,
+      "right": 287.71875,
+      "bottom": 2009.8125,
+      "left": 32
+    },
+    "button": {
+      "x": 32,
+      "y": 2019.3125,
+      "width": 91,
+      "height": 39.5,
+      "top": 2019.3125,
+      "right": 123,
+      "bottom": 2058.8125,
+      "left": 32
+    },
+    "caption": {
+      "x": 17,
+      "y": 1978.8125,
+      "width": 326,
+      "height": 91,
+      "top": 1978.8125,
+      "right": 343,
+      "bottom": 2069.8125,
+      "left": 17
+    }
+  },
+  {
+    "topic": "defectfill",
+    "figure": 2,
+    "text": "缺陷很明顯，也可能長錯地方",
+    "overlap_chars": "",
+    "strong": {
+      "x": 32,
+      "y": 4229.859375,
+      "width": 169,
+      "height": 19,
+      "top": 4229.859375,
+      "right": 201,
+      "bottom": 4248.859375,
+      "left": 32
+    },
+    "button": {
+      "x": 201,
+      "y": 4219.859375,
+      "width": 91,
+      "height": 39.5,
+      "top": 4219.859375,
+      "right": 292,
+      "bottom": 4259.359375,
+      "left": 201
+    },
+    "caption": {
+      "x": 17,
+      "y": 4198.859375,
+      "width": 326,
+      "height": 71.5,
+      "top": 4198.859375,
+      "right": 343,
+      "bottom": 4270.359375,
+      "left": 17
+    }
+  },
+  {
+    "topic": "defectfill",
+    "figure": 3,
+    "text": "要補缺陷資料：先比較學習與生成成本",
+    "overlap_chars": "",
+    "strong": {
+      "x": 32,
+      "y": 5919.21875,
+      "width": 221,
+      "height": 19,
+      "top": 5919.21875,
+      "right": 253,
+      "bottom": 5938.21875,
+      "left": 32
+    },
+    "button": {
+      "x": 32,
+      "y": 5947.71875,
+      "width": 91,
+      "height": 39.5,
+      "top": 5947.71875,
+      "right": 123,
+      "bottom": 5987.21875,
+      "left": 32
+    },
+    "caption": {
+      "x": 17,
+      "y": 5907.21875,
+      "width": 326,
+      "height": 91,
+      "top": 5907.21875,
+      "right": 343,
+      "bottom": 5998.21875,
+      "left": 17
+    }
+  },
+  {
+    "topic": "anomalydiffusion",
+    "figure": 1,
+    "text": "AnomalyDiffusion：外觀與位置分開控制",
+    "overlap_chars": "",
+    "strong": {
+      "x": 32,
+      "y": 2060.421875,
+      "width": 244.3125,
+      "height": 19,
+      "top": 2060.421875,
+      "right": 276.3125,
+      "bottom": 2079.421875,
+      "left": 32
+    },
+    "button": {
+      "x": 32,
+      "y": 2088.921875,
+      "width": 91,
+      "height": 39.5,
+      "top": 2088.921875,
+      "right": 123,
+      "bottom": 2128.421875,
+      "left": 32
+    },
+    "caption": {
+      "x": 17,
+      "y": 2048.421875,
+      "width": 326,
+      "height": 91,
+      "top": 2048.421875,
+      "right": 343,
+      "bottom": 2139.421875,
+      "left": 17
+    }
+  },
+  {
+    "topic": "anomalydiffusion",
+    "figure": 2,
+    "text": "給了兩塊遮罩，小缺陷仍要逐一核對",
+    "overlap_chars": "",
+    "strong": {
+      "x": 32,
+      "y": 4195.265625,
+      "width": 208,
+      "height": 19,
+      "top": 4195.265625,
+      "right": 240,
+      "bottom": 4214.265625,
+      "left": 32
+    },
+    "button": {
+      "x": 32,
+      "y": 4223.765625,
+      "width": 91,
+      "height": 39.5,
+      "top": 4223.765625,
+      "right": 123,
+      "bottom": 4263.265625,
+      "left": 32
+    },
+    "caption": {
+      "x": 17,
+      "y": 4183.265625,
+      "width": 326,
+      "height": 91,
+      "top": 4183.265625,
+      "right": 343,
+      "bottom": 4274.265625,
+      "left": 17
+    }
+  },
+  {
+    "topic": "anomalydiffusion",
+    "figure": 3,
+    "text": "要補缺陷資料：先比較學習與生成成本",
+    "overlap_chars": "",
+    "strong": {
+      "x": 32,
+      "y": 5950,
+      "width": 221,
+      "height": 19,
+      "top": 5950,
+      "right": 253,
+      "bottom": 5969,
+      "left": 32
+    },
+    "button": {
+      "x": 32,
+      "y": 5978.5,
+      "width": 91,
+      "height": 39.5,
+      "top": 5978.5,
+      "right": 123,
+      "bottom": 6018,
+      "left": 32
+    },
+    "caption": {
+      "x": 17,
+      "y": 5938,
+      "width": 326,
+      "height": 91,
+      "top": 5938,
+      "right": 343,
+      "bottom": 6029,
+      "left": 17
+    }
+  },
+  {
+    "topic": "tf-idg",
+    "figure": 1,
+    "text": "TF-IDG：不微調權重，生成時對齊缺陷",
+    "overlap_chars": "",
+    "strong": {
+      "x": 32,
+      "y": 1990.8125,
+      "width": 225.4375,
+      "height": 19,
+      "top": 1990.8125,
+      "right": 257.4375,
+      "bottom": 2009.8125,
+      "left": 32
+    },
+    "button": {
+      "x": 32,
+      "y": 2019.3125,
+      "width": 91,
+      "height": 39.5,
+      "top": 2019.3125,
+      "right": 123,
+      "bottom": 2058.8125,
+      "left": 32
+    },
+    "caption": {
+      "x": 17,
+      "y": 1978.8125,
+      "width": 326,
+      "height": 91,
+      "top": 1978.8125,
+      "right": 343,
+      "bottom": 2069.8125,
+      "left": 17
+    }
+  },
+  {
+    "topic": "tf-idg",
+    "figure": 2,
+    "text": "免微調，也會把參考外觀帶錯",
+    "overlap_chars": "",
+    "strong": {
+      "x": 32,
+      "y": 4200.265625,
+      "width": 169,
+      "height": 19,
+      "top": 4200.265625,
+      "right": 201,
+      "bottom": 4219.265625,
+      "left": 32
+    },
+    "button": {
+      "x": 201,
+      "y": 4190.265625,
+      "width": 91,
+      "height": 39.5,
+      "top": 4190.265625,
+      "right": 292,
+      "bottom": 4229.765625,
+      "left": 201
+    },
+    "caption": {
+      "x": 17,
+      "y": 4169.265625,
+      "width": 326,
+      "height": 71.5,
+      "top": 4169.265625,
+      "right": 343,
+      "bottom": 4240.765625,
+      "left": 17
+    }
+  },
+  {
+    "topic": "tf-idg",
+    "figure": 3,
+    "text": "要補缺陷資料：先比較學習與生成成本",
+    "overlap_chars": "",
+    "strong": {
+      "x": 32,
+      "y": 5897.359375,
+      "width": 221,
+      "height": 19,
+      "top": 5897.359375,
+      "right": 253,
+      "bottom": 5916.359375,
+      "left": 32
+    },
+    "button": {
+      "x": 32,
+      "y": 5925.859375,
+      "width": 91,
+      "height": 39.5,
+      "top": 5925.859375,
+      "right": 123,
+      "bottom": 5965.359375,
+      "left": 32
+    },
+    "caption": {
+      "x": 17,
+      "y": 5885.359375,
+      "width": 326,
+      "height": 91,
+      "top": 5885.359375,
+      "right": 343,
+      "bottom": 5976.359375,
+      "left": 17
+    }
+  },
+  {
+    "topic": "controlnet",
+    "figure": 1,
+    "text": "ControlNet：把輪廓條件送進生成過程",
+    "overlap_chars": "",
+    "strong": {
+      "x": 32,
+      "y": 2020.921875,
+      "width": 226.703125,
+      "height": 19,
+      "top": 2020.921875,
+      "right": 258.703125,
+      "bottom": 2039.921875,
+      "left": 32
+    },
+    "button": {
+      "x": 32,
+      "y": 2049.421875,
+      "width": 91,
+      "height": 39.5,
+      "top": 2049.421875,
+      "right": 123,
+      "bottom": 2088.921875,
+      "left": 32
+    },
+    "caption": {
+      "x": 17,
+      "y": 2008.921875,
+      "width": 326,
+      "height": 91,
+      "top": 2008.921875,
+      "right": 343,
+      "bottom": 2099.921875,
+      "left": 17
+    }
+  },
+  {
+    "topic": "controlnet",
+    "figure": 2,
+    "text": "輪廓相同，細小裂紋仍可能不同",
+    "overlap_chars": "",
+    "strong": {
+      "x": 32,
+      "y": 4233.953125,
+      "width": 182,
+      "height": 19,
+      "top": 4233.953125,
+      "right": 214,
+      "bottom": 4252.953125,
+      "left": 32
+    },
+    "button": {
+      "x": 214,
+      "y": 4223.953125,
+      "width": 91,
+      "height": 39.5,
+      "top": 4223.953125,
+      "right": 305,
+      "bottom": 4263.453125,
+      "left": 214
+    },
+    "caption": {
+      "x": 17,
+      "y": 4202.953125,
+      "width": 326,
+      "height": 71.5,
+      "top": 4202.953125,
+      "right": 343,
+      "bottom": 4274.453125,
+      "left": 17
+    }
+  },
+  {
+    "topic": "controlnet",
+    "figure": 3,
+    "text": "控制布局，還是只改一塊？",
+    "overlap_chars": "",
+    "strong": {
+      "x": 32,
+      "y": 5904.1875,
+      "width": 156,
+      "height": 19,
+      "top": 5904.1875,
+      "right": 188,
+      "bottom": 5923.1875,
+      "left": 32
+    },
+    "button": {
+      "x": 188,
+      "y": 5894.1875,
+      "width": 91,
+      "height": 39.5,
+      "top": 5894.1875,
+      "right": 279,
+      "bottom": 5933.6875,
+      "left": 188
+    },
+    "caption": {
+      "x": 17,
+      "y": 5873.1875,
+      "width": 326,
+      "height": 71.5,
+      "top": 5873.1875,
+      "right": 343,
+      "bottom": 5944.6875,
+      "left": 17
+    }
+  },
+  {
+    "topic": "inpainting",
+    "figure": 1,
+    "text": "Inpainting：指定一塊，補出連續紋理",
+    "overlap_chars": "",
+    "strong": {
+      "x": 32,
+      "y": 2020.921875,
+      "width": 222.21875,
+      "height": 19,
+      "top": 2020.921875,
+      "right": 254.21875,
+      "bottom": 2039.921875,
+      "left": 32
+    },
+    "button": {
+      "x": 32,
+      "y": 2049.421875,
+      "width": 91,
+      "height": 39.5,
+      "top": 2049.421875,
+      "right": 123,
+      "bottom": 2088.921875,
+      "left": 32
+    },
+    "caption": {
+      "x": 17,
+      "y": 2008.921875,
+      "width": 326,
+      "height": 91,
+      "top": 2008.921875,
+      "right": 343,
+      "bottom": 2099.921875,
+      "left": 17
+    }
+  },
+  {
+    "topic": "inpainting",
+    "figure": 2,
+    "text": "遮住真實孔洞，也能補出平整表面",
+    "overlap_chars": "",
+    "strong": {
+      "x": 32,
+      "y": 4263.546875,
+      "width": 195,
+      "height": 19,
+      "top": 4263.546875,
+      "right": 227,
+      "bottom": 4282.546875,
+      "left": 32
+    },
+    "button": {
+      "x": 227,
+      "y": 4253.546875,
+      "width": 91,
+      "height": 39.5,
+      "top": 4253.546875,
+      "right": 318,
+      "bottom": 4293.046875,
+      "left": 227
+    },
+    "caption": {
+      "x": 17,
+      "y": 4232.546875,
+      "width": 326,
+      "height": 71.5,
+      "top": 4232.546875,
+      "right": 343,
+      "bottom": 4304.046875,
+      "left": 17
+    }
+  },
+  {
+    "topic": "inpainting",
+    "figure": 3,
+    "text": "控制布局，還是只改一塊？",
+    "overlap_chars": "",
+    "strong": {
+      "x": 32,
+      "y": 5914.640625,
+      "width": 156,
+      "height": 19,
+      "top": 5914.640625,
+      "right": 188,
+      "bottom": 5933.640625,
+      "left": 32
+    },
+    "button": {
+      "x": 188,
+      "y": 5904.640625,
+      "width": 91,
+      "height": 39.5,
+      "top": 5904.640625,
+      "right": 279,
+      "bottom": 5944.140625,
+      "left": 188
+    },
+    "caption": {
+      "x": 17,
+      "y": 5883.640625,
+      "width": 326,
+      "height": 71.5,
+      "top": 5883.640625,
+      "right": 343,
+      "bottom": 5955.140625,
+      "left": 17
+    }
+  },
+  {
+    "topic": "diffusion-restoration",
+    "figure": 1,
+    "text": "擴散復原：用影像先驗，逐步估回細節",
+    "overlap_chars": "",
+    "strong": {
+      "x": 32,
+      "y": 2114.765625,
+      "width": 221,
+      "height": 19,
+      "top": 2114.765625,
+      "right": 253,
+      "bottom": 2133.765625,
+      "left": 32
+    },
+    "button": {
+      "x": 32,
+      "y": 2143.265625,
+      "width": 91,
+      "height": 39.5,
+      "top": 2143.265625,
+      "right": 123,
+      "bottom": 2182.765625,
+      "left": 32
+    },
+    "caption": {
+      "x": 17,
+      "y": 2102.765625,
+      "width": 326,
+      "height": 91,
+      "top": 2102.765625,
+      "right": 343,
+      "bottom": 2193.765625,
+      "left": 17
+    }
+  },
+  {
+    "topic": "diffusion-restoration",
+    "figure": 2,
+    "text": "同一退化影像，可能對應不同細節",
+    "overlap_chars": "",
+    "strong": {
+      "x": 32,
+      "y": 4446.171875,
+      "width": 195,
+      "height": 19,
+      "top": 4446.171875,
+      "right": 227,
+      "bottom": 4465.171875,
+      "left": 32
+    },
+    "button": {
+      "x": 227,
+      "y": 4436.171875,
+      "width": 91,
+      "height": 39.5,
+      "top": 4436.171875,
+      "right": 318,
+      "bottom": 4475.671875,
+      "left": 227
+    },
+    "caption": {
+      "x": 17,
+      "y": 4415.171875,
+      "width": 326,
+      "height": 71.5,
+      "top": 4415.171875,
+      "right": 343,
+      "bottom": 4486.671875,
+      "left": 17
+    }
+  },
+  {
+    "topic": "diffusion-restoration",
+    "figure": 3,
+    "text": "先看影像壞在哪裡，再選復原方法",
+    "overlap_chars": "",
+    "strong": {
+      "x": 32,
+      "y": 6162.265625,
+      "width": 195,
+      "height": 19,
+      "top": 6162.265625,
+      "right": 227,
+      "bottom": 6181.265625,
+      "left": 32
+    },
+    "button": {
+      "x": 227,
+      "y": 6152.265625,
+      "width": 91,
+      "height": 39.5,
+      "top": 6152.265625,
+      "right": 318,
+      "bottom": 6191.765625,
+      "left": 227
+    },
+    "caption": {
+      "x": 17,
+      "y": 6131.265625,
+      "width": 326,
+      "height": 71.5,
+      "top": 6131.265625,
+      "right": 343,
+      "bottom": 6202.765625,
+      "left": 17
+    }
+  },
+  {
+    "topic": "deblur",
+    "figure": 1,
+    "text": "Deblur：把拖開的邊緣，估回清楚位置",
+    "overlap_chars": "",
+    "strong": {
+      "x": 32,
+      "y": 1990.8125,
+      "width": 225.265625,
+      "height": 19,
+      "top": 1990.8125,
+      "right": 257.265625,
+      "bottom": 2009.8125,
+      "left": 32
+    },
+    "button": {
+      "x": 32,
+      "y": 2019.3125,
+      "width": 91,
+      "height": 39.5,
+      "top": 2019.3125,
+      "right": 123,
+      "bottom": 2058.8125,
+      "left": 32
+    },
+    "caption": {
+      "x": 17,
+      "y": 1978.8125,
+      "width": 326,
+      "height": 91,
+      "top": 1978.8125,
+      "right": 343,
+      "bottom": 2069.8125,
+      "left": 17
+    }
+  },
+  {
+    "topic": "deblur",
+    "figure": 2,
+    "text": "去模糊後的雙邊，可能是振鈴假影",
+    "overlap_chars": "",
+    "strong": {
+      "x": 32,
+      "y": 4163.9375,
+      "width": 195,
+      "height": 19,
+      "top": 4163.9375,
+      "right": 227,
+      "bottom": 4182.9375,
+      "left": 32
+    },
+    "button": {
+      "x": 227,
+      "y": 4153.9375,
+      "width": 91,
+      "height": 39.5,
+      "top": 4153.9375,
+      "right": 318,
+      "bottom": 4193.4375,
+      "left": 227
+    },
+    "caption": {
+      "x": 17,
+      "y": 4132.9375,
+      "width": 326,
+      "height": 71.5,
+      "top": 4132.9375,
+      "right": 343,
+      "bottom": 4204.4375,
+      "left": 17
+    }
+  },
+  {
+    "topic": "deblur",
+    "figure": 3,
+    "text": "先看影像壞在哪裡，再選復原方法",
+    "overlap_chars": "",
+    "strong": {
+      "x": 32,
+      "y": 5845.421875,
+      "width": 195,
+      "height": 19,
+      "top": 5845.421875,
+      "right": 227,
+      "bottom": 5864.421875,
+      "left": 32
+    },
+    "button": {
+      "x": 227,
+      "y": 5835.421875,
+      "width": 91,
+      "height": 39.5,
+      "top": 5835.421875,
+      "right": 318,
+      "bottom": 5874.921875,
+      "left": 227
+    },
+    "caption": {
+      "x": 17,
+      "y": 5814.421875,
+      "width": 326,
+      "height": 71.5,
+      "top": 5814.421875,
+      "right": 343,
+      "bottom": 5885.921875,
+      "left": 17
+    }
+  },
+  {
+    "topic": "super-resolution",
+    "figure": 1,
+    "text": "超解析度：增加像素，並估計缺少的細節",
+    "overlap_chars": "",
+    "strong": {
+      "x": 32,
+      "y": 2060.421875,
+      "width": 234,
+      "height": 19,
+      "top": 2060.421875,
+      "right": 266,
+      "bottom": 2079.421875,
+      "left": 32
+    },
+    "button": {
+      "x": 32,
+      "y": 2088.921875,
+      "width": 91,
+      "height": 39.5,
+      "top": 2088.921875,
+      "right": 123,
+      "bottom": 2128.421875,
+      "left": 32
+    },
+    "caption": {
+      "x": 17,
+      "y": 2048.421875,
+      "width": 326,
+      "height": 91,
+      "top": 2048.421875,
+      "right": 343,
+      "bottom": 2139.421875,
+      "left": 17
+    }
+  },
+  {
+    "topic": "super-resolution",
+    "figure": 2,
+    "text": "低解析看不見的缺口，放大後也難確定",
+    "overlap_chars": "",
+    "strong": {
+      "x": 32,
+      "y": 4284.046875,
+      "width": 221,
+      "height": 19,
+      "top": 4284.046875,
+      "right": 253,
+      "bottom": 4303.046875,
+      "left": 32
+    },
+    "button": {
+      "x": 32,
+      "y": 4312.546875,
+      "width": 91,
+      "height": 39.5,
+      "top": 4312.546875,
+      "right": 123,
+      "bottom": 4352.046875,
+      "left": 32
+    },
+    "caption": {
+      "x": 17,
+      "y": 4272.046875,
+      "width": 326,
+      "height": 91,
+      "top": 4272.046875,
+      "right": 343,
+      "bottom": 4363.046875,
+      "left": 17
+    }
+  },
+  {
+    "topic": "super-resolution",
+    "figure": 3,
+    "text": "先看影像壞在哪裡，再選復原方法",
+    "overlap_chars": "",
+    "strong": {
+      "x": 32,
+      "y": 6030.90625,
+      "width": 195,
+      "height": 19,
+      "top": 6030.90625,
+      "right": 227,
+      "bottom": 6049.90625,
+      "left": 32
+    },
+    "button": {
+      "x": 227,
+      "y": 6020.90625,
+      "width": 91,
+      "height": 39.5,
+      "top": 6020.90625,
+      "right": 318,
+      "bottom": 6060.40625,
+      "left": 227
+    },
+    "caption": {
+      "x": 17,
+      "y": 5999.90625,
+      "width": 326,
+      "height": 71.5,
+      "top": 5999.90625,
+      "right": 343,
+      "bottom": 6071.40625,
+      "left": 17
+    }
+  }
+]

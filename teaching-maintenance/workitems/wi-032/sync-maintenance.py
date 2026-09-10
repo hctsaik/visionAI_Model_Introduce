@@ -2,6 +2,9 @@ import json,hashlib,shutil,re
 from pathlib import Path
 W=Path(__file__).resolve().parent;C=W.parents[1];R=C.parents[1];S=C/'teaching-maintenance'
 p=S/'manifest.json';m=json.loads(p.read_text(encoding='utf-8'));m['workitem']='WI-032';new={}
+for src in (W.parent/'wi-031').iterdir():
+ if src.is_file() and src.suffix in {'.md','.json','.py','.tsv'}:
+  new['workitems/wi-031/'+src.name]=src
 for src in list(W.glob('*.md'))+list(W.glob('*.json'))+list(W.glob('*.py')):
  new['workitems/wi-032/'+src.name]=src
 for src in (W/'pages').glob('*/report.json'):new['workitems/wi-032/'+src.relative_to(W).as_posix()]=src

@@ -1,3 +1,7 @@
+## WI-032 發布完成（2026-09-11）
+
+第一部分六課成果已 commit 並 push：2e218926e2ff5d1a8d21ca5cb7bbe381fde27819；GitHub Pages 部署成功，公開 93 個檔案逐一 hash 與已提交內容一致（本機部分 Markdown 為 CRLF，Git 為 LF，文字內容一致）。發布證據為 workitems/wi-032/public-release-verification.json。最新學習及接續資料同步保存在 Git 的 teaching-maintenance。使用者成品核准仍 pending；第二部分 52 課未開始，下次依根 Overall_Review.md 第二部分接續。此段取代下方歷史未發布狀態。
+
 ## WI-032：Overall Review第一部分（本機完成、未發布）
 
 [總計畫](project/Overall_Review.md)將58課分成6課重建與52課局部修正；前6課已完成主線、工程層、手機圖、自測與交付。[報告](workitems/wi-032/REPORT.md)、[學習](project/TEACHING_REVIEW_LOG.md)、[驗證](workitems/wi-032/final-verification.json)與全部brief已保存。使用者核准pending。

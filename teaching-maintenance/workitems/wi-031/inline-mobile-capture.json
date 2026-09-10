@@ -1,0 +1,12 @@
+[
+  {
+    "topic": "det-dino-detector",
+    "figures": 4,
+    "svg": 4
+  },
+  {
+    "topic": "yolo-world",
+    "figures": 4,
+    "svg": 4
+  }
+]

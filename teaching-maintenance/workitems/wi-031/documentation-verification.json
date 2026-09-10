@@ -1,0 +1,15 @@
+{
+  "durable_status_files": 3,
+  "checklist_complete": true,
+  "synchronized_authority_snapshots": [
+    "project/IMAGE_STYLE_GUIDE.md",
+    "project/TEACHING_REVIEW_LOG.md",
+    "project/TEACHING_SCORING_RUBRIC.md",
+    "project/TEACHING_WEBPAGE_GUIDE.md",
+    "project/CLAUDE.md"
+  ],
+  "production_changed": false,
+  "commit_push": false,
+  "git_diff_check": "PASS",
+  "tracked_changes": "Only teaching-maintenance README, manifest and three learning Markdown snapshots; no docs changes"
+}

@@ -66,12 +66,18 @@ WI-032第一部分六課本機重建、自評與必要驗證完成。Overall_Rev
 使用者明確授權「繼續 commit + push」。範圍為已完成第一部分六課、審查與學習、第二部分接續紀錄；不開始第二部分。即將同步 Git 內維護副本並檢查提交清單，避免根目錄 Markdown 只留本機。
 
 - [x] 同步最新來源與學習副本，核對已驗證 HTML、資產與提交差異。
-- [ ] Commit 並 push main，核對遠端 SHA。
-- [ ] 核對 Pages 結果與公開內容，保存發布證據及接續狀態。
+- [x] Commit 並 push main，核對遠端 SHA。
+- [x] 核對 Pages 結果與公開內容，保存發布證據及接續狀態。
 
 目前提交／發布未執行；既有 14 tests／130 subtests 通過，這次未改教材，不重新建置已固定的 HTML。下一步同步與提交前檢查。使用者成品審閱與發布授權分開。
 
 提交前 checkpoint：已確認 course／docs HTML 與實頁驗證 hash 相同，985 份維護 manifest hash 通過；4 張未引用候選保留到 unused-publish-candidates，未刪除。git diff --check 通過。GitHub CLI 未登入，因此發布狀態將以公開 API 核對；Git push 使用既有 Git 認證，不輸出憑證。即將提交 docs 與 teaching-maintenance。
+
+推送 checkpoint：內容 commit 2e21892 已成功 push main；Pages run 34538018042 排隊，公開內容尚待核對。第二部分 52 課未開始。下一步等待部署完成，再保存公開 hash 證據。
+
+接續依賴核對：發現 Overall 已保存，但其依據 WI-031 的 58 課完整審查尚未進入 Git 維護快照。已擴充同步範圍納入該輪頂層 Markdown、結果、驗證及脚本；與發布證據一併補交，確保第二部分接續不只依賴本機。歷史截圖仍保留本機，不宣稱完整搬入 Git。
+
+公開核對首次失敗：ChArUco model.md 的本機 CRLF 與 Git／Pages LF 不同；獨立核對 128 處 CRLF，正規化後內容完全相同。改以 git show 的已提交位元為公開 SHA 比對基準，另檢查本機文字正規化後相同；PNG 與 HTML 仍須原始位元相同。Pages run 34538018042 已 success，正在重跑公開核對，不將首次失敗記為成功。
 
 ## WI-032-L 學習補記（2026-09-11）
 
@@ -97,3 +103,7 @@ WI-032第一部分六課本機重建、自評與必要驗證完成。Overall_Rev
 Checkpoint：既有八項重建學習已存在 TEACHING_REVIEW_LOG.md；正在補記最後收尾發現及下次驗證方式。預期產物為共用 log、網頁指南及接續 Markdown，不另建第二套規則。驗收為新增紀錄有可定位證據、連結存在、狀態不混淆。文件檢查尚未執行，無阻礙。
 
 完成 checkpoint：共用 log 已補六項「觀察／規則位置／下次驗證」及 HTML 版本固定的學習，共用網頁指南已同步。6 份 Markdown UTF-8 檢查、4 個新增證據連結及既有 final_html_freeze 證據核對通過；git diff --check 通過（僅既有 HTML 換行提示）。首次用 PowerShell 管線寫入三個入口時中文轉成問號，實讀發現後已用 apply_patch 修復並再次核對；後續中文文件應直接以 UTF-8 檔案或 apply_patch 寫入，不能只看命令成功。此次未重跑網頁測試、產圖或模型推論。無阻礙；下一步依使用者後續指示接續。六課製作完成與使用者待核准狀態不變。
+
+
+發布完成 checkpoint：第一部分六課成果已 commit 並 push：2e218926e2ff5d1a8d21ca5cb7bbe381fde27819；GitHub Pages 部署成功，公開 93 個檔案逐一 hash 與已提交內容一致（本機部分 Markdown 為 CRLF，Git 為 LF，文字內容一致）。發布證據為 workitems/wi-032/public-release-verification.json。最新學習及接續資料同步保存在 Git 的 teaching-maintenance。使用者成品核准仍 pending；第二部分 52 課未開始，下次依根 Overall_Review.md 第二部分接續。此段取代下方歷史未發布狀態。
+公開 API 已核對 Pages run 34538018042 success。即將將本發布證據另行提交及推送；該紀錄提交不更動 docs 教材。

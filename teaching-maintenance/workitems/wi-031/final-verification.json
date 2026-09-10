@@ -1,0 +1,30 @@
+{
+  "topic_count": 58,
+  "page_states": 116,
+  "complete_states": 116,
+  "zoom_checks": 376,
+  "answers_opened": 116,
+  "navigation_changed": 116,
+  "page_errors": [],
+  "whole_page_overflow_states": 0,
+  "caption_count": 188,
+  "caption_overlap_count": 0,
+  "deep_chapter_width_states": 80,
+  "deep_view_captures": 148,
+  "rechecked_premature_blank_captures": 13,
+  "recheck_files_exist": true,
+  "active_assets": 644,
+  "changed_course_assets": [],
+  "docs_asset_mismatches": [],
+  "html_unchanged": true,
+  "course_docs_html_equal": true,
+  "shared_main_asset_paths": 66,
+  "shared_hashes_unchanged": true,
+  "public_html_matches_at_capture": true,
+  "classification_counts": {
+    "符合": 0,
+    "需要重建": 6,
+    "局部修正": 52
+  },
+  "result_evidence_links_checked": 424
+}

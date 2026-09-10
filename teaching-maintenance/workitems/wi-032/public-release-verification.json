@@ -1,0 +1,660 @@
+{
+  "commit": "2e218926e2ff5d1a8d21ca5cb7bbe381fde27819",
+  "url": "https://hctsaik.github.io/visionAI_Model_Introduce/",
+  "checks": [
+    {
+      "path": "index.html",
+      "sha256": "e4f657377bf9eeac2b7b0b857df46915acf72a699adf91147ccfaa786aac2ac2",
+      "status": 200,
+      "matches_committed_bytes": true,
+      "local_line_endings_only": false
+    },
+    {
+      "path": "_course_content/generated-concepts/charuco/wi032-charuco-core-r05-desktop.png",
+      "sha256": "ec556aafa483ea41185391772564503c4cdfeedee09b2bc0d444e63e826ab031",
+      "status": 200,
+      "matches_committed_bytes": true,
+      "local_line_endings_only": false
+    },
+    {
+      "path": "_course_content/generated-concepts/charuco/wi032-charuco-core-r05-mobile.png",
+      "sha256": "95bb73a62dc1309afd629c56ecd2340533650d5b955ba29bb5ff29424cebb8ab",
+      "status": 200,
+      "matches_committed_bytes": true,
+      "local_line_endings_only": false
+    },
+    {
+      "path": "_course_content/generated-concepts/charuco/wi032-charuco-failure-native-r05-desktop.png",
+      "sha256": "5155d66bf96ce9ff6bc097827b458924c18906490483a539170527da965eb03b",
+      "status": 200,
+      "matches_committed_bytes": true,
+      "local_line_endings_only": false
+    },
+    {
+      "path": "_course_content/generated-concepts/charuco/wi032-charuco-failure-native-r05-mobile.png",
+      "sha256": "1f8f10df6aed95c5974764b173f4c50184c63d984392c7c4246107ef37021f71",
+      "status": 200,
+      "matches_committed_bytes": true,
+      "local_line_endings_only": false
+    },
+    {
+      "path": "_course_content/generated-concepts/det-dino-detector/wi032-detector-compare-r01-desktop.png",
+      "sha256": "3578ba3370635cf640fe13c4677d024ffc18065a0ac4413787c50904b14e7ea3",
+      "status": 200,
+      "matches_committed_bytes": true,
+      "local_line_endings_only": false
+    },
+    {
+      "path": "_course_content/generated-concepts/det-dino-detector/wi032-detector-compare-r02-mobile.png",
+      "sha256": "7519591799fa36ae21d4640d66efb1af292685d71985e8d784640fd318aa37e6",
+      "status": 200,
+      "matches_committed_bytes": true,
+      "local_line_endings_only": false
+    },
+    {
+      "path": "_course_content/generated-concepts/det-dino-detector/wi032-dino-core-r01-desktop.png",
+      "sha256": "e3ecb4fa1a59b8e0582ce4133c9716fa51b6a445adf98b77490105b6850ba848",
+      "status": 200,
+      "matches_committed_bytes": true,
+      "local_line_endings_only": false
+    },
+    {
+      "path": "_course_content/generated-concepts/det-dino-detector/wi032-dino-core-r02-mobile.png",
+      "sha256": "73959c039ec4ad64ff9bda8bc1e7189be229bc0a7aaa41b49acf6e9308c96afa",
+      "status": 200,
+      "matches_committed_bytes": true,
+      "local_line_endings_only": false
+    },
+    {
+      "path": "_course_content/generated-concepts/det-dino-detector/wi032-dino-failure-r02-desktop.png",
+      "sha256": "543c0ec17d6d681c209b8f4ff84ac989941041dbcdb05a31f8a1f29ed2f89534",
+      "status": 200,
+      "matches_committed_bytes": true,
+      "local_line_endings_only": false
+    },
+    {
+      "path": "_course_content/generated-concepts/det-dino-detector/wi032-dino-failure-r04-mobile.png",
+      "sha256": "8958052f9df4d741a7d71afd21ef424fbf5d45f3ef424974fc7dbe6b0a518913",
+      "status": 200,
+      "matches_committed_bytes": true,
+      "local_line_endings_only": false
+    },
+    {
+      "path": "_course_content/generated-concepts/ecc/wi032-ecc-core-r01-desktop.png",
+      "sha256": "5345d7e79d2a05260fdd15b486552bdc105ca2637987da9db40072c6194e2b9d",
+      "status": 200,
+      "matches_committed_bytes": true,
+      "local_line_endings_only": false
+    },
+    {
+      "path": "_course_content/generated-concepts/ecc/wi032-ecc-core-r01-mobile.png",
+      "sha256": "a69ed9f2781682f76a01d2d2b284f462f4004dfedbf4a88bfd9add46c5e1ffe0",
+      "status": 200,
+      "matches_committed_bytes": true,
+      "local_line_endings_only": false
+    },
+    {
+      "path": "_course_content/generated-concepts/ecc/wi032-ecc-failure-native-r05-desktop.png",
+      "sha256": "36f9ab8cb729cc2a8dbb2cdfe7df3f7ae07a92edf9dec824d00ba870261ad3c3",
+      "status": 200,
+      "matches_committed_bytes": true,
+      "local_line_endings_only": false
+    },
+    {
+      "path": "_course_content/generated-concepts/ecc/wi032-ecc-failure-native-r05-mobile.png",
+      "sha256": "335562deda970a4d6c8cb239eb951fa0a8b1776d33c0bb5ef61a09ff6abd5d24",
+      "status": 200,
+      "matches_committed_bytes": true,
+      "local_line_endings_only": false
+    },
+    {
+      "path": "_course_content/generated-concepts/ecc/wi032-geometry-compare-native-r05-desktop.png",
+      "sha256": "0b132dd65ec7c19f69d865093c3ea413d07035599e329102460d486c8ccb3eb3",
+      "status": 200,
+      "matches_committed_bytes": true,
+      "local_line_endings_only": false
+    },
+    {
+      "path": "_course_content/generated-concepts/ecc/wi032-geometry-compare-native-r05-mobile.png",
+      "sha256": "a544bd14044783a58188eaebadf51d6495355cd7646b40ffb07fd8b39eeba2be",
+      "status": 200,
+      "matches_committed_bytes": true,
+      "local_line_endings_only": false
+    },
+    {
+      "path": "_course_content/generated-concepts/lightglue/wi032-lightglue-core-native-r05-desktop.png",
+      "sha256": "904d0708c634300227d0136dcc3a1e6d8da799690550425f352a8d709e2dc43d",
+      "status": 200,
+      "matches_committed_bytes": true,
+      "local_line_endings_only": false
+    },
+    {
+      "path": "_course_content/generated-concepts/lightglue/wi032-lightglue-core-native-r05-mobile.png",
+      "sha256": "5135b1b5c433c674ff68807e83a948d0e707ea4b26fa61d6de59b81656e9d920",
+      "status": 200,
+      "matches_committed_bytes": true,
+      "local_line_endings_only": false
+    },
+    {
+      "path": "_course_content/generated-concepts/lightglue/wi032-lightglue-failure-native-r05-desktop.png",
+      "sha256": "ce01796293c9442ab1a4d82b87a348e5922c4efdcd6e9d5fa2dbb4e9199a04b6",
+      "status": 200,
+      "matches_committed_bytes": true,
+      "local_line_endings_only": false
+    },
+    {
+      "path": "_course_content/generated-concepts/lightglue/wi032-lightglue-failure-native-r05-mobile.png",
+      "sha256": "fb6f94bfb0c84ce4f8e1cc89e51213a1bda111d46ed7fd887fc8bcc80bf652c5",
+      "status": 200,
+      "matches_committed_bytes": true,
+      "local_line_endings_only": false
+    },
+    {
+      "path": "_course_content/generated-concepts/sift/wi032-sift-core-native-r05-desktop.png",
+      "sha256": "1712a061122299d59f47ede3dd83aa643f8900b16410e880c0d5144c11a43ccd",
+      "status": 200,
+      "matches_committed_bytes": true,
+      "local_line_endings_only": false
+    },
+    {
+      "path": "_course_content/generated-concepts/sift/wi032-sift-core-native-r05-mobile.png",
+      "sha256": "f3820d2c6aa950b0d81446b4d4a1ca1b28ba4e8b1df729350a0a5c8a9f7ead02",
+      "status": 200,
+      "matches_committed_bytes": true,
+      "local_line_endings_only": false
+    },
+    {
+      "path": "_course_content/generated-concepts/sift/wi032-sift-failure-native-r05-desktop.png",
+      "sha256": "92c20ce75e699972e436cc2e6d34703af077fc94040771e46d0479ff3097611c",
+      "status": 200,
+      "matches_committed_bytes": true,
+      "local_line_endings_only": false
+    },
+    {
+      "path": "_course_content/generated-concepts/sift/wi032-sift-failure-native-r05-mobile.png",
+      "sha256": "8757ed745e12ccb2c6f20c962c27f4bdd969733c94bec0c6b6c87e8b417adca0",
+      "status": 200,
+      "matches_committed_bytes": true,
+      "local_line_endings_only": false
+    },
+    {
+      "path": "_course_content/generated-concepts/yolo-world/wi032-world-core-r01-desktop.png",
+      "sha256": "9eff4ccc8083c901eccaf352fa3ff77aeed3611f57cdc30ab7e68197203fd47a",
+      "status": 200,
+      "matches_committed_bytes": true,
+      "local_line_endings_only": false
+    },
+    {
+      "path": "_course_content/generated-concepts/yolo-world/wi032-world-core-r02-mobile.png",
+      "sha256": "9f2e69509108dafa50307493d151c6b74cbbbcae3afa33abd766f6916e79bb61",
+      "status": 200,
+      "matches_committed_bytes": true,
+      "local_line_endings_only": false
+    },
+    {
+      "path": "_course_content/generated-concepts/yolo-world/wi032-world-failure-r03-desktop.png",
+      "sha256": "cf7e236d51dfe4bb0e3a8ec6920346136d288bfd19ce4669edc4cec37c5b3b11",
+      "status": 200,
+      "matches_committed_bytes": true,
+      "local_line_endings_only": false
+    },
+    {
+      "path": "_course_content/generated-concepts/yolo-world/wi032-world-failure-r03-mobile.png",
+      "sha256": "89ab0e8455fafd29cdf547d71b2eecb740306cceb2efa1fc94d9e6bca96600fb",
+      "status": 200,
+      "matches_committed_bytes": true,
+      "local_line_endings_only": false
+    },
+    {
+      "path": "roadmap-model-selection/geometry-alignment-measurement/sift/images/final/WI032-retained-sift-r06-c2-how.png",
+      "sha256": "59bdd47590377c7dde8de0626412759fd7de2f0f5d91e7c082298d8208c79b60",
+      "status": 200,
+      "matches_committed_bytes": true,
+      "local_line_endings_only": false
+    },
+    {
+      "path": "roadmap-model-selection/geometry-alignment-measurement/sift/images/final/WI032-retained-sift-r06-d4-stop.png",
+      "sha256": "bd88cb4814c0d7c024758e3e22ac050bc44c3bac78ea9a24c24cd6f1fb45a696",
+      "status": 200,
+      "matches_committed_bytes": true,
+      "local_line_endings_only": false
+    },
+    {
+      "path": "roadmap-model-selection/geometry-alignment-measurement/sift/images/final/WI032-SIFT-01-r06-desktop.png",
+      "sha256": "d0e9fb8cd37fa4eae1100d28ebcef01c482c53c15af0f7bd1c895315be272aef",
+      "status": 200,
+      "matches_committed_bytes": true,
+      "local_line_endings_only": false
+    },
+    {
+      "path": "roadmap-model-selection/geometry-alignment-measurement/sift/images/final/WI032-SIFT-01-r06-mobile.png",
+      "sha256": "956ffadd453b895932d804abfdec55a175280ededd609f2bd484b591242edc77",
+      "status": 200,
+      "matches_committed_bytes": true,
+      "local_line_endings_only": false
+    },
+    {
+      "path": "roadmap-model-selection/geometry-alignment-measurement/sift/images/final/WI032-SIFT-02-r04-desktop.png",
+      "sha256": "15cf9fe7cedac029b8d4a567b3272e448feebd0ad7319c5db83a5bb752eaad52",
+      "status": 200,
+      "matches_committed_bytes": true,
+      "local_line_endings_only": false
+    },
+    {
+      "path": "roadmap-model-selection/geometry-alignment-measurement/sift/images/final/WI032-SIFT-02-r04-mobile.png",
+      "sha256": "393c7f58807e157ff9ec4bd88134d5938da55c30ea92e8ef40cc7032d079e79f",
+      "status": 200,
+      "matches_committed_bytes": true,
+      "local_line_endings_only": false
+    },
+    {
+      "path": "roadmap-model-selection/geometry-alignment-measurement/sift/images/final/WI032-SIFT-03-r04-desktop.png",
+      "sha256": "78de41ecd1903f0425a8494d6f27b388339cd0617ce76b1a233405781ab18605",
+      "status": 200,
+      "matches_committed_bytes": true,
+      "local_line_endings_only": false
+    },
+    {
+      "path": "roadmap-model-selection/geometry-alignment-measurement/sift/images/final/WI032-SIFT-03-r04-mobile.png",
+      "sha256": "42e98c0ff6907c327bee45ef4972737ddabfea7112254efb7aefbf69e50aa5fa",
+      "status": 200,
+      "matches_committed_bytes": true,
+      "local_line_endings_only": false
+    },
+    {
+      "path": "roadmap-model-selection/geometry-alignment-measurement/sift/images/final/WI032-SIFT-04-r04-desktop.png",
+      "sha256": "8f5bde9194d513384930c7f5a3e5bb38e6bfe054b6fe4071d91989a72ba9c067",
+      "status": 200,
+      "matches_committed_bytes": true,
+      "local_line_endings_only": false
+    },
+    {
+      "path": "roadmap-model-selection/geometry-alignment-measurement/sift/images/final/WI032-SIFT-04-r04-mobile.png",
+      "sha256": "b769e3b65a1368128dd9a21120ce93d43221032ca35b12c4b490c2fe56984426",
+      "status": 200,
+      "matches_committed_bytes": true,
+      "local_line_endings_only": false
+    },
+    {
+      "path": "roadmap-model-selection/geometry-alignment-measurement/lightglue/images/final/WI032-LIGHTGLUE-01-r04-desktop.png",
+      "sha256": "25f5bfe2f586bd8c674992c287a89a32f0cceb93e5faed4887f8d9ac5c3bb3b3",
+      "status": 200,
+      "matches_committed_bytes": true,
+      "local_line_endings_only": false
+    },
+    {
+      "path": "roadmap-model-selection/geometry-alignment-measurement/lightglue/images/final/WI032-LIGHTGLUE-01-r04-mobile.png",
+      "sha256": "c5f3bad0e032487aacfcbc3fb2703c03bf14e8cab61b70fd0f56ce850538dd88",
+      "status": 200,
+      "matches_committed_bytes": true,
+      "local_line_endings_only": false
+    },
+    {
+      "path": "roadmap-model-selection/geometry-alignment-measurement/lightglue/images/final/WI032-LIGHTGLUE-02-r04-desktop.png",
+      "sha256": "cfcd5ed38d3f801d0051518a206924bd15d7f916aa40fddd30e74c852daa2814",
+      "status": 200,
+      "matches_committed_bytes": true,
+      "local_line_endings_only": false
+    },
+    {
+      "path": "roadmap-model-selection/geometry-alignment-measurement/lightglue/images/final/WI032-LIGHTGLUE-02-r04-mobile.png",
+      "sha256": "892c8b8fae425aa2f7c25506711882e5da4f89976384e0bf6de51a5ac7a4efe4",
+      "status": 200,
+      "matches_committed_bytes": true,
+      "local_line_endings_only": false
+    },
+    {
+      "path": "roadmap-model-selection/geometry-alignment-measurement/lightglue/images/final/WI032-LIGHTGLUE-03-r04-desktop.png",
+      "sha256": "857c8ff0efb84ed50def437f2d226533660b54858e9d593ece25da83931aed7e",
+      "status": 200,
+      "matches_committed_bytes": true,
+      "local_line_endings_only": false
+    },
+    {
+      "path": "roadmap-model-selection/geometry-alignment-measurement/lightglue/images/final/WI032-LIGHTGLUE-03-r04-mobile.png",
+      "sha256": "50705829a71b08875286953eaaec36b440be5a70e53ef198569d71b0918f1484",
+      "status": 200,
+      "matches_committed_bytes": true,
+      "local_line_endings_only": false
+    },
+    {
+      "path": "roadmap-model-selection/geometry-alignment-measurement/lightglue/images/final/WI032-LIGHTGLUE-04-r04-desktop.png",
+      "sha256": "d822d885d07e9011bb25f7114d577586a520383c84d7fbcd34e7b34bbc57ea32",
+      "status": 200,
+      "matches_committed_bytes": true,
+      "local_line_endings_only": false
+    },
+    {
+      "path": "roadmap-model-selection/geometry-alignment-measurement/lightglue/images/final/WI032-LIGHTGLUE-04-r04-mobile.png",
+      "sha256": "7134530ad70cdb01d4fb8e5a9fa42803c807757283ee3c7183f9ef5aaf07f647",
+      "status": 200,
+      "matches_committed_bytes": true,
+      "local_line_endings_only": false
+    },
+    {
+      "path": "roadmap-model-selection/geometry-alignment-measurement/ecc/images/final/WI032-ECC-01-r04-desktop.png",
+      "sha256": "f72bbb3eae3d082ea7c2cd0f40c43d1c82301869fab738914e0574918d38f815",
+      "status": 200,
+      "matches_committed_bytes": true,
+      "local_line_endings_only": false
+    },
+    {
+      "path": "roadmap-model-selection/geometry-alignment-measurement/ecc/images/final/WI032-ECC-01-r04-mobile.png",
+      "sha256": "626133810381ff79c3c451a4cf6206caff883a91d2e19fe5378cfe1c939cf424",
+      "status": 200,
+      "matches_committed_bytes": true,
+      "local_line_endings_only": false
+    },
+    {
+      "path": "roadmap-model-selection/geometry-alignment-measurement/ecc/images/final/WI032-ECC-02-r04-desktop.png",
+      "sha256": "db35989bf5f127a3bd13a1b39db32e8de84d5474f7bf08fc553b750a49341f20",
+      "status": 200,
+      "matches_committed_bytes": true,
+      "local_line_endings_only": false
+    },
+    {
+      "path": "roadmap-model-selection/geometry-alignment-measurement/ecc/images/final/WI032-ECC-02-r04-mobile.png",
+      "sha256": "5bb46938747992046f159d7c8e4a4702c8fe0113aacbd25b347ba2df8e47cb1b",
+      "status": 200,
+      "matches_committed_bytes": true,
+      "local_line_endings_only": false
+    },
+    {
+      "path": "roadmap-model-selection/geometry-alignment-measurement/ecc/images/final/WI032-ECC-03-r04-desktop.png",
+      "sha256": "0bab5ca10926ff8e74df590d7b940421006ac71f2c78e49147e2d9e25a9ddabf",
+      "status": 200,
+      "matches_committed_bytes": true,
+      "local_line_endings_only": false
+    },
+    {
+      "path": "roadmap-model-selection/geometry-alignment-measurement/ecc/images/final/WI032-ECC-03-r04-mobile.png",
+      "sha256": "3cf89fa49467a7e38704088365cf312ffd3b90ceaec352e08a8a96834cba9181",
+      "status": 200,
+      "matches_committed_bytes": true,
+      "local_line_endings_only": false
+    },
+    {
+      "path": "roadmap-model-selection/geometry-alignment-measurement/ecc/images/final/WI032-ECC-04-r04-desktop.png",
+      "sha256": "a6dfe7ac997521bf81974cd51a37e41c0531eb9bdf671e759db7b2d84df3e439",
+      "status": 200,
+      "matches_committed_bytes": true,
+      "local_line_endings_only": false
+    },
+    {
+      "path": "roadmap-model-selection/geometry-alignment-measurement/ecc/images/final/WI032-ECC-04-r04-mobile.png",
+      "sha256": "0e2e28f088602c66a5114dc7139c395f1213b7f221e37734572b9ea8f1baad6b",
+      "status": 200,
+      "matches_committed_bytes": true,
+      "local_line_endings_only": false
+    },
+    {
+      "path": "roadmap-model-selection/geometry-alignment-measurement/ecc/images/final/WI032-retained-ecc-r06-c3-get.png",
+      "sha256": "9eb64cb581551913d1f33fc0c244651e7a68b866d8796d7b8e53622e25dcd5a4",
+      "status": 200,
+      "matches_committed_bytes": true,
+      "local_line_endings_only": false
+    },
+    {
+      "path": "roadmap-model-selection/geometry-alignment-measurement/ecc/images/final/WI032-retained-ecc-r06-d4-stop.png",
+      "sha256": "35f7ae43e6a4eaae7110d47ae82077130709109a5cff170923af0da5e56f3b6e",
+      "status": 200,
+      "matches_committed_bytes": true,
+      "local_line_endings_only": false
+    },
+    {
+      "path": "roadmap-model-selection/geometry-alignment-measurement/charuco/images/final/WI032-CHARUCO-01-r04-desktop.png",
+      "sha256": "ba918f945402ee32243a406c2d1a43043aecd73b49d486e05f5549f6fd41901d",
+      "status": 200,
+      "matches_committed_bytes": true,
+      "local_line_endings_only": false
+    },
+    {
+      "path": "roadmap-model-selection/geometry-alignment-measurement/charuco/images/final/WI032-CHARUCO-01-r04-mobile.png",
+      "sha256": "25f6d0bd26cc4864abd47bfc870379d644b216bbbb0aa05bff72bec06a85c062",
+      "status": 200,
+      "matches_committed_bytes": true,
+      "local_line_endings_only": false
+    },
+    {
+      "path": "roadmap-model-selection/geometry-alignment-measurement/charuco/images/final/WI032-CHARUCO-02-r04-desktop.png",
+      "sha256": "1d195fd706ad59e7bf2d8f966242ebb05df6fbabc76c9147b3e8b1aa92bf929b",
+      "status": 200,
+      "matches_committed_bytes": true,
+      "local_line_endings_only": false
+    },
+    {
+      "path": "roadmap-model-selection/geometry-alignment-measurement/charuco/images/final/WI032-CHARUCO-02-r04-mobile.png",
+      "sha256": "dcaa444f2c2a9b32d16195c141b7516fe34f01d5b9956f9f22e2a5a3ff584c80",
+      "status": 200,
+      "matches_committed_bytes": true,
+      "local_line_endings_only": false
+    },
+    {
+      "path": "roadmap-model-selection/geometry-alignment-measurement/charuco/images/final/WI032-CHARUCO-03-r04-desktop.png",
+      "sha256": "1c85f04d6fd19625c0d4d6224f0a6f67d41db73ec822410f74de30453e52cfb3",
+      "status": 200,
+      "matches_committed_bytes": true,
+      "local_line_endings_only": false
+    },
+    {
+      "path": "roadmap-model-selection/geometry-alignment-measurement/charuco/images/final/WI032-CHARUCO-03-r04-mobile.png",
+      "sha256": "8f4e928c3b3b27ee8ce898781e144a953613181bdbd196e7b6c3597c13442385",
+      "status": 200,
+      "matches_committed_bytes": true,
+      "local_line_endings_only": false
+    },
+    {
+      "path": "roadmap-model-selection/geometry-alignment-measurement/charuco/images/final/WI032-CHARUCO-04-r04-desktop.png",
+      "sha256": "420ae0430b1f6c1d64de3c0a42d781bb28c5240f6162d6ebd9d767c9adfd641e",
+      "status": 200,
+      "matches_committed_bytes": true,
+      "local_line_endings_only": false
+    },
+    {
+      "path": "roadmap-model-selection/geometry-alignment-measurement/charuco/images/final/WI032-CHARUCO-04-r04-mobile.png",
+      "sha256": "6209f1dfd1c8602094acb3603bd861741abc3ef9e8b6bc8a7d921cd3b5204e2b",
+      "status": 200,
+      "matches_committed_bytes": true,
+      "local_line_endings_only": false
+    },
+    {
+      "path": "roadmap-model-selection/detector/yolo-world/images/final/WI032-YOLOWORLD-01-r04-desktop.png",
+      "sha256": "35151b1249411a6200ce153ab0a719633e34240c53388d7b416556bbd79b56f0",
+      "status": 200,
+      "matches_committed_bytes": true,
+      "local_line_endings_only": false
+    },
+    {
+      "path": "roadmap-model-selection/detector/yolo-world/images/final/WI032-YOLOWORLD-01-r04-mobile.png",
+      "sha256": "5a50d9fb4fe22cf87946090892a27977a91f1839313d827700adee951376ca96",
+      "status": 200,
+      "matches_committed_bytes": true,
+      "local_line_endings_only": false
+    },
+    {
+      "path": "roadmap-model-selection/detector/yolo-world/images/final/WI032-YOLOWORLD-02-r05-desktop.png",
+      "sha256": "d16289d9826f9d18187c4a4f366939863d9ac5235a8d957a3652bf1dcf15274a",
+      "status": 200,
+      "matches_committed_bytes": true,
+      "local_line_endings_only": false
+    },
+    {
+      "path": "roadmap-model-selection/detector/yolo-world/images/final/WI032-YOLOWORLD-02-r05-mobile.png",
+      "sha256": "4441b65ac4745e87f63c4dadf9c4063d1a53730e506818a47a0a962d3ad9f718",
+      "status": 200,
+      "matches_committed_bytes": true,
+      "local_line_endings_only": false
+    },
+    {
+      "path": "roadmap-model-selection/detector/yolo-world/images/final/WI032-YOLOWORLD-03-r07-desktop.png",
+      "sha256": "ec1a74b708a4ebeee848b80972dd8da2927a8c7290d671da1e0e4b10542a9c8e",
+      "status": 200,
+      "matches_committed_bytes": true,
+      "local_line_endings_only": false
+    },
+    {
+      "path": "roadmap-model-selection/detector/yolo-world/images/final/WI032-YOLOWORLD-03-r07-mobile.png",
+      "sha256": "f0008c3335f45b7b1920ab0014f67ca8e903eedf0db898a6434b1f0349e9e177",
+      "status": 200,
+      "matches_committed_bytes": true,
+      "local_line_endings_only": false
+    },
+    {
+      "path": "roadmap-model-selection/detector/yolo-world/images/final/WI032-YOLOWORLD-04-r04-desktop.png",
+      "sha256": "04ff5c9fcda8d7da4585cc88a1337075f65f442be7403c78d7ce78beb26eb828",
+      "status": 200,
+      "matches_committed_bytes": true,
+      "local_line_endings_only": false
+    },
+    {
+      "path": "roadmap-model-selection/detector/yolo-world/images/final/WI032-YOLOWORLD-04-r04-mobile.png",
+      "sha256": "4958f75fe510b322714a0697b800796436a068fb8b442d6360a5ec5c2495da24",
+      "status": 200,
+      "matches_committed_bytes": true,
+      "local_line_endings_only": false
+    },
+    {
+      "path": "roadmap-model-selection/detector/det-dino-detector/images/final/WI032-DINO-DET-01-r04-desktop.png",
+      "sha256": "b8809f0226e2c48ce10e51122a6aba827502333eaf1b6104aa1c23e958964b34",
+      "status": 200,
+      "matches_committed_bytes": true,
+      "local_line_endings_only": false
+    },
+    {
+      "path": "roadmap-model-selection/detector/det-dino-detector/images/final/WI032-DINO-DET-01-r04-mobile.png",
+      "sha256": "4d0a403b2f648d8ad28b23ed4ba20908af657d638cbfa651243944daa0afca7f",
+      "status": 200,
+      "matches_committed_bytes": true,
+      "local_line_endings_only": false
+    },
+    {
+      "path": "roadmap-model-selection/detector/det-dino-detector/images/final/WI032-DINO-DET-02-r04-desktop.png",
+      "sha256": "5240e0cb44d3e176f1ba8bbc9180e0e905d4dadc84bfc06fc537bbc347e7c94c",
+      "status": 200,
+      "matches_committed_bytes": true,
+      "local_line_endings_only": false
+    },
+    {
+      "path": "roadmap-model-selection/detector/det-dino-detector/images/final/WI032-DINO-DET-02-r04-mobile.png",
+      "sha256": "3c740f3475a4f6e67c907014513eb99700e25b14d2e4efa2e3943a81d7bc5e09",
+      "status": 200,
+      "matches_committed_bytes": true,
+      "local_line_endings_only": false
+    },
+    {
+      "path": "roadmap-model-selection/detector/det-dino-detector/images/final/WI032-DINO-DET-03-r04-desktop.png",
+      "sha256": "a05f26d23ad7e8df91cbeaef7c60dd5abe7a58eaf48ff19621c56dfde6d767ad",
+      "status": 200,
+      "matches_committed_bytes": true,
+      "local_line_endings_only": false
+    },
+    {
+      "path": "roadmap-model-selection/detector/det-dino-detector/images/final/WI032-DINO-DET-03-r04-mobile.png",
+      "sha256": "21010713ba6b65b87da485e040870bad02c7e306284948932db01b6811325436",
+      "status": 200,
+      "matches_committed_bytes": true,
+      "local_line_endings_only": false
+    },
+    {
+      "path": "roadmap-model-selection/detector/det-dino-detector/images/final/WI032-DINO-DET-04-r04-desktop.png",
+      "sha256": "c8942447bca766e39e697d7a7c809e9beefab560b4e6e4e2a7ecf52031b57b48",
+      "status": 200,
+      "matches_committed_bytes": true,
+      "local_line_endings_only": false
+    },
+    {
+      "path": "roadmap-model-selection/detector/det-dino-detector/images/final/WI032-DINO-DET-04-r04-mobile.png",
+      "sha256": "0633a61086fcab32490a3293f3a650cfb9b213933e18c52bae1fda02e56b54f6",
+      "status": 200,
+      "matches_committed_bytes": true,
+      "local_line_endings_only": false
+    },
+    {
+      "path": "roadmap-model-selection/geometry-alignment-measurement/charuco/model.md",
+      "sha256": "9395600d8b68dd6b78e8438c71badd0e744549146730876dd0b34441225a5893",
+      "status": 200,
+      "matches_committed_bytes": true,
+      "local_line_endings_only": true
+    },
+    {
+      "path": "roadmap-model-selection/geometry-alignment-measurement/charuco/slide-manifest.md",
+      "sha256": "0819a68118f9551c6b8a4ba53ef94cd55177fbb030c2e36e5640f153aef82960",
+      "status": 200,
+      "matches_committed_bytes": true,
+      "local_line_endings_only": true
+    },
+    {
+      "path": "roadmap-model-selection/geometry-alignment-measurement/ecc/model.md",
+      "sha256": "afcb4e3c432d36936e33a7578dbc3c16fb1cbb9b4e0d8cf1d776f6a8b9f4f0cf",
+      "status": 200,
+      "matches_committed_bytes": true,
+      "local_line_endings_only": true
+    },
+    {
+      "path": "roadmap-model-selection/geometry-alignment-measurement/ecc/slide-manifest.md",
+      "sha256": "b46763201e03edfde3119c4768593833bbaec53648dc438d6eb282e9523158ce",
+      "status": 200,
+      "matches_committed_bytes": true,
+      "local_line_endings_only": true
+    },
+    {
+      "path": "roadmap-model-selection/geometry-alignment-measurement/sift/model.md",
+      "sha256": "8a2739cf64ebb207e1db3603b4037df181e653a3b3a9afe6aceccc37633fd739",
+      "status": 200,
+      "matches_committed_bytes": true,
+      "local_line_endings_only": true
+    },
+    {
+      "path": "roadmap-model-selection/geometry-alignment-measurement/sift/slide-manifest.md",
+      "sha256": "ae33090a0852cbbe22ebc31366daa731d8a57dcf04d12c779cbcb53e41bdea13",
+      "status": 200,
+      "matches_committed_bytes": true,
+      "local_line_endings_only": true
+    },
+    {
+      "path": "roadmap-model-selection/geometry-alignment-measurement/lightglue/model.md",
+      "sha256": "64b81cdb1acb4a4e640ffd5acca185bbfd4ce6954a9608f9599956bc609a30cf",
+      "status": 200,
+      "matches_committed_bytes": true,
+      "local_line_endings_only": true
+    },
+    {
+      "path": "roadmap-model-selection/geometry-alignment-measurement/lightglue/slide-manifest.md",
+      "sha256": "5f1212cc2894db62a403220e58b8a82787cf4f0bd258b2e88d91ade37f4bfe5b",
+      "status": 200,
+      "matches_committed_bytes": true,
+      "local_line_endings_only": true
+    },
+    {
+      "path": "roadmap-model-selection/detector/det-dino-detector/model.md",
+      "sha256": "f4b79308446feeed7dc4b94ec83fedbbbd373b88696c07eff9b0f7791ce2c475",
+      "status": 200,
+      "matches_committed_bytes": true,
+      "local_line_endings_only": true
+    },
+    {
+      "path": "roadmap-model-selection/detector/det-dino-detector/slide-manifest.md",
+      "sha256": "3c94a112ddc7fda8cc97a5f41ae447f199e2330573c5fb2ba2149ae164e05712",
+      "status": 200,
+      "matches_committed_bytes": true,
+      "local_line_endings_only": true
+    },
+    {
+      "path": "roadmap-model-selection/detector/yolo-world/model.md",
+      "sha256": "e3db2e708a9afdcf5d3b8d96c5598bfdee2bec4bc2454b5a2e9a61ee2fff744f",
+      "status": 200,
+      "matches_committed_bytes": true,
+      "local_line_endings_only": true
+    },
+    {
+      "path": "roadmap-model-selection/detector/yolo-world/slide-manifest.md",
+      "sha256": "83bfddc963a591c7e4722aa82b48f8e2dc125223a27318701e353cc0bb7b143a",
+      "status": 200,
+      "matches_committed_bytes": true,
+      "local_line_endings_only": true
+    }
+  ],
+  "checked_files": 93,
+  "user_approval": "pending",
+  "part_two": "not_started"
+}

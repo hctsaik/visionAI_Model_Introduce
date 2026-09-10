@@ -1,0 +1,2042 @@
+[
+  {
+    "topic": "resnet",
+    "width": 1440,
+    "chapter": 1,
+    "views": [
+      {
+        "screenshot": "1440-c01-v01.png",
+        "title": "為何需要ResNet：加深後的訓練困難\n放大完整圖",
+        "box": {
+          "x": 366.1875,
+          "y": 359.390625,
+          "width": 1011.625,
+          "height": 641.703125
+        }
+      },
+      {
+        "screenshot": "1440-c01-v02.png",
+        "title": "已知外觀與人的處置\n放大完整圖",
+        "box": {
+          "x": 366.1875,
+          "y": 359.390625,
+          "width": 1011.625,
+          "height": 641.703125
+        }
+      }
+    ]
+  },
+  {
+    "topic": "resnet",
+    "width": 1440,
+    "chapter": 2,
+    "views": [
+      {
+        "screenshot": "1440-c02-v01.png",
+        "title": "Skip connection：分支、繞行與相加\n放大完整圖",
+        "box": {
+          "x": 366.1875,
+          "y": 359,
+          "width": 1011.625,
+          "height": 641.703125
+        }
+      },
+      {
+        "screenshot": "1440-c02-v02.png",
+        "title": "同位置的實際殘差相加\n放大完整圖",
+        "box": {
+          "x": 366.1875,
+          "y": 359,
+          "width": 1011.625,
+          "height": 641.703125
+        }
+      }
+    ]
+  },
+  {
+    "topic": "resnet",
+    "width": 1440,
+    "chapter": 3,
+    "views": [
+      {
+        "screenshot": "1440-c03-v01.png",
+        "title": "同工件的實際階段回應\n放大完整圖",
+        "box": {
+          "x": 366.1875,
+          "y": -0.65625,
+          "width": 1011.625,
+          "height": 641.703125
+        }
+      }
+    ]
+  },
+  {
+    "topic": "resnet",
+    "width": 1440,
+    "chapter": 4,
+    "views": [
+      {
+        "screenshot": "1440-c04-v01.png",
+        "title": "批次改變與固定統計\n放大完整圖",
+        "box": {
+          "x": 366.1875,
+          "y": -0.59375,
+          "width": 1011.625,
+          "height": 641.703125
+        }
+      }
+    ]
+  },
+  {
+    "topic": "resnet",
+    "width": 1440,
+    "chapter": 5,
+    "views": [
+      {
+        "screenshot": "1440-c05-v01.png",
+        "title": "不同位置的相同平均\n放大完整圖",
+        "box": {
+          "x": 366.1875,
+          "y": -0.53125,
+          "width": 1011.625,
+          "height": 641.703125
+        }
+      }
+    ]
+  },
+  {
+    "topic": "resnet",
+    "width": 1440,
+    "chapter": 6,
+    "views": [
+      {
+        "screenshot": "1440-c06-v01.png",
+        "title": "新條件高分仍覆核\n放大完整圖",
+        "box": {
+          "x": 366.1875,
+          "y": -1.46875,
+          "width": 1011.625,
+          "height": 641.703125
+        }
+      }
+    ]
+  },
+  {
+    "topic": "resnet",
+    "width": 1440,
+    "chapter": 7,
+    "views": [
+      {
+        "screenshot": "1440-c07-v01.png",
+        "title": "漏檢耗時與覆核取捨\n放大完整圖",
+        "box": {
+          "x": 366.1875,
+          "y": -0.890625,
+          "width": 1011.625,
+          "height": 641.703125
+        }
+      }
+    ]
+  },
+  {
+    "topic": "resnet",
+    "width": 1440,
+    "chapter": 8,
+    "views": [
+      {
+        "screenshot": "1440-c08-v01.png",
+        "title": "ResNet：同位置加回修正\n放大完整圖",
+        "box": {
+          "x": 366.1875,
+          "y": 358.828125,
+          "width": 1011.625,
+          "height": 641.703125
+        }
+      },
+      {
+        "screenshot": "1440-c08-v02.png",
+        "title": "ConvNeXt：各通道混附近位置\n放大完整圖",
+        "box": {
+          "x": 366.1875,
+          "y": 358.828125,
+          "width": 1011.625,
+          "height": 641.703125
+        }
+      },
+      {
+        "screenshot": "1440-c08-v03.png",
+        "title": "ConvNeXt：固定位置再混通道\n放大完整圖",
+        "box": {
+          "x": 366.1875,
+          "y": 358.828125,
+          "width": 1011.625,
+          "height": 641.703125
+        }
+      },
+      {
+        "screenshot": "1440-c08-v04.png",
+        "title": "ViT：同一R-01跨位置加權\n放大完整圖",
+        "box": {
+          "x": 366.1875,
+          "y": 358.828125,
+          "width": 1011.625,
+          "height": 641.703125
+        }
+      }
+    ]
+  },
+  {
+    "topic": "resnet",
+    "width": 360,
+    "chapter": 1,
+    "views": [
+      {
+        "screenshot": "360-c01-v01.png",
+        "title": "為何需要ResNet：加深後的訓練困難放大完整圖",
+        "box": {
+          "x": 33,
+          "y": 325.015625,
+          "width": 294,
+          "height": 474.625
+        }
+      },
+      {
+        "screenshot": "360-c01-v02.png",
+        "title": "已知外觀與人的處置放大完整圖",
+        "box": {
+          "x": 33,
+          "y": 325.015625,
+          "width": 294,
+          "height": 455.125
+        }
+      }
+    ]
+  },
+  {
+    "topic": "resnet",
+    "width": 360,
+    "chapter": 2,
+    "views": [
+      {
+        "screenshot": "360-c02-v01.png",
+        "title": "Skip connection：分支、繞行與相加放大完整圖",
+        "box": {
+          "x": 33,
+          "y": 325.84375,
+          "width": 294,
+          "height": 474.625
+        }
+      },
+      {
+        "screenshot": "360-c02-v02.png",
+        "title": "同位置的實際殘差相加放大完整圖",
+        "box": {
+          "x": 33,
+          "y": 325.84375,
+          "width": 294,
+          "height": 455.125
+        }
+      }
+    ]
+  },
+  {
+    "topic": "resnet",
+    "width": 360,
+    "chapter": 3,
+    "views": [
+      {
+        "screenshot": "360-c03-v01.png",
+        "title": "同工件的實際階段回應放大完整圖",
+        "box": {
+          "x": 33,
+          "y": 172.5625,
+          "width": 294,
+          "height": 455.125
+        }
+      }
+    ]
+  },
+  {
+    "topic": "resnet",
+    "width": 360,
+    "chapter": 4,
+    "views": [
+      {
+        "screenshot": "360-c04-v01.png",
+        "title": "批次改變與固定統計放大完整圖",
+        "box": {
+          "x": 33,
+          "y": 172.25,
+          "width": 294,
+          "height": 455.125
+        }
+      }
+    ]
+  },
+  {
+    "topic": "resnet",
+    "width": 360,
+    "chapter": 5,
+    "views": [
+      {
+        "screenshot": "360-c05-v01.png",
+        "title": "不同位置的相同平均放大完整圖",
+        "box": {
+          "x": 33,
+          "y": 172.671875,
+          "width": 294,
+          "height": 455.125
+        }
+      }
+    ]
+  },
+  {
+    "topic": "resnet",
+    "width": 360,
+    "chapter": 6,
+    "views": [
+      {
+        "screenshot": "360-c06-v01.png",
+        "title": "新條件高分仍覆核放大完整圖",
+        "box": {
+          "x": 33,
+          "y": 172.796875,
+          "width": 294,
+          "height": 455.125
+        }
+      }
+    ]
+  },
+  {
+    "topic": "resnet",
+    "width": 360,
+    "chapter": 7,
+    "views": [
+      {
+        "screenshot": "360-c07-v01.png",
+        "title": "漏檢耗時與覆核取捨放大完整圖",
+        "box": {
+          "x": 33,
+          "y": 172.6875,
+          "width": 294,
+          "height": 455.125
+        }
+      }
+    ]
+  },
+  {
+    "topic": "resnet",
+    "width": 360,
+    "chapter": 8,
+    "views": [
+      {
+        "screenshot": "360-c08-v01.png",
+        "title": "ResNet：同位置加回修正放大完整圖",
+        "box": {
+          "x": 33,
+          "y": 345.09375,
+          "width": 294,
+          "height": 455.125
+        }
+      },
+      {
+        "screenshot": "360-c08-v02.png",
+        "title": "ConvNeXt：各通道混附近位置放大完整圖",
+        "box": {
+          "x": 33,
+          "y": 325.09375,
+          "width": 294,
+          "height": 474.625
+        }
+      },
+      {
+        "screenshot": "360-c08-v03.png",
+        "title": "ConvNeXt：固定位置再混通道放大完整圖",
+        "box": {
+          "x": 33,
+          "y": 325.09375,
+          "width": 294,
+          "height": 474.625
+        }
+      },
+      {
+        "screenshot": "360-c08-v04.png",
+        "title": "ViT：同一R-01跨位置加權放大完整圖",
+        "box": {
+          "x": 33,
+          "y": 325.09375,
+          "width": 294,
+          "height": 455.125
+        }
+      }
+    ]
+  },
+  {
+    "topic": "segformer",
+    "width": 1440,
+    "chapter": 1,
+    "views": [
+      {
+        "screenshot": "1440-c01-v01.png",
+        "title": "核心思想：先看完整因果\n放大完整圖",
+        "box": {
+          "x": 366.1875,
+          "y": 359.578125,
+          "width": 1011.625,
+          "height": 641.703125
+        }
+      },
+      {
+        "screenshot": "1440-c01-v02.png",
+        "title": "從W-01亮線到像素候選\n放大完整圖",
+        "box": {
+          "x": 366.1875,
+          "y": 359.578125,
+          "width": 1011.625,
+          "height": 641.703125
+        }
+      }
+    ]
+  },
+  {
+    "topic": "segformer",
+    "width": 1440,
+    "chapter": 2,
+    "views": [
+      {
+        "screenshot": "1440-c02-v01.png",
+        "title": "相鄰窗口的共同像素\n放大完整圖",
+        "box": {
+          "x": 366.1875,
+          "y": -1.171875,
+          "width": 1011.625,
+          "height": 641.703125
+        }
+      }
+    ]
+  },
+  {
+    "topic": "segformer",
+    "width": 1440,
+    "chapter": 3,
+    "views": [
+      {
+        "screenshot": "1440-c03-v01.png",
+        "title": "同亮線的四尺度訊號\n放大完整圖",
+        "box": {
+          "x": 366.1875,
+          "y": -1.5,
+          "width": 1011.625,
+          "height": 641.703125
+        }
+      }
+    ]
+  },
+  {
+    "topic": "segformer",
+    "width": 1440,
+    "chapter": 4,
+    "views": [
+      {
+        "screenshot": "1440-c04-v01.png",
+        "title": "保留Q，縮減K/V候選位置\n放大完整圖",
+        "box": {
+          "x": 366.1875,
+          "y": -1.4375,
+          "width": 1011.625,
+          "height": 641.703125
+        }
+      }
+    ]
+  },
+  {
+    "topic": "segformer",
+    "width": 1440,
+    "chapter": 5,
+    "views": [
+      {
+        "screenshot": "1440-c05-v01.png",
+        "title": "對齊後保留四組訊號再融合\n放大完整圖",
+        "box": {
+          "x": 366.1875,
+          "y": -0.765625,
+          "width": 1011.625,
+          "height": 641.703125
+        }
+      }
+    ]
+  },
+  {
+    "topic": "segformer",
+    "width": 1440,
+    "chapter": 6,
+    "views": [
+      {
+        "screenshot": "1440-c06-v01.png",
+        "title": "訓練與推論的不同資料責任\n放大完整圖",
+        "box": {
+          "x": 366.1875,
+          "y": -1.09375,
+          "width": 1011.625,
+          "height": 641.703125
+        }
+      }
+    ]
+  },
+  {
+    "topic": "segformer",
+    "width": 1440,
+    "chapter": 7,
+    "views": [
+      {
+        "screenshot": "1440-c07-v01.png",
+        "title": "同條件的節拍與漏檢取捨\n放大完整圖",
+        "box": {
+          "x": 366.1875,
+          "y": -0.515625,
+          "width": 1011.625,
+          "height": 641.703125
+        }
+      }
+    ]
+  },
+  {
+    "topic": "segformer",
+    "width": 1440,
+    "chapter": 8,
+    "views": [
+      {
+        "screenshot": "1440-c08-v01.png",
+        "title": "同PCB的語意與實例輸出比較\n放大完整圖",
+        "box": {
+          "x": 366.1875,
+          "y": 358.8125,
+          "width": 1011.625,
+          "height": 641.703125
+        }
+      },
+      {
+        "screenshot": "1440-c08-v02.png",
+        "title": "U-Net：粗細特徵接回融合\n放大完整圖",
+        "box": {
+          "x": 366.1875,
+          "y": 358.8125,
+          "width": 1011.625,
+          "height": 641.703125
+        }
+      },
+      {
+        "screenshot": "1440-c08-v03.png",
+        "title": "SegFormer：四尺度對齊融合\n放大完整圖",
+        "box": {
+          "x": 366.1875,
+          "y": 358.8125,
+          "width": 1011.625,
+          "height": 641.703125
+        }
+      },
+      {
+        "screenshot": "1440-c08-v04.png",
+        "title": "YOLO-Seg：共享基底按件組合\n放大完整圖",
+        "box": {
+          "x": 366.1875,
+          "y": 358.8125,
+          "width": 1011.625,
+          "height": 641.703125
+        }
+      }
+    ]
+  },
+  {
+    "topic": "segformer",
+    "width": 360,
+    "chapter": 1,
+    "views": [
+      {
+        "screenshot": "360-c01-v01.png",
+        "title": "核心思想：先看完整因果放大完整圖",
+        "box": {
+          "x": 33,
+          "y": 345,
+          "width": 294,
+          "height": 455.125
+        }
+      },
+      {
+        "screenshot": "360-c01-v02.png",
+        "title": "從W-01亮線到像素候選放大完整圖",
+        "box": {
+          "x": 33,
+          "y": 345,
+          "width": 294,
+          "height": 455.125
+        }
+      }
+    ]
+  },
+  {
+    "topic": "segformer",
+    "width": 360,
+    "chapter": 2,
+    "views": [
+      {
+        "screenshot": "360-c02-v01.png",
+        "title": "相鄰窗口的共同像素放大完整圖",
+        "box": {
+          "x": 33,
+          "y": 172.125,
+          "width": 294,
+          "height": 455.125
+        }
+      }
+    ]
+  },
+  {
+    "topic": "segformer",
+    "width": 360,
+    "chapter": 3,
+    "views": [
+      {
+        "screenshot": "360-c03-v01.png",
+        "title": "同亮線的四尺度訊號放大完整圖",
+        "box": {
+          "x": 33,
+          "y": 172.296875,
+          "width": 294,
+          "height": 455.125
+        }
+      }
+    ]
+  },
+  {
+    "topic": "segformer",
+    "width": 360,
+    "chapter": 4,
+    "views": [
+      {
+        "screenshot": "360-c04-v01.png",
+        "title": "保留Q，縮減K/V候選位置放大完整圖",
+        "box": {
+          "x": 33,
+          "y": 172.765625,
+          "width": 294,
+          "height": 455.125
+        }
+      }
+    ]
+  },
+  {
+    "topic": "segformer",
+    "width": 360,
+    "chapter": 5,
+    "views": [
+      {
+        "screenshot": "360-c05-v01.png",
+        "title": "對齊後保留四組訊號再融合放大完整圖",
+        "box": {
+          "x": 33,
+          "y": 172.4375,
+          "width": 294,
+          "height": 455.125
+        }
+      }
+    ]
+  },
+  {
+    "topic": "segformer",
+    "width": 360,
+    "chapter": 6,
+    "views": [
+      {
+        "screenshot": "360-c06-v01.png",
+        "title": "訓練與推論的不同資料責任放大完整圖",
+        "box": {
+          "x": 33,
+          "y": 172.421875,
+          "width": 294,
+          "height": 455.125
+        }
+      }
+    ]
+  },
+  {
+    "topic": "segformer",
+    "width": 360,
+    "chapter": 7,
+    "views": [
+      {
+        "screenshot": "360-c07-v01.png",
+        "title": "同條件的節拍與漏檢取捨放大完整圖",
+        "box": {
+          "x": 33,
+          "y": 172.71875,
+          "width": 294,
+          "height": 455.125
+        }
+      }
+    ]
+  },
+  {
+    "topic": "segformer",
+    "width": 360,
+    "chapter": 8,
+    "views": [
+      {
+        "screenshot": "360-c08-v01.png",
+        "title": "同PCB的語意與實例輸出比較放大完整圖",
+        "box": {
+          "x": 33,
+          "y": 344.734375,
+          "width": 294,
+          "height": 455.125
+        }
+      },
+      {
+        "screenshot": "360-c08-v02.png",
+        "title": "U-Net：粗細特徵接回融合放大完整圖",
+        "box": {
+          "x": 33,
+          "y": 344.734375,
+          "width": 294,
+          "height": 455.125
+        }
+      },
+      {
+        "screenshot": "360-c08-v03.png",
+        "title": "SegFormer：四尺度對齊融合放大完整圖",
+        "box": {
+          "x": 33,
+          "y": 325.734375,
+          "width": 294,
+          "height": 474.625
+        }
+      },
+      {
+        "screenshot": "360-c08-v04.png",
+        "title": "YOLO-Seg：共享基底按件組合放大完整圖",
+        "box": {
+          "x": 33,
+          "y": 325.734375,
+          "width": 294,
+          "height": 474.625
+        }
+      }
+    ]
+  },
+  {
+    "topic": "ad-patchcore",
+    "width": 1440,
+    "chapter": 1,
+    "views": [
+      {
+        "screenshot": "1440-c01-v01.png",
+        "title": "PatchCore：先懂核心再看細節\n放大完整圖",
+        "box": {
+          "x": 366.1875,
+          "y": 359.5625,
+          "width": 1011.625,
+          "height": 641.703125
+        }
+      },
+      {
+        "screenshot": "1440-c01-v02.png",
+        "title": "來源與分流\n放大完整圖",
+        "box": {
+          "x": 366.1875,
+          "y": 359.5625,
+          "width": 1011.625,
+          "height": 641.703125
+        }
+      }
+    ]
+  },
+  {
+    "topic": "ad-patchcore",
+    "width": 1440,
+    "chapter": 2,
+    "views": [
+      {
+        "screenshot": "1440-c02-v01.png",
+        "title": "實際CNN回應\n放大完整圖",
+        "box": {
+          "x": 366.1875,
+          "y": 359.375,
+          "width": 1011.625,
+          "height": 641.703125
+        }
+      },
+      {
+        "screenshot": "1440-c02-v02.png",
+        "title": "兩層附近結構\n放大完整圖",
+        "box": {
+          "x": 366.1875,
+          "y": 359.375,
+          "width": 1011.625,
+          "height": 641.703125
+        }
+      }
+    ]
+  },
+  {
+    "topic": "ad-patchcore",
+    "width": 1440,
+    "chapter": 3,
+    "views": [
+      {
+        "screenshot": "1440-c03-v01.png",
+        "title": "來源與代表\n放大完整圖",
+        "box": {
+          "x": 366.1875,
+          "y": -1.4375,
+          "width": 1011.625,
+          "height": 641.703125
+        }
+      }
+    ]
+  },
+  {
+    "topic": "ad-patchcore",
+    "width": 1440,
+    "chapter": 4,
+    "views": [
+      {
+        "screenshot": "1440-c04-v01.png",
+        "title": "正常對照\n放大完整圖",
+        "box": {
+          "x": 366.1875,
+          "y": 359.5625,
+          "width": 1011.625,
+          "height": 641.703125
+        }
+      },
+      {
+        "screenshot": "1440-c04-v02.png",
+        "title": "刮傷查庫\n放大完整圖",
+        "box": {
+          "x": 366.1875,
+          "y": 359.5625,
+          "width": 1011.625,
+          "height": 641.703125
+        }
+      }
+    ]
+  },
+  {
+    "topic": "ad-patchcore",
+    "width": 1440,
+    "chapter": 5,
+    "views": [
+      {
+        "screenshot": "1440-c05-v01.png",
+        "title": "分數與參考支持\n放大完整圖",
+        "box": {
+          "x": 366.1875,
+          "y": 359.46875,
+          "width": 1011.625,
+          "height": 641.703125
+        }
+      },
+      {
+        "screenshot": "1440-c05-v02.png",
+        "title": "格點與熱區\n放大完整圖",
+        "box": {
+          "x": 366.1875,
+          "y": 359.46875,
+          "width": 1011.625,
+          "height": 641.703125
+        }
+      }
+    ]
+  },
+  {
+    "topic": "ad-patchcore",
+    "width": 1440,
+    "chapter": 6,
+    "views": [
+      {
+        "screenshot": "1440-c06-v01.png",
+        "title": "刪掉正常代表\n放大完整圖",
+        "box": {
+          "x": 366.1875,
+          "y": 359.734375,
+          "width": 1011.625,
+          "height": 641.703125
+        }
+      },
+      {
+        "screenshot": "1440-c06-v02.png",
+        "title": "誤收缺陷\n放大完整圖",
+        "box": {
+          "x": 366.1875,
+          "y": 359.734375,
+          "width": 1011.625,
+          "height": 641.703125
+        }
+      }
+    ]
+  },
+  {
+    "topic": "ad-patchcore",
+    "width": 1440,
+    "chapter": 7,
+    "views": [
+      {
+        "screenshot": "1440-c07-v01.png",
+        "title": "PatchCore查庫\n放大完整圖",
+        "box": {
+          "x": 366.1875,
+          "y": 359.640625,
+          "width": 1011.625,
+          "height": 641.703125
+        }
+      },
+      {
+        "screenshot": "1440-c07-v02.png",
+        "title": "PaDiM同位置\n放大完整圖",
+        "box": {
+          "x": 366.1875,
+          "y": 359.640625,
+          "width": 1011.625,
+          "height": 641.703125
+        }
+      },
+      {
+        "screenshot": "1440-c07-v03.png",
+        "title": "EfficientAD師生比較\n放大完整圖",
+        "box": {
+          "x": 366.1875,
+          "y": 359.640625,
+          "width": 1011.625,
+          "height": 641.703125
+        }
+      }
+    ]
+  },
+  {
+    "topic": "ad-patchcore",
+    "width": 1440,
+    "chapter": 8,
+    "views": [
+      {
+        "screenshot": "1440-c08-v01.png",
+        "title": "重現案例一\n放大完整圖",
+        "box": {
+          "x": 366.1875,
+          "y": 358.90625,
+          "width": 1011.625,
+          "height": 641.703125
+        }
+      },
+      {
+        "screenshot": "1440-c08-v02.png",
+        "title": "重現案例二\n放大完整圖",
+        "box": {
+          "x": 366.1875,
+          "y": 358.90625,
+          "width": 1011.625,
+          "height": 641.703125
+        }
+      },
+      {
+        "screenshot": "1440-c08-v03.png",
+        "title": "作者漏檢\n放大完整圖",
+        "box": {
+          "x": 366.1875,
+          "y": 358.90625,
+          "width": 1011.625,
+          "height": 641.703125
+        }
+      },
+      {
+        "screenshot": "1440-c08-v04.png",
+        "title": "作者誤報\n放大完整圖",
+        "box": {
+          "x": 366.1875,
+          "y": 358.90625,
+          "width": 1011.625,
+          "height": 641.703125
+        }
+      }
+    ]
+  },
+  {
+    "topic": "ad-patchcore",
+    "width": 360,
+    "chapter": 1,
+    "views": [
+      {
+        "screenshot": "360-c01-v01.png",
+        "title": "PatchCore：先懂核心再看細節放大完整圖",
+        "box": {
+          "x": 33,
+          "y": 325.1875,
+          "width": 294,
+          "height": 474.625
+        }
+      },
+      {
+        "screenshot": "360-c01-v02.png",
+        "title": "來源與分流放大完整圖",
+        "box": {
+          "x": 33,
+          "y": 325.1875,
+          "width": 294,
+          "height": 455.125
+        }
+      }
+    ]
+  },
+  {
+    "topic": "ad-patchcore",
+    "width": 360,
+    "chapter": 2,
+    "views": [
+      {
+        "screenshot": "360-c02-v01.png",
+        "title": "實際CNN回應放大完整圖",
+        "box": {
+          "x": 33,
+          "y": 344.765625,
+          "width": 294,
+          "height": 455.125
+        }
+      },
+      {
+        "screenshot": "360-c02-v02.png",
+        "title": "兩層附近結構放大完整圖",
+        "box": {
+          "x": 33,
+          "y": 344.765625,
+          "width": 294,
+          "height": 455.125
+        }
+      }
+    ]
+  },
+  {
+    "topic": "ad-patchcore",
+    "width": 360,
+    "chapter": 3,
+    "views": [
+      {
+        "screenshot": "360-c03-v01.png",
+        "title": "來源與代表放大完整圖",
+        "box": {
+          "x": 33,
+          "y": 172.59375,
+          "width": 294,
+          "height": 455.125
+        }
+      }
+    ]
+  },
+  {
+    "topic": "ad-patchcore",
+    "width": 360,
+    "chapter": 4,
+    "views": [
+      {
+        "screenshot": "360-c04-v01.png",
+        "title": "正常對照放大完整圖",
+        "box": {
+          "x": 33,
+          "y": 345.234375,
+          "width": 294,
+          "height": 455.125
+        }
+      },
+      {
+        "screenshot": "360-c04-v02.png",
+        "title": "刮傷查庫放大完整圖",
+        "box": {
+          "x": 33,
+          "y": 345.234375,
+          "width": 294,
+          "height": 455.125
+        }
+      }
+    ]
+  },
+  {
+    "topic": "ad-patchcore",
+    "width": 360,
+    "chapter": 5,
+    "views": [
+      {
+        "screenshot": "360-c05-v01.png",
+        "title": "分數與參考支持放大完整圖",
+        "box": {
+          "x": 33,
+          "y": 344.6875,
+          "width": 294,
+          "height": 455.125
+        }
+      },
+      {
+        "screenshot": "360-c05-v02.png",
+        "title": "格點與熱區放大完整圖",
+        "box": {
+          "x": 33,
+          "y": 344.6875,
+          "width": 294,
+          "height": 455.125
+        }
+      }
+    ]
+  },
+  {
+    "topic": "ad-patchcore",
+    "width": 360,
+    "chapter": 6,
+    "views": [
+      {
+        "screenshot": "360-c06-v01.png",
+        "title": "刪掉正常代表放大完整圖",
+        "box": {
+          "x": 33,
+          "y": 345.296875,
+          "width": 294,
+          "height": 455.125
+        }
+      },
+      {
+        "screenshot": "360-c06-v02.png",
+        "title": "誤收缺陷放大完整圖",
+        "box": {
+          "x": 33,
+          "y": 345.296875,
+          "width": 294,
+          "height": 455.125
+        }
+      }
+    ]
+  },
+  {
+    "topic": "ad-patchcore",
+    "width": 360,
+    "chapter": 7,
+    "views": [
+      {
+        "screenshot": "360-c07-v01.png",
+        "title": "PatchCore查庫放大完整圖",
+        "box": {
+          "x": 33,
+          "y": 344.625,
+          "width": 294,
+          "height": 455.125
+        }
+      },
+      {
+        "screenshot": "360-c07-v02.png",
+        "title": "PaDiM同位置放大完整圖",
+        "box": {
+          "x": 33,
+          "y": 344.625,
+          "width": 294,
+          "height": 455.125
+        }
+      },
+      {
+        "screenshot": "360-c07-v03.png",
+        "title": "EfficientAD師生比較放大完整圖",
+        "box": {
+          "x": 33,
+          "y": 344.625,
+          "width": 294,
+          "height": 455.125
+        }
+      }
+    ]
+  },
+  {
+    "topic": "ad-patchcore",
+    "width": 360,
+    "chapter": 8,
+    "views": [
+      {
+        "screenshot": "360-c08-v01.png",
+        "title": "重現案例一放大完整圖",
+        "box": {
+          "x": 33,
+          "y": 344.546875,
+          "width": 294,
+          "height": 455.125
+        }
+      },
+      {
+        "screenshot": "360-c08-v02.png",
+        "title": "重現案例二放大完整圖",
+        "box": {
+          "x": 33,
+          "y": 344.546875,
+          "width": 294,
+          "height": 455.125
+        }
+      },
+      {
+        "screenshot": "360-c08-v03.png",
+        "title": "作者漏檢放大完整圖",
+        "box": {
+          "x": 33,
+          "y": 344.546875,
+          "width": 294,
+          "height": 455.125
+        }
+      },
+      {
+        "screenshot": "360-c08-v04.png",
+        "title": "作者誤報放大完整圖",
+        "box": {
+          "x": 33,
+          "y": 344.546875,
+          "width": 294,
+          "height": 455.125
+        }
+      }
+    ]
+  },
+  {
+    "topic": "ad-anomalydino",
+    "width": 1440,
+    "chapter": 1,
+    "views": [
+      {
+        "screenshot": "1440-c01-v01.png",
+        "title": "AnomalyDINO：先懂核心再看細節\n放大完整圖",
+        "box": {
+          "x": 366.1875,
+          "y": 359.078125,
+          "width": 1011.625,
+          "height": 641.703125
+        }
+      },
+      {
+        "screenshot": "1440-c01-v02.png",
+        "title": "先備資料\n放大完整圖",
+        "box": {
+          "x": 366.1875,
+          "y": 359.078125,
+          "width": 1011.625,
+          "height": 641.703125
+        }
+      },
+      {
+        "screenshot": "1440-c01-v03.png",
+        "title": "看圖覆核\n放大完整圖",
+        "box": {
+          "x": 366.1875,
+          "y": 359.078125,
+          "width": 1011.625,
+          "height": 641.703125
+        }
+      }
+    ]
+  },
+  {
+    "topic": "ad-anomalydino",
+    "width": 1440,
+    "chapter": 2,
+    "views": [
+      {
+        "screenshot": "1440-c02-v01.png",
+        "title": "正常存庫\n放大完整圖",
+        "box": {
+          "x": 366.1875,
+          "y": 358.890625,
+          "width": 1011.625,
+          "height": 641.703125
+        }
+      },
+      {
+        "screenshot": "1440-c02-v02.png",
+        "title": "待測查庫\n放大完整圖",
+        "box": {
+          "x": 366.1875,
+          "y": 358.890625,
+          "width": 1011.625,
+          "height": 641.703125
+        }
+      }
+    ]
+  },
+  {
+    "topic": "ad-anomalydino",
+    "width": 1440,
+    "chapter": 3,
+    "views": [
+      {
+        "screenshot": "1440-c03-v01.png",
+        "title": "刮傷找近鄰\n放大完整圖",
+        "box": {
+          "x": 366.1875,
+          "y": 358.796875,
+          "width": 1011.625,
+          "height": 641.703125
+        }
+      },
+      {
+        "screenshot": "1440-c03-v02.png",
+        "title": "正常對照\n放大完整圖",
+        "box": {
+          "x": 366.1875,
+          "y": 358.796875,
+          "width": 1011.625,
+          "height": 641.703125
+        }
+      }
+    ]
+  },
+  {
+    "topic": "ad-anomalydino",
+    "width": 1440,
+    "chapter": 4,
+    "views": [
+      {
+        "screenshot": "1440-c04-v01.png",
+        "title": "先看哪件\n放大完整圖",
+        "box": {
+          "x": 366.1875,
+          "y": 359.609375,
+          "width": 1011.625,
+          "height": 641.703125
+        }
+      },
+      {
+        "screenshot": "1440-c04-v02.png",
+        "title": "再看哪裡\n放大完整圖",
+        "box": {
+          "x": 366.1875,
+          "y": 359.609375,
+          "width": 1011.625,
+          "height": 641.703125
+        }
+      },
+      {
+        "screenshot": "1440-c04-v03.png",
+        "title": "展開算術\n放大完整圖",
+        "box": {
+          "x": 366.1875,
+          "y": 359.609375,
+          "width": 1011.625,
+          "height": 641.703125
+        }
+      }
+    ]
+  },
+  {
+    "topic": "ad-anomalydino",
+    "width": 1440,
+    "chapter": 5,
+    "views": [
+      {
+        "screenshot": "1440-c05-v01.png",
+        "title": "乾淨參考\n放大完整圖",
+        "box": {
+          "x": 366.1875,
+          "y": 359.703125,
+          "width": 1011.625,
+          "height": 641.703125
+        }
+      },
+      {
+        "screenshot": "1440-c05-v02.png",
+        "title": "誤加刮傷\n放大完整圖",
+        "box": {
+          "x": 366.1875,
+          "y": 359.703125,
+          "width": 1011.625,
+          "height": 641.703125
+        }
+      }
+    ]
+  },
+  {
+    "topic": "ad-anomalydino",
+    "width": 1440,
+    "chapter": 6,
+    "views": [
+      {
+        "screenshot": "1440-c06-v01.png",
+        "title": "朝向規格\n放大完整圖",
+        "box": {
+          "x": 366.1875,
+          "y": 358.890625,
+          "width": 1011.625,
+          "height": 641.703125
+        }
+      },
+      {
+        "screenshot": "1440-c06-v02.png",
+        "title": "遮罩範圍\n放大完整圖",
+        "box": {
+          "x": 366.1875,
+          "y": 358.890625,
+          "width": 1011.625,
+          "height": 641.703125
+        }
+      },
+      {
+        "screenshot": "1440-c06-v03.png",
+        "title": "接線規則\n放大完整圖",
+        "box": {
+          "x": 366.1875,
+          "y": 358.890625,
+          "width": 1011.625,
+          "height": 641.703125
+        }
+      }
+    ]
+  },
+  {
+    "topic": "ad-anomalydino",
+    "width": 1440,
+    "chapter": 7,
+    "views": [
+      {
+        "screenshot": "1440-c07-v01.png",
+        "title": "AnomalyDINO\n放大完整圖",
+        "box": {
+          "x": 366.1875,
+          "y": 358.796875,
+          "width": 1011.625,
+          "height": 641.703125
+        }
+      },
+      {
+        "screenshot": "1440-c07-v02.png",
+        "title": "PatchCore\n放大完整圖",
+        "box": {
+          "x": 366.1875,
+          "y": 358.796875,
+          "width": 1011.625,
+          "height": 641.703125
+        }
+      },
+      {
+        "screenshot": "1440-c07-v03.png",
+        "title": "EfficientAD\n放大完整圖",
+        "box": {
+          "x": 366.1875,
+          "y": 358.796875,
+          "width": 1011.625,
+          "height": 641.703125
+        }
+      }
+    ]
+  },
+  {
+    "topic": "ad-anomalydino",
+    "width": 1440,
+    "chapter": 8,
+    "views": [
+      {
+        "screenshot": "1440-c08-v01.png",
+        "title": "瓶口定位\n放大完整圖",
+        "box": {
+          "x": 366.1875,
+          "y": 358.96875,
+          "width": 1011.625,
+          "height": 641.703125
+        }
+      },
+      {
+        "screenshot": "1440-c08-v02.png",
+        "title": "磁磚定位\n放大完整圖",
+        "box": {
+          "x": 366.1875,
+          "y": 358.96875,
+          "width": 1011.625,
+          "height": 641.703125
+        }
+      },
+      {
+        "screenshot": "1440-c08-v03.png",
+        "title": "換線漏檢\n放大完整圖",
+        "box": {
+          "x": 366.1875,
+          "y": 358.96875,
+          "width": 1011.625,
+          "height": 641.703125
+        }
+      },
+      {
+        "screenshot": "1440-c08-v04.png",
+        "title": "正常誤報\n放大完整圖",
+        "box": {
+          "x": 366.1875,
+          "y": 358.96875,
+          "width": 1011.625,
+          "height": 641.703125
+        }
+      }
+    ]
+  },
+  {
+    "topic": "ad-anomalydino",
+    "width": 360,
+    "chapter": 1,
+    "views": [
+      {
+        "screenshot": "360-c01-v01.png",
+        "title": "AnomalyDINO：先懂核心再看細節放大完整圖",
+        "box": {
+          "x": 33,
+          "y": 325.359375,
+          "width": 294,
+          "height": 474.625
+        }
+      },
+      {
+        "screenshot": "360-c01-v02.png",
+        "title": "先備資料放大完整圖",
+        "box": {
+          "x": 33,
+          "y": 325.359375,
+          "width": 294,
+          "height": 455.125
+        }
+      },
+      {
+        "screenshot": "360-c01-v03.png",
+        "title": "看圖覆核放大完整圖",
+        "box": {
+          "x": 33,
+          "y": 325.359375,
+          "width": 294,
+          "height": 455.125
+        }
+      }
+    ]
+  },
+  {
+    "topic": "ad-anomalydino",
+    "width": 360,
+    "chapter": 2,
+    "views": [
+      {
+        "screenshot": "360-c02-v01.png",
+        "title": "正常存庫放大完整圖",
+        "box": {
+          "x": 33,
+          "y": 344.640625,
+          "width": 294,
+          "height": 455.125
+        }
+      },
+      {
+        "screenshot": "360-c02-v02.png",
+        "title": "待測查庫放大完整圖",
+        "box": {
+          "x": 33,
+          "y": 344.640625,
+          "width": 294,
+          "height": 455.125
+        }
+      }
+    ]
+  },
+  {
+    "topic": "ad-anomalydino",
+    "width": 360,
+    "chapter": 3,
+    "views": [
+      {
+        "screenshot": "360-c03-v01.png",
+        "title": "刮傷找近鄰放大完整圖",
+        "box": {
+          "x": 33,
+          "y": 345.328125,
+          "width": 294,
+          "height": 455.125
+        }
+      },
+      {
+        "screenshot": "360-c03-v02.png",
+        "title": "正常對照放大完整圖",
+        "box": {
+          "x": 33,
+          "y": 345.328125,
+          "width": 294,
+          "height": 455.125
+        }
+      }
+    ]
+  },
+  {
+    "topic": "ad-anomalydino",
+    "width": 360,
+    "chapter": 4,
+    "views": [
+      {
+        "screenshot": "360-c04-v01.png",
+        "title": "先看哪件放大完整圖",
+        "box": {
+          "x": 33,
+          "y": 345.15625,
+          "width": 294,
+          "height": 455.125
+        }
+      },
+      {
+        "screenshot": "360-c04-v02.png",
+        "title": "再看哪裡放大完整圖",
+        "box": {
+          "x": 33,
+          "y": 280.15625,
+          "width": 294,
+          "height": 519.546875
+        }
+      },
+      {
+        "screenshot": "360-c04-v03.png",
+        "title": "展開算術放大完整圖",
+        "box": {
+          "x": 33,
+          "y": 280.15625,
+          "width": 294,
+          "height": 519.546875
+        }
+      }
+    ]
+  },
+  {
+    "topic": "ad-anomalydino",
+    "width": 360,
+    "chapter": 5,
+    "views": [
+      {
+        "screenshot": "360-c05-v01.png",
+        "title": "乾淨參考放大完整圖",
+        "box": {
+          "x": 33,
+          "y": 344.6875,
+          "width": 294,
+          "height": 455.125
+        }
+      },
+      {
+        "screenshot": "360-c05-v02.png",
+        "title": "誤加刮傷放大完整圖",
+        "box": {
+          "x": 33,
+          "y": 344.6875,
+          "width": 294,
+          "height": 455.125
+        }
+      }
+    ]
+  },
+  {
+    "topic": "ad-anomalydino",
+    "width": 360,
+    "chapter": 6,
+    "views": [
+      {
+        "screenshot": "360-c06-v01.png",
+        "title": "朝向規格放大完整圖",
+        "box": {
+          "x": 33,
+          "y": 344.984375,
+          "width": 294,
+          "height": 455.125
+        }
+      },
+      {
+        "screenshot": "360-c06-v02.png",
+        "title": "遮罩範圍放大完整圖",
+        "box": {
+          "x": 33,
+          "y": 344.984375,
+          "width": 294,
+          "height": 455.125
+        }
+      },
+      {
+        "screenshot": "360-c06-v03.png",
+        "title": "接線規則放大完整圖",
+        "box": {
+          "x": 33,
+          "y": 344.984375,
+          "width": 294,
+          "height": 455.125
+        }
+      }
+    ]
+  },
+  {
+    "topic": "ad-anomalydino",
+    "width": 360,
+    "chapter": 7,
+    "views": [
+      {
+        "screenshot": "360-c07-v01.png",
+        "title": "AnomalyDINO放大完整圖",
+        "box": {
+          "x": 33,
+          "y": 345.171875,
+          "width": 294,
+          "height": 455.125
+        }
+      },
+      {
+        "screenshot": "360-c07-v02.png",
+        "title": "PatchCore放大完整圖",
+        "box": {
+          "x": 33,
+          "y": 345.171875,
+          "width": 294,
+          "height": 455.125
+        }
+      },
+      {
+        "screenshot": "360-c07-v03.png",
+        "title": "EfficientAD放大完整圖",
+        "box": {
+          "x": 33,
+          "y": 345.171875,
+          "width": 294,
+          "height": 455.125
+        }
+      }
+    ]
+  },
+  {
+    "topic": "ad-anomalydino",
+    "width": 360,
+    "chapter": 8,
+    "views": [
+      {
+        "screenshot": "360-c08-v01.png",
+        "title": "瓶口定位放大完整圖",
+        "box": {
+          "x": 33,
+          "y": 345.25,
+          "width": 294,
+          "height": 455.125
+        }
+      },
+      {
+        "screenshot": "360-c08-v02.png",
+        "title": "磁磚定位放大完整圖",
+        "box": {
+          "x": 33,
+          "y": 345.25,
+          "width": 294,
+          "height": 455.125
+        }
+      },
+      {
+        "screenshot": "360-c08-v03.png",
+        "title": "換線漏檢放大完整圖",
+        "box": {
+          "x": 33,
+          "y": 345.25,
+          "width": 294,
+          "height": 455.125
+        }
+      },
+      {
+        "screenshot": "360-c08-v04.png",
+        "title": "正常誤報放大完整圖",
+        "box": {
+          "x": 33,
+          "y": 345.25,
+          "width": 294,
+          "height": 455.125
+        }
+      }
+    ]
+  },
+  {
+    "topic": "ad-efficientad",
+    "width": 1440,
+    "chapter": 1,
+    "views": [
+      {
+        "screenshot": "1440-c01-v01.png",
+        "title": "EfficientAD：先懂核心再看細節\n放大完整圖",
+        "box": {
+          "x": 366.1875,
+          "y": 358.984375,
+          "width": 1011.625,
+          "height": 641.703125
+        }
+      },
+      {
+        "screenshot": "1440-c01-v02.png",
+        "title": "原章：資料準備與工作流程\n放大完整圖",
+        "box": {
+          "x": 366.1875,
+          "y": 358.984375,
+          "width": 1011.625,
+          "height": 641.703125
+        }
+      }
+    ]
+  },
+  {
+    "topic": "ad-efficientad",
+    "width": 1440,
+    "chapter": 2,
+    "views": [
+      {
+        "screenshot": "1440-c02-v01.png",
+        "title": "本章機制圖 02 / 8\n手機可左右滑讀圖 · 放大閱讀",
+        "box": {
+          "x": 366.1875,
+          "y": -1.46875,
+          "width": 1011.625,
+          "height": 641.703125
+        }
+      }
+    ]
+  },
+  {
+    "topic": "ad-efficientad",
+    "width": 1440,
+    "chapter": 3,
+    "views": [
+      {
+        "screenshot": "1440-c03-v01.png",
+        "title": "本章機制圖 03 / 8\n手機可左右滑讀圖 · 放大閱讀",
+        "box": {
+          "x": 366.1875,
+          "y": -1.140625,
+          "width": 1011.625,
+          "height": 641.703125
+        }
+      }
+    ]
+  },
+  {
+    "topic": "ad-efficientad",
+    "width": 1440,
+    "chapter": 4,
+    "views": [
+      {
+        "screenshot": "1440-c04-v01.png",
+        "title": "本章機制圖 04 / 8\n手機可左右滑讀圖 · 放大閱讀",
+        "box": {
+          "x": 366.1875,
+          "y": -1.40625,
+          "width": 1011.625,
+          "height": 641.703125
+        }
+      }
+    ]
+  },
+  {
+    "topic": "ad-efficientad",
+    "width": 1440,
+    "chapter": 5,
+    "views": [
+      {
+        "screenshot": "1440-c05-v01.png",
+        "title": "本章機制圖 05 / 8\n手機可左右滑讀圖 · 放大閱讀",
+        "box": {
+          "x": 366.1875,
+          "y": -1.25,
+          "width": 1011.625,
+          "height": 641.703125
+        }
+      }
+    ]
+  },
+  {
+    "topic": "ad-efficientad",
+    "width": 1440,
+    "chapter": 6,
+    "views": [
+      {
+        "screenshot": "1440-c06-v01.png",
+        "title": "本章機制圖 06 / 8\n手機直向分段 · 完整圖可放大 · 放大閱讀",
+        "box": {
+          "x": 366.1875,
+          "y": -0.578125,
+          "width": 1011.625,
+          "height": 641.703125
+        }
+      }
+    ]
+  },
+  {
+    "topic": "ad-efficientad",
+    "width": 1440,
+    "chapter": 7,
+    "views": [
+      {
+        "screenshot": "1440-c07-v01.png",
+        "title": "本章機制圖 07 / 8\n手機可左右滑讀圖 · 放大閱讀",
+        "box": {
+          "x": 366.1875,
+          "y": -1.09375,
+          "width": 1011.625,
+          "height": 641.703125
+        }
+      }
+    ]
+  },
+  {
+    "topic": "ad-efficientad",
+    "width": 1440,
+    "chapter": 8,
+    "views": [
+      {
+        "screenshot": "1440-c08-v01.png",
+        "title": "本章機制圖 08 / 8\n手機可左右滑讀圖 · 放大閱讀",
+        "box": {
+          "x": 366.1875,
+          "y": -0.75,
+          "width": 1011.625,
+          "height": 641.703125
+        }
+      }
+    ]
+  },
+  {
+    "topic": "ad-efficientad",
+    "width": 360,
+    "chapter": 1,
+    "views": [
+      {
+        "screenshot": "360-c01-v01.png",
+        "title": "EfficientAD：先懂核心再看細節放大完整圖",
+        "box": {
+          "x": 33,
+          "y": 325.046875,
+          "width": 294,
+          "height": 474.625
+        }
+      },
+      {
+        "screenshot": "360-c01-v02.png",
+        "title": "原章：資料準備與工作流程放大完整圖",
+        "box": {
+          "x": 33,
+          "y": 325.046875,
+          "width": 294,
+          "height": 237.828125
+        }
+      }
+    ]
+  },
+  {
+    "topic": "ad-efficientad",
+    "width": 360,
+    "chapter": 2,
+    "views": [
+      {
+        "screenshot": "360-c02-v01.png",
+        "title": "本章機制圖 02 / 8手機可左右滑讀圖 · 放大閱讀",
+        "box": {
+          "x": 33,
+          "y": 94.984375,
+          "width": 294,
+          "height": 610.765625
+        }
+      }
+    ]
+  },
+  {
+    "topic": "ad-efficientad",
+    "width": 360,
+    "chapter": 3,
+    "views": [
+      {
+        "screenshot": "360-c03-v01.png",
+        "title": "本章機制圖 03 / 8手機可左右滑讀圖 · 放大閱讀",
+        "box": {
+          "x": 33,
+          "y": 94.703125,
+          "width": 294,
+          "height": 610.765625
+        }
+      }
+    ]
+  },
+  {
+    "topic": "ad-efficientad",
+    "width": 360,
+    "chapter": 4,
+    "views": [
+      {
+        "screenshot": "360-c04-v01.png",
+        "title": "本章機制圖 04 / 8手機可左右滑讀圖 · 放大閱讀",
+        "box": {
+          "x": 33,
+          "y": 94.96875,
+          "width": 294,
+          "height": 610.765625
+        }
+      }
+    ]
+  },
+  {
+    "topic": "ad-efficientad",
+    "width": 360,
+    "chapter": 5,
+    "views": [
+      {
+        "screenshot": "360-c05-v01.png",
+        "title": "本章機制圖 05 / 8手機可左右滑讀圖 · 放大閱讀",
+        "box": {
+          "x": 33,
+          "y": 94.578125,
+          "width": 294,
+          "height": 610.765625
+        }
+      }
+    ]
+  },
+  {
+    "topic": "ad-efficientad",
+    "width": 360,
+    "chapter": 6,
+    "views": [
+      {
+        "screenshot": "360-c06-v01.png",
+        "title": "1. 先認出同一工件\n\nA-01 的刮痕在下方中央。接下來各張圖都對回這個位置；圖片與數值均為教學示範。\n\n2. 局部差異：Teacher 對 Student 第一組\n\n此位置原始差異 2.50，依正常參考對齊後為 0.20。\n\n3. 整體差異：AE 對 Student 第二組\n\n同位置原始差異 2.00，依另一路正常參考對齊後為 0.02；兩路不是用原始大小直接比。\n\n4. 融合後，再取全圖最大值\n\n同位置平均：(0.20 + 0.02) ÷ 2 = 0.11。本例其他位置都更低，因此 image score 也是 0.11。\n\n5. 超過門檻，交給人判讀\n\n0.11 高於示範門檻 0.08，所以送人工覆核。回看原圖確認刮痕，再依產品規格處置；分數本身不等於報廢決定。\n\n本章機制圖 06 / 8手機直向分段 · 完整圖可放大 · 放大閱讀",
+        "box": {
+          "x": 33,
+          "y": -784.421875,
+          "width": 294,
+          "height": 2368.125
+        }
+      }
+    ]
+  },
+  {
+    "topic": "ad-efficientad",
+    "width": 360,
+    "chapter": 7,
+    "views": [
+      {
+        "screenshot": "360-c07-v01.png",
+        "title": "本章機制圖 07 / 8手機可左右滑讀圖 · 放大閱讀",
+        "box": {
+          "x": 33,
+          "y": 94.796875,
+          "width": 294,
+          "height": 610.765625
+        }
+      }
+    ]
+  },
+  {
+    "topic": "ad-efficientad",
+    "width": 360,
+    "chapter": 8,
+    "views": [
+      {
+        "screenshot": "360-c08-v01.png",
+        "title": "本章機制圖 08 / 8手機可左右滑讀圖 · 放大閱讀",
+        "box": {
+          "x": 33,
+          "y": 94.765625,
+          "width": 294,
+          "height": 610.765625
+        }
+      }
+    ]
+  }
+]

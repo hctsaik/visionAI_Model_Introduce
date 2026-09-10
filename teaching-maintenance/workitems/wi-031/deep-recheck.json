@@ -1,0 +1,119 @@
+[
+  {
+    "original": "deep\\ad-anomalydino\\1440-c01-v02.png",
+    "recheck": "deep\\ad-anomalydino\\1440-c01-v02-recheck.png",
+    "stddev": [
+      47.485122365968955,
+      42.49646592362377,
+      38.36452888671635
+    ]
+  },
+  {
+    "original": "deep\\ad-anomalydino\\1440-c03-v02.png",
+    "recheck": "deep\\ad-anomalydino\\1440-c03-v02-recheck.png",
+    "stddev": [
+      46.76322618658583,
+      41.61535566770123,
+      40.41435759573237
+    ]
+  },
+  {
+    "original": "deep\\ad-anomalydino\\1440-c04-v02.png",
+    "recheck": "deep\\ad-anomalydino\\1440-c04-v02-recheck.png",
+    "stddev": [
+      43.29792380713477,
+      41.251480511785324,
+      40.3718042733513
+    ]
+  },
+  {
+    "original": "deep\\ad-anomalydino\\1440-c07-v02.png",
+    "recheck": "deep\\ad-anomalydino\\1440-c07-v02-recheck.png",
+    "stddev": [
+      50.07251000270947,
+      43.558932555536224,
+      39.09221394536865
+    ]
+  },
+  {
+    "original": "deep\\ad-anomalydino\\1440-c07-v03.png",
+    "recheck": "deep\\ad-anomalydino\\1440-c07-v03-recheck.png",
+    "stddev": [
+      64.62550872847048,
+      61.97065317646844,
+      60.519397118198725
+    ]
+  },
+  {
+    "original": "deep\\ad-patchcore\\1440-c01-v02.png",
+    "recheck": "deep\\ad-patchcore\\1440-c01-v02-recheck.png",
+    "stddev": [
+      42.81424686198725,
+      39.796978095355946,
+      37.680767642304055
+    ]
+  },
+  {
+    "original": "deep\\ad-patchcore\\1440-c02-v02.png",
+    "recheck": "deep\\ad-patchcore\\1440-c02-v02-recheck.png",
+    "stddev": [
+      48.19971991259621,
+      38.096973854357984,
+      32.904302838182616
+    ]
+  },
+  {
+    "original": "deep\\ad-patchcore\\1440-c04-v02.png",
+    "recheck": "deep\\ad-patchcore\\1440-c04-v02-recheck.png",
+    "stddev": [
+      46.23019004184735,
+      40.97881905941546,
+      39.75648687663471
+    ]
+  },
+  {
+    "original": "deep\\ad-patchcore\\1440-c06-v02.png",
+    "recheck": "deep\\ad-patchcore\\1440-c06-v02-recheck.png",
+    "stddev": [
+      40.201792538035505,
+      37.42963727594967,
+      36.68727319168151
+    ]
+  },
+  {
+    "original": "deep\\ad-patchcore\\1440-c07-v03.png",
+    "recheck": "deep\\ad-patchcore\\1440-c07-v03-recheck.png",
+    "stddev": [
+      40.14928415968747,
+      32.964753627854314,
+      31.471693916514262
+    ]
+  },
+  {
+    "original": "deep\\ad-patchcore\\1440-c08-v03.png",
+    "recheck": "deep\\ad-patchcore\\1440-c08-v03-recheck.png",
+    "stddev": [
+      67.61431980510412,
+      69.77569875064812,
+      68.24652932382618
+    ]
+  },
+  {
+    "original": "deep\\ad-patchcore\\1440-c08-v04.png",
+    "recheck": "deep\\ad-patchcore\\1440-c08-v04-recheck.png",
+    "stddev": [
+      54.16941246775012,
+      64.78965279699058,
+      68.97272419107588
+    ]
+  },
+  {
+    "original": "deep\\resnet\\1440-c08-v03.png",
+    "recheck": "deep\\resnet\\1440-c08-v03-recheck.png",
+    "stddev": [
+      55.7473004266441,
+      41.866434514620394,
+      35.22902634531143
+    ]
+  }
+]

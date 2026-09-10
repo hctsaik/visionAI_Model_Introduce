@@ -38,8 +38,21 @@ elif mode=='public':
     def check(p):
         rel=p.relative_to(C/'docs').as_posix()
         res=requests.get(base+rel+'?wi032='+head,timeout=45);res.raise_for_status()
-        assert sha(res.content)==sha(p.read_bytes()),rel
-        return {'path':rel,'sha256':sha(res.content),'status':res.status_code}
+        committed=subprocess.check_output(['git','show',head+':docs/'+rel],cwd=C)
+        assert sha(res.content)==sha(committed),rel
+        local=p.read_bytes()
+        if p.suffix=='.md':
+            assert local.replace(b'\r\n',b'\n')==committed.replace(b'\r\n',b'\n'),rel
+        else: assert local==committed,rel
+        return {'path':rel,'sha256':sha(res.content),'status':res.status_code,'matches_committed_bytes':True,'local_line_endings_only':local!=committed}
     with ThreadPoolExecutor(max_workers=6) as pool: rows=list(pool.map(check,paths))
     (W/'public-release-verification.json').write_text(json.dumps({'commit':head,'url':base,'checks':rows,'checked_files':len(rows),'user_approval':'pending','part_two':'not_started'},indent=2),encoding='utf-8')
     print('Public byte checks PASS:',len(rows),head)
+elif mode=='record':
+    evidence=json.loads((W/'public-release-verification.json').read_text(encoding='utf-8'))
+    message=f"第一部分六課成果已 commit 並 push：{evidence['commit']}；GitHub Pages 部署成功，公開 {evidence['checked_files']} 個檔案逐一 hash 與已提交內容一致（本機部分 Markdown 為 CRLF，Git 為 LF，文字內容一致）。發布證據為 workitems/wi-032/public-release-verification.json。最新學習及接續資料同步保存在 Git 的 teaching-maintenance。使用者成品核准仍 pending；第二部分 52 課未開始，下次依根 Overall_Review.md 第二部分接續。此段取代下方歷史未發布狀態。"
+    checkpoint(message)
+    for p in [R/'Overall_Review.md',W/'REPORT.md',C/'teaching-maintenance/README.md']:
+        p.write_text('## WI-032 發布完成（2026-09-11）\n\n'+message+'\n\n'+p.read_text(encoding='utf-8'),encoding='utf-8')
+    p=W/'PLAN.md';s=p.read_text(encoding='utf-8').replace('- [ ] 核對 Pages 結果與公開內容，保存發布證據及接續狀態。','- [x] 核對 Pages 結果與公開內容，保存發布證據及接續狀態。')
+    p.write_text(s+'\n\n發布完成 checkpoint：'+message+'\n公開 API 已核對 Pages run 34538018042 success。即將將本發布證據另行提交及推送；該紀錄提交不更動 docs 教材。\n',encoding='utf-8')

@@ -1,0 +1,1046 @@
+[
+  {
+    "path": "_course_content/generated-concepts/resnet/wi030-class-d2-r01-desktop.png",
+    "sha256": "f0054b55869a84d56759e3d7b67db20dd7253e91e0e40bad93b8a1209df33c4e",
+    "uses": [
+      {
+        "topic": "resnet",
+        "layer": "first-2-1-image"
+      },
+      {
+        "topic": "convnext",
+        "layer": "first-2-1-image"
+      },
+      {
+        "topic": "vit-classifier",
+        "layer": "first-2-1-image"
+      }
+    ]
+  },
+  {
+    "path": "_course_content/generated-concepts/resnet/wi030-class-d2-r03-mobile.png",
+    "sha256": "0e936426ea17b9a7e109c37ba65293ba4fa52b3c0ace8eed2a4a8664be553ee0",
+    "uses": [
+      {
+        "topic": "resnet",
+        "layer": "first-2-1-mobile_image"
+      },
+      {
+        "topic": "convnext",
+        "layer": "first-2-1-mobile_image"
+      },
+      {
+        "topic": "vit-classifier",
+        "layer": "first-2-1-mobile_image"
+      }
+    ]
+  },
+  {
+    "path": "_course_content/generated-concepts/resnet/wi030-class-d3-r05-desktop.png",
+    "sha256": "5897e2daac5efbeb76c7ab6be78ed196ce664352dbad4b0ae884970fbc2f7e5a",
+    "uses": [
+      {
+        "topic": "resnet",
+        "layer": "first-3-1-image"
+      },
+      {
+        "topic": "convnext",
+        "layer": "first-3-1-image"
+      },
+      {
+        "topic": "vit-classifier",
+        "layer": "first-3-1-image"
+      }
+    ]
+  },
+  {
+    "path": "_course_content/generated-concepts/resnet/wi030-class-d3-r06-mobile.png",
+    "sha256": "b835049c82e7c394d524e5e957deb785c3498947c09055bdf483d001c62ffada",
+    "uses": [
+      {
+        "topic": "resnet",
+        "layer": "first-3-1-mobile_image"
+      },
+      {
+        "topic": "convnext",
+        "layer": "first-3-1-mobile_image"
+      },
+      {
+        "topic": "vit-classifier",
+        "layer": "first-3-1-mobile_image"
+      }
+    ]
+  },
+  {
+    "path": "_course_content/generated-concepts/u-net/wi030-seg-d2-r03-desktop.png",
+    "sha256": "68cd03a376c8090acadcfdfdc83d9ce02b4224f5d340970a16cf9abf938499d4",
+    "uses": [
+      {
+        "topic": "u-net",
+        "layer": "first-2-1-image"
+      },
+      {
+        "topic": "segformer",
+        "layer": "first-2-1-image"
+      }
+    ]
+  },
+  {
+    "path": "_course_content/generated-concepts/u-net/wi030-seg-d2-r03-mobile.png",
+    "sha256": "550c509766ae8fec1575f550f5638c4e55ec3dc4b464442e3a48aeb938afe06a",
+    "uses": [
+      {
+        "topic": "u-net",
+        "layer": "first-2-1-mobile_image"
+      },
+      {
+        "topic": "segformer",
+        "layer": "first-2-1-mobile_image"
+      }
+    ]
+  },
+  {
+    "path": "_course_content/generated-concepts/u-net/wi030-seg-d3-r01-desktop.png",
+    "sha256": "f3da268f1b33baca27ebf9ade64db6cf7882d1d43669842c734b456578287031",
+    "uses": [
+      {
+        "topic": "u-net",
+        "layer": "first-3-1-image"
+      },
+      {
+        "topic": "segformer",
+        "layer": "first-3-1-image"
+      },
+      {
+        "topic": "yolo-seg",
+        "layer": "first-3-1-image"
+      }
+    ]
+  },
+  {
+    "path": "_course_content/generated-concepts/u-net/wi030-seg-d3-r01-mobile.png",
+    "sha256": "d8ae4673b02e0dfe097adbc4ebc13d512b7c8ec3cf4c3e453c11aa5f0f39a4d7",
+    "uses": [
+      {
+        "topic": "u-net",
+        "layer": "first-3-1-mobile_image"
+      },
+      {
+        "topic": "segformer",
+        "layer": "first-3-1-mobile_image"
+      },
+      {
+        "topic": "yolo-seg",
+        "layer": "first-3-1-mobile_image"
+      }
+    ]
+  },
+  {
+    "path": "_course_content/generated-concepts/pose/wi030-pose-d2-r02-desktop.png",
+    "sha256": "9ae272c90dd2bc31e387a5aa7795c9d3db52c49648d069924aff94ae20492005",
+    "uses": [
+      {
+        "topic": "keypoint-r-cnn",
+        "layer": "first-2-1-image"
+      },
+      {
+        "topic": "pose",
+        "layer": "first-2-1-image"
+      }
+    ]
+  },
+  {
+    "path": "_course_content/generated-concepts/pose/wi030-pose-d2-r02-mobile.png",
+    "sha256": "26f117b04fae08da4a385547947d1177cf1c5bdf46259a2fbc8def5309136405",
+    "uses": [
+      {
+        "topic": "keypoint-r-cnn",
+        "layer": "first-2-1-mobile_image"
+      },
+      {
+        "topic": "pose",
+        "layer": "first-2-1-mobile_image"
+      }
+    ]
+  },
+  {
+    "path": "_course_content/generated-concepts/pose/wi030-pose-d3-r03-desktop.png",
+    "sha256": "b98525406995d0f18378c44ed1aa01a904022b8384b58c5ea3595177f33cb928",
+    "uses": [
+      {
+        "topic": "keypoint-r-cnn",
+        "layer": "first-3-1-image"
+      },
+      {
+        "topic": "pose",
+        "layer": "first-3-1-image"
+      }
+    ]
+  },
+  {
+    "path": "_course_content/generated-concepts/pose/wi030-pose-d3-r03-mobile.png",
+    "sha256": "133661e1880292f9d4bd064739352251af7ee7c3ddbd60106ef7a3a9e91d72c9",
+    "uses": [
+      {
+        "topic": "keypoint-r-cnn",
+        "layer": "first-3-1-mobile_image"
+      },
+      {
+        "topic": "pose",
+        "layer": "first-3-1-mobile_image"
+      }
+    ]
+  },
+  {
+    "path": "_course_content/generated-concepts/det-yolo-dense/wi024-known-d3-r02-desktop.png",
+    "sha256": "1a0c466b19a7ee678c0d28932de83efa9b65da87ae0e8429d3d862282eea6286",
+    "uses": [
+      {
+        "topic": "det-yolo-dense",
+        "layer": "first-3-1-image"
+      },
+      {
+        "topic": "det-rtdetr",
+        "layer": "first-3-1-image"
+      }
+    ]
+  },
+  {
+    "path": "_course_content/generated-concepts/det-yolo-dense/wi024-known-d3-r01-mobile.png",
+    "sha256": "111bb3a9b1257e0cde80a52d8c3284ea1a3e015fabc533240e28ffaf1b132c20",
+    "uses": [
+      {
+        "topic": "det-yolo-dense",
+        "layer": "first-3-1-mobile_image"
+      },
+      {
+        "topic": "det-rtdetr",
+        "layer": "first-3-1-mobile_image"
+      }
+    ]
+  },
+  {
+    "path": "_course_content/generated-concepts/det-yolo-dense/det-yolo-dense-d01-compare-known.svg",
+    "sha256": "c102f85058fcba0b6171f4980d430a98ab598a0de1f4c8c290710aa44082dac8",
+    "uses": [
+      {
+        "topic": "det-dino-detector",
+        "layer": "first-3-1-image"
+      },
+      {
+        "topic": "yolo-world",
+        "layer": "first-3-1-image"
+      }
+    ]
+  },
+  {
+    "path": "_course_content/generated-concepts/det-yolo-dense/det-yolo-dense-d01-compare-known-mobile.svg",
+    "sha256": "4b4765974ab25081fdcef0004ffb99eaed17f00f75180216d1b8034cb2856596",
+    "uses": [
+      {
+        "topic": "det-dino-detector",
+        "layer": "first-3-1-mobile_image"
+      },
+      {
+        "topic": "yolo-world",
+        "layer": "first-3-1-mobile_image"
+      }
+    ]
+  },
+  {
+    "path": "_course_content/generated-concepts/det-yolo-dense/det-yolo-dense-d01-compare-prompt.svg",
+    "sha256": "4ae3361cb7cced3a806ac103d1d181d9914d1b3827796dc0a59dc3122c662680",
+    "uses": [
+      {
+        "topic": "det-dino-detector",
+        "layer": "first-4-1-image"
+      },
+      {
+        "topic": "yolo-world",
+        "layer": "first-4-1-image"
+      }
+    ]
+  },
+  {
+    "path": "_course_content/generated-concepts/det-yolo-dense/det-yolo-dense-d01-compare-prompt-mobile.svg",
+    "sha256": "d7a2720e532d9b98ca06269a236c213db6de42bd5393c30c43cbec15aa55ac16",
+    "uses": [
+      {
+        "topic": "det-dino-detector",
+        "layer": "first-4-1-mobile_image"
+      },
+      {
+        "topic": "yolo-world",
+        "layer": "first-4-1-mobile_image"
+      }
+    ]
+  },
+  {
+    "path": "_course_content/generated-concepts/det-grounding-dino-interface/wi024-prompt-d3-r01-desktop.png",
+    "sha256": "6fddbecc00a8956ee4a04a17e563a42ef6093d7c98b0425a1b87694b824f0ef2",
+    "uses": [
+      {
+        "topic": "det-grounding-dino-interface",
+        "layer": "first-3-1-image"
+      },
+      {
+        "topic": "yoloe",
+        "layer": "first-3-1-image"
+      }
+    ]
+  },
+  {
+    "path": "_course_content/generated-concepts/det-grounding-dino-interface/wi024-prompt-d3-r01-mobile.png",
+    "sha256": "456d03298f84584c26ebd33ede32e34a29532e7e404b0eb13f6f175b4f2bdd30",
+    "uses": [
+      {
+        "topic": "det-grounding-dino-interface",
+        "layer": "first-3-1-mobile_image"
+      },
+      {
+        "topic": "yoloe",
+        "layer": "first-3-1-mobile_image"
+      }
+    ]
+  },
+  {
+    "path": "_course_content/generated-concepts/ad-patchcore/wi030-ad-d2-r02-desktop.png",
+    "sha256": "d56c08d7588472f11713eac0dab1ca34422786a397efdcac25d1e403fda4a6fa",
+    "uses": [
+      {
+        "topic": "ad-patchcore",
+        "layer": "first-2-1-image"
+      },
+      {
+        "topic": "ad-padim",
+        "layer": "first-2-1-image"
+      },
+      {
+        "topic": "ad-anomalydino",
+        "layer": "first-2-1-image"
+      },
+      {
+        "topic": "ad-efficientad",
+        "layer": "first-2-1-image"
+      }
+    ]
+  },
+  {
+    "path": "_course_content/generated-concepts/ad-patchcore/wi030-ad-d2-r02-mobile.png",
+    "sha256": "3be092ace4a2ad992abb639f4488633f9b2bdf46406bb0f4c40f2b278ddf053c",
+    "uses": [
+      {
+        "topic": "ad-patchcore",
+        "layer": "first-2-1-mobile_image"
+      },
+      {
+        "topic": "ad-padim",
+        "layer": "first-2-1-mobile_image"
+      },
+      {
+        "topic": "ad-anomalydino",
+        "layer": "first-2-1-mobile_image"
+      },
+      {
+        "topic": "ad-efficientad",
+        "layer": "first-2-1-mobile_image"
+      }
+    ]
+  },
+  {
+    "path": "_course_content/generated-concepts/ad-patchcore/wi030-ad-d3-r04-desktop.png",
+    "sha256": "9e48067e72008111295867622d66457e6a03e8d08526021f24813f4826b5aa1b",
+    "uses": [
+      {
+        "topic": "ad-patchcore",
+        "layer": "first-3-1-image"
+      },
+      {
+        "topic": "ad-padim",
+        "layer": "first-3-1-image"
+      },
+      {
+        "topic": "ad-anomalydino",
+        "layer": "first-3-1-image"
+      },
+      {
+        "topic": "ad-efficientad",
+        "layer": "first-3-1-image"
+      }
+    ]
+  },
+  {
+    "path": "_course_content/generated-concepts/ad-patchcore/wi030-ad-d3-r03-mobile.png",
+    "sha256": "59a2b3f67f7c57a03c44f9afbaf7661635abc687988178198d25d458852e445b",
+    "uses": [
+      {
+        "topic": "ad-patchcore",
+        "layer": "first-3-1-mobile_image"
+      },
+      {
+        "topic": "ad-padim",
+        "layer": "first-3-1-mobile_image"
+      },
+      {
+        "topic": "ad-anomalydino",
+        "layer": "first-3-1-mobile_image"
+      },
+      {
+        "topic": "ad-efficientad",
+        "layer": "first-3-1-mobile_image"
+      }
+    ]
+  },
+  {
+    "path": "_course_content/generated-concepts/ad-stfpm/wi021-feature-methods-d3-r02-desktop.png",
+    "sha256": "f87139a5f9038c43f7b24ad33c271a6bf0a916a236059f5f7360d7cada1e3af6",
+    "uses": [
+      {
+        "topic": "ad-subspacead",
+        "layer": "first-3-1-image"
+      },
+      {
+        "topic": "ad-stfpm",
+        "layer": "first-3-1-image"
+      }
+    ]
+  },
+  {
+    "path": "_course_content/generated-concepts/ad-stfpm/wi021-feature-methods-d3-r03-mobile.png",
+    "sha256": "356a0fb8dcabf5588c2359fa20ff72d1251d0e23d2fb1fee5e238da1c51bc4a4",
+    "uses": [
+      {
+        "topic": "ad-subspacead",
+        "layer": "first-3-1-mobile_image"
+      },
+      {
+        "topic": "ad-stfpm",
+        "layer": "first-3-1-mobile_image"
+      }
+    ]
+  },
+  {
+    "path": "_course_content/generated-concepts/ad-ae/wi021-ae-d5-r02-desktop.png",
+    "sha256": "cd4136e18e106226fceaea1ce643f47696830b4d19dab782ea5b38569d7be803",
+    "uses": [
+      {
+        "topic": "ad-rd4ad",
+        "layer": "first-4-1-image"
+      },
+      {
+        "topic": "ad-ae",
+        "layer": "first-5-1-image"
+      },
+      {
+        "topic": "ad-draem",
+        "layer": "first-4-1-image"
+      }
+    ]
+  },
+  {
+    "path": "_course_content/generated-concepts/ad-ae/wi021-ae-d5-r02-mobile.png",
+    "sha256": "5e989c93e2e5c937b199c13055e9781c15dfaf0c4cac8ea241dcfbb7ebfcb0a9",
+    "uses": [
+      {
+        "topic": "ad-rd4ad",
+        "layer": "first-4-1-mobile_image"
+      },
+      {
+        "topic": "ad-ae",
+        "layer": "first-5-1-mobile_image"
+      },
+      {
+        "topic": "ad-draem",
+        "layer": "first-4-1-mobile_image"
+      }
+    ]
+  },
+  {
+    "path": "_course_content/generated-concepts/ad-dinomaly/wi021-multi-reconstruction-d2-r02-desktop.png",
+    "sha256": "2252749e6e8574f1d0599518b49bb90528fcbca54fab653534f5a170ff17489e",
+    "uses": [
+      {
+        "topic": "ad-uniad",
+        "layer": "first-2-1-image"
+      },
+      {
+        "topic": "ad-dinomaly",
+        "layer": "first-2-1-image"
+      },
+      {
+        "topic": "ad-invad",
+        "layer": "first-2-1-image"
+      }
+    ]
+  },
+  {
+    "path": "_course_content/generated-concepts/ad-dinomaly/wi021-multi-reconstruction-d2-r03-mobile.png",
+    "sha256": "9dedb96f380025424d5dc73c73e6cc26d7d835eedb01ea37d06b2fbf265daafe",
+    "uses": [
+      {
+        "topic": "ad-uniad",
+        "layer": "first-2-1-mobile_image"
+      },
+      {
+        "topic": "ad-dinomaly",
+        "layer": "first-2-1-mobile_image"
+      },
+      {
+        "topic": "ad-invad",
+        "layer": "first-2-1-mobile_image"
+      }
+    ]
+  },
+  {
+    "path": "_course_content/generated-concepts/ad-dinomaly/wi021-multi-reconstruction-d3-r02-desktop.png",
+    "sha256": "6d245f368265c18398ef8515c78ba299c9e22c59766aeaf2538465eb294d527d",
+    "uses": [
+      {
+        "topic": "ad-uniad",
+        "layer": "first-3-1-image"
+      },
+      {
+        "topic": "ad-dinomaly",
+        "layer": "first-3-1-image"
+      },
+      {
+        "topic": "ad-invad",
+        "layer": "first-3-1-image"
+      }
+    ]
+  },
+  {
+    "path": "_course_content/generated-concepts/ad-dinomaly/wi021-multi-reconstruction-d3-r02-mobile.png",
+    "sha256": "7b115e86de0a4668c8bc7408d3ef70c4bfdba1e490e04a85d2200887a6d7530d",
+    "uses": [
+      {
+        "topic": "ad-uniad",
+        "layer": "first-3-1-mobile_image"
+      },
+      {
+        "topic": "ad-dinomaly",
+        "layer": "first-3-1-mobile_image"
+      },
+      {
+        "topic": "ad-invad",
+        "layer": "first-3-1-mobile_image"
+      }
+    ]
+  },
+  {
+    "path": "_course_content/generated-concepts/ad-ddad/wi021-diffusion-methods-d2-r02-desktop.png",
+    "sha256": "2954c5ebc2ef2f9cde77115492860d45d694c56a8f4c79a29dd078f9f7011a0e",
+    "uses": [
+      {
+        "topic": "ad-diffad",
+        "layer": "first-2-1-image"
+      },
+      {
+        "topic": "ad-ddad",
+        "layer": "first-2-1-image"
+      }
+    ]
+  },
+  {
+    "path": "_course_content/generated-concepts/ad-ddad/wi021-diffusion-methods-d2-r03-mobile.png",
+    "sha256": "8f62dd499f8ac5252ab2fa39147a1bfcc50e2ab96bd7f49296827be32e2da7d4",
+    "uses": [
+      {
+        "topic": "ad-diffad",
+        "layer": "first-2-1-mobile_image"
+      },
+      {
+        "topic": "ad-ddad",
+        "layer": "first-2-1-mobile_image"
+      }
+    ]
+  },
+  {
+    "path": "_course_content/generated-concepts/ad-ddad/wi021-diffusion-methods-d3-r02-desktop.png",
+    "sha256": "43132edead7efaa67e3e57d976e53f6d6c43b7596ae70185fad779e6676ff673",
+    "uses": [
+      {
+        "topic": "ad-diffad",
+        "layer": "first-3-1-image"
+      },
+      {
+        "topic": "ad-ddad",
+        "layer": "first-3-1-image"
+      }
+    ]
+  },
+  {
+    "path": "_course_content/generated-concepts/ad-ddad/wi021-diffusion-methods-d3-r04-mobile.png",
+    "sha256": "51ab1a7621812bb08a2352fa410fcde8f58a25e8e0dbee09e19a590341736ab2",
+    "uses": [
+      {
+        "topic": "ad-diffad",
+        "layer": "first-3-1-mobile_image"
+      },
+      {
+        "topic": "ad-ddad",
+        "layer": "first-3-1-mobile_image"
+      }
+    ]
+  },
+  {
+    "path": "_course_content/generated-concepts/ad-anomalyclip/wi021-clip-methods-d2-r02-desktop.png",
+    "sha256": "ea5c39cd6c9280c25d6b489fb27acd651df42156431bc06cf55a99141716bfaa",
+    "uses": [
+      {
+        "topic": "ad-winclip",
+        "layer": "first-2-1-image"
+      },
+      {
+        "topic": "ad-anomalyclip",
+        "layer": "first-2-1-image"
+      }
+    ]
+  },
+  {
+    "path": "_course_content/generated-concepts/ad-anomalyclip/wi021-clip-methods-d2-r01-mobile.png",
+    "sha256": "9b4c7fd516a5b0548750ccf4f0b6247fef84c74de6122e18ae0bebe5b87fb847",
+    "uses": [
+      {
+        "topic": "ad-winclip",
+        "layer": "first-2-1-mobile_image"
+      },
+      {
+        "topic": "ad-anomalyclip",
+        "layer": "first-2-1-mobile_image"
+      }
+    ]
+  },
+  {
+    "path": "_course_content/generated-concepts/ad-anomalyclip/wi021-clip-methods-d3-r04-desktop.png",
+    "sha256": "861b16c99eaf9824bcbea07f257f1c39b45901b4f5b204fc6922b7408373b57a",
+    "uses": [
+      {
+        "topic": "ad-winclip",
+        "layer": "first-3-1-image"
+      },
+      {
+        "topic": "ad-anomalyclip",
+        "layer": "first-3-1-image"
+      },
+      {
+        "topic": "ad-anomalygpt",
+        "layer": "first-3-1-image"
+      }
+    ]
+  },
+  {
+    "path": "_course_content/generated-concepts/ad-anomalyclip/wi021-clip-methods-d3-r07-mobile.png",
+    "sha256": "6a50e8d606b29f0dc772d0bc976a678c10f3da2c3b36e6cc0cfb788d97d389e9",
+    "uses": [
+      {
+        "topic": "ad-winclip",
+        "layer": "first-3-1-mobile_image"
+      },
+      {
+        "topic": "ad-anomalyclip",
+        "layer": "first-3-1-mobile_image"
+      },
+      {
+        "topic": "ad-anomalygpt",
+        "layer": "first-3-1-mobile_image"
+      }
+    ]
+  },
+  {
+    "path": "_course_content/generated-concepts/frame-difference/wi028-change-d3-r02-desktop.png",
+    "sha256": "c29daf8a025c695fe0d4e8cfc0937fffa80a745452554f3b0ba952d344a560ea",
+    "uses": [
+      {
+        "topic": "frame-difference",
+        "layer": "first-3-1-image"
+      },
+      {
+        "topic": "background-subtraction",
+        "layer": "first-3-1-image"
+      }
+    ]
+  },
+  {
+    "path": "_course_content/generated-concepts/frame-difference/wi028-change-d3-r03-mobile.png",
+    "sha256": "4871d2649252eccb6845864b238508972dae6730083f572b8949bd74227d3c5d",
+    "uses": [
+      {
+        "topic": "frame-difference",
+        "layer": "first-3-1-mobile_image"
+      },
+      {
+        "topic": "background-subtraction",
+        "layer": "first-3-1-mobile_image"
+      }
+    ]
+  },
+  {
+    "path": "_course_content/generated-concepts/lucas-kanade/wi028-flow-d2-r03-desktop.png",
+    "sha256": "cae83ca570d6f86c4103c4e9a7e4ff0e61b9b55f18d48a47f27781c7a2cd87dd",
+    "uses": [
+      {
+        "topic": "lucas-kanade",
+        "layer": "first-2-1-image"
+      },
+      {
+        "topic": "raft",
+        "layer": "first-2-1-image"
+      }
+    ]
+  },
+  {
+    "path": "_course_content/generated-concepts/lucas-kanade/wi028-flow-d2-r03-mobile.png",
+    "sha256": "bb27ec22d5e7f8fa796e50f47df823518e5b5b487ce2359ef09c8decd42f63ac",
+    "uses": [
+      {
+        "topic": "lucas-kanade",
+        "layer": "first-2-1-mobile_image"
+      },
+      {
+        "topic": "raft",
+        "layer": "first-2-1-mobile_image"
+      }
+    ]
+  },
+  {
+    "path": "_course_content/generated-concepts/lucas-kanade/wi028-flow-d3-r01-desktop.png",
+    "sha256": "fbd02d803658dd4200d35dc6a6a888cf4eab37cd27bc56b3a7d265dc0a659e98",
+    "uses": [
+      {
+        "topic": "lucas-kanade",
+        "layer": "first-3-1-image"
+      },
+      {
+        "topic": "raft",
+        "layer": "first-3-1-image"
+      }
+    ]
+  },
+  {
+    "path": "_course_content/generated-concepts/lucas-kanade/wi028-flow-d3-r01-mobile.png",
+    "sha256": "2e01d29715e1a93faa4d069f15dc140f8a6d3d747f705785844f94eaa66d2635",
+    "uses": [
+      {
+        "topic": "lucas-kanade",
+        "layer": "first-3-1-mobile_image"
+      },
+      {
+        "topic": "raft",
+        "layer": "first-3-1-mobile_image"
+      }
+    ]
+  },
+  {
+    "path": "_course_content/generated-concepts/convlstm/wi028-video-d3-r02-desktop.png",
+    "sha256": "dfa827840e1e26fb21ab641bddb7c4ff17576610c24dbb7a08bd7a7939c939c3",
+    "uses": [
+      {
+        "topic": "convlstm",
+        "layer": "first-3-1-image"
+      },
+      {
+        "topic": "videomae",
+        "layer": "first-3-1-image"
+      },
+      {
+        "topic": "v-jepa",
+        "layer": "first-3-1-image"
+      }
+    ]
+  },
+  {
+    "path": "_course_content/generated-concepts/convlstm/wi028-video-d3-r02-mobile.png",
+    "sha256": "410d1219d2f877283173afdce1d15760ea626e21ae4878b76bd55f0c1f175df5",
+    "uses": [
+      {
+        "topic": "convlstm",
+        "layer": "first-3-1-mobile_image"
+      },
+      {
+        "topic": "videomae",
+        "layer": "first-3-1-mobile_image"
+      },
+      {
+        "topic": "v-jepa",
+        "layer": "first-3-1-mobile_image"
+      }
+    ]
+  },
+  {
+    "path": "_course_content/generated-concepts/videomae/wi028-video-d2-r01-desktop.png",
+    "sha256": "8eb9ac44384a45b9e3ef0361c0168cc578dc4a35ce3e8334266cbbefc9758990",
+    "uses": [
+      {
+        "topic": "videomae",
+        "layer": "first-2-1-image"
+      },
+      {
+        "topic": "v-jepa",
+        "layer": "first-2-1-image"
+      }
+    ]
+  },
+  {
+    "path": "_course_content/generated-concepts/videomae/wi028-video-d2-r01-mobile.png",
+    "sha256": "47dfbd9913e9c8e8d8cae39b4445f4f0081e66218b440aed90d28c3d21e83148",
+    "uses": [
+      {
+        "topic": "videomae",
+        "layer": "first-2-1-mobile_image"
+      },
+      {
+        "topic": "v-jepa",
+        "layer": "first-2-1-mobile_image"
+      }
+    ]
+  },
+  {
+    "path": "_course_content/generated-concepts/dinov2/wi027-dino-d2-r03-desktop.png",
+    "sha256": "0c16a2c56639ce8d9957cf5316c895057c442e8f432c48dfd8e5922254733cc3",
+    "uses": [
+      {
+        "topic": "dinov2",
+        "layer": "first-2-1-image"
+      },
+      {
+        "topic": "dinov3",
+        "layer": "first-2-1-image"
+      }
+    ]
+  },
+  {
+    "path": "_course_content/generated-concepts/dinov2/wi027-dino-d2-r03-mobile.png",
+    "sha256": "2442c70d838609d2705282c3b7090f11e5071c2790eb00a57dc414efc8099f56",
+    "uses": [
+      {
+        "topic": "dinov2",
+        "layer": "first-2-1-mobile_image"
+      },
+      {
+        "topic": "dinov3",
+        "layer": "first-2-1-mobile_image"
+      }
+    ]
+  },
+  {
+    "path": "_course_content/generated-concepts/dinov2/wi027-features-d3-r02-desktop.png",
+    "sha256": "1388b9a548ccb9a12e90c298e43ff3d09ac99d1a453e3d734dfed29808682377",
+    "uses": [
+      {
+        "topic": "dinov2",
+        "layer": "first-3-1-image"
+      },
+      {
+        "topic": "dinov3",
+        "layer": "first-3-1-image"
+      }
+    ]
+  },
+  {
+    "path": "_course_content/generated-concepts/dinov2/wi027-features-d3-r03-mobile.png",
+    "sha256": "4a7e47177a76944b52cfe29923228d90ddcf5fbb7d81160826bdb572d0557e25",
+    "uses": [
+      {
+        "topic": "dinov2",
+        "layer": "first-3-1-mobile_image"
+      },
+      {
+        "topic": "dinov3",
+        "layer": "first-3-1-mobile_image"
+      }
+    ]
+  },
+  {
+    "path": "_course_content/generated-concepts/clip/wi027-alignment-d2-r01-desktop.png",
+    "sha256": "ef00684f591c9ecc9ddf4b4646f3ae47764e90f0e28abbec78b16c1dfd041f0e",
+    "uses": [
+      {
+        "topic": "clip",
+        "layer": "first-2-1-image"
+      },
+      {
+        "topic": "siglip",
+        "layer": "first-2-1-image"
+      }
+    ]
+  },
+  {
+    "path": "_course_content/generated-concepts/clip/wi027-alignment-d2-r01-mobile.png",
+    "sha256": "77c6b8f76eceeea53bf77c505618be6d946be9bd4f240270f55924c0d62b35de",
+    "uses": [
+      {
+        "topic": "clip",
+        "layer": "first-2-1-mobile_image"
+      },
+      {
+        "topic": "siglip",
+        "layer": "first-2-1-mobile_image"
+      }
+    ]
+  },
+  {
+    "path": "_course_content/generated-concepts/clip/wi027-alignment-d3-r03-desktop.png",
+    "sha256": "b70f445d2045a7e6ba5a34d451045e3c52379da7de9eeb21d1703502fdf17b68",
+    "uses": [
+      {
+        "topic": "clip",
+        "layer": "first-3-1-image"
+      },
+      {
+        "topic": "siglip",
+        "layer": "first-3-1-image"
+      }
+    ]
+  },
+  {
+    "path": "_course_content/generated-concepts/clip/wi027-alignment-d3-r03-mobile.png",
+    "sha256": "654abdbe4fb3767880036ab19afad3f83aea37dce736e6719a0929b78f5e47b6",
+    "uses": [
+      {
+        "topic": "clip",
+        "layer": "first-3-1-mobile_image"
+      },
+      {
+        "topic": "siglip",
+        "layer": "first-3-1-mobile_image"
+      }
+    ]
+  },
+  {
+    "path": "_course_content/generated-concepts/llava/wi027-vlm-d3-r03-desktop.png",
+    "sha256": "b20d243e102f205ad14c27dbb6d0e4ec0f21e4202d0859e926d17a14c0ec33e4",
+    "uses": [
+      {
+        "topic": "llava",
+        "layer": "first-3-1-image"
+      },
+      {
+        "topic": "qwen-vl",
+        "layer": "first-3-1-image"
+      },
+      {
+        "topic": "gemini-vision",
+        "layer": "first-3-1-image"
+      }
+    ]
+  },
+  {
+    "path": "_course_content/generated-concepts/llava/wi027-vlm-d3-r03-mobile.png",
+    "sha256": "ee90541a3601abdee8b82d969a6a526b65fc2ae83d2ee4068efa95fd5d7009e8",
+    "uses": [
+      {
+        "topic": "llava",
+        "layer": "first-3-1-mobile_image"
+      },
+      {
+        "topic": "qwen-vl",
+        "layer": "first-3-1-mobile_image"
+      },
+      {
+        "topic": "gemini-vision",
+        "layer": "first-3-1-mobile_image"
+      }
+    ]
+  },
+  {
+    "path": "_course_content/generated-concepts/defectfill/wi026-generation-d3-r02-desktop.png",
+    "sha256": "1160b29977a403679d05104eb74b92eecc94ce7ee50994a2b42f67f411f56e3c",
+    "uses": [
+      {
+        "topic": "defectfill",
+        "layer": "first-3-1-image"
+      },
+      {
+        "topic": "anomalydiffusion",
+        "layer": "first-3-1-image"
+      },
+      {
+        "topic": "tf-idg",
+        "layer": "first-3-1-image"
+      }
+    ]
+  },
+  {
+    "path": "_course_content/generated-concepts/defectfill/wi026-generation-d3-r01-mobile.png",
+    "sha256": "3a28db2d35761e0f8c8855187a3a197e07de935b8b219508e8512d21a7d9cc37",
+    "uses": [
+      {
+        "topic": "defectfill",
+        "layer": "first-3-1-mobile_image"
+      },
+      {
+        "topic": "anomalydiffusion",
+        "layer": "first-3-1-mobile_image"
+      },
+      {
+        "topic": "tf-idg",
+        "layer": "first-3-1-mobile_image"
+      }
+    ]
+  },
+  {
+    "path": "_course_content/generated-concepts/controlnet/wi026-editing-d3-r02-desktop.png",
+    "sha256": "cce66ab5c9f17c5f14cd203da8545d0073dd4b4bb2f429842e103c37e3360509",
+    "uses": [
+      {
+        "topic": "controlnet",
+        "layer": "first-3-1-image"
+      },
+      {
+        "topic": "inpainting",
+        "layer": "first-3-1-image"
+      }
+    ]
+  },
+  {
+    "path": "_course_content/generated-concepts/controlnet/wi026-editing-d3-r02-mobile.png",
+    "sha256": "82e109771635655f1d02e6e30237eae9c7768e49454f0ef38d0637f213c09566",
+    "uses": [
+      {
+        "topic": "controlnet",
+        "layer": "first-3-1-mobile_image"
+      },
+      {
+        "topic": "inpainting",
+        "layer": "first-3-1-mobile_image"
+      }
+    ]
+  },
+  {
+    "path": "_course_content/generated-concepts/diffusion-restoration/wi026-restoration-d3-r01-desktop.png",
+    "sha256": "76bf115cb5c70ba18c8f046ffa256356452c4fb540e8de9dbe125203c6d76088",
+    "uses": [
+      {
+        "topic": "diffusion-restoration",
+        "layer": "first-3-1-image"
+      },
+      {
+        "topic": "deblur",
+        "layer": "first-3-1-image"
+      },
+      {
+        "topic": "super-resolution",
+        "layer": "first-3-1-image"
+      }
+    ]
+  },
+  {
+    "path": "_course_content/generated-concepts/diffusion-restoration/wi026-restoration-d3-r01-mobile.png",
+    "sha256": "f9d3d4d9abda89993124694d03924724ee0f09cfca9af35e98fecb6cf66264e6",
+    "uses": [
+      {
+        "topic": "diffusion-restoration",
+        "layer": "first-3-1-mobile_image"
+      },
+      {
+        "topic": "deblur",
+        "layer": "first-3-1-mobile_image"
+      },
+      {
+        "topic": "super-resolution",
+        "layer": "first-3-1-mobile_image"
+      }
+    ]
+  }
+]
