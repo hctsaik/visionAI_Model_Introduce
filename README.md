@@ -18,10 +18,12 @@ visual assets and lesson documents it references. It intentionally excludes loca
 caches, prompt intermediates, raw image-generation material, and presentation
 source files.
 
-The September 2026 teaching revision rebuilds the first-read content of 13
-anomaly-detection lessons with 62 distinct desktop/mobile PNG illustrations.
+The latest teaching revision (WI-030) rebuilds four anomaly-detection lessons
+and eight classification, segmentation and pose lessons with 42 distinct
+desktop/mobile PNG illustrations, conditional self-checks and operating guidance.
 These are instructional illustrations, not measured model inference results.
 The original engineering reference diagrams remain available in their folded sections.
+The bundle also includes every lesson's linked model and image-manifest Markdown.
 
 Teaching rules and the reusable review skill are versioned in
 [teaching-maintenance](teaching-maintenance/README.md), with their source and

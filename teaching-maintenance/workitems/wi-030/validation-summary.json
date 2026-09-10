@@ -76,7 +76,14 @@
     "html_hash_matches": true,
     "removed_unreferenced_files": []
   },
-  "public_release": "pending separate public-release-verification.json",
+  "public_release": {
+    "status": "verified",
+    "commit": "c7d1533214fb832abbdaccc93b5ac88c06539ffd",
+    "pages_run": 34508577230,
+    "png_hashes": 42,
+    "handoff_documents": 116,
+    "evidence": "public-release-verification.json"
+  },
   "user_approval": "pending",
   "model_inference_performed": false,
   "human_learning_test_performed": false,

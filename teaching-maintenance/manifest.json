@@ -9,7 +9,7 @@
     {
       "snapshot": "project/TEACHING_REVIEW_LOG.md",
       "source": "C:\\code\\claude\\visionAI\\TEACHING_REVIEW_LOG.md",
-      "sha256": "0b4ea4383a590e4e7406a3117fb363a495582e941c3463143947981744ab920f"
+      "sha256": "55f504adda921f1205ef4c2353b42f77d14b88f7c6c49a9c0775ada3d6ff1256"
     },
     {
       "snapshot": "project/TEACHING_SCORING_RUBRIC.md",
@@ -1859,7 +1859,7 @@
     {
       "snapshot": "workitems/wi-030/PLAN.md",
       "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\PLAN.md",
-      "sha256": "062bfb923fcca37d5fbfa6366745f59b54e88dd099396a750bbde88e39af53a4"
+      "sha256": "cf63bf780e54499759a9c0e0cfd347d34fa9e0f82dfac34baa372f9a59fdac19"
     },
     {
       "snapshot": "workitems/wi-030/pose-c1-r01.md",
@@ -2639,7 +2639,7 @@
     {
       "snapshot": "workitems/wi-030/validation-summary.json",
       "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\validation-summary.json",
-      "sha256": "95a3046e0a5d398f6aaa959bc869936593bb288021a68e61897d280348d5dfcc"
+      "sha256": "9af09cbf61cd1eb13b21a26abc5561fd8478af0f81225e99f968c7df73765123"
     },
     {
       "snapshot": "workitems/wi-030/visual-plan.json",
@@ -2784,17 +2784,17 @@
     {
       "snapshot": "workitems/wi-030/WORKITEMS.md",
       "source": "C:\\code\\claude\\visionAI\\WORKITEMS.md",
-      "sha256": "44206536e062a045926e5046617983a552923cbb567f49388695235442bcd7d2"
+      "sha256": "035cf62b829d9388bcc74db91f0e7b29696dc254098c4dde522376c91694501b"
     },
     {
       "snapshot": "workitems/wi-030/BEGINNER_VISUAL_TODO.md",
       "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\BEGINNER_VISUAL_TODO.md",
-      "sha256": "38f29c40725de747df8e72badff1d53899f7235bef49c9a49a62dd0cc007ac39"
+      "sha256": "2aa4548efdcacc7440a98dbbb2d3e1a0e367cc5778299062b0f69eaa0494e447"
     },
     {
       "snapshot": "workitems/wi-030/BEGINNER_VISUAL_STATUS.md",
       "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\BEGINNER_VISUAL_STATUS.md",
-      "sha256": "152d046d29ef24ed3fde20ad5cab9dacf7b2cd9e61c5ab6529aebe8de26f8064"
+      "sha256": "3a251723da7926764ccaebfa3d2b05009d0f79bd12628f7b9979be51198807c2"
     },
     {
       "snapshot": "workitems/wi-030/authoring/_course_content/topics/ad-patchcore.json",
@@ -3120,6 +3120,26 @@
       "snapshot": "workitems/wi-030/authoring/workitems/wi-030/write_preflights.py",
       "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\write_preflights.py",
       "sha256": "274489b5e577ec37a9af0e74b66e314062af069331760ca2f0e401ec664c81ec"
+    },
+    {
+      "snapshot": "workitems/wi-030/deployment-status.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\deployment-status.json",
+      "sha256": "943a366d0c9d2dbfa56640023f69d5296032f903b6e63bb1052e8a97035f4ea5"
+    },
+    {
+      "snapshot": "workitems/wi-030/public-release-verification.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\public-release-verification.json",
+      "sha256": "b929d7a12fe61926436d2cb80cb1cd702fbf5b2b586538f0641576efdfa9464c"
+    },
+    {
+      "snapshot": "workitems/wi-030/authoring/workitems/wi-030/complete_checkpoint.py",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\complete_checkpoint.py",
+      "sha256": "350d6bc3a64394db2883b9a90e883f05e7872b3e89e01278197bce6230c3719e"
+    },
+    {
+      "snapshot": "workitems/wi-030/authoring/workitems/wi-030/deployment_status.py",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-030\\deployment_status.py",
+      "sha256": "f3d0ebf42bec1759efb1b7ae7326dda19ed407086e055341f34f0ab13b33c2cd"
     }
   ]
 }

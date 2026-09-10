@@ -2676,3 +2676,5 @@ WI-023版本保存補充：使用者後續授權commit＋push；本文件與其�
 最後查操作卡時發現本機docs缺少model.md／slide-manifest.md，原因是bundle只選圖與concept_path，未收modelPath／manifestPath。HTML雖有連結，但發布目標不存在；不是瀏覽器快取。已補builder依現有課程連結打包文件，會使其餘課程既有文件也可到達，不改其教材JSON。即將重建docs、測全部文件的來源／打包位元一致及十二課24個HTTP連結；原1231資產數屬修正前歷史，新總數待實際建置確認。公開部署尚未執行。
 
 文件連結也是交付內容：除了圖片HTTP，需檢查操作卡引用的Markdown是否隨發布包存在，來源與發布版本一致。
+
+WI-030收尾：12課42PNG自評與實頁審查、發布驗證完成；公開HTML／42PNG／116文件一致。實際範圍、逐項扣分及既有ChArUco失敗見workitems/wi-030；使用者核准pending。

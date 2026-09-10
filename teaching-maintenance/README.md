@@ -1,5 +1,26 @@
 # Teaching maintenance snapshots
 
+## Latest: WI-030
+
+Twelve lessons were rebuilt: PatchCore, PaDiM, AnomalyDINO, EfficientAD,
+ResNet, ConvNeXt, ViT, U-Net, SegFormer, YOLO-Seg, Keypoint R-CNN and Pose Pipeline.
+The 42 PNGs cover 21 distinct stories. Each lesson has a core mechanism,
+failure case, comparison, conditional self-check and practical handoff guidance.
+Five existing advanced chapter sets are preserved behind an opt-in collapsed entry.
+
+Resume from [the workitem plan](workitems/wi-030/PLAN.md).
+[Validation](workitems/wi-030/validation-summary.json),
+[individual image reviews](workitems/wi-030/image-review.md) and
+[page reviews](workitems/wi-030/page-review.md) separate author assessment,
+tool checks and pending user acceptance. The existing unrelated ChArUco
+legacy-verifier failure is recorded explicitly.
+
+`workitems/wi-030/authoring/` preserves the changed topic sources, model Markdown,
+learner briefs, builders, focused tests and generation/integration scripts.
+Versioned prompts and preflights are alongside the plan; final PNGs are in `docs/`.
+Original rejected PNGs and full browser screenshots remain in the local workspace.
+This is a continuation snapshot, not a complete backup of every authoring asset.
+
 ## WI-027 scope
 
 Seven foundation and vision-language lessons were rebuilt with 30 desktop/mobile PNGs, three first-read stories per lesson, explanations, comparisons, self-checks and operating cards. `workitems/wi-027/` preserves selected assets, versioned briefs, generation intentions, source references and individual image/page assessments. Validation covers 42 interaction states, 126 image zoom checks, 14 final page states, 60 local HTTP hashes and five regression tests. User review remains pending; illustrations are not model measurements.
