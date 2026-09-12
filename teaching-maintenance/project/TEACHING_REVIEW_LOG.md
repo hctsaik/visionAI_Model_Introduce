@@ -2813,3 +2813,6 @@ Pose、DINOv3、DiffusionAD及AnomalyGPT工程圖與指定手機/反例本機完
 ## WI-035-L2：修正與本機驗證完成
 
 19 課機制修正、六課收束與卡片引導、已確認繁簡及製作註記修正；PoC 三步往返、模型提示、完整預覽、Markdown 匯出、草稿保護與儲存失敗提示完成。25 項相關測試、38 課程路由、20 PoC 截圖、1370 資產雜湊與 HTML 一致，見 WI-035 REPORT／final-verification.json。首次 label schema、blur 吞點擊、末端 takeaway 覆寫失敗與修正均保留。舊 verifier 在基準也失敗，不拿過時契約改教材。共用原則已寫回 TEACHING_WEBPAGE_GUIDE.md；未更新 skill、未新增模型推論或真人驗收。接著依既有 Git 授權推送並實驗公開頁。
+
+### WI-035 公開發布驗證完成
+功能提交 ce52c34 已推送並成功部署。公開頁 HTML 與本機 f4f66004 雜湊一致；公開 1440px／390px 的模型提示、步驟切換與預覽通過，見 workitems/wi-035/release-verification.json。學習已隨 Git 保存；實作與發布完成，使用者審閱仍 pending。

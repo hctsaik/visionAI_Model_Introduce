@@ -17,3 +17,5 @@
 Checkpoint：即將保存基準並開始修正。未跑測試。預期產物：本目錄 before/after 截圖、驗證 JSON、REPORT.md；來源 tools/build_interactive_learning_html.py、_course_content/topics/*.json；輸出 interactive-learning.html、docs/index.html。內建 Browser 無可用連線，改本機 Playwright 測試。
 
 實作與必要驗證完成，詳 REPORT.md／final-verification.json。25 項相關測試通過；舊全站 verifier 的既有 schema 問題於基準重現並記錄，不算本次產品退化。下一步依先前 Git push 授權提交並確認公開頁；成品使用者審閱 pending。
+
+最終 checkpoint：ce52c34 已 push 並部署成功。公開 HTML 與本機 SHA-256 一致；公開桌面／手機操作通過，見 release-verification.json。授權修改工作完成，沒有尚待實作項目；使用者審閱 pending 與完成狀態分開。

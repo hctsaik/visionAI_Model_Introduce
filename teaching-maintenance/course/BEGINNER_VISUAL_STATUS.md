@@ -1,5 +1,17 @@
 ## WI-035 教材修正與 PoC 互動改善
 
+WI-035 已完成並公開發布。功能提交 ce52c34 已 push；GitHub Pages 部署成功，公開 HTML 與本機 hash f4f66004 一致，公開桌面／手機模型提示、步驟與預覽實測通過。19 課機制、六課收束／引導、PoC 互動與 Markdown 學習均完成；證據 REPORT.md、final-verification.json、release-verification.json。沒有待實作項目；成品使用者審閱 pending。
+
+唯一 checklist：teaching-images/vision-ai-model-selection/workitems/wi-035/PLAN.md。
+
+## WI-035 教材修正與 PoC 互動改善
+
+Git 提交 ce52c34 並 push origin/main 成功，121 檔含網站、來源快照與 Markdown 學習；暫存 diff --check 通過。正核對 GitHub Pages 公開 HTML 與桌面／手機操作，尚不把 push 等同部署成功。
+
+唯一 checklist：teaching-images/vision-ai-model-selection/workitems/wi-035/PLAN.md。
+
+## WI-035 教材修正與 PoC 互動改善
+
 教材及 PoC 實作完成：25 項相關測試、38 課程路由、20 PoC 截圖、1370 資產雜湊與 HTML 一致。舊 verifier 的既有 schema 失敗已在基準重現，見報告。學習已寫回 Markdown；下一步同步維護快照、Git 提交推送並核對公開頁。成品審閱 pending。
 
 唯一 checklist：teaching-images/vision-ai-model-selection/workitems/wi-035/PLAN.md。
