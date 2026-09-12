@@ -9,3 +9,6 @@
 學習：三步切換只改善操作順序，沒有降低「不知道該回答什麼」的負擔。此受眾需先提供可辨識的選項，再把自由文字放在補充位置。已寫入根 TEACHING_WEBPAGE_GUIDE.md 的 WI-036 和 TEACHING_REVIEW_LOG.md。檢查必須包含完全不輸入自由文字的完整使用路徑。舊內容保存與使用者成品認可是不同狀態。
 
 來源快照：teaching-maintenance/workitems/wi-036/authoring/；在完整工作區同相對路徑恢復後先建 HTML，再建 docs。提交前驗證與公開結果分別記錄；release-verification.json 為公開部署後的實際收據，沒有收據時不可推定已部署。使用者審閱 pending。
+
+## 公開結果
+功能提交 ae7b513 已推送；公開 HTML 與本機 SHA-256 一致（09eb11b8…），1440px／390px 的下拉選擇、模型提示及預覽均實測通過。24 項本機行為測試通過；詳 release-verification.json。此輪實作及發布完成，使用者審閱仍 pending。

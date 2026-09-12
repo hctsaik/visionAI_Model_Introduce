@@ -1,5 +1,17 @@
 ## WI-036 下拉選擇題
 
+WI-036 已完成並發布：九項下拉選擇题、相依輸出選項、選填補充及舊草稿保留均完成。24 項行為測試通過，公开桌面／手機下拉與預覽實測通過，公開 HTML hash 09eb11b8 與本機相同。功能提交 ae7b513 已推送；學習已寫入 Markdown，沒有待實作項目。使用者成品審閱 pending。
+
+唯一 checklist：teaching-images/vision-ai-model-selection/workitems/wi-036/PLAN.md。
+
+## WI-036 下拉選擇題
+
+ae7b513 已提交並 push origin/main，含下拉選擇題實作與 Markdown 學習。24 項行為測試通過；公開部署正在進行，下一步核對 HTTP 雜湊與公開桌面／手機操作。使用者審閱 pending。
+
+唯一 checklist：teaching-images/vision-ai-model-selection/workitems/wi-036/PLAN.md。
+
+## WI-036 下拉選擇題
+
 九項下拉選擇題已完成，任務會連動輸出選項，自訂說明選填且保留舊草稿。兩入口各 12 項行為測試通過、16 截圖、無水平溢出；課程資料與 e9c732f 相同。最後三段提示文字已改為選擇語氣並重驗。即將保存 Markdown、提交推送並驗證公開頁；使用者審閱 pending。
 
 唯一 checklist：teaching-images/vision-ai-model-selection/workitems/wi-036/PLAN.md。
