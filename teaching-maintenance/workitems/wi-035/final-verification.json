@@ -1,0 +1,13 @@
+{
+  "html_sha256": "f4f6600448e80275e046fa57b61bc26a28b4649f5ab34f8d6e80b1887d3d20fb",
+  "asset_hashes_equal": 1370,
+  "poc_behavior_tests": 16,
+  "navigation_tests": 3,
+  "bundle_tests": 2,
+  "engineering_tests": 4,
+  "lesson_routes": 38,
+  "poc_screenshots": 20,
+  "overflow": false,
+  "legacy_verifier": "Excluded: same charuco schema failure reproduced on baseline 358fefe. Current builder schema, bundle hashes, authored-label tests and actual browser checks passed.",
+  "user_approval": "pending"
+}

@@ -1,0 +1,572 @@
+{
+  "model": "Dinomaly",
+  "badge": "多類正常共訓，特徵重建",
+  "title": "Dinomaly：正常特徵重建，避免逐點照抄",
+  "scenario": {
+    "title": "三種產品，共用模型如何驗證",
+    "body": "多類產品共用檢測：用強特徵與受限制的重建，追查細刮傷及正常外觀。"
+  },
+  "promise": {
+    "title": "可覆核的特徵差異位置圖",
+    "body": "提供可疑位置與候選分數；不直接交付尺寸、根因或放行判定。"
+  },
+  "mental_model": {
+    "title": "Dinomaly：正常特徵重建，避免逐點照抄",
+    "body": "本課採原版 Dinomaly。固定 DINOv2 提取特徵，多類正常資料訓練瓶頸與解碼器；Dropout 在訓練時擾動表示，線性注意力分散聚合，多層分組與寬鬆重建減少硬性逐層逐點照抄。推論關閉 Dropout，比較特徵差異後回看 p。",
+    "limit": "正常外觀可能誤報，缺陷也可能被重建；按產品保留未見資料驗證。"
+  },
+  "micro_example": {
+    "title": "換更大骨幹後，值得增加等待時間嗎？",
+    "setup": "Dinomaly 換大骨幹與高解析度後，試看幾張細裂更清楚，但整體延遲變長，小類別正常品仍常誤報。",
+    "prediction": "保留大骨幹、調回較小設定，或比較 UniAD／InvAD，需要哪些證據？",
+    "reveal": "保留相同未見資料，逐類核對細裂漏檢與正常誤報，在同硬體量完整前處理到結果的時間。大骨幹若降低關鍵漏檢且符合節拍，可接受較高成本；若主要改善只出現在少數示例，先補驗證。不同設定需各自校準門檻，在相同風險要求比覆核量，不憑模型大小判勝負。"
+  },
+  "mechanism_steps": [
+    {
+      "title": "以固定 foundation encoder 產生多層 tokens",
+      "body": "多類別 clean normal ROI 依固定 feature recipe 經選定 ViT layers，輸出 patch tokens 和其空間對應。",
+      "why": "checkpoint、layer、stride、ROI 和類別取樣決定 token 正常性；frozen backbone 只固定前段，不保證整個系統不學習。",
+      "anchor": "工程圖核對：ROI → selected foundation tokens",
+      "diagram": {
+        "title": "foundation encoder 取 tokens",
+        "body": "多類別 ROI 經選定 ViT layer 產生 patch tokens。",
+        "why": "layer、stride 與類別取樣定義 token 正常性。",
+        "anchor": "ROI → foundation tokens"
+      }
+    },
+    {
+      "title": "加入 anti-copy bottleneck 與 decoder controls",
+      "body": "tokens 經 noisy／dropout bottleneck、linear attention 與 loose reconstruction 設計進入 trainable decoder，僅用 normal data 訓練。",
+      "why": "若路徑太容易逐 token copy，異常也會被重建；這些 controls 用來讓 residual 有機會代表超出正常規律的部分。",
+      "anchor": "工程圖核對：noise / linear attention / loose decoder",
+      "diagram": {
+        "title": "anti-copy controls 限制抄寫",
+        "body": "noise、linear attention 與 loose decoder 重建 token。",
+        "why": "避免異常 token 被逐點複製。",
+        "anchor": "tokens → anti-copy decoder"
+      }
+    },
+    {
+      "title": "比較原 token 與重建 token",
+      "body": "測試 tokens 與 decoder output 在選定 layer、位置與 distance rule 下比較，得到 token-wise residual maps。",
+      "why": "candidate 的來源是 token reconstruction discrepancy；它既不是 raw pixel error，也不等於模型知道異常的名稱。",
+      "anchor": "工程圖核對：token residual per layer",
+      "diagram": {
+        "title": "原 token 對重建 token",
+        "body": "選定層與位置的差距形成 residual map。",
+        "why": "候選不是 raw pixel error 或缺陷名稱。",
+        "anchor": "token ↔ reconstructed token"
+      }
+    },
+    {
+      "title": "融合各層，保留每個類別的 evidence",
+      "body": "各層 residual 經固定 resize、fusion、aggregation、calibration/threshold 形成 map 和 image candidate score，並按 category 保存結果。",
+      "why": "shared model 的 pooled result 可遮蔽稀有類別失敗；per-class low-FPR 和 review load 才能證明部署邊界。",
+      "anchor": "工程圖核對：layer fusion → per-class review gate",
+      "diagram": {
+        "title": "多層 residual 分類別 review",
+        "body": "fusion 後為每個 category 保存候選分數。",
+        "why": "pooled 成績會遮蔽稀有類別失敗。",
+        "anchor": "layer fusion → per-class gate"
+      }
+    }
+  ],
+  "visual_intro": "先理解 anti-copy 為何必要，再核對 foundation tokens、decoder controls、token residual 和每類 evidence gate。",
+  "beginner_path": {
+    "title": "多類正常共訓：核心做法、逐類反例與條件選型",
+    "intro": "三張首讀圖以金屬板、連接器與陶瓷板說明；全部為教學示意，非模型實測。",
+    "visuals": [
+      {
+        "id": "wi021-ad-dinomaly-1",
+        "title": "Dinomaly：正常特徵重建，避免逐點照抄",
+        "prompt": "從正常資料建立重建能力，再追待測金屬板 A 的刮傷 p。",
+        "caption": "本課採原版 Dinomaly。固定 DINOv2 提取特徵，多類正常資料訓練瓶頸與解碼器；Dropout 在訓練時擾動表示，線性注意力分散聚合，多層分組與寬鬆重建減少硬性逐層逐點照抄。推論關閉 Dropout，比較特徵差異後回看 p。",
+        "image": "_course_content/generated-concepts/ad-dinomaly/wi021-dinomaly-c1-r04-desktop.png",
+        "alt": "Dinomaly：正常特徵重建，避免逐點照抄。本課採原版 Dinomaly。固定 DINOv2 提取特徵，多類正常資料訓練瓶頸與解碼器；Dropout 在訓練時擾動表示，線性注意力分散聚合，多層分組與寬鬆重建減少硬性逐層逐點照抄。推論關閉 Dropout，比較特徵差異後回看 p。 本圖為 AI 生成教學示意，非模型實測。",
+        "callouts": [
+          {
+            "title": "強特徵不是免訓練",
+            "body": "DINOv2 提供預訓練表示，但瓶頸與解碼器仍要學正常資料；換骨幹或解析度會改變表示，必須重新驗證。"
+          },
+          {
+            "title": "分組比較在改什麼",
+            "body": "圖中把多層特徵融合後對照，重建不必逐層一對一硬配；注意力聚合與訓練約束一起影響保留哪些正常資訊。"
+          },
+          {
+            "title": "怎麼理解效率",
+            "body": "純 Transformer 設計不等於任何硬體都快。骨幹大小、影像解析度與實作都影響延遲；細刮傷也可能在表示或重建中失去線索。"
+          }
+        ],
+        "reading_views": [
+          {
+            "title": "Dinomaly：正常特徵重建，避免逐點照抄",
+            "image": "_course_content/generated-concepts/ad-dinomaly/wi021-dinomaly-c1-r04-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/ad-dinomaly/wi021-dinomaly-c1-r01-mobile.png",
+            "alt": "Dinomaly：正常特徵重建，避免逐點照抄。本課採原版 Dinomaly。固定 DINOv2 提取特徵，多類正常資料訓練瓶頸與解碼器；Dropout 在訓練時擾動表示，線性注意力分散聚合，多層分組與寬鬆重建減少硬性逐層逐點照抄。推論關閉 Dropout，比較特徵差異後回看 p。 本圖為 AI 生成教學示意，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              724,
+              2172
+            ],
+            "mobile_display_mode": "full-mobile",
+            "mobile_intrinsic_width": 724,
+            "mobile_intrinsic_height": 2172,
+            "desktop_intrinsic_width": 1672,
+            "desktop_intrinsic_height": 941
+          }
+        ],
+        "core_ideas": true
+      },
+      {
+        "id": "wi021-ad-dinomaly-2",
+        "title": "共用模型，不能只看平均結果",
+        "prompt": "以正常孔邊 q 與細刮傷 p 對照誤報、漏檢，再分開檢查三種產品。",
+        "caption": "正常外觀未被資料涵蓋，原始與重建特徵在 q 不同，可能誤報；刮傷 p 若也被重建得相近，反而可能漏檢。多類共訓可減少模型管理，但每類都要另留未見正常與真缺陷驗證。",
+        "image": "_course_content/generated-concepts/ad-dinomaly/wi021-multi-reconstruction-d2-r02-desktop.png",
+        "alt": "共用模型，不能只看平均結果。正常外觀未被資料涵蓋，原始與重建特徵在 q 不同，可能誤報；刮傷 p 若也被重建得相近，反而可能漏檢。多類共訓可減少模型管理，但每類都要另留未見正常與真缺陷驗證。 本圖為 AI 生成教學示意，非模型實測。",
+        "callouts": [
+          {
+            "title": "正常資料要涵蓋什麼",
+            "body": "分開不同實體件與批次，涵蓋允收的反光、紋理與姿態；不要把近似照片分到訓練和驗證兩邊。"
+          },
+          {
+            "title": "兩種錯誤一起看",
+            "body": "先回看 p、q 原圖確認可見度與允收範圍。按產品記錄誤報、漏檢和覆核量，不能讓大類別掩蓋小類別失敗。"
+          },
+          {
+            "title": "成本怎麼量",
+            "body": "在相同硬體、解析度、前處理及風險要求下量端到端延遲與覆核量；提高門檻可能少誤報而多漏檢。"
+          }
+        ],
+        "reading_views": [
+          {
+            "title": "共用模型，不能只看平均結果",
+            "image": "_course_content/generated-concepts/ad-dinomaly/wi021-multi-reconstruction-d2-r02-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/ad-dinomaly/wi021-multi-reconstruction-d2-r03-mobile.png",
+            "alt": "共用模型，不能只看平均結果。正常外觀未被資料涵蓋，原始與重建特徵在 q 不同，可能誤報；刮傷 p 若也被重建得相近，反而可能漏檢。多類共訓可減少模型管理，但每類都要另留未見正常與真缺陷驗證。 本圖為 AI 生成教學示意，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              724,
+              2172
+            ],
+            "mobile_display_mode": "full-mobile",
+            "mobile_intrinsic_width": 724,
+            "mobile_intrinsic_height": 2172,
+            "desktop_intrinsic_width": 1672,
+            "desktop_intrinsic_height": 941
+          }
+        ],
+        "core_ideas": false
+      },
+      {
+        "id": "wi021-ad-dinomaly-3",
+        "title": "三種多類重建，差異在哪裡？",
+        "prompt": "固定多類正常資料與未見驗證，看限制複製、分散分組及輸入條件調制三條路。",
+        "caption": "UniAD 用注意力遮蔽、逐層查詢及特徵擾動限制照抄；原版 Dinomaly 結合基礎特徵、Dropout 瓶頸、線性注意力及寬鬆重建；InvAD 由輸入產生空間條件調制生成特徵。三者都需正常訓練，位置線索不能直接當精密輪廓。",
+        "image": "_course_content/generated-concepts/ad-dinomaly/wi021-multi-reconstruction-d3-r02-desktop.png",
+        "alt": "三種多類重建，差異在哪裡？。UniAD 用注意力遮蔽、逐層查詢及特徵擾動限制照抄；原版 Dinomaly 結合基礎特徵、Dropout 瓶頸、線性注意力及寬鬆重建；InvAD 由輸入產生空間條件調制生成特徵。三者都需正常訓練，位置線索不能直接當精密輪廓。 本圖為 AI 生成教學示意，非模型實測。",
+        "callouts": [
+          {
+            "title": "只有正常品時怎麼起步",
+            "body": "三者均可列入正常訓練候選；選定既有骨幹與實作後，固定未見資料比較各類錯誤。缺正常資料時，不能把多類模型當免適配捷徑。"
+          },
+          {
+            "title": "換產品與速度的取捨",
+            "body": "補新產品正常資料並核對適配或重訓需求。按同一漏檢風險要求，比誤報、端到端時間與人工覆核量；沒有共同實測就不排名。"
+          },
+          {
+            "title": "怎麼選下一個實驗",
+            "body": "照抄是主要問題可先試 UniAD 的限制；想評估強特徵與分組策略可試 Dinomaly；想核對輸入條件式細節重建可試 InvAD。這是實驗起點，不是性能保證。"
+          }
+        ],
+        "reading_views": [
+          {
+            "title": "三種多類重建，差異在哪裡？",
+            "image": "_course_content/generated-concepts/ad-dinomaly/wi021-multi-reconstruction-d3-r02-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/ad-dinomaly/wi021-multi-reconstruction-d3-r02-mobile.png",
+            "alt": "三種多類重建，差異在哪裡？。UniAD 用注意力遮蔽、逐層查詢及特徵擾動限制照抄；原版 Dinomaly 結合基礎特徵、Dropout 瓶頸、線性注意力及寬鬆重建；InvAD 由輸入產生空間條件調制生成特徵。三者都需正常訓練，位置線索不能直接當精密輪廓。 本圖為 AI 生成教學示意，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              724,
+              2172
+            ],
+            "mobile_display_mode": "full-mobile",
+            "mobile_intrinsic_width": 724,
+            "mobile_intrinsic_height": 2172,
+            "desktop_intrinsic_width": 1672,
+            "desktop_intrinsic_height": 941
+          }
+        ],
+        "core_ideas": false
+      }
+    ]
+  },
+  "concept_visuals": [],
+  "boundary_cases": [
+    {
+      "condition": "anti-copy controls 太弱或 decoder 過度重建",
+      "effect": "異常 token 可能被原樣重建，residual 降低，造成 escape。",
+      "action": "HOLD；做 controls ablation、查看真實 escaped defects，而非只用平均 reconstruction loss。"
+    },
+    {
+      "condition": "controls 太強、feature mismatch 或稀有類別 coverage 不足",
+      "effect": "合法 normal token 也無法重建，false reject 對某些類別特別高。",
+      "action": "以每類 support/future split、seed spread、teacher/domain fit 分層檢查，不能只報 pooled AUROC。"
+    },
+    {
+      "condition": "patch stride、ROI/drift 或 global logic",
+      "effect": "tiny defect 低於 token 有效尺度；取像條件變動或缺件關係也可能不被 token residual 表達。",
+      "action": "驗 effective pixels、acquisition state 和適合的結構方法；條件不成立先 HOLD。"
+    }
+  ],
+  "comparison": [
+    {
+      "model": "Dinomaly",
+      "normality": "anti-copy decoder 對 foundation normal tokens 的可重建性",
+      "candidate": "token reconstruction residual 大"
+    },
+    {
+      "model": "UniAD",
+      "normality": "masked layer-query decoder 對共享多類別 features 的可重建性",
+      "candidate": "layer feature residual 大"
+    },
+    {
+      "model": "RD4AD",
+      "normality": "one-class reverse decoder 對 teacher features 的重建",
+      "candidate": "teacher/reconstructed feature discrepancy 大"
+    }
+  ],
+  "selection": "UniAD 用注意力遮蔽、逐層查詢及特徵擾動限制照抄；原版 Dinomaly 結合基礎特徵、Dropout 瓶頸、線性注意力及寬鬆重建；InvAD 由輸入產生空間條件調制生成特徵。三者都需正常訓練，位置線索不能直接當精密輪廓。 補新產品正常資料並核對適配或重訓需求。按同一漏檢風險要求，比誤報、端到端時間與人工覆核量；沒有共同實測就不排名。",
+  "poc": {
+    "title": "POC 第一件事：證明模型不是在抄 token",
+    "steps": [
+      "固定 foundation checkpoint/layers、ROI/feature recipe、class roster/balance、decoder architecture、noise/dropout、linear attention、loose loss、seed 和 checkpoint。",
+      "鎖 token residual、layer fusion、resize、aggregation、calibration、threshold 和 per-class candidate evidence。",
+      "以 controls ablation、real challenge/future/drift split 報告 per-class escape、false reject/review load、tiny defect、P95、adaptation cost 和 seed spread。"
+    ],
+    "hold": "anti-copy state未鎖、類別coverage不平衡、support受污染、domain mismatch、tiny defect/global logic或完整P95未驗時，先 HOLD。",
+    "acceptance": {
+      "baseline": "固定 Foundation checkpoint/layers、multi-class roster、normal balance、anti-copy controls、decoder/loss、token fusion 與每類 calibration。",
+      "measure": "逐類量 escape、false reject、review load、tiny-defect evidence、seed spread、controls ablation、adaptation cost 與完整 P95。",
+      "negative_control": "移除或弱化 dropout／Linear Attention／Loose Reconstruction，或留出 rare class，確認 identity shortcut 與 pooled metric 如何掩蓋 per-class escape。",
+      "owner": "各產品類別製程 owner、Vision ML owner、shared-model governance owner"
+    }
+  },
+  "teach_back": {
+    "question": "為什麼重建誤差變小，不一定檢測變好？",
+    "answer": "正常與異常都重建得像，差異可能一起縮小；要分開看正常誤報與缺陷漏檢，才能判斷檢測能力。"
+  },
+  "slide_reading": [
+    {
+      "title": "Dinomaly：多类正常，共用重建路徑",
+      "question": "共同訓練仍需逐產品驗證。",
+      "look": "先看三種產品的正常資料，再核對固定骨幹，更新重建路徑，最後看位置差異交原圖覆核。",
+      "relation": "固定DINOv2，多類正常共同訓練MLP及解碼器；位置差異是覆核線索。各類正常變化與真缺陷分開留出，不用整體平均掩蓋弱類。",
+      "takeaway": "共同訓練仍需逐產品驗證。",
+      "terms": [
+        "位置：對回同一輸入座標，不能任意混層或混影格。",
+        "圖中數值：作者給定機制算例，非模型實測或建議門檻。"
+      ]
+    },
+    {
+      "title": "Dinomaly：限制照抄，再分組比較",
+      "question": "訓練擾動與分組對照，要和推論設定分開。",
+      "look": "先看正常特徵，訓練才Dropout，再核對線性注意力分散聚合，最後看多層分組後比較差異。",
+      "relation": "固定DINOv2，用正常特徵訓練瓶頸及解碼器；訓練MLP Dropout阻止直接照抄，eval關閉。線性注意力降低聚焦相同位置的捷徑；多層按組相加後比較，放寬逐層對應。訓練另降低已重建良好位置的梯度影響。圖中兩組/小格為機制示意，不是固定層號或維度。",
+      "takeaway": "訓練擾動與分組對照，要和推論設定分開。",
+      "terms": [
+        "位置：對回同一輸入座標，不能任意混層或混影格。",
+        "圖中數值：作者給定機制算例，非模型實測或建議門檻。"
+      ]
+    },
+    {
+      "title": "Dinomaly：訓練擾動，部署要關閉",
+      "question": "保存層分組與eval設定，才可重現差異。",
+      "look": "先看訓練Dropout，推論關閉，再核對保存重建與分組版本，最後看按產品驗誤報和漏檢。",
+      "relation": "保存骨幹、MLP、解碼器、使用層和分組、前處理及評分。Dropout只於訓練；放鬆逐層配對與難位置訓練策略不等於省略驗證。部署需eval，變更分組後重新驗。",
+      "takeaway": "保存層分組與eval設定，才可重現差異。",
+      "terms": [
+        "位置：對回同一輸入座標，不能任意混層或混影格。",
+        "圖中數值：作者給定機制算例，非模型實測或建議門檻。"
+      ]
+    },
+    {
+      "title": "Dinomaly：低重建差，不保證無刮傷",
+      "question": "限制照抄是手段，缺陷仍要用真例驗證。",
+      "look": "先看同板刮傷p仍然存在，再核對若原與重建表示相同，最後看獨立正常與缺陷分開驗。",
+      "relation": "給定原與重建表示同為[.6,.8]，餘弦差0；原圖刮傷仍在。Dropout和線性注意力針對照抄捷徑，不保證每个缺陷有大差異。",
+      "takeaway": "限制照抄是手段，缺陷仍要用真例驗證。",
+      "terms": [
+        "位置：對回同一輸入座標，不能任意混層或混影格。",
+        "圖中數值：作者給定機制算例，非模型實測或建議門檻。"
+      ]
+    }
+  ],
+  "comparison_headers": {
+    "title": "先比 anti-copy path，不比 frozen backbone 標籤",
+    "basis": "如何限制 token 直接複製？",
+    "output": "哪個 token residual 才是候選？"
+  },
+  "transfer_check": {
+    "title": "新產品能直接沿用嗎",
+    "scenario": "加入外觀不同的新產品，想沿用既有模型和門檻。",
+    "question": "共用模型是否代表不需新資料？",
+    "answer": "仍需新產品正常涵蓋、獨立驗證與適配評估；更新後同時重驗既有產品，避免平均分掩蓋退步。"
+  },
+  "review_trace": {
+    "authority": "roadmap-model-selection/anomaly-detection/ad-dinomaly/model.md",
+    "scope": "WI-033：工程層四圖與手機比較修正；首讀有效內容保留。原生圖已審，整頁與使用者審閱另記。",
+    "claims": [
+      {
+        "id": "visual-1",
+        "field": "beginner_path.visuals[token-workpiece]",
+        "source": "模型定位 / architecture_path"
+      },
+      {
+        "id": "visual-2",
+        "field": "beginner_path.visuals[foundation-support]",
+        "source": "architecture_path"
+      },
+      {
+        "id": "visual-3",
+        "field": "beginner_path.visuals[anti-copy-controls]",
+        "source": "representation_or_score"
+      },
+      {
+        "id": "visual-4",
+        "field": "beginner_path.visuals[token-residual]",
+        "source": "failure_boundary"
+      },
+      {
+        "id": "visual-5",
+        "field": "beginner_path.visuals[review-hold]",
+        "source": "selection_gate / evidence_bundle"
+      },
+      {
+        "id": "promise",
+        "field": "promise",
+        "source": "模型定位 / representation_or_score"
+      },
+      {
+        "id": "mechanism",
+        "field": "mechanism_steps",
+        "source": "architecture_path / representation_or_score"
+      },
+      {
+        "id": "boundaries",
+        "field": "boundary_cases",
+        "source": "failure_boundary / selection_gate"
+      },
+      {
+        "id": "comparison",
+        "field": "comparison + selection",
+        "source": "selection_gate"
+      },
+      {
+        "id": "poc",
+        "field": "poc + acceptance",
+        "source": "cost_and_operating_point / evidence_bundle"
+      },
+      {
+        "id": "transfer",
+        "field": "transfer_check",
+        "source": "failure_boundary / selection_gate"
+      },
+      {
+        "id": "f01-core",
+        "field": "beginner_path.visuals[0] + scenario + mental_model",
+        "source": "https://github.com/guojiajeremy/Dinomaly"
+      },
+      {
+        "id": "f01-transfer",
+        "field": "micro_example + transfer_check",
+        "source": "由原論文機制推論移除後果；https://github.com/guojiajeremy/Dinomaly"
+      },
+      {
+        "id": "wi021-first-read",
+        "field": "beginner_path + micro_example + selection",
+        "source": "https://github.com/guojiajeremy/Dinomaly；https://raw.githubusercontent.com/guojiajeremy/Dinomaly/master/dinomaly_mvtec_uni.py"
+      }
+    ]
+  },
+  "teaching_preflight": {
+    "brief": "teaching-images/vision-ai-model-selection/workitems/wi-021/dinomaly-c1-r01.md",
+    "story": "C",
+    "major_visual_nodes": 4,
+    "visual_status": "self-reviewed",
+    "user_review": "pending"
+  },
+  "engineering_slides": [
+    {
+      "title": "Dinomaly：多类正常，共用重建路徑",
+      "question": "共同訓練仍需逐產品驗證。",
+      "plain": {
+        "look": "先看三種產品的正常資料，再核對固定骨幹，更新重建路徑，最後看位置差異交原圖覆核。",
+        "relation": "固定DINOv2，多類正常共同訓練MLP及解碼器；位置差異是覆核線索。各類正常變化與真缺陷分開留出，不用整體平均掩蓋弱類。",
+        "takeaway": "共同訓練仍需逐產品驗證。"
+      },
+      "terms": [
+        "位置：對回同一輸入座標，不能任意混層或混影格。",
+        "圖中數值：作者給定機制算例，非模型實測或建議門檻。"
+      ],
+      "guide": [
+        "固定DINOv2，多類正常共同訓練MLP及解碼器；位置差異是覆核線索。各類正常變化與真缺陷分開留出，不用整體平均掩蓋弱類。",
+        "先看三種產品的正常資料，再核對固定骨幹，更新重建路徑，最後看位置差異交原圖覆核。"
+      ],
+      "stages": [
+        {
+          "title": "三種產品的正常資料",
+          "body": "三種產品的正常資料；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "固定骨幹，更新重建路徑",
+          "body": "固定骨幹，更新重建路徑；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "位置差異交原圖覆核",
+          "body": "位置差異交原圖覆核；請對照圖內輸入、變化與結果。"
+        }
+      ],
+      "misconception": "正常外觀可能誤報，缺陷也可能被重建；按產品保留未見資料驗證。",
+      "alt": "Dinomaly：多类正常，共用重建路徑。共同訓練仍需逐產品驗證。 教學示意，非模型實測。",
+      "mobile_image": "roadmap-model-selection/anomaly-detection/ad-dinomaly/images/final/WI033-DINOMALY-01-r01-mobile.png",
+      "mobile_width": 768,
+      "mobile_height": 2304,
+      "engineering": {
+        "takeaway": "共同訓練仍需逐產品驗證。",
+        "nextAction": "固定 foundation checkpoint/layers、ROI/feature recipe、class roster/balance、decoder architecture、noise/dropout、linear attention、loose loss、seed 和 checkpoint。",
+        "redLine": "anti-copy state未鎖、類別coverage不平衡、support受污染、domain mismatch、tiny defect/global logic或完整P95未驗時，先 HOLD。"
+      },
+      "source": "https://arxiv.org/html/2405.14325v5"
+    },
+    {
+      "title": "Dinomaly：限制照抄，再分組比較",
+      "question": "訓練擾動與分組對照，要和推論設定分開。",
+      "plain": {
+        "look": "先看正常特徵，訓練才Dropout，再核對線性注意力分散聚合，最後看多層分組後比較差異。",
+        "relation": "固定DINOv2，用正常特徵訓練瓶頸及解碼器；訓練MLP Dropout阻止直接照抄，eval關閉。線性注意力降低聚焦相同位置的捷徑；多層按組相加後比較，放寬逐層對應。訓練另降低已重建良好位置的梯度影響。圖中兩組/小格為機制示意，不是固定層號或維度。",
+        "takeaway": "訓練擾動與分組對照，要和推論設定分開。"
+      },
+      "terms": [
+        "位置：對回同一輸入座標，不能任意混層或混影格。",
+        "圖中數值：作者給定機制算例，非模型實測或建議門檻。"
+      ],
+      "guide": [
+        "固定DINOv2，用正常特徵訓練瓶頸及解碼器；訓練MLP Dropout阻止直接照抄，eval關閉。線性注意力降低聚焦相同位置的捷徑；多層按組相加後比較，放寬逐層對應。訓練另降低已重建良好位置的梯度影響。圖中兩組/小格為機制示意，不是固定層號或維度。",
+        "先看正常特徵，訓練才Dropout，再核對線性注意力分散聚合，最後看多層分組後比較差異。"
+      ],
+      "stages": [
+        {
+          "title": "正常特徵，訓練才Dropout",
+          "body": "正常特徵，訓練才Dropout；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "線性注意力分散聚合",
+          "body": "線性注意力分散聚合；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "多層分組後比較差異",
+          "body": "多層分組後比較差異；請對照圖內輸入、變化與結果。"
+        }
+      ],
+      "misconception": "正常外觀可能誤報，缺陷也可能被重建；按產品保留未見資料驗證。",
+      "alt": "Dinomaly：限制照抄，再分組比較。訓練擾動與分組對照，要和推論設定分開。 教學示意，非模型實測。",
+      "mobile_image": "roadmap-model-selection/anomaly-detection/ad-dinomaly/images/final/WI033-DINOMALY-02-r02-mobile.png",
+      "mobile_width": 768,
+      "mobile_height": 2400,
+      "engineering": {
+        "takeaway": "訓練擾動與分組對照，要和推論設定分開。",
+        "nextAction": "固定 foundation checkpoint/layers、ROI/feature recipe、class roster/balance、decoder architecture、noise/dropout、linear attention、loose loss、seed 和 checkpoint。",
+        "redLine": "anti-copy state未鎖、類別coverage不平衡、support受污染、domain mismatch、tiny defect/global logic或完整P95未驗時，先 HOLD。"
+      },
+      "source": "https://arxiv.org/html/2405.14325v5"
+    },
+    {
+      "title": "Dinomaly：訓練擾動，部署要關閉",
+      "question": "保存層分組與eval設定，才可重現差異。",
+      "plain": {
+        "look": "先看訓練Dropout，推論關閉，再核對保存重建與分組版本，最後看按產品驗誤報和漏檢。",
+        "relation": "保存骨幹、MLP、解碼器、使用層和分組、前處理及評分。Dropout只於訓練；放鬆逐層配對與難位置訓練策略不等於省略驗證。部署需eval，變更分組後重新驗。",
+        "takeaway": "保存層分組與eval設定，才可重現差異。"
+      },
+      "terms": [
+        "位置：對回同一輸入座標，不能任意混層或混影格。",
+        "圖中數值：作者給定機制算例，非模型實測或建議門檻。"
+      ],
+      "guide": [
+        "保存骨幹、MLP、解碼器、使用層和分組、前處理及評分。Dropout只於訓練；放鬆逐層配對與難位置訓練策略不等於省略驗證。部署需eval，變更分組後重新驗。",
+        "先看訓練Dropout，推論關閉，再核對保存重建與分組版本，最後看按產品驗誤報和漏檢。"
+      ],
+      "stages": [
+        {
+          "title": "訓練Dropout，推論關閉",
+          "body": "訓練Dropout，推論關閉；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "保存重建與分組版本",
+          "body": "保存重建與分組版本；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "按產品驗誤報和漏檢",
+          "body": "按產品驗誤報和漏檢；請對照圖內輸入、變化與結果。"
+        }
+      ],
+      "misconception": "正常外觀可能誤報，缺陷也可能被重建；按產品保留未見資料驗證。",
+      "alt": "Dinomaly：訓練擾動，部署要關閉。保存層分組與eval設定，才可重現差異。 教學示意，非模型實測。",
+      "mobile_image": "roadmap-model-selection/anomaly-detection/ad-dinomaly/images/final/WI033-DINOMALY-03-r01-mobile.png",
+      "mobile_width": 768,
+      "mobile_height": 2304,
+      "engineering": {
+        "takeaway": "保存層分組與eval設定，才可重現差異。",
+        "nextAction": "固定 foundation checkpoint/layers、ROI/feature recipe、class roster/balance、decoder architecture、noise/dropout、linear attention、loose loss、seed 和 checkpoint。",
+        "redLine": "anti-copy state未鎖、類別coverage不平衡、support受污染、domain mismatch、tiny defect/global logic或完整P95未驗時，先 HOLD。"
+      },
+      "source": "https://arxiv.org/html/2405.14325v5"
+    },
+    {
+      "title": "Dinomaly：低重建差，不保證無刮傷",
+      "question": "限制照抄是手段，缺陷仍要用真例驗證。",
+      "plain": {
+        "look": "先看同板刮傷p仍然存在，再核對若原與重建表示相同，最後看獨立正常與缺陷分開驗。",
+        "relation": "給定原與重建表示同為[.6,.8]，餘弦差0；原圖刮傷仍在。Dropout和線性注意力針對照抄捷徑，不保證每个缺陷有大差異。",
+        "takeaway": "限制照抄是手段，缺陷仍要用真例驗證。"
+      },
+      "terms": [
+        "位置：對回同一輸入座標，不能任意混層或混影格。",
+        "圖中數值：作者給定機制算例，非模型實測或建議門檻。"
+      ],
+      "guide": [
+        "給定原與重建表示同為[.6,.8]，餘弦差0；原圖刮傷仍在。Dropout和線性注意力針對照抄捷徑，不保證每个缺陷有大差異。",
+        "先看同板刮傷p仍然存在，再核對若原與重建表示相同，最後看獨立正常與缺陷分開驗。"
+      ],
+      "stages": [
+        {
+          "title": "同板刮傷p仍然存在",
+          "body": "同板刮傷p仍然存在；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "若原與重建表示相同",
+          "body": "若原與重建表示相同；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "獨立正常與缺陷分開驗",
+          "body": "獨立正常與缺陷分開驗；請對照圖內輸入、變化與結果。"
+        }
+      ],
+      "misconception": "正常外觀可能誤報，缺陷也可能被重建；按產品保留未見資料驗證。",
+      "alt": "Dinomaly：低重建差，不保證無刮傷。限制照抄是手段，缺陷仍要用真例驗證。 教學示意，非模型實測。",
+      "mobile_image": "roadmap-model-selection/anomaly-detection/ad-dinomaly/images/final/WI033-DINOMALY-04-r01-mobile.png",
+      "mobile_width": 768,
+      "mobile_height": 2304,
+      "engineering": {
+        "takeaway": "限制照抄是手段，缺陷仍要用真例驗證。",
+        "nextAction": "固定 foundation checkpoint/layers、ROI/feature recipe、class roster/balance、decoder architecture、noise/dropout、linear attention、loose loss、seed 和 checkpoint。",
+        "redLine": "anti-copy state未鎖、類別coverage不平衡、support受污染、domain mismatch、tiny defect/global logic或完整P95未驗時，先 HOLD。"
+      },
+      "source": "https://arxiv.org/html/2405.14325v5"
+    }
+  ]
+}

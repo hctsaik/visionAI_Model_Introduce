@@ -1,0 +1,571 @@
+{
+  "model": "Frame Difference",
+  "badge": "傳統影格差分",
+  "title": "Frame Difference：先找出畫面哪裡變了",
+  "scenario": {
+    "title": "固定相機看輸送帶，你只想在畫面有明顯變化時保留事件片段，減少人工從頭看完整段影片。",
+    "body": "固定相機看輸送帶，你只想在畫面有明顯變化時保留事件片段，減少人工從頭看完整段影片。"
+  },
+  "promise": {
+    "title": "交付結果與接手工作",
+    "body": "變化遮罩、變化區域及應用整合的事件片段。交給人回看或接後段偵測；不直接交出類別、穩定身分或完整輪廓。"
+  },
+  "mental_model": {
+    "title": "傳統影格差分",
+    "body": "Frame Difference 比較兩個時間點同一位置的像素亮度，再把差得夠大的位置標出來。方片向右移時，原本有片、後來沒片的左帶，以及新進入的右帶會亮起；重疊且亮度相同的中央可能不亮。它便宜直接，因為不需要先學物件種類；也因此只知道變了，不知道是什麼。",
+    "limit": "工件位置不動，只有燈光閃一下，整幅亮度改變仍可能讓差分大片亮起。反過來，工件已停住且與上一影格相同時，差分可能全黑。"
+  },
+  "micro_example": {
+    "title": "換成會停住的料盤",
+    "setup": "料盤進站後停十秒，你要知道它是否仍占著工位。",
+    "prediction": "只用相鄰影格差分夠嗎？",
+    "reveal": "不夠；停住後變化會減少。可試背景相減加停留計時，但需避免停留時被背景吸收；若已有可靠的占位感測器或偵測器，也可作更直接基準。"
+  },
+  "mechanism_steps": [
+    {
+      "title": "兩個時間點",
+      "body": "本例用前一影格；拉長間隔可能讓慢動更明顯，也可能留下更分離的變化區。取樣間隔會改變問題本身。",
+      "why": "由本課核心機制連接工作用途",
+      "anchor": "WI028-1",
+      "diagram": {
+        "title": "兩個時間點",
+        "body": "本例用前一影格；拉長間隔可能讓慢動更明顯，也可能留下更分離的變化區。取樣間隔會改變問題本身。",
+        "why": "詳見本課版本與來源",
+        "anchor": "WI028-1"
+      }
+    },
+    {
+      "title": "比較同位置",
+      "body": "先算絕對亮度差，再設門檻和小區塊濾除；細紋、陰影與曝光也會造成差。圖中的兩條白帶是簡化亮度一致的示意。",
+      "why": "由本課核心機制連接工作用途",
+      "anchor": "WI028-2",
+      "diagram": {
+        "title": "比較同位置",
+        "body": "先算絕對亮度差，再設門檻和小區塊濾除；細紋、陰影與曝光也會造成差。圖中的兩條白帶是簡化亮度一致的示意。",
+        "why": "詳見本課版本與來源",
+        "anchor": "WI028-2"
+      }
+    },
+    {
+      "title": "差分與回看",
+      "body": "變化遮罩、變化區域及應用整合的事件片段。交給人回看或接後段偵測；不直接交出類別、穩定身分或完整輪廓。",
+      "why": "由本課核心機制連接工作用途",
+      "anchor": "WI028-3",
+      "diagram": {
+        "title": "差分與回看",
+        "body": "變化遮罩、變化區域及應用整合的事件片段。交給人回看或接後段偵測；不直接交出類別、穩定身分或完整輪廓。",
+        "why": "詳見本課版本與來源",
+        "anchor": "WI028-3"
+      }
+    },
+    {
+      "title": "工作核對與接手",
+      "body": "把人工標記的事件當對照，比較差分與背景相減的事件漏報、誤報、事件延遲和完整處理成本；不把兩白帶算兩件產品。",
+      "why": "由本課核心機制連接工作用途",
+      "anchor": "WI028-4",
+      "diagram": {
+        "title": "工作核對與接手",
+        "body": "把人工標記的事件當對照，比較差分與背景相減的事件漏報、誤報、事件延遲和完整處理成本；不把兩白帶算兩件產品。",
+        "why": "詳見本課版本與來源",
+        "anchor": "WI028-4"
+      }
+    }
+  ],
+  "visual_intro": "Frame Difference 比較兩個時間點同一位置的像素亮度，再把差得夠大的位置標出來。方片向右移時，原本有片、後來沒片的左帶，以及新進入的右帶會亮起；重疊且亮度相同的中央可能不亮。它便宜直接，因為不需要先學物件種類；也因此只知道變了，不知道是什麼。",
+  "beginner_path": {
+    "title": "從必要原理、具體反例到工作取捨",
+    "intro": "固定相機看輸送帶，你只想在畫面有明顯變化時保留事件片段，減少人工從頭看完整段影片。 下列圖像、特徵及回答為教學示意，不是模型實測。",
+    "visuals": [
+      {
+        "id": "wi028-frame-c1",
+        "title": "Frame Difference：找出兩張畫面的變化",
+        "prompt": "固定相機看輸送帶，你只想在畫面有明顯變化時保留事件片段，減少人工從頭看完整段影片。",
+        "caption": "Frame Difference 比較兩個時間點同一位置的像素亮度，再把差得夠大的位置標出來。方片向右移時，原本有片、後來沒片的左帶，以及新進入的右帶會亮起；重疊且亮度相同的中央可能不亮。它便宜直接，因為不需要先學物件種類；也因此只知道變了，不知道是什麼。",
+        "image": "_course_content/generated-concepts/frame-difference/wi028-frame-c1-r02-desktop.png",
+        "alt": "Frame Difference：找出兩張畫面的變化。Frame Difference 比較兩個時間點同一位置的像素亮度，再把差得夠大的位置標出來。方片向右移時，原本有片、後來沒片的左帶，以及新進入的右帶會亮起；重疊且亮度相同的中央可能不亮。它便宜直接，因為不需要先學物件種類；也因此只知道變了，不知道是什麼。 AI生成教學示意，非模型實測。",
+        "callouts": [
+          {
+            "title": "參考是另一張影格",
+            "body": "本例用前一影格；拉長間隔可能讓慢動更明顯，也可能留下更分離的變化區。取樣間隔會改變問題本身。"
+          },
+          {
+            "title": "差分不等於物件",
+            "body": "先算絕對亮度差，再設門檻和小區塊濾除；細紋、陰影與曝光也會造成差。圖中的兩條白帶是簡化亮度一致的示意。"
+          },
+          {
+            "title": "交付與接手",
+            "body": "變化遮罩、變化區域及應用整合的事件片段。交給人回看或接後段偵測；不直接交出類別、穩定身分或完整輪廓。"
+          }
+        ],
+        "reading_views": [
+          {
+            "title": "Frame Difference：找出兩張畫面的變化",
+            "image": "_course_content/generated-concepts/frame-difference/wi028-frame-c1-r02-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/frame-difference/wi028-frame-c1-r02-mobile.png",
+            "alt": "Frame Difference：找出兩張畫面的變化。Frame Difference 比較兩個時間點同一位置的像素亮度，再把差得夠大的位置標出來。方片向右移時，原本有片、後來沒片的左帶，以及新進入的右帶會亮起；重疊且亮度相同的中央可能不亮。它便宜直接，因為不需要先學物件種類；也因此只知道變了，不知道是什麼。 AI生成教學示意，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              887,
+              1774
+            ],
+            "mobile_display_mode": "full-mobile",
+            "desktop_intrinsic_width": 1672,
+            "desktop_intrinsic_height": 941,
+            "mobile_intrinsic_width": 887,
+            "mobile_intrinsic_height": 1774
+          }
+        ],
+        "core_ideas": true
+      },
+      {
+        "id": "wi028-frame-d2",
+        "title": "工件沒動，亮度變了也會觸發差分",
+        "prompt": "觀察哪個條件改變，讓原本的結果不夠可靠？",
+        "caption": "工件位置不動，只有燈光閃一下，整幅亮度改變仍可能讓差分大片亮起。反過來，工件已停住且與上一影格相同時，差分可能全黑。",
+        "image": "_course_content/generated-concepts/frame-difference/wi028-frame-d2-r01-desktop.png",
+        "alt": "工件沒動，亮度變了也會觸發差分。工件位置不動，只有燈光閃一下，整幅亮度改變仍可能讓差分大片亮起。反過來，工件已停住且與上一影格相同時，差分可能全黑。 AI生成教學示意，非模型實測。",
+        "callouts": [
+          {
+            "title": "看哪裡",
+            "body": "工件位置不動，只有燈光閃一下，整幅亮度改變仍可能讓差分大片亮起。反過來，工件已停住且與上一影格相同時，差分可能全黑。"
+          },
+          {
+            "title": "接著怎麼做",
+            "body": "先回看片段，檢查曝光、照明與相機晃動；固定取像條件後，再調影格間隔、門檻及事件持續時間。"
+          }
+        ],
+        "reading_views": [
+          {
+            "title": "工件沒動，亮度變了也會觸發差分",
+            "image": "_course_content/generated-concepts/frame-difference/wi028-frame-d2-r01-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/frame-difference/wi028-frame-d2-r01-mobile.png",
+            "alt": "工件沒動，亮度變了也會觸發差分。工件位置不動，只有燈光閃一下，整幅亮度改變仍可能讓差分大片亮起。反過來，工件已停住且與上一影格相同時，差分可能全黑。 AI生成教學示意，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              887,
+              1774
+            ],
+            "mobile_display_mode": "full-mobile",
+            "desktop_intrinsic_width": 1672,
+            "desktop_intrinsic_height": 941,
+            "mobile_intrinsic_width": 887,
+            "mobile_intrinsic_height": 1774
+          }
+        ],
+        "core_ideas": false
+      },
+      {
+        "id": "wi028-change-d3",
+        "title": "找變化還是找前景？先決定參考是誰",
+        "prompt": "相同工作需求下，資料、輸出與成本如何取捨？",
+        "caption": "只需抓瞬間改變，可先用影格差分；要相對常態背景找新出現且暫時停住的工件，可比較背景相減。若要物件身分與跨線計數，需要另有偵測與追蹤。",
+        "image": "_course_content/generated-concepts/frame-difference/wi028-change-d3-r02-desktop.png",
+        "alt": "找變化還是找前景？先決定參考是誰。只需抓瞬間改變，可先用影格差分；要相對常態背景找新出現且暫時停住的工件，可比較背景相減。若要物件身分與跨線計數，需要另有偵測與追蹤。 AI生成教學示意，非模型實測。",
+        "callouts": [
+          {
+            "title": "怎麼選",
+            "body": "只需抓瞬間改變，可先用影格差分；要相對常態背景找新出現且暫時停住的工件，可比較背景相減。若要物件身分與跨線計數，需要另有偵測與追蹤。"
+          },
+          {
+            "title": "資料與完整成本",
+            "body": "不用標註訓練網路，仍需包含正常運轉、停留、閃光和晃動的影片作調整與獨立測試。換產品、光源或相機後重驗門檻；同看漏掉的事件、每小時誤觸發及回看量。"
+          }
+        ],
+        "reading_views": [
+          {
+            "title": "找變化還是找前景？先決定參考是誰",
+            "image": "_course_content/generated-concepts/frame-difference/wi028-change-d3-r02-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/frame-difference/wi028-change-d3-r03-mobile.png",
+            "alt": "找變化還是找前景？先決定參考是誰。只需抓瞬間改變，可先用影格差分；要相對常態背景找新出現且暫時停住的工件，可比較背景相減。若要物件身分與跨線計數，需要另有偵測與追蹤。 AI生成教學示意，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              1024,
+              1536
+            ],
+            "mobile_display_mode": "full-mobile",
+            "desktop_intrinsic_width": 1672,
+            "desktop_intrinsic_height": 941,
+            "mobile_intrinsic_width": 1024,
+            "mobile_intrinsic_height": 1536
+          }
+        ],
+        "core_ideas": false
+      }
+    ]
+  },
+  "concept_visuals": [],
+  "boundary_cases": [
+    {
+      "condition": "本課具體反例",
+      "effect": "工件位置不動，只有燈光閃一下，整幅亮度改變仍可能讓差分大片亮起。反過來，工件已停住且與上一影格相同時，差分可能全黑。",
+      "action": "先回看片段，檢查曝光、照明與相機晃動；固定取像條件後，再調影格間隔、門檻及事件持續時間。"
+    },
+    {
+      "condition": "更換產品、模型或輸入設定",
+      "effect": "不用標註訓練網路，仍需包含正常運轉、停留、閃光和晃動的影片作調整與獨立測試。換產品、光源或相機後重驗門檻；同看漏掉的事件、每小時誤觸發及回看量。",
+      "action": "先收集固定相機的正常／停留／閃光短片，保存時間戳，選定比較間隔和監看區域。"
+    },
+    {
+      "condition": "把示意當成實際推論",
+      "effect": "本課特徵、排序、回答及圖像僅用於解釋，不支持現場準確率或耗時結論。",
+      "action": "把人工標記的事件當對照，比較差分與背景相減的事件漏報、誤報、事件延遲和完整處理成本；不把兩白帶算兩件產品。"
+    }
+  ],
+  "comparison": [
+    {
+      "model": "Frame Difference",
+      "normality": "前一影格或指定時刻；選取間隔、門檻和事件規則",
+      "candidate": "像素變化；停住後可能消失"
+    },
+    {
+      "model": "背景相減",
+      "normality": "初始化和更新背景模型；處理光照／陰影",
+      "candidate": "相對常態的前景；停久可能被吸收"
+    },
+    {
+      "model": "工件偵測／占位感測",
+      "normality": "偵測需相應類別資料，感測器需現場安裝與驗證",
+      "candidate": "類別框或占位訊號；代價依任務比較"
+    }
+  ],
+  "selection": "只需抓瞬間改變，可先用影格差分；要相對常態背景找新出現且暫時停住的工件，可比較背景相減。若要物件身分與跨線計數，需要另有偵測與追蹤。 不用標註訓練網路，仍需包含正常運轉、停留、閃光和晃動的影片作調整與獨立測試。換產品、光源或相機後重驗門檻；同看漏掉的事件、每小時誤觸發及回看量。",
+  "poc": {
+    "title": "以真實工作資料做小規模比較",
+    "steps": [
+      "先收集固定相機的正常／停留／閃光短片，保存時間戳，選定比較間隔和監看區域。",
+      "不用標註訓練網路，仍需包含正常運轉、停留、閃光和晃動的影片作調整與獨立測試。換產品、光源或相機後重驗門檻；同看漏掉的事件、每小時誤觸發及回看量。",
+      "把人工標記的事件當對照，比較差分與背景相減的事件漏報、誤報、事件延遲和完整處理成本；不把兩白帶算兩件產品。"
+    ],
+    "hold": "先回看片段，檢查曝光、照明與相機晃動；固定取像條件後，再調影格間隔、門檻及事件持續時間。",
+    "acceptance": {
+      "baseline": "既有流程或最簡單可行方法",
+      "measure": "把人工標記的事件當對照，比較差分與背景相減的事件漏報、誤報、事件延遲和完整處理成本；不把兩白帶算兩件產品。",
+      "negative_control": "工件位置不動，只有燈光閃一下，整幅亮度改變仍可能讓差分大片亮起。反過來，工件已停住且與上一影格相同時，差分可能全黑。",
+      "owner": "實作與影像核對負責人"
+    }
+  },
+  "teach_back": {
+    "question": "它改變什麼？何時選另一種做法？",
+    "answer": "Frame Difference 比較兩個時間點同一位置的像素亮度，再把差得夠大的位置標出來。方片向右移時，原本有片、後來沒片的左帶，以及新進入的右帶會亮起；重疊且亮度相同的中央可能不亮。它便宜直接，因為不需要先學物件種類；也因此只知道變了，不知道是什麼。 只需抓瞬間改變，可先用影格差分；要相對常態背景找新出現且暫時停住的工件，可比較背景相減。若要物件身分與跨線計數，需要另有偵測與追蹤。"
+  },
+  "slide_reading": [
+    {
+      "title": "Frame Difference：找前後變化的位置",
+      "question": "差分回答哪裡變了，物件數需另推論。",
+      "look": "先看固定相機看同一方件，再核對逐座標差異再過門檻，最後看兩條變化帶交後段處理。",
+      "relation": "相鄰灰階前後相減取絕對值，再二值門檻。給定差80大於示意門檻30為前景，但0不亮；門檻不是建議值。不能直接把帶數當件數。",
+      "takeaway": "差分回答哪裡變了，物件數需另推論。",
+      "terms": [
+        "位置：對回同一輸入座標，不能任意混層或混影格。",
+        "圖中數值：作者給定機制算例，非模型實測或建議門檻。"
+      ]
+    },
+    {
+      "title": "Frame Difference：同座標相減，留下雙帶",
+      "question": "雙帶來自同物件前後位置，不能當兩個物件。",
+      "look": "先看同一方件，前後移動一格，再核對固定座標，逐格取絕對差，最後看只有離開與進入兩帶亮。",
+      "relation": "給定一維橫切灰階：前幀[20,100,100,100,20]，後幀[20,20,100,100,100]，差[0,80,0,0,80]。方件向右移一格，中間重疊不變；兩條亮帶是同一物件的離開與進入，不是兩物件或完整輪廓。教學算例未跑影像演算法。",
+      "takeaway": "雙帶來自同物件前後位置，不能當兩個物件。",
+      "terms": [
+        "位置：對回同一輸入座標，不能任意混層或混影格。",
+        "圖中數值：作者給定機制算例，非模型實測或建議門檻。"
+      ]
+    },
+    {
+      "title": "Frame Difference：相機與時間間隔要固定",
+      "question": "不同取像條件，差異的原因也會改變。",
+      "look": "先看保存前後時間与相機設定，再核對全畫面變亮也會有差，最後看停住物件兩幀差為0。",
+      "relation": "保存幀距、曝光、相機位置、ROI、灰階/門檻與後處理。曝光跳變或震動造成非物件運動差；靜止物件會消失於兩幀差。異常動作或缺陷判定須下游另作。",
+      "takeaway": "不同取像條件，差異的原因也會改變。",
+      "terms": [
+        "位置：對回同一輸入座標，不能任意混層或混影格。",
+        "圖中數值：作者給定機制算例，非模型實測或建議門檻。"
+      ]
+    },
+    {
+      "title": "相鄰差分與背景相減：參考不同",
+      "question": "同件停住，兩方法的時間記憶不同。",
+      "look": "先看同一方件已停住，再核對前後相同：相鄰差為0，最後看相對舊背景仍可能是前景。",
+      "relation": "相鄰差分只比較選定兩幀；背景相減對歷史常態比較，初停物件可仍為前景，但背景更新後也可能被吸收。此差異不代表方法固定更準。",
+      "takeaway": "同件停住，兩方法的時間記憶不同。",
+      "terms": [
+        "位置：對回同一輸入座標，不能任意混層或混影格。",
+        "圖中數值：作者給定機制算例，非模型實測或建議門檻。"
+      ]
+    }
+  ],
+  "comparison_headers": {
+    "title": "找變化還是找前景？先決定參考是誰",
+    "basis": "所需資料與方法差異",
+    "output": "輸出與維護責任"
+  },
+  "transfer_check": {
+    "title": "換成會停住的料盤",
+    "scenario": "料盤進站後停十秒，你要知道它是否仍占著工位。",
+    "question": "只用相鄰影格差分夠嗎？",
+    "answer": "不夠；停住後變化會減少。可試背景相減加停留計時，但需避免停留時被背景吸收；若已有可靠的占位感測器或偵測器，也可作更直接基準。"
+  },
+  "review_trace": {
+    "authority": "roadmap-model-selection/video-temporal/frame-difference/model.md",
+    "scope": "WI-033：工程層四圖與手機比較修正；首讀有效內容保留。原生圖已審，整頁與使用者審閱另記。",
+    "claims": [
+      {
+        "id": "visual-1",
+        "field": "beginner_path.visuals[same-conveyor-aoi]",
+        "source": "模型定位 / architecture_path"
+      },
+      {
+        "id": "visual-2",
+        "field": "beginner_path.visuals[declared-frame-pair]",
+        "source": "architecture_path"
+      },
+      {
+        "id": "visual-3",
+        "field": "beginner_path.visuals[registered-subtraction]",
+        "source": "representation_or_score"
+      },
+      {
+        "id": "visual-4",
+        "field": "beginner_path.visuals[component-event]",
+        "source": "failure_boundary"
+      },
+      {
+        "id": "visual-5",
+        "field": "beginner_path.visuals[hold-boundary]",
+        "source": "selection_gate / evidence_bundle"
+      },
+      {
+        "id": "promise",
+        "field": "promise",
+        "source": "模型定位 / representation_or_score"
+      },
+      {
+        "id": "mechanism",
+        "field": "mechanism_steps",
+        "source": "architecture_path / representation_or_score"
+      },
+      {
+        "id": "boundaries",
+        "field": "boundary_cases",
+        "source": "failure_boundary / selection_gate"
+      },
+      {
+        "id": "comparison",
+        "field": "comparison + selection",
+        "source": "selection_gate"
+      },
+      {
+        "id": "poc",
+        "field": "poc + acceptance",
+        "source": "cost_and_operating_point / evidence_bundle"
+      },
+      {
+        "id": "transfer",
+        "field": "transfer_check",
+        "source": "failure_boundary / selection_gate"
+      },
+      {
+        "id": "f02-core",
+        "field": "beginner_path.visuals[0] + scenario + mental_model",
+        "source": "roadmap-model-selection/video-temporal/frame-difference/model.md"
+      },
+      {
+        "id": "f02-transfer",
+        "field": "micro_example + transfer_check + selection",
+        "source": "roadmap-model-selection/video-temporal/frame-difference/model.md"
+      },
+      {
+        "id": "wi028-first-read",
+        "field": "beginner_path + core + selection + transfer",
+        "source": "https://docs.opencv.org/4.x/d2/de8/group__core__array.html"
+      }
+    ]
+  },
+  "quality_status": {
+    "label": "首讀圖文已核對",
+    "state": "self-reviewed",
+    "round": "WI-028",
+    "reason": "新版首讀逐圖與整頁自評、桌機手機互動驗證完成；使用者核准pending。原工程圖未納入本輪分數。"
+  },
+  "teaching_preflight": {
+    "brief": "teaching-images/vision-ai-model-selection/workitems/wi-028/frame-c1-r02.md",
+    "mobile_brief": "teaching-images/vision-ai-model-selection/workitems/wi-028/frame-c1-r02.md",
+    "story": "C",
+    "major_visual_nodes": 3,
+    "visual_status": "self-reviewed",
+    "user_review": "pending"
+  },
+  "engineering_slides": [
+    {
+      "title": "Frame Difference：找前後變化的位置",
+      "question": "差分回答哪裡變了，物件數需另推論。",
+      "plain": {
+        "look": "先看固定相機看同一方件，再核對逐座標差異再過門檻，最後看兩條變化帶交後段處理。",
+        "relation": "相鄰灰階前後相減取絕對值，再二值門檻。給定差80大於示意門檻30為前景，但0不亮；門檻不是建議值。不能直接把帶數當件數。",
+        "takeaway": "差分回答哪裡變了，物件數需另推論。"
+      },
+      "terms": [
+        "位置：對回同一輸入座標，不能任意混層或混影格。",
+        "圖中數值：作者給定機制算例，非模型實測或建議門檻。"
+      ],
+      "guide": [
+        "相鄰灰階前後相減取絕對值，再二值門檻。給定差80大於示意門檻30為前景，但0不亮；門檻不是建議值。不能直接把帶數當件數。",
+        "先看固定相機看同一方件，再核對逐座標差異再過門檻，最後看兩條變化帶交後段處理。"
+      ],
+      "stages": [
+        {
+          "title": "固定相機看同一方件",
+          "body": "固定相機看同一方件；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "逐座標差異再過門檻",
+          "body": "逐座標差異再過門檻；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "兩條變化帶交後段處理",
+          "body": "兩條變化帶交後段處理；請對照圖內輸入、變化與結果。"
+        }
+      ],
+      "misconception": "工件位置不動，只有燈光閃一下，整幅亮度改變仍可能讓差分大片亮起。反過來，工件已停住且與上一影格相同時，差分可能全黑。",
+      "alt": "Frame Difference：找前後變化的位置。差分回答哪裡變了，物件數需另推論。 教學示意，非模型實測。",
+      "mobile_image": "roadmap-model-selection/video-temporal/frame-difference/images/final/WI033-FRAMEDIFF-01-r01-mobile.png",
+      "mobile_width": 768,
+      "mobile_height": 2304,
+      "engineering": {
+        "takeaway": "差分回答哪裡變了，物件數需另推論。",
+        "nextAction": "先收集固定相機的正常／停留／閃光短片，保存時間戳，選定比較間隔和監看區域。",
+        "redLine": "先回看片段，檢查曝光、照明與相機晃動；固定取像條件後，再調影格間隔、門檻及事件持續時間。"
+      },
+      "source": "https://docs.opencv.org/4.x/d2/de8/group__core__array.html"
+    },
+    {
+      "title": "Frame Difference：同座標相減，留下雙帶",
+      "question": "雙帶來自同物件前後位置，不能當兩個物件。",
+      "plain": {
+        "look": "先看同一方件，前後移動一格，再核對固定座標，逐格取絕對差，最後看只有離開與進入兩帶亮。",
+        "relation": "給定一維橫切灰階：前幀[20,100,100,100,20]，後幀[20,20,100,100,100]，差[0,80,0,0,80]。方件向右移一格，中間重疊不變；兩條亮帶是同一物件的離開與進入，不是兩物件或完整輪廓。教學算例未跑影像演算法。",
+        "takeaway": "雙帶來自同物件前後位置，不能當兩個物件。"
+      },
+      "terms": [
+        "位置：對回同一輸入座標，不能任意混層或混影格。",
+        "圖中數值：作者給定機制算例，非模型實測或建議門檻。"
+      ],
+      "guide": [
+        "給定一維橫切灰階：前幀[20,100,100,100,20]，後幀[20,20,100,100,100]，差[0,80,0,0,80]。方件向右移一格，中間重疊不變；兩條亮帶是同一物件的離開與進入，不是兩物件或完整輪廓。教學算例未跑影像演算法。",
+        "先看同一方件，前後移動一格，再核對固定座標，逐格取絕對差，最後看只有離開與進入兩帶亮。"
+      ],
+      "stages": [
+        {
+          "title": "同一方件，前後移動一格",
+          "body": "同一方件，前後移動一格；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "固定座標，逐格取絕對差",
+          "body": "固定座標，逐格取絕對差；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "只有離開與進入兩帶亮",
+          "body": "只有離開與進入兩帶亮；請對照圖內輸入、變化與結果。"
+        }
+      ],
+      "misconception": "工件位置不動，只有燈光閃一下，整幅亮度改變仍可能讓差分大片亮起。反過來，工件已停住且與上一影格相同時，差分可能全黑。",
+      "alt": "Frame Difference：同座標相減，留下雙帶。雙帶來自同物件前後位置，不能當兩個物件。 教學示意，非模型實測。",
+      "mobile_image": "roadmap-model-selection/video-temporal/frame-difference/images/final/WI033-FRAMEDIFF-02-r02-mobile.png",
+      "mobile_width": 768,
+      "mobile_height": 2400,
+      "engineering": {
+        "takeaway": "雙帶來自同物件前後位置，不能當兩個物件。",
+        "nextAction": "先收集固定相機的正常／停留／閃光短片，保存時間戳，選定比較間隔和監看區域。",
+        "redLine": "先回看片段，檢查曝光、照明與相機晃動；固定取像條件後，再調影格間隔、門檻及事件持續時間。"
+      },
+      "source": "https://docs.opencv.org/4.x/d2/de8/group__core__array.html"
+    },
+    {
+      "title": "Frame Difference：相機與時間間隔要固定",
+      "question": "不同取像條件，差異的原因也會改變。",
+      "plain": {
+        "look": "先看保存前後時間与相機設定，再核對全畫面變亮也會有差，最後看停住物件兩幀差為0。",
+        "relation": "保存幀距、曝光、相機位置、ROI、灰階/門檻與後處理。曝光跳變或震動造成非物件運動差；靜止物件會消失於兩幀差。異常動作或缺陷判定須下游另作。",
+        "takeaway": "不同取像條件，差異的原因也會改變。"
+      },
+      "terms": [
+        "位置：對回同一輸入座標，不能任意混層或混影格。",
+        "圖中數值：作者給定機制算例，非模型實測或建議門檻。"
+      ],
+      "guide": [
+        "保存幀距、曝光、相機位置、ROI、灰階/門檻與後處理。曝光跳變或震動造成非物件運動差；靜止物件會消失於兩幀差。異常動作或缺陷判定須下游另作。",
+        "先看保存前後時間与相機設定，再核對全畫面變亮也會有差，最後看停住物件兩幀差為0。"
+      ],
+      "stages": [
+        {
+          "title": "保存前後時間与相機設定",
+          "body": "保存前後時間与相機設定；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "全畫面變亮也會有差",
+          "body": "全畫面變亮也會有差；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "停住物件兩幀差為0",
+          "body": "停住物件兩幀差為0；請對照圖內輸入、變化與結果。"
+        }
+      ],
+      "misconception": "工件位置不動，只有燈光閃一下，整幅亮度改變仍可能讓差分大片亮起。反過來，工件已停住且與上一影格相同時，差分可能全黑。",
+      "alt": "Frame Difference：相機與時間間隔要固定。不同取像條件，差異的原因也會改變。 教學示意，非模型實測。",
+      "mobile_image": "roadmap-model-selection/video-temporal/frame-difference/images/final/WI033-FRAMEDIFF-03-r02-mobile.png",
+      "mobile_width": 768,
+      "mobile_height": 2304,
+      "engineering": {
+        "takeaway": "不同取像條件，差異的原因也會改變。",
+        "nextAction": "先收集固定相機的正常／停留／閃光短片，保存時間戳，選定比較間隔和監看區域。",
+        "redLine": "先回看片段，檢查曝光、照明與相機晃動；固定取像條件後，再調影格間隔、門檻及事件持續時間。"
+      },
+      "source": "https://docs.opencv.org/4.x/d2/de8/group__core__array.html"
+    },
+    {
+      "title": "相鄰差分與背景相減：參考不同",
+      "question": "同件停住，兩方法的時間記憶不同。",
+      "plain": {
+        "look": "先看同一方件已停住，再核對前後相同：相鄰差為0，最後看相對舊背景仍可能是前景。",
+        "relation": "相鄰差分只比較選定兩幀；背景相減對歷史常態比較，初停物件可仍為前景，但背景更新後也可能被吸收。此差異不代表方法固定更準。",
+        "takeaway": "同件停住，兩方法的時間記憶不同。"
+      },
+      "terms": [
+        "位置：對回同一輸入座標，不能任意混層或混影格。",
+        "圖中數值：作者給定機制算例，非模型實測或建議門檻。"
+      ],
+      "guide": [
+        "相鄰差分只比較選定兩幀；背景相減對歷史常態比較，初停物件可仍為前景，但背景更新後也可能被吸收。此差異不代表方法固定更準。",
+        "先看同一方件已停住，再核對前後相同：相鄰差為0，最後看相對舊背景仍可能是前景。"
+      ],
+      "stages": [
+        {
+          "title": "同一方件已停住",
+          "body": "同一方件已停住；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "前後相同：相鄰差為0",
+          "body": "前後相同：相鄰差為0；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "相對舊背景仍可能是前景",
+          "body": "相對舊背景仍可能是前景；請對照圖內輸入、變化與結果。"
+        }
+      ],
+      "misconception": "工件位置不動，只有燈光閃一下，整幅亮度改變仍可能讓差分大片亮起。反過來，工件已停住且與上一影格相同時，差分可能全黑。",
+      "alt": "相鄰差分與背景相減：參考不同。同件停住，兩方法的時間記憶不同。 教學示意，非模型實測。",
+      "mobile_image": "roadmap-model-selection/video-temporal/frame-difference/images/final/WI033-FRAMEDIFF-04-r02-mobile.png",
+      "mobile_width": 768,
+      "mobile_height": 2304,
+      "engineering": {
+        "takeaway": "同件停住，兩方法的時間記憶不同。",
+        "nextAction": "先收集固定相機的正常／停留／閃光短片，保存時間戳，選定比較間隔和監看區域。",
+        "redLine": "先回看片段，檢查曝光、照明與相機晃動；固定取像條件後，再調影格間隔、門檻及事件持續時間。"
+      },
+      "source": "https://docs.opencv.org/4.x/d2/de8/group__core__array.html"
+    }
+  ]
+}

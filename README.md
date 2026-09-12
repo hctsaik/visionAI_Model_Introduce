@@ -18,7 +18,14 @@ visual assets and lesson documents it references. It intentionally excludes loca
 caches, prompt intermediates, raw image-generation material, and presentation
 source files.
 
-The latest teaching revision (WI-030) rebuilds four anomaly-detection lessons
+The latest revision (WI-035) adds a three-step PoC workbench with model-specific
+guidance, draft progress, editable previews, Markdown export, and protected
+example imports. It also corrects mechanism text in 19 lessons and detector
+selection summaries. See [the change report](teaching-maintenance/workitems/wi-035/REPORT.md)
+and [reusable teaching lessons](teaching-maintenance/project/TEACHING_WEBPAGE_GUIDE.md).
+Draft completeness indicates filled fields, not validated model performance.
+
+An earlier teaching revision (WI-030) rebuilds four anomaly-detection lessons
 and eight classification, segmentation and pose lessons with 42 distinct
 desktop/mobile PNG illustrations, conditional self-checks and operating guidance.
 These are instructional illustrations, not measured model inference results.

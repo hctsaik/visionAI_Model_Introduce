@@ -1,0 +1,538 @@
+{
+  "model": "DINO detector",
+  "beginner_path": {
+    "title": "從必要原理、具體反例到工作取捨",
+    "intro": "要在料盤裡找出每顆螺栓與墊圈，需要物件框和類別。DINO detector在DETR式查詢出框的基礎上改善訓練訊號；它不是拿正常品特徵查庫的DINOv2骨幹。 下列圖像、特徵及回答為教學示意，不是模型實測。",
+    "visuals": [
+      {
+        "id": "wi032-dino-core",
+        "title": "DINO detector：先練辨別帶噪框，再學會出框",
+        "prompt": "要在料盤裡找出每顆螺栓與墊圈，需要物件框和類別。DINO detector在DETR式查詢出框的基礎上改善訓練訊號；它不是拿正常品特徵查庫的DINOv2骨幹。",
+        "caption": "DINO detector的對比去噪訓練，從人工真值產生帶噪查詢：較接近的正樣本學還原物件框／類別，較偏離的負樣本學無物件，提供辨別訊號。這些真值帶噪查詢只存在訓練；推論由影像特徵選取初始框位置並經decoder查詢更新，交出已學類別與框，不會拿到真值。",
+        "image": "_course_content/generated-concepts/det-dino-detector/wi032-dino-core-r01-desktop.png",
+        "alt": "DINO detector：先練辨別帶噪框，再學會出框。DINO detector的對比去噪訓練，從人工真值產生帶噪查詢：較接近的正樣本學還原物件框／類別，較偏離的負樣本學無物件，提供辨別訊號。這些真值帶噪查詢只存在訓練；推論由影像特徵選取初始框位置並經decoder查詢更新，交出已學類別與框，不會拿到真值。 教學示意，非模型實測。",
+        "callouts": [
+          {
+            "title": "去噪是訓練設計",
+            "body": "圖中只展開螺栓一組示例；真實訓練仍要為所有需要的物件準備標註。負查詢是一種學習目標，不是說影像中的螺栓消失了。"
+          },
+          {
+            "title": "影像產生初始查詢位置",
+            "body": "mixed query selection以影像特徵的候選框提供位置初始化，搭配可學內容查詢，再逐步更新類別與框；不是用訓練真值框作推論起點。"
+          },
+          {
+            "title": "結果仍需工作驗證",
+            "body": "模型輸出類別、信心與邊界框。去噪及框更新改善的是學習方式，不保證小物件、遮擋或新類別都被找到。"
+          }
+        ],
+        "reading_views": [
+          {
+            "title": "DINO detector：先練辨別帶噪框，再學會出框",
+            "image": "_course_content/generated-concepts/det-dino-detector/wi032-dino-core-r01-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/det-dino-detector/wi032-dino-core-r02-mobile.png",
+            "alt": "DINO detector：先練辨別帶噪框，再學會出框。DINO detector的對比去噪訓練，從人工真值產生帶噪查詢：較接近的正樣本學還原物件框／類別，較偏離的負樣本學無物件，提供辨別訊號。這些真值帶噪查詢只存在訓練；推論由影像特徵選取初始框位置並經decoder查詢更新，交出已學類別與框，不會拿到真值。 教學示意，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              1024,
+              1536
+            ],
+            "mobile_display_mode": "full-mobile",
+            "desktop_intrinsic_width": 1672,
+            "desktop_intrinsic_height": 941,
+            "mobile_intrinsic_width": 1024,
+            "mobile_intrinsic_height": 1536
+          }
+        ],
+        "core_ideas": true
+      },
+      {
+        "id": "wi032-dino-failure",
+        "title": "訓練去噪，不能保證遮擋後仍找得到",
+        "prompt": "觀察哪個條件改變，讓原本的結果不夠可靠？",
+        "caption": "同一料盤的墊圈被夾具遮住後，模型仍可能漏檢。帶噪框訓練不等於已涵蓋所有遮擋情況；圖中是假設漏檢示意，要回到逐件標註核對，而不是只看找到的框。",
+        "image": "_course_content/generated-concepts/det-dino-detector/wi032-dino-failure-r02-desktop.png",
+        "alt": "訓練去噪，不能保證遮擋後仍找得到。同一料盤的墊圈被夾具遮住後，模型仍可能漏檢。帶噪框訓練不等於已涵蓋所有遮擋情況；圖中是假設漏檢示意，要回到逐件標註核對，而不是只看找到的框。 教學示意，非模型實測。",
+        "callouts": [
+          {
+            "title": "看哪裡",
+            "body": "同一料盤的墊圈被夾具遮住後，模型仍可能漏檢。帶噪框訓練不等於已涵蓋所有遮擋情況；圖中是假設漏檢示意，要回到逐件標註核對，而不是只看找到的框。"
+          },
+          {
+            "title": "接著怎麼做",
+            "body": "遮擋、小目標或不同取像造成漏檢時，先檢查原圖可觀測性、標註與訓練／驗證分布，再比較改取像、補樣本或微調；未經核對的框不直接當數量或良率真值。"
+          }
+        ],
+        "reading_views": [
+          {
+            "title": "訓練去噪，不能保證遮擋後仍找得到",
+            "image": "_course_content/generated-concepts/det-dino-detector/wi032-dino-failure-r02-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/det-dino-detector/wi032-dino-failure-r04-mobile.png",
+            "alt": "訓練去噪，不能保證遮擋後仍找得到。同一料盤的墊圈被夾具遮住後，模型仍可能漏檢。帶噪框訓練不等於已涵蓋所有遮擋情況；圖中是假設漏檢示意，要回到逐件標註核對，而不是只看找到的框。 教學示意，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              1024,
+              1536
+            ],
+            "mobile_display_mode": "full-mobile",
+            "desktop_intrinsic_width": 1672,
+            "desktop_intrinsic_height": 941,
+            "mobile_intrinsic_width": 1024,
+            "mobile_intrinsic_height": 1536
+          }
+        ],
+        "core_ideas": false
+      },
+      {
+        "id": "wi032-detector-compare",
+        "title": "找同一批零件：類別從哪裡來？",
+        "prompt": "相同工作需求下，資料、輸出與成本如何取捨？",
+        "caption": "DINO detector通常由固定類別的監督訓練建立分類頭；YOLO-World用預訓練視覺語言表示和文字詞彙產生候選。固定少數類別且能準備標註時，可比較DINO與既有YOLO／RT-DETR；類別詞彙經常變更可試YOLO-World，但仍要驗證現場資料，不能只按新舊或論文成績選。",
+        "image": "_course_content/generated-concepts/det-dino-detector/wi032-detector-compare-r01-desktop.png",
+        "alt": "找同一批零件：類別從哪裡來？。DINO detector通常由固定類別的監督訓練建立分類頭；YOLO-World用預訓練視覺語言表示和文字詞彙產生候選。固定少數類別且能準備標註時，可比較DINO與既有YOLO／RT-DETR；類別詞彙經常變更可試YOLO-World，但仍要驗證現場資料，不能只按新舊或論文成績選。 教學示意，非模型實測。",
+        "callouts": [
+          {
+            "title": "怎麼選",
+            "body": "DINO detector通常由固定類別的監督訓練建立分類頭；YOLO-World用預訓練視覺語言表示和文字詞彙產生候選。固定少數類別且能準備標註時，可比較DINO與既有YOLO／RT-DETR；類別詞彙經常變更可試YOLO-World，但仍要驗證現場資料，不能只按新舊或論文成績選。"
+          },
+          {
+            "title": "資料與完整成本",
+            "body": "換固定類別通常涉及標註／模型頭與微調流程，換拍攝條件也需重新驗證。DINO的訓練成本、輸入尺寸與查詢數會影響部署取捨；比較需包含前後處理及人工覆核，不借用跨硬體FPS排名。"
+          }
+        ],
+        "reading_views": [
+          {
+            "title": "找同一批零件：類別從哪裡來？",
+            "image": "_course_content/generated-concepts/det-dino-detector/wi032-detector-compare-r01-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/det-dino-detector/wi032-detector-compare-r02-mobile.png",
+            "alt": "找同一批零件：類別從哪裡來？。DINO detector通常由固定類別的監督訓練建立分類頭；YOLO-World用預訓練視覺語言表示和文字詞彙產生候選。固定少數類別且能準備標註時，可比較DINO與既有YOLO／RT-DETR；類別詞彙經常變更可試YOLO-World，但仍要驗證現場資料，不能只按新舊或論文成績選。 教學示意，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              1024,
+              1536
+            ],
+            "mobile_display_mode": "full-mobile",
+            "desktop_intrinsic_width": 1672,
+            "desktop_intrinsic_height": 941,
+            "mobile_intrinsic_width": 1024,
+            "mobile_intrinsic_height": 1536
+          }
+        ],
+        "core_ideas": false
+      }
+    ]
+  },
+  "badge": "DETR系物件偵測器；不是DINOv2特徵骨幹",
+  "title": "用較穩定的學習訊號，練出物件框",
+  "scenario": {
+    "title": "要在料盤裡找出每顆螺栓與墊圈，需要物件框和類別。DINO detector在DETR式查詢出框的基礎上改善訓練訊號；它不是拿正常品特徵查庫的DINOv2骨幹。",
+    "body": "要在料盤裡找出每顆螺栓與墊圈，需要物件框和類別。DINO detector在DETR式查詢出框的基礎上改善訓練訊號；它不是拿正常品特徵查庫的DINOv2骨幹。"
+  },
+  "promise": {
+    "title": "交付結果與接手工作",
+    "body": "每個候選物件的框、類別與分數；工件計數、是否漏裝、尺寸與品質判定是後續規則與驗證。需要精確輪廓時另選分割流程，框不能當mask。"
+  },
+  "mental_model": {
+    "title": "DETR系物件偵測器；不是DINOv2特徵骨幹",
+    "body": "DINO detector的對比去噪訓練，從人工真值產生帶噪查詢：較接近的正樣本學還原物件框／類別，較偏離的負樣本學無物件，提供辨別訊號。這些真值帶噪查詢只存在訓練；推論由影像特徵選取初始框位置並經decoder查詢更新，交出已學類別與框，不會拿到真值。",
+    "limit": "同一料盤的墊圈被夾具遮住後，模型仍可能漏檢。帶噪框訓練不等於已涵蓋所有遮擋情況；圖中是假設漏檢示意，要回到逐件標註核對，而不是只看找到的框。"
+  },
+  "micro_example": {
+    "title": "固定類別還是經常換詞彙？",
+    "setup": "A線只找三種固定零件且有完整框標註；B線每週新增零件名稱，但幾乎沒有目標場景標註。",
+    "prediction": "兩條線都應只因DINO的訓練設計而優先選它嗎？",
+    "reveal": "A線可比較DINO與既有固定類別偵測器，用同資料看漏檢和完整成本；有現成標註讓微調較可行。B線可先用YOLO-World的文字詞彙測候選，但仍需建立獨立核對集；如果新零件外觀太相近或是細缺陷，提示詞未必足夠，可能仍需取像改善與標註微調。沒有目標資料時不能替任一方法承諾現場準確率。"
+  },
+  "mechanism_steps": [
+    {
+      "title": "訓練準備真值",
+      "body": "訓練影像提供要學的物件類別與框。真值用於監督一般偵測查詢，也用於建立帶噪的訓練輔助查詢。",
+      "why": "分清訓練輔助分支與一般偵測流程，避免把真值當作推論輸入。",
+      "anchor": "WI032-1",
+      "diagram": {
+        "title": "訓練準備真值",
+        "body": "訓練影像提供要學的物件類別與框。真值用於監督一般偵測查詢，也用於建立帶噪的訓練輔助查詢。",
+        "why": "分清訓練輔助分支與一般偵測流程，避免把真值當作推論輸入。",
+        "anchor": "WI032-1"
+      }
+    },
+    {
+      "title": "正負去噪訊號",
+      "body": "訓練時對真值類別及框加入擾動；較接近真值的正查詢學重建原物件，較遠的負查詢學背景，幫助模型區分相近候選。這個輔助分支在正式推論時移除。",
+      "why": "分清訓練輔助分支與一般偵測流程，避免把真值當作推論輸入。",
+      "anchor": "WI032-2",
+      "diagram": {
+        "title": "正負去噪訊號",
+        "body": "訓練時對真值類別及框加入擾動；較接近真值的正查詢學重建原物件，較遠的負查詢學背景，幫助模型區分相近候選。這個輔助分支在正式推論時移除。",
+        "why": "分清訓練輔助分支與一般偵測流程，避免把真值當作推論輸入。",
+        "anchor": "WI032-2"
+      }
+    },
+    {
+      "title": "影像初始化與正式推論",
+      "body": "Mixed query selection 從影像特徵候選選位置初始化，搭配可學內容查詢，再更新類別與框。這是一般偵測查詢的初始化方式；推論只讀影像，不用真值框或去噪輔助查詢。",
+      "why": "分清訓練輔助分支與一般偵測流程，避免把真值當作推論輸入。",
+      "anchor": "WI032-3",
+      "diagram": {
+        "title": "影像初始化與正式推論",
+        "body": "Mixed query selection 從影像特徵候選選位置初始化，搭配可學內容查詢，再更新類別與框。這是一般偵測查詢的初始化方式；推論只讀影像，不用真值框或去噪輔助查詢。",
+        "why": "分清訓練輔助分支與一般偵測流程，避免把真值當作推論輸入。",
+        "anchor": "WI032-3"
+      }
+    },
+    {
+      "title": "工作核對與接手",
+      "body": "保存模型與前處理版本、原圖、逐件真值和輸出框，分別查漏檢、錯類、重複框及遮擋／小目標；量同硬體的完整延遲與覆核負擔。本輪沒有重訓或推論，去噪與漏檢圖皆為教學示意。",
+      "why": "由本課核心機制連接工作用途",
+      "anchor": "WI032-4",
+      "diagram": {
+        "title": "工作核對與接手",
+        "body": "保存模型與前處理版本、原圖、逐件真值和輸出框，分別查漏檢、錯類、重複框及遮擋／小目標；量同硬體的完整延遲與覆核負擔。本輪沒有重訓或推論，去噪與漏檢圖皆為教學示意。",
+        "why": "詳見本課版本與來源",
+        "anchor": "WI032-4"
+      }
+    }
+  ],
+  "visual_intro": "DINO detector的對比去噪訓練，從人工真值產生帶噪查詢：較接近的正樣本學還原物件框／類別，較偏離的負樣本學無物件，提供辨別訊號。這些真值帶噪查詢只存在訓練；推論由影像特徵選取初始框位置並經decoder查詢更新，交出已學類別與框，不會拿到真值。",
+  "concept_visuals": [],
+  "boundary_cases": [
+    {
+      "condition": "本課具體反例",
+      "effect": "同一料盤的墊圈被夾具遮住後，模型仍可能漏檢。帶噪框訓練不等於已涵蓋所有遮擋情況；圖中是假設漏檢示意，要回到逐件標註核對，而不是只看找到的框。",
+      "action": "遮擋、小目標或不同取像造成漏檢時，先檢查原圖可觀測性、標註與訓練／驗證分布，再比較改取像、補樣本或微調；未經核對的框不直接當數量或良率真值。"
+    },
+    {
+      "condition": "更換產品、模型或輸入設定",
+      "effect": "換固定類別通常涉及標註／模型頭與微調流程，換拍攝條件也需重新驗證。DINO的訓練成本、輸入尺寸與查詢數會影響部署取捨；比較需包含前後處理及人工覆核，不借用跨硬體FPS排名。",
+      "action": "定義螺栓／墊圈等類別和每件框標註，依實體工件與拍攝批次隔離訓練／驗證／測試；選明確DINO版本與預訓練checkpoint，再評估是否微調。"
+    },
+    {
+      "condition": "把示意當成實際推論",
+      "effect": "本課特徵、排序、回答及圖像僅用於解釋，不支持現場準確率或耗時結論。",
+      "action": "保存模型與前處理版本、原圖、逐件真值和輸出框，分別查漏檢、錯類、重複框及遮擋／小目標；量同硬體的完整延遲與覆核負擔。本輪沒有重訓或推論，去噪與漏檢圖皆為教學示意。"
+    }
+  ],
+  "comparison": [
+    {
+      "model": "DINO detector",
+      "normality": "固定類別框標註與監督訓練／微調",
+      "candidate": "框／類別／分數；換類別涉及資料與模型"
+    },
+    {
+      "model": "YOLO-World",
+      "normality": "預訓練視覺語言模型與文字詞彙",
+      "candidate": "詞彙對應候選框；更新表示及現場驗證"
+    },
+    {
+      "model": "比較方式",
+      "normality": "同批影像、同硬體、獨立逐件真值",
+      "candidate": "漏檢、錯類、完整耗時與維護／覆核成本"
+    }
+  ],
+  "selection": "DINO detector通常由固定類別的監督訓練建立分類頭；YOLO-World用預訓練視覺語言表示和文字詞彙產生候選。固定少數類別且能準備標註時，可比較DINO與既有YOLO／RT-DETR；類別詞彙經常變更可試YOLO-World，但仍要驗證現場資料，不能只按新舊或論文成績選。 換固定類別通常涉及標註／模型頭與微調流程，換拍攝條件也需重新驗證。DINO的訓練成本、輸入尺寸與查詢數會影響部署取捨；比較需包含前後處理及人工覆核，不借用跨硬體FPS排名。",
+  "poc": {
+    "title": "以真實工作資料做小規模比較",
+    "steps": [
+      "定義螺栓／墊圈等類別和每件框標註，依實體工件與拍攝批次隔離訓練／驗證／測試；選明確DINO版本與預訓練checkpoint，再評估是否微調。",
+      "在相同保留工件上比較 DINO 與既有固定類別偵測器；記錄標註／微調成本、輸入尺寸與查詢數，量包含前後處理和人工覆核的完整延遲。新增類別或改取像時重新驗證。",
+      "保存模型與前處理版本、原圖、逐件真值和輸出框，分別查漏檢、錯類、重複框及遮擋／小目標；量同硬體的完整延遲與覆核負擔。本輪沒有重訓或推論，去噪與漏檢圖皆為教學示意。"
+    ],
+    "hold": "遮擋、小目標或不同取像造成漏檢時，先檢查原圖可觀測性、標註與訓練／驗證分布，再比較改取像、補樣本或微調；未經核對的框不直接當數量或良率真值。",
+    "acceptance": {
+      "baseline": "既有流程或最簡單可行方法",
+      "measure": "保存模型與前處理版本、原圖、逐件真值和輸出框，分別查漏檢、錯類、重複框及遮擋／小目標；量同硬體的完整延遲與覆核負擔。本輪沒有重訓或推論，去噪與漏檢圖皆為教學示意。",
+      "negative_control": "同一料盤的墊圈被夾具遮住後，模型仍可能漏檢。帶噪框訓練不等於已涵蓋所有遮擋情況；圖中是假設漏檢示意，要回到逐件標註核對，而不是只看找到的框。",
+      "owner": "實作與影像核對負責人"
+    }
+  },
+  "teach_back": {
+    "question": "它改變什麼？何時選另一種做法？",
+    "answer": "DINO detector的對比去噪訓練，從人工真值產生帶噪查詢：較接近的正樣本學還原物件框／類別，較偏離的負樣本學無物件，提供辨別訊號。這些真值帶噪查詢只存在訓練；推論由影像特徵選取初始框位置並經decoder查詢更新，交出已學類別與框，不會拿到真值。 DINO detector通常由固定類別的監督訓練建立分類頭；YOLO-World用預訓練視覺語言表示和文字詞彙產生候選。固定少數類別且能準備標註時，可比較DINO與既有YOLO／RT-DETR；類別詞彙經常變更可試YOLO-World，但仍要驗證現場資料，不能只按新舊或論文成績選。"
+  },
+  "slide_reading": [
+    {
+      "title": "固定類別偵測：先把學習任務定清楚",
+      "question": "DINO detector是偵測器，不是DINOv2特徵骨幹。",
+      "look": "先看逐件框與類別，再看查詢更新框與類別，最後核對交付候選物件。",
+      "relation": "本課討論DINO DETR系檢測器。模型交付物件框、類別與分數，而像素分割、毫米尺寸及業務計數規則需其他流程；訓練/驗證分組應避免同工件或連續影像泄漏。",
+      "takeaway": "DINO detector是偵測器，不是DINOv2特徵骨幹。",
+      "terms": [
+        "逐件框與類別：訓練資料需要物件標註；依工件／批次隔離資料",
+        "查詢更新框與類別：影像特徵參與decoder；訓練後推論不使用真值"
+      ]
+    },
+    {
+      "title": "Mixed query selection：位置與內容分開來",
+      "question": "推論起點來自影像，不是人工真值框。",
+      "look": "先看影像提供候選位置，再看內容查詢可學習，最後核對decoder逐層更新。",
+      "relation": "DINO mixed query selection以encoder候選提供位置初始化，同時使用可學習內容queries。decoder進一步精修框與類別；與訓練專用的GT noisy queries區分，不能把二者畫在同一推論路徑。",
+      "takeaway": "推論起點來自影像，不是人工真值框。",
+      "terms": [
+        "影像提供候選位置：由影像特徵選候選框；當作查詢位置的初始化",
+        "內容查詢可學習：位置來自影像候選；內容使用可學表示"
+      ]
+    },
+    {
+      "title": "對比去噪：正負查詢的學習目標不同",
+      "question": "帶噪查詢是訓練輔助，正式推論不用真值。",
+      "look": "先看從真值產生帶噪查詢，再看近正樣本還原目標，最後核對負樣本學無物件。",
+      "relation": "正負帶噪查詢以不同噪聲范圍構建，正樣本學習還原對應GT框/類，負樣本學習無物件。噪聲示意不是實際采樣統計；不能將no-object目標解釋為原圖里真的沒有物件。",
+      "takeaway": "帶噪查詢是訓練輔助，正式推論不用真值。",
+      "terms": [
+        "從真值產生帶噪查詢：只在訓練建立此分支；此圖展開一個標註物件",
+        "近正樣本還原目標：學框與類別的還原；保留穩定的監督訊號"
+      ]
+    },
+    {
+      "title": "新增類別，不能只改顯示名稱",
+      "question": "按類別變更與資料成本選方法，不按模型新舊。",
+      "look": "先看原本固定類別，再看新類別與新場景，最後核對用錯誤與成本比較。",
+      "relation": "與YOLO-World開放詞匯路線相比，DINO固定類別通常需相應模型頭與監督訓練/微調。二者都需現場獨立數據驗證；改變標注或閾值也應重新量測錯誤與完整成本。",
+      "takeaway": "按類別變更與資料成本選方法，不按模型新舊。",
+      "terms": [
+        "原本固定類別：類別頭與訓練標註綁定；更名不會學會新外觀",
+        "新類別與新場景：準備標註與獨立核對集；評估微調與其他方法"
+      ]
+    }
+  ],
+  "comparison_headers": {
+    "title": "找同一批零件：類別從哪裡來？",
+    "basis": "所需資料與方法差異",
+    "output": "輸出與維護責任"
+  },
+  "transfer_check": {
+    "title": "固定類別還是經常換詞彙？",
+    "scenario": "A線只找三種固定零件且有完整框標註；B線每週新增零件名稱，但幾乎沒有目標場景標註。",
+    "question": "兩條線都應只因DINO的訓練設計而優先選它嗎？",
+    "answer": "A線可比較DINO與既有固定類別偵測器，用同資料看漏檢和完整成本；有現成標註讓微調較可行。B線可先用YOLO-World的文字詞彙測候選，但仍需建立獨立核對集；如果新零件外觀太相近或是細缺陷，提示詞未必足夠，可能仍需取像改善與標註微調。沒有目標資料時不能替任一方法承諾現場準確率。"
+  },
+  "review_trace": {
+    "authority": "roadmap-model-selection/detector/det-dino-detector/model.md",
+    "scope": "WI-032：六課主線及工程層圖文重建；既有ECC案例保留。頁內驗證與使用者核准另記。",
+    "claims": [
+      {
+        "id": "d01-visual-1",
+        "field": "beginner_path.visuals[d01-core]",
+        "source": "D01核心、反例與共同決策；https://arxiv.org/abs/2203.03605"
+      },
+      {
+        "id": "d01-visual-2",
+        "field": "beginner_path.visuals[d01-failure]",
+        "source": "D01核心、反例與共同決策；https://arxiv.org/abs/2203.03605"
+      },
+      {
+        "id": "d01-visual-3",
+        "field": "beginner_path.visuals[d01-compare-known]",
+        "source": "D01核心、反例與共同決策；https://arxiv.org/abs/2203.03605"
+      },
+      {
+        "id": "d01-visual-4",
+        "field": "beginner_path.visuals[d01-compare-prompt]",
+        "source": "D01核心、反例與共同決策；https://arxiv.org/abs/2203.03605"
+      },
+      {
+        "id": "d01-contract",
+        "field": "promise + mechanism_steps",
+        "source": "D01來源補正及工程輸出責任"
+      },
+      {
+        "id": "d01-transfer",
+        "field": "transfer_check",
+        "source": "D01資料、輸出與公平比較"
+      },
+      {
+        "id": "wi032-first-read",
+        "field": "beginner_path + core + selection + transfer",
+        "source": "https://arxiv.org/abs/2203.03605"
+      }
+    ]
+  },
+  "quality_status": {
+    "label": "本機重建、自評與驗證完成",
+    "state": "self_reviewed",
+    "round": "WI-032",
+    "reason": "逐圖及整頁自評、實頁操作與必要回歸已完成；使用者成品核准pending，未發布。"
+  },
+  "teaching_preflight": {
+    "brief": "teaching-images/vision-ai-model-selection/workitems/wi-032/dino-core-r01.md",
+    "mobile_brief": "teaching-images/vision-ai-model-selection/workitems/wi-032/dino-core-r01.md",
+    "story": "C",
+    "major_visual_nodes": 3,
+    "visual_status": "self-reviewed",
+    "user_review": "pending"
+  },
+  "engineering_slides": [
+    {
+      "title": "固定類別偵測：先把學習任務定清楚",
+      "question": "DINO detector是偵測器，不是DINOv2特徵骨幹。",
+      "plain": {
+        "look": "先看逐件框與類別，再看查詢更新框與類別，最後核對交付候選物件。",
+        "relation": "本課討論DINO DETR系檢測器。模型交付物件框、類別與分數，而像素分割、毫米尺寸及業務計數規則需其他流程；訓練/驗證分組應避免同工件或連續影像泄漏。",
+        "takeaway": "DINO detector是偵測器，不是DINOv2特徵骨幹。"
+      },
+      "terms": [
+        "逐件框與類別：訓練資料需要物件標註；依工件／批次隔離資料",
+        "查詢更新框與類別：影像特徵參與decoder；訓練後推論不使用真值"
+      ],
+      "guide": [
+        "本課討論DINO DETR系檢測器。模型交付物件框、類別與分數，而像素分割、毫米尺寸及業務計數規則需其他流程；訓練/驗證分組應避免同工件或連續影像泄漏。",
+        "讀圖：逐件框與類別 → 查詢更新框與類別 → 交付候選物件"
+      ],
+      "stages": [
+        {
+          "title": "逐件框與類別",
+          "body": "訓練資料需要物件標註；依工件／批次隔離資料"
+        },
+        {
+          "title": "查詢更新框與類別",
+          "body": "影像特徵參與decoder；訓練後推論不使用真值"
+        },
+        {
+          "title": "交付候選物件",
+          "body": "邊界框＋類別＋分數；計數與品質判定另核對"
+        }
+      ],
+      "misconception": "示意只解釋本步驟，不可當作模型實測或省略後續核對。",
+      "alt": "固定類別偵測：先把學習任務定清楚。DINO detector是偵測器，不是DINOv2特徵骨幹。 教學示意，非本輪模型實測。",
+      "mobile_image": "roadmap-model-selection/detector/det-dino-detector/images/final/WI032-DINO-DET-01-r04-mobile.png",
+      "mobile_width": 768,
+      "mobile_height": 2770,
+      "engineering": {
+        "takeaway": "DINO detector是偵測器，不是DINOv2特徵骨幹。",
+        "nextAction": "定義螺栓／墊圈等類別和每件框標註，依實體工件與拍攝批次隔離訓練／驗證／測試；選明確DINO版本與預訓練checkpoint，再評估是否微調。",
+        "redLine": "遮擋、小目標或不同取像造成漏檢時，先檢查原圖可觀測性、標註與訓練／驗證分布，再比較改取像、補樣本或微調；未經核對的框不直接當數量或良率真值。"
+      },
+      "source": "https://arxiv.org/abs/2203.03605"
+    },
+    {
+      "title": "Mixed query selection：位置與內容分開來",
+      "question": "推論起點來自影像，不是人工真值框。",
+      "plain": {
+        "look": "先看影像提供候選位置，再看內容查詢可學習，最後核對decoder逐層更新。",
+        "relation": "DINO mixed query selection以encoder候選提供位置初始化，同時使用可學習內容queries。decoder進一步精修框與類別；與訓練專用的GT noisy queries區分，不能把二者畫在同一推論路徑。",
+        "takeaway": "推論起點來自影像，不是人工真值框。"
+      },
+      "terms": [
+        "影像提供候選位置：由影像特徵選候選框；當作查詢位置的初始化",
+        "內容查詢可學習：位置來自影像候選；內容使用可學表示"
+      ],
+      "guide": [
+        "DINO mixed query selection以encoder候選提供位置初始化，同時使用可學習內容queries。decoder進一步精修框與類別；與訓練專用的GT noisy queries區分，不能把二者畫在同一推論路徑。",
+        "讀圖：影像提供候選位置 → 內容查詢可學習 → decoder逐層更新"
+      ],
+      "stages": [
+        {
+          "title": "影像提供候選位置",
+          "body": "由影像特徵選候選框；當作查詢位置的初始化"
+        },
+        {
+          "title": "內容查詢可學習",
+          "body": "位置來自影像候選；內容使用可學表示"
+        },
+        {
+          "title": "decoder逐層更新",
+          "body": "位置與內容共同參與；逐步估類別與框"
+        }
+      ],
+      "misconception": "示意只解釋本步驟，不可當作模型實測或省略後續核對。",
+      "alt": "Mixed query selection：位置與內容分開來。推論起點來自影像，不是人工真值框。 教學示意，非本輪模型實測。",
+      "mobile_image": "roadmap-model-selection/detector/det-dino-detector/images/final/WI032-DINO-DET-02-r04-mobile.png",
+      "mobile_width": 768,
+      "mobile_height": 2770,
+      "engineering": {
+        "takeaway": "推論起點來自影像，不是人工真值框。",
+        "nextAction": "定義螺栓／墊圈等類別和每件框標註，依實體工件與拍攝批次隔離訓練／驗證／測試；選明確DINO版本與預訓練checkpoint，再評估是否微調。",
+        "redLine": "遮擋、小目標或不同取像造成漏檢時，先檢查原圖可觀測性、標註與訓練／驗證分布，再比較改取像、補樣本或微調；未經核對的框不直接當數量或良率真值。"
+      },
+      "source": "https://arxiv.org/abs/2203.03605"
+    },
+    {
+      "title": "對比去噪：正負查詢的學習目標不同",
+      "question": "帶噪查詢是訓練輔助，正式推論不用真值。",
+      "plain": {
+        "look": "先看從真值產生帶噪查詢，再看近正樣本還原目標，最後核對負樣本學無物件。",
+        "relation": "正負帶噪查詢以不同噪聲范圍構建，正樣本學習還原對應GT框/類，負樣本學習無物件。噪聲示意不是實際采樣統計；不能將no-object目標解釋為原圖里真的沒有物件。",
+        "takeaway": "帶噪查詢是訓練輔助，正式推論不用真值。"
+      },
+      "terms": [
+        "從真值產生帶噪查詢：只在訓練建立此分支；此圖展開一個標註物件",
+        "近正樣本還原目標：學框與類別的還原；保留穩定的監督訊號"
+      ],
+      "guide": [
+        "正負帶噪查詢以不同噪聲范圍構建，正樣本學習還原對應GT框/類，負樣本學習無物件。噪聲示意不是實際采樣統計；不能將no-object目標解釋為原圖里真的沒有物件。",
+        "讀圖：從真值產生帶噪查詢 → 近正樣本還原目標 → 負樣本學無物件"
+      ],
+      "stages": [
+        {
+          "title": "從真值產生帶噪查詢",
+          "body": "只在訓練建立此分支；此圖展開一個標註物件"
+        },
+        {
+          "title": "近正樣本還原目標",
+          "body": "學框與類別的還原；保留穩定的監督訊號"
+        },
+        {
+          "title": "負樣本學無物件",
+          "body": "偏離的查詢學背景目標；不是把影像物件刪除"
+        }
+      ],
+      "misconception": "示意只解釋本步驟，不可當作模型實測或省略後續核對。",
+      "alt": "對比去噪：正負查詢的學習目標不同。帶噪查詢是訓練輔助，正式推論不用真值。 教學示意，非本輪模型實測。",
+      "mobile_image": "roadmap-model-selection/detector/det-dino-detector/images/final/WI032-DINO-DET-03-r04-mobile.png",
+      "mobile_width": 768,
+      "mobile_height": 2770,
+      "engineering": {
+        "takeaway": "帶噪查詢是訓練輔助，正式推論不用真值。",
+        "nextAction": "定義螺栓／墊圈等類別和每件框標註，依實體工件與拍攝批次隔離訓練／驗證／測試；選明確DINO版本與預訓練checkpoint，再評估是否微調。",
+        "redLine": "遮擋、小目標或不同取像造成漏檢時，先檢查原圖可觀測性、標註與訓練／驗證分布，再比較改取像、補樣本或微調；未經核對的框不直接當數量或良率真值。"
+      },
+      "source": "https://arxiv.org/abs/2203.03605",
+      "label": "訓練時如何學會區分"
+    },
+    {
+      "title": "新增類別，不能只改顯示名稱",
+      "question": "按類別變更與資料成本選方法，不按模型新舊。",
+      "plain": {
+        "look": "先看原本固定類別，再看新類別與新場景，最後核對用錯誤與成本比較。",
+        "relation": "與YOLO-World開放詞匯路線相比，DINO固定類別通常需相應模型頭與監督訓練/微調。二者都需現場獨立數據驗證；改變標注或閾值也應重新量測錯誤與完整成本。",
+        "takeaway": "按類別變更與資料成本選方法，不按模型新舊。"
+      },
+      "terms": [
+        "原本固定類別：類別頭與訓練標註綁定；更名不會學會新外觀",
+        "新類別與新場景：準備標註與獨立核對集；評估微調與其他方法"
+      ],
+      "guide": [
+        "與YOLO-World開放詞匯路線相比，DINO固定類別通常需相應模型頭與監督訓練/微調。二者都需現場獨立數據驗證；改變標注或閾值也應重新量測錯誤與完整成本。",
+        "讀圖：原本固定類別 → 新類別與新場景 → 用錯誤與成本比較"
+      ],
+      "stages": [
+        {
+          "title": "原本固定類別",
+          "body": "類別頭與訓練標註綁定；更名不會學會新外觀"
+        },
+        {
+          "title": "新類別與新場景",
+          "body": "準備標註與獨立核對集；評估微調與其他方法"
+        },
+        {
+          "title": "用錯誤與成本比較",
+          "body": "查漏檢、錯類、重複框；包含訓練與覆核成本"
+        }
+      ],
+      "misconception": "同一料盤的墊圈被夾具遮住後，模型仍可能漏檢。帶噪框訓練不等於已涵蓋所有遮擋情況；圖中是假設漏檢示意，要回到逐件標註核對，而不是只看找到的框。",
+      "alt": "新增類別，不能只改顯示名稱。按類別變更與資料成本選方法，不按模型新舊。 教學示意，非本輪模型實測。",
+      "mobile_image": "roadmap-model-selection/detector/det-dino-detector/images/final/WI032-DINO-DET-04-r04-mobile.png",
+      "mobile_width": 768,
+      "mobile_height": 2770,
+      "engineering": {
+        "takeaway": "按類別變更與資料成本選方法，不按模型新舊。",
+        "nextAction": "定義螺栓／墊圈等類別和每件框標註，依實體工件與拍攝批次隔離訓練／驗證／測試；選明確DINO版本與預訓練checkpoint，再評估是否微調。",
+        "redLine": "遮擋、小目標或不同取像造成漏檢時，先檢查原圖可觀測性、標註與訓練／驗證分布，再比較改取像、補樣本或微調；未經核對的框不直接當數量或良率真值。"
+      },
+      "source": "https://arxiv.org/abs/2203.03605"
+    }
+  ],
+  "takeaway": "類別固定且能準備框標註時，可比較 DINO；以現場漏檢、定位與完整成本決定是否採用。"
+}

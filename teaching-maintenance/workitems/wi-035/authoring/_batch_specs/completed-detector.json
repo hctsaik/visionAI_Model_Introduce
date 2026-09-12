@@ -1,0 +1,152 @@
+[
+  {
+    "slug": "det-grounding-dino-interface",
+    "relative_dir": "detector/det-grounding-dino-interface",
+    "model": "Grounding DINO",
+    "family": "detector",
+    "case_tag": "CASE D · Open-set AOI",
+    "family_tag": "Candidate Detector",
+    "identity": {
+      "title": "Grounding DINO：文字找 candidate ROI，不是缺陷證據",
+      "context": "固定 AOI、phrase 與 prompt version；box 只送後續專業確認。",
+      "bubble": "文字框為什麼不能直接放行？",
+      "cards": [
+        {"title": "AOI + phrase", "body": "raw AOI image\n探索詞彙／ROI", "visual": "input"},
+        {"title": "Text-image 對齊", "body": "phrase tokens\n導引 query 選擇", "visual": "dual"},
+        {"title": "Candidate boxes", "body": "phrase-conditioned\nbox + score", "visual": "feature"},
+        {"title": "確認 gate", "body": "inverse ROI\n交 detector／人工", "visual": "gate"}
+      ],
+      "flow": "AOI + phrase → grounding queries → candidate boxes → specialist review",
+      "takeaway": "Phrase box 是探索候選，不能當 defect truth 或 release。"
+    },
+    "architecture": {
+      "title": "Grounding DINO：phrase tokens 改變 query 與 box score space",
+      "context": "image features 與文字 tokens 經 enhancer、guided query、decoder 形成候選框。",
+      "bubble": "文字 token 怎麼改變要找的 ROI？",
+      "cards": [
+        {"title": "Image features", "body": "AOI backbone\n多尺度 feature", "visual": "input"},
+        {"title": "Phrase tokens", "body": "template／tokenizer\n文字表示固定", "visual": "dual"},
+        {"title": "Guided queries", "body": "feature enhancer\nlanguage-guided select", "visual": "feature"},
+        {"title": "Box + inverse ROI", "body": "cross-modal decoder\n映回 raw coordinates", "visual": "score"}
+      ],
+      "flow": "image features + text tokens → guided queries → decoder → box / inverse ROI",
+      "takeaway": "Phrase 改變候選 score space；box 仍只是 specialist 的 ROI。"
+    },
+    "build": {
+      "title": "Grounding DINO：prompt 到 inverse ROI 的 inference contract",
+      "context": "詞彙、tokenization、threshold、NMS 與座標轉換都必須可重播。",
+      "bubble": "哪個版本漂移會讓 box 失去可比性？",
+      "cards": [
+        {"title": "Prompt bundle", "body": "詞彙／同義詞\ntemplate version", "visual": "input"},
+        {"title": "Preprocess lock", "body": "image + text recipe\ntokenization 固定", "visual": "contract"},
+        {"title": "Postprocess", "body": "phrase threshold\nNMS + inverse map", "visual": "score"},
+        {"title": "Review metrics", "body": "grounding recall\nsensitivity／P95", "visual": "gate"}
+      ],
+      "flow": "prompt bundle → fixed inference → threshold / inverse map → confirmation gate",
+      "takeaway": "可回查 prompt 與座標 contract，才可比較 candidate 品質。"
+    },
+    "failure": "phrase 含義、詞彙與 tiny object 都可能造成錯框。把 phrase box 直接 release，會跳過 defect evidence。",
+    "selection": "適合作為長尾名詞探索。固定 vocabulary、ROI、pixels 後，比 grounding recall、prompt sensitivity、P95 與確認率。",
+    "takeaway": "只讓 Grounding DINO 擴大候選召回；defect 與 release 交 specialist。"
+  },
+  {
+    "slug": "yolo-world",
+    "relative_dir": "detector/yolo-world",
+    "model": "YOLO-World",
+    "family": "detector",
+    "case_tag": "CASE D · Open-set AOI",
+    "family_tag": "Candidate Detector",
+    "identity": {
+      "title": "YOLO-World：dense open-vocabulary box 是候選，不是 defect proof",
+      "context": "文字 embedding 與 YOLO-like features 產生密集候選；零樣本 score 不可直接放行。",
+      "bubble": "快的 dense score 能直接判 defect 嗎？",
+      "cards": [
+        {"title": "AOI + vocabulary", "body": "raw image／ROI\n詞彙＋負向詞", "visual": "input"},
+        {"title": "Embedding cache", "body": "prompt ensemble\ntext cache version", "visual": "dual"},
+        {"title": "Dense fusion", "body": "multi-scale feature\nopen-vocab scores", "visual": "feature"},
+        {"title": "NMS + review", "body": "candidate boxes\n交 specialist gate", "visual": "gate"}
+      ],
+      "flow": "image + vocabulary → text cache → dense fusion → NMS / specialist",
+      "takeaway": "Dense score 是 prompt-conditioned candidate，不是校準後的 defect probability。"
+    },
+    "architecture": {
+      "title": "YOLO-World：prompt embedding 進入 dense score 的對齊路徑",
+      "context": "文字 embedding 與多尺度影像特徵對齊，對每個 location 產生 open-vocabulary score。",
+      "bubble": "文字怎麼影響每個 dense location？",
+      "cards": [
+        {"title": "Multi-scale image", "body": "AOI backbone\nfeature pyramid", "visual": "input"},
+        {"title": "Text embeddings", "body": "prompt ensemble\nnormalize + cache", "visual": "dual"},
+        {"title": "V-L alignment", "body": "vision-language fusion\ndense locations", "visual": "feature"},
+        {"title": "Decode / NMS", "body": "prompt scores\nboxes → ROI", "visual": "score"}
+      ],
+      "flow": "features + embeddings → alignment/fusion → dense scores → decode / NMS",
+      "takeaway": "Vocabulary 決定 score space；固定後才可比較候選召回與穩定度。"
+    },
+    "build": {
+      "title": "YOLO-World：vocabulary、cache、calibration 的部署 contract",
+      "context": "embedding、forward、postprocess 分開量測，並鎖 prompt、normalization、NMS 與 export。",
+      "bubble": "哪個 cache 或詞彙變更會改變 score？",
+      "cards": [
+        {"title": "Vocabulary policy", "body": "synonym／negative\n詞彙版本固定", "visual": "input"},
+        {"title": "Embedding state", "body": "cache checksum\ntext normalize", "visual": "contract"},
+        {"title": "Dense contract", "body": "calibration／NMS\nROI transform", "visual": "score"},
+        {"title": "Evidence gate", "body": "recall／stability\nP95 + confirmation", "visual": "gate"}
+      ],
+      "flow": "vocabulary → embedding cache → fixed dense inference → calibration / review",
+      "takeaway": "只採用可回查的 prompt-to-ROI workflow；不要把 zero-shot score 當良率。"
+    },
+    "failure": "詞彙偏差、相近語意、tiny ROI、domain shift 與 calibration 都會扭曲 dense score。",
+    "selection": "適合快速探索長尾候選。與其他 open-set detector 比較時固定 vocabulary、ROI、pixels、hardware、threshold 與 owner action。",
+    "takeaway": "先比 candidate recall、prompt stability、P95；最終 defect decision 仍由 specialist。"
+  },
+  {
+    "slug": "yoloe",
+    "relative_dir": "detector/yoloe",
+    "model": "YOLOE",
+    "family": "detector",
+    "case_tag": "CASE D · Promptable AOI",
+    "family_tag": "Candidate Detector",
+    "identity": {
+      "title": "YOLOE：text／visual prompt 只產生 candidate box 或 mask",
+      "context": "必須鎖 prompt source 與 detection／segmentation mode；候選仍交專業確認。",
+      "bubble": "prompt 產生的 mask 是 defect truth 嗎？",
+      "cards": [
+        {"title": "AOI + prompt", "body": "text 或 exemplar\n指定 head mode", "visual": "input"},
+        {"title": "Prompt 表示", "body": "text tokens\nvisual embedding", "visual": "dual"},
+        {"title": "Prompt-aware head", "body": "mode-specific\nboxes／masks／scores", "visual": "feature"},
+        {"title": "Confirm gate", "body": "candidate ROI\n交 specialist review", "visual": "gate"}
+      ],
+      "flow": "image + text/visual prompt → aware head → box / mask → specialist review",
+      "takeaway": "Candidate 的粒度可不同，但都不能取代製程證據或 release。"
+    },
+    "architecture": {
+      "title": "YOLOE：可變 prompt representation 決定 prompt-aware 輸出",
+      "context": "text token 或 visual exemplar 與 image features 匯入同一 prompt-aware head。",
+      "bubble": "同一 AOI 為何會有 box 與 mask 兩種輸出？",
+      "cards": [
+        {"title": "Image features", "body": "AOI feature map\n固定 preprocess", "visual": "input"},
+        {"title": "Text / visual", "body": "token 或 exemplar\nprompt source lock", "visual": "dual"},
+        {"title": "Aware head", "body": "prompt-conditioned\ndetect／segment mode", "visual": "feature"},
+        {"title": "Separate outputs", "body": "box／mask／score\ninverse ROI", "visual": "score"}
+      ],
+      "flow": "features + prompt representation → aware head → mode-specific outputs → ROI",
+      "takeaway": "Box、mask、score 是不同輸出；要分開驗證，不能混成單一性能。"
+    },
+    "build": {
+      "title": "YOLOE：prompt source、mode、postprocess 的 inference contract",
+      "context": "文字模板、visual exemplar、head mode、threshold、NMS／mask postprocess 都要版本化。",
+      "bubble": "哪一個 prompt 或 mode 改動會讓結果不可比？",
+      "cards": [
+        {"title": "Prompt source", "body": "text template\nexemplar IDs", "visual": "input"},
+        {"title": "Mode contract", "body": "detect／segment\nhead version lock", "visual": "contract"},
+        {"title": "Postprocess", "body": "threshold／NMS\nmask rule + inverse", "visual": "score"},
+        {"title": "Mode-wise gate", "body": "text／visual recall\nmask consistency／P95", "visual": "gate"}
+      ],
+      "flow": "prompt source → fixed mode / preprocess → postprocess → mode-wise review",
+      "takeaway": "先驗每個 prompt mode 的可靠度，再決定 candidate workflow 的 owner。"
+    },
+    "failure": "prompt drift、exemplar bias、small object、mask inconsistency 與 mode mismatch 都會讓 candidate 誤導決策。",
+    "selection": "適合探索 text／visual prompt 介面。比較時固定 vocabulary、exemplar、ROI、pixels、mode 與 owner action。",
+    "takeaway": "Promptable output 可幫助找 ROI；最終 defect／release 仍需 specialist evidence。"
+  }
+]

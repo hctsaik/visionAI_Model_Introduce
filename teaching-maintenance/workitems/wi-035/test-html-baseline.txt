@@ -1,0 +1,7 @@
+Traceback (most recent call last):
+  File "C:\code\claude\visionAI\teaching-images\vision-ai-model-selection\tools\verify_interactive_learning_html.py", line 558, in <module>
+    validate(target)
+    ~~~~~~~~^^^^^^^^
+  File "C:\code\claude\visionAI\teaching-images\vision-ai-model-selection\tools\verify_interactive_learning_html.py", line 237, in validate
+    raise ValueError(f"{topic_id}: incomplete model-specific teaching story")
+ValueError: charuco: incomplete model-specific teaching story

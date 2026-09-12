@@ -1,0 +1,210 @@
+[
+  {
+    "slug": "ad-patchcore",
+    "relative_dir": "roadmap-model-selection/anomaly-detection/ad-patchcore",
+    "model": "PatchCore",
+    "asset_prefix": "PATCHCORE",
+    "family": "anomaly",
+    "case_tag": "CASE B · Surface AOI",
+    "family_tag": "Anomaly Detection",
+    "identity": {
+      "title": "PatchCore：最近 normal patch 的距離，只是 anomaly evidence",
+      "context": "以 clean nominal patch memory 為基準；距離圖必須回到 ROI、support 與決策契約解讀。",
+      "bubble": "最近鄰距離\n能直接放行嗎？",
+      "cards": [
+        {"title": "clean normal ROI", "body": "clean support\n aligned tile", "visual": "input"},
+        {"title": "frozen features", "body": "multi-layer patch\n embedding", "visual": "feature"},
+        {"title": "coreset memory", "body": "representative bank\nsearch index", "visual": "dual"},
+        {"title": "distance review", "body": "novelty map\n→ evidence gate", "visual": "gate"}
+      ],
+      "flow": "clean ROI → patch features → coreset/index → nearest-neighbour evidence",
+      "takeaway": "PatchCore 找的是陌生 normal patch；它不輸出 defect probability。"
+    },
+    "architecture": {
+      "title": "PatchCore：normal patch bank 如何形成 novelty map？",
+      "context": "nominal ROI 經 frozen backbone 建 bank；test patch 對最近 exemplar 的距離形成版本化 heatmap。",
+      "bubble": "哪一個 patch\n被當作 normal？",
+      "cards": [
+        {"title": "aligned ROI", "body": "ROI / tile / mask\nfixed recipe", "visual": "input"},
+        {"title": "patch features", "body": "backbone layers\nalign + project", "visual": "feature"},
+        {"title": "bank + index", "body": "coreset ratio\nmetric + search K", "visual": "dual"},
+        {"title": "novelty map", "body": "NN distance\naggregate + threshold", "visual": "score"}
+      ],
+      "flow": "nominal patches → coreset memory → test NN distance → map / image score",
+      "takeaway": "patch grid 經 upsample 後仍是 feature-space evidence，不是原生 pixel mask。"
+    },
+    "build": {
+      "title": "PatchCore：bank、索引與 operating point 必須一起鎖定",
+      "context": "support 的清潔度與 coverage、memory recipe、search 路徑及低-FPR驗證共同決定可用性。",
+      "bubble": "這個 bank\n可否被重播？",
+      "cards": [
+        {"title": "support audit", "body": "IDs + coverage\ncontamination check", "visual": "input"},
+        {"title": "bank recipe", "body": "checkpoint + layers\ncoreset seed", "visual": "contract"},
+        {"title": "search contract", "body": "ANN / exact\nRAM + P95", "visual": "score"},
+        {"title": "release evidence", "body": "escape + review\ndrift rebuild", "visual": "gate"}
+      ],
+      "flow": "audit support → build indexed bank → calibrate score → low-FPR gate",
+      "takeaway": "只有可重播的 normal bank，才能讓距離與 threshold 有工程意義。"
+    },
+    "failure": "support 不足或受污染、ROI/registration 漂移、tiny defect 小於 patch，及 coreset/ANN 近似都會改寫距離。",
+    "selection": "固定 support split、ROI、encoder、index、aggregation 與 threshold；比較 low-FPR escape、P95、RAM 與 review load。",
+    "takeaway": "PatchCore 是 normal exemplar 距離模型；heatmap 不是 defect probability。",
+    "selection_takeaway": "選 PatchCore 的證據是 support coverage、index 成本與低-FPR evidence，而非公開 AUROC。"
+  },
+  {
+    "slug": "ad-padim",
+    "relative_dir": "roadmap-model-selection/anomaly-detection/ad-padim",
+    "model": "PaDiM",
+    "asset_prefix": "PADIM",
+    "family": "anomaly",
+    "case_tag": "CASE B · Surface AOI",
+    "family_tag": "Anomaly Detection",
+    "identity": {
+      "title": "PaDiM：每個位置的 normal Gaussian，不是 exemplar bank",
+      "context": "PaDiM 在對齊 feature grid 的每個位置保存 μ／Σ；Mahalanobis distance 只是在固定位置契約下的 evidence。",
+      "bubble": "位置對齊失真\n還能解讀分數嗎？",
+      "cards": [
+        {"title": "aligned normal ROI", "body": "same position\nclean support", "visual": "input"},
+        {"title": "multi-layer feature", "body": "CNN feature grid\nalign + concat", "visual": "feature"},
+        {"title": "μ / Σ state", "body": "per-position\nGaussian normality", "visual": "dual"},
+        {"title": "distance review", "body": "Mahalanobis map\n→ evidence gate", "visual": "gate"}
+      ],
+      "flow": "aligned support → position Gaussian state → test distance → review evidence",
+      "takeaway": "PaDiM 的分數依賴位置對齊與 covariance，不是通用 defect probability。"
+    },
+    "architecture": {
+      "title": "PaDiM：per-position Gaussian 如何形成 Mahalanobis map？",
+      "context": "同一對齊位置的 normal embedding 建 μ／Σ；test embedding 與該位置 state 的距離形成 anomaly map。",
+      "bubble": "同一位置的\nnormal 是誰？",
+      "cards": [
+        {"title": "ROI alignment", "body": "ROI / registration\nmask fixed", "visual": "input"},
+        {"title": "position embedding", "body": "selected layers\ndimension subset", "visual": "feature"},
+        {"title": "Gaussian state", "body": "μp + regularized Σp\ncondition check", "visual": "dual"},
+        {"title": "score map", "body": "same-position dM\nsmooth + aggregate", "visual": "score"}
+      ],
+      "flow": "aligned normal features → μp/Σp → same-position distance → image score",
+      "takeaway": "每位置 Gaussian 是 compact state；維度、support 與 regularization 必須完整版本化。"
+    },
+    "build": {
+      "title": "PaDiM：對齊、covariance 與 state 必須一同版本化",
+      "context": "misregistration、support 數量與 covariance conditioning 會直接改變 anomaly map 和放行風險。",
+      "bubble": "Σ 的狀態\n穩定嗎？",
+      "cards": [
+        {"title": "support + alignment", "body": "clean IDs\nregistration audit", "visual": "input"},
+        {"title": "dimension recipe", "body": "layers + projection\nseed fixed", "visual": "contract"},
+        {"title": "covariance audit", "body": "estimator + λ\ncondition number", "visual": "score"},
+        {"title": "release evidence", "body": "low-FPR + P95\ndrift rebuild", "visual": "gate"}
+      ],
+      "flow": "audit alignment → estimate μ/Σ → calibrate map → low-FPR gate",
+      "takeaway": "PaDiM 能省下 exemplar search，但不能省略 alignment 與 conditioning 的治理。"
+    },
+    "failure": "misregistration、multimodal normal、support 太少或 covariance 病態會讓同位置距離失真；tiny defect 與 drift 也會改分數。",
+    "selection": "固定 support、ROI、feature、state budget、aggregation 與 threshold；比較 escape、review load、P95、state size 與 conditioning。",
+    "takeaway": "PaDiM 適合高度對齊、可由局部 Gaussian 近似的 normality，不適合把位置漂移當缺陷。",
+    "selection_takeaway": "選 PaDiM 的證據是對齊穩定度、covariance health 與低-FPR，並非單張 map 漂亮。"
+  },
+  {
+    "slug": "ad-anomalydino",
+    "relative_dir": "roadmap-model-selection/anomaly-detection/ad-anomalydino",
+    "model": "AnomalyDINO",
+    "asset_prefix": "ANOMALYDINO",
+    "family": "anomaly",
+    "case_tag": "CASE B · Surface AOI",
+    "family_tag": "Anomaly Detection",
+    "identity": {
+      "title": "AnomalyDINO：少量 normal token 的距離，只是候選 evidence",
+      "context": "one/few clean support 經 DINOv2 形成 token memory；cosine distance 受 support、mask、rotation 與 token grid 限制。",
+      "bubble": "one/few support\n夠代表正常嗎？",
+      "cards": [
+        {"title": "support gallery", "body": "one/few clean ROI\nIDs + rotation", "visual": "input"},
+        {"title": "DINOv2 tokens", "body": "frozen checkpoint\npatch-token grid", "visual": "feature"},
+        {"title": "token memory", "body": "valid nominal token\ncosine NN", "visual": "dual"},
+        {"title": "candidate map", "body": "tail aggregation\n→ review gate", "visual": "gate"}
+      ],
+      "flow": "support gallery → DINOv2 tokens → cosine nearest neighbour → candidate evidence",
+      "takeaway": "AnomalyDINO 是 training-free token novelty，不是 DINO detector 或 native segmentation。"
+    },
+    "architecture": {
+      "title": "AnomalyDINO：support token 如何形成 cosine novelty map？",
+      "context": "support 和 test ROI 必須共用 resize、mask、rotation 與 DINOv2 layer；query token 對 memory 的 cosine distance 形成 map。",
+      "bubble": "mask 與 rotation\n改了什麼？",
+      "cards": [
+        {"title": "shared preprocess", "body": "ROI / resize\nmask + rotation", "visual": "input"},
+        {"title": "DINOv2 grid", "body": "checkpoint + layer\nvalid tokens", "visual": "feature"},
+        {"title": "support search", "body": "shot selection\ncosine / index K", "visual": "dual"},
+        {"title": "novelty output", "body": "token map\ntail + threshold", "visual": "score"}
+      ],
+      "flow": "shared preprocessing → support/query tokens → cosine NN → tail image score",
+      "takeaway": "token-grid evidence 的有效解析度受 input、patch size、support 及後處理共同限制。"
+    },
+    "build": {
+      "title": "AnomalyDINO：shot、mask、rotation 與 tail aggregation 要鎖住",
+      "context": "少量 support 的選取變異、PCA mask 與 rotation semantics 都可能改變 normality 邊界。",
+      "bubble": "support 換一輪\n結果還一致嗎？",
+      "cards": [
+        {"title": "support audit", "body": "shot IDs\ncontamination check", "visual": "input"},
+        {"title": "encoder contract", "body": "DINOv2 layer\ngrid + normalize", "visual": "contract"},
+        {"title": "selection variance", "body": "mask / rotation\ntail statistic", "visual": "score"},
+        {"title": "release evidence", "body": "escape + P95\ndrift rebuild", "visual": "gate"}
+      ],
+      "flow": "audit support → lock token recipe → quantify variance → low-FPR gate",
+      "takeaway": "training-free 不表示免治理；one/few-shot 的 normality 必須可重播、可比較。"
+    },
+    "failure": "one/few support bias、contamination、mask/rotation 語意錯置、token grid 稀釋 tiny defect，以及 domain/ROI drift 都會改寫分數。",
+    "selection": "固定 support split、shot、ROI、token resolution、postprocess、hardware/index 與 threshold；比較 support variance、escape、P95 與 RAM。",
+    "takeaway": "AnomalyDINO 適合少量 normal 的快速探索；候選仍需回到低-FPR evidence route。",
+    "selection_takeaway": "選 AnomalyDINO 的證據是受控 support 下的穩定 novelty、低-FPR 與可治理的 mask/rotation。"
+  },
+  {
+    "slug": "ad-rd4ad",
+    "relative_dir": "roadmap-model-selection/anomaly-detection/ad-rd4ad",
+    "model": "RD4AD",
+    "asset_prefix": "RD4AD",
+    "family": "anomaly",
+    "case_tag": "CASE B · Surface AOI",
+    "family_tag": "Anomaly Detection",
+    "identity": {
+      "title": "RD4AD：reverse distillation 的 feature discrepancy，不是 pixel repair",
+      "context": "frozen teacher feature 由 one-class bottleneck 和 reverse decoder 重建；對應 feature 的 cosine discrepancy 才是 anomaly evidence。",
+      "bubble": "重建 feature\n就代表 defect 嗎？",
+      "cards": [
+        {"title": "clean normal ROI", "body": "normal-fit split\ntransform locked", "visual": "input"},
+        {"title": "frozen teacher", "body": "multi-scale feature\nteacher audit", "visual": "feature"},
+        {"title": "reverse decoder", "body": "bottleneck → decoder\nreconstruct feature", "visual": "dual"},
+        {"title": "discrepancy gate", "body": "cosine map\n→ evidence review", "visual": "gate"}
+      ],
+      "flow": "normal ROI → frozen teacher → reverse reconstruction → cosine evidence",
+      "takeaway": "RD4AD 重建的是 teacher feature，不是可直接判斷的 defect image。"
+    },
+    "architecture": {
+      "title": "RD4AD：teacher feature 如何逆向重建並形成 map？",
+      "context": "frozen encoder 的多尺度 feature 經 bottleneck 與 reverse decoder 重建；同層 cosine discrepancy 經 resize、fusion 與 aggregation 形成 score。",
+      "bubble": "哪一層 feature\n沒被重建好？",
+      "cards": [
+        {"title": "teacher pyramid", "body": "fixed encoder\nselected levels", "visual": "input"},
+        {"title": "one-class embed", "body": "compact bottleneck\nnormal structure", "visual": "feature"},
+        {"title": "reverse decode", "body": "reconstruct levels\ncosine loss", "visual": "dual"},
+        {"title": "fused map", "body": "resize + addition\nmax + threshold", "visual": "score"}
+      ],
+      "flow": "teacher feature pyramid → bottleneck / reverse decoder → level discrepancy → fused score",
+      "takeaway": "feature loss、fusion、smoothing 與 max aggregation 都是 RD4AD 的版本化決策路徑。"
+    },
+    "build": {
+      "title": "RD4AD：teacher、normal fit、fusion 與 P95 必須一起治理",
+      "context": "teacher domain fit、normal coverage、bottleneck 容量及 postprocess 共同決定是否壓掉缺陷或誤拒正常。",
+      "bubble": "decoder 太強\n會重建 defect 嗎？",
+      "cards": [
+        {"title": "normal-fit audit", "body": "IDs + coverage\ncontamination check", "visual": "input"},
+        {"title": "teacher lock", "body": "checkpoint + levels\nfrozen-state audit", "visual": "contract"},
+        {"title": "fit + fusion", "body": "loss + seed\nsmooth + max", "visual": "score"},
+        {"title": "release evidence", "body": "escape + P95\ndrift rebuild", "visual": "gate"}
+      ],
+      "flow": "audit normal fit → train reverse path → lock score recipe → low-FPR gate",
+      "takeaway": "reverse reconstruction 需同時驗證 compression、overgeneralization、domain fit 與 end-to-end latency。"
+    },
+    "failure": "support contamination、teacher domain mismatch、過窄 bottleneck、過強 decoder、tiny defect、registration drift 與 smoothing 都可能扭曲 discrepancy。",
+    "selection": "固定 normal split、teacher/layers、ROI、feature fusion、hardware 與 threshold；比較 escape、review load、training/P95、memory 及 drift。",
+    "takeaway": "RD4AD 適合 clean normal 與合適 teacher 的 feature-reconstruction；它不是 pixel autoencoder 或 defect classifier。",
+    "selection_takeaway": "選 RD4AD 的證據是 teacher-domain fit、受控 reconstruction gap 與低-FPR runtime evidence。"
+  }
+]

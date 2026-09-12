@@ -1,0 +1,99 @@
+POC 選型畫布 · 三步完成
+
+把想法變成
+可驗收的 POC。
+
+不用一次填完七個工程名詞。照三步走：先說現場問題，再寫比較方法，最後寫遇到風險時誰接手。內容只儲存在這台裝置的瀏覽器。
+
+⚑
+寫完後，你要能回答：
+模型先交出什麼？憑什麼可信？什麼情況要停下來？誰會接手？
+帶入晶圓 AOI 範例
+1
+先說現場要解什麼
+
+不要先選模型；先說清楚要幫誰看什麼，以及模型只能交出什麼。
+
+現場問題
+模型先交出什麼？
+2
+再寫怎麼公平比較
+
+固定同一段畫面、同一批資料與同一套驗收方式，才知道模型是否真的有幫助。
+
+你有什麼資料？畫面是否可靠？
+先選一個模型當起點
+尚未選擇
+ChArUco · 幾何、校正與對位
+ECC · 幾何、校正與對位
+SIFT · 幾何、校正與對位
+LightGlue · 幾何、校正與對位
+ResNet · 已知目標：分類、分割與姿態
+ConvNeXt · 已知目標：分類、分割與姿態
+ViT · 已知目標：分類、分割與姿態
+U-Net · 已知目標：分類、分割與姿態
+SegFormer · 已知目標：分類、分割與姿態
+YOLO-Seg · 已知目標：分類、分割與姿態
+Keypoint R-CNN · 已知目標：分類、分割與姿態
+Pose Pipeline · 已知目標：分類、分割與姿態
+YOLO dense detector · 物件偵測與開放詞彙候選
+RT-DETR · 物件偵測與開放詞彙候選
+DINO detector · 物件偵測與開放詞彙候選
+Grounding DINO · 物件偵測與開放詞彙候選
+YOLO-World · 物件偵測與開放詞彙候選
+YOLOE · 物件偵測與開放詞彙候選
+PatchCore · 異常檢測：正常性建模
+PaDiM · 異常檢測：正常性建模
+AnomalyDINO · 異常檢測：正常性建模
+SubspaceAD · 異常檢測：正常性建模
+STFPM · 異常檢測：正常性建模
+RD4AD · 異常檢測：正常性建模
+EfficientAD · 異常檢測：正常性建模
+Autoencoder (AE) · 異常檢測：正常性建模
+DRAEM · 異常檢測：正常性建模
+UniAD · 異常檢測：正常性建模
+Dinomaly · 異常檢測：正常性建模
+InvAD · 異常檢測：正常性建模
+DiffusionAD · 異常檢測：正常性建模
+DDAD · 異常檢測：正常性建模
+WinCLIP · 異常檢測：正常性建模
+AnomalyCLIP · 異常檢測：正常性建模
+AnomalyGPT · 異常檢測：正常性建模
+Frame Difference · 時間序列、運動與影片理解
+Background Subtraction · 時間序列、運動與影片理解
+Lucas–Kanade · 時間序列、運動與影片理解
+RAFT · 時間序列、運動與影片理解
+ByteTrack · 時間序列、運動與影片理解
+ConvLSTM · 時間序列、運動與影片理解
+VideoMAE · 時間序列、運動與影片理解
+V-JEPA · 時間序列、運動與影片理解
+DINOv2 · Foundation Vision、語意檢索與 VLM
+DINOv3 · Foundation Vision、語意檢索與 VLM
+CLIP · Foundation Vision、語意檢索與 VLM
+SigLIP · Foundation Vision、語意檢索與 VLM
+LLaVA · Foundation Vision、語意檢索與 VLM
+Qwen-VL · Foundation Vision、語意檢索與 VLM
+Gemini Vision · Foundation Vision、語意檢索與 VLM
+DefectFill · Diffusion、合成資料與影像復原
+AnomalyDiffusion · Diffusion、合成資料與影像復原
+TF-IDG · Diffusion、合成資料與影像復原
+ControlNet · Diffusion、合成資料與影像復原
+Inpainting · Diffusion、合成資料與影像復原
+Diffusion Restoration · Diffusion、合成資料與影像復原
+Deblur · Diffusion、合成資料與影像復原
+Super-resolution · Diffusion、合成資料與影像復原
+哪些條件一定要固定？
+3
+最後寫安全交接
+
+保留能回查的資料，並事先說好畫面或服務改變時，誰要接手。
+
+怎樣才算真的有用？
+碰到什麼先停下來？
+
+自動儲存在這台裝置的瀏覽器中。
+
+列印／另存 PDF
+匯出學習與 POC 進度 JSON
+匯入進度 JSON
+清除本機進度

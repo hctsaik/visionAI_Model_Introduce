@@ -1,0 +1,13 @@
+test_example_cancel_replace_undo_and_learning_preserved (__main__.PocWorkbenchTests.test_example_cancel_replace_undo_and_learning_preserved) ... ok
+test_json_roundtrip_and_legacy_draft (__main__.PocWorkbenchTests.test_json_roundtrip_and_legacy_draft) ... ok
+test_lesson_handoff (__main__.PocWorkbenchTests.test_lesson_handoff) ... ok
+test_mobile_keyboard_and_preview (__main__.PocWorkbenchTests.test_mobile_keyboard_and_preview) ... ok
+test_model_search_hints_preserve_existing_content (__main__.PocWorkbenchTests.test_model_search_hints_preserve_existing_content) ... ok
+test_preview_markdown_and_print_keep_long_text (__main__.PocWorkbenchTests.test_preview_markdown_and_print_keep_long_text) ... ok
+test_step_navigation_persistence_and_missing_focus (__main__.PocWorkbenchTests.test_step_navigation_persistence_and_missing_focus) ... ok
+test_storage_failure_is_visible (__main__.PocWorkbenchTests.test_storage_failure_is_visible) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 25.225s
+
+OK

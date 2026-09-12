@@ -1,0 +1,7 @@
+test_every_referenced_static_asset_is_available_for_deployment (test_github_pages_bundle.GitHubPagesBundleTests.test_every_referenced_static_asset_is_available_for_deployment) ... ok
+test_handoff_documents_requested_by_lesson_links_ship_with_identical_content (test_github_pages_bundle.GitHubPagesBundleTests.test_handoff_documents_requested_by_lesson_links_ship_with_identical_content) ... ok
+
+----------------------------------------------------------------------
+Ran 2 tests in 45.718s
+
+OK

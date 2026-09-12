@@ -1,0 +1,571 @@
+{
+  "model": "ConvLSTM",
+  "badge": "保留空間結構的循環單元",
+  "title": "ConvLSTM：讓時間記憶保留位置",
+  "scenario": {
+    "title": "夾爪的單張照片看不出動作經過；你想結合前幾張畫面，判斷目前較像接近、夾取還是移開的階段。",
+    "body": "夾爪的單張照片看不出動作經過；你想結合前幾張畫面，判斷目前較像接近、夾取還是移開的階段。"
+  },
+  "promise": {
+    "title": "交付結果與接手工作",
+    "body": "本例將時序狀態交給另行訓練的任務頭，產生夾取階段候選；其他接法可預測影像等，但不是單元自動具有的所有能力。"
+  },
+  "mental_model": {
+    "title": "保留空間結構的循環單元",
+    "body": "ConvLSTM 在每個時間點把新輸入與舊狀態一起處理，以卷積更新保留空間結構的記憶，選擇保留、加入或忘掉哪些線索。相較把整張攤平處理，它保留鄰近位置的關係；相較只看單張，它可以利用前面看到的變化。",
+    "limit": "一段影片結束後直接沿用記憶到另一段，舊的已夾住狀態可能干擾新片段；掉幀、順序錯誤或取樣間隔改變也會改變時間意義。"
+  },
+  "micro_example": {
+    "title": "換成兩台相機交替片段",
+    "setup": "服務交替收到機台A和B的片段，夾爪姿態不同。",
+    "prediction": "可以共用上一段的記憶嗎？",
+    "reveal": "不能不加區分地共用；應按相機／連續片段隔離或重置狀態，按真正任務訓練並測邊界。若單張已足以判階段，先比較較簡單且無狀態維護的基準。"
+  },
+  "beginner_path": {
+    "title": "從必要原理、具體反例到工作取捨",
+    "intro": "夾爪的單張照片看不出動作經過；你想結合前幾張畫面，判斷目前較像接近、夾取還是移開的階段。 下列圖像、特徵及回答為教學示意，不是模型實測。",
+    "visuals": [
+      {
+        "id": "wi028-conv-c1",
+        "title": "ConvLSTM：把位置與時間一起留在記憶裡",
+        "prompt": "夾爪的單張照片看不出動作經過；你想結合前幾張畫面，判斷目前較像接近、夾取還是移開的階段。",
+        "caption": "ConvLSTM 在每個時間點把新輸入與舊狀態一起處理，以卷積更新保留空間結構的記憶，選擇保留、加入或忘掉哪些線索。相較把整張攤平處理，它保留鄰近位置的關係；相較只看單張，它可以利用前面看到的變化。",
+        "image": "_course_content/generated-concepts/convlstm/wi028-conv-c1-r01-desktop.png",
+        "alt": "ConvLSTM：把位置與時間一起留在記憶裡。ConvLSTM 在每個時間點把新輸入與舊狀態一起處理，以卷積更新保留空間結構的記憶，選擇保留、加入或忘掉哪些線索。相較把整張攤平處理，它保留鄰近位置的關係；相較只看單張，它可以利用前面看到的變化。 AI生成教學示意，非模型實測。",
+        "callouts": [
+          {
+            "title": "記憶是學到的狀態",
+            "body": "隱藏狀態與記憶不是把舊影格直接存成照片。它們由訓練目標決定保留哪些時間與空間線索。"
+          },
+          {
+            "title": "單元不等於現成模型",
+            "body": "原始論文以降雨預測為例；本課夾爪階段為工業改編，需要影像編碼、ConvLSTM與相應任務頭及訓練。"
+          },
+          {
+            "title": "交付與接手",
+            "body": "本例將時序狀態交給另行訓練的任務頭，產生夾取階段候選；其他接法可預測影像等，但不是單元自動具有的所有能力。"
+          }
+        ],
+        "reading_views": [
+          {
+            "title": "ConvLSTM：把位置與時間一起留在記憶裡",
+            "image": "_course_content/generated-concepts/convlstm/wi028-conv-c1-r01-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/convlstm/wi028-conv-c1-r01-mobile.png",
+            "alt": "ConvLSTM：把位置與時間一起留在記憶裡。ConvLSTM 在每個時間點把新輸入與舊狀態一起處理，以卷積更新保留空間結構的記憶，選擇保留、加入或忘掉哪些線索。相較把整張攤平處理，它保留鄰近位置的關係；相較只看單張，它可以利用前面看到的變化。 AI生成教學示意，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              887,
+              1774
+            ],
+            "mobile_display_mode": "full-mobile",
+            "desktop_intrinsic_width": 1672,
+            "desktop_intrinsic_height": 941,
+            "mobile_intrinsic_width": 887,
+            "mobile_intrinsic_height": 1774
+          }
+        ],
+        "core_ideas": true
+      },
+      {
+        "id": "wi028-conv-d2",
+        "title": "時間接錯，記憶就會帶著舊狀態",
+        "prompt": "觀察哪個條件改變，讓原本的結果不夠可靠？",
+        "caption": "一段影片結束後直接沿用記憶到另一段，舊的已夾住狀態可能干擾新片段；掉幀、順序錯誤或取樣間隔改變也會改變時間意義。 圖中的夾爪小圖用來表示狀態意義，不是記憶張量的實際外觀。",
+        "image": "_course_content/generated-concepts/convlstm/wi028-conv-d2-r01-desktop.png",
+        "alt": "時間接錯，記憶就會帶著舊狀態。一段影片結束後直接沿用記憶到另一段，舊的已夾住狀態可能干擾新片段；掉幀、順序錯誤或取樣間隔改變也會改變時間意義。 圖中的夾爪小圖用來表示狀態意義，不是記憶張量的實際外觀。 AI生成教學示意，非模型實測。",
+        "callouts": [
+          {
+            "title": "看哪裡",
+            "body": "一段影片結束後直接沿用記憶到另一段，舊的已夾住狀態可能干擾新片段；掉幀、順序錯誤或取樣間隔改變也會改變時間意義。"
+          },
+          {
+            "title": "接著怎麼做",
+            "body": "固定片段切法與時間戳，依任務在邊界重置狀態；加入掉幀和長短片段測試，回看分類候選，不以記憶存在便宣稱理解動作。"
+          }
+        ],
+        "reading_views": [
+          {
+            "title": "時間接錯，記憶就會帶著舊狀態",
+            "image": "_course_content/generated-concepts/convlstm/wi028-conv-d2-r01-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/convlstm/wi028-conv-d2-r01-mobile.png",
+            "alt": "時間接錯，記憶就會帶著舊狀態。一段影片結束後直接沿用記憶到另一段，舊的已夾住狀態可能干擾新片段；掉幀、順序錯誤或取樣間隔改變也會改變時間意義。 圖中的夾爪小圖用來表示狀態意義，不是記憶張量的實際外觀。 AI生成教學示意，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              887,
+              1774
+            ],
+            "mobile_display_mode": "full-mobile",
+            "desktop_intrinsic_width": 1672,
+            "desktop_intrinsic_height": 941,
+            "mobile_intrinsic_width": 887,
+            "mobile_intrinsic_height": 1774
+          }
+        ],
+        "core_ideas": false
+      },
+      {
+        "id": "wi028-video-d3",
+        "title": "記住序列、補像素、預測特徵：學習方式不同",
+        "prompt": "相同工作需求下，資料、輸出與成本如何取捨？",
+        "caption": "少量明確動作任務，可比較單張分類、簡單時序規則與ConvLSTM；較通用影片表示可比較VideoMAE或V-JEPA。後兩者提供預訓練表示，不是免標註的現成夾爪判定器。",
+        "image": "_course_content/generated-concepts/convlstm/wi028-video-d3-r02-desktop.png",
+        "alt": "記住序列、補像素、預測特徵：學習方式不同。少量明確動作任務，可比較單張分類、簡單時序規則與ConvLSTM；較通用影片表示可比較VideoMAE或V-JEPA。後兩者提供預訓練表示，不是免標註的現成夾爪判定器。 AI生成教學示意，非模型實測。",
+        "callouts": [
+          {
+            "title": "怎麼選",
+            "body": "少量明確動作任務，可比較單張分類、簡單時序規則與ConvLSTM；較通用影片表示可比較VideoMAE或V-JEPA。後兩者提供預訓練表示，不是免標註的現成夾爪判定器。"
+          },
+          {
+            "title": "資料與完整成本",
+            "body": "需準備符合任務的連續片段與標註，按完整作業／實體分開訓練與測試。換動作、相機或取樣頻率要重新驗證，必要時重訓；成本含序列等待與狀態管理。"
+          }
+        ],
+        "reading_views": [
+          {
+            "title": "記住序列、補像素、預測特徵：學習方式不同",
+            "image": "_course_content/generated-concepts/convlstm/wi028-video-d3-r02-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/convlstm/wi028-video-d3-r02-mobile.png",
+            "alt": "記住序列、補像素、預測特徵：學習方式不同。少量明確動作任務，可比較單張分類、簡單時序規則與ConvLSTM；較通用影片表示可比較VideoMAE或V-JEPA。後兩者提供預訓練表示，不是免標註的現成夾爪判定器。 AI生成教學示意，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              887,
+              1774
+            ],
+            "mobile_display_mode": "full-mobile",
+            "desktop_intrinsic_width": 1672,
+            "desktop_intrinsic_height": 941,
+            "mobile_intrinsic_width": 887,
+            "mobile_intrinsic_height": 1774
+          }
+        ],
+        "core_ideas": false
+      }
+    ]
+  },
+  "mechanism_steps": [
+    {
+      "title": "連續影格的空間線索",
+      "body": "隱藏狀態與記憶不是把舊影格直接存成照片。它們由訓練目標決定保留哪些時間與空間線索。",
+      "why": "由本課核心機制連接工作用途",
+      "anchor": "WI028-1",
+      "diagram": {
+        "title": "連續影格的空間線索",
+        "body": "隱藏狀態與記憶不是把舊影格直接存成照片。它們由訓練目標決定保留哪些時間與空間線索。",
+        "why": "詳見本課版本與來源",
+        "anchor": "WI028-1"
+      }
+    },
+    {
+      "title": "卷積更新狀態",
+      "body": "原始論文以降雨預測為例；本課夾爪階段為工業改編，需要影像編碼、ConvLSTM與相應任務頭及訓練。",
+      "why": "由本課核心機制連接工作用途",
+      "anchor": "WI028-2",
+      "diagram": {
+        "title": "卷積更新狀態",
+        "body": "原始論文以降雨預測為例；本課夾爪階段為工業改編，需要影像編碼、ConvLSTM與相應任務頭及訓練。",
+        "why": "詳見本課版本與來源",
+        "anchor": "WI028-2"
+      }
+    },
+    {
+      "title": "任務頭判讀片段",
+      "body": "本例將時序狀態交給另行訓練的任務頭，產生夾取階段候選；其他接法可預測影像等，但不是單元自動具有的所有能力。",
+      "why": "由本課核心機制連接工作用途",
+      "anchor": "WI028-3",
+      "diagram": {
+        "title": "任務頭判讀片段",
+        "body": "本例將時序狀態交給另行訓練的任務頭，產生夾取階段候選；其他接法可預測影像等，但不是單元自動具有的所有能力。",
+        "why": "詳見本課版本與來源",
+        "anchor": "WI028-3"
+      }
+    },
+    {
+      "title": "工作核對與接手",
+      "body": "比較漏掉的階段、錯誤切換、事件延遲和完整運算成本；用丟幀／片段邊界負例檢查模型是否依賴正確時間線索。",
+      "why": "由本課核心機制連接工作用途",
+      "anchor": "WI028-4",
+      "diagram": {
+        "title": "工作核對與接手",
+        "body": "比較漏掉的階段、錯誤切換、事件延遲和完整運算成本；用丟幀／片段邊界負例檢查模型是否依賴正確時間線索。",
+        "why": "詳見本課版本與來源",
+        "anchor": "WI028-4"
+      }
+    }
+  ],
+  "visual_intro": "ConvLSTM 在每個時間點把新輸入與舊狀態一起處理，以卷積更新保留空間結構的記憶，選擇保留、加入或忘掉哪些線索。相較把整張攤平處理，它保留鄰近位置的關係；相較只看單張，它可以利用前面看到的變化。",
+  "concept_visuals": [],
+  "boundary_cases": [
+    {
+      "condition": "本課具體反例",
+      "effect": "一段影片結束後直接沿用記憶到另一段，舊的已夾住狀態可能干擾新片段；掉幀、順序錯誤或取樣間隔改變也會改變時間意義。",
+      "action": "固定片段切法與時間戳，依任務在邊界重置狀態；加入掉幀和長短片段測試，回看分類候選，不以記憶存在便宣稱理解動作。"
+    },
+    {
+      "condition": "更換產品、模型或輸入設定",
+      "effect": "需準備符合任務的連續片段與標註，按完整作業／實體分開訓練與測試。換動作、相機或取樣頻率要重新驗證，必要時重訓；成本含序列等待與狀態管理。",
+      "action": "先定義動作階段標註，保存完整循環與時間戳，依作業批次切分資料，建立單張或規則基準。"
+    },
+    {
+      "condition": "把示意當成實際推論",
+      "effect": "本課特徵、排序、回答及圖像僅用於解釋，不支持現場準確率或耗時結論。",
+      "action": "比較漏掉的階段、錯誤切換、事件延遲和完整運算成本；用丟幀／片段邊界負例檢查模型是否依賴正確時間線索。"
+    }
+  ],
+  "comparison": [
+    {
+      "model": "ConvLSTM應用",
+      "normality": "連續片段、任務標註；訓練空間記憶與任務頭",
+      "candidate": "依任務定義的序列輸出；管理狀態／重置"
+    },
+    {
+      "model": "VideoMAE原版",
+      "normality": "像素重建預訓練；可用現有權重，需下游標註",
+      "candidate": "影片表示＋任務頭；重建不是現場判定"
+    },
+    {
+      "model": "V-JEPA 2024原版",
+      "normality": "特徵預測預訓練；可用現有權重，需下游標註",
+      "candidate": "影片表示＋任務頭；不是未來影片生成"
+    }
+  ],
+  "selection": "少量明確動作任務，可比較單張分類、簡單時序規則與ConvLSTM；較通用影片表示可比較VideoMAE或V-JEPA。後兩者提供預訓練表示，不是免標註的現成夾爪判定器。 需準備符合任務的連續片段與標註，按完整作業／實體分開訓練與測試。換動作、相機或取樣頻率要重新驗證，必要時重訓；成本含序列等待與狀態管理。",
+  "poc": {
+    "title": "以真實工作資料做小規模比較",
+    "steps": [
+      "先定義動作階段標註，保存完整循環與時間戳，依作業批次切分資料，建立單張或規則基準。",
+      "需準備符合任務的連續片段與標註，按完整作業／實體分開訓練與測試。換動作、相機或取樣頻率要重新驗證，必要時重訓；成本含序列等待與狀態管理。",
+      "比較漏掉的階段、錯誤切換、事件延遲和完整運算成本；用丟幀／片段邊界負例檢查模型是否依賴正確時間線索。"
+    ],
+    "hold": "固定片段切法與時間戳，依任務在邊界重置狀態；加入掉幀和長短片段測試，回看分類候選，不以記憶存在便宣稱理解動作。",
+    "acceptance": {
+      "baseline": "既有流程或最簡單可行方法",
+      "measure": "比較漏掉的階段、錯誤切換、事件延遲和完整運算成本；用丟幀／片段邊界負例檢查模型是否依賴正確時間線索。",
+      "negative_control": "一段影片結束後直接沿用記憶到另一段，舊的已夾住狀態可能干擾新片段；掉幀、順序錯誤或取樣間隔改變也會改變時間意義。",
+      "owner": "實作與影像核對負責人"
+    }
+  },
+  "teach_back": {
+    "question": "它改變什麼？何時選另一種做法？",
+    "answer": "ConvLSTM 在每個時間點把新輸入與舊狀態一起處理，以卷積更新保留空間結構的記憶，選擇保留、加入或忘掉哪些線索。相較把整張攤平處理，它保留鄰近位置的關係；相較只看單張，它可以利用前面看到的變化。 少量明確動作任務，可比較單張分類、簡單時序規則與ConvLSTM；較通用影片表示可比較VideoMAE或V-JEPA。後兩者提供預訓練表示，不是免標註的現成夾爪判定器。"
+  },
+  "slide_reading": [
+    {
+      "title": "ConvLSTM：影片狀態接上明確任務",
+      "question": "時序表示要接任務頭，才有可驗的輸出。",
+      "look": "先看連續夾取影片與任務標註，再核對卷積記憶接任務頭，最後看完整影片驗失敗與延遲。",
+      "relation": "同夾爪方塊，夾取成功/失敗是另定義標籤；ConvLSTM產生H/C，分類頭需有監督。以整段影片或實體工件切分，不讓相鄰幀跨訓練驗證。",
+      "takeaway": "時序表示要接任務頭，才有可驗的輸出。",
+      "terms": [
+        "示意數值：作者給定局部算例，非模型實測或建議參數。",
+        "同位置：比較保持相同影像座標與時間身份，不能任意換工件。"
+      ]
+    },
+    {
+      "title": "ConvLSTM：卷積門控更新空間記憶",
+      "question": "新影格和舊狀態，逐位置決定記住什麼。",
+      "look": "先看新影格與前一步空間狀態，再核對門控保留舊值、加入新值，最後看新狀態傳到下一時間點。",
+      "relation": "同一夾爪與方塊依序張開、接近、夾住。X_t及H_(t-1)以卷積產生門控，C_t=f_t⊙C_(t-1)+i_t⊙候選；H_t=o_t⊙tanh(C_t)。原論文可有peephole。給定單位置Cprev=.4,f=.5,i=.8,candidate=.5得C=.6；其餘位置另有值。不是每張影格都重新歸零；任务頭另訓練。",
+      "takeaway": "新影格和舊狀態，逐位置決定記住什麼。",
+      "terms": [
+        "示意數值：作者給定局部算例，非模型實測或建議參數。",
+        "同位置：比較保持相同影像座標與時間身份，不能任意換工件。"
+      ]
+    },
+    {
+      "title": "ConvLSTM：狀態生命週期要明定",
+      "question": "換影片或相機時，依任務重設記憶。",
+      "look": "先看順序、幀距與縮放固定，再核對同片續接，換片重設，最後看保存狀態與任務頭版本。",
+      "relation": "推論狀態初始化/持續/重設需符合訓練方式；不能讓相機A記憶污染B。保存幀距、解析度、網路及任務頭版本，量完整預處理/狀態更新/任務輸出延遲。",
+      "takeaway": "換影片或相機時，依任務重設記憶。",
+      "terms": [
+        "示意數值：作者給定局部算例，非模型實測或建議參數。",
+        "同位置：比較保持相同影像座標與時間身份，不能任意換工件。"
+      ]
+    },
+    {
+      "title": "ConvLSTM：有記憶也可能忘記關鍵",
+      "question": "記憶是一種可學狀態，不是完整影格存檔。",
+      "look": "先看短暫失敗發生在中間影格，再核對忘記門連乘使舊訊號衰減，最後看不同片長與幀距各自驗。",
+      "relation": "作者單格例：後續不加入新候選，C初值1、每步f=.5，經三步變.125；不代表真模型門固定。關鍵事件若未取到/遭遺忘仍可能漏檢。",
+      "takeaway": "記憶是一種可學狀態，不是完整影格存檔。",
+      "terms": [
+        "示意數值：作者給定局部算例，非模型實測或建議參數。",
+        "同位置：比較保持相同影像座標與時間身份，不能任意換工件。"
+      ]
+    }
+  ],
+  "comparison_headers": {
+    "title": "記住序列、補像素、預測特徵：學習方式不同",
+    "basis": "所需資料與方法差異",
+    "output": "輸出與維護責任"
+  },
+  "transfer_check": {
+    "title": "換成兩台相機交替片段",
+    "scenario": "服務交替收到機台A和B的片段，夾爪姿態不同。",
+    "question": "可以共用上一段的記憶嗎？",
+    "answer": "不能不加區分地共用；應按相機／連續片段隔離或重置狀態，按真正任務訓練並測邊界。若單張已足以判階段，先比較較簡單且無狀態維護的基準。"
+  },
+  "review_trace": {
+    "authority": "roadmap-model-selection/video-temporal/convlstm/model.md",
+    "scope": "WI-033：工程層四圖與手機比較修正；首讀有效內容保留。原生圖已審，整頁與使用者審閱另記。",
+    "claims": [
+      {
+        "id": "visual-1",
+        "field": "beginner_path.visuals[conveyor-window]",
+        "source": "模型定位 / architecture_path"
+      },
+      {
+        "id": "visual-2",
+        "field": "beginner_path.visuals[window-spatial-feature]",
+        "source": "architecture_path"
+      },
+      {
+        "id": "visual-3",
+        "field": "beginner_path.visuals[convolutional-gates-state]",
+        "source": "representation_or_score"
+      },
+      {
+        "id": "visual-4",
+        "field": "beginner_path.visuals[reset-warmup-counterfactual]",
+        "source": "failure_boundary"
+      },
+      {
+        "id": "visual-5",
+        "field": "beginner_path.visuals[downstream-event-gate]",
+        "source": "selection_gate / evidence_bundle"
+      },
+      {
+        "id": "promise",
+        "field": "promise",
+        "source": "模型定位 / representation_or_score"
+      },
+      {
+        "id": "mechanism",
+        "field": "mechanism_steps",
+        "source": "architecture_path / representation_or_score"
+      },
+      {
+        "id": "boundaries",
+        "field": "boundary_cases",
+        "source": "failure_boundary / selection_gate"
+      },
+      {
+        "id": "comparison",
+        "field": "comparison + selection",
+        "source": "selection_gate"
+      },
+      {
+        "id": "poc",
+        "field": "poc + acceptance",
+        "source": "cost_and_operating_point / evidence_bundle"
+      },
+      {
+        "id": "transfer",
+        "field": "transfer_check",
+        "source": "failure_boundary / selection_gate"
+      },
+      {
+        "id": "f02-core",
+        "field": "beginner_path.visuals[0] + scenario + mental_model",
+        "source": "roadmap-model-selection/video-temporal/convlstm/model.md"
+      },
+      {
+        "id": "f02-transfer",
+        "field": "micro_example + transfer_check + selection",
+        "source": "roadmap-model-selection/video-temporal/convlstm/model.md"
+      },
+      {
+        "id": "wi028-first-read",
+        "field": "beginner_path + core + selection + transfer",
+        "source": "https://arxiv.org/abs/1506.04214"
+      }
+    ]
+  },
+  "quality_status": {
+    "label": "首讀圖文已核對",
+    "state": "self-reviewed",
+    "round": "WI-028",
+    "reason": "新版首讀逐圖與整頁自評、桌機手機互動驗證完成；使用者核准pending。原工程圖未納入本輪分數。"
+  },
+  "teaching_preflight": {
+    "brief": "teaching-images/vision-ai-model-selection/workitems/wi-028/conv-c1-r01.md",
+    "mobile_brief": "teaching-images/vision-ai-model-selection/workitems/wi-028/conv-c1-r01.md",
+    "story": "C",
+    "major_visual_nodes": 3,
+    "visual_status": "self-reviewed",
+    "user_review": "pending"
+  },
+  "engineering_slides": [
+    {
+      "title": "ConvLSTM：影片狀態接上明確任務",
+      "question": "時序表示要接任務頭，才有可驗的輸出。",
+      "plain": {
+        "look": "先看連續夾取影片與任務標註，再核對卷積記憶接任務頭，最後看完整影片驗失敗與延遲。",
+        "relation": "同夾爪方塊，夾取成功/失敗是另定義標籤；ConvLSTM產生H/C，分類頭需有監督。以整段影片或實體工件切分，不讓相鄰幀跨訓練驗證。",
+        "takeaway": "時序表示要接任務頭，才有可驗的輸出。"
+      },
+      "terms": [
+        "示意數值：作者給定局部算例，非模型實測或建議參數。",
+        "同位置：比較保持相同影像座標與時間身份，不能任意換工件。"
+      ],
+      "guide": [
+        "同夾爪方塊，夾取成功/失敗是另定義標籤；ConvLSTM產生H/C，分類頭需有監督。以整段影片或實體工件切分，不讓相鄰幀跨訓練驗證。",
+        "先看連續夾取影片與任務標註，再核對卷積記憶接任務頭，最後看完整影片驗失敗與延遲。"
+      ],
+      "stages": [
+        {
+          "title": "連續夾取影片與任務標註",
+          "body": "連續夾取影片與任務標註；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "卷積記憶接任務頭",
+          "body": "卷積記憶接任務頭；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "完整影片驗失敗與延遲",
+          "body": "完整影片驗失敗與延遲；請對照圖內輸入、變化與結果。"
+        }
+      ],
+      "misconception": "一段影片結束後直接沿用記憶到另一段，舊的已夾住狀態可能干擾新片段；掉幀、順序錯誤或取樣間隔改變也會改變時間意義。",
+      "alt": "ConvLSTM：影片狀態接上明確任務。時序表示要接任務頭，才有可驗的輸出。 教學示意，非模型實測。",
+      "mobile_image": "roadmap-model-selection/video-temporal/convlstm/images/final/WI033-CONVLSTM-01-r01-mobile.png",
+      "mobile_width": 768,
+      "mobile_height": 2304,
+      "engineering": {
+        "takeaway": "時序表示要接任務頭，才有可驗的輸出。",
+        "nextAction": "先定義動作階段標註，保存完整循環與時間戳，依作業批次切分資料，建立單張或規則基準。",
+        "redLine": "固定片段切法與時間戳，依任務在邊界重置狀態；加入掉幀和長短片段測試，回看分類候選，不以記憶存在便宣稱理解動作。"
+      },
+      "source": "https://arxiv.org/abs/1506.04214"
+    },
+    {
+      "title": "ConvLSTM：卷積門控更新空間記憶",
+      "question": "新影格和舊狀態，逐位置決定記住什麼。",
+      "plain": {
+        "look": "先看新影格與前一步空間狀態，再核對門控保留舊值、加入新值，最後看新狀態傳到下一時間點。",
+        "relation": "同一夾爪與方塊依序張開、接近、夾住。X_t及H_(t-1)以卷積產生門控，C_t=f_t⊙C_(t-1)+i_t⊙候選；H_t=o_t⊙tanh(C_t)。原論文可有peephole。給定單位置Cprev=.4,f=.5,i=.8,candidate=.5得C=.6；其餘位置另有值。不是每張影格都重新歸零；任务頭另訓練。",
+        "takeaway": "新影格和舊狀態，逐位置決定記住什麼。"
+      },
+      "terms": [
+        "示意數值：作者給定局部算例，非模型實測或建議參數。",
+        "同位置：比較保持相同影像座標與時間身份，不能任意換工件。"
+      ],
+      "guide": [
+        "同一夾爪與方塊依序張開、接近、夾住。X_t及H_(t-1)以卷積產生門控，C_t=f_t⊙C_(t-1)+i_t⊙候選；H_t=o_t⊙tanh(C_t)。原論文可有peephole。給定單位置Cprev=.4,f=.5,i=.8,candidate=.5得C=.6；其餘位置另有值。不是每張影格都重新歸零；任务頭另訓練。",
+        "先看新影格與前一步空間狀態，再核對門控保留舊值、加入新值，最後看新狀態傳到下一時間點。"
+      ],
+      "stages": [
+        {
+          "title": "新影格與前一步空間狀態",
+          "body": "新影格與前一步空間狀態；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "門控保留舊值、加入新值",
+          "body": "門控保留舊值、加入新值；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "新狀態傳到下一時間點",
+          "body": "新狀態傳到下一時間點；請對照圖內輸入、變化與結果。"
+        }
+      ],
+      "misconception": "一段影片結束後直接沿用記憶到另一段，舊的已夾住狀態可能干擾新片段；掉幀、順序錯誤或取樣間隔改變也會改變時間意義。",
+      "alt": "ConvLSTM：卷積門控更新空間記憶。新影格和舊狀態，逐位置決定記住什麼。 教學示意，非模型實測。",
+      "mobile_image": "roadmap-model-selection/video-temporal/convlstm/images/final/WI033-CONVLSTM-02-r02-mobile.png",
+      "mobile_width": 768,
+      "mobile_height": 2304,
+      "engineering": {
+        "takeaway": "新影格和舊狀態，逐位置決定記住什麼。",
+        "nextAction": "先定義動作階段標註，保存完整循環與時間戳，依作業批次切分資料，建立單張或規則基準。",
+        "redLine": "固定片段切法與時間戳，依任務在邊界重置狀態；加入掉幀和長短片段測試，回看分類候選，不以記憶存在便宣稱理解動作。"
+      },
+      "source": "https://arxiv.org/abs/1506.04214"
+    },
+    {
+      "title": "ConvLSTM：狀態生命週期要明定",
+      "question": "換影片或相機時，依任務重設記憶。",
+      "plain": {
+        "look": "先看順序、幀距與縮放固定，再核對同片續接，換片重設，最後看保存狀態與任務頭版本。",
+        "relation": "推論狀態初始化/持續/重設需符合訓練方式；不能讓相機A記憶污染B。保存幀距、解析度、網路及任務頭版本，量完整預處理/狀態更新/任務輸出延遲。",
+        "takeaway": "換影片或相機時，依任務重設記憶。"
+      },
+      "terms": [
+        "示意數值：作者給定局部算例，非模型實測或建議參數。",
+        "同位置：比較保持相同影像座標與時間身份，不能任意換工件。"
+      ],
+      "guide": [
+        "推論狀態初始化/持續/重設需符合訓練方式；不能讓相機A記憶污染B。保存幀距、解析度、網路及任務頭版本，量完整預處理/狀態更新/任務輸出延遲。",
+        "先看順序、幀距與縮放固定，再核對同片續接，換片重設，最後看保存狀態與任務頭版本。"
+      ],
+      "stages": [
+        {
+          "title": "順序、幀距與縮放固定",
+          "body": "順序、幀距與縮放固定；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "同片續接，換片重設",
+          "body": "同片續接，換片重設；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "保存狀態與任務頭版本",
+          "body": "保存狀態與任務頭版本；請對照圖內輸入、變化與結果。"
+        }
+      ],
+      "misconception": "一段影片結束後直接沿用記憶到另一段，舊的已夾住狀態可能干擾新片段；掉幀、順序錯誤或取樣間隔改變也會改變時間意義。",
+      "alt": "ConvLSTM：狀態生命週期要明定。換影片或相機時，依任務重設記憶。 教學示意，非模型實測。",
+      "mobile_image": "roadmap-model-selection/video-temporal/convlstm/images/final/WI033-CONVLSTM-03-r02-mobile.png",
+      "mobile_width": 768,
+      "mobile_height": 2304,
+      "engineering": {
+        "takeaway": "換影片或相機時，依任務重設記憶。",
+        "nextAction": "先定義動作階段標註，保存完整循環與時間戳，依作業批次切分資料，建立單張或規則基準。",
+        "redLine": "固定片段切法與時間戳，依任務在邊界重置狀態；加入掉幀和長短片段測試，回看分類候選，不以記憶存在便宣稱理解動作。"
+      },
+      "source": "https://arxiv.org/abs/1506.04214"
+    },
+    {
+      "title": "ConvLSTM：有記憶也可能忘記關鍵",
+      "question": "記憶是一種可學狀態，不是完整影格存檔。",
+      "plain": {
+        "look": "先看短暫失敗發生在中間影格，再核對忘記門連乘使舊訊號衰減，最後看不同片長與幀距各自驗。",
+        "relation": "作者單格例：後續不加入新候選，C初值1、每步f=.5，經三步變.125；不代表真模型門固定。關鍵事件若未取到/遭遺忘仍可能漏檢。",
+        "takeaway": "記憶是一種可學狀態，不是完整影格存檔。"
+      },
+      "terms": [
+        "示意數值：作者給定局部算例，非模型實測或建議參數。",
+        "同位置：比較保持相同影像座標與時間身份，不能任意換工件。"
+      ],
+      "guide": [
+        "作者單格例：後續不加入新候選，C初值1、每步f=.5，經三步變.125；不代表真模型門固定。關鍵事件若未取到/遭遺忘仍可能漏檢。",
+        "先看短暫失敗發生在中間影格，再核對忘記門連乘使舊訊號衰減，最後看不同片長與幀距各自驗。"
+      ],
+      "stages": [
+        {
+          "title": "短暫失敗發生在中間影格",
+          "body": "短暫失敗發生在中間影格；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "忘記門連乘使舊訊號衰減",
+          "body": "忘記門連乘使舊訊號衰減；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "不同片長與幀距各自驗",
+          "body": "不同片長與幀距各自驗；請對照圖內輸入、變化與結果。"
+        }
+      ],
+      "misconception": "一段影片結束後直接沿用記憶到另一段，舊的已夾住狀態可能干擾新片段；掉幀、順序錯誤或取樣間隔改變也會改變時間意義。",
+      "alt": "ConvLSTM：有記憶也可能忘記關鍵。記憶是一種可學狀態，不是完整影格存檔。 教學示意，非模型實測。",
+      "mobile_image": "roadmap-model-selection/video-temporal/convlstm/images/final/WI033-CONVLSTM-04-r01-mobile.png",
+      "mobile_width": 768,
+      "mobile_height": 2304,
+      "engineering": {
+        "takeaway": "記憶是一種可學狀態，不是完整影格存檔。",
+        "nextAction": "先定義動作階段標註，保存完整循環與時間戳，依作業批次切分資料，建立單張或規則基準。",
+        "redLine": "固定片段切法與時間戳，依任務在邊界重置狀態；加入掉幀和長短片段測試，回看分類候選，不以記憶存在便宣稱理解動作。"
+      },
+      "source": "https://arxiv.org/abs/1506.04214"
+    }
+  ]
+}

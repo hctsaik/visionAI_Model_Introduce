@@ -1,0 +1,352 @@
+[
+  {
+    "slug": "defectfill",
+    "relative_dir": "diffusion-restoration/defectfill",
+    "model": "DefectFill",
+    "family": "diffusion",
+    "case_tag": "CASE D · Wafer AOI",
+    "family_tag": "Diffusion",
+    "identity": {
+      "title": "DefectFill：少量缺陷參考生成訓練候選",
+      "context": "固定 real split、reference/mask 與 provenance；生成圖只進下游訓練實驗。",
+      "bubble": "少量缺陷，怎麼增成可驗證的訓練資料？",
+      "cards": [
+        {"title": "缺陷 reference", "body": "image + mask 對\n來源／split 固定", "visual": "input"},
+        {"title": "正常 target", "body": "normal ROI +\nplacement mask", "visual": "input"},
+        {"title": "LoRA inpaint", "body": "defect token\nmasked denoise", "visual": "dual"},
+        {"title": "Synthetic gate", "body": "image/mask trace\nreal holdout review", "visual": "gate"}
+      ],
+      "flow": "reference + normal/mask → LoRA inpaint → synthetic bundle → real review",
+      "takeaway": "生成圖只是可追溯的訓練候選；真實 holdout 才判斷效益。"
+    },
+    "architecture": {
+      "title": "DefectFill：參考缺陷、遮罩與正常區域驅動 LoRA inpainting",
+      "context": "defect/object/attention loss 將少量缺陷概念帶進已鎖定的 inpainting checkpoint。",
+      "bubble": "哪個輸入決定缺陷外觀與放置位置？",
+      "cards": [
+        {"title": "Reference concept", "body": "few image/mask\n學 defect token", "visual": "input"},
+        {"title": "Target placement", "body": "normal ROI\nplanned mask", "visual": "input"},
+        {"title": "LoRA attention", "body": "text encoder + U-Net\nattention adaptation", "visual": "dual"},
+        {"title": "LFS + trace", "body": "multi samples\nselect + provenance", "visual": "contract"}
+      ],
+      "flow": "reference + target mask → LoRA attention → masked denoise → LFS trace",
+      "takeaway": "LFS 只挑選視覺表現；不會證明生成缺陷符合現場物理。"
+    },
+    "build": {
+      "title": "DefectFill：reference、LoRA、sampling 與 real-holdout 是同一實驗契約",
+      "context": "來源、checkpoint、prompt、seed、LFS、下游訓練與 real holdout 必須一同可回放。",
+      "bubble": "哪些設定一改，synthetic 效益就不再可比？",
+      "cards": [
+        {"title": "Source lock", "body": "refs／normal IDs\nmask + license", "visual": "input"},
+        {"title": "Model state", "body": "base + LoRA rev\nprompt／rank", "visual": "dual"},
+        {"title": "Sampling state", "body": "steps／guidance\nseed + LFS rule", "visual": "contract"},
+        {"title": "Benefit gate", "body": "downstream recipe\nreal split + P95", "visual": "gate"}
+      ],
+      "flow": "govern sources → lock LoRA/sampling → train downstream → real-benefit gate",
+      "takeaway": "要量完整資料生產成本與真實效益，不能只比一張漂亮合成圖。"
+    },
+    "failure": "物理／尺度可不合理。LFS 只選視覺表現。synthetic-to-real 仍可失效。",
+    "selection": "固定 real split、mask 與下游訓練。驗標籤完整性、mode coverage、P95。",
+    "takeaway": "DefectFill 是受控資料增強候選，不是缺陷真值或放行證據。"
+  },
+  {
+    "slug": "anomalydiffusion",
+    "relative_dir": "diffusion-restoration/anomalydiffusion",
+    "model": "AnomalyDiffusion",
+    "family": "diffusion",
+    "case_tag": "CASE D · Wafer AOI",
+    "family_tag": "Diffusion",
+    "identity": {
+      "title": "AnomalyDiffusion：few-shot anomaly 只產生合成訓練候選",
+      "context": "少量 anomaly image/mask 參考加正常目標；輸出仍須走 real-holdout 與 domain review。",
+      "bubble": "少量 anomaly，如何變成可審核的訓練候選？",
+      "cards": [
+        {"title": "Few-shot refs", "body": "anomaly image/mask\nsource split lock", "visual": "input"},
+        {"title": "Normal + mask", "body": "normal ROI\nplanned location", "visual": "input"},
+        {"title": "Spatial guidance", "body": "appearance + mask\nconditional denoise", "visual": "dual"},
+        {"title": "Real gate", "body": "synthetic trace\nholdout + review", "visual": "gate"}
+      ],
+      "flow": "few refs + normal/mask → guided generation → synthetic bundle → real review",
+      "takeaway": "影像和 mask 對齊，仍不等於缺陷物理、標籤或產線真實。"
+    },
+    "architecture": {
+      "title": "AnomalyDiffusion：外觀 embedding 與空間 mask 分開控制生成",
+      "context": "anomaly appearance、mask spatial embedding 與 adaptive attention 共同定義合成 image/mask bundle。",
+      "bubble": "外觀與位置，怎麼在生成路徑上分工？",
+      "cards": [
+        {"title": "Appearance embed", "body": "few anomaly refs\nlearned concept", "visual": "feature"},
+        {"title": "Spatial embed", "body": "planned anomaly mask\nlocation condition", "visual": "input"},
+        {"title": "Adaptive attention", "body": "condition alignment\nlatent denoise", "visual": "dual"},
+        {"title": "Traceable asset", "body": "image + mask\nseed + provenance", "visual": "contract"}
+      ],
+      "flow": "appearance + spatial mask → attention-guided denoise → image/mask → trace",
+      "takeaway": "attention re-weighting 改善對齊，不會自動驗證製程語意或 sensor fidelity。"
+    },
+    "build": {
+      "title": "AnomalyDiffusion：embedding、sampling 與 real downstream benefit 必須一起鎖定",
+      "context": "few-shot 來源、mask policy、checkpoint、attention、seed、synthetic volume 與 review 都要有版本。",
+      "bubble": "哪些資料或設定會製造虛假的下游增益？",
+      "cards": [
+        {"title": "Reference audit", "body": "source IDs\nleakage + license", "visual": "input"},
+        {"title": "Condition state", "body": "embedding／mask\nattention revision", "visual": "dual"},
+        {"title": "Sampling recipe", "body": "steps／guidance\nseed + volume", "visual": "contract"},
+        {"title": "Downstream gate", "body": "real holdout\nfailure review + P95", "visual": "gate"}
+      ],
+      "flow": "audit refs → lock conditions → generate/train → real-benefit gate",
+      "takeaway": "合成真實感與 mask alignment 都不能取代分層 real-holdout 證據。"
+    },
+    "failure": "mask 對齊不等於真實物理。few-shot 可記住來源。現場轉移仍可失效。",
+    "selection": "固定 real split、mask policy、synthetic budget。驗真實效益、來源與 review。",
+    "takeaway": "AnomalyDiffusion 只在真實 holdout、provenance 與 domain review 都過關時才可作增強實驗。"
+  },
+  {
+    "slug": "tf-idg",
+    "relative_dir": "diffusion-restoration/tf-idg",
+    "model": "TF-IDG",
+    "family": "diffusion",
+    "case_tag": "CASE D · Wafer AOI",
+    "family_tag": "Diffusion",
+    "identity": {
+      "title": "TF-IDG：training-free 生成仍只是 synthetic training candidate",
+      "context": "frozen diffusion base 依文字、feature、region condition 產生候選；不會自動變成可信標籤。",
+      "bubble": "不微調模型，就代表生成缺陷可信嗎？",
+      "cards": [
+        {"title": "Normal target", "body": "normal ROI\nrecipe + split", "visual": "input"},
+        {"title": "Defect condition", "body": "text／feature／region\nplanned request", "visual": "feature"},
+        {"title": "Frozen guidance", "body": "named base model\nconditioned denoise", "visual": "dual"},
+        {"title": "Synthetic review", "body": "asset + trace\nreal holdout gate", "visual": "gate"}
+      ],
+      "flow": "normal ROI + condition → frozen guidance → synthetic asset → real review",
+      "takeaway": "training-free 是沒有本次微調，不是沒有風險、成本或驗證責任。"
+    },
+    "architecture": {
+      "title": "TF-IDG：文字、feature 與 region condition 引導 frozen diffusion",
+      "context": "base checkpoint、tokenizer、prompt、feature extraction、region policy 與 sampler 一起定義生成結果。",
+      "bubble": "哪些條件其實已決定缺陷會長成什麼？",
+      "cards": [
+        {"title": "Image / ROI", "body": "normal capture\nROI + context", "visual": "input"},
+        {"title": "Guidance bundle", "body": "prompt／feature\nregion condition", "visual": "feature"},
+        {"title": "Frozen denoise", "body": "base checkpoint\nscheduler + steps", "visual": "dual"},
+        {"title": "Asset trace", "body": "synthetic image\nseed + provenance", "visual": "contract"}
+      ],
+      "flow": "ROI + guidance bundle → frozen denoise → synthetic image → trace bundle",
+      "takeaway": "base、prompt、region 與 seed 的變動，都會改變 synthetic data 的分布。"
+    },
+    "build": {
+      "title": "TF-IDG：checkpoint、conditions、seed、filters 與真實效益同時可稽核",
+      "context": "training-free run 仍要鎖 base/license、code、conditions、sampling、review、downstream 和 real split。",
+      "bubble": "哪些設定沒鎖，就不能重播或比較？",
+      "cards": [
+        {"title": "Data contract", "body": "normal IDs\nreal split + taxonomy", "visual": "input"},
+        {"title": "Base contract", "body": "checkpoint/hash\ncode + tokenizer", "visual": "contract"},
+        {"title": "Generation recipe", "body": "prompt／region\nsteps + seed", "visual": "dual"},
+        {"title": "Benefit gate", "body": "quality review\ndownstream + P95", "visual": "gate"}
+      ],
+      "flow": "lock data/base → lock conditions → generate/train → real-benefit gate",
+      "takeaway": "沒有微調不等於沒有全流程成本；generation、review、training 都要量。"
+    },
+    "failure": "frozen base 也會幻覺。prompt／region 可偏移。training-free 不等於低成本。",
+    "selection": "固定 real split、condition、synthetic budget。驗真實效益、license、P95。",
+    "takeaway": "TF-IDG 的採用依據是真實 downstream evidence，不是 training-free 標籤。"
+  },
+  {
+    "slug": "diffusion-restoration",
+    "relative_dir": "diffusion-restoration/diffusion-restoration",
+    "model": "Diffusion Restoration",
+    "family": "diffusion",
+    "case_tag": "CASE D · Wafer AOI",
+    "family_tag": "Restoration",
+    "identity": {
+      "title": "Diffusion Restoration：可讀性 estimate，不是原始量測",
+      "context": "degraded raw、condition、sampling 與 restored estimate 必須保留關聯；關鍵判斷回查 raw。",
+      "bubble": "復原後變清楚，能當相機量到的事實嗎？",
+      "cards": [
+        {"title": "Degraded raw", "body": "blur／noise／codec\nraw ROI retained", "visual": "input"},
+        {"title": "Degradation state", "body": "condition model\nROI + capture", "visual": "feature"},
+        {"title": "Reverse diffusion", "body": "locked checkpoint\nsampling steps", "visual": "dual"},
+        {"title": "Evidence review", "body": "x-hat + residual\nuncertainty + raw", "visual": "gate"}
+      ],
+      "flow": "degraded raw → condition → reverse diffusion → estimate/raw review",
+      "takeaway": "restored pixels 是 estimate；不能單獨成為 defect、尺寸或放行證據。"
+    },
+    "architecture": {
+      "title": "Diffusion Restoration：退化 condition 進入 reverse denoising，輸出 estimate 與不確定性",
+      "context": "退化假設、named checkpoint 與 denoiser steps 共同決定 x-hat、residual 與 uncertainty。",
+      "bubble": "為什麼不能只看一張更清楚的 output？",
+      "cards": [
+        {"title": "Observation y", "body": "degraded ROI\nraw pixels", "visual": "input"},
+        {"title": "Condition model", "body": "blur／noise／codec\nassumption lock", "visual": "feature"},
+        {"title": "Reverse path", "body": "checkpoint\nsteps + guidance", "visual": "dual"},
+        {"title": "Estimate bundle", "body": "x-hat／residual\nuncertainty review", "visual": "score"}
+      ],
+      "flow": "raw y + condition → reverse denoise → x-hat → residual/uncertainty",
+      "takeaway": "品質取決於退化假設；視覺銳利度不是未觀測物理細節的證明。"
+    },
+    "build": {
+      "title": "Diffusion Restoration：degradation、checkpoint、sampling、tile 與 fidelity 都要鎖定",
+      "context": "controlled pair、capture、model、seed、steps、tile stitch、failure gallery 與 P95 構成完整契約。",
+      "bubble": "哪一組設定能重播並揭露 hallucination？",
+      "cards": [
+        {"title": "Controlled pairs", "body": "raw + target\nseverity split", "visual": "input"},
+        {"title": "Model recipe", "body": "degradation model\ncheckpoint + code", "visual": "contract"},
+        {"title": "Inference recipe", "body": "steps／guidance\nseed + tile stitch", "visual": "dual"},
+        {"title": "Fidelity gate", "body": "residual gallery\nreal holdout + P95", "visual": "gate"}
+      ],
+      "flow": "controlled data → fixed restoration → fidelity/failure → human-use gate",
+      "takeaway": "採用前要量成對 fidelity、hallucination 和完整 P95，不是單張清晰度。"
+    },
+    "failure": "未知退化會捏造細節。tile／sampling 可改結果。estimate 不可當量測。",
+    "selection": "先證明 paired fidelity 與 hallucination。保留 raw/residual，限定 human assist。",
+    "takeaway": "Diffusion Restoration 適合受限的可讀性輔助；任何關鍵證據仍回到 raw capture。"
+  },
+  {
+    "slug": "inpainting",
+    "relative_dir": "diffusion-restoration/inpainting",
+    "model": "Inpainting",
+    "family": "diffusion",
+    "case_tag": "CASE D · Wafer AOI",
+    "family_tag": "Restoration",
+    "identity": {
+      "title": "Inpainting：mask-guided fill 是 synthetic/edit candidate",
+      "context": "模型只依 mask 外 context 填補候選；原圖、mask、filled output 必須一起保存。",
+      "bubble": "填補後的 pixels，能替代原始 AOI 證據嗎？",
+      "cards": [
+        {"title": "Original raw", "body": "raw ROI\noriginal retained", "visual": "input"},
+        {"title": "Repair mask", "body": "allowed fill area\nboundary policy", "visual": "feature"},
+        {"title": "Masked denoise", "body": "context + condition\ninpainting route", "visual": "dual"},
+        {"title": "Edit review", "body": "filled + mask\nsynthetic label", "visual": "gate"}
+      ],
+      "flow": "original + mask/context → masked denoise → filled candidate → raw/mask review",
+      "takeaway": "被填補的是 plausible content，不是相機觀測到的 defect、結構或尺寸。"
+    },
+    "architecture": {
+      "title": "Inpainting：image、mask、context 與 condition 共同形成 filled-region 關聯",
+      "context": "binary/soft mask、checkpoint、prompt、sampler 與 blend policy 必須被指定，才能重播 edit candidate。",
+      "bubble": "哪些物件要和 filled output 一起保存？",
+      "cards": [
+        {"title": "Image + mask", "body": "original ROI\nbinary／soft mask", "visual": "input"},
+        {"title": "Outside context", "body": "edge / texture\noptional prompt", "visual": "feature"},
+        {"title": "Inpainting path", "body": "named checkpoint\nmasked sampling", "visual": "dual"},
+        {"title": "Relationship trace", "body": "original/mask/output\nedit manifest", "visual": "contract"}
+      ],
+      "flow": "image + mask + context → guided inpaint → filled output → edit trace",
+      "takeaway": "mask 是允許模型修改的區域，不是 defect label、量測 ROI 或真實證據。"
+    },
+    "build": {
+      "title": "Inpainting：mask generator、sampling、blend 與 review policy 要分層驗證",
+      "context": "mask size/location/edge complexity 會改變品質與風險；每次 edit 都需完整 trace。",
+      "bubble": "哪些設定一改，就會得到另一個填補結果？",
+      "cards": [
+        {"title": "Mask contract", "body": "generator version\nsize／edge／location", "visual": "input"},
+        {"title": "Model contract", "body": "checkpoint/hash\nprompt + code", "visual": "contract"},
+        {"title": "Sampling contract", "body": "steps／sampler\nseed + blend/tile", "visual": "dual"},
+        {"title": "Safety gate", "body": "stratified review\nfailure + P95", "visual": "gate"}
+      ],
+      "flow": "lock mask/model → lock sampling → stratified review → safe-use gate",
+      "takeaway": "要以 mask 分層品質與 failure gallery 驗證；不可把漂亮填補當缺陷證據。"
+    },
+    "failure": "mask 邊界可錯置。填補可抹除／幻覺。不可當 defect 或量測。",
+    "selection": "只限模擬／data augmentation。鎖 mask、sampling、review。關鍵 evidence 一律 no-go。",
+    "takeaway": "Inpainting 只能做受控 synthetic/edit；關鍵 defect、尺寸、traceability 決策必須回到 raw。"
+  },
+  {
+    "slug": "deblur",
+    "relative_dir": "diffusion-restoration/deblur",
+    "model": "Deblur",
+    "family": "diffusion",
+    "case_tag": "CASE D · Wafer AOI",
+    "family_tag": "Restoration",
+    "identity": {
+      "title": "Deblur：先修正取像，再把清晰候選限定為 visual assist",
+      "context": "motion/defocus blur 的第一個工程問題是曝光、振動、focus；deblur output 是 estimate。",
+      "bubble": "模型補出的銳利邊緣，能當 defect 事實嗎？",
+      "cards": [
+        {"title": "Blurred raw", "body": "motion／defocus\ncapture metadata", "visual": "input"},
+        {"title": "Blur source", "body": "exposure／vibration\nfocus／PSF", "visual": "feature"},
+        {"title": "Inverse deblur", "body": "kernel or neural\nx-hat estimate", "visual": "dual"},
+        {"title": "Capture-first gate", "body": "false edge map\nraw + review", "visual": "gate"}
+      ],
+      "flow": "blurred raw → source/PSF → inverse estimate → capture-first review",
+      "takeaway": "關鍵 defect 優先改善取像；deblurred pixels 不是量測真值。"
+    },
+    "architecture": {
+      "title": "Deblur：k／PSF 假設進入 inverse，輸出 x-hat 與 false-edge evidence",
+      "context": "blurred y≈k*x+n 的 kernel/PSF 假設或 neural inverse 共同決定 restoration 行為。",
+      "bubble": "哪個假設決定邊緣是復原還是創造？",
+      "cards": [
+        {"title": "Blurred y", "body": "blurred ROI\ny ≈ k*x + n", "visual": "input"},
+        {"title": "PSF assumption", "body": "motion／defocus\nkernel estimate", "visual": "feature"},
+        {"title": "Inverse operator", "body": "classical/neural\nx-hat output", "visual": "dual"},
+        {"title": "Artifact check", "body": "ringing／false edge\nraw comparison", "visual": "score"}
+      ],
+      "flow": "blurred y → PSF/kernel → inverse operator → x-hat/artifact map",
+      "takeaway": "清晰化不證明正確；PSF mismatch 會把不存在的邊緣變得顯眼。"
+    },
+    "build": {
+      "title": "Deblur：paired blur data、capture、PSF、inverse 與 false-detail 都需可比較",
+      "context": "severity、exposure、PSF、implementation、loss 與 raw reference 必須和 P95 一起記錄。",
+      "bubble": "如何證明細節是復原，而不是模型創造？",
+      "cards": [
+        {"title": "Controlled targets", "body": "paired raw/blur\nseverity strata", "visual": "input"},
+        {"title": "Capture contract", "body": "exposure／focus\nvibration + PSF", "visual": "contract"},
+        {"title": "Inverse recipe", "body": "model／loss\nseed + version", "visual": "dual"},
+        {"title": "False-detail gate", "body": "ringing gallery\npaired fidelity + P95", "visual": "gate"}
+      ],
+      "flow": "controlled capture → fixed inverse → false-detail evidence → specialist gate",
+      "takeaway": "不能用一張更清楚的圖取代 paired target、artifact review 與 capture 改善。"
+    },
+    "failure": "未知 PSF 會產生假邊緣。ringing 會誤導判讀。關鍵 defect 先改取像。",
+    "selection": "先改善 exposure／stabilization／focus。用 paired target 驗 false detail。只限 human assist。",
+    "takeaway": "Deblur 只在 raw、PSF 假設與 artifact evidence 都保留時，才可做受限的人員輔助。"
+  },
+  {
+    "slug": "super-resolution",
+    "relative_dir": "diffusion-restoration/super-resolution",
+    "model": "Super-resolution",
+    "family": "diffusion",
+    "case_tag": "CASE D · Wafer AOI",
+    "family_tag": "Restoration",
+    "identity": {
+      "title": "Super-resolution：高解析 estimate 不是新增的 micro-defect 證據",
+      "context": "low-resolution raw、scale 與 degradation 進入 SR prior；輸出只能作輔助候選。",
+      "bubble": "放大後看見 micro-detail，就代表真的存在嗎？",
+      "cards": [
+        {"title": "Low-res raw", "body": "LR ROI\nsensor pixels", "visual": "input"},
+        {"title": "Scale / degrade", "body": "scale factor\nresize kernel", "visual": "feature"},
+        {"title": "SR prior", "body": "CNN／ViT／diffusion\nx-hat estimate", "visual": "dual"},
+        {"title": "Artifact review", "body": "texture／alias\nLR + calibration", "visual": "gate"}
+      ],
+      "flow": "LR raw → scale/degradation → SR prior → estimate/artifact review",
+      "takeaway": "SR 可改善可讀性，不能把 sensor 沒量到的微缺陷變成可靠事實。"
+    },
+    "architecture": {
+      "title": "Super-resolution：scale、degradation 與 prior 共同決定 HR estimate",
+      "context": "resize kernel、reconstruction/feature/generative prior 與 output scale 共同定義 texture 和 alias 風險。",
+      "bubble": "哪一個設定決定畫面是平滑還是補出細節？",
+      "cards": [
+        {"title": "LR observation", "body": "low-res y\nROI + pixel grid", "visual": "input"},
+        {"title": "Scale contract", "body": "x2/x4 factor\nkernel + degrade", "visual": "feature"},
+        {"title": "Upsample prior", "body": "CNN／ViT／diffusion\nHR x-hat", "visual": "dual"},
+        {"title": "Texture check", "body": "alias／uncertainty\ncalibration target", "visual": "score"}
+      ],
+      "flow": "LR y + scale → SR prior → HR x-hat → texture/alias check",
+      "takeaway": "感知細節與真實細節不同；關鍵 micro-pattern 必須回到 calibration 或 HR capture。"
+    },
+    "build": {
+      "title": "Super-resolution：paired LR/HR、tile、sampling 與 calibration 要共同驗證",
+      "context": "scale、resize kernel、checkpoint、tile overlap、steps、seed、paired target 與 P95 都屬一個 recipe。",
+      "bubble": "哪些設定未鎖，就無法比較 hallucination？",
+      "cards": [
+        {"title": "Paired target", "body": "LR/HR pairs\ncalibration truth", "visual": "input"},
+        {"title": "Scale recipe", "body": "factor／kernel\ndegradation policy", "visual": "contract"},
+        {"title": "SR inference", "body": "checkpoint／steps\nseed + tile overlap", "visual": "dual"},
+        {"title": "Fidelity gate", "body": "seam／alias gallery\npaired metrics + P95", "visual": "gate"}
+      ],
+      "flow": "paired LR/HR → fixed scale/SR → artifact evidence → calibration gate",
+      "takeaway": "PSNR 或畫面銳利度不夠；必須量關鍵圖樣 fidelity、alias、tile seam 和 P95。"
+    },
+    "failure": "texture 可被幻覺。scale／tile 可造 alias。不可當 CD 或 defect evidence。",
+    "selection": "先量 paired fidelity、alias、P95。保留 LR／scale trace。只限非關鍵 review。",
+    "takeaway": "Super-resolution 是可讀性或研究輔助；不得以 SR output 單獨宣稱 CD、defect 或 PASS/FAIL。"
+  }
+]

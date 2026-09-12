@@ -1,0 +1,570 @@
+{
+  "model": "Diffusion Restoration",
+  "badge": "影像復原方法家族",
+  "title": "擴散復原：由退化觀測，逐步估計清晰影像",
+  "scenario": {
+    "title": "舊AOI影像有雜訊或模糊，想讓工程師更容易看清結構，同時知道哪些細節只是估計。",
+    "body": "舊AOI影像有雜訊或模糊，想讓工程師更容易看清結構，同時知道哪些細節只是估計。"
+  },
+  "promise": {
+    "title": "交付結果與接手工作",
+    "body": "較清楚的復原估計，配合原觀測核對；可支援閱讀或另行驗證過的下游流程。"
+  },
+  "mental_model": {
+    "title": "影像復原方法家族",
+    "body": "擴散模型先從訓練資料學會清晰影像的規律。復原時把退化觀測或退化模型當條件，在反覆去噪中估計可能的清晰影像。圖中的『套回退化再比觀測』說明一致性檢查：候選不能只符合外觀先驗，也要能解釋原觀測；具體約束位置與方式依方法而異。",
+    "limit": "原觀測太模糊時，有裂紋及無裂紋兩個清晰候選，套回退化後都可能近似同一觀測。觀測一致是必要線索，仍不能唯一確定原來的細節；殘差也不直接等於缺陷機率或可信度。"
+  },
+  "micro_example": {
+    "title": "一張很清楚，一張稍模糊但較穩定",
+    "setup": "擴散候選細節漂亮卻在不同取樣間改變裂紋；快速模型結果平滑，產線又有時間限制。",
+    "prediction": "會以清晰度選擴散，還是如何設計比較？",
+    "reveal": "先用同一真實清晰對照與缺陷留出資料，量關鍵細節保留、假影、下游錯誤及總時間。快速模型可作基準；若兩者都不能確認裂紋，就改善取像或保留覆核，不能用漂亮細節代替證據。"
+  },
+  "mechanism_steps": [
+    {
+      "title": "帶雜訊的兩孔金屬板觀測",
+      "body": "把帶雜訊或模糊的觀測影像作為限制，依方法指定退化條件或觀測模型；復原要估計可能的清晰影像，原始觀測仍須保留。",
+      "why": "核對本步輸入與輸出，才能判斷下一步是否接得上。",
+      "anchor": "WI026-step-1",
+      "diagram": {
+        "title": "帶雜訊的兩孔金屬板觀測",
+        "body": "把帶雜訊或模糊的觀測影像作為限制，依方法指定退化條件或觀測模型；復原要估計可能的清晰影像，原始觀測仍須保留。",
+        "why": "核對本步輸入與輸出，才能判斷下一步是否接得上。",
+        "anchor": "WI026-step-1"
+      }
+    },
+    {
+      "title": "去噪先驗與觀測條件共同引導",
+      "body": "先驗提供合理邊緣與紋理；觀測限制它能猜成什麼。先驗已學在權重中，圖上的清晰案例不是推論時去資料庫查最近照片。",
+      "why": "先驗與觀測互補",
+      "anchor": "WI026-step-2",
+      "diagram": {
+        "title": "去噪先驗與觀測條件共同引導",
+        "body": "先驗提供合理邊緣與紋理；觀測限制它能猜成什麼。先驗已學在權重中，圖上的清晰案例不是推論時去資料庫查最近照片。",
+        "why": "先驗與觀測互補",
+        "anchor": "WI026-step-2"
+      }
+    },
+    {
+      "title": "噪聲到粗輪廓到較清楚估計",
+      "body": "有些方法用退化／清晰配對訓練，有些以預訓練先驗解已知退化的反問題，例如DDRM。本圖表達代表性原理，並不把每一種方法都說成有相同外部迴圈。 圖中雜訊為定性示意；含隨機雜訊時，一致性須依觀測模型與容許誤差判斷，不要求另抽一次雜訊後逐像素相等。",
+      "why": "不是單一通用模型",
+      "anchor": "WI026-step-3",
+      "diagram": {
+        "title": "噪聲到粗輪廓到較清楚估計",
+        "body": "有些方法用退化／清晰配對訓練，有些以預訓練先驗解已知退化的反問題，例如DDRM。本圖表達代表性原理，並不把每一種方法都說成有相同外部迴圈。 圖中雜訊為定性示意；含隨機雜訊時，一致性須依觀測模型與容許誤差判斷，不要求另抽一次雜訊後逐像素相等。",
+        "why": "不是單一通用模型",
+        "anchor": "WI026-step-3"
+      }
+    },
+    {
+      "title": "重新套退化條件，回比觀測",
+      "body": "較清楚的復原估計，配合原觀測核對；可支援閱讀或另行驗證過的下游流程。",
+      "why": "核對後接入用途",
+      "anchor": "WI026-step-4",
+      "diagram": {
+        "title": "重新套退化條件，回比觀測",
+        "body": "較清楚的復原估計，配合原觀測核對；可支援閱讀或另行驗證過的下游流程。",
+        "why": "核對後接入用途",
+        "anchor": "WI026-step-4"
+      }
+    }
+  ],
+  "beginner_path": {
+    "title": "從核心做法、反例到方法選擇",
+    "intro": "舊AOI影像有雜訊或模糊，想讓工程師更容易看清結構，同時知道哪些細節只是估計。 三張圖依序看做法、失敗與取捨；AI生成教學示意，非模型實測。",
+    "visuals": [
+      {
+        "id": "wi026-diffusion-restoration-c1",
+        "title": "擴散復原：用影像先驗，逐步估回細節",
+        "prompt": "舊AOI影像有雜訊或模糊，想讓工程師更容易看清結構，同時知道哪些細節只是估計。",
+        "caption": "擴散模型先從訓練資料學會清晰影像的規律。復原時把退化觀測或退化模型當條件，在反覆去噪中估計可能的清晰影像。圖中的『套回退化再比觀測』說明一致性檢查：候選不能只符合外觀先驗，也要能解釋原觀測；具體約束位置與方式依方法而異。",
+        "image": "_course_content/generated-concepts/diffusion-restoration/wi026-diffusion-restoration-c1-r01-desktop.png",
+        "alt": "擴散復原：用影像先驗，逐步估回細節。擴散模型先從訓練資料學會清晰影像的規律。復原時把退化觀測或退化模型當條件，在反覆去噪中估計可能的清晰影像。圖中的『套回退化再比觀測』說明一致性檢查：候選不能只符合外觀先驗，也要能解釋原觀測；具體約束位置與方式依方法而異。 AI生成教學示意，非模型實測。",
+        "callouts": [
+          {
+            "title": "先驗與觀測互補",
+            "body": "先驗提供合理邊緣與紋理；觀測限制它能猜成什麼。先驗已學在權重中，圖上的清晰案例不是推論時去資料庫查最近照片。"
+          },
+          {
+            "title": "不是單一通用模型",
+            "body": "有些方法用退化／清晰配對訓練，有些以預訓練先驗解已知退化的反問題，例如DDRM。本圖表達代表性原理，並不把每一種方法都說成有相同外部迴圈。 圖中雜訊為定性示意；含隨機雜訊時，一致性須依觀測模型與容許誤差判斷，不要求另抽一次雜訊後逐像素相等。"
+          },
+          {
+            "title": "交給誰",
+            "body": "較清楚的復原估計，配合原觀測核對；可支援閱讀或另行驗證過的下游流程。"
+          }
+        ],
+        "reading_views": [
+          {
+            "title": "擴散復原：用影像先驗，逐步估回細節",
+            "image": "_course_content/generated-concepts/diffusion-restoration/wi026-diffusion-restoration-c1-r01-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/diffusion-restoration/wi026-diffusion-restoration-c1-r02-mobile.png",
+            "alt": "擴散復原：用影像先驗，逐步估回細節。擴散模型先從訓練資料學會清晰影像的規律。復原時把退化觀測或退化模型當條件，在反覆去噪中估計可能的清晰影像。圖中的『套回退化再比觀測』說明一致性檢查：候選不能只符合外觀先驗，也要能解釋原觀測；具體約束位置與方式依方法而異。 AI生成教學示意，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              724,
+              2172
+            ],
+            "mobile_display_mode": "full-mobile",
+            "mobile_intrinsic_width": 724,
+            "mobile_intrinsic_height": 2172,
+            "desktop_intrinsic_width": 1672,
+            "desktop_intrinsic_height": 941
+          }
+        ],
+        "core_ideas": true
+      },
+      {
+        "id": "wi026-restoration-d2",
+        "title": "同一退化影像，可能對應不同細節",
+        "prompt": "觀察同位置的變化：這個結果能支持什麼用途？",
+        "caption": "原觀測太模糊時，有裂紋及無裂紋兩個清晰候選，套回退化後都可能近似同一觀測。觀測一致是必要線索，仍不能唯一確定原來的細節；殘差也不直接等於缺陷機率或可信度。",
+        "image": "_course_content/generated-concepts/diffusion-restoration/wi026-restoration-d2-r02-desktop.png",
+        "alt": "同一退化影像，可能對應不同細節。原觀測太模糊時，有裂紋及無裂紋兩個清晰候選，套回退化後都可能近似同一觀測。觀測一致是必要線索，仍不能唯一確定原來的細節；殘差也不直接等於缺陷機率或可信度。 AI生成教學示意，非模型實測。",
+        "callouts": [
+          {
+            "title": "看哪裡",
+            "body": "原觀測太模糊時，有裂紋及無裂紋兩個清晰候選，套回退化後都可能近似同一觀測。觀測一致是必要線索，仍不能唯一確定原來的細節；殘差也不直接等於缺陷機率或可信度。"
+          },
+          {
+            "title": "接著怎麼做",
+            "body": "關鍵區域用獨立取像、真實清晰對照或其他量測核對；無法核對時保留不確定結論。"
+          }
+        ],
+        "reading_views": [
+          {
+            "title": "同一退化影像，可能對應不同細節",
+            "image": "_course_content/generated-concepts/diffusion-restoration/wi026-restoration-d2-r02-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/diffusion-restoration/wi026-restoration-d2-r02-mobile.png",
+            "alt": "同一退化影像，可能對應不同細節。原觀測太模糊時，有裂紋及無裂紋兩個清晰候選，套回退化後都可能近似同一觀測。觀測一致是必要線索，仍不能唯一確定原來的細節；殘差也不直接等於缺陷機率或可信度。 AI生成教學示意，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              724,
+              2172
+            ],
+            "mobile_display_mode": "full-mobile",
+            "mobile_intrinsic_width": 724,
+            "mobile_intrinsic_height": 2172,
+            "desktop_intrinsic_width": 1672,
+            "desktop_intrinsic_height": 941
+          }
+        ],
+        "core_ideas": false
+      },
+      {
+        "id": "wi026-restoration-d3",
+        "title": "先看影像壞在哪裡，再選復原方法",
+        "prompt": "固定需求與資料，哪種準備及處理成本較合適？",
+        "caption": "先分任務：模糊要去模糊，低解析要超解析，雜訊要去噪；擴散是可支援這些任務的一種做法。延遲嚴格時可先測傳統或前饋基準；多步生成的細節能力是否值得成本，須由相同資料上的錯誤與時間判斷。",
+        "image": "_course_content/generated-concepts/diffusion-restoration/wi026-restoration-d3-r01-desktop.png",
+        "alt": "先看影像壞在哪裡，再選復原方法。先分任務：模糊要去模糊，低解析要超解析，雜訊要去噪；擴散是可支援這些任務的一種做法。延遲嚴格時可先測傳統或前饋基準；多步生成的細節能力是否值得成本，須由相同資料上的錯誤與時間判斷。 AI生成教學示意，非模型實測。",
+        "callouts": [
+          {
+            "title": "如何選",
+            "body": "先分任務：模糊要去模糊，低解析要超解析，雜訊要去噪；擴散是可支援這些任務的一種做法。延遲嚴格時可先測傳統或前饋基準；多步生成的細節能力是否值得成本，須由相同資料上的錯誤與時間判斷。"
+          },
+          {
+            "title": "換產品與完整成本",
+            "body": "只有正常清晰圖可製作受控退化對照，但不保證模擬了現場退化或保留真缺陷。換相機／材質需重驗退化假設與模型。輸出是影像估計，非直接缺陷分數或輪廓；比較原圖與復原後下游漏檢、誤報、假影及端到端時間。"
+          }
+        ],
+        "reading_views": [
+          {
+            "title": "先看影像壞在哪裡，再選復原方法",
+            "image": "_course_content/generated-concepts/diffusion-restoration/wi026-restoration-d3-r01-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/diffusion-restoration/wi026-restoration-d3-r01-mobile.png",
+            "alt": "先看影像壞在哪裡，再選復原方法。先分任務：模糊要去模糊，低解析要超解析，雜訊要去噪；擴散是可支援這些任務的一種做法。延遲嚴格時可先測傳統或前饋基準；多步生成的細節能力是否值得成本，須由相同資料上的錯誤與時間判斷。 AI生成教學示意，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              724,
+              2172
+            ],
+            "mobile_display_mode": "full-mobile",
+            "mobile_intrinsic_width": 724,
+            "mobile_intrinsic_height": 2172,
+            "desktop_intrinsic_width": 1672,
+            "desktop_intrinsic_height": 941
+          }
+        ],
+        "core_ideas": false
+      }
+    ]
+  },
+  "visual_intro": "擴散模型先從訓練資料學會清晰影像的規律。復原時把退化觀測或退化模型當條件，在反覆去噪中估計可能的清晰影像。圖中的『套回退化再比觀測』說明一致性檢查：候選不能只符合外觀先驗，也要能解釋原觀測；具體約束位置與方式依方法而異。",
+  "concept_visuals": [],
+  "boundary_cases": [
+    {
+      "condition": "本課具體反例",
+      "effect": "原觀測太模糊時，有裂紋及無裂紋兩個清晰候選，套回退化後都可能近似同一觀測。觀測一致是必要線索，仍不能唯一確定原來的細節；殘差也不直接等於缺陷機率或可信度。",
+      "action": "關鍵區域用獨立取像、真實清晰對照或其他量測核對；無法核對時保留不確定結論。"
+    },
+    {
+      "condition": "換產品或取像條件",
+      "effect": "只有正常清晰圖可製作受控退化對照，但不保證模擬了現場退化或保留真缺陷。換相機／材質需重驗退化假設與模型。輸出是影像估計，非直接缺陷分數或輪廓；比較原圖與復原後下游漏檢、誤報、假影及端到端時間。",
+      "action": "先在固定真實留出資料重驗，再擴大用途。"
+    },
+    {
+      "condition": "把生成示意當成模型實測",
+      "effect": "本課圖像說明可能機制與失敗情況，不能據此計算現場準確率或節拍。",
+      "action": "保留真實原圖、模型設定與對照輸出，以符合工作需求的留出資料另行測量。"
+    }
+  ],
+  "comparison": [
+    {
+      "model": "去模糊任務",
+      "normality": "辨識運動／失焦等退化，準備對照",
+      "candidate": "反推清晰估計；核對振鈴及假邊"
+    },
+    {
+      "model": "超解析任務",
+      "normality": "核對採樣、倍率與高低解析對照",
+      "candidate": "高解析估計；核對假紋理及微細邊界"
+    },
+    {
+      "model": "擴散方法",
+      "normality": "選支援目標任務的模型與條件；反覆去噪",
+      "candidate": "可作上述任務的候選做法；比較品質與總成本"
+    }
+  ],
+  "selection": "先分任務：模糊要去模糊，低解析要超解析，雜訊要去噪；擴散是可支援這些任務的一種做法。延遲嚴格時可先測傳統或前饋基準；多步生成的細節能力是否值得成本，須由相同資料上的錯誤與時間判斷。 只有正常清晰圖可製作受控退化對照，但不保證模擬了現場退化或保留真缺陷。換相機／材質需重驗退化假設與模型。輸出是影像估計，非直接缺陷分數或輪廓；比較原圖與復原後下游漏檢、誤報、假影及端到端時間。",
+  "poc": {
+    "title": "小規模比較：資料、效果與完整成本",
+    "steps": [
+      "保留原始資料，固定訓練與獨立真實留出切分，選定本課工作需求。",
+      "只有正常清晰圖可製作受控退化對照，但不保證模擬了現場退化或保留真缺陷。換相機／材質需重驗退化假設與模型。輸出是影像估計，非直接缺陷分數或輪廓；比較原圖與復原後下游漏檢、誤報、假影及端到端時間。",
+      "記錄失敗影像、原圖與輸出關係、端到端時間和人工覆核量，再決定是否擴大。"
+    ],
+    "hold": "關鍵區域用獨立取像、真實清晰對照或其他量測核對；無法核對時保留不確定結論。",
+    "acceptance": {
+      "baseline": "原有流程或最簡單可行方法",
+      "measure": "關鍵細節、下游錯誤、總時間及覆核量",
+      "negative_control": "以本課反例檢查錯誤結論是否被排除",
+      "owner": "教材使用者指定的實作及覆核負責人"
+    }
+  },
+  "teach_back": {
+    "question": "它改變什麼？換條件後如何選？",
+    "answer": "擴散模型先從訓練資料學會清晰影像的規律。復原時把退化觀測或退化模型當條件，在反覆去噪中估計可能的清晰影像。圖中的『套回退化再比觀測』說明一致性檢查：候選不能只符合外觀先驗，也要能解釋原觀測；具體約束位置與方式依方法而異。 先分任務：模糊要去模糊，低解析要超解析，雜訊要去噪；擴散是可支援這些任務的一種做法。延遲嚴格時可先測傳統或前饋基準；多步生成的細節能力是否值得成本，須由相同資料上的錯誤與時間判斷。"
+  },
+  "slide_reading": [
+    {
+      "title": "擴散復原：先說清楚觀測退化",
+      "question": "復原候選與原始觀測需一起交付。",
+      "look": "先看保存原板影像與退化條件，再核對觀測條件約束先驗候選，最後看回套退化並另作外部驗證。",
+      "relation": "線性逆問題示意，保存A/噪聲假設與原觀測；候選再退化對回y並檢未觀測細節，不把低殘差當真值。",
+      "takeaway": "復原候選與原始觀測需一起交付。",
+      "terms": [
+        "示意數值：作者給定局部算例，非模型實測或建議參數。",
+        "同位置：比較保持相同影像座標與時間身份，不能任意換工件。"
+      ]
+    },
+    {
+      "title": "擴散復原：估計後，套回觀測條件",
+      "question": "退化後相符是必要核對，不能證明細節唯一。",
+      "look": "先看同板退化觀測與退化算子，再核對先驗與觀測共同約束候選，最後看候選再退化，回比原觀測。",
+      "relation": "同中部雙孔板。以線性退化y=Ax+n為例，預訓練擴散先驗與已知觀測/退化條件形成候選；不同方法條件接法不同，不概括為單一演算法。作者兩像素平均算子：[0,100]及[40,60]都得50，證明非唯一；不把某次採樣當真值。",
+      "takeaway": "退化後相符是必要核對，不能證明細節唯一。",
+      "terms": [
+        "示意數值：作者給定局部算例，非模型實測或建議參數。",
+        "同位置：比較保持相同影像座標與時間身份，不能任意換工件。"
+      ]
+    },
+    {
+      "title": "擴散復原：退化假設與採樣要配套",
+      "question": "退化條件改變，模型與驗證也要重新核對。",
+      "look": "先看退化算子與噪聲設定版本，再核對同觀測保留多個候選，最後看比較資料一致性與外部證據。",
+      "relation": "保存模型、退化算子、噪聲與步數種子；不同候選一致不保證唯一真實。時間要含每步去噪及資料一致性。",
+      "takeaway": "退化條件改變，模型與驗證也要重新核對。",
+      "terms": [
+        "示意數值：作者給定局部算例，非模型實測或建議參數。",
+        "同位置：比較保持相同影像座標與時間身份，不能任意換工件。"
+      ]
+    },
+    {
+      "title": "擴散復原：錯退化也會給漂亮結果",
+      "question": "先驗看起來合理，仍可能不符合取像原因。",
+      "look": "先看原板實際受雜訊污染，再核對錯把觀測當移動模糊，最後看回原觀測和取像設定核對。",
+      "relation": "作者反例把加性雜訊當卷積模糊，假設錯誤可引入不必要輪廓。需檢退化與獨立成像，不以漂亮結果證明模型合適。",
+      "takeaway": "先驗看起來合理，仍可能不符合取像原因。",
+      "terms": [
+        "示意數值：作者給定局部算例，非模型實測或建議參數。",
+        "同位置：比較保持相同影像座標與時間身份，不能任意換工件。"
+      ]
+    }
+  ],
+  "comparison_headers": {
+    "title": "先看影像壞在哪裡，再選復原方法",
+    "basis": "資料準備與方法分工",
+    "output": "交付結果與核對重點"
+  },
+  "transfer_check": {
+    "title": "一張很清楚，一張稍模糊但較穩定",
+    "scenario": "擴散候選細節漂亮卻在不同取樣間改變裂紋；快速模型結果平滑，產線又有時間限制。",
+    "question": "會以清晰度選擴散，還是如何設計比較？",
+    "answer": "先用同一真實清晰對照與缺陷留出資料，量關鍵細節保留、假影、下游錯誤及總時間。快速模型可作基準；若兩者都不能確認裂紋，就改善取像或保留覆核，不能用漂亮細節代替證據。"
+  },
+  "review_trace": {
+    "authority": "roadmap-model-selection/diffusion-restoration/diffusion-restoration/model.md",
+    "scope": "WI-033：工程層四圖與手機比較修正；首讀有效內容保留。原生圖已審，整頁與使用者審閱另記。",
+    "claims": [
+      {
+        "id": "visual-1",
+        "field": "beginner_path.visuals[aoi-estimate-contract]",
+        "source": "模型定位 / architecture_path"
+      },
+      {
+        "id": "visual-2",
+        "field": "beginner_path.visuals[raw-xhat-residual]",
+        "source": "architecture_path"
+      },
+      {
+        "id": "visual-3",
+        "field": "beginner_path.visuals[reverse-estimate-contract]",
+        "source": "representation_or_score"
+      },
+      {
+        "id": "visual-4",
+        "field": "beginner_path.visuals[visible-uncertainty-review]",
+        "source": "failure_boundary"
+      },
+      {
+        "id": "visual-5",
+        "field": "beginner_path.visuals[raw-evidence-hold]",
+        "source": "selection_gate / evidence_bundle"
+      },
+      {
+        "id": "promise",
+        "field": "promise",
+        "source": "模型定位 / representation_or_score"
+      },
+      {
+        "id": "mechanism",
+        "field": "mechanism_steps",
+        "source": "architecture_path / representation_or_score"
+      },
+      {
+        "id": "boundaries",
+        "field": "boundary_cases",
+        "source": "failure_boundary / selection_gate"
+      },
+      {
+        "id": "comparison",
+        "field": "comparison + selection",
+        "source": "selection_gate"
+      },
+      {
+        "id": "poc",
+        "field": "poc + acceptance",
+        "source": "cost_and_operating_point / evidence_bundle"
+      },
+      {
+        "id": "transfer",
+        "field": "transfer_check",
+        "source": "failure_boundary / selection_gate"
+      },
+      {
+        "id": "f02-core",
+        "field": "beginner_path.visuals[0] + scenario + mental_model",
+        "source": "roadmap-model-selection/diffusion-restoration/diffusion-restoration/model.md"
+      },
+      {
+        "id": "f02-transfer",
+        "field": "micro_example + transfer_check + selection",
+        "source": "roadmap-model-selection/diffusion-restoration/diffusion-restoration/model.md"
+      },
+      {
+        "id": "wi026-first-read",
+        "field": "beginner_path + core + selection + transfer",
+        "source": "https://arxiv.org/abs/2201.11793"
+      }
+    ]
+  },
+  "quality_status": {
+    "label": "首讀圖文已重製並自評；使用者核准待確認",
+    "state": "self-reviewed",
+    "round": "WI-026",
+    "reason": "38張不同PNG逐圖審查；整頁與互動證據見workitems/wi-026，原工程圖未重新評分。"
+  },
+  "teaching_preflight": {
+    "brief": "teaching-images/vision-ai-model-selection/workitems/wi-026/diffusion-restoration-c1-r01.md",
+    "story": "C",
+    "major_visual_nodes": 4,
+    "visual_status": "self-reviewed",
+    "user_review": "pending"
+  },
+  "engineering_slides": [
+    {
+      "title": "擴散復原：先說清楚觀測退化",
+      "question": "復原候選與原始觀測需一起交付。",
+      "plain": {
+        "look": "先看保存原板影像與退化條件，再核對觀測條件約束先驗候選，最後看回套退化並另作外部驗證。",
+        "relation": "線性逆問題示意，保存A/噪聲假設與原觀測；候選再退化對回y並檢未觀測細節，不把低殘差當真值。",
+        "takeaway": "復原候選與原始觀測需一起交付。"
+      },
+      "terms": [
+        "示意數值：作者給定局部算例，非模型實測或建議參數。",
+        "同位置：比較保持相同影像座標與時間身份，不能任意換工件。"
+      ],
+      "guide": [
+        "線性逆問題示意，保存A/噪聲假設與原觀測；候選再退化對回y並檢未觀測細節，不把低殘差當真值。",
+        "先看保存原板影像與退化條件，再核對觀測條件約束先驗候選，最後看回套退化並另作外部驗證。"
+      ],
+      "stages": [
+        {
+          "title": "保存原板影像與退化條件",
+          "body": "保存原板影像與退化條件；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "觀測條件約束先驗候選",
+          "body": "觀測條件約束先驗候選；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "回套退化並另作外部驗證",
+          "body": "回套退化並另作外部驗證；請對照圖內輸入、變化與結果。"
+        }
+      ],
+      "misconception": "原觀測太模糊時，有裂紋及無裂紋兩個清晰候選，套回退化後都可能近似同一觀測。觀測一致是必要線索，仍不能唯一確定原來的細節；殘差也不直接等於缺陷機率或可信度。",
+      "alt": "擴散復原：先說清楚觀測退化。復原候選與原始觀測需一起交付。 教學示意，非模型實測。",
+      "mobile_image": "roadmap-model-selection/diffusion-restoration/diffusion-restoration/images/final/WI033-DIFFUSION-RESTORATION-01-r02-mobile.png",
+      "mobile_width": 768,
+      "mobile_height": 2304,
+      "engineering": {
+        "takeaway": "復原候選與原始觀測需一起交付。",
+        "nextAction": "保留原始資料，固定訓練與獨立真實留出切分，選定本課工作需求。",
+        "redLine": "關鍵區域用獨立取像、真實清晰對照或其他量測核對；無法核對時保留不確定結論。"
+      },
+      "source": "https://arxiv.org/abs/2201.11793"
+    },
+    {
+      "title": "擴散復原：估計後，套回觀測條件",
+      "question": "退化後相符是必要核對，不能證明細節唯一。",
+      "plain": {
+        "look": "先看同板退化觀測與退化算子，再核對先驗與觀測共同約束候選，最後看候選再退化，回比原觀測。",
+        "relation": "同中部雙孔板。以線性退化y=Ax+n為例，預訓練擴散先驗與已知觀測/退化條件形成候選；不同方法條件接法不同，不概括為單一演算法。作者兩像素平均算子：[0,100]及[40,60]都得50，證明非唯一；不把某次採樣當真值。",
+        "takeaway": "退化後相符是必要核對，不能證明細節唯一。"
+      },
+      "terms": [
+        "示意數值：作者給定局部算例，非模型實測或建議參數。",
+        "同位置：比較保持相同影像座標與時間身份，不能任意換工件。"
+      ],
+      "guide": [
+        "同中部雙孔板。以線性退化y=Ax+n為例，預訓練擴散先驗與已知觀測/退化條件形成候選；不同方法條件接法不同，不概括為單一演算法。作者兩像素平均算子：[0,100]及[40,60]都得50，證明非唯一；不把某次採樣當真值。",
+        "先看同板退化觀測與退化算子，再核對先驗與觀測共同約束候選，最後看候選再退化，回比原觀測。"
+      ],
+      "stages": [
+        {
+          "title": "同板退化觀測與退化算子",
+          "body": "同板退化觀測與退化算子；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "先驗與觀測共同約束候選",
+          "body": "先驗與觀測共同約束候選；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "候選再退化，回比原觀測",
+          "body": "候選再退化，回比原觀測；請對照圖內輸入、變化與結果。"
+        }
+      ],
+      "misconception": "原觀測太模糊時，有裂紋及無裂紋兩個清晰候選，套回退化後都可能近似同一觀測。觀測一致是必要線索，仍不能唯一確定原來的細節；殘差也不直接等於缺陷機率或可信度。",
+      "alt": "擴散復原：估計後，套回觀測條件。退化後相符是必要核對，不能證明細節唯一。 教學示意，非模型實測。",
+      "mobile_image": "roadmap-model-selection/diffusion-restoration/diffusion-restoration/images/final/WI033-DIFFUSION-RESTORATION-02-r01-mobile.png",
+      "mobile_width": 768,
+      "mobile_height": 2304,
+      "engineering": {
+        "takeaway": "退化後相符是必要核對，不能證明細節唯一。",
+        "nextAction": "保留原始資料，固定訓練與獨立真實留出切分，選定本課工作需求。",
+        "redLine": "關鍵區域用獨立取像、真實清晰對照或其他量測核對；無法核對時保留不確定結論。"
+      },
+      "source": "https://arxiv.org/abs/2201.11793"
+    },
+    {
+      "title": "擴散復原：退化假設與採樣要配套",
+      "question": "退化條件改變，模型與驗證也要重新核對。",
+      "plain": {
+        "look": "先看退化算子與噪聲設定版本，再核對同觀測保留多個候選，最後看比較資料一致性與外部證據。",
+        "relation": "保存模型、退化算子、噪聲與步數種子；不同候選一致不保證唯一真實。時間要含每步去噪及資料一致性。",
+        "takeaway": "退化條件改變，模型與驗證也要重新核對。"
+      },
+      "terms": [
+        "示意數值：作者給定局部算例，非模型實測或建議參數。",
+        "同位置：比較保持相同影像座標與時間身份，不能任意換工件。"
+      ],
+      "guide": [
+        "保存模型、退化算子、噪聲與步數種子；不同候選一致不保證唯一真實。時間要含每步去噪及資料一致性。",
+        "先看退化算子與噪聲設定版本，再核對同觀測保留多個候選，最後看比較資料一致性與外部證據。"
+      ],
+      "stages": [
+        {
+          "title": "退化算子與噪聲設定版本",
+          "body": "退化算子與噪聲設定版本；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "同觀測保留多個候選",
+          "body": "同觀測保留多個候選；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "比較資料一致性與外部證據",
+          "body": "比較資料一致性與外部證據；請對照圖內輸入、變化與結果。"
+        }
+      ],
+      "misconception": "原觀測太模糊時，有裂紋及無裂紋兩個清晰候選，套回退化後都可能近似同一觀測。觀測一致是必要線索，仍不能唯一確定原來的細節；殘差也不直接等於缺陷機率或可信度。",
+      "alt": "擴散復原：退化假設與採樣要配套。退化條件改變，模型與驗證也要重新核對。 教學示意，非模型實測。",
+      "mobile_image": "roadmap-model-selection/diffusion-restoration/diffusion-restoration/images/final/WI033-DIFFUSION-RESTORATION-03-r02-mobile.png",
+      "mobile_width": 768,
+      "mobile_height": 2304,
+      "engineering": {
+        "takeaway": "退化條件改變，模型與驗證也要重新核對。",
+        "nextAction": "保留原始資料，固定訓練與獨立真實留出切分，選定本課工作需求。",
+        "redLine": "關鍵區域用獨立取像、真實清晰對照或其他量測核對；無法核對時保留不確定結論。"
+      },
+      "source": "https://arxiv.org/abs/2201.11793"
+    },
+    {
+      "title": "擴散復原：錯退化也會給漂亮結果",
+      "question": "先驗看起來合理，仍可能不符合取像原因。",
+      "plain": {
+        "look": "先看原板實際受雜訊污染，再核對錯把觀測當移動模糊，最後看回原觀測和取像設定核對。",
+        "relation": "作者反例把加性雜訊當卷積模糊，假設錯誤可引入不必要輪廓。需檢退化與獨立成像，不以漂亮結果證明模型合適。",
+        "takeaway": "先驗看起來合理，仍可能不符合取像原因。"
+      },
+      "terms": [
+        "示意數值：作者給定局部算例，非模型實測或建議參數。",
+        "同位置：比較保持相同影像座標與時間身份，不能任意換工件。"
+      ],
+      "guide": [
+        "作者反例把加性雜訊當卷積模糊，假設錯誤可引入不必要輪廓。需檢退化與獨立成像，不以漂亮結果證明模型合適。",
+        "先看原板實際受雜訊污染，再核對錯把觀測當移動模糊，最後看回原觀測和取像設定核對。"
+      ],
+      "stages": [
+        {
+          "title": "原板實際受雜訊污染",
+          "body": "原板實際受雜訊污染；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "錯把觀測當移動模糊",
+          "body": "錯把觀測當移動模糊；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "回原觀測和取像設定核對",
+          "body": "回原觀測和取像設定核對；請對照圖內輸入、變化與結果。"
+        }
+      ],
+      "misconception": "原觀測太模糊時，有裂紋及無裂紋兩個清晰候選，套回退化後都可能近似同一觀測。觀測一致是必要線索，仍不能唯一確定原來的細節；殘差也不直接等於缺陷機率或可信度。",
+      "alt": "擴散復原：錯退化也會給漂亮結果。先驗看起來合理，仍可能不符合取像原因。 教學示意，非模型實測。",
+      "mobile_image": "roadmap-model-selection/diffusion-restoration/diffusion-restoration/images/final/WI033-DIFFUSION-RESTORATION-04-r02-mobile.png",
+      "mobile_width": 768,
+      "mobile_height": 2304,
+      "engineering": {
+        "takeaway": "先驗看起來合理，仍可能不符合取像原因。",
+        "nextAction": "保留原始資料，固定訓練與獨立真實留出切分，選定本課工作需求。",
+        "redLine": "關鍵區域用獨立取像、真實清晰對照或其他量測核對；無法核對時保留不確定結論。"
+      },
+      "source": "https://arxiv.org/abs/2201.11793"
+    }
+  ]
+}

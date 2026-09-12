@@ -1,0 +1,570 @@
+{
+  "model": "Deblur",
+  "badge": "去模糊任務",
+  "title": "Deblur：從拖影中反推較清楚的影像",
+  "scenario": {
+    "title": "輸送中的金屬板在曝光期間移動，孔邊與外框拖開，影響人工判讀或後續定位。",
+    "body": "輸送中的金屬板在曝光期間移動，孔邊與外框拖開，影響人工判讀或後續定位。"
+  },
+  "promise": {
+    "title": "交付結果與接手工作",
+    "body": "去模糊後的清晰估計；核對邊緣、重影和下游定位是否改善。"
+  },
+  "mental_model": {
+    "title": "去模糊任務",
+    "body": "模糊把原本局部的訊號散到周圍：運動可能形成方向性拖影，失焦則有不同的擴散形狀。去模糊利用已知或估計的退化線索與影像先驗，反推清晰候選；可用傳統反卷積，也可用直接學模糊到清晰的網路，不一定顯式輸出模糊核。",
+    "limit": "假設復原後在直邊旁多出平行明暗線，這可能是振鈴假影。獨立清晰重拍只有一條邊；因此不能把復原後所有銳利線都當成裂紋或實體結構。"
+  },
+  "micro_example": {
+    "title": "產線加速後只在部分位置拖影",
+    "setup": "模型在原速度有效，加速後外框多出雙線；重拍較慢，但可以增加照明縮短曝光。",
+    "prediction": "先換更大的模型，還是比較取像與去模糊方案？",
+    "reveal": "先確認拖影與曝光、運動的關係，用相同物件比較縮短曝光的取像改善及現有／新去模糊方法。看真實邊緣、假影、漏檢與完整節拍；更大模型可能增加延遲，也未必涵蓋新模糊。"
+  },
+  "beginner_path": {
+    "title": "從核心做法、反例到方法選擇",
+    "intro": "輸送中的金屬板在曝光期間移動，孔邊與外框拖開，影響人工判讀或後續定位。 三張圖依序看做法、失敗與取捨；AI生成教學示意，非模型實測。",
+    "visuals": [
+      {
+        "id": "wi026-deblur-c1",
+        "title": "Deblur：把拖開的邊緣，估回清楚位置",
+        "prompt": "輸送中的金屬板在曝光期間移動，孔邊與外框拖開，影響人工判讀或後續定位。",
+        "caption": "模糊把原本局部的訊號散到周圍：運動可能形成方向性拖影，失焦則有不同的擴散形狀。去模糊利用已知或估計的退化線索與影像先驗，反推清晰候選；可用傳統反卷積，也可用直接學模糊到清晰的網路，不一定顯式輸出模糊核。",
+        "image": "_course_content/generated-concepts/deblur/wi026-deblur-c1-r02-desktop.png",
+        "alt": "Deblur：把拖開的邊緣，估回清楚位置。模糊把原本局部的訊號散到周圍：運動可能形成方向性拖影，失焦則有不同的擴散形狀。去模糊利用已知或估計的退化線索與影像先驗，反推清晰候選；可用傳統反卷積，也可用直接學模糊到清晰的網路，不一定顯式輸出模糊核。 AI生成教學示意，非模型實測。",
+        "callouts": [
+          {
+            "title": "先理解怎麼糊",
+            "body": "圖中先畫清晰邊因曝光期間移動而散開，再畫反推；兩個方向不同。模糊不只是像素數太少，直接放大不能把拖影解開。"
+          },
+          {
+            "title": "選實作與資料",
+            "body": "傳統方法可能需要估計模糊核；學習方法通常需要符合目標退化的訓練資料或合適預訓練權重。新現場的振動、曝光與失焦若不同，仍需重新驗證。"
+          },
+          {
+            "title": "交給誰",
+            "body": "去模糊後的清晰估計；核對邊緣、重影和下游定位是否改善。"
+          }
+        ],
+        "reading_views": [
+          {
+            "title": "Deblur：把拖開的邊緣，估回清楚位置",
+            "image": "_course_content/generated-concepts/deblur/wi026-deblur-c1-r02-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/deblur/wi026-deblur-c1-r02-mobile.png",
+            "alt": "Deblur：把拖開的邊緣，估回清楚位置。模糊把原本局部的訊號散到周圍：運動可能形成方向性拖影，失焦則有不同的擴散形狀。去模糊利用已知或估計的退化線索與影像先驗，反推清晰候選；可用傳統反卷積，也可用直接學模糊到清晰的網路，不一定顯式輸出模糊核。 AI生成教學示意，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              724,
+              2172
+            ],
+            "mobile_display_mode": "full-mobile",
+            "mobile_intrinsic_width": 724,
+            "mobile_intrinsic_height": 2172,
+            "desktop_intrinsic_width": 1672,
+            "desktop_intrinsic_height": 941
+          }
+        ],
+        "core_ideas": true
+      },
+      {
+        "id": "wi026-deblur-d2",
+        "title": "去模糊後的雙邊，可能是振鈴假影",
+        "prompt": "觀察同位置的變化：這個結果能支持什麼用途？",
+        "caption": "假設復原後在直邊旁多出平行明暗線，這可能是振鈴假影。獨立清晰重拍只有一條邊；因此不能把復原後所有銳利線都當成裂紋或實體結構。",
+        "image": "_course_content/generated-concepts/deblur/wi026-deblur-d2-r01-desktop.png",
+        "alt": "去模糊後的雙邊，可能是振鈴假影。假設復原後在直邊旁多出平行明暗線，這可能是振鈴假影。獨立清晰重拍只有一條邊；因此不能把復原後所有銳利線都當成裂紋或實體結構。 AI生成教學示意，非模型實測。",
+        "callouts": [
+          {
+            "title": "看哪裡",
+            "body": "假設復原後在直邊旁多出平行明暗線，這可能是振鈴假影。獨立清晰重拍只有一條邊；因此不能把復原後所有銳利線都當成裂紋或實體結構。"
+          },
+          {
+            "title": "接著怎麼做",
+            "body": "檢查原圖、重拍對照及邊緣假影；能調整時先改善曝光、照明、穩定與焦距。"
+          }
+        ],
+        "reading_views": [
+          {
+            "title": "去模糊後的雙邊，可能是振鈴假影",
+            "image": "_course_content/generated-concepts/deblur/wi026-deblur-d2-r01-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/deblur/wi026-deblur-d2-r01-mobile.png",
+            "alt": "去模糊後的雙邊，可能是振鈴假影。假設復原後在直邊旁多出平行明暗線，這可能是振鈴假影。獨立清晰重拍只有一條邊；因此不能把復原後所有銳利線都當成裂紋或實體結構。 AI生成教學示意，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              728,
+              2161
+            ],
+            "mobile_display_mode": "full-mobile",
+            "mobile_intrinsic_width": 728,
+            "mobile_intrinsic_height": 2161,
+            "desktop_intrinsic_width": 1672,
+            "desktop_intrinsic_height": 941
+          }
+        ],
+        "core_ideas": false
+      },
+      {
+        "id": "wi026-restoration-d3",
+        "title": "先看影像壞在哪裡，再選復原方法",
+        "prompt": "固定需求與資料，哪種準備及處理成本較合適？",
+        "caption": "需求是去模糊，候選可含反卷積、前饋網路與擴散方法；超解析主要處理採樣不足，不能把兩者當同一件事。可改善取像時也把取像方案納入成本比較。",
+        "image": "_course_content/generated-concepts/diffusion-restoration/wi026-restoration-d3-r01-desktop.png",
+        "alt": "先看影像壞在哪裡，再選復原方法。需求是去模糊，候選可含反卷積、前饋網路與擴散方法；超解析主要處理採樣不足，不能把兩者當同一件事。可改善取像時也把取像方案納入成本比較。 AI生成教學示意，非模型實測。",
+        "callouts": [
+          {
+            "title": "如何選",
+            "body": "需求是去模糊，候選可含反卷積、前饋網路與擴散方法；超解析主要處理採樣不足，不能把兩者當同一件事。可改善取像時也把取像方案納入成本比較。"
+          },
+          {
+            "title": "換產品與完整成本",
+            "body": "只有正常清晰圖可建立模擬拖影基準，仍需真實模糊與缺陷資料檢查漏檢。換速度／相機／鏡頭時重新核對退化。結果是影像估計，若需精密輪廓或尺寸，要另驗實際邊界誤差；比較推論、重拍、人工覆核的總時間。"
+          }
+        ],
+        "reading_views": [
+          {
+            "title": "先看影像壞在哪裡，再選復原方法",
+            "image": "_course_content/generated-concepts/diffusion-restoration/wi026-restoration-d3-r01-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/diffusion-restoration/wi026-restoration-d3-r01-mobile.png",
+            "alt": "先看影像壞在哪裡，再選復原方法。需求是去模糊，候選可含反卷積、前饋網路與擴散方法；超解析主要處理採樣不足，不能把兩者當同一件事。可改善取像時也把取像方案納入成本比較。 AI生成教學示意，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              724,
+              2172
+            ],
+            "mobile_display_mode": "full-mobile",
+            "mobile_intrinsic_width": 724,
+            "mobile_intrinsic_height": 2172,
+            "desktop_intrinsic_width": 1672,
+            "desktop_intrinsic_height": 941
+          }
+        ],
+        "core_ideas": false
+      }
+    ]
+  },
+  "mechanism_steps": [
+    {
+      "title": "移動中的金屬板留下水平拖影",
+      "body": "曝光期間工件位移會把同一邊緣累積到多個位置，形成拖影；先確認這種退化，再選用相應的反推或學習方法。",
+      "why": "核對本步輸入與輸出，才能判斷下一步是否接得上。",
+      "anchor": "WI026-step-1",
+      "diagram": {
+        "title": "移動中的金屬板留下水平拖影",
+        "body": "曝光期間工件位移會把同一邊緣累積到多個位置，形成拖影；先確認這種退化，再選用相應的反推或學習方法。",
+        "why": "核對本步輸入與輸出，才能判斷下一步是否接得上。",
+        "anchor": "WI026-step-1"
+      }
+    },
+    {
+      "title": "局部直邊被水平擴散的成像原因",
+      "body": "圖中先畫清晰邊因曝光期間移動而散開，再畫反推；兩個方向不同。模糊不只是像素數太少，直接放大不能把拖影解開。",
+      "why": "先理解怎麼糊",
+      "anchor": "WI026-step-2",
+      "diagram": {
+        "title": "局部直邊被水平擴散的成像原因",
+        "body": "圖中先畫清晰邊因曝光期間移動而散開，再畫反推；兩個方向不同。模糊不只是像素數太少，直接放大不能把拖影解開。",
+        "why": "先理解怎麼糊",
+        "anchor": "WI026-step-2"
+      }
+    },
+    {
+      "title": "由模糊線索與先驗反推清晰候選",
+      "body": "傳統方法可能需要估計模糊核；學習方法通常需要符合目標退化的訓練資料或合適預訓練權重。新現場的振動、曝光與失焦若不同，仍需重新驗證。",
+      "why": "選實作與資料",
+      "anchor": "WI026-step-3",
+      "diagram": {
+        "title": "由模糊線索與先驗反推清晰候選",
+        "body": "傳統方法可能需要估計模糊核；學習方法通常需要符合目標退化的訓練資料或合適預訓練權重。新現場的振動、曝光與失焦若不同，仍需重新驗證。",
+        "why": "選實作與資料",
+        "anchor": "WI026-step-3"
+      }
+    },
+    {
+      "title": "回比原圖邊缘，檢查重影",
+      "body": "去模糊後的清晰估計；核對邊緣、重影和下游定位是否改善。",
+      "why": "核對後接入用途",
+      "anchor": "WI026-step-4",
+      "diagram": {
+        "title": "回比原圖邊缘，檢查重影",
+        "body": "去模糊後的清晰估計；核對邊緣、重影和下游定位是否改善。",
+        "why": "核對後接入用途",
+        "anchor": "WI026-step-4"
+      }
+    }
+  ],
+  "visual_intro": "模糊把原本局部的訊號散到周圍：運動可能形成方向性拖影，失焦則有不同的擴散形狀。去模糊利用已知或估計的退化線索與影像先驗，反推清晰候選；可用傳統反卷積，也可用直接學模糊到清晰的網路，不一定顯式輸出模糊核。",
+  "concept_visuals": [],
+  "boundary_cases": [
+    {
+      "condition": "本課具體反例",
+      "effect": "假設復原後在直邊旁多出平行明暗線，這可能是振鈴假影。獨立清晰重拍只有一條邊；因此不能把復原後所有銳利線都當成裂紋或實體結構。",
+      "action": "檢查原圖、重拍對照及邊緣假影；能調整時先改善曝光、照明、穩定與焦距。"
+    },
+    {
+      "condition": "換產品或取像條件",
+      "effect": "只有正常清晰圖可建立模擬拖影基準，仍需真實模糊與缺陷資料檢查漏檢。換速度／相機／鏡頭時重新核對退化。結果是影像估計，若需精密輪廓或尺寸，要另驗實際邊界誤差；比較推論、重拍、人工覆核的總時間。",
+      "action": "先在固定真實留出資料重驗，再擴大用途。"
+    },
+    {
+      "condition": "把生成示意當成模型實測",
+      "effect": "本課圖像說明可能機制與失敗情況，不能據此計算現場準確率或節拍。",
+      "action": "保留真實原圖、模型設定與對照輸出，以符合工作需求的留出資料另行測量。"
+    }
+  ],
+  "comparison": [
+    {
+      "model": "去模糊任務",
+      "normality": "辨識運動／失焦等退化，準備對照",
+      "candidate": "反推清晰估計；核對振鈴及假邊"
+    },
+    {
+      "model": "超解析任務",
+      "normality": "核對採樣、倍率與高低解析對照",
+      "candidate": "高解析估計；核對假紋理及微細邊界"
+    },
+    {
+      "model": "擴散方法",
+      "normality": "選支援目標任務的模型與條件；反覆去噪",
+      "candidate": "可作上述任務的候選做法；比較品質與總成本"
+    }
+  ],
+  "selection": "需求是去模糊，候選可含反卷積、前饋網路與擴散方法；超解析主要處理採樣不足，不能把兩者當同一件事。可改善取像時也把取像方案納入成本比較。 只有正常清晰圖可建立模擬拖影基準，仍需真實模糊與缺陷資料檢查漏檢。換速度／相機／鏡頭時重新核對退化。結果是影像估計，若需精密輪廓或尺寸，要另驗實際邊界誤差；比較推論、重拍、人工覆核的總時間。",
+  "poc": {
+    "title": "小規模比較：資料、效果與完整成本",
+    "steps": [
+      "保留原始資料，固定訓練與獨立真實留出切分，選定本課工作需求。",
+      "只有正常清晰圖可建立模擬拖影基準，仍需真實模糊與缺陷資料檢查漏檢。換速度／相機／鏡頭時重新核對退化。結果是影像估計，若需精密輪廓或尺寸，要另驗實際邊界誤差；比較推論、重拍、人工覆核的總時間。",
+      "記錄失敗影像、原圖與輸出關係、端到端時間和人工覆核量，再決定是否擴大。"
+    ],
+    "hold": "檢查原圖、重拍對照及邊緣假影；能調整時先改善曝光、照明、穩定與焦距。",
+    "acceptance": {
+      "baseline": "原有流程或最簡單可行方法",
+      "measure": "關鍵細節、下游錯誤、總時間及覆核量",
+      "negative_control": "以本課反例檢查錯誤結論是否被排除",
+      "owner": "教材使用者指定的實作及覆核負責人"
+    }
+  },
+  "teach_back": {
+    "question": "它改變什麼？換條件後如何選？",
+    "answer": "模糊把原本局部的訊號散到周圍：運動可能形成方向性拖影，失焦則有不同的擴散形狀。去模糊利用已知或估計的退化線索與影像先驗，反推清晰候選；可用傳統反卷積，也可用直接學模糊到清晰的網路，不一定顯式輸出模糊核。 需求是去模糊，候選可含反卷積、前饋網路與擴散方法；超解析主要處理採樣不足，不能把兩者當同一件事。可改善取像時也把取像方案納入成本比較。"
+  },
+  "slide_reading": [
+    {
+      "title": "Deblur：模糊觀測與清晰參考分开",
+      "question": "去模糊是估計，量測需驗邊緣偏差。",
+      "look": "先看保存模糊直邊與曝光設定，再核對以復原模型估計清晰候選，最後看同位置與清晰取像比對。",
+      "relation": "同板直邊，不只比較視覺清晰度；以同位置獨立短曝光/清晰圖驗邊緣偏移、假邊與下游量測。",
+      "takeaway": "去模糊是估計，量測需驗邊緣偏差。",
+      "terms": [
+        "示意數值：作者給定局部算例，非模型實測或建議參數。",
+        "同位置：比較保持相同影像座標與時間身份，不能任意換工件。"
+      ]
+    },
+    {
+      "title": "Deblur：模糊邊緣反推清晰候選",
+      "question": "清晰候選仍要用獨立觀測檢查假邊。",
+      "look": "先看移動曝光使邊緣展寬，再核對由觀測估計清晰邊緣，最後看回看振鈴及獨立清晰影像。",
+      "relation": "同金屬板直邊橫切，真邊階躍與曝光平均展寬。傳統反卷積/學習式復原均輸出估計，圖示非某一特定模型架構；空間變化運動模糊不能用單一核概括。回套退化及獨立短曝光影像檢查重影/振鈴。不用可能缺字的近似符號，直接寫約等於。",
+      "takeaway": "清晰候選仍要用獨立觀測檢查假邊。",
+      "terms": [
+        "示意數值：作者給定局部算例，非模型實測或建議參數。",
+        "同位置：比較保持相同影像座標與時間身份，不能任意換工件。"
+      ]
+    },
+    {
+      "title": "Deblur：速度、細節和假邊一起驗",
+      "question": "按實際曝光與運動條件驗完整流程。",
+      "look": "先看保存解析度、曝光與模型，再核對逐位置比較邊緣偏移，最後看端到端延遲與錯誤一起看。",
+      "relation": "物理移動/失焦與空間變化不同，模型訓練退化需對應。作者像素邊界100/102差2只示例，不是毫米或模型實測。",
+      "takeaway": "按實際曝光與運動條件驗完整流程。",
+      "terms": [
+        "示意數值：作者給定局部算例，非模型實測或建議參數。",
+        "同位置：比較保持相同影像座標與時間身份，不能任意換工件。"
+      ]
+    },
+    {
+      "title": "Deblur：銳利的多重邊可能是振鈴",
+      "question": "銳利度增加，不能取代真邊位置證據。",
+      "look": "先看原觀測只有一條模糊邊，再核對候選多重邊造成錯定位，最後看独立清晰取像驗單一真邊。",
+      "relation": "同邊橫切振鈴比原平滑觀測更銳利但有額外輪廓，量測若選錯峰會偏移。獨立成像驗證。",
+      "takeaway": "銳利度增加，不能取代真邊位置證據。",
+      "terms": [
+        "示意數值：作者給定局部算例，非模型實測或建議參數。",
+        "同位置：比較保持相同影像座標與時間身份，不能任意換工件。"
+      ]
+    }
+  ],
+  "comparison_headers": {
+    "title": "先看影像壞在哪裡，再選復原方法",
+    "basis": "資料準備與方法分工",
+    "output": "交付結果與核對重點"
+  },
+  "transfer_check": {
+    "title": "產線加速後只在部分位置拖影",
+    "scenario": "模型在原速度有效，加速後外框多出雙線；重拍較慢，但可以增加照明縮短曝光。",
+    "question": "先換更大的模型，還是比較取像與去模糊方案？",
+    "answer": "先確認拖影與曝光、運動的關係，用相同物件比較縮短曝光的取像改善及現有／新去模糊方法。看真實邊緣、假影、漏檢與完整節拍；更大模型可能增加延遲，也未必涵蓋新模糊。"
+  },
+  "review_trace": {
+    "authority": "roadmap-model-selection/diffusion-restoration/deblur/model.md",
+    "scope": "WI-033：工程層四圖與手機比較修正；首讀有效內容保留。原生圖已審，整頁與使用者審閱另記。",
+    "claims": [
+      {
+        "id": "visual-1",
+        "field": "beginner_path.visuals[motion-blur-aoi]",
+        "source": "模型定位 / architecture_path"
+      },
+      {
+        "id": "visual-2",
+        "field": "beginner_path.visuals[inverse-contract]",
+        "source": "architecture_path"
+      },
+      {
+        "id": "visual-3",
+        "field": "beginner_path.visuals[raw-artifact-evidence]",
+        "source": "representation_or_score"
+      },
+      {
+        "id": "visual-4",
+        "field": "beginner_path.visuals[psf-counterfactual]",
+        "source": "failure_boundary"
+      },
+      {
+        "id": "visual-5",
+        "field": "beginner_path.visuals[capture-first-gate]",
+        "source": "selection_gate / evidence_bundle"
+      },
+      {
+        "id": "promise",
+        "field": "promise",
+        "source": "模型定位 / representation_or_score"
+      },
+      {
+        "id": "mechanism",
+        "field": "mechanism_steps",
+        "source": "architecture_path / representation_or_score"
+      },
+      {
+        "id": "boundaries",
+        "field": "boundary_cases",
+        "source": "failure_boundary / selection_gate"
+      },
+      {
+        "id": "comparison",
+        "field": "comparison + selection",
+        "source": "selection_gate"
+      },
+      {
+        "id": "poc",
+        "field": "poc + acceptance",
+        "source": "cost_and_operating_point / evidence_bundle"
+      },
+      {
+        "id": "transfer",
+        "field": "transfer_check",
+        "source": "failure_boundary / selection_gate"
+      },
+      {
+        "id": "f02-core",
+        "field": "beginner_path.visuals[0] + scenario + mental_model",
+        "source": "roadmap-model-selection/diffusion-restoration/deblur/model.md"
+      },
+      {
+        "id": "f02-transfer",
+        "field": "micro_example + transfer_check + selection",
+        "source": "roadmap-model-selection/diffusion-restoration/deblur/model.md"
+      },
+      {
+        "id": "wi026-first-read",
+        "field": "beginner_path + core + selection + transfer",
+        "source": "https://arxiv.org/abs/1711.07064"
+      }
+    ]
+  },
+  "quality_status": {
+    "label": "首讀圖文已重製並自評；使用者核准待確認",
+    "state": "self-reviewed",
+    "round": "WI-026",
+    "reason": "38張不同PNG逐圖審查；整頁與互動證據見workitems/wi-026，原工程圖未重新評分。"
+  },
+  "teaching_preflight": {
+    "brief": "teaching-images/vision-ai-model-selection/workitems/wi-026/deblur-c1-r01.md",
+    "story": "C",
+    "major_visual_nodes": 4,
+    "visual_status": "self-reviewed",
+    "user_review": "pending"
+  },
+  "engineering_slides": [
+    {
+      "title": "Deblur：模糊觀測與清晰參考分开",
+      "question": "去模糊是估計，量測需驗邊緣偏差。",
+      "plain": {
+        "look": "先看保存模糊直邊與曝光設定，再核對以復原模型估計清晰候選，最後看同位置與清晰取像比對。",
+        "relation": "同板直邊，不只比較視覺清晰度；以同位置獨立短曝光/清晰圖驗邊緣偏移、假邊與下游量測。",
+        "takeaway": "去模糊是估計，量測需驗邊緣偏差。"
+      },
+      "terms": [
+        "示意數值：作者給定局部算例，非模型實測或建議參數。",
+        "同位置：比較保持相同影像座標與時間身份，不能任意換工件。"
+      ],
+      "guide": [
+        "同板直邊，不只比較視覺清晰度；以同位置獨立短曝光/清晰圖驗邊緣偏移、假邊與下游量測。",
+        "先看保存模糊直邊與曝光設定，再核對以復原模型估計清晰候選，最後看同位置與清晰取像比對。"
+      ],
+      "stages": [
+        {
+          "title": "保存模糊直邊與曝光設定",
+          "body": "保存模糊直邊與曝光設定；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "以復原模型估計清晰候選",
+          "body": "以復原模型估計清晰候選；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "同位置與清晰取像比對",
+          "body": "同位置與清晰取像比對；請對照圖內輸入、變化與結果。"
+        }
+      ],
+      "misconception": "假設復原後在直邊旁多出平行明暗線，這可能是振鈴假影。獨立清晰重拍只有一條邊；因此不能把復原後所有銳利線都當成裂紋或實體結構。",
+      "alt": "Deblur：模糊觀測與清晰參考分开。去模糊是估計，量測需驗邊緣偏差。 教學示意，非模型實測。",
+      "mobile_image": "roadmap-model-selection/diffusion-restoration/deblur/images/final/WI033-DEBLUR-01-r01-mobile.png",
+      "mobile_width": 768,
+      "mobile_height": 2304,
+      "engineering": {
+        "takeaway": "去模糊是估計，量測需驗邊緣偏差。",
+        "nextAction": "保留原始資料，固定訓練與獨立真實留出切分，選定本課工作需求。",
+        "redLine": "檢查原圖、重拍對照及邊緣假影；能調整時先改善曝光、照明、穩定與焦距。"
+      },
+      "source": "https://arxiv.org/abs/1612.02177"
+    },
+    {
+      "title": "Deblur：模糊邊緣反推清晰候選",
+      "question": "清晰候選仍要用獨立觀測檢查假邊。",
+      "plain": {
+        "look": "先看移動曝光使邊緣展寬，再核對由觀測估計清晰邊緣，最後看回看振鈴及獨立清晰影像。",
+        "relation": "同金屬板直邊橫切，真邊階躍與曝光平均展寬。傳統反卷積/學習式復原均輸出估計，圖示非某一特定模型架構；空間變化運動模糊不能用單一核概括。回套退化及獨立短曝光影像檢查重影/振鈴。不用可能缺字的近似符號，直接寫約等於。",
+        "takeaway": "清晰候選仍要用獨立觀測檢查假邊。"
+      },
+      "terms": [
+        "示意數值：作者給定局部算例，非模型實測或建議參數。",
+        "同位置：比較保持相同影像座標與時間身份，不能任意換工件。"
+      ],
+      "guide": [
+        "同金屬板直邊橫切，真邊階躍與曝光平均展寬。傳統反卷積/學習式復原均輸出估計，圖示非某一特定模型架構；空間變化運動模糊不能用單一核概括。回套退化及獨立短曝光影像檢查重影/振鈴。不用可能缺字的近似符號，直接寫約等於。",
+        "先看移動曝光使邊緣展寬，再核對由觀測估計清晰邊緣，最後看回看振鈴及獨立清晰影像。"
+      ],
+      "stages": [
+        {
+          "title": "移動曝光使邊緣展寬",
+          "body": "移動曝光使邊緣展寬；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "由觀測估計清晰邊緣",
+          "body": "由觀測估計清晰邊緣；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "回看振鈴及獨立清晰影像",
+          "body": "回看振鈴及獨立清晰影像；請對照圖內輸入、變化與結果。"
+        }
+      ],
+      "misconception": "假設復原後在直邊旁多出平行明暗線，這可能是振鈴假影。獨立清晰重拍只有一條邊；因此不能把復原後所有銳利線都當成裂紋或實體結構。",
+      "alt": "Deblur：模糊邊緣反推清晰候選。清晰候選仍要用獨立觀測檢查假邊。 教學示意，非模型實測。",
+      "mobile_image": "roadmap-model-selection/diffusion-restoration/deblur/images/final/WI033-DEBLUR-02-r01-mobile.png",
+      "mobile_width": 768,
+      "mobile_height": 2304,
+      "engineering": {
+        "takeaway": "清晰候選仍要用獨立觀測檢查假邊。",
+        "nextAction": "保留原始資料，固定訓練與獨立真實留出切分，選定本課工作需求。",
+        "redLine": "檢查原圖、重拍對照及邊緣假影；能調整時先改善曝光、照明、穩定與焦距。"
+      },
+      "source": "https://arxiv.org/abs/1612.02177"
+    },
+    {
+      "title": "Deblur：速度、細節和假邊一起驗",
+      "question": "按實際曝光與運動條件驗完整流程。",
+      "plain": {
+        "look": "先看保存解析度、曝光與模型，再核對逐位置比較邊緣偏移，最後看端到端延遲與錯誤一起看。",
+        "relation": "物理移動/失焦與空間變化不同，模型訓練退化需對應。作者像素邊界100/102差2只示例，不是毫米或模型實測。",
+        "takeaway": "按實際曝光與運動條件驗完整流程。"
+      },
+      "terms": [
+        "示意數值：作者給定局部算例，非模型實測或建議參數。",
+        "同位置：比較保持相同影像座標與時間身份，不能任意換工件。"
+      ],
+      "guide": [
+        "物理移動/失焦與空間變化不同，模型訓練退化需對應。作者像素邊界100/102差2只示例，不是毫米或模型實測。",
+        "先看保存解析度、曝光與模型，再核對逐位置比較邊緣偏移，最後看端到端延遲與錯誤一起看。"
+      ],
+      "stages": [
+        {
+          "title": "保存解析度、曝光與模型",
+          "body": "保存解析度、曝光與模型；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "逐位置比較邊緣偏移",
+          "body": "逐位置比較邊緣偏移；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "端到端延遲與錯誤一起看",
+          "body": "端到端延遲與錯誤一起看；請對照圖內輸入、變化與結果。"
+        }
+      ],
+      "misconception": "假設復原後在直邊旁多出平行明暗線，這可能是振鈴假影。獨立清晰重拍只有一條邊；因此不能把復原後所有銳利線都當成裂紋或實體結構。",
+      "alt": "Deblur：速度、細節和假邊一起驗。按實際曝光與運動條件驗完整流程。 教學示意，非模型實測。",
+      "mobile_image": "roadmap-model-selection/diffusion-restoration/deblur/images/final/WI033-DEBLUR-03-r02-mobile.png",
+      "mobile_width": 768,
+      "mobile_height": 2304,
+      "engineering": {
+        "takeaway": "按實際曝光與運動條件驗完整流程。",
+        "nextAction": "保留原始資料，固定訓練與獨立真實留出切分，選定本課工作需求。",
+        "redLine": "檢查原圖、重拍對照及邊緣假影；能調整時先改善曝光、照明、穩定與焦距。"
+      },
+      "source": "https://arxiv.org/abs/1612.02177"
+    },
+    {
+      "title": "Deblur：銳利的多重邊可能是振鈴",
+      "question": "銳利度增加，不能取代真邊位置證據。",
+      "plain": {
+        "look": "先看原觀測只有一條模糊邊，再核對候選多重邊造成錯定位，最後看独立清晰取像驗單一真邊。",
+        "relation": "同邊橫切振鈴比原平滑觀測更銳利但有額外輪廓，量測若選錯峰會偏移。獨立成像驗證。",
+        "takeaway": "銳利度增加，不能取代真邊位置證據。"
+      },
+      "terms": [
+        "示意數值：作者給定局部算例，非模型實測或建議參數。",
+        "同位置：比較保持相同影像座標與時間身份，不能任意換工件。"
+      ],
+      "guide": [
+        "同邊橫切振鈴比原平滑觀測更銳利但有額外輪廓，量測若選錯峰會偏移。獨立成像驗證。",
+        "先看原觀測只有一條模糊邊，再核對候選多重邊造成錯定位，最後看独立清晰取像驗單一真邊。"
+      ],
+      "stages": [
+        {
+          "title": "原觀測只有一條模糊邊",
+          "body": "原觀測只有一條模糊邊；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "候選多重邊造成錯定位",
+          "body": "候選多重邊造成錯定位；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "独立清晰取像驗單一真邊",
+          "body": "独立清晰取像驗單一真邊；請對照圖內輸入、變化與結果。"
+        }
+      ],
+      "misconception": "假設復原後在直邊旁多出平行明暗線，這可能是振鈴假影。獨立清晰重拍只有一條邊；因此不能把復原後所有銳利線都當成裂紋或實體結構。",
+      "alt": "Deblur：銳利的多重邊可能是振鈴。銳利度增加，不能取代真邊位置證據。 教學示意，非模型實測。",
+      "mobile_image": "roadmap-model-selection/diffusion-restoration/deblur/images/final/WI033-DEBLUR-04-r01-mobile.png",
+      "mobile_width": 768,
+      "mobile_height": 2304,
+      "engineering": {
+        "takeaway": "銳利度增加，不能取代真邊位置證據。",
+        "nextAction": "保留原始資料，固定訓練與獨立真實留出切分，選定本課工作需求。",
+        "redLine": "檢查原圖、重拍對照及邊緣假影；能調整時先改善曝光、照明、穩定與焦距。"
+      },
+      "source": "https://arxiv.org/abs/1612.02177"
+    }
+  ]
+}

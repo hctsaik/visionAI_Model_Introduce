@@ -1,0 +1,355 @@
+{
+  "mechanism_topics": [
+    "dinov2",
+    "dinov3",
+    "clip",
+    "siglip",
+    "llava",
+    "qwen-vl",
+    "gemini-vision",
+    "defectfill",
+    "anomalydiffusion",
+    "tf-idg",
+    "controlnet",
+    "inpainting",
+    "diffusion-restoration",
+    "deblur",
+    "super-resolution",
+    "resnet",
+    "det-dino-detector",
+    "yolo-world",
+    "yoloe"
+  ],
+  "wording_edits": [
+    {
+      "field": "ad-anomalygpt.json.slide_reading[3].relation",
+      "before": "同一支架若位置圖指中部，回答卻描述孔邊，不能因語句流暢就放行。以同一批真缺陷與正常圖比較只看位置或加問答的錯誤、延遲和人工覆核时间；沒有收益時保留簡單流程也合理。",
+      "after": "同一支架若位置圖指中部，回答卻描述孔邊，不能因語句流暢就放行。以同一批真缺陷與正常圖比較只看位置或加問答的錯誤、延遲和人工覆核時間；沒有收益時保留簡單流程也合理。"
+    },
+    {
+      "field": "ad-anomalygpt.json.engineering_slides[3].plain.relation",
+      "before": "同一支架若位置圖指中部，回答卻描述孔邊，不能因語句流暢就放行。以同一批真缺陷與正常圖比較只看位置或加問答的錯誤、延遲和人工覆核时间；沒有收益時保留簡單流程也合理。",
+      "after": "同一支架若位置圖指中部，回答卻描述孔邊，不能因語句流暢就放行。以同一批真缺陷與正常圖比較只看位置或加問答的錯誤、延遲和人工覆核時間；沒有收益時保留簡單流程也合理。"
+    },
+    {
+      "field": "ad-anomalygpt.json.engineering_slides[3].guide[0]",
+      "before": "同一支架若位置圖指中部，回答卻描述孔邊，不能因語句流暢就放行。以同一批真缺陷與正常圖比較只看位置或加問答的錯誤、延遲和人工覆核时间；沒有收益時保留簡單流程也合理。",
+      "after": "同一支架若位置圖指中部，回答卻描述孔邊，不能因語句流暢就放行。以同一批真缺陷與正常圖比較只看位置或加問答的錯誤、延遲和人工覆核時間；沒有收益時保留簡單流程也合理。"
+    },
+    {
+      "field": "ad-invad.json.slide_reading[1].relation",
+      "before": "本課為2024 Feature Inversion的InvAD。固定影像編碼器抽特徵，融合/重縮放/風格轉換產生空間條件；由常數特徵起步，SSM以每位置縮放和偏移調制標準化特徵。给定z=3，p縮放2偏移1得7，q縮放0.5偏移0得1.5；這只是SSM局部算例。正常訓練MSE重建，推論餘弦差。SSM是Spatial Style Modulation，不是狀態空間模型。",
+      "after": "本課為2024 Feature Inversion的InvAD。固定影像編碼器抽特徵，融合/重縮放/風格轉換產生空間條件；由常數特徵起步，SSM以每位置縮放和偏移調制標準化特徵。給定z=3，p縮放2偏移1得7，q縮放0.5偏移0得1.5；這只是SSM局部算例。正常訓練MSE重建，推論餘弦差。SSM是Spatial Style Modulation，不是狀態空間模型。"
+    },
+    {
+      "field": "ad-invad.json.engineering_slides[1].plain.relation",
+      "before": "本課為2024 Feature Inversion的InvAD。固定影像編碼器抽特徵，融合/重縮放/風格轉換產生空間條件；由常數特徵起步，SSM以每位置縮放和偏移調制標準化特徵。给定z=3，p縮放2偏移1得7，q縮放0.5偏移0得1.5；這只是SSM局部算例。正常訓練MSE重建，推論餘弦差。SSM是Spatial Style Modulation，不是狀態空間模型。",
+      "after": "本課為2024 Feature Inversion的InvAD。固定影像編碼器抽特徵，融合/重縮放/風格轉換產生空間條件；由常數特徵起步，SSM以每位置縮放和偏移調制標準化特徵。給定z=3，p縮放2偏移1得7，q縮放0.5偏移0得1.5；這只是SSM局部算例。正常訓練MSE重建，推論餘弦差。SSM是Spatial Style Modulation，不是狀態空間模型。"
+    },
+    {
+      "field": "ad-invad.json.engineering_slides[1].guide[0]",
+      "before": "本課為2024 Feature Inversion的InvAD。固定影像編碼器抽特徵，融合/重縮放/風格轉換產生空間條件；由常數特徵起步，SSM以每位置縮放和偏移調制標準化特徵。给定z=3，p縮放2偏移1得7，q縮放0.5偏移0得1.5；這只是SSM局部算例。正常訓練MSE重建，推論餘弦差。SSM是Spatial Style Modulation，不是狀態空間模型。",
+      "after": "本課為2024 Feature Inversion的InvAD。固定影像編碼器抽特徵，融合/重縮放/風格轉換產生空間條件；由常數特徵起步，SSM以每位置縮放和偏移調制標準化特徵。給定z=3，p縮放2偏移1得7，q縮放0.5偏移0得1.5；這只是SSM局部算例。正常訓練MSE重建，推論餘弦差。SSM是Spatial Style Modulation，不是狀態空間模型。"
+    },
+    {
+      "field": "ad-subspacead.json.slide_reading[3].relation",
+      "before": "延續中心化x=[3,2]；只留水平一維，投影[3,0]殘差2；二維全保留，投影等於x，殘差0。這是線性投影的確切算例，说明增加維度不保證異常檢測更好。",
+      "after": "延續中心化x=[3,2]；只留水平一維，投影[3,0]殘差2；二維全保留，投影等於x，殘差0。這是線性投影的確切算例，說明增加維度不保證異常檢測更好。"
+    },
+    {
+      "field": "ad-subspacead.json.engineering_slides[3].plain.relation",
+      "before": "延續中心化x=[3,2]；只留水平一維，投影[3,0]殘差2；二維全保留，投影等於x，殘差0。這是線性投影的確切算例，说明增加維度不保證異常檢測更好。",
+      "after": "延續中心化x=[3,2]；只留水平一維，投影[3,0]殘差2；二維全保留，投影等於x，殘差0。這是線性投影的確切算例，說明增加維度不保證異常檢測更好。"
+    },
+    {
+      "field": "ad-subspacead.json.engineering_slides[3].guide[0]",
+      "before": "延續中心化x=[3,2]；只留水平一維，投影[3,0]殘差2；二維全保留，投影等於x，殘差0。這是線性投影的確切算例，说明增加維度不保證異常檢測更好。",
+      "after": "延續中心化x=[3,2]；只留水平一維，投影[3,0]殘差2；二維全保留，投影等於x，殘差0。這是線性投影的確切算例，說明增加維度不保證異常檢測更好。"
+    },
+    {
+      "field": "anomalydiffusion.json.slide_reading[1].relation",
+      "before": "同上方双孔板，大左下/小右下兩區。學異常外觀embedding及mask編碼器，固定擴散主幹；空間及外觀條件引導。AAR用生成估計與正常圖遮罩內差找較弱區域調注意力，背景與正常圖融合。給两mask只生成一傷仍是需剔除的錯標反例，不聲稱自適應必成功。 r01實看修正：恢復原板上方兩孔，保留大左下小右下雙傷；條件pill與caption分離。",
+      "after": "同上方双孔板，大左下/小右下兩區。學異常外觀embedding及mask編碼器，固定擴散主幹；空間及外觀條件引導。AAR用生成估計與正常圖遮罩內差找較弱區域調注意力，背景與正常圖融合。給两mask只生成一傷仍是需剔除的錯標反例，不聲稱自適應必成功。"
+    },
+    {
+      "field": "anomalydiffusion.json.engineering_slides[1].plain.relation",
+      "before": "同上方双孔板，大左下/小右下兩區。學異常外觀embedding及mask編碼器，固定擴散主幹；空間及外觀條件引導。AAR用生成估計與正常圖遮罩內差找較弱區域調注意力，背景與正常圖融合。給两mask只生成一傷仍是需剔除的錯標反例，不聲稱自適應必成功。 r01實看修正：恢復原板上方兩孔，保留大左下小右下雙傷；條件pill與caption分離。",
+      "after": "同上方双孔板，大左下/小右下兩區。學異常外觀embedding及mask編碼器，固定擴散主幹；空間及外觀條件引導。AAR用生成估計與正常圖遮罩內差找較弱區域調注意力，背景與正常圖融合。給两mask只生成一傷仍是需剔除的錯標反例，不聲稱自適應必成功。"
+    },
+    {
+      "field": "anomalydiffusion.json.engineering_slides[1].guide[0]",
+      "before": "同上方双孔板，大左下/小右下兩區。學異常外觀embedding及mask編碼器，固定擴散主幹；空間及外觀條件引導。AAR用生成估計與正常圖遮罩內差找較弱區域調注意力，背景與正常圖融合。給两mask只生成一傷仍是需剔除的錯標反例，不聲稱自適應必成功。 r01實看修正：恢復原板上方兩孔，保留大左下小右下雙傷；條件pill與caption分離。",
+      "after": "同上方双孔板，大左下/小右下兩區。學異常外觀embedding及mask編碼器，固定擴散主幹；空間及外觀條件引導。AAR用生成估計與正常圖遮罩內差找較弱區域調注意力，背景與正常圖融合。給两mask只生成一傷仍是需剔除的錯標反例，不聲稱自適應必成功。"
+    },
+    {
+      "field": "controlnet.json.slide_reading[1].relation",
+      "before": "同上方雙孔矩形板，輪廓圖含外框/兩孔，文字指定銀色金屬。預訓練主幹固定，可訓練編碼副本接條件，zero convolution初始化0以殘差連接主幹；訓練後連接通常不為0。每步讀時間/噪聲latent與條件；不把輪廓輸出當缺陷熱點。 r01實看修正：輪廓外框與孔框同用白線。",
+      "after": "同上方雙孔矩形板，輪廓圖含外框/兩孔，文字指定銀色金屬。預訓練主幹固定，可訓練編碼副本接條件，zero convolution初始化0以殘差連接主幹；訓練後連接通常不為0。每步讀時間/噪聲latent與條件；不把輪廓輸出當缺陷熱點。"
+    },
+    {
+      "field": "controlnet.json.engineering_slides[1].plain.relation",
+      "before": "同上方雙孔矩形板，輪廓圖含外框/兩孔，文字指定銀色金屬。預訓練主幹固定，可訓練編碼副本接條件，zero convolution初始化0以殘差連接主幹；訓練後連接通常不為0。每步讀時間/噪聲latent與條件；不把輪廓輸出當缺陷熱點。 r01實看修正：輪廓外框與孔框同用白線。",
+      "after": "同上方雙孔矩形板，輪廓圖含外框/兩孔，文字指定銀色金屬。預訓練主幹固定，可訓練編碼副本接條件，zero convolution初始化0以殘差連接主幹；訓練後連接通常不為0。每步讀時間/噪聲latent與條件；不把輪廓輸出當缺陷熱點。"
+    },
+    {
+      "field": "controlnet.json.engineering_slides[1].guide[0]",
+      "before": "同上方雙孔矩形板，輪廓圖含外框/兩孔，文字指定銀色金屬。預訓練主幹固定，可訓練編碼副本接條件，zero convolution初始化0以殘差連接主幹；訓練後連接通常不為0。每步讀時間/噪聲latent與條件；不把輪廓輸出當缺陷熱點。 r01實看修正：輪廓外框與孔框同用白線。",
+      "after": "同上方雙孔矩形板，輪廓圖含外框/兩孔，文字指定銀色金屬。預訓練主幹固定，可訓練編碼副本接條件，zero convolution初始化0以殘差連接主幹；訓練後連接通常不為0。每步讀時間/噪聲latent與條件；不把輪廓輸出當缺陷熱點。"
+    },
+    {
+      "field": "convlstm.json.slide_reading[1].relation",
+      "before": "同一夾爪與方塊依序張開、接近、夾住。X_t及H_(t-1)以卷積產生門控，C_t=f_t⊙C_(t-1)+i_t⊙候選；H_t=o_t⊙tanh(C_t)。原論文可有peephole。給定單位置Cprev=.4,f=.5,i=.8,candidate=.5得C=.6；其餘位置另有值。不是每張影格都重新歸零；任务頭另訓練。 r01實看修正：下一步明畫卷積門控與X(t+1)，避免誤讀直接預測圖像。",
+      "after": "同一夾爪與方塊依序張開、接近、夾住。X_t及H_(t-1)以卷積產生門控，C_t=f_t⊙C_(t-1)+i_t⊙候選；H_t=o_t⊙tanh(C_t)。原論文可有peephole。給定單位置Cprev=.4,f=.5,i=.8,candidate=.5得C=.6；其餘位置另有值。不是每張影格都重新歸零；任务頭另訓練。"
+    },
+    {
+      "field": "convlstm.json.slide_reading[2].relation",
+      "before": "推論狀態初始化/持續/重設需符合訓練方式；不能讓相機A記憶污染B。保存幀距、解析度、網路及任務頭版本，量完整預處理/狀態更新/任務輸出延遲。 r01實看修正：时间刻度及標籤各自定位，避免SVG空白合併。",
+      "after": "推論狀態初始化/持續/重設需符合訓練方式；不能讓相機A記憶污染B。保存幀距、解析度、網路及任務頭版本，量完整預處理/狀態更新/任務輸出延遲。"
+    },
+    {
+      "field": "convlstm.json.engineering_slides[1].plain.relation",
+      "before": "同一夾爪與方塊依序張開、接近、夾住。X_t及H_(t-1)以卷積產生門控，C_t=f_t⊙C_(t-1)+i_t⊙候選；H_t=o_t⊙tanh(C_t)。原論文可有peephole。給定單位置Cprev=.4,f=.5,i=.8,candidate=.5得C=.6；其餘位置另有值。不是每張影格都重新歸零；任务頭另訓練。 r01實看修正：下一步明畫卷積門控與X(t+1)，避免誤讀直接預測圖像。",
+      "after": "同一夾爪與方塊依序張開、接近、夾住。X_t及H_(t-1)以卷積產生門控，C_t=f_t⊙C_(t-1)+i_t⊙候選；H_t=o_t⊙tanh(C_t)。原論文可有peephole。給定單位置Cprev=.4,f=.5,i=.8,candidate=.5得C=.6；其餘位置另有值。不是每張影格都重新歸零；任务頭另訓練。"
+    },
+    {
+      "field": "convlstm.json.engineering_slides[1].guide[0]",
+      "before": "同一夾爪與方塊依序張開、接近、夾住。X_t及H_(t-1)以卷積產生門控，C_t=f_t⊙C_(t-1)+i_t⊙候選；H_t=o_t⊙tanh(C_t)。原論文可有peephole。給定單位置Cprev=.4,f=.5,i=.8,candidate=.5得C=.6；其餘位置另有值。不是每張影格都重新歸零；任务頭另訓練。 r01實看修正：下一步明畫卷積門控與X(t+1)，避免誤讀直接預測圖像。",
+      "after": "同一夾爪與方塊依序張開、接近、夾住。X_t及H_(t-1)以卷積產生門控，C_t=f_t⊙C_(t-1)+i_t⊙候選；H_t=o_t⊙tanh(C_t)。原論文可有peephole。給定單位置Cprev=.4,f=.5,i=.8,candidate=.5得C=.6；其餘位置另有值。不是每張影格都重新歸零；任务頭另訓練。"
+    },
+    {
+      "field": "convlstm.json.engineering_slides[2].plain.relation",
+      "before": "推論狀態初始化/持續/重設需符合訓練方式；不能讓相機A記憶污染B。保存幀距、解析度、網路及任務頭版本，量完整預處理/狀態更新/任務輸出延遲。 r01實看修正：时间刻度及標籤各自定位，避免SVG空白合併。",
+      "after": "推論狀態初始化/持續/重設需符合訓練方式；不能讓相機A記憶污染B。保存幀距、解析度、網路及任務頭版本，量完整預處理/狀態更新/任務輸出延遲。"
+    },
+    {
+      "field": "convlstm.json.engineering_slides[2].guide[0]",
+      "before": "推論狀態初始化/持續/重設需符合訓練方式；不能讓相機A記憶污染B。保存幀距、解析度、網路及任務頭版本，量完整預處理/狀態更新/任務輸出延遲。 r01實看修正：时间刻度及標籤各自定位，避免SVG空白合併。",
+      "after": "推論狀態初始化/持續/重設需符合訓練方式；不能讓相機A記憶污染B。保存幀距、解析度、網路及任務頭版本，量完整預處理/狀態更新/任務輸出延遲。"
+    },
+    {
+      "field": "deblur.json.slide_reading[2].relation",
+      "before": "物理移動/失焦與空間變化不同，模型訓練退化需對應。作者像素邊界100/102差2只示例，不是毫米或模型實測。 r01實看修正：真邊/估計/差值移出影像並以同色標明，避免跨邊界。",
+      "after": "物理移動/失焦與空間變化不同，模型訓練退化需對應。作者像素邊界100/102差2只示例，不是毫米或模型實測。"
+    },
+    {
+      "field": "deblur.json.engineering_slides[2].plain.relation",
+      "before": "物理移動/失焦與空間變化不同，模型訓練退化需對應。作者像素邊界100/102差2只示例，不是毫米或模型實測。 r01實看修正：真邊/估計/差值移出影像並以同色標明，避免跨邊界。",
+      "after": "物理移動/失焦與空間變化不同，模型訓練退化需對應。作者像素邊界100/102差2只示例，不是毫米或模型實測。"
+    },
+    {
+      "field": "deblur.json.engineering_slides[2].guide[0]",
+      "before": "物理移動/失焦與空間變化不同，模型訓練退化需對應。作者像素邊界100/102差2只示例，不是毫米或模型實測。 r01實看修正：真邊/估計/差值移出影像並以同色標明，避免跨邊界。",
+      "after": "物理移動/失焦與空間變化不同，模型訓練退化需對應。作者像素邊界100/102差2只示例，不是毫米或模型實測。"
+    },
+    {
+      "field": "defectfill.json.slide_reading[1].relation",
+      "before": "同一上方雙孔板，下方中心刮傷。少量缺陷及mask微調文字編碼器及attention LoRA；缺陷/物件/attention三損失協同。正常影像+mask進inpainting，LFS挑遮罩內相對原正常图LPIPS更大的候選（較低保真）；給定.1/.3只是示例，不等於物理真實度，仍需逐件位置及真缺陷驗證。 r01實看修正：候選A改為淡刮傷，不把正常原圖配非零距離。",
+      "after": "同一上方雙孔板，下方中心刮傷。少量缺陷及mask微調文字編碼器及attention LoRA；缺陷/物件/attention三損失協同。正常影像+mask進inpainting，LFS挑遮罩內相對原正常图LPIPS更大的候選（較低保真）；給定.1/.3只是示例，不等於物理真實度，仍需逐件位置及真缺陷驗證。"
+    },
+    {
+      "field": "defectfill.json.engineering_slides[1].plain.relation",
+      "before": "同一上方雙孔板，下方中心刮傷。少量缺陷及mask微調文字編碼器及attention LoRA；缺陷/物件/attention三損失協同。正常影像+mask進inpainting，LFS挑遮罩內相對原正常图LPIPS更大的候選（較低保真）；給定.1/.3只是示例，不等於物理真實度，仍需逐件位置及真缺陷驗證。 r01實看修正：候選A改為淡刮傷，不把正常原圖配非零距離。",
+      "after": "同一上方雙孔板，下方中心刮傷。少量缺陷及mask微調文字編碼器及attention LoRA；缺陷/物件/attention三損失協同。正常影像+mask進inpainting，LFS挑遮罩內相對原正常图LPIPS更大的候選（較低保真）；給定.1/.3只是示例，不等於物理真實度，仍需逐件位置及真缺陷驗證。"
+    },
+    {
+      "field": "defectfill.json.engineering_slides[1].guide[0]",
+      "before": "同一上方雙孔板，下方中心刮傷。少量缺陷及mask微調文字編碼器及attention LoRA；缺陷/物件/attention三損失協同。正常影像+mask進inpainting，LFS挑遮罩內相對原正常图LPIPS更大的候選（較低保真）；給定.1/.3只是示例，不等於物理真實度，仍需逐件位置及真缺陷驗證。 r01實看修正：候選A改為淡刮傷，不把正常原圖配非零距離。",
+      "after": "同一上方雙孔板，下方中心刮傷。少量缺陷及mask微調文字編碼器及attention LoRA；缺陷/物件/attention三損失協同。正常影像+mask進inpainting，LFS挑遮罩內相對原正常图LPIPS更大的候選（較低保真）；給定.1/.3只是示例，不等於物理真實度，仍需逐件位置及真缺陷驗證。"
+    },
+    {
+      "field": "det-rtdetr.json.slide_reading[1].relation",
+      "before": "训练时一對一匹配讓不同query學不同物件，沒有匹配的query學背景。推論不讀真值：混合編碼與query選擇提供起點，decoder反覆取影像線索更新框。示意q1對A、q2對B、q3未過分數篩選。省去NMS不代表無門檻、零重複或固定更快。",
+      "after": "訓練時一對一匹配讓不同query學不同物件，沒有匹配的query學背景。推論不讀真值：混合編碼與query選擇提供起點，decoder反覆取影像線索更新框。示意q1對A、q2對B、q3未過分數篩選。省去NMS不代表無門檻、零重複或固定更快。"
+    },
+    {
+      "field": "det-rtdetr.json.engineering_slides[1].plain.relation",
+      "before": "训练时一對一匹配讓不同query學不同物件，沒有匹配的query學背景。推論不讀真值：混合編碼與query選擇提供起點，decoder反覆取影像線索更新框。示意q1對A、q2對B、q3未過分數篩選。省去NMS不代表無門檻、零重複或固定更快。",
+      "after": "訓練時一對一匹配讓不同query學不同物件，沒有匹配的query學背景。推論不讀真值：混合編碼與query選擇提供起點，decoder反覆取影像線索更新框。示意q1對A、q2對B、q3未過分數篩選。省去NMS不代表無門檻、零重複或固定更快。"
+    },
+    {
+      "field": "det-rtdetr.json.engineering_slides[1].guide[0]",
+      "before": "训练时一對一匹配讓不同query學不同物件，沒有匹配的query學背景。推論不讀真值：混合編碼與query選擇提供起點，decoder反覆取影像線索更新框。示意q1對A、q2對B、q3未過分數篩選。省去NMS不代表無門檻、零重複或固定更快。",
+      "after": "訓練時一對一匹配讓不同query學不同物件，沒有匹配的query學背景。推論不讀真值：混合編碼與query選擇提供起點，decoder反覆取影像線索更新框。示意q1對A、q2對B、q3未過分數篩選。省去NMS不代表無門檻、零重複或固定更快。"
+    },
+    {
+      "field": "diffusion-restoration.json.slide_reading[0].relation",
+      "before": "線性逆問題示意，保存A/噪聲假設與原觀測；候選再退化對回y並檢未觀測細節，不把低殘差當真值。 r01實看修正：比較A估計與原觀測，依噪聲模型檢殘差；不宣稱知道真實n。",
+      "after": "線性逆問題示意，保存A/噪聲假設與原觀測；候選再退化對回y並檢未觀測細節，不把低殘差當真值。"
+    },
+    {
+      "field": "diffusion-restoration.json.slide_reading[2].relation",
+      "before": "保存模型、退化算子、噪聲與步數種子；不同候選一致不保證唯一真實。時間要含每步去噪及資料一致性。 r01實看修正：依噪聲模型驗殘差，並將結論寫成明確可做的條件核對。",
+      "after": "保存模型、退化算子、噪聲與步數種子；不同候選一致不保證唯一真實。時間要含每步去噪及資料一致性。"
+    },
+    {
+      "field": "diffusion-restoration.json.slide_reading[3].relation",
+      "before": "作者反例把加性雜訊當卷積模糊，假設錯誤可引入不必要輪廓。需檢退化與獨立成像，不以漂亮結果證明模型合適。 r01實看修正：錯退化反例保留完整同板，在右外框畫多重邊；噪聲容許條件明寫。",
+      "after": "作者反例把加性雜訊當卷積模糊，假設錯誤可引入不必要輪廓。需檢退化與獨立成像，不以漂亮結果證明模型合適。"
+    },
+    {
+      "field": "diffusion-restoration.json.engineering_slides[0].plain.relation",
+      "before": "線性逆問題示意，保存A/噪聲假設與原觀測；候選再退化對回y並檢未觀測細節，不把低殘差當真值。 r01實看修正：比較A估計與原觀測，依噪聲模型檢殘差；不宣稱知道真實n。",
+      "after": "線性逆問題示意，保存A/噪聲假設與原觀測；候選再退化對回y並檢未觀測細節，不把低殘差當真值。"
+    },
+    {
+      "field": "diffusion-restoration.json.engineering_slides[0].guide[0]",
+      "before": "線性逆問題示意，保存A/噪聲假設與原觀測；候選再退化對回y並檢未觀測細節，不把低殘差當真值。 r01實看修正：比較A估計與原觀測，依噪聲模型檢殘差；不宣稱知道真實n。",
+      "after": "線性逆問題示意，保存A/噪聲假設與原觀測；候選再退化對回y並檢未觀測細節，不把低殘差當真值。"
+    },
+    {
+      "field": "diffusion-restoration.json.engineering_slides[2].plain.relation",
+      "before": "保存模型、退化算子、噪聲與步數種子；不同候選一致不保證唯一真實。時間要含每步去噪及資料一致性。 r01實看修正：依噪聲模型驗殘差，並將結論寫成明確可做的條件核對。",
+      "after": "保存模型、退化算子、噪聲與步數種子；不同候選一致不保證唯一真實。時間要含每步去噪及資料一致性。"
+    },
+    {
+      "field": "diffusion-restoration.json.engineering_slides[2].guide[0]",
+      "before": "保存模型、退化算子、噪聲與步數種子；不同候選一致不保證唯一真實。時間要含每步去噪及資料一致性。 r01實看修正：依噪聲模型驗殘差，並將結論寫成明確可做的條件核對。",
+      "after": "保存模型、退化算子、噪聲與步數種子；不同候選一致不保證唯一真實。時間要含每步去噪及資料一致性。"
+    },
+    {
+      "field": "diffusion-restoration.json.engineering_slides[3].plain.relation",
+      "before": "作者反例把加性雜訊當卷積模糊，假設錯誤可引入不必要輪廓。需檢退化與獨立成像，不以漂亮結果證明模型合適。 r01實看修正：錯退化反例保留完整同板，在右外框畫多重邊；噪聲容許條件明寫。",
+      "after": "作者反例把加性雜訊當卷積模糊，假設錯誤可引入不必要輪廓。需檢退化與獨立成像，不以漂亮結果證明模型合適。"
+    },
+    {
+      "field": "diffusion-restoration.json.engineering_slides[3].guide[0]",
+      "before": "作者反例把加性雜訊當卷積模糊，假設錯誤可引入不必要輪廓。需檢退化與獨立成像，不以漂亮結果證明模型合適。 r01實看修正：錯退化反例保留完整同板，在右外框畫多重邊；噪聲容許條件明寫。",
+      "after": "作者反例把加性雜訊當卷積模糊，假設錯誤可引入不必要輪廓。需檢退化與獨立成像，不以漂亮結果證明模型合適。"
+    },
+    {
+      "field": "dinov2.json.mechanism_steps[0].body",
+      "before": "同一影像產生不同裁切與擾動視圖，分別交给 Teacher／Student 建立整圖與局部學習目標；這是預訓練資料處理，不是部署時替工件新增類別。",
+      "after": "同一影像產生不同裁切與擾動視圖，分別交給 Teacher／Student 建立整圖與局部學習目標；這是預訓練資料處理，不是部署時替工件新增類別。"
+    },
+    {
+      "field": "dinov2.json.mechanism_steps[0].diagram.body",
+      "before": "同一影像產生不同裁切與擾動視圖，分別交给 Teacher／Student 建立整圖與局部學習目標；這是預訓練資料處理，不是部署時替工件新增類別。",
+      "after": "同一影像產生不同裁切與擾動視圖，分別交給 Teacher／Student 建立整圖與局部學習目標；這是預訓練資料處理，不是部署時替工件新增類別。"
+    },
+    {
+      "field": "inpainting.json.slide_reading[1].relation",
+      "before": "同上方雙孔板，下方污點為可編修區。以擴散修補為例，原圖與二值mask定義位置；mask 1為修改的本圖約定，API可能相反。生成內區與外部上下文融合，不保證所有pipeline遮罩外逐像素不變；比較原圖與編修版並另存。真孔被影像填平不代表實體補材。 r01實看修正：保持原下方黑污點，不任意換成刮傷。",
+      "after": "同上方雙孔板，下方污點為可編修區。以擴散修補為例，原圖與二值mask定義位置；mask 1為修改的本圖約定，API可能相反。生成內區與外部上下文融合，不保證所有pipeline遮罩外逐像素不變；比較原圖與編修版並另存。真孔被影像填平不代表實體補材。"
+    },
+    {
+      "field": "inpainting.json.engineering_slides[1].plain.relation",
+      "before": "同上方雙孔板，下方污點為可編修區。以擴散修補為例，原圖與二值mask定義位置；mask 1為修改的本圖約定，API可能相反。生成內區與外部上下文融合，不保證所有pipeline遮罩外逐像素不變；比較原圖與編修版並另存。真孔被影像填平不代表實體補材。 r01實看修正：保持原下方黑污點，不任意換成刮傷。",
+      "after": "同上方雙孔板，下方污點為可編修區。以擴散修補為例，原圖與二值mask定義位置；mask 1為修改的本圖約定，API可能相反。生成內區與外部上下文融合，不保證所有pipeline遮罩外逐像素不變；比較原圖與編修版並另存。真孔被影像填平不代表實體補材。"
+    },
+    {
+      "field": "inpainting.json.engineering_slides[1].guide[0]",
+      "before": "同上方雙孔板，下方污點為可編修區。以擴散修補為例，原圖與二值mask定義位置；mask 1為修改的本圖約定，API可能相反。生成內區與外部上下文融合，不保證所有pipeline遮罩外逐像素不變；比較原圖與編修版並另存。真孔被影像填平不代表實體補材。 r01實看修正：保持原下方黑污點，不任意換成刮傷。",
+      "after": "同上方雙孔板，下方污點為可編修區。以擴散修補為例，原圖與二值mask定義位置；mask 1為修改的本圖約定，API可能相反。生成內區與外部上下文融合，不保證所有pipeline遮罩外逐像素不變；比較原圖與編修版並另存。真孔被影像填平不代表實體補材。"
+    },
+    {
+      "field": "tf-idg.json.slide_reading[3].relation",
+      "before": "作者失敗示意：木紋參考可能使金屬局部出現木質纹理；背景保持不能保證mask內物理正確。",
+      "after": "作者失敗示意：木紋參考可能使金屬局部出現木質紋理；背景保持不能保證mask內物理正確。"
+    },
+    {
+      "field": "tf-idg.json.engineering_slides[3].plain.relation",
+      "before": "作者失敗示意：木紋參考可能使金屬局部出現木質纹理；背景保持不能保證mask內物理正確。",
+      "after": "作者失敗示意：木紋參考可能使金屬局部出現木質紋理；背景保持不能保證mask內物理正確。"
+    },
+    {
+      "field": "tf-idg.json.engineering_slides[3].guide[0]",
+      "before": "作者失敗示意：木紋參考可能使金屬局部出現木質纹理；背景保持不能保證mask內物理正確。",
+      "after": "作者失敗示意：木紋參考可能使金屬局部出現木質紋理；背景保持不能保證mask內物理正確。"
+    },
+    {
+      "field": "v-jepa.json.slide_reading[1].relation",
+      "before": "2024原版V-JEPA；上下文編碼器讀可見tokens，預測器加遮蔽位置資訊預測目標tokens。完整影片只進目標編碼器，目標stop-gradient，其權重由上下文EMA更新。L1比較同位置特徵。作者兩維算例預測[.2,.8]目標[.4,.7]平均絕對差.15，不是異常分數。 r01實看修正：目標格與EMA文字分離。",
+      "after": "2024原版V-JEPA；上下文編碼器讀可見tokens，預測器加遮蔽位置資訊預測目標tokens。完整影片只進目標編碼器，目標stop-gradient，其權重由上下文EMA更新。L1比較同位置特徵。作者兩維算例預測[.2,.8]目標[.4,.7]平均絕對差.15，不是異常分數。"
+    },
+    {
+      "field": "v-jepa.json.slide_reading[2].relation",
+      "before": "保存2024骨幹checkpoint、影格取樣、裁切與下游讀出頭。EMA是預訓練目標權重更新，不是現場每片自動更新模型；原版不宣稱未來影像生成。 r01實看修正：时间刻度及標籤各自定位。",
+      "after": "保存2024骨幹checkpoint、影格取樣、裁切與下游讀出頭。EMA是預訓練目標權重更新，不是現場每片自動更新模型；原版不宣稱未來影像生成。"
+    },
+    {
+      "field": "v-jepa.json.engineering_slides[1].plain.relation",
+      "before": "2024原版V-JEPA；上下文編碼器讀可見tokens，預測器加遮蔽位置資訊預測目標tokens。完整影片只進目標編碼器，目標stop-gradient，其權重由上下文EMA更新。L1比較同位置特徵。作者兩維算例預測[.2,.8]目標[.4,.7]平均絕對差.15，不是異常分數。 r01實看修正：目標格與EMA文字分離。",
+      "after": "2024原版V-JEPA；上下文編碼器讀可見tokens，預測器加遮蔽位置資訊預測目標tokens。完整影片只進目標編碼器，目標stop-gradient，其權重由上下文EMA更新。L1比較同位置特徵。作者兩維算例預測[.2,.8]目標[.4,.7]平均絕對差.15，不是異常分數。"
+    },
+    {
+      "field": "v-jepa.json.engineering_slides[1].guide[0]",
+      "before": "2024原版V-JEPA；上下文編碼器讀可見tokens，預測器加遮蔽位置資訊預測目標tokens。完整影片只進目標編碼器，目標stop-gradient，其權重由上下文EMA更新。L1比較同位置特徵。作者兩維算例預測[.2,.8]目標[.4,.7]平均絕對差.15，不是異常分數。 r01實看修正：目標格與EMA文字分離。",
+      "after": "2024原版V-JEPA；上下文編碼器讀可見tokens，預測器加遮蔽位置資訊預測目標tokens。完整影片只進目標編碼器，目標stop-gradient，其權重由上下文EMA更新。L1比較同位置特徵。作者兩維算例預測[.2,.8]目標[.4,.7]平均絕對差.15，不是異常分數。"
+    },
+    {
+      "field": "v-jepa.json.engineering_slides[2].plain.relation",
+      "before": "保存2024骨幹checkpoint、影格取樣、裁切與下游讀出頭。EMA是預訓練目標權重更新，不是現場每片自動更新模型；原版不宣稱未來影像生成。 r01實看修正：时间刻度及標籤各自定位。",
+      "after": "保存2024骨幹checkpoint、影格取樣、裁切與下游讀出頭。EMA是預訓練目標權重更新，不是現場每片自動更新模型；原版不宣稱未來影像生成。"
+    },
+    {
+      "field": "v-jepa.json.engineering_slides[2].guide[0]",
+      "before": "保存2024骨幹checkpoint、影格取樣、裁切與下游讀出頭。EMA是預訓練目標權重更新，不是現場每片自動更新模型；原版不宣稱未來影像生成。 r01實看修正：时间刻度及標籤各自定位。",
+      "after": "保存2024骨幹checkpoint、影格取樣、裁切與下游讀出頭。EMA是預訓練目標權重更新，不是現場每片自動更新模型；原版不宣稱未來影像生成。"
+    },
+    {
+      "field": "videomae.json.slide_reading[1].relation",
+      "before": "原版VideoMAE預訓練使用跨時間一致tube mask，通常90–95%高比例；圖中小格只示意對位，不代表實際比例。編碼器處理可見tokens，輕量解碼器加入mask tokens重建像素，以原遮蔽位置像素監督；下游動作分類使用編碼器及另外訓練任務頭，不使用預訓練解碼器。 r01實看修正：解碼重建格上移，與caption保留間距。",
+      "after": "原版VideoMAE預訓練使用跨時間一致tube mask，通常90–95%高比例；圖中小格只示意對位，不代表實際比例。編碼器處理可見tokens，輕量解碼器加入mask tokens重建像素，以原遮蔽位置像素監督；下游動作分類使用編碼器及另外訓練任務頭，不使用預訓練解碼器。"
+    },
+    {
+      "field": "videomae.json.slide_reading[2].relation",
+      "before": "全注意力成對數約隨N平方；給定100與200 tokens，其N平方1萬/4萬只是計算量尺度示例，不是實測毫秒。取樣跨距大可能漏短失敗。 r01實看修正：时间刻度及標籤各自定位。",
+      "after": "全注意力成對數約隨N平方；給定100與200 tokens，其N平方1萬/4萬只是計算量尺度示例，不是實測毫秒。取樣跨距大可能漏短失敗。"
+    },
+    {
+      "field": "videomae.json.slide_reading[3].relation",
+      "before": "作者例：100格中99格平方差0、關鍵格100，平均1；平均重建差不能直接當事件成功率。少數關鍵動作需標註與下游驗證。 r01實看修正：99格/1格都明寫平方差，避免把差100誤讀成平方後1萬。",
+      "after": "作者例：100格中99格平方差0、關鍵格100，平均1；平均重建差不能直接當事件成功率。少數關鍵動作需標註與下游驗證。"
+    },
+    {
+      "field": "videomae.json.engineering_slides[1].plain.relation",
+      "before": "原版VideoMAE預訓練使用跨時間一致tube mask，通常90–95%高比例；圖中小格只示意對位，不代表實際比例。編碼器處理可見tokens，輕量解碼器加入mask tokens重建像素，以原遮蔽位置像素監督；下游動作分類使用編碼器及另外訓練任務頭，不使用預訓練解碼器。 r01實看修正：解碼重建格上移，與caption保留間距。",
+      "after": "原版VideoMAE預訓練使用跨時間一致tube mask，通常90–95%高比例；圖中小格只示意對位，不代表實際比例。編碼器處理可見tokens，輕量解碼器加入mask tokens重建像素，以原遮蔽位置像素監督；下游動作分類使用編碼器及另外訓練任務頭，不使用預訓練解碼器。"
+    },
+    {
+      "field": "videomae.json.engineering_slides[1].guide[0]",
+      "before": "原版VideoMAE預訓練使用跨時間一致tube mask，通常90–95%高比例；圖中小格只示意對位，不代表實際比例。編碼器處理可見tokens，輕量解碼器加入mask tokens重建像素，以原遮蔽位置像素監督；下游動作分類使用編碼器及另外訓練任務頭，不使用預訓練解碼器。 r01實看修正：解碼重建格上移，與caption保留間距。",
+      "after": "原版VideoMAE預訓練使用跨時間一致tube mask，通常90–95%高比例；圖中小格只示意對位，不代表實際比例。編碼器處理可見tokens，輕量解碼器加入mask tokens重建像素，以原遮蔽位置像素監督；下游動作分類使用編碼器及另外訓練任務頭，不使用預訓練解碼器。"
+    },
+    {
+      "field": "videomae.json.engineering_slides[2].plain.relation",
+      "before": "全注意力成對數約隨N平方；給定100與200 tokens，其N平方1萬/4萬只是計算量尺度示例，不是實測毫秒。取樣跨距大可能漏短失敗。 r01實看修正：时间刻度及標籤各自定位。",
+      "after": "全注意力成對數約隨N平方；給定100與200 tokens，其N平方1萬/4萬只是計算量尺度示例，不是實測毫秒。取樣跨距大可能漏短失敗。"
+    },
+    {
+      "field": "videomae.json.engineering_slides[2].guide[0]",
+      "before": "全注意力成對數約隨N平方；給定100與200 tokens，其N平方1萬/4萬只是計算量尺度示例，不是實測毫秒。取樣跨距大可能漏短失敗。 r01實看修正：时间刻度及標籤各自定位。",
+      "after": "全注意力成對數約隨N平方；給定100與200 tokens，其N平方1萬/4萬只是計算量尺度示例，不是實測毫秒。取樣跨距大可能漏短失敗。"
+    },
+    {
+      "field": "videomae.json.engineering_slides[3].plain.relation",
+      "before": "作者例：100格中99格平方差0、關鍵格100，平均1；平均重建差不能直接當事件成功率。少數關鍵動作需標註與下游驗證。 r01實看修正：99格/1格都明寫平方差，避免把差100誤讀成平方後1萬。",
+      "after": "作者例：100格中99格平方差0、關鍵格100，平均1；平均重建差不能直接當事件成功率。少數關鍵動作需標註與下游驗證。"
+    },
+    {
+      "field": "videomae.json.engineering_slides[3].guide[0]",
+      "before": "作者例：100格中99格平方差0、關鍵格100，平均1；平均重建差不能直接當事件成功率。少數關鍵動作需標註與下游驗證。 r01實看修正：99格/1格都明寫平方差，避免把差100誤讀成平方後1萬。",
+      "after": "作者例：100格中99格平方差0、關鍵格100，平均1；平均重建差不能直接當事件成功率。少數關鍵動作需標註與下游驗證。"
+    },
+    {
+      "field": "yolo-seg.json.slide_reading[3].relation",
+      "before": "共同输入与物件外观不变。语意遮罩同色表示同類，不一定提供逐件身份；實例分割分出甲乙，可支援後續逐件統計。重疊與遮擋仍可能分錯，需要標註與域內驗證；不聲稱必然比語意分割更適合所有工作。",
+      "after": "共同輸入與物件外觀不變。語意遮罩同色表示同類，不一定提供逐件身份；實例分割分出甲乙，可支援後續逐件統計。重疊與遮擋仍可能分錯，需要標註與域內驗證；不聲稱必然比語意分割更適合所有工作。"
+    },
+    {
+      "field": "yolo-seg.json.engineering_slides[3].plain.relation",
+      "before": "共同输入与物件外观不变。语意遮罩同色表示同類，不一定提供逐件身份；實例分割分出甲乙，可支援後續逐件統計。重疊與遮擋仍可能分錯，需要標註與域內驗證；不聲稱必然比語意分割更適合所有工作。",
+      "after": "共同輸入與物件外觀不變。語意遮罩同色表示同類，不一定提供逐件身份；實例分割分出甲乙，可支援後續逐件統計。重疊與遮擋仍可能分錯，需要標註與域內驗證；不聲稱必然比語意分割更適合所有工作。"
+    },
+    {
+      "field": "yolo-seg.json.engineering_slides[3].guide[0]",
+      "before": "共同输入与物件外观不变。语意遮罩同色表示同類，不一定提供逐件身份；實例分割分出甲乙，可支援後續逐件統計。重疊與遮擋仍可能分錯，需要標註與域內驗證；不聲稱必然比語意分割更適合所有工作。",
+      "after": "共同輸入與物件外觀不變。語意遮罩同色表示同類，不一定提供逐件身份；實例分割分出甲乙，可支援後續逐件統計。重疊與遮擋仍可能分錯，需要標註與域內驗證；不聲稱必然比語意分割更適合所有工作。"
+    },
+    {
+      "field": "learner-briefs.json.det-grounding-dino-interface.first",
+      "before": "類別名稱經常變更時，文字提示產生的候選框能否满足現場需求？",
+      "after": "類別名稱經常變更時，文字提示產生的候選框能否滿足現場需求？"
+    }
+  ]
+}

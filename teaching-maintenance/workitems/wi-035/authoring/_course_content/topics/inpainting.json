@@ -1,0 +1,570 @@
+{
+  "model": "Inpainting",
+  "badge": "局部影像填補任務",
+  "title": "Inpainting：指定一塊，補出合理的內容",
+  "scenario": {
+    "title": "製作外觀模擬圖時，想清除金屬板中央污漬，讓周圍拉絲紋理自然延續。",
+    "body": "製作外觀模擬圖時，想清除金屬板中央污漬，讓周圍拉絲紋理自然延續。"
+  },
+  "promise": {
+    "title": "交付結果與接手工作",
+    "body": "獨立保存的編修影像及遮罩；檢查接縫、紋理和區域外變化。"
+  },
+  "mental_model": {
+    "title": "局部影像填補任務",
+    "body": "Inpainting是一類填補任務，並非單一模型。遮罩指出可重畫的區域，未遮住的周邊提供上下文；擴散式實作以這些條件引導逐步去噪，讓局部從雜訊形成合理紋理。傳統修補或其他神經網路也能做Inpainting，本課用擴散式路徑說明。",
+    "limit": "第二圖改用下半部真的破洞：同樣能把它填成平整表面，但改變的是畫面，沒有修復金屬。兩個上方製造孔仍保留；這樣才能清楚追蹤是哪個區域被重畫。"
+  },
+  "micro_example": {
+    "title": "紋理簡單與結構缺失兩種填補",
+    "setup": "一張圖只有小污漬，另一張的孔邊整片被遮住；交付時間很短。",
+    "prediction": "會兩張都用同一擴散設定，還是分開處理？",
+    "reveal": "小污漬可先比較傳統或快速填補，核對紋理接縫；大面積結構缺失可用帶條件的生成方法探索，但可能有多個合理答案。按用途核對結構、外區變化及總時間；若需知道實體原狀，應重拍或取得其他觀測。"
+  },
+  "mechanism_steps": [
+    {
+      "title": "指定原圖與用途",
+      "body": "保留原始照片並指定要改寫的遮罩區域；模型讀取周邊影像與可選文字條件，僅把輸出當用途已說明的填補候選。",
+      "why": "核對本步輸入與輸出，才能判斷下一步是否接得上。",
+      "anchor": "WI026-step-1",
+      "diagram": {
+        "title": "指定原圖與用途",
+        "body": "保留原始照片並指定要改寫的遮罩區域；模型讀取周邊影像與可選文字條件，僅把輸出當用途已說明的填補候選。",
+        "why": "核對本步輸入與輸出，才能判斷下一步是否接得上。",
+        "anchor": "WI026-step-1"
+      }
+    },
+    {
+      "title": "以遮罩與周邊提供條件",
+      "body": "遮罩指定改哪裡，周邊提供紋理方向和結構線索；拿掉周邊約束，局部可能接不上。遮罩由人或上游流程提供，不是此步自行偵測出的缺陷真值。",
+      "why": "遮罩與周邊各管什麼",
+      "anchor": "WI026-step-2",
+      "diagram": {
+        "title": "以遮罩與周邊提供條件",
+        "body": "遮罩指定改哪裡，周邊提供紋理方向和結構線索；拿掉周邊約束，局部可能接不上。遮罩由人或上游流程提供，不是此步自行偵測出的缺陷真值。",
+        "why": "遮罩與周邊各管什麼",
+        "anchor": "WI026-step-2"
+      }
+    },
+    {
+      "title": "逐步生成填補紋理",
+      "body": "模型在原圖周邊、遮罩與其他條件下逐步形成填補區，再依管線解碼及合成；遮罩外是否精確保留需逐像素核對，填補紋理不是新觀測證據。",
+      "why": "核對本步輸入與輸出，才能判斷下一步是否接得上。",
+      "anchor": "WI026-step-3",
+      "diagram": {
+        "title": "逐步生成填補紋理",
+        "body": "模型在原圖周邊、遮罩與其他條件下逐步形成填補區，再依管線解碼及合成；遮罩外是否精確保留需逐像素核對，填補紋理不是新觀測證據。",
+        "why": "核對本步輸入與輸出，才能判斷下一步是否接得上。",
+        "anchor": "WI026-step-3"
+      }
+    },
+    {
+      "title": "檢查接縫與外區變化",
+      "body": "獨立保存的編修影像及遮罩；檢查接縫、紋理和區域外變化。",
+      "why": "核對後接入用途",
+      "anchor": "WI026-step-4",
+      "diagram": {
+        "title": "檢查接縫與外區變化",
+        "body": "獨立保存的編修影像及遮罩；檢查接縫、紋理和區域外變化。",
+        "why": "核對後接入用途",
+        "anchor": "WI026-step-4"
+      }
+    }
+  ],
+  "beginner_path": {
+    "title": "從核心做法、反例到方法選擇",
+    "intro": "製作外觀模擬圖時，想清除金屬板中央污漬，讓周圍拉絲紋理自然延續。 三張圖依序看做法、失敗與取捨；AI生成教學示意，非模型實測。",
+    "visuals": [
+      {
+        "id": "wi026-inpainting-c1",
+        "title": "Inpainting：指定一塊，補出連續紋理",
+        "prompt": "製作外觀模擬圖時，想清除金屬板中央污漬，讓周圍拉絲紋理自然延續。",
+        "caption": "Inpainting是一類填補任務，並非單一模型。遮罩指出可重畫的區域，未遮住的周邊提供上下文；擴散式實作以這些條件引導逐步去噪，讓局部從雜訊形成合理紋理。傳統修補或其他神經網路也能做Inpainting，本課用擴散式路徑說明。",
+        "image": "_course_content/generated-concepts/inpainting/wi026-inpainting-c1-r02-desktop.png",
+        "alt": "Inpainting：指定一塊，補出連續紋理。Inpainting是一類填補任務，並非單一模型。遮罩指出可重畫的區域，未遮住的周邊提供上下文；擴散式實作以這些條件引導逐步去噪，讓局部從雜訊形成合理紋理。傳統修補或其他神經網路也能做Inpainting，本課用擴散式路徑說明。 AI生成教學示意，非模型實測。",
+        "callouts": [
+          {
+            "title": "遮罩與周邊各管什麼",
+            "body": "遮罩指定改哪裡，周邊提供紋理方向和結構線索；拿掉周邊約束，局部可能接不上。遮罩由人或上游流程提供，不是此步自行偵測出的缺陷真值。"
+          },
+          {
+            "title": "準備與核對",
+            "body": "使用預訓練填補模型通常不需為每張圖重訓；要準備原圖、遮罩，視實作加文字或其他條件。遮罩外能否精確保留取決於管線、解碼與合成方式，應比較實際差異。"
+          },
+          {
+            "title": "交給誰",
+            "body": "獨立保存的編修影像及遮罩；檢查接縫、紋理和區域外變化。"
+          }
+        ],
+        "reading_views": [
+          {
+            "title": "Inpainting：指定一塊，補出連續紋理",
+            "image": "_course_content/generated-concepts/inpainting/wi026-inpainting-c1-r02-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/inpainting/wi026-inpainting-c1-r01-mobile.png",
+            "alt": "Inpainting：指定一塊，補出連續紋理。Inpainting是一類填補任務，並非單一模型。遮罩指出可重畫的區域，未遮住的周邊提供上下文；擴散式實作以這些條件引導逐步去噪，讓局部從雜訊形成合理紋理。傳統修補或其他神經網路也能做Inpainting，本課用擴散式路徑說明。 AI生成教學示意，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              724,
+              2172
+            ],
+            "mobile_display_mode": "full-mobile",
+            "mobile_intrinsic_width": 724,
+            "mobile_intrinsic_height": 2172,
+            "desktop_intrinsic_width": 1672,
+            "desktop_intrinsic_height": 941
+          }
+        ],
+        "core_ideas": true
+      },
+      {
+        "id": "wi026-inpainting-d2",
+        "title": "遮住真實孔洞，也能補出平整表面",
+        "prompt": "觀察同位置的變化：這個結果能支持什麼用途？",
+        "caption": "第二圖改用下半部真的破洞：同樣能把它填成平整表面，但改變的是畫面，沒有修復金屬。兩個上方製造孔仍保留；這樣才能清楚追蹤是哪個區域被重畫。",
+        "image": "_course_content/generated-concepts/inpainting/wi026-inpainting-d2-r01-desktop.png",
+        "alt": "遮住真實孔洞，也能補出平整表面。第二圖改用下半部真的破洞：同樣能把它填成平整表面，但改變的是畫面，沒有修復金屬。兩個上方製造孔仍保留；這樣才能清楚追蹤是哪個區域被重畫。 AI生成教學示意，非模型實測。",
+        "callouts": [
+          {
+            "title": "看哪裡",
+            "body": "第二圖改用下半部真的破洞：同樣能把它填成平整表面，但改變的是畫面，沒有修復金屬。兩個上方製造孔仍保留；這樣才能清楚追蹤是哪個區域被重畫。"
+          },
+          {
+            "title": "接著怎麼做",
+            "body": "模擬用途另存編修版；判斷原工件是否破損時查看原圖或實體，不能由填補結果反推。"
+          }
+        ],
+        "reading_views": [
+          {
+            "title": "遮住真實孔洞，也能補出平整表面",
+            "image": "_course_content/generated-concepts/inpainting/wi026-inpainting-d2-r01-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/inpainting/wi026-inpainting-d2-r01-mobile.png",
+            "alt": "遮住真實孔洞，也能補出平整表面。第二圖改用下半部真的破洞：同樣能把它填成平整表面，但改變的是畫面，沒有修復金屬。兩個上方製造孔仍保留；這樣才能清楚追蹤是哪個區域被重畫。 AI生成教學示意，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              724,
+              2172
+            ],
+            "mobile_display_mode": "full-mobile",
+            "mobile_intrinsic_width": 724,
+            "mobile_intrinsic_height": 2172,
+            "desktop_intrinsic_width": 1672,
+            "desktop_intrinsic_height": 941
+          }
+        ],
+        "core_ideas": false
+      },
+      {
+        "id": "wi026-editing-d3",
+        "title": "控制布局，還是只改一塊？",
+        "prompt": "固定需求與資料，哪種準備及處理成本較合適？",
+        "caption": "要局部修補，先測Inpainting；要生成整體布局相近的外觀，可用ControlNet。兩者能在支援的實作中搭配。若目標是生成某類真實刮傷，需要缺陷概念及資料準備，不能只因遮罩存在就當作已學會缺陷。",
+        "image": "_course_content/generated-concepts/controlnet/wi026-editing-d3-r02-desktop.png",
+        "alt": "控制布局，還是只改一塊？。要局部修補，先測Inpainting；要生成整體布局相近的外觀，可用ControlNet。兩者能在支援的實作中搭配。若目標是生成某類真實刮傷，需要缺陷概念及資料準備，不能只因遮罩存在就當作已學會缺陷。 AI生成教學示意，非模型實測。",
+        "callouts": [
+          {
+            "title": "如何選",
+            "body": "要局部修補，先測Inpainting；要生成整體布局相近的外觀，可用ControlNet。兩者能在支援的實作中搭配。若目標是生成某類真實刮傷，需要缺陷概念及資料準備，不能只因遮罩存在就當作已學會缺陷。"
+          },
+          {
+            "title": "換產品與完整成本",
+            "body": "只有正常影像也能測局部填補；新產品需重新核對材質、遮罩大小和周邊資訊。比較傳統修補、前饋或擴散實作時，固定用途與遮罩，記接縫、外區改動、生成時間及人工覆核量。結果是編修圖，不是精密分割或實體量測。"
+          }
+        ],
+        "reading_views": [
+          {
+            "title": "控制布局，還是只改一塊？",
+            "image": "_course_content/generated-concepts/controlnet/wi026-editing-d3-r02-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/controlnet/wi026-editing-d3-r02-mobile.png",
+            "alt": "控制布局，還是只改一塊？。要局部修補，先測Inpainting；要生成整體布局相近的外觀，可用ControlNet。兩者能在支援的實作中搭配。若目標是生成某類真實刮傷，需要缺陷概念及資料準備，不能只因遮罩存在就當作已學會缺陷。 AI生成教學示意，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              726,
+              2167
+            ],
+            "mobile_display_mode": "full-mobile",
+            "mobile_intrinsic_width": 726,
+            "mobile_intrinsic_height": 2167,
+            "desktop_intrinsic_width": 1672,
+            "desktop_intrinsic_height": 941
+          }
+        ],
+        "core_ideas": false
+      }
+    ]
+  },
+  "visual_intro": "Inpainting是一類填補任務，並非單一模型。遮罩指出可重畫的區域，未遮住的周邊提供上下文；擴散式實作以這些條件引導逐步去噪，讓局部從雜訊形成合理紋理。傳統修補或其他神經網路也能做Inpainting，本課用擴散式路徑說明。",
+  "concept_visuals": [],
+  "boundary_cases": [
+    {
+      "condition": "本課具體反例",
+      "effect": "第二圖改用下半部真的破洞：同樣能把它填成平整表面，但改變的是畫面，沒有修復金屬。兩個上方製造孔仍保留；這樣才能清楚追蹤是哪個區域被重畫。",
+      "action": "模擬用途另存編修版；判斷原工件是否破損時查看原圖或實體，不能由填補結果反推。"
+    },
+    {
+      "condition": "換產品或取像條件",
+      "effect": "只有正常影像也能測局部填補；新產品需重新核對材質、遮罩大小和周邊資訊。比較傳統修補、前饋或擴散實作時，固定用途與遮罩，記接縫、外區改動、生成時間及人工覆核量。結果是編修圖，不是精密分割或實體量測。",
+      "action": "先在固定真實留出資料重驗，再擴大用途。"
+    },
+    {
+      "condition": "把生成示意當成模型實測",
+      "effect": "本課圖像說明可能機制與失敗情況，不能據此計算現場準確率或節拍。",
+      "action": "保留真實原圖、模型設定與對照輸出，以符合工作需求的留出資料另行測量。"
+    }
+  ],
+  "comparison": [
+    {
+      "model": "ControlNet",
+      "normality": "空間條件與相應控制權重；需要時再訓練",
+      "candidate": "布局受引導的新影像"
+    },
+    {
+      "model": "Inpainting",
+      "normality": "原圖、遮罩與周邊；依實作另加條件",
+      "candidate": "指定區域填補後的編修圖"
+    },
+    {
+      "model": "支援兩者的管線",
+      "normality": "同時準備空間條件及編修遮罩",
+      "candidate": "局部編修時也受結構引導；仍需實測外區保留"
+    }
+  ],
+  "selection": "要局部修補，先測Inpainting；要生成整體布局相近的外觀，可用ControlNet。兩者能在支援的實作中搭配。若目標是生成某類真實刮傷，需要缺陷概念及資料準備，不能只因遮罩存在就當作已學會缺陷。 只有正常影像也能測局部填補；新產品需重新核對材質、遮罩大小和周邊資訊。比較傳統修補、前饋或擴散實作時，固定用途與遮罩，記接縫、外區改動、生成時間及人工覆核量。結果是編修圖，不是精密分割或實體量測。",
+  "poc": {
+    "title": "小規模比較：資料、效果與完整成本",
+    "steps": [
+      "保留原始資料，固定訓練與獨立真實留出切分，選定本課工作需求。",
+      "只有正常影像也能測局部填補；新產品需重新核對材質、遮罩大小和周邊資訊。比較傳統修補、前饋或擴散實作時，固定用途與遮罩，記接縫、外區改動、生成時間及人工覆核量。結果是編修圖，不是精密分割或實體量測。",
+      "記錄失敗影像、原圖與輸出關係、端到端時間和人工覆核量，再決定是否擴大。"
+    ],
+    "hold": "模擬用途另存編修版；判斷原工件是否破損時查看原圖或實體，不能由填補結果反推。",
+    "acceptance": {
+      "baseline": "原有流程或最簡單可行方法",
+      "measure": "關鍵細節、下游錯誤、總時間及覆核量",
+      "negative_control": "以本課反例檢查錯誤結論是否被排除",
+      "owner": "教材使用者指定的實作及覆核負責人"
+    }
+  },
+  "teach_back": {
+    "question": "它改變什麼？換條件後如何選？",
+    "answer": "Inpainting是一類填補任務，並非單一模型。遮罩指出可重畫的區域，未遮住的周邊提供上下文；擴散式實作以這些條件引導逐步去噪，讓局部從雜訊形成合理紋理。傳統修補或其他神經網路也能做Inpainting，本課用擴散式路徑說明。 要局部修補，先測Inpainting；要生成整體布局相近的外觀，可用ControlNet。兩者能在支援的實作中搭配。若目標是生成某類真實刮傷，需要缺陷概念及資料準備，不能只因遮罩存在就當作已學會缺陷。"
+  },
+  "slide_reading": [
+    {
+      "title": "Inpainting：原圖、遮罩、候選三者留存",
+      "question": "編修輸出另存，保留原觀測供追查。",
+      "look": "先看原污點影像與修改範圍，再核對遮罩與模型約定核對，最後看候選與原圖並列驗接縫。",
+      "relation": "同上方雙孔板下方黑污點，明列mask 1修改約定及預處理縮放，保存原圖與生成版本。",
+      "takeaway": "編修輸出另存，保留原觀測供追查。",
+      "terms": [
+        "示意數值：作者給定局部算例，非模型實測或建議參數。",
+        "同位置：比較保持相同影像座標與時間身份，不能任意換工件。"
+      ]
+    },
+    {
+      "title": "Inpainting：指定內區，保留外部上下文",
+      "question": "編修影像可以補平，實物狀態並未改變。",
+      "look": "先看原圖與可編修遮罩分開保存，再核對遮罩內去噪、外部提供上下文，最後看檢查接縫與遮罩外變動。",
+      "relation": "同上方雙孔板，下方污點為可編修區。以擴散修補為例，原圖與二值mask定義位置；mask 1為修改的本圖約定，API可能相反。生成內區與外部上下文融合，不保證所有pipeline遮罩外逐像素不變；比較原圖與編修版並另存。真孔被影像填平不代表實體補材。",
+      "takeaway": "編修影像可以補平，實物狀態並未改變。",
+      "terms": [
+        "示意數值：作者給定局部算例，非模型實測或建議參數。",
+        "同位置：比較保持相同影像座標與時間身份，不能任意換工件。"
+      ]
+    },
+    {
+      "title": "Inpainting：遮罩太緊或太大各有代價",
+      "question": "按原位置驗接縫、孔位與遮罩外變化。",
+      "look": "先看緊遮罩保留邊缘污點，再核對大遮罩可能波及鄰近結構，最後看保留原圖與mask縮放記錄。",
+      "relation": "遮罩需包含預期修改區；羽化/膨脹可能改善接縫也擴大修改範圍，實作各異。不能推薦固定像素寬度。",
+      "takeaway": "按原位置驗接縫、孔位與遮罩外變化。",
+      "terms": [
+        "示意數值：作者給定局部算例，非模型實測或建議參數。",
+        "同位置：比較保持相同影像座標與時間身份，不能任意換工件。"
+      ]
+    },
+    {
+      "title": "Inpainting：照片填孔，實體仍有孔",
+      "question": "影像編修只改像素，不能當實物修復。",
+      "look": "先看原板左上孔指定可編修，再核對生成版孔被紋理填平，最後看重新拍攝仍看見真孔。",
+      "relation": "同上方兩孔板，仅改左孔影像。原檢測與實物量測不能拿編修版本作真值。",
+      "takeaway": "影像編修只改像素，不能當實物修復。",
+      "terms": [
+        "示意數值：作者給定局部算例，非模型實測或建議參數。",
+        "同位置：比較保持相同影像座標與時間身份，不能任意換工件。"
+      ]
+    }
+  ],
+  "comparison_headers": {
+    "title": "控制布局，還是只改一塊？",
+    "basis": "資料準備與方法分工",
+    "output": "交付結果與核對重點"
+  },
+  "transfer_check": {
+    "title": "紋理簡單與結構缺失兩種填補",
+    "scenario": "一張圖只有小污漬，另一張的孔邊整片被遮住；交付時間很短。",
+    "question": "會兩張都用同一擴散設定，還是分開處理？",
+    "answer": "小污漬可先比較傳統或快速填補，核對紋理接縫；大面積結構缺失可用帶條件的生成方法探索，但可能有多個合理答案。按用途核對結構、外區變化及總時間；若需知道實體原狀，應重拍或取得其他觀測。"
+  },
+  "review_trace": {
+    "authority": "roadmap-model-selection/diffusion-restoration/inpainting/model.md",
+    "scope": "WI-033：工程層四圖與手機比較修正；首讀有效內容保留。原生圖已審，整頁與使用者審閱另記。",
+    "claims": [
+      {
+        "id": "visual-1",
+        "field": "beginner_path.visuals[aoi-masked-fill-contract]",
+        "source": "模型定位 / architecture_path"
+      },
+      {
+        "id": "visual-2",
+        "field": "beginner_path.visuals[mask-context-boundary]",
+        "source": "architecture_path"
+      },
+      {
+        "id": "visual-3",
+        "field": "beginner_path.visuals[versioned-inpaint-recipe]",
+        "source": "representation_or_score"
+      },
+      {
+        "id": "visual-4",
+        "field": "beginner_path.visuals[edit-manifest-review]",
+        "source": "failure_boundary"
+      },
+      {
+        "id": "visual-5",
+        "field": "beginner_path.visuals[boundary-change-hold]",
+        "source": "selection_gate / evidence_bundle"
+      },
+      {
+        "id": "promise",
+        "field": "promise",
+        "source": "模型定位 / representation_or_score"
+      },
+      {
+        "id": "mechanism",
+        "field": "mechanism_steps",
+        "source": "architecture_path / representation_or_score"
+      },
+      {
+        "id": "boundaries",
+        "field": "boundary_cases",
+        "source": "failure_boundary / selection_gate"
+      },
+      {
+        "id": "comparison",
+        "field": "comparison + selection",
+        "source": "selection_gate"
+      },
+      {
+        "id": "poc",
+        "field": "poc + acceptance",
+        "source": "cost_and_operating_point / evidence_bundle"
+      },
+      {
+        "id": "transfer",
+        "field": "transfer_check",
+        "source": "failure_boundary / selection_gate"
+      },
+      {
+        "id": "f02-core",
+        "field": "beginner_path.visuals[0] + scenario + mental_model",
+        "source": "roadmap-model-selection/diffusion-restoration/inpainting/model.md"
+      },
+      {
+        "id": "f02-transfer",
+        "field": "micro_example + transfer_check + selection",
+        "source": "roadmap-model-selection/diffusion-restoration/inpainting/model.md"
+      },
+      {
+        "id": "wi026-first-read",
+        "field": "beginner_path + core + selection + transfer",
+        "source": "https://arxiv.org/abs/2201.09865"
+      }
+    ]
+  },
+  "quality_status": {
+    "label": "首讀圖文已重製並自評；使用者核准待確認",
+    "state": "self-reviewed",
+    "round": "WI-026",
+    "reason": "38張不同PNG逐圖審查；整頁與互動證據見workitems/wi-026，原工程圖未重新評分。"
+  },
+  "teaching_preflight": {
+    "brief": "teaching-images/vision-ai-model-selection/workitems/wi-026/inpainting-c1-r02.md",
+    "story": "C",
+    "major_visual_nodes": 4,
+    "visual_status": "self-reviewed",
+    "user_review": "pending"
+  },
+  "engineering_slides": [
+    {
+      "title": "Inpainting：原圖、遮罩、候選三者留存",
+      "question": "編修輸出另存，保留原觀測供追查。",
+      "plain": {
+        "look": "先看原污點影像與修改範圍，再核對遮罩與模型約定核對，最後看候選與原圖並列驗接縫。",
+        "relation": "同上方雙孔板下方黑污點，明列mask 1修改約定及預處理縮放，保存原圖與生成版本。",
+        "takeaway": "編修輸出另存，保留原觀測供追查。"
+      },
+      "terms": [
+        "示意數值：作者給定局部算例，非模型實測或建議參數。",
+        "同位置：比較保持相同影像座標與時間身份，不能任意換工件。"
+      ],
+      "guide": [
+        "同上方雙孔板下方黑污點，明列mask 1修改約定及預處理縮放，保存原圖與生成版本。",
+        "先看原污點影像與修改範圍，再核對遮罩與模型約定核對，最後看候選與原圖並列驗接縫。"
+      ],
+      "stages": [
+        {
+          "title": "原污點影像與修改範圍",
+          "body": "原污點影像與修改範圍；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "遮罩與模型約定核對",
+          "body": "遮罩與模型約定核對；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "候選與原圖並列驗接縫",
+          "body": "候選與原圖並列驗接縫；請對照圖內輸入、變化與結果。"
+        }
+      ],
+      "misconception": "第二圖改用下半部真的破洞：同樣能把它填成平整表面，但改變的是畫面，沒有修復金屬。兩個上方製造孔仍保留；這樣才能清楚追蹤是哪個區域被重畫。",
+      "alt": "Inpainting：原圖、遮罩、候選三者留存。編修輸出另存，保留原觀測供追查。 教學示意，非模型實測。",
+      "mobile_image": "roadmap-model-selection/diffusion-restoration/inpainting/images/final/WI033-INPAINTING-01-r01-mobile.png",
+      "mobile_width": 768,
+      "mobile_height": 2304,
+      "engineering": {
+        "takeaway": "編修輸出另存，保留原觀測供追查。",
+        "nextAction": "保留原始資料，固定訓練與獨立真實留出切分，選定本課工作需求。",
+        "redLine": "模擬用途另存編修版；判斷原工件是否破損時查看原圖或實體，不能由填補結果反推。"
+      },
+      "source": "https://arxiv.org/abs/2201.09865"
+    },
+    {
+      "title": "Inpainting：指定內區，保留外部上下文",
+      "question": "編修影像可以補平，實物狀態並未改變。",
+      "plain": {
+        "look": "先看原圖與可編修遮罩分開保存，再核對遮罩內去噪、外部提供上下文，最後看檢查接縫與遮罩外變動。",
+        "relation": "同上方雙孔板，下方污點為可編修區。以擴散修補為例，原圖與二值mask定義位置；mask 1為修改的本圖約定，API可能相反。生成內區與外部上下文融合，不保證所有pipeline遮罩外逐像素不變；比較原圖與編修版並另存。真孔被影像填平不代表實體補材。",
+        "takeaway": "編修影像可以補平，實物狀態並未改變。"
+      },
+      "terms": [
+        "示意數值：作者給定局部算例，非模型實測或建議參數。",
+        "同位置：比較保持相同影像座標與時間身份，不能任意換工件。"
+      ],
+      "guide": [
+        "同上方雙孔板，下方污點為可編修區。以擴散修補為例，原圖與二值mask定義位置；mask 1為修改的本圖約定，API可能相反。生成內區與外部上下文融合，不保證所有pipeline遮罩外逐像素不變；比較原圖與編修版並另存。真孔被影像填平不代表實體補材。",
+        "先看原圖與可編修遮罩分開保存，再核對遮罩內去噪、外部提供上下文，最後看檢查接縫與遮罩外變動。"
+      ],
+      "stages": [
+        {
+          "title": "原圖與可編修遮罩分開保存",
+          "body": "原圖與可編修遮罩分開保存；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "遮罩內去噪、外部提供上下文",
+          "body": "遮罩內去噪、外部提供上下文；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "檢查接縫與遮罩外變動",
+          "body": "檢查接縫與遮罩外變動；請對照圖內輸入、變化與結果。"
+        }
+      ],
+      "misconception": "第二圖改用下半部真的破洞：同樣能把它填成平整表面，但改變的是畫面，沒有修復金屬。兩個上方製造孔仍保留；這樣才能清楚追蹤是哪個區域被重畫。",
+      "alt": "Inpainting：指定內區，保留外部上下文。編修影像可以補平，實物狀態並未改變。 教學示意，非模型實測。",
+      "mobile_image": "roadmap-model-selection/diffusion-restoration/inpainting/images/final/WI033-INPAINTING-02-r02-mobile.png",
+      "mobile_width": 768,
+      "mobile_height": 2304,
+      "engineering": {
+        "takeaway": "編修影像可以補平，實物狀態並未改變。",
+        "nextAction": "保留原始資料，固定訓練與獨立真實留出切分，選定本課工作需求。",
+        "redLine": "模擬用途另存編修版；判斷原工件是否破損時查看原圖或實體，不能由填補結果反推。"
+      },
+      "source": "https://arxiv.org/abs/2201.09865"
+    },
+    {
+      "title": "Inpainting：遮罩太緊或太大各有代價",
+      "question": "按原位置驗接縫、孔位與遮罩外變化。",
+      "plain": {
+        "look": "先看緊遮罩保留邊缘污點，再核對大遮罩可能波及鄰近結構，最後看保留原圖與mask縮放記錄。",
+        "relation": "遮罩需包含預期修改區；羽化/膨脹可能改善接縫也擴大修改範圍，實作各異。不能推薦固定像素寬度。",
+        "takeaway": "按原位置驗接縫、孔位與遮罩外變化。"
+      },
+      "terms": [
+        "示意數值：作者給定局部算例，非模型實測或建議參數。",
+        "同位置：比較保持相同影像座標與時間身份，不能任意換工件。"
+      ],
+      "guide": [
+        "遮罩需包含預期修改區；羽化/膨脹可能改善接縫也擴大修改範圍，實作各異。不能推薦固定像素寬度。",
+        "先看緊遮罩保留邊缘污點，再核對大遮罩可能波及鄰近結構，最後看保留原圖與mask縮放記錄。"
+      ],
+      "stages": [
+        {
+          "title": "緊遮罩保留邊缘污點",
+          "body": "緊遮罩保留邊缘污點；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "大遮罩可能波及鄰近結構",
+          "body": "大遮罩可能波及鄰近結構；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "保留原圖與mask縮放記錄",
+          "body": "保留原圖與mask縮放記錄；請對照圖內輸入、變化與結果。"
+        }
+      ],
+      "misconception": "第二圖改用下半部真的破洞：同樣能把它填成平整表面，但改變的是畫面，沒有修復金屬。兩個上方製造孔仍保留；這樣才能清楚追蹤是哪個區域被重畫。",
+      "alt": "Inpainting：遮罩太緊或太大各有代價。按原位置驗接縫、孔位與遮罩外變化。 教學示意，非模型實測。",
+      "mobile_image": "roadmap-model-selection/diffusion-restoration/inpainting/images/final/WI033-INPAINTING-03-r01-mobile.png",
+      "mobile_width": 768,
+      "mobile_height": 2304,
+      "engineering": {
+        "takeaway": "按原位置驗接縫、孔位與遮罩外變化。",
+        "nextAction": "保留原始資料，固定訓練與獨立真實留出切分，選定本課工作需求。",
+        "redLine": "模擬用途另存編修版；判斷原工件是否破損時查看原圖或實體，不能由填補結果反推。"
+      },
+      "source": "https://arxiv.org/abs/2201.09865"
+    },
+    {
+      "title": "Inpainting：照片填孔，實體仍有孔",
+      "question": "影像編修只改像素，不能當實物修復。",
+      "plain": {
+        "look": "先看原板左上孔指定可編修，再核對生成版孔被紋理填平，最後看重新拍攝仍看見真孔。",
+        "relation": "同上方兩孔板，仅改左孔影像。原檢測與實物量測不能拿編修版本作真值。",
+        "takeaway": "影像編修只改像素，不能當實物修復。"
+      },
+      "terms": [
+        "示意數值：作者給定局部算例，非模型實測或建議參數。",
+        "同位置：比較保持相同影像座標與時間身份，不能任意換工件。"
+      ],
+      "guide": [
+        "同上方兩孔板，仅改左孔影像。原檢測與實物量測不能拿編修版本作真值。",
+        "先看原板左上孔指定可編修，再核對生成版孔被紋理填平，最後看重新拍攝仍看見真孔。"
+      ],
+      "stages": [
+        {
+          "title": "原板左上孔指定可編修",
+          "body": "原板左上孔指定可編修；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "生成版孔被紋理填平",
+          "body": "生成版孔被紋理填平；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "重新拍攝仍看見真孔",
+          "body": "重新拍攝仍看見真孔；請對照圖內輸入、變化與結果。"
+        }
+      ],
+      "misconception": "第二圖改用下半部真的破洞：同樣能把它填成平整表面，但改變的是畫面，沒有修復金屬。兩個上方製造孔仍保留；這樣才能清楚追蹤是哪個區域被重畫。",
+      "alt": "Inpainting：照片填孔，實體仍有孔。影像編修只改像素，不能當實物修復。 教學示意，非模型實測。",
+      "mobile_image": "roadmap-model-selection/diffusion-restoration/inpainting/images/final/WI033-INPAINTING-04-r01-mobile.png",
+      "mobile_width": 768,
+      "mobile_height": 2304,
+      "engineering": {
+        "takeaway": "影像編修只改像素，不能當實物修復。",
+        "nextAction": "保留原始資料，固定訓練與獨立真實留出切分，選定本課工作需求。",
+        "redLine": "模擬用途另存編修版；判斷原工件是否破損時查看原圖或實體，不能由填補結果反推。"
+      },
+      "source": "https://arxiv.org/abs/2201.09865"
+    }
+  ]
+}

@@ -1,0 +1,996 @@
+{
+  "model": "ResNet",
+  "badge": "殘差式影像分類",
+  "title": "ResNet：保留原有線索，再學需要的修正",
+  "scenario": {
+    "title": "固定相機拍螺絲頭，要把十字、一字與內六角分流到不同料盒。",
+    "body": "固定相機拍螺絲頭，要把十字、一字與內六角分流到不同料盒。"
+  },
+  "promise": {
+    "title": "交付結果與接手工作",
+    "body": "已知類別與模型分數，交分流規則或人工覆核；未知產品、輪廓與3D姿態另行處理。"
+  },
+  "mental_model": {
+    "title": "殘差式影像分類",
+    "body": "ResNet讓特徵走兩條路：一路直接保留x，另一路學修正F(x)，兩路相加後繼續處理。這使較深網路較容易最佳化；最後由分類頭把特徵對應到已知螺絲類別。相加的是相容的特徵，不是兩張原始照片。",
+    "limit": "訓練照片中十字螺絲總在藍墊、內六角總在橘墊，模型可能學到背景捷徑。把同一十字螺絲換到橘墊後，可能誤判內六角；工件本身沒有改變。"
+  },
+  "micro_example": {
+    "title": "資料還是深度先投入？",
+    "setup": "新背景讓原ResNet分類變差。你可以先擴充跨背景標註，也可以比較更深的ResNet；同時做兩者會超出本輪時間。",
+    "prediction": "你如何用一個小檢查決定先投入哪一邊？",
+    "reveal": "先用同工件、不同背景的保留資料找錯誤集中在哪裡。若背景切換主導錯誤，先改善資料與取像較直接；若跨背景仍有一致的細部類別混淆，可比較容量或解析度。更深網路可能有用，但殘差不自動消除背景捷徑，仍須同資料驗證。"
+  },
+  "mechanism_steps": [
+    {
+      "title": "已知類別工件",
+      "body": "先把工件影像依固定前處理送入網路，卷積逐步抽取特徵；已知類別由訓練資料定義，分類頭須與要區分的工件類別相符。",
+      "why": "核對本步輸入與輸出，才能判斷下一步是否接得上。",
+      "anchor": "WI030-1",
+      "diagram": {
+        "title": "已知類別工件",
+        "body": "先把工件影像依固定前處理送入網路，卷積逐步抽取特徵；已知類別由訓練資料定義，分類頭須與要區分的工件類別相符。",
+        "why": "核對本步輸入與輸出，才能判斷下一步是否接得上。",
+        "anchor": "WI030-1"
+      }
+    },
+    {
+      "title": "殘差兩路相加",
+      "body": "直接路徑保留輸入特徵，卷積分支學殘差，兩路相加形成下一層表示；尺寸或通道不同時需投影匹配，不能任意相加。",
+      "why": "核對本步輸入與輸出，才能判斷下一步是否接得上。",
+      "anchor": "WI030-2",
+      "diagram": {
+        "title": "殘差兩路相加",
+        "body": "直接路徑保留輸入特徵，卷積分支學殘差，兩路相加形成下一層表示；尺寸或通道不同時需投影匹配，不能任意相加。",
+        "why": "核對本步輸入與輸出，才能判斷下一步是否接得上。",
+        "anchor": "WI030-2"
+      }
+    },
+    {
+      "title": "分類後接工作",
+      "body": "分類頭把整張工件 ROI 的特徵轉成已知類別分數，交由分流規則或人工覆核；預訓練只是起點，仍要用現場類別資料調整與驗證，不直接提供每件輪廓。",
+      "why": "核對本步輸入與輸出，才能判斷下一步是否接得上。",
+      "anchor": "WI030-3",
+      "diagram": {
+        "title": "分類後接工作",
+        "body": "分類頭把整張工件 ROI 的特徵轉成已知類別分數，交由分流規則或人工覆核；預訓練只是起點，仍要用現場類別資料調整與驗證，不直接提供每件輪廓。",
+        "why": "核對本步輸入與輸出，才能判斷下一步是否接得上。",
+        "anchor": "WI030-3"
+      }
+    },
+    {
+      "title": "工作核對與接手",
+      "body": "用未見批次逐類核對真實輸入、標籤、預測及信心，列混淆矩陣與背景／反光失敗例；記錄整段耗時、記憶體與人工覆核量。教學圖的分類結果不是實測。",
+      "why": "由本課核心機制連接工作用途",
+      "anchor": "WI030-4",
+      "diagram": {
+        "title": "工作核對與接手",
+        "body": "用未見批次逐類核對真實輸入、標籤、預測及信心，列混淆矩陣與背景／反光失敗例；記錄整段耗時、記憶體與人工覆核量。教學圖的分類結果不是實測。",
+        "why": "詳見本課版本與來源",
+        "anchor": "WI030-4"
+      }
+    }
+  ],
+  "visual_intro": "ResNet讓特徵走兩條路：一路直接保留x，另一路學修正F(x)，兩路相加後繼續處理。這使較深網路較容易最佳化；最後由分類頭把特徵對應到已知螺絲類別。相加的是相容的特徵，不是兩張原始照片。",
+  "beginner_path": {
+    "title": "從必要原理、具體反例到工作取捨",
+    "intro": "固定相機拍螺絲頭，要把十字、一字與內六角分流到不同料盒。 下列圖像、特徵及回答為教學示意，不是模型實測。",
+    "visuals": [
+      {
+        "id": "wi030-resnet-c1",
+        "title": "ResNet：保留原有線索，再學需要的修正",
+        "prompt": "固定相機拍螺絲頭，要把十字、一字與內六角分流到不同料盒。",
+        "caption": "ResNet讓特徵走兩條路：一路直接保留x，另一路學修正F(x)，兩路相加後繼續處理。這使較深網路較容易最佳化；最後由分類頭把特徵對應到已知螺絲類別。相加的是相容的特徵，不是兩張原始照片。",
+        "image": "_course_content/generated-concepts/resnet/wi030-resnet-c1-r02-desktop.png",
+        "alt": "ResNet：保留原有線索，再學需要的修正。ResNet讓特徵走兩條路：一路直接保留x，另一路學修正F(x)，兩路相加後繼續處理。這使較深網路較容易最佳化；最後由分類頭把特徵對應到已知螺絲類別。相加的是相容的特徵，不是兩張原始照片。 AI生成教學示意，非模型實測。",
+        "callouts": [
+          {
+            "title": "保留與修正",
+            "body": "直接路徑保留已有線索，卷積分支學需要的變化；尺寸或通道不同時需投影匹配，不能任意相加。"
+          },
+          {
+            "title": "分類需工作標註",
+            "body": "預訓練能提供起點，仍需相應類別資料調整和驗證。分類頭給整張ROI類別，不給每件輪廓。"
+          },
+          {
+            "title": "交付與接手",
+            "body": "已知類別與模型分數，交分流規則或人工覆核；未知產品、輪廓與3D姿態另行處理。"
+          }
+        ],
+        "reading_views": [
+          {
+            "title": "ResNet：保留原有線索，再學需要的修正",
+            "image": "_course_content/generated-concepts/resnet/wi030-resnet-c1-r02-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/resnet/wi030-resnet-c1-r02-mobile.png",
+            "alt": "ResNet：保留原有線索，再學需要的修正。ResNet讓特徵走兩條路：一路直接保留x，另一路學修正F(x)，兩路相加後繼續處理。這使較深網路較容易最佳化；最後由分類頭把特徵對應到已知螺絲類別。相加的是相容的特徵，不是兩張原始照片。 AI生成教學示意，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              768,
+              2048
+            ],
+            "mobile_display_mode": "full-mobile",
+            "desktop_intrinsic_width": 1672,
+            "desktop_intrinsic_height": 941,
+            "mobile_intrinsic_width": 768,
+            "mobile_intrinsic_height": 2048
+          }
+        ],
+        "core_ideas": true
+      },
+      {
+        "id": "wi030-class-d2",
+        "title": "模型認的是工件，還是拍攝背景？",
+        "prompt": "觀察哪個條件改變，讓原本的結果不夠可靠？",
+        "caption": "訓練照片中十字螺絲總在藍墊、內六角總在橘墊，模型可能學到背景捷徑。把同一十字螺絲換到橘墊後，可能誤判內六角；工件本身沒有改變。",
+        "image": "_course_content/generated-concepts/resnet/wi030-class-d2-r01-desktop.png",
+        "alt": "模型認的是工件，還是拍攝背景？。訓練照片中十字螺絲總在藍墊、內六角總在橘墊，模型可能學到背景捷徑。把同一十字螺絲換到橘墊後，可能誤判內六角；工件本身沒有改變。 AI生成教學示意，非模型實測。",
+        "callouts": [
+          {
+            "title": "看哪裡",
+            "body": "訓練照片中十字螺絲總在藍墊、內六角總在橘墊，模型可能學到背景捷徑。把同一十字螺絲換到橘墊後，可能誤判內六角；工件本身沒有改變。"
+          },
+          {
+            "title": "接著怎麼做",
+            "body": "讓各類工件都跨背景、批次與允收光照取樣；以未參與訓練的批次驗證，分析各類混淆與低信心案例，再決定是否重新訓練。"
+          }
+        ],
+        "reading_views": [
+          {
+            "title": "模型認的是工件，還是拍攝背景？",
+            "image": "_course_content/generated-concepts/resnet/wi030-class-d2-r01-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/resnet/wi030-class-d2-r03-mobile.png",
+            "alt": "模型認的是工件，還是拍攝背景？。訓練照片中十字螺絲總在藍墊、內六角總在橘墊，模型可能學到背景捷徑。把同一十字螺絲換到橘墊後，可能誤判內六角；工件本身沒有改變。 AI生成教學示意，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              887,
+              1774
+            ],
+            "mobile_display_mode": "full-mobile",
+            "desktop_intrinsic_width": 1672,
+            "desktop_intrinsic_height": 941,
+            "mobile_intrinsic_width": 887,
+            "mobile_intrinsic_height": 1774
+          }
+        ],
+        "core_ideas": false
+      },
+      {
+        "id": "wi030-class-d3",
+        "title": "同一分類工作，三種特徵整理方式",
+        "prompt": "相同工作需求下，資料、輸出與成本如何取捨？",
+        "caption": "ResNet用殘差相加傳遞特徵；ConvNeXt仍以卷積作空間與通道處理；ViT讓區塊特徵互相參照。三者都可接分類頭；用相同標註、資料切分、前處理與硬體比較錯誤、耗時和記憶體，不能只看模型新舊。",
+        "image": "_course_content/generated-concepts/resnet/wi030-class-d3-r05-desktop.png",
+        "alt": "同一分類工作，三種特徵整理方式。ResNet用殘差相加傳遞特徵；ConvNeXt仍以卷積作空間與通道處理；ViT讓區塊特徵互相參照。三者都可接分類頭；用相同標註、資料切分、前處理與硬體比較錯誤、耗時和記憶體，不能只看模型新舊。 AI生成教學示意，非模型實測。",
+        "callouts": [
+          {
+            "title": "怎麼選",
+            "body": "ResNet用殘差相加傳遞特徵；ConvNeXt仍以卷積作空間與通道處理；ViT讓區塊特徵互相參照。三者都可接分類頭；用相同標註、資料切分、前處理與硬體比較錯誤、耗時和記憶體，不能只看模型新舊。"
+          },
+          {
+            "title": "資料與完整成本",
+            "body": "需各類工作標註和未見批次測試；選預訓練權重後調整任務頭。換類別、背景或拍攝條件重新核對，不能只沿用原測試準確率。"
+          }
+        ],
+        "reading_views": [
+          {
+            "title": "同一分類工作，三種特徵整理方式",
+            "image": "_course_content/generated-concepts/resnet/wi030-class-d3-r05-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/resnet/wi030-class-d3-r06-mobile.png",
+            "alt": "同一分類工作，三種特徵整理方式。ResNet用殘差相加傳遞特徵；ConvNeXt仍以卷積作空間與通道處理；ViT讓區塊特徵互相參照。三者都可接分類頭；用相同標註、資料切分、前處理與硬體比較錯誤、耗時和記憶體，不能只看模型新舊。 AI生成教學示意，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              724,
+              2172
+            ],
+            "mobile_display_mode": "full-mobile",
+            "desktop_intrinsic_width": 1672,
+            "desktop_intrinsic_height": 941,
+            "mobile_intrinsic_width": 724,
+            "mobile_intrinsic_height": 2172
+          }
+        ],
+        "core_ideas": false
+      }
+    ]
+  },
+  "deep_dive": {
+    "title": "ResNet 八章完整導讀",
+    "intro": "先理解ResNet要解決的訓練困難，再沿兩條路看skip connection（跳接）怎麼運作；接著用R-01實際特徵與工作案例，討論能力、限制與選型。",
+    "concept_path": "roadmap-model-selection/known-target-classification/resnet/RESNET_MODEL_CONCEPT.md",
+    "chapters": [
+      {
+        "id": "task-output",
+        "nav": "為何需要ResNet",
+        "title": "01｜為什麼需要 ResNet？加深不一定學得好",
+        "summary": "我們希望更多卷積層能組合更複雜的形狀線索，但普通網路單純加深後，可能連訓練資料都學得更差。ResNet讓每個區塊保留直接路徑、另學修正，降低深層網路的訓練困難。",
+        "image": "_course_content/generated-concepts/resnet/resnet-e02-why.svg",
+        "alt": "為何需要ResNet：加深後的訓練困難。原生示意圖；非產品模型推論。",
+        "points": [
+          "先看圖中的訓練錯誤：原論文在CIFAR-10比較20層與56層普通網路，較深者訓練錯誤更高，稱為退化問題。圖只示意趨勢；不是本站曲線，也不表示所有深網都會退化。這不能只用過擬合解釋，因為訓練資料本身也沒學好。",
+          "為何跳接有幫助？若新增區塊暫時不需要改動特徵，普通塊仍得學會傳回原值；殘差塊可讓修正趨近零，由直接路徑保留原值。下一章把這兩條路畫出來。更容易訓練仍不保證每個任務越深越準。",
+          "用在R-01工件時：要判整件屬於正常、刮傷或污染，可用預訓練ResNet作分類候選，再以產品標註調整模型。按批次切分資料，和較小基準比較漏檢、延遲及覆核量；若只有正常品或需要缺陷位置，先比較符合該輸出的其他方法。切換第二張圖看工作接法。"
+        ],
+        "check": {
+          "question": "同一批資料，普通網路加深後「訓練錯誤」也升高。這只代表過擬合嗎？為何值得比較ResNet？",
+          "answer": "不只如此：訓練資料本身學得更差，表示有最佳化困難。ResNet透過直接跳接加上學到的修正，讓保留原特徵更容易。仍需比較驗證集表現與計算成本；不能直接保證ResNet勝出。"
+        },
+        "source_ids": [
+          "paper",
+          "torchvision-code",
+          "hf-docs"
+        ],
+        "reading_views": [
+          {
+            "title": "為何需要ResNet：加深後的訓練困難",
+            "image": "_course_content/generated-concepts/resnet/resnet-e02-why.svg",
+            "mobile_image": "_course_content/generated-concepts/resnet/resnet-e02-why-mobile.svg",
+            "mobile_crop": [
+              0,
+              0,
+              720,
+              941
+            ],
+            "alt": "為何需要ResNet：加深後的訓練困難。原生示意圖；非產品模型推論。"
+          },
+          {
+            "title": "已知外觀與人的處置",
+            "image": "_course_content/generated-concepts/resnet/resnet-e01-01-task.svg",
+            "mobile_image": "_course_content/generated-concepts/resnet/resnet-e01-01-task-mobile.svg",
+            "mobile_crop": [
+              0,
+              0,
+              720,
+              941
+            ],
+            "alt": "已知外觀與人的處置；同一案例的來源、處理、輸出與人的下一步。圖內列出證據範圍。"
+          }
+        ]
+      },
+      {
+        "id": "residual-addition",
+        "nav": "Skip connection",
+        "title": "02｜Skip connection：輸入分兩路，再相加",
+        "summary": "這裡的x是前面層產生的特徵，不是整張原照片。主路徑經卷積學習修正F(x)；另一條跳接繞過這幾層，將x直接送到相加點。两路同位置逐格相加，再經ReLU。",
+        "image": "_course_content/generated-concepts/resnet/resnet-e02-skip.svg",
+        "alt": "Skip connection：分支、繞行與相加。原生示意圖；非產品模型推論。",
+        "points": [
+          "先沿圖找分岔和會合：普通塊直接學整個輸出H(x)；殘差塊改學F(x)=H(x)−x，最後加回x。「殘差」是相對輸入的修正，並非分類錯誤率。設定例[2,1,3]+[0,2,−1]=[2,3,2]；若F(x)=0，這個非負例保留x。",
+          "為何有利於訓練？保留原特徵不必全靠卷積重新學出來；反向傳播的學習訊號也多了一條直接路徑。兩條路仍同時運作，skip不是跳過計算或停止訓練。原版ResNet相加後有ReLU，訊號仍受啟用狀態影響，不能宣稱任何情況梯度都不衰減。",
+          "相加必須同高寬、同通道數；不一致時常用1×1卷積投影和步幅對齊，此時不是原封不動傳x。圖省略BatchNorm以先看清路徑；基本塊畫兩個卷積，ResNet50的bottleneck為三個。第二視圖接回本機ResNet50實際數值，仍不是產品缺陷機率。"
+        ],
+        "check": {
+          "question": "把圖中的跳接移除，並讓卷積分支輸出全零，還能保留[2,1,3]嗎？如果通道數不同又該怎麼辦？",
+          "answer": "不能。沒有跳接時只剩零輸出；有相同尺寸的identity跳接時，相加前得到x，這個非負例經ReLU仍不變。通道數或高寬不同時要先對齊，例如投影shortcut。這不能省掉主路徑的卷積計算。"
+        },
+        "source_ids": [
+          "paper",
+          "torchvision-code",
+          "identity-paper"
+        ],
+        "reading_views": [
+          {
+            "title": "Skip connection：分支、繞行與相加",
+            "image": "_course_content/generated-concepts/resnet/resnet-e02-skip.svg",
+            "mobile_image": "_course_content/generated-concepts/resnet/wi033-resnet-deep-skip-r01-mobile.png",
+            "mobile_crop": [
+              0,
+              0,
+              768,
+              2800
+            ],
+            "alt": "Skip connection：分支、繞行與相加。原生示意圖；非產品模型推論。 手機版重排原有證據，實測或概念示意性質同原來源。",
+            "mobile_display_mode": "full-mobile",
+            "mobile_intrinsic_width": 768,
+            "mobile_intrinsic_height": 2800
+          },
+          {
+            "title": "同位置的實際殘差相加",
+            "image": "_course_content/generated-concepts/resnet/resnet-e01-02-residual.svg",
+            "mobile_image": "_course_content/generated-concepts/resnet/wi033-resnet-deep-residual-r02-mobile.png",
+            "mobile_crop": [
+              0,
+              0,
+              768,
+              2800
+            ],
+            "alt": "同位置的實際殘差相加；同一案例的來源、處理、輸出與人的下一步。圖內列出證據範圍。 手機版重排原有證據，實測或概念示意性質同原來源。",
+            "mobile_display_mode": "full-mobile",
+            "mobile_intrinsic_width": 768,
+            "mobile_intrinsic_height": 2800
+          }
+        ]
+      },
+      {
+        "id": "stage-shapes",
+        "nav": "Stages 與 shapes",
+        "title": "03｜同一工件，逐步形成不同回應",
+        "summary": "四張圖顯示同一工件經不同階段的實際通道回應。前段仍有細邊與孔洞附近的變化，後段空間位置較粗；不可把亮區直接命名為缺陷。",
+        "image": "_course_content/generated-concepts/resnet/resnet-e01-03-stages.svg",
+        "alt": "同工件的實際階段回應；同一案例的來源、處理、輸出與人的下一步。圖內列出證據範圍。",
+        "points": [
+          "每階段選空間變化最大的通道；各圖獨立色階，顏色強弱不能跨圖排名。",
+          "整件特徵越來越抽象。尺寸與通道數有助重現，細節架構可留在工程參考。",
+          "要找微小缺陷，先核對原始像素、縮圖後像素與分層漏檢；加深模型不會補回失去的觀測。"
+        ],
+        "check": {
+          "question": "最後階段看不到細線，應先加深模型，還是檢查拍攝與輸入？",
+          "answer": "先檢查拍攝解析度、ROI、縮圖及分層漏檢。可比較局部裁切或分割，但須重測成本；僅靠通道圖不能斷言模型必定漏檢。"
+        },
+        "source_ids": [
+          "paper",
+          "torchvision-code",
+          "hf-docs"
+        ],
+        "reading_views": [
+          {
+            "title": "同工件的實際階段回應",
+            "image": "_course_content/generated-concepts/resnet/resnet-e01-03-stages.svg",
+            "mobile_image": "_course_content/generated-concepts/resnet/resnet-e01-03-stages-mobile.svg",
+            "mobile_crop": [
+              0,
+              0,
+              720,
+              941
+            ],
+            "alt": "同工件的實際階段回應；同一案例的來源、處理、輸出與人的下一步。圖內列出證據範圍。"
+          }
+        ]
+      },
+      {
+        "id": "train-infer-bn",
+        "nav": "訓練、推論與 BN",
+        "title": "04｜同件回應為何會受批次影響",
+        "summary": "橘格固定是同一件的回應5。訓練每批的均值不同，中心化結果跟著變；部署使用保存的統計量，這一步才不受同批其他件影響。",
+        "image": "_course_content/generated-concepts/resnet/resnet-e01-04-bn.svg",
+        "alt": "批次改變與固定統計；同一案例的來源、處理、輸出與人的下一步。圖內列出證據範圍。",
+        "points": [
+          "圖只拆中心化步驟；完整BatchNorm另含變異數標準化、縮放與偏移。",
+          "訓練forward更新running statistics；反向算梯度，optimizer才更新可學參數。",
+          "上線使用eval並鎖定前處理、類別順序與權重；這不代表資料漂移已解決。"
+        ],
+        "check": {
+          "question": "同件單張跑和混批跑結果不同，第一個該查什麼？",
+          "answer": "先查eval模式、BatchNorm統計、前處理與批次處理的一致性，再核對數值誤差。別先重新訓練或放寬門檻掩蓋部署差異。"
+        },
+        "source_ids": [
+          "torchvision-code",
+          "bn-code"
+        ],
+        "reading_views": [
+          {
+            "title": "批次改變與固定統計",
+            "image": "_course_content/generated-concepts/resnet/resnet-e01-04-bn.svg",
+            "mobile_image": "_course_content/generated-concepts/resnet/wi033-resnet-deep-bn-r02-mobile.png",
+            "mobile_crop": [
+              0,
+              0,
+              768,
+              2800
+            ],
+            "alt": "批次改變與固定統計；同一案例的來源、處理、輸出與人的下一步。圖內列出證據範圍。 手機版重排原有證據，實測或概念示意性質同原來源。",
+            "mobile_display_mode": "full-mobile",
+            "mobile_intrinsic_width": 768,
+            "mobile_intrinsic_height": 2800
+          }
+        ]
+      },
+      {
+        "id": "pooling-observability",
+        "nav": "Pooling 與可觀測性",
+        "title": "05｜平均後，已無法知道亮點在哪裡",
+        "summary": "A與B的特徵熱點在不同位置，兩者都是一格8加十五格0，平均同為0.5。這個可追算例說明：整體分數相同，位置仍可能不同。",
+        "image": "_course_content/generated-concepts/resnet/resnet-e01-05-pooling.svg",
+        "alt": "不同位置的相同平均；同一案例的來源、處理、輸出與人的下一步。圖內列出證據範圍。",
+        "points": [
+          "橘框是兩種來源位置的示意，不是人工缺陷標註，也不是實際熱圖。",
+          "需要定位時保留空間輸出，或改用偵測／分割；不能從一個平均值倒推出座標。",
+          "分類關注圖可供診斷，精確輪廓及物理尺寸仍需標註、校正與專門驗證。"
+        ],
+        "check": {
+          "question": "工站要刮傷輪廓才能計算面積，但分類正確率已很高，能直接交付嗎？",
+          "answer": "不能。分類只滿足整件類別；應增加分割及面積量測驗證。若只需分流到人工覆核，分類仍可能是成本合理的候選。"
+        },
+        "source_ids": [
+          "paper",
+          "gradcam"
+        ],
+        "reading_views": [
+          {
+            "title": "不同位置的相同平均",
+            "image": "_course_content/generated-concepts/resnet/resnet-e01-05-pooling.svg",
+            "mobile_image": "_course_content/generated-concepts/resnet/resnet-e01-05-pooling-mobile.svg",
+            "mobile_crop": [
+              0,
+              0,
+              720,
+              941
+            ],
+            "alt": "不同位置的相同平均；同一案例的來源、處理、輸出與人的下一步。圖內列出證據範圍。"
+          }
+        ]
+      },
+      {
+        "id": "calibration-ood",
+        "nav": "校準與 OOD",
+        "title": "06｜同樣高分，新條件仍要覆核",
+        "summary": "同一個正常0.97的設定分數，在已驗證批次與未驗證新批次會走不同流程。模型分數不能替代輸入条件與允收規格的確認。",
+        "image": "_course_content/generated-concepts/resnet/resnet-e01-06-gate.svg",
+        "alt": "新條件高分仍覆核；同一案例的來源、處理、輸出與人的下一步。圖內列出證據範圍。",
+        "points": [
+          "已驗證範圍內，仍要按類別風險與允收規則處置，並定期抽驗。",
+          "新批次或新料號先保留影像、抽驗並覆核；資料足夠後再決定是否調整或重訓。",
+          "校正改善已知資料的信心解讀；OOD偵測也會失敗，不是未知缺陷保證。"
+        ],
+        "check": {
+          "question": "新料號正常分數0.97，但增加覆核會拖慢工站，你怎麼選？",
+          "answer": "先保留新料號覆核或受控抽驗，量測風險與覆核量；有驗證證據後再設自動處置。不能只因節拍壓力就把高分當成新條件已驗證。"
+        },
+        "source_ids": [
+          "calibration",
+          "ood"
+        ],
+        "reading_views": [
+          {
+            "title": "新條件高分仍覆核",
+            "image": "_course_content/generated-concepts/resnet/resnet-e01-06-gate.svg",
+            "mobile_image": "_course_content/generated-concepts/resnet/resnet-e01-06-gate-mobile.svg",
+            "mobile_crop": [
+              0,
+              0,
+              720,
+              941
+            ],
+            "alt": "新條件高分仍覆核；同一案例的來源、處理、輸出與人的下一步。圖內列出證據範圍。"
+          }
+        ]
+      },
+      {
+        "id": "variants-evidence",
+        "nav": "Variants 與證據",
+        "title": "07｜用漏檢與耗時，篩選更深候選",
+        "summary": "圖是假設的同一100件測試結果，不是實際ResNet排名。需求為漏檢最多2件、P95最多20ms。B同時過關，A漏太多，C超時，B的覆核量仍需工站接得住。",
+        "image": "_course_content/generated-concepts/resnet/resnet-e01-07-variants.svg",
+        "alt": "漏檢耗時與覆核取捨；同一案例的來源、處理、輸出與人的下一步。圖內列出證據範圍。",
+        "points": [
+          "層數18／50／101只是候選版本，不能單獨代表品質或安全性。",
+          "固定資料切分、輸入、預訓練、訓練預算及硬體，再測漏檢、耗時、記憶體和覆核量。",
+          "目前沒有本站三模型共同效能實測；圖中的假設只用來練習條件取捨。"
+        ],
+        "check": {
+          "question": "若工站每100件最多只覆核15件，圖中B還能直接採用嗎？",
+          "answer": "不能直接採用：B雖過漏檢與耗時，但覆核25件超量。可調整流程、收集資料或重新比較門檻，且必須重測漏檢；不能改用漏檢超標的A來湊節拍。"
+        },
+        "source_ids": [
+          "paper",
+          "torchvision-code"
+        ],
+        "reading_views": [
+          {
+            "title": "漏檢耗時與覆核取捨",
+            "image": "_course_content/generated-concepts/resnet/resnet-e01-07-variants.svg",
+            "mobile_image": "_course_content/generated-concepts/resnet/resnet-e01-07-variants-mobile.svg",
+            "mobile_crop": [
+              0,
+              0,
+              720,
+              941
+            ],
+            "alt": "漏檢耗時與覆核取捨；同一案例的來源、處理、輸出與人的下一步。圖內列出證據範圍。"
+          }
+        ]
+      },
+      {
+        "id": "selection-decision",
+        "nav": "比較與決策",
+        "title": "08｜把三種骨幹放回同一個工作問題",
+        "summary": "同一R-01，切換看三種代表操作：加回修正、混合鄰域與通道、跨位置加權。這是機制比較，本站效能仍需同條件實測。",
+        "image": "_course_content/generated-concepts/resnet/resnet-e01-02-residual.svg",
+        "alt": "同位置的實際殘差相加；同一案例的來源、處理、輸出與人的下一步。圖內列出證據範圍。",
+        "points": [
+          "三者都可接已知類別分類頭；固定資料、ROI、標註、預訓練與訓練預算，按留出批次漏檢、P95與覆核量選擇。",
+          "換產品要重查標註、成像、資料分布及允收；是否重訓由新資料驗證決定。",
+          "只有正常資料或需要精確輪廓時，先改任務與輸出設計，不能只換分類骨幹。"
+        ],
+        "check": {
+          "question": "有穩定ROI與少量已知缺陷標註，但想處理跨區塊關係，是否必須選ViT？",
+          "answer": "不必。可把有合適預訓練的ViT加入比較，也保留ResNet與ConvNeXt基準；看留出批次的漏檢、覆核、耗時，不能只憑全域關係需求決定勝負。"
+        },
+        "source_ids": [
+          "paper",
+          "convnext-code",
+          "vit-paper"
+        ],
+        "reading_views": [
+          {
+            "title": "ResNet：同位置加回修正",
+            "image": "_course_content/generated-concepts/resnet/resnet-e01-02-residual.svg",
+            "mobile_image": "_course_content/generated-concepts/resnet/wi033-resnet-deep-residual-r02-mobile.png",
+            "mobile_crop": [
+              0,
+              0,
+              768,
+              2800
+            ],
+            "alt": "同位置的實際殘差相加；同一案例的來源、處理、輸出與人的下一步。圖內列出證據範圍。 手機版重排原有證據，實測或概念示意性質同原來源。",
+            "mobile_display_mode": "full-mobile",
+            "mobile_intrinsic_width": 768,
+            "mobile_intrinsic_height": 2800
+          },
+          {
+            "title": "ConvNeXt：各通道混附近位置",
+            "image": "_course_content/generated-concepts/convnext/convnext-e01-03-spatial.svg",
+            "mobile_image": "_course_content/generated-concepts/resnet/wi033-resnet-deep-cnx-spatial-r02-mobile.png",
+            "mobile_crop": [
+              0,
+              0,
+              768,
+              2800
+            ],
+            "alt": "同通道的鄰域混合；同一案例的來源、處理、輸出與人的下一步。圖內列出證據範圍。 手機版重排原有證據，實測或概念示意性質同原來源。",
+            "mobile_display_mode": "full-mobile",
+            "mobile_intrinsic_width": 768,
+            "mobile_intrinsic_height": 2800
+          },
+          {
+            "title": "ConvNeXt：固定位置再混通道",
+            "image": "_course_content/generated-concepts/convnext/convnext-e01-03-channels.svg",
+            "mobile_image": "_course_content/generated-concepts/resnet/wi033-resnet-deep-cnx-channel-r02-mobile.png",
+            "mobile_crop": [
+              0,
+              0,
+              768,
+              2800
+            ],
+            "alt": "同位置的通道混合；同一案例的來源、處理、輸出與人的下一步。圖內列出證據範圍。 手機版重排原有證據，實測或概念示意性質同原來源。",
+            "mobile_display_mode": "full-mobile",
+            "mobile_intrinsic_width": 768,
+            "mobile_intrinsic_height": 2800
+          },
+          {
+            "title": "ViT：同一R-01跨位置加權",
+            "image": "_course_content/generated-concepts/vit-classifier/vit-classifier-e01-06-r01-attention.svg",
+            "mobile_image": "_course_content/generated-concepts/resnet/wi033-resnet-deep-vit-attention-r01-mobile.png",
+            "mobile_crop": [
+              0,
+              0,
+              768,
+              2800
+            ],
+            "alt": "ViT：同一R-01跨位置加權；同一案例的來源、處理、輸出與人的下一步。圖內列出證據範圍。 手機版重排原有證據，實測或概念示意性質同原來源。",
+            "mobile_display_mode": "full-mobile",
+            "mobile_intrinsic_width": 768,
+            "mobile_intrinsic_height": 2800
+          }
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "id": "paper",
+        "label": "Deep Residual Learning 論文（arXiv）",
+        "url": "https://arxiv.org/abs/1512.03385",
+        "scope": "Residual learning、BasicBlock／Bottleneck 架構與 ImageNet 實驗的第一來源"
+      },
+      {
+        "id": "torchvision-code",
+        "label": "Torchvision ResNet 原始碼",
+        "url": "https://github.com/pytorch/vision/blob/v0.27.0/torchvision/models/resnet.py",
+        "scope": "公開實作中的 blocks、strides、downsample、weights 與 variants"
+      },
+      {
+        "id": "hf-docs",
+        "label": "Hugging Face ResNet 文件",
+        "url": "https://huggingface.co/docs/transformers/model_doc/resnet",
+        "scope": "模型介面、前處理與分類輸出說明"
+      },
+      {
+        "id": "calibration",
+        "label": "Modern Neural Network Calibration（arXiv）",
+        "url": "https://arxiv.org/abs/1706.04599",
+        "scope": "神經網路信心校準、reliability 與 temperature scaling"
+      },
+      {
+        "id": "ood",
+        "label": "Baseline for OOD Detection（arXiv）",
+        "url": "https://arxiv.org/abs/1610.02136",
+        "scope": "以分類器分數做 OOD baseline 的方法與邊界"
+      },
+      {
+        "id": "gradcam",
+        "label": "Grad-CAM 論文（arXiv）",
+        "url": "https://arxiv.org/abs/1610.02391",
+        "scope": "以梯度產生類別關注圖的用途與解讀邊界"
+      },
+      {
+        "id": "bn-code",
+        "label": "PyTorch BatchNorm 原始碼",
+        "url": "https://github.com/pytorch/pytorch/blob/v2.12.0/torch/nn/modules/batchnorm.py",
+        "scope": "訓練forward、running statistics與eval"
+      },
+      {
+        "id": "convnext-code",
+        "label": "ConvNeXt 作者原始碼",
+        "url": "https://github.com/facebookresearch/ConvNeXt/blob/main/models/convnext.py",
+        "scope": "depthwise與pointwise混合"
+      },
+      {
+        "id": "vit-paper",
+        "label": "ViT 原論文",
+        "url": "https://arxiv.org/abs/2010.11929",
+        "scope": "patch embedding與self-attention"
+      },
+      {
+        "id": "identity-paper",
+        "label": "Identity Mappings in Deep Residual Networks",
+        "url": "https://arxiv.org/abs/1603.05027",
+        "scope": "Identity shortcut的前向與反向傳播分析；須區分原版與pre-activation殘差塊。"
+      }
+    ],
+    "default_collapsed": true
+  },
+  "concept_visuals": [],
+  "boundary_cases": [
+    {
+      "condition": "本課具體反例",
+      "effect": "訓練照片中十字螺絲總在藍墊、內六角總在橘墊，模型可能學到背景捷徑。把同一十字螺絲換到橘墊後，可能誤判內六角；工件本身沒有改變。",
+      "action": "讓各類工件都跨背景、批次與允收光照取樣；以未參與訓練的批次驗證，分析各類混淆與低信心案例，再決定是否重新訓練。"
+    },
+    {
+      "condition": "更換產品、模型或輸入設定",
+      "effect": "需各類工作標註和未見批次測試；選預訓練權重後調整任務頭。換類別、背景或拍攝條件重新核對，不能只沿用原測試準確率。",
+      "action": "先定義各類與未知品接手規則，讓每類跨背景拍攝，按批次切開訓練和測試。"
+    },
+    {
+      "condition": "把示意當成實際推論",
+      "effect": "本課特徵、排序、回答及圖像僅用於解釋，不支持現場準確率或耗時結論。",
+      "action": "用未見批次逐類核對真實輸入、標籤、預測及信心，列混淆矩陣與背景／反光失敗例；記錄整段耗時、記憶體與人工覆核量。教學圖的分類結果不是實測。"
+    }
+  ],
+  "comparison": [
+    {
+      "model": "ResNet",
+      "normality": "類別標註；殘差特徵相加",
+      "candidate": "已知類別；同資料測錯誤與成本"
+    },
+    {
+      "model": "ConvNeXt",
+      "normality": "類別標註；現代空間／通道卷積",
+      "candidate": "已知類別；不能以模型新舊排名"
+    },
+    {
+      "model": "ViT",
+      "normality": "類別標註；區塊表示與注意力",
+      "candidate": "已知類別；注意力不是輪廓真值"
+    }
+  ],
+  "selection": "ResNet用殘差相加傳遞特徵；ConvNeXt仍以卷積作空間與通道處理；ViT讓區塊特徵互相參照。三者都可接分類頭；用相同標註、資料切分、前處理與硬體比較錯誤、耗時和記憶體，不能只看模型新舊。 需各類工作標註和未見批次測試；選預訓練權重後調整任務頭。換類別、背景或拍攝條件重新核對，不能只沿用原測試準確率。",
+  "poc": {
+    "title": "以真實工作資料做小規模比較",
+    "steps": [
+      "先定義各類與未知品接手規則，讓每類跨背景拍攝，按批次切開訓練和測試。",
+      "需各類工作標註和未見批次測試；選預訓練權重後調整任務頭。換類別、背景或拍攝條件重新核對，不能只沿用原測試準確率。",
+      "用未見批次逐類核對真實輸入、標籤、預測及信心，列混淆矩陣與背景／反光失敗例；記錄整段耗時、記憶體與人工覆核量。教學圖的分類結果不是實測。"
+    ],
+    "hold": "讓各類工件都跨背景、批次與允收光照取樣；以未參與訓練的批次驗證，分析各類混淆與低信心案例，再決定是否重新訓練。",
+    "acceptance": {
+      "baseline": "既有流程或最簡單可行方法",
+      "measure": "用未見批次逐類核對真實輸入、標籤、預測及信心，列混淆矩陣與背景／反光失敗例；記錄整段耗時、記憶體與人工覆核量。教學圖的分類結果不是實測。",
+      "negative_control": "訓練照片中十字螺絲總在藍墊、內六角總在橘墊，模型可能學到背景捷徑。把同一十字螺絲換到橘墊後，可能誤判內六角；工件本身沒有改變。",
+      "owner": "實作與影像核對負責人"
+    }
+  },
+  "teach_back": {
+    "question": "它改變什麼？何時選另一種做法？",
+    "answer": "ResNet讓特徵走兩條路：一路直接保留x，另一路學修正F(x)，兩路相加後繼續處理。這使較深網路較容易最佳化；最後由分類頭把特徵對應到已知螺絲類別。相加的是相容的特徵，不是兩張原始照片。 ResNet用殘差相加傳遞特徵；ConvNeXt仍以卷積作空間與通道處理；ViT讓區塊特徵互相參照。三者都可接分類頭；用相同標註、資料切分、前處理與硬體比較錯誤、耗時和記憶體，不能只看模型新舊。"
+  },
+  "slide_reading": [
+    {
+      "title": "ResNet：先把整張照片分到已知類別",
+      "question": "整圖分類要類別標註，細傷位置不會自動交付。",
+      "look": "先看同件照片與類別標註，再核對殘差逐步更新影像表示，最後看分類頭交出整件分數。",
+      "relation": "沿用支架完整／刮傷兩類工作例。用有標註的整圖訓練分類器，殘差分支學相對輸入的修正；分類頭彙整特徵後交付類別分數，無法直接交付刮傷座標。圖中分數是給定示意。",
+      "takeaway": "整圖分類要類別標註，細傷位置不會自動交付。",
+      "terms": [
+        "特徵：由影像學到的中間表示，並非標註真值。",
+        "本圖示意：解釋模型責任，不代表新模型實測。"
+      ]
+    },
+    {
+      "title": "ResNet：保留輸入，再加上學到的修正",
+      "question": "同形狀才能逐位置相加；換形狀需先對齊。",
+      "look": "先看輸入x分成兩條路，再核對主路學修正F(x)，最後看對齊後逐項相加。",
+      "relation": "用同位置2×2特徵教學例：x=[2,1;0,3]，F(x)=[1,0;2,-1]，相加得到[3,1;2,2]。直通路是輸入特徵而非原圖；形狀不同時需投影或其他對齊。展示殘差核心，啟用函數與其他層於正文說明，不把加法當缺陷消除。",
+      "takeaway": "同形狀才能逐位置相加；換形狀需先對齊。",
+      "terms": [
+        "特徵：由影像學到的中間表示，並非標註真值。",
+        "本圖示意：解釋模型責任，不代表新模型實測。"
+      ]
+    },
+    {
+      "title": "ResNet：分類結果要連回原圖與標籤",
+      "question": "保存類別映射與前處理，換批次後重驗誤判。",
+      "look": "先看鎖定裁切與類別映射，再核對彙整表示再讀出分數，最後看回原圖核对錯分樣本。",
+      "relation": "推論固定裁切、resize、標準化、權重與類別順序。分類頭使用彙整特徵，不把可視化特徵圖當缺陷位置。保存分數與原圖，分批次驗漏判與誤判；全域平均會弱化某些細小線索，是否漏判仍需資料驗證。",
+      "takeaway": "保存類別映射與前處理，換批次後重驗誤判。",
+      "terms": [
+        "特徵：由影像學到的中間表示，並非標註真值。",
+        "本圖示意：解釋模型責任，不代表新模型實測。"
+      ]
+    },
+    {
+      "title": "ResNet：背景變了，分類依據仍要成立",
+      "question": "同件換背景測捷徑，定位需求另選位置輸出。",
+      "look": "先看同件放在兩種背景，再核對分類器只給整件類別，最後看需要位置時比較分割。",
+      "relation": "相同支架與缺口只改背景，檢查模型是否依背景而非工件分類。若要缺陷位置，另評分割及其像素標註成本；ResNet可當骨幹，但本分類頭不因有熱圖可視化就變成分割器。",
+      "takeaway": "同件換背景測捷徑，定位需求另選位置輸出。",
+      "terms": [
+        "特徵：由影像學到的中間表示，並非標註真值。",
+        "本圖示意：解釋模型責任，不代表新模型實測。"
+      ]
+    }
+  ],
+  "comparison_headers": {
+    "title": "同一分類工作，三種特徵整理方式",
+    "basis": "所需資料與方法差異",
+    "output": "輸出與維護責任"
+  },
+  "transfer_check": {
+    "title": "資料還是深度先投入？",
+    "scenario": "新背景讓原ResNet分類變差。你可以先擴充跨背景標註，也可以比較更深的ResNet；同時做兩者會超出本輪時間。",
+    "question": "你如何用一個小檢查決定先投入哪一邊？",
+    "answer": "先用同工件、不同背景的保留資料找錯誤集中在哪裡。若背景切換主導錯誤，先改善資料與取像較直接；若跨背景仍有一致的細部類別混淆，可比較容量或解析度。更深網路可能有用，但殘差不自動消除背景捷徑，仍須同資料驗證。"
+  },
+  "review_trace": {
+    "authority": "roadmap-model-selection/known-target-classification/resnet/model.md",
+    "scope": "WI-033第三批：四工程與指定深讀手機重排；原實測資料/示意身份/桌機來源保留。原生已審，頁內驗證及使用者核准另記。",
+    "claims": [
+      {
+        "id": "visual-1",
+        "field": "beginner_path.visuals[known-class-case]",
+        "source": "模型定位 / architecture_path"
+      },
+      {
+        "id": "visual-2",
+        "field": "beginner_path.visuals[residual-stages]",
+        "source": "architecture_path"
+      },
+      {
+        "id": "visual-3",
+        "field": "beginner_path.visuals[pooling-logits]",
+        "source": "representation_or_score"
+      },
+      {
+        "id": "visual-4",
+        "field": "beginner_path.visuals[unknown-boundary]",
+        "source": "failure_boundary"
+      },
+      {
+        "id": "visual-5",
+        "field": "beginner_path.visuals[representation-choice]",
+        "source": "selection_gate / evidence_bundle"
+      },
+      {
+        "id": "promise",
+        "field": "promise",
+        "source": "模型定位 / representation_or_score"
+      },
+      {
+        "id": "mechanism",
+        "field": "mechanism_steps",
+        "source": "architecture_path / representation_or_score"
+      },
+      {
+        "id": "boundaries",
+        "field": "boundary_cases",
+        "source": "failure_boundary / selection_gate"
+      },
+      {
+        "id": "comparison",
+        "field": "comparison + selection",
+        "source": "selection_gate"
+      },
+      {
+        "id": "poc",
+        "field": "poc + acceptance",
+        "source": "cost_and_operating_point / evidence_bundle"
+      },
+      {
+        "id": "transfer",
+        "field": "transfer_check",
+        "source": "failure_boundary / selection_gate"
+      },
+      {
+        "id": "wi030-first-read",
+        "field": "beginner_path + core + selection + transfer",
+        "source": "https://arxiv.org/abs/1512.03385"
+      }
+    ]
+  },
+  "quality_status": {
+    "label": "首讀圖文已核對",
+    "state": "self-reviewed",
+    "round": "WI-030",
+    "reason": "新版逐圖與整頁自評、桌機手機驗證完成；使用者成品核准pending。原工程圖未納入本輪分數。"
+  },
+  "teaching_preflight": {
+    "brief": "teaching-images/vision-ai-model-selection/workitems/wi-030/resnet-c1-r02-desktop.md",
+    "mobile_brief": "teaching-images/vision-ai-model-selection/workitems/wi-030/resnet-c1-r02-mobile.md",
+    "story": "C",
+    "major_visual_nodes": 3,
+    "visual_status": "self-reviewed",
+    "user_review": "pending"
+  },
+  "engineering_slides": [
+    {
+      "title": "ResNet：先把整張照片分到已知類別",
+      "question": "整圖分類要類別標註，細傷位置不會自動交付。",
+      "plain": {
+        "look": "先看同件照片與類別標註，再核對殘差逐步更新影像表示，最後看分類頭交出整件分數。",
+        "relation": "沿用支架完整／刮傷兩類工作例。用有標註的整圖訓練分類器，殘差分支學相對輸入的修正；分類頭彙整特徵後交付類別分數，無法直接交付刮傷座標。圖中分數是給定示意。",
+        "takeaway": "整圖分類要類別標註，細傷位置不會自動交付。"
+      },
+      "terms": [
+        "特徵：由影像學到的中間表示，並非標註真值。",
+        "本圖示意：解釋模型責任，不代表新模型實測。"
+      ],
+      "guide": [
+        "沿用支架完整／刮傷兩類工作例。用有標註的整圖訓練分類器，殘差分支學相對輸入的修正；分類頭彙整特徵後交付類別分數，無法直接交付刮傷座標。圖中分數是給定示意。",
+        "先看同件照片與類別標註，再核對殘差逐步更新影像表示，最後看分類頭交出整件分數。"
+      ],
+      "stages": [
+        {
+          "title": "同件照片與類別標註",
+          "body": "同件照片與類別標註；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "殘差逐步更新影像表示",
+          "body": "殘差逐步更新影像表示；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "分類頭交出整件分數",
+          "body": "分類頭交出整件分數；請對照圖內輸入、變化與結果。"
+        }
+      ],
+      "misconception": "訓練照片中十字螺絲總在藍墊、內六角總在橘墊，模型可能學到背景捷徑。把同一十字螺絲換到橘墊後，可能誤判內六角；工件本身沒有改變。",
+      "alt": "ResNet：先把整張照片分到已知類別。整圖分類要類別標註，細傷位置不會自動交付。 教學示意，非模型實測。",
+      "mobile_image": "roadmap-model-selection/known-target-classification/resnet/images/final/WI033-RESNET-01-r01-mobile.png",
+      "mobile_width": 768,
+      "mobile_height": 2304,
+      "engineering": {
+        "takeaway": "整圖分類要類別標註，細傷位置不會自動交付。",
+        "nextAction": "先定義各類與未知品接手規則，讓每類跨背景拍攝，按批次切開訓練和測試。",
+        "redLine": "讓各類工件都跨背景、批次與允收光照取樣；以未參與訓練的批次驗證，分析各類混淆與低信心案例，再決定是否重新訓練。"
+      },
+      "source": "https://arxiv.org/abs/1512.03385"
+    },
+    {
+      "title": "ResNet：保留輸入，再加上學到的修正",
+      "question": "同形狀才能逐位置相加；換形狀需先對齊。",
+      "plain": {
+        "look": "先看輸入x分成兩條路，再核對主路學修正F(x)，最後看對齊後逐項相加。",
+        "relation": "用同位置2×2特徵教學例：x=[2,1;0,3]，F(x)=[1,0;2,-1]，相加得到[3,1;2,2]。直通路是輸入特徵而非原圖；形狀不同時需投影或其他對齊。展示殘差核心，啟用函數與其他層於正文說明，不把加法當缺陷消除。",
+        "takeaway": "同形狀才能逐位置相加；換形狀需先對齊。"
+      },
+      "terms": [
+        "特徵：由影像學到的中間表示，並非標註真值。",
+        "本圖示意：解釋模型責任，不代表新模型實測。"
+      ],
+      "guide": [
+        "用同位置2×2特徵教學例：x=[2,1;0,3]，F(x)=[1,0;2,-1]，相加得到[3,1;2,2]。直通路是輸入特徵而非原圖；形狀不同時需投影或其他對齊。展示殘差核心，啟用函數與其他層於正文說明，不把加法當缺陷消除。",
+        "先看輸入x分成兩條路，再核對主路學修正F(x)，最後看對齊後逐項相加。"
+      ],
+      "stages": [
+        {
+          "title": "輸入x分成兩條路",
+          "body": "輸入x分成兩條路；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "主路學修正F(x)",
+          "body": "主路學修正F(x)；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "對齊後逐項相加",
+          "body": "對齊後逐項相加；請對照圖內輸入、變化與結果。"
+        }
+      ],
+      "misconception": "訓練照片中十字螺絲總在藍墊、內六角總在橘墊，模型可能學到背景捷徑。把同一十字螺絲換到橘墊後，可能誤判內六角；工件本身沒有改變。",
+      "alt": "ResNet：保留輸入，再加上學到的修正。同形狀才能逐位置相加；換形狀需先對齊。 教學示意，非模型實測。",
+      "mobile_image": "roadmap-model-selection/known-target-classification/resnet/images/final/WI033-RESNET-02-r02-mobile.png",
+      "mobile_width": 768,
+      "mobile_height": 2304,
+      "engineering": {
+        "takeaway": "同形狀才能逐位置相加；換形狀需先對齊。",
+        "nextAction": "先定義各類與未知品接手規則，讓每類跨背景拍攝，按批次切開訓練和測試。",
+        "redLine": "讓各類工件都跨背景、批次與允收光照取樣；以未參與訓練的批次驗證，分析各類混淆與低信心案例，再決定是否重新訓練。"
+      },
+      "source": "https://arxiv.org/abs/1512.03385"
+    },
+    {
+      "title": "ResNet：分類結果要連回原圖與標籤",
+      "question": "保存類別映射與前處理，換批次後重驗誤判。",
+      "plain": {
+        "look": "先看鎖定裁切與類別映射，再核對彙整表示再讀出分數，最後看回原圖核对錯分樣本。",
+        "relation": "推論固定裁切、resize、標準化、權重與類別順序。分類頭使用彙整特徵，不把可視化特徵圖當缺陷位置。保存分數與原圖，分批次驗漏判與誤判；全域平均會弱化某些細小線索，是否漏判仍需資料驗證。",
+        "takeaway": "保存類別映射與前處理，換批次後重驗誤判。"
+      },
+      "terms": [
+        "特徵：由影像學到的中間表示，並非標註真值。",
+        "本圖示意：解釋模型責任，不代表新模型實測。"
+      ],
+      "guide": [
+        "推論固定裁切、resize、標準化、權重與類別順序。分類頭使用彙整特徵，不把可視化特徵圖當缺陷位置。保存分數與原圖，分批次驗漏判與誤判；全域平均會弱化某些細小線索，是否漏判仍需資料驗證。",
+        "先看鎖定裁切與類別映射，再核對彙整表示再讀出分數，最後看回原圖核对錯分樣本。"
+      ],
+      "stages": [
+        {
+          "title": "鎖定裁切與類別映射",
+          "body": "鎖定裁切與類別映射；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "彙整表示再讀出分數",
+          "body": "彙整表示再讀出分數；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "回原圖核对錯分樣本",
+          "body": "回原圖核对錯分樣本；請對照圖內輸入、變化與結果。"
+        }
+      ],
+      "misconception": "訓練照片中十字螺絲總在藍墊、內六角總在橘墊，模型可能學到背景捷徑。把同一十字螺絲換到橘墊後，可能誤判內六角；工件本身沒有改變。",
+      "alt": "ResNet：分類結果要連回原圖與標籤。保存類別映射與前處理，換批次後重驗誤判。 教學示意，非模型實測。",
+      "mobile_image": "roadmap-model-selection/known-target-classification/resnet/images/final/WI033-RESNET-03-r01-mobile.png",
+      "mobile_width": 768,
+      "mobile_height": 2304,
+      "engineering": {
+        "takeaway": "保存類別映射與前處理，換批次後重驗誤判。",
+        "nextAction": "先定義各類與未知品接手規則，讓每類跨背景拍攝，按批次切開訓練和測試。",
+        "redLine": "讓各類工件都跨背景、批次與允收光照取樣；以未參與訓練的批次驗證，分析各類混淆與低信心案例，再決定是否重新訓練。"
+      },
+      "source": "https://arxiv.org/abs/1512.03385"
+    },
+    {
+      "title": "ResNet：背景變了，分類依據仍要成立",
+      "question": "同件換背景測捷徑，定位需求另選位置輸出。",
+      "plain": {
+        "look": "先看同件放在兩種背景，再核對分類器只給整件類別，最後看需要位置時比較分割。",
+        "relation": "相同支架與缺口只改背景，檢查模型是否依背景而非工件分類。若要缺陷位置，另評分割及其像素標註成本；ResNet可當骨幹，但本分類頭不因有熱圖可視化就變成分割器。",
+        "takeaway": "同件換背景測捷徑，定位需求另選位置輸出。"
+      },
+      "terms": [
+        "特徵：由影像學到的中間表示，並非標註真值。",
+        "本圖示意：解釋模型責任，不代表新模型實測。"
+      ],
+      "guide": [
+        "相同支架與缺口只改背景，檢查模型是否依背景而非工件分類。若要缺陷位置，另評分割及其像素標註成本；ResNet可當骨幹，但本分類頭不因有熱圖可視化就變成分割器。",
+        "先看同件放在兩種背景，再核對分類器只給整件類別，最後看需要位置時比較分割。"
+      ],
+      "stages": [
+        {
+          "title": "同件放在兩種背景",
+          "body": "同件放在兩種背景；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "分類器只給整件類別",
+          "body": "分類器只給整件類別；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "需要位置時比較分割",
+          "body": "需要位置時比較分割；請對照圖內輸入、變化與結果。"
+        }
+      ],
+      "misconception": "訓練照片中十字螺絲總在藍墊、內六角總在橘墊，模型可能學到背景捷徑。把同一十字螺絲換到橘墊後，可能誤判內六角；工件本身沒有改變。",
+      "alt": "ResNet：背景變了，分類依據仍要成立。同件換背景測捷徑，定位需求另選位置輸出。 教學示意，非模型實測。",
+      "mobile_image": "roadmap-model-selection/known-target-classification/resnet/images/final/WI033-RESNET-04-r01-mobile.png",
+      "mobile_width": 768,
+      "mobile_height": 2304,
+      "engineering": {
+        "takeaway": "同件換背景測捷徑，定位需求另選位置輸出。",
+        "nextAction": "先定義各類與未知品接手規則，讓每類跨背景拍攝，按批次切開訓練和測試。",
+        "redLine": "讓各類工件都跨背景、批次與允收光照取樣；以未參與訓練的批次驗證，分析各類混淆與低信心案例，再決定是否重新訓練。"
+      },
+      "source": "https://arxiv.org/abs/1512.03385"
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+[
+  {
+    "name": "poc-docs",
+    "exit_code": 0,
+    "log": "test-poc-docs.txt"
+  },
+  {
+    "name": "poc-course",
+    "exit_code": 0,
+    "log": "test-poc-course.txt"
+  },
+  {
+    "name": "regression",
+    "exit_code": 0,
+    "log": "test-regression.txt"
+  },
+  {
+    "name": "bundle",
+    "exit_code": 0,
+    "log": "test-bundle.txt"
+  },
+  {
+    "name": "engineering",
+    "exit_code": 0,
+    "log": "test-engineering.txt"
+  },
+  {
+    "name": "html",
+    "exit_code": 1,
+    "log": "test-html.txt"
+  }
+]

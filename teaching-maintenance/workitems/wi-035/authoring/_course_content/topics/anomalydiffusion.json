@@ -1,0 +1,570 @@
+{
+  "model": "AnomalyDiffusion",
+  "badge": "少樣本異常影像生成",
+  "title": "AnomalyDiffusion：學缺陷外觀，再指定生成位置",
+  "scenario": {
+    "title": "少量刮傷總出現在相近位置，訓練資料卻需要不同位置和大小的案例。",
+    "body": "少量刮傷總出現在相近位置，訓練資料卻需要不同位置和大小的案例。"
+  },
+  "promise": {
+    "title": "交付結果與接手工作",
+    "body": "合成異常影像及對應遮罩；逐區核對後交給下游檢測模型。"
+  },
+  "mental_model": {
+    "title": "少樣本異常影像生成",
+    "body": "方法把『刮傷長什麼樣』與『要放在哪裡』拆開：用少量缺陷學外觀嵌入，另把遮罩編成位置訊號，一起引導擴散生成。去噪中比較暫時結果與正常影像，對尚不明顯的預定缺陷區加強注意力，減少小區域被忽略。",
+    "limit": "第二圖另換大、小菱形遮罩測試。圖中預定生成大、小兩處刮傷，假設結果只出現大刮傷。小區放大仍平整，卻保留了缺陷標註，會給下游錯誤監督。適應性注意力的設計目的就是改善這類對應，但不是逐張成功保證。"
+  },
+  "micro_example": {
+    "title": "多個小孔洞的資料增強",
+    "setup": "生成一個大孔很穩定；改成三個小孔的遮罩後，整圖仍逼真，但部分小孔沒有出現。",
+    "prediction": "應增加同一批影像的訓練權重，還是先改生成與資料核對？",
+    "reveal": "先核對每個遮罩區與生成外觀，剔除錯配樣本，檢查位置條件、尺寸和注意力調整，再重產少量比較。增加錯配樣本權重會加強錯誤監督；也可測不同生成方法，但用同真實留出資料決定。"
+  },
+  "mechanism_steps": [
+    {
+      "title": "刮傷參考學外觀，目標遮罩給位置",
+      "body": "從少量帶遮罩的缺陷參考學外觀表示，另把目標遮罩編成位置條件；外觀與位置分開提供，才能嘗試在正常影像的新位置生成缺陷候選。",
+      "why": "核對本步輸入與輸出，才能判斷下一步是否接得上。",
+      "anchor": "WI026-step-1",
+      "diagram": {
+        "title": "刮傷參考學外觀，目標遮罩給位置",
+        "body": "從少量帶遮罩的缺陷參考學外觀表示，另把目標遮罩編成位置條件；外觀與位置分開提供，才能嘗試在正常影像的新位置生成缺陷候選。",
+        "why": "核對本步輸入與輸出，才能判斷下一步是否接得上。",
+        "anchor": "WI026-step-1"
+      }
+    },
+    {
+      "title": "兩種條件共同引導生成",
+      "body": "外觀嵌入從有遮罩的缺陷例學習；空間編碼器把目標遮罩轉成位置條件。拆開後，換遮罩可改放置位置，不必把原照片的位置一起背下來。",
+      "why": "外觀與位置分工",
+      "anchor": "WI026-step-2",
+      "diagram": {
+        "title": "兩種條件共同引導生成",
+        "body": "外觀嵌入從有遮罩的缺陷例學習；空間編碼器把目標遮罩轉成位置條件。拆開後，換遮罩可改放置位置，不必把原照片的位置一起背下來。",
+        "why": "外觀與位置分工",
+        "anchor": "WI026-step-2"
+      }
+    },
+    {
+      "title": "比較正常與暫時結果，補強未明顯區域",
+      "body": "適應性注意力重加權關注預定區內仍不明顯的變化；這是生成時的調整，不是把輸出當新真值重訓。背景由正常影像配合混合去噪保留。",
+      "why": "生成中的回饋",
+      "anchor": "WI026-step-3",
+      "diagram": {
+        "title": "比較正常與暫時結果，補強未明顯區域",
+        "body": "適應性注意力重加權關注預定區內仍不明顯的變化；這是生成時的調整，不是把輸出當新真值重訓。背景由正常影像配合混合去噪保留。",
+        "why": "生成中的回饋",
+        "anchor": "WI026-step-3"
+      }
+    },
+    {
+      "title": "得到對應遮罩的合成刮傷圖",
+      "body": "合成異常影像及對應遮罩；逐區核對後交給下游檢測模型。",
+      "why": "核對後接入用途",
+      "anchor": "WI026-step-4",
+      "diagram": {
+        "title": "得到對應遮罩的合成刮傷圖",
+        "body": "合成異常影像及對應遮罩；逐區核對後交給下游檢測模型。",
+        "why": "核對後接入用途",
+        "anchor": "WI026-step-4"
+      }
+    }
+  ],
+  "beginner_path": {
+    "title": "從核心做法、反例到方法選擇",
+    "intro": "少量刮傷總出現在相近位置，訓練資料卻需要不同位置和大小的案例。 三張圖依序看做法、失敗與取捨；AI生成教學示意，非模型實測。",
+    "visuals": [
+      {
+        "id": "wi026-anomalydiffusion-c1",
+        "title": "AnomalyDiffusion：外觀與位置分開控制",
+        "prompt": "少量刮傷總出現在相近位置，訓練資料卻需要不同位置和大小的案例。",
+        "caption": "方法把『刮傷長什麼樣』與『要放在哪裡』拆開：用少量缺陷學外觀嵌入，另把遮罩編成位置訊號，一起引導擴散生成。去噪中比較暫時結果與正常影像，對尚不明顯的預定缺陷區加強注意力，減少小區域被忽略。",
+        "image": "_course_content/generated-concepts/anomalydiffusion/wi026-anomalydiffusion-c1-r01-desktop.png",
+        "alt": "AnomalyDiffusion：外觀與位置分開控制。方法把『刮傷長什麼樣』與『要放在哪裡』拆開：用少量缺陷學外觀嵌入，另把遮罩編成位置訊號，一起引導擴散生成。去噪中比較暫時結果與正常影像，對尚不明顯的預定缺陷區加強注意力，減少小區域被忽略。 AI生成教學示意，非模型實測。",
+        "callouts": [
+          {
+            "title": "外觀與位置分工",
+            "body": "外觀嵌入從有遮罩的缺陷例學習；空間編碼器把目標遮罩轉成位置條件。拆開後，換遮罩可改放置位置，不必把原照片的位置一起背下來。"
+          },
+          {
+            "title": "生成中的回饋",
+            "body": "適應性注意力重加權關注預定區內仍不明顯的變化；這是生成時的調整，不是把輸出當新真值重訓。背景由正常影像配合混合去噪保留。"
+          },
+          {
+            "title": "交給誰",
+            "body": "合成異常影像及對應遮罩；逐區核對後交給下游檢測模型。"
+          }
+        ],
+        "reading_views": [
+          {
+            "title": "AnomalyDiffusion：外觀與位置分開控制",
+            "image": "_course_content/generated-concepts/anomalydiffusion/wi026-anomalydiffusion-c1-r01-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/anomalydiffusion/wi026-anomalydiffusion-c1-r01-mobile.png",
+            "alt": "AnomalyDiffusion：外觀與位置分開控制。方法把『刮傷長什麼樣』與『要放在哪裡』拆開：用少量缺陷學外觀嵌入，另把遮罩編成位置訊號，一起引導擴散生成。去噪中比較暫時結果與正常影像，對尚不明顯的預定缺陷區加強注意力，減少小區域被忽略。 AI生成教學示意，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              724,
+              2172
+            ],
+            "mobile_display_mode": "full-mobile",
+            "mobile_intrinsic_width": 724,
+            "mobile_intrinsic_height": 2172,
+            "desktop_intrinsic_width": 1672,
+            "desktop_intrinsic_height": 941
+          }
+        ],
+        "core_ideas": true
+      },
+      {
+        "id": "wi026-anomalydiffusion-d2",
+        "title": "給了兩塊遮罩，小缺陷仍要逐一核對",
+        "prompt": "觀察同位置的變化：這個結果能支持什麼用途？",
+        "caption": "第二圖另換大、小菱形遮罩測試。圖中預定生成大、小兩處刮傷，假設結果只出現大刮傷。小區放大仍平整，卻保留了缺陷標註，會給下游錯誤監督。適應性注意力的設計目的就是改善這類對應，但不是逐張成功保證。",
+        "image": "_course_content/generated-concepts/anomalydiffusion/wi026-anomalydiffusion-d2-r02-desktop.png",
+        "alt": "給了兩塊遮罩，小缺陷仍要逐一核對。第二圖另換大、小菱形遮罩測試。圖中預定生成大、小兩處刮傷，假設結果只出現大刮傷。小區放大仍平整，卻保留了缺陷標註，會給下游錯誤監督。適應性注意力的設計目的就是改善這類對應，但不是逐張成功保證。 AI生成教學示意，非模型實測。",
+        "callouts": [
+          {
+            "title": "看哪裡",
+            "body": "第二圖另換大、小菱形遮罩測試。圖中預定生成大、小兩處刮傷，假設結果只出現大刮傷。小區放大仍平整，卻保留了缺陷標註，會給下游錯誤監督。適應性注意力的設計目的就是改善這類對應，但不是逐張成功保證。"
+          },
+          {
+            "title": "接著怎麼做",
+            "body": "逐一檢查遮罩內有無對應外觀；缺漏候選重產或剔除，不能只看整圖好不好看。"
+          }
+        ],
+        "reading_views": [
+          {
+            "title": "給了兩塊遮罩，小缺陷仍要逐一核對",
+            "image": "_course_content/generated-concepts/anomalydiffusion/wi026-anomalydiffusion-d2-r02-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/anomalydiffusion/wi026-anomalydiffusion-d2-r01-mobile.png",
+            "alt": "給了兩塊遮罩，小缺陷仍要逐一核對。第二圖另換大、小菱形遮罩測試。圖中預定生成大、小兩處刮傷，假設結果只出現大刮傷。小區放大仍平整，卻保留了缺陷標註，會給下游錯誤監督。適應性注意力的設計目的就是改善這類對應，但不是逐張成功保證。 AI生成教學示意，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              724,
+              2172
+            ],
+            "mobile_display_mode": "full-mobile",
+            "mobile_intrinsic_width": 724,
+            "mobile_intrinsic_height": 2172,
+            "desktop_intrinsic_width": 1672,
+            "desktop_intrinsic_height": 941
+          }
+        ],
+        "core_ideas": false
+      },
+      {
+        "id": "wi026-generation-d3",
+        "title": "要補缺陷資料：先比較學習與生成成本",
+        "prompt": "固定需求與資料，哪種準備及處理成本較合適？",
+        "caption": "希望外觀概念與位置控制分開，可選AnomalyDiffusion做候選；重視填補模型的局部概念適配可比較DefectFill；不做案例微調可比較TF-IDG。只有正常品而無缺陷參考時，先用正常性方法建立偵測基準，別把少樣本生成當成已知道所有缺陷。",
+        "image": "_course_content/generated-concepts/defectfill/wi026-generation-d3-r02-desktop.png",
+        "alt": "要補缺陷資料：先比較學習與生成成本。希望外觀概念與位置控制分開，可選AnomalyDiffusion做候選；重視填補模型的局部概念適配可比較DefectFill；不做案例微調可比較TF-IDG。只有正常品而無缺陷參考時，先用正常性方法建立偵測基準，別把少樣本生成當成已知道所有缺陷。 AI生成教學示意，非模型實測。",
+        "callouts": [
+          {
+            "title": "如何選",
+            "body": "希望外觀概念與位置控制分開，可選AnomalyDiffusion做候選；重視填補模型的局部概念適配可比較DefectFill；不做案例微調可比較TF-IDG。只有正常品而無缺陷參考時，先用正常性方法建立偵測基準，別把少樣本生成當成已知道所有缺陷。"
+          },
+          {
+            "title": "換產品與完整成本",
+            "body": "新材質或缺陷型態可能需要重新學外觀並驗證位置條件。影像與遮罩是訓練候選，不是產線自動分割結果。用相同合成量、下游模型與真實留出集，比漏檢、誤報、標註一致性、生成與覆核時間。"
+          }
+        ],
+        "reading_views": [
+          {
+            "title": "要補缺陷資料：先比較學習與生成成本",
+            "image": "_course_content/generated-concepts/defectfill/wi026-generation-d3-r02-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/defectfill/wi026-generation-d3-r01-mobile.png",
+            "alt": "要補缺陷資料：先比較學習與生成成本。希望外觀概念與位置控制分開，可選AnomalyDiffusion做候選；重視填補模型的局部概念適配可比較DefectFill；不做案例微調可比較TF-IDG。只有正常品而無缺陷參考時，先用正常性方法建立偵測基準，別把少樣本生成當成已知道所有缺陷。 AI生成教學示意，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              724,
+              2172
+            ],
+            "mobile_display_mode": "full-mobile",
+            "mobile_intrinsic_width": 724,
+            "mobile_intrinsic_height": 2172,
+            "desktop_intrinsic_width": 1672,
+            "desktop_intrinsic_height": 941
+          }
+        ],
+        "core_ideas": false
+      }
+    ]
+  },
+  "visual_intro": "方法把『刮傷長什麼樣』與『要放在哪裡』拆開：用少量缺陷學外觀嵌入，另把遮罩編成位置訊號，一起引導擴散生成。去噪中比較暫時結果與正常影像，對尚不明顯的預定缺陷區加強注意力，減少小區域被忽略。",
+  "concept_visuals": [],
+  "boundary_cases": [
+    {
+      "condition": "本課具體反例",
+      "effect": "第二圖另換大、小菱形遮罩測試。圖中預定生成大、小兩處刮傷，假設結果只出現大刮傷。小區放大仍平整，卻保留了缺陷標註，會給下游錯誤監督。適應性注意力的設計目的就是改善這類對應，但不是逐張成功保證。",
+      "action": "逐一檢查遮罩內有無對應外觀；缺漏候選重產或剔除，不能只看整圖好不好看。"
+    },
+    {
+      "condition": "換產品或取像條件",
+      "effect": "新材質或缺陷型態可能需要重新學外觀並驗證位置條件。影像與遮罩是訓練候選，不是產線自動分割結果。用相同合成量、下游模型與真實留出集，比漏檢、誤報、標註一致性、生成與覆核時間。",
+      "action": "先在固定真實留出資料重驗，再擴大用途。"
+    },
+    {
+      "condition": "把生成示意當成模型實測",
+      "effect": "本課圖像說明可能機制與失敗情況，不能據此計算現場準確率或節拍。",
+      "action": "保留真實原圖、模型設定與對照輸出，以符合工作需求的留出資料另行測量。"
+    }
+  ],
+  "comparison": [
+    {
+      "model": "DefectFill",
+      "normality": "少量缺陷＋遮罩；LoRA微調與多候選選樣",
+      "candidate": "合成缺陷影像及對應遮罩"
+    },
+    {
+      "model": "AnomalyDiffusion",
+      "normality": "少量缺陷；學外觀嵌入及位置条件",
+      "candidate": "由外觀和目標位置控制的合成圖"
+    },
+    {
+      "model": "TF-IDG",
+      "normality": "正常圖、缺陷參考與遮罩；權重固定、生成時最佳化",
+      "candidate": "經特徵對齊及背景保存的候選"
+    }
+  ],
+  "selection": "希望外觀概念與位置控制分開，可選AnomalyDiffusion做候選；重視填補模型的局部概念適配可比較DefectFill；不做案例微調可比較TF-IDG。只有正常品而無缺陷參考時，先用正常性方法建立偵測基準，別把少樣本生成當成已知道所有缺陷。 新材質或缺陷型態可能需要重新學外觀並驗證位置條件。影像與遮罩是訓練候選，不是產線自動分割結果。用相同合成量、下游模型與真實留出集，比漏檢、誤報、標註一致性、生成與覆核時間。",
+  "poc": {
+    "title": "小規模比較：資料、效果與完整成本",
+    "steps": [
+      "保留原始資料，固定訓練與獨立真實留出切分，選定本課工作需求。",
+      "新材質或缺陷型態可能需要重新學外觀並驗證位置條件。影像與遮罩是訓練候選，不是產線自動分割結果。用相同合成量、下游模型與真實留出集，比漏檢、誤報、標註一致性、生成與覆核時間。",
+      "記錄失敗影像、原圖與輸出關係、端到端時間和人工覆核量，再決定是否擴大。"
+    ],
+    "hold": "逐一檢查遮罩內有無對應外觀；缺漏候選重產或剔除，不能只看整圖好不好看。",
+    "acceptance": {
+      "baseline": "原有流程或最簡單可行方法",
+      "measure": "關鍵細節、下游錯誤、總時間及覆核量",
+      "negative_control": "以本課反例檢查錯誤結論是否被排除",
+      "owner": "教材使用者指定的實作及覆核負責人"
+    }
+  },
+  "teach_back": {
+    "question": "它改變什麼？換條件後如何選？",
+    "answer": "方法把『刮傷長什麼樣』與『要放在哪裡』拆開：用少量缺陷學外觀嵌入，另把遮罩編成位置訊號，一起引導擴散生成。去噪中比較暫時結果與正常影像，對尚不明顯的預定缺陷區加強注意力，減少小區域被忽略。 希望外觀概念與位置控制分開，可選AnomalyDiffusion做候選；重視填補模型的局部概念適配可比較DefectFill；不做案例微調可比較TF-IDG。只有正常品而無缺陷參考時，先用正常性方法建立偵測基準，別把少樣本生成當成已知道所有缺陷。"
+  },
+  "slide_reading": [
+    {
+      "title": "AnomalyDiffusion：兩區各有資料責任",
+      "question": "圖與遮罩要逐區一致，才可當訓練樣本。",
+      "look": "先看真缺陷教外觀與位置，再核對同板雙區條件生成，最後看逐區驗證圖與標註。",
+      "relation": "保持原上方雙孔板及大左下小右下兩傷。合成mask是生成條件，不自動成為真值；空mask區或越界都要剔除或修標。",
+      "takeaway": "圖與遮罩要逐區一致，才可當訓練樣本。",
+      "terms": [
+        "示意數值：作者給定局部算例，非模型實測或建議參數。",
+        "同位置：比較保持相同影像座標與時間身份，不能任意換工件。"
+      ]
+    },
+    {
+      "title": "AnomalyDiffusion：外觀與位置共同引導",
+      "question": "逐區核對合成缺陷，不能只相信指定遮罩。",
+      "look": "先看外觀嵌入與遮罩空間嵌入，再核對較弱區域得到更多注意，最後看背景融合與圖像遮罩核對。",
+      "relation": "同上方双孔板，大左下/小右下兩區。學異常外觀embedding及mask編碼器，固定擴散主幹；空間及外觀條件引導。AAR用生成估計與正常圖遮罩內差找較弱區域調注意力，背景與正常圖融合。給两mask只生成一傷仍是需剔除的錯標反例，不聲稱自適應必成功。",
+      "takeaway": "逐區核對合成缺陷，不能只相信指定遮罩。",
+      "terms": [
+        "示意數值：作者給定局部算例，非模型實測或建議參數。",
+        "同位置：比較保持相同影像座標與時間身份，不能任意換工件。"
+      ]
+    },
+    {
+      "title": "AnomalyDiffusion：外觀與位置都要版本",
+      "question": "保存嵌入、遮罩編碼與採樣設定。",
+      "look": "先看外觀與遮罩編碼配套保存，再核對逐區看生成變化強弱，最後看兩個區域分開量覆蓋。",
+      "relation": "保存基模、外觀embedding、mask編碼、AAR/背景融合與採樣設定。不同大小缺陷不能只看整圖平均；位置覆蓋與背景孔位分開驗。",
+      "takeaway": "保存嵌入、遮罩編碼與採樣設定。",
+      "terms": [
+        "示意數值：作者給定局部算例，非模型實測或建議參數。",
+        "同位置：比較保持相同影像座標與時間身份，不能任意換工件。"
+      ]
+    },
+    {
+      "title": "AnomalyDiffusion：兩個遮罩只長一傷",
+      "question": "未生成的區域，不能沿用缺陷標籤。",
+      "look": "先看條件指定左大右小兩區，再核對反例只生成左側刮傷，最後看剔除或修標，再驗訓練效益。",
+      "relation": "同板同mask，一傷對兩標籤是錯標反例；AAR可能改善但不保證避免。不得用合成量取代真實留出集。",
+      "takeaway": "未生成的區域，不能沿用缺陷標籤。",
+      "terms": [
+        "示意數值：作者給定局部算例，非模型實測或建議參數。",
+        "同位置：比較保持相同影像座標與時間身份，不能任意換工件。"
+      ]
+    }
+  ],
+  "comparison_headers": {
+    "title": "要補缺陷資料：先比較學習與生成成本",
+    "basis": "資料準備與方法分工",
+    "output": "交付結果與核對重點"
+  },
+  "transfer_check": {
+    "title": "多個小孔洞的資料增強",
+    "scenario": "生成一個大孔很穩定；改成三個小孔的遮罩後，整圖仍逼真，但部分小孔沒有出現。",
+    "question": "應增加同一批影像的訓練權重，還是先改生成與資料核對？",
+    "answer": "先核對每個遮罩區與生成外觀，剔除錯配樣本，檢查位置條件、尺寸和注意力調整，再重產少量比較。增加錯配樣本權重會加強錯誤監督；也可測不同生成方法，但用同真實留出資料決定。"
+  },
+  "review_trace": {
+    "authority": "roadmap-model-selection/diffusion-restoration/anomalydiffusion/model.md",
+    "scope": "WI-033：工程層四圖與手機比較修正；首讀有效內容保留。原生圖已審，整頁與使用者審閱另記。",
+    "claims": [
+      {
+        "id": "visual-1",
+        "field": "beginner_path.visuals[aoi-synthetic-contract]",
+        "source": "模型定位 / architecture_path"
+      },
+      {
+        "id": "visual-2",
+        "field": "beginner_path.visuals[evidence-design]",
+        "source": "architecture_path"
+      },
+      {
+        "id": "visual-3",
+        "field": "beginner_path.visuals[appearance-spatial-attention]",
+        "source": "representation_or_score"
+      },
+      {
+        "id": "visual-4",
+        "field": "beginner_path.visuals[synthetic-boundary-review]",
+        "source": "failure_boundary"
+      },
+      {
+        "id": "visual-5",
+        "field": "beginner_path.visuals[real-holdout-gate]",
+        "source": "selection_gate / evidence_bundle"
+      },
+      {
+        "id": "promise",
+        "field": "promise",
+        "source": "模型定位 / representation_or_score"
+      },
+      {
+        "id": "mechanism",
+        "field": "mechanism_steps",
+        "source": "architecture_path / representation_or_score"
+      },
+      {
+        "id": "boundaries",
+        "field": "boundary_cases",
+        "source": "failure_boundary / selection_gate"
+      },
+      {
+        "id": "comparison",
+        "field": "comparison + selection",
+        "source": "selection_gate"
+      },
+      {
+        "id": "poc",
+        "field": "poc + acceptance",
+        "source": "cost_and_operating_point / evidence_bundle"
+      },
+      {
+        "id": "transfer",
+        "field": "transfer_check",
+        "source": "failure_boundary / selection_gate"
+      },
+      {
+        "id": "f02-core",
+        "field": "beginner_path.visuals[0] + scenario + mental_model",
+        "source": "https://arxiv.org/abs/2312.05767"
+      },
+      {
+        "id": "f02-transfer",
+        "field": "micro_example + transfer_check + selection",
+        "source": "https://arxiv.org/abs/2312.05767"
+      },
+      {
+        "id": "wi026-first-read",
+        "field": "beginner_path + core + selection + transfer",
+        "source": "https://arxiv.org/abs/2312.05767"
+      }
+    ]
+  },
+  "quality_status": {
+    "label": "首讀圖文已重製並自評；使用者核准待確認",
+    "state": "self-reviewed",
+    "round": "WI-026",
+    "reason": "38張不同PNG逐圖審查；整頁與互動證據見workitems/wi-026，原工程圖未重新評分。"
+  },
+  "teaching_preflight": {
+    "brief": "teaching-images/vision-ai-model-selection/workitems/wi-026/anomalydiffusion-c1-r01.md",
+    "story": "C",
+    "major_visual_nodes": 4,
+    "visual_status": "self-reviewed",
+    "user_review": "pending"
+  },
+  "engineering_slides": [
+    {
+      "title": "AnomalyDiffusion：兩區各有資料責任",
+      "question": "圖與遮罩要逐區一致，才可當訓練樣本。",
+      "plain": {
+        "look": "先看真缺陷教外觀與位置，再核對同板雙區條件生成，最後看逐區驗證圖與標註。",
+        "relation": "保持原上方雙孔板及大左下小右下兩傷。合成mask是生成條件，不自動成為真值；空mask區或越界都要剔除或修標。",
+        "takeaway": "圖與遮罩要逐區一致，才可當訓練樣本。"
+      },
+      "terms": [
+        "示意數值：作者給定局部算例，非模型實測或建議參數。",
+        "同位置：比較保持相同影像座標與時間身份，不能任意換工件。"
+      ],
+      "guide": [
+        "保持原上方雙孔板及大左下小右下兩傷。合成mask是生成條件，不自動成為真值；空mask區或越界都要剔除或修標。",
+        "先看真缺陷教外觀與位置，再核對同板雙區條件生成，最後看逐區驗證圖與標註。"
+      ],
+      "stages": [
+        {
+          "title": "真缺陷教外觀與位置",
+          "body": "真缺陷教外觀與位置；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "同板雙區條件生成",
+          "body": "同板雙區條件生成；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "逐區驗證圖與標註",
+          "body": "逐區驗證圖與標註；請對照圖內輸入、變化與結果。"
+        }
+      ],
+      "misconception": "第二圖另換大、小菱形遮罩測試。圖中預定生成大、小兩處刮傷，假設結果只出現大刮傷。小區放大仍平整，卻保留了缺陷標註，會給下游錯誤監督。適應性注意力的設計目的就是改善這類對應，但不是逐張成功保證。",
+      "alt": "AnomalyDiffusion：兩區各有資料責任。圖與遮罩要逐區一致，才可當訓練樣本。 教學示意，非模型實測。",
+      "mobile_image": "roadmap-model-selection/diffusion-restoration/anomalydiffusion/images/final/WI033-ANOMALYDIFFUSION-01-r01-mobile.png",
+      "mobile_width": 768,
+      "mobile_height": 2304,
+      "engineering": {
+        "takeaway": "圖與遮罩要逐區一致，才可當訓練樣本。",
+        "nextAction": "保留原始資料，固定訓練與獨立真實留出切分，選定本課工作需求。",
+        "redLine": "逐一檢查遮罩內有無對應外觀；缺漏候選重產或剔除，不能只看整圖好不好看。"
+      },
+      "source": "https://arxiv.org/html/2312.05767v1"
+    },
+    {
+      "title": "AnomalyDiffusion：外觀與位置共同引導",
+      "question": "逐區核對合成缺陷，不能只相信指定遮罩。",
+      "plain": {
+        "look": "先看外觀嵌入與遮罩空間嵌入，再核對較弱區域得到更多注意，最後看背景融合與圖像遮罩核對。",
+        "relation": "同上方双孔板，大左下/小右下兩區。學異常外觀embedding及mask編碼器，固定擴散主幹；空間及外觀條件引導。AAR用生成估計與正常圖遮罩內差找較弱區域調注意力，背景與正常圖融合。給两mask只生成一傷仍是需剔除的錯標反例，不聲稱自適應必成功。",
+        "takeaway": "逐區核對合成缺陷，不能只相信指定遮罩。"
+      },
+      "terms": [
+        "示意數值：作者給定局部算例，非模型實測或建議參數。",
+        "同位置：比較保持相同影像座標與時間身份，不能任意換工件。"
+      ],
+      "guide": [
+        "同上方双孔板，大左下/小右下兩區。學異常外觀embedding及mask編碼器，固定擴散主幹；空間及外觀條件引導。AAR用生成估計與正常圖遮罩內差找較弱區域調注意力，背景與正常圖融合。給两mask只生成一傷仍是需剔除的錯標反例，不聲稱自適應必成功。",
+        "先看外觀嵌入與遮罩空間嵌入，再核對較弱區域得到更多注意，最後看背景融合與圖像遮罩核對。"
+      ],
+      "stages": [
+        {
+          "title": "外觀嵌入與遮罩空間嵌入",
+          "body": "外觀嵌入與遮罩空間嵌入；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "較弱區域得到更多注意",
+          "body": "較弱區域得到更多注意；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "背景融合與圖像遮罩核對",
+          "body": "背景融合與圖像遮罩核對；請對照圖內輸入、變化與結果。"
+        }
+      ],
+      "misconception": "第二圖另換大、小菱形遮罩測試。圖中預定生成大、小兩處刮傷，假設結果只出現大刮傷。小區放大仍平整，卻保留了缺陷標註，會給下游錯誤監督。適應性注意力的設計目的就是改善這類對應，但不是逐張成功保證。",
+      "alt": "AnomalyDiffusion：外觀與位置共同引導。逐區核對合成缺陷，不能只相信指定遮罩。 教學示意，非模型實測。",
+      "mobile_image": "roadmap-model-selection/diffusion-restoration/anomalydiffusion/images/final/WI033-ANOMALYDIFFUSION-02-r02-mobile.png",
+      "mobile_width": 768,
+      "mobile_height": 2304,
+      "engineering": {
+        "takeaway": "逐區核對合成缺陷，不能只相信指定遮罩。",
+        "nextAction": "保留原始資料，固定訓練與獨立真實留出切分，選定本課工作需求。",
+        "redLine": "逐一檢查遮罩內有無對應外觀；缺漏候選重產或剔除，不能只看整圖好不好看。"
+      },
+      "source": "https://arxiv.org/html/2312.05767v1"
+    },
+    {
+      "title": "AnomalyDiffusion：外觀與位置都要版本",
+      "question": "保存嵌入、遮罩編碼與採樣設定。",
+      "plain": {
+        "look": "先看外觀與遮罩編碼配套保存，再核對逐區看生成變化強弱，最後看兩個區域分開量覆蓋。",
+        "relation": "保存基模、外觀embedding、mask編碼、AAR/背景融合與採樣設定。不同大小缺陷不能只看整圖平均；位置覆蓋與背景孔位分開驗。",
+        "takeaway": "保存嵌入、遮罩編碼與採樣設定。"
+      },
+      "terms": [
+        "示意數值：作者給定局部算例，非模型實測或建議參數。",
+        "同位置：比較保持相同影像座標與時間身份，不能任意換工件。"
+      ],
+      "guide": [
+        "保存基模、外觀embedding、mask編碼、AAR/背景融合與採樣設定。不同大小缺陷不能只看整圖平均；位置覆蓋與背景孔位分開驗。",
+        "先看外觀與遮罩編碼配套保存，再核對逐區看生成變化強弱，最後看兩個區域分開量覆蓋。"
+      ],
+      "stages": [
+        {
+          "title": "外觀與遮罩編碼配套保存",
+          "body": "外觀與遮罩編碼配套保存；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "逐區看生成變化強弱",
+          "body": "逐區看生成變化強弱；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "兩個區域分開量覆蓋",
+          "body": "兩個區域分開量覆蓋；請對照圖內輸入、變化與結果。"
+        }
+      ],
+      "misconception": "第二圖另換大、小菱形遮罩測試。圖中預定生成大、小兩處刮傷，假設結果只出現大刮傷。小區放大仍平整，卻保留了缺陷標註，會給下游錯誤監督。適應性注意力的設計目的就是改善這類對應，但不是逐張成功保證。",
+      "alt": "AnomalyDiffusion：外觀與位置都要版本。保存嵌入、遮罩編碼與採樣設定。 教學示意，非模型實測。",
+      "mobile_image": "roadmap-model-selection/diffusion-restoration/anomalydiffusion/images/final/WI033-ANOMALYDIFFUSION-03-r01-mobile.png",
+      "mobile_width": 768,
+      "mobile_height": 2304,
+      "engineering": {
+        "takeaway": "保存嵌入、遮罩編碼與採樣設定。",
+        "nextAction": "保留原始資料，固定訓練與獨立真實留出切分，選定本課工作需求。",
+        "redLine": "逐一檢查遮罩內有無對應外觀；缺漏候選重產或剔除，不能只看整圖好不好看。"
+      },
+      "source": "https://arxiv.org/html/2312.05767v1"
+    },
+    {
+      "title": "AnomalyDiffusion：兩個遮罩只長一傷",
+      "question": "未生成的區域，不能沿用缺陷標籤。",
+      "plain": {
+        "look": "先看條件指定左大右小兩區，再核對反例只生成左側刮傷，最後看剔除或修標，再驗訓練效益。",
+        "relation": "同板同mask，一傷對兩標籤是錯標反例；AAR可能改善但不保證避免。不得用合成量取代真實留出集。",
+        "takeaway": "未生成的區域，不能沿用缺陷標籤。"
+      },
+      "terms": [
+        "示意數值：作者給定局部算例，非模型實測或建議參數。",
+        "同位置：比較保持相同影像座標與時間身份，不能任意換工件。"
+      ],
+      "guide": [
+        "同板同mask，一傷對兩標籤是錯標反例；AAR可能改善但不保證避免。不得用合成量取代真實留出集。",
+        "先看條件指定左大右小兩區，再核對反例只生成左側刮傷，最後看剔除或修標，再驗訓練效益。"
+      ],
+      "stages": [
+        {
+          "title": "條件指定左大右小兩區",
+          "body": "條件指定左大右小兩區；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "反例只生成左側刮傷",
+          "body": "反例只生成左側刮傷；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "剔除或修標，再驗訓練效益",
+          "body": "剔除或修標，再驗訓練效益；請對照圖內輸入、變化與結果。"
+        }
+      ],
+      "misconception": "第二圖另換大、小菱形遮罩測試。圖中預定生成大、小兩處刮傷，假設結果只出現大刮傷。小區放大仍平整，卻保留了缺陷標註，會給下游錯誤監督。適應性注意力的設計目的就是改善這類對應，但不是逐張成功保證。",
+      "alt": "AnomalyDiffusion：兩個遮罩只長一傷。未生成的區域，不能沿用缺陷標籤。 教學示意，非模型實測。",
+      "mobile_image": "roadmap-model-selection/diffusion-restoration/anomalydiffusion/images/final/WI033-ANOMALYDIFFUSION-04-r01-mobile.png",
+      "mobile_width": 768,
+      "mobile_height": 2304,
+      "engineering": {
+        "takeaway": "未生成的區域，不能沿用缺陷標籤。",
+        "nextAction": "保留原始資料，固定訓練與獨立真實留出切分，選定本課工作需求。",
+        "redLine": "逐一檢查遮罩內有無對應外觀；缺漏候選重產或剔除，不能只看整圖好不好看。"
+      },
+      "source": "https://arxiv.org/html/2312.05767v1"
+    }
+  ]
+}

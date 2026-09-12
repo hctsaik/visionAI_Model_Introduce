@@ -1,0 +1,570 @@
+{
+  "model": "DefectFill",
+  "badge": "缺陷資料生成方法",
+  "title": "DefectFill：把少量缺陷學成可生成的外觀",
+  "scenario": {
+    "title": "新產品正常品很多，刮傷樣本卻很少；希望補出位置和形狀不同的訓練候選。",
+    "body": "新產品正常品很多，刮傷樣本卻很少；希望補出位置和形狀不同的訓練候選。"
+  },
+  "promise": {
+    "title": "交付結果與接手工作",
+    "body": "合成缺陷影像、對應的預定遮罩與生成設定；核對後可供另一個分類或分割模型訓練。"
+  },
+  "mental_model": {
+    "title": "缺陷資料生成方法",
+    "body": "先用少量真實缺陷照片及遮罩，微調預訓練填補模型的部分權重。學習同時關注刮傷細節、刮傷與物件的關係，以及缺陷詞應對應的位置。生成時給正常板與預定遮罩，逐步把缺陷填進去；LFS 再從多個候選挑出缺陷表現較明顯的一張。",
+    "limit": "本例把放置區移到孔邊。刮傷即使明顯，若在原本沒有材料的孔內長出橋接紋理，仍是幾何不合理的候選。LFS不負責檢查工件幾何；要先檢查位置、形狀與遮罩對應，再進資料集。"
+  },
+  "micro_example": {
+    "title": "換成高反光的新金屬板",
+    "setup": "只有五張刮傷照片與遮罩，已有正常性偵測基準；生成圖很逼真，但微調及篩圖耗時。",
+    "prediction": "你會先擴大DefectFill資料量，還是比較TF-IDG與既有基準？",
+    "reveal": "可以小規模比較：固定真實留出集、下游模型和合成預算，記錄各路徑的微調、生成與人工篩圖時間。若加入資料未改善真實漏檢或反而增誤報，就保留基準；不因影像逼真而擴量。TF-IDG免微調也要付迭代成本。"
+  },
+  "mechanism_steps": [
+    {
+      "title": "少量刮傷照片與人工遮罩",
+      "body": "以少量真實刮傷照片及對應人工遮罩提供外觀和位置監督，再調整生成模型的部分權重；遮罩是準備資料的一部分，不是生成後自動得到的真值。",
+      "why": "核對本步輸入與輸出，才能判斷下一步是否接得上。",
+      "anchor": "WI026-step-1",
+      "diagram": {
+        "title": "少量刮傷照片與人工遮罩",
+        "body": "以少量真實刮傷照片及對應人工遮罩提供外觀和位置監督，再調整生成模型的部分權重；遮罩是準備資料的一部分，不是生成後自動得到的真值。",
+        "why": "核對本步輸入與輸出，才能判斷下一步是否接得上。",
+        "anchor": "WI026-step-1"
+      }
+    },
+    {
+      "title": "學局部外觀、物件關係及關注位置",
+      "body": "LoRA調整文字編碼器及注意力相關權重；缺陷、物件、注意力三種學習訊號，分別支援局部細節、自然融合及位置對應。它不是直接複製貼上一塊照片。",
+      "why": "學什麼",
+      "anchor": "WI026-step-2",
+      "diagram": {
+        "title": "學局部外觀、物件關係及關注位置",
+        "body": "LoRA調整文字編碼器及注意力相關權重；缺陷、物件、注意力三種學習訊號，分別支援局部細節、自然融合及位置對應。它不是直接複製貼上一塊照片。",
+        "why": "學什麼",
+        "anchor": "WI026-step-2"
+      }
+    },
+    {
+      "title": "正常金屬板指定下半遮罩，逐步生成刮傷",
+      "body": "正常影像提供背景，目標遮罩指定放置位置。LFS比較遮罩內生成區與原正常區的感知差異，偏向挑出表現明顯的候選；不等於選出最符合製程物理的一張。",
+      "why": "生成與選樣",
+      "anchor": "WI026-step-3",
+      "diagram": {
+        "title": "正常金屬板指定下半遮罩，逐步生成刮傷",
+        "body": "正常影像提供背景，目標遮罩指定放置位置。LFS比較遮罩內生成區與原正常區的感知差異，偏向挑出表現明顯的候選；不等於選出最符合製程物理的一張。",
+        "why": "生成與選樣",
+        "anchor": "WI026-step-3"
+      }
+    },
+    {
+      "title": "多候選選較明顯缺陷，供下游訓練",
+      "body": "合成缺陷影像、對應的預定遮罩與生成設定；核對後可供另一個分類或分割模型訓練。",
+      "why": "核對後接入用途",
+      "anchor": "WI026-step-4",
+      "diagram": {
+        "title": "多候選選較明顯缺陷，供下游訓練",
+        "body": "合成缺陷影像、對應的預定遮罩與生成設定；核對後可供另一個分類或分割模型訓練。",
+        "why": "核對後接入用途",
+        "anchor": "WI026-step-4"
+      }
+    }
+  ],
+  "beginner_path": {
+    "title": "從核心做法、反例到方法選擇",
+    "intro": "新產品正常品很多，刮傷樣本卻很少；希望補出位置和形狀不同的訓練候選。 三張圖依序看做法、失敗與取捨；AI生成教學示意，非模型實測。",
+    "visuals": [
+      {
+        "id": "wi026-defectfill-c1",
+        "title": "DefectFill：把少量缺陷，學成可填入的外觀",
+        "prompt": "新產品正常品很多，刮傷樣本卻很少；希望補出位置和形狀不同的訓練候選。",
+        "caption": "先用少量真實缺陷照片及遮罩，微調預訓練填補模型的部分權重。學習同時關注刮傷細節、刮傷與物件的關係，以及缺陷詞應對應的位置。生成時給正常板與預定遮罩，逐步把缺陷填進去；LFS 再從多個候選挑出缺陷表現較明顯的一張。",
+        "image": "_course_content/generated-concepts/defectfill/wi026-defectfill-c1-r03-desktop.png",
+        "alt": "DefectFill：把少量缺陷，學成可填入的外觀。先用少量真實缺陷照片及遮罩，微調預訓練填補模型的部分權重。學習同時關注刮傷細節、刮傷與物件的關係，以及缺陷詞應對應的位置。生成時給正常板與預定遮罩，逐步把缺陷填進去；LFS 再從多個候選挑出缺陷表現較明顯的一張。 AI生成教學示意，非模型實測。",
+        "callouts": [
+          {
+            "title": "學什麼",
+            "body": "LoRA調整文字編碼器及注意力相關權重；缺陷、物件、注意力三種學習訊號，分別支援局部細節、自然融合及位置對應。它不是直接複製貼上一塊照片。"
+          },
+          {
+            "title": "生成與選樣",
+            "body": "正常影像提供背景，目標遮罩指定放置位置。LFS比較遮罩內生成區與原正常區的感知差異，偏向挑出表現明顯的候選；不等於選出最符合製程物理的一張。"
+          },
+          {
+            "title": "交給誰",
+            "body": "合成缺陷影像、對應的預定遮罩與生成設定；核對後可供另一個分類或分割模型訓練。"
+          }
+        ],
+        "reading_views": [
+          {
+            "title": "DefectFill：把少量缺陷，學成可填入的外觀",
+            "image": "_course_content/generated-concepts/defectfill/wi026-defectfill-c1-r03-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/defectfill/wi026-defectfill-c1-r02-mobile.png",
+            "alt": "DefectFill：把少量缺陷，學成可填入的外觀。先用少量真實缺陷照片及遮罩，微調預訓練填補模型的部分權重。學習同時關注刮傷細節、刮傷與物件的關係，以及缺陷詞應對應的位置。生成時給正常板與預定遮罩，逐步把缺陷填進去；LFS 再從多個候選挑出缺陷表現較明顯的一張。 AI生成教學示意，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              724,
+              2172
+            ],
+            "mobile_display_mode": "full-mobile",
+            "mobile_intrinsic_width": 724,
+            "mobile_intrinsic_height": 2172,
+            "desktop_intrinsic_width": 1672,
+            "desktop_intrinsic_height": 941
+          }
+        ],
+        "core_ideas": true
+      },
+      {
+        "id": "wi026-defectfill-d2",
+        "title": "缺陷很明顯，也可能長錯地方",
+        "prompt": "觀察同位置的變化：這個結果能支持什麼用途？",
+        "caption": "本例把放置區移到孔邊。刮傷即使明顯，若在原本沒有材料的孔內長出橋接紋理，仍是幾何不合理的候選。LFS不負責檢查工件幾何；要先檢查位置、形狀與遮罩對應，再進資料集。",
+        "image": "_course_content/generated-concepts/defectfill/wi026-defectfill-d2-r02-desktop.png",
+        "alt": "缺陷很明顯，也可能長錯地方。本例把放置區移到孔邊。刮傷即使明顯，若在原本沒有材料的孔內長出橋接紋理，仍是幾何不合理的候選。LFS不負責檢查工件幾何；要先檢查位置、形狀與遮罩對應，再進資料集。 AI生成教學示意，非模型實測。",
+        "callouts": [
+          {
+            "title": "看哪裡",
+            "body": "本例把放置區移到孔邊。刮傷即使明顯，若在原本沒有材料的孔內長出橋接紋理，仍是幾何不合理的候選。LFS不負責檢查工件幾何；要先檢查位置、形狀與遮罩對應，再進資料集。"
+          },
+          {
+            "title": "接著怎麼做",
+            "body": "剔除不合理候選；同一真實留出集比較加入合成資料前後的漏檢、誤報及覆核量。"
+          }
+        ],
+        "reading_views": [
+          {
+            "title": "缺陷很明顯，也可能長錯地方",
+            "image": "_course_content/generated-concepts/defectfill/wi026-defectfill-d2-r02-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/defectfill/wi026-defectfill-d2-r01-mobile.png",
+            "alt": "缺陷很明顯，也可能長錯地方。本例把放置區移到孔邊。刮傷即使明顯，若在原本沒有材料的孔內長出橋接紋理，仍是幾何不合理的候選。LFS不負責檢查工件幾何；要先檢查位置、形狀與遮罩對應，再進資料集。 AI生成教學示意，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              724,
+              2172
+            ],
+            "mobile_display_mode": "full-mobile",
+            "mobile_intrinsic_width": 724,
+            "mobile_intrinsic_height": 2172,
+            "desktop_intrinsic_width": 1672,
+            "desktop_intrinsic_height": 941
+          }
+        ],
+        "core_ideas": false
+      },
+      {
+        "id": "wi026-generation-d3",
+        "title": "要補缺陷資料：先比較學習與生成成本",
+        "prompt": "固定需求與資料，哪種準備及處理成本較合適？",
+        "caption": "有少量缺陷與遮罩、願意支付微調及多候選選樣成本，可測DefectFill；想分開學外觀與位置，可比較AnomalyDiffusion；不想為新案例微調權重，可試TF-IDG，但仍有參考準備與迭代生成成本。只有正常品時，先建立正常性偵測基準或受控人工擾動，不能假定這些少樣本方法已學過真實刮傷。",
+        "image": "_course_content/generated-concepts/defectfill/wi026-generation-d3-r02-desktop.png",
+        "alt": "要補缺陷資料：先比較學習與生成成本。有少量缺陷與遮罩、願意支付微調及多候選選樣成本，可測DefectFill；想分開學外觀與位置，可比較AnomalyDiffusion；不想為新案例微調權重，可試TF-IDG，但仍有參考準備與迭代生成成本。只有正常品時，先建立正常性偵測基準或受控人工擾動，不能假定這些少樣本方法已學過真實刮傷。 AI生成教學示意，非模型實測。",
+        "callouts": [
+          {
+            "title": "如何選",
+            "body": "有少量缺陷與遮罩、願意支付微調及多候選選樣成本，可測DefectFill；想分開學外觀與位置，可比較AnomalyDiffusion；不想為新案例微調權重，可試TF-IDG，但仍有參考準備與迭代生成成本。只有正常品時，先建立正常性偵測基準或受控人工擾動，不能假定這些少樣本方法已學過真實刮傷。"
+          },
+          {
+            "title": "換產品與完整成本",
+            "body": "換產品須重新核對參考材質、缺陷類型、放置區與適配權重。三者輸出都是資料候選，實際缺陷分數或輪廓由下游模型產生。固定真實切分、合成數量與下游設定，比生成、篩選、訓練及覆核的完整成本。"
+          }
+        ],
+        "reading_views": [
+          {
+            "title": "要補缺陷資料：先比較學習與生成成本",
+            "image": "_course_content/generated-concepts/defectfill/wi026-generation-d3-r02-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/defectfill/wi026-generation-d3-r01-mobile.png",
+            "alt": "要補缺陷資料：先比較學習與生成成本。有少量缺陷與遮罩、願意支付微調及多候選選樣成本，可測DefectFill；想分開學外觀與位置，可比較AnomalyDiffusion；不想為新案例微調權重，可試TF-IDG，但仍有參考準備與迭代生成成本。只有正常品時，先建立正常性偵測基準或受控人工擾動，不能假定這些少樣本方法已學過真實刮傷。 AI生成教學示意，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              724,
+              2172
+            ],
+            "mobile_display_mode": "full-mobile",
+            "mobile_intrinsic_width": 724,
+            "mobile_intrinsic_height": 2172,
+            "desktop_intrinsic_width": 1672,
+            "desktop_intrinsic_height": 941
+          }
+        ],
+        "core_ideas": false
+      }
+    ]
+  },
+  "visual_intro": "先用少量真實缺陷照片及遮罩，微調預訓練填補模型的部分權重。學習同時關注刮傷細節、刮傷與物件的關係，以及缺陷詞應對應的位置。生成時給正常板與預定遮罩，逐步把缺陷填進去；LFS 再從多個候選挑出缺陷表現較明顯的一張。",
+  "concept_visuals": [],
+  "boundary_cases": [
+    {
+      "condition": "本課具體反例",
+      "effect": "本例把放置區移到孔邊。刮傷即使明顯，若在原本沒有材料的孔內長出橋接紋理，仍是幾何不合理的候選。LFS不負責檢查工件幾何；要先檢查位置、形狀與遮罩對應，再進資料集。",
+      "action": "剔除不合理候選；同一真實留出集比較加入合成資料前後的漏檢、誤報及覆核量。"
+    },
+    {
+      "condition": "換產品或取像條件",
+      "effect": "換產品須重新核對參考材質、缺陷類型、放置區與適配權重。三者輸出都是資料候選，實際缺陷分數或輪廓由下游模型產生。固定真實切分、合成數量與下游設定，比生成、篩選、訓練及覆核的完整成本。",
+      "action": "先在固定真實留出資料重驗，再擴大用途。"
+    },
+    {
+      "condition": "把生成示意當成模型實測",
+      "effect": "本課圖像說明可能機制與失敗情況，不能據此計算現場準確率或節拍。",
+      "action": "保留真實原圖、模型設定與對照輸出，以符合工作需求的留出資料另行測量。"
+    }
+  ],
+  "comparison": [
+    {
+      "model": "DefectFill",
+      "normality": "少量缺陷＋遮罩；LoRA微調與多候選選樣",
+      "candidate": "合成缺陷影像及對應遮罩"
+    },
+    {
+      "model": "AnomalyDiffusion",
+      "normality": "少量缺陷；學外觀嵌入及位置条件",
+      "candidate": "由外觀和目標位置控制的合成圖"
+    },
+    {
+      "model": "TF-IDG",
+      "normality": "正常圖、缺陷參考與遮罩；權重固定、生成時最佳化",
+      "candidate": "經特徵對齊及背景保存的候選"
+    }
+  ],
+  "selection": "有少量缺陷與遮罩、願意支付微調及多候選選樣成本，可測DefectFill；想分開學外觀與位置，可比較AnomalyDiffusion；不想為新案例微調權重，可試TF-IDG，但仍有參考準備與迭代生成成本。只有正常品時，先建立正常性偵測基準或受控人工擾動，不能假定這些少樣本方法已學過真實刮傷。 換產品須重新核對參考材質、缺陷類型、放置區與適配權重。三者輸出都是資料候選，實際缺陷分數或輪廓由下游模型產生。固定真實切分、合成數量與下游設定，比生成、篩選、訓練及覆核的完整成本。",
+  "poc": {
+    "title": "小規模比較：資料、效果與完整成本",
+    "steps": [
+      "保留原始資料，固定訓練與獨立真實留出切分，選定本課工作需求。",
+      "換產品須重新核對參考材質、缺陷類型、放置區與適配權重。三者輸出都是資料候選，實際缺陷分數或輪廓由下游模型產生。固定真實切分、合成數量與下游設定，比生成、篩選、訓練及覆核的完整成本。",
+      "記錄失敗影像、原圖與輸出關係、端到端時間和人工覆核量，再決定是否擴大。"
+    ],
+    "hold": "剔除不合理候選；同一真實留出集比較加入合成資料前後的漏檢、誤報及覆核量。",
+    "acceptance": {
+      "baseline": "原有流程或最簡單可行方法",
+      "measure": "關鍵細節、下游錯誤、總時間及覆核量",
+      "negative_control": "以本課反例檢查錯誤結論是否被排除",
+      "owner": "教材使用者指定的實作及覆核負責人"
+    }
+  },
+  "teach_back": {
+    "question": "它改變什麼？換條件後如何選？",
+    "answer": "先用少量真實缺陷照片及遮罩，微調預訓練填補模型的部分權重。學習同時關注刮傷細節、刮傷與物件的關係，以及缺陷詞應對應的位置。生成時給正常板與預定遮罩，逐步把缺陷填進去；LFS 再從多個候選挑出缺陷表現較明顯的一張。 有少量缺陷與遮罩、願意支付微調及多候選選樣成本，可測DefectFill；想分開學外觀與位置，可比較AnomalyDiffusion；不想為新案例微調權重，可試TF-IDG，但仍有參考準備與迭代生成成本。只有正常品時，先建立正常性偵測基準或受控人工擾動，不能假定這些少樣本方法已學過真實刮傷。"
+  },
+  "slide_reading": [
+    {
+      "title": "DefectFill：合成資料先核對再加入",
+      "question": "合成圖供訓練增補，真實留出集負責驗收。",
+      "look": "先看少量真缺陷及人工遮罩，再核對同板指定位置產生刮傷，最後看檢查後納入訓練資料。",
+      "relation": "正常底圖、參考缺陷、遮罩與來源保留；合成圖及mask一致才進訓練。真實缺陷留出不得被參考/候選挑選用過。",
+      "takeaway": "合成圖供訓練增補，真實留出集負責驗收。",
+      "terms": [
+        "示意數值：作者給定局部算例，非模型實測或建議參數。",
+        "同位置：比較保持相同影像座標與時間身份，不能任意換工件。"
+      ]
+    },
+    {
+      "title": "DefectFill：學缺陷，再填指定區域",
+      "question": "先學缺陷外觀，再核對合成位置與真實性。",
+      "look": "先看少量缺陷與遮罩教LoRA，再核對正常板加指定遮罩生成，最後看遮罩內感知差異挑候選。",
+      "relation": "同一上方雙孔板，下方中心刮傷。少量缺陷及mask微調文字編碼器及attention LoRA；缺陷/物件/attention三損失協同。正常影像+mask進inpainting，LFS挑遮罩內相對原正常图LPIPS更大的候選（較低保真）；給定.1/.3只是示例，不等於物理真實度，仍需逐件位置及真缺陷驗證。",
+      "takeaway": "先學缺陷外觀，再核對合成位置與真實性。",
+      "terms": [
+        "示意數值：作者給定局部算例，非模型實測或建議參數。",
+        "同位置：比較保持相同影像座標與時間身份，不能任意換工件。"
+      ]
+    },
+    {
+      "title": "DefectFill：適配與挑選成本分開算",
+      "question": "候選越多，生成與挑選的成本都會累積。",
+      "look": "先看保存LoRA與遮罩版本，再核對多候選乘上多步採樣，最後看挑選仍需真缺陷驗證。",
+      "relation": "保存基模/LoRA、文字、mask、種子、採樣與LFS設定。作者例4候選×20步=80去噪呼叫，未含LPIPS與預處理；增加候選不保證增加資料效益。",
+      "takeaway": "候選越多，生成與挑選的成本都會累積。",
+      "terms": [
+        "示意數值：作者給定局部算例，非模型實測或建議參數。",
+        "同位置：比較保持相同影像座標與時間身份，不能任意換工件。"
+      ]
+    },
+    {
+      "title": "DefectFill：局部差大，也可能是假傷",
+      "question": "LFS挑局部差異，物理合理性仍需另驗。",
+      "look": "先看同板同位置的刮傷候選，再核對異常大黑塊也可能差很大，最後看用真實缺陷留出驗效益。",
+      "relation": "感知距離較大也可能來自不合理塗塊，不等於真刮傷。以mask覆蓋、材質及真缺陷檢測效益核對。",
+      "takeaway": "LFS挑局部差異，物理合理性仍需另驗。",
+      "terms": [
+        "示意數值：作者給定局部算例，非模型實測或建議參數。",
+        "同位置：比較保持相同影像座標與時間身份，不能任意換工件。"
+      ]
+    }
+  ],
+  "comparison_headers": {
+    "title": "要補缺陷資料：先比較學習與生成成本",
+    "basis": "資料準備與方法分工",
+    "output": "交付結果與核對重點"
+  },
+  "transfer_check": {
+    "title": "換成高反光的新金屬板",
+    "scenario": "只有五張刮傷照片與遮罩，已有正常性偵測基準；生成圖很逼真，但微調及篩圖耗時。",
+    "question": "你會先擴大DefectFill資料量，還是比較TF-IDG與既有基準？",
+    "answer": "可以小規模比較：固定真實留出集、下游模型和合成預算，記錄各路徑的微調、生成與人工篩圖時間。若加入資料未改善真實漏檢或反而增誤報，就保留基準；不因影像逼真而擴量。TF-IDG免微調也要付迭代成本。"
+  },
+  "review_trace": {
+    "authority": "roadmap-model-selection/diffusion-restoration/defectfill/model.md",
+    "scope": "WI-033：工程層四圖與手機比較修正；首讀有效內容保留。原生圖已審，整頁與使用者審閱另記。",
+    "claims": [
+      {
+        "id": "visual-1",
+        "field": "beginner_path.visuals[aoi-synthetic-contract]",
+        "source": "模型定位 / architecture_path"
+      },
+      {
+        "id": "visual-2",
+        "field": "beginner_path.visuals[provenance-split]",
+        "source": "architecture_path"
+      },
+      {
+        "id": "visual-3",
+        "field": "beginner_path.visuals[lora-masked-inpaint]",
+        "source": "representation_or_score"
+      },
+      {
+        "id": "visual-4",
+        "field": "beginner_path.visuals[synthetic-bundle-lfs-review]",
+        "source": "failure_boundary"
+      },
+      {
+        "id": "visual-5",
+        "field": "beginner_path.visuals[real-holdout-evidence-gate]",
+        "source": "selection_gate / evidence_bundle"
+      },
+      {
+        "id": "promise",
+        "field": "promise",
+        "source": "模型定位 / representation_or_score"
+      },
+      {
+        "id": "mechanism",
+        "field": "mechanism_steps",
+        "source": "architecture_path / representation_or_score"
+      },
+      {
+        "id": "boundaries",
+        "field": "boundary_cases",
+        "source": "failure_boundary / selection_gate"
+      },
+      {
+        "id": "comparison",
+        "field": "comparison + selection",
+        "source": "selection_gate"
+      },
+      {
+        "id": "poc",
+        "field": "poc + acceptance",
+        "source": "cost_and_operating_point / evidence_bundle"
+      },
+      {
+        "id": "transfer",
+        "field": "transfer_check",
+        "source": "failure_boundary / selection_gate"
+      },
+      {
+        "id": "f02-core",
+        "field": "beginner_path.visuals[0] + scenario + mental_model",
+        "source": "https://arxiv.org/abs/2503.13985"
+      },
+      {
+        "id": "f02-transfer",
+        "field": "micro_example + transfer_check + selection",
+        "source": "https://arxiv.org/abs/2503.13985"
+      },
+      {
+        "id": "wi026-first-read",
+        "field": "beginner_path + core + selection + transfer",
+        "source": "https://arxiv.org/html/2503.13985v1"
+      }
+    ]
+  },
+  "quality_status": {
+    "label": "首讀圖文已重製並自評；使用者核准待確認",
+    "state": "self-reviewed",
+    "round": "WI-026",
+    "reason": "38張不同PNG逐圖審查；整頁與互動證據見workitems/wi-026，原工程圖未重新評分。"
+  },
+  "teaching_preflight": {
+    "brief": "teaching-images/vision-ai-model-selection/workitems/wi-026/defectfill-c1-r01.md",
+    "story": "C",
+    "major_visual_nodes": 4,
+    "visual_status": "self-reviewed",
+    "user_review": "pending"
+  },
+  "engineering_slides": [
+    {
+      "title": "DefectFill：合成資料先核對再加入",
+      "question": "合成圖供訓練增補，真實留出集負責驗收。",
+      "plain": {
+        "look": "先看少量真缺陷及人工遮罩，再核對同板指定位置產生刮傷，最後看檢查後納入訓練資料。",
+        "relation": "正常底圖、參考缺陷、遮罩與來源保留；合成圖及mask一致才進訓練。真實缺陷留出不得被參考/候選挑選用過。",
+        "takeaway": "合成圖供訓練增補，真實留出集負責驗收。"
+      },
+      "terms": [
+        "示意數值：作者給定局部算例，非模型實測或建議參數。",
+        "同位置：比較保持相同影像座標與時間身份，不能任意換工件。"
+      ],
+      "guide": [
+        "正常底圖、參考缺陷、遮罩與來源保留；合成圖及mask一致才進訓練。真實缺陷留出不得被參考/候選挑選用過。",
+        "先看少量真缺陷及人工遮罩，再核對同板指定位置產生刮傷，最後看檢查後納入訓練資料。"
+      ],
+      "stages": [
+        {
+          "title": "少量真缺陷及人工遮罩",
+          "body": "少量真缺陷及人工遮罩；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "同板指定位置產生刮傷",
+          "body": "同板指定位置產生刮傷；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "檢查後納入訓練資料",
+          "body": "檢查後納入訓練資料；請對照圖內輸入、變化與結果。"
+        }
+      ],
+      "misconception": "本例把放置區移到孔邊。刮傷即使明顯，若在原本沒有材料的孔內長出橋接紋理，仍是幾何不合理的候選。LFS不負責檢查工件幾何；要先檢查位置、形狀與遮罩對應，再進資料集。",
+      "alt": "DefectFill：合成資料先核對再加入。合成圖供訓練增補，真實留出集負責驗收。 教學示意，非模型實測。",
+      "mobile_image": "roadmap-model-selection/diffusion-restoration/defectfill/images/final/WI033-DEFECTFILL-01-r01-mobile.png",
+      "mobile_width": 768,
+      "mobile_height": 2304,
+      "engineering": {
+        "takeaway": "合成圖供訓練增補，真實留出集負責驗收。",
+        "nextAction": "保留原始資料，固定訓練與獨立真實留出切分，選定本課工作需求。",
+        "redLine": "剔除不合理候選；同一真實留出集比較加入合成資料前後的漏檢、誤報及覆核量。"
+      },
+      "source": "https://arxiv.org/html/2503.13985v1"
+    },
+    {
+      "title": "DefectFill：學缺陷，再填指定區域",
+      "question": "先學缺陷外觀，再核對合成位置與真實性。",
+      "plain": {
+        "look": "先看少量缺陷與遮罩教LoRA，再核對正常板加指定遮罩生成，最後看遮罩內感知差異挑候選。",
+        "relation": "同一上方雙孔板，下方中心刮傷。少量缺陷及mask微調文字編碼器及attention LoRA；缺陷/物件/attention三損失協同。正常影像+mask進inpainting，LFS挑遮罩內相對原正常图LPIPS更大的候選（較低保真）；給定.1/.3只是示例，不等於物理真實度，仍需逐件位置及真缺陷驗證。",
+        "takeaway": "先學缺陷外觀，再核對合成位置與真實性。"
+      },
+      "terms": [
+        "示意數值：作者給定局部算例，非模型實測或建議參數。",
+        "同位置：比較保持相同影像座標與時間身份，不能任意換工件。"
+      ],
+      "guide": [
+        "同一上方雙孔板，下方中心刮傷。少量缺陷及mask微調文字編碼器及attention LoRA；缺陷/物件/attention三損失協同。正常影像+mask進inpainting，LFS挑遮罩內相對原正常图LPIPS更大的候選（較低保真）；給定.1/.3只是示例，不等於物理真實度，仍需逐件位置及真缺陷驗證。",
+        "先看少量缺陷與遮罩教LoRA，再核對正常板加指定遮罩生成，最後看遮罩內感知差異挑候選。"
+      ],
+      "stages": [
+        {
+          "title": "少量缺陷與遮罩教LoRA",
+          "body": "少量缺陷與遮罩教LoRA；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "正常板加指定遮罩生成",
+          "body": "正常板加指定遮罩生成；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "遮罩內感知差異挑候選",
+          "body": "遮罩內感知差異挑候選；請對照圖內輸入、變化與結果。"
+        }
+      ],
+      "misconception": "本例把放置區移到孔邊。刮傷即使明顯，若在原本沒有材料的孔內長出橋接紋理，仍是幾何不合理的候選。LFS不負責檢查工件幾何；要先檢查位置、形狀與遮罩對應，再進資料集。",
+      "alt": "DefectFill：學缺陷，再填指定區域。先學缺陷外觀，再核對合成位置與真實性。 教學示意，非模型實測。",
+      "mobile_image": "roadmap-model-selection/diffusion-restoration/defectfill/images/final/WI033-DEFECTFILL-02-r02-mobile.png",
+      "mobile_width": 768,
+      "mobile_height": 2304,
+      "engineering": {
+        "takeaway": "先學缺陷外觀，再核對合成位置與真實性。",
+        "nextAction": "保留原始資料，固定訓練與獨立真實留出切分，選定本課工作需求。",
+        "redLine": "剔除不合理候選；同一真實留出集比較加入合成資料前後的漏檢、誤報及覆核量。"
+      },
+      "source": "https://arxiv.org/html/2503.13985v1"
+    },
+    {
+      "title": "DefectFill：適配與挑選成本分開算",
+      "question": "候選越多，生成與挑選的成本都會累積。",
+      "plain": {
+        "look": "先看保存LoRA與遮罩版本，再核對多候選乘上多步採樣，最後看挑選仍需真缺陷驗證。",
+        "relation": "保存基模/LoRA、文字、mask、種子、採樣與LFS設定。作者例4候選×20步=80去噪呼叫，未含LPIPS與預處理；增加候選不保證增加資料效益。",
+        "takeaway": "候選越多，生成與挑選的成本都會累積。"
+      },
+      "terms": [
+        "示意數值：作者給定局部算例，非模型實測或建議參數。",
+        "同位置：比較保持相同影像座標與時間身份，不能任意換工件。"
+      ],
+      "guide": [
+        "保存基模/LoRA、文字、mask、種子、採樣與LFS設定。作者例4候選×20步=80去噪呼叫，未含LPIPS與預處理；增加候選不保證增加資料效益。",
+        "先看保存LoRA與遮罩版本，再核對多候選乘上多步採樣，最後看挑選仍需真缺陷驗證。"
+      ],
+      "stages": [
+        {
+          "title": "保存LoRA與遮罩版本",
+          "body": "保存LoRA與遮罩版本；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "多候選乘上多步採樣",
+          "body": "多候選乘上多步採樣；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "挑選仍需真缺陷驗證",
+          "body": "挑選仍需真缺陷驗證；請對照圖內輸入、變化與結果。"
+        }
+      ],
+      "misconception": "本例把放置區移到孔邊。刮傷即使明顯，若在原本沒有材料的孔內長出橋接紋理，仍是幾何不合理的候選。LFS不負責檢查工件幾何；要先檢查位置、形狀與遮罩對應，再進資料集。",
+      "alt": "DefectFill：適配與挑選成本分開算。候選越多，生成與挑選的成本都會累積。 教學示意，非模型實測。",
+      "mobile_image": "roadmap-model-selection/diffusion-restoration/defectfill/images/final/WI033-DEFECTFILL-03-r01-mobile.png",
+      "mobile_width": 768,
+      "mobile_height": 2304,
+      "engineering": {
+        "takeaway": "候選越多，生成與挑選的成本都會累積。",
+        "nextAction": "保留原始資料，固定訓練與獨立真實留出切分，選定本課工作需求。",
+        "redLine": "剔除不合理候選；同一真實留出集比較加入合成資料前後的漏檢、誤報及覆核量。"
+      },
+      "source": "https://arxiv.org/html/2503.13985v1"
+    },
+    {
+      "title": "DefectFill：局部差大，也可能是假傷",
+      "question": "LFS挑局部差異，物理合理性仍需另驗。",
+      "plain": {
+        "look": "先看同板同位置的刮傷候選，再核對異常大黑塊也可能差很大，最後看用真實缺陷留出驗效益。",
+        "relation": "感知距離較大也可能來自不合理塗塊，不等於真刮傷。以mask覆蓋、材質及真缺陷檢測效益核對。",
+        "takeaway": "LFS挑局部差異，物理合理性仍需另驗。"
+      },
+      "terms": [
+        "示意數值：作者給定局部算例，非模型實測或建議參數。",
+        "同位置：比較保持相同影像座標與時間身份，不能任意換工件。"
+      ],
+      "guide": [
+        "感知距離較大也可能來自不合理塗塊，不等於真刮傷。以mask覆蓋、材質及真缺陷檢測效益核對。",
+        "先看同板同位置的刮傷候選，再核對異常大黑塊也可能差很大，最後看用真實缺陷留出驗效益。"
+      ],
+      "stages": [
+        {
+          "title": "同板同位置的刮傷候選",
+          "body": "同板同位置的刮傷候選；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "異常大黑塊也可能差很大",
+          "body": "異常大黑塊也可能差很大；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "用真實缺陷留出驗效益",
+          "body": "用真實缺陷留出驗效益；請對照圖內輸入、變化與結果。"
+        }
+      ],
+      "misconception": "本例把放置區移到孔邊。刮傷即使明顯，若在原本沒有材料的孔內長出橋接紋理，仍是幾何不合理的候選。LFS不負責檢查工件幾何；要先檢查位置、形狀與遮罩對應，再進資料集。",
+      "alt": "DefectFill：局部差大，也可能是假傷。LFS挑局部差異，物理合理性仍需另驗。 教學示意，非模型實測。",
+      "mobile_image": "roadmap-model-selection/diffusion-restoration/defectfill/images/final/WI033-DEFECTFILL-04-r01-mobile.png",
+      "mobile_width": 768,
+      "mobile_height": 2304,
+      "engineering": {
+        "takeaway": "LFS挑局部差異，物理合理性仍需另驗。",
+        "nextAction": "保留原始資料，固定訓練與獨立真實留出切分，選定本課工作需求。",
+        "redLine": "剔除不合理候選；同一真實留出集比較加入合成資料前後的漏檢、誤報及覆核量。"
+      },
+      "source": "https://arxiv.org/html/2503.13985v1"
+    }
+  ]
+}

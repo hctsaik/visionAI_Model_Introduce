@@ -2799,3 +2799,17 @@ Pose、DINOv3、DiffusionAD及AnomalyGPT工程圖與指定手機/反例本機完
 ## WI-033-L9：全52課收尾驗證
 
 52課逐課完成；最終1506HTTP、1370資產一致、累計208主頁/1472放大與160深讀、最後24 tests/130 subtests及58課178圖說通過。逐圖與頁面證據見WI-033 REPORT，使用者核准pending，未發布。觀察→規則：同板q與噪聲驗證、梯度更新對象和差異量已併入IMAGE_STYLE_GUIDE；caption/解碼/分批hash證據已併入TEACHING_WEBPAGE_GUIDE。下一輪依這些具體檢查驗證，不以舊分數代表新成品。資產彙總腳本初次將WindowsPath當字串而失敗；改明確as_posix後重驗，教材未受影響。
+
+## WI-034 審查完成／版本判定（2026-09-12）
+
+以新版 358fefe 與父提交核對，十項判斷見 teaching-images/vision-ai-model-selection/workitems/wi-034/REPORT.md。新版仍有 DINO、15 課 step0、YOLO-World、ResNet 文字錯位；YOLOE 問答與 slide3/4 重複之描述不能直接套用。22 路由已擷取，DINO 因果鏈截圖已檢視；未重跑模型或完整功能測試。此次審查完成，教材／skill 修正未開始，未再提交推送。下一個具體動作若進入修正：先重配機制標題與內文，再驗可見頁。
+
+學習：新版圖片完成不代表沿用的收合文字已校對；審查須看實際編譯欄位，避免把舊來源欄位當成目前渲染結果。評論來源版本無證據時不可猜測。
+
+## WI-035-L1：實作前學習
+
+觀察：新版仍沿用錯位機制文字；公開 PoC 把三步全部展開，選模型無回饋，範例會覆蓋草稿。原因：來源欄位重組未核對語義，表單只收值而沒有協助完成任務。可重用原則已寫入 TEACHING_WEBPAGE_GUIDE.md WI-035；適用於教學內容組裝與草稿型互動。下一輪以編譯後文字和實際桌面／手機操作驗證，保留 public/local baseline 截圖。尚未完成實作，不更改量表，也不聲稱真人學習成效。
+
+## WI-035-L2：修正與本機驗證完成
+
+19 課機制修正、六課收束與卡片引導、已確認繁簡及製作註記修正；PoC 三步往返、模型提示、完整預覽、Markdown 匯出、草稿保護與儲存失敗提示完成。25 項相關測試、38 課程路由、20 PoC 截圖、1370 資產雜湊與 HTML 一致，見 WI-035 REPORT／final-verification.json。首次 label schema、blur 吞點擊、末端 takeaway 覆寫失敗與修正均保留。舊 verifier 在基準也失敗，不拿過時契約改教材。共用原則已寫回 TEACHING_WEBPAGE_GUIDE.md；未更新 skill、未新增模型推論或真人驗收。接著依既有 Git 授權推送並實驗公開頁。

@@ -1,0 +1,652 @@
+[
+  {
+    "slug": "ad-stfpm",
+    "relative_dir": "anomaly-detection/ad-stfpm",
+    "model": "STFPM",
+    "family": "anomaly",
+    "case_tag": "CASE B · Surface AOI",
+    "family_tag": "Anomaly Detection",
+    "identity": {
+      "title": "STFPM：正常特徵差異形成異常候選",
+      "context": "固定 normal ROI、teacher、layers 與 fusion。",
+      "bubble": "正常品怎麼變成可審核的異常候選？",
+      "cards": [
+        {"title": "乾淨 normal ROI", "body": "只用正常 support\nROI／split 版本固定", "visual": "input"},
+        {"title": "Teacher + student", "body": "teacher frozen\nstudent 學 normal feature", "visual": "dual"},
+        {"title": "多尺度 discrepancy", "body": "normalized L2\n逐層形成差異圖", "visual": "feature"},
+        {"title": "熱圖＋review", "body": "fusion + max score\n回看 raw ROI", "visual": "gate"}
+      ],
+      "flow": "normal ROI → dual forward → L2 map → review",
+      "takeaway": "Heatmap 是差異證據，不是自動放行。"
+    },
+    "architecture": {
+      "title": "STFPM：雙路 feature pyramid 比對",
+      "context": "同架構 teacher/student 只在正常資料上對齊。",
+      "bubble": "兩個 feature pyramid 要怎麼比較？",
+      "cards": [
+        {"title": "輸入 contract", "body": "ROI／resize／mask\n維持同一 recipe", "visual": "input"},
+        {"title": "雙路 forward", "body": "frozen teacher\ntrainable student", "visual": "dual"},
+        {"title": "Layer-wise L2", "body": "normalize → difference\nresize 至共同 grid", "visual": "score"},
+        {"title": "產品 fusion", "body": "layer product\nmax → threshold gate", "visual": "gate"}
+      ],
+      "flow": "ROI → teacher/student → layer maps → fused score",
+      "takeaway": "Layer、normalization、fusion 都是 score contract。"
+    },
+    "build": {
+      "title": "STFPM：normal-fit 與部署 contract",
+      "context": "資料、teacher lock、seed、P95 與 gate 要一起版本化。",
+      "bubble": "正常資料混入 defect 時會發生什麼？",
+      "cards": [
+        {"title": "Normal split", "body": "clean IDs／coverage\n先做 contamination audit", "visual": "input"},
+        {"title": "Teacher state", "body": "checkpoint／layers\nfrozen audit 留存", "visual": "contract"},
+        {"title": "Student fit", "body": "init／loss／seed\ncheckpoint 可重播", "visual": "feature"},
+        {"title": "Release gate", "body": "low-FPR／P95\ndrift 時 rebuild", "visual": "gate"}
+      ],
+      "flow": "clean split → student fit → calibrate → P95 gate",
+      "takeaway": "污染、teacher mismatch、drift 都要重做 qualification。"
+    },
+    "failure": "normal contamination 會污染 student。teacher mismatch 會推高誤報。tiny defect 與 drift 仍要另驗。",
+    "selection": "適合 normal-only feature baseline。先驗低 FPR、P95 與 drift。",
+    "takeaway": "先固定正常特徵契約，再把差異圖交給 evidence gate。"
+  },
+  {
+    "slug": "ad-ae",
+    "relative_dir": "anomaly-detection/ad-ae",
+    "model": "Autoencoder (AE)",
+    "family": "anomaly",
+    "case_tag": "CASE B · Surface AOI",
+    "family_tag": "Anomaly Detection",
+    "identity": {
+      "title": "AE：重建 residual 是候選，不是 defect 機率",
+      "context": "先鎖 image/feature target、latent、loss 與 residual。",
+      "bubble": "重建得不好，就一定是 defect 嗎？",
+      "cards": [
+        {"title": "Normal support", "body": "乾淨 normal ROI\n涵蓋合法變異", "visual": "input"},
+        {"title": "Encoder → z", "body": "壓縮目標訊號\nlatent capacity 固定", "visual": "feature"},
+        {"title": "Decoder 重建", "body": "image 或 feature\n不可混用 target", "visual": "dual"},
+        {"title": "Residual review", "body": "map + aggregation\nthreshold 後再 review", "visual": "gate"}
+      ],
+      "flow": "normal ROI → encoder z → reconstruction → residual",
+      "takeaway": "Residual 是重建不一致，不是校準後的 defect 機率。"
+    },
+    "architecture": {
+      "title": "AE：target、latent 與 residual 必須分清",
+      "context": "Image-AE 與 feature-AE 是不同的 score contract。",
+      "bubble": "pixel residual 和 feature residual 能混畫嗎？",
+      "cards": [
+        {"title": "鎖 target", "body": "image x 或 feature F\n定義比較空間", "visual": "input"},
+        {"title": "Encode", "body": "encoder → latent z\n容量與 skip 固定", "visual": "feature"},
+        {"title": "Decode", "body": "z → x-hat／F-hat\n重建 recipe 鎖定", "visual": "dual"},
+        {"title": "Residual score", "body": "abs／SSIM／feature diff\nmap → image score", "visual": "score"}
+      ],
+      "flow": "target → encoder → latent → decoder → residual",
+      "takeaway": "Loss、mask、smoothing、aggregation 都會改變 operating point。"
+    },
+    "build": {
+      "title": "AE：重建品質與低 FPR 要一起驗證",
+      "context": "資料、transform、loss、checkpoint、threshold 都屬模型狀態。",
+      "bubble": "太強或太弱的 bottleneck 都會失效嗎？",
+      "cards": [
+        {"title": "Normal coverage", "body": "lot／view／light\n排除 contamination", "visual": "input"},
+        {"title": "Capacity + loss", "body": "latent／skip／L1-L2\nperceptual recipe", "visual": "contract"},
+        {"title": "Residual contract", "body": "mask／resize／smooth\naggregation 可重播", "visual": "score"},
+        {"title": "Evidence gate", "body": "input/recon/residual\nP95 與 drift review", "visual": "gate"}
+      ],
+      "flow": "normal fit → target/loss → residual → evidence gate",
+      "takeaway": "同看 input、reconstruction、residual 才能解讀失敗。"
+    },
+    "failure": "anomaly 可能被重建而逃逸。normal blur 會提高誤報。光照位移與 global logic 仍要另驗。",
+    "selection": "適合可解讀的 normal-only baseline。微缺陷與低 FPR 要量測。",
+    "takeaway": "AE 的價值在可檢視 residual，不在把它誤稱 defect probability。"
+  },
+  {
+    "slug": "ad-draem",
+    "relative_dir": "anomaly-detection/ad-draem",
+    "model": "DRAEM",
+    "family": "anomaly",
+    "case_tag": "CASE B · Surface AOI",
+    "family_tag": "Anomaly Detection",
+    "identity": {
+      "title": "DRAEM：合成異常訓練，不等於真實缺陷證據",
+      "context": "合成 mask 驅動重建與 discriminative segmentation。",
+      "bubble": "合成瑕疵真的會代表工廠 defect 嗎？",
+      "cards": [
+        {"title": "合成 corruption", "body": "texture/noise + Perlin\n生成 I-a、M-a", "visual": "input"},
+        {"title": "Normal-like recon", "body": "重建網路把 I-a\n拉回正常外觀", "visual": "dual"},
+        {"title": "Joint embedding", "body": "I-a + I-r concat\n供判別網路使用", "visual": "feature"},
+        {"title": "Real review gate", "body": "segmentation map\n真實 holdout 驗證", "visual": "gate"}
+      ],
+      "flow": "synthetic pair → reconstruction → joint map → real review",
+      "takeaway": "Synthetic supervision 不會自動證明 simulator 等於現場。"
+    },
+    "architecture": {
+      "title": "DRAEM：重建與判別分工的 anomaly map",
+      "context": "主輸出是 discriminative map，不是單獨 residual。",
+      "bubble": "為什麼不能只看 reconstruction residual？",
+      "cards": [
+        {"title": "Simulator recipe", "body": "mask／opacity／blend\n來源與 seed 鎖定", "visual": "input"},
+        {"title": "Reconstruction net", "body": "corrupted image\n→ normal-like I-r", "visual": "dual"},
+        {"title": "Discriminative net", "body": "original + recon\n學 pixel boundary", "visual": "feature"},
+        {"title": "Map contract", "body": "smooth／aggregate\nthreshold → action", "visual": "score"}
+      ],
+      "flow": "I-a + mask → I-r → concat → anomaly map",
+      "takeaway": "合成 recipe、loss、map aggregation 都是 release state。"
+    },
+    "build": {
+      "title": "DRAEM：先治理 simulator，再驗真實 holdout",
+      "context": "真實缺陷與 synthetic defect 必須分開檢驗。",
+      "bubble": "模型在 synthetic mask 高分就可上線嗎？",
+      "cards": [
+        {"title": "Normal source", "body": "clean IDs／ROI\nreal normal split", "visual": "input"},
+        {"title": "Synthetic source", "body": "texture license\nmask occupancy／blend", "visual": "contract"},
+        {"title": "Coupled losses", "body": "SSIM + L2\nsegmentation loss", "visual": "feature"},
+        {"title": "Production gate", "body": "real challenge\nlow-FPR／P95／drift", "visual": "gate"}
+      ],
+      "flow": "normal + simulator → train → real holdout → release",
+      "takeaway": "必須報告 synthetic-to-real gap，不可只報 synthetic score。"
+    },
+    "failure": "simulator artefact 會誤導判別器。optics shift 可造成誤報。global logic 仍可能逃逸。",
+    "selection": "適合可治理的合成表面異常。真實 holdout 必須通過 gate。",
+    "takeaway": "DRAEM 的候選價值取決於真實缺陷證據，而非漂亮合成圖。"
+  },
+  {
+    "slug": "ad-efficientad",
+    "relative_dir": "anomaly-detection/ad-efficientad",
+    "model": "EfficientAD",
+    "family": "anomaly",
+    "case_tag": "CASE B · Surface AOI",
+    "family_tag": "Anomaly Detection",
+    "identity": {
+      "title": "EfficientAD：局部 PDN 與全域 AE 的雙路 evidence",
+      "context": "paper millisecond 不等於 camera-to-PLC P95。",
+      "bubble": "局部小缺陷和全域錯裝都能看見嗎？",
+      "cards": [
+        {"title": "Normal ROI", "body": "clean nominal support\ninput recipe 固定", "visual": "input"},
+        {"title": "PDN local path", "body": "frozen teacher\nstudent 學 local map", "visual": "dual"},
+        {"title": "Global AE path", "body": "global context\n補局部路徑盲區", "visual": "feature"},
+        {"title": "Fused action", "body": "calibrate + fusion\n完整 P95 gate", "visual": "gate"}
+      ],
+      "flow": "ROI → local PDN + global AE → fused map → gate",
+      "takeaway": "Local/global map 都需 calibration；forward ms 不是 SLA。"
+    },
+    "architecture": {
+      "title": "EfficientAD：local/global map 的 locked fusion",
+      "context": "PDN discrepancy 與 AE evidence 不能任意混權。",
+      "bubble": "兩張 map 如何成為一個可用的 score？",
+      "cards": [
+        {"title": "Input contract", "body": "ROI／crop／stride\n有效像素先固定", "visual": "input"},
+        {"title": "Local discrepancy", "body": "teacher map − student\n保留細小 evidence", "visual": "dual"},
+        {"title": "Global discrepancy", "body": "AE + student path\n找全域不相容", "visual": "feature"},
+        {"title": "Calibrate + fuse", "body": "normal quantiles\nmap → image score", "visual": "score"}
+      ],
+      "flow": "ROI → local map + global map → fusion → threshold",
+      "takeaway": "Local-only、global-only、fused 都應有對照 evidence。"
+    },
+    "build": {
+      "title": "EfficientAD：快不快，要看完整 image-to-action",
+      "context": "teacher、penalty data、calibration 與 engine 都必須固定。",
+      "bubble": "外部 penalty data 可以隨手換公開資料嗎？",
+      "cards": [
+        {"title": "Normal + penalty", "body": "normal IDs\nexternal source 可追溯", "visual": "input"},
+        {"title": "Model state", "body": "PDN／student／AE\ncheckpoint 與 seed", "visual": "contract"},
+        {"title": "Score state", "body": "teacher stats\ncalibration／fusion rule", "visual": "score"},
+        {"title": "Deployment gate", "body": "pre/forward/post\nP95、VRAM、drift", "visual": "gate"}
+      ],
+      "flow": "govern data → fit paths → calibrate → full P95",
+      "takeaway": "未版本化 penalty source 或 fusion，任何比較都失效。"
+    },
+    "failure": "contamination 會改變 normal boundary。PDN stride 會稀釋微缺陷。local/global 都可能有盲點。",
+    "selection": "適合 latency/state size 受限的 POC。要量 local/global map 與完整 P95。",
+    "takeaway": "只有完整延遲與融合證據過關，才可引用 EfficientAD 的速度。"
+  },
+  {
+    "slug": "ad-invad",
+    "relative_dir": "anomaly-detection/ad-invad",
+    "model": "InvAD",
+    "family": "anomaly",
+    "case_tag": "CASE B · Surface AOI",
+    "family_tag": "Anomaly Detection",
+    "identity": {
+      "title": "InvAD：forward feature inversion，不是逐圖最佳化",
+      "context": "2024 feature-inversion 路徑以 SSM 重建正常 feature。",
+      "bubble": "InvAD 的 inversion 是不是每張圖都反覆求解？",
+      "cards": [
+        {"title": "Multi-class ROI", "body": "class roster + normal\nimage recipe 固定", "visual": "input"},
+        {"title": "Encoder features", "body": "multi-scale feature\n先做 rescaling", "visual": "feature"},
+        {"title": "Style + SSM decoder", "body": "constant query\n由 spatial style 調制", "visual": "dual"},
+        {"title": "Residual gate", "body": "normal-like feature\n→ map／review", "visual": "gate"}
+      ],
+      "flow": "ROI → encoder → style/SSM → feature residual",
+      "takeaway": "InvAD 是單次 learned forward，不是 per-image optimization。"
+    },
+    "architecture": {
+      "title": "InvAD：style modulation 重建 normal-like feature",
+      "context": "rescaling、style translator、constant query、SSM 都是模型本體。",
+      "bubble": "constant query 怎麼會知道這張 AOI 的 style？",
+      "cards": [
+        {"title": "Image encoder", "body": "ROI → multi-scale F\nlayer state 固定", "visual": "input"},
+        {"title": "Rescale + style", "body": "align feature scales\n形成 spatial style", "visual": "feature"},
+        {"title": "SSM decoder", "body": "constant query\n受 style 動態調制", "visual": "dual"},
+        {"title": "Feature residual", "body": "F − F-hat\naggregate → threshold", "visual": "score"}
+      ],
+      "flow": "features → style → SSM decoder → residual score",
+      "takeaway": "重建的是 feature，不是可當證據的 pixel repair image。"
+    },
+    "build": {
+      "title": "InvAD：固定 feature state，量每類真實 evidence",
+      "context": "class balance、style domain、decoder capacity 共同決定風險。",
+      "bubble": "decoder 太強會不會把 anomaly 一起重建？",
+      "cards": [
+        {"title": "Category support", "body": "class balance\nnormal coverage audit", "visual": "input"},
+        {"title": "Feature contract", "body": "encoder／layers\nrescale dimensions", "visual": "contract"},
+        {"title": "Decoder contract", "body": "style／query／SSM\nloss 與 residual", "visual": "feature"},
+        {"title": "Evidence gate", "body": "real escapes\nper-class low-FPR／P95", "visual": "gate"}
+      ],
+      "flow": "class roster → feature fit → residual → per-class gate",
+      "takeaway": "不要把同名 diffusion inversion 的成本套到 InvAD。"
+    },
+    "failure": "decoder 過強會重建 anomaly。style drift 會改變 feature。tiny defect 與 global logic 仍要另驗。",
+    "selection": "適合受治理的 multi-class research。需量每類 escape、低 FPR 與 P95。",
+    "takeaway": "先釘住模型身分與單次 forward contract，再談殘差表現。"
+  },
+  {
+    "slug": "ad-ddad",
+    "relative_dir": "anomaly-detection/ad-ddad",
+    "model": "DDAD",
+    "family": "anomaly",
+    "case_tag": "CASE B · Surface AOI",
+    "family_tag": "Anomaly Detection",
+    "identity": {
+      "title": "DDAD：target-conditioned diffusion 的雙 residual",
+      "context": "輸入作為 condition，重建後合併 pixel/feature evidence。",
+      "bubble": "conditioned diffusion 如何保留正常結構？",
+      "cards": [
+        {"title": "Test ROI x", "body": "固定 registration\nresize／colour recipe", "visual": "input"},
+        {"title": "Target condition", "body": "noisy source + x\nlock schedule/steps", "visual": "dual"},
+        {"title": "Defectless x-hat", "body": "conditional denoise\n輸出 normal-like recon", "visual": "feature"},
+        {"title": "Dual residual gate", "body": "pixel + feature map\nfuse → review", "visual": "gate"}
+      ],
+      "flow": "x condition → diffusion recon → dual residual → gate",
+      "takeaway": "DDAD 的分數不是單一 denoiser step，也不是單一 pixel map。"
+    },
+    "architecture": {
+      "title": "DDAD：condition、sampling、pixel/feature fusion",
+      "context": "schedule、noise start、steps 與 adapted feature 都是 state。",
+      "bubble": "為什麼 DDAD 不能只報一張漂亮 reconstruction？",
+      "cards": [
+        {"title": "Condition contract", "body": "x、guidance strength\nnoise schedule 固定", "visual": "input"},
+        {"title": "Diffusion denoise", "body": "locked sampler\nsteps → x-hat", "visual": "dual"},
+        {"title": "Two residuals", "body": "|x−x-hat|\n|phi(x)−phi(x-hat)|", "visual": "feature"},
+        {"title": "Fused score", "body": "normalize／fuse\nmap → threshold", "visual": "score"}
+      ],
+      "flow": "condition → sampler → x-hat → pixel/feature fusion",
+      "takeaway": "更換 sampler 或 steps，就已是不同 operating point。"
+    },
+    "build": {
+      "title": "DDAD：sampling cost 與真實 escape 必須同量",
+      "context": "feature adaptation 與生成近似樣本不可省略審核。",
+      "bubble": "多步 sampling 的 P95 可以用一個 forward 代替嗎？",
+      "cards": [
+        {"title": "Data protocol", "body": "normal／synthetic IDs\nleakage audit", "visual": "input"},
+        {"title": "Diffusion state", "body": "beta／start／steps\ndenoiser checkpoint", "visual": "contract"},
+        {"title": "Feature state", "body": "adaptation recipe\nresidual weights", "visual": "feature"},
+        {"title": "Release gate", "body": "real recon/escape\nfull P95／drift", "visual": "gate"}
+      ],
+      "flow": "govern protocol → lock sampling → fuse → full P95",
+      "takeaway": "生成 bias 與 feature bias 都要用真實 challenge 檢查。"
+    },
+    "failure": "condition 可能保留或幻覺 defect。sampler 變更會改 score。feature bias 與 global logic 仍要另驗。",
+    "selection": "適合 target-conditioned diffusion POC。先驗雙 residual 與完整 sampling P95。",
+    "takeaway": "先驗雙 residual 與完整 sampling latency，再選 DDAD。"
+  },
+  {
+    "slug": "ad-diffad",
+    "relative_dir": "anomaly-detection/ad-diffad",
+    "model": "DiffusionAD",
+    "family": "anomaly",
+    "case_tag": "CASE B · Surface AOI",
+    "family_tag": "Anomaly Detection",
+    "identity": {
+      "title": "DiffusionAD：norm-guided one-step restoration",
+      "context": "one-step denoiser + segmentation；非 multi-step diffusion。",
+      "bubble": "一個 denoise step 為何能形成 anomaly map？",
+      "cards": [
+        {"title": "Normal ROI", "body": "clean support\nnoise recipe 固定", "visual": "input"},
+        {"title": "Norm guidance", "body": "noise-to-norm\none-step denoiser", "visual": "dual"},
+        {"title": "Joint segmentation", "body": "x + restoration\n學 pixel anomaly map", "visual": "feature"},
+        {"title": "Evidence gate", "body": "map aggregation\nreal holdout review", "visual": "gate"}
+      ],
+      "flow": "ROI → one-step restore → segmentation map → review",
+      "takeaway": "One-step restoration 是正常參考，不是美化影像目標。"
+    },
+    "architecture": {
+      "title": "DiffusionAD：noise-to-norm 再交給 segmentation",
+      "context": "noise timestep、guidance、restoration 與 map contract 要鎖定。",
+      "bubble": "它和多步 diffusion reconstruction 差在哪裡？",
+      "cards": [
+        {"title": "Noise state", "body": "schedule + timestep\ntrain/test 一致", "visual": "input"},
+        {"title": "One-step denoiser", "body": "norm-guided\n輸出 x-hat", "visual": "dual"},
+        {"title": "Concat evidence", "body": "x + x-hat\n送入 segmentation head", "visual": "feature"},
+        {"title": "Map contract", "body": "smooth／aggregate\nthreshold → action", "visual": "score"}
+      ],
+      "flow": "noise state → one-step x-hat → concat → map",
+      "takeaway": "把 multi-step latency 套到 DiffusionAD 會改變模型身分。"
+    },
+    "build": {
+      "title": "DiffusionAD：一個 step 也要量完整部署 evidence",
+      "context": "正常 support、guidance、synthetic behavior、P95 都需記錄。",
+      "bubble": "one-step forward 快，是否等於產線整體快？",
+      "cards": [
+        {"title": "Normal support", "body": "clean IDs／coverage\ncontamination audit", "visual": "input"},
+        {"title": "Guidance state", "body": "schedule／timestep\ncheckpoint／loss", "visual": "contract"},
+        {"title": "Segmentation state", "body": "synthetic supervision\nmap aggregation", "visual": "feature"},
+        {"title": "Real gate", "body": "erasure／false reject\nlow-FPR／full P95", "visual": "gate"}
+      ],
+      "flow": "normal fit → one-step state → real map → P95 gate",
+      "takeaway": "restoration bias 要以真實 defect erasure 與 false reject 驗證。"
+    },
+    "failure": "restoration bias 可抹掉真缺陷。synthetic overfit 會誤導 map。tiny defect 與 global logic 仍要另驗。",
+    "selection": "適合驗證 one-step restore+segment 路徑。要用真實 holdout 量 P95。",
+    "takeaway": "先鎖 one-step 身分與真實 map evidence，才可與 DDAD 比較。"
+  },
+  {
+    "slug": "ad-dinomaly",
+    "relative_dir": "anomaly-detection/ad-dinomaly",
+    "model": "Dinomaly",
+    "family": "anomaly",
+    "case_tag": "CASE B · Surface AOI",
+    "family_tag": "Anomaly Detection",
+    "identity": {
+      "title": "Dinomaly：Transformer token 重建，阻止 identity copy",
+      "context": "Foundation feature + noise/linear/loose anti-copy controls。",
+      "bubble": "重建模型怎麼避免把 anomaly token 原樣複製？",
+      "cards": [
+        {"title": "Multi-class normal", "body": "category roster\nROI／feature recipe", "visual": "input"},
+        {"title": "Foundation tokens", "body": "selected ViT layers\nadapted path 受控", "visual": "feature"},
+        {"title": "Anti-copy decoder", "body": "dropout + linear attn\nloose reconstruction", "visual": "dual"},
+        {"title": "Token residual", "body": "layer fusion\nper-class review gate", "visual": "gate"}
+      ],
+      "flow": "ROI → ViT tokens → anti-copy decoder → residual",
+      "takeaway": "Frozen backbone 不代表整個 Dinomaly path training-free。"
+    },
+    "architecture": {
+      "title": "Dinomaly：四個 anti-identity 元件缺一不可",
+      "context": "Noise、linear attention、loose loss 用來限制直接 token copy。",
+      "bubble": "哪個設定會讓 decoder 偷偷還原 anomaly？",
+      "cards": [
+        {"title": "Patch token", "body": "Foundation encoder\nlayer／stride 固定", "visual": "input"},
+        {"title": "Noisy bottleneck", "body": "dropout 擾動\n防逐 token 複製", "visual": "feature"},
+        {"title": "Linear decoder", "body": "unfocused attention\nloose normal tokens", "visual": "dual"},
+        {"title": "Residual fusion", "body": "token difference\nmap/image aggregation", "visual": "score"}
+      ],
+      "flow": "patch tokens → noise/linear decoder → loose recon → score",
+      "takeaway": "dropout、attention、loose grouping 都會改變低 FPR。"
+    },
+    "build": {
+      "title": "Dinomaly：adaptation 成本與每類 evidence 都要量",
+      "context": "共同模型要避免常見類別淹沒稀有類別。",
+      "bubble": "統一多類別模型，會不會只對大宗產品好？",
+      "cards": [
+        {"title": "Class roster", "body": "normal count balance\nfuture split 留存", "visual": "input"},
+        {"title": "Backbone state", "body": "checkpoint／layers\nfrozen/adapted audit", "visual": "contract"},
+        {"title": "Shortcut controls", "body": "dropout／decoder\nloose loss 固定", "visual": "feature"},
+        {"title": "Per-class gate", "body": "escape／review load\nP95／drift", "visual": "gate"}
+      ],
+      "flow": "class roster → adaptation → residual → per-class gate",
+      "takeaway": "Pool AUROC 不能掩蓋稀有類別的低 FPR 失敗。"
+    },
+    "failure": "feature mismatch 會推高誤報。identity mapping 會壓低 residual。rare tail 與 global logic 仍要另驗。",
+    "selection": "適合已證明 ViT domain fit 的多類別 POC。要量每類低 FPR 與 adaptation cost。",
+    "takeaway": "選 Dinomaly 前，要先驗 anti-copy state 與每類證據。"
+  },
+  {
+    "slug": "ad-subspacead",
+    "relative_dir": "anomaly-detection/ad-subspacead",
+    "model": "SubspaceAD",
+    "family": "anomaly",
+    "case_tag": "CASE B · Surface AOI",
+    "family_tag": "Anomaly Detection",
+    "identity": {
+      "title": "SubspaceAD：few-shot PCA normal plane 的正交殘差",
+      "context": "frozen DINOv2 patch feature 以 compact μ+C 表示正常變異。",
+      "bubble": "少量 normal 怎麼變成一個可用的 anomaly state？",
+      "cards": [
+        {"title": "One/few normal", "body": "clean support ROI\nshot 與 augmentation 固定", "visual": "input"},
+        {"title": "DINOv2 patches", "body": "frozen checkpoint\nselected token layers", "visual": "feature"},
+        {"title": "PCA subspace", "body": "mean μ + basis C\nrank/variance policy", "visual": "dual"},
+        {"title": "Residual gate", "body": "orthogonal norm\nTVaR → threshold", "visual": "gate"}
+      ],
+      "flow": "few normal → patch features → PCA plane → residual",
+      "takeaway": "它儲存 compact subspace，不是 exemplar memory bank。"
+    },
+    "architecture": {
+      "title": "SubspaceAD：投影到 normal plane，再量 plane 外距離",
+      "context": "PCA rank、feature grid、top-tail aggregation 都是 score contract。",
+      "bubble": "高 residual 到底代表什麼幾何意義？",
+      "cards": [
+        {"title": "Feature recipe", "body": "ROI → DINOv2\npatch grid／norm 固定", "visual": "input"},
+        {"title": "Fit μ and C", "body": "normal tokens\nPCA solver + rank", "visual": "feature"},
+        {"title": "Orthogonal residual", "body": "z−μ − CCᵀ(z−μ)\n取 residual norm", "visual": "dual"},
+        {"title": "Image score", "body": "upsample/filter\ntop-tail／TVaR gate", "visual": "score"}
+      ],
+      "flow": "patch z → PCA projection → residual grid → TVaR",
+      "takeaway": "Upsampled patch map 不等於 native pixel mask。"
+    },
+    "build": {
+      "title": "SubspaceAD：support bias 與 rank sensitivity 要先驗",
+      "context": "訓練少不等於支援、feature、P95 可以不受控。",
+      "bubble": "rank 太低或太高，會怎樣改變 defect score？",
+      "cards": [
+        {"title": "Support audit", "body": "shot IDs／normal modes\ncontamination 檢查", "visual": "input"},
+        {"title": "PCA state", "body": "μ／C／rank\nchecksum 可重播", "visual": "contract"},
+        {"title": "Score state", "body": "normalization\nfilter／TVaR／calibration", "visual": "score"},
+        {"title": "Evidence gate", "body": "support variance\nlow-FPR／encoder P95", "visual": "gate"}
+      ],
+      "flow": "support audit → PCA fit → calibrate → drift gate",
+      "takeaway": "大型 encoder 仍主導 P95；compact basis 不等於快速部署。"
+    },
+    "failure": "nonlinear normal 會讓 PCA underfit。rank 過高可能吸收 defect。support bias 與 logical anomaly 仍要另驗。",
+    "selection": "適合少量乾淨 normal 的線性候選。先驗 rank、support variance 與 encoder P95。",
+    "takeaway": "先驗 support、rank、patch resolution，再把 PCA residual 當 evidence。"
+  },
+  {
+    "slug": "ad-uniad",
+    "relative_dir": "anomaly-detection/ad-uniad",
+    "model": "UniAD",
+    "family": "anomaly",
+    "case_tag": "CASE B · Surface AOI",
+    "family_tag": "Anomaly Detection",
+    "identity": {
+      "title": "UniAD：shared multi-class recon，阻止 identity shortcut",
+      "context": "layer queries、neighbor mask、feature jitter 要一起成立。",
+      "bubble": "一個共享模型怎麼不把 anomaly feature 直接複製？",
+      "cards": [
+        {"title": "Category roster", "body": "multi-class normal\ncoverage／balance 固定", "visual": "input"},
+        {"title": "Backbone features", "body": "multi-layer maps\nfeature jitter training", "visual": "feature"},
+        {"title": "Query reconstruction", "body": "layer-wise queries\nneighbor mask 防 copy", "visual": "dual"},
+        {"title": "Residual gate", "body": "layer fusion\nper-category review", "visual": "gate"}
+      ],
+      "flow": "class ROI → layer features → masked queries → residual",
+      "takeaway": "UniAD 的共享效益必須通過每一類的低 FPR 證據。"
+    },
+    "architecture": {
+      "title": "UniAD：jitter、queries、neighbor mask 的 anti-copy path",
+      "context": "純 feature reconstruction 容易走 identity shortcut。",
+      "bubble": "為何 layer-wise query decoder 不能拿掉？",
+      "cards": [
+        {"title": "Layer features", "body": "ROI → backbone\nselected maps 固定", "visual": "input"},
+        {"title": "Feature jitter", "body": "train-time perturb\n迫使 normal recovery", "visual": "feature"},
+        {"title": "Masked decoder", "body": "layer query + mask\n阻斷鄰近 copy", "visual": "dual"},
+        {"title": "Residual fusion", "body": "each layer diff\nresize → image score", "visual": "score"}
+      ],
+      "flow": "features → jitter/masked queries → recon → layer residual",
+      "takeaway": "mask、jitter、aggregation 都是部署上的 score state。"
+    },
+    "build": {
+      "title": "UniAD：共同模型也要保留每類 qualification",
+      "context": "class support、shortcut controls、threshold、P95 不能只看平均。",
+      "bubble": "共用模型可否取代所有 per-class evidence？",
+      "cards": [
+        {"title": "Normal roster", "body": "category IDs\nrare class coverage", "visual": "input"},
+        {"title": "Control state", "body": "queries／mask／jitter\ncheckpoint 固定", "visual": "contract"},
+        {"title": "Score contract", "body": "layers／fusion\naggregation／threshold", "visual": "score"},
+        {"title": "Per-class gate", "body": "low-FPR／review load\nfuture split／P95", "visual": "gate"}
+      ],
+      "flow": "roster audit → train controls → calibrate → class gates",
+      "takeaway": "Pooled benchmark 結果不能取代稀有類別的部署驗證。"
+    },
+    "failure": "identity shortcut 會壓低 residual。rare class 會有 score tail。tiny defect 與 global logic 仍要另驗。",
+    "selection": "適合受治理多產品 normal pipeline。每個 category 仍需獨立驗證。",
+    "takeaway": "共享模型不是免驗證模型；每個 category 都要有 evidence gate。"
+  },
+  {
+    "slug": "ad-anomalyclip",
+    "relative_dir": "anomaly-detection/ad-anomalyclip",
+    "model": "AnomalyCLIP",
+    "family": "anomaly",
+    "case_tag": "CASE B · Surface AOI",
+    "family_tag": "Anomaly Detection",
+    "identity": {
+      "title": "AnomalyCLIP：learned prompt 的 zero-shot transfer",
+      "context": "auxiliary prompt learning 必須證明 target-data exclusion。",
+      "bubble": "zero-shot 為何仍有 learned state 與 transfer risk？",
+      "cards": [
+        {"title": "Auxiliary split", "body": "source IDs／license\ntarget exclusion audit", "visual": "input"},
+        {"title": "Learned prompts", "body": "normal/anomaly tokens\nobject-agnostic state", "visual": "dual"},
+        {"title": "CLIP patch alignment", "body": "global + patch feature\nsimilarity margins", "visual": "feature"},
+        {"title": "Target review gate", "body": "patch map + calibrate\nreal holdout evidence", "visual": "gate"}
+      ],
+      "flow": "auxiliary prompts → CLIP patches → margin map → target gate",
+      "takeaway": "Zero-shot 指無 target training，不代表沒有可漂移的 learned state。"
+    },
+    "architecture": {
+      "title": "AnomalyCLIP：prompt token 與 patch margin 的 score path",
+      "context": "CLIP、tokenizer、template、feature layer、map rule 都必須鎖定。",
+      "bubble": "文字 prompt 怎麼變成 AOI 的 local evidence？",
+      "cards": [
+        {"title": "Input recipe", "body": "ROI／image prep\nCLIP revision 固定", "visual": "input"},
+        {"title": "Prompt embeddings", "body": "learned normal/abnormal\ncontext/template lock", "visual": "dual"},
+        {"title": "Image + patch", "body": "selected features\nnormalized similarities", "visual": "feature"},
+        {"title": "Margin map", "body": "patch interpolation\ncalibration → action", "visual": "score"}
+      ],
+      "flow": "ROI → CLIP features + prompts → margins → patch map",
+      "takeaway": "Prompt wording與 feature state 的小變化，都能反轉 margin。"
+    },
+    "build": {
+      "title": "AnomalyCLIP：先驗 leakage 與 prompt transfer，再談 P95",
+      "context": "auxiliary data、prompt checkpoint、local calibration 要同時可稽核。",
+      "bubble": "auxiliary data 沒有目標影像，還會有 leakage 嗎？",
+      "cards": [
+        {"title": "Data governance", "body": "taxonomy／split\nlicense／exclusion", "visual": "input"},
+        {"title": "Prompt state", "body": "tokens／context length\ntext adaptation version", "visual": "contract"},
+        {"title": "Map contract", "body": "patch layer／resize\nscore／calibration", "visual": "score"},
+        {"title": "Transfer gate", "body": "prompt variance\nunseen product／P95", "visual": "gate"}
+      ],
+      "flow": "audit auxiliary → lock prompts → calibrate → target gate",
+      "takeaway": "真正的風險是 prompt transfer，不是語言能力的高低。"
+    },
+    "failure": "target leakage 會污染 transfer 結論。prompt drift 可反轉 margin。patch stride 與 domain gap 仍要另驗。",
+    "selection": "適合已有受治理 prompt-learning 的 CLIP 路徑。需有 target holdout 與 local calibration。",
+    "takeaway": "若無 source audit、target holdout、local calibration，就不應選 AnomalyCLIP。"
+  },
+  {
+    "slug": "ad-anomalygpt",
+    "relative_dir": "anomaly-detection/ad-anomalygpt",
+    "model": "AnomalyGPT",
+    "family": "anomaly",
+    "case_tag": "CASE B · Surface AOI",
+    "family_tag": "Anomaly Detection",
+    "identity": {
+      "title": "AnomalyGPT：grounded assist，不是 autonomous release",
+      "context": "文字回答與 evidence region 都是候選，需要 specialist owner。",
+      "bubble": "LLM 說有異常，能直接 PASS/FAIL 嗎？",
+      "cards": [
+        {"title": "Simulated pairs", "body": "anomaly image + text\nsource policy 固定", "visual": "input"},
+        {"title": "Vision + prompt", "body": "visual tokens\nprompt learner state", "visual": "feature"},
+        {"title": "Bridge / LVLM", "body": "structured response\nlocation decoder", "visual": "dual"},
+        {"title": "Grounded handoff", "body": "uncertainty／abstain\nhuman/specialist confirm", "visual": "gate"}
+      ],
+      "flow": "ROI + evidence → LVLM → candidate region → human gate",
+      "takeaway": "流暢文字不是 defect probability，也不是 final decision。"
+    },
+    "architecture": {
+      "title": "AnomalyGPT：從 visual token 到可追溯 assist response",
+      "context": "輸出必須綁 evidence-region、uncertainty、next action。",
+      "bubble": "如何讓回答能回到原始影像與 specialist evidence？",
+      "cards": [
+        {"title": "Controlled inputs", "body": "ROI + specialist map\nprompt/retrieval 固定", "visual": "input"},
+        {"title": "Visual-language path", "body": "encoder + learned prompt\nbridge / LVLM", "visual": "dual"},
+        {"title": "Two candidates", "body": "text response\nimage decoder region", "visual": "feature"},
+        {"title": "Grounding check", "body": "schema／uncertainty\nconfirm → action", "visual": "score"}
+      ],
+      "flow": "ROI/evidence → tokens → response+region → confirmation",
+      "takeaway": "任何 response 都要標示 observed、 inferred 與下一步確認。"
+    },
+    "build": {
+      "title": "AnomalyGPT：security、hallucination、token P95 一起受控",
+      "context": "模型、prompt、retrieval、schema、data policy 的變更都會改行為。",
+      "bubble": "只量 vision encoder latency，能代表 LVLM P95 嗎？",
+      "cards": [
+        {"title": "Source + policy", "body": "simulated IDs\nredaction／ACL／retention", "visual": "input"},
+        {"title": "Model state", "body": "LLM／bridge／tokenizer\ntemperature/schema lock", "visual": "contract"},
+        {"title": "Grounding test", "body": "hallucination\nregion-text agreement", "visual": "feature"},
+        {"title": "Assist gate", "body": "abstain route\nfull token P95／owner", "visual": "gate"}
+      ],
+      "flow": "security audit → lock state → grounding test → assist gate",
+      "takeaway": "P95 包含 retrieval、generation、decoder、handoff，不只 encoder。"
+    },
+    "failure": "hallucination 需要 abstain 與確認。ungrounded region 不可放行。sensitive data 與 variable P95 仍要受控。",
+    "selection": "適合有 specialist owner 的工程 assist。不適合 autonomous release。",
+    "takeaway": "把 AnomalyGPT 放在 evidence loop 內，而非 release decision 末端。"
+  },
+  {
+    "slug": "ad-winclip",
+    "relative_dir": "anomaly-detection/ad-winclip",
+    "model": "WinCLIP",
+    "family": "anomaly",
+    "case_tag": "CASE B · Surface AOI",
+    "family_tag": "Anomaly Detection",
+    "identity": {
+      "title": "WinCLIP：frozen prompt ensemble 與 window/patch alignment",
+      "context": "zero/few-shot 仍須治理 prompt、window、reference。",
+      "bubble": "沒有標註，prompt margin 就能直接上線嗎？",
+      "cards": [
+        {"title": "ROI + windows", "body": "full image／window／patch\nscale/stride 固定", "visual": "input"},
+        {"title": "Prompt ensemble", "body": "normal/anomaly words\nclass/template state", "visual": "dual"},
+        {"title": "CLIP margins", "body": "image/window/patch\nsimilarity difference", "visual": "feature"},
+        {"title": "Calibrated action", "body": "map + image score\nabstain/review gate", "visual": "gate"}
+      ],
+      "flow": "ROI windows → CLIP prompts → similarity margins → gate",
+      "takeaway": "Zero-shot prompt score 不是校準後的 production defect probability。"
+    },
+    "architecture": {
+      "title": "WinCLIP：window scale 與 prompt margin 構成 score",
+      "context": "image、window、patch、text embedding 與 aggregation 必須一起固定。",
+      "bubble": "局部 window 如何對齊 normal/anomaly text？",
+      "cards": [
+        {"title": "Window layout", "body": "ROI／size／stride\npadding/scale policy", "visual": "input"},
+        {"title": "Text side", "body": "state words\ntemplates + tokenizer", "visual": "dual"},
+        {"title": "Visual side", "body": "full/window/patch\nfrozen CLIP features", "visual": "feature"},
+        {"title": "Margin fusion", "body": "normalize／aggregate\nmap + image score", "visual": "score"}
+      ],
+      "flow": "ROI windows + prompts → CLIP embeddings → margins → map",
+      "takeaway": "Window layout 與 prompt vocabulary 都是模型 input state。"
+    },
+    "build": {
+      "title": "WinCLIP：prompt revision 與 few-normal bank 都要可稽核",
+      "context": "WinCLIP+ reference bank 可增證據，也會增加治理與 P95。",
+      "bubble": "few normal reference 加進來，還算 data-free 嗎？",
+      "cards": [
+        {"title": "Prompt contract", "body": "CLIP／tokenizer\nwords／templates／cache", "visual": "contract"},
+        {"title": "Reference policy", "body": "WinCLIP+ IDs\nselection／contamination", "visual": "input"},
+        {"title": "Score contract", "body": "windows／weights\ncalibration／threshold", "visual": "score"},
+        {"title": "Transfer gate", "body": "prompt sensitivity\nlow-FPR／full P95", "visual": "gate"}
+      ],
+      "flow": "lock prompts/refs → run windows → calibrate → transfer gate",
+      "takeaway": "Prompt、reference、cache 任一變更都需要重新 calibration。"
+    },
+    "failure": "prompt drift 可反轉 similarity margin。tiny defect 會落在 window 下。domain naming gap 與 global logic 仍要另驗。",
+    "selection": "適合探索 zero/few-shot semantic candidate。需 local proof 與 calibration。",
+    "takeaway": "先驗 prompt sensitivity、window effective pixels、local calibration 才可選用。"
+  }
+]

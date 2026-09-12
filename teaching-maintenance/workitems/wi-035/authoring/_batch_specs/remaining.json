@@ -1,0 +1,1178 @@
+[
+  {
+    "slug": "controlnet",
+    "relative_dir": "diffusion-restoration/controlnet",
+    "model": "ControlNet",
+    "family": "diffusion",
+    "case_tag": "CASE D · Wafer AOI",
+    "family_tag": "Diffusion",
+    "identity": {
+      "title": "ControlNet：條件控制生成，不等於 AOI 證據",
+      "context": "固定 raw ROI、condition 與 base/control；輸出只是可追溯的 synthetic/edit candidate。",
+      "bubble": "這張控制生成圖，能當 AOI 證據嗎？",
+      "cards": [
+        {
+          "title": "raw evidence",
+          "body": "raw sensor ROI\nno overwrite",
+          "visual": "input"
+        },
+        {
+          "title": "condition control",
+          "body": "edge/mask/depth\nversioned map",
+          "visual": "feature"
+        },
+        {
+          "title": "editing family",
+          "body": "base + Control\nbranch",
+          "visual": "dual"
+        },
+        {
+          "title": "review boundary",
+          "body": "synthetic label\nhuman review",
+          "visual": "gate"
+        }
+      ],
+      "flow": "raw ROI → versioned condition → controlled edit → synthetic/review boundary",
+      "takeaway": "ControlNet 是可控生成工具，不驗證物理事實。"
+    },
+    "architecture": {
+      "title": "ControlNet 架構：condition branch 控制 denoising，輸出可回放 synthetic asset",
+      "context": "source/ROI、condition map 與 prompt 進入 matched base + ControlNet，再以受控 denoising 產生編修候選。",
+      "bubble": "condition map 如何進入生成？",
+      "cards": [
+        {
+          "title": "raw AOI / ROI",
+          "body": "raw ROI evidence\nversioned ROI",
+          "visual": "input"
+        },
+        {
+          "title": "condition map",
+          "body": "edge/mask/depth\nversioned map",
+          "visual": "feature"
+        },
+        {
+          "title": "base + ControlNet",
+          "body": "matched ckpts\ncontrol scale",
+          "visual": "dual"
+        },
+        {
+          "title": "controlled denoise",
+          "body": "synthetic + log\nfidelity review",
+          "visual": "contract"
+        }
+      ],
+      "flow": "raw ROI + condition + prompt → matched branches → conditional denoise → traceable edit",
+      "takeaway": "空間貼合不等於 condition 正確，也不等於缺陷真實。"
+    },
+    "build": {
+      "title": "ControlNet 建置：鎖定條件、checkpoint 與 replay bundle",
+      "context": "每次生成必須保存來源、condition、模型版本、sampling recipe 與 raw/synthetic 分界。",
+      "bubble": "哪一組設定能讓結果可回放？",
+      "cards": [
+        {
+          "title": "source lock",
+          "body": "ROI hash\nextract + prep",
+          "visual": "input"
+        },
+        {
+          "title": "model recipe",
+          "body": "base/control rev\nprompt + scale",
+          "visual": "dual"
+        },
+        {
+          "title": "replay bundle",
+          "body": "sampler/step/seed\nsize + tile",
+          "visual": "contract"
+        },
+        {
+          "title": "adherence gate",
+          "body": "raw/synth split\nP95 + expert gate",
+          "visual": "gate"
+        }
+      ],
+      "flow": "source hash → model recipe → replay manifest → adherence/fidelity gate",
+      "takeaway": "生成輸出必須保有 provenance，且不得自動成為 PASS/HOLD 證據。"
+    },
+    "failure": "條件錯或模型不匹配會捏造細節。Prompt/scale 漂移也會改變結果。",
+    "selection": "鎖 source/cond/seed/review。看 fidelity、P95、expert。",
+    "takeaway": "ControlNet 控制「怎麼生成」，不是「現場到底發生了什麼」。"
+  },
+  {
+    "slug": "det-dino-detector",
+    "relative_dir": "detector/det-dino-detector",
+    "model": "DINO detector",
+    "family": "detector",
+    "case_tag": "CASE C · Parts AOI",
+    "family_tag": "Known-object Detection",
+    "identity": {
+      "title": "DINO detector：denoising 強化 set detection，不是 DINOv2 特徵模型",
+      "context": "它是 supervised DETR-family box detector；denoising groups 用於 training，不是 anomaly inference。",
+      "bubble": "DINO 名稱相同，就代表同一種模型嗎？",
+      "cards": [
+        {
+          "title": "closed-set task",
+          "body": "known class box\nROI task",
+          "visual": "input"
+        },
+        {
+          "title": "DETR family",
+          "body": "multi-scale feat.\nobject queries",
+          "visual": "feature"
+        },
+        {
+          "title": "denoising training",
+          "body": "noisy GT groups\nquery training",
+          "visual": "dual"
+        },
+        {
+          "title": "box evidence",
+          "body": "class/box set\nreview gate",
+          "visual": "gate"
+        }
+      ],
+      "flow": "labelled ROI → DETR query learning → refined box set → production evidence gate",
+      "takeaway": "DINO detector、DINOv2/DINOv3 encoder 與 VLM 是不同路線。"
+    },
+    "architecture": {
+      "title": "DINO detector 架構：multi-scale encoder、mixed queries 與 iterative box refinement",
+      "context": "image/ROI 經 encoder 後選取 queries；decoder 以 set prediction 與 iterative refinement 輸出 box/class。",
+      "bubble": "denoising branch 在哪裡影響 detection？",
+      "cards": [
+        {
+          "title": "image / ROI",
+          "body": "labels + ignore\nresize + padding",
+          "visual": "input"
+        },
+        {
+          "title": "multi-scale encoder",
+          "body": "backbone feat.\ncross-level encode",
+          "visual": "feature"
+        },
+        {
+          "title": "queries + DN",
+          "body": "mixed queries\nDN: train only",
+          "visual": "dual"
+        },
+        {
+          "title": "refined box set",
+          "body": "refine box set\nclass/box → ROI",
+          "visual": "score"
+        }
+      ],
+      "flow": "ROI → multi-scale features → mixed queries → decoder refinement → box set",
+      "takeaway": "query/set prediction 不是 dense feature-location candidate 的同義詞。"
+    },
+    "build": {
+      "title": "DINO detector 建置：data、queries、set loss 與 release evidence 一起鎖定",
+      "context": "要讓 DINO detector 可比較，必須固定 label/ignore、query recipe、matching loss、export 與 operational metrics。",
+      "bubble": "哪些設定會把 query detector 變成另一個 operating point？",
+      "cards": [
+        {
+          "title": "data contract",
+          "body": "box labels/ignore\nlot split",
+          "visual": "input"
+        },
+        {
+          "title": "query recipe",
+          "body": "backbone/levels/q\nDN + noise",
+          "visual": "feature"
+        },
+        {
+          "title": "set training",
+          "body": "match + loss\nschedule + aug.",
+          "visual": "dual"
+        },
+        {
+          "title": "release gate",
+          "body": "small recall\noverlap + P95",
+          "visual": "gate"
+        }
+      ],
+      "flow": "label contract → query recipe → set training → critical-size/P95 gate",
+      "takeaway": "以 target size-bin 與工廠 runtime 驗證，不以 COCO AP 單點放行。"
+    },
+    "failure": "小目標或 label drift 會漏檢。Query 容量、export 或 OOD 也會失效。",
+    "selection": "鎖 ROI/labels/runtime/action。再比 recall、overlap、P95。",
+    "takeaway": "類別固定且能準備框標註時，可比較 DINO；以現場漏檢、定位與完整成本決定是否採用。"
+  },
+  {
+    "slug": "det-rtdetr",
+    "relative_dir": "detector/det-rtdetr",
+    "model": "RT-DETR",
+    "family": "detector",
+    "case_tag": "CASE C · Parts AOI",
+    "family_tag": "Known-object Detection",
+    "identity": {
+      "title": "RT-DETR：decoder depth 是速度／品質旋鈕，不等於 SLA",
+      "context": "RT-DETR 是 real-time-oriented DETR set detector；其 realtime 必須在選定 encoder、depth、export 與硬體上量測。",
+      "bubble": "少幾層 decoder，就能宣稱 realtime 嗎？",
+      "cards": [
+        {
+          "title": "known-object boxes",
+          "body": "known class box\nROI output",
+          "visual": "input"
+        },
+        {
+          "title": "hybrid encoder",
+          "body": "intra/cross fuse\nmulti-scale",
+          "visual": "feature"
+        },
+        {
+          "title": "query detector",
+          "body": "selected queries\nreference points",
+          "visual": "dual"
+        },
+        {
+          "title": "local SLA",
+          "body": "small recall\nPLC P95",
+          "visual": "gate"
+        }
+      ],
+      "flow": "known-object ROI → query detector → depth operating point → measured SLA",
+      "takeaway": "realtime 是完成 camera-to-decision 路徑的量測結果。"
+    },
+    "architecture": {
+      "title": "RT-DETR 架構：hybrid encoder 選 queries，decoder depth 輸出 box set",
+      "context": "multi-scale features 經 intra/cross-scale fusion，選出 object queries，再以可配置 decoder layers 解碼 class/box。",
+      "bubble": "decoder depth 影響哪一段品質與延遲？",
+      "cards": [
+        {
+          "title": "image / ROI",
+          "body": "resize + padding\ncheck pixels",
+          "visual": "input"
+        },
+        {
+          "title": "hybrid encoder",
+          "body": "multi-scale feat.\nintra/cross fuse",
+          "visual": "feature"
+        },
+        {
+          "title": "selected queries",
+          "body": "selected queries\nreference points",
+          "visual": "dual"
+        },
+        {
+          "title": "decoder box set",
+          "body": "depth → speed\nclass/box → ROI",
+          "visual": "score"
+        }
+      ],
+      "flow": "ROI → hybrid encoder → selected queries → decoder layers → box set",
+      "takeaway": "paper FPS 與現場 SLA 中間仍有 resize、export、postprocess 和 action。"
+    },
+    "build": {
+      "title": "RT-DETR 建置：把 depth、export 與 actual P95 變成同一 operating point",
+      "context": "固定 coverage、variant、query/depth、precision、engine 與 output policy，才能判斷速度／品質 trade-off。",
+      "bubble": "哪個 depth／export 組合真的能通過 SLA？",
+      "cards": [
+        {
+          "title": "coverage contract",
+          "body": "ROI + label/ignore\nsmall target truth",
+          "visual": "input"
+        },
+        {
+          "title": "operating point",
+          "body": "variant/encoder/q\ndecoder depth",
+          "visual": "feature"
+        },
+        {
+          "title": "export path",
+          "body": "precision / engine\npostproc + HW",
+          "visual": "contract"
+        },
+        {
+          "title": "SLA gate",
+          "body": "small + overlap\nPLC P95",
+          "visual": "gate"
+        }
+      ],
+      "flow": "coverage contract → depth/export recipe → camera path → SLA gate",
+      "takeaway": "改 decoder depth、engine 或 padding，就是另一個可驗證的 operating point。"
+    },
+    "failure": "resize/stride 會抹掉小目標。Depth/export 或 OOD 會改變 SLA。",
+    "selection": "固定 labels、pixels、export 與 P95。再和 YOLO/DINO 比較。",
+    "takeaway": "RT-DETR 的 realtime 由已鎖定的 operating point 證明，不由論文 FPS 證明。"
+  },
+  {
+    "slug": "det-yolo-dense",
+    "relative_dir": "detector/det-yolo-dense",
+    "model": "YOLO dense detector",
+    "family": "detector",
+    "case_tag": "CASE C · Parts AOI",
+    "family_tag": "Known-object Detection",
+    "identity": {
+      "title": "YOLO：dense candidates 經 decode／NMS 才是 box，不是先天品質",
+      "context": "YOLO 是 one-stage dense detector family；exact version、stride、assignment、decode 與 NMS 一起定義輸出。",
+      "bubble": "模型輸出的一堆 candidates，何時才變成可用 box？",
+      "cards": [
+        {
+          "title": "known-class ROI",
+          "body": "box labels\ncritical pixels",
+          "visual": "input"
+        },
+        {
+          "title": "dense family",
+          "body": "multi-scale neck\ndense candidates",
+          "visual": "feature"
+        },
+        {
+          "title": "postprocess path",
+          "body": "decode + conf.\nNMS → ROI",
+          "visual": "contract"
+        },
+        {
+          "title": "release evidence",
+          "body": "size-bin recall\ndup + false alarm",
+          "visual": "gate"
+        }
+      ],
+      "flow": "ROI pixels → dense candidates → decode/NMS → box evidence gate",
+      "takeaway": "YOLO 不是單一模型名；runtime 也不是單一 FPS。"
+    },
+    "architecture": {
+      "title": "YOLO 架構：backbone/neck 產生 dense heads，再經 decode/NMS 回到 ROI boxes",
+      "context": "CNN backbone 和 FPN/PAN-like neck 產生多尺度 feature locations；head 的 box/class/objectness candidates 經 postprocess 才能使用。",
+      "bubble": "dense head 的 candidates 如何回到原始 ROI？",
+      "cards": [
+        {
+          "title": "image / ROI",
+          "body": "letterbox/tile\ncritical pixels",
+          "visual": "input"
+        },
+        {
+          "title": "backbone + neck",
+          "body": "CNN features\nFPN/PAN scales",
+          "visual": "feature"
+        },
+        {
+          "title": "dense heads",
+          "body": "box/class per cell\nobjectness score",
+          "visual": "score"
+        },
+        {
+          "title": "decode + NMS",
+          "body": "threshold + NMS\ninverse → ROI",
+          "visual": "contract"
+        }
+      ],
+      "flow": "ROI → CNN/FPN features → dense candidates → decode/NMS → boxes",
+      "takeaway": "dense candidate score 不是已校準的 defect decision。"
+    },
+    "build": {
+      "title": "YOLO 建置：sampling、labels、NMS 與 runtime 必須一起鎖定",
+      "context": "版本/variant、letterbox、stride、assignment、threshold、NMS、tile merge 與 hardware 共同定義 YOLO operating point。",
+      "bubble": "改了 NMS 或 tile merge，還是同一個模型嗎？",
+      "cards": [
+        {
+          "title": "label contract",
+          "body": "box/class/ignore\nlot/recipe split",
+          "visual": "input"
+        },
+        {
+          "title": "model recipe",
+          "body": "ver/stride/assign\nbackbone + head",
+          "visual": "feature"
+        },
+        {
+          "title": "output policy",
+          "body": "decode/conf/NMS\ntile merge/max",
+          "visual": "contract"
+        },
+        {
+          "title": "release gate",
+          "body": "size-bin recall\noverlap/dup + P95",
+          "visual": "gate"
+        }
+      ],
+      "flow": "label/sampling contract → model recipe → output policy → size/P95 gate",
+      "takeaway": "優化 NMS 不能掩蓋 sampling 已遺失的 tiny defect evidence。"
+    },
+    "failure": "stride 或 letterbox 會漏檢。tile/NMS drift 會誤報。",
+    "selection": "鎖 sampling/labels/NMS/runtime。再比 recall、false alarm、P95。",
+    "takeaway": "YOLO 的 box 是 dense candidates 加 decode/NMS 的完整契約。"
+  },
+  {
+    "slug": "background-subtraction",
+    "relative_dir": "video-temporal/background-subtraction",
+    "model": "Background Subtraction",
+    "family": "video",
+    "case_tag": "CASE C · Carrier Event",
+    "family_tag": "Temporal Vision",
+    "identity": {
+      "title": "Background Subtraction：background state 與 update rate 決定什麼被吸收",
+      "context": "它是固定視角長序列的 foreground proposal；background initialization 和 learning rate 共同定義何時應 reset/HOLD。",
+      "bubble": "停太久的 carrier，會不會被當成背景？",
+      "cards": [
+        {
+          "title": "stable view",
+          "body": "fixed camera / ROI\nempty scene proof",
+          "visual": "input"
+        },
+        {
+          "title": "background memory",
+          "body": "running/GMM state\nupdate eligibility",
+          "visual": "feature"
+        },
+        {
+          "title": "foreground candidate",
+          "body": "likelihood / mask\ncomponent evidence",
+          "visual": "score"
+        },
+        {
+          "title": "reset boundary",
+          "body": "scene / shadow\nREVIEW or HOLD",
+          "visual": "gate"
+        }
+      ],
+      "flow": "stable capture → background state → foreground candidate → event/reset gate",
+      "takeaway": "foreground component 不是 semantic object、identity 或物理原因。"
+    },
+    "architecture": {
+      "title": "Background Subtraction 架構：state update 產生 foreground likelihood，再聚合事件",
+      "context": "初始化背景與當前 frame 經光度處理後，利用 named background state 和 update rule 形成 mask、components 與 event queue。",
+      "bubble": "哪一條 update rule 會讓持續事件被吸收？",
+      "cards": [
+        {
+          "title": "fixed view stream",
+          "body": "empty scene proof\nROI + timestamps",
+          "visual": "input"
+        },
+        {
+          "title": "background state",
+          "body": "running/GMM state\nrate + update mask",
+          "visual": "feature"
+        },
+        {
+          "title": "foreground likelihood",
+          "body": "dist. + threshold\nshadow rule + mask",
+          "visual": "score"
+        },
+        {
+          "title": "event or reset",
+          "body": "morph + components\npersist → REVIEW",
+          "visual": "gate"
+        }
+      ],
+      "flow": "initialized state + frame → likelihood/mask → components → event or reset",
+      "takeaway": "背景模型一旦 silent adaptation，就可能吞掉重要的長停事件。"
+    },
+    "build": {
+      "title": "Background Subtraction 建置：state policy、event policy 與 reset ownership 一起驗證",
+      "context": "camera、background implementation、update mask、threshold、morphology、component/event queue 與 reset 必須有版本與 owner。",
+      "bubble": "背景何時能更新，何時必須 freeze 或 reset？",
+      "cards": [
+        {
+          "title": "capture lock",
+          "body": "camera + ROI\ntime + register",
+          "visual": "input"
+        },
+        {
+          "title": "state policy",
+          "body": "impl. + history\nrate + shadows",
+          "visual": "feature"
+        },
+        {
+          "title": "event contract",
+          "body": "morph + component\nwindow/dedup/queue",
+          "visual": "contract"
+        },
+        {
+          "title": "reset gate",
+          "body": "stopped absorption\nscene change + P95",
+          "visual": "gate"
+        }
+      ],
+      "flow": "capture lock → state policy → event contract → reset/latency gate",
+      "takeaway": "單張 foreground mask 或 update time 都不是 production evidence。"
+    },
+    "failure": "污染初始化或 update rate 會吞事件。Camera motion 會誤報。illumination/shadow 也會誤報。",
+    "selection": "固定視角才使用。量 reset、長停、false alarm、P95。",
+    "takeaway": "foreground mask 是候選區域，不是物件類別、identity 或物理證據。"
+  },
+  {
+    "slug": "bytetrack",
+    "relative_dir": "video-temporal/bytetrack",
+    "model": "ByteTrack",
+    "family": "video",
+    "case_tag": "CASE C · Carrier Event",
+    "family_tag": "Temporal Vision",
+    "identity": {
+      "title": "ByteTrack：先 high-score 再 low-score 關聯，不能補回 detector miss",
+      "context": "它以 detector boxes/scores 追蹤多物件；low-score recovery 保持已存在 track，不會創造 upstream 沒有的偵測。",
+      "bubble": "低分 box 是雜訊，還是能延續既有 track？",
+      "cards": [
+        {
+          "title": "upstream detector",
+          "body": "box/score/class\ndetector revision",
+          "visual": "input"
+        },
+        {
+          "title": "two-stage match",
+          "body": "high score first\nlow score recovery",
+          "visual": "dual"
+        },
+        {
+          "title": "track state",
+          "body": "Kalman prediction\nassoc. + lifecycle",
+          "visual": "feature"
+        },
+        {
+          "title": "event boundary",
+          "body": "ID history / dwell\nreview crossings",
+          "visual": "gate"
+        }
+      ],
+      "flow": "detector candidates → high/low association → track lifecycle → event evidence",
+      "takeaway": "track ID 是合約內的 identity bookkeeping，不是已驗證物理身份。"
+    },
+    "architecture": {
+      "title": "ByteTrack 架構：高分匹配後以低分 candidate 回復 track continuity",
+      "context": "detector scores 分區後，Kalman prediction 與 declared association gate 依序處理 match、unmatched 和 lifecycle transition。",
+      "bubble": "low-score recovery 怎麼不直接變成 false track？",
+      "cards": [
+        {
+          "title": "detector input",
+          "body": "timestamped frame\nbox/score/class",
+          "visual": "input"
+        },
+        {
+          "title": "high / low partition",
+          "body": "high-score first\nlow-score recovery",
+          "visual": "dual"
+        },
+        {
+          "title": "Kalman association",
+          "body": "predict + IoU gate\nmatch / unmatched",
+          "visual": "feature"
+        },
+        {
+          "title": "track event",
+          "body": "new/lost/removed\nID → event review",
+          "visual": "gate"
+        }
+      ],
+      "flow": "detector boxes → high match → low recovery → lifecycle → track event",
+      "takeaway": "detector recall 與 tracking continuity 是分開的量測責任。"
+    },
+    "build": {
+      "title": "ByteTrack 建置：detector、association、lifecycle 與 event contract 必須一起鎖定",
+      "context": "Tracker 評比要固定 upstream detector/NMS/calibration、camera sampling、association truth、event rule 與 hardware。",
+      "bubble": "哪個變更會讓 ID metrics 不再可比？",
+      "cards": [
+        {
+          "title": "detector contract",
+          "body": "weights/NMS/calib.\nframe rate + ROI",
+          "visual": "input"
+        },
+        {
+          "title": "association recipe",
+          "body": "hi/lo threshold\nKalman + cost gate",
+          "visual": "dual"
+        },
+        {
+          "title": "lifecycle contract",
+          "body": "buffer + class\ntrack-event window",
+          "visual": "contract"
+        },
+        {
+          "title": "continuity gate",
+          "body": "det. recall split\nID switch + P95",
+          "visual": "gate"
+        }
+      ],
+      "flow": "detector contract → association recipe → track event → continuity/P95 gate",
+      "takeaway": "IDF1/MOTA 不是 detector precision/recall，也不是 production event result。"
+    },
+    "failure": "Detector miss 會斷 track。Occlusion/crossing 會換 ID。",
+    "selection": "先證明 detector recall。再固定契約，比 continuity 與 P95。",
+    "takeaway": "tracking gain 不能被寫成 detector accuracy gain。"
+  },
+  {
+    "slug": "convlstm",
+    "relative_dir": "video-temporal/convlstm",
+    "model": "ConvLSTM",
+    "family": "video",
+    "case_tag": "CASE C · Carrier Event",
+    "family_tag": "Temporal Vision",
+    "identity": {
+      "title": "ConvLSTM：空間 state 有有效期限，必須連同 reset 與 head 管理",
+      "context": "它以 convolutional gates 讓 h/c 保留空間布局；有效範圍由 sequence window、sampling、state carry/reset 與 task head 定義。",
+      "bubble": "hidden state 可以記住多久，遇到缺幀怎麼辦？",
+      "cards": [
+        {
+          "title": "temporal window",
+          "body": "timestamped frames\nlength + stride",
+          "visual": "input"
+        },
+        {
+          "title": "spatial memory",
+          "body": "hidden h + cell c\nfeature resolution",
+          "visual": "dual"
+        },
+        {
+          "title": "conv gates",
+          "body": "i / f / o / g\nstate update",
+          "visual": "feature"
+        },
+        {
+          "title": "event owner",
+          "body": "separate task head\naggregate + action",
+          "visual": "gate"
+        }
+      ],
+      "flow": "sequence window → h/c update → task head → temporal event gate",
+      "takeaway": "hidden state 不是 event verdict，也不是無限記憶。"
+    },
+    "architecture": {
+      "title": "ConvLSTM 架構：current spatial feature 和 prior h/c 經 conv gates 更新 state",
+      "context": "sequence windows 先形成 xₜ，與 hₜ₋₁/cₜ₋₁ 通過 i/f/o/g gate 更新，再交給獨立 head 和 event aggregation。",
+      "bubble": "recurrent state 與最後 event score 的邊界在哪裡？",
+      "cards": [
+        {
+          "title": "sequence window",
+          "body": "timestamped frames\nlength/stride/ROI",
+          "visual": "input"
+        },
+        {
+          "title": "xₜ + prior state",
+          "body": "xₜ feature\nprior h/c",
+          "visual": "dual"
+        },
+        {
+          "title": "conv gate update",
+          "body": "i/f/o/g gates\nupdated hₜ / cₜ",
+          "visual": "feature"
+        },
+        {
+          "title": "head → event",
+          "body": "task head\naggregate + action",
+          "visual": "gate"
+        }
+      ],
+      "flow": "frames → spatial xₜ + prior state → conv gates → head/aggregation → event",
+      "takeaway": "只有 head + aggregation + threshold 才能形成版本化 task score。"
+    },
+    "build": {
+      "title": "ConvLSTM 建置：sequence split、state policy、head 與 latency 一起驗證",
+      "context": "window/stride、hidden channels、reset/warm-up、sequence isolation 和 downstream head 改任一項都會改變 operating point。",
+      "bubble": "如何避免 temporal leakage 或 stale state？",
+      "cards": [
+        {
+          "title": "sequence contract",
+          "body": "time + frame gaps\nsequence/lot split",
+          "visual": "input"
+        },
+        {
+          "title": "state recipe",
+          "body": "ch./kernel/layers\ncarry/reset/warmup",
+          "visual": "feature"
+        },
+        {
+          "title": "head contract",
+          "body": "head + aggregate\nthreshold + owner",
+          "visual": "contract"
+        },
+        {
+          "title": "temporal gate",
+          "body": "drop / cam change\nstate drift + P95",
+          "visual": "gate"
+        }
+      ],
+      "flow": "isolated sequences → state recipe → head contract → drift/latency gate",
+      "takeaway": "training loss 或 one-step accuracy 不能放大成 production event outcome。"
+    },
+    "failure": "長依賴或 rate change 會遺忘。State carry 可 leakage。Clip overlap 也會 leakage。",
+    "selection": "短中期 window 才適用。鎖 reset、head、truth、P95。",
+    "takeaway": "hidden state 不是 event verdict；head、aggregation 與 action 必須另行版本化。"
+  },
+  {
+    "slug": "frame-difference",
+    "relative_dir": "video-temporal/frame-difference",
+    "model": "Frame Difference",
+    "family": "video",
+    "case_tag": "CASE C · Carrier Event",
+    "family_tag": "Temporal Vision",
+    "identity": {
+      "title": "Frame Difference：|Iₜ − Iₜ₋ₖ| 是候選動作，不是物件辨識",
+      "context": "這是固定 camera 的透明 motion baseline；frame interval、normalization、threshold、morphology 與 event policy 一起定義結果。",
+      "bubble": "亮度閃爍造成的變化，也算 carrier event 嗎？",
+      "cards": [
+        {
+          "title": "frame pair",
+          "body": "Iₜ / Iₜ₋ₖ\ntime + fixed ROI",
+          "visual": "input"
+        },
+        {
+          "title": "change evidence",
+          "body": "absolute diff\npixel magnitude",
+          "visual": "score"
+        },
+        {
+          "title": "candidate region",
+          "body": "mask / morph\ncomponent + time",
+          "visual": "feature"
+        },
+        {
+          "title": "event boundary",
+          "body": "camera/flicker\nreview or HOLD",
+          "visual": "gate"
+        }
+      ],
+      "flow": "frame pair → difference mask → component/event → failure gate",
+      "takeaway": "change component 不是 object class、track ID 或 defect verdict。"
+    },
+    "architecture": {
+      "title": "Frame Difference 架構：兩張版本化 frame 的差值變成 component/event candidate",
+      "context": "宣告 interval 的 Iₜ/Iₜ₋ₖ 經 ROI/registration/normalization 後取絕對差，然後閾值、形態學、components 和 event aggregation。",
+      "bubble": "差值圖如何避免直接變成 production action？",
+      "cards": [
+        {
+          "title": "timestamped pair",
+          "body": "Iₜ + Iₜ₋ₖ\nROI + register",
+          "visual": "input"
+        },
+        {
+          "title": "absolute difference",
+          "body": "photo normalize\nabs diff",
+          "visual": "score"
+        },
+        {
+          "title": "mask + component",
+          "body": "threshold + morph\narea + persist",
+          "visual": "feature"
+        },
+        {
+          "title": "event queue",
+          "body": "aggregate / dedup\nREVIEW / HOLD",
+          "visual": "gate"
+        }
+      ],
+      "flow": "frame pair → absolute difference → mask/components → event queue",
+      "takeaway": "單張 binary mask 或 diff time 都不是 event-level evidence。"
+    },
+    "build": {
+      "title": "Frame Difference 建置：reference、photometry、event rule 與 failure handling 全部可回放",
+      "context": "frame interval、camera/exposure、normalization、threshold、morphology、component persistence、queue 和 reset 都要鎖定。",
+      "bubble": "要用多大的 interval 才看得見目標事件？",
+      "cards": [
+        {
+          "title": "pair policy",
+          "body": "frame interval k\ntime + exposure",
+          "visual": "input"
+        },
+        {
+          "title": "change recipe",
+          "body": "ROI/norm/thresh\ncomponent filter",
+          "visual": "feature"
+        },
+        {
+          "title": "event contract",
+          "body": "morph + persist\nqueue + reset",
+          "visual": "contract"
+        },
+        {
+          "title": "motion gate",
+          "body": "flicker + jitter\nslow-event + P95",
+          "visual": "gate"
+        }
+      ],
+      "flow": "pair policy → change recipe → event contract → failure/P95 gate",
+      "takeaway": "改 k、threshold 或 morphology，就是新的 deployed score。"
+    },
+    "failure": "Flicker、reflection、jitter 可誤報。Slow motion 可漏事件。Dropped frame 也可漏事件。",
+    "selection": "固定 camera/ROI/exposure 才可用。驗 pixels、interval、review、P95。",
+    "takeaway": "difference component 是 event candidate，不是 object class、ID 或 defect verdict。"
+  },
+  {
+    "slug": "lucas-kanade",
+    "relative_dir": "video-temporal/lucas-kanade",
+    "model": "Lucas–Kanade",
+    "family": "video",
+    "case_tag": "CASE C · Carrier Event",
+    "family_tag": "Temporal Vision",
+    "identity": {
+      "title": "Lucas–Kanade：局部解 (u,v) 必須有 texture／residual 證據",
+      "context": "它是 local optical-flow estimator；可使用 sparse points 或 patch grid，但不維持長期 semantic identity。",
+      "bubble": "這個 flow vector 是真的 motion，還是 texture 不足？",
+      "cards": [
+        {
+          "title": "frame-pair input",
+          "body": "timestamps / ROI\ntexture points",
+          "visual": "input"
+        },
+        {
+          "title": "local assumption",
+          "body": "brightness const.\nsmall local motion",
+          "visual": "feature"
+        },
+        {
+          "title": "flow vector",
+          "body": "local solve gives\n(u,v) + residual",
+          "visual": "score"
+        },
+        {
+          "title": "reject boundary",
+          "body": "condition + occl.\nglobal-motion gate",
+          "visual": "gate"
+        }
+      ],
+      "flow": "frame pair + texture → local solve → valid vector → aggregation/action gate",
+      "takeaway": "彩色 flow field 只是視覺化，不是 production evidence。"
+    },
+    "architecture": {
+      "title": "Lucas–Kanade 架構：local gradients 解 normal equation，輸出可信的 (u,v)",
+      "context": "frame pair 先選 feature/patch，計算 Iₓ/Iᵧ/Iₜ，經 local least-squares 與 pyramid 後附上 residual/conditioning/outlier evidence。",
+      "bubble": "哪一個條件決定 vector 應被拒絕？",
+      "cards": [
+        {
+          "title": "frame pair + features",
+          "body": "timestamps / ROI\npoints/patch grid",
+          "visual": "input"
+        },
+        {
+          "title": "local gradients",
+          "body": "Iₓ / Iᵧ / Iₜ\nwindow + pyramid",
+          "visual": "feature"
+        },
+        {
+          "title": "least-squares flow",
+          "body": "normal equation\nlocal (u,v)",
+          "visual": "score"
+        },
+        {
+          "title": "confidence → action",
+          "body": "cond. + residual\nglobal + review",
+          "visual": "gate"
+        }
+      ],
+      "flow": "frame pair → gradients/window → local solve → confidence/global-motion gate",
+      "takeaway": "local flow vector 不等於 physical velocity、class 或 track identity。"
+    },
+    "build": {
+      "title": "Lucas–Kanade 建置：sampling、pyramid、reject policy 與 vector coverage 可比較",
+      "context": "ROI/interval、feature policy、window/pyramid、termination、residual gate、global-motion separation 和 downstream aggregation 都要固定。",
+      "bubble": "target optics 裡有多少 vector 真正可用？",
+      "cards": [
+        {
+          "title": "pair contract",
+          "body": "interval + ROI\nphotometric rule",
+          "visual": "input"
+        },
+        {
+          "title": "solve recipe",
+          "body": "feat/window/pyr.\niters + precision",
+          "visual": "feature"
+        },
+        {
+          "title": "reject contract",
+          "body": "cond. + residual\nFB check + agg.",
+          "visual": "contract"
+        },
+        {
+          "title": "coverage gate",
+          "body": "valid-vector rate\ntexture/cam + P95",
+          "visual": "gate"
+        }
+      ],
+      "flow": "pair contract → solve recipe → reject/aggregate → coverage/P95 gate",
+      "takeaway": "比 RAFT 前，要先共用 frame pair、truth、reject policy 和 event contract。"
+    },
+    "failure": "弱 texture 或大位移會錯解。Brightness/occlusion 會失效。Global motion 也會失效。",
+    "selection": "小位移且 texture 可觀測才用。先驗證 reject、coverage 與 P95。",
+    "takeaway": "彩色 flow field 只是視覺化；可部署的是具殘差與拒絕證據的 local solve。"
+  },
+  {
+    "slug": "raft",
+    "relative_dir": "video-temporal/raft",
+    "model": "RAFT",
+    "family": "video",
+    "case_tag": "CASE C · Carrier Event",
+    "family_tag": "Temporal Vision",
+    "identity": {
+      "title": "RAFT：all-pairs correlation 加 recurrent updates，換來 dense flow 與成本",
+      "context": "它是 learned dense optical flow；checkpoint、resize/padding、correlation、iterations 與 precision 共同定義 accuracy、VRAM 和 P95。",
+      "bubble": "dense flow 真的有下游 owner，還是只是一張漂亮圖？",
+      "cards": [
+        {
+          "title": "frame-pair input",
+          "body": "timestamps / ROI\nresize + padding",
+          "visual": "input"
+        },
+        {
+          "title": "learned matching",
+          "body": "feature + context\nckpt-specific",
+          "visual": "dual"
+        },
+        {
+          "title": "dense field",
+          "body": "all-pairs corr.\nrecurrent refine",
+          "visual": "feature"
+        },
+        {
+          "title": "cost/evidence gate",
+          "body": "coverage + occl.\nVRAM + P95",
+          "visual": "gate"
+        }
+      ],
+      "flow": "frame pair → learned correlation → dense flow → confidence/cost gate",
+      "takeaway": "dense flow 不是 object class、semantic identity 或 release evidence。"
+    },
+    "architecture": {
+      "title": "RAFT 架構：雙 encoder 建 all-pairs correlation，recurrent block 迭代細化 dense flow",
+      "context": "兩 frame 的 feature/context encoder 與 correlation volume 供 update block lookup；宣告 iteration 後 upsample、reject 與 global-motion handling。",
+      "bubble": "為何 iteration 數與 correlation 實作不能省略？",
+      "cards": [
+        {
+          "title": "frame pair",
+          "body": "timestamps / ROI\nresize + padding",
+          "visual": "input"
+        },
+        {
+          "title": "dual encoders",
+          "body": "pair feature enc.\ncontext encoder",
+          "visual": "dual"
+        },
+        {
+          "title": "correlation + update",
+          "body": "all-pairs volume\nlookup iterations",
+          "visual": "feature"
+        },
+        {
+          "title": "dense flow gate",
+          "body": "upsample (u,v)\nconfidence/review",
+          "visual": "gate"
+        }
+      ],
+      "flow": "frame pair → dual encoders → correlation/update iterations → dense-flow review",
+      "takeaway": "correlation size 和 iterations 同時改變 correspondence、VRAM 和 latency。"
+    },
+    "build": {
+      "title": "RAFT 建置：checkpoint、correlation、iterations 與 dense-flow action contract 必須同時鎖定",
+      "context": "輸入 policy、encoder/checkpoint、correlation implementation、iterations、precision、reject/postprocess 和 downstream owner 都屬同一 recipe。",
+      "bubble": "哪個密集 flow recipe 能在 target optics 通過成本與 coverage？",
+      "cards": [
+        {
+          "title": "input lock",
+          "body": "ckpt/color/ROI\nresize + interval",
+          "visual": "input"
+        },
+        {
+          "title": "correlation recipe",
+          "body": "encoder + corr.\niters + precision",
+          "visual": "feature"
+        },
+        {
+          "title": "flow contract",
+          "body": "postproc + reject\naggregate + owner",
+          "visual": "contract"
+        },
+        {
+          "title": "dense-flow gate",
+          "body": "target coverage\nVRAM + occl. + P95",
+          "visual": "gate"
+        }
+      ],
+      "flow": "input lock → correlation recipe → flow/action contract → coverage/VRAM/P95 gate",
+      "takeaway": "不能用 public benchmark 或 color wheel 取代 target-domain endpoint/coverage evidence。"
+    },
+    "failure": "Optics shift 會錯配。Occlusion/reflection 會錯配。Frame gap/cam motion 會失效。",
+    "selection": "需要 dense-flow owner 才考慮。先驗證 target truth、VRAM、P95。",
+    "takeaway": "RAFT 的 correlation 與 iteration 是成本／行為契約，不是語意 class 或 track ID。"
+  },
+  {
+    "slug": "v-jepa",
+    "relative_dir": "video-temporal/v-jepa",
+    "model": "V-JEPA",
+    "family": "video",
+    "case_tag": "CASE C · Carrier Event",
+    "family_tag": "Temporal Vision",
+    "identity": {
+      "title": "V-JEPA：預測 latent target，不是生成 pixels 或 event verdict",
+      "context": "V-JEPA 是 joint-embedding predictive architecture；context encoder/predictor 預測 stop-gradient target latents，後續 task head 才能決策。",
+      "bubble": "latent prediction loss 能直接說明 carrier event 嗎？",
+      "cards": [
+        {
+          "title": "video clips",
+          "body": "timed video pixels\nclip/token cover",
+          "visual": "input"
+        },
+        {
+          "title": "context vs target",
+          "body": "visible context\nmasked targets",
+          "visual": "dual"
+        },
+        {
+          "title": "latent objective",
+          "body": "predict features\nnot pixels",
+          "visual": "feature"
+        },
+        {
+          "title": "task boundary",
+          "body": "task head\nevent truth/review",
+          "visual": "gate"
+        }
+      ],
+      "flow": "video clip → context/target masks → latent prediction → governed task head",
+      "takeaway": "latent similarity 不是 anomaly score、event recall 或 action evidence。"
+    },
+    "architecture": {
+      "title": "V-JEPA 架構：context encoder/predictor 對齊 target-encoder latent，不重建 pixels",
+      "context": "clip tokens 依 context/target multi-block mask 分流；predictor 以 target positions 預測 latent，target encoder 提供 stop-gradient target。",
+      "bubble": "target latent 為何不能被誤畫成 pixel decoder？",
+      "cards": [
+        {
+          "title": "clip + token policy",
+          "body": "timestamped frames\nROI + token policy",
+          "visual": "input"
+        },
+        {
+          "title": "context / target masks",
+          "body": "visible context\ntarget positions",
+          "visual": "dual"
+        },
+        {
+          "title": "latent prediction",
+          "body": "context/predictor\ntarget enc. SG",
+          "visual": "feature"
+        },
+        {
+          "title": "downstream head",
+          "body": "task head\naggregate → event",
+          "visual": "gate"
+        }
+      ],
+      "flow": "clip tokens → context/target split → latent prediction → separate task head",
+      "takeaway": "pretraining objective 和 downstream event score 是不同物件。"
+    },
+    "build": {
+      "title": "V-JEPA 建置：clip/mask、pretraining provenance 與 downstream event head 可共同審計",
+      "context": "clip coverage、mask policy、target-update、checkpoint、head/threshold、sequence isolation 和 token/P95 都要版本化。",
+      "bubble": "目標 micro-event 有沒有被 clip/token policy 看見？",
+      "cards": [
+        {
+          "title": "clip contract",
+          "body": "len/stride/overlap\nsequence/lot split",
+          "visual": "input"
+        },
+        {
+          "title": "pretrain recipe",
+          "body": "mask + target rule\nenc/pred/ckpt",
+          "visual": "dual"
+        },
+        {
+          "title": "head contract",
+          "body": "frozen/FT head\nagg. + thresh.",
+          "visual": "contract"
+        },
+        {
+          "title": "coverage gate",
+          "body": "micro-event cover\ntoken/VRAM + P95",
+          "visual": "gate"
+        }
+      ],
+      "flow": "clip/split contract → latent recipe → task-head contract → coverage/drift/P95 gate",
+      "takeaway": "foundation pretraining scale 不能取代 target-domain event validation。"
+    },
+    "failure": "Mask policy 可漏 micro-event。Drift 或無 head 會失效。",
+    "selection": "有 data/compute/head 才考慮。驗 clip coverage、micro-event、P95。",
+    "takeaway": "latent prediction loss 不是 anomaly score、event recall 或 release evidence。"
+  },
+  {
+    "slug": "videomae",
+    "relative_dir": "video-temporal/videomae",
+    "model": "VideoMAE",
+    "family": "video",
+    "case_tag": "CASE C · Carrier Event",
+    "family_tag": "Temporal Vision",
+    "identity": {
+      "title": "VideoMAE：masked reconstruction 是 pretraining loss，不是事件分數",
+      "context": "VideoMAE 將 clip 做 tubelet/patch tokenization、high-ratio masking、transformer encoding 與 lightweight decoding；下游 head 才有任務責任。",
+      "bubble": "重建得好，就代表 carrier event 已被看見嗎？",
+      "cards": [
+        {
+          "title": "sampled clips",
+          "body": "timestamps / ROI\ntubelet cover",
+          "visual": "input"
+        },
+        {
+          "title": "high-ratio mask",
+          "body": "visible / masked\nmask policy",
+          "visual": "dual"
+        },
+        {
+          "title": "reconstruct target",
+          "body": "encoder + decoder\npretrain loss",
+          "visual": "feature"
+        },
+        {
+          "title": "event boundary",
+          "body": "FT task head\ntruth + review",
+          "visual": "gate"
+        }
+      ],
+      "flow": "sampled clip → masking/reconstruction → learned representation → task-head gate",
+      "takeaway": "masked reconstruction objective 不是 deployed anomaly/event score。"
+    },
+    "architecture": {
+      "title": "VideoMAE 架構：visible tubelets 經 transformer，decoder 重建 masked targets",
+      "context": "timestamped clip 經 tubelet/patch tokenization 與 declared high-ratio mask；encoder 的 representation 需經獨立 task head 才能產生事件候選。",
+      "bubble": "masked target reconstruction 和 event head 在哪裡分開？",
+      "cards": [
+        {
+          "title": "clip → tubelets",
+          "body": "timestamped frames\nclip/patch/token",
+          "visual": "input"
+        },
+        {
+          "title": "high-ratio mask",
+          "body": "visible / masked\nshape/ratio/seed",
+          "visual": "dual"
+        },
+        {
+          "title": "encoder + decoder",
+          "body": "token transformer\nreconstruct mask",
+          "visual": "feature"
+        },
+        {
+          "title": "downstream head",
+          "body": "frozen/FT head\naggregate → event",
+          "visual": "gate"
+        }
+      ],
+      "flow": "clip/tubelets → mask → encoder/decoder reconstruction → separate task head",
+      "takeaway": "未被 sampling 或 tubelet coverage 看見的短事件，無法由 reconstruction 補回。"
+    },
+    "build": {
+      "title": "VideoMAE 建置：clip coverage、mask/checkpoint、head 與 buffer-to-action P95 共用一份契約",
+      "context": "clip length/stride/overlap、token/mask policy、checkpoint、fine-tune head、sequence isolation、sliding window 和 hardware 必須一起記錄。",
+      "bubble": "短事件和 adjacent clips 的風險，是否被測進 recipe？",
+      "cards": [
+        {
+          "title": "clip contract",
+          "body": "stride + overlap\nsequence/lot split",
+          "visual": "input"
+        },
+        {
+          "title": "pretrain recipe",
+          "body": "tubelet/mask\nckpt + tokens",
+          "visual": "feature"
+        },
+        {
+          "title": "event contract",
+          "body": "head + window\nthreshold + owner",
+          "visual": "contract"
+        },
+        {
+          "title": "coverage gate",
+          "body": "short-event miss\nVRAM/drift + P95",
+          "visual": "gate"
+        }
+      ],
+      "flow": "clip/split contract → mask/checkpoint recipe → event contract → coverage/P95 gate",
+      "takeaway": "encoder throughput 或 pretraining loss 不是 capture-to-event production latency。"
+    },
+    "failure": "Coarse sampling 可漏短事件。Clip leakage/ckpt shift 會失效。",
+    "selection": "有 video + task head 才用。驗 coverage、buffer、P95。",
+    "takeaway": "重建目標只驗證 self-supervised training，不等於 anomaly、alert 或 release。"
+  }
+]

@@ -1,0 +1,1990 @@
+{
+  "topic_count": 44,
+  "expected_asset_count": 176,
+  "generated_count": 176,
+  "missing": [],
+  "invalid_dimensions": [],
+  "topics": [
+    {
+      "slug": "ad-stfpm",
+      "assets": [
+        {
+          "path": "roadmap-model-selection\\anomaly-detection\\ad-stfpm\\images\\final\\STFPM-01-positioning_v02-ppt-master-style.png",
+          "exists": true,
+          "size": [
+            1672,
+            941
+          ],
+          "mode": "RGB",
+          "valid_16_9": true
+        },
+        {
+          "path": "roadmap-model-selection\\anomaly-detection\\ad-stfpm\\images\\final\\STFPM-02-architecture_v02-ppt-master-style.png",
+          "exists": true,
+          "size": [
+            1672,
+            941
+          ],
+          "mode": "RGB",
+          "valid_16_9": true
+        },
+        {
+          "path": "roadmap-model-selection\\anomaly-detection\\ad-stfpm\\images\\final\\STFPM-03-build-inference_v02-ppt-master-style.png",
+          "exists": true,
+          "size": [
+            1672,
+            941
+          ],
+          "mode": "RGB",
+          "valid_16_9": true
+        },
+        {
+          "path": "roadmap-model-selection\\anomaly-detection\\ad-stfpm\\images\\final\\STFPM-04-selection-boundary_v02-ppt-comparison-style.png",
+          "exists": true,
+          "size": [
+            1672,
+            941
+          ],
+          "mode": "RGB",
+          "valid_16_9": true
+        }
+      ]
+    },
+    {
+      "slug": "ad-ae",
+      "assets": [
+        {
+          "path": "roadmap-model-selection\\anomaly-detection\\ad-ae\\images\\final\\AE-01-positioning_v02-ppt-master-style.png",
+          "exists": true,
+          "size": [
+            1672,
+            941
+          ],
+          "mode": "RGB",
+          "valid_16_9": true
+        },
+        {
+          "path": "roadmap-model-selection\\anomaly-detection\\ad-ae\\images\\final\\AE-02-architecture_v02-ppt-master-style.png",
+          "exists": true,
+          "size": [
+            1672,
+            941
+          ],
+          "mode": "RGB",
+          "valid_16_9": true
+        },
+        {
+          "path": "roadmap-model-selection\\anomaly-detection\\ad-ae\\images\\final\\AE-03-build-inference_v02-ppt-master-style.png",
+          "exists": true,
+          "size": [
+            1672,
+            941
+          ],
+          "mode": "RGB",
+          "valid_16_9": true
+        },
+        {
+          "path": "roadmap-model-selection\\anomaly-detection\\ad-ae\\images\\final\\AE-04-selection-boundary_v02-ppt-comparison-style.png",
+          "exists": true,
+          "size": [
+            1672,
+            941
+          ],
+          "mode": "RGB",
+          "valid_16_9": true
+        }
+      ]
+    },
+    {
+      "slug": "ad-draem",
+      "assets": [
+        {
+          "path": "roadmap-model-selection\\anomaly-detection\\ad-draem\\images\\final\\DRAEM-01-positioning_v02-ppt-master-style.png",
+          "exists": true,
+          "size": [
+            1672,
+            941
+          ],
+          "mode": "RGB",
+          "valid_16_9": true
+        },
+        {
+          "path": "roadmap-model-selection\\anomaly-detection\\ad-draem\\images\\final\\DRAEM-02-architecture_v02-ppt-master-style.png",
+          "exists": true,
+          "size": [
+            1672,
+            941
+          ],
+          "mode": "RGB",
+          "valid_16_9": true
+        },
+        {
+          "path": "roadmap-model-selection\\anomaly-detection\\ad-draem\\images\\final\\DRAEM-03-build-inference_v02-ppt-master-style.png",
+          "exists": true,
+          "size": [
+            1672,
+            941
+          ],
+          "mode": "RGB",
+          "valid_16_9": true
+        },
+        {
+          "path": "roadmap-model-selection\\anomaly-detection\\ad-draem\\images\\final\\DRAEM-04-selection-boundary_v02-ppt-comparison-style.png",
+          "exists": true,
+          "size": [
+            1672,
+            941
+          ],
+          "mode": "RGB",
+          "valid_16_9": true
+        }
+      ]
+    },
+    {
+      "slug": "ad-efficientad",
+      "assets": [
+        {
+          "path": "roadmap-model-selection\\anomaly-detection\\ad-efficientad\\images\\final\\EFFICIENTAD-01-positioning_v02-ppt-master-style.png",
+          "exists": true,
+          "size": [
+            1672,
+            941
+          ],
+          "mode": "RGB",
+          "valid_16_9": true
+        },
+        {
+          "path": "roadmap-model-selection\\anomaly-detection\\ad-efficientad\\images\\final\\EFFICIENTAD-02-architecture_v02-ppt-master-style.png",
+          "exists": true,
+          "size": [
+            1672,
+            941
+          ],
+          "mode": "RGB",
+          "valid_16_9": true
+        },
+        {
+          "path": "roadmap-model-selection\\anomaly-detection\\ad-efficientad\\images\\final\\EFFICIENTAD-03-build-inference_v02-ppt-master-style.png",
+          "exists": true,
+          "size": [
+            1672,
+            941
+          ],
+          "mode": "RGB",
+          "valid_16_9": true
+        },
+        {
+          "path": "roadmap-model-selection\\anomaly-detection\\ad-efficientad\\images\\final\\EFFICIENTAD-04-selection-boundary_v02-ppt-comparison-style.png",
+          "exists": true,
+          "size": [
+            1672,
+            941
+          ],
+          "mode": "RGB",
+          "valid_16_9": true
+        }
+      ]
+    },
+    {
+      "slug": "ad-invad",
+      "assets": [
+        {
+          "path": "roadmap-model-selection\\anomaly-detection\\ad-invad\\images\\final\\INVAD-01-positioning_v02-ppt-master-style.png",
+          "exists": true,
+          "size": [
+            1672,
+            941
+          ],
+          "mode": "RGB",
+          "valid_16_9": true
+        },
+        {
+          "path": "roadmap-model-selection\\anomaly-detection\\ad-invad\\images\\final\\INVAD-02-architecture_v02-ppt-master-style.png",
+          "exists": true,
+          "size": [
+            1672,
+            941
+          ],
+          "mode": "RGB",
+          "valid_16_9": true
+        },
+        {
+          "path": "roadmap-model-selection\\anomaly-detection\\ad-invad\\images\\final\\INVAD-03-build-inference_v02-ppt-master-style.png",
+          "exists": true,
+          "size": [
+            1672,
+            941
+          ],
+          "mode": "RGB",
+          "valid_16_9": true
+        },
+        {
+          "path": "roadmap-model-selection\\anomaly-detection\\ad-invad\\images\\final\\INVAD-04-selection-boundary_v02-ppt-comparison-style.png",
+          "exists": true,
+          "size": [
+            1672,
+            941
+          ],
+          "mode": "RGB",
+          "valid_16_9": true
+        }
+      ]
+    },
+    {
+      "slug": "ad-ddad",
+      "assets": [
+        {
+          "path": "roadmap-model-selection\\anomaly-detection\\ad-ddad\\images\\final\\DDAD-01-positioning_v02-ppt-master-style.png",
+          "exists": true,
+          "size": [
+            1672,
+            941
+          ],
+          "mode": "RGB",
+          "valid_16_9": true
+        },
+        {
+          "path": "roadmap-model-selection\\anomaly-detection\\ad-ddad\\images\\final\\DDAD-02-architecture_v02-ppt-master-style.png",
+          "exists": true,
+          "size": [
+            1672,
+            941
+          ],
+          "mode": "RGB",
+          "valid_16_9": true
+        },
+        {
+          "path": "roadmap-model-selection\\anomaly-detection\\ad-ddad\\images\\final\\DDAD-03-build-inference_v02-ppt-master-style.png",
+          "exists": true,
+          "size": [
+            1672,
+            941
+          ],
+          "mode": "RGB",
+          "valid_16_9": true
+        },
+        {
+          "path": "roadmap-model-selection\\anomaly-detection\\ad-ddad\\images\\final\\DDAD-04-selection-boundary_v02-ppt-comparison-style.png",
+          "exists": true,
+          "size": [
+            1672,
+            941
+          ],
+          "mode": "RGB",
+          "valid_16_9": true
+        }
+      ]
+    },
+    {
+      "slug": "ad-diffad",
+      "assets": [
+        {
+          "path": "roadmap-model-selection\\anomaly-detection\\ad-diffad\\images\\final\\DIFFAD-01-positioning_v02-ppt-master-style.png",
+          "exists": true,
+          "size": [
+            1672,
+            941
+          ],
+          "mode": "RGB",
+          "valid_16_9": true
+        },
+        {
+          "path": "roadmap-model-selection\\anomaly-detection\\ad-diffad\\images\\final\\DIFFAD-02-architecture_v02-ppt-master-style.png",
+          "exists": true,
+          "size": [
+            1672,
+            941
+          ],
+          "mode": "RGB",
+          "valid_16_9": true
+        },
+        {
+          "path": "roadmap-model-selection\\anomaly-detection\\ad-diffad\\images\\final\\DIFFAD-03-build-inference_v02-ppt-master-style.png",
+          "exists": true,
+          "size": [
+            1672,
+            941
+          ],
+          "mode": "RGB",
+          "valid_16_9": true
+        },
+        {
+          "path": "roadmap-model-selection\\anomaly-detection\\ad-diffad\\images\\final\\DIFFAD-04-selection-boundary_v02-ppt-comparison-style.png",
+          "exists": true,
+          "size": [
+            1672,
+            941
+          ],
+          "mode": "RGB",
+          "valid_16_9": true
+        }
+      ]
+    },
+    {
+      "slug": "ad-dinomaly",
+      "assets": [
+        {
+          "path": "roadmap-model-selection\\anomaly-detection\\ad-dinomaly\\images\\final\\DINOMALY-01-positioning_v02-ppt-master-style.png",
+          "exists": true,
+          "size": [
+            1672,
+            941
+          ],
+          "mode": "RGB",
+          "valid_16_9": true
+        },
+        {
+          "path": "roadmap-model-selection\\anomaly-detection\\ad-dinomaly\\images\\final\\DINOMALY-02-architecture_v02-ppt-master-style.png",
+          "exists": true,
+          "size": [
+            1672,
+            941
+          ],
+          "mode": "RGB",
+          "valid_16_9": true
+        },
+        {
+          "path": "roadmap-model-selection\\anomaly-detection\\ad-dinomaly\\images\\final\\DINOMALY-03-build-inference_v02-ppt-master-style.png",
+          "exists": true,
+          "size": [
+            1672,
+            941
+          ],
+          "mode": "RGB",
+          "valid_16_9": true
+        },
+        {
+          "path": "roadmap-model-selection\\anomaly-detection\\ad-dinomaly\\images\\final\\DINOMALY-04-selection-boundary_v02-ppt-comparison-style.png",
+          "exists": true,
+          "size": [
+            1672,
+            941
+          ],
+          "mode": "RGB",
+          "valid_16_9": true
+        }
+      ]
+    },
+    {
+      "slug": "ad-subspacead",
+      "assets": [
+        {
+          "path": "roadmap-model-selection\\anomaly-detection\\ad-subspacead\\images\\final\\SUBSPACEAD-01-positioning_v02-ppt-master-style.png",
+          "exists": true,
+          "size": [
+            1672,
+            941
+          ],
+          "mode": "RGB",
+          "valid_16_9": true
+        },
+        {
+          "path": "roadmap-model-selection\\anomaly-detection\\ad-subspacead\\images\\final\\SUBSPACEAD-02-architecture_v02-ppt-master-style.png",
+          "exists": true,
+          "size": [
+            1672,
+            941
+          ],
+          "mode": "RGB",
+          "valid_16_9": true
+        },
+        {
+          "path": "roadmap-model-selection\\anomaly-detection\\ad-subspacead\\images\\final\\SUBSPACEAD-03-build-inference_v02-ppt-master-style.png",
+          "exists": true,
+          "size": [
+            1672,
+            941
+          ],
+          "mode": "RGB",
+          "valid_16_9": true
+        },
+        {
+          "path": "roadmap-model-selection\\anomaly-detection\\ad-subspacead\\images\\final\\SUBSPACEAD-04-selection-boundary_v02-ppt-comparison-style.png",
+          "exists": true,
+          "size": [
+            1672,
+            941
+          ],
+          "mode": "RGB",
+          "valid_16_9": true
+        }
+      ]
+    },
+    {
+      "slug": "ad-uniad",
+      "assets": [
+        {
+          "path": "roadmap-model-selection\\anomaly-detection\\ad-uniad\\images\\final\\UNIAD-01-positioning_v02-ppt-master-style.png",
+          "exists": true,
+          "size": [
+            1672,
+            941
+          ],
+          "mode": "RGB",
+          "valid_16_9": true
+        },
+        {
+          "path": "roadmap-model-selection\\anomaly-detection\\ad-uniad\\images\\final\\UNIAD-02-architecture_v02-ppt-master-style.png",
+          "exists": true,
+          "size": [
+            1672,
+            941
+          ],
+          "mode": "RGB",
+          "valid_16_9": true
+        },
+        {
+          "path": "roadmap-model-selection\\anomaly-detection\\ad-uniad\\images\\final\\UNIAD-03-build-inference_v02-ppt-master-style.png",
+          "exists": true,
+          "size": [
+            1672,
+            941
+          ],
+          "mode": "RGB",
+          "valid_16_9": true
+        },
+        {
+          "path": "roadmap-model-selection\\anomaly-detection\\ad-uniad\\images\\final\\UNIAD-04-selection-boundary_v02-ppt-comparison-style.png",
+          "exists": true,
+          "size": [
+            1672,
+            941
+          ],
+          "mode": "RGB",
+          "valid_16_9": true
+        }
+      ]
+    },
+    {
+      "slug": "ad-anomalyclip",
+      "assets": [
+        {
+          "path": "roadmap-model-selection\\anomaly-detection\\ad-anomalyclip\\images\\final\\ANOCLIP-01-positioning_v02-ppt-master-style.png",
+          "exists": true,
+          "size": [
+            1672,
+            941
+          ],
+          "mode": "RGB",
+          "valid_16_9": true
+        },
+        {
+          "path": "roadmap-model-selection\\anomaly-detection\\ad-anomalyclip\\images\\final\\ANOCLIP-02-architecture_v02-ppt-master-style.png",
+          "exists": true,
+          "size": [
+            1672,
+            941
+          ],
+          "mode": "RGB",
+          "valid_16_9": true
+        },
+        {
+          "path": "roadmap-model-selection\\anomaly-detection\\ad-anomalyclip\\images\\final\\ANOCLIP-03-build-inference_v02-ppt-master-style.png",
+          "exists": true,
+          "size": [
+            1672,
+            941
+          ],
+          "mode": "RGB",
+          "valid_16_9": true
+        },
+        {
+          "path": "roadmap-model-selection\\anomaly-detection\\ad-anomalyclip\\images\\final\\ANOCLIP-04-selection-boundary_v02-ppt-comparison-style.png",
+          "exists": true,
+          "size": [
+            1672,
+            941
+          ],
+          "mode": "RGB",
+          "valid_16_9": true
+        }
+      ]
+    },
+    {
+      "slug": "ad-anomalygpt",
+      "assets": [
+        {
+          "path": "roadmap-model-selection\\anomaly-detection\\ad-anomalygpt\\images\\final\\ANOGPT-01-positioning_v02-ppt-master-style.png",
+          "exists": true,
+          "size": [
+            1672,
+            941
+          ],
+          "mode": "RGB",
+          "valid_16_9": true
+        },
+        {
+          "path": "roadmap-model-selection\\anomaly-detection\\ad-anomalygpt\\images\\final\\ANOGPT-02-architecture_v02-ppt-master-style.png",
+          "exists": true,
+          "size": [
+            1672,
+            941
+          ],
+          "mode": "RGB",
+          "valid_16_9": true
+        },
+        {
+          "path": "roadmap-model-selection\\anomaly-detection\\ad-anomalygpt\\images\\final\\ANOGPT-03-build-inference_v02-ppt-master-style.png",
+          "exists": true,
+          "size": [
+            1672,
+            941
+          ],
+          "mode": "RGB",
+          "valid_16_9": true
+        },
+        {
+          "path": "roadmap-model-selection\\anomaly-detection\\ad-anomalygpt\\images\\final\\ANOGPT-04-selection-boundary_v02-ppt-comparison-style.png",
+          "exists": true,
+          "size": [
+            1672,
+            941
+          ],
+          "mode": "RGB",
+          "valid_16_9": true
+        }
+      ]
+    },
+    {
+      "slug": "ad-winclip",
+      "assets": [
+        {
+          "path": "roadmap-model-selection\\anomaly-detection\\ad-winclip\\images\\final\\WINCLIP-01-positioning_v02-ppt-master-style.png",
+          "exists": true,
+          "size": [
+            1672,
+            941
+          ],
+          "mode": "RGB",
+          "valid_16_9": true
+        },
+        {
+          "path": "roadmap-model-selection\\anomaly-detection\\ad-winclip\\images\\final\\WINCLIP-02-architecture_v02-ppt-master-style.png",
+          "exists": true,
+          "size": [
+            1672,
+            941
+          ],
+          "mode": "RGB",
+          "valid_16_9": true
+        },
+        {
+          "path": "roadmap-model-selection\\anomaly-detection\\ad-winclip\\images\\final\\WINCLIP-03-build-inference_v02-ppt-master-style.png",
+          "exists": true,
+          "size": [
+            1672,
+            941
+          ],
+          "mode": "RGB",
+          "valid_16_9": true
+        },
+        {
+          "path": "roadmap-model-selection\\anomaly-detection\\ad-winclip\\images\\final\\WINCLIP-04-selection-boundary_v02-ppt-comparison-style.png",
+          "exists": true,
+          "size": [
+            1672,
+            941
+          ],
+          "mode": "RGB",
+          "valid_16_9": true
+        }
+      ]
+    },
+    {
+      "slug": "controlnet",
+      "assets": [
+        {
+          "path": "roadmap-model-selection\\diffusion-restoration\\controlnet\\images\\final\\CONTROLNET-01-positioning_v02-ppt-master-style.png",
+          "exists": true,
+          "size": [
+            1672,
+            941
+          ],
+          "mode": "RGB",
+          "valid_16_9": true
+        },
+        {
+          "path": "roadmap-model-selection\\diffusion-restoration\\controlnet\\images\\final\\CONTROLNET-02-architecture_v02-ppt-master-style.png",
+          "exists": true,
+          "size": [
+            1672,
+            941
+          ],
+          "mode": "RGB",
+          "valid_16_9": true
+        },
+        {
+          "path": "roadmap-model-selection\\diffusion-restoration\\controlnet\\images\\final\\CONTROLNET-03-build-inference_v02-ppt-master-style.png",
+          "exists": true,
+          "size": [
+            1672,
+            941
+          ],
+          "mode": "RGB",
+          "valid_16_9": true
+        },
+        {
+          "path": "roadmap-model-selection\\diffusion-restoration\\controlnet\\images\\final\\CONTROLNET-04-selection-boundary_v02-ppt-comparison-style.png",
+          "exists": true,
+          "size": [
+            1672,
+            941
+          ],
+          "mode": "RGB",
+          "valid_16_9": true
+        }
+      ]
+    },
+    {
+      "slug": "det-dino-detector",
+      "assets": [
+        {
+          "path": "roadmap-model-selection\\detector\\det-dino-detector\\images\\final\\DINO-DET-01-positioning_v02-ppt-master-style.png",
+          "exists": true,
+          "size": [
+            1672,
+            941
+          ],
+          "mode": "RGB",
+          "valid_16_9": true
+        },
+        {
+          "path": "roadmap-model-selection\\detector\\det-dino-detector\\images\\final\\DINO-DET-02-architecture_v02-ppt-master-style.png",
+          "exists": true,
+          "size": [
+            1672,
+            941
+          ],
+          "mode": "RGB",
+          "valid_16_9": true
+        },
+        {
+          "path": "roadmap-model-selection\\detector\\det-dino-detector\\images\\final\\DINO-DET-03-build-inference_v02-ppt-master-style.png",
+          "exists": true,
+          "size": [
+            1672,
+            941
+          ],
+          "mode": "RGB",
+          "valid_16_9": true
+        },
+        {
+          "path": "roadmap-model-selection\\detector\\det-dino-detector\\images\\final\\DINO-DET-04-selection-boundary_v02-ppt-comparison-style.png",
+          "exists": true,
+          "size": [
+            1672,
+            941
+          ],
+          "mode": "RGB",
+          "valid_16_9": true
+        }
+      ],
+      "takeaway": "類別固定且能準備框標註時，可比較 DINO；以現場漏檢、定位與完整成本決定是否採用。"
+    },
+    {
+      "slug": "det-rtdetr",
+      "assets": [
+        {
+          "path": "roadmap-model-selection\\detector\\det-rtdetr\\images\\final\\RTDETR-01-positioning_v02-ppt-master-style.png",
+          "exists": true,
+          "size": [
+            1672,
+            941
+          ],
+          "mode": "RGB",
+          "valid_16_9": true
+        },
+        {
+          "path": "roadmap-model-selection\\detector\\det-rtdetr\\images\\final\\RTDETR-02-architecture_v02-ppt-master-style.png",
+          "exists": true,
+          "size": [
+            1672,
+            941
+          ],
+          "mode": "RGB",
+          "valid_16_9": true
+        },
+        {
+          "path": "roadmap-model-selection\\detector\\det-rtdetr\\images\\final\\RTDETR-03-build-inference_v02-ppt-master-style.png",
+          "exists": true,
+          "size": [
+            1672,
+            941
+          ],
+          "mode": "RGB",
+          "valid_16_9": true
+        },
+        {
+          "path": "roadmap-model-selection\\detector\\det-rtdetr\\images\\final\\RTDETR-04-selection-boundary_v02-ppt-comparison-style.png",
+          "exists": true,
+          "size": [
+            1672,
+            941
+          ],
+          "mode": "RGB",
+          "valid_16_9": true
+        }
+      ]
+    },
+    {
+      "slug": "det-yolo-dense",
+      "assets": [
+        {
+          "path": "roadmap-model-selection\\detector\\det-yolo-dense\\images\\final\\YOLO-01-positioning_v02-ppt-master-style.png",
+          "exists": true,
+          "size": [
+            1672,
+            941
+          ],
+          "mode": "RGB",
+          "valid_16_9": true
+        },
+        {
+          "path": "roadmap-model-selection\\detector\\det-yolo-dense\\images\\final\\YOLO-02-architecture_v02-ppt-master-style.png",
+          "exists": true,
+          "size": [
+            1672,
+            941
+          ],
+          "mode": "RGB",
+          "valid_16_9": true
+        },
+        {
+          "path": "roadmap-model-selection\\detector\\det-yolo-dense\\images\\final\\YOLO-03-build-inference_v02-ppt-master-style.png",
+          "exists": true,
+          "size": [
+            1672,
+            941
+          ],
+          "mode": "RGB",
+          "valid_16_9": true
+        },
+        {
+          "path": "roadmap-model-selection\\detector\\det-yolo-dense\\images\\final\\YOLO-04-selection-boundary_v02-ppt-comparison-style.png",
+          "exists": true,
+          "size": [
+            1672,
+            941
+          ],
+          "mode": "RGB",
+          "valid_16_9": true
+        }
+      ]
+    },
+    {
+      "slug": "background-subtraction",
+      "assets": [
+        {
+          "path": "roadmap-model-selection\\video-temporal\\background-subtraction\\images\\final\\BGSUB-01-positioning_v02-ppt-master-style.png",
+          "exists": true,
+          "size": [
+            1672,
+            941
+          ],
+          "mode": "RGB",
+          "valid_16_9": true
+        },
+        {
+          "path": "roadmap-model-selection\\video-temporal\\background-subtraction\\images\\final\\BGSUB-02-architecture_v02-ppt-master-style.png",
+          "exists": true,
+          "size": [
+            1672,
+            941
+          ],
+          "mode": "RGB",
+          "valid_16_9": true
+        },
+        {
+          "path": "roadmap-model-selection\\video-temporal\\background-subtraction\\images\\final\\BGSUB-03-build-inference_v02-ppt-master-style.png",
+          "exists": true,
+          "size": [
+            1672,
+            941
+          ],
+          "mode": "RGB",
+          "valid_16_9": true
+        },
+        {
+          "path": "roadmap-model-selection\\video-temporal\\background-subtraction\\images\\final\\BGSUB-04-selection-boundary_v02-ppt-comparison-style.png",
+          "exists": true,
+          "size": [
+            1672,
+            941
+          ],
+          "mode": "RGB",
+          "valid_16_9": true
+        }
+      ]
+    },
+    {
+      "slug": "bytetrack",
+      "assets": [
+        {
+          "path": "roadmap-model-selection\\video-temporal\\bytetrack\\images\\final\\BYTETRACK-01-positioning_v02-ppt-master-style.png",
+          "exists": true,
+          "size": [
+            1672,
+            941
+          ],
+          "mode": "RGB",
+          "valid_16_9": true
+        },
+        {
+          "path": "roadmap-model-selection\\video-temporal\\bytetrack\\images\\final\\BYTETRACK-02-architecture_v02-ppt-master-style.png",
+          "exists": true,
+          "size": [
+            1672,
+            941
+          ],
+          "mode": "RGB",
+          "valid_16_9": true
+        },
+        {
+          "path": "roadmap-model-selection\\video-temporal\\bytetrack\\images\\final\\BYTETRACK-03-build-inference_v02-ppt-master-style.png",
+          "exists": true,
+          "size": [
+            1672,
+            941
+          ],
+          "mode": "RGB",
+          "valid_16_9": true
+        },
+        {
+          "path": "roadmap-model-selection\\video-temporal\\bytetrack\\images\\final\\BYTETRACK-04-selection-boundary_v02-ppt-comparison-style.png",
+          "exists": true,
+          "size": [
+            1672,
+            941
+          ],
+          "mode": "RGB",
+          "valid_16_9": true
+        }
+      ]
+    },
+    {
+      "slug": "convlstm",
+      "assets": [
+        {
+          "path": "roadmap-model-selection\\video-temporal\\convlstm\\images\\final\\CONVLSTM-01-positioning_v02-ppt-master-style.png",
+          "exists": true,
+          "size": [
+            1672,
+            941
+          ],
+          "mode": "RGB",
+          "valid_16_9": true
+        },
+        {
+          "path": "roadmap-model-selection\\video-temporal\\convlstm\\images\\final\\CONVLSTM-02-architecture_v02-ppt-master-style.png",
+          "exists": true,
+          "size": [
+            1672,
+            941
+          ],
+          "mode": "RGB",
+          "valid_16_9": true
+        },
+        {
+          "path": "roadmap-model-selection\\video-temporal\\convlstm\\images\\final\\CONVLSTM-03-build-inference_v02-ppt-master-style.png",
+          "exists": true,
+          "size": [
+            1672,
+            941
+          ],
+          "mode": "RGB",
+          "valid_16_9": true
+        },
+        {
+          "path": "roadmap-model-selection\\video-temporal\\convlstm\\images\\final\\CONVLSTM-04-selection-boundary_v02-ppt-comparison-style.png",
+          "exists": true,
+          "size": [
+            1672,
+            941
+          ],
+          "mode": "RGB",
+          "valid_16_9": true
+        }
+      ]
+    },
+    {
+      "slug": "frame-difference",
+      "assets": [
+        {
+          "path": "roadmap-model-selection\\video-temporal\\frame-difference\\images\\final\\FRAMEDIFF-01-positioning_v02-ppt-master-style.png",
+          "exists": true,
+          "size": [
+            1672,
+            941
+          ],
+          "mode": "RGB",
+          "valid_16_9": true
+        },
+        {
+          "path": "roadmap-model-selection\\video-temporal\\frame-difference\\images\\final\\FRAMEDIFF-02-architecture_v02-ppt-master-style.png",
+          "exists": true,
+          "size": [
+            1672,
+            941
+          ],
+          "mode": "RGB",
+          "valid_16_9": true
+        },
+        {
+          "path": "roadmap-model-selection\\video-temporal\\frame-difference\\images\\final\\FRAMEDIFF-03-build-inference_v02-ppt-master-style.png",
+          "exists": true,
+          "size": [
+            1672,
+            941
+          ],
+          "mode": "RGB",
+          "valid_16_9": true
+        },
+        {
+          "path": "roadmap-model-selection\\video-temporal\\frame-difference\\images\\final\\FRAMEDIFF-04-selection-boundary_v02-ppt-comparison-style.png",
+          "exists": true,
+          "size": [
+            1672,
+            941
+          ],
+          "mode": "RGB",
+          "valid_16_9": true
+        }
+      ]
+    },
+    {
+      "slug": "lucas-kanade",
+      "assets": [
+        {
+          "path": "roadmap-model-selection\\video-temporal\\lucas-kanade\\images\\final\\LK-01-positioning_v02-ppt-master-style.png",
+          "exists": true,
+          "size": [
+            1672,
+            941
+          ],
+          "mode": "RGB",
+          "valid_16_9": true
+        },
+        {
+          "path": "roadmap-model-selection\\video-temporal\\lucas-kanade\\images\\final\\LK-02-architecture_v02-ppt-master-style.png",
+          "exists": true,
+          "size": [
+            1672,
+            941
+          ],
+          "mode": "RGB",
+          "valid_16_9": true
+        },
+        {
+          "path": "roadmap-model-selection\\video-temporal\\lucas-kanade\\images\\final\\LK-03-build-inference_v02-ppt-master-style.png",
+          "exists": true,
+          "size": [
+            1672,
+            941
+          ],
+          "mode": "RGB",
+          "valid_16_9": true
+        },
+        {
+          "path": "roadmap-model-selection\\video-temporal\\lucas-kanade\\images\\final\\LK-04-selection-boundary_v02-ppt-comparison-style.png",
+          "exists": true,
+          "size": [
+            1672,
+            941
+          ],
+          "mode": "RGB",
+          "valid_16_9": true
+        }
+      ]
+    },
+    {
+      "slug": "raft",
+      "assets": [
+        {
+          "path": "roadmap-model-selection\\video-temporal\\raft\\images\\final\\RAFT-01-positioning_v02-ppt-master-style.png",
+          "exists": true,
+          "size": [
+            1672,
+            941
+          ],
+          "mode": "RGB",
+          "valid_16_9": true
+        },
+        {
+          "path": "roadmap-model-selection\\video-temporal\\raft\\images\\final\\RAFT-02-architecture_v02-ppt-master-style.png",
+          "exists": true,
+          "size": [
+            1672,
+            941
+          ],
+          "mode": "RGB",
+          "valid_16_9": true
+        },
+        {
+          "path": "roadmap-model-selection\\video-temporal\\raft\\images\\final\\RAFT-03-build-inference_v02-ppt-master-style.png",
+          "exists": true,
+          "size": [
+            1672,
+            941
+          ],
+          "mode": "RGB",
+          "valid_16_9": true
+        },
+        {
+          "path": "roadmap-model-selection\\video-temporal\\raft\\images\\final\\RAFT-04-selection-boundary_v02-ppt-comparison-style.png",
+          "exists": true,
+          "size": [
+            1672,
+            941
+          ],
+          "mode": "RGB",
+          "valid_16_9": true
+        }
+      ]
+    },
+    {
+      "slug": "v-jepa",
+      "assets": [
+        {
+          "path": "roadmap-model-selection\\video-temporal\\v-jepa\\images\\final\\VJEPA-01-positioning_v02-ppt-master-style.png",
+          "exists": true,
+          "size": [
+            1672,
+            941
+          ],
+          "mode": "RGB",
+          "valid_16_9": true
+        },
+        {
+          "path": "roadmap-model-selection\\video-temporal\\v-jepa\\images\\final\\VJEPA-02-architecture_v02-ppt-master-style.png",
+          "exists": true,
+          "size": [
+            1672,
+            941
+          ],
+          "mode": "RGB",
+          "valid_16_9": true
+        },
+        {
+          "path": "roadmap-model-selection\\video-temporal\\v-jepa\\images\\final\\VJEPA-03-build-inference_v02-ppt-master-style.png",
+          "exists": true,
+          "size": [
+            1672,
+            941
+          ],
+          "mode": "RGB",
+          "valid_16_9": true
+        },
+        {
+          "path": "roadmap-model-selection\\video-temporal\\v-jepa\\images\\final\\VJEPA-04-selection-boundary_v02-ppt-comparison-style.png",
+          "exists": true,
+          "size": [
+            1672,
+            941
+          ],
+          "mode": "RGB",
+          "valid_16_9": true
+        }
+      ]
+    },
+    {
+      "slug": "videomae",
+      "assets": [
+        {
+          "path": "roadmap-model-selection\\video-temporal\\videomae\\images\\final\\VIDEOMAE-01-positioning_v02-ppt-master-style.png",
+          "exists": true,
+          "size": [
+            1672,
+            941
+          ],
+          "mode": "RGB",
+          "valid_16_9": true
+        },
+        {
+          "path": "roadmap-model-selection\\video-temporal\\videomae\\images\\final\\VIDEOMAE-02-architecture_v02-ppt-master-style.png",
+          "exists": true,
+          "size": [
+            1672,
+            941
+          ],
+          "mode": "RGB",
+          "valid_16_9": true
+        },
+        {
+          "path": "roadmap-model-selection\\video-temporal\\videomae\\images\\final\\VIDEOMAE-03-build-inference_v02-ppt-master-style.png",
+          "exists": true,
+          "size": [
+            1672,
+            941
+          ],
+          "mode": "RGB",
+          "valid_16_9": true
+        },
+        {
+          "path": "roadmap-model-selection\\video-temporal\\videomae\\images\\final\\VIDEOMAE-04-selection-boundary_v02-ppt-comparison-style.png",
+          "exists": true,
+          "size": [
+            1672,
+            941
+          ],
+          "mode": "RGB",
+          "valid_16_9": true
+        }
+      ]
+    },
+    {
+      "slug": "clip",
+      "assets": [
+        {
+          "path": "roadmap-model-selection\\foundation-vlm-open-world\\clip\\images\\final\\CLIP-01-positioning_v02-ppt-master-style.png",
+          "exists": true,
+          "size": [
+            1672,
+            941
+          ],
+          "mode": "RGB",
+          "valid_16_9": true
+        },
+        {
+          "path": "roadmap-model-selection\\foundation-vlm-open-world\\clip\\images\\final\\CLIP-02-architecture_v02-ppt-master-style.png",
+          "exists": true,
+          "size": [
+            1672,
+            941
+          ],
+          "mode": "RGB",
+          "valid_16_9": true
+        },
+        {
+          "path": "roadmap-model-selection\\foundation-vlm-open-world\\clip\\images\\final\\CLIP-03-build-inference_v02-ppt-master-style.png",
+          "exists": true,
+          "size": [
+            1672,
+            941
+          ],
+          "mode": "RGB",
+          "valid_16_9": true
+        },
+        {
+          "path": "roadmap-model-selection\\foundation-vlm-open-world\\clip\\images\\final\\CLIP-04-selection-boundary_v02-ppt-comparison-style.png",
+          "exists": true,
+          "size": [
+            1672,
+            941
+          ],
+          "mode": "RGB",
+          "valid_16_9": true
+        }
+      ]
+    },
+    {
+      "slug": "dinov2",
+      "assets": [
+        {
+          "path": "roadmap-model-selection\\foundation-vlm-open-world\\dinov2\\images\\final\\DINOV2-01-positioning_v02-ppt-master-style.png",
+          "exists": true,
+          "size": [
+            1672,
+            941
+          ],
+          "mode": "RGB",
+          "valid_16_9": true
+        },
+        {
+          "path": "roadmap-model-selection\\foundation-vlm-open-world\\dinov2\\images\\final\\DINOV2-02-architecture_v02-ppt-master-style.png",
+          "exists": true,
+          "size": [
+            1672,
+            941
+          ],
+          "mode": "RGB",
+          "valid_16_9": true
+        },
+        {
+          "path": "roadmap-model-selection\\foundation-vlm-open-world\\dinov2\\images\\final\\DINOV2-03-build-inference_v02-ppt-master-style.png",
+          "exists": true,
+          "size": [
+            1672,
+            941
+          ],
+          "mode": "RGB",
+          "valid_16_9": true
+        },
+        {
+          "path": "roadmap-model-selection\\foundation-vlm-open-world\\dinov2\\images\\final\\DINOV2-04-selection-boundary_v02-ppt-comparison-style.png",
+          "exists": true,
+          "size": [
+            1672,
+            941
+          ],
+          "mode": "RGB",
+          "valid_16_9": true
+        }
+      ]
+    },
+    {
+      "slug": "dinov3",
+      "assets": [
+        {
+          "path": "roadmap-model-selection\\foundation-vlm-open-world\\dinov3\\images\\final\\DINOV3-01-positioning_v02-ppt-master-style.png",
+          "exists": true,
+          "size": [
+            1672,
+            941
+          ],
+          "mode": "RGB",
+          "valid_16_9": true
+        },
+        {
+          "path": "roadmap-model-selection\\foundation-vlm-open-world\\dinov3\\images\\final\\DINOV3-02-architecture_v02-ppt-master-style.png",
+          "exists": true,
+          "size": [
+            1672,
+            941
+          ],
+          "mode": "RGB",
+          "valid_16_9": true
+        },
+        {
+          "path": "roadmap-model-selection\\foundation-vlm-open-world\\dinov3\\images\\final\\DINOV3-03-build-inference_v02-ppt-master-style.png",
+          "exists": true,
+          "size": [
+            1672,
+            941
+          ],
+          "mode": "RGB",
+          "valid_16_9": true
+        },
+        {
+          "path": "roadmap-model-selection\\foundation-vlm-open-world\\dinov3\\images\\final\\DINOV3-04-selection-boundary_v02-ppt-comparison-style.png",
+          "exists": true,
+          "size": [
+            1672,
+            941
+          ],
+          "mode": "RGB",
+          "valid_16_9": true
+        }
+      ]
+    },
+    {
+      "slug": "gemini-vision",
+      "assets": [
+        {
+          "path": "roadmap-model-selection\\foundation-vlm-open-world\\gemini-vision\\images\\final\\GEMINI-01-positioning_v02-ppt-master-style.png",
+          "exists": true,
+          "size": [
+            1672,
+            941
+          ],
+          "mode": "RGB",
+          "valid_16_9": true
+        },
+        {
+          "path": "roadmap-model-selection\\foundation-vlm-open-world\\gemini-vision\\images\\final\\GEMINI-02-architecture_v02-ppt-master-style.png",
+          "exists": true,
+          "size": [
+            1672,
+            941
+          ],
+          "mode": "RGB",
+          "valid_16_9": true
+        },
+        {
+          "path": "roadmap-model-selection\\foundation-vlm-open-world\\gemini-vision\\images\\final\\GEMINI-03-build-inference_v02-ppt-master-style.png",
+          "exists": true,
+          "size": [
+            1672,
+            941
+          ],
+          "mode": "RGB",
+          "valid_16_9": true
+        },
+        {
+          "path": "roadmap-model-selection\\foundation-vlm-open-world\\gemini-vision\\images\\final\\GEMINI-04-selection-boundary_v02-ppt-comparison-style.png",
+          "exists": true,
+          "size": [
+            1672,
+            941
+          ],
+          "mode": "RGB",
+          "valid_16_9": true
+        }
+      ]
+    },
+    {
+      "slug": "llava",
+      "assets": [
+        {
+          "path": "roadmap-model-selection\\foundation-vlm-open-world\\llava\\images\\final\\LLAVA-01-positioning_v02-ppt-master-style.png",
+          "exists": true,
+          "size": [
+            1672,
+            941
+          ],
+          "mode": "RGB",
+          "valid_16_9": true
+        },
+        {
+          "path": "roadmap-model-selection\\foundation-vlm-open-world\\llava\\images\\final\\LLAVA-02-architecture_v02-ppt-master-style.png",
+          "exists": true,
+          "size": [
+            1672,
+            941
+          ],
+          "mode": "RGB",
+          "valid_16_9": true
+        },
+        {
+          "path": "roadmap-model-selection\\foundation-vlm-open-world\\llava\\images\\final\\LLAVA-03-build-inference_v02-ppt-master-style.png",
+          "exists": true,
+          "size": [
+            1672,
+            941
+          ],
+          "mode": "RGB",
+          "valid_16_9": true
+        },
+        {
+          "path": "roadmap-model-selection\\foundation-vlm-open-world\\llava\\images\\final\\LLAVA-04-selection-boundary_v02-ppt-comparison-style.png",
+          "exists": true,
+          "size": [
+            1672,
+            941
+          ],
+          "mode": "RGB",
+          "valid_16_9": true
+        }
+      ]
+    },
+    {
+      "slug": "qwen-vl",
+      "assets": [
+        {
+          "path": "roadmap-model-selection\\foundation-vlm-open-world\\qwen-vl\\images\\final\\QWEN-01-positioning_v02-ppt-master-style.png",
+          "exists": true,
+          "size": [
+            1672,
+            941
+          ],
+          "mode": "RGB",
+          "valid_16_9": true
+        },
+        {
+          "path": "roadmap-model-selection\\foundation-vlm-open-world\\qwen-vl\\images\\final\\QWEN-02-architecture_v02-ppt-master-style.png",
+          "exists": true,
+          "size": [
+            1672,
+            941
+          ],
+          "mode": "RGB",
+          "valid_16_9": true
+        },
+        {
+          "path": "roadmap-model-selection\\foundation-vlm-open-world\\qwen-vl\\images\\final\\QWEN-03-build-inference_v02-ppt-master-style.png",
+          "exists": true,
+          "size": [
+            1672,
+            941
+          ],
+          "mode": "RGB",
+          "valid_16_9": true
+        },
+        {
+          "path": "roadmap-model-selection\\foundation-vlm-open-world\\qwen-vl\\images\\final\\QWEN-04-selection-boundary_v02-ppt-comparison-style.png",
+          "exists": true,
+          "size": [
+            1672,
+            941
+          ],
+          "mode": "RGB",
+          "valid_16_9": true
+        }
+      ]
+    },
+    {
+      "slug": "siglip",
+      "assets": [
+        {
+          "path": "roadmap-model-selection\\foundation-vlm-open-world\\siglip\\images\\final\\SIGLIP-01-positioning_v02-ppt-master-style.png",
+          "exists": true,
+          "size": [
+            1672,
+            941
+          ],
+          "mode": "RGB",
+          "valid_16_9": true
+        },
+        {
+          "path": "roadmap-model-selection\\foundation-vlm-open-world\\siglip\\images\\final\\SIGLIP-02-architecture_v02-ppt-master-style.png",
+          "exists": true,
+          "size": [
+            1672,
+            941
+          ],
+          "mode": "RGB",
+          "valid_16_9": true
+        },
+        {
+          "path": "roadmap-model-selection\\foundation-vlm-open-world\\siglip\\images\\final\\SIGLIP-03-build-inference_v02-ppt-master-style.png",
+          "exists": true,
+          "size": [
+            1672,
+            941
+          ],
+          "mode": "RGB",
+          "valid_16_9": true
+        },
+        {
+          "path": "roadmap-model-selection\\foundation-vlm-open-world\\siglip\\images\\final\\SIGLIP-04-selection-boundary_v02-ppt-comparison-style.png",
+          "exists": true,
+          "size": [
+            1672,
+            941
+          ],
+          "mode": "RGB",
+          "valid_16_9": true
+        }
+      ]
+    },
+    {
+      "slug": "charuco",
+      "assets": [
+        {
+          "path": "roadmap-model-selection\\geometry-alignment-measurement\\charuco\\images\\final\\CHARUCO-01-positioning_v02-ppt-master-style.png",
+          "exists": true,
+          "size": [
+            1672,
+            941
+          ],
+          "mode": "RGB",
+          "valid_16_9": true
+        },
+        {
+          "path": "roadmap-model-selection\\geometry-alignment-measurement\\charuco\\images\\final\\CHARUCO-02-architecture_v02-ppt-master-style.png",
+          "exists": true,
+          "size": [
+            1672,
+            941
+          ],
+          "mode": "RGB",
+          "valid_16_9": true
+        },
+        {
+          "path": "roadmap-model-selection\\geometry-alignment-measurement\\charuco\\images\\final\\CHARUCO-03-build-inference_v02-ppt-master-style.png",
+          "exists": true,
+          "size": [
+            1672,
+            941
+          ],
+          "mode": "RGB",
+          "valid_16_9": true
+        },
+        {
+          "path": "roadmap-model-selection\\geometry-alignment-measurement\\charuco\\images\\final\\CHARUCO-04-selection-boundary_v02-ppt-comparison-style.png",
+          "exists": true,
+          "size": [
+            1672,
+            941
+          ],
+          "mode": "RGB",
+          "valid_16_9": true
+        }
+      ]
+    },
+    {
+      "slug": "ecc",
+      "assets": [
+        {
+          "path": "roadmap-model-selection\\geometry-alignment-measurement\\ecc\\images\\final\\ECC-01-positioning_v02-ppt-master-style.png",
+          "exists": true,
+          "size": [
+            1672,
+            941
+          ],
+          "mode": "RGB",
+          "valid_16_9": true
+        },
+        {
+          "path": "roadmap-model-selection\\geometry-alignment-measurement\\ecc\\images\\final\\ECC-02-architecture_v02-ppt-master-style.png",
+          "exists": true,
+          "size": [
+            1672,
+            941
+          ],
+          "mode": "RGB",
+          "valid_16_9": true
+        },
+        {
+          "path": "roadmap-model-selection\\geometry-alignment-measurement\\ecc\\images\\final\\ECC-03-build-inference_v02-ppt-master-style.png",
+          "exists": true,
+          "size": [
+            1672,
+            941
+          ],
+          "mode": "RGB",
+          "valid_16_9": true
+        },
+        {
+          "path": "roadmap-model-selection\\geometry-alignment-measurement\\ecc\\images\\final\\ECC-04-selection-boundary_v02-ppt-comparison-style.png",
+          "exists": true,
+          "size": [
+            1672,
+            941
+          ],
+          "mode": "RGB",
+          "valid_16_9": true
+        }
+      ]
+    },
+    {
+      "slug": "lightglue",
+      "assets": [
+        {
+          "path": "roadmap-model-selection\\geometry-alignment-measurement\\lightglue\\images\\final\\LIGHTGLUE-01-positioning_v02-ppt-master-style.png",
+          "exists": true,
+          "size": [
+            1672,
+            941
+          ],
+          "mode": "RGB",
+          "valid_16_9": true
+        },
+        {
+          "path": "roadmap-model-selection\\geometry-alignment-measurement\\lightglue\\images\\final\\LIGHTGLUE-02-architecture_v02-ppt-master-style.png",
+          "exists": true,
+          "size": [
+            1672,
+            941
+          ],
+          "mode": "RGB",
+          "valid_16_9": true
+        },
+        {
+          "path": "roadmap-model-selection\\geometry-alignment-measurement\\lightglue\\images\\final\\LIGHTGLUE-03-build-inference_v02-ppt-master-style.png",
+          "exists": true,
+          "size": [
+            1672,
+            941
+          ],
+          "mode": "RGB",
+          "valid_16_9": true
+        },
+        {
+          "path": "roadmap-model-selection\\geometry-alignment-measurement\\lightglue\\images\\final\\LIGHTGLUE-04-selection-boundary_v02-ppt-comparison-style.png",
+          "exists": true,
+          "size": [
+            1672,
+            941
+          ],
+          "mode": "RGB",
+          "valid_16_9": true
+        }
+      ]
+    },
+    {
+      "slug": "sift",
+      "assets": [
+        {
+          "path": "roadmap-model-selection\\geometry-alignment-measurement\\sift\\images\\final\\SIFT-01-positioning_v02-ppt-master-style.png",
+          "exists": true,
+          "size": [
+            1672,
+            941
+          ],
+          "mode": "RGB",
+          "valid_16_9": true
+        },
+        {
+          "path": "roadmap-model-selection\\geometry-alignment-measurement\\sift\\images\\final\\SIFT-02-architecture_v02-ppt-master-style.png",
+          "exists": true,
+          "size": [
+            1672,
+            941
+          ],
+          "mode": "RGB",
+          "valid_16_9": true
+        },
+        {
+          "path": "roadmap-model-selection\\geometry-alignment-measurement\\sift\\images\\final\\SIFT-03-build-inference_v02-ppt-master-style.png",
+          "exists": true,
+          "size": [
+            1672,
+            941
+          ],
+          "mode": "RGB",
+          "valid_16_9": true
+        },
+        {
+          "path": "roadmap-model-selection\\geometry-alignment-measurement\\sift\\images\\final\\SIFT-04-selection-boundary_v02-ppt-comparison-style.png",
+          "exists": true,
+          "size": [
+            1672,
+            941
+          ],
+          "mode": "RGB",
+          "valid_16_9": true
+        }
+      ]
+    },
+    {
+      "slug": "convnext",
+      "assets": [
+        {
+          "path": "roadmap-model-selection\\known-target-classification\\convnext\\images\\final\\CONVNEXT-01-positioning_v02-ppt-master-style.png",
+          "exists": true,
+          "size": [
+            1672,
+            941
+          ],
+          "mode": "RGB",
+          "valid_16_9": true
+        },
+        {
+          "path": "roadmap-model-selection\\known-target-classification\\convnext\\images\\final\\CONVNEXT-02-architecture_v02-ppt-master-style.png",
+          "exists": true,
+          "size": [
+            1672,
+            941
+          ],
+          "mode": "RGB",
+          "valid_16_9": true
+        },
+        {
+          "path": "roadmap-model-selection\\known-target-classification\\convnext\\images\\final\\CONVNEXT-03-build-inference_v02-ppt-master-style.png",
+          "exists": true,
+          "size": [
+            1672,
+            941
+          ],
+          "mode": "RGB",
+          "valid_16_9": true
+        },
+        {
+          "path": "roadmap-model-selection\\known-target-classification\\convnext\\images\\final\\CONVNEXT-04-selection-boundary_v02-ppt-comparison-style.png",
+          "exists": true,
+          "size": [
+            1672,
+            941
+          ],
+          "mode": "RGB",
+          "valid_16_9": true
+        }
+      ]
+    },
+    {
+      "slug": "keypoint-r-cnn",
+      "assets": [
+        {
+          "path": "roadmap-model-selection\\known-target-classification\\keypoint-r-cnn\\images\\final\\KPRCNN-01-positioning_v02-ppt-master-style.png",
+          "exists": true,
+          "size": [
+            1672,
+            941
+          ],
+          "mode": "RGB",
+          "valid_16_9": true
+        },
+        {
+          "path": "roadmap-model-selection\\known-target-classification\\keypoint-r-cnn\\images\\final\\KPRCNN-02-architecture_v02-ppt-master-style.png",
+          "exists": true,
+          "size": [
+            1672,
+            941
+          ],
+          "mode": "RGB",
+          "valid_16_9": true
+        },
+        {
+          "path": "roadmap-model-selection\\known-target-classification\\keypoint-r-cnn\\images\\final\\KPRCNN-03-build-inference_v02-ppt-master-style.png",
+          "exists": true,
+          "size": [
+            1672,
+            941
+          ],
+          "mode": "RGB",
+          "valid_16_9": true
+        },
+        {
+          "path": "roadmap-model-selection\\known-target-classification\\keypoint-r-cnn\\images\\final\\KPRCNN-04-selection-boundary_v02-ppt-comparison-style.png",
+          "exists": true,
+          "size": [
+            1672,
+            941
+          ],
+          "mode": "RGB",
+          "valid_16_9": true
+        }
+      ]
+    },
+    {
+      "slug": "pose",
+      "assets": [
+        {
+          "path": "roadmap-model-selection\\known-target-classification\\pose\\images\\final\\POSE-01-positioning_v02-ppt-master-style.png",
+          "exists": true,
+          "size": [
+            1672,
+            941
+          ],
+          "mode": "RGB",
+          "valid_16_9": true
+        },
+        {
+          "path": "roadmap-model-selection\\known-target-classification\\pose\\images\\final\\POSE-02-architecture_v02-ppt-master-style.png",
+          "exists": true,
+          "size": [
+            1672,
+            941
+          ],
+          "mode": "RGB",
+          "valid_16_9": true
+        },
+        {
+          "path": "roadmap-model-selection\\known-target-classification\\pose\\images\\final\\POSE-03-build-inference_v02-ppt-master-style.png",
+          "exists": true,
+          "size": [
+            1672,
+            941
+          ],
+          "mode": "RGB",
+          "valid_16_9": true
+        },
+        {
+          "path": "roadmap-model-selection\\known-target-classification\\pose\\images\\final\\POSE-04-selection-boundary_v02-ppt-comparison-style.png",
+          "exists": true,
+          "size": [
+            1672,
+            941
+          ],
+          "mode": "RGB",
+          "valid_16_9": true
+        }
+      ]
+    },
+    {
+      "slug": "resnet",
+      "assets": [
+        {
+          "path": "roadmap-model-selection\\known-target-classification\\resnet\\images\\final\\RESNET-01-positioning_v02-ppt-master-style.png",
+          "exists": true,
+          "size": [
+            1672,
+            941
+          ],
+          "mode": "RGB",
+          "valid_16_9": true
+        },
+        {
+          "path": "roadmap-model-selection\\known-target-classification\\resnet\\images\\final\\RESNET-02-architecture_v02-ppt-master-style.png",
+          "exists": true,
+          "size": [
+            1672,
+            941
+          ],
+          "mode": "RGB",
+          "valid_16_9": true
+        },
+        {
+          "path": "roadmap-model-selection\\known-target-classification\\resnet\\images\\final\\RESNET-03-build-inference_v02-ppt-master-style.png",
+          "exists": true,
+          "size": [
+            1672,
+            941
+          ],
+          "mode": "RGB",
+          "valid_16_9": true
+        },
+        {
+          "path": "roadmap-model-selection\\known-target-classification\\resnet\\images\\final\\RESNET-04-selection-boundary_v02-ppt-comparison-style.png",
+          "exists": true,
+          "size": [
+            1672,
+            941
+          ],
+          "mode": "RGB",
+          "valid_16_9": true
+        }
+      ]
+    },
+    {
+      "slug": "segformer",
+      "assets": [
+        {
+          "path": "roadmap-model-selection\\known-target-classification\\segformer\\images\\final\\SEGFORMER-01-positioning_v02-ppt-master-style.png",
+          "exists": true,
+          "size": [
+            1672,
+            941
+          ],
+          "mode": "RGB",
+          "valid_16_9": true
+        },
+        {
+          "path": "roadmap-model-selection\\known-target-classification\\segformer\\images\\final\\SEGFORMER-02-architecture_v02-ppt-master-style.png",
+          "exists": true,
+          "size": [
+            1672,
+            941
+          ],
+          "mode": "RGB",
+          "valid_16_9": true
+        },
+        {
+          "path": "roadmap-model-selection\\known-target-classification\\segformer\\images\\final\\SEGFORMER-03-build-inference_v02-ppt-master-style.png",
+          "exists": true,
+          "size": [
+            1672,
+            941
+          ],
+          "mode": "RGB",
+          "valid_16_9": true
+        },
+        {
+          "path": "roadmap-model-selection\\known-target-classification\\segformer\\images\\final\\SEGFORMER-04-selection-boundary_v02-ppt-comparison-style.png",
+          "exists": true,
+          "size": [
+            1672,
+            941
+          ],
+          "mode": "RGB",
+          "valid_16_9": true
+        }
+      ]
+    },
+    {
+      "slug": "u-net",
+      "assets": [
+        {
+          "path": "roadmap-model-selection\\known-target-classification\\u-net\\images\\final\\UNET-01-positioning_v02-ppt-master-style.png",
+          "exists": true,
+          "size": [
+            1672,
+            941
+          ],
+          "mode": "RGB",
+          "valid_16_9": true
+        },
+        {
+          "path": "roadmap-model-selection\\known-target-classification\\u-net\\images\\final\\UNET-02-architecture_v02-ppt-master-style.png",
+          "exists": true,
+          "size": [
+            1672,
+            941
+          ],
+          "mode": "RGB",
+          "valid_16_9": true
+        },
+        {
+          "path": "roadmap-model-selection\\known-target-classification\\u-net\\images\\final\\UNET-03-build-inference_v02-ppt-master-style.png",
+          "exists": true,
+          "size": [
+            1672,
+            941
+          ],
+          "mode": "RGB",
+          "valid_16_9": true
+        },
+        {
+          "path": "roadmap-model-selection\\known-target-classification\\u-net\\images\\final\\UNET-04-selection-boundary_v02-ppt-comparison-style.png",
+          "exists": true,
+          "size": [
+            1672,
+            941
+          ],
+          "mode": "RGB",
+          "valid_16_9": true
+        }
+      ]
+    },
+    {
+      "slug": "vit-classifier",
+      "assets": [
+        {
+          "path": "roadmap-model-selection\\known-target-classification\\vit-classifier\\images\\final\\VIT-01-positioning_v02-ppt-master-style.png",
+          "exists": true,
+          "size": [
+            1672,
+            941
+          ],
+          "mode": "RGB",
+          "valid_16_9": true
+        },
+        {
+          "path": "roadmap-model-selection\\known-target-classification\\vit-classifier\\images\\final\\VIT-02-architecture_v02-ppt-master-style.png",
+          "exists": true,
+          "size": [
+            1672,
+            941
+          ],
+          "mode": "RGB",
+          "valid_16_9": true
+        },
+        {
+          "path": "roadmap-model-selection\\known-target-classification\\vit-classifier\\images\\final\\VIT-03-build-inference_v02-ppt-master-style.png",
+          "exists": true,
+          "size": [
+            1672,
+            941
+          ],
+          "mode": "RGB",
+          "valid_16_9": true
+        },
+        {
+          "path": "roadmap-model-selection\\known-target-classification\\vit-classifier\\images\\final\\VIT-04-selection-boundary_v02-ppt-comparison-style.png",
+          "exists": true,
+          "size": [
+            1672,
+            941
+          ],
+          "mode": "RGB",
+          "valid_16_9": true
+        }
+      ]
+    },
+    {
+      "slug": "yolo-seg",
+      "assets": [
+        {
+          "path": "roadmap-model-selection\\known-target-classification\\yolo-seg\\images\\final\\YOLOSEG-01-positioning_v02-ppt-master-style.png",
+          "exists": true,
+          "size": [
+            1672,
+            941
+          ],
+          "mode": "RGB",
+          "valid_16_9": true
+        },
+        {
+          "path": "roadmap-model-selection\\known-target-classification\\yolo-seg\\images\\final\\YOLOSEG-02-architecture_v02-ppt-master-style.png",
+          "exists": true,
+          "size": [
+            1672,
+            941
+          ],
+          "mode": "RGB",
+          "valid_16_9": true
+        },
+        {
+          "path": "roadmap-model-selection\\known-target-classification\\yolo-seg\\images\\final\\YOLOSEG-03-build-inference_v02-ppt-master-style.png",
+          "exists": true,
+          "size": [
+            1672,
+            941
+          ],
+          "mode": "RGB",
+          "valid_16_9": true
+        },
+        {
+          "path": "roadmap-model-selection\\known-target-classification\\yolo-seg\\images\\final\\YOLOSEG-04-selection-boundary_v02-ppt-comparison-style.png",
+          "exists": true,
+          "size": [
+            1672,
+            941
+          ],
+          "mode": "RGB",
+          "valid_16_9": true
+        }
+      ]
+    }
+  ]
+}

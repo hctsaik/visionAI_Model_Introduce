@@ -1,0 +1,8 @@
+test_missing_meaningful_stage_rejected (test_engineering_mobile_pages.EngineeringMobileTests.test_missing_meaningful_stage_rejected) ... ok
+test_missing_page_wrong_dimensions_and_unsafe_path_rejected (test_engineering_mobile_pages.EngineeringMobileTests.test_missing_page_wrong_dimensions_and_unsafe_path_rejected) ... ok
+test_mobile_source_survives_and_manifest_owns_desktop (test_engineering_mobile_pages.EngineeringMobileTests.test_mobile_source_survives_and_manifest_owns_desktop) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.053s
+
+OK

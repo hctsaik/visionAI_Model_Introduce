@@ -1,0 +1,570 @@
+{
+  "model": "ControlNet",
+  "badge": "擴散模型的空間控制方法",
+  "title": "ControlNet：讓生成影像跟著空間條件走",
+  "scenario": {
+    "title": "文字可以說『兩孔金屬板』，但無法穩定指定兩孔位置；希望用輪廓圖約束布局。",
+    "body": "文字可以說『兩孔金屬板』，但無法穩定指定兩孔位置；希望用輪廓圖約束布局。"
+  },
+  "promise": {
+    "title": "交付結果與接手工作",
+    "body": "受條件引導的新影像；比對布局與細節後用於展示或受控資料增強。"
+  },
+  "mental_model": {
+    "title": "擴散模型的空間控制方法",
+    "body": "ControlNet增加可訓練的控制分支，把邊緣、深度或姿態等空間條件轉成訊號，注入基礎擴散模型的去噪過程。原論文訓練時固定基礎模型權重，以零初始化連接逐步學會利用條件；使用時載入對應條件類型的權重，讓生成布局跟著條件走。",
+    "limit": "輪廓只包含外框與孔，沒描述細裂紋。相同輪廓可能生成有裂紋或沒有裂紋的外觀；條件滿足與原細節忠實是不同問題。本圖是可能情況示意，不是兩次實測輸出。"
+  },
+  "micro_example": {
+    "title": "商品圖要換材質，同時保留指定區域",
+    "setup": "需要把整張板改成另一種材質，兩孔布局要相近；另一項需求只想移除中央污漬。",
+    "prediction": "兩個需求分別選ControlNet、Inpainting，或組合？",
+    "reveal": "整體材質變化可用輪廓ControlNet約束布局；只改污漬可用Inpainting指定區域。若局部生成也要遵守結構，可測支援兩者的管線。各自核對布局偏差、遮罩外變化與生成成本；不能因輪廓吻合就認定微裂紋被保留。"
+  },
+  "beginner_path": {
+    "title": "從核心做法、反例到方法選擇",
+    "intro": "文字可以說『兩孔金屬板』，但無法穩定指定兩孔位置；希望用輪廓圖約束布局。 三張圖依序看做法、失敗與取捨；AI生成教學示意，非模型實測。",
+    "visuals": [
+      {
+        "id": "wi026-controlnet-c1",
+        "title": "ControlNet：把輪廓條件送進生成過程",
+        "prompt": "文字可以說『兩孔金屬板』，但無法穩定指定兩孔位置；希望用輪廓圖約束布局。",
+        "caption": "ControlNet增加可訓練的控制分支，把邊緣、深度或姿態等空間條件轉成訊號，注入基礎擴散模型的去噪過程。原論文訓練時固定基礎模型權重，以零初始化連接逐步學會利用條件；使用時載入對應條件類型的權重，讓生成布局跟著條件走。",
+        "image": "_course_content/generated-concepts/controlnet/wi026-controlnet-c1-r02-desktop.png",
+        "alt": "ControlNet：把輪廓條件送進生成過程。ControlNet增加可訓練的控制分支，把邊緣、深度或姿態等空間條件轉成訊號，注入基礎擴散模型的去噪過程。原論文訓練時固定基礎模型權重，以零初始化連接逐步學會利用條件；使用時載入對應條件類型的權重，讓生成布局跟著條件走。 AI生成教學示意，非模型實測。",
+        "callouts": [
+          {
+            "title": "條件的角色",
+            "body": "本圖用外框與兩孔的輪廓。它限制『放哪裡』，文字及生成先驗補出材質外觀；輪廓不是從生成結果再偵測出的品質答案。"
+          },
+          {
+            "title": "準備與訓練",
+            "body": "可先用已訓練的邊緣控制模型；若要新增條件類型或適配產業資料，需準備條件圖與對應影像並訓練控制分支。基礎模型固定不代表ControlNet本身完全免訓練。"
+          },
+          {
+            "title": "交給誰",
+            "body": "受條件引導的新影像；比對布局與細節後用於展示或受控資料增強。"
+          }
+        ],
+        "reading_views": [
+          {
+            "title": "ControlNet：把輪廓條件送進生成過程",
+            "image": "_course_content/generated-concepts/controlnet/wi026-controlnet-c1-r02-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/controlnet/wi026-controlnet-c1-r01-mobile.png",
+            "alt": "ControlNet：把輪廓條件送進生成過程。ControlNet增加可訓練的控制分支，把邊緣、深度或姿態等空間條件轉成訊號，注入基礎擴散模型的去噪過程。原論文訓練時固定基礎模型權重，以零初始化連接逐步學會利用條件；使用時載入對應條件類型的權重，讓生成布局跟著條件走。 AI生成教學示意，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              724,
+              2172
+            ],
+            "mobile_display_mode": "full-mobile",
+            "mobile_intrinsic_width": 724,
+            "mobile_intrinsic_height": 2172,
+            "desktop_intrinsic_width": 1672,
+            "desktop_intrinsic_height": 941
+          }
+        ],
+        "core_ideas": true
+      },
+      {
+        "id": "wi026-controlnet-d2",
+        "title": "輪廓相同，細小裂紋仍可能不同",
+        "prompt": "觀察同位置的變化：這個結果能支持什麼用途？",
+        "caption": "輪廓只包含外框與孔，沒描述細裂紋。相同輪廓可能生成有裂紋或沒有裂紋的外觀；條件滿足與原細節忠實是不同問題。本圖是可能情況示意，不是兩次實測輸出。",
+        "image": "_course_content/generated-concepts/controlnet/wi026-controlnet-d2-r01-desktop.png",
+        "alt": "輪廓相同，細小裂紋仍可能不同。輪廓只包含外框與孔，沒描述細裂紋。相同輪廓可能生成有裂紋或沒有裂紋的外觀；條件滿足與原細節忠實是不同問題。本圖是可能情況示意，不是兩次實測輸出。 AI生成教學示意，非模型實測。",
+        "callouts": [
+          {
+            "title": "看哪裡",
+            "body": "輪廓只包含外框與孔，沒描述細裂紋。相同輪廓可能生成有裂紋或沒有裂紋的外觀；條件滿足與原細節忠實是不同問題。本圖是可能情況示意，不是兩次實測輸出。"
+          },
+          {
+            "title": "接著怎麼做",
+            "body": "布局任務先核對條件；要保留微小缺陷則補相應資訊，或回到原始影像核對。"
+          }
+        ],
+        "reading_views": [
+          {
+            "title": "輪廓相同，細小裂紋仍可能不同",
+            "image": "_course_content/generated-concepts/controlnet/wi026-controlnet-d2-r01-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/controlnet/wi026-controlnet-d2-r01-mobile.png",
+            "alt": "輪廓相同，細小裂紋仍可能不同。輪廓只包含外框與孔，沒描述細裂紋。相同輪廓可能生成有裂紋或沒有裂紋的外觀；條件滿足與原細節忠實是不同問題。本圖是可能情況示意，不是兩次實測輸出。 AI生成教學示意，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              724,
+              2172
+            ],
+            "mobile_display_mode": "full-mobile",
+            "mobile_intrinsic_width": 724,
+            "mobile_intrinsic_height": 2172,
+            "desktop_intrinsic_width": 1672,
+            "desktop_intrinsic_height": 941
+          }
+        ],
+        "core_ideas": false
+      },
+      {
+        "id": "wi026-editing-d3",
+        "title": "控制布局，還是只改一塊？",
+        "prompt": "固定需求與資料，哪種準備及處理成本較合適？",
+        "caption": "要控制整體布局，考慮ControlNet；要指定局部重畫，考慮Inpainting。前者是控制機制，後者是任務，支援的管線可以搭配兩者。要學真實缺陷外觀再放入正常品，可另外比較DefectFill等少樣本生成方法。",
+        "image": "_course_content/generated-concepts/controlnet/wi026-editing-d3-r02-desktop.png",
+        "alt": "控制布局，還是只改一塊？。要控制整體布局，考慮ControlNet；要指定局部重畫，考慮Inpainting。前者是控制機制，後者是任務，支援的管線可以搭配兩者。要學真實缺陷外觀再放入正常品，可另外比較DefectFill等少樣本生成方法。 AI生成教學示意，非模型實測。",
+        "callouts": [
+          {
+            "title": "如何選",
+            "body": "要控制整體布局，考慮ControlNet；要指定局部重畫，考慮Inpainting。前者是控制機制，後者是任務，支援的管線可以搭配兩者。要學真實缺陷外觀再放入正常品，可另外比較DefectFill等少樣本生成方法。"
+          },
+          {
+            "title": "換產品與完整成本",
+            "body": "只有正常圖也能抽輪廓做布局探索，卻不足以證明生成缺陷真實。換產品先查輪廓、條件抽取與權重適用性；比較前處理、生成、人工核對時間。兩者主要交付影像，不直接交付真實缺陷輪廓或尺寸。"
+          }
+        ],
+        "reading_views": [
+          {
+            "title": "控制布局，還是只改一塊？",
+            "image": "_course_content/generated-concepts/controlnet/wi026-editing-d3-r02-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/controlnet/wi026-editing-d3-r02-mobile.png",
+            "alt": "控制布局，還是只改一塊？。要控制整體布局，考慮ControlNet；要指定局部重畫，考慮Inpainting。前者是控制機制，後者是任務，支援的管線可以搭配兩者。要學真實缺陷外觀再放入正常品，可另外比較DefectFill等少樣本生成方法。 AI生成教學示意，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              726,
+              2167
+            ],
+            "mobile_display_mode": "full-mobile",
+            "mobile_intrinsic_width": 726,
+            "mobile_intrinsic_height": 2167,
+            "desktop_intrinsic_width": 1672,
+            "desktop_intrinsic_height": 941
+          }
+        ],
+        "core_ideas": false
+      }
+    ]
+  },
+  "mechanism_steps": [
+    {
+      "title": "金屬板的輪廓條件圖",
+      "body": "把金屬板外框與兩孔位置表示成輪廓條件圖，送入控制分支；文字描述補充外觀需求，輪廓圖提供空間布局線索。",
+      "why": "核對本步輸入與輸出，才能判斷下一步是否接得上。",
+      "anchor": "WI026-step-1",
+      "diagram": {
+        "title": "金屬板的輪廓條件圖",
+        "body": "把金屬板外框與兩孔位置表示成輪廓條件圖，送入控制分支；文字描述補充外觀需求，輪廓圖提供空間布局線索。",
+        "why": "核對本步輸入與輸出，才能判斷下一步是否接得上。",
+        "anchor": "WI026-step-1"
+      }
+    },
+    {
+      "title": "控制分支將輪廓訊號注入基礎模型",
+      "body": "經訓練的控制分支把輪廓條件轉成控制訊號，注入基礎去噪網路的對應層；條件提供布局限制，基礎模型的先驗仍影響外觀。",
+      "why": "核對本步輸入與輸出，才能判斷下一步是否接得上。",
+      "anchor": "WI026-step-2",
+      "diagram": {
+        "title": "控制分支將輪廓訊號注入基礎模型",
+        "body": "經訓練的控制分支把輪廓條件轉成控制訊號，注入基礎去噪網路的對應層；條件提供布局限制，基礎模型的先驗仍影響外觀。",
+        "why": "核對本步輸入與輸出，才能判斷下一步是否接得上。",
+        "anchor": "WI026-step-2"
+      }
+    },
+    {
+      "title": "條件引導去噪形成金屬外觀",
+      "body": "去噪網路結合文字、輪廓控制與目前含噪表示，逐步形成影像候選；若新增條件類型或適配產業資料，需準備相應資料並訓練控制分支。",
+      "why": "核對本步輸入與輸出，才能判斷下一步是否接得上。",
+      "anchor": "WI026-step-3",
+      "diagram": {
+        "title": "條件引導去噪形成金屬外觀",
+        "body": "去噪網路結合文字、輪廓控制與目前含噪表示，逐步形成影像候選；若新增條件類型或適配產業資料，需準備相應資料並訓練控制分支。",
+        "why": "核對本步輸入與輸出，才能判斷下一步是否接得上。",
+        "anchor": "WI026-step-3"
+      }
+    },
+    {
+      "title": "生成兩孔板並比對原輪廓",
+      "body": "受條件引導的新影像；比對布局與細節後用於展示或受控資料增強。",
+      "why": "核對後接入用途",
+      "anchor": "WI026-step-4",
+      "diagram": {
+        "title": "生成兩孔板並比對原輪廓",
+        "body": "受條件引導的新影像；比對布局與細節後用於展示或受控資料增強。",
+        "why": "核對後接入用途",
+        "anchor": "WI026-step-4"
+      }
+    }
+  ],
+  "visual_intro": "ControlNet增加可訓練的控制分支，把邊緣、深度或姿態等空間條件轉成訊號，注入基礎擴散模型的去噪過程。原論文訓練時固定基礎模型權重，以零初始化連接逐步學會利用條件；使用時載入對應條件類型的權重，讓生成布局跟著條件走。",
+  "concept_visuals": [],
+  "boundary_cases": [
+    {
+      "condition": "本課具體反例",
+      "effect": "輪廓只包含外框與孔，沒描述細裂紋。相同輪廓可能生成有裂紋或沒有裂紋的外觀；條件滿足與原細節忠實是不同問題。本圖是可能情況示意，不是兩次實測輸出。",
+      "action": "布局任務先核對條件；要保留微小缺陷則補相應資訊，或回到原始影像核對。"
+    },
+    {
+      "condition": "換產品或取像條件",
+      "effect": "只有正常圖也能抽輪廓做布局探索，卻不足以證明生成缺陷真實。換產品先查輪廓、條件抽取與權重適用性；比較前處理、生成、人工核對時間。兩者主要交付影像，不直接交付真實缺陷輪廓或尺寸。",
+      "action": "先在固定真實留出資料重驗，再擴大用途。"
+    },
+    {
+      "condition": "把生成示意當成模型實測",
+      "effect": "本課圖像說明可能機制與失敗情況，不能據此計算現場準確率或節拍。",
+      "action": "保留真實原圖、模型設定與對照輸出，以符合工作需求的留出資料另行測量。"
+    }
+  ],
+  "comparison": [
+    {
+      "model": "ControlNet",
+      "normality": "空間條件與相應控制權重；需要時再訓練",
+      "candidate": "布局受引導的新影像"
+    },
+    {
+      "model": "Inpainting",
+      "normality": "原圖、遮罩與周邊；依實作另加條件",
+      "candidate": "指定區域填補後的編修圖"
+    },
+    {
+      "model": "支援兩者的管線",
+      "normality": "同時準備空間條件及編修遮罩",
+      "candidate": "局部編修時也受結構引導；仍需實測外區保留"
+    }
+  ],
+  "selection": "要控制整體布局，考慮ControlNet；要指定局部重畫，考慮Inpainting。前者是控制機制，後者是任務，支援的管線可以搭配兩者。要學真實缺陷外觀再放入正常品，可另外比較DefectFill等少樣本生成方法。 只有正常圖也能抽輪廓做布局探索，卻不足以證明生成缺陷真實。換產品先查輪廓、條件抽取與權重適用性；比較前處理、生成、人工核對時間。兩者主要交付影像，不直接交付真實缺陷輪廓或尺寸。",
+  "poc": {
+    "title": "小規模比較：資料、效果與完整成本",
+    "steps": [
+      "保留原始資料，固定訓練與獨立真實留出切分，選定本課工作需求。",
+      "只有正常圖也能抽輪廓做布局探索，卻不足以證明生成缺陷真實。換產品先查輪廓、條件抽取與權重適用性；比較前處理、生成、人工核對時間。兩者主要交付影像，不直接交付真實缺陷輪廓或尺寸。",
+      "記錄失敗影像、原圖與輸出關係、端到端時間和人工覆核量，再決定是否擴大。"
+    ],
+    "hold": "布局任務先核對條件；要保留微小缺陷則補相應資訊，或回到原始影像核對。",
+    "acceptance": {
+      "baseline": "原有流程或最簡單可行方法",
+      "measure": "關鍵細節、下游錯誤、總時間及覆核量",
+      "negative_control": "以本課反例檢查錯誤結論是否被排除",
+      "owner": "教材使用者指定的實作及覆核負責人"
+    }
+  },
+  "teach_back": {
+    "question": "它改變什麼？換條件後如何選？",
+    "answer": "ControlNet增加可訓練的控制分支，把邊緣、深度或姿態等空間條件轉成訊號，注入基礎擴散模型的去噪過程。原論文訓練時固定基礎模型權重，以零初始化連接逐步學會利用條件；使用時載入對應條件類型的權重，讓生成布局跟著條件走。 要控制整體布局，考慮ControlNet；要指定局部重畫，考慮Inpainting。前者是控制機制，後者是任務，支援的管線可以搭配兩者。要學真實缺陷外觀再放入正常品，可另外比較DefectFill等少樣本生成方法。"
+  },
+  "slide_reading": [
+    {
+      "title": "ControlNet：條件圖與文字共同交付",
+      "question": "先定義控制什麼，再檢查生成是否遵守。",
+      "look": "先看保存雙孔輪廓與文字，再核對條件版本接匹配模型，最後看生成板回比孔位與外框。",
+      "relation": "輪廓抽取版本、解析度與對應ControlNet checkpoint需匹配。輸出是合成板，不是實拍檢測或尺寸量測。",
+      "takeaway": "先定義控制什麼，再檢查生成是否遵守。",
+      "terms": [
+        "示意數值：作者給定局部算例，非模型實測或建議參數。",
+        "同位置：比較保持相同影像座標與時間身份，不能任意換工件。"
+      ]
+    },
+    {
+      "title": "ControlNet：控制殘差接入去噪主幹",
+      "question": "條件控制布局，細節仍要回原條件核對。",
+      "look": "先看雙孔輪廓形成控制條件，再核對可訓練分支經零初始化連接，最後看多步條件去噪再比輪廓。",
+      "relation": "同上方雙孔矩形板，輪廓圖含外框/兩孔，文字指定銀色金屬。預訓練主幹固定，可訓練編碼副本接條件，zero convolution初始化0以殘差連接主幹；訓練後連接通常不為0。每步讀時間/噪聲latent與條件；不把輪廓輸出當缺陷熱點。",
+      "takeaway": "條件控制布局，細節仍要回原條件核對。",
+      "terms": [
+        "示意數值：作者給定局部算例，非模型實測或建議參數。",
+        "同位置：比較保持相同影像座標與時間身份，不能任意換工件。"
+      ]
+    },
+    {
+      "title": "ControlNet：控制強度要配採樣驗證",
+      "question": "強度只是設定，遵守條件與品質要同時看。",
+      "look": "先看保存控制模型與前處理，再核對控制強弱改變殘差注入，最後看同條件比較位置偏差。",
+      "relation": "保存前處理器、控制強度/起止步、基模、文字與採樣。強度增大不保證所有細節更真；用同輪廓檢孔位/外框及材質。",
+      "takeaway": "強度只是設定，遵守條件與品質要同時看。",
+      "terms": [
+        "示意數值：作者給定局部算例，非模型實測或建議參數。",
+        "同位置：比較保持相同影像座標與時間身份，不能任意換工件。"
+      ]
+    },
+    {
+      "title": "ControlNet：相同輪廓，不限定有無刮傷",
+      "question": "條件未描述的細節，不能當成觀測證據。",
+      "look": "先看同一張雙孔輪廓條件，再核對無傷與有傷都可符輪廓，最後看若要真缺陷，回實拍核對。",
+      "relation": "同上方兩孔，外框與孔位不變，表面刮傷可不同；輪廓相符不能證明生成裂紋真實存在。",
+      "takeaway": "條件未描述的細節，不能當成觀測證據。",
+      "terms": [
+        "示意數值：作者給定局部算例，非模型實測或建議參數。",
+        "同位置：比較保持相同影像座標與時間身份，不能任意換工件。"
+      ]
+    }
+  ],
+  "comparison_headers": {
+    "title": "控制布局，還是只改一塊？",
+    "basis": "資料準備與方法分工",
+    "output": "交付結果與核對重點"
+  },
+  "transfer_check": {
+    "title": "商品圖要換材質，同時保留指定區域",
+    "scenario": "需要把整張板改成另一種材質，兩孔布局要相近；另一項需求只想移除中央污漬。",
+    "question": "兩個需求分別選ControlNet、Inpainting，或組合？",
+    "answer": "整體材質變化可用輪廓ControlNet約束布局；只改污漬可用Inpainting指定區域。若局部生成也要遵守結構，可測支援兩者的管線。各自核對布局偏差、遮罩外變化與生成成本；不能因輪廓吻合就認定微裂紋被保留。"
+  },
+  "review_trace": {
+    "authority": "roadmap-model-selection/diffusion-restoration/controlnet/model.md",
+    "scope": "WI-033：工程層四圖與手機比較修正；首讀有效內容保留。原生圖已審，整頁與使用者審閱另記。",
+    "claims": [
+      {
+        "id": "visual-1",
+        "field": "beginner_path.visuals[raw-condition-workpiece]",
+        "source": "模型定位 / architecture_path"
+      },
+      {
+        "id": "visual-2",
+        "field": "beginner_path.visuals[matched-control-branch]",
+        "source": "architecture_path"
+      },
+      {
+        "id": "visual-3",
+        "field": "beginner_path.visuals[denoise-synthetic-candidate]",
+        "source": "representation_or_score"
+      },
+      {
+        "id": "visual-4",
+        "field": "beginner_path.visuals[plausible-is-not-valid]",
+        "source": "failure_boundary"
+      },
+      {
+        "id": "visual-5",
+        "field": "beginner_path.visuals[traceability-review-gate]",
+        "source": "selection_gate / evidence_bundle"
+      },
+      {
+        "id": "promise",
+        "field": "promise",
+        "source": "模型定位 / representation_or_score"
+      },
+      {
+        "id": "mechanism",
+        "field": "mechanism_steps",
+        "source": "architecture_path / representation_or_score"
+      },
+      {
+        "id": "boundaries",
+        "field": "boundary_cases",
+        "source": "failure_boundary / selection_gate"
+      },
+      {
+        "id": "comparison",
+        "field": "comparison + selection",
+        "source": "selection_gate"
+      },
+      {
+        "id": "poc",
+        "field": "poc + acceptance",
+        "source": "cost_and_operating_point / evidence_bundle"
+      },
+      {
+        "id": "transfer",
+        "field": "transfer_check",
+        "source": "failure_boundary / selection_gate"
+      },
+      {
+        "id": "f02-core",
+        "field": "beginner_path.visuals[0] + scenario + mental_model",
+        "source": "https://arxiv.org/abs/2302.05543"
+      },
+      {
+        "id": "f02-transfer",
+        "field": "micro_example + transfer_check + selection",
+        "source": "https://arxiv.org/abs/2302.05543"
+      },
+      {
+        "id": "wi026-first-read",
+        "field": "beginner_path + core + selection + transfer",
+        "source": "https://arxiv.org/abs/2302.05543"
+      }
+    ]
+  },
+  "quality_status": {
+    "label": "首讀圖文已重製並自評；使用者核准待確認",
+    "state": "self-reviewed",
+    "round": "WI-026",
+    "reason": "38張不同PNG逐圖審查；整頁與互動證據見workitems/wi-026，原工程圖未重新評分。"
+  },
+  "teaching_preflight": {
+    "brief": "teaching-images/vision-ai-model-selection/workitems/wi-026/controlnet-c1-r01.md",
+    "story": "C",
+    "major_visual_nodes": 4,
+    "visual_status": "self-reviewed",
+    "user_review": "pending"
+  },
+  "engineering_slides": [
+    {
+      "title": "ControlNet：條件圖與文字共同交付",
+      "question": "先定義控制什麼，再檢查生成是否遵守。",
+      "plain": {
+        "look": "先看保存雙孔輪廓與文字，再核對條件版本接匹配模型，最後看生成板回比孔位與外框。",
+        "relation": "輪廓抽取版本、解析度與對應ControlNet checkpoint需匹配。輸出是合成板，不是實拍檢測或尺寸量測。",
+        "takeaway": "先定義控制什麼，再檢查生成是否遵守。"
+      },
+      "terms": [
+        "示意數值：作者給定局部算例，非模型實測或建議參數。",
+        "同位置：比較保持相同影像座標與時間身份，不能任意換工件。"
+      ],
+      "guide": [
+        "輪廓抽取版本、解析度與對應ControlNet checkpoint需匹配。輸出是合成板，不是實拍檢測或尺寸量測。",
+        "先看保存雙孔輪廓與文字，再核對條件版本接匹配模型，最後看生成板回比孔位與外框。"
+      ],
+      "stages": [
+        {
+          "title": "保存雙孔輪廓與文字",
+          "body": "保存雙孔輪廓與文字；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "條件版本接匹配模型",
+          "body": "條件版本接匹配模型；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "生成板回比孔位與外框",
+          "body": "生成板回比孔位與外框；請對照圖內輸入、變化與結果。"
+        }
+      ],
+      "misconception": "輪廓只包含外框與孔，沒描述細裂紋。相同輪廓可能生成有裂紋或沒有裂紋的外觀；條件滿足與原細節忠實是不同問題。本圖是可能情況示意，不是兩次實測輸出。",
+      "alt": "ControlNet：條件圖與文字共同交付。先定義控制什麼，再檢查生成是否遵守。 教學示意，非模型實測。",
+      "mobile_image": "roadmap-model-selection/diffusion-restoration/controlnet/images/final/WI033-CONTROLNET-01-r01-mobile.png",
+      "mobile_width": 768,
+      "mobile_height": 2304,
+      "engineering": {
+        "takeaway": "先定義控制什麼，再檢查生成是否遵守。",
+        "nextAction": "保留原始資料，固定訓練與獨立真實留出切分，選定本課工作需求。",
+        "redLine": "布局任務先核對條件；要保留微小缺陷則補相應資訊，或回到原始影像核對。"
+      },
+      "source": "https://arxiv.org/abs/2302.05543"
+    },
+    {
+      "title": "ControlNet：控制殘差接入去噪主幹",
+      "question": "條件控制布局，細節仍要回原條件核對。",
+      "plain": {
+        "look": "先看雙孔輪廓形成控制條件，再核對可訓練分支經零初始化連接，最後看多步條件去噪再比輪廓。",
+        "relation": "同上方雙孔矩形板，輪廓圖含外框/兩孔，文字指定銀色金屬。預訓練主幹固定，可訓練編碼副本接條件，zero convolution初始化0以殘差連接主幹；訓練後連接通常不為0。每步讀時間/噪聲latent與條件；不把輪廓輸出當缺陷熱點。",
+        "takeaway": "條件控制布局，細節仍要回原條件核對。"
+      },
+      "terms": [
+        "示意數值：作者給定局部算例，非模型實測或建議參數。",
+        "同位置：比較保持相同影像座標與時間身份，不能任意換工件。"
+      ],
+      "guide": [
+        "同上方雙孔矩形板，輪廓圖含外框/兩孔，文字指定銀色金屬。預訓練主幹固定，可訓練編碼副本接條件，zero convolution初始化0以殘差連接主幹；訓練後連接通常不為0。每步讀時間/噪聲latent與條件；不把輪廓輸出當缺陷熱點。",
+        "先看雙孔輪廓形成控制條件，再核對可訓練分支經零初始化連接，最後看多步條件去噪再比輪廓。"
+      ],
+      "stages": [
+        {
+          "title": "雙孔輪廓形成控制條件",
+          "body": "雙孔輪廓形成控制條件；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "可訓練分支經零初始化連接",
+          "body": "可訓練分支經零初始化連接；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "多步條件去噪再比輪廓",
+          "body": "多步條件去噪再比輪廓；請對照圖內輸入、變化與結果。"
+        }
+      ],
+      "misconception": "輪廓只包含外框與孔，沒描述細裂紋。相同輪廓可能生成有裂紋或沒有裂紋的外觀；條件滿足與原細節忠實是不同問題。本圖是可能情況示意，不是兩次實測輸出。",
+      "alt": "ControlNet：控制殘差接入去噪主幹。條件控制布局，細節仍要回原條件核對。 教學示意，非模型實測。",
+      "mobile_image": "roadmap-model-selection/diffusion-restoration/controlnet/images/final/WI033-CONTROLNET-02-r02-mobile.png",
+      "mobile_width": 768,
+      "mobile_height": 2304,
+      "engineering": {
+        "takeaway": "條件控制布局，細節仍要回原條件核對。",
+        "nextAction": "保留原始資料，固定訓練與獨立真實留出切分，選定本課工作需求。",
+        "redLine": "布局任務先核對條件；要保留微小缺陷則補相應資訊，或回到原始影像核對。"
+      },
+      "source": "https://arxiv.org/abs/2302.05543"
+    },
+    {
+      "title": "ControlNet：控制強度要配採樣驗證",
+      "question": "強度只是設定，遵守條件與品質要同時看。",
+      "plain": {
+        "look": "先看保存控制模型與前處理，再核對控制強弱改變殘差注入，最後看同條件比較位置偏差。",
+        "relation": "保存前處理器、控制強度/起止步、基模、文字與採樣。強度增大不保證所有細節更真；用同輪廓檢孔位/外框及材質。",
+        "takeaway": "強度只是設定，遵守條件與品質要同時看。"
+      },
+      "terms": [
+        "示意數值：作者給定局部算例，非模型實測或建議參數。",
+        "同位置：比較保持相同影像座標與時間身份，不能任意換工件。"
+      ],
+      "guide": [
+        "保存前處理器、控制強度/起止步、基模、文字與採樣。強度增大不保證所有細節更真；用同輪廓檢孔位/外框及材質。",
+        "先看保存控制模型與前處理，再核對控制強弱改變殘差注入，最後看同條件比較位置偏差。"
+      ],
+      "stages": [
+        {
+          "title": "保存控制模型與前處理",
+          "body": "保存控制模型與前處理；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "控制強弱改變殘差注入",
+          "body": "控制強弱改變殘差注入；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "同條件比較位置偏差",
+          "body": "同條件比較位置偏差；請對照圖內輸入、變化與結果。"
+        }
+      ],
+      "misconception": "輪廓只包含外框與孔，沒描述細裂紋。相同輪廓可能生成有裂紋或沒有裂紋的外觀；條件滿足與原細節忠實是不同問題。本圖是可能情況示意，不是兩次實測輸出。",
+      "alt": "ControlNet：控制強度要配採樣驗證。強度只是設定，遵守條件與品質要同時看。 教學示意，非模型實測。",
+      "mobile_image": "roadmap-model-selection/diffusion-restoration/controlnet/images/final/WI033-CONTROLNET-03-r01-mobile.png",
+      "mobile_width": 768,
+      "mobile_height": 2304,
+      "engineering": {
+        "takeaway": "強度只是設定，遵守條件與品質要同時看。",
+        "nextAction": "保留原始資料，固定訓練與獨立真實留出切分，選定本課工作需求。",
+        "redLine": "布局任務先核對條件；要保留微小缺陷則補相應資訊，或回到原始影像核對。"
+      },
+      "source": "https://arxiv.org/abs/2302.05543"
+    },
+    {
+      "title": "ControlNet：相同輪廓，不限定有無刮傷",
+      "question": "條件未描述的細節，不能當成觀測證據。",
+      "plain": {
+        "look": "先看同一張雙孔輪廓條件，再核對無傷與有傷都可符輪廓，最後看若要真缺陷，回實拍核對。",
+        "relation": "同上方兩孔，外框與孔位不變，表面刮傷可不同；輪廓相符不能證明生成裂紋真實存在。",
+        "takeaway": "條件未描述的細節，不能當成觀測證據。"
+      },
+      "terms": [
+        "示意數值：作者給定局部算例，非模型實測或建議參數。",
+        "同位置：比較保持相同影像座標與時間身份，不能任意換工件。"
+      ],
+      "guide": [
+        "同上方兩孔，外框與孔位不變，表面刮傷可不同；輪廓相符不能證明生成裂紋真實存在。",
+        "先看同一張雙孔輪廓條件，再核對無傷與有傷都可符輪廓，最後看若要真缺陷，回實拍核對。"
+      ],
+      "stages": [
+        {
+          "title": "同一張雙孔輪廓條件",
+          "body": "同一張雙孔輪廓條件；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "無傷與有傷都可符輪廓",
+          "body": "無傷與有傷都可符輪廓；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "若要真缺陷，回實拍核對",
+          "body": "若要真缺陷，回實拍核對；請對照圖內輸入、變化與結果。"
+        }
+      ],
+      "misconception": "輪廓只包含外框與孔，沒描述細裂紋。相同輪廓可能生成有裂紋或沒有裂紋的外觀；條件滿足與原細節忠實是不同問題。本圖是可能情況示意，不是兩次實測輸出。",
+      "alt": "ControlNet：相同輪廓，不限定有無刮傷。條件未描述的細節，不能當成觀測證據。 教學示意，非模型實測。",
+      "mobile_image": "roadmap-model-selection/diffusion-restoration/controlnet/images/final/WI033-CONTROLNET-04-r01-mobile.png",
+      "mobile_width": 768,
+      "mobile_height": 2304,
+      "engineering": {
+        "takeaway": "條件未描述的細節，不能當成觀測證據。",
+        "nextAction": "保留原始資料，固定訓練與獨立真實留出切分，選定本課工作需求。",
+        "redLine": "布局任務先核對條件；要保留微小缺陷則補相應資訊，或回到原始影像核對。"
+      },
+      "source": "https://arxiv.org/abs/2302.05543"
+    }
+  ]
+}

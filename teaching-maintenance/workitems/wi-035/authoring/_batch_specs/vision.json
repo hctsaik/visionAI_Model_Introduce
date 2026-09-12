@@ -1,0 +1,971 @@
+[
+  {
+    "slug": "clip",
+    "relative_dir": "roadmap-model-selection/foundation-vlm-open-world/clip",
+    "model": "CLIP",
+    "family": "foundation",
+    "case_tag": "CASE · AOI Assist",
+    "family_tag": "FOUNDATION",
+    "identity": {
+      "title": "CLIP：相似度只產生候選",
+      "context": "固定 AOI ROI 與受控 prompt 會產生語意候選；它不是 defect probability、定位或放行。",
+      "bubble": "相似度可直接\n當 defect 嗎？",
+      "cards": [
+        {"title": "固定 ROI", "body": "raw image\n+ tile", "visual": "input"},
+        {"title": "雙 Encoder", "body": "image v\ntext t", "visual": "dual"},
+        {"title": "候選排序", "body": "v·t／τ\nranking", "visual": "score"},
+        {"title": "證據 Gate", "body": "candidate\n→ review", "visual": "gate"}
+      ],
+      "flow": "ROI + prompt → image/text embedding → similarity rank → evidence review",
+      "takeaway": "CLIP 只把候選排隊；最終缺陷主張必須回到可追溯證據。"
+    },
+    "architecture": {
+      "title": "CLIP：雙 Encoder 如何形成排序？",
+      "context": "影像與受控文字各自編碼到共享 embedding；normalized similarity 只在固定候選集合內可解讀。",
+      "bubble": "共享 embedding\n是不是生成橋接？",
+      "cards": [
+        {"title": "ROI + prompt", "body": "resize\ntokenizer", "visual": "input"},
+        {"title": "影像路徑", "body": "vision encoder\n→ v", "visual": "feature"},
+        {"title": "文字路徑", "body": "text encoder\n→ t", "visual": "dual"},
+        {"title": "排名輸出", "body": "normalize\n→ rank", "visual": "score"}
+      ],
+      "flow": "versioned pixels + prompt ontology → v／t → normalized similarity → ranked candidate",
+      "takeaway": "共同 embedding 是比較介面，不是能產生 box、mask 或答案的橋接器。"
+    },
+    "build": {
+      "title": "CLIP：量產前鎖住哪些契約？",
+      "context": "checkpoint、ROI、preprocess、prompt pool、temperature 與 evidence route 都必須版本化。",
+      "bubble": "排名變了時\n能否重播？",
+      "cards": [
+        {"title": "鎖輸入", "body": "ROI／resize\ncheckpoint", "visual": "contract"},
+        {"title": "鎖文字", "body": "prompt pool\ncache", "visual": "dual"},
+        {"title": "量全流程", "body": "prompt variance\n+ P95", "visual": "score"},
+        {"title": "異常轉 review", "body": "OOD\nhuman gate", "visual": "gate"}
+      ],
+      "flow": "versioned input + prompt → rank/calibration → OOD or variance → specialist action",
+      "takeaway": "prompt 也是量產介面；沒有版本、變異與 P95，就沒有可比較的 CLIP。"
+    },
+    "failure": "把 similarity 當 defect 機率；不量 ROI 與 prompt 變異；沒有 OOD 和人工 gate。",
+    "selection": "固定 ROI、checkpoint、prompt；量 retrieval truth、變異與 P95；候選必回 evidence review。",
+    "takeaway": "CLIP 適合語意候選與檢索，不是缺陷放行器。",
+    "selection_takeaway": "選 CLIP 的證據是固定契約下的檢索品質、abstain 與完整 evidence route。"
+  },
+  {
+    "slug": "dinov2",
+    "relative_dir": "roadmap-model-selection/foundation-vlm-open-world/dinov2",
+    "model": "DINOv2",
+    "family": "foundation",
+    "case_tag": "CASE · Wafer AOI",
+    "family_tag": "FOUNDATION",
+    "identity": {
+      "title": "DINOv2：特徵底座不是 Detector",
+      "context": "DINOv2 提供 global 與 patch features；score、map、box 與 action 都要由明確下游 owner 負責。",
+      "bubble": "特徵能直接\n變成判定嗎？",
+      "cards": [
+        {"title": "固定 ROI", "body": "image\ntile policy", "visual": "input"},
+        {"title": "ViT 特徵", "body": "global\npatch grid", "visual": "feature"},
+        {"title": "指定下游", "body": "NN／AD\nhead", "visual": "score"},
+        {"title": "決策 Gate", "body": "score owner\n+ review", "visual": "gate"}
+      ],
+      "flow": "ROI/tile → DINOv2 features → named downstream score/map → evidence action",
+      "takeaway": "DINOv2 供應 representation；任何分數、地圖或 box 都不能省略下游 owner。"
+    },
+    "architecture": {
+      "title": "DINOv2：ViT 如何留下 global 與 patch 特徵？",
+      "context": "影像經 patchify 與 self-attention 後輸出 CLS/global feature 和 spatial patch grid，沒有文字 encoder 或 decoder。",
+      "bubble": "patch feature\n會自動定位嗎？",
+      "cards": [
+        {"title": "輸入契約", "body": "ROI／tile\nnormalize", "visual": "input"},
+        {"title": "Patchify", "body": "patch\n+ position", "visual": "feature"},
+        {"title": "ViT blocks", "body": "self-\nattention", "visual": "dual"},
+        {"title": "特徵出口", "body": "CLS\npatch grid", "visual": "feature"}
+      ],
+      "flow": "versioned image → patch tokens → ViT blocks → selected global／patch representation",
+      "takeaway": "哪一層、哪個 patch grid 被取用，決定後續還看得到多少局部證據。"
+    },
+    "build": {
+      "title": "DINOv2：特徵部署要鎖住什麼？",
+      "context": "model size、patch、layer、pooling、support bank 與下游 head 是同一條可重播的 feature contract。",
+      "bubble": "這個分數\n由誰負責？",
+      "cards": [
+        {"title": "鎖 feature", "body": "ckpt／patch\nlayer", "visual": "contract"},
+        {"title": "鎖 route", "body": "pool／NN\nAD head", "visual": "feature"},
+        {"title": "量資源", "body": "tokens／VRAM\nP95", "visual": "score"},
+        {"title": "驗漂移", "body": "separability\nOOD", "visual": "gate"}
+      ],
+      "flow": "feature contract → support/head route → local truth + drift test → full P95 action",
+      "takeaway": "高維 embedding 不是 defect proof；先命名 score owner，再驗證 local separability。"
+    },
+    "failure": "把 embedding 當 detector；未鎖 layer、patch、pooling；只量 backbone P95。",
+    "selection": "固定 ROI/tile、patch、layer；指定 score owner；驗 separability、drift、P95。",
+    "takeaway": "DINOv2 是特徵底座；分數、地圖與決策都必須有下游 owner。",
+    "selection_takeaway": "選 DINOv2 必須證明固定 feature contract 下的下游 route 真能保留現場局部證據。"
+  },
+  {
+    "slug": "dinov3",
+    "relative_dir": "roadmap-model-selection/foundation-vlm-open-world/dinov3",
+    "model": "DINOv3",
+    "family": "foundation",
+    "case_tag": "CASE · Wafer AOI",
+    "family_tag": "FOUNDATION",
+    "identity": {
+      "title": "DINOv3：較新的密集特徵仍需下游證明",
+      "context": "DINOv3 是獨立的 self-supervised feature backbone；dense representation 改良不等於 detector 或 mask。",
+      "bubble": "新一代特徵\n就能直接放行？",
+      "cards": [
+        {"title": "固定 pixels", "body": "ROI + tile\ncontract", "visual": "input"},
+        {"title": "Dense feature", "body": "global\npatch reps", "visual": "feature"},
+        {"title": "Named route", "body": "retrieval／AD\nhead", "visual": "score"},
+        {"title": "同基線驗證", "body": "DINOv2\n+ review", "visual": "gate"}
+      ],
+      "flow": "same ROI → DINOv3 dense features → named downstream route → DINOv2 evidence comparison",
+      "takeaway": "DINOv3 的價值要在同一像素與下游契約中證明，不能只靠名稱更新。"
+    },
+    "architecture": {
+      "title": "DINOv3：密集 representation 的路徑",
+      "context": "patch tokens 經長程 self-supervised ViT 形成 global／dense features；Gram anchoring 是訓練機制，不是 runtime mask。",
+      "bubble": "Gram anchoring\n是推論輸出嗎？",
+      "cards": [
+        {"title": "Patch tokens", "body": "ROI／resize\npatch", "visual": "input"},
+        {"title": "長程 ViT", "body": "dense\nsimilarity", "visual": "feature"},
+        {"title": "訓練錨定", "body": "Gram\nanchoring", "visual": "dual"},
+        {"title": "下游出口", "body": "route owns\nscore", "visual": "score"}
+      ],
+      "flow": "image → patch tokens → dense ViT representation → versioned adaptor/head → score or map",
+      "takeaway": "Gram anchoring 改善訓練期 dense feature；推論分數仍必須由具名下游路徑產生。"
+    },
+    "build": {
+      "title": "DINOv3：升級前先做同契約比較",
+      "context": "release、license、patch、layer、postprocess 與 adaptor 變更後，必須與 DINOv2 使用相同 pixels 與 P95 定義比較。",
+      "bubble": "新版權重\n值得替換嗎？",
+      "cards": [
+        {"title": "鎖 release", "body": "hash／license\npatch", "visual": "contract"},
+        {"title": "鎖轉換", "body": "layer\npostprocess", "visual": "feature"},
+        {"title": "同基線量測", "body": "DINOv2\n+ P95", "visual": "score"},
+        {"title": "資格 Gate", "body": "drift／security\nOOD", "visual": "gate"}
+      ],
+      "flow": "release contract → same-pixel DINOv2 baseline → local truth/drift → qualified action",
+      "takeaway": "較新的 dense feature 不是 operating point；版本、相容性、證據與 P95 都要重新 qualification。"
+    },
+    "failure": "把 DINOv3 當 detector；把 Gram anchoring 當 mask；不做同像素 DINOv2 baseline。",
+    "selection": "固定 release、patch、layer；指定 downstream route；同 ROI 比 DINOv2、drift、P95。",
+    "takeaway": "密集特徵改良要在同一量產契約證明，不能只靠較新的名字。",
+    "selection_takeaway": "只有在固定 pixels 與下游 owner 下勝過 DINOv2，DINOv3 才值得進入 production shortlist。"
+  },
+  {
+    "slug": "gemini-vision",
+    "relative_dir": "roadmap-model-selection/foundation-vlm-open-world/gemini-vision",
+    "model": "Gemini Vision",
+    "family": "foundation",
+    "case_tag": "CASE · AOI Assist",
+    "family_tag": "FOUNDATION",
+    "identity": {
+      "title": "Gemini Vision：服務回答是 assist，不是放行",
+      "context": "這是具名 provider service route；模型 ID、API version、region 與資料政策比虛構內部架構更重要。",
+      "bubble": "JSON 回答能\n直接 PASS 嗎？",
+      "cards": [
+        {"title": "文件／影像", "body": "question\n+ schema", "visual": "input"},
+        {"title": "Egress Gate", "body": "redaction\nACL", "visual": "gate"},
+        {"title": "Provider service", "body": "named API\nmodel", "visual": "dual"},
+        {"title": "驗證 claim", "body": "audit\n+ specialist", "visual": "gate"}
+      ],
+      "flow": "file + schema → redaction/ACL → named Gemini API → validated response → specialist action",
+      "takeaway": "Gemini Vision 的工程責任在服務契約與 evidence validation，不在猜測 provider 內部 encoder。"
+    },
+    "architecture": {
+      "title": "Gemini Vision：可控的是 service contract",
+      "context": "檔案、prompt、schema 與 tool policy 先過 client governance，再送到具名 API；回傳內容必經 evidence 與 abstain。",
+      "bubble": "服務 alias\n會不會變？",
+      "cards": [
+        {"title": "Request", "body": "file\nsystem schema", "visual": "input"},
+        {"title": "Client governance", "body": "ACL／region\nredact", "visual": "contract"},
+        {"title": "Named service", "body": "model ID\nAPI version", "visual": "dual"},
+        {"title": "Response Gate", "body": "citation\nabstain", "visual": "gate"}
+      ],
+      "flow": "versioned request → client governance → provider response/tool call → validation + audit log",
+      "takeaway": "structured JSON 讓解析可控，卻不能自動保證 grounding、定位或物理量測。"
+    },
+    "build": {
+      "title": "Gemini Vision：部署前重播服務行為",
+      "context": "API model/date、region、retention、rate limit、retry、cost 與 fallback 要一起鎖定並用 replay set qualification。",
+      "bubble": "服務變更後\n怎麼重驗？",
+      "cards": [
+        {"title": "鎖 service", "body": "model／API\nregion", "visual": "contract"},
+        {"title": "鎖資料界線", "body": "retention\nACL", "visual": "gate"},
+        {"title": "量服務成本", "body": "retry／429\nP95", "visual": "score"},
+        {"title": "安全 fallback", "body": "replay\n+ human", "visual": "gate"}
+      ],
+      "flow": "named service policy → replay request/response → errors/cost/P95 → safe fallback action",
+      "takeaway": "provider alias、價格或 rate limit 改變都可能改變工程結果；service 需持續監控與重驗。"
+    },
+    "failure": "以服務品牌取代 model ID；忽略 egress、retention、rate limit；把 JSON 回答當 PASS。",
+    "selection": "固定 model ID、API、region；重播 grounding、abstain、P95；驗資料界線與 fallback。",
+    "takeaway": "服務型 VLM 的選型是治理、證據與 fallback 的選型。",
+    "selection_takeaway": "流暢的 provider 回答不是 action；具名服務契約與可重播 evidence 才是採用門檻。"
+  },
+  {
+    "slug": "llava",
+    "relative_dir": "roadmap-model-selection/foundation-vlm-open-world/llava",
+    "model": "LLaVA",
+    "family": "foundation",
+    "case_tag": "CASE · AOI Assist",
+    "family_tag": "FOUNDATION",
+    "identity": {
+      "title": "LLaVA：語言回答必須回查證據",
+      "context": "LLaVA 將 visual tokens 經 projector 放入 LLM context，適合 assistive review；流暢答案仍只是一個 claim。",
+      "bubble": "流暢答案能\n直接放行嗎？",
+      "cards": [
+        {"title": "影像 + 問題", "body": "ROI／tile\nprompt", "visual": "input"},
+        {"title": "Visual tokens", "body": "vision\nencoder", "visual": "feature"},
+        {"title": "Projector + LLM", "body": "language\ncontext", "visual": "dual"},
+        {"title": "Grounding Gate", "body": "claim\n→ evidence", "visual": "gate"}
+      ],
+      "flow": "image + question → visual tokens → projector/LLM → structured claim → evidence review",
+      "takeaway": "LLaVA 可加速說明與追問；detector、量測與 PASS 仍要有獨立 evidence owner。"
+    },
+    "architecture": {
+      "title": "LLaVA：visual token 如何進入 LLM？",
+      "context": "versioned vision encoder 先產生 visual tokens，learned projector 對齊 language space，LLM 最後自回歸產生 schema-controlled answer。",
+      "bubble": "projector 能\n產生 defect box？",
+      "cards": [
+        {"title": "固定 pixels", "body": "ROI／resize\ntile", "visual": "input"},
+        {"title": "Vision encoder", "body": "visual\ntokens", "visual": "feature"},
+        {"title": "Learned bridge", "body": "projector\n→ LLM", "visual": "dual"},
+        {"title": "Schema output", "body": "answer\nabstain", "visual": "score"}
+      ],
+      "flow": "image preprocess → visual tokens → projector → LLM context → structured language output",
+      "takeaway": "projector 只對齊 token 空間；它不會憑空建立定位、量測或放行證據。"
+    },
+    "build": {
+      "title": "LLaVA：把回答變成可審計 assist workflow",
+      "context": "vision、projector、LLM、prompt/schema、RAG、ACL、token cap 與 decoding 都需可重播，並量完整 P95。",
+      "bubble": "答案引用的\n證據可重播嗎？",
+      "cards": [
+        {"title": "鎖模型鏈", "body": "vision／proj.\nLLM", "visual": "contract"},
+        {"title": "鎖指令資料", "body": "prompt／RAG\nACL", "visual": "contract"},
+        {"title": "量 token 成本", "body": "prefill／decode\nP95", "visual": "score"},
+        {"title": "測 grounding", "body": "injection\nabstain", "visual": "gate"}
+      ],
+      "flow": "versioned VLM + schema/RAG → replay claims → grounding/security/P95 → specialist workflow",
+      "takeaway": "語言輸出須附來源、uncertainty 與 allowed action；否則只能當探索訊號。"
+    },
+    "failure": "把 fluent answer 當證據；忽略 token 與 injection；讓 VLM 自動 PASS 或量測。",
+    "selection": "固定 image/question/schema；驗 grounding、abstain、ACL、P95；由專家確認 action。",
+    "takeaway": "LLaVA 適合協作式理解，不是自動判定模型。",
+    "selection_takeaway": "只有答案能在固定 evidence contract 下重播、拒答並被專家接受，LLaVA 才可進 assist workflow。"
+  },
+  {
+    "slug": "qwen-vl",
+    "relative_dir": "roadmap-model-selection/foundation-vlm-open-world/qwen-vl",
+    "model": "Qwen-VL",
+    "family": "foundation",
+    "case_tag": "CASE · AOI Assist",
+    "family_tag": "FOUNDATION",
+    "identity": {
+      "title": "Qwen-VL：動態 visual token 改變 operating point",
+      "context": "以具名、定日期的 Qwen deployment 處理多影像／文件；dynamic resolution 的 token 數、VRAM、P95 與成本都必須可見。",
+      "bubble": "不同尺寸輸入\n成本會一樣嗎？",
+      "cards": [
+        {"title": "多模態輸入", "body": "image／doc\nquestion", "visual": "input"},
+        {"title": "Dynamic resize", "body": "variable\ntokens", "visual": "feature"},
+        {"title": "VLM response", "body": "text／JSON\nclaim", "visual": "dual"},
+        {"title": "Evidence Gate", "body": "ground\n+ specialist", "visual": "gate"}
+      ],
+      "flow": "image/document + pixel caps → variable visual tokens → Qwen VLM claim → grounding review",
+      "takeaway": "Qwen-VL 的可用性不只看回答；每筆工作負載的 visual-token operating point 都要量測。"
+    },
+    "architecture": {
+      "title": "Qwen-VL：可變 token 的多模態路徑",
+      "context": "dynamic-resolution processor 依 image/video 與 pixel constraints 產生 token sequence；position handling 與 LLM 版本都屬部署契約。",
+      "bubble": "token 數能用\n固定 patch 公式嗎？",
+      "cards": [
+        {"title": "Pixel constraints", "body": "min／max\npixels", "visual": "input"},
+        {"title": "Dynamic processor", "body": "variable token\nsequence", "visual": "feature"},
+        {"title": "Position + bridge", "body": "M-ROPE\nLLM", "visual": "dual"},
+        {"title": "Schema claim", "body": "text／JSON\nabstain", "visual": "score"}
+      ],
+      "flow": "versioned processor + pixels → visual token sequence → multimodal LLM → governed response",
+      "takeaway": "final LLM token context 必須由部署 processor 實測；不可用泛化 patch-count 取代它。"
+    },
+    "build": {
+      "title": "Qwen-VL：先量 token-to-P95，再談部署",
+      "context": "model revision、processor、pixel cap、quantization、context、schema、RAG、ACL 與 concurrency 要一起固定。",
+      "bubble": "長文件輸入\n會不會截斷？",
+      "cards": [
+        {"title": "鎖 deployment", "body": "revision\nprocessor", "visual": "contract"},
+        {"title": "鎖 token cap", "body": "pixels／context\nframes", "visual": "contract"},
+        {"title": "量 operating point", "body": "VRAM／cost\nP95", "visual": "score"},
+        {"title": "驗治理", "body": "grounding／ACL\nfallback", "visual": "gate"}
+      ],
+      "flow": "deployment + pixel contract → token/VRAM profile → replay evidence/security → safe specialist action",
+      "takeaway": "aspect ratio、頁數與 token cap 會改變可用性；它們是工程控制，而不是背景細節。"
+    },
+    "failure": "用廣義 Qwen-VL 名稱部署；忽略動態 token 的 VRAM/P95；把流暢回答當 grounding。",
+    "selection": "固定 deployment、processor、token cap；量 workload 的 VRAM、cost、P95；驗 evidence、ACL、fallback。",
+    "takeaway": "Qwen-VL 必須以命名部署與真實多模態工作負載選型。",
+    "selection_takeaway": "只有 token、證據與資料界線都在同一契約下通過，Qwen-VL 才能安全加入 assist route。"
+  },
+  {
+    "slug": "siglip",
+    "relative_dir": "roadmap-model-selection/foundation-vlm-open-world/siglip",
+    "model": "SigLIP",
+    "family": "foundation",
+    "case_tag": "CASE · AOI Assist",
+    "family_tag": "FOUNDATION",
+    "identity": {
+      "title": "SigLIP：pairwise loss 不等於量產分數",
+      "context": "SigLIP 是 image/text dual encoder，適合語意檢索與候選探索；pairwise sigmoid 是訓練差異，不是放行證據。",
+      "bubble": "sigmoid score\n就是機率嗎？",
+      "cards": [
+        {"title": "固定 ROI", "body": "image\n+ prompt", "visual": "input"},
+        {"title": "雙 Encoder", "body": "image v\ntext t", "visual": "dual"},
+        {"title": "相似度 rank", "body": "local score\npolicy", "visual": "score"},
+        {"title": "回到 evidence", "body": "abstain\nreview", "visual": "gate"}
+      ],
+      "flow": "ROI + prompt ontology → dual embeddings → versioned similarity rank → evidence gate",
+      "takeaway": "SigLIP 的 score 是本地比較結果；不能因為 sigmoid loss 就當作校準 defect probability。"
+    },
+    "architecture": {
+      "title": "SigLIP：雙 Encoder 與 pairwise sigmoid 的邊界",
+      "context": "影像 v 與文字 t 仍各自編碼；pairwise sigmoid 描述訓練 objective，deployment 只輸出版本化 similarity/rank。",
+      "bubble": "訓練 objective\n會產生 box 嗎？",
+      "cards": [
+        {"title": "輸入契約", "body": "ROI／resize\nprompt", "visual": "input"},
+        {"title": "Image embedding", "body": "vision encoder\n→ v", "visual": "feature"},
+        {"title": "Text embedding", "body": "text encoder\n→ t", "visual": "dual"},
+        {"title": "本地 rank", "body": "similarity\npolicy", "visual": "score"}
+      ],
+      "flow": "versioned image/text inputs → v／t embeddings → local comparison policy → candidate rank",
+      "takeaway": "訓練目標與部署操作點不同；prompt、ROI 與 threshold 才決定候選分數如何被解讀。"
+    },
+    "build": {
+      "title": "SigLIP：要和 CLIP 用同契約比較",
+      "context": "checkpoint、ROI、preprocess、prompt pool、tokenizer、cache、aggregation 與 calibration 一起固定，才可公平比較。",
+      "bubble": "較換 objective\n就值得換模型？",
+      "cards": [
+        {"title": "鎖共同輸入", "body": "ROI／pixels\nprompt", "visual": "contract"},
+        {"title": "鎖 score policy", "body": "cache／rank\nthreshold", "visual": "contract"},
+        {"title": "量真實表現", "body": "grounding\nP95", "visual": "score"},
+        {"title": "量不確定性", "body": "variance\nOOD gate", "visual": "gate"}
+      ],
+      "flow": "same CLIP contract → local retrieval truth → prompt/OOD robustness → end-to-end review",
+      "takeaway": "不是比較 loss 名稱，而是比較同一現場 contract 下的 retrieval、abstain 與 P95。"
+    },
+    "failure": "用 sigmoid objective 宣稱較佳；忽略 prompt 與 ROI contract；把 global rank 當 pixel proof。",
+    "selection": "固定 CLIP 的 ROI、prompt、cache；量 retrieval truth、variance、P95；失敗轉 specialist route。",
+    "takeaway": "SigLIP 可作語意候選，必須在相同 CLIP 契約下驗證。",
+    "selection_takeaway": "pairwise sigmoid 不是選型理由；固定現場 evidence contract 下的結果才是。"
+  },
+  {
+    "slug": "charuco",
+    "relative_dir": "roadmap-model-selection/geometry-alignment-measurement/charuco",
+    "model": "ChArUco",
+    "family": "geometry",
+    "case_tag": "CASE · Alignment",
+    "family_tag": "GEOMETRY",
+    "identity": {
+      "title": "ChArUco：可放標靶時的幾何基準",
+      "context": "ChArUco 是有已知尺寸與 ID 的實體標定板；它用於可追溯 camera pose 與 calibration，不取代日常產品 registration。",
+      "bubble": "角點可校正\n整個系統嗎？",
+      "cards": [
+        {"title": "已知標靶", "body": "known board\n+ camera", "visual": "input"},
+        {"title": "Marker + corner", "body": "marker ID\n+ corners", "visual": "dual"},
+        {"title": "2D／3D 對應", "body": "object／image\npoints", "visual": "feature"},
+        {"title": "幾何 Gate", "body": "pose + residual\ncoverage gate", "visual": "gate"}
+      ],
+      "flow": "board image → marker/corner correspondence → calibration or PnP → residual-qualified pose",
+      "takeaway": "可控標靶提供幾何基準；真正可用與否由 coverage、residual tail 與重裝 repeatability 決定。"
+    },
+    "architecture": {
+      "title": "ChArUco：從 ID corner 到可追溯 pose",
+      "context": "marker ID 輔助建立穩定 correspondence，插值棋盤角點再與已知 object points 求解 calibration 或 PnP。",
+      "bubble": "只要找到角點\n就能相信 pose？",
+      "cards": [
+        {"title": "Board image", "body": "board image\nmarker detect", "visual": "input"},
+        {"title": "可識別角點", "body": "ID + corners\ninterpolate", "visual": "dual"},
+        {"title": "座標對應", "body": "object／image\npoints", "visual": "feature"},
+        {"title": "求解輸出", "body": "calib／PnP\npose + residual", "visual": "score"}
+      ],
+      "flow": "known board geometry → detected corners → 2D/3D correspondence → pose + reprojection residual",
+      "takeaway": "ChArUco 的 score 不是分類 accuracy，而是可覆蓋整個工作範圍的 reprojection residual。"
+    },
+    "build": {
+      "title": "ChArUco：qualification 要看 P95，不只平均",
+      "context": "標靶尺寸、平面度、mount、focus 與多姿態／全 FOV 影像是建置契約；部署時每次 pose 都應通過 quality gate。",
+      "bubble": "重裝之後\n還能重現嗎？",
+      "cards": [
+        {"title": "鎖標靶", "body": "board size\nflatness／mount", "visual": "contract"},
+        {"title": "取全覆蓋", "body": "FOV + pose\ncoverage", "visual": "input"},
+        {"title": "量誤差尾端", "body": "P50／P95\nresidual", "visual": "score"},
+        {"title": "重裝 Gate", "body": "reinstall\nreject gate", "visual": "gate"}
+      ],
+      "flow": "board/mount contract → full-FOV captures → residual distribution → repeatable qualified pose",
+      "takeaway": "單次低平均誤差不夠；遮擋、反光與重裝後的 P95 才揭露幾何尾端風險。"
+    },
+    "failure": "單次平均 residual 就放行；角點 coverage 不足仍求解；忽略標靶尺寸與 mount 漂移。",
+    "selection": "固定標靶尺寸與 camera 設定；覆蓋全 FOV、距離與姿態；驗 P95 residual、重裝 repeatability。",
+    "takeaway": "需要可追溯幾何基準且可放標靶時，ChArUco 是首選。",
+    "selection_takeaway": "不是每張 board image 都可採用；coverage、residual tail 與重裝穩定性共同決定 ChArUco qualification。"
+  },
+  {
+    "slug": "ecc",
+    "relative_dir": "roadmap-model-selection/geometry-alignment-measurement/ecc",
+    "model": "ECC",
+    "family": "geometry",
+    "case_tag": "CASE · Alignment",
+    "family_tag": "GEOMETRY",
+    "identity": {
+      "title": "ECC：小位移的直接影像配準",
+      "context": "ECC 以 template 與 moving ROI 的外觀相關性迭代更新 warp；適用初始位姿接近、外觀穩定與近似平面的場景。",
+      "bubble": "高相關就表示\n對位正確嗎？",
+      "cards": [
+        {"title": "雙 ROI", "body": "template\nmoving ROI", "visual": "input"},
+        {"title": "選 warp", "body": "translation\naffine／H", "visual": "contract"},
+        {"title": "迭代 θ", "body": "pyramid + ECC\nupdate", "visual": "feature"},
+        {"title": "收斂 Gate", "body": "residual\n+ convergence", "visual": "gate"}
+      ],
+      "flow": "template + moving ROI → warp θ update → aligned ROI/inverse map → residual and convergence gate",
+      "takeaway": "ECC 是連續微調器，不是大位移、視差或結構改變的萬用對位器。"
+    },
+    "architecture": {
+      "title": "ECC：從 warp θ 到 aligned ROI",
+      "context": "固定 template、mask 與 initialization 後，ECC 在 pyramid 上反覆 warp、正規化與最大化相關目標，輸出 inverse transform。",
+      "bubble": "warp 自由度越高\n越安全嗎？",
+      "cards": [
+        {"title": "輸入 pair", "body": "template\nmoving ROI", "visual": "input"},
+        {"title": "Warp family", "body": "θ init\ntranslation→H", "visual": "contract"},
+        {"title": "ECC loop", "body": "pyramid\niterative update", "visual": "feature"},
+        {"title": "配準輸出", "body": "aligned ROI\ninverse map", "visual": "score"}
+      ],
+      "flow": "fixed pair + initialization → photometric ECC iterations → warp θ → aligned ROI + inverse transform",
+      "takeaway": "過度自由的 homography 也能看似高相關；residual 與收斂狀態必須一起判讀。"
+    },
+    "build": {
+      "title": "ECC：把錯收斂納入 operating point",
+      "context": "template、mask、pyramid、warp family、initial transform、最大 iterations 與停止條件都要固定並量測。",
+      "bubble": "反光或視差時\n要繼續求解嗎？",
+      "cards": [
+        {"title": "鎖 template", "body": "template／mask\npyramid", "visual": "contract"},
+        {"title": "鎖求解", "body": "θ init\nstop criterion", "visual": "contract"},
+        {"title": "量尾端", "body": "iterations\nP95／false conv.", "visual": "score"},
+        {"title": "拒用條件", "body": "reflection\nparallax／shift", "visual": "gate"}
+      ],
+      "flow": "locked template/warp → iterative alignment → convergence/residual trace → accept or reject",
+      "takeaway": "ECC 的量產 KPI 包含錯收斂與拒用率；只報快速成功案例會掩蓋 alignment 風險。"
+    },
+    "failure": "大位移仍硬用 ECC；錯初值或視差也求解；只看高相關不看 residual tail。",
+    "selection": "固定 template、mask、warp、init；量錯收斂、reject、P95；以 residual tail 決定採用。",
+    "takeaway": "外觀穩定且初始位置可靠時，ECC 是有效的微調配準器。",
+    "selection_takeaway": "ECC 的成立條件是小位移與可驗證收斂；不是產生任何 transform 就叫成功。"
+  },
+  {
+    "slug": "lightglue",
+    "relative_dir": "roadmap-model-selection/geometry-alignment-measurement/lightglue",
+    "model": "LightGlue",
+    "family": "geometry",
+    "case_tag": "CASE · Alignment",
+    "family_tag": "GEOMETRY",
+    "identity": {
+      "title": "LightGlue：learned matching 仍要幾何驗證",
+      "context": "LightGlue 接收上游 extractor 的 keypoints/descriptors，以 attention、confidence 與 pruning 產生 matches；它不是 transform solver。",
+      "bubble": "高 confidence match\n就能直接 warp？",
+      "cards": [
+        {"title": "Image pair", "body": "reference\ncurrent ROI", "visual": "input"},
+        {"title": "Extractor 邊界", "body": "keypoints\ndescriptors", "visual": "dual"},
+        {"title": "Learned match", "body": "attention\n+ pruning", "visual": "feature"},
+        {"title": "幾何 Gate", "body": "RANSAC\ninlier coverage", "visual": "gate"}
+      ],
+      "flow": "image pair → external extractor → LightGlue matches → RANSAC/inlier gate → warp",
+      "takeaway": "LightGlue 產生 correspondence；幾何有效性仍由 inlier coverage、residual 與 solver 決定。"
+    },
+    "architecture": {
+      "title": "LightGlue：token match 要接 RANSAC 才有幾何意義",
+      "context": "SuperPoint、DISK 或 ALIKED 先產生 descriptor tokens；LightGlue 的 self/cross attention 只負責配對與信心，不負責 pose。",
+      "bubble": "matcher 是否等於\ngeometry solver？",
+      "cards": [
+        {"title": "Pair + extractor", "body": "image pair\nkeypoint budget", "visual": "input"},
+        {"title": "Descriptor tokens", "body": "external\nextractor output", "visual": "dual"},
+        {"title": "Attention match", "body": "self／cross\nconfidence", "visual": "feature"},
+        {"title": "Solver", "body": "RANSAC\nwarp／pose", "visual": "score"}
+      ],
+      "flow": "extractor tokens → adaptive matching/pruning → correspondences → RANSAC → verified transform",
+      "takeaway": "confidence 不是量測值；只有幾何 solver 的 inlier spatial coverage 能證明 matches 可用。"
+    },
+    "build": {
+      "title": "LightGlue：把 extractor 與 P95 一起鎖住",
+      "context": "extractor、weights、resize、keypoint budget、threshold、early stop 與 RANSAC 是一個共同 operating contract。",
+      "bubble": "更多 keypoints\n一定更可靠嗎？",
+      "cards": [
+        {"title": "鎖 extractor", "body": "weights\nresize／budget", "visual": "contract"},
+        {"title": "鎖 matcher", "body": "threshold\nearly stop", "visual": "contract"},
+        {"title": "量全路徑", "body": "extract + match\nsolver P95", "visual": "score"},
+        {"title": "驗 surface", "body": "repeat／OOD\nlow conf. reject", "visual": "gate"}
+      ],
+      "flow": "extractor/matcher contract → match + geometry solver → inlier/residual/P95 → accept or reject",
+      "takeaway": "keypoint budget 與 pruning 在 recall、latency 間取捨；不能只看公開 demo pair。"
+    },
+    "failure": "把 matcher 當 transform solver；重複紋理仍硬湊 matches；只看 confidence 不看 inlier coverage。",
+    "selection": "固定 extractor、scale、budget、RANSAC；比 SIFT 的 coverage、residual、P95；低 confidence 時拒用。",
+    "takeaway": "傳統 descriptor 不穩且可接受模型依賴時，可驗證 LightGlue。",
+    "selection_takeaway": "LightGlue 只有在固定 extractor contract 下改善真實表面 pair 的幾何證據，才值得採用。"
+  },
+  {
+    "slug": "sift",
+    "relative_dir": "roadmap-model-selection/geometry-alignment-measurement/sift",
+    "model": "SIFT",
+    "family": "geometry",
+    "case_tag": "CASE · Alignment",
+    "family_tag": "GEOMETRY",
+    "identity": {
+      "title": "SIFT：可解釋 local correspondence 的基線",
+      "context": "SIFT 從有穩定紋理的 reference/current ROI 找到尺度與方向特徵，提供 geometry initialization；它不是深度模型或分類器。",
+      "bubble": "match 很多就\n能相信對位嗎？",
+      "cards": [
+        {"title": "有紋理 ROI", "body": "reference\ncurrent ROI", "visual": "input"},
+        {"title": "Local features", "body": "scale／orientation\ndescriptor", "visual": "feature"},
+        {"title": "Ratio matches", "body": "NN match\nratio test", "visual": "dual"},
+        {"title": "Coverage Gate", "body": "RANSAC\nresidual／spread", "visual": "gate"}
+      ],
+      "flow": "textured image pair → SIFT keypoints/descriptors → ratio/RANSAC inliers → transform gate",
+      "takeaway": "SIFT 的價值是可追查 correspondence；match 數量必須加上空間 coverage 與 residual 才有工程意義。"
+    },
+    "architecture": {
+      "title": "SIFT：從 DoG extrema 到幾何 transform",
+      "context": "image pyramid 中的 DoG extrema 經 contrast/edge rejection、orientation 與 gradient descriptor 後，才進入 ratio test 與 RANSAC。",
+      "bubble": "任何亮點都能\n成為 keypoint？",
+      "cards": [
+        {"title": "Scale space", "body": "image pyramid\nDoG extrema", "visual": "input"},
+        {"title": "穩定 keypoint", "body": "contrast／edge\norientation", "visual": "feature"},
+        {"title": "Descriptor match", "body": "gradient desc.\nratio test", "visual": "dual"},
+        {"title": "Transform", "body": "RANSAC\ninliers + warp", "visual": "score"}
+      ],
+      "flow": "pyramid → stable keypoints/descriptors → nearest matches → RANSAC inliers → transform",
+      "takeaway": "SIFT 先拒掉不穩定 extrema；但 repetitive texture 與低紋理仍可能製造看似合理的錯配。"
+    },
+    "build": {
+      "title": "SIFT：量 coverage 與 reject，不只 match 數",
+      "context": "detector threshold、matcher、ratio test、RANSAC model 與 inlier gate 要固定；P95 同時含 feature、matching 與 solver。",
+      "bubble": "inlier 集中一角\n還能採用嗎？",
+      "cards": [
+        {"title": "鎖特徵設定", "body": "detector\nthreshold", "visual": "contract"},
+        {"title": "鎖幾何規則", "body": "ratio test\nRANSAC model", "visual": "contract"},
+        {"title": "量空間證據", "body": "inlier spread\nresidual tail", "visual": "score"},
+        {"title": "拒用場景", "body": "low texture\nrepeat／glare", "visual": "gate"}
+      ],
+      "flow": "fixed SIFT/RANSAC contract → correspondence distribution → residual/P95 → valid initialization or reject",
+      "takeaway": "position-sensitive AD 中，SIFT 通常只是 initialization；後面仍需 finer registration gate。"
+    },
+    "failure": "只用 match 數決定採用；重複圖樣造成集中錯配；把 SIFT warp 當最終 registration。",
+    "selection": "固定 detector、matcher、RANSAC；驗 coverage、residual、reject、P95；再接下游 registration。",
+    "takeaway": "表面紋理可觀測且需要可解釋 correspondence 時，SIFT 是穩健基線。",
+    "selection_takeaway": "SIFT 的 qualification 重點不是 match 數，而是全 ROI 的 inlier evidence 和下游配準可重現性。"
+  },
+  {
+    "slug": "convnext",
+    "relative_dir": "roadmap-model-selection/known-target-classification/convnext",
+    "model": "ConvNeXt",
+    "family": "classification",
+    "case_tag": "CASE · Known Class",
+    "family_tag": "CLASSIFICATION",
+    "identity": {
+      "title": "ConvNeXt：現代 CNN 仍是 closed-set classifier",
+      "context": "ConvNeXt 以 large-kernel depthwise convolution 與階層 features 分類已知類別；global score 不是 tiny defect 的定位證據。",
+      "bubble": "大 kernel 能\n找出微小缺陷？",
+      "cards": [
+        {"title": "固定 ROI", "body": "known classes\npixel budget", "visual": "input"},
+        {"title": "ConvNeXt stages", "body": "large-kernel\ndepthwise conv", "visual": "feature"},
+        {"title": "Global logits", "body": "pool +\nlinear head", "visual": "score"},
+        {"title": "Reject Gate", "body": "OOD／low conf.\n→ review", "visual": "gate"}
+      ],
+      "flow": "fixed ROI → hierarchical CNN features → pooled class logits → calibration/OOD review",
+      "takeaway": "ConvNeXt 的大 receptive field 不會補回未被光學 sampling 到的 tiny defect。"
+    },
+    "architecture": {
+      "title": "ConvNeXt：從 patchify stem 到 closed-set logits",
+      "context": "patchify-like stem 後，large-kernel depthwise conv 與 pointwise channel mixing 逐 stage 形成 features，再 global pool 分類。",
+      "bubble": "global logit\n是 mask 嗎？",
+      "cards": [
+        {"title": "Input contract", "body": "ROI／resize\nnormalize", "visual": "input"},
+        {"title": "Modern stem", "body": "patchify-like\nconv stem", "visual": "feature"},
+        {"title": "Hierarchical blocks", "body": "DW conv\nchannel mix", "visual": "dual"},
+        {"title": "Class output", "body": "global pool\nclass logits", "visual": "score"}
+      ],
+      "flow": "versioned pixels → ConvNeXt stages → global average pooling → closed-set logits",
+      "takeaway": "large-kernel convolution 擴大混合範圍；它不把 image-level classifier 變成 localization 模型。"
+    },
+    "build": {
+      "title": "ConvNeXt：分類契約包含 tile 與 reject",
+      "context": "variant、pretraining、pixels、augmentation、tile aggregation、threshold 與 OOD policy 必須共同固定，才能和 ResNet／ViT 比較。",
+      "bubble": "切 tile 的方式\n會改判定嗎？",
+      "cards": [
+        {"title": "鎖 variant", "body": "Tiny／Small\nweights", "visual": "contract"},
+        {"title": "鎖資料契約", "body": "labels／split\naugmentation", "visual": "contract"},
+        {"title": "量全流程", "body": "tile aggregate\nP95", "visual": "score"},
+        {"title": "驗未知", "body": "calibration\nOOD → review", "visual": "gate"}
+      ],
+      "flow": "model/data/tile contract → logits aggregation → recall/calibration/P95 → reject or review",
+      "takeaway": "tile border、aggregation 與 threshold 未鎖定時，同一 die 可能因切法不同而改變決策。"
+    },
+    "failure": "把 global logit 當 tiny defect 位置；只比 backbone forward；忽略 tile aggregation 與 OOD。",
+    "selection": "固定 ROI、labels、pixels、tile；比 ResNet、ViT 的 recall、calib、P95；低信心轉 review。",
+    "takeaway": "已知類別穩定且需現代 CNN toolchain 時，可驗證 ConvNeXt。",
+    "selection_takeaway": "ConvNeXt 的選型證據是固定資料與 tile 契約下的 critical recall、校準與端到端 P95。"
+  },
+  {
+    "slug": "keypoint-r-cnn",
+    "relative_dir": "roadmap-model-selection/known-target-classification/keypoint-r-cnn",
+    "model": "Keypoint R-CNN",
+    "family": "classification",
+    "case_tag": "CASE · Landmark",
+    "family_tag": "CLASSIFICATION",
+    "identity": {
+      "title": "Keypoint R-CNN：proposal recall 決定 landmark 上限",
+      "context": "two-stage pipeline 先找 instance box，再在每個 ROI 估 K 個 heatmaps；漏掉 proposal 就沒有後續 keypoint。",
+      "bubble": "heatmap 很高\n就代表座標準？",
+      "cards": [
+        {"title": "Multi-instance", "body": "known objects\nocclusion／overlap", "visual": "input"},
+        {"title": "RPN proposals", "body": "objectness\nbox + NMS", "visual": "feature"},
+        {"title": "ROI heatmaps", "body": "ROIAlign\nK keypoints", "visual": "dual"},
+        {"title": "Coordinate Gate", "body": "visibility\n+ uncertainty", "visual": "gate"}
+      ],
+      "flow": "image → RPN proposals → ROIAlign heatmaps → inverse map → per-instance landmark gate",
+      "takeaway": "Keypoint peak 不是校準座標 uncertainty；proposal、ROI 與 inverse mapping 都共同決定實際誤差。"
+    },
+    "architecture": {
+      "title": "Keypoint R-CNN：box path 與 heatmap path 必須一起看",
+      "context": "backbone/FPN 先供 RPN 提案，ROIAlign 再分支到 box/class 與 keypoint heatmap head，最後映回原圖座標。",
+      "bubble": "box score 高就\n不會漏 landmark？",
+      "cards": [
+        {"title": "Backbone + FPN", "body": "multi-scale\nfeatures", "visual": "feature"},
+        {"title": "Proposal route", "body": "RPN\nfilter + NMS", "visual": "dual"},
+        {"title": "ROI heads", "body": "box + K\nheatmaps", "visual": "feature"},
+        {"title": "Original coords", "body": "argmax\ninverse map", "visual": "score"}
+      ],
+      "flow": "FPN → RPN/NMS → ROIAlign → per-keypoint heatmaps → mapped coordinates",
+      "takeaway": "proposal recall 是 keypoint recall 的上限；後段 heatmap 不能復活從未送進 ROI 的 instance。"
+    },
+    "build": {
+      "title": "Keypoint R-CNN：把 visibility 與 mapping 納入驗收",
+      "context": "anchors、proposal budget、ROIAlign、K/order、heatmap resolution、visibility、argmax 與 inverse mapping 都需要版本化。",
+      "bubble": "遮擋 keypoint\n要硬猜嗎？",
+      "cards": [
+        {"title": "鎖 proposal", "body": "anchors／NMS\nbudget", "visual": "contract"},
+        {"title": "鎖 landmark", "body": "K/order\nvisibility", "visual": "contract"},
+        {"title": "量座標誤差", "body": "proposal recall\npixel error", "visual": "score"},
+        {"title": "測失效", "body": "occlusion／swap\nreview gate", "visual": "gate"}
+      ],
+      "flow": "proposal/landmark contract → heatmap decode + inverse map → recall/error trace → uncertainty review",
+      "takeaway": "量測任務還要另傳遞 calibration、repeatability 與 per-keypoint uncertainty，不能只看 heatmap peak。"
+    },
+    "failure": "忽略 proposal miss；以 heatmap peak 當座標 uncertainty；遮擋或對稱時硬輸出 landmark。",
+    "selection": "固定 box、K點、proposal、heatmap；比 recall、pixel error、P95；低信心轉 review。",
+    "takeaway": "需要多 instance 的固定 landmark set 時，Keypoint R-CNN 是可審計選項。",
+    "selection_takeaway": "選 Keypoint R-CNN 前，先證明 proposal route 和 landmark route 都能在真實遮擋／重疊下維持可用。"
+  },
+  {
+    "slug": "pose",
+    "relative_dir": "roadmap-model-selection/known-target-classification/pose",
+    "model": "Pose Pipeline",
+    "family": "classification",
+    "case_tag": "CASE · Pose",
+    "family_tag": "CLASSIFICATION",
+    "identity": {
+      "title": "Pose：是可審計 pipeline，不是單一 checkpoint",
+      "context": "top-down 與 bottom-up 都要明確指定 keypoint schema、association、camera/solver 與 uncertainty policy，才談 2D/3D pose。",
+      "bubble": "keypoint AP 高\n就能放行 pose？",
+      "cards": [
+        {"title": "工件影像", "body": "orientation\nocclusion／symmetry", "visual": "input"},
+        {"title": "Keypoint route", "body": "top-down\nor bottom-up", "visual": "feature"},
+        {"title": "Association", "body": "instance ID\nordered joints", "visual": "dual"},
+        {"title": "Pose Gate", "body": "solver\n+ uncertainty", "visual": "gate"}
+      ],
+      "flow": "image → keypoints + association → camera/geometry solver → pose with uncertainty/fallback",
+      "takeaway": "Pose 不是 heatmap 的別名；它是 keypoints、association、座標轉換與幾何 solver 的共同責任。"
+    },
+    "architecture": {
+      "title": "Pose：top-down 與 bottom-up 在 association 分岔",
+      "context": "top-down 先 detector/crop 再估 keypoints；bottom-up 先全圖 heatmaps 再 grouping；兩者最後都需 geometry solver。",
+      "bubble": "少了 association\n還能有 instance pose？",
+      "cards": [
+        {"title": "Shared image", "body": "fixed camera\ninput contract", "visual": "input"},
+        {"title": "Top-down", "body": "detect → crop\nkeypoint net", "visual": "feature"},
+        {"title": "Bottom-up", "body": "heatmaps\n+ grouping", "visual": "dual"},
+        {"title": "Geometry output", "body": "fit／PnP\npose + fallback", "visual": "score"}
+      ],
+      "flow": "top-down or bottom-up keypoints → association → inverse mapping → geometry solver → pose",
+      "takeaway": "兩條路都不能跳過 association、camera contract 與 solver；keypoint heatmap 本身不是 pose。"
+    },
+    "build": {
+      "title": "Pose：要量 event success 與 tail error",
+      "context": "topology、schema、camera calibration、solver、visibility、fallback、mapping 與 runtime 要一起固定，並量 final event result。",
+      "bubble": "pose 殘差低\n就不需 fallback？",
+      "cards": [
+        {"title": "鎖 pipeline", "body": "topology\nbackbone／decoder", "visual": "contract"},
+        {"title": "鎖幾何", "body": "camera\nsolver／fixture", "visual": "contract"},
+        {"title": "量結果", "body": "event success\ntail error／P95", "visual": "score"},
+        {"title": "不確定 Gate", "body": "missing／swap\nfallback", "visual": "gate"}
+      ],
+      "flow": "pipeline/camera contract → keypoints + solver → event/tail evidence → uncertainty fallback",
+      "takeaway": "detector AP、keypoint AP 或 solver residual 都不能單獨推出可靠 pose；最終 event 成功才是驗收。"
+    },
+    "failure": "把 keypoint AP 當 pose 放行；忽略 association 與 camera drift；無 uncertainty 仍輸出 orientation。",
+    "selection": "固定 keypoint、camera、decision；比 event success、tail error、P95；設定 confidence/fallback gate。",
+    "takeaway": "需要 orientation、grasp 或 fixture localization 時，先建立可審計 Pose pipeline。",
+    "selection_takeaway": "Pose 的採用依據是可重播的 event 成功、尾端誤差與 fallback 行為，而不是單一 AP。"
+  },
+  {
+    "slug": "resnet",
+    "relative_dir": "roadmap-model-selection/known-target-classification/resnet",
+    "model": "ResNet",
+    "family": "classification",
+    "case_tag": "CASE · Known Class",
+    "family_tag": "CLASSIFICATION",
+    "identity": {
+      "title": "ResNet：成熟分類基線，不負責未知與定位",
+      "context": "ResNet 用 residual shortcut 讓深層 CNN 對固定 ROI 輸出 known-class logits；它不回答未知 defect、位置或 mask。",
+      "bubble": "高 confidence\n就代表正常嗎？",
+      "cards": [
+        {"title": "固定 ROI", "body": "known labels\npixel budget", "visual": "input"},
+        {"title": "Residual stages", "body": "F(x) + x\nspatial maps", "visual": "feature"},
+        {"title": "Global logits", "body": "pool +\nlinear head", "visual": "score"},
+        {"title": "OOD Gate", "body": "low conf.\n→ review", "visual": "gate"}
+      ],
+      "flow": "fixed ROI → residual CNN → pooled known-class logits → calibration/OOD review",
+      "takeaway": "ResNet 的 high logit 不是未知檢出保證；closed-set 之外必須有 reject 與 review。"
+    },
+    "architecture": {
+      "title": "ResNet：shortcut 為何能支撐深層 CNN？",
+      "context": "convolution stem 後的 residual blocks 以 F(x)+x 保留梯度與資訊路徑，最後 global pooling 形成 image-level logits。",
+      "bubble": "shortcut 能把\nclass score 變 mask？",
+      "cards": [
+        {"title": "Input contract", "body": "ROI／resize\nnormalize", "visual": "input"},
+        {"title": "Conv stem", "body": "early spatial\nfeatures", "visual": "feature"},
+        {"title": "Residual blocks", "body": "F(x) + x\ndownsample", "visual": "dual"},
+        {"title": "Class head", "body": "global pool\nclass logits", "visual": "score"}
+      ],
+      "flow": "versioned ROI → stem/residual stages → global average pooling → known-class logits",
+      "takeaway": "residual shortcut 改善最佳化，不會讓 global classifier 原生輸出 defect box、mask 或尺寸。"
+    },
+    "build": {
+      "title": "ResNet：量產基線要有校準與 OOD gate",
+      "context": "depth、pretraining、pixels、labels、lot/recipe split、threshold 與 SLA 都要鎖定；平均 top-1 不足以說明風險。",
+      "bubble": "新 recipe 進來\n能直接沿用嗎？",
+      "cards": [
+        {"title": "鎖模型", "body": "ResNet-18／50\nweights", "visual": "contract"},
+        {"title": "鎖資料", "body": "lot／recipe split\nclass balance", "visual": "contract"},
+        {"title": "量關鍵 KPI", "body": "critical recall\ncalibration／P95", "visual": "score"},
+        {"title": "拒用未知", "body": "OOD\nreview queue", "visual": "gate"}
+      ],
+      "flow": "model/data contract → closed-set logits → critical recall/calibration → OOD reject or review",
+      "takeaway": "成熟 baseline 的力量在可比較與可部署；前提是資料 split 與未知拒用規則也成熟。"
+    },
+    "failure": "把 closed-set confidence 當未知保證；背景捷徑仍放行；只比 average top-1。",
+    "selection": "固定 ROI、labels、split、threshold；比 recall、calibration、OOD、P95；低信心轉 review。",
+    "takeaway": "ROI 固定、類別穩定且需成熟 CNN baseline 時，ResNet 是合理起點。",
+    "selection_takeaway": "ResNet 的量產價值來自可校準的 critical recall 與 OOD reject，不是單一最高分類分數。"
+  },
+  {
+    "slug": "segformer",
+    "relative_dir": "roadmap-model-selection/known-target-classification/segformer",
+    "model": "SegFormer",
+    "family": "classification",
+    "case_tag": "CASE · Semantic Mask",
+    "family_tag": "CLASSIFICATION",
+    "identity": {
+      "title": "SegFormer：多尺度 semantic mask，不是 instance 或量測",
+      "context": "hierarchical MiT encoder 與 lightweight MLP decoder 融合多尺度 features 產生 pixel logits；semantic mask 不自帶 instance identity。",
+      "bubble": "semantic mask\n就是量測結果？",
+      "cards": [
+        {"title": "高解析 ROI", "body": "thin／tiny\ntile border", "visual": "input"},
+        {"title": "MiT stages", "body": "hierarchical\nfeatures", "visual": "feature"},
+        {"title": "MLP decoder", "body": "project／upsample\nfuse", "visual": "dual"},
+        {"title": "Mask Gate", "body": "pixel logits\n→ review", "visual": "gate"}
+      ],
+      "flow": "image/crop → multi-scale MiT features → MLP fuse → semantic mask + boundary review",
+      "takeaway": "SegFormer 的 mask 是已知 semantic class；IoU、mask confidence 都不能直接當 instance 或 CD 量測。"
+    },
+    "architecture": {
+      "title": "SegFormer：四尺度 feature 如何融合成 semantic mask",
+      "context": "overlapping patch embedding 經 hierarchical MiT stages 產生四個尺度 features；MLP 對齊、upsample、fuse 後才輸出 pixel logits。",
+      "bubble": "上採樣後就有\n原生細邊界？",
+      "cards": [
+        {"title": "Crop／tile", "body": "input contract\noverlap", "visual": "input"},
+        {"title": "MiT encoder", "body": "patch embed\nself-attention", "visual": "feature"},
+        {"title": "Four-scale fuse", "body": "MLP project\nupsample", "visual": "dual"},
+        {"title": "Semantic output", "body": "pixel logits\nstitch mask", "visual": "score"}
+      ],
+      "flow": "overlap patches → hierarchical features → per-scale MLP fuse → logits → stitch/inverse map",
+      "takeaway": "較高輸出 resolution 不會憑空產生邊界證據；stride、crop 與 tile seam 仍可能稀釋 tiny/thin 物件。"
+    },
+    "build": {
+      "title": "SegFormer：把 crop、stitch 與 boundary 納入 P95",
+      "context": "MiT variant、crop/tile、overlap、decoder、loss、output resolution、threshold、stitch 與 engine 是完整的 segmentation contract。",
+      "bubble": "paper mIoU 高\n就能量產嗎？",
+      "cards": [
+        {"title": "鎖 variant", "body": "MiT B0–B5\ncheckpoint", "visual": "contract"},
+        {"title": "鎖 labels", "body": "class／ignore\nboundary policy", "visual": "contract"},
+        {"title": "量 mask KPI", "body": "critical recall\nboundary／seam", "visual": "score"},
+        {"title": "驗 shift", "body": "tile／recipe\nreview gate", "visual": "gate"}
+      ],
+      "flow": "model/data/tile contract → multi-crop inference → stitch + KPI → drift/review action",
+      "takeaway": "paper mIoU 不能替代 fab operating point；真正要看 critical region、seam、memory 與 end-to-end P95。"
+    },
+    "failure": "以 paper mIoU 直接選型；把 semantic mask 當 instance；忽略 boundary、tile seam 與 shift。",
+    "selection": "固定 labels、crop/tile、output、engine；比 recall、boundary/seam、memory、P95；量測另接 uncertainty。",
+    "takeaway": "已知語意類別且多尺度 context 重要時，可驗證 SegFormer。",
+    "selection_takeaway": "SegFormer 的採用要由固定資料與 crop 契約下的 boundary/tiny evidence 驅動，不是 paper 指標。"
+  },
+  {
+    "slug": "u-net",
+    "relative_dir": "roadmap-model-selection/known-target-classification/u-net",
+    "model": "U-Net",
+    "family": "classification",
+    "case_tag": "CASE · Semantic Mask",
+    "family_tag": "CLASSIFICATION",
+    "identity": {
+      "title": "U-Net：skip connection 產生 semantic mask，不自帶 instance",
+      "context": "contracting encoder 與 expanding decoder 以同尺度 skip connections 恢復 localization，輸出的是 per-pixel semantic logits。",
+      "bubble": "相連物件的 mask\n會自然分開嗎？",
+      "cards": [
+        {"title": "高解析 ROI", "body": "thin／touching\ntile border", "visual": "input"},
+        {"title": "Encoder", "body": "downsample\ncontext", "visual": "feature"},
+        {"title": "Decoder + skip", "body": "upsample\nlocal detail", "visual": "dual"},
+        {"title": "Semantic mask", "body": "pixel logits\nthreshold gate", "visual": "gate"}
+      ],
+      "flow": "image/tile → encoder context + skip features → decoder → semantic mask → review",
+      "takeaway": "U-Net 可保留同尺度 local detail；但 touching instance、量測與不確定性仍需要模型外規則。"
+    },
+    "architecture": {
+      "title": "U-Net：encoder、bottleneck、skip 如何恢復定位",
+      "context": "downsampling encoder 壓縮 context，bottleneck 後的 expanding decoder 與同尺度 skip concatenate，再形成 H×W×K pixel logits。",
+      "bubble": "skip connection\n保證細邊界？",
+      "cards": [
+        {"title": "Input tiles", "body": "ROI／normalize\noverlap", "visual": "input"},
+        {"title": "Contracting path", "body": "downsample\ncontext", "visual": "feature"},
+        {"title": "Expanding path", "body": "upsample\nskip concat", "visual": "dual"},
+        {"title": "Mask output", "body": "logits\nargmax／stitch", "visual": "score"}
+      ],
+      "flow": "input → encoder/bottleneck → skip-fused decoder → pixel logits → semantic mask",
+      "takeaway": "skip feature 有助 localization，但 downsampling、interpolation 與 tile blending 仍會決定 tiny/boundary 是否保留。"
+    },
+    "build": {
+      "title": "U-Net：先鎖 decoder、tiling 與 postprocess",
+      "context": "encoder、depth、width、loss、crop/tile、overlap、threshold、blend/stitch 與 postprocess 共同決定一張 mask 的邊界。",
+      "bubble": "IoU 高就能\n量尺寸嗎？",
+      "cards": [
+        {"title": "鎖網路", "body": "encoder／depth\nwidth／decoder", "visual": "contract"},
+        {"title": "鎖資料", "body": "pixel labels\nclass balance", "visual": "contract"},
+        {"title": "量邊界", "body": "Dice／IoU\nboundary／seam", "visual": "score"},
+        {"title": "拒用風險", "body": "touching／shift\nreview gate", "visual": "gate"}
+      ],
+      "flow": "network/data/tile contract → mask + blend/stitch → boundary/tiny KPI → review or action",
+      "takeaway": "raw mask 不能直接升格為 CD 或面積量測；若進量測，還要校正、repeatability 與 uncertainty gate。"
+    },
+    "failure": "把 touching region 當 instance；以 IoU 推出尺寸能力；忽略 seam、threshold、boundary noise。",
+    "selection": "固定 pixel labels、tiling、postprocess；比 boundary/tiny、P95、seam；需要 instance 時另選 pipeline。",
+    "takeaway": "已知語意區域且可控 decoder/tiling 時，U-Net 是強韌的 segmentation 基線。",
+    "selection_takeaway": "U-Net 的量產價值在可控的資料、decoder 與 stitch 契約，不在單一漂亮 mask。"
+  },
+  {
+    "slug": "vit-classifier",
+    "relative_dir": "roadmap-model-selection/known-target-classification/vit-classifier",
+    "model": "ViT",
+    "family": "classification",
+    "case_tag": "CASE · Known Class",
+    "family_tag": "CLASSIFICATION",
+    "identity": {
+      "title": "ViT：attention 不能復原 patch 前消失的訊號",
+      "context": "ViT 將固定 ROI 切成 patches，經 self-attention 形成 global class logits；patch 內被稀釋的 micro defect 不會被 attention 自動找回。",
+      "bubble": "attention 高\n就是 defect evidence？",
+      "cards": [
+        {"title": "Pixel budget", "body": "fixed ROI\nmicro defect", "visual": "input"},
+        {"title": "Patch tokens", "body": "P×P grid\n+ position", "visual": "feature"},
+        {"title": "Transformer", "body": "self-attention\n+ MLP", "visual": "dual"},
+        {"title": "Class logits", "body": "class token\n→ review", "visual": "gate"}
+      ],
+      "flow": "ROI pixels → patch tokens → transformer attention → pooled closed-set logits → OOD review",
+      "takeaway": "ViT 的第一個工程問題是 observability：缺陷在進入 patch 前是否已經看得見。"
+    },
+    "architecture": {
+      "title": "ViT：patch token 如何成為 image-level class score",
+      "context": "P×P non-overlapping patches 被線性嵌入，加上 positional encoding 與 class token 後，經 repeated Transformer blocks 輸出 logits。",
+      "bubble": "attention map\n可直接當 mask？",
+      "cards": [
+        {"title": "ROI patches", "body": "H×W → P×P\ntoken grid", "visual": "input"},
+        {"title": "Token setup", "body": "embedding\n+ position", "visual": "feature"},
+        {"title": "ViT blocks", "body": "attention／MLP\nresidual", "visual": "dual"},
+        {"title": "Class head", "body": "class token\nlinear logits", "visual": "score"}
+      ],
+      "flow": "patchify + position → transformer blocks → class token/pooling → closed-set logits",
+      "takeaway": "attention map 是內部表示，不是已驗證缺陷邊界；分類輸出仍是 image/tile-level score。"
+    },
+    "build": {
+      "title": "ViT：patch size、VRAM 與 P95 是一組取捨",
+      "context": "patch、resolution、model size、pretraining、position interpolation、tile aggregation 與 reject policy 需一起鎖定。",
+      "bubble": "更小 patch\n就沒有代價？",
+      "cards": [
+        {"title": "鎖 token 契約", "body": "patch size\nresolution", "visual": "contract"},
+        {"title": "鎖訓練", "body": "pretraining\nfine-tune", "visual": "contract"},
+        {"title": "量資源", "body": "token count\nVRAM／P95", "visual": "score"},
+        {"title": "驗未知", "body": "OOD／tile\nreview gate", "visual": "gate"}
+      ],
+      "flow": "pixel/patch contract → token/VRAM profile → recall/calibration/P95 → OOD reject",
+      "takeaway": "更小 patch 與更高解析度會提高 token cost；先量觀測性，再選 operating point。"
+    },
+    "failure": "以 attention map 當 box/mask；不先檢查 pixel observability；忽略 patch、VRAM、tile 與 OOD。",
+    "selection": "固定 pixels、patch、pretrain、tile；比 recall、calibration、VRAM、P95；低信心轉 review。",
+    "takeaway": "長距結構重要且可善用 pretraining 時，ViT 值得在像素契約後評估。",
+    "selection_takeaway": "ViT 的選型從可見像素與 token budget 開始，不能從 attention 的視覺效果開始。"
+  },
+  {
+    "slug": "yolo-seg",
+    "relative_dir": "roadmap-model-selection/known-target-classification/yolo-seg",
+    "model": "YOLO-Seg",
+    "family": "classification",
+    "case_tag": "CASE · Instance Mask",
+    "family_tag": "CLASSIFICATION",
+    "identity": {
+      "title": "YOLO-Seg：每個已知 instance 的 box、class 與 mask",
+      "context": "YOLO-Seg 以 dense box/class candidates、prototype masks 與 per-instance coefficients 組合出 instance masks；不是 semantic segmentation 或量測。",
+      "bubble": "instance mask\n就等於尺寸嗎？",
+      "cards": [
+        {"title": "Instance image", "body": "tiny／overlap\ntile border", "visual": "input"},
+        {"title": "Dense heads", "body": "box／class\ncoefficients", "visual": "feature"},
+        {"title": "Prototype masks", "body": "shared basis\ncompose", "visual": "dual"},
+        {"title": "Instance Gate", "body": "NMS／threshold\nreview", "visual": "gate"}
+      ],
+      "flow": "image → box/class + prototype/mask coeff. → compose/NMS → per-instance mask review",
+      "takeaway": "YOLO-Seg 的 mask 是 instance candidate；mask confidence 仍不是 physical uncertainty 或量測結論。"
+    },
+    "architecture": {
+      "title": "YOLO-Seg：prototype × coefficient 如何組成 instance mask",
+      "context": "backbone/neck 同時產生 dense box/class 與 prototype basis；經 decode/NMS 後，instance coefficients 才組合成自己的 mask 並映回原圖。",
+      "bubble": "NMS 後的 mask\n就不會重疊錯嗎？",
+      "cards": [
+        {"title": "Letterbox input", "body": "ROI／resize\nstride", "visual": "input"},
+        {"title": "Dense detections", "body": "box／class\nmask coeff.", "visual": "feature"},
+        {"title": "Prototype branch", "body": "shared mask\nbasis", "visual": "dual"},
+        {"title": "Per-instance output", "body": "NMS／compose\nrescale", "visual": "score"}
+      ],
+      "flow": "letterbox → dense heads + prototypes → decode/NMS → coefficient compose → box/class/mask",
+      "takeaway": "mask resolution、crop、threshold、rescale 與 overlap policy 都會改變邊界；它們不能藏在後處理裡。"
+    },
+    "build": {
+      "title": "YOLO-Seg：把 NMS、mask compose 與 tiny recall 納入 P95",
+      "context": "exact release、weights、letterbox、prototype config、NMS、threshold、tile merge 與 runtime 都需固定，不能只報 box mAP。",
+      "bubble": "box AP 高\n就代表 mask 可用？",
+      "cards": [
+        {"title": "鎖模型", "body": "version／weights\nheads", "visual": "contract"},
+        {"title": "鎖 mask 規則", "body": "NMS／crop\nthreshold／rescale", "visual": "contract"},
+        {"title": "量 instance KPI", "body": "tiny recall\nboundary／overlap", "visual": "score"},
+        {"title": "量測 Gate", "body": "calibration\nuncertainty", "visual": "gate"}
+      ],
+      "flow": "model/mask contract → decode/NMS/compose → instance boundary/P95 → calibration or review",
+      "takeaway": "若 downstream 要量尺寸，instance mask 只是候選 ROI；還需 calibration、repeatability 與 uncertainty。"
+    },
+    "failure": "用 box AP 推出 mask 或尺寸能力；忽略 tiny、overlap、NMS、tile；把 mask confidence 當 uncertainty。",
+    "selection": "固定 instance labels、mask/NMS、pixels；比 boundary、tiny/overlap、P95；量測另接 calibration gate。",
+    "takeaway": "已知類別且需要每個 instance 的輪廓時，可驗證 YOLO-Seg。",
+    "selection_takeaway": "YOLO-Seg 的工程價值在 instance-aware mask；其邊界與量測主張仍需另行驗證。"
+  }
+]

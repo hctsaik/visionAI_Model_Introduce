@@ -1,0 +1,614 @@
+{
+  "model": "DRAEM",
+  "badge": "合成異常教重建，也教判別",
+  "title": "DRAEM：原圖與重建共同學習定位",
+  "scenario": {
+    "title": "缺陷標註不足，仍想學哪些位置值得查",
+    "body": "同一兩孔金屬板有很多正常照片，真實刮傷種類收不齊。先從正常圖製作合成練習題，再驗證是否真的能找出待測板 A 的刮傷 p。"
+  },
+  "promise": {
+    "title": "交付學習式異常位置圖",
+    "body": "原始影像、重建估計與判別網路的可疑位置圖，用於定位覆核；不直接提供真實缺陷機率、精密輪廓、尺寸或自動放行。"
+  },
+  "mental_model": {
+    "title": "重建是對照，判別才是位置預測",
+    "body": "正常原圖提供重建目標，合成區域 mask 提供定位目標。推論把待測原圖與重建一起交給判別器，不需要提供 mask。",
+    "limit": "合成外觀可能與真實缺陷不同；重建和判別都可能失敗，必須用未見真實影像查誤報與漏檢。"
+  },
+  "micro_example": {
+    "title": "新產品只漏細刮傷，你先改什麼？",
+    "setup": "DRAEM 在合成色斑上表現很好，換成反光外殼卻漏掉細刮傷，正常孔邊也常被標出。",
+    "prediction": "增加更多同款色斑、修改合成外觀、改善光源或改試 RD4AD，各需要什麼證據？",
+    "reveal": "先查原圖是否看得見細刮傷、正常光澤是否允收，以及合成外觀是否只教會色斑。用獨立真實正常與缺陷比較取像、合成設計和候選模型；提高門檻可能減少誤報卻增加漏檢。RD4AD 可作特徵路徑對照，AE 可作殘差基準，選擇須連同時間與覆核成本驗證。"
+  },
+  "mechanism_steps": [
+    {
+      "title": "用可追溯規則產生合成異常對",
+      "body": "正常 ROI 依 source texture／noise、Perlin mask、幾何／色彩 transform、opacity 與 blending 生成 corrupted image I_a 和 synthetic mask M_a。",
+      "why": "mask shape、覆蓋率與混合方式會決定模型最容易學到哪種異常外觀；未版本化的 simulator 使結果不可比較。",
+      "anchor": "工程圖核對：normal ROI + synthetic recipe → I_a／M_a",
+      "diagram": {
+        "title": "合成 recipe 產生 I_a/M_a",
+        "body": "正常 ROI 混入 texture 與 mask 成為訓練對。",
+        "why": "模擬外觀會決定模型學到的捷徑。",
+        "anchor": "normal ROI + recipe → I_a/M_a"
+      }
+    },
+    {
+      "title": "學一條正常重建路徑",
+      "body": "reconstruction network 將合成污染圖重建為 normal-looking image，使用鎖定 SSIM／L2 等目標與 normal support recipe。",
+      "why": "重建提供的是對照訊號，不是最終判斷；它也可能抹掉正常微結構或保留真實異常。",
+      "anchor": "工程圖核對：corrupt image → reconstruction",
+      "diagram": {
+        "title": "污染圖重建成對照",
+        "body": "reconstruction network 將 I_a 還原 normal-like 外觀。",
+        "why": "重建只是對照，可能抹掉或保留訊號。",
+        "anchor": "corrupt image → reconstruction"
+      }
+    },
+    {
+      "title": "讓辨別器同看原圖與重建",
+      "body": "將 I_a 與 I_r 的 joint representation 送入 discriminative segmentation network，訓練輸出 synthetic anomaly map；測試時改用 test image 與其 reconstruction。",
+      "why": "DRAEM 的 local evidence 來自辨別式 joint embedding，而不只是把兩張圖相減。",
+      "anchor": "工程圖核對：original + reconstruction → segmentation map",
+      "diagram": {
+        "title": "joint embedding 產生分割圖",
+        "body": "原圖與重建一起進入辨別式 segmentation。",
+        "why": "候選不是兩張圖的單純相減。",
+        "anchor": "original + reconstruction → map"
+      }
+    },
+    {
+      "title": "把 map 變成候選，並回到真實證據",
+      "body": "預測 map 經 versioned smoothing、resize、ROI mask、aggregation、calibration 與 threshold 形成 candidate score 和 review trace。",
+      "why": "後處理可掩蓋小 anomaly 或放大合成式雜訊；真實 challenge 及低 FPR 證據比合成 mask IoU 更重要。",
+      "anchor": "工程圖核對：map postprocess → evidence gate",
+      "diagram": {
+        "title": "map 後處理交 evidence gate",
+        "body": "預測 map 經固定 rule 形成 candidate score。",
+        "why": "真實 challenge 比合成 mask 成績重要。",
+        "anchor": "map → calibration → review"
+      }
+    }
+  ],
+  "visual_intro": "先分開『合成訓練題』與『真實考題』，再核對 synthetic recipe、reconstruction、joint segmentation 與 real-evidence gate。",
+  "beginner_path": {
+    "title": "同一金屬板：合成練習、重建對照與學習式判別",
+    "intro": "四張圖看推論、訓練監督、真實失敗情境與鄰近方法。全部為教學示意，沒有模型實測或性能排名。",
+    "visuals": [
+      {
+        "id": "wi021-ad-draem-1",
+        "title": "DRAEM：原圖與重建，一起交給判別器",
+        "prompt": "同板 A 的刮傷 p，重建後還有一個學習式判別步驟。",
+        "caption": "DRAEM 先用正常影像合成異常來訓練；待測影像經重建後，原圖與重建共同供判別網路產生位置圖。推論時不需提供 mask，也不是單純相減。",
+        "image": "_course_content/generated-concepts/ad-draem/wi021-draem-c1-r01-desktop.png",
+        "alt": "DRAEM：原圖與重建，一起交給判別器。DRAEM 先用正常影像合成異常來訓練；待測影像經重建後，原圖與重建共同供判別網路產生位置圖。推論時不需提供 mask，也不是單純相減。 本圖為 AI 生成教學示意，非模型實測。",
+        "callouts": [
+          {
+            "title": "重建提供什麼",
+            "body": "正常外觀的估計，用作對照；它不是正常真值，也不保證抹除所有缺陷。"
+          },
+          {
+            "title": "兩個輸入一起用",
+            "body": "判別器同時讀原圖與重建，學哪些位置值得標出；單看重建圖不等於完整 DRAEM。"
+          },
+          {
+            "title": "輸出如何接手",
+            "body": "回看 p 的原始影像，核對可疑位置；熱區不直接等於精密輪廓、尺寸或放行結論。"
+          }
+        ],
+        "reading_views": [
+          {
+            "title": "DRAEM：原圖與重建，一起交給判別器",
+            "image": "_course_content/generated-concepts/ad-draem/wi021-draem-c1-r01-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/ad-draem/wi021-draem-c1-r01-mobile.png",
+            "alt": "DRAEM：原圖與重建，一起交給判別器。DRAEM 先用正常影像合成異常來訓練；待測影像經重建後，原圖與重建共同供判別網路產生位置圖。推論時不需提供 mask，也不是單純相減。 本圖為 AI 生成教學示意，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              724,
+              2172
+            ],
+            "mobile_display_mode": "full-mobile",
+            "mobile_intrinsic_width": 724,
+            "mobile_intrinsic_height": 2172,
+            "desktop_intrinsic_width": 1672,
+            "desktop_intrinsic_height": 941
+          }
+        ],
+        "core_ideas": true
+      },
+      {
+        "id": "wi021-ad-draem-2",
+        "title": "DRAEM 兩個學習目標，答案從哪裡來？",
+        "prompt": "正常原圖教重建，已知合成區域教定位，兩種監督不要混在一起。",
+        "caption": "正常原圖加合成紋理，得到受損影像與已知 mask。重建估計以原本正常圖為目標；判別器預測位置以合成 mask 為目標。未見真實正常與缺陷保留作驗證。",
+        "image": "_course_content/generated-concepts/ad-draem/wi021-draem-c2-r01-desktop.png",
+        "alt": "DRAEM 兩個學習目標，答案從哪裡來？。正常原圖加合成紋理，得到受損影像與已知 mask。重建估計以原本正常圖為目標；判別器預測位置以合成 mask 為目標。未見真實正常與缺陷保留作驗證。 本圖為 AI 生成教學示意，非模型實測。",
+        "callouts": [
+          {
+            "title": "不必先收齊真缺陷標註",
+            "body": "訓練定位目標可由合成區域自動取得；合成方式仍須設計，正常資料也要涵蓋允收變化。"
+          },
+          {
+            "title": "mask 是訓練答案",
+            "body": "已知 mask 用於訓練定位，不是待測時提供的答案，也不是將預測偽裝成真值。"
+          },
+          {
+            "title": "真實驗證獨立保留",
+            "body": "按實體件或批次分資料，避免相近照片跨訓練與驗證。真缺陷用來查漏檢，不能只報合成成績。"
+          }
+        ],
+        "reading_views": [
+          {
+            "title": "DRAEM 兩個學習目標，答案從哪裡來？",
+            "image": "_course_content/generated-concepts/ad-draem/wi021-draem-c2-r01-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/ad-draem/wi021-draem-c2-r03-mobile.png",
+            "alt": "DRAEM 兩個學習目標，答案從哪裡來？。正常原圖加合成紋理，得到受損影像與已知 mask。重建估計以原本正常圖為目標；判別器預測位置以合成 mask 為目標。未見真實正常與缺陷保留作驗證。 本圖為 AI 生成教學示意，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              724,
+              2172
+            ],
+            "mobile_display_mode": "full-mobile",
+            "mobile_intrinsic_width": 724,
+            "mobile_intrinsic_height": 2172,
+            "desktop_intrinsic_width": 1672,
+            "desktop_intrinsic_height": 941
+          }
+        ],
+        "core_ideas": false
+      },
+      {
+        "id": "wi021-ad-draem-3",
+        "title": "DRAEM 合成題會做，真刮傷也會嗎？",
+        "prompt": "三列同案例比較：合成紋理、真實細刮傷與正常孔邊。",
+        "caption": "合成紋理能定位，不代表沒見過的細刮傷也能定位；重建保留刮傷、或正常孔邊被模糊時，學習式判別仍可能漏檢或誤報。圖中是可能情境，不是固定模型行為。",
+        "image": "_course_content/generated-concepts/ad-draem/wi021-draem-d3-r02-desktop.png",
+        "alt": "DRAEM 合成題會做，真刮傷也會嗎？。合成紋理能定位，不代表沒見過的細刮傷也能定位；重建保留刮傷、或正常孔邊被模糊時，學習式判別仍可能漏檢或誤報。圖中是可能情境，不是固定模型行為。 本圖為 AI 生成教學示意，非模型實測。",
+        "callouts": [
+          {
+            "title": "新外觀可能漏檢",
+            "body": "若模型只學到合成紋理的線索，真實細刮傷可能沒有反應；需檢查原圖與判別結果。"
+          },
+          {
+            "title": "正常差異也可能誤報",
+            "body": "q 是允收的正常小孔；重建差異不保證判別器一定能忽略它。"
+          },
+          {
+            "title": "先查資料與取像",
+            "body": "以未見真實正常和缺陷評估，再調合成方式、取像或模型；保留最終獨立測試，避免反覆用同批資料挑版本。"
+          }
+        ],
+        "reading_views": [
+          {
+            "title": "DRAEM 合成題會做，真刮傷也會嗎？",
+            "image": "_course_content/generated-concepts/ad-draem/wi021-draem-d3-r02-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/ad-draem/wi021-draem-d3-r01-mobile.png",
+            "alt": "DRAEM 合成題會做，真刮傷也會嗎？。合成紋理能定位，不代表沒見過的細刮傷也能定位；重建保留刮傷、或正常孔邊被模糊時，學習式判別仍可能漏檢或誤報。圖中是可能情境，不是固定模型行為。 本圖為 AI 生成教學示意，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              724,
+              2172
+            ],
+            "mobile_display_mode": "full-mobile",
+            "mobile_intrinsic_width": 724,
+            "mobile_intrinsic_height": 2172,
+            "desktop_intrinsic_width": 1672,
+            "desktop_intrinsic_height": 941
+          }
+        ],
+        "core_ideas": false
+      },
+      {
+        "id": "wi021-ad-draem-4",
+        "title": "AE、RD4AD、DRAEM 的結果來源有何不同？",
+        "prompt": "同板同需求，比像素差異、特徵差異與學習式判別。",
+        "caption": "image-AE 直接比較原圖與重建像素，RD4AD 比教師與反向重建特徵，DRAEM 把原圖與重建共同交給判別器。不同資料流提供不同候選，不能據示意熱圖排名。 固定硬體、解析度與前處理，按相同漏檢風險比較誤報、端到端時間及覆核量；較少模型部件不等於現場一定較快。",
+        "image": "_course_content/generated-concepts/ad-ae/wi021-ae-d5-r02-desktop.png",
+        "alt": "AE、RD4AD、DRAEM 的結果來源有何不同？。image-AE 直接比較原圖與重建像素，RD4AD 比教師與反向重建特徵，DRAEM 把原圖與重建共同交給判別器。不同資料流提供不同候選，不能據示意熱圖排名。 本圖為 AI 生成教學示意，非模型實測。",
+        "callouts": [
+          {
+            "title": "只有正常品時",
+            "body": "AE、RD4AD 可從正常訓練起步；DRAEM 另由正常圖合成異常與 mask，需承擔合成設計及兩網路訓練。"
+          },
+          {
+            "title": "換產品的成本",
+            "body": "檢查正常資料、合成外觀、訓練適配與門檻。舊產品的合成方式不一定涵蓋新產品缺陷。"
+          },
+          {
+            "title": "工作上如何比較",
+            "body": "固定硬體、解析度與未見正常／真缺陷，對照誤報、漏檢、處理時間與人工覆核。精確量測需另行驗證邊界與校正。"
+          }
+        ],
+        "reading_views": [
+          {
+            "title": "AE、RD4AD、DRAEM 的結果來源有何不同？",
+            "image": "_course_content/generated-concepts/ad-ae/wi021-ae-d5-r02-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/ad-ae/wi021-ae-d5-r02-mobile.png",
+            "alt": "AE、RD4AD、DRAEM 的結果來源有何不同？。image-AE 直接比較原圖與重建像素，RD4AD 比教師與反向重建特徵，DRAEM 把原圖與重建共同交給判別器。不同資料流提供不同候選，不能據示意熱圖排名。 本圖為 AI 生成教學示意，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              724,
+              2172
+            ],
+            "mobile_display_mode": "full-mobile",
+            "mobile_intrinsic_width": 724,
+            "mobile_intrinsic_height": 2172,
+            "desktop_intrinsic_width": 1672,
+            "desktop_intrinsic_height": 941
+          }
+        ],
+        "core_ideas": false
+      }
+    ]
+  },
+  "concept_visuals": [],
+  "boundary_cases": [
+    {
+      "condition": "synthetic texture、mask 或 blending 偏離真實 defect",
+      "effect": "segmentation 可能只辨認 simulator artefact，真實低對比或製程特有缺陷漏檢。",
+      "action": "HOLD；記錄 synthetic recipe/provenance，使用真實 challenge、failure images 與 error taxonomy 驗證 transfer。"
+    },
+    {
+      "condition": "reconstruction 抹掉正常細節或保留異常",
+      "effect": "joint input 的差異可能造成 false reject 或 defect escape，僅看重建漂亮與否無法判斷。",
+      "action": "同步審查 input/reconstruction/map/decision；以正常與真實缺陷的三聯證據校正。"
+    },
+    {
+      "condition": "registration／照明變化、tiny defect 或 global logical anomaly",
+      "effect": "外部變化像合成 corruption，或局部 visual supervision 無法表達缺件與關係錯誤。",
+      "action": "先查 acquisition state 與 effective pixels；對 logical anomaly 使用結構／規則型方法。"
+    }
+  ],
+  "comparison": [
+    {
+      "model": "DRAEM",
+      "normality": "重建權重加上受 synthetic anomalies 監督的 joint discriminator",
+      "candidate": "original/reconstruction joint segmentation map 高"
+    },
+    {
+      "model": "Autoencoder (AE)",
+      "normality": "指定 target 的 normal reconstruction path",
+      "candidate": "target/reconstruction residual 大"
+    },
+    {
+      "model": "DiffusionAD",
+      "normality": "norm-guided one-step restoration 加 segmentation state",
+      "candidate": "joint restoration/segmentation map 高"
+    }
+  ],
+  "selection": "能設計合成異常並訓練重建與判別兩個網路時，可評估 DRAEM；以 AE 作像素重建基準、RD4AD 作特徵重建對照。換產品需重查正常資料、合成外觀與訓練適配；用相同未見真實正常／缺陷、硬體與解析度比較漏檢、誤報、時間與覆核量。",
+  "poc": {
+    "title": "POC 第一件事：驗證模型學到的是缺陷機制，不是合成捷徑",
+    "steps": [
+      "固定 normal IDs、ROI/registration、synthetic source/license、Perlin/mask/opacity/blend distribution、seed、reconstruction／segmentation architectures 和 losses。",
+      "鎖 joint input、map smoothing/resize/mask、aggregation、calibration、threshold 與三聯 evidence format。",
+      "在 real challenge／future／drift split 比較 critical-defect recall、low-FPR escape、false reject/review load、synthetic-to-real gap、P95 和 failure images。"
+    ],
+    "hold": "synthetic recipe 不可稽核、真實 morphology 未覆蓋、support 受污染、取像漂移、tiny defect 或 logical anomaly 無證據時，先 HOLD。",
+    "acceptance": {
+      "baseline": "固定 clean normal IDs、synthetic texture/mask/blend recipe、reconstruction/discriminator state、joint map rule 與 calibration。",
+      "measure": "量 real critical-defect recall、low-FPR escape、false reject、review load、synthetic-to-real gap、failure images 與完整 P95。",
+      "negative_control": "以未被 simulator 覆蓋的真實 morphology 作隔離 challenge，確認模型不會因 synthetic-only 成績高而被錯誤放行。",
+      "owner": "缺陷製程 owner、synthetic-data provenance owner、Vision ML owner"
+    }
+  },
+  "teach_back": {
+    "question": "拿掉判別器，只算原圖與重建差異，還缺什麼？",
+    "answer": "缺少從兩张影像共同學習的定位判別，退回殘差基準；合成 mask 是訓練目標，推論不需提供。"
+  },
+  "slide_reading": [
+    {
+      "title": "DRAEM：正常圖配合合成異常來教",
+      "question": "合成提供訓練目標，驗證仍要用真缺陷。",
+      "look": "先看同板正常與獨立真缺陷驗證，再核對兩種監督各有明確來源，最後看交付學習式位置圖與原圖。",
+      "relation": "以正常圖和生成的局部異常建立重建/判別監督，測試使用原圖與重建共同分割。合成mask是訓練真值，不是部署必需輸入，也不保證代表真缺陷。",
+      "takeaway": "合成提供訓練目標，驗證仍要用真缺陷。",
+      "terms": [
+        "特徵：模型的中間表示，與影像像素分開。",
+        "圖中數值：作者給定算例，不是本輪模型實測。"
+      ]
+    },
+    {
+      "title": "DRAEM：兩種監督，兩張圖判別",
+      "question": "重建提供對照，判別器學習位置輸出。",
+      "look": "先看正常圖與合成mask各教一事，再核對待測原圖與重建共同輸入，最後看判別網路學可疑位置。",
+      "relation": "訓練以正常圖作重建目標、合成異常mask作判別定位目標；推論待測影像經重建，原影像與重建一起送判別網路。位置圖不是單純像素相減，推論不提供真值mask。保留同板A刮傷p；合成外觀只是訓練工具，仍需真缺陷驗證。",
+      "takeaway": "重建提供對照，判別器學習位置輸出。",
+      "terms": [
+        "特徵：模型的中間表示，與影像像素分開。",
+        "圖中數值：作者給定算例，不是本輪模型實測。"
+      ]
+    },
+    {
+      "title": "DRAEM：兩個網路與合成策略一起管",
+      "question": "版本能重現流程，真缺陷才能檢驗轉移。",
+      "look": "先看保存重建與判別版本，再核對原圖與重建一起到判別器，最後看合成外觀與真刮傷分開驗。",
+      "relation": "保存兩網路權重、合成來源/區域策略、前處理及位置評分設定。部署不提供真值mask；合成訓練例與真刮傷存在差距，要用獨立真缺陷/正常驗證漏檢誤報和完整延遲。",
+      "takeaway": "版本能重現流程，真缺陷才能檢驗轉移。",
+      "terms": [
+        "特徵：模型的中間表示，與影像像素分開。",
+        "圖中數值：作者給定算例，不是本輪模型實測。"
+      ]
+    },
+    {
+      "title": "DRAEM與AE：判別位置不是直接相減",
+      "question": "兩張圖同樣作對照，後段判定不同。",
+      "look": "先看同一金屬板刮傷p，再核對AE以同位置像素差給線索，最後看DRAEM用兩張圖學位置。",
+      "relation": "同工件比較AE差異基線與DRAEM判別分割：前者直接定義像素差，後者學原圖與重建的joint embedding和位置分類。需分開資料成本與真缺陷驗證，不把DRAEM簡化成AE相減。",
+      "takeaway": "兩張圖同樣作對照，後段判定不同。",
+      "terms": [
+        "特徵：模型的中間表示，與影像像素分開。",
+        "圖中數值：作者給定算例，不是本輪模型實測。"
+      ]
+    }
+  ],
+  "comparison_headers": {
+    "title": "先比 synthetic-to-real contract，不比 synthetic IoU",
+    "basis": "synthetic supervision 如何形成 normality path？",
+    "output": "哪個 joint map 才是 candidate？"
+  },
+  "transfer_check": {
+    "title": "改查漏裝零件，合成污點足夠嗎？",
+    "scenario": "產線下一個需求是找漏裝零件，不只是表面紋理異常。",
+    "question": "在正常照片貼紋理，能證明模型會理解零件存在與裝配關係嗎？",
+    "answer": "不能。需收集代表性的漏裝與正常變化驗證，考慮物件偵測或幾何關係檢查；DRAEM 仍可測，但不能把局部合成污點成績當成漏裝能力。"
+  },
+  "review_trace": {
+    "authority": "roadmap-model-selection/anomaly-detection/ad-draem/model.md",
+    "scope": "WI-033：工程層四圖與手機比較修正；首讀有效內容保留。原生圖已審，整頁與使用者審閱另記。",
+    "claims": [
+      {
+        "id": "visual-1",
+        "field": "beginner_path.visuals[training-deployment-workpiece]",
+        "source": "模型定位 / architecture_path"
+      },
+      {
+        "id": "visual-2",
+        "field": "beginner_path.visuals[synthetic-recipe-supervision]",
+        "source": "architecture_path"
+      },
+      {
+        "id": "visual-3",
+        "field": "beginner_path.visuals[reconstruction-joint-discriminator]",
+        "source": "representation_or_score"
+      },
+      {
+        "id": "visual-4",
+        "field": "beginner_path.visuals[deployment-candidate-review]",
+        "source": "failure_boundary"
+      },
+      {
+        "id": "visual-5",
+        "field": "beginner_path.visuals[transfer-boundary-hold]",
+        "source": "selection_gate / evidence_bundle"
+      },
+      {
+        "id": "promise",
+        "field": "promise",
+        "source": "模型定位 / representation_or_score"
+      },
+      {
+        "id": "mechanism",
+        "field": "mechanism_steps",
+        "source": "architecture_path / representation_or_score"
+      },
+      {
+        "id": "boundaries",
+        "field": "boundary_cases",
+        "source": "failure_boundary / selection_gate"
+      },
+      {
+        "id": "comparison",
+        "field": "comparison + selection",
+        "source": "selection_gate"
+      },
+      {
+        "id": "poc",
+        "field": "poc + acceptance",
+        "source": "cost_and_operating_point / evidence_bundle"
+      },
+      {
+        "id": "transfer",
+        "field": "transfer_check",
+        "source": "failure_boundary / selection_gate"
+      },
+      {
+        "id": "f01-core",
+        "field": "beginner_path.visuals[0] + scenario + mental_model",
+        "source": "https://arxiv.org/abs/2108.07610"
+      },
+      {
+        "id": "f01-transfer",
+        "field": "micro_example + transfer_check",
+        "source": "由原論文機制推論移除後果；https://arxiv.org/abs/2108.07610"
+      },
+      {
+        "id": "wi021-first-read",
+        "field": "beginner_path + micro_example + selection",
+        "source": "https://arxiv.org/abs/2108.07610；AE https://arxiv.org/abs/1807.02011；RD4AD https://arxiv.org/abs/2201.10703"
+      }
+    ]
+  },
+  "teaching_preflight": {
+    "brief": "teaching-images/vision-ai-model-selection/workitems/wi-021/draem-c1-r01.md",
+    "story": "C",
+    "major_visual_nodes": 4,
+    "visual_status": "self-reviewed",
+    "user_review": "pending"
+  },
+  "engineering_slides": [
+    {
+      "title": "DRAEM：正常圖配合合成異常來教",
+      "question": "合成提供訓練目標，驗證仍要用真缺陷。",
+      "plain": {
+        "look": "先看同板正常與獨立真缺陷驗證，再核對兩種監督各有明確來源，最後看交付學習式位置圖與原圖。",
+        "relation": "以正常圖和生成的局部異常建立重建/判別監督，測試使用原圖與重建共同分割。合成mask是訓練真值，不是部署必需輸入，也不保證代表真缺陷。",
+        "takeaway": "合成提供訓練目標，驗證仍要用真缺陷。"
+      },
+      "terms": [
+        "特徵：模型的中間表示，與影像像素分開。",
+        "圖中數值：作者給定算例，不是本輪模型實測。"
+      ],
+      "guide": [
+        "以正常圖和生成的局部異常建立重建/判別監督，測試使用原圖與重建共同分割。合成mask是訓練真值，不是部署必需輸入，也不保證代表真缺陷。",
+        "先看同板正常與獨立真缺陷驗證，再核對兩種監督各有明確來源，最後看交付學習式位置圖與原圖。"
+      ],
+      "stages": [
+        {
+          "title": "同板正常與獨立真缺陷驗證",
+          "body": "同板正常與獨立真缺陷驗證；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "兩種監督各有明確來源",
+          "body": "兩種監督各有明確來源；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "交付學習式位置圖與原圖",
+          "body": "交付學習式位置圖與原圖；請對照圖內輸入、變化與結果。"
+        }
+      ],
+      "misconception": "合成外觀可能與真實缺陷不同；重建和判別都可能失敗，必須用未見真實影像查誤報與漏檢。",
+      "alt": "DRAEM：正常圖配合合成異常來教。合成提供訓練目標，驗證仍要用真缺陷。 教學示意，非模型實測。",
+      "mobile_image": "roadmap-model-selection/anomaly-detection/ad-draem/images/final/WI033-DRAEM-01-r01-mobile.png",
+      "mobile_width": 768,
+      "mobile_height": 2304,
+      "engineering": {
+        "takeaway": "合成提供訓練目標，驗證仍要用真缺陷。",
+        "nextAction": "固定 normal IDs、ROI/registration、synthetic source/license、Perlin/mask/opacity/blend distribution、seed、reconstruction／segmentation architectures 和 losses。",
+        "redLine": "synthetic recipe 不可稽核、真實 morphology 未覆蓋、support 受污染、取像漂移、tiny defect 或 logical anomaly 無證據時，先 HOLD。"
+      },
+      "source": "https://arxiv.org/abs/2108.07610"
+    },
+    {
+      "title": "DRAEM：兩種監督，兩張圖判別",
+      "question": "重建提供對照，判別器學習位置輸出。",
+      "plain": {
+        "look": "先看正常圖與合成mask各教一事，再核對待測原圖與重建共同輸入，最後看判別網路學可疑位置。",
+        "relation": "訓練以正常圖作重建目標、合成異常mask作判別定位目標；推論待測影像經重建，原影像與重建一起送判別網路。位置圖不是單純像素相減，推論不提供真值mask。保留同板A刮傷p；合成外觀只是訓練工具，仍需真缺陷驗證。",
+        "takeaway": "重建提供對照，判別器學習位置輸出。"
+      },
+      "terms": [
+        "特徵：模型的中間表示，與影像像素分開。",
+        "圖中數值：作者給定算例，不是本輪模型實測。"
+      ],
+      "guide": [
+        "訓練以正常圖作重建目標、合成異常mask作判別定位目標；推論待測影像經重建，原影像與重建一起送判別網路。位置圖不是單純像素相減，推論不提供真值mask。保留同板A刮傷p；合成外觀只是訓練工具，仍需真缺陷驗證。",
+        "先看正常圖與合成mask各教一事，再核對待測原圖與重建共同輸入，最後看判別網路學可疑位置。"
+      ],
+      "stages": [
+        {
+          "title": "正常圖與合成mask各教一事",
+          "body": "正常圖與合成mask各教一事；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "待測原圖與重建共同輸入",
+          "body": "待測原圖與重建共同輸入；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "判別網路學可疑位置",
+          "body": "判別網路學可疑位置；請對照圖內輸入、變化與結果。"
+        }
+      ],
+      "misconception": "合成外觀可能與真實缺陷不同；重建和判別都可能失敗，必須用未見真實影像查誤報與漏檢。",
+      "alt": "DRAEM：兩種監督，兩張圖判別。重建提供對照，判別器學習位置輸出。 教學示意，非模型實測。",
+      "mobile_image": "roadmap-model-selection/anomaly-detection/ad-draem/images/final/WI033-DRAEM-02-r02-mobile.png",
+      "mobile_width": 768,
+      "mobile_height": 2304,
+      "engineering": {
+        "takeaway": "重建提供對照，判別器學習位置輸出。",
+        "nextAction": "固定 normal IDs、ROI/registration、synthetic source/license、Perlin/mask/opacity/blend distribution、seed、reconstruction／segmentation architectures 和 losses。",
+        "redLine": "synthetic recipe 不可稽核、真實 morphology 未覆蓋、support 受污染、取像漂移、tiny defect 或 logical anomaly 無證據時，先 HOLD。"
+      },
+      "source": "https://arxiv.org/abs/2108.07610"
+    },
+    {
+      "title": "DRAEM：兩個網路與合成策略一起管",
+      "question": "版本能重現流程，真缺陷才能檢驗轉移。",
+      "plain": {
+        "look": "先看保存重建與判別版本，再核對原圖與重建一起到判別器，最後看合成外觀與真刮傷分開驗。",
+        "relation": "保存兩網路權重、合成來源/區域策略、前處理及位置評分設定。部署不提供真值mask；合成訓練例與真刮傷存在差距，要用獨立真缺陷/正常驗證漏檢誤報和完整延遲。",
+        "takeaway": "版本能重現流程，真缺陷才能檢驗轉移。"
+      },
+      "terms": [
+        "特徵：模型的中間表示，與影像像素分開。",
+        "圖中數值：作者給定算例，不是本輪模型實測。"
+      ],
+      "guide": [
+        "保存兩網路權重、合成來源/區域策略、前處理及位置評分設定。部署不提供真值mask；合成訓練例與真刮傷存在差距，要用獨立真缺陷/正常驗證漏檢誤報和完整延遲。",
+        "先看保存重建與判別版本，再核對原圖與重建一起到判別器，最後看合成外觀與真刮傷分開驗。"
+      ],
+      "stages": [
+        {
+          "title": "保存重建與判別版本",
+          "body": "保存重建與判別版本；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "原圖與重建一起到判別器",
+          "body": "原圖與重建一起到判別器；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "合成外觀與真刮傷分開驗",
+          "body": "合成外觀與真刮傷分開驗；請對照圖內輸入、變化與結果。"
+        }
+      ],
+      "misconception": "合成外觀可能與真實缺陷不同；重建和判別都可能失敗，必須用未見真實影像查誤報與漏檢。",
+      "alt": "DRAEM：兩個網路與合成策略一起管。版本能重現流程，真缺陷才能檢驗轉移。 教學示意，非模型實測。",
+      "mobile_image": "roadmap-model-selection/anomaly-detection/ad-draem/images/final/WI033-DRAEM-03-r01-mobile.png",
+      "mobile_width": 768,
+      "mobile_height": 2304,
+      "engineering": {
+        "takeaway": "版本能重現流程，真缺陷才能檢驗轉移。",
+        "nextAction": "固定 normal IDs、ROI/registration、synthetic source/license、Perlin/mask/opacity/blend distribution、seed、reconstruction／segmentation architectures 和 losses。",
+        "redLine": "synthetic recipe 不可稽核、真實 morphology 未覆蓋、support 受污染、取像漂移、tiny defect 或 logical anomaly 無證據時，先 HOLD。"
+      },
+      "source": "https://arxiv.org/abs/2108.07610"
+    },
+    {
+      "title": "DRAEM與AE：判別位置不是直接相減",
+      "question": "兩張圖同樣作對照，後段判定不同。",
+      "plain": {
+        "look": "先看同一金屬板刮傷p，再核對AE以同位置像素差給線索，最後看DRAEM用兩張圖學位置。",
+        "relation": "同工件比較AE差異基線與DRAEM判別分割：前者直接定義像素差，後者學原圖與重建的joint embedding和位置分類。需分開資料成本與真缺陷驗證，不把DRAEM簡化成AE相減。",
+        "takeaway": "兩張圖同樣作對照，後段判定不同。"
+      },
+      "terms": [
+        "特徵：模型的中間表示，與影像像素分開。",
+        "圖中數值：作者給定算例，不是本輪模型實測。"
+      ],
+      "guide": [
+        "同工件比較AE差異基線與DRAEM判別分割：前者直接定義像素差，後者學原圖與重建的joint embedding和位置分類。需分開資料成本與真缺陷驗證，不把DRAEM簡化成AE相減。",
+        "先看同一金屬板刮傷p，再核對AE以同位置像素差給線索，最後看DRAEM用兩張圖學位置。"
+      ],
+      "stages": [
+        {
+          "title": "同一金屬板刮傷p",
+          "body": "同一金屬板刮傷p；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "AE以同位置像素差給線索",
+          "body": "AE以同位置像素差給線索；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "DRAEM用兩張圖學位置",
+          "body": "DRAEM用兩張圖學位置；請對照圖內輸入、變化與結果。"
+        }
+      ],
+      "misconception": "合成外觀可能與真實缺陷不同；重建和判別都可能失敗，必須用未見真實影像查誤報與漏檢。",
+      "alt": "DRAEM與AE：判別位置不是直接相減。兩張圖同樣作對照，後段判定不同。 教學示意，非模型實測。",
+      "mobile_image": "roadmap-model-selection/anomaly-detection/ad-draem/images/final/WI033-DRAEM-04-r01-mobile.png",
+      "mobile_width": 768,
+      "mobile_height": 2304,
+      "engineering": {
+        "takeaway": "兩張圖同樣作對照，後段判定不同。",
+        "nextAction": "固定 normal IDs、ROI/registration、synthetic source/license、Perlin/mask/opacity/blend distribution、seed、reconstruction／segmentation architectures 和 losses。",
+        "redLine": "synthetic recipe 不可稽核、真實 morphology 未覆蓋、support 受污染、取像漂移、tiny defect 或 logical anomaly 無證據時，先 HOLD。"
+      },
+      "source": "https://arxiv.org/abs/2108.07610"
+    }
+  ]
+}

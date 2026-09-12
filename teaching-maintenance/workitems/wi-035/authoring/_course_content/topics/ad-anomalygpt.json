@@ -1,0 +1,572 @@
+{
+  "model": "AnomalyGPT",
+  "badge": "內建定位與多模態對話",
+  "title": "AnomalyGPT：定位線索接進看圖對話",
+  "scenario": {
+    "title": "細刮傷與正常反光，如何接到工作",
+    "body": "金屬板的細痕 p 需要檢出，正常孔邊 q 又不能一直誤報；先確認資料與需要的位置或問答輸出。"
+  },
+  "promise": {
+    "title": "位置與問答，各自覆核",
+    "body": "交付可疑位置線索；文字或熱圖都不能直接代表精密輪廓、尺寸、根因或自動放行。"
+  },
+  "mental_model": {
+    "title": "AnomalyGPT：定位線索接進看圖對話",
+    "body": "合成異常影像、遮罩與文字配對訓練影像解碼器和提示學習器，影像編碼器與 LLM 固定。測試影像的局部特徵經解碼後與正常／異常文字匹配，產生內建位置圖；提示學習器把位置資訊轉成提示，連同影像表示與問題送入 LLM，產生回答。",
+    "limit": "語意與位置仍可能錯；必須用未見正常與真缺陷檢查適用範圍。"
+  },
+  "micro_example": {
+    "title": "換一個工作條件，再做選擇",
+    "setup": "產線已有位置檢測結果，工程師想加問答減少覆核時間；候選 AnomalyGPT 能流暢回答，但有時熱區與描述對不上。",
+    "prediction": "直接以文字結論放行、把對話作輔助，或保留只看位置的流程，如何比較？",
+    "reveal": "先分開驗證定位和文字證據，對不上時回原圖覆核；不把流暢回答當作放行依據。若互動問題確實縮短判讀，可比較帶對話與只看位置兩種流程的錯誤、延遲和人工工時；若沒有節省成本，可保留簡單流程。外部檢測器可作應用整合，但不能把它說成原模型必要輸入。"
+  },
+  "mechanism_steps": [
+    {
+      "title": "建立受治理的 simulated instruction 與模型狀態",
+      "body": "鎖 normal support、simulated anomaly/text pair policy、visual encoder、prompt learner、bridge/LVLM、image decoder、templates、schema、seed、source licenses與security policy。",
+      "why": "prompt、LLM/tokenizer、simulator、retrieval/SOP與schema的任一變更都可改輸出；沒有治理就無法追溯assist行為。",
+      "anchor": "工程圖核對：simulated pairs → prompt/bridge/LVLM state",
+      "diagram": {
+        "title": "鎖 simulated pairs 與 LVLM state",
+        "body": "資料、prompt、bridge、decoder 與 schema 一起版本化。",
+        "why": "任一模型或 SOP 改動都會改輸出。",
+        "anchor": "simulated pairs → LVLM state"
+      }
+    },
+    {
+      "title": "以固定輸入產生 visual-language candidates",
+      "body": "test ROI 和宣告的 specialist evidence 經固定 preprocessing、visual tokens、learned prompt、bridge/LVLM，產生結構化文字候選與image-decoder region。",
+      "why": "ROI、evidence、prompt、generation controls共同決定回答；模型不是直接觀察製程真相。",
+      "anchor": "工程圖核對：ROI + evidence → tokens → response + region",
+      "diagram": {
+        "title": "ROI 與 evidence 產生候選",
+        "body": "visual tokens 經 LVLM 輸出文字與 region。",
+        "why": "回答受輸入與 generation controls 限制。",
+        "anchor": "ROI + evidence → response + region"
+      }
+    },
+    {
+      "title": "讓輸出攜帶 observed、inferred與不確定性",
+      "body": "response schema 要求 evidence-region ID、observed/inferred分離、uncertainty/abstain、SOP/retrieval revision和next confirmation action。",
+      "why": "把不確定性隱藏在自然語言裡會讓人誤讀為結論；結構化欄位才能被grounding和owner policy檢查。",
+      "anchor": "工程圖核對：grounded output schema",
+      "diagram": {
+        "title": "schema 分開觀察與推論",
+        "body": "response 帶 region、uncertainty 與 next action。",
+        "why": "文字不能隱藏未確認的推論。",
+        "anchor": "grounded output schema"
+      }
+    },
+    {
+      "title": "grounding check後交給specialist owner",
+      "body": "檢查region-text agreement、hallucination、資料安全與latency後，再由human/specialist evidence policy做PASS/REVIEW/HOLD。",
+      "why": "AnomalyGPT的輸出是assist候選；只有外部、版本化的owner contract可把證據轉成產品決策。",
+      "anchor": "工程圖核對：grounding / abstain → specialist confirmation",
+      "diagram": {
+        "title": "grounding 後交 specialist",
+        "body": "檢查 region-text 後由 owner 確認 action。",
+        "why": "LLM 候選不能自行做產品決策。",
+        "anchor": "grounding → specialist confirmation"
+      }
+    }
+  ],
+  "visual_intro": "先看清它的輸出是『帶座標的候選說明』，再核對視覺語言路徑、schema、abstain和owner gate。",
+  "beginner_path": {
+    "title": "核心機制、反例覆核與條件選型",
+    "intro": "三張首讀圖；工件、位置圖與問答均為教學示意，非模型實測。",
+    "visuals": [
+      {
+        "id": "wi021-ad-anomalygpt-1",
+        "title": "AnomalyGPT：定位線索接進看圖對話",
+        "prompt": "沿著同一塊金屬板 A，追提示、影像與位置的來源。",
+        "caption": "合成異常影像、遮罩與文字配對訓練影像解碼器和提示學習器，影像編碼器與 LLM 固定。測試影像的局部特徵經解碼後與正常／異常文字匹配，產生內建位置圖；提示學習器把位置資訊轉成提示，連同影像表示與問題送入 LLM，產生回答。",
+        "image": "_course_content/generated-concepts/ad-anomalygpt/wi021-anomalygpt-c1-r02-desktop.png",
+        "alt": "AnomalyGPT：定位線索接進看圖對話。合成異常影像、遮罩與文字配對訓練影像解碼器和提示學習器，影像編碼器與 LLM 固定。測試影像的局部特徵經解碼後與正常／異常文字匹配，產生內建位置圖；提示學習器把位置資訊轉成提示，連同影像表示與問題送入 LLM，產生回答。 本圖為 AI 生成教學示意，非模型實測。",
+        "callouts": [
+          {
+            "title": "不是只有聊天模型",
+            "body": "原方法包含自己的定位解碼器，不必先接一個外部 specialist 才能運作。少樣本路徑可用正常特徵庫的最近匹配定位。"
+          },
+          {
+            "title": "三種輸入各做什麼",
+            "body": "影像表示提供整體內容，位置提示帶入局部線索，使用者文字提出問題；移除定位連線會改變模型可用的依據。"
+          },
+          {
+            "title": "回答仍須核對",
+            "body": "圖中問答是作者設計的示意，不是實際推論。模型能回答有無異常，不等於現場可免驗證，也不直接交付深度、根因或放行決策。"
+          }
+        ],
+        "reading_views": [
+          {
+            "title": "AnomalyGPT：定位線索接進看圖對話",
+            "image": "_course_content/generated-concepts/ad-anomalygpt/wi021-anomalygpt-c1-r02-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/ad-anomalygpt/wi033-core-r01-mobile.png",
+            "alt": "AnomalyGPT：先定位，再接看圖對話。內建位置提供線索，回答仍回原圖核對。 手機為原生SVG教學示意，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              768,
+              2304
+            ],
+            "mobile_display_mode": "full-mobile",
+            "mobile_intrinsic_width": 768,
+            "mobile_intrinsic_height": 2304,
+            "desktop_intrinsic_width": 1672,
+            "desktop_intrinsic_height": 941
+          }
+        ],
+        "core_ideas": true
+      },
+      {
+        "id": "wi021-ad-anomalygpt-2",
+        "title": "覆核練習：回答肯定，位置卻不一致",
+        "prompt": "原圖 p 是可見細痕，q 是正常孔邊；檢查假設回答。",
+        "caption": "這是假設錯誤：熱區指向 q，回答卻宣稱裂縫與夾具根因。先把熱區與原圖對齊，再區分觀察、推測及未知；保存原圖與位置圖，必要時補拍或現場覆核，最後按允收規格處置。",
+        "image": "_course_content/generated-concepts/ad-anomalygpt/wi021-anomalygpt-d2-r01-desktop.png",
+        "alt": "覆核練習：回答肯定，位置卻不一致。這是假設錯誤：熱區指向 q，回答卻宣稱裂縫與夾具根因。先把熱區與原圖對齊，再區分觀察、推測及未知；保存原圖與位置圖，必要時補拍或現場覆核，最後按允收規格處置。 本圖為 AI 生成教學示意，非模型實測。",
+        "callouts": [
+          {
+            "title": "模型與應用責任",
+            "body": "AnomalyGPT 本身已有定位與對話；這張教學的覆核格式是應用接手方式，不是模型保證會產生的固定報告。"
+          },
+          {
+            "title": "哪些話有證據",
+            "body": "p 的線狀痕跡可由影像觀察，是否刮傷仍是待核對推測；深度和夾具根因不能只靠這張影像斷定。"
+          },
+          {
+            "title": "怎麼統計成本",
+            "body": "位置正確、文字有據和處置是否正確要分開驗證；並量延遲及人工覆核量，不能以回答流暢度代表有效檢測。"
+          }
+        ],
+        "reading_views": [
+          {
+            "title": "覆核練習：回答肯定，位置卻不一致",
+            "image": "_course_content/generated-concepts/ad-anomalygpt/wi021-anomalygpt-d2-r01-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/ad-anomalygpt/wi033-failure-r01-mobile.png",
+            "alt": "AnomalyGPT：回答肯定仍要查證。位置、觀察和推測分開核對，不能由流暢度放行。 手機為原生SVG教學示意，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              768,
+              2304
+            ],
+            "mobile_display_mode": "full-mobile",
+            "mobile_intrinsic_width": 768,
+            "mobile_intrinsic_height": 2304,
+            "desktop_intrinsic_width": 1672,
+            "desktop_intrinsic_height": 941
+          }
+        ],
+        "core_ideas": false
+      },
+      {
+        "id": "wi021-ad-anomalygpt-3",
+        "title": "三種圖文方法，先選工作結果",
+        "prompt": "同一金屬板 A，比資料準備、位置輸出與對話成本。",
+        "caption": "WinCLIP 用人工狀態文字與視窗，WinCLIP+ 可加正常參考；AnomalyCLIP 使用輔助資料學到的提示；AnomalyGPT 加入內建定位與對話。只有正常品可先評估參考路線，訓練型方法要先備妥已訓練模型。固定硬體、解析度與漏檢要求，比誤報、延遲和覆核量；位置圖不等於精密輪廓或尺寸。",
+        "image": "_course_content/generated-concepts/ad-anomalyclip/wi021-clip-methods-d3-r04-desktop.png",
+        "alt": "三種圖文方法，先選工作結果。WinCLIP 用人工狀態文字與視窗，WinCLIP+ 可加正常參考；AnomalyCLIP 使用輔助資料學到的提示；AnomalyGPT 加入內建定位與對話。只有正常品可先評估參考路線，訓練型方法要先備妥已訓練模型。固定硬體、解析度與漏檢要求，比誤報、延遲和覆核量；位置圖不等於精密輪廓或尺寸。 本圖為 AI 生成教學示意，非模型實測。",
+        "callouts": [
+          {
+            "title": "圖中比較範圍",
+            "body": "位置圖 p? 僅代表輸出形式，不表示三者檢測結果相同。手機以整個 AnomalyGPT 方塊比較輸出，完整的影像、位置提示與問題路徑見核心圖。"
+          },
+          {
+            "title": "新產品需要什麼",
+            "body": "重查人工提示、正常參考或已訓練提示的適用範圍；需要適配時另留驗證資料。輔助訓練資料與目標評測資料不能混用。"
+          },
+          {
+            "title": "何時值得用對話",
+            "body": "需要互動解讀才加入文字驗證；同時量回答有無證據、定位錯誤和人工覆核時間。只需要位置線索時，可先比較較簡單的輸出流程。"
+          }
+        ],
+        "reading_views": [
+          {
+            "title": "三種圖文方法，先選工作結果",
+            "image": "_course_content/generated-concepts/ad-anomalyclip/wi021-clip-methods-d3-r04-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/ad-anomalygpt/wi033-comparison-r01-mobile.png",
+            "alt": "三種圖文方法：先選工作結果。先驗定位，再驗對話能否減少覆核成本。 手機為原生SVG教學示意，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              768,
+              2304
+            ],
+            "mobile_display_mode": "full-mobile",
+            "mobile_intrinsic_width": 768,
+            "mobile_intrinsic_height": 2304,
+            "desktop_intrinsic_width": 1672,
+            "desktop_intrinsic_height": 941
+          }
+        ],
+        "core_ideas": false
+      }
+    ]
+  },
+  "concept_visuals": [],
+  "boundary_cases": [
+    {
+      "condition": "response hallucination或region-text disagreement",
+      "effect": "流暢說明可能沒有對應視覺證據，錯誤仍看似可信。",
+      "action": "HOLD/abstain；要求grounding、region-text agreement、specialist confirmation和hallucination test。"
+    },
+    {
+      "condition": "prompt/LLM/tokenizer/retrieval/SOP/schema或generation controls改變",
+      "effect": "同一輸入可能產生不同文字、區域、uncertainty與延遲。",
+      "action": "保存完整模型與generation state，變更後以固定case regression與security review重新qualification。"
+    },
+    {
+      "condition": "sensitive data、token latency、tiny defect或global logic",
+      "effect": "資料權限/保留可能不合規，完整P95受生成和retrieval影響，且assist層未必有可靠視覺解析度或結構判讀。",
+      "action": "先設ACL/redaction/retention與complete P95；把精密檢測和release放在specialist path。"
+    }
+  ],
+  "comparison": [
+    {
+      "model": "AnomalyGPT",
+      "normality": "合成影像、遮罩與文字訓練；局部解碼與狀態文字匹配，位置再轉提示",
+      "candidate": "內建異常位置與對話回答，兩者均回原圖核對"
+    },
+    {
+      "model": "AnomalyCLIP",
+      "normality": "輔助資料學習物件無關的正常／異常提示，與CLIP表示匹配",
+      "candidate": "異常分數與位置圖；目標產品另驗適用範圍"
+    },
+    {
+      "model": "WinCLIP",
+      "normality": "人工狀態文字與視窗／patch／整圖聚合；WinCLIP+可加正常參考",
+      "candidate": "異常分數與位置圖；同條件比較漏檢、誤報與成本"
+    }
+  ],
+  "selection": "WinCLIP 用人工狀態文字與視窗，WinCLIP+ 可加正常參考；AnomalyCLIP 使用輔助資料學到的提示；AnomalyGPT 加入內建定位與對話。只有正常品可先評估參考路線，訓練型方法要先備妥已訓練模型。固定硬體、解析度與漏檢要求，比誤報、延遲和覆核量；位置圖不等於精密輪廓或尺寸。",
+  "poc": {
+    "title": "POC 第一件事：驗證它會在不確定時停下來",
+    "steps": [
+      "固定 simulated pair IDs/policy、visual encoder/prompt/bridge/LLM/tokenizer、retrieval/SOP snapshot、temperature/top-p/max tokens、image decoder、schema、ACL/redaction/retention。",
+      "鎖ROI/evidence inputs、response/region/uncertainty/abstain trace、grounding checks、owner actions和full latency measurement。",
+      "以real holdout和red-team cases量grounded-answer rate、region-text agreement、hallucination、abstain quality、review load、security和complete P95/P99。"
+    ],
+    "hold": "沒有evidence region、grounding/abstain、specialist owner、security policy、真實評估或完整P95時，必須HOLD在release loop之外。",
+    "acceptance": {
+      "baseline": "固定 simulated-pair policy、visual encoder、prompt、bridge/LVLM、image decoder、schema、retrieval/SOP snapshot 與 generation controls。",
+      "measure": "量 grounded-answer rate、region-text agreement、hallucination、abstain quality、review load、security outcome 與完整 P95/P99。",
+      "negative_control": "提供缺少 evidence region、region-text mismatch 或過期 SOP 的案例；系統必須 abstain/HOLD 並交回 specialist，不能產生 autonomous action。",
+      "owner": "specialist evidence owner、VLM owner、安全／隱私 owner、品質 owner"
+    }
+  },
+  "teach_back": {
+    "question": "為什麼語意相似、熱區或肯定回答，都不足以直接放行？",
+    "answer": "它們只是模型線索，可能誤報、漏檢或超出影像證據。要回原圖，按允收規格及獨立資料驗證，再決定現場處置。"
+  },
+  "slide_reading": [
+    {
+      "title": "AnomalyGPT：用成對資料學定位與回答",
+      "question": "合成影像、遮罩與文字要描述同一處异常。",
+      "look": "先看影像異常與遮罩對齊，再核對文字描述同一位置與外觀，最後看更新解碼器與提示學習器。",
+      "relation": "用合成異常影像、位置遮罩及文字配對訓練；預訓練影像編碼器和LLM保持固定，更新影像解碼器及提示學習器。遮罩和描述須對上同一異常，否則不同監督互相矛盾；真實未見缺陷仍需獨立驗證。",
+      "takeaway": "合成影像、遮罩與文字要描述同一處异常。",
+      "terms": [
+        "位置圖：模型內建圖文匹配支路產生的定位線索。",
+        "提示學習器：把定位線索轉為LLM能使用的提示表示。"
+      ]
+    },
+    {
+      "title": "AnomalyGPT：定位由內建支路產生",
+      "question": "內建位置圖先轉提示，再連同影像與問題產生回答。",
+      "look": "先看同一影像產生全局與局部表示，再核對內建解碼與圖文匹配定位，最後看位置轉提示後接入 LLM。",
+      "relation": "影像編碼器提供全局與局部表示。局部表示經影像解碼器，與正常／異常文字特徵匹配得位置圖，再由prompt learner轉為提示；LLM另接全局影像表示與使用者問題。此圖是原模型內建支路，不把任意外部檢測器當必要輸入。",
+      "takeaway": "內建位置圖先轉提示，再連同影像與問題產生回答。",
+      "terms": [
+        "位置圖：模型內建圖文匹配支路產生的定位線索。",
+        "提示學習器：把定位線索轉為LLM能使用的提示表示。"
+      ]
+    },
+    {
+      "title": "AnomalyGPT：文字與位置一起交付",
+      "question": "回答、位置和原圖一起覆核，對不上就保留疑問。",
+      "look": "先看保留同一影像的定位，再核對問題與位置提示參與回答，最後看核對文字是否有原圖證據。",
+      "relation": "交付原圖、內建定位與對話記錄，逐項核對文字描述的部位和異常類型。對話可協助判讀但不能替代定位驗證；若回答與圖不一致，保留失敗狀態並回原圖。額外外部檢測器是應用整合選擇，不是原模型必需支路。",
+      "takeaway": "回答、位置和原圖一起覆核，對不上就保留疑問。",
+      "terms": [
+        "位置圖：模型內建圖文匹配支路產生的定位線索。",
+        "提示學習器：把定位線索轉為LLM能使用的提示表示。"
+      ]
+    },
+    {
+      "title": "AnomalyGPT：會回答不代表會判對",
+      "question": "同圖比較定位與文字證據，再量覆核成本。",
+      "look": "先看共同原圖：刮痕在中部，再核對位置在中部，文字卻說孔邊，最後看帶對話是否真能減少工時。",
+      "relation": "同一支架若位置圖指中部，回答卻描述孔邊，不能因語句流暢就放行。以同一批真缺陷與正常圖比較只看位置或加問答的錯誤、延遲和人工覆核時間；沒有收益時保留簡單流程也合理。",
+      "takeaway": "同圖比較定位與文字證據，再量覆核成本。",
+      "terms": [
+        "位置圖：模型內建圖文匹配支路產生的定位線索。",
+        "提示學習器：把定位線索轉為LLM能使用的提示表示。"
+      ]
+    }
+  ],
+  "comparison_headers": {
+    "title": "先比 evidence contract，不比回答流暢度",
+    "basis": "這條方法交的是什麼 evidence，而非什麼 normality？",
+    "output": "何時才能交給外部 owner？"
+  },
+  "transfer_check": {
+    "title": "換產品要重做什麼",
+    "scenario": "新產品外觀、允收反光與缺陷型態都不同。",
+    "question": "哪些準備與驗證不能直接沿用？",
+    "answer": "重新核對提示來源、正常參考或既有模型的適用範圍；有適配時另留驗證資料。分開檢查正常誤報、真缺陷漏檢與成本；需要對話時再驗文字是否有據。"
+  },
+  "review_trace": {
+    "authority": "roadmap-model-selection/anomaly-detection/ad-anomalygpt/model.md",
+    "scope": "WI-033：工程層四圖與手機比較修正；首讀有效內容保留。原生圖已審，整頁與使用者審閱另記。",
+    "claims": [
+      {
+        "id": "visual-1",
+        "field": "beginner_path.visuals[grounded-assist]",
+        "source": "模型定位 / architecture_path"
+      },
+      {
+        "id": "visual-2",
+        "field": "beginner_path.visuals[simulated-pairs]",
+        "source": "architecture_path"
+      },
+      {
+        "id": "visual-3",
+        "field": "beginner_path.visuals[inference-candidates]",
+        "source": "representation_or_score"
+      },
+      {
+        "id": "visual-4",
+        "field": "beginner_path.visuals[observed-inferred]",
+        "source": "failure_boundary"
+      },
+      {
+        "id": "visual-5",
+        "field": "beginner_path.visuals[specialist-handoff]",
+        "source": "selection_gate / evidence_bundle"
+      },
+      {
+        "id": "promise",
+        "field": "promise",
+        "source": "模型定位 / representation_or_score"
+      },
+      {
+        "id": "mechanism",
+        "field": "mechanism_steps",
+        "source": "architecture_path / representation_or_score"
+      },
+      {
+        "id": "boundaries",
+        "field": "boundary_cases",
+        "source": "failure_boundary / selection_gate"
+      },
+      {
+        "id": "comparison",
+        "field": "comparison + selection",
+        "source": "selection_gate"
+      },
+      {
+        "id": "poc",
+        "field": "poc + acceptance",
+        "source": "cost_and_operating_point / evidence_bundle"
+      },
+      {
+        "id": "transfer",
+        "field": "transfer_check",
+        "source": "failure_boundary / selection_gate"
+      },
+      {
+        "id": "f01-core",
+        "field": "beginner_path.visuals[0] + scenario + mental_model",
+        "source": "https://arxiv.org/abs/2308.15366"
+      },
+      {
+        "id": "f01-transfer",
+        "field": "micro_example + transfer_check",
+        "source": "由原論文機制推論移除後果；https://arxiv.org/abs/2308.15366"
+      },
+      {
+        "id": "wi021-first-read",
+        "field": "beginner_path + micro_example + selection",
+        "source": "https://arxiv.org/html/2308.15366v3"
+      }
+    ]
+  },
+  "teaching_preflight": {
+    "brief": "teaching-images/vision-ai-model-selection/workitems/wi-021/anomalygpt-c1-r01.md",
+    "story": "C",
+    "major_visual_nodes": 4,
+    "visual_status": "self-reviewed",
+    "user_review": "pending"
+  },
+  "engineering_slides": [
+    {
+      "title": "AnomalyGPT：用成對資料學定位與回答",
+      "question": "合成影像、遮罩與文字要描述同一處异常。",
+      "plain": {
+        "look": "先看影像異常與遮罩對齊，再核對文字描述同一位置與外觀，最後看更新解碼器與提示學習器。",
+        "relation": "用合成異常影像、位置遮罩及文字配對訓練；預訓練影像編碼器和LLM保持固定，更新影像解碼器及提示學習器。遮罩和描述須對上同一異常，否則不同監督互相矛盾；真實未見缺陷仍需獨立驗證。",
+        "takeaway": "合成影像、遮罩與文字要描述同一處异常。"
+      },
+      "terms": [
+        "位置圖：模型內建圖文匹配支路產生的定位線索。",
+        "提示學習器：把定位線索轉為LLM能使用的提示表示。"
+      ],
+      "guide": [
+        "用合成異常影像、位置遮罩及文字配對訓練；預訓練影像編碼器和LLM保持固定，更新影像解碼器及提示學習器。遮罩和描述須對上同一異常，否則不同監督互相矛盾；真實未見缺陷仍需獨立驗證。",
+        "先看影像異常與遮罩對齊，再核對文字描述同一位置與外觀，最後看更新解碼器與提示學習器。"
+      ],
+      "stages": [
+        {
+          "title": "影像異常與遮罩對齊",
+          "body": "影像異常與遮罩對齊；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "文字描述同一位置與外觀",
+          "body": "文字描述同一位置與外觀；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "更新解碼器與提示學習器",
+          "body": "更新解碼器與提示學習器；請對照圖內輸入、變化與結果。"
+        }
+      ],
+      "misconception": "語意與位置仍可能錯；必須用未見正常與真缺陷檢查適用範圍。",
+      "alt": "AnomalyGPT：用成對資料學定位與回答。合成影像、遮罩與文字要描述同一處异常。 教學示意，非模型實測。",
+      "mobile_image": "roadmap-model-selection/anomaly-detection/ad-anomalygpt/images/final/WI033-ANOGPT-01-r01-mobile.png",
+      "mobile_width": 768,
+      "mobile_height": 2400,
+      "engineering": {
+        "takeaway": "合成影像、遮罩與文字要描述同一處异常。",
+        "nextAction": "固定 simulated pair IDs/policy、visual encoder/prompt/bridge/LLM/tokenizer、retrieval/SOP snapshot、temperature/top-p/max tokens、image decoder、schema、ACL/redaction/retention。",
+        "redLine": "沒有evidence region、grounding/abstain、specialist owner、security policy、真實評估或完整P95時，必須HOLD在release loop之外。"
+      },
+      "source": "https://github.com/CASIA-LMC-Lab/AnomalyGPT"
+    },
+    {
+      "title": "AnomalyGPT：定位由內建支路產生",
+      "question": "內建位置圖先轉提示，再連同影像與問題產生回答。",
+      "plain": {
+        "look": "先看同一影像產生全局與局部表示，再核對內建解碼與圖文匹配定位，最後看位置轉提示後接入 LLM。",
+        "relation": "影像編碼器提供全局與局部表示。局部表示經影像解碼器，與正常／異常文字特徵匹配得位置圖，再由prompt learner轉為提示；LLM另接全局影像表示與使用者問題。此圖是原模型內建支路，不把任意外部檢測器當必要輸入。",
+        "takeaway": "內建位置圖先轉提示，再連同影像與問題產生回答。"
+      },
+      "terms": [
+        "位置圖：模型內建圖文匹配支路產生的定位線索。",
+        "提示學習器：把定位線索轉為LLM能使用的提示表示。"
+      ],
+      "guide": [
+        "影像編碼器提供全局與局部表示。局部表示經影像解碼器，與正常／異常文字特徵匹配得位置圖，再由prompt learner轉為提示；LLM另接全局影像表示與使用者問題。此圖是原模型內建支路，不把任意外部檢測器當必要輸入。",
+        "先看同一影像產生全局與局部表示，再核對內建解碼與圖文匹配定位，最後看位置轉提示後接入 LLM。"
+      ],
+      "stages": [
+        {
+          "title": "同一影像產生全局與局部表示",
+          "body": "同一影像產生全局與局部表示；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "內建解碼與圖文匹配定位",
+          "body": "內建解碼與圖文匹配定位；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "位置轉提示後接入 LLM",
+          "body": "位置轉提示後接入 LLM；請對照圖內輸入、變化與結果。"
+        }
+      ],
+      "misconception": "語意與位置仍可能錯；必須用未見正常與真缺陷檢查適用範圍。",
+      "alt": "AnomalyGPT：定位由內建支路產生。內建位置圖先轉提示，再連同影像與問題產生回答。 教學示意，非模型實測。",
+      "mobile_image": "roadmap-model-selection/anomaly-detection/ad-anomalygpt/images/final/WI033-ANOGPT-02-r02-mobile.png",
+      "mobile_width": 768,
+      "mobile_height": 2400,
+      "engineering": {
+        "takeaway": "內建位置圖先轉提示，再連同影像與問題產生回答。",
+        "nextAction": "固定 simulated pair IDs/policy、visual encoder/prompt/bridge/LLM/tokenizer、retrieval/SOP snapshot、temperature/top-p/max tokens、image decoder、schema、ACL/redaction/retention。",
+        "redLine": "沒有evidence region、grounding/abstain、specialist owner、security policy、真實評估或完整P95時，必須HOLD在release loop之外。"
+      },
+      "source": "https://github.com/CASIA-LMC-Lab/AnomalyGPT"
+    },
+    {
+      "title": "AnomalyGPT：文字與位置一起交付",
+      "question": "回答、位置和原圖一起覆核，對不上就保留疑問。",
+      "plain": {
+        "look": "先看保留同一影像的定位，再核對問題與位置提示參與回答，最後看核對文字是否有原圖證據。",
+        "relation": "交付原圖、內建定位與對話記錄，逐項核對文字描述的部位和異常類型。對話可協助判讀但不能替代定位驗證；若回答與圖不一致，保留失敗狀態並回原圖。額外外部檢測器是應用整合選擇，不是原模型必需支路。",
+        "takeaway": "回答、位置和原圖一起覆核，對不上就保留疑問。"
+      },
+      "terms": [
+        "位置圖：模型內建圖文匹配支路產生的定位線索。",
+        "提示學習器：把定位線索轉為LLM能使用的提示表示。"
+      ],
+      "guide": [
+        "交付原圖、內建定位與對話記錄，逐項核對文字描述的部位和異常類型。對話可協助判讀但不能替代定位驗證；若回答與圖不一致，保留失敗狀態並回原圖。額外外部檢測器是應用整合選擇，不是原模型必需支路。",
+        "先看保留同一影像的定位，再核對問題與位置提示參與回答，最後看核對文字是否有原圖證據。"
+      ],
+      "stages": [
+        {
+          "title": "保留同一影像的定位",
+          "body": "保留同一影像的定位；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "問題與位置提示參與回答",
+          "body": "問題與位置提示參與回答；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "核對文字是否有原圖證據",
+          "body": "核對文字是否有原圖證據；請對照圖內輸入、變化與結果。"
+        }
+      ],
+      "misconception": "語意與位置仍可能錯；必須用未見正常與真缺陷檢查適用範圍。",
+      "alt": "AnomalyGPT：文字與位置一起交付。回答、位置和原圖一起覆核，對不上就保留疑問。 教學示意，非模型實測。",
+      "mobile_image": "roadmap-model-selection/anomaly-detection/ad-anomalygpt/images/final/WI033-ANOGPT-03-r01-mobile.png",
+      "mobile_width": 768,
+      "mobile_height": 2400,
+      "engineering": {
+        "takeaway": "回答、位置和原圖一起覆核，對不上就保留疑問。",
+        "nextAction": "固定 simulated pair IDs/policy、visual encoder/prompt/bridge/LLM/tokenizer、retrieval/SOP snapshot、temperature/top-p/max tokens、image decoder、schema、ACL/redaction/retention。",
+        "redLine": "沒有evidence region、grounding/abstain、specialist owner、security policy、真實評估或完整P95時，必須HOLD在release loop之外。"
+      },
+      "source": "https://github.com/CASIA-LMC-Lab/AnomalyGPT"
+    },
+    {
+      "title": "AnomalyGPT：會回答不代表會判對",
+      "question": "同圖比較定位與文字證據，再量覆核成本。",
+      "plain": {
+        "look": "先看共同原圖：刮痕在中部，再核對位置在中部，文字卻說孔邊，最後看帶對話是否真能減少工時。",
+        "relation": "同一支架若位置圖指中部，回答卻描述孔邊，不能因語句流暢就放行。以同一批真缺陷與正常圖比較只看位置或加問答的錯誤、延遲和人工覆核時間；沒有收益時保留簡單流程也合理。",
+        "takeaway": "同圖比較定位與文字證據，再量覆核成本。"
+      },
+      "terms": [
+        "位置圖：模型內建圖文匹配支路產生的定位線索。",
+        "提示學習器：把定位線索轉為LLM能使用的提示表示。"
+      ],
+      "guide": [
+        "同一支架若位置圖指中部，回答卻描述孔邊，不能因語句流暢就放行。以同一批真缺陷與正常圖比較只看位置或加問答的錯誤、延遲和人工覆核時間；沒有收益時保留簡單流程也合理。",
+        "先看共同原圖：刮痕在中部，再核對位置在中部，文字卻說孔邊，最後看帶對話是否真能減少工時。"
+      ],
+      "stages": [
+        {
+          "title": "共同原圖：刮痕在中部",
+          "body": "共同原圖：刮痕在中部；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "位置在中部，文字卻說孔邊",
+          "body": "位置在中部，文字卻說孔邊；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "帶對話是否真能減少工時",
+          "body": "帶對話是否真能減少工時；請對照圖內輸入、變化與結果。"
+        }
+      ],
+      "misconception": "語意與位置仍可能錯；必須用未見正常與真缺陷檢查適用範圍。",
+      "alt": "AnomalyGPT：會回答不代表會判對。同圖比較定位與文字證據，再量覆核成本。 教學示意，非模型實測。",
+      "mobile_image": "roadmap-model-selection/anomaly-detection/ad-anomalygpt/images/final/WI033-ANOGPT-04-r01-mobile.png",
+      "mobile_width": 768,
+      "mobile_height": 2400,
+      "engineering": {
+        "takeaway": "同圖比較定位與文字證據，再量覆核成本。",
+        "nextAction": "固定 simulated pair IDs/policy、visual encoder/prompt/bridge/LLM/tokenizer、retrieval/SOP snapshot、temperature/top-p/max tokens、image decoder、schema、ACL/redaction/retention。",
+        "redLine": "沒有evidence region、grounding/abstain、specialist owner、security policy、真實評估或完整P95時，必須HOLD在release loop之外。"
+      },
+      "source": "https://github.com/CASIA-LMC-Lab/AnomalyGPT"
+    }
+  ]
+}

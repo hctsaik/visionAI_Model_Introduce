@@ -1,0 +1,614 @@
+{
+  "model": "RD4AD",
+  "badge": "固定教師，反向重建正常特徵",
+  "title": "RD4AD：比較教師與反向重建特徵",
+  "scenario": {
+    "title": "正常資料多，細刮傷種類卻不齊",
+    "body": "固定相機檢查兩孔金屬板，想從正常資料學出可疑位置。必須理解刮傷 p 的特徵為何可能對不上，也要看正常孔邊 q 的誤報。"
+  },
+  "promise": {
+    "title": "交付可回看的特徵差異線索",
+    "body": "多尺度特徵差異形成異常圖與候選分數；可協助定位覆核，不直接交付缺陷類型、精確輪廓、尺寸或放行結論。"
+  },
+  "mental_model": {
+    "title": "教師抽特徵，學生由嵌入還原",
+    "body": "固定教師把影像轉成多尺度特徵；可訓練瓶頸與反向解碼器用正常資料學重建這些特徵。比較同位置特徵差異，再回到原圖。",
+    "limit": "細缺陷在兩份特徵中仍可能相似；正常光澤也可能造成差異。正常訓練對齊不保證異常檢測成功。"
+  },
+  "micro_example": {
+    "title": "換成反光外殼，先改門檻還是取像？",
+    "setup": "新產品正常外殼常反光，RD4AD 熱圖在正常邊緣亮起，部分細刮傷卻沒有反應。",
+    "prediction": "直接提高門檻會犧牲什麼？你會如何比較改善光源、補正常資料與改試 AE 或 DRAEM？",
+    "reveal": "提高門檻可能減少誤報，同時增加漏檢。先查原圖是否看得見細刮傷、正常光澤是否允收與資料是否涵蓋；固定未見正常與真缺陷，對照取像改善及候選方法的誤報、漏檢、時間與覆核量。AE 可作像素重建基準；能設計合成異常時可試 DRAEM，但不預設一定更好。"
+  },
+  "mechanism_steps": [
+    {
+      "title": "由 frozen teacher 取多尺度 normal feature",
+      "body": "乾淨 normal ROI 依固定 recipe 經 frozen pretrained encoder，輸出選定層級的 teacher feature pyramid。",
+      "why": "教師 checkpoint、層級與 ROI recipe 決定模型看見哪些局部；domain mismatch 會讓正常與異常差異都失真。",
+      "anchor": "工程圖核對：frozen teacher → multi-scale features",
+      "diagram": {
+        "title": "teacher 取多尺度特徵",
+        "body": "固定 encoder 輸出選定層的 feature pyramid。",
+        "why": "checkpoint 與 layer 決定比較語言。",
+        "anchor": "ROI → frozen teacher → features"
+      }
+    },
+    {
+      "title": "讓一個 one-class bottleneck 學正常訊息",
+      "body": "trainable bottleneck 與 reverse decoder 只用正常資料，將 teacher features 壓縮後以反向尺度順序重建。",
+      "why": "受限通道的目的，是保留正常結構而非逐點複製輸入；bottleneck 太窄會誤拒正常，太寬又可能吸收異常。",
+      "anchor": "工程圖核對：one-class bottleneck → reverse decoder",
+      "diagram": {
+        "title": "受限路徑重建正常特徵",
+        "body": "bottleneck 壓縮後由 reverse decoder 重建。",
+        "why": "容量過小誤拒，過大可能吸收異常。",
+        "anchor": "bottleneck → reverse decoder"
+      }
+    },
+    {
+      "title": "逐層比較教師與重建 feature",
+      "body": "測試 ROI 同時走 teacher 與 normal-trained reverse path；每個對應位置計算 1−cosine(F_teacher,F_decoder) 的 discrepancy。",
+      "why": "RD4AD 的候選來自兩個 feature 表示不一致，而不是 input 與重建影像的像素差。",
+      "anchor": "工程圖核對：per-level cosine discrepancy",
+      "diagram": {
+        "title": "逐層量 cosine discrepancy",
+        "body": "teacher feature 與重建 feature 逐位置比較。",
+        "why": "候選是 feature 差異，不是像素差。",
+        "anchor": "teacher ↔ decoder feature"
+      }
+    },
+    {
+      "title": "多尺度差異融合成候選，再 review",
+      "body": "每層 discrepancy map resize 到共同 grid，依鎖定 addition、smoothing 與 max 等規則融合為 map 和 image candidate score。",
+      "why": "fusion、Gaussian smoothing 與 max aggregation 都能放大或稀釋小熱點；它們是 operating point 的一部分，不是純視覺裝飾。",
+      "anchor": "工程圖核對：resize → fusion → smoothing → gate",
+      "diagram": {
+        "title": "多層差異聚合為候選",
+        "body": "各層 map 對齊後融合成 image score。",
+        "why": "fusion 與 smoothing 會改小熱點可見性。",
+        "anchor": "resize → fusion → gate"
+      }
+    }
+  ],
+  "visual_intro": "先把它想成『教師描述與正常反向重建是否對得上』，再核對 teacher、bottleneck、reverse decoder 與 discrepancy gate。",
+  "beginner_path": {
+    "title": "同一金屬板：特徵從哪裡來，差異如何用",
+    "intro": "四張圖依序看特徵重建、正常訓練、失敗情境與鄰近方法。全部為教學示意，非模型實測。",
+    "visuals": [
+      {
+        "id": "wi021-ad-rd4ad-1",
+        "title": "RD4AD 把教師特徵，與重建特徵相比",
+        "prompt": "追蹤同板 A 的刮傷 p，先分清影像與特徵。",
+        "caption": "固定教師提取多尺度特徵；正常資料訓練的瓶頸與反向學生還原教師表示。逐尺度比較同位置特徵，整合差異後回看原圖。學生輸入是教師的嵌入表示，輸出是特徵。",
+        "image": "_course_content/generated-concepts/ad-rd4ad/wi021-rd4ad-c1-r04-desktop.png",
+        "alt": "RD4AD 把教師特徵，與重建特徵相比。固定教師提取多尺度特徵；正常資料訓練的瓶頸與反向學生還原教師表示。逐尺度比較同位置特徵，整合差異後回看原圖。學生輸入是教師的嵌入表示，輸出是特徵。 本圖為 AI 生成教學示意，非模型實測。",
+        "callouts": [
+          {
+            "title": "正常知識如何進來",
+            "body": "教師保持固定，瓶頸與學生只用正常影像的教師特徵學習。"
+          },
+          {
+            "title": "圖中比較什麼",
+            "body": "同尺度、同位置的教師與重建特徵；彩色格子是表示示意，不是修復照片或缺陷機率。"
+          },
+          {
+            "title": "從熱區回到原圖",
+            "body": "p 表示原圖的刮傷位置；抽象特徵格不等於精確像素邊界，熱區用於覆核。"
+          }
+        ],
+        "reading_views": [
+          {
+            "title": "RD4AD 把教師特徵，與重建特徵相比",
+            "image": "_course_content/generated-concepts/ad-rd4ad/wi021-rd4ad-c1-r04-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/ad-rd4ad/wi021-rd4ad-c1-r01-mobile.png",
+            "alt": "RD4AD 把教師特徵，與重建特徵相比。固定教師提取多尺度特徵；正常資料訓練的瓶頸與反向學生還原教師表示。逐尺度比較同位置特徵，整合差異後回看原圖。學生輸入是教師的嵌入表示，輸出是特徵。 本圖為 AI 生成教學示意，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              724,
+              2172
+            ],
+            "mobile_display_mode": "full-mobile",
+            "mobile_intrinsic_width": 724,
+            "mobile_intrinsic_height": 2172,
+            "desktop_intrinsic_width": 1672,
+            "desktop_intrinsic_height": 941
+          }
+        ],
+        "core_ideas": true
+      },
+      {
+        "id": "wi021-ad-rd4ad-2",
+        "title": "RD4AD 訓練時，誰的權重會改？",
+        "prompt": "先留驗證集，再看固定教師與可訓練瓶頸、學生的分工。",
+        "caption": "用正常品讓重建特徵接近教師特徵，更新瓶頸與學生，教師權重固定。另留未見正常與缺陷，評估正常孔邊 q 的誤報及刮傷 p 的漏檢；這些結果是可能情境示意。",
+        "image": "_course_content/generated-concepts/ad-rd4ad/wi021-rd4ad-c2-r02-desktop.png",
+        "alt": "RD4AD 訓練時，誰的權重會改？。用正常品讓重建特徵接近教師特徵，更新瓶頸與學生，教師權重固定。另留未見正常與缺陷，評估正常孔邊 q 的誤報及刮傷 p 的漏檢；這些結果是可能情境示意。 本圖為 AI 生成教學示意，非模型實測。",
+        "callouts": [
+          {
+            "title": "資料怎麼分",
+            "body": "不同實體件、批次與合理光澤變化應被涵蓋；同一件的近似影像不要跨訓練與驗證。"
+          },
+          {
+            "title": "哪些部件會更新",
+            "body": "正常特徵差異用來訓練瓶頸與反向學生；推論時三者權重都固定。"
+          },
+          {
+            "title": "驗證兩側錯誤",
+            "body": "不能只看正常訓練誤差；真缺陷僅用於獨立驗證，本課不把驗證影像加入權重訓練。"
+          }
+        ],
+        "reading_views": [
+          {
+            "title": "RD4AD 訓練時，誰的權重會改？",
+            "image": "_course_content/generated-concepts/ad-rd4ad/wi021-rd4ad-c2-r02-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/ad-rd4ad/wi021-rd4ad-c2-r01-mobile.png",
+            "alt": "RD4AD 訓練時，誰的權重會改？。用正常品讓重建特徵接近教師特徵，更新瓶頸與學生，教師權重固定。另留未見正常與缺陷，評估正常孔邊 q 的誤報及刮傷 p 的漏檢；這些結果是可能情境示意。 本圖為 AI 生成教學示意，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              724,
+              2172
+            ],
+            "mobile_display_mode": "full-mobile",
+            "mobile_intrinsic_width": 724,
+            "mobile_intrinsic_height": 2172,
+            "desktop_intrinsic_width": 1672,
+            "desktop_intrinsic_height": 941
+          }
+        ],
+        "core_ideas": false
+      },
+      {
+        "id": "wi021-ad-rd4ad-3",
+        "title": "RD4AD 熱圖沒亮，就能放行嗎？",
+        "prompt": "對照刮傷 p 與正常孔邊 q；高低差異各有可能誤判。",
+        "caption": "細刮傷在兩份特徵裡可能很相似，造成漏檢；正常孔邊的新光澤可能讓兩份特徵不同，造成誤報。高差異與低差異都要用未見資料核對。",
+        "image": "_course_content/generated-concepts/ad-rd4ad/wi021-rd4ad-d3-r01-desktop.png",
+        "alt": "RD4AD 熱圖沒亮，就能放行嗎？。細刮傷在兩份特徵裡可能很相似，造成漏檢；正常孔邊的新光澤可能讓兩份特徵不同，造成誤報。高差異與低差異都要用未見資料核對。 本圖為 AI 生成教學示意，非模型實測。",
+        "callouts": [
+          {
+            "title": "熱圖沒亮",
+            "body": "先確認影像能看見細刮傷，以及特徵是否保留線索；低差異不等於正常保證。"
+          },
+          {
+            "title": "正常位置亮了",
+            "body": "q 是正常小孔，先核對光澤、取像穩定性與訓練資料涵蓋，不把每個熱區都當缺陷。"
+          },
+          {
+            "title": "如何調整",
+            "body": "提高門檻可能減少誤報卻增加漏檢；改善取像、正常資料或候選模型後，用同一獨立驗證集比較。"
+          }
+        ],
+        "reading_views": [
+          {
+            "title": "RD4AD 熱圖沒亮，就能放行嗎？",
+            "image": "_course_content/generated-concepts/ad-rd4ad/wi021-rd4ad-d3-r01-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/ad-rd4ad/wi021-rd4ad-d3-r01-mobile.png",
+            "alt": "RD4AD 熱圖沒亮，就能放行嗎？。細刮傷在兩份特徵裡可能很相似，造成漏檢；正常孔邊的新光澤可能讓兩份特徵不同，造成誤報。高差異與低差異都要用未見資料核對。 本圖為 AI 生成教學示意，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              724,
+              2172
+            ],
+            "mobile_display_mode": "full-mobile",
+            "mobile_intrinsic_width": 724,
+            "mobile_intrinsic_height": 2172,
+            "desktop_intrinsic_width": 1672,
+            "desktop_intrinsic_height": 941
+          }
+        ],
+        "core_ideas": false
+      },
+      {
+        "id": "wi021-ad-rd4ad-4",
+        "title": "AE、RD4AD、DRAEM 的線索從哪裡來？",
+        "prompt": "用同一板與同一需求，比較三種資料流。",
+        "caption": "image-AE 比較原圖與重建像素；RD4AD 比較教師與反向重建特徵；DRAEM 把原圖與重建交給學習式判別器。三條路徑不是性能排名，必須在共同驗證資料上選。 固定硬體、解析度與前處理，按相同漏檢風險比較誤報、端到端時間及覆核量；較少模型部件不等於現場一定較快。",
+        "image": "_course_content/generated-concepts/ad-ae/wi021-ae-d5-r02-desktop.png",
+        "alt": "AE、RD4AD、DRAEM 的線索從哪裡來？。image-AE 比較原圖與重建像素；RD4AD 比較教師與反向重建特徵；DRAEM 把原圖與重建交給學習式判別器。三條路徑不是性能排名，必須在共同驗證資料上選。 本圖為 AI 生成教學示意，非模型實測。",
+        "callouts": [
+          {
+            "title": "只有正常資料",
+            "body": "AE 與 RD4AD 都能以正常影像訓練；DRAEM 另設計合成異常與 mask 監督，不需在推論提供 mask。"
+          },
+          {
+            "title": "換產品怎麼辦",
+            "body": "檢查正常表示是否仍涵蓋新產品，可能需重新訓練或適配；門檻一定要重新驗證。"
+          },
+          {
+            "title": "節拍與覆核一起看",
+            "body": "固定硬體、影像尺寸與前處理，比處理時間、誤報、漏檢與人工覆核負擔；熱圖都不是已校正的尺寸。"
+          }
+        ],
+        "reading_views": [
+          {
+            "title": "AE、RD4AD、DRAEM 的線索從哪裡來？",
+            "image": "_course_content/generated-concepts/ad-ae/wi021-ae-d5-r02-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/ad-ae/wi021-ae-d5-r02-mobile.png",
+            "alt": "AE、RD4AD、DRAEM 的線索從哪裡來？。image-AE 比較原圖與重建像素；RD4AD 比較教師與反向重建特徵；DRAEM 把原圖與重建交給學習式判別器。三條路徑不是性能排名，必須在共同驗證資料上選。 本圖為 AI 生成教學示意，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              724,
+              2172
+            ],
+            "mobile_display_mode": "full-mobile",
+            "mobile_intrinsic_width": 724,
+            "mobile_intrinsic_height": 2172,
+            "desktop_intrinsic_width": 1672,
+            "desktop_intrinsic_height": 941
+          }
+        ],
+        "core_ideas": false
+      }
+    ]
+  },
+  "concept_visuals": [],
+  "boundary_cases": [
+    {
+      "condition": "bottleneck 太受限或 normal modes 未涵蓋",
+      "effect": "合法正常微特徵無法重建，discrepancy 大，false reject 與 review load 上升。",
+      "action": "以隔離 holdout、不同 lot/view 支援抽樣和 seed spread 驗證，不要只壓低訓練 loss。"
+    },
+    {
+      "condition": "decoder 過度泛化或 support 受污染",
+      "effect": "異常 feature 也可能被重建，或污染型態被教成 normal，造成小 discrepancy 與漏檢。",
+      "action": "HOLD；審查 normal support、escaped defects 與容量設定，重新訓練後用真實 challenge qualification。"
+    },
+    {
+      "condition": "teacher domain mismatch、ROI／照明漂移或 tiny defect 被 smoothing 稀釋",
+      "effect": "feature 差距反映量測或 feature stride，而非目標缺陷。",
+      "action": "先查 acquisition／teacher fit／effective pixels；保存每層 map、resize、fusion、smoothing 與失敗例。"
+    }
+  ],
+  "comparison": [
+    {
+      "model": "RD4AD",
+      "normality": "frozen teacher 下的 one-class bottleneck＋reverse decoder",
+      "candidate": "教師與反向重建 feature 的 cosine discrepancy 大"
+    },
+    {
+      "model": "STFPM",
+      "normality": "normal-trained student 能模仿 frozen teacher pyramid",
+      "candidate": "teacher/student normalized feature discrepancy 大"
+    },
+    {
+      "model": "Autoencoder (AE)",
+      "normality": "encoder-decoder 對指定 image 或 feature target 的重建",
+      "candidate": "target 與 reconstruction residual 大"
+    }
+  ],
+  "selection": "只有正常資料時，可比較 RD4AD 的特徵重建與 AE 的像素重建；能設計合成異常時，DRAEM 是另一候選。換產品需核對正常資料涵蓋、訓練適配與門檻；用相同未見正常和真缺陷、硬體與解析度一起比誤報、漏檢、時間及覆核成本。輸出都須經驗證，不直接當精確尺寸。",
+  "poc": {
+    "title": "POC 第一件事：同時驗證『正常被保留』與『異常沒被重建』",
+    "steps": [
+      "固定 teacher checkpoint/frozen audit、feature levels、ROI/transform、normal-fit IDs、bottleneck／decoder architecture、loss、optimizer、seed 與 checkpoint。",
+      "鎖 cosine discrepancy、resize alignment、multi-level fusion、smoothing、map-to-image aggregation、threshold 與 candidate evidence format。",
+      "在 challenge／future／drift split 報告 low-FPR escape、false reject/review load、每層 map、escaped defects、P95/VRAM/RAM、training cost 與 seed spread。"
+    ],
+    "hold": "support 受污染、teacher domain mismatch、normal modes 不足、tiny defect 小於有效 feature 尺度、drift 或完整 P95 不符合流程時，先 HOLD 或改選方法。",
+    "acceptance": {
+      "baseline": "固定 frozen teacher、feature levels、one-class bottleneck、reverse decoder、cosine discrepancy、fusion/smoothing 與 calibration。",
+      "measure": "量 normal false reject、escaped defect、per-level maps、low-FPR、review load、P95/VRAM/RAM 與 seed spread。",
+      "negative_control": "以過寬 decoder／bottleneck capacity 與 teacher-domain mismatch challenge 測試，確認已知 defect discrepancy 不會被過度重建而消失。",
+      "owner": "AOI 品質 owner、teacher/decoder ML owner、Vision QA owner"
+    }
+  },
+  "teach_back": {
+    "question": "RD4AD 的學生為什麼不是另一個直接看原圖的教師？",
+    "answer": "學生接收教師經瓶頸得到的嵌入，由高階往低階還原特徵；兩份特徵差異形成線索。教師固定，正常訓練更新瓶頸與學生。"
+  },
+  "slide_reading": [
+    {
+      "title": "RD4AD：正常資料教瓶頸與反向學生",
+      "question": "先固定教師，正常資料再訓練重建表示。",
+      "look": "先看同板正常與驗證資料分開，再核對教師特徵教瓶頸與學生，最後看輸出特徵差異供位置覆核。",
+      "relation": "教師固定，正常訓練更新單類瓶頸與反向學生。重建的是多尺度特徵，與同尺度教師表示比較形成位置線索；不是由模型修復物理工件，沒有尺寸或允收保證。",
+      "takeaway": "先固定教師，正常資料再訓練重建表示。",
+      "terms": [
+        "特徵：模型的中間表示，與影像像素分開。",
+        "圖中數值：作者給定算例，不是本輪模型實測。"
+      ]
+    },
+    {
+      "title": "RD4AD：从瓶頸反向重建教師特徵",
+      "question": "學生從教師嵌入重建，逐尺度對照教師。",
+      "look": "先看教師多尺度特徵進瓶頸，再核對學生由粗到細還原特徵，最後看同尺度兩份表示逐一比。",
+      "relation": "固定教師編碼器抽多尺度特徵，可訓練one-class瓶頸和反向學生解碼器以正常資料學重建。學生輸入是教師嵌入，不是原圖；對應尺度的教師與重建特徵以餘弦差異比較並映回位置。教師高低尺度與學生逆向重建對應清楚，不把輸出說成修復照片。",
+      "takeaway": "學生從教師嵌入重建，逐尺度對照教師。",
+      "terms": [
+        "特徵：模型的中間表示，與影像像素分開。",
+        "圖中數值：作者給定算例，不是本輪模型實測。"
+      ]
+    },
+    {
+      "title": "RD4AD：教師、瓶頸、學生是一組",
+      "question": "三組權重與尺度配對固定，才能重現差異。",
+      "look": "先看三部分保存為同一版本，再核對教師與重建逐尺度配對，最後看原圖與位置結果一起驗。",
+      "relation": "保存教師、瓶頸和學生權重及各層的配對、前處理、插值、餘弦差與彙整。避免只部署學生而沒有教師嵌入來源；域內正常光澤和小刮傷都需獨立驗。",
+      "takeaway": "三組權重與尺度配對固定，才能重現差異。",
+      "terms": [
+        "特徵：模型的中間表示，與影像像素分開。",
+        "圖中數值：作者給定算例，不是本輪模型實測。"
+      ]
+    },
+    {
+      "title": "RD4AD與AE：重建的對象不同",
+      "question": "特徵重建與像素重建，不能共用同一解讀。",
+      "look": "先看同一金屬板刮傷p，再核對RD4AD比較教師與重建表示，最後看AE比較原圖40與重建150。",
+      "relation": "在同檢查工件上，RD4AD重建特徵並比餘弦差；AE基線重建像素並在相同位置相減。像素差110和特徵差不是同一尺度的數字，不能直接比較大小判方法好壞。",
+      "takeaway": "特徵重建與像素重建，不能共用同一解讀。",
+      "terms": [
+        "特徵：模型的中間表示，與影像像素分開。",
+        "圖中數值：作者給定算例，不是本輪模型實測。"
+      ]
+    }
+  ],
+  "comparison_headers": {
+    "title": "先比 reverse feature reconstruction，不比重建圖美觀",
+    "basis": "teacher feature 如何被 normal path 反向重建？",
+    "output": "cosine discrepancy 如何才成候選？"
+  },
+  "transfer_check": {
+    "title": "如果改成查零件裝錯呢？",
+    "scenario": "另一條線要找孔位配置或裝配關係錯誤，而不只是表面刮傷。",
+    "question": "局部特徵差異足以代表完整裝配關係嗎？如何驗證？",
+    "answer": "不能保證。補具代表性的錯裝與正常變化樣本，檢查整體關係是否可分；必要時加入物件、關鍵點或幾何關係檢查。仍可測 RD4AD 作候選，但不能把表面刮傷結果直接推廣到裝配判定。"
+  },
+  "review_trace": {
+    "authority": "roadmap-model-selection/anomaly-detection/ad-rd4ad/model.md",
+    "scope": "WI-033：工程層四圖與手機比較修正；首讀有效內容保留。原生圖已審，整頁與使用者審閱另記。",
+    "claims": [
+      {
+        "id": "visual-1",
+        "field": "beginner_path.visuals[reconstruct-normal-feature-workpiece]",
+        "source": "模型定位 / architecture_path"
+      },
+      {
+        "id": "visual-2",
+        "field": "beginner_path.visuals[teacher-reverse-path]",
+        "source": "architecture_path"
+      },
+      {
+        "id": "visual-3",
+        "field": "beginner_path.visuals[cosine-evidence]",
+        "source": "representation_or_score"
+      },
+      {
+        "id": "visual-4",
+        "field": "beginner_path.visuals[capacity-counterfactual]",
+        "source": "failure_boundary"
+      },
+      {
+        "id": "visual-5",
+        "field": "beginner_path.visuals[reverse-distillation-choice]",
+        "source": "selection_gate / evidence_bundle"
+      },
+      {
+        "id": "promise",
+        "field": "promise",
+        "source": "模型定位 / representation_or_score"
+      },
+      {
+        "id": "mechanism",
+        "field": "mechanism_steps",
+        "source": "architecture_path / representation_or_score"
+      },
+      {
+        "id": "boundaries",
+        "field": "boundary_cases",
+        "source": "failure_boundary / selection_gate"
+      },
+      {
+        "id": "comparison",
+        "field": "comparison + selection",
+        "source": "selection_gate"
+      },
+      {
+        "id": "poc",
+        "field": "poc + acceptance",
+        "source": "cost_and_operating_point / evidence_bundle"
+      },
+      {
+        "id": "transfer",
+        "field": "transfer_check",
+        "source": "failure_boundary / selection_gate"
+      },
+      {
+        "id": "f01-core",
+        "field": "beginner_path.visuals[0] + scenario + mental_model",
+        "source": "https://arxiv.org/abs/2201.10703"
+      },
+      {
+        "id": "f01-transfer",
+        "field": "micro_example + transfer_check",
+        "source": "由原論文機制推論移除後果；https://arxiv.org/abs/2201.10703"
+      },
+      {
+        "id": "wi021-first-read",
+        "field": "beginner_path + micro_example + selection",
+        "source": "https://arxiv.org/abs/2201.10703；比較 AE https://arxiv.org/abs/1807.02011；DRAEM https://arxiv.org/abs/2108.07610"
+      }
+    ]
+  },
+  "teaching_preflight": {
+    "brief": "teaching-images/vision-ai-model-selection/workitems/wi-021/rd4ad-c1-r01.md",
+    "story": "C",
+    "major_visual_nodes": 4,
+    "visual_status": "self-reviewed",
+    "user_review": "pending"
+  },
+  "engineering_slides": [
+    {
+      "title": "RD4AD：正常資料教瓶頸與反向學生",
+      "question": "先固定教師，正常資料再訓練重建表示。",
+      "plain": {
+        "look": "先看同板正常與驗證資料分開，再核對教師特徵教瓶頸與學生，最後看輸出特徵差異供位置覆核。",
+        "relation": "教師固定，正常訓練更新單類瓶頸與反向學生。重建的是多尺度特徵，與同尺度教師表示比較形成位置線索；不是由模型修復物理工件，沒有尺寸或允收保證。",
+        "takeaway": "先固定教師，正常資料再訓練重建表示。"
+      },
+      "terms": [
+        "特徵：模型的中間表示，與影像像素分開。",
+        "圖中數值：作者給定算例，不是本輪模型實測。"
+      ],
+      "guide": [
+        "教師固定，正常訓練更新單類瓶頸與反向學生。重建的是多尺度特徵，與同尺度教師表示比較形成位置線索；不是由模型修復物理工件，沒有尺寸或允收保證。",
+        "先看同板正常與驗證資料分開，再核對教師特徵教瓶頸與學生，最後看輸出特徵差異供位置覆核。"
+      ],
+      "stages": [
+        {
+          "title": "同板正常與驗證資料分開",
+          "body": "同板正常與驗證資料分開；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "教師特徵教瓶頸與學生",
+          "body": "教師特徵教瓶頸與學生；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "輸出特徵差異供位置覆核",
+          "body": "輸出特徵差異供位置覆核；請對照圖內輸入、變化與結果。"
+        }
+      ],
+      "misconception": "細缺陷在兩份特徵中仍可能相似；正常光澤也可能造成差異。正常訓練對齊不保證異常檢測成功。",
+      "alt": "RD4AD：正常資料教瓶頸與反向學生。先固定教師，正常資料再訓練重建表示。 教學示意，非模型實測。",
+      "mobile_image": "roadmap-model-selection/anomaly-detection/ad-rd4ad/images/final/WI033-RD4AD-01-r02-mobile.png",
+      "mobile_width": 768,
+      "mobile_height": 2304,
+      "engineering": {
+        "takeaway": "先固定教師，正常資料再訓練重建表示。",
+        "nextAction": "固定 teacher checkpoint/frozen audit、feature levels、ROI/transform、normal-fit IDs、bottleneck／decoder architecture、loss、optimizer、seed 與 checkpoint。",
+        "redLine": "support 受污染、teacher domain mismatch、normal modes 不足、tiny defect 小於有效 feature 尺度、drift 或完整 P95 不符合流程時，先 HOLD 或改選方法。"
+      },
+      "source": "https://openaccess.thecvf.com/content/CVPR2022/html/Deng_Anomaly_Detection_via_Reverse_Distillation_From_One-Class_Embedding_CVPR_2022_paper.html"
+    },
+    {
+      "title": "RD4AD：从瓶頸反向重建教師特徵",
+      "question": "學生從教師嵌入重建，逐尺度對照教師。",
+      "plain": {
+        "look": "先看教師多尺度特徵進瓶頸，再核對學生由粗到細還原特徵，最後看同尺度兩份表示逐一比。",
+        "relation": "固定教師編碼器抽多尺度特徵，可訓練one-class瓶頸和反向學生解碼器以正常資料學重建。學生輸入是教師嵌入，不是原圖；對應尺度的教師與重建特徵以餘弦差異比較並映回位置。教師高低尺度與學生逆向重建對應清楚，不把輸出說成修復照片。",
+        "takeaway": "學生從教師嵌入重建，逐尺度對照教師。"
+      },
+      "terms": [
+        "特徵：模型的中間表示，與影像像素分開。",
+        "圖中數值：作者給定算例，不是本輪模型實測。"
+      ],
+      "guide": [
+        "固定教師編碼器抽多尺度特徵，可訓練one-class瓶頸和反向學生解碼器以正常資料學重建。學生輸入是教師嵌入，不是原圖；對應尺度的教師與重建特徵以餘弦差異比較並映回位置。教師高低尺度與學生逆向重建對應清楚，不把輸出說成修復照片。",
+        "先看教師多尺度特徵進瓶頸，再核對學生由粗到細還原特徵，最後看同尺度兩份表示逐一比。"
+      ],
+      "stages": [
+        {
+          "title": "教師多尺度特徵進瓶頸",
+          "body": "教師多尺度特徵進瓶頸；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "學生由粗到細還原特徵",
+          "body": "學生由粗到細還原特徵；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "同尺度兩份表示逐一比",
+          "body": "同尺度兩份表示逐一比；請對照圖內輸入、變化與結果。"
+        }
+      ],
+      "misconception": "細缺陷在兩份特徵中仍可能相似；正常光澤也可能造成差異。正常訓練對齊不保證異常檢測成功。",
+      "alt": "RD4AD：从瓶頸反向重建教師特徵。學生從教師嵌入重建，逐尺度對照教師。 教學示意，非模型實測。",
+      "mobile_image": "roadmap-model-selection/anomaly-detection/ad-rd4ad/images/final/WI033-RD4AD-02-r02-mobile.png",
+      "mobile_width": 768,
+      "mobile_height": 2304,
+      "engineering": {
+        "takeaway": "學生從教師嵌入重建，逐尺度對照教師。",
+        "nextAction": "固定 teacher checkpoint/frozen audit、feature levels、ROI/transform、normal-fit IDs、bottleneck／decoder architecture、loss、optimizer、seed 與 checkpoint。",
+        "redLine": "support 受污染、teacher domain mismatch、normal modes 不足、tiny defect 小於有效 feature 尺度、drift 或完整 P95 不符合流程時，先 HOLD 或改選方法。"
+      },
+      "source": "https://openaccess.thecvf.com/content/CVPR2022/html/Deng_Anomaly_Detection_via_Reverse_Distillation_From_One-Class_Embedding_CVPR_2022_paper.html"
+    },
+    {
+      "title": "RD4AD：教師、瓶頸、學生是一組",
+      "question": "三組權重與尺度配對固定，才能重現差異。",
+      "plain": {
+        "look": "先看三部分保存為同一版本，再核對教師與重建逐尺度配對，最後看原圖與位置結果一起驗。",
+        "relation": "保存教師、瓶頸和學生權重及各層的配對、前處理、插值、餘弦差與彙整。避免只部署學生而沒有教師嵌入來源；域內正常光澤和小刮傷都需獨立驗。",
+        "takeaway": "三組權重與尺度配對固定，才能重現差異。"
+      },
+      "terms": [
+        "特徵：模型的中間表示，與影像像素分開。",
+        "圖中數值：作者給定算例，不是本輪模型實測。"
+      ],
+      "guide": [
+        "保存教師、瓶頸和學生權重及各層的配對、前處理、插值、餘弦差與彙整。避免只部署學生而沒有教師嵌入來源；域內正常光澤和小刮傷都需獨立驗。",
+        "先看三部分保存為同一版本，再核對教師與重建逐尺度配對，最後看原圖與位置結果一起驗。"
+      ],
+      "stages": [
+        {
+          "title": "三部分保存為同一版本",
+          "body": "三部分保存為同一版本；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "教師與重建逐尺度配對",
+          "body": "教師與重建逐尺度配對；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "原圖與位置結果一起驗",
+          "body": "原圖與位置結果一起驗；請對照圖內輸入、變化與結果。"
+        }
+      ],
+      "misconception": "細缺陷在兩份特徵中仍可能相似；正常光澤也可能造成差異。正常訓練對齊不保證異常檢測成功。",
+      "alt": "RD4AD：教師、瓶頸、學生是一組。三組權重與尺度配對固定，才能重現差異。 教學示意，非模型實測。",
+      "mobile_image": "roadmap-model-selection/anomaly-detection/ad-rd4ad/images/final/WI033-RD4AD-03-r01-mobile.png",
+      "mobile_width": 768,
+      "mobile_height": 2304,
+      "engineering": {
+        "takeaway": "三組權重與尺度配對固定，才能重現差異。",
+        "nextAction": "固定 teacher checkpoint/frozen audit、feature levels、ROI/transform、normal-fit IDs、bottleneck／decoder architecture、loss、optimizer、seed 與 checkpoint。",
+        "redLine": "support 受污染、teacher domain mismatch、normal modes 不足、tiny defect 小於有效 feature 尺度、drift 或完整 P95 不符合流程時，先 HOLD 或改選方法。"
+      },
+      "source": "https://openaccess.thecvf.com/content/CVPR2022/html/Deng_Anomaly_Detection_via_Reverse_Distillation_From_One-Class_Embedding_CVPR_2022_paper.html"
+    },
+    {
+      "title": "RD4AD與AE：重建的對象不同",
+      "question": "特徵重建與像素重建，不能共用同一解讀。",
+      "plain": {
+        "look": "先看同一金屬板刮傷p，再核對RD4AD比較教師與重建表示，最後看AE比較原圖40與重建150。",
+        "relation": "在同檢查工件上，RD4AD重建特徵並比餘弦差；AE基線重建像素並在相同位置相減。像素差110和特徵差不是同一尺度的數字，不能直接比較大小判方法好壞。",
+        "takeaway": "特徵重建與像素重建，不能共用同一解讀。"
+      },
+      "terms": [
+        "特徵：模型的中間表示，與影像像素分開。",
+        "圖中數值：作者給定算例，不是本輪模型實測。"
+      ],
+      "guide": [
+        "在同檢查工件上，RD4AD重建特徵並比餘弦差；AE基線重建像素並在相同位置相減。像素差110和特徵差不是同一尺度的數字，不能直接比較大小判方法好壞。",
+        "先看同一金屬板刮傷p，再核對RD4AD比較教師與重建表示，最後看AE比較原圖40與重建150。"
+      ],
+      "stages": [
+        {
+          "title": "同一金屬板刮傷p",
+          "body": "同一金屬板刮傷p；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "RD4AD比較教師與重建表示",
+          "body": "RD4AD比較教師與重建表示；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "AE比較原圖40與重建150",
+          "body": "AE比較原圖40與重建150；請對照圖內輸入、變化與結果。"
+        }
+      ],
+      "misconception": "細缺陷在兩份特徵中仍可能相似；正常光澤也可能造成差異。正常訓練對齊不保證異常檢測成功。",
+      "alt": "RD4AD與AE：重建的對象不同。特徵重建與像素重建，不能共用同一解讀。 教學示意，非模型實測。",
+      "mobile_image": "roadmap-model-selection/anomaly-detection/ad-rd4ad/images/final/WI033-RD4AD-04-r01-mobile.png",
+      "mobile_width": 768,
+      "mobile_height": 2304,
+      "engineering": {
+        "takeaway": "特徵重建與像素重建，不能共用同一解讀。",
+        "nextAction": "固定 teacher checkpoint/frozen audit、feature levels、ROI/transform、normal-fit IDs、bottleneck／decoder architecture、loss、optimizer、seed 與 checkpoint。",
+        "redLine": "support 受污染、teacher domain mismatch、normal modes 不足、tiny defect 小於有效 feature 尺度、drift 或完整 P95 不符合流程時，先 HOLD 或改選方法。"
+      },
+      "source": "https://openaccess.thecvf.com/content/CVPR2022/html/Deng_Anomaly_Detection_via_Reverse_Distillation_From_One-Class_Embedding_CVPR_2022_paper.html"
+    }
+  ]
+}

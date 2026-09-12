@@ -1,0 +1,8 @@
+{
+  "html_sha256": "f4f6600448e80275e046fa57b61bc26a28b4649f5ab34f8d6e80b1887d3d20fb",
+  "summary_as_step0": 0,
+  "dino_label": "訓練時如何學會區分",
+  "dino_takeaway": "類別固定且能準備框標註時，可比較 DINO；以現場漏檢、定位與完整成本決定是否採用。",
+  "topics": 58,
+  "course_docs_equal": true
+}

@@ -1,0 +1,570 @@
+{
+  "model": "TF-IDG",
+  "badge": "免案例微調的缺陷生成",
+  "title": "TF-IDG：固定權重，在生成途中對齊缺陷",
+  "scenario": {
+    "title": "要把少量刮傷參考放到新正常板，不希望每個案例都另做模型微調。",
+    "body": "要把少量刮傷參考放到新正常板，不希望每個案例都另做模型微調。"
+  },
+  "promise": {
+    "title": "交付結果與接手工作",
+    "body": "帶有合成缺陷的影像及目標遮罩；核對後作下游訓練候選。"
+  },
+  "mental_model": {
+    "title": "免案例微調的缺陷生成",
+    "body": "TF-IDG建立在預訓練影像編修框架上：缺陷參考提供外觀，目標遮罩提供形狀與位置。生成初期讓局部特徵向參考對齊；再找出遮罩內仍像正常面的區域，補強容易漏掉的小缺陷；後期引入原背景資訊，維持紋理連續。它調整生成中的表示，保持模型權重固定。",
+    "limit": "本例把黑色粗糙表面的刮傷轉到銀色拉絲板。假設刮傷長出來，卻把一塊黑色粗紋理也帶入，接縫明顯不自然。紋理保存能提供背景約束，仍要檢查跨材質參考是否合適。"
+  },
+  "beginner_path": {
+    "title": "從核心做法、反例到方法選擇",
+    "intro": "要把少量刮傷參考放到新正常板，不希望每個案例都另做模型微調。 三張圖依序看做法、失敗與取捨；AI生成教學示意，非模型實測。",
+    "visuals": [
+      {
+        "id": "wi026-tf-idg-c1",
+        "title": "TF-IDG：不微調權重，生成時對齊缺陷",
+        "prompt": "要把少量刮傷參考放到新正常板，不希望每個案例都另做模型微調。",
+        "caption": "TF-IDG建立在預訓練影像編修框架上：缺陷參考提供外觀，目標遮罩提供形狀與位置。生成初期讓局部特徵向參考對齊；再找出遮罩內仍像正常面的區域，補強容易漏掉的小缺陷；後期引入原背景資訊，維持紋理連續。它調整生成中的表示，保持模型權重固定。",
+        "image": "_course_content/generated-concepts/tf-idg/wi026-tf-idg-c1-r02-desktop.png",
+        "alt": "TF-IDG：不微調權重，生成時對齊缺陷。TF-IDG建立在預訓練影像編修框架上：缺陷參考提供外觀，目標遮罩提供形狀與位置。生成初期讓局部特徵向參考對齊；再找出遮罩內仍像正常面的區域，補強容易漏掉的小缺陷；後期引入原背景資訊，維持紋理連續。它調整生成中的表示，保持模型權重固定。 AI生成教學示意，非模型實測。",
+        "callouts": [
+          {
+            "title": "免訓練省在哪裡",
+            "body": "省去針對本案例更新模型權重的階段，並非沒有預訓練，也不是沒有最佳化。參考與正常圖先經反演保存資訊；生成過程仍反覆對齊，可能有顯著時間與記憶體成本。"
+          },
+          {
+            "title": "三個關鍵動作",
+            "body": "參考缺陷與生成區做特徵分布對齊；適應遮罩指出目標區內變化不足的位置；紋理保存把原背景資訊帶入後期生成。DINOv2提供參考外觀條件，ControlNet支援目標形狀條件。"
+          },
+          {
+            "title": "交給誰",
+            "body": "帶有合成缺陷的影像及目標遮罩；核對後作下游訓練候選。"
+          }
+        ],
+        "reading_views": [
+          {
+            "title": "TF-IDG：不微調權重，生成時對齊缺陷",
+            "image": "_course_content/generated-concepts/tf-idg/wi026-tf-idg-c1-r02-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/tf-idg/wi026-tf-idg-c1-r03-mobile.png",
+            "alt": "TF-IDG：不微調權重，生成時對齊缺陷。TF-IDG建立在預訓練影像編修框架上：缺陷參考提供外觀，目標遮罩提供形狀與位置。生成初期讓局部特徵向參考對齊；再找出遮罩內仍像正常面的區域，補強容易漏掉的小缺陷；後期引入原背景資訊，維持紋理連續。它調整生成中的表示，保持模型權重固定。 AI生成教學示意，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              724,
+              2172
+            ],
+            "mobile_display_mode": "full-mobile",
+            "mobile_intrinsic_width": 724,
+            "mobile_intrinsic_height": 2172,
+            "desktop_intrinsic_width": 1672,
+            "desktop_intrinsic_height": 941
+          }
+        ],
+        "core_ideas": true
+      },
+      {
+        "id": "wi026-tf-idg-d2",
+        "title": "免微調，也會把參考外觀帶錯",
+        "prompt": "觀察同位置的變化：這個結果能支持什麼用途？",
+        "caption": "本例把黑色粗糙表面的刮傷轉到銀色拉絲板。假設刮傷長出來，卻把一塊黑色粗紋理也帶入，接縫明顯不自然。紋理保存能提供背景約束，仍要檢查跨材質參考是否合適。",
+        "image": "_course_content/generated-concepts/tf-idg/wi026-tf-idg-d2-r02-desktop.png",
+        "alt": "免微調，也會把參考外觀帶錯。本例把黑色粗糙表面的刮傷轉到銀色拉絲板。假設刮傷長出來，卻把一塊黑色粗紋理也帶入，接縫明顯不自然。紋理保存能提供背景約束，仍要檢查跨材質參考是否合適。 AI生成教學示意，非模型實測。",
+        "callouts": [
+          {
+            "title": "看哪裡",
+            "body": "本例把黑色粗糙表面的刮傷轉到銀色拉絲板。假設刮傷長出來，卻把一塊黑色粗紋理也帶入，接縫明顯不自然。紋理保存能提供背景約束，仍要檢查跨材質參考是否合適。"
+          },
+          {
+            "title": "接著怎麼做",
+            "body": "換較合適的參考或調整生成設定，檢查缺陷細節、小區覆蓋及背景接縫，再評估下游效益。"
+          }
+        ],
+        "reading_views": [
+          {
+            "title": "免微調，也會把參考外觀帶錯",
+            "image": "_course_content/generated-concepts/tf-idg/wi026-tf-idg-d2-r02-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/tf-idg/wi026-tf-idg-d2-r01-mobile.png",
+            "alt": "免微調，也會把參考外觀帶錯。本例把黑色粗糙表面的刮傷轉到銀色拉絲板。假設刮傷長出來，卻把一塊黑色粗紋理也帶入，接縫明顯不自然。紋理保存能提供背景約束，仍要檢查跨材質參考是否合適。 AI生成教學示意，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              724,
+              2172
+            ],
+            "mobile_display_mode": "full-mobile",
+            "mobile_intrinsic_width": 724,
+            "mobile_intrinsic_height": 2172,
+            "desktop_intrinsic_width": 1672,
+            "desktop_intrinsic_height": 941
+          }
+        ],
+        "core_ideas": false
+      },
+      {
+        "id": "wi026-generation-d3",
+        "title": "要補缺陷資料：先比較學習與生成成本",
+        "prompt": "固定需求與資料，哪種準備及處理成本較合適？",
+        "caption": "不想為案例微調時，可先試TF-IDG；願意學外觀嵌入可比較AnomalyDiffusion；願意適配填補模型可比較DefectFill。TF-IDG原方法需要正常影像、缺陷參考及遮罩，不能簡化成『只輸入一句文字』。只有正常品時，先建正常性基準或取得參考。",
+        "image": "_course_content/generated-concepts/defectfill/wi026-generation-d3-r02-desktop.png",
+        "alt": "要補缺陷資料：先比較學習與生成成本。不想為案例微調時，可先試TF-IDG；願意學外觀嵌入可比較AnomalyDiffusion；願意適配填補模型可比較DefectFill。TF-IDG原方法需要正常影像、缺陷參考及遮罩，不能簡化成『只輸入一句文字』。只有正常品時，先建正常性基準或取得參考。 AI生成教學示意，非模型實測。",
+        "callouts": [
+          {
+            "title": "如何選",
+            "body": "不想為案例微調時，可先試TF-IDG；願意學外觀嵌入可比較AnomalyDiffusion；願意適配填補模型可比較DefectFill。TF-IDG原方法需要正常影像、缺陷參考及遮罩，不能簡化成『只輸入一句文字』。只有正常品時，先建正常性基準或取得參考。"
+          },
+          {
+            "title": "換產品與完整成本",
+            "body": "換產品至少要核對參考材質、遮罩和背景，不更新權重也不代表可直接沿用。比較相同真實切分、合成量與下游輸出需求，記完整生成、人工核對及訓練時間；免微調不等於端到端最快。"
+          }
+        ],
+        "reading_views": [
+          {
+            "title": "要補缺陷資料：先比較學習與生成成本",
+            "image": "_course_content/generated-concepts/defectfill/wi026-generation-d3-r02-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/defectfill/wi026-generation-d3-r01-mobile.png",
+            "alt": "要補缺陷資料：先比較學習與生成成本。不想為案例微調時，可先試TF-IDG；願意學外觀嵌入可比較AnomalyDiffusion；願意適配填補模型可比較DefectFill。TF-IDG原方法需要正常影像、缺陷參考及遮罩，不能簡化成『只輸入一句文字』。只有正常品時，先建正常性基準或取得參考。 AI生成教學示意，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              724,
+              2172
+            ],
+            "mobile_display_mode": "full-mobile",
+            "mobile_intrinsic_width": 724,
+            "mobile_intrinsic_height": 2172,
+            "desktop_intrinsic_width": 1672,
+            "desktop_intrinsic_height": 941
+          }
+        ],
+        "core_ideas": false
+      }
+    ]
+  },
+  "micro_example": {
+    "title": "換產品頻繁，但每日只需少量增強圖",
+    "setup": "你有缺陷參考和正常板，每週換材質；TF-IDG不用微調，但每張生成慢且有接縫需要人工核對。",
+    "prediction": "應因免微調而直接選它，還是比較另一種準備成本？",
+    "reveal": "若每批量少，免微調可能節省準備時間；若需要大量生成，適配一次後的路徑也可能划算。固定真實留出集，實測總生成量下的準備、迭代及覆核時間，並檢查跨材質紋理和下游錯誤；不能只計權重更新時間。"
+  },
+  "mechanism_steps": [
+    {
+      "title": "正常金屬板、缺陷參考與目標遮罩",
+      "body": "提供正常金屬板、缺陷參考與目標遮罩；先把參考和正常圖反演到生成過程可使用的表示，再以外觀和形狀條件引導生成。",
+      "why": "核對本步輸入與輸出，才能判斷下一步是否接得上。",
+      "anchor": "WI026-step-1",
+      "diagram": {
+        "title": "正常金屬板、缺陷參考與目標遮罩",
+        "body": "提供正常金屬板、缺陷參考與目標遮罩；先把參考和正常圖反演到生成過程可使用的表示，再以外觀和形狀條件引導生成。",
+        "why": "核對本步輸入與輸出，才能判斷下一步是否接得上。",
+        "anchor": "WI026-step-1"
+      }
+    },
+    {
+      "title": "生成局部特徵向參考對齊",
+      "body": "省去針對本案例更新模型權重的階段，並非沒有預訓練，也不是沒有最佳化。參考與正常圖先經反演保存資訊；生成過程仍反覆對齊，可能有顯著時間與記憶體成本。",
+      "why": "免訓練省在哪裡",
+      "anchor": "WI026-step-2",
+      "diagram": {
+        "title": "生成局部特徵向參考對齊",
+        "body": "省去針對本案例更新模型權重的階段，並非沒有預訓練，也不是沒有最佳化。參考與正常圖先經反演保存資訊；生成過程仍反覆對齊，可能有顯著時間與記憶體成本。",
+        "why": "免訓練省在哪裡",
+        "anchor": "WI026-step-2"
+      }
+    },
+    {
+      "title": "補強未改變小區域，融合原背景紋理",
+      "body": "參考缺陷與生成區做特徵分布對齊；適應遮罩指出目標區內變化不足的位置；紋理保存把原背景資訊帶入後期生成。DINOv2提供參考外觀條件，ControlNet支援目標形狀條件。",
+      "why": "三個關鍵動作",
+      "anchor": "WI026-step-3",
+      "diagram": {
+        "title": "補強未改變小區域，融合原背景紋理",
+        "body": "參考缺陷與生成區做特徵分布對齊；適應遮罩指出目標區內變化不足的位置；紋理保存把原背景資訊帶入後期生成。DINOv2提供參考外觀條件，ControlNet支援目標形狀條件。",
+        "why": "三個關鍵動作",
+        "anchor": "WI026-step-3"
+      }
+    },
+    {
+      "title": "合成雙刮傷與遮罩交人工核對",
+      "body": "帶有合成缺陷的影像及目標遮罩；核對後作下游訓練候選。",
+      "why": "核對後接入用途",
+      "anchor": "WI026-step-4",
+      "diagram": {
+        "title": "合成雙刮傷與遮罩交人工核對",
+        "body": "帶有合成缺陷的影像及目標遮罩；核對後作下游訓練候選。",
+        "why": "核對後接入用途",
+        "anchor": "WI026-step-4"
+      }
+    }
+  ],
+  "visual_intro": "TF-IDG建立在預訓練影像編修框架上：缺陷參考提供外觀，目標遮罩提供形狀與位置。生成初期讓局部特徵向參考對齊；再找出遮罩內仍像正常面的區域，補強容易漏掉的小缺陷；後期引入原背景資訊，維持紋理連續。它調整生成中的表示，保持模型權重固定。",
+  "concept_visuals": [],
+  "boundary_cases": [
+    {
+      "condition": "本課具體反例",
+      "effect": "本例把黑色粗糙表面的刮傷轉到銀色拉絲板。假設刮傷長出來，卻把一塊黑色粗紋理也帶入，接縫明顯不自然。紋理保存能提供背景約束，仍要檢查跨材質參考是否合適。",
+      "action": "換較合適的參考或調整生成設定，檢查缺陷細節、小區覆蓋及背景接縫，再評估下游效益。"
+    },
+    {
+      "condition": "換產品或取像條件",
+      "effect": "換產品至少要核對參考材質、遮罩和背景，不更新權重也不代表可直接沿用。比較相同真實切分、合成量與下游輸出需求，記完整生成、人工核對及訓練時間；免微調不等於端到端最快。",
+      "action": "先在固定真實留出資料重驗，再擴大用途。"
+    },
+    {
+      "condition": "把生成示意當成模型實測",
+      "effect": "本課圖像說明可能機制與失敗情況，不能據此計算現場準確率或節拍。",
+      "action": "保留真實原圖、模型設定與對照輸出，以符合工作需求的留出資料另行測量。"
+    }
+  ],
+  "comparison": [
+    {
+      "model": "DefectFill",
+      "normality": "少量缺陷＋遮罩；LoRA微調與多候選選樣",
+      "candidate": "合成缺陷影像及對應遮罩"
+    },
+    {
+      "model": "AnomalyDiffusion",
+      "normality": "少量缺陷；學外觀嵌入及位置条件",
+      "candidate": "由外觀和目標位置控制的合成圖"
+    },
+    {
+      "model": "TF-IDG",
+      "normality": "正常圖、缺陷參考與遮罩；權重固定、生成時最佳化",
+      "candidate": "經特徵對齊及背景保存的候選"
+    }
+  ],
+  "selection": "不想為案例微調時，可先試TF-IDG；願意學外觀嵌入可比較AnomalyDiffusion；願意適配填補模型可比較DefectFill。TF-IDG原方法需要正常影像、缺陷參考及遮罩，不能簡化成『只輸入一句文字』。只有正常品時，先建正常性基準或取得參考。 換產品至少要核對參考材質、遮罩和背景，不更新權重也不代表可直接沿用。比較相同真實切分、合成量與下游輸出需求，記完整生成、人工核對及訓練時間；免微調不等於端到端最快。",
+  "poc": {
+    "title": "小規模比較：資料、效果與完整成本",
+    "steps": [
+      "保留原始資料，固定訓練與獨立真實留出切分，選定本課工作需求。",
+      "換產品至少要核對參考材質、遮罩和背景，不更新權重也不代表可直接沿用。比較相同真實切分、合成量與下游輸出需求，記完整生成、人工核對及訓練時間；免微調不等於端到端最快。",
+      "記錄失敗影像、原圖與輸出關係、端到端時間和人工覆核量，再決定是否擴大。"
+    ],
+    "hold": "換較合適的參考或調整生成設定，檢查缺陷細節、小區覆蓋及背景接縫，再評估下游效益。",
+    "acceptance": {
+      "baseline": "原有流程或最簡單可行方法",
+      "measure": "關鍵細節、下游錯誤、總時間及覆核量",
+      "negative_control": "以本課反例檢查錯誤結論是否被排除",
+      "owner": "教材使用者指定的實作及覆核負責人"
+    }
+  },
+  "teach_back": {
+    "question": "它改變什麼？換條件後如何選？",
+    "answer": "TF-IDG建立在預訓練影像編修框架上：缺陷參考提供外觀，目標遮罩提供形狀與位置。生成初期讓局部特徵向參考對齊；再找出遮罩內仍像正常面的區域，補強容易漏掉的小缺陷；後期引入原背景資訊，維持紋理連續。它調整生成中的表示，保持模型權重固定。 不想為案例微調時，可先試TF-IDG；願意學外觀嵌入可比較AnomalyDiffusion；願意適配填補模型可比較DefectFill。TF-IDG原方法需要正常影像、缺陷參考及遮罩，不能簡化成『只輸入一句文字』。只有正常品時，先建正常性基準或取得參考。"
+  },
+  "slide_reading": [
+    {
+      "title": "TF-IDG：參考外觀引導局部合成",
+      "question": "不微調權重，仍需要參考、遮罩與驗證。",
+      "look": "先看正常板、參考傷、局部遮罩，再核對固定權重下引導latent，最後看同板兩區逐一核對。",
+      "relation": "免微調不是零資料。正常底圖與外觀參考及mask是每次生成條件；同中部雙孔板下方兩區，保存合成來源。",
+      "takeaway": "不微調權重，仍需要參考、遮罩與驗證。",
+      "terms": [
+        "示意數值：作者給定局部算例，非模型實測或建議參數。",
+        "同位置：比較保持相同影像座標與時間身份，不能任意換工件。"
+      ]
+    },
+    {
+      "title": "TF-IDG：梯度引導生成，不改模型權重",
+      "question": "更新生成中的潛變量，模型權重保持固定。",
+      "look": "先看正常板、缺陷參考與局部遮罩，再核對特徵差的梯度引導潛變量，最後看補弱區並保持背景紋理。",
+      "relation": "同中部兩孔板，下方兩刮傷區。TF-IDG固定預訓練權重；生成局部特徵與參考對齊，梯度對latent求得並進入採樣更新，不是optimizer更新模型權重。自適應遮罩補弱區，AdaIN及背景融合保持紋理；跨材質參考仍可能錯。官方cldm/ddim_hacked.py autograd.grad(loss,latent)可核對；圖中z→z_next只示意引導不是完整採樣公式。",
+      "takeaway": "更新生成中的潛變量，模型權重保持固定。",
+      "terms": [
+        "示意數值：作者給定局部算例，非模型實測或建議參數。",
+        "同位置：比較保持相同影像座標與時間身份，不能任意換工件。"
+      ]
+    },
+    {
+      "title": "TF-IDG：免訓練仍有反向計算",
+      "question": "每步特徵梯度也要算進延遲與記憶體。",
+      "look": "先看模型權重固定且不更新，再核對latent求導需中間激活，最後看保存參考與引導設定。",
+      "relation": "官方autograd.grad(loss,latent)是採樣引導；不要把免微調等同只有一次前向。計入特徵、梯度、採樣與背景融合時間；未實測不給速度排名。",
+      "takeaway": "每步特徵梯度也要算進延遲與記憶體。",
+      "terms": [
+        "示意數值：作者給定局部算例，非模型實測或建議參數。",
+        "同位置：比較保持相同影像座標與時間身份，不能任意換工件。"
+      ]
+    },
+    {
+      "title": "TF-IDG：参考換材質，可能帶錯紋理",
+      "question": "梯度對齊外觀，不保證符合目標材質。",
+      "look": "先看金屬板與木紋缺陷參考，再核對生成區帶入木紋反例，最後看同材質真例檢查孔位與紋理。",
+      "relation": "作者失敗示意：木紋參考可能使金屬局部出現木質紋理；背景保持不能保證mask內物理正確。",
+      "takeaway": "梯度對齊外觀，不保證符合目標材質。",
+      "terms": [
+        "示意數值：作者給定局部算例，非模型實測或建議參數。",
+        "同位置：比較保持相同影像座標與時間身份，不能任意換工件。"
+      ]
+    }
+  ],
+  "comparison_headers": {
+    "title": "要補缺陷資料：先比較學習與生成成本",
+    "basis": "資料準備與方法分工",
+    "output": "交付結果與核對重點"
+  },
+  "transfer_check": {
+    "title": "換產品頻繁，但每日只需少量增強圖",
+    "scenario": "你有缺陷參考和正常板，每週換材質；TF-IDG不用微調，但每張生成慢且有接縫需要人工核對。",
+    "question": "應因免微調而直接選它，還是比較另一種準備成本？",
+    "answer": "若每批量少，免微調可能節省準備時間；若需要大量生成，適配一次後的路徑也可能划算。固定真實留出集，實測總生成量下的準備、迭代及覆核時間，並檢查跨材質紋理和下游錯誤；不能只計權重更新時間。"
+  },
+  "review_trace": {
+    "authority": "roadmap-model-selection/diffusion-restoration/tf-idg/model.md",
+    "scope": "WI-033：工程層四圖與手機比較修正；首讀有效內容保留。原生圖已審，整頁與使用者審閱另記。",
+    "claims": [
+      {
+        "id": "visual-1",
+        "field": "beginner_path.visuals[source-condition-contract]",
+        "source": "模型定位 / architecture_path"
+      },
+      {
+        "id": "visual-2",
+        "field": "beginner_path.visuals[frozen-guidance-route]",
+        "source": "architecture_path"
+      },
+      {
+        "id": "visual-3",
+        "field": "beginner_path.visuals[sampling-provenance-bundle]",
+        "source": "representation_or_score"
+      },
+      {
+        "id": "visual-4",
+        "field": "beginner_path.visuals[real-holdout-gate]",
+        "source": "failure_boundary"
+      },
+      {
+        "id": "visual-5",
+        "field": "beginner_path.visuals[counterfactual-hold-boundary]",
+        "source": "selection_gate / evidence_bundle"
+      },
+      {
+        "id": "promise",
+        "field": "promise",
+        "source": "模型定位 / representation_or_score"
+      },
+      {
+        "id": "mechanism",
+        "field": "mechanism_steps",
+        "source": "architecture_path / representation_or_score"
+      },
+      {
+        "id": "boundaries",
+        "field": "boundary_cases",
+        "source": "failure_boundary / selection_gate"
+      },
+      {
+        "id": "comparison",
+        "field": "comparison + selection",
+        "source": "selection_gate"
+      },
+      {
+        "id": "poc",
+        "field": "poc + acceptance",
+        "source": "cost_and_operating_point / evidence_bundle"
+      },
+      {
+        "id": "transfer",
+        "field": "transfer_check",
+        "source": "failure_boundary / selection_gate"
+      },
+      {
+        "id": "f02-core",
+        "field": "beginner_path.visuals[0] + scenario + mental_model",
+        "source": "https://openaccess.thecvf.com/content/ICCV2025/html/Xu_Training-Free_Industrial_Defect_Generation_with_Diffusion_Models_ICCV_2025_paper.html"
+      },
+      {
+        "id": "f02-transfer",
+        "field": "micro_example + transfer_check + selection",
+        "source": "https://openaccess.thecvf.com/content/ICCV2025/html/Xu_Training-Free_Industrial_Defect_Generation_with_Diffusion_Models_ICCV_2025_paper.html"
+      },
+      {
+        "id": "wi026-first-read",
+        "field": "beginner_path + core + selection + transfer",
+        "source": "https://openaccess.thecvf.com/content/ICCV2025/html/Xu_Training-Free_Industrial_Defect_Generation_with_Diffusion_Models_ICCV_2025_paper.html"
+      }
+    ]
+  },
+  "quality_status": {
+    "label": "首讀圖文已重製並自評；使用者核准待確認",
+    "state": "self-reviewed",
+    "round": "WI-026",
+    "reason": "38張不同PNG逐圖審查；整頁與互動證據見workitems/wi-026，原工程圖未重新評分。"
+  },
+  "teaching_preflight": {
+    "brief": "teaching-images/vision-ai-model-selection/workitems/wi-026/tf-idg-c1-r01.md",
+    "story": "C",
+    "major_visual_nodes": 4,
+    "visual_status": "self-reviewed",
+    "user_review": "pending"
+  },
+  "engineering_slides": [
+    {
+      "title": "TF-IDG：參考外觀引導局部合成",
+      "question": "不微調權重，仍需要參考、遮罩與驗證。",
+      "plain": {
+        "look": "先看正常板、參考傷、局部遮罩，再核對固定權重下引導latent，最後看同板兩區逐一核對。",
+        "relation": "免微調不是零資料。正常底圖與外觀參考及mask是每次生成條件；同中部雙孔板下方兩區，保存合成來源。",
+        "takeaway": "不微調權重，仍需要參考、遮罩與驗證。"
+      },
+      "terms": [
+        "示意數值：作者給定局部算例，非模型實測或建議參數。",
+        "同位置：比較保持相同影像座標與時間身份，不能任意換工件。"
+      ],
+      "guide": [
+        "免微調不是零資料。正常底圖與外觀參考及mask是每次生成條件；同中部雙孔板下方兩區，保存合成來源。",
+        "先看正常板、參考傷、局部遮罩，再核對固定權重下引導latent，最後看同板兩區逐一核對。"
+      ],
+      "stages": [
+        {
+          "title": "正常板、參考傷、局部遮罩",
+          "body": "正常板、參考傷、局部遮罩；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "固定權重下引導latent",
+          "body": "固定權重下引導latent；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "同板兩區逐一核對",
+          "body": "同板兩區逐一核對；請對照圖內輸入、變化與結果。"
+        }
+      ],
+      "misconception": "本例把黑色粗糙表面的刮傷轉到銀色拉絲板。假設刮傷長出來，卻把一塊黑色粗紋理也帶入，接縫明顯不自然。紋理保存能提供背景約束，仍要檢查跨材質參考是否合適。",
+      "alt": "TF-IDG：參考外觀引導局部合成。不微調權重，仍需要參考、遮罩與驗證。 教學示意，非模型實測。",
+      "mobile_image": "roadmap-model-selection/diffusion-restoration/tf-idg/images/final/WI033-TFIDG-01-r01-mobile.png",
+      "mobile_width": 768,
+      "mobile_height": 2304,
+      "engineering": {
+        "takeaway": "不微調權重，仍需要參考、遮罩與驗證。",
+        "nextAction": "保留原始資料，固定訓練與獨立真實留出切分，選定本課工作需求。",
+        "redLine": "換較合適的參考或調整生成設定，檢查缺陷細節、小區覆蓋及背景接縫，再評估下游效益。"
+      },
+      "source": "https://github.com/rubymiaomiao/TF-IDG ; https://raw.githubusercontent.com/rubymiaomiao/TF-IDG/main/cldm/ddim_hacked.py"
+    },
+    {
+      "title": "TF-IDG：梯度引導生成，不改模型權重",
+      "question": "更新生成中的潛變量，模型權重保持固定。",
+      "plain": {
+        "look": "先看正常板、缺陷參考與局部遮罩，再核對特徵差的梯度引導潛變量，最後看補弱區並保持背景紋理。",
+        "relation": "同中部兩孔板，下方兩刮傷區。TF-IDG固定預訓練權重；生成局部特徵與參考對齊，梯度對latent求得並進入採樣更新，不是optimizer更新模型權重。自適應遮罩補弱區，AdaIN及背景融合保持紋理；跨材質參考仍可能錯。官方cldm/ddim_hacked.py autograd.grad(loss,latent)可核對；圖中z→z_next只示意引導不是完整採樣公式。",
+        "takeaway": "更新生成中的潛變量，模型權重保持固定。"
+      },
+      "terms": [
+        "示意數值：作者給定局部算例，非模型實測或建議參數。",
+        "同位置：比較保持相同影像座標與時間身份，不能任意換工件。"
+      ],
+      "guide": [
+        "同中部兩孔板，下方兩刮傷區。TF-IDG固定預訓練權重；生成局部特徵與參考對齊，梯度對latent求得並進入採樣更新，不是optimizer更新模型權重。自適應遮罩補弱區，AdaIN及背景融合保持紋理；跨材質參考仍可能錯。官方cldm/ddim_hacked.py autograd.grad(loss,latent)可核對；圖中z→z_next只示意引導不是完整採樣公式。",
+        "先看正常板、缺陷參考與局部遮罩，再核對特徵差的梯度引導潛變量，最後看補弱區並保持背景紋理。"
+      ],
+      "stages": [
+        {
+          "title": "正常板、缺陷參考與局部遮罩",
+          "body": "正常板、缺陷參考與局部遮罩；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "特徵差的梯度引導潛變量",
+          "body": "特徵差的梯度引導潛變量；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "補弱區並保持背景紋理",
+          "body": "補弱區並保持背景紋理；請對照圖內輸入、變化與結果。"
+        }
+      ],
+      "misconception": "本例把黑色粗糙表面的刮傷轉到銀色拉絲板。假設刮傷長出來，卻把一塊黑色粗紋理也帶入，接縫明顯不自然。紋理保存能提供背景約束，仍要檢查跨材質參考是否合適。",
+      "alt": "TF-IDG：梯度引導生成，不改模型權重。更新生成中的潛變量，模型權重保持固定。 教學示意，非模型實測。",
+      "mobile_image": "roadmap-model-selection/diffusion-restoration/tf-idg/images/final/WI033-TFIDG-02-r01-mobile.png",
+      "mobile_width": 768,
+      "mobile_height": 2304,
+      "engineering": {
+        "takeaway": "更新生成中的潛變量，模型權重保持固定。",
+        "nextAction": "保留原始資料，固定訓練與獨立真實留出切分，選定本課工作需求。",
+        "redLine": "換較合適的參考或調整生成設定，檢查缺陷細節、小區覆蓋及背景接縫，再評估下游效益。"
+      },
+      "source": "https://github.com/rubymiaomiao/TF-IDG ; https://raw.githubusercontent.com/rubymiaomiao/TF-IDG/main/cldm/ddim_hacked.py"
+    },
+    {
+      "title": "TF-IDG：免訓練仍有反向計算",
+      "question": "每步特徵梯度也要算進延遲與記憶體。",
+      "plain": {
+        "look": "先看模型權重固定且不更新，再核對latent求導需中間激活，最後看保存參考與引導設定。",
+        "relation": "官方autograd.grad(loss,latent)是採樣引導；不要把免微調等同只有一次前向。計入特徵、梯度、採樣與背景融合時間；未實測不給速度排名。",
+        "takeaway": "每步特徵梯度也要算進延遲與記憶體。"
+      },
+      "terms": [
+        "示意數值：作者給定局部算例，非模型實測或建議參數。",
+        "同位置：比較保持相同影像座標與時間身份，不能任意換工件。"
+      ],
+      "guide": [
+        "官方autograd.grad(loss,latent)是採樣引導；不要把免微調等同只有一次前向。計入特徵、梯度、採樣與背景融合時間；未實測不給速度排名。",
+        "先看模型權重固定且不更新，再核對latent求導需中間激活，最後看保存參考與引導設定。"
+      ],
+      "stages": [
+        {
+          "title": "模型權重固定且不更新",
+          "body": "模型權重固定且不更新；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "latent求導需中間激活",
+          "body": "latent求導需中間激活；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "保存參考與引導設定",
+          "body": "保存參考與引導設定；請對照圖內輸入、變化與結果。"
+        }
+      ],
+      "misconception": "本例把黑色粗糙表面的刮傷轉到銀色拉絲板。假設刮傷長出來，卻把一塊黑色粗紋理也帶入，接縫明顯不自然。紋理保存能提供背景約束，仍要檢查跨材質參考是否合適。",
+      "alt": "TF-IDG：免訓練仍有反向計算。每步特徵梯度也要算進延遲與記憶體。 教學示意，非模型實測。",
+      "mobile_image": "roadmap-model-selection/diffusion-restoration/tf-idg/images/final/WI033-TFIDG-03-r01-mobile.png",
+      "mobile_width": 768,
+      "mobile_height": 2304,
+      "engineering": {
+        "takeaway": "每步特徵梯度也要算進延遲與記憶體。",
+        "nextAction": "保留原始資料，固定訓練與獨立真實留出切分，選定本課工作需求。",
+        "redLine": "換較合適的參考或調整生成設定，檢查缺陷細節、小區覆蓋及背景接縫，再評估下游效益。"
+      },
+      "source": "https://github.com/rubymiaomiao/TF-IDG ; https://raw.githubusercontent.com/rubymiaomiao/TF-IDG/main/cldm/ddim_hacked.py"
+    },
+    {
+      "title": "TF-IDG：参考換材質，可能帶錯紋理",
+      "question": "梯度對齊外觀，不保證符合目標材質。",
+      "plain": {
+        "look": "先看金屬板與木紋缺陷參考，再核對生成區帶入木紋反例，最後看同材質真例檢查孔位與紋理。",
+        "relation": "作者失敗示意：木紋參考可能使金屬局部出現木質紋理；背景保持不能保證mask內物理正確。",
+        "takeaway": "梯度對齊外觀，不保證符合目標材質。"
+      },
+      "terms": [
+        "示意數值：作者給定局部算例，非模型實測或建議參數。",
+        "同位置：比較保持相同影像座標與時間身份，不能任意換工件。"
+      ],
+      "guide": [
+        "作者失敗示意：木紋參考可能使金屬局部出現木質紋理；背景保持不能保證mask內物理正確。",
+        "先看金屬板與木紋缺陷參考，再核對生成區帶入木紋反例，最後看同材質真例檢查孔位與紋理。"
+      ],
+      "stages": [
+        {
+          "title": "金屬板與木紋缺陷參考",
+          "body": "金屬板與木紋缺陷參考；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "生成區帶入木紋反例",
+          "body": "生成區帶入木紋反例；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "同材質真例檢查孔位與紋理",
+          "body": "同材質真例檢查孔位與紋理；請對照圖內輸入、變化與結果。"
+        }
+      ],
+      "misconception": "本例把黑色粗糙表面的刮傷轉到銀色拉絲板。假設刮傷長出來，卻把一塊黑色粗紋理也帶入，接縫明顯不自然。紋理保存能提供背景約束，仍要檢查跨材質參考是否合適。",
+      "alt": "TF-IDG：参考換材質，可能帶錯紋理。梯度對齊外觀，不保證符合目標材質。 教學示意，非模型實測。",
+      "mobile_image": "roadmap-model-selection/diffusion-restoration/tf-idg/images/final/WI033-TFIDG-04-r01-mobile.png",
+      "mobile_width": 768,
+      "mobile_height": 2304,
+      "engineering": {
+        "takeaway": "梯度對齊外觀，不保證符合目標材質。",
+        "nextAction": "保留原始資料，固定訓練與獨立真實留出切分，選定本課工作需求。",
+        "redLine": "換較合適的參考或調整生成設定，檢查缺陷細節、小區覆蓋及背景接縫，再評估下游效益。"
+      },
+      "source": "https://github.com/rubymiaomiao/TF-IDG ; https://raw.githubusercontent.com/rubymiaomiao/TF-IDG/main/cldm/ddim_hacked.py"
+    }
+  ]
+}

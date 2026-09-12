@@ -1,0 +1,8 @@
+test_deep_linked_reference_steps_keep_their_step_scroll (test_interactive_navigation.InteractiveNavigationTests.test_deep_linked_reference_steps_keep_their_step_scroll) ... ok
+test_reselecting_the_active_sidebar_item_is_not_a_dead_click (test_interactive_navigation.InteractiveNavigationTests.test_reselecting_the_active_sidebar_item_is_not_a_dead_click) ... ok
+test_sidebar_navigation_resets_to_the_new_section_start (test_interactive_navigation.InteractiveNavigationTests.test_sidebar_navigation_resets_to_the_new_section_start) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.001s
+
+OK
