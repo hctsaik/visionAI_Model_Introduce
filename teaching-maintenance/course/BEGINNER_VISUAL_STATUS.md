@@ -1,3 +1,13 @@
+## WI-036 下拉選擇題
+
+九項下拉選擇題已完成，任務會連動輸出選項，自訂說明選填且保留舊草稿。兩入口各 12 項行為測試通過、16 截圖、無水平溢出；課程資料與 e9c732f 相同。最後三段提示文字已改為選擇語氣並重驗。即將保存 Markdown、提交推送並驗證公開頁；使用者審閱 pending。
+
+唯一 checklist：teaching-images/vision-ai-model-selection/workitems/wi-036/PLAN.md。
+
+## WI-036 下拉選擇題修正
+
+使用者明確要求 PoC 使用下拉選项而非空白敘述。即將實作全部步驟、舊草稿相容與驗證，唯一 checklist：teaching-images/vision-ai-model-selection/workitems/wi-036/PLAN.md。測試未跑；使用者審閱 pending。
+
 ## WI-035 教材修正與 PoC 互動改善
 
 WI-035 已完成並公開發布。功能提交 ce52c34 已 push；GitHub Pages 部署成功，公開 HTML 與本機 hash f4f66004 一致，公開桌面／手機模型提示、步驟與預覽實測通過。19 課機制、六課收束／引導、PoC 互動與 Markdown 學習均完成；證據 REPORT.md、final-verification.json、release-verification.json。沒有待實作項目；成品使用者審閱 pending。

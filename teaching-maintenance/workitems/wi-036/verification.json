@@ -1,0 +1,22 @@
+{
+  "routes": [
+    {
+      "route": "docs/index.html",
+      "behavior_tests": 12,
+      "passed": true
+    },
+    {
+      "route": "interactive-learning.html",
+      "behavior_tests": 12,
+      "passed": true
+    }
+  ],
+  "total_behavior_tests": 24,
+  "screenshots": 16,
+  "empty_forms_visible_textareas": 0,
+  "horizontal_overflow": false,
+  "course_data_unchanged": true,
+  "course_docs_equal": true,
+  "html_sha256": "09eb11b8eaacbcd5ea2fa5e843e5fb2f882ef34ad6fe7543eb96cb0aa7854fb4",
+  "user_approval": "pending"
+}
