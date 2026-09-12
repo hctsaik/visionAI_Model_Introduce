@@ -1,0 +1,502 @@
+[
+  {
+    "topic": "ad-uniad",
+    "route": "interactive-learning.html",
+    "width": 1440,
+    "errors": [],
+    "images": [
+      {
+        "src": "http://127.0.0.1:8000/_course_content/generated-concepts/ad-uniad/wi021-uniad-c1-r02-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 404.1875,
+          "y": 401.640625,
+          "width": 935.625,
+          "height": 526.5625,
+          "top": 401.640625,
+          "right": 1339.8125,
+          "bottom": 928.203125,
+          "left": 404.1875
+        },
+        "kind": "main-1"
+      },
+      {
+        "src": "http://127.0.0.1:8000/_course_content/generated-concepts/ad-dinomaly/wi021-multi-reconstruction-d2-r02-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 404.1875,
+          "y": 200.75,
+          "width": 935.625,
+          "height": 526.5625,
+          "top": 200.75,
+          "right": 1339.8125,
+          "bottom": 727.3125,
+          "left": 404.1875
+        },
+        "kind": "main-2"
+      },
+      {
+        "src": "http://127.0.0.1:8000/_course_content/generated-concepts/ad-dinomaly/wi021-multi-reconstruction-d3-r02-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 404.1875,
+          "y": 201.0625,
+          "width": 935.625,
+          "height": 526.5625,
+          "top": 201.0625,
+          "right": 1339.8125,
+          "bottom": 727.625,
+          "left": 404.1875
+        },
+        "kind": "main-3"
+      },
+      {
+        "src": "http://127.0.0.1:8000/roadmap-model-selection/anomaly-detection/ad-uniad/images/final/WI033-UNIAD-01-r01-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 367.1875,
+          "y": 196.1875,
+          "width": 1009.625,
+          "height": 568.203125,
+          "top": 196.1875,
+          "right": 1376.8125,
+          "bottom": 764.390625,
+          "left": 367.1875
+        },
+        "kind": "engineering-1"
+      },
+      {
+        "src": "http://127.0.0.1:8000/roadmap-model-selection/anomaly-detection/ad-uniad/images/final/WI033-UNIAD-02-r02-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 367.1875,
+          "y": 195.59375,
+          "width": 1009.625,
+          "height": 568.203125,
+          "top": 195.59375,
+          "right": 1376.8125,
+          "bottom": 763.796875,
+          "left": 367.1875
+        },
+        "kind": "engineering-2"
+      },
+      {
+        "src": "http://127.0.0.1:8000/roadmap-model-selection/anomaly-detection/ad-uniad/images/final/WI033-UNIAD-03-r01-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 367.1875,
+          "y": 195.65625,
+          "width": 1009.625,
+          "height": 568.203125,
+          "top": 195.65625,
+          "right": 1376.8125,
+          "bottom": 763.859375,
+          "left": 367.1875
+        },
+        "kind": "engineering-3"
+      },
+      {
+        "src": "http://127.0.0.1:8000/roadmap-model-selection/anomaly-detection/ad-uniad/images/final/WI033-UNIAD-04-r01-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 367.1875,
+          "y": 196.1875,
+          "width": 1009.625,
+          "height": 568.203125,
+          "top": 196.1875,
+          "right": 1376.8125,
+          "bottom": 764.390625,
+          "left": 367.1875
+        },
+        "kind": "engineering-4"
+      }
+    ],
+    "zoom_checks": 7,
+    "answer": true,
+    "overflow": false,
+    "navigation": true,
+    "complete": true
+  },
+  {
+    "topic": "ad-uniad",
+    "route": "interactive-learning.html",
+    "width": 360,
+    "errors": [],
+    "images": [
+      {
+        "src": "http://127.0.0.1:8000/_course_content/generated-concepts/ad-uniad/wi021-uniad-c1-r02-mobile.png",
+        "nw": 724,
+        "nh": 2172,
+        "box": {
+          "x": 17,
+          "y": -134.890625,
+          "width": 326,
+          "height": 978,
+          "top": -134.890625,
+          "right": 343,
+          "bottom": 843.109375,
+          "left": 17
+        },
+        "kind": "main-1"
+      },
+      {
+        "src": "http://127.0.0.1:8000/_course_content/generated-concepts/ad-dinomaly/wi021-multi-reconstruction-d2-r03-mobile.png",
+        "nw": 724,
+        "nh": 2172,
+        "box": {
+          "x": 17,
+          "y": -134.21875,
+          "width": 326,
+          "height": 978,
+          "top": -134.21875,
+          "right": 343,
+          "bottom": 843.78125,
+          "left": 17
+        },
+        "kind": "main-2"
+      },
+      {
+        "src": "http://127.0.0.1:8000/_course_content/generated-concepts/ad-dinomaly/wi021-multi-reconstruction-d3-r02-mobile.png",
+        "nw": 724,
+        "nh": 2172,
+        "box": {
+          "x": 17,
+          "y": -134.796875,
+          "width": 326,
+          "height": 978,
+          "top": -134.796875,
+          "right": 343,
+          "bottom": 843.203125,
+          "left": 17
+        },
+        "kind": "main-3"
+      },
+      {
+        "src": "http://127.0.0.1:8000/roadmap-model-selection/anomaly-detection/ad-uniad/images/final/WI033-UNIAD-01-r01-mobile.png",
+        "nw": 768,
+        "nh": 2304,
+        "box": {
+          "x": 34,
+          "y": -69.171875,
+          "width": 292,
+          "height": 876,
+          "top": -69.171875,
+          "right": 326,
+          "bottom": 806.828125,
+          "left": 34
+        },
+        "kind": "engineering-1"
+      },
+      {
+        "src": "http://127.0.0.1:8000/roadmap-model-selection/anomaly-detection/ad-uniad/images/final/WI033-UNIAD-02-r02-mobile.png",
+        "nw": 768,
+        "nh": 2304,
+        "box": {
+          "x": 34,
+          "y": -69.8125,
+          "width": 292,
+          "height": 876,
+          "top": -69.8125,
+          "right": 326,
+          "bottom": 806.1875,
+          "left": 34
+        },
+        "kind": "engineering-2"
+      },
+      {
+        "src": "http://127.0.0.1:8000/roadmap-model-selection/anomaly-detection/ad-uniad/images/final/WI033-UNIAD-03-r01-mobile.png",
+        "nw": 768,
+        "nh": 2304,
+        "box": {
+          "x": 34,
+          "y": -69.84375,
+          "width": 292,
+          "height": 876,
+          "top": -69.84375,
+          "right": 326,
+          "bottom": 806.15625,
+          "left": 34
+        },
+        "kind": "engineering-3"
+      },
+      {
+        "src": "http://127.0.0.1:8000/roadmap-model-selection/anomaly-detection/ad-uniad/images/final/WI033-UNIAD-04-r01-mobile.png",
+        "nw": 768,
+        "nh": 2304,
+        "box": {
+          "x": 34,
+          "y": -69.671875,
+          "width": 292,
+          "height": 876,
+          "top": -69.671875,
+          "right": 326,
+          "bottom": 806.328125,
+          "left": 34
+        },
+        "kind": "engineering-4"
+      }
+    ],
+    "zoom_checks": 7,
+    "answer": true,
+    "overflow": false,
+    "navigation": true,
+    "complete": true
+  },
+  {
+    "topic": "ad-uniad",
+    "route": "docs/index.html",
+    "width": 1440,
+    "errors": [],
+    "images": [
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/ad-uniad/wi021-uniad-c1-r02-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 404.1875,
+          "y": 401.640625,
+          "width": 935.625,
+          "height": 526.5625,
+          "top": 401.640625,
+          "right": 1339.8125,
+          "bottom": 928.203125,
+          "left": 404.1875
+        },
+        "kind": "main-1"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/ad-dinomaly/wi021-multi-reconstruction-d2-r02-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 404.1875,
+          "y": 200.75,
+          "width": 935.625,
+          "height": 526.5625,
+          "top": 200.75,
+          "right": 1339.8125,
+          "bottom": 727.3125,
+          "left": 404.1875
+        },
+        "kind": "main-2"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/ad-dinomaly/wi021-multi-reconstruction-d3-r02-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 404.1875,
+          "y": 201.0625,
+          "width": 935.625,
+          "height": 526.5625,
+          "top": 201.0625,
+          "right": 1339.8125,
+          "bottom": 727.625,
+          "left": 404.1875
+        },
+        "kind": "main-3"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/anomaly-detection/ad-uniad/images/final/WI033-UNIAD-01-r01-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 367.1875,
+          "y": 196.1875,
+          "width": 1009.625,
+          "height": 568.203125,
+          "top": 196.1875,
+          "right": 1376.8125,
+          "bottom": 764.390625,
+          "left": 367.1875
+        },
+        "kind": "engineering-1"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/anomaly-detection/ad-uniad/images/final/WI033-UNIAD-02-r02-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 367.1875,
+          "y": 195.59375,
+          "width": 1009.625,
+          "height": 568.203125,
+          "top": 195.59375,
+          "right": 1376.8125,
+          "bottom": 763.796875,
+          "left": 367.1875
+        },
+        "kind": "engineering-2"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/anomaly-detection/ad-uniad/images/final/WI033-UNIAD-03-r01-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 367.1875,
+          "y": 195.65625,
+          "width": 1009.625,
+          "height": 568.203125,
+          "top": 195.65625,
+          "right": 1376.8125,
+          "bottom": 763.859375,
+          "left": 367.1875
+        },
+        "kind": "engineering-3"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/anomaly-detection/ad-uniad/images/final/WI033-UNIAD-04-r01-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 367.1875,
+          "y": 196.1875,
+          "width": 1009.625,
+          "height": 568.203125,
+          "top": 196.1875,
+          "right": 1376.8125,
+          "bottom": 764.390625,
+          "left": 367.1875
+        },
+        "kind": "engineering-4"
+      }
+    ],
+    "zoom_checks": 7,
+    "answer": true,
+    "overflow": false,
+    "navigation": true,
+    "complete": true
+  },
+  {
+    "topic": "ad-uniad",
+    "route": "docs/index.html",
+    "width": 360,
+    "errors": [],
+    "images": [
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/ad-uniad/wi021-uniad-c1-r02-mobile.png",
+        "nw": 724,
+        "nh": 2172,
+        "box": {
+          "x": 17,
+          "y": -134.890625,
+          "width": 326,
+          "height": 978,
+          "top": -134.890625,
+          "right": 343,
+          "bottom": 843.109375,
+          "left": 17
+        },
+        "kind": "main-1"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/ad-dinomaly/wi021-multi-reconstruction-d2-r03-mobile.png",
+        "nw": 724,
+        "nh": 2172,
+        "box": {
+          "x": 17,
+          "y": -134.21875,
+          "width": 326,
+          "height": 978,
+          "top": -134.21875,
+          "right": 343,
+          "bottom": 843.78125,
+          "left": 17
+        },
+        "kind": "main-2"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/ad-dinomaly/wi021-multi-reconstruction-d3-r02-mobile.png",
+        "nw": 724,
+        "nh": 2172,
+        "box": {
+          "x": 17,
+          "y": -134.796875,
+          "width": 326,
+          "height": 978,
+          "top": -134.796875,
+          "right": 343,
+          "bottom": 843.203125,
+          "left": 17
+        },
+        "kind": "main-3"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/anomaly-detection/ad-uniad/images/final/WI033-UNIAD-01-r01-mobile.png",
+        "nw": 768,
+        "nh": 2304,
+        "box": {
+          "x": 34,
+          "y": -69.171875,
+          "width": 292,
+          "height": 876,
+          "top": -69.171875,
+          "right": 326,
+          "bottom": 806.828125,
+          "left": 34
+        },
+        "kind": "engineering-1"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/anomaly-detection/ad-uniad/images/final/WI033-UNIAD-02-r02-mobile.png",
+        "nw": 768,
+        "nh": 2304,
+        "box": {
+          "x": 34,
+          "y": -69.8125,
+          "width": 292,
+          "height": 876,
+          "top": -69.8125,
+          "right": 326,
+          "bottom": 806.1875,
+          "left": 34
+        },
+        "kind": "engineering-2"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/anomaly-detection/ad-uniad/images/final/WI033-UNIAD-03-r01-mobile.png",
+        "nw": 768,
+        "nh": 2304,
+        "box": {
+          "x": 34,
+          "y": -69.84375,
+          "width": 292,
+          "height": 876,
+          "top": -69.84375,
+          "right": 326,
+          "bottom": 806.15625,
+          "left": 34
+        },
+        "kind": "engineering-3"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/anomaly-detection/ad-uniad/images/final/WI033-UNIAD-04-r01-mobile.png",
+        "nw": 768,
+        "nh": 2304,
+        "box": {
+          "x": 34,
+          "y": -69.671875,
+          "width": 292,
+          "height": 876,
+          "top": -69.671875,
+          "right": 326,
+          "bottom": 806.328125,
+          "left": 34
+        },
+        "kind": "engineering-4"
+      }
+    ],
+    "zoom_checks": 7,
+    "answer": true,
+    "overflow": false,
+    "navigation": true,
+    "complete": true
+  }
+]

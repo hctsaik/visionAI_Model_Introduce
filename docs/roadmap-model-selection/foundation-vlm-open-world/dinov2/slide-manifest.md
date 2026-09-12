@@ -1,8 +1,14 @@
 # DINOv2 slide manifest
 
-| slide_id | logical page | purpose | visual type | active asset | status |
-| --- | --- | --- | --- | --- | --- |
-| `DINOV2-01` | `06-10` | Position DINOv2 as a visual feature backbone and make layer, patch policy and named downstream route responsible for any score, map or box. | C | `images/final/DINOV2-01-positioning_v02-ppt-master-style.png` | approved |
-| `DINOV2-02` | `06-11` | Trace patchify and ViT feature outputs to the layer, pooling and named downstream route that owns any score, map or box. | C | `images/final/DINOV2-02-architecture_v02-ppt-master-style.png` | approved |
-| `DINOV2-03` | `06-12` | Lock DINOv2 backbone/input and feature-operation contracts, then measure token, VRAM, local separability, drift and complete P95. | C | `images/final/DINOV2-03-build-inference_v02-ppt-master-style.png` | approved |
-| `DINOV2-04` | `06-13` | Select DINOv2 only through a named few-shot or transfer downstream route with fixed feature contract and local truth, patch-dilution, drift and P95 evidence. | D | `images/final/DINOV2-04-selection-boundary_v02-ppt-comparison-style.png` | approved |
+| slide_id | 教學目標 | 版型 | active asset | 狀態 |
+| --- | --- | --- | --- | --- |
+| `DINOV2-01` | DINOv2：先抽表示，再定義下游任務 | C | `images/final/WI033-DINOV2-01-r01-desktop.png` | native_and_page_reviewed_user_pending |
+| `DINOV2-02` | DINOv2：先學表示，部署再抽特徵 | C | `images/final/WI033-DINOV2-02-r03-desktop.png` | native_and_page_reviewed_user_pending |
+| `DINOV2-03` | DINOv2：查庫必須使用相容特徵 | C | `images/final/WI033-DINOV2-03-r01-desktop.png` | native_and_page_reviewed_user_pending |
+| `DINOV2-04` | DINOv2：外观差異不等於不良 | D | `images/final/WI033-DINOV2-04-r01-desktop.png` | native_and_page_reviewed_user_pending |
+
+## 保留的歷史來源（非目前啟用）
+- [DINOV2-01](images/final/DINOV2-01-positioning_v02-ppt-master-style.png)
+- [DINOV2-02](images/final/DINOV2-02-architecture_v02-ppt-master-style.png)
+- [DINOV2-03](images/final/DINOV2-03-build-inference_v02-ppt-master-style.png)
+- [DINOV2-04](images/final/DINOV2-04-selection-boundary_v02-ppt-comparison-style.png)

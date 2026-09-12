@@ -1,0 +1,484 @@
+{
+  "model": "YOLO-Seg",
+  "badge": "每件獨立的實例分割",
+  "title": "YOLO-Seg：每個物件，都有自己的遮罩",
+  "scenario": {
+    "title": "輸送帶有兩個同類墊圈，需要分開每一件再計數，不能只知道哪些像素是墊圈。",
+    "body": "輸送帶有兩個同類墊圈，需要分開每一件再計數，不能只知道哪些像素是墊圈。"
+  },
+  "promise": {
+    "title": "交付結果與接手工作",
+    "body": "每件框、類別與獨立遮罩，供逐件核對和計數；A/B是實例ID，不代表不同產品類別或跨影格身分。"
+  },
+  "mental_model": {
+    "title": "每件獨立的實例分割",
+    "body": "以YOLOv8-seg機制為例，共享特徵產生一組原型遮罩，偵測分支為每件預測框、類別及遮罩係數。每件係數組合共享原型，再依框處理成該件遮罩。共享原型不是一張完整墊圈答案；兩件同類也要有分開的實例輸出。",
+    "limit": "兩個墊圈稍微重疊，模型可能只交出一件遮罩。原圖仍有兩件；人工圈出的漏件區不是模型的第二個偵測。"
+  },
+  "micro_example": {
+    "title": "補模型資料，還是改分料？",
+    "setup": "兩個相接墊圈常只被算成一件。可增加重疊標註訓練，也可用分料或調整視角讓兩件更容易看清。",
+    "prediction": "你會先做哪一項小試驗？何時保留兩者一起做？",
+    "reveal": "先檢查人是否能從原圖穩定分辨兩件。可見線索足夠而資料不足時先補重疊樣本；遮擋讓身份難辨時改善分料／視角更直接。兩者都有問題可合用，但各自量成本與效益。驗證逐件召回、錯誤合併／切分、計數誤差和節拍，面積估數只能作另行驗證的受限方案。"
+  },
+  "mechanism_steps": [
+    {
+      "title": "先有實例標註",
+      "body": "原型提供共同基底，A和B各自一組係數形成各自遮罩；兩路不是先算A再把剩下區域當B。",
+      "why": "由本課核心機制連接工作用途",
+      "anchor": "WI030-1",
+      "diagram": {
+        "title": "先有實例標註",
+        "body": "原型提供共同基底，A和B各自一組係數形成各自遮罩；兩路不是先算A再把剩下區域當B。",
+        "why": "詳見本課版本與來源",
+        "anchor": "WI030-1"
+      }
+    },
+    {
+      "title": "共享底圖，各自組合",
+      "body": "輸出依賴偵測與遮罩品質，重疊、遮擋及小物件可造成漏檢；計數另需定義可見與允收規則。",
+      "why": "由本課核心機制連接工作用途",
+      "anchor": "WI030-2",
+      "diagram": {
+        "title": "共享底圖，各自組合",
+        "body": "輸出依賴偵測與遮罩品質，重疊、遮擋及小物件可造成漏檢；計數另需定義可見與允收規則。",
+        "why": "詳見本課版本與來源",
+        "anchor": "WI030-2"
+      }
+    },
+    {
+      "title": "分開每一件",
+      "body": "每件框、類別與獨立遮罩，供逐件核對和計數；A/B是實例ID，不代表不同產品類別或跨影格身分。",
+      "why": "由本課核心機制連接工作用途",
+      "anchor": "WI030-3",
+      "diagram": {
+        "title": "分開每一件",
+        "body": "每件框、類別與獨立遮罩，供逐件核對和計數；A/B是實例ID，不代表不同產品類別或跨影格身分。",
+        "why": "詳見本課版本與來源",
+        "anchor": "WI030-3"
+      }
+    },
+    {
+      "title": "工作核對與接手",
+      "body": "保存真實原圖與逐件標註，量物件召回、錯誤合併／切分、遮罩品質和計數誤差；孔洞保留需求另驗，示意圖不是模型結果。",
+      "why": "由本課核心機制連接工作用途",
+      "anchor": "WI030-4",
+      "diagram": {
+        "title": "工作核對與接手",
+        "body": "保存真實原圖與逐件標註，量物件召回、錯誤合併／切分、遮罩品質和計數誤差；孔洞保留需求另驗，示意圖不是模型結果。",
+        "why": "詳見本課版本與來源",
+        "anchor": "WI030-4"
+      }
+    }
+  ],
+  "visual_intro": "以YOLOv8-seg機制為例，共享特徵產生一組原型遮罩，偵測分支為每件預測框、類別及遮罩係數。每件係數組合共享原型，再依框處理成該件遮罩。共享原型不是一張完整墊圈答案；兩件同類也要有分開的實例輸出。",
+  "beginner_path": {
+    "title": "從必要原理、具體反例到工作取捨",
+    "intro": "輸送帶有兩個同類墊圈，需要分開每一件再計數，不能只知道哪些像素是墊圈。 下列圖像、特徵及回答為教學示意，不是模型實測。",
+    "visuals": [
+      {
+        "id": "wi030-yoloseg-c1",
+        "title": "YOLO-Seg：每個物件，都有自己的遮罩",
+        "prompt": "輸送帶有兩個同類墊圈，需要分開每一件再計數，不能只知道哪些像素是墊圈。",
+        "caption": "以YOLOv8-seg機制為例，共享特徵產生一組原型遮罩，偵測分支為每件預測框、類別及遮罩係數。每件係數組合共享原型，再依框處理成該件遮罩。共享原型不是一張完整墊圈答案；兩件同類也要有分開的實例輸出。",
+        "image": "_course_content/generated-concepts/yolo-seg/wi030-yoloseg-c1-r07-desktop.png",
+        "alt": "YOLO-Seg：每個物件，都有自己的遮罩。以YOLOv8-seg機制為例，共享特徵產生一組原型遮罩，偵測分支為每件預測框、類別及遮罩係數。每件係數組合共享原型，再依框處理成該件遮罩。共享原型不是一張完整墊圈答案；兩件同類也要有分開的實例輸出。 AI生成教學示意，非模型實測。",
+        "callouts": [
+          {
+            "title": "共享原型、各件係數",
+            "body": "原型提供共同基底，A和B各自一組係數形成各自遮罩；兩路不是先算A再把剩下區域當B。"
+          },
+          {
+            "title": "先偵測到才能分件",
+            "body": "輸出依賴偵測與遮罩品質，重疊、遮擋及小物件可造成漏檢；計數另需定義可見與允收規則。"
+          },
+          {
+            "title": "交付與接手",
+            "body": "每件框、類別與獨立遮罩，供逐件核對和計數；A/B是實例ID，不代表不同產品類別或跨影格身分。"
+          }
+        ],
+        "reading_views": [
+          {
+            "title": "YOLO-Seg：每個物件，都有自己的遮罩",
+            "image": "_course_content/generated-concepts/yolo-seg/wi030-yoloseg-c1-r07-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/yolo-seg/wi030-yoloseg-c1-r06-mobile.png",
+            "alt": "YOLO-Seg：每個物件，都有自己的遮罩。以YOLOv8-seg機制為例，共享特徵產生一組原型遮罩，偵測分支為每件預測框、類別及遮罩係數。每件係數組合共享原型，再依框處理成該件遮罩。共享原型不是一張完整墊圈答案；兩件同類也要有分開的實例輸出。 AI生成教學示意，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              724,
+              2172
+            ],
+            "mobile_display_mode": "full-mobile",
+            "desktop_intrinsic_width": 1672,
+            "desktop_intrinsic_height": 941,
+            "mobile_intrinsic_width": 724,
+            "mobile_intrinsic_height": 2172
+          }
+        ],
+        "core_ideas": true
+      },
+      {
+        "id": "wi030-instance-d2",
+        "title": "兩件靠在一起，遮罩可能合錯或漏掉",
+        "prompt": "觀察哪個條件改變，讓原本的結果不夠可靠？",
+        "caption": "兩個墊圈稍微重疊，模型可能只交出一件遮罩。原圖仍有兩件；人工圈出的漏件區不是模型的第二個偵測。",
+        "image": "_course_content/generated-concepts/yolo-seg/wi030-instance-d2-r02-desktop.png",
+        "alt": "兩件靠在一起，遮罩可能合錯或漏掉。兩個墊圈稍微重疊，模型可能只交出一件遮罩。原圖仍有兩件；人工圈出的漏件區不是模型的第二個偵測。 AI生成教學示意，非模型實測。",
+        "callouts": [
+          {
+            "title": "看哪裡",
+            "body": "兩個墊圈稍微重疊，模型可能只交出一件遮罩。原圖仍有兩件；人工圈出的漏件區不是模型的第二個偵測。"
+          },
+          {
+            "title": "接著怎麼做",
+            "body": "逐件核對原圖和標註，補足重疊樣本，必要時調整取像視角或分料，再用未見資料重測漏件和錯誤分件。"
+          }
+        ],
+        "reading_views": [
+          {
+            "title": "兩件靠在一起，遮罩可能合錯或漏掉",
+            "image": "_course_content/generated-concepts/yolo-seg/wi030-instance-d2-r02-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/yolo-seg/wi030-instance-d2-r04-mobile.png",
+            "alt": "兩件靠在一起，遮罩可能合錯或漏掉。兩個墊圈稍微重疊，模型可能只交出一件遮罩。原圖仍有兩件；人工圈出的漏件區不是模型的第二個偵測。 AI生成教學示意，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              724,
+              2172
+            ],
+            "mobile_display_mode": "full-mobile",
+            "desktop_intrinsic_width": 1672,
+            "desktop_intrinsic_height": 941,
+            "mobile_intrinsic_width": 724,
+            "mobile_intrinsic_height": 2172
+          }
+        ],
+        "core_ideas": false
+      },
+      {
+        "id": "wi030-seg-d3",
+        "title": "要同類區域，還是每件各一張遮罩？",
+        "prompt": "相同工作需求下，資料、輸出與成本如何取捨？",
+        "caption": "U-Net和SegFormer提供語意分割：同類像素用同類標籤，未必區分每一件。YOLO-Seg提供實例分割：每件有自己的遮罩。先決定要量區域還是逐件計數，再比較模型與標註成本。",
+        "image": "_course_content/generated-concepts/u-net/wi030-seg-d3-r01-desktop.png",
+        "alt": "要同類區域，還是每件各一張遮罩？。U-Net和SegFormer提供語意分割：同類像素用同類標籤，未必區分每一件。YOLO-Seg提供實例分割：每件有自己的遮罩。先決定要量區域還是逐件計數，再比較模型與標註成本。 AI生成教學示意，非模型實測。",
+        "callouts": [
+          {
+            "title": "怎麼選",
+            "body": "U-Net和SegFormer提供語意分割：同類像素用同類標籤，未必區分每一件。YOLO-Seg提供實例分割：每件有自己的遮罩。先決定要量區域還是逐件計數，再比較模型與標註成本。"
+          },
+          {
+            "title": "資料與完整成本",
+            "body": "需每件實例標註和相應版本權重；本課以YOLOv8-seg為例，不泛化聲稱所有YOLO版本都相同。固定解析度、門檻及後處理，測每件漏檢、重疊和推論成本。"
+          }
+        ],
+        "reading_views": [
+          {
+            "title": "要同類區域，還是每件各一張遮罩？",
+            "image": "_course_content/generated-concepts/u-net/wi030-seg-d3-r01-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/u-net/wi030-seg-d3-r01-mobile.png",
+            "alt": "要同類區域，還是每件各一張遮罩？。U-Net和SegFormer提供語意分割：同類像素用同類標籤，未必區分每一件。YOLO-Seg提供實例分割：每件有自己的遮罩。先決定要量區域還是逐件計數，再比較模型與標註成本。 AI生成教學示意，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              887,
+              1774
+            ],
+            "mobile_display_mode": "full-mobile",
+            "desktop_intrinsic_width": 1672,
+            "desktop_intrinsic_height": 941,
+            "mobile_intrinsic_width": 887,
+            "mobile_intrinsic_height": 1774
+          }
+        ],
+        "core_ideas": false
+      }
+    ]
+  },
+  "concept_visuals": [
+    {
+      "id": "causal-chain",
+      "placement": "after_causal_chain",
+      "title": "一個 YOLO-Seg mask 是怎麼被組出來的？",
+      "prompt": "先預測：共享 prototype masks 會不會是每個物件的最終 mask？每個 object 還缺少什麼？",
+      "caption": "由左到右：backbone/neck 產生 dense box/class candidates 和每個 instance coefficient，prototype branch 產生共享 mask basis；decode/NMS 留下 instances，最後每個 coefficient×prototypes 組合自己的 mask 並回映原圖。",
+      "image": "_course_content/generated-concepts/yolo-seg/yolo-seg-causal-chain_v01.svg",
+      "alt": "四段概念圖：帶 instance labels 的影像、dense box/class head 和共享 prototype masks、NMS 保留多個物件框、每個物件以不同係數組成自己的 contour mask。",
+      "callouts": [
+        {
+          "title": "① dense candidates 不是成品",
+          "body": "每個 feature location 的候選還必須 decode/filter/NMS。"
+        },
+        {
+          "title": "② prototype 是共用 basis",
+          "body": "每個 instance 以不同 coefficient 取用它，不是大家共用一張答案。"
+        },
+        {
+          "title": "③ 邊界受後處理影響",
+          "body": "crop、threshold、rescale、tile merge 會改變最終 contour。"
+        }
+      ]
+    },
+    {
+      "id": "worked-example",
+      "placement": "after_micro_example",
+      "title": "重疊 instances：誰留下、誰被抑制、誰的 mask 需要檢查？",
+      "prompt": "兩個已知物件重疊時，哪一步決定是否保留兩個 box；保留下來後，為何還要分別檢查各自 contour？",
+      "caption": "左側 dense head 對重疊物件提出多個候選；中間 decode/NMS 可能消除 duplicate，也可能在不當 policy 下壓掉真正相鄰 instance；右側每個留下的 box 用自己的 coefficient 組成不同 mask，不能只看一張合併區域。",
+      "image": "_course_content/generated-concepts/yolo-seg/yolo-seg-worked-example_v01.svg",
+      "alt": "三段概念圖：重疊元件產生多個 dense boxes，中間 NMS 顯示可能保留或壓掉候選，右邊兩個不同 instance 分別有自己的 box、class 和輪廓 mask。",
+      "callouts": [
+        {
+          "title": "左：dense overlap 很常見",
+          "body": "同一物件和相鄰物件都可能產生多個候選。"
+        },
+        {
+          "title": "中：NMS 是 operating knob",
+          "body": "NMS IoU/class policy 改變 duplicate 和相鄰 instance 的取捨。"
+        },
+        {
+          "title": "右：每個 instance 各自驗證",
+          "body": "box recall、tiny/overlap error、boundary error 和 review 都要分開量。"
+        }
+      ]
+    },
+    {
+      "id": "comparison",
+      "placement": "after_comparison",
+      "title": "先選 mask 的單位，再選 U-Net、SegFormer 或 YOLO-Seg",
+      "prompt": "若你問的是「這個像素是哪一類」還是「這是哪一個物件」，答案會導向不同 pipeline。",
+      "caption": "U-Net 和 SegFormer 對每個 pixel 輸出已知 semantic class，touching same-class regions 可能合併；YOLO-Seg 對每個保留 known instance 輸出 box/class/mask，需治理 dense candidates、NMS、prototypes 和 overlap。",
+      "image": "_course_content/generated-concepts/yolo-seg/yolo-seg-comparison_v01.svg",
+      "alt": "三欄比較圖：U-Net 以一片 semantic region 表示相碰物件，SegFormer 以多尺度 semantic mask 表示區域，YOLO-Seg 以每個物件的 box 和個別 masks 表示 instances。",
+      "callouts": [
+        {
+          "title": "U-Net：語意 pixel",
+          "body": "同類相碰物件不自然分開，instance split 另做。"
+        },
+        {
+          "title": "SegFormer：多尺度語意 pixel",
+          "body": "mask 仍是 semantic；stride/crop/stitch/邊界必須驗證。"
+        },
+        {
+          "title": "YOLO-Seg：每個 known instance",
+          "body": "輸出 box、class 和自己的 mask；也承擔 NMS/tiny/overlap 風險。"
+        }
+      ]
+    },
+    {
+      "id": "boundary-cases-explainer",
+      "placement": "before_boundary_cases",
+      "title": "同一條因果鏈，在哪裡會被破壞？",
+      "prompt": "不要只記住風險名詞；先預測條件一變，畫面或候選結果會怎麼變，再決定何時應 HOLD。",
+      "caption": "YOLO-Seg 的三個模型專屬反事實：每欄把條件、可觀察後果與正確下一步放在一起。它們不是自動修正規則；遇到條件超出驗證範圍時，先保存原始證據並進入 HOLD／REVIEW。",
+      "image": "_course_content/generated-concepts/yolo-seg/yolo-seg-boundary-cases_v01.svg",
+      "alt": "YOLO-Seg 的三欄反事實說明圖：每欄依序說明一個失效條件、可能看到的候選或量測後果，以及應進入 HOLD、重驗或改選方法的安全下一步。",
+      "callouts": [
+        {
+          "title": "先看條件，而不是先改門檻",
+          "body": "候選改變可能是資料、取像、設定或模型假設被破壞，不能立刻解讀成產品真相。"
+        },
+        {
+          "title": "把可觀察後果說出來",
+          "body": "誤報、漏檢、整片異常或時間失序都需要回到原始資料與版本追查。"
+        },
+        {
+          "title": "HOLD 是設計的一部分",
+          "body": "先停止自動往下走、保存 evidence，確認條件後才重新 qualification 或交給適合的方法。"
+        }
+      ]
+    }
+  ],
+  "boundary_cases": [
+    {
+      "condition": "本課具體反例",
+      "effect": "兩個墊圈稍微重疊，模型可能只交出一件遮罩。原圖仍有兩件；人工圈出的漏件區不是模型的第二個偵測。",
+      "action": "逐件核對原圖和標註，補足重疊樣本，必要時調整取像視角或分料，再用未見資料重測漏件和錯誤分件。"
+    },
+    {
+      "condition": "更換產品、模型或輸入設定",
+      "effect": "需每件實例標註和相應版本權重；本課以YOLOv8-seg為例，不泛化聲稱所有YOLO版本都相同。固定解析度、門檻及後處理，測每件漏檢、重疊和推論成本。",
+      "action": "先決定遮擋物件如何標註與計數，收單件、相鄰、重疊和空畫面，分開批次驗證。"
+    },
+    {
+      "condition": "把示意當成實際推論",
+      "effect": "本課特徵、排序、回答及圖像僅用於解釋，不支持現場準確率或耗時結論。",
+      "action": "保存真實原圖與逐件標註，量物件召回、錯誤合併／切分、遮罩品質和計數誤差；孔洞保留需求另驗，示意圖不是模型結果。"
+    }
+  ],
+  "comparison": [
+    {
+      "model": "U-Net",
+      "normality": "像素標註；編碼解碼同尺度跳接",
+      "candidate": "語意區域；邊界與尺度需另驗"
+    },
+    {
+      "model": "SegFormer",
+      "normality": "像素標註；階層特徵多尺度融合",
+      "candidate": "語意區域；不自動提供每件ID"
+    },
+    {
+      "model": "YOLOv8-seg例",
+      "normality": "每件標註；原型＋每件係數",
+      "candidate": "每件框與遮罩；漏檢重疊逐件驗"
+    }
+  ],
+  "selection": "U-Net和SegFormer提供語意分割：同類像素用同類標籤，未必區分每一件。YOLO-Seg提供實例分割：每件有自己的遮罩。先決定要量區域還是逐件計數，再比較模型與標註成本。 需每件實例標註和相應版本權重；本課以YOLOv8-seg為例，不泛化聲稱所有YOLO版本都相同。固定解析度、門檻及後處理，測每件漏檢、重疊和推論成本。",
+  "poc": {
+    "title": "以真實工作資料做小規模比較",
+    "steps": [
+      "先決定遮擋物件如何標註與計數，收單件、相鄰、重疊和空畫面，分開批次驗證。",
+      "需每件實例標註和相應版本權重；本課以YOLOv8-seg為例，不泛化聲稱所有YOLO版本都相同。固定解析度、門檻及後處理，測每件漏檢、重疊和推論成本。",
+      "保存真實原圖與逐件標註，量物件召回、錯誤合併／切分、遮罩品質和計數誤差；孔洞保留需求另驗，示意圖不是模型結果。"
+    ],
+    "hold": "逐件核對原圖和標註，補足重疊樣本，必要時調整取像視角或分料，再用未見資料重測漏件和錯誤分件。",
+    "acceptance": {
+      "baseline": "既有流程或最簡單可行方法",
+      "measure": "保存真實原圖與逐件標註，量物件召回、錯誤合併／切分、遮罩品質和計數誤差；孔洞保留需求另驗，示意圖不是模型結果。",
+      "negative_control": "兩個墊圈稍微重疊，模型可能只交出一件遮罩。原圖仍有兩件；人工圈出的漏件區不是模型的第二個偵測。",
+      "owner": "實作與影像核對負責人"
+    }
+  },
+  "teach_back": {
+    "question": "它改變什麼？何時選另一種做法？",
+    "answer": "以YOLOv8-seg機制為例，共享特徵產生一組原型遮罩，偵測分支為每件預測框、類別及遮罩係數。每件係數組合共享原型，再依框處理成該件遮罩。共享原型不是一張完整墊圈答案；兩件同類也要有分開的實例輸出。 U-Net和SegFormer提供語意分割：同類像素用同類標籤，未必區分每一件。YOLO-Seg提供實例分割：每件有自己的遮罩。先決定要量區域還是逐件計數，再比較模型與標註成本。"
+  },
+  "slide_reading": [
+    {
+      "title": "先找：YOLO-Seg 的輸出單位為何是 instance？",
+      "question": "box/class/mask、ignore zones 與 overlap order 為何都必須寫進 label contract？",
+      "look": "找 instance boxes/polygons/masks、classes、ignore zones、overlap order、letterbox 和 stride。",
+      "relation": "每個標註 object 定義一個輸出責任；縮放和重疊規則決定訓練/評估如何看它。",
+      "takeaway": "YOLO-Seg 不是把全圖著色，而是對每個已知 object 交自己的結果。",
+      "terms": [
+        "instance：同類別中可單獨識別的一個物件",
+        "letterbox：將影像縮放/補邊到模型輸入尺寸的規則，會影響座標回映"
+      ]
+    },
+    {
+      "title": "這張圖要核對：box head 和 prototype branch 如何分工？",
+      "question": "為什麼每個 instance 需要 coefficient，prototype 又不是最終 mask？",
+      "look": "找 dense box/class candidates、per-instance mask coefficients、prototype masks 和 backbone/neck。",
+      "relation": "head 提出候選和混合配方；prototype branch 提供共享 basis；兩者相乘才形成各 instance 的 mask。",
+      "takeaway": "prototype/coefficients 使每個保留物件能得到不同輪廓。",
+      "terms": [
+        "prototype mask：供多個 instance 組合使用的共享 mask basis",
+        "mask coefficient：某個 instance 用來組合 prototypes 的權重"
+      ]
+    },
+    {
+      "title": "先看：哪些 dense candidates 會真的變成 instance？",
+      "question": "decode/filter/NMS 為何會改變重疊物件的輸出？",
+      "look": "找 dense locations、decode、confidence/class filtering、NMS、selected boxes 和 output cap。",
+      "relation": "dense raw candidates 經版本指定參數化還原 box，再由過濾/NMS 去除候選或重複。",
+      "takeaway": "NMS 不是小細節；它直接決定哪些 object 有機會獲得 mask。",
+      "terms": [
+        "NMS：依重疊與分數抑制重複候選的後處理",
+        "dense candidate：每個 feature location 提出的 box/class/objectness 候選"
+      ]
+    },
+    {
+      "title": "最後看：成品 contour 為何還需 boundary 與量測 gate？",
+      "question": "compose、crop、threshold、rescale 和 inverse map 如何共同改變 mask？",
+      "look": "找 coefficient×prototypes、box crop、mask threshold、rescale、tile merge、inverse mapping 和 calibration/uncertainty。",
+      "relation": "這些步驟把中間表示變成原圖 contour；每一項都可能改邊界，物理量測仍需額外證據。",
+      "takeaway": "instance mask 是候選輪廓，不是自帶 CD/area precision 或 release。",
+      "terms": [
+        "inverse mapping：把 letterbox/tile 座標下的 box/mask 回映到 raw image",
+        "boundary error：預測 contour 相對標註邊界的偏差"
+      ]
+    }
+  ],
+  "comparison_headers": {
+    "title": "要同類區域，還是每件各一張遮罩？",
+    "basis": "所需資料與方法差異",
+    "output": "輸出與維護責任"
+  },
+  "transfer_check": {
+    "title": "補模型資料，還是改分料？",
+    "scenario": "兩個相接墊圈常只被算成一件。可增加重疊標註訓練，也可用分料或調整視角讓兩件更容易看清。",
+    "question": "你會先做哪一項小試驗？何時保留兩者一起做？",
+    "answer": "先檢查人是否能從原圖穩定分辨兩件。可見線索足夠而資料不足時先補重疊樣本；遮擋讓身份難辨時改善分料／視角更直接。兩者都有問題可合用，但各自量成本與效益。驗證逐件召回、錯誤合併／切分、計數誤差和節拍，面積估數只能作另行驗證的受限方案。"
+  },
+  "review_trace": {
+    "authority": "roadmap-model-selection/known-target-classification/yolo-seg/model.md",
+    "scope": "WI-030 十二課首讀圖文與手機PNG、反例、比較及自測；原工程slide保留，未以首讀評分代替工程圖審查。",
+    "claims": [
+      {
+        "id": "visual-1",
+        "field": "beginner_path.visuals[pcb-instance-anchor]",
+        "source": "模型定位 / architecture_path"
+      },
+      {
+        "id": "visual-2",
+        "field": "beginner_path.visuals[instance-label-contract]",
+        "source": "architecture_path"
+      },
+      {
+        "id": "visual-3",
+        "field": "beginner_path.visuals[dense-fpn-prototypes]",
+        "source": "representation_or_score"
+      },
+      {
+        "id": "visual-4",
+        "field": "beginner_path.visuals[decode-nms-compose-review]",
+        "source": "failure_boundary"
+      },
+      {
+        "id": "visual-5",
+        "field": "beginner_path.visuals[operating-boundary-selection]",
+        "source": "selection_gate / evidence_bundle"
+      },
+      {
+        "id": "promise",
+        "field": "promise",
+        "source": "模型定位 / representation_or_score"
+      },
+      {
+        "id": "mechanism",
+        "field": "mechanism_steps",
+        "source": "architecture_path / representation_or_score"
+      },
+      {
+        "id": "boundaries",
+        "field": "boundary_cases",
+        "source": "failure_boundary / selection_gate"
+      },
+      {
+        "id": "comparison",
+        "field": "comparison + selection",
+        "source": "selection_gate"
+      },
+      {
+        "id": "poc",
+        "field": "poc + acceptance",
+        "source": "cost_and_operating_point / evidence_bundle"
+      },
+      {
+        "id": "transfer",
+        "field": "transfer_check",
+        "source": "failure_boundary / selection_gate"
+      },
+      {
+        "id": "wi030-first-read",
+        "field": "beginner_path + core + selection + transfer",
+        "source": "https://github.com/ultralytics/ultralytics/blob/v8.3.0/ultralytics/nn/modules/head.py"
+      }
+    ]
+  },
+  "quality_status": {
+    "label": "首讀圖文已核對",
+    "state": "self-reviewed",
+    "round": "WI-030",
+    "reason": "新版逐圖與整頁自評、桌機手機驗證完成；使用者成品核准pending。原工程圖未納入本輪分數。"
+  },
+  "teaching_preflight": {
+    "brief": "teaching-images/vision-ai-model-selection/workitems/wi-030/yoloseg-c1-r07-desktop.md",
+    "mobile_brief": "teaching-images/vision-ai-model-selection/workitems/wi-030/yoloseg-c1-r06-mobile.md",
+    "story": "C",
+    "major_visual_nodes": 3,
+    "visual_status": "self-reviewed",
+    "user_review": "pending"
+  }
+}

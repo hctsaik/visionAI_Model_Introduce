@@ -116,3 +116,40 @@ Keep camera / lens / timestamps / frame-rate / frame-drop records; ROI / preproc
 ## Production gate
 
 The six model-specific fields, comparison contract and required visual primitives are complete. Pages 05-18 through 05-21 may proceed to versioned white high-density C / D visual production. Final assets must pass Chinese readability, engineering-causality, no-fabricated-performance, manifest, QA and style validation before approval.
+
+<!-- wi033-engineering:start -->
+## WI-033 工程圖修正
+
+### ByteTrack：跨幀接身份，計數另定義
+
+ByteTrack輸入逐幀偵測框、分數與時間順序；輸出追蹤ID和框。計數線、方向與重複事件政策在下游，單有追蹤不等於完成可靠計數。
+
+框先偵測，ID靠配對，過線再計數。
+
+來源：https://github.com/FoundationVision/ByteTrack
+
+### ByteTrack：先高分，再接剩餘低分
+
+偵測框分高/低分，先以高分框匹配預測軌跡，再用低分框匹配剩餘未配對的活動軌跡。給定ID7短暫遮擋造成0.3低分但位置接近，可第二輪續接；孤立低分不直接建新ID。未接回則丟失，超過保留期移除；計數線與事件由下游另訂。分數只是算例，非建議門檻。
+
+低分框要有軌跡依據，才可能接回原ID。
+
+來源：https://github.com/FoundationVision/ByteTrack
+
+### ByteTrack：幀率與丟失緩衝要配套
+
+保存偵測器、分數/匹配門檻、幀率/時間順序、track_buffer與事件規則。給定30幀在30fps是1秒，在10fps是3秒；實作可能按fps縮放，須核對有效幀數。跨攝影機切換應重置，不能沿用不相關ID。
+
+驗完整影片的斷軌與重複計數。
+
+來源：https://github.com/FoundationVision/ByteTrack
+
+### ByteTrack：低分框要有配對證據
+
+低分再匹配使用剩餘未配對活動軌跡，孤立低分不直接建新ID。高分新候選也需依實作確認和後續續接；偵測誤框與長遮擋仍可能造成錯ID。
+
+孤立低分不能憑空建成可靠新物件。
+
+來源：https://github.com/FoundationVision/ByteTrack
+
+<!-- wi033-engineering:end -->

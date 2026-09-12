@@ -117,3 +117,40 @@ Keep camera / lens / timestamp / frame-rate / missing-frame records; ROI / prepr
 ## Production gate
 
 The six model-specific fields, comparison contract and required visual primitives are complete. Pages 05-30 through 05-33 may proceed to versioned white high-density C / D visual production. Final assets must pass Chinese readability, engineering causality, no-fabricated-performance, manifest, QA and style validation before approval.
+
+<!-- wi033-engineering:start -->
+## WI-033 工程圖修正
+
+### V-JEPA：特徵預測之後再學任務
+
+原版2024 V-JEPA預測表徵而非像素；下游可固定骨幹學注意力探針，或另選微調策略須記清。目標編碼器和預測器不是部署任務頭。
+
+自監督訊號不會自動變成事件標籤。
+
+來源：https://arxiv.org/html/2404.08471v1
+
+### V-JEPA：預測同位置的目標特徵
+
+2024原版V-JEPA；上下文編碼器讀可見tokens，預測器加遮蔽位置資訊預測目標tokens。完整影片只進目標編碼器，目標stop-gradient，其權重由上下文EMA更新。L1比較同位置特徵。作者兩維算例預測[.2,.8]目標[.4,.7]平均絕對差.15，不是異常分數。 r01實看修正：目標格與EMA文字分離。
+
+目標特徵提供訓練訊號，部署另學任務。
+
+來源：https://arxiv.org/html/2404.08471v1
+
+### V-JEPA：保存取樣與下游模式
+
+保存2024骨幹checkpoint、影格取樣、裁切與下游讀出頭。EMA是預訓練目標權重更新，不是現場每片自動更新模型；原版不宣稱未來影像生成。 r01實看修正：时间刻度及標籤各自定位。
+
+骨幹、讀出頭與取樣設定是一組。
+
+來源：https://arxiv.org/html/2404.08471v1
+
+### V-JEPA與VideoMAE：監督目標不同
+
+兩者預訓練目標及尺度不同，L1=.15不能對MSE=1排名。固定資料、讀出方式、硬體與事件指標比較；沒有本輪共同實測。
+
+同影片比較任務成果，不能比兩種損失值。
+
+來源：https://arxiv.org/html/2404.08471v1
+
+<!-- wi033-engineering:end -->

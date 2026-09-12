@@ -1,0 +1,1541 @@
+{
+  "html_sha256": "17a716a585d9c10b490a46ba86757e4ac216f15c39261c22e11a75dbf282e89a",
+  "topics": [
+    {
+      "topic": "ad-ae",
+      "captions": [
+        {
+          "bottom": 1935.40625,
+          "buttonTop": 1944.40625,
+          "display": "block",
+          "clear": true,
+          "inside": true
+        },
+        {
+          "bottom": 3889.109375,
+          "buttonTop": 3898.109375,
+          "display": "block",
+          "clear": true,
+          "inside": true
+        },
+        {
+          "bottom": 5556.921875,
+          "buttonTop": 5565.921875,
+          "display": "block",
+          "clear": true,
+          "inside": true
+        },
+        {
+          "bottom": 7257.90625,
+          "buttonTop": 7266.90625,
+          "display": "block",
+          "clear": true,
+          "inside": true
+        },
+        {
+          "bottom": 8958.890625,
+          "buttonTop": 8967.890625,
+          "display": "block",
+          "clear": true,
+          "inside": true
+        }
+      ]
+    },
+    {
+      "topic": "ad-anomalyclip",
+      "captions": [
+        {
+          "bottom": 1938.359375,
+          "buttonTop": 1947.359375,
+          "display": "block",
+          "clear": true,
+          "inside": true
+        },
+        {
+          "bottom": 4199.15625,
+          "buttonTop": 4208.15625,
+          "display": "block",
+          "clear": true,
+          "inside": true
+        },
+        {
+          "bottom": 5942.328125,
+          "buttonTop": 5951.328125,
+          "display": "block",
+          "clear": true,
+          "inside": true
+        }
+      ]
+    },
+    {
+      "topic": "ad-anomalydino",
+      "captions": [
+        {
+          "bottom": 1924.6875,
+          "buttonTop": 1933.6875,
+          "display": "block",
+          "clear": true,
+          "inside": true
+        },
+        {
+          "bottom": 3950.859375,
+          "buttonTop": 3959.859375,
+          "display": "block",
+          "clear": true,
+          "inside": true
+        },
+        {
+          "bottom": 5550.90625,
+          "buttonTop": 5559.90625,
+          "display": "block",
+          "clear": true,
+          "inside": true
+        }
+      ]
+    },
+    {
+      "topic": "ad-anomalygpt",
+      "captions": [
+        {
+          "bottom": 1901.109375,
+          "buttonTop": 1910.109375,
+          "display": "block",
+          "clear": true,
+          "inside": true
+        },
+        {
+          "bottom": 4124.734375,
+          "buttonTop": 4133.734375,
+          "display": "block",
+          "clear": true,
+          "inside": true
+        },
+        {
+          "bottom": 5827.15625,
+          "buttonTop": 5836.15625,
+          "display": "block",
+          "clear": true,
+          "inside": true
+        }
+      ]
+    },
+    {
+      "topic": "ad-ddad",
+      "captions": [
+        {
+          "bottom": 1875.203125,
+          "buttonTop": 1884.203125,
+          "display": "block",
+          "clear": true,
+          "inside": true
+        },
+        {
+          "bottom": 4004.21875,
+          "buttonTop": 4013.21875,
+          "display": "block",
+          "clear": true,
+          "inside": true
+        },
+        {
+          "bottom": 5706.1875,
+          "buttonTop": 5715.1875,
+          "display": "block",
+          "clear": true,
+          "inside": true
+        }
+      ]
+    },
+    {
+      "topic": "ad-diffad",
+      "captions": [
+        {
+          "bottom": 1874.75,
+          "buttonTop": 1883.75,
+          "display": "block",
+          "clear": true,
+          "inside": true
+        },
+        {
+          "bottom": 3944.578125,
+          "buttonTop": 3953.578125,
+          "display": "block",
+          "clear": true,
+          "inside": true
+        },
+        {
+          "bottom": 5646.546875,
+          "buttonTop": 5655.546875,
+          "display": "block",
+          "clear": true,
+          "inside": true
+        }
+      ]
+    },
+    {
+      "topic": "ad-dinomaly",
+      "captions": [
+        {
+          "bottom": 1920.609375,
+          "buttonTop": 1929.609375,
+          "display": "block",
+          "clear": true,
+          "inside": true
+        },
+        {
+          "bottom": 4022.28125,
+          "buttonTop": 4031.28125,
+          "display": "block",
+          "clear": true,
+          "inside": true
+        },
+        {
+          "bottom": 5724.703125,
+          "buttonTop": 5733.703125,
+          "display": "block",
+          "clear": true,
+          "inside": true
+        }
+      ]
+    },
+    {
+      "topic": "ad-draem",
+      "captions": [
+        {
+          "bottom": 1947.484375,
+          "buttonTop": 1956.484375,
+          "display": "block",
+          "clear": true,
+          "inside": true
+        },
+        {
+          "bottom": 3963.953125,
+          "buttonTop": 3972.953125,
+          "display": "block",
+          "clear": true,
+          "inside": true
+        },
+        {
+          "bottom": 5664.9375,
+          "buttonTop": 5673.9375,
+          "display": "block",
+          "clear": true,
+          "inside": true
+        },
+        {
+          "bottom": 7365.921875,
+          "buttonTop": 7374.921875,
+          "display": "block",
+          "clear": true,
+          "inside": true
+        }
+      ]
+    },
+    {
+      "topic": "ad-efficientad",
+      "captions": [
+        {
+          "bottom": 1993.859375,
+          "buttonTop": 2002.859375,
+          "display": "block",
+          "clear": true,
+          "inside": true
+        },
+        {
+          "bottom": 4187.890625,
+          "buttonTop": 4196.890625,
+          "display": "block",
+          "clear": true,
+          "inside": true
+        },
+        {
+          "bottom": 5841.6875,
+          "buttonTop": 5850.6875,
+          "display": "block",
+          "clear": true,
+          "inside": true
+        }
+      ]
+    },
+    {
+      "topic": "ad-invad",
+      "captions": [
+        {
+          "bottom": 1920.15625,
+          "buttonTop": 1929.15625,
+          "display": "block",
+          "clear": true,
+          "inside": true
+        },
+        {
+          "bottom": 4081.015625,
+          "buttonTop": 4090.015625,
+          "display": "block",
+          "clear": true,
+          "inside": true
+        },
+        {
+          "bottom": 5783.4375,
+          "buttonTop": 5792.4375,
+          "display": "block",
+          "clear": true,
+          "inside": true
+        }
+      ]
+    },
+    {
+      "topic": "ad-padim",
+      "captions": [
+        {
+          "bottom": 1722.203125,
+          "buttonTop": 1731.203125,
+          "display": "block",
+          "clear": true,
+          "inside": true
+        },
+        {
+          "bottom": 3748.375,
+          "buttonTop": 3757.375,
+          "display": "block",
+          "clear": true,
+          "inside": true
+        },
+        {
+          "bottom": 5402.171875,
+          "buttonTop": 5411.171875,
+          "display": "block",
+          "clear": true,
+          "inside": true
+        }
+      ]
+    },
+    {
+      "topic": "ad-patchcore",
+      "captions": [
+        {
+          "bottom": 1958.1875,
+          "buttonTop": 1967.1875,
+          "display": "block",
+          "clear": true,
+          "inside": true
+        },
+        {
+          "bottom": 3984.359375,
+          "buttonTop": 3993.359375,
+          "display": "block",
+          "clear": true,
+          "inside": true
+        },
+        {
+          "bottom": 5584.40625,
+          "buttonTop": 5593.40625,
+          "display": "block",
+          "clear": true,
+          "inside": true
+        }
+      ]
+    },
+    {
+      "topic": "ad-rd4ad",
+      "captions": [
+        {
+          "bottom": 1947.484375,
+          "buttonTop": 1956.484375,
+          "display": "block",
+          "clear": true,
+          "inside": true
+        },
+        {
+          "bottom": 3993.546875,
+          "buttonTop": 4002.546875,
+          "display": "block",
+          "clear": true,
+          "inside": true
+        },
+        {
+          "bottom": 5694.53125,
+          "buttonTop": 5703.53125,
+          "display": "block",
+          "clear": true,
+          "inside": true
+        },
+        {
+          "bottom": 7377.34375,
+          "buttonTop": 7386.34375,
+          "display": "block",
+          "clear": true,
+          "inside": true
+        }
+      ]
+    },
+    {
+      "topic": "ad-stfpm",
+      "captions": [
+        {
+          "bottom": 1947.03125,
+          "buttonTop": 1956.03125,
+          "display": "block",
+          "clear": true,
+          "inside": true
+        },
+        {
+          "bottom": 4022.6875,
+          "buttonTop": 4031.6875,
+          "display": "block",
+          "clear": true,
+          "inside": true
+        },
+        {
+          "bottom": 5764.578125,
+          "buttonTop": 5773.578125,
+          "display": "block",
+          "clear": true,
+          "inside": true
+        }
+      ]
+    },
+    {
+      "topic": "ad-subspacead",
+      "captions": [
+        {
+          "bottom": 1966.984375,
+          "buttonTop": 1975.984375,
+          "display": "block",
+          "clear": true,
+          "inside": true
+        },
+        {
+          "bottom": 4042.640625,
+          "buttonTop": 4051.640625,
+          "display": "block",
+          "clear": true,
+          "inside": true
+        },
+        {
+          "bottom": 5751.359375,
+          "buttonTop": 5760.359375,
+          "display": "block",
+          "clear": true,
+          "inside": true
+        }
+      ]
+    },
+    {
+      "topic": "ad-uniad",
+      "captions": [
+        {
+          "bottom": 1920.609375,
+          "buttonTop": 1929.609375,
+          "display": "block",
+          "clear": true,
+          "inside": true
+        },
+        {
+          "bottom": 4022.28125,
+          "buttonTop": 4031.28125,
+          "display": "block",
+          "clear": true,
+          "inside": true
+        },
+        {
+          "bottom": 5724.703125,
+          "buttonTop": 5733.703125,
+          "display": "block",
+          "clear": true,
+          "inside": true
+        }
+      ]
+    },
+    {
+      "topic": "ad-winclip",
+      "captions": [
+        {
+          "bottom": 1901.109375,
+          "buttonTop": 1910.109375,
+          "display": "block",
+          "clear": true,
+          "inside": true
+        },
+        {
+          "bottom": 4132.3125,
+          "buttonTop": 4141.3125,
+          "display": "block",
+          "clear": true,
+          "inside": true
+        },
+        {
+          "bottom": 5875.484375,
+          "buttonTop": 5884.484375,
+          "display": "block",
+          "clear": true,
+          "inside": true
+        }
+      ]
+    },
+    {
+      "topic": "anomalydiffusion",
+      "captions": [
+        {
+          "bottom": 2079.921875,
+          "buttonTop": 2088.921875,
+          "display": "block",
+          "clear": true,
+          "inside": true
+        },
+        {
+          "bottom": 4214.765625,
+          "buttonTop": 4223.765625,
+          "display": "block",
+          "clear": true,
+          "inside": true
+        },
+        {
+          "bottom": 5969.5,
+          "buttonTop": 5978.5,
+          "display": "block",
+          "clear": true,
+          "inside": true
+        }
+      ]
+    },
+    {
+      "topic": "background-subtraction",
+      "captions": [
+        {
+          "bottom": 1755,
+          "buttonTop": 1764,
+          "display": "block",
+          "clear": true,
+          "inside": true
+        },
+        {
+          "bottom": 3460.03125,
+          "buttonTop": 3469.03125,
+          "display": "block",
+          "clear": true,
+          "inside": true
+        },
+        {
+          "bottom": 4679.75,
+          "buttonTop": 4688.75,
+          "display": "block",
+          "clear": true,
+          "inside": true
+        }
+      ]
+    },
+    {
+      "topic": "bytetrack",
+      "captions": [
+        {
+          "bottom": 1958.1875,
+          "buttonTop": 1967.1875,
+          "display": "block",
+          "clear": true,
+          "inside": true
+        },
+        {
+          "bottom": 3767.03125,
+          "buttonTop": 3776.03125,
+          "display": "block",
+          "clear": true,
+          "inside": true
+        },
+        {
+          "bottom": 4959.875,
+          "buttonTop": 4968.875,
+          "display": "block",
+          "clear": true,
+          "inside": true
+        }
+      ]
+    },
+    {
+      "topic": "charuco",
+      "captions": [
+        {
+          "bottom": 2053.046875,
+          "buttonTop": 2062.046875,
+          "display": "block",
+          "clear": true,
+          "inside": true
+        },
+        {
+          "bottom": 4563.734375,
+          "buttonTop": 4572.734375,
+          "display": "block",
+          "clear": true,
+          "inside": true
+        },
+        {
+          "bottom": 6615.984375,
+          "buttonTop": 6624.984375,
+          "display": "block",
+          "clear": true,
+          "inside": true
+        }
+      ]
+    },
+    {
+      "topic": "clip",
+      "captions": [
+        {
+          "bottom": 2160.640625,
+          "buttonTop": 2169.640625,
+          "display": "block",
+          "clear": true,
+          "inside": true
+        },
+        {
+          "bottom": 4295.484375,
+          "buttonTop": 4304.484375,
+          "display": "block",
+          "clear": true,
+          "inside": true
+        },
+        {
+          "bottom": 6004.203125,
+          "buttonTop": 6013.203125,
+          "display": "block",
+          "clear": true,
+          "inside": true
+        }
+      ]
+    },
+    {
+      "topic": "controlnet",
+      "captions": [
+        {
+          "bottom": 2040.421875,
+          "buttonTop": 2049.421875,
+          "display": "block",
+          "clear": true,
+          "inside": true
+        },
+        {
+          "bottom": 4234.453125,
+          "buttonTop": 4243.453125,
+          "display": "block",
+          "clear": true,
+          "inside": true
+        },
+        {
+          "bottom": 5924.1875,
+          "buttonTop": 5933.1875,
+          "display": "block",
+          "clear": true,
+          "inside": true
+        }
+      ]
+    },
+    {
+      "topic": "convlstm",
+      "captions": [
+        {
+          "bottom": 1741.703125,
+          "buttonTop": 1750.703125,
+          "display": "block",
+          "clear": true,
+          "inside": true
+        },
+        {
+          "bottom": 3550.546875,
+          "buttonTop": 3559.546875,
+          "display": "block",
+          "clear": true,
+          "inside": true
+        },
+        {
+          "bottom": 4987.015625,
+          "buttonTop": 4996.015625,
+          "display": "block",
+          "clear": true,
+          "inside": true
+        }
+      ]
+    },
+    {
+      "topic": "convnext",
+      "captions": [
+        {
+          "bottom": 1858.3125,
+          "buttonTop": 1867.3125,
+          "display": "block",
+          "clear": true,
+          "inside": true
+        },
+        {
+          "bottom": 3637.5625,
+          "buttonTop": 3646.5625,
+          "display": "block",
+          "clear": true,
+          "inside": true
+        },
+        {
+          "bottom": 5373.15625,
+          "buttonTop": 5382.15625,
+          "display": "block",
+          "clear": true,
+          "inside": true
+        }
+      ]
+    },
+    {
+      "topic": "deblur",
+      "captions": [
+        {
+          "bottom": 2010.3125,
+          "buttonTop": 2019.3125,
+          "display": "block",
+          "clear": true,
+          "inside": true
+        },
+        {
+          "bottom": 4164.4375,
+          "buttonTop": 4173.4375,
+          "display": "block",
+          "clear": true,
+          "inside": true
+        },
+        {
+          "bottom": 5865.421875,
+          "buttonTop": 5874.421875,
+          "display": "block",
+          "clear": true,
+          "inside": true
+        }
+      ]
+    },
+    {
+      "topic": "defectfill",
+      "captions": [
+        {
+          "bottom": 2010.3125,
+          "buttonTop": 2019.3125,
+          "display": "block",
+          "clear": true,
+          "inside": true
+        },
+        {
+          "bottom": 4230.359375,
+          "buttonTop": 4239.359375,
+          "display": "block",
+          "clear": true,
+          "inside": true
+        },
+        {
+          "bottom": 5958.21875,
+          "buttonTop": 5967.21875,
+          "display": "block",
+          "clear": true,
+          "inside": true
+        }
+      ]
+    },
+    {
+      "topic": "det-dino-detector",
+      "captions": [
+        {
+          "bottom": 1630.421875,
+          "buttonTop": 1639.421875,
+          "display": "block",
+          "clear": true,
+          "inside": true
+        },
+        {
+          "bottom": 3335.453125,
+          "buttonTop": 3344.453125,
+          "display": "block",
+          "clear": true,
+          "inside": true
+        },
+        {
+          "bottom": 4582.046875,
+          "buttonTop": 4591.046875,
+          "display": "block",
+          "clear": true,
+          "inside": true
+        }
+      ]
+    },
+    {
+      "topic": "det-grounding-dino-interface",
+      "captions": [
+        {
+          "bottom": 1986.53125,
+          "buttonTop": 1995.53125,
+          "display": "block",
+          "clear": true,
+          "inside": true
+        },
+        {
+          "bottom": 4147.390625,
+          "buttonTop": 4156.390625,
+          "display": "block",
+          "clear": true,
+          "inside": true
+        },
+        {
+          "bottom": 5902.234375,
+          "buttonTop": 5911.234375,
+          "display": "block",
+          "clear": true,
+          "inside": true
+        }
+      ]
+    },
+    {
+      "topic": "det-rtdetr",
+      "captions": [
+        {
+          "bottom": 1886.984375,
+          "buttonTop": 1895.984375,
+          "display": "block",
+          "clear": true,
+          "inside": true
+        },
+        {
+          "bottom": 4047.84375,
+          "buttonTop": 4056.84375,
+          "display": "block",
+          "clear": true,
+          "inside": true
+        },
+        {
+          "bottom": 5837.1875,
+          "buttonTop": 5846.1875,
+          "display": "block",
+          "clear": true,
+          "inside": true
+        }
+      ]
+    },
+    {
+      "topic": "det-yolo-dense",
+      "captions": [
+        {
+          "bottom": 1990.21875,
+          "buttonTop": 1999.21875,
+          "display": "block",
+          "clear": true,
+          "inside": true
+        },
+        {
+          "bottom": 4154.65625,
+          "buttonTop": 4163.65625,
+          "display": "block",
+          "clear": true,
+          "inside": true
+        },
+        {
+          "bottom": 5944,
+          "buttonTop": 5953,
+          "display": "block",
+          "clear": true,
+          "inside": true
+        }
+      ]
+    },
+    {
+      "topic": "diffusion-restoration",
+      "captions": [
+        {
+          "bottom": 2134.265625,
+          "buttonTop": 2143.265625,
+          "display": "block",
+          "clear": true,
+          "inside": true
+        },
+        {
+          "bottom": 4446.671875,
+          "buttonTop": 4455.671875,
+          "display": "block",
+          "clear": true,
+          "inside": true
+        },
+        {
+          "bottom": 6182.265625,
+          "buttonTop": 6191.265625,
+          "display": "block",
+          "clear": true,
+          "inside": true
+        }
+      ]
+    },
+    {
+      "topic": "dinov2",
+      "captions": [
+        {
+          "bottom": 2133.765625,
+          "buttonTop": 2142.765625,
+          "display": "block",
+          "clear": true,
+          "inside": true
+        },
+        {
+          "bottom": 4298.203125,
+          "buttonTop": 4307.203125,
+          "display": "block",
+          "clear": true,
+          "inside": true
+        },
+        {
+          "bottom": 6006.46875,
+          "buttonTop": 6015.46875,
+          "display": "block",
+          "clear": true,
+          "inside": true
+        }
+      ]
+    },
+    {
+      "topic": "dinov3",
+      "captions": [
+        {
+          "bottom": 2112.015625,
+          "buttonTop": 2121.015625,
+          "display": "block",
+          "clear": true,
+          "inside": true
+        },
+        {
+          "bottom": 4394.828125,
+          "buttonTop": 4403.828125,
+          "display": "block",
+          "clear": true,
+          "inside": true
+        },
+        {
+          "bottom": 6103.09375,
+          "buttonTop": 6112.09375,
+          "display": "block",
+          "clear": true,
+          "inside": true
+        }
+      ]
+    },
+    {
+      "topic": "ecc",
+      "captions": [
+        {
+          "bottom": 1647.984375,
+          "buttonTop": 1656.984375,
+          "display": "block",
+          "clear": true,
+          "inside": true
+        },
+        {
+          "bottom": 4095.90625,
+          "buttonTop": 4104.90625,
+          "display": "block",
+          "clear": true,
+          "inside": true
+        },
+        {
+          "bottom": 6175.03125,
+          "buttonTop": 6184.03125,
+          "display": "block",
+          "clear": true,
+          "inside": true
+        }
+      ]
+    },
+    {
+      "topic": "frame-difference",
+      "captions": [
+        {
+          "bottom": 1811.3125,
+          "buttonTop": 1820.3125,
+          "display": "block",
+          "clear": true,
+          "inside": true
+        },
+        {
+          "bottom": 3708.9375,
+          "buttonTop": 3717.9375,
+          "display": "block",
+          "clear": true,
+          "inside": true
+        },
+        {
+          "bottom": 4928.65625,
+          "buttonTop": 4937.65625,
+          "display": "block",
+          "clear": true,
+          "inside": true
+        }
+      ]
+    },
+    {
+      "topic": "gemini-vision",
+      "captions": [
+        {
+          "bottom": 2151.515625,
+          "buttonTop": 2160.515625,
+          "display": "block",
+          "clear": true,
+          "inside": true
+        },
+        {
+          "bottom": 4375.140625,
+          "buttonTop": 4384.140625,
+          "display": "block",
+          "clear": true,
+          "inside": true
+        },
+        {
+          "bottom": 6083.859375,
+          "buttonTop": 6092.859375,
+          "display": "block",
+          "clear": true,
+          "inside": true
+        }
+      ]
+    },
+    {
+      "topic": "inpainting",
+      "captions": [
+        {
+          "bottom": 2040.421875,
+          "buttonTop": 2049.421875,
+          "display": "block",
+          "clear": true,
+          "inside": true
+        },
+        {
+          "bottom": 4264.046875,
+          "buttonTop": 4273.046875,
+          "display": "block",
+          "clear": true,
+          "inside": true
+        },
+        {
+          "bottom": 5934.640625,
+          "buttonTop": 5943.640625,
+          "display": "block",
+          "clear": true,
+          "inside": true
+        }
+      ]
+    },
+    {
+      "topic": "keypoint-r-cnn",
+      "captions": [
+        {
+          "bottom": 1737.46875,
+          "buttonTop": 1746.46875,
+          "display": "block",
+          "clear": true,
+          "inside": true
+        },
+        {
+          "bottom": 3598.21875,
+          "buttonTop": 3607.21875,
+          "display": "block",
+          "clear": true,
+          "inside": true
+        },
+        {
+          "bottom": 5333.8125,
+          "buttonTop": 5342.8125,
+          "display": "block",
+          "clear": true,
+          "inside": true
+        }
+      ]
+    },
+    {
+      "topic": "lightglue",
+      "captions": [
+        {
+          "bottom": 2396.578125,
+          "buttonTop": 2405.578125,
+          "display": "block",
+          "clear": true,
+          "inside": true
+        },
+        {
+          "bottom": 4907.265625,
+          "buttonTop": 4916.265625,
+          "display": "block",
+          "clear": true,
+          "inside": true
+        },
+        {
+          "bottom": 6986.390625,
+          "buttonTop": 6995.390625,
+          "display": "block",
+          "clear": true,
+          "inside": true
+        }
+      ]
+    },
+    {
+      "topic": "llava",
+      "captions": [
+        {
+          "bottom": 2133.765625,
+          "buttonTop": 2142.765625,
+          "display": "block",
+          "clear": true,
+          "inside": true
+        },
+        {
+          "bottom": 4386.984375,
+          "buttonTop": 4395.984375,
+          "display": "block",
+          "clear": true,
+          "inside": true
+        },
+        {
+          "bottom": 6095.703125,
+          "buttonTop": 6104.703125,
+          "display": "block",
+          "clear": true,
+          "inside": true
+        }
+      ]
+    },
+    {
+      "topic": "lucas-kanade",
+      "captions": [
+        {
+          "bottom": 1648.3125,
+          "buttonTop": 1657.3125,
+          "display": "block",
+          "clear": true,
+          "inside": true
+        },
+        {
+          "bottom": 3753.5625,
+          "buttonTop": 3762.5625,
+          "display": "block",
+          "clear": true,
+          "inside": true
+        },
+        {
+          "bottom": 4940.109375,
+          "buttonTop": 4949.109375,
+          "display": "block",
+          "clear": true,
+          "inside": true
+        }
+      ]
+    },
+    {
+      "topic": "pose",
+      "captions": [
+        {
+          "bottom": 1893.1875,
+          "buttonTop": 1902.1875,
+          "display": "block",
+          "clear": true,
+          "inside": true
+        },
+        {
+          "bottom": 3813.125,
+          "buttonTop": 3822.125,
+          "display": "block",
+          "clear": true,
+          "inside": true
+        },
+        {
+          "bottom": 5548.71875,
+          "buttonTop": 5557.71875,
+          "display": "block",
+          "clear": true,
+          "inside": true
+        }
+      ]
+    },
+    {
+      "topic": "qwen-vl",
+      "captions": [
+        {
+          "bottom": 2158.390625,
+          "buttonTop": 2167.390625,
+          "display": "block",
+          "clear": true,
+          "inside": true
+        },
+        {
+          "bottom": 4411.609375,
+          "buttonTop": 4420.609375,
+          "display": "block",
+          "clear": true,
+          "inside": true
+        },
+        {
+          "bottom": 6093.453125,
+          "buttonTop": 6102.453125,
+          "display": "block",
+          "clear": true,
+          "inside": true
+        }
+      ]
+    },
+    {
+      "topic": "raft",
+      "captions": [
+        {
+          "bottom": 1959.03125,
+          "buttonTop": 1968.03125,
+          "display": "block",
+          "clear": true,
+          "inside": true
+        },
+        {
+          "bottom": 4093.875,
+          "buttonTop": 4102.875,
+          "display": "block",
+          "clear": true,
+          "inside": true
+        },
+        {
+          "bottom": 5280.421875,
+          "buttonTop": 5289.421875,
+          "display": "block",
+          "clear": true,
+          "inside": true
+        }
+      ]
+    },
+    {
+      "topic": "resnet",
+      "captions": [
+        {
+          "bottom": 1858.3125,
+          "buttonTop": 1867.3125,
+          "display": "block",
+          "clear": true,
+          "inside": true
+        },
+        {
+          "bottom": 3637.5625,
+          "buttonTop": 3646.5625,
+          "display": "block",
+          "clear": true,
+          "inside": true
+        },
+        {
+          "bottom": 5373.15625,
+          "buttonTop": 5382.15625,
+          "display": "block",
+          "clear": true,
+          "inside": true
+        }
+      ]
+    },
+    {
+      "topic": "segformer",
+      "captions": [
+        {
+          "bottom": 1966.984375,
+          "buttonTop": 1975.984375,
+          "display": "block",
+          "clear": true,
+          "inside": true
+        },
+        {
+          "bottom": 4072.234375,
+          "buttonTop": 4081.234375,
+          "display": "block",
+          "clear": true,
+          "inside": true
+        },
+        {
+          "bottom": 5428.078125,
+          "buttonTop": 5437.078125,
+          "display": "block",
+          "clear": true,
+          "inside": true
+        }
+      ]
+    },
+    {
+      "topic": "sift",
+      "captions": [
+        {
+          "bottom": 2396.578125,
+          "buttonTop": 2405.578125,
+          "display": "block",
+          "clear": true,
+          "inside": true
+        },
+        {
+          "bottom": 4848.078125,
+          "buttonTop": 4857.078125,
+          "display": "block",
+          "clear": true,
+          "inside": true
+        },
+        {
+          "bottom": 6900.328125,
+          "buttonTop": 6909.328125,
+          "display": "block",
+          "clear": true,
+          "inside": true
+        }
+      ]
+    },
+    {
+      "topic": "siglip",
+      "captions": [
+        {
+          "bottom": 2160.640625,
+          "buttonTop": 2169.640625,
+          "display": "block",
+          "clear": true,
+          "inside": true
+        },
+        {
+          "bottom": 4384.265625,
+          "buttonTop": 4393.265625,
+          "display": "block",
+          "clear": true,
+          "inside": true
+        },
+        {
+          "bottom": 6092.984375,
+          "buttonTop": 6101.984375,
+          "display": "block",
+          "clear": true,
+          "inside": true
+        }
+      ]
+    },
+    {
+      "topic": "super-resolution",
+      "captions": [
+        {
+          "bottom": 2079.921875,
+          "buttonTop": 2088.921875,
+          "display": "block",
+          "clear": true,
+          "inside": true
+        },
+        {
+          "bottom": 4303.546875,
+          "buttonTop": 4312.546875,
+          "display": "block",
+          "clear": true,
+          "inside": true
+        },
+        {
+          "bottom": 6058.28125,
+          "buttonTop": 6067.28125,
+          "display": "block",
+          "clear": true,
+          "inside": true
+        }
+      ]
+    },
+    {
+      "topic": "tf-idg",
+      "captions": [
+        {
+          "bottom": 2010.3125,
+          "buttonTop": 2019.3125,
+          "display": "block",
+          "clear": true,
+          "inside": true
+        },
+        {
+          "bottom": 4200.765625,
+          "buttonTop": 4209.765625,
+          "display": "block",
+          "clear": true,
+          "inside": true
+        },
+        {
+          "bottom": 5936.359375,
+          "buttonTop": 5945.359375,
+          "display": "block",
+          "clear": true,
+          "inside": true
+        }
+      ]
+    },
+    {
+      "topic": "u-net",
+      "captions": [
+        {
+          "bottom": 1640.984375,
+          "buttonTop": 1649.984375,
+          "display": "block",
+          "clear": true,
+          "inside": true
+        },
+        {
+          "bottom": 3746.234375,
+          "buttonTop": 3755.234375,
+          "display": "block",
+          "clear": true,
+          "inside": true
+        },
+        {
+          "bottom": 5102.078125,
+          "buttonTop": 5111.078125,
+          "display": "block",
+          "clear": true,
+          "inside": true
+        }
+      ]
+    },
+    {
+      "topic": "v-jepa",
+      "captions": [
+        {
+          "bottom": 1757.578125,
+          "buttonTop": 1766.578125,
+          "display": "block",
+          "clear": true,
+          "inside": true
+        },
+        {
+          "bottom": 3433.015625,
+          "buttonTop": 3442.015625,
+          "display": "block",
+          "clear": true,
+          "inside": true
+        },
+        {
+          "bottom": 4788.859375,
+          "buttonTop": 4797.859375,
+          "display": "block",
+          "clear": true,
+          "inside": true
+        }
+      ]
+    },
+    {
+      "topic": "videomae",
+      "captions": [
+        {
+          "bottom": 1959.03125,
+          "buttonTop": 1968.03125,
+          "display": "block",
+          "clear": true,
+          "inside": true
+        },
+        {
+          "bottom": 3604.875,
+          "buttonTop": 3613.875,
+          "display": "block",
+          "clear": true,
+          "inside": true
+        },
+        {
+          "bottom": 4987.59375,
+          "buttonTop": 4996.59375,
+          "display": "block",
+          "clear": true,
+          "inside": true
+        }
+      ]
+    },
+    {
+      "topic": "vit-classifier",
+      "captions": [
+        {
+          "bottom": 1600.046875,
+          "buttonTop": 1609.046875,
+          "display": "block",
+          "clear": true,
+          "inside": true
+        },
+        {
+          "bottom": 3379.296875,
+          "buttonTop": 3388.296875,
+          "display": "block",
+          "clear": true,
+          "inside": true
+        },
+        {
+          "bottom": 5114.890625,
+          "buttonTop": 5123.890625,
+          "display": "block",
+          "clear": true,
+          "inside": true
+        }
+      ]
+    },
+    {
+      "topic": "yolo-seg",
+      "captions": [
+        {
+          "bottom": 2013.359375,
+          "buttonTop": 2022.359375,
+          "display": "block",
+          "clear": true,
+          "inside": true
+        },
+        {
+          "bottom": 4118.609375,
+          "buttonTop": 4127.609375,
+          "display": "block",
+          "clear": true,
+          "inside": true
+        },
+        {
+          "bottom": 5474.453125,
+          "buttonTop": 5483.453125,
+          "display": "block",
+          "clear": true,
+          "inside": true
+        }
+      ]
+    },
+    {
+      "topic": "yolo-world",
+      "captions": [
+        {
+          "bottom": 1616.828125,
+          "buttonTop": 1625.828125,
+          "display": "block",
+          "clear": true,
+          "inside": true
+        },
+        {
+          "bottom": 3262.671875,
+          "buttonTop": 3271.671875,
+          "display": "block",
+          "clear": true,
+          "inside": true
+        },
+        {
+          "bottom": 4536.140625,
+          "buttonTop": 4545.140625,
+          "display": "block",
+          "clear": true,
+          "inside": true
+        }
+      ]
+    },
+    {
+      "topic": "yoloe",
+      "captions": [
+        {
+          "bottom": 1947.484375,
+          "buttonTop": 1956.484375,
+          "display": "block",
+          "clear": true,
+          "inside": true
+        },
+        {
+          "bottom": 4226.71875,
+          "buttonTop": 4235.71875,
+          "display": "block",
+          "clear": true,
+          "inside": true
+        },
+        {
+          "bottom": 6008.4375,
+          "buttonTop": 6017.4375,
+          "display": "block",
+          "clear": true,
+          "inside": true
+        }
+      ]
+    }
+  ]
+}

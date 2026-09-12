@@ -1,0 +1,642 @@
+[
+  {
+    "id": "det-yolo-dense-engineering-1",
+    "mode": "desktop",
+    "path": "roadmap-model-selection/detector/det-yolo-dense/images/final/WI033-YOLO-01-r01-desktop.png",
+    "sha256": "9b584fb9bb515911272f39bdc833fc30ce092387a8004b565fb0d51951190486",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "det-yolo-dense-engineering-1",
+    "mode": "mobile",
+    "path": "roadmap-model-selection/detector/det-yolo-dense/images/final/WI033-YOLO-01-r01-mobile.png",
+    "sha256": "4b4e970ac2566172e5df5c0de0e6566ab0e201cb7f8c9b96510ab36391359a61",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "det-yolo-dense-engineering-2",
+    "mode": "desktop",
+    "path": "roadmap-model-selection/detector/det-yolo-dense/images/final/WI033-YOLO-02-r02-desktop.png",
+    "sha256": "08bead40bc763f98d4bdfdecedf8bdf8eb981c392dbb2e789a3342a412eeeb68",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "det-yolo-dense-engineering-2",
+    "mode": "mobile",
+    "path": "roadmap-model-selection/detector/det-yolo-dense/images/final/WI033-YOLO-02-r02-mobile.png",
+    "sha256": "8da0d099942d1b7d19077246050a4ec0103309b6074771bbeb618eff877c99cb",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "det-yolo-dense-engineering-3",
+    "mode": "desktop",
+    "path": "roadmap-model-selection/detector/det-yolo-dense/images/final/WI033-YOLO-03-r02-desktop.png",
+    "sha256": "07148480ae876747b089d6af8634035f94210a5e51ee1ccd9955949424eee0c3",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "det-yolo-dense-engineering-3",
+    "mode": "mobile",
+    "path": "roadmap-model-selection/detector/det-yolo-dense/images/final/WI033-YOLO-03-r02-mobile.png",
+    "sha256": "3d2004337dafeb60afa0a6ffcc00a23589cabb7fc1b12f770758cf1a540f8f7c",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "det-yolo-dense-engineering-4",
+    "mode": "desktop",
+    "path": "roadmap-model-selection/detector/det-yolo-dense/images/final/WI033-YOLO-04-r01-desktop.png",
+    "sha256": "01aa4b1d07f8e0857f447184093e6f66252d94297e6e45c6ad7be3cf1e2c8f96",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "det-yolo-dense-engineering-4",
+    "mode": "mobile",
+    "path": "roadmap-model-selection/detector/det-yolo-dense/images/final/WI033-YOLO-04-r01-mobile.png",
+    "sha256": "803d71eb2bd50f988915240ed38bb40e92cdeb2f4eca1759129faffbc913e7dd",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "det-rtdetr-engineering-1",
+    "mode": "desktop",
+    "path": "roadmap-model-selection/detector/det-rtdetr/images/final/WI033-RTDETR-01-r01-desktop.png",
+    "sha256": "114e38590190a9384c624400d57c314a088393553fcdf28bf72819a516c68667",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "det-rtdetr-engineering-1",
+    "mode": "mobile",
+    "path": "roadmap-model-selection/detector/det-rtdetr/images/final/WI033-RTDETR-01-r01-mobile.png",
+    "sha256": "00f1af11bb852fd57a8d2cd1d43f408c1c237201452aa01d8dad96abef2beee3",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "det-rtdetr-engineering-2",
+    "mode": "desktop",
+    "path": "roadmap-model-selection/detector/det-rtdetr/images/final/WI033-RTDETR-02-r02-desktop.png",
+    "sha256": "819a561fed50fd5e50738da58f29e49c9c0421c00ee513b48f803b3da9d214c0",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "det-rtdetr-engineering-2",
+    "mode": "mobile",
+    "path": "roadmap-model-selection/detector/det-rtdetr/images/final/WI033-RTDETR-02-r02-mobile.png",
+    "sha256": "6e2c161d6fb3c3b0978ba32f2b2ecb21e1810d327d64dd2c5c7a7dfaabec7daf",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "det-rtdetr-engineering-3",
+    "mode": "desktop",
+    "path": "roadmap-model-selection/detector/det-rtdetr/images/final/WI033-RTDETR-03-r02-desktop.png",
+    "sha256": "d967d8ef570c269271a0cded828ecf49ecac3a59fbcbcd9d039eb649aa3f0b6b",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "det-rtdetr-engineering-3",
+    "mode": "mobile",
+    "path": "roadmap-model-selection/detector/det-rtdetr/images/final/WI033-RTDETR-03-r02-mobile.png",
+    "sha256": "2bb94479dd434b5b8fa23ee24c2724d40c5e94c7f5667ab2e909f0286ef13d83",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "det-rtdetr-engineering-4",
+    "mode": "desktop",
+    "path": "roadmap-model-selection/detector/det-rtdetr/images/final/WI033-RTDETR-04-r01-desktop.png",
+    "sha256": "e37fec1773c45452ee350437f5f79f081824b9c27584081853fe93a826affebb",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "det-rtdetr-engineering-4",
+    "mode": "mobile",
+    "path": "roadmap-model-selection/detector/det-rtdetr/images/final/WI033-RTDETR-04-r01-mobile.png",
+    "sha256": "2a133ba5582136b37e4519e0a5b07007057826d83441371ec57bffaf3f7b3cc5",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "det-grounding-dino-interface-engineering-1",
+    "mode": "desktop",
+    "path": "roadmap-model-selection/detector/det-grounding-dino-interface/images/final/WI033-GROUNDING-DINO-01-r02-desktop.png",
+    "sha256": "236b2d16592bb04c6c33ebfb5dd6784beda48c8300c812b9b95d5766cd6dcf02",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "det-grounding-dino-interface-engineering-1",
+    "mode": "mobile",
+    "path": "roadmap-model-selection/detector/det-grounding-dino-interface/images/final/WI033-GROUNDING-DINO-01-r02-mobile.png",
+    "sha256": "cc436289c8b86f423ecb5b33529d1a4ec054e44f503ba32eb71a54eec1e54c68",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "det-grounding-dino-interface-engineering-2",
+    "mode": "desktop",
+    "path": "roadmap-model-selection/detector/det-grounding-dino-interface/images/final/WI033-GROUNDING-DINO-02-r02-desktop.png",
+    "sha256": "6f3fcf01696d21835411fc713cc62fe369b760891429e61e7b8ef616037c23aa",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "det-grounding-dino-interface-engineering-2",
+    "mode": "mobile",
+    "path": "roadmap-model-selection/detector/det-grounding-dino-interface/images/final/WI033-GROUNDING-DINO-02-r02-mobile.png",
+    "sha256": "9428c183138a78e2d67bc7f9882c54ab9c62ddffcb645062b3b1a3ead02ff5a2",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "det-grounding-dino-interface-engineering-3",
+    "mode": "desktop",
+    "path": "roadmap-model-selection/detector/det-grounding-dino-interface/images/final/WI033-GROUNDING-DINO-03-r02-desktop.png",
+    "sha256": "897981dfdafcf8118f3a2d59ae211db1dd618da853ed424ed41058e917ac5d5d",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "det-grounding-dino-interface-engineering-3",
+    "mode": "mobile",
+    "path": "roadmap-model-selection/detector/det-grounding-dino-interface/images/final/WI033-GROUNDING-DINO-03-r02-mobile.png",
+    "sha256": "e73a25bad3e0443c6e2a5f7e549c4ae7472d784fdfc4cd0f976893701f1a5a83",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "det-grounding-dino-interface-engineering-4",
+    "mode": "desktop",
+    "path": "roadmap-model-selection/detector/det-grounding-dino-interface/images/final/WI033-GROUNDING-DINO-04-r01-desktop.png",
+    "sha256": "40494da96ad89722b2e2d1ec05cf48262579d0a7650712e05c08744f52105c2c",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "det-grounding-dino-interface-engineering-4",
+    "mode": "mobile",
+    "path": "roadmap-model-selection/detector/det-grounding-dino-interface/images/final/WI033-GROUNDING-DINO-04-r01-mobile.png",
+    "sha256": "b0d4fc7b2825be0199ce7c8da6af75320dd1c24a62b0603cca4a6e7ac10fd669",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "yoloe-engineering-1",
+    "mode": "desktop",
+    "path": "roadmap-model-selection/detector/yoloe/images/final/WI033-YOLOE-01-r01-desktop.png",
+    "sha256": "20218b6b4a4fec8569dcbb87c181fa9fa7712ecfe7b41cbcab6e1cd359be0cab",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "yoloe-engineering-1",
+    "mode": "mobile",
+    "path": "roadmap-model-selection/detector/yoloe/images/final/WI033-YOLOE-01-r01-mobile.png",
+    "sha256": "7d6b7eaf6f06d51edb9448be390342e59dcc8852f21ad593e12b89fa71d34e61",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "yoloe-engineering-2",
+    "mode": "desktop",
+    "path": "roadmap-model-selection/detector/yoloe/images/final/WI033-YOLOE-02-r02-desktop.png",
+    "sha256": "88d24e3c8485c4c83b2c4319a04ea232bae50e069d81222898d0cf04668dfd1e",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "yoloe-engineering-2",
+    "mode": "mobile",
+    "path": "roadmap-model-selection/detector/yoloe/images/final/WI033-YOLOE-02-r02-mobile.png",
+    "sha256": "70652c92709d5d67a00b735a6a5b1a43198fbd32def423d8c2b937d37a3bf45f",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "yoloe-engineering-3",
+    "mode": "desktop",
+    "path": "roadmap-model-selection/detector/yoloe/images/final/WI033-YOLOE-03-r01-desktop.png",
+    "sha256": "8494ebe8ae63709dfd137fbec31e77658af4d8297072ee569d5acc697f766177",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "yoloe-engineering-3",
+    "mode": "mobile",
+    "path": "roadmap-model-selection/detector/yoloe/images/final/WI033-YOLOE-03-r01-mobile.png",
+    "sha256": "71208f264801bf35a00db0cbc45dddcaa293e516a98cda4a1f6db3d51ed522a8",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "yoloe-engineering-4",
+    "mode": "desktop",
+    "path": "roadmap-model-selection/detector/yoloe/images/final/WI033-YOLOE-04-r01-desktop.png",
+    "sha256": "8669e2837574324e4713fa0e91a5830af0e952642eb5805fdf7bd8701843b73f",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "yoloe-engineering-4",
+    "mode": "mobile",
+    "path": "roadmap-model-selection/detector/yoloe/images/final/WI033-YOLOE-04-r01-mobile.png",
+    "sha256": "bcecfaf484b80074d0203708d4eb5307e4f23fd286bf17405872b60a4d28b858",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "dinov2-engineering-1",
+    "mode": "desktop",
+    "path": "roadmap-model-selection/foundation-vlm-open-world/dinov2/images/final/WI033-DINOV2-01-r01-desktop.png",
+    "sha256": "c95cff0085e6f3258d2b86f1d84c66876fc21e5084550abd8ed5e1d706521f4e",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "dinov2-engineering-1",
+    "mode": "mobile",
+    "path": "roadmap-model-selection/foundation-vlm-open-world/dinov2/images/final/WI033-DINOV2-01-r01-mobile.png",
+    "sha256": "f769fe1acf5518318f2a6a842418f5572d41041b3eed3e859d74709c0a24d822",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "dinov2-engineering-2",
+    "mode": "desktop",
+    "path": "roadmap-model-selection/foundation-vlm-open-world/dinov2/images/final/WI033-DINOV2-02-r03-desktop.png",
+    "sha256": "89090cadd09a1969bbb351f0ecc0239b6639d957ac0a990dab9c9a409f417c67",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "dinov2-engineering-2",
+    "mode": "mobile",
+    "path": "roadmap-model-selection/foundation-vlm-open-world/dinov2/images/final/WI033-DINOV2-02-r03-mobile.png",
+    "sha256": "6eb0cc431e5e824607c31bfed5148b129f53df0d1b860942b3731a56887e4427",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "dinov2-engineering-3",
+    "mode": "desktop",
+    "path": "roadmap-model-selection/foundation-vlm-open-world/dinov2/images/final/WI033-DINOV2-03-r01-desktop.png",
+    "sha256": "6fc8d3224f7bc472cc27937c22edac5a1beacca26e7c7c7c38fd3332d75e275c",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "dinov2-engineering-3",
+    "mode": "mobile",
+    "path": "roadmap-model-selection/foundation-vlm-open-world/dinov2/images/final/WI033-DINOV2-03-r01-mobile.png",
+    "sha256": "87983006b8900166bfef912136a1a2557ac5a33b257e215594dcd555c48cb4bb",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "dinov2-engineering-4",
+    "mode": "desktop",
+    "path": "roadmap-model-selection/foundation-vlm-open-world/dinov2/images/final/WI033-DINOV2-04-r01-desktop.png",
+    "sha256": "7e284cf2cf07f0a458b0a975f32eb321db3f01bb3b98ada4bf250194edbc6aa5",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "dinov2-engineering-4",
+    "mode": "mobile",
+    "path": "roadmap-model-selection/foundation-vlm-open-world/dinov2/images/final/WI033-DINOV2-04-r01-mobile.png",
+    "sha256": "58483bd3a8066953cfc98eacbe4413299b37785dfc324cf6ac2f109dd6e78600",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "llava-engineering-1",
+    "mode": "desktop",
+    "path": "roadmap-model-selection/foundation-vlm-open-world/llava/images/final/WI033-LLAVA-01-r02-desktop.png",
+    "sha256": "2c307434204b9316eef21cc6807bb308b43b8b6ea69583243609ee2bcdcb2ef7",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "llava-engineering-1",
+    "mode": "mobile",
+    "path": "roadmap-model-selection/foundation-vlm-open-world/llava/images/final/WI033-LLAVA-01-r02-mobile.png",
+    "sha256": "38c01b2bfe0aabd6edf68193c622f1349772a9f692547b367fd2049f24a4b0d1",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "llava-engineering-2",
+    "mode": "desktop",
+    "path": "roadmap-model-selection/foundation-vlm-open-world/llava/images/final/WI033-LLAVA-02-r02-desktop.png",
+    "sha256": "d1a26ed26b60c41e5c9b5502e0991fbd86de5d706c2ac2db191102d1a8aa18af",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "llava-engineering-2",
+    "mode": "mobile",
+    "path": "roadmap-model-selection/foundation-vlm-open-world/llava/images/final/WI033-LLAVA-02-r02-mobile.png",
+    "sha256": "1ae0f771a2f7c8923cc1573aaf5eb8148c7190a80074a4172df743017e19eb2e",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "llava-engineering-3",
+    "mode": "desktop",
+    "path": "roadmap-model-selection/foundation-vlm-open-world/llava/images/final/WI033-LLAVA-03-r02-desktop.png",
+    "sha256": "690c145fcc879b3892ae45e68e4c2cef867819b6a498f2672ef11870e669fc0a",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "llava-engineering-3",
+    "mode": "mobile",
+    "path": "roadmap-model-selection/foundation-vlm-open-world/llava/images/final/WI033-LLAVA-03-r02-mobile.png",
+    "sha256": "1193eaafb3f397ed3fcd9c3521537be5dcc2c2d8b5b805421749d7b5ae1301d3",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "llava-engineering-4",
+    "mode": "desktop",
+    "path": "roadmap-model-selection/foundation-vlm-open-world/llava/images/final/WI033-LLAVA-04-r01-desktop.png",
+    "sha256": "26bc0af731d46c4c664d4ba7f3dbe8522c7f177e5edb5674089033eb6ac3516d",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "llava-engineering-4",
+    "mode": "mobile",
+    "path": "roadmap-model-selection/foundation-vlm-open-world/llava/images/final/WI033-LLAVA-04-r01-mobile.png",
+    "sha256": "957f58033641aa3b7a7c918be32146d05823b203183b0248f3260be363a9def6",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "qwen-vl-engineering-1",
+    "mode": "desktop",
+    "path": "roadmap-model-selection/foundation-vlm-open-world/qwen-vl/images/final/WI033-QWEN-01-r01-desktop.png",
+    "sha256": "44cad0b20ee32bc316d4b9cecf461cd20e54f6a981f6aba89ebb404661ba6f46",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "qwen-vl-engineering-1",
+    "mode": "mobile",
+    "path": "roadmap-model-selection/foundation-vlm-open-world/qwen-vl/images/final/WI033-QWEN-01-r01-mobile.png",
+    "sha256": "12d25dfcc3e54b5d09c7b7307f991da5f3949f2d9c3877549cf6a14b509e26fa",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "qwen-vl-engineering-2",
+    "mode": "desktop",
+    "path": "roadmap-model-selection/foundation-vlm-open-world/qwen-vl/images/final/WI033-QWEN-02-r02-desktop.png",
+    "sha256": "5c3ae3523ea0170b83ffdd2673e3454db5b85641f6ec979f936e03c3ef9708d3",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "qwen-vl-engineering-2",
+    "mode": "mobile",
+    "path": "roadmap-model-selection/foundation-vlm-open-world/qwen-vl/images/final/WI033-QWEN-02-r02-mobile.png",
+    "sha256": "370f2ece756461b3ce17044d7983d99a9eb7ef04bbbd4ffbfa3e7e58caca6fa0",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "qwen-vl-engineering-3",
+    "mode": "desktop",
+    "path": "roadmap-model-selection/foundation-vlm-open-world/qwen-vl/images/final/WI033-QWEN-03-r01-desktop.png",
+    "sha256": "c150f34a1216848d625b12e3da4f539319d4a079ff76d5a78e8ce729abbf7219",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "qwen-vl-engineering-3",
+    "mode": "mobile",
+    "path": "roadmap-model-selection/foundation-vlm-open-world/qwen-vl/images/final/WI033-QWEN-03-r01-mobile.png",
+    "sha256": "23f80915964d8c9f7c65f338fb5298bca795e45f71294ab9403aa6d5c692de35",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "qwen-vl-engineering-4",
+    "mode": "desktop",
+    "path": "roadmap-model-selection/foundation-vlm-open-world/qwen-vl/images/final/WI033-QWEN-04-r01-desktop.png",
+    "sha256": "6ac4075b8e151f82c182f158248fcfd7588918573662a4c85c493114913d1981",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "qwen-vl-engineering-4",
+    "mode": "mobile",
+    "path": "roadmap-model-selection/foundation-vlm-open-world/qwen-vl/images/final/WI033-QWEN-04-r01-mobile.png",
+    "sha256": "a3d77a733116126d8b597666406f4d342a95bf10d7fa0a5efe414c056f19b57f",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "gemini-vision-engineering-1",
+    "mode": "desktop",
+    "path": "roadmap-model-selection/foundation-vlm-open-world/gemini-vision/images/final/WI033-GEMINI-01-r02-desktop.png",
+    "sha256": "0b2dd5f33064fb2747ee60376c8cef9061d3f31bb1ddc9b5729fca31079bb553",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "gemini-vision-engineering-1",
+    "mode": "mobile",
+    "path": "roadmap-model-selection/foundation-vlm-open-world/gemini-vision/images/final/WI033-GEMINI-01-r02-mobile.png",
+    "sha256": "45c6377c3fb62ee29b74a985ce249179c869f45b2d39a22c6cb0f9227f66064d",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "gemini-vision-engineering-2",
+    "mode": "desktop",
+    "path": "roadmap-model-selection/foundation-vlm-open-world/gemini-vision/images/final/WI033-GEMINI-02-r02-desktop.png",
+    "sha256": "803c8b3111064df8a20bcdee80d94a93cf908989ff76d5088fc70adf3f1abaea",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "gemini-vision-engineering-2",
+    "mode": "mobile",
+    "path": "roadmap-model-selection/foundation-vlm-open-world/gemini-vision/images/final/WI033-GEMINI-02-r02-mobile.png",
+    "sha256": "49f3a87704a85bfaac47a87d034ea52b29405969b443fde20e8d5282bd54e0c0",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "gemini-vision-engineering-3",
+    "mode": "desktop",
+    "path": "roadmap-model-selection/foundation-vlm-open-world/gemini-vision/images/final/WI033-GEMINI-03-r02-desktop.png",
+    "sha256": "853a42986c3e4241157f6312ac1d7ae276646712d4c68219683d6b081bc20f43",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "gemini-vision-engineering-3",
+    "mode": "mobile",
+    "path": "roadmap-model-selection/foundation-vlm-open-world/gemini-vision/images/final/WI033-GEMINI-03-r02-mobile.png",
+    "sha256": "e2a28ee54df46b0b58f0ccecbdc1f53ff468431724976c934224ef64fcc04dbb",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "gemini-vision-engineering-4",
+    "mode": "desktop",
+    "path": "roadmap-model-selection/foundation-vlm-open-world/gemini-vision/images/final/WI033-GEMINI-04-r01-desktop.png",
+    "sha256": "bb44e1eb5f77b7e5c91ec4cd25684f6f377da39c65252c509b8584812c5ae570",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "gemini-vision-engineering-4",
+    "mode": "mobile",
+    "path": "roadmap-model-selection/foundation-vlm-open-world/gemini-vision/images/final/WI033-GEMINI-04-r01-mobile.png",
+    "sha256": "d7829dbe8712d8e8097221990f490bfa31c6aaa9bd61cb510189baa95f4ab9bc",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  }
+]

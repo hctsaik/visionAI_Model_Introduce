@@ -1,12 +1,14 @@
 # AnomalyCLIP slide manifest
 
-| slide_id | course page | teaching purpose | style | active asset | status |
-| --- | --- | --- | --- | --- | --- |
-| `ANOCLIP-01` | 04-63 | Position auxiliary prompt learning, target-data exclusion, learned object-agnostic normal / anomaly tokens, and zero-shot target transfer. | C | `images/final/ANOCLIP-01-positioning_v02-ppt-master-style.png` | approved |
-| `ANOCLIP-02` | 04-64 | Explain learned prompt tokens, global and patch CLIP features, similarity alignment, patch map, score fusion, and calibration. | C | `images/final/ANOCLIP-02-architecture_v02-ppt-master-style.png` | approved |
-| `ANOCLIP-03` | 04-65 | Govern CLIP / tokenizer, auxiliary split, prompt learning, feature adaptation, patch mapping, target transfer, real holdout, and complete P95/P99. | C | `images/final/ANOCLIP-03-build-inference_v02-ppt-master-style.png` | approved |
-| `ANOCLIP-04` | 04-66 | Gate prompt overfit / leakage, language-domain mismatch, tiny defects, uncalibrated scores, global logic, and fair WinCLIP comparison. | D | `images/final/ANOCLIP-04-selection-boundary_v02-ppt-comparison-style.png` | approved |
+| slide_id | 教學目標 | 版型 | active asset | 狀態 |
+| --- | --- | --- | --- | --- |
+| `ANOCLIP-01` | AnomalyCLIP：目標零樣本仍有學習來源 | C | `images/final/WI033-ANOCLIP-01-r01-desktop.png` | native_and_page_reviewed_user_pending |
+| `ANOCLIP-02` | AnomalyCLIP：先學提示，再定位新件 | C | `images/final/WI033-ANOCLIP-02-r02-desktop.png` | native_and_page_reviewed_user_pending |
+| `ANOCLIP-03` | AnomalyCLIP：學到的提示需要版本 | C | `images/final/WI033-ANOCLIP-03-r02-desktop.png` | native_and_page_reviewed_user_pending |
+| `ANOCLIP-04` | AnomalyCLIP：語意相似也可能看錯位置 | D | `images/final/WI033-ANOCLIP-04-r02-desktop.png` | native_and_page_reviewed_user_pending |
 
-## Version history
-
-- v01 is the active deterministic rendering line, produced by `tools/render_anomalyclip_cardgrid.py` with the reviewed white technical-card system. No ImageGen background or existing final asset was overwritten.
+## 保留的歷史來源（非目前啟用）
+- [ANOCLIP-01](images/final/ANOCLIP-01-positioning_v02-ppt-master-style.png)
+- [ANOCLIP-02](images/final/ANOCLIP-02-architecture_v02-ppt-master-style.png)
+- [ANOCLIP-03](images/final/ANOCLIP-03-build-inference_v02-ppt-master-style.png)
+- [ANOCLIP-04](images/final/ANOCLIP-04-selection-boundary_v02-ppt-comparison-style.png)

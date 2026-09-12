@@ -1,0 +1,2162 @@
+[
+  {
+    "id": "det-yolo-dense-engineering-1",
+    "image": "det-yolo-dense-engineering-1-r01-desktop.png",
+    "sha256": "9b584fb9bb515911272f39bdc833fc30ce092387a8004b565fb0d51951190486",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "YOLOv8式：從有標註的物件學出框；同PCB候選/去重/原圖映射分開，驗收另列定位偏移與漏框，非NMS同例矛盾。",
+      "選定桌機與手機逐張原生實看；三節點、框/工件、算例和結論可讀",
+      "幾何簡化；部分長術語與長捲動扣分，未真人理解測試"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "精確幾何與統一配色，質感簡化"
+      ],
+      "completeness": [
+        9,
+        "框與類別來自訓練，不能用熱點代替框。"
+      ],
+      "professionalism": [
+        9,
+        "同PCB候選/去重/原圖映射分開，驗收另列定位偏移與漏框，非NMS同例矛盾。"
+      ],
+      "density": [
+        8,
+        "三段直讀，術語稍密"
+      ],
+      "hierarchy": [
+        9,
+        "單一路徑與單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch4-page-assessment.json; batch4-failure-page-review.json"
+  },
+  {
+    "id": "det-yolo-dense-engineering-1",
+    "image": "det-yolo-dense-engineering-1-r01-mobile.png",
+    "sha256": "4b4e970ac2566172e5df5c0de0e6566ab0e201cb7f8c9b96510ab36391359a61",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "YOLOv8式：從有標註的物件學出框；同PCB候選/去重/原圖映射分開，驗收另列定位偏移與漏框，非NMS同例矛盾。",
+      "選定桌機與手機逐張原生實看；三節點、框/工件、算例和結論可讀",
+      "幾何簡化；部分長術語與長捲動扣分，未真人理解測試"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "精確幾何與統一配色，質感簡化"
+      ],
+      "completeness": [
+        9,
+        "框與類別來自訓練，不能用熱點代替框。"
+      ],
+      "professionalism": [
+        9,
+        "同PCB候選/去重/原圖映射分開，驗收另列定位偏移與漏框，非NMS同例矛盾。"
+      ],
+      "density": [
+        8,
+        "三段直讀，術語稍密"
+      ],
+      "hierarchy": [
+        9,
+        "單一路徑與單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch4-page-assessment.json; batch4-failure-page-review.json"
+  },
+  {
+    "id": "det-yolo-dense-engineering-3",
+    "image": "det-yolo-dense-engineering-3-r02-desktop.png",
+    "sha256": "07148480ae876747b089d6af8634035f94210a5e51ee1ccd9955949424eee0c3",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "YOLO：去重設定也屬於交付條件；同PCB候選/去重/原圖映射分開，驗收另列定位偏移與漏框，非NMS同例矛盾。",
+      "選定桌機與手機逐張原生實看；三節點、框/工件、算例和結論可讀",
+      "幾何簡化；部分長術語與長捲動扣分，未真人理解測試"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "精確幾何與統一配色，質感簡化"
+      ],
+      "completeness": [
+        9,
+        "模型、前處理與門檻一起固定，再驗漏件。"
+      ],
+      "professionalism": [
+        9,
+        "同PCB候選/去重/原圖映射分開，驗收另列定位偏移與漏框，非NMS同例矛盾。"
+      ],
+      "density": [
+        8,
+        "三段直讀，術語稍密"
+      ],
+      "hierarchy": [
+        9,
+        "單一路徑與單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch4-page-assessment.json; batch4-failure-page-review.json"
+  },
+  {
+    "id": "det-yolo-dense-engineering-3",
+    "image": "det-yolo-dense-engineering-3-r02-mobile.png",
+    "sha256": "3d2004337dafeb60afa0a6ffcc00a23589cabb7fc1b12f770758cf1a540f8f7c",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "YOLO：去重設定也屬於交付條件；同PCB候選/去重/原圖映射分開，驗收另列定位偏移與漏框，非NMS同例矛盾。",
+      "選定桌機與手機逐張原生實看；三節點、框/工件、算例和結論可讀",
+      "幾何簡化；部分長術語與長捲動扣分，未真人理解測試"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "精確幾何與統一配色，質感簡化"
+      ],
+      "completeness": [
+        9,
+        "模型、前處理與門檻一起固定，再驗漏件。"
+      ],
+      "professionalism": [
+        9,
+        "同PCB候選/去重/原圖映射分開，驗收另列定位偏移與漏框，非NMS同例矛盾。"
+      ],
+      "density": [
+        8,
+        "三段直讀，術語稍密"
+      ],
+      "hierarchy": [
+        9,
+        "單一路徑與單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch4-page-assessment.json; batch4-failure-page-review.json"
+  },
+  {
+    "id": "det-yolo-dense-engineering-4",
+    "image": "det-yolo-dense-engineering-4-r01-desktop.png",
+    "sha256": "01aa4b1d07f8e0857f447184093e6f66252d94297e6e45c6ad7be3cf1e2c8f96",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "YOLO與RT-DETR：同一PCB比較交付；同PCB候選/去重/原圖映射分開，驗收另列定位偏移與漏框，非NMS同例矛盾。",
+      "選定桌機與手機逐張原生實看；三節點、框/工件、算例和結論可讀",
+      "幾何簡化；部分長術語與長捲動扣分，未真人理解測試"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "精確幾何與統一配色，質感簡化"
+      ],
+      "completeness": [
+        9,
+        "比較逐件錯誤與完整延遲，不只看有無NMS。"
+      ],
+      "professionalism": [
+        9,
+        "同PCB候選/去重/原圖映射分開，驗收另列定位偏移與漏框，非NMS同例矛盾。"
+      ],
+      "density": [
+        8,
+        "三段直讀，術語稍密"
+      ],
+      "hierarchy": [
+        9,
+        "單一路徑與單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch4-page-assessment.json; batch4-failure-page-review.json"
+  },
+  {
+    "id": "det-yolo-dense-engineering-4",
+    "image": "det-yolo-dense-engineering-4-r01-mobile.png",
+    "sha256": "803d71eb2bd50f988915240ed38bb40e92cdeb2f4eca1759129faffbc913e7dd",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "YOLO與RT-DETR：同一PCB比較交付；同PCB候選/去重/原圖映射分開，驗收另列定位偏移與漏框，非NMS同例矛盾。",
+      "選定桌機與手機逐張原生實看；三節點、框/工件、算例和結論可讀",
+      "幾何簡化；部分長術語與長捲動扣分，未真人理解測試"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "精確幾何與統一配色，質感簡化"
+      ],
+      "completeness": [
+        9,
+        "比較逐件錯誤與完整延遲，不只看有無NMS。"
+      ],
+      "professionalism": [
+        9,
+        "同PCB候選/去重/原圖映射分開，驗收另列定位偏移與漏框，非NMS同例矛盾。"
+      ],
+      "density": [
+        8,
+        "三段直讀，術語稍密"
+      ],
+      "hierarchy": [
+        9,
+        "單一路徑與單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch4-page-assessment.json; batch4-failure-page-review.json"
+  },
+  {
+    "id": "det-rtdetr-engineering-1",
+    "image": "det-rtdetr-engineering-1-r01-desktop.png",
+    "sha256": "114e38590190a9384c624400d57c314a088393553fcdf28bf72819a516c68667",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "RT-DETR：query逐步定位各個物件；query起點與更新次數可追，訓練匹配不混入推論，與YOLO按工作成本比較。",
+      "選定桌機與手機逐張原生實看；三節點、框/工件、算例和結論可讀",
+      "幾何簡化；部分長術語與長捲動扣分，未真人理解測試"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "精確幾何與統一配色，質感簡化"
+      ],
+      "completeness": [
+        9,
+        "輸出是物件框；一對一匹配只在訓練使用。"
+      ],
+      "professionalism": [
+        9,
+        "query起點與更新次數可追，訓練匹配不混入推論，與YOLO按工作成本比較。"
+      ],
+      "density": [
+        8,
+        "三段直讀，術語稍密"
+      ],
+      "hierarchy": [
+        9,
+        "單一路徑與單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch4-page-assessment.json; batch4-failure-page-review.json"
+  },
+  {
+    "id": "det-rtdetr-engineering-1",
+    "image": "det-rtdetr-engineering-1-r01-mobile.png",
+    "sha256": "00f1af11bb852fd57a8d2cd1d43f408c1c237201452aa01d8dad96abef2beee3",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "RT-DETR：query逐步定位各個物件；query起點與更新次數可追，訓練匹配不混入推論，與YOLO按工作成本比較。",
+      "選定桌機與手機逐張原生實看；三節點、框/工件、算例和結論可讀",
+      "幾何簡化；部分長術語與長捲動扣分，未真人理解測試"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "精確幾何與統一配色，質感簡化"
+      ],
+      "completeness": [
+        9,
+        "輸出是物件框；一對一匹配只在訓練使用。"
+      ],
+      "professionalism": [
+        9,
+        "query起點與更新次數可追，訓練匹配不混入推論，與YOLO按工作成本比較。"
+      ],
+      "density": [
+        8,
+        "三段直讀，術語稍密"
+      ],
+      "hierarchy": [
+        9,
+        "單一路徑與單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch4-page-assessment.json; batch4-failure-page-review.json"
+  },
+  {
+    "id": "det-rtdetr-engineering-3",
+    "image": "det-rtdetr-engineering-3-r02-desktop.png",
+    "sha256": "d967d8ef570c269271a0cded828ecf49ecac3a59fbcbcd9d039eb649aa3f0b6b",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "RT-DETR：修框次數也要連品質驗；query起點與更新次數可追，訓練匹配不混入推論，與YOLO按工作成本比較。",
+      "選定桌機與手機逐張原生實看；三節點、框/工件、算例和結論可讀",
+      "幾何簡化；部分長術語與長捲動扣分，未真人理解測試"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "精確幾何與統一配色，質感簡化"
+      ],
+      "completeness": [
+        9,
+        "減少decoder層可改成本，不能預設品質不變。"
+      ],
+      "professionalism": [
+        9,
+        "query起點與更新次數可追，訓練匹配不混入推論，與YOLO按工作成本比較。"
+      ],
+      "density": [
+        8,
+        "三段直讀，術語稍密"
+      ],
+      "hierarchy": [
+        9,
+        "單一路徑與單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch4-page-assessment.json; batch4-failure-page-review.json"
+  },
+  {
+    "id": "det-rtdetr-engineering-3",
+    "image": "det-rtdetr-engineering-3-r02-mobile.png",
+    "sha256": "2bb94479dd434b5b8fa23ee24c2724d40c5e94c7f5667ab2e909f0286ef13d83",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "RT-DETR：修框次數也要連品質驗；query起點與更新次數可追，訓練匹配不混入推論，與YOLO按工作成本比較。",
+      "選定桌機與手機逐張原生實看；三節點、框/工件、算例和結論可讀",
+      "幾何簡化；部分長術語與長捲動扣分，未真人理解測試"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "精確幾何與統一配色，質感簡化"
+      ],
+      "completeness": [
+        9,
+        "減少decoder層可改成本，不能預設品質不變。"
+      ],
+      "professionalism": [
+        9,
+        "query起點與更新次數可追，訓練匹配不混入推論，與YOLO按工作成本比較。"
+      ],
+      "density": [
+        8,
+        "三段直讀，術語稍密"
+      ],
+      "hierarchy": [
+        9,
+        "單一路徑與單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch4-page-assessment.json; batch4-failure-page-review.json"
+  },
+  {
+    "id": "det-rtdetr-engineering-4",
+    "image": "det-rtdetr-engineering-4-r01-desktop.png",
+    "sha256": "e37fec1773c45452ee350437f5f79f081824b9c27584081853fe93a826affebb",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "RT-DETR與YOLO：比較工作代價；query起點與更新次數可追，訓練匹配不混入推論，與YOLO按工作成本比較。",
+      "選定桌機與手機逐張原生實看；三節點、框/工件、算例和結論可讀",
+      "幾何簡化；部分長術語與長捲動扣分，未真人理解測試"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "精確幾何與統一配色，質感簡化"
+      ],
+      "completeness": [
+        9,
+        "去掉NMS是一項設計，域內結果才決定取捨。"
+      ],
+      "professionalism": [
+        9,
+        "query起點與更新次數可追，訓練匹配不混入推論，與YOLO按工作成本比較。"
+      ],
+      "density": [
+        8,
+        "三段直讀，術語稍密"
+      ],
+      "hierarchy": [
+        9,
+        "單一路徑與單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch4-page-assessment.json; batch4-failure-page-review.json"
+  },
+  {
+    "id": "det-rtdetr-engineering-4",
+    "image": "det-rtdetr-engineering-4-r01-mobile.png",
+    "sha256": "2a133ba5582136b37e4519e0a5b07007057826d83441371ec57bffaf3f7b3cc5",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "RT-DETR與YOLO：比較工作代價；query起點與更新次數可追，訓練匹配不混入推論，與YOLO按工作成本比較。",
+      "選定桌機與手機逐張原生實看；三節點、框/工件、算例和結論可讀",
+      "幾何簡化；部分長術語與長捲動扣分，未真人理解測試"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "精確幾何與統一配色，質感簡化"
+      ],
+      "completeness": [
+        9,
+        "去掉NMS是一項設計，域內結果才決定取捨。"
+      ],
+      "professionalism": [
+        9,
+        "query起點與更新次數可追，訓練匹配不混入推論，與YOLO按工作成本比較。"
+      ],
+      "density": [
+        8,
+        "三段直讀，術語稍密"
+      ],
+      "hierarchy": [
+        9,
+        "單一路徑與單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch4-page-assessment.json; batch4-failure-page-review.json"
+  },
+  {
+    "id": "det-grounding-dino-interface-engineering-1",
+    "image": "det-grounding-dino-interface-engineering-1-r02-desktop.png",
+    "sha256": "236b2d16592bb04c6c33ebfb5dd6784beda48c8300c812b9b95d5766cd6dcf02",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "Grounding DINO：用詞語指定想找什麼；任務图以resistor對應兩框，工程2另講交互；提示和門檻一起保存。",
+      "選定桌機與手機逐張原生實看；三節點、框/工件、算例和結論可讀",
+      "幾何簡化；部分長術語與長捲動扣分，未真人理解測試"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "精確幾何與統一配色，質感簡化"
+      ],
+      "completeness": [
+        9,
+        "文字可以引導定位，專業料號仍需另驗。"
+      ],
+      "professionalism": [
+        9,
+        "任務图以resistor對應兩框，工程2另講交互；提示和門檻一起保存。"
+      ],
+      "density": [
+        8,
+        "三段直讀，術語稍密"
+      ],
+      "hierarchy": [
+        9,
+        "單一路徑與單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch4-page-assessment.json; batch4-failure-page-review.json"
+  },
+  {
+    "id": "det-grounding-dino-interface-engineering-1",
+    "image": "det-grounding-dino-interface-engineering-1-r02-mobile.png",
+    "sha256": "cc436289c8b86f423ecb5b33529d1a4ec054e44f503ba32eb71a54eec1e54c68",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "Grounding DINO：用詞語指定想找什麼；任務图以resistor對應兩框，工程2另講交互；提示和門檻一起保存。",
+      "選定桌機與手機逐張原生實看；三節點、框/工件、算例和結論可讀",
+      "幾何簡化；部分長術語與長捲動扣分，未真人理解測試"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "精確幾何與統一配色，質感簡化"
+      ],
+      "completeness": [
+        9,
+        "文字可以引導定位，專業料號仍需另驗。"
+      ],
+      "professionalism": [
+        9,
+        "任務图以resistor對應兩框，工程2另講交互；提示和門檻一起保存。"
+      ],
+      "density": [
+        8,
+        "三段直讀，術語稍密"
+      ],
+      "hierarchy": [
+        9,
+        "單一路徑與單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch4-page-assessment.json; batch4-failure-page-review.json"
+  },
+  {
+    "id": "det-grounding-dino-interface-engineering-3",
+    "image": "det-grounding-dino-interface-engineering-3-r02-desktop.png",
+    "sha256": "897981dfdafcf8118f3a2d59ae211db1dd618da853ed424ed41058e917ac5d5d",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "Grounding DINO：提示詞也是設定；任務图以resistor對應兩框，工程2另講交互；提示和門檻一起保存。",
+      "選定桌機與手機逐張原生實看；三節點、框/工件、算例和結論可讀",
+      "幾何簡化；部分長術語與長捲動扣分，未真人理解測試"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "精確幾何與統一配色，質感簡化"
+      ],
+      "completeness": [
+        9,
+        "保存提示與門檻，框映回原圖後逐件核對。"
+      ],
+      "professionalism": [
+        9,
+        "任務图以resistor對應兩框，工程2另講交互；提示和門檻一起保存。"
+      ],
+      "density": [
+        8,
+        "三段直讀，術語稍密"
+      ],
+      "hierarchy": [
+        9,
+        "單一路徑與單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch4-page-assessment.json; batch4-failure-page-review.json"
+  },
+  {
+    "id": "det-grounding-dino-interface-engineering-3",
+    "image": "det-grounding-dino-interface-engineering-3-r02-mobile.png",
+    "sha256": "e73a25bad3e0443c6e2a5f7e549c4ae7472d784fdfc4cd0f976893701f1a5a83",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "Grounding DINO：提示詞也是設定；任務图以resistor對應兩框，工程2另講交互；提示和門檻一起保存。",
+      "選定桌機與手機逐張原生實看；三節點、框/工件、算例和結論可讀",
+      "幾何簡化；部分長術語與長捲動扣分，未真人理解測試"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "精確幾何與統一配色，質感簡化"
+      ],
+      "completeness": [
+        9,
+        "保存提示與門檻，框映回原圖後逐件核對。"
+      ],
+      "professionalism": [
+        9,
+        "任務图以resistor對應兩框，工程2另講交互；提示和門檻一起保存。"
+      ],
+      "density": [
+        8,
+        "三段直讀，術語稍密"
+      ],
+      "hierarchy": [
+        9,
+        "單一路徑與單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch4-page-assessment.json; batch4-failure-page-review.json"
+  },
+  {
+    "id": "det-grounding-dino-interface-engineering-4",
+    "image": "det-grounding-dino-interface-engineering-4-r01-desktop.png",
+    "sha256": "40494da96ad89722b2e2d1ec05cf48262579d0a7650712e05c08744f52105c2c",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "文字偵測與專用偵測：同題試驗；任務图以resistor對應兩框，工程2另講交互；提示和門檻一起保存。",
+      "選定桌機與手機逐張原生實看；三節點、框/工件、算例和結論可讀",
+      "幾何簡化；部分長術語與長捲動扣分，未真人理解測試"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "精確幾何與統一配色，質感簡化"
+      ],
+      "completeness": [
+        9,
+        "類別常變可試文字提示，穩定任務可訓練專用頭。"
+      ],
+      "professionalism": [
+        9,
+        "任務图以resistor對應兩框，工程2另講交互；提示和門檻一起保存。"
+      ],
+      "density": [
+        8,
+        "三段直讀，術語稍密"
+      ],
+      "hierarchy": [
+        9,
+        "單一路徑與單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch4-page-assessment.json; batch4-failure-page-review.json"
+  },
+  {
+    "id": "det-grounding-dino-interface-engineering-4",
+    "image": "det-grounding-dino-interface-engineering-4-r01-mobile.png",
+    "sha256": "b0d4fc7b2825be0199ce7c8da6af75320dd1c24a62b0603cca4a6e7ac10fd669",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "文字偵測與專用偵測：同題試驗；任務图以resistor對應兩框，工程2另講交互；提示和門檻一起保存。",
+      "選定桌機與手機逐張原生實看；三節點、框/工件、算例和結論可讀",
+      "幾何簡化；部分長術語與長捲動扣分，未真人理解測試"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "精確幾何與統一配色，質感簡化"
+      ],
+      "completeness": [
+        9,
+        "類別常變可試文字提示，穩定任務可訓練專用頭。"
+      ],
+      "professionalism": [
+        9,
+        "任務图以resistor對應兩框，工程2另講交互；提示和門檻一起保存。"
+      ],
+      "density": [
+        8,
+        "三段直讀，術語稍密"
+      ],
+      "hierarchy": [
+        9,
+        "單一路徑與單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch4-page-assessment.json; batch4-failure-page-review.json"
+  },
+  {
+    "id": "yoloe-engineering-1",
+    "image": "yoloe-engineering-1-r01-desktop.png",
+    "sha256": "20218b6b4a4fec8569dcbb87c181fa9fa7712ecfe7b41cbcab6e1cd359be0cab",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "YOLOE：選一種提示模式來找物件；三種模式是替代入口；SAVPE向量加權可算，同類外觀不表示103/272可互換。",
+      "選定桌機與手機逐張原生實看；三節點、框/工件、算例和結論可讀",
+      "幾何簡化；部分長術語與長捲動扣分，未真人理解測試"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "精確幾何與統一配色，質感簡化"
+      ],
+      "completeness": [
+        9,
+        "提示是任務入口，交付仍是框與遮罩。"
+      ],
+      "professionalism": [
+        9,
+        "三種模式是替代入口；SAVPE向量加權可算，同類外觀不表示103/272可互換。"
+      ],
+      "density": [
+        8,
+        "三段直讀，術語稍密"
+      ],
+      "hierarchy": [
+        9,
+        "單一路徑與單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch4-page-assessment.json; batch4-failure-page-review.json"
+  },
+  {
+    "id": "yoloe-engineering-1",
+    "image": "yoloe-engineering-1-r01-mobile.png",
+    "sha256": "7d6b7eaf6f06d51edb9448be390342e59dcc8852f21ad593e12b89fa71d34e61",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "YOLOE：選一種提示模式來找物件；三種模式是替代入口；SAVPE向量加權可算，同類外觀不表示103/272可互換。",
+      "選定桌機與手機逐張原生實看；三節點、框/工件、算例和結論可讀",
+      "幾何簡化；部分長術語與長捲動扣分，未真人理解測試"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "精確幾何與統一配色，質感簡化"
+      ],
+      "completeness": [
+        9,
+        "提示是任務入口，交付仍是框與遮罩。"
+      ],
+      "professionalism": [
+        9,
+        "三種模式是替代入口；SAVPE向量加權可算，同類外觀不表示103/272可互換。"
+      ],
+      "density": [
+        8,
+        "三段直讀，術語稍密"
+      ],
+      "hierarchy": [
+        9,
+        "單一路徑與單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch4-page-assessment.json; batch4-failure-page-review.json"
+  },
+  {
+    "id": "yoloe-engineering-3",
+    "image": "yoloe-engineering-3-r01-desktop.png",
+    "sha256": "8494ebe8ae63709dfd137fbec31e77658af4d8297072ee569d5acc697f766177",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "YOLOE：把提示與結果一起留存；三種模式是替代入口；SAVPE向量加權可算，同類外觀不表示103/272可互換。",
+      "選定桌機與手機逐張原生實看；三節點、框/工件、算例和結論可讀",
+      "幾何簡化；部分長術語與長捲動扣分，未真人理解測試"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "精確幾何與統一配色，質感簡化"
+      ],
+      "completeness": [
+        9,
+        "提示ROI、模式與權重都要可追溯。"
+      ],
+      "professionalism": [
+        9,
+        "三種模式是替代入口；SAVPE向量加權可算，同類外觀不表示103/272可互換。"
+      ],
+      "density": [
+        8,
+        "三段直讀，術語稍密"
+      ],
+      "hierarchy": [
+        9,
+        "單一路徑與單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch4-page-assessment.json; batch4-failure-page-review.json"
+  },
+  {
+    "id": "yoloe-engineering-3",
+    "image": "yoloe-engineering-3-r01-mobile.png",
+    "sha256": "71208f264801bf35a00db0cbc45dddcaa293e516a98cda4a1f6db3d51ed522a8",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "YOLOE：把提示與結果一起留存；三種模式是替代入口；SAVPE向量加權可算，同類外觀不表示103/272可互換。",
+      "選定桌機與手機逐張原生實看；三節點、框/工件、算例和結論可讀",
+      "幾何簡化；部分長術語與長捲動扣分，未真人理解測試"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "精確幾何與統一配色，質感簡化"
+      ],
+      "completeness": [
+        9,
+        "提示ROI、模式與權重都要可追溯。"
+      ],
+      "professionalism": [
+        9,
+        "三種模式是替代入口；SAVPE向量加權可算，同類外觀不表示103/272可互換。"
+      ],
+      "density": [
+        8,
+        "三段直讀，術語稍密"
+      ],
+      "hierarchy": [
+        9,
+        "單一路徑與單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch4-page-assessment.json; batch4-failure-page-review.json"
+  },
+  {
+    "id": "yoloe-engineering-4",
+    "image": "yoloe-engineering-4-r01-desktop.png",
+    "sha256": "8669e2837574324e4713fa0e91a5830af0e952642eb5805fdf7bd8701843b73f",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "YOLOE：提示方便，料號仍要查證；三種模式是替代入口；SAVPE向量加權可算，同類外觀不表示103/272可互換。",
+      "選定桌機與手機逐張原生實看；三節點、框/工件、算例和結論可讀",
+      "幾何簡化；部分長術語與長捲動扣分，未真人理解測試"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "精確幾何與統一配色，質感簡化"
+      ],
+      "completeness": [
+        9,
+        "外觀相似可以被找出，精確規格需要其他證據。"
+      ],
+      "professionalism": [
+        9,
+        "三種模式是替代入口；SAVPE向量加權可算，同類外觀不表示103/272可互換。"
+      ],
+      "density": [
+        8,
+        "三段直讀，術語稍密"
+      ],
+      "hierarchy": [
+        9,
+        "單一路徑與單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch4-page-assessment.json; batch4-failure-page-review.json"
+  },
+  {
+    "id": "yoloe-engineering-4",
+    "image": "yoloe-engineering-4-r01-mobile.png",
+    "sha256": "bcecfaf484b80074d0203708d4eb5307e4f23fd286bf17405872b60a4d28b858",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "YOLOE：提示方便，料號仍要查證；三種模式是替代入口；SAVPE向量加權可算，同類外觀不表示103/272可互換。",
+      "選定桌機與手機逐張原生實看；三節點、框/工件、算例和結論可讀",
+      "幾何簡化；部分長術語與長捲動扣分，未真人理解測試"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "精確幾何與統一配色，質感簡化"
+      ],
+      "completeness": [
+        9,
+        "外觀相似可以被找出，精確規格需要其他證據。"
+      ],
+      "professionalism": [
+        9,
+        "三種模式是替代入口；SAVPE向量加權可算，同類外觀不表示103/272可互換。"
+      ],
+      "density": [
+        8,
+        "三段直讀，術語稍密"
+      ],
+      "hierarchy": [
+        9,
+        "單一路徑與單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch4-page-assessment.json; batch4-failure-page-review.json"
+  },
+  {
+    "id": "dinov2-engineering-1",
+    "image": "dinov2-engineering-1-r01-desktop.png",
+    "sha256": "c95cff0085e6f3258d2b86f1d84c66876fc21e5084550abd8ed5e1d706521f4e",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "DINOv2：先抽表示，再定義下游任務；同L支架、同空間距離.283/.141可核算，背景控制與下游判定分開。",
+      "選定桌機與手機逐張原生實看；三節點、框/工件、算例和結論可讀",
+      "幾何簡化；部分長術語與長捲動扣分，未真人理解測試"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "精確幾何與統一配色，質感簡化"
+      ],
+      "completeness": [
+        9,
+        "骨幹交特徵，分類與異常判定還要另接。"
+      ],
+      "professionalism": [
+        9,
+        "同L支架、同空間距離.283/.141可核算，背景控制與下游判定分開。"
+      ],
+      "density": [
+        8,
+        "三段直讀，術語稍密"
+      ],
+      "hierarchy": [
+        9,
+        "單一路徑與單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch4-page-assessment.json; batch4-failure-page-review.json"
+  },
+  {
+    "id": "dinov2-engineering-1",
+    "image": "dinov2-engineering-1-r01-mobile.png",
+    "sha256": "f769fe1acf5518318f2a6a842418f5572d41041b3eed3e859d74709c0a24d822",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "DINOv2：先抽表示，再定義下游任務；同L支架、同空間距離.283/.141可核算，背景控制與下游判定分開。",
+      "選定桌機與手機逐張原生實看；三節點、框/工件、算例和結論可讀",
+      "幾何簡化；部分長術語與長捲動扣分，未真人理解測試"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "精確幾何與統一配色，質感簡化"
+      ],
+      "completeness": [
+        9,
+        "骨幹交特徵，分類與異常判定還要另接。"
+      ],
+      "professionalism": [
+        9,
+        "同L支架、同空間距離.283/.141可核算，背景控制與下游判定分開。"
+      ],
+      "density": [
+        8,
+        "三段直讀，術語稍密"
+      ],
+      "hierarchy": [
+        9,
+        "單一路徑與單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch4-page-assessment.json; batch4-failure-page-review.json"
+  },
+  {
+    "id": "dinov2-engineering-3",
+    "image": "dinov2-engineering-3-r01-desktop.png",
+    "sha256": "6fc8d3224f7bc472cc27937c22edac5a1beacca26e7c7c7c38fd3332d75e275c",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "DINOv2：查庫必須使用相容特徵；同L支架、同空間距離.283/.141可核算，背景控制與下游判定分開。",
+      "選定桌機與手機逐張原生實看；三節點、框/工件、算例和結論可讀",
+      "幾何簡化；部分長術語與長捲動扣分，未真人理解測試"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "精確幾何與統一配色，質感簡化"
+      ],
+      "completeness": [
+        9,
+        "換骨幹或前處理，舊庫不能直接混用。"
+      ],
+      "professionalism": [
+        9,
+        "同L支架、同空間距離.283/.141可核算，背景控制與下游判定分開。"
+      ],
+      "density": [
+        8,
+        "三段直讀，術語稍密"
+      ],
+      "hierarchy": [
+        9,
+        "單一路徑與單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch4-page-assessment.json; batch4-failure-page-review.json"
+  },
+  {
+    "id": "dinov2-engineering-3",
+    "image": "dinov2-engineering-3-r01-mobile.png",
+    "sha256": "87983006b8900166bfef912136a1a2557ac5a33b257e215594dcd555c48cb4bb",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "DINOv2：查庫必須使用相容特徵；同L支架、同空間距離.283/.141可核算，背景控制與下游判定分開。",
+      "選定桌機與手機逐張原生實看；三節點、框/工件、算例和結論可讀",
+      "幾何簡化；部分長術語與長捲動扣分，未真人理解測試"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "精確幾何與統一配色，質感簡化"
+      ],
+      "completeness": [
+        9,
+        "換骨幹或前處理，舊庫不能直接混用。"
+      ],
+      "professionalism": [
+        9,
+        "同L支架、同空間距離.283/.141可核算，背景控制與下游判定分開。"
+      ],
+      "density": [
+        8,
+        "三段直讀，術語稍密"
+      ],
+      "hierarchy": [
+        9,
+        "單一路徑與單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch4-page-assessment.json; batch4-failure-page-review.json"
+  },
+  {
+    "id": "dinov2-engineering-4",
+    "image": "dinov2-engineering-4-r01-desktop.png",
+    "sha256": "7e284cf2cf07f0a458b0a975f32eb321db3f01bb3b98ada4bf250194edbc6aa5",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "DINOv2：外观差異不等於不良；同L支架、同空間距離.283/.141可核算，背景控制與下游判定分開。",
+      "選定桌機與手機逐張原生實看；三節點、框/工件、算例和結論可讀",
+      "幾何簡化；部分長術語與長捲動扣分，未真人理解測試"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "精確幾何與統一配色，質感簡化"
+      ],
+      "completeness": [
+        9,
+        "同件特徵受條件影響，判定要回到工作規格。"
+      ],
+      "professionalism": [
+        9,
+        "同L支架、同空間距離.283/.141可核算，背景控制與下游判定分開。"
+      ],
+      "density": [
+        8,
+        "三段直讀，術語稍密"
+      ],
+      "hierarchy": [
+        9,
+        "單一路徑與單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch4-page-assessment.json; batch4-failure-page-review.json"
+  },
+  {
+    "id": "dinov2-engineering-4",
+    "image": "dinov2-engineering-4-r01-mobile.png",
+    "sha256": "58483bd3a8066953cfc98eacbe4413299b37785dfc324cf6ac2f109dd6e78600",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "DINOv2：外观差異不等於不良；同L支架、同空間距離.283/.141可核算，背景控制與下游判定分開。",
+      "選定桌機與手機逐張原生實看；三節點、框/工件、算例和結論可讀",
+      "幾何簡化；部分長術語與長捲動扣分，未真人理解測試"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "精確幾何與統一配色，質感簡化"
+      ],
+      "completeness": [
+        9,
+        "同件特徵受條件影響，判定要回到工作規格。"
+      ],
+      "professionalism": [
+        9,
+        "同L支架、同空間距離.283/.141可核算，背景控制與下游判定分開。"
+      ],
+      "density": [
+        8,
+        "三段直讀，術語稍密"
+      ],
+      "hierarchy": [
+        9,
+        "單一路徑與單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch4-page-assessment.json; batch4-failure-page-review.json"
+  },
+  {
+    "id": "llava-engineering-1",
+    "image": "llava-engineering-1-r02-desktop.png",
+    "sha256": "2c307434204b9316eef21cc6807bb308b43b8b6ea69583243609ee2bcdcb2ef7",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "LLaVA：影像與問題共同形成回答；同接頭左有右未見，任務證據與投影機制分圖，未知原因不猜測。",
+      "選定桌機與手機逐張原生實看；三節點、框/工件、算例和結論可讀",
+      "幾何簡化；部分長術語與長捲動扣分，未真人理解測試"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "精確幾何與統一配色，質感簡化"
+      ],
+      "completeness": [
+        9,
+        "可見描述與原因推測要分開交付。"
+      ],
+      "professionalism": [
+        9,
+        "同接頭左有右未見，任務證據與投影機制分圖，未知原因不猜測。"
+      ],
+      "density": [
+        8,
+        "三段直讀，術語稍密"
+      ],
+      "hierarchy": [
+        9,
+        "單一路徑與單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch4-page-assessment.json; batch4-failure-page-review.json"
+  },
+  {
+    "id": "llava-engineering-1",
+    "image": "llava-engineering-1-r02-mobile.png",
+    "sha256": "38c01b2bfe0aabd6edf68193c622f1349772a9f692547b367fd2049f24a4b0d1",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "LLaVA：影像與問題共同形成回答；同接頭左有右未見，任務證據與投影機制分圖，未知原因不猜測。",
+      "選定桌機與手機逐張原生實看；三節點、框/工件、算例和結論可讀",
+      "幾何簡化；部分長術語與長捲動扣分，未真人理解測試"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "精確幾何與統一配色，質感簡化"
+      ],
+      "completeness": [
+        9,
+        "可見描述與原因推測要分開交付。"
+      ],
+      "professionalism": [
+        9,
+        "同接頭左有右未見，任務證據與投影機制分圖，未知原因不猜測。"
+      ],
+      "density": [
+        8,
+        "三段直讀，術語稍密"
+      ],
+      "hierarchy": [
+        9,
+        "單一路徑與單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch4-page-assessment.json; batch4-failure-page-review.json"
+  },
+  {
+    "id": "llava-engineering-3",
+    "image": "llava-engineering-3-r02-desktop.png",
+    "sha256": "690c145fcc879b3892ae45e68e4c2cef867819b6a498f2672ef11870e669fc0a",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "LLaVA：原圖、問題與版本一起保存；同接頭左有右未見，任務證據與投影機制分圖，未知原因不猜測。",
+      "選定桌機與手機逐張原生實看；三節點、框/工件、算例和結論可讀",
+      "幾何簡化；部分長術語與長捲動扣分，未真人理解測試"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "精確幾何與統一配色，質感簡化"
+      ],
+      "completeness": [
+        9,
+        "回答要可追溯，錯誤與不確定都要留存。"
+      ],
+      "professionalism": [
+        9,
+        "同接頭左有右未見，任務證據與投影機制分圖，未知原因不猜測。"
+      ],
+      "density": [
+        8,
+        "三段直讀，術語稍密"
+      ],
+      "hierarchy": [
+        9,
+        "單一路徑與單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch4-page-assessment.json; batch4-failure-page-review.json"
+  },
+  {
+    "id": "llava-engineering-3",
+    "image": "llava-engineering-3-r02-mobile.png",
+    "sha256": "1193eaafb3f397ed3fcd9c3521537be5dcc2c2d8b5b805421749d7b5ae1301d3",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "LLaVA：原圖、問題與版本一起保存；同接頭左有右未見，任務證據與投影機制分圖，未知原因不猜測。",
+      "選定桌機與手機逐張原生實看；三節點、框/工件、算例和結論可讀",
+      "幾何簡化；部分長術語與長捲動扣分，未真人理解測試"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "精確幾何與統一配色，質感簡化"
+      ],
+      "completeness": [
+        9,
+        "回答要可追溯，錯誤與不確定都要留存。"
+      ],
+      "professionalism": [
+        9,
+        "同接頭左有右未見，任務證據與投影機制分圖，未知原因不猜測。"
+      ],
+      "density": [
+        8,
+        "三段直讀，術語稍密"
+      ],
+      "hierarchy": [
+        9,
+        "單一路徑與單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch4-page-assessment.json; batch4-failure-page-review.json"
+  },
+  {
+    "id": "llava-engineering-4",
+    "image": "llava-engineering-4-r01-desktop.png",
+    "sha256": "26bc0af731d46c4c664d4ba7f3dbe8522c7f177e5edb5674089033eb6ac3516d",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "LLaVA與專用視覺：先定義交付；同接頭左有右未見，任務證據與投影機制分圖，未知原因不猜測。",
+      "選定桌機與手機逐張原生實看；三節點、框/工件、算例和結論可讀",
+      "幾何簡化；部分長術語與長捲動扣分，未真人理解測試"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "精確幾何與統一配色，質感簡化"
+      ],
+      "completeness": [
+        9,
+        "可追問的回答與固定座位判定，各驗各的成本。"
+      ],
+      "professionalism": [
+        9,
+        "同接頭左有右未見，任務證據與投影機制分圖，未知原因不猜測。"
+      ],
+      "density": [
+        8,
+        "三段直讀，術語稍密"
+      ],
+      "hierarchy": [
+        9,
+        "單一路徑與單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch4-page-assessment.json; batch4-failure-page-review.json"
+  },
+  {
+    "id": "llava-engineering-4",
+    "image": "llava-engineering-4-r01-mobile.png",
+    "sha256": "957f58033641aa3b7a7c918be32146d05823b203183b0248f3260be363a9def6",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "LLaVA與專用視覺：先定義交付；同接頭左有右未見，任務證據與投影機制分圖，未知原因不猜測。",
+      "選定桌機與手機逐張原生實看；三節點、框/工件、算例和結論可讀",
+      "幾何簡化；部分長術語與長捲動扣分，未真人理解測試"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "精確幾何與統一配色，質感簡化"
+      ],
+      "completeness": [
+        9,
+        "可追問的回答與固定座位判定，各驗各的成本。"
+      ],
+      "professionalism": [
+        9,
+        "同接頭左有右未見，任務證據與投影機制分圖，未知原因不猜測。"
+      ],
+      "density": [
+        8,
+        "三段直讀，術語稍密"
+      ],
+      "hierarchy": [
+        9,
+        "單一路徑與單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch4-page-assessment.json; batch4-failure-page-review.json"
+  },
+  {
+    "id": "qwen-vl-engineering-1",
+    "image": "qwen-vl-engineering-1-r01-desktop.png",
+    "sha256": "44cad0b20ee32bc316d4b9cecf461cd20e54f6a981f6aba89ebb404661ba6f46",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "Qwen2-VL：讀文字也要保留位置；同銘牌B08欄位，位置/像素預算/原圖核對相連，OCR比較不捏造勝負。",
+      "選定桌機與手機逐張原生實看；三節點、框/工件、算例和結論可讀",
+      "幾何簡化；部分長術語與長捲動扣分，未真人理解測試"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "精確幾何與統一配色，質感簡化"
+      ],
+      "completeness": [
+        9,
+        "視覺token保留線索，回答仍須逐欄核對。"
+      ],
+      "professionalism": [
+        9,
+        "同銘牌B08欄位，位置/像素預算/原圖核對相連，OCR比較不捏造勝負。"
+      ],
+      "density": [
+        8,
+        "三段直讀，術語稍密"
+      ],
+      "hierarchy": [
+        9,
+        "單一路徑與單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch4-page-assessment.json; batch4-failure-page-review.json"
+  },
+  {
+    "id": "qwen-vl-engineering-1",
+    "image": "qwen-vl-engineering-1-r01-mobile.png",
+    "sha256": "12d25dfcc3e54b5d09c7b7307f991da5f3949f2d9c3877549cf6a14b509e26fa",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "Qwen2-VL：讀文字也要保留位置；同銘牌B08欄位，位置/像素預算/原圖核對相連，OCR比較不捏造勝負。",
+      "選定桌機與手機逐張原生實看；三節點、框/工件、算例和結論可讀",
+      "幾何簡化；部分長術語與長捲動扣分，未真人理解測試"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "精確幾何與統一配色，質感簡化"
+      ],
+      "completeness": [
+        9,
+        "視覺token保留線索，回答仍須逐欄核對。"
+      ],
+      "professionalism": [
+        9,
+        "同銘牌B08欄位，位置/像素預算/原圖核對相連，OCR比較不捏造勝負。"
+      ],
+      "density": [
+        8,
+        "三段直讀，術語稍密"
+      ],
+      "hierarchy": [
+        9,
+        "單一路徑與單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch4-page-assessment.json; batch4-failure-page-review.json"
+  },
+  {
+    "id": "qwen-vl-engineering-3",
+    "image": "qwen-vl-engineering-3-r01-desktop.png",
+    "sha256": "c150f34a1216848d625b12e3da4f539319d4a079ff76d5a78e8ce729abbf7219",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "Qwen2-VL：像素預算要與小字一起驗；同銘牌B08欄位，位置/像素預算/原圖核對相連，OCR比較不捏造勝負。",
+      "選定桌機與手機逐張原生實看；三節點、框/工件、算例和結論可讀",
+      "幾何簡化；部分長術語與長捲動扣分，未真人理解測試"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "精確幾何與統一配色，質感簡化"
+      ],
+      "completeness": [
+        9,
+        "節省token前，先確認關鍵字仍能看清。"
+      ],
+      "professionalism": [
+        9,
+        "同銘牌B08欄位，位置/像素預算/原圖核對相連，OCR比較不捏造勝負。"
+      ],
+      "density": [
+        8,
+        "三段直讀，術語稍密"
+      ],
+      "hierarchy": [
+        9,
+        "單一路徑與單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch4-page-assessment.json; batch4-failure-page-review.json"
+  },
+  {
+    "id": "qwen-vl-engineering-3",
+    "image": "qwen-vl-engineering-3-r01-mobile.png",
+    "sha256": "23f80915964d8c9f7c65f338fb5298bca795e45f71294ab9403aa6d5c692de35",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "Qwen2-VL：像素預算要與小字一起驗；同銘牌B08欄位，位置/像素預算/原圖核對相連，OCR比較不捏造勝負。",
+      "選定桌機與手機逐張原生實看；三節點、框/工件、算例和結論可讀",
+      "幾何簡化；部分長術語與長捲動扣分，未真人理解測試"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "精確幾何與統一配色，質感簡化"
+      ],
+      "completeness": [
+        9,
+        "節省token前，先確認關鍵字仍能看清。"
+      ],
+      "professionalism": [
+        9,
+        "同銘牌B08欄位，位置/像素預算/原圖核對相連，OCR比較不捏造勝負。"
+      ],
+      "density": [
+        8,
+        "三段直讀，術語稍密"
+      ],
+      "hierarchy": [
+        9,
+        "單一路徑與單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch4-page-assessment.json; batch4-failure-page-review.json"
+  },
+  {
+    "id": "qwen-vl-engineering-4",
+    "image": "qwen-vl-engineering-4-r01-desktop.png",
+    "sha256": "6ac4075b8e151f82c182f158248fcfd7588918573662a4c85c493114913d1981",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "Qwen2-VL與OCR：按文字工作選型；同銘牌B08欄位，位置/像素預算/原圖核對相連，OCR比較不捏造勝負。",
+      "選定桌機與手機逐張原生實看；三節點、框/工件、算例和結論可讀",
+      "幾何簡化；部分長術語與長捲動扣分，未真人理解測試"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "精確幾何與統一配色，質感簡化"
+      ],
+      "completeness": [
+        9,
+        "固定欄位可試OCR，問答需求再比較VLM。"
+      ],
+      "professionalism": [
+        9,
+        "同銘牌B08欄位，位置/像素預算/原圖核對相連，OCR比較不捏造勝負。"
+      ],
+      "density": [
+        8,
+        "三段直讀，術語稍密"
+      ],
+      "hierarchy": [
+        9,
+        "單一路徑與單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch4-page-assessment.json; batch4-failure-page-review.json"
+  },
+  {
+    "id": "qwen-vl-engineering-4",
+    "image": "qwen-vl-engineering-4-r01-mobile.png",
+    "sha256": "a3d77a733116126d8b597666406f4d342a95bf10d7fa0a5efe414c056f19b57f",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "Qwen2-VL與OCR：按文字工作選型；同銘牌B08欄位，位置/像素預算/原圖核對相連，OCR比較不捏造勝負。",
+      "選定桌機與手機逐張原生實看；三節點、框/工件、算例和結論可讀",
+      "幾何簡化；部分長術語與長捲動扣分，未真人理解測試"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "精確幾何與統一配色，質感簡化"
+      ],
+      "completeness": [
+        9,
+        "固定欄位可試OCR，問答需求再比較VLM。"
+      ],
+      "professionalism": [
+        9,
+        "同銘牌B08欄位，位置/像素預算/原圖核對相連，OCR比較不捏造勝負。"
+      ],
+      "density": [
+        8,
+        "三段直讀，術語稍密"
+      ],
+      "hierarchy": [
+        9,
+        "單一路徑與單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch4-page-assessment.json; batch4-failure-page-review.json"
+  },
+  {
+    "id": "gemini-vision-engineering-1",
+    "image": "gemini-vision-engineering-1-r02-desktop.png",
+    "sha256": "0b2dd5f33064fb2747ee60376c8cef9061d3f31bb1ddc9b5729fca31079bb553",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "Gemini Vision：交付可以核對的欄位；欄位設計與機制分圖，只描述公開請求回覆，格式與內容分別驗。",
+      "選定桌機與手機逐張原生實看；三節點、框/工件、算例和結論可讀",
+      "幾何簡化；部分長術語與長捲動扣分，未真人理解測試"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "精確幾何與統一配色，質感簡化"
+      ],
+      "completeness": [
+        9,
+        "要求欄位能幫助核對，但不保證內容正確。"
+      ],
+      "professionalism": [
+        9,
+        "欄位設計與機制分圖，只描述公開請求回覆，格式與內容分別驗。"
+      ],
+      "density": [
+        8,
+        "三段直讀，術語稍密"
+      ],
+      "hierarchy": [
+        9,
+        "單一路徑與單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch4-page-assessment.json; batch4-failure-page-review.json"
+  },
+  {
+    "id": "gemini-vision-engineering-1",
+    "image": "gemini-vision-engineering-1-r02-mobile.png",
+    "sha256": "45c6377c3fb62ee29b74a985ce249179c869f45b2d39a22c6cb0f9227f66064d",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "Gemini Vision：交付可以核對的欄位；欄位設計與機制分圖，只描述公開請求回覆，格式與內容分別驗。",
+      "選定桌機與手機逐張原生實看；三節點、框/工件、算例和結論可讀",
+      "幾何簡化；部分長術語與長捲動扣分，未真人理解測試"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "精確幾何與統一配色，質感簡化"
+      ],
+      "completeness": [
+        9,
+        "要求欄位能幫助核對，但不保證內容正確。"
+      ],
+      "professionalism": [
+        9,
+        "欄位設計與機制分圖，只描述公開請求回覆，格式與內容分別驗。"
+      ],
+      "density": [
+        8,
+        "三段直讀，術語稍密"
+      ],
+      "hierarchy": [
+        9,
+        "單一路徑與單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch4-page-assessment.json; batch4-failure-page-review.json"
+  },
+  {
+    "id": "gemini-vision-engineering-3",
+    "image": "gemini-vision-engineering-3-r02-desktop.png",
+    "sha256": "853a42986c3e4241157f6312ac1d7ae276646712d4c68219683d6b081bc20f43",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "Gemini Vision：格式與內容分開驗；欄位設計與機制分圖，只描述公開請求回覆，格式與內容分別驗。",
+      "選定桌機與手機逐張原生實看；三節點、框/工件、算例和結論可讀",
+      "幾何簡化；部分長術語與長捲動扣分，未真人理解測試"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "精確幾何與統一配色，質感簡化"
+      ],
+      "completeness": [
+        9,
+        "版本、請求與回覆都保存，異常欄位交覆核。"
+      ],
+      "professionalism": [
+        9,
+        "欄位設計與機制分圖，只描述公開請求回覆，格式與內容分別驗。"
+      ],
+      "density": [
+        8,
+        "三段直讀，術語稍密"
+      ],
+      "hierarchy": [
+        9,
+        "單一路徑與單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch4-page-assessment.json; batch4-failure-page-review.json"
+  },
+  {
+    "id": "gemini-vision-engineering-3",
+    "image": "gemini-vision-engineering-3-r02-mobile.png",
+    "sha256": "e2a28ee54df46b0b58f0ccecbdc1f53ff468431724976c934224ef64fcc04dbb",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "Gemini Vision：格式與內容分開驗；欄位設計與機制分圖，只描述公開請求回覆，格式與內容分別驗。",
+      "選定桌機與手機逐張原生實看；三節點、框/工件、算例和結論可讀",
+      "幾何簡化；部分長術語與長捲動扣分，未真人理解測試"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "精確幾何與統一配色，質感簡化"
+      ],
+      "completeness": [
+        9,
+        "版本、請求與回覆都保存，異常欄位交覆核。"
+      ],
+      "professionalism": [
+        9,
+        "欄位設計與機制分圖，只描述公開請求回覆，格式與內容分別驗。"
+      ],
+      "density": [
+        8,
+        "三段直讀，術語稍密"
+      ],
+      "hierarchy": [
+        9,
+        "單一路徑與單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch4-page-assessment.json; batch4-failure-page-review.json"
+  },
+  {
+    "id": "gemini-vision-engineering-4",
+    "image": "gemini-vision-engineering-4-r01-desktop.png",
+    "sha256": "bb44e1eb5f77b7e5c91ec4cd25684f6f377da39c65252c509b8584812c5ae570",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "雲端VLM與專用模型：同件比較；欄位設計與機制分圖，只描述公開請求回覆，格式與內容分別驗。",
+      "選定桌機與手機逐張原生實看；三節點、框/工件、算例和結論可讀",
+      "幾何簡化；部分長術語與長捲動扣分，未真人理解測試"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "精確幾何與統一配色，質感簡化"
+      ],
+      "completeness": [
+        9,
+        "按問題彈性、資料流與錯誤成本選擇。"
+      ],
+      "professionalism": [
+        9,
+        "欄位設計與機制分圖，只描述公開請求回覆，格式與內容分別驗。"
+      ],
+      "density": [
+        8,
+        "三段直讀，術語稍密"
+      ],
+      "hierarchy": [
+        9,
+        "單一路徑與單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch4-page-assessment.json; batch4-failure-page-review.json"
+  },
+  {
+    "id": "gemini-vision-engineering-4",
+    "image": "gemini-vision-engineering-4-r01-mobile.png",
+    "sha256": "d7829dbe8712d8e8097221990f490bfa31c6aaa9bd61cb510189baa95f4ab9bc",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "雲端VLM與專用模型：同件比較；欄位設計與機制分圖，只描述公開請求回覆，格式與內容分別驗。",
+      "選定桌機與手機逐張原生實看；三節點、框/工件、算例和結論可讀",
+      "幾何簡化；部分長術語與長捲動扣分，未真人理解測試"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "精確幾何與統一配色，質感簡化"
+      ],
+      "completeness": [
+        9,
+        "按問題彈性、資料流與錯誤成本選擇。"
+      ],
+      "professionalism": [
+        9,
+        "欄位設計與機制分圖，只描述公開請求回覆，格式與內容分別驗。"
+      ],
+      "density": [
+        8,
+        "三段直讀，術語稍密"
+      ],
+      "hierarchy": [
+        9,
+        "單一路徑與單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch4-page-assessment.json; batch4-failure-page-review.json"
+  }
+]

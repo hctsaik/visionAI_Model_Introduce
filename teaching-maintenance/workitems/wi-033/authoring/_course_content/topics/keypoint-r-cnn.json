@@ -1,0 +1,561 @@
+{
+  "model": "Keypoint R-CNN",
+  "badge": "物件內的2D關鍵點",
+  "title": "Keypoint R-CNN：先分物件，再找有名字的點",
+  "scenario": {
+    "title": "同張圖有兩塊L形件，要找出每件A、B、C孔中心，供對位或後續幾何求解。",
+    "body": "同張圖有兩塊L形件，要找出每件A、B、C孔中心，供對位或後續幾何求解。"
+  },
+  "promise": {
+    "title": "交付結果與接手工作",
+    "body": "每件的2D關鍵點、框及相應分數，交對位或幾何步驟；不直接交出3D旋轉和平移。"
+  },
+  "mental_model": {
+    "title": "物件內的2D關鍵點",
+    "body": "Keypoint R-CNN先偵測物件，以對齊的ROI特徵為每種關鍵點預測位置熱圖，再把框內位置映回原圖。A/B/C是定義好的點身分，每件都要一致；工業孔位需要相應訓練與標註，不能直接把COCO人體權重當孔位模型。",
+    "limit": "四孔板接近對稱，辨識方向的缺口又被遮住時，兩套點位對應可能都看似合理。錯誤身分可能得到看似小的重投影誤差；低誤差不能單獨證明姿態正確。"
+  },
+  "beginner_path": {
+    "title": "從必要原理、具體反例到工作取捨",
+    "intro": "同張圖有兩塊L形件，要找出每件A、B、C孔中心，供對位或後續幾何求解。 下列圖像、特徵及回答為教學示意，不是模型實測。",
+    "visuals": [
+      {
+        "id": "wi030-key-c1",
+        "title": "Keypoint R-CNN：先分物件，再找有名字的點",
+        "prompt": "同張圖有兩塊L形件，要找出每件A、B、C孔中心，供對位或後續幾何求解。",
+        "caption": "Keypoint R-CNN先偵測物件，以對齊的ROI特徵為每種關鍵點預測位置熱圖，再把框內位置映回原圖。A/B/C是定義好的點身分，每件都要一致；工業孔位需要相應訓練與標註，不能直接把COCO人體權重當孔位模型。",
+        "image": "_course_content/generated-concepts/keypoint-r-cnn/wi030-key-c1-r04-desktop.png",
+        "alt": "Keypoint R-CNN：先分物件，再找有名字的點。Keypoint R-CNN先偵測物件，以對齊的ROI特徵為每種關鍵點預測位置熱圖，再把框內位置映回原圖。A/B/C是定義好的點身分，每件都要一致；工業孔位需要相應訓練與標註，不能直接把COCO人體權重當孔位模型。 AI生成教學示意，非模型實測。",
+        "callouts": [
+          {
+            "title": "每件有自己的ROI",
+            "body": "共享影像特徵後，各個物件分開ROI處理；兩件的A點不能混成同一物件的一組點。"
+          },
+          {
+            "title": "點位需映回原圖",
+            "body": "熱圖位置經尺度與裁切座標還原成2D影像座標。可見性與置信判斷仍需實際驗證。"
+          },
+          {
+            "title": "交付與接手",
+            "body": "每件的2D關鍵點、框及相應分數，交對位或幾何步驟；不直接交出3D旋轉和平移。"
+          }
+        ],
+        "reading_views": [
+          {
+            "title": "Keypoint R-CNN：先分物件，再找有名字的點",
+            "image": "_course_content/generated-concepts/keypoint-r-cnn/wi030-key-c1-r04-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/keypoint-r-cnn/wi030-key-c1-r05-mobile.png",
+            "alt": "Keypoint R-CNN：先分物件，再找有名字的點。Keypoint R-CNN先偵測物件，以對齊的ROI特徵為每種關鍵點預測位置熱圖，再把框內位置映回原圖。A/B/C是定義好的點身分，每件都要一致；工業孔位需要相應訓練與標註，不能直接把COCO人體權重當孔位模型。 AI生成教學示意，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              887,
+              1774
+            ],
+            "mobile_display_mode": "full-mobile",
+            "desktop_intrinsic_width": 1672,
+            "desktop_intrinsic_height": 941,
+            "mobile_intrinsic_width": 887,
+            "mobile_intrinsic_height": 1774
+          }
+        ],
+        "core_ideas": true
+      },
+      {
+        "id": "wi030-pose-d2",
+        "title": "對稱或遮住時，完整的點也可能配錯",
+        "prompt": "觀察哪個條件改變，讓原本的結果不夠可靠？",
+        "caption": "四孔板接近對稱，辨識方向的缺口又被遮住時，兩套點位對應可能都看似合理。錯誤身分可能得到看似小的重投影誤差；低誤差不能單獨證明姿態正確。",
+        "image": "_course_content/generated-concepts/pose/wi030-pose-d2-r02-desktop.png",
+        "alt": "對稱或遮住時，完整的點也可能配錯。四孔板接近對稱，辨識方向的缺口又被遮住時，兩套點位對應可能都看似合理。錯誤身分可能得到看似小的重投影誤差；低誤差不能單獨證明姿態正確。 AI生成教學示意，非模型實測。",
+        "callouts": [
+          {
+            "title": "看哪裡",
+            "body": "四孔板接近對稱，辨識方向的缺口又被遮住時，兩套點位對應可能都看似合理。錯誤身分可能得到看似小的重投影誤差；低誤差不能單獨證明姿態正確。"
+          },
+          {
+            "title": "接著怎麼做",
+            "body": "先確認點的身分、可見性和工件幾何；必要時換視角或加入可驗證的不對稱標記，重查多解與座標鏈，不用猜測的解接動作。"
+          }
+        ],
+        "reading_views": [
+          {
+            "title": "對稱或遮住時，完整的點也可能配錯",
+            "image": "_course_content/generated-concepts/pose/wi030-pose-d2-r02-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/pose/wi030-pose-d2-r02-mobile.png",
+            "alt": "對稱或遮住時，完整的點也可能配錯。四孔板接近對稱，辨識方向的缺口又被遮住時，兩套點位對應可能都看似合理。錯誤身分可能得到看似小的重投影誤差；低誤差不能單獨證明姿態正確。 AI生成教學示意，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              836,
+              1881
+            ],
+            "mobile_display_mode": "full-mobile",
+            "desktop_intrinsic_width": 1672,
+            "desktop_intrinsic_height": 941,
+            "mobile_intrinsic_width": 836,
+            "mobile_intrinsic_height": 1881
+          }
+        ],
+        "core_ideas": false
+      },
+      {
+        "id": "wi030-pose-d3",
+        "title": "找點與求姿態，是不同的工作責任",
+        "prompt": "相同工作需求下，資料、輸出與成本如何取捨？",
+        "caption": "Keypoint R-CNN負責影像中的2D點及所屬物件；Pose Pipeline把這些同名點和已知3D幾何、相機校正接起來求姿態。它們可以串接，不是互相取代的模型排名。只需2D位置時不一定要增加3D求解。",
+        "image": "_course_content/generated-concepts/pose/wi030-pose-d3-r03-desktop.png",
+        "alt": "找點與求姿態，是不同的工作責任。Keypoint R-CNN負責影像中的2D點及所屬物件；Pose Pipeline把這些同名點和已知3D幾何、相機校正接起來求姿態。它們可以串接，不是互相取代的模型排名。只需2D位置時不一定要增加3D求解。 AI生成教學示意，非模型實測。",
+        "callouts": [
+          {
+            "title": "怎麼選",
+            "body": "Keypoint R-CNN負責影像中的2D點及所屬物件；Pose Pipeline把這些同名點和已知3D幾何、相機校正接起來求姿態。它們可以串接，不是互相取代的模型排名。只需2D位置時不一定要增加3D求解。"
+          },
+          {
+            "title": "資料與完整成本",
+            "body": "定義每種工件固定點名、可見性與遮擋標註；以適當任務頭訓練，固定ROI和座標還原流程。換點位定義或工件需重訓／重驗。"
+          }
+        ],
+        "reading_views": [
+          {
+            "title": "找點與求姿態，是不同的工作責任",
+            "image": "_course_content/generated-concepts/pose/wi030-pose-d3-r03-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/pose/wi030-pose-d3-r03-mobile.png",
+            "alt": "找點與求姿態，是不同的工作責任。Keypoint R-CNN負責影像中的2D點及所屬物件；Pose Pipeline把這些同名點和已知3D幾何、相機校正接起來求姿態。它們可以串接，不是互相取代的模型排名。只需2D位置時不一定要增加3D求解。 AI生成教學示意，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              724,
+              2172
+            ],
+            "mobile_display_mode": "full-mobile",
+            "desktop_intrinsic_width": 1670,
+            "desktop_intrinsic_height": 941,
+            "mobile_intrinsic_width": 724,
+            "mobile_intrinsic_height": 2172
+          }
+        ],
+        "core_ideas": false
+      }
+    ]
+  },
+  "micro_example": {
+    "title": "先交2D，還是接3D？",
+    "setup": "目前工站只需檢查孔中心是否落在影像允收區；未來另一工站想用相機姿態做對位。",
+    "prediction": "這輪先交2D點核對，或同時建立3D流程？各自還缺哪些資料？",
+    "reveal": "目前需求可先交逐件2D點與允收核對，驗證點名、遮擋與映回原圖誤差。若本輪已需3D接手，才同時準備足夠正確2D–3D對應、已知幾何、相機校正、多解檢查及必要外參。不能把2D分數當姿態精度，也不必為尚未需要的輸出先付全部成本。"
+  },
+  "mechanism_steps": [
+    {
+      "title": "每件定義相同點",
+      "body": "共享影像特徵後，各個物件分開ROI處理；兩件的A點不能混成同一物件的一組點。",
+      "why": "由本課核心機制連接工作用途",
+      "anchor": "WI030-1",
+      "diagram": {
+        "title": "每件定義相同點",
+        "body": "共享影像特徵後，各個物件分開ROI處理；兩件的A點不能混成同一物件的一組點。",
+        "why": "詳見本課版本與來源",
+        "anchor": "WI030-1"
+      }
+    },
+    {
+      "title": "框內預測位置",
+      "body": "熱圖位置經尺度與裁切座標還原成2D影像座標。可見性與置信判斷仍需實際驗證。",
+      "why": "由本課核心機制連接工作用途",
+      "anchor": "WI030-2",
+      "diagram": {
+        "title": "框內預測位置",
+        "body": "熱圖位置經尺度與裁切座標還原成2D影像座標。可見性與置信判斷仍需實際驗證。",
+        "why": "詳見本課版本與來源",
+        "anchor": "WI030-2"
+      }
+    },
+    {
+      "title": "映回原圖",
+      "body": "每件的2D關鍵點、框及相應分數，交對位或幾何步驟；不直接交出3D旋轉和平移。",
+      "why": "由本課核心機制連接工作用途",
+      "anchor": "WI030-3",
+      "diagram": {
+        "title": "映回原圖",
+        "body": "每件的2D關鍵點、框及相應分數，交對位或幾何步驟；不直接交出3D旋轉和平移。",
+        "why": "詳見本課版本與來源",
+        "anchor": "WI030-3"
+      }
+    },
+    {
+      "title": "工作核對與接手",
+      "body": "逐件量2D位置誤差、點名混淆、漏點與遮擋表現，核對ROI映回原圖。若再求姿態，另外量姿態誤差，不能只以點位分數代替。",
+      "why": "由本課核心機制連接工作用途",
+      "anchor": "WI030-4",
+      "diagram": {
+        "title": "工作核對與接手",
+        "body": "逐件量2D位置誤差、點名混淆、漏點與遮擋表現，核對ROI映回原圖。若再求姿態，另外量姿態誤差，不能只以點位分數代替。",
+        "why": "詳見本課版本與來源",
+        "anchor": "WI030-4"
+      }
+    }
+  ],
+  "visual_intro": "Keypoint R-CNN先偵測物件，以對齊的ROI特徵為每種關鍵點預測位置熱圖，再把框內位置映回原圖。A/B/C是定義好的點身分，每件都要一致；工業孔位需要相應訓練與標註，不能直接把COCO人體權重當孔位模型。",
+  "concept_visuals": [],
+  "boundary_cases": [
+    {
+      "condition": "本課具體反例",
+      "effect": "四孔板接近對稱，辨識方向的缺口又被遮住時，兩套點位對應可能都看似合理。錯誤身分可能得到看似小的重投影誤差；低誤差不能單獨證明姿態正確。",
+      "action": "先確認點的身分、可見性和工件幾何；必要時換視角或加入可驗證的不對稱標記，重查多解與座標鏈，不用猜測的解接動作。"
+    },
+    {
+      "condition": "更換產品、模型或輸入設定",
+      "effect": "定義每種工件固定點名、可見性與遮擋標註；以適當任務頭訓練，固定ROI和座標還原流程。換點位定義或工件需重訓／重驗。",
+      "action": "先在不同旋轉和遮擋影像檢查人能否一致標A/B/C，再按批次分開訓練與測試。"
+    },
+    {
+      "condition": "把示意當成實際推論",
+      "effect": "本課特徵、排序、回答及圖像僅用於解釋，不支持現場準確率或耗時結論。",
+      "action": "逐件量2D位置誤差、點名混淆、漏點與遮擋表現，核對ROI映回原圖。若再求姿態，另外量姿態誤差，不能只以點位分數代替。"
+    }
+  ],
+  "comparison": [
+    {
+      "model": "Keypoint R-CNN",
+      "normality": "每件框與點名標註；工業任務訓練",
+      "candidate": "2D點及物件歸屬"
+    },
+    {
+      "model": "幾何與相機資料",
+      "normality": "同名3D點、內參畸變與一致單位",
+      "candidate": "把2D點接到幾何問題"
+    },
+    {
+      "model": "PnP姿態流程",
+      "normality": "足夠正確對應；適用求解與多解驗證",
+      "candidate": "物體→相機姿態；接工站需外參"
+    }
+  ],
+  "selection": "Keypoint R-CNN負責影像中的2D點及所屬物件；Pose Pipeline把這些同名點和已知3D幾何、相機校正接起來求姿態。它們可以串接，不是互相取代的模型排名。只需2D位置時不一定要增加3D求解。 定義每種工件固定點名、可見性與遮擋標註；以適當任務頭訓練，固定ROI和座標還原流程。換點位定義或工件需重訓／重驗。",
+  "poc": {
+    "title": "以真實工作資料做小規模比較",
+    "steps": [
+      "先在不同旋轉和遮擋影像檢查人能否一致標A/B/C，再按批次分開訓練與測試。",
+      "定義每種工件固定點名、可見性與遮擋標註；以適當任務頭訓練，固定ROI和座標還原流程。換點位定義或工件需重訓／重驗。",
+      "逐件量2D位置誤差、點名混淆、漏點與遮擋表現，核對ROI映回原圖。若再求姿態，另外量姿態誤差，不能只以點位分數代替。"
+    ],
+    "hold": "先確認點的身分、可見性和工件幾何；必要時換視角或加入可驗證的不對稱標記，重查多解與座標鏈，不用猜測的解接動作。",
+    "acceptance": {
+      "baseline": "既有流程或最簡單可行方法",
+      "measure": "逐件量2D位置誤差、點名混淆、漏點與遮擋表現，核對ROI映回原圖。若再求姿態，另外量姿態誤差，不能只以點位分數代替。",
+      "negative_control": "四孔板接近對稱，辨識方向的缺口又被遮住時，兩套點位對應可能都看似合理。錯誤身分可能得到看似小的重投影誤差；低誤差不能單獨證明姿態正確。",
+      "owner": "實作與影像核對負責人"
+    }
+  },
+  "teach_back": {
+    "question": "它改變什麼？何時選另一種做法？",
+    "answer": "Keypoint R-CNN先偵測物件，以對齊的ROI特徵為每種關鍵點預測位置熱圖，再把框內位置映回原圖。A/B/C是定義好的點身分，每件都要一致；工業孔位需要相應訓練與標註，不能直接把COCO人體權重當孔位模型。 Keypoint R-CNN負責影像中的2D點及所屬物件；Pose Pipeline把這些同名點和已知3D幾何、相機校正接起來求姿態。它們可以串接，不是互相取代的模型排名。只需2D位置時不一定要增加3D求解。"
+  },
+  "slide_reading": [
+    {
+      "title": "Keypoint R-CNN：先找物件，再找具名點",
+      "question": "點的身份要先定義，座標不能混成無名熱區。",
+      "look": "先看支架A缺口、B/C孔心，再核對每件ROI保留相對位置，最後看A/B/C各有自己的位置分布。",
+      "relation": "把Mask R-CNN的關鍵點支路用於自訂工件，需重新定義並標註關鍵點身份；人體預訓練權重不直接懂支架孔心。每個ROI的每個關鍵點有位置分布，經解碼映回原圖，不是任意紅色熱區。",
+      "takeaway": "點的身份要先定義，座標不能混成無名熱區。",
+      "terms": [
+        "特徵：由影像學到的中間表示，並非標註真值。",
+        "本圖示意：解釋模型責任，不代表新模型實測。"
+      ]
+    },
+    {
+      "title": "Keypoint R-CNN：ROI座標要映回原圖",
+      "question": "同一個點沿ROI與原圖映射，A/B/C不能互換。",
+      "look": "先看原圖框出同一件支架，再核對ROI內各點分開解碼，最後看依框位與尺度映回原圖。",
+      "relation": "ROIAlign取得對齊特徵，關鍵點頭分別產生K個位置heatmaps。圖用連續ROI座標示意x=x0+u*w、y=y0+v*h；實作還要遵循格心、resize與padding約定。A點[0.275,0.3125]在框原點[100,50]、寬高[200,160]時映到[155,100]。",
+      "takeaway": "同一個點沿ROI與原圖映射，A/B/C不能互換。",
+      "terms": [
+        "特徵：由影像學到的中間表示，並非標註真值。",
+        "本圖示意：解釋模型責任，不代表新模型實測。"
+      ]
+    },
+    {
+      "title": "Keypoint R-CNN：遮住的點也可能被猜出",
+      "question": "估計位置與可見證據分開，可信度不足要覆核。",
+      "look": "先看遮擋覆住同件的C孔，再核對模型仍可能給C的估計，最後看原圖核對後才接幾何求解。",
+      "relation": "不可把每個輸出座標當已見到真實點。可見性標註與模型回傳的score/visibility欄位需按實作解讀；保留原圖、具名座標與分數，遮擋點單獨評估。接PnP另需K、畸變、3D對應與足够非退化點。",
+      "takeaway": "估計位置與可見證據分開，可信度不足要覆核。",
+      "terms": [
+        "特徵：由影像學到的中間表示，並非標註真值。",
+        "本圖示意：解釋模型責任，不代表新模型實測。"
+      ]
+    },
+    {
+      "title": "關鍵點與分割：要具名位置還是整片區域",
+      "question": "按交付選標註：具名點、輪廓與姿態各有責任。",
+      "look": "先看同一支架工作需求，再核對關鍵點：A/B/C具名座標，最後看分割：逐像素物件區域。",
+      "relation": "固定同一支架影像，若要孔中心身份對應可評關鍵點；若要整片邊界可評分割。兩者都不單獨保證物理姿態或毫米尺寸；按可見性、標註成本、幾何誤差與後續用途比較。",
+      "takeaway": "按交付選標註：具名點、輪廓與姿態各有責任。",
+      "terms": [
+        "特徵：由影像學到的中間表示，並非標註真值。",
+        "本圖示意：解釋模型責任，不代表新模型實測。"
+      ]
+    }
+  ],
+  "comparison_headers": {
+    "title": "找點與求姿態，是不同的工作責任",
+    "basis": "所需資料與方法差異",
+    "output": "輸出與維護責任"
+  },
+  "transfer_check": {
+    "title": "先交2D，還是接3D？",
+    "scenario": "目前工站只需檢查孔中心是否落在影像允收區；未來另一工站想用相機姿態做對位。",
+    "question": "這輪先交2D點核對，或同時建立3D流程？各自還缺哪些資料？",
+    "answer": "目前需求可先交逐件2D點與允收核對，驗證點名、遮擋與映回原圖誤差。若本輪已需3D接手，才同時準備足夠正確2D–3D對應、已知幾何、相機校正、多解檢查及必要外參。不能把2D分數當姿態精度，也不必為尚未需要的輸出先付全部成本。"
+  },
+  "review_trace": {
+    "authority": "roadmap-model-selection/known-target-classification/keypoint-r-cnn/model.md",
+    "scope": "WI-033：工程層四圖與手機比較修正；首讀有效內容保留。原生圖已審，整頁與使用者審閱另記。",
+    "claims": [
+      {
+        "id": "visual-1",
+        "field": "beginner_path.visuals[instance-landmark-contract]",
+        "source": "模型定位 / architecture_path"
+      },
+      {
+        "id": "visual-2",
+        "field": "beginner_path.visuals[rpn-roialign-dependency]",
+        "source": "architecture_path"
+      },
+      {
+        "id": "visual-3",
+        "field": "beginner_path.visuals[ordered-heatmaps-decode]",
+        "source": "representation_or_score"
+      },
+      {
+        "id": "visual-4",
+        "field": "beginner_path.visuals[inverse-map-evidence-review]",
+        "source": "failure_boundary"
+      },
+      {
+        "id": "visual-5",
+        "field": "beginner_path.visuals[observability-hold-boundary]",
+        "source": "selection_gate / evidence_bundle"
+      },
+      {
+        "id": "promise",
+        "field": "promise",
+        "source": "模型定位 / representation_or_score"
+      },
+      {
+        "id": "mechanism",
+        "field": "mechanism_steps",
+        "source": "architecture_path / representation_or_score"
+      },
+      {
+        "id": "boundaries",
+        "field": "boundary_cases",
+        "source": "failure_boundary / selection_gate"
+      },
+      {
+        "id": "comparison",
+        "field": "comparison + selection",
+        "source": "selection_gate"
+      },
+      {
+        "id": "poc",
+        "field": "poc + acceptance",
+        "source": "cost_and_operating_point / evidence_bundle"
+      },
+      {
+        "id": "transfer",
+        "field": "transfer_check",
+        "source": "failure_boundary / selection_gate"
+      },
+      {
+        "id": "wi030-first-read",
+        "field": "beginner_path + core + selection + transfer",
+        "source": "https://docs.pytorch.org/vision/main/_modules/torchvision/models/detection/keypoint_rcnn.html"
+      }
+    ]
+  },
+  "quality_status": {
+    "label": "首讀圖文已核對",
+    "state": "self-reviewed",
+    "round": "WI-030",
+    "reason": "新版逐圖與整頁自評、桌機手機驗證完成；使用者成品核准pending。原工程圖未納入本輪分數。"
+  },
+  "teaching_preflight": {
+    "brief": "teaching-images/vision-ai-model-selection/workitems/wi-030/key-c1-r04-desktop.md",
+    "mobile_brief": "teaching-images/vision-ai-model-selection/workitems/wi-030/key-c1-r05-mobile.md",
+    "story": "C",
+    "major_visual_nodes": 3,
+    "visual_status": "self-reviewed",
+    "user_review": "pending"
+  },
+  "engineering_slides": [
+    {
+      "title": "Keypoint R-CNN：先找物件，再找具名點",
+      "question": "點的身份要先定義，座標不能混成無名熱區。",
+      "plain": {
+        "look": "先看支架A缺口、B/C孔心，再核對每件ROI保留相對位置，最後看A/B/C各有自己的位置分布。",
+        "relation": "把Mask R-CNN的關鍵點支路用於自訂工件，需重新定義並標註關鍵點身份；人體預訓練權重不直接懂支架孔心。每個ROI的每個關鍵點有位置分布，經解碼映回原圖，不是任意紅色熱區。",
+        "takeaway": "點的身份要先定義，座標不能混成無名熱區。"
+      },
+      "terms": [
+        "特徵：由影像學到的中間表示，並非標註真值。",
+        "本圖示意：解釋模型責任，不代表新模型實測。"
+      ],
+      "guide": [
+        "把Mask R-CNN的關鍵點支路用於自訂工件，需重新定義並標註關鍵點身份；人體預訓練權重不直接懂支架孔心。每個ROI的每個關鍵點有位置分布，經解碼映回原圖，不是任意紅色熱區。",
+        "先看支架A缺口、B/C孔心，再核對每件ROI保留相對位置，最後看A/B/C各有自己的位置分布。"
+      ],
+      "stages": [
+        {
+          "title": "支架A缺口、B/C孔心",
+          "body": "支架A缺口、B/C孔心；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "每件ROI保留相對位置",
+          "body": "每件ROI保留相對位置；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "A/B/C各有自己的位置分布",
+          "body": "A/B/C各有自己的位置分布；請對照圖內輸入、變化與結果。"
+        }
+      ],
+      "misconception": "四孔板接近對稱，辨識方向的缺口又被遮住時，兩套點位對應可能都看似合理。錯誤身分可能得到看似小的重投影誤差；低誤差不能單獨證明姿態正確。",
+      "alt": "Keypoint R-CNN：先找物件，再找具名點。點的身份要先定義，座標不能混成無名熱區。 教學示意，非模型實測。",
+      "mobile_image": "roadmap-model-selection/known-target-classification/keypoint-r-cnn/images/final/WI033-KPRCNN-01-r01-mobile.png",
+      "mobile_width": 768,
+      "mobile_height": 2304,
+      "engineering": {
+        "takeaway": "點的身份要先定義，座標不能混成無名熱區。",
+        "nextAction": "先在不同旋轉和遮擋影像檢查人能否一致標A/B/C，再按批次分開訓練與測試。",
+        "redLine": "先確認點的身分、可見性和工件幾何；必要時換視角或加入可驗證的不對稱標記，重查多解與座標鏈，不用猜測的解接動作。"
+      },
+      "source": "https://arxiv.org/abs/1703.06870"
+    },
+    {
+      "title": "Keypoint R-CNN：ROI座標要映回原圖",
+      "question": "同一個點沿ROI與原圖映射，A/B/C不能互換。",
+      "plain": {
+        "look": "先看原圖框出同一件支架，再核對ROI內各點分開解碼，最後看依框位與尺度映回原圖。",
+        "relation": "ROIAlign取得對齊特徵，關鍵點頭分別產生K個位置heatmaps。圖用連續ROI座標示意x=x0+u*w、y=y0+v*h；實作還要遵循格心、resize與padding約定。A點[0.275,0.3125]在框原點[100,50]、寬高[200,160]時映到[155,100]。",
+        "takeaway": "同一個點沿ROI與原圖映射，A/B/C不能互換。"
+      },
+      "terms": [
+        "特徵：由影像學到的中間表示，並非標註真值。",
+        "本圖示意：解釋模型責任，不代表新模型實測。"
+      ],
+      "guide": [
+        "ROIAlign取得對齊特徵，關鍵點頭分別產生K個位置heatmaps。圖用連續ROI座標示意x=x0+u*w、y=y0+v*h；實作還要遵循格心、resize與padding約定。A點[0.275,0.3125]在框原點[100,50]、寬高[200,160]時映到[155,100]。",
+        "先看原圖框出同一件支架，再核對ROI內各點分開解碼，最後看依框位與尺度映回原圖。"
+      ],
+      "stages": [
+        {
+          "title": "原圖框出同一件支架",
+          "body": "原圖框出同一件支架；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "ROI內各點分開解碼",
+          "body": "ROI內各點分開解碼；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "依框位與尺度映回原圖",
+          "body": "依框位與尺度映回原圖；請對照圖內輸入、變化與結果。"
+        }
+      ],
+      "misconception": "四孔板接近對稱，辨識方向的缺口又被遮住時，兩套點位對應可能都看似合理。錯誤身分可能得到看似小的重投影誤差；低誤差不能單獨證明姿態正確。",
+      "alt": "Keypoint R-CNN：ROI座標要映回原圖。同一個點沿ROI與原圖映射，A/B/C不能互換。 教學示意，非模型實測。",
+      "mobile_image": "roadmap-model-selection/known-target-classification/keypoint-r-cnn/images/final/WI033-KPRCNN-02-r02-mobile.png",
+      "mobile_width": 768,
+      "mobile_height": 2304,
+      "engineering": {
+        "takeaway": "同一個點沿ROI與原圖映射，A/B/C不能互換。",
+        "nextAction": "先在不同旋轉和遮擋影像檢查人能否一致標A/B/C，再按批次分開訓練與測試。",
+        "redLine": "先確認點的身分、可見性和工件幾何；必要時換視角或加入可驗證的不對稱標記，重查多解與座標鏈，不用猜測的解接動作。"
+      },
+      "source": "https://arxiv.org/abs/1703.06870"
+    },
+    {
+      "title": "Keypoint R-CNN：遮住的點也可能被猜出",
+      "question": "估計位置與可見證據分開，可信度不足要覆核。",
+      "plain": {
+        "look": "先看遮擋覆住同件的C孔，再核對模型仍可能給C的估計，最後看原圖核對後才接幾何求解。",
+        "relation": "不可把每個輸出座標當已見到真實點。可見性標註與模型回傳的score/visibility欄位需按實作解讀；保留原圖、具名座標與分數，遮擋點單獨評估。接PnP另需K、畸變、3D對應與足够非退化點。",
+        "takeaway": "估計位置與可見證據分開，可信度不足要覆核。"
+      },
+      "terms": [
+        "特徵：由影像學到的中間表示，並非標註真值。",
+        "本圖示意：解釋模型責任，不代表新模型實測。"
+      ],
+      "guide": [
+        "不可把每個輸出座標當已見到真實點。可見性標註與模型回傳的score/visibility欄位需按實作解讀；保留原圖、具名座標與分數，遮擋點單獨評估。接PnP另需K、畸變、3D對應與足够非退化點。",
+        "先看遮擋覆住同件的C孔，再核對模型仍可能給C的估計，最後看原圖核對後才接幾何求解。"
+      ],
+      "stages": [
+        {
+          "title": "遮擋覆住同件的C孔",
+          "body": "遮擋覆住同件的C孔；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "模型仍可能給C的估計",
+          "body": "模型仍可能給C的估計；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "原圖核對後才接幾何求解",
+          "body": "原圖核對後才接幾何求解；請對照圖內輸入、變化與結果。"
+        }
+      ],
+      "misconception": "四孔板接近對稱，辨識方向的缺口又被遮住時，兩套點位對應可能都看似合理。錯誤身分可能得到看似小的重投影誤差；低誤差不能單獨證明姿態正確。",
+      "alt": "Keypoint R-CNN：遮住的點也可能被猜出。估計位置與可見證據分開，可信度不足要覆核。 教學示意，非模型實測。",
+      "mobile_image": "roadmap-model-selection/known-target-classification/keypoint-r-cnn/images/final/WI033-KPRCNN-03-r02-mobile.png",
+      "mobile_width": 768,
+      "mobile_height": 2304,
+      "engineering": {
+        "takeaway": "估計位置與可見證據分開，可信度不足要覆核。",
+        "nextAction": "先在不同旋轉和遮擋影像檢查人能否一致標A/B/C，再按批次分開訓練與測試。",
+        "redLine": "先確認點的身分、可見性和工件幾何；必要時換視角或加入可驗證的不對稱標記，重查多解與座標鏈，不用猜測的解接動作。"
+      },
+      "source": "https://arxiv.org/abs/1703.06870"
+    },
+    {
+      "title": "關鍵點與分割：要具名位置還是整片區域",
+      "question": "按交付選標註：具名點、輪廓與姿態各有責任。",
+      "plain": {
+        "look": "先看同一支架工作需求，再核對關鍵點：A/B/C具名座標，最後看分割：逐像素物件區域。",
+        "relation": "固定同一支架影像，若要孔中心身份對應可評關鍵點；若要整片邊界可評分割。兩者都不單獨保證物理姿態或毫米尺寸；按可見性、標註成本、幾何誤差與後續用途比較。",
+        "takeaway": "按交付選標註：具名點、輪廓與姿態各有責任。"
+      },
+      "terms": [
+        "特徵：由影像學到的中間表示，並非標註真值。",
+        "本圖示意：解釋模型責任，不代表新模型實測。"
+      ],
+      "guide": [
+        "固定同一支架影像，若要孔中心身份對應可評關鍵點；若要整片邊界可評分割。兩者都不單獨保證物理姿態或毫米尺寸；按可見性、標註成本、幾何誤差與後續用途比較。",
+        "先看同一支架工作需求，再核對關鍵點：A/B/C具名座標，最後看分割：逐像素物件區域。"
+      ],
+      "stages": [
+        {
+          "title": "同一支架工作需求",
+          "body": "同一支架工作需求；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "關鍵點：A/B/C具名座標",
+          "body": "關鍵點：A/B/C具名座標；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "分割：逐像素物件區域",
+          "body": "分割：逐像素物件區域；請對照圖內輸入、變化與結果。"
+        }
+      ],
+      "misconception": "四孔板接近對稱，辨識方向的缺口又被遮住時，兩套點位對應可能都看似合理。錯誤身分可能得到看似小的重投影誤差；低誤差不能單獨證明姿態正確。",
+      "alt": "關鍵點與分割：要具名位置還是整片區域。按交付選標註：具名點、輪廓與姿態各有責任。 教學示意，非模型實測。",
+      "mobile_image": "roadmap-model-selection/known-target-classification/keypoint-r-cnn/images/final/WI033-KPRCNN-04-r01-mobile.png",
+      "mobile_width": 768,
+      "mobile_height": 2304,
+      "engineering": {
+        "takeaway": "按交付選標註：具名點、輪廓與姿態各有責任。",
+        "nextAction": "先在不同旋轉和遮擋影像檢查人能否一致標A/B/C，再按批次分開訓練與測試。",
+        "redLine": "先確認點的身分、可見性和工件幾何；必要時換視角或加入可驗證的不對稱標記，重查多解與座標鏈，不用猜測的解接動作。"
+      },
+      "source": "https://arxiv.org/abs/1703.06870"
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+[
+  {
+    "brief": "C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-033/sr-same-board-counterexample-r01.md",
+    "objective": "缺口是否存在，要靠真正有解析力的取像。",
+    "page_type": "D",
+    "node_count": 3,
+    "reference": "teaching-images/vision-ai-model-selection/course-delivery/section-pages/01-geometry-alignment-measurement/images/final/GEO-02-common-contract_v01.png",
+    "takeaway": "缺口是否存在，要靠真正有解析力的取像。 #FFF4CC",
+    "required_files_present": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  }
+]

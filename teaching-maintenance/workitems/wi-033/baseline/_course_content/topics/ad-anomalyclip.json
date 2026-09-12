@@ -1,0 +1,495 @@
+{
+  "model": "AnomalyCLIP",
+  "badge": "圖文語意與異常位置",
+  "title": "AnomalyCLIP：先學狀態提示，再看新產品",
+  "scenario": {
+    "title": "細刮傷與正常反光，如何接到工作",
+    "body": "金屬板的細痕 p 需要檢出，正常孔邊 q 又不能一直誤報；先確認資料與需要的位置或問答輸出。"
+  },
+  "promise": {
+    "title": "分數與位置，回原圖覆核",
+    "body": "交付可疑位置線索；文字或熱圖都不能直接代表精密輪廓、尺寸、根因或自動放行。"
+  },
+  "mental_model": {
+    "title": "AnomalyCLIP：先學狀態提示，再看新產品",
+    "body": "以輔助正常／異常資料和區域標註，聯合整圖與局部監督學習物件無關的狀態提示。CLIP 骨幹權重固定，文字提示可學，DPAM 調整注意力以保留局部語意；目標影像與兩種文字表示比較，再整合多層局部線索。目標零樣本不代表模型從未訓練。",
+    "limit": "語意與位置仍可能錯；必須用未見正常與真缺陷檢查適用範圍。"
+  },
+  "micro_example": {
+    "title": "換一個工作條件，再做選擇",
+    "setup": "已有 AnomalyCLIP 提示模型，從霧面零件換成透明接頭；正常反光被標紅，細裂卻有漏檢。",
+    "prediction": "改幾句人工提示、沿用現成模型，還是補資料適配／建立正常參考？",
+    "reveal": "任意手寫句子不能直接等同已學提示。先查取像與輔助資料適用範圍，保留新材質正常及真細裂，比較既有提示模型與正常參考方法；若適配，訓練與驗證分開。提高門檻可能少誤報卻多漏檢；以同風險要求比較成本，並記錄目標設定是否仍屬零樣本。"
+  },
+  "mechanism_steps": [
+    {
+      "title": "先稽核 auxiliary prompt-learning 與 target exclusion",
+      "body": "保存 auxiliary data IDs、taxonomy、license、split、target exclusion、source anomaly policy 與 prompt-learning checkpoint。",
+      "why": "zero-shot 指沒有用 target training，不代表沒有學過的 prompt state；target leakage 會讓 transfer 結論不成立。",
+      "anchor": "工程圖核對：auxiliary split → learned prompt tokens",
+      "diagram": {
+        "title": "稽核 auxiliary 與 target exclusion",
+        "body": "auxiliary split 學 prompt，目標資料必須排除。",
+        "why": "zero-shot 不等於沒有 learned state。",
+        "anchor": "auxiliary split → learned prompts"
+      }
+    },
+    {
+      "title": "鎖定 learned normal/anomaly text embeddings",
+      "body": "在鎖定的 CLIP/text encoder、tokenizer、template、context length 與已宣告 adaptation state 下得到 normal 與 anomaly prompt embeddings。",
+      "why": "文字側的微小改動可翻轉 similarity margin；沒有 revision 就無法重播同一個候選。",
+      "anchor": "工程圖核對：normal/abnormal prompt embeddings",
+      "diagram": {
+        "title": "鎖定 normal/anomaly prompts",
+        "body": "文字 encoder 與 learned tokens 形成兩種 embeddings。",
+        "why": "模板或 tokenizer 會移動 margin。",
+        "anchor": "prompts → text embeddings"
+      }
+    },
+    {
+      "title": "讓 ROI 的 global/patch feature 和 prompts 比較",
+      "body": "固定 ROI/image preprocessing 後，由 frozen 或已宣告 adapted 的 CLIP image encoder 產生 global 與 selected patch features，計算各自對 normal/anomaly prompt 的 normalized similarity margin。",
+      "why": "局部 evidence 來自特定 feature 層和 patch resolution；不是 VLM 的自由文字能力，也可能漏掉 tiny defect。",
+      "anchor": "工程圖核對：CLIP patch features → normal/anomaly margins",
+      "diagram": {
+        "title": "patch feature 對兩種 prompts",
+        "body": "global/patch features 計算 normal-anomaly margin。",
+        "why": "局部 evidence 受 layer 與 patch 尺度限制。",
+        "anchor": "CLIP features → prompt margins"
+      }
+    },
+    {
+      "title": "margin map 先本地校正，再交給 review",
+      "body": "patch margins 經固定 interpolation、smoothing、aggregation、calibration、threshold/abstain policy 形成 candidate map 和 action trace。",
+      "why": "margin 的大小本身不等於 defect probability；prompt transfer、domain gap 與 map rule 都可能改低 FPR。",
+      "anchor": "工程圖核對：margin map → local calibration → gate",
+      "diagram": {
+        "title": "margin map 本地校正",
+        "body": "patch margins 聚合後進入 calibration 與 review。",
+        "why": "margin 不是 defect probability。",
+        "anchor": "margin map → local gate"
+      }
+    }
+  ],
+  "visual_intro": "先記住：zero-shot 不是 zero-state；再核對 auxiliary audit、learned prompts、patch margin 與本地校正。",
+  "beginner_path": {
+    "title": "核心機制、反例覆核與條件選型",
+    "intro": "三張首讀圖；工件、位置圖與問答均為教學示意，非模型實測。",
+    "visuals": [
+      {
+        "id": "wi021-ad-anomalyclip-1",
+        "title": "AnomalyCLIP：先學狀態提示，再看新產品",
+        "prompt": "沿著同一塊金屬板 A，追提示、影像與位置的來源。",
+        "caption": "以輔助正常／異常資料和區域標註，聯合整圖與局部監督學習物件無關的狀態提示。CLIP 骨幹權重固定，文字提示可學，DPAM 調整注意力以保留局部語意；目標影像與兩種文字表示比較，再整合多層局部線索。目標零樣本不代表模型從未訓練。",
+        "image": "_course_content/generated-concepts/ad-anomalyclip/wi021-anomalyclip-c1-r02-desktop.png",
+        "alt": "AnomalyCLIP：先學狀態提示，再看新產品。以輔助正常／異常資料和區域標註，聯合整圖與局部監督學習物件無關的狀態提示。CLIP 骨幹權重固定，文字提示可學，DPAM 調整注意力以保留局部語意；目標影像與兩種文字表示比較，再整合多層局部線索。目標零樣本不代表模型從未訓練。 本圖為 AI 生成教學示意，非模型實測。",
+        "callouts": [
+          {
+            "title": "學到的是什麼",
+            "body": "V、W 代表可學參數，搭配 object／damaged object；不是人工列出每一種產品名稱或缺陷清單。文字編碼中的附加提示也參與學習。"
+          },
+          {
+            "title": "局部位置怎麼來",
+            "body": "整張 A 經影像編碼取得局部表示，p 放大圖只是指出取自哪裡；p 的影像特徵與正常／異常文字向量分開輸入相似度比較。DPAM 方格是注意力示意，不是空間熱圖。"
+          },
+          {
+            "title": "怎麼驗證零樣本",
+            "body": "核對輔助訓練資料與模型版本，目標測試不能混入訓練。把新產品正常與真缺陷獨立驗證，不因提示通用就省略現場檢查。"
+          }
+        ],
+        "reading_views": [
+          {
+            "title": "AnomalyCLIP：先學狀態提示，再看新產品",
+            "image": "_course_content/generated-concepts/ad-anomalyclip/wi021-anomalyclip-c1-r02-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/ad-anomalyclip/wi021-anomalyclip-c1-r02-mobile.png",
+            "alt": "AnomalyCLIP：先學狀態提示，再看新產品。以輔助正常／異常資料和區域標註，聯合整圖與局部監督學習物件無關的狀態提示。CLIP 骨幹權重固定，文字提示可學，DPAM 調整注意力以保留局部語意；目標影像與兩種文字表示比較，再整合多層局部線索。目標零樣本不代表模型從未訓練。 本圖為 AI 生成教學示意，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              725,
+              2170
+            ],
+            "mobile_display_mode": "full-mobile",
+            "mobile_intrinsic_width": 725,
+            "mobile_intrinsic_height": 2170,
+            "desktop_intrinsic_width": 1672,
+            "desktop_intrinsic_height": 941
+          }
+        ],
+        "core_ideas": true
+      },
+      {
+        "id": "wi021-ad-anomalyclip-2",
+        "title": "文字懂異常，仍可能看錯細節",
+        "prompt": "用允收孔邊 q 與細刮傷 p，分開看誤報、漏檢。",
+        "caption": "正常孔邊 q 可能得到高分而誤報，細傷 p 也可能得低分而漏檢；圖中輸出是教學假設。先確認影像可見度，再用獨立正常與真缺陷比較設定，不能把語意相似當成缺陷機率。",
+        "image": "_course_content/generated-concepts/ad-anomalyclip/wi021-clip-methods-d2-r02-desktop.png",
+        "alt": "文字懂異常，仍可能看錯細節。正常孔邊 q 可能得到高分而誤報，細傷 p 也可能得低分而漏檢；圖中輸出是教學假設。先確認影像可見度，再用獨立正常與真缺陷比較設定，不能把語意相似當成缺陷機率。 本圖為 AI 生成教學示意，非模型實測。",
+        "callouts": [
+          {
+            "title": "提示來源不同",
+            "body": "WinCLIP 的文字由人工組合，AnomalyCLIP 的提示參數先在輔助資料學到；不是把兩個名字換在同一套手寫提示上。"
+          },
+          {
+            "title": "先改善什麼",
+            "body": "核對光照、對焦與有效解析度，確認 p 能看見、q 屬於允收變化；文字換得更強烈，不能找回影像沒有的細節。"
+          },
+          {
+            "title": "如何查兩種錯誤",
+            "body": "固定未見正常與真缺陷，按材質和缺陷尺寸記錄誤報、漏檢。WinCLIP+ 另查正常參考涵蓋，在同漏檢要求下比較完整延遲及覆核量。"
+          }
+        ],
+        "reading_views": [
+          {
+            "title": "文字懂異常，仍可能看錯細節",
+            "image": "_course_content/generated-concepts/ad-anomalyclip/wi021-clip-methods-d2-r02-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/ad-anomalyclip/wi021-clip-methods-d2-r01-mobile.png",
+            "alt": "文字懂異常，仍可能看錯細節。正常孔邊 q 可能得到高分而誤報，細傷 p 也可能得低分而漏檢；圖中輸出是教學假設。先確認影像可見度，再用獨立正常與真缺陷比較設定，不能把語意相似當成缺陷機率。 本圖為 AI 生成教學示意，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              724,
+              2171
+            ],
+            "mobile_display_mode": "full-mobile",
+            "mobile_intrinsic_width": 724,
+            "mobile_intrinsic_height": 2171,
+            "desktop_intrinsic_width": 1672,
+            "desktop_intrinsic_height": 941
+          }
+        ],
+        "core_ideas": false
+      },
+      {
+        "id": "wi021-ad-anomalyclip-3",
+        "title": "三種圖文方法，先選工作結果",
+        "prompt": "同一金屬板 A，比資料準備、位置輸出與對話成本。",
+        "caption": "WinCLIP 用人工狀態文字與視窗，WinCLIP+ 可加正常參考；AnomalyCLIP 使用輔助資料學到的提示；AnomalyGPT 加入內建定位與對話。只有正常品可先評估參考路線，訓練型方法要先備妥已訓練模型。固定硬體、解析度與漏檢要求，比誤報、延遲和覆核量；位置圖不等於精密輪廓或尺寸。",
+        "image": "_course_content/generated-concepts/ad-anomalyclip/wi021-clip-methods-d3-r04-desktop.png",
+        "alt": "三種圖文方法，先選工作結果。WinCLIP 用人工狀態文字與視窗，WinCLIP+ 可加正常參考；AnomalyCLIP 使用輔助資料學到的提示；AnomalyGPT 加入內建定位與對話。只有正常品可先評估參考路線，訓練型方法要先備妥已訓練模型。固定硬體、解析度與漏檢要求，比誤報、延遲和覆核量；位置圖不等於精密輪廓或尺寸。 本圖為 AI 生成教學示意，非模型實測。",
+        "callouts": [
+          {
+            "title": "圖中比較範圍",
+            "body": "位置圖 p? 僅代表輸出形式，不表示三者檢測結果相同。手機以整個 AnomalyGPT 方塊比較輸出，完整的影像、位置提示與問題路徑見核心圖。"
+          },
+          {
+            "title": "新產品需要什麼",
+            "body": "重查人工提示、正常參考或已訓練提示的適用範圍；需要適配時另留驗證資料。輔助訓練資料與目標評測資料不能混用。"
+          },
+          {
+            "title": "何時值得用對話",
+            "body": "需要互動解讀才加入文字驗證；同時量回答有無證據、定位錯誤和人工覆核時間。只需要位置線索時，可先比較較簡單的輸出流程。"
+          }
+        ],
+        "reading_views": [
+          {
+            "title": "三種圖文方法，先選工作結果",
+            "image": "_course_content/generated-concepts/ad-anomalyclip/wi021-clip-methods-d3-r04-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/ad-anomalyclip/wi021-clip-methods-d3-r07-mobile.png",
+            "alt": "三種圖文方法，先選工作結果。WinCLIP 用人工狀態文字與視窗，WinCLIP+ 可加正常參考；AnomalyCLIP 使用輔助資料學到的提示；AnomalyGPT 加入內建定位與對話。只有正常品可先評估參考路線，訓練型方法要先備妥已訓練模型。固定硬體、解析度與漏檢要求，比誤報、延遲和覆核量；位置圖不等於精密輪廓或尺寸。 本圖為 AI 生成教學示意，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              725,
+              2169
+            ],
+            "mobile_display_mode": "full-mobile",
+            "mobile_intrinsic_width": 725,
+            "mobile_intrinsic_height": 2169,
+            "desktop_intrinsic_width": 1672,
+            "desktop_intrinsic_height": 941
+          }
+        ],
+        "core_ideas": false
+      }
+    ]
+  },
+  "concept_visuals": [
+    {
+      "id": "causal-chain",
+      "placement": "after_causal_chain",
+      "title": "AnomalyCLIP：先懂核心再看細節",
+      "prompt": "把學到的提示換成任意一句手寫描述，還是相同方法嗎？",
+      "caption": "通用 CLIP 常先認出物件名稱，而不是細微正常與異常。AnomalyCLIP在輔助資料上學與物件類別無關的狀態提示，把注意重點轉向異常語意。",
+      "image": "_course_content/generated-concepts/ad-anomalyclip/ad-anomalyclip-f01-core.png",
+      "alt": "通用 CLIP 常先認出物件名稱，而不是細微正常與異常。AnomalyCLIP在輔助資料上學與物件類別無關的狀態提示，把注意重點轉向異常語意。 圖為既有生成工件與機制設定，不是模型推論。",
+      "callouts": [
+        {
+          "title": "提示由資料學習",
+          "body": "正常／異常提示包含可學習 tokens，在輔助資料上訓練；目標產品 zero-shot 不代表全流程從未訓練。"
+        },
+        {
+          "title": "全局和局部對齊",
+          "body": "共同學習整圖與局部的正常／異常語意，讓提示不只服務物件分類，也支持位置線索。"
+        },
+        {
+          "title": "轉移到目標產品",
+          "body": "目標影像與學到的提示比較，產生整圖與局部結果；提示能否跨到新材質仍需現場驗證。"
+        }
+      ]
+    },
+    {
+      "id": "worked-example",
+      "placement": "after_micro_example",
+      "title": "換一個 prompt template，為何同一 patch 會換邊？",
+      "prompt": "兩欄固定同一ROI patch與CLIP image feature，只改learned context/template revision。",
+      "caption": "同一局部可因 prompt state 改變而有不同 normal/anomaly margin。這不是讓人挑最漂亮的字句，而是提醒任何 prompt revision 都要有校正與回歸證據。",
+      "image": "_course_content/generated-concepts/ad-anomalyclip/ad-anomalyclip-worked-example_v01.svg",
+      "alt": "左右對照圖：同一ROI橘色局部連向兩組不同prompt向量，左側margin偏normal而右側偏anomaly，底部均有校正與review標記。",
+      "callouts": [
+        {
+          "title": "prompt revision",
+          "body": "template、context、tokens或tokenizer改變都可改margin。"
+        },
+        {
+          "title": "不是文字選美",
+          "body": "不可只選在少量樣本上最亮的prompt。"
+        },
+        {
+          "title": "需recalibration",
+          "body": "用target holdout、prompt variance和low-FPR結果重新qualification。"
+        }
+      ]
+    },
+    {
+      "id": "comparison",
+      "placement": "after_comparison",
+      "title": "AnomalyCLIP 的 learned prompt 不等於 WinCLIP 的 frozen ensemble",
+      "prompt": "兩者都用CLIP文字與影像相似度，但文字側的學習與風險不同。",
+      "caption": "AnomalyCLIP 有 auxiliary learned normal/anomaly prompts 和 target-exclusion 風險；WinCLIP 使用宣告的 frozen prompt ensemble，並可加 few-normal references。兩者都需 local calibration。",
+      "image": "_course_content/generated-concepts/ad-anomalyclip/ad-anomalyclip-comparison_v01.svg",
+      "alt": "左右比較圖：左側auxiliary資料形成learned prompt，右側固定文字模板加optional normal references，兩側皆對ROI patch產生margin候選格。",
+      "callouts": [
+        {
+          "title": "AnomalyCLIP",
+          "body": "重點是prompt learning state與transfer audit。"
+        },
+        {
+          "title": "WinCLIP",
+          "body": "重點是frozen prompt vocabulary、window layout和reference policy。"
+        },
+        {
+          "title": "共同邊界",
+          "body": "CLIP margin不是calibrated release probability或精確定位證明。"
+        }
+      ]
+    },
+    {
+      "id": "boundary-cases-explainer",
+      "placement": "before_boundary_cases",
+      "title": "source、prompt 與 patch 尺度會怎麼改 margin？",
+      "prompt": "同一 patch 的 learned prompt margin：source 混入、prompt state 漂移或可觀測尺度不足時，先壞的是哪個前提？",
+      "caption": "AnomalyCLIP 的三個模型專屬反事實：每欄把條件、可觀察後果與正確下一步放在一起。它們不是自動修正規則；遇到條件超出驗證範圍時，先保存原始證據並進入 HOLD／REVIEW。",
+      "image": "_course_content/generated-concepts/ad-anomalyclip/ad-anomalyclip-boundary-cases_v01.svg",
+      "alt": "AnomalyCLIP 的三欄反事實說明圖：每欄依序說明一個失效條件、可能看到的候選或量測後果，以及應進入 HOLD、重驗或改選方法的安全下一步。",
+      "callouts": [
+        {
+          "title": "source 或 split 洩漏",
+          "body": "margin 可能看似穩定卻不再代表目標 AOI；先審計 source、split 與 target isolation。"
+        },
+        {
+          "title": "learned prompt state 漂移",
+          "body": "同一 image embedding 的 normal/anomaly 相似度可換邊；保存 prompt、tokenizer、ensemble 與 calibration revision。"
+        },
+        {
+          "title": "小缺陷或 logical task",
+          "body": "低解析 patch 的 margin 不是像素真值；先 HOLD，驗 effective pixels 或改用可定位／規則方法。"
+        }
+      ]
+    }
+  ],
+  "boundary_cases": [
+    {
+      "condition": "auxiliary data 對 target 有 leakage、license 或 taxonomy 不清",
+      "effect": "所謂zero-shot transfer可能已見過目標語義，結論與部署資料治理都失效。",
+      "action": "HOLD；保存source IDs/splits/licenses與target exclusion audit，必要時改用可追溯方法。"
+    },
+    {
+      "condition": "prompt/tokenizer/template/CLIP revision 改變，或 prompt transfer 不穩",
+      "effect": "normal/anomaly margin 可能反轉，同一熱圖無法與舊 threshold 比較。",
+      "action": "重新校正，執行prompt variance、target holdout、unseen product與低FPR regression。"
+    },
+    {
+      "condition": "patch有效尺度不足、image/text domain gap 或 global logic",
+      "effect": "tiny defect可能被插值掩蓋；產品命名、材料、照明或缺件關係未必被prompt margin表達。",
+      "action": "驗effective pixels與domain coverage；對低FPR/結構問題使用specialist evidence或HOLD。"
+    }
+  ],
+  "comparison": [
+    {
+      "model": "AnomalyCLIP",
+      "normality": "learned normal prompt與CLIP patch/global alignment",
+      "candidate": "normal/anomaly prompt similarity margin 高"
+    },
+    {
+      "model": "WinCLIP",
+      "normality": "frozen prompt ensemble，可選few-normal references",
+      "candidate": "image/window/patch similarity margin 高"
+    },
+    {
+      "model": "AnomalyGPT",
+      "normality": "非 normality representation：visual-language assist state 加 evidence-region path",
+      "candidate": "grounded response/region candidate，非自動決策"
+    }
+  ],
+  "selection": "WinCLIP 用人工狀態文字與視窗，WinCLIP+ 可加正常參考；AnomalyCLIP 使用輔助資料學到的提示；AnomalyGPT 加入內建定位與對話。只有正常品可先評估參考路線，訓練型方法要先備妥已訓練模型。固定硬體、解析度與漏檢要求，比誤報、延遲和覆核量；位置圖不等於精密輪廓或尺寸。",
+  "poc": {
+    "title": "POC 第一件事：先證明 margin 沒有借到目標答案",
+    "steps": [
+      "固定 auxiliary IDs/license/taxonomy/splits/target exclusion、CLIP/tokenizer、learned prompt tokens/template/context/adaptation state、ROI/image recipe和feature layers。",
+      "鎖 similarity normalization、patch interpolation/smoothing、aggregation、calibration、threshold/abstain和candidate evidence trace。",
+      "在 target holdout、unseen product、prompt variance、challenge/future/drift split 比較low-FPR escape、false reject/review load、effective pixels、P95和transfer failures。"
+    ],
+    "hold": "source audit或target exclusion缺失、prompt不穩、domain gap、tiny defect/global logic或P95無證據時，先 HOLD。",
+    "acceptance": {
+      "baseline": "固定 target-excluded auxiliary split、CLIP/tokenizer、learned prompt state、ROI、patch rule 與 local calibration。",
+      "measure": "量 target holdout 的 prompt variance、margin distribution、low-FPR escape、false reject、review load、patch evidence 與完整 P95。",
+      "negative_control": "以受控 prompt paraphrase、class-name 改寫或 tokenizer revision 重跑，證明 margin 改變會觸發重新 calibration，而非沿用舊 threshold。",
+      "owner": "資料治理 owner、Vision ML owner、目標 AOI 品質 owner"
+    }
+  },
+  "teach_back": {
+    "question": "為什麼語意相似、熱區或肯定回答，都不足以直接放行？",
+    "answer": "它們只是模型線索，可能誤報、漏檢或超出影像證據。要回原圖，按允收規格及獨立資料驗證，再決定現場處置。"
+  },
+  "slide_reading": [
+    {
+      "title": "先找：learned prompt 從哪裡來？",
+      "question": "什麼證據說明target product沒有混入prompt learning？",
+      "look": "找 auxiliary IDs、splits、license、taxonomy與target exclusion。",
+      "relation": "source資料和學習的prompt一起決定transfer偏好。",
+      "takeaway": "zero-shot是資料邊界主張，必須可稽核。",
+      "terms": [
+        "auxiliary data：用於學prompt的外部/來源資料",
+        "target exclusion：證明目標資料未進入訓練的稽核"
+      ]
+    },
+    {
+      "title": "這張圖要核對 prompt margin",
+      "question": "一個patch怎麼得到normal/anomaly相對分數？",
+      "look": "找 CLIP patch feature、normal prompt、anomaly prompt和similarity difference。",
+      "relation": "同一feature與兩種text embeddings比較，差值才是候選訊號。",
+      "takeaway": "margin不是自然語言答案，也不是defect probability。",
+      "terms": [
+        "prompt embedding：文字經CLIP編碼後的向量",
+        "similarity margin：對兩組prompt相似度的差值"
+      ]
+    },
+    {
+      "title": "先鎖 prompt state，才看map",
+      "question": "為何template換字也需要重新校正？",
+      "look": "找 tokens/context/tokenizer/feature layer、interpolation和calibration。",
+      "relation": "任何文字或feature版本改變都能移動margin分布和低FPR。",
+      "takeaway": "prompt revision是模型變更，不是文案修改。",
+      "terms": [
+        "prompt variance：不同prompt版本造成的分數變動",
+        "recalibration：版本改後重新驗證分數與門檻"
+      ]
+    },
+    {
+      "title": "選它前，先看transfer boundary",
+      "question": "何時不該把一張prompt heatmap當作選型答案？",
+      "look": "看 leakage、domain gap、effective pixels、global logic和target holdout。",
+      "relation": "候選可因資料、語言或視覺domain差異失效，局部margin亦未必表達關係錯誤。",
+      "takeaway": "低FPR與可追溯ROI要求高時，沒有local proof就HOLD。",
+      "terms": [
+        "domain gap：來源與目標產品外觀/語義的差異",
+        "local calibration：以目標本地資料驗證margin行為"
+      ]
+    }
+  ],
+  "comparison_headers": {
+    "title": "先比 learned prompt state，不比「語言能力」",
+    "basis": "prompt state 如何定義 normal／anomaly？",
+    "output": "哪個 similarity margin 才是候選？"
+  },
+  "transfer_check": {
+    "title": "換產品要重做什麼",
+    "scenario": "新產品外觀、允收反光與缺陷型態都不同。",
+    "question": "哪些準備與驗證不能直接沿用？",
+    "answer": "重新核對提示來源、正常參考或既有模型的適用範圍；有適配時另留驗證資料。分開檢查正常誤報、真缺陷漏檢與成本；需要對話時再驗文字是否有據。"
+  },
+  "review_trace": {
+    "authority": "roadmap-model-selection/anomaly-detection/ad-anomalyclip/model.md",
+    "scope": "WI-021 三張首讀桌面/手機實際圖文重製，保留工程參考層。",
+    "claims": [
+      {
+        "id": "visual-1",
+        "field": "beginner_path.visuals[prompt-workpiece]",
+        "source": "模型定位 / architecture_path"
+      },
+      {
+        "id": "visual-2",
+        "field": "beginner_path.visuals[auxiliary-prompt-contract]",
+        "source": "architecture_path"
+      },
+      {
+        "id": "visual-3",
+        "field": "beginner_path.visuals[patch-text-margin]",
+        "source": "representation_or_score"
+      },
+      {
+        "id": "visual-4",
+        "field": "beginner_path.visuals[prompt-version-transfer]",
+        "source": "failure_boundary"
+      },
+      {
+        "id": "visual-5",
+        "field": "beginner_path.visuals[review-hold]",
+        "source": "selection_gate / evidence_bundle"
+      },
+      {
+        "id": "promise",
+        "field": "promise",
+        "source": "模型定位 / representation_or_score"
+      },
+      {
+        "id": "mechanism",
+        "field": "mechanism_steps",
+        "source": "architecture_path / representation_or_score"
+      },
+      {
+        "id": "boundaries",
+        "field": "boundary_cases",
+        "source": "failure_boundary / selection_gate"
+      },
+      {
+        "id": "comparison",
+        "field": "comparison + selection",
+        "source": "selection_gate"
+      },
+      {
+        "id": "poc",
+        "field": "poc + acceptance",
+        "source": "cost_and_operating_point / evidence_bundle"
+      },
+      {
+        "id": "transfer",
+        "field": "transfer_check",
+        "source": "failure_boundary / selection_gate"
+      },
+      {
+        "id": "f01-core",
+        "field": "beginner_path.visuals[0] + scenario + mental_model",
+        "source": "https://arxiv.org/abs/2310.18961"
+      },
+      {
+        "id": "f01-transfer",
+        "field": "micro_example + transfer_check",
+        "source": "由原論文機制推論移除後果；https://arxiv.org/abs/2310.18961"
+      },
+      {
+        "id": "wi021-first-read",
+        "field": "beginner_path + micro_example + selection",
+        "source": "https://arxiv.org/html/2310.18961v4"
+      }
+    ]
+  },
+  "teaching_preflight": {
+    "brief": "teaching-images/vision-ai-model-selection/workitems/wi-021/anomalyclip-c1-r01.md",
+    "story": "C",
+    "major_visual_nodes": 4,
+    "visual_status": "self-reviewed",
+    "user_review": "pending"
+  }
+}

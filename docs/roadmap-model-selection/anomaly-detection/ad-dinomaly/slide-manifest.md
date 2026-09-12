@@ -1,8 +1,14 @@
 # Dinomaly slide manifest
 
-| slide_id | course page | teaching purpose | style | active asset | status |
-| --- | --- | --- | --- | --- | --- |
-| `DINOMALY-01` | 04-43 | Position the Foundation-Transformer token path, noisy bottleneck, linear decoder, loose reconstruction, residual decision, and adapted-path cost boundary. | C | `images/final/DINOMALY-01-positioning_v02-ppt-master-style.png` | approved |
-| `DINOMALY-02` | 04-44 | Explain the four anti-identity components and the versioned token-residual / fusion / aggregation contract. | C | `images/final/DINOMALY-02-architecture_v02-ppt-master-style.png` | approved |
-| `DINOMALY-03` | 04-45 | Govern feature state, adaptation, dropout, linear attention, loose loss, per-category evidence, latency, and drift. | C | `images/final/DINOMALY-03-build-inference_v02-ppt-master-style.png` | approved |
-| `DINOMALY-04` | 04-46 | Show feature-domain, identity-mapping, rare-class, effective-pixel, and global-logic boundaries before fair Dinomaly/UniAD/DRAEM comparison. | D | `images/final/DINOMALY-04-selection-boundary_v02-ppt-comparison-style.png` | approved |
+| slide_id | 教學目標 | 版型 | active asset | 狀態 |
+| --- | --- | --- | --- | --- |
+| `DINOMALY-01` | Dinomaly：多类正常，共用重建路徑 | C | `images/final/WI033-DINOMALY-01-r01-desktop.png` | native_and_page_reviewed_user_pending |
+| `DINOMALY-02` | Dinomaly：限制照抄，再分組比較 | C | `images/final/WI033-DINOMALY-02-r02-desktop.png` | native_and_page_reviewed_user_pending |
+| `DINOMALY-03` | Dinomaly：訓練擾動，部署要關閉 | C | `images/final/WI033-DINOMALY-03-r01-desktop.png` | native_and_page_reviewed_user_pending |
+| `DINOMALY-04` | Dinomaly：低重建差，不保證無刮傷 | D | `images/final/WI033-DINOMALY-04-r01-desktop.png` | native_and_page_reviewed_user_pending |
+
+## 保留的歷史來源（非目前啟用）
+- [DINOMALY-01](images/final/DINOMALY-01-positioning_v02-ppt-master-style.png)
+- [DINOMALY-02](images/final/DINOMALY-02-architecture_v02-ppt-master-style.png)
+- [DINOMALY-03](images/final/DINOMALY-03-build-inference_v02-ppt-master-style.png)
+- [DINOMALY-04](images/final/DINOMALY-04-selection-boundary_v02-ppt-comparison-style.png)

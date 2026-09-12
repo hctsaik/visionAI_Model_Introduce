@@ -1,0 +1,30 @@
+[
+  {
+    "id": "patchcore-deep-features",
+    "topic": "ad-patchcore",
+    "chapter": 2,
+    "view": 0,
+    "path": "_course_content/generated-concepts/ad-patchcore/wi033-patchcore-deep-features-r02-mobile.png",
+    "old_mobile": "_course_content/generated-concepts/ad-patchcore/patchcore-work-02-features_p03-mobile.svg",
+    "sha256": "bb5b86e2cd8e4d8289702214e1a799bd1a70f8e12d6a6caae028648c5fbf24d2",
+    "desktop_source": "_course_content/generated-concepts/ad-patchcore/patchcore-work-02-features_p03.svg",
+    "desktop_sha256": "a8cef33d79c3409801e88cedf7fdabd28ea871c896704182782d28e60cb7fa6d",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "patchcore-deep-context",
+    "topic": "ad-patchcore",
+    "chapter": 2,
+    "view": 1,
+    "path": "_course_content/generated-concepts/ad-patchcore/wi033-patchcore-deep-context-r01-mobile.png",
+    "old_mobile": "_course_content/generated-concepts/ad-patchcore/patchcore-work-02-context_p03-mobile.svg",
+    "sha256": "d8b19537d8fef828e218249a90a29f71b06a037370a175e8e04e2e6eee5f961d",
+    "desktop_source": "_course_content/generated-concepts/ad-patchcore/patchcore-work-02-context_p03.svg",
+    "desktop_sha256": "6f8c3548cafefe59cc0ce277d4f7aacb035a2aa4f9ae208843551cf87308eaf1",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  }
+]

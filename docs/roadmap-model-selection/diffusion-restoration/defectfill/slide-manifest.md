@@ -1,8 +1,14 @@
 # DefectFill slide manifest
 
-| slide_id | logical page | purpose | visual type | active asset | status |
-| --- | --- | --- | --- | --- | --- |
-| `DEFECTFILL-01` | `07-02` | Position DefectFill as a few-reference inpainting-diffusion route for synthetic training data, with a real-holdout and specialist boundary. | C | `images/final/DEFECTFILL-01-positioning_v02-ppt-master-style.png` | approved |
-| `DEFECTFILL-02` | `07-03` | Explain the reference/mask/normal-image to masked denoising to synthetic image/mask/provenance path. | C | `images/final/DEFECTFILL-02-architecture_v02-ppt-master-style.png` | approved |
-| `DEFECTFILL-03` | `07-04` | Lock data, condition, checkpoint, LoRA, scheduler, seed, LFS, provenance, real-holdout, and downstream-benefit controls. | C | `images/final/DEFECTFILL-03-build-inference_v02-ppt-master-style.png` | approved |
-| `DEFECTFILL-04` | `07-05` | Reject synthetic-image aesthetics as selection evidence; compare augmentation routes only on fixed real-holdout and governance conditions. | D | `images/final/DEFECTFILL-04-selection-boundary_v02-ppt-comparison-style.png` | approved |
+| slide_id | 教學目標 | 版型 | active asset | 狀態 |
+| --- | --- | --- | --- | --- |
+| `DEFECTFILL-01` | DefectFill：合成資料先核對再加入 | C | `images/final/WI033-DEFECTFILL-01-r01-desktop.png` | native_and_page_reviewed_user_pending |
+| `DEFECTFILL-02` | DefectFill：學缺陷，再填指定區域 | C | `images/final/WI033-DEFECTFILL-02-r02-desktop.png` | native_and_page_reviewed_user_pending |
+| `DEFECTFILL-03` | DefectFill：適配與挑選成本分開算 | C | `images/final/WI033-DEFECTFILL-03-r01-desktop.png` | native_and_page_reviewed_user_pending |
+| `DEFECTFILL-04` | DefectFill：局部差大，也可能是假傷 | D | `images/final/WI033-DEFECTFILL-04-r01-desktop.png` | native_and_page_reviewed_user_pending |
+
+## 保留的歷史來源（非目前啟用）
+- [DEFECTFILL-01](images/final/DEFECTFILL-01-positioning_v02-ppt-master-style.png)
+- [DEFECTFILL-02](images/final/DEFECTFILL-02-architecture_v02-ppt-master-style.png)
+- [DEFECTFILL-03](images/final/DEFECTFILL-03-build-inference_v02-ppt-master-style.png)
+- [DEFECTFILL-04](images/final/DEFECTFILL-04-selection-boundary_v02-ppt-comparison-style.png)

@@ -1,0 +1,22 @@
+{
+  "image": "_course_content/generated-concepts/dinov2/wi027-dino-d2-r03-desktop.png",
+  "reading_views": [
+    {
+      "title": "特徵很相近，仍可能漏掉小缺口",
+      "image": "_course_content/generated-concepts/dinov2/wi027-dino-d2-r03-desktop.png",
+      "mobile_image": "_course_content/generated-concepts/dinov2/wi027-dino-d2-r03-mobile.png",
+      "alt": "特徵很相近，仍可能漏掉小缺口。換一個墊圈案例：右側小缺口在原圖可見，整張縮小後卻可能變弱。相近的特徵不能證明工件無缺陷；DINOv2 本身也不自動輸出缺陷輪廓。 AI生成教學示意，非模型實測。",
+      "mobile_crop": [
+        0,
+        0,
+        725,
+        2169
+      ],
+      "mobile_display_mode": "full-mobile",
+      "desktop_intrinsic_width": 1672,
+      "desktop_intrinsic_height": 941,
+      "mobile_intrinsic_width": 725,
+      "mobile_intrinsic_height": 2169
+    }
+  ]
+}

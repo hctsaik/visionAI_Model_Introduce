@@ -105,3 +105,40 @@ Preserve image/ROI/tile provenance and redaction state; vision-encoder/projector
 - Liu et al., *Visual Instruction Tuning* (LLaVA, 2023), [arXiv:2304.08485](https://arxiv.org/abs/2304.08485).
 - Liu et al., *Improved Baselines with Visual Instruction Tuning* (LLaVA-1.5, 2023), [arXiv:2310.03744](https://arxiv.org/abs/2310.03744).
 - `full-model-course/06-foundation-vision-and-vlm.md` for course-scoped claims and page order.
+
+<!-- wi033-engineering:start -->
+## WI-033 工程圖修正
+
+### LLaVA：影像與問題共同形成回答
+
+以原版LLaVA的投影橋接為界，不把所有家族版本當相同架構。固定接頭左有螺絲右空座，回答可描述右未見螺絲，但照片不能證明原因；所有回答為教學設計。
+
+可見描述與原因推測要分開交付。
+
+來源：https://arxiv.org/abs/2304.08485
+
+### 原版LLaVA：把影像表示接進語言模型
+
+以原版LLaVA為界：預訓練視覺編碼器輸出表示，學習線性投影接入語言模型的embedding空間，再與問題文字共同產生回答。圖內小向量僅說明不同維度的橋接，不是該模型實際維度。右側空螺絲座支持未見螺絲，不能推出漏裝或振動鬆脫等原因。
+
+投影橋接影像與文字，回答仍要有可見證據。
+
+來源：https://arxiv.org/abs/2304.08485
+
+### LLaVA：原圖、問題與版本一起保存
+
+保存checkpoint、processor、完整問題及生成設定，記錄原圖與回答。對同一接頭逐側查證，不能因句子流暢就放行；需要定位輪廓或自動放行時另建驗證，不把語言回答當校正後尺寸。
+
+回答要可追溯，錯誤與不確定都要留存。
+
+來源：https://arxiv.org/abs/2304.08485
+
+### LLaVA與專用視覺：先定義交付
+
+同接頭若只問固定座位有無螺絲，可比較ROI分類或規則；若工作需要開放問題與說明，可評VLM。两者仍須影像證據、未知處理及漏判成本，不能只按模型大小決定。
+
+可追問的回答與固定座位判定，各驗各的成本。
+
+來源：https://arxiv.org/abs/2304.08485
+
+<!-- wi033-engineering:end -->

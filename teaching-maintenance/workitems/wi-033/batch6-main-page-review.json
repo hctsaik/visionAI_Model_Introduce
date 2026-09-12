@@ -1,0 +1,32 @@
+{
+  "status": "passed",
+  "actual_viewed": [
+    "pages/ad-winclip/docs-360-main-2.png",
+    "pages/ad-winclip/docs-360-main-3.png",
+    "pages/ad-anomalyclip/docs-360-main-2.png",
+    "pages/ad-anomalyclip/docs-360-main-3.png"
+  ],
+  "notes": [
+    "四首讀手機頁已實看，孔口與刮傷保留，放大按鈕獨立下排",
+    "原桌機SHA未變；來源/docs/HTTP一致"
+  ],
+  "http": [
+    "http://127.0.0.1:8000/_course_content/generated-concepts/ad-anomalyclip/wi033-clip-shared-errors-r02-mobile.png",
+    "http://127.0.0.1:8000/docs/_course_content/generated-concepts/ad-anomalyclip/wi033-clip-shared-errors-r02-mobile.png",
+    "http://127.0.0.1:8000/_course_content/generated-concepts/ad-anomalyclip/wi021-clip-methods-d2-r02-desktop.png",
+    "http://127.0.0.1:8000/docs/_course_content/generated-concepts/ad-anomalyclip/wi021-clip-methods-d2-r02-desktop.png",
+    "http://127.0.0.1:8000/_course_content/generated-concepts/ad-anomalyclip/wi033-clip-shared-errors-r02-mobile.png",
+    "http://127.0.0.1:8000/docs/_course_content/generated-concepts/ad-anomalyclip/wi033-clip-shared-errors-r02-mobile.png",
+    "http://127.0.0.1:8000/_course_content/generated-concepts/ad-anomalyclip/wi021-clip-methods-d2-r02-desktop.png",
+    "http://127.0.0.1:8000/docs/_course_content/generated-concepts/ad-anomalyclip/wi021-clip-methods-d2-r02-desktop.png",
+    "http://127.0.0.1:8000/_course_content/generated-concepts/ad-anomalyclip/wi033-clip-shared-methods-r01-mobile.png",
+    "http://127.0.0.1:8000/docs/_course_content/generated-concepts/ad-anomalyclip/wi033-clip-shared-methods-r01-mobile.png",
+    "http://127.0.0.1:8000/_course_content/generated-concepts/ad-anomalyclip/wi021-clip-methods-d3-r04-desktop.png",
+    "http://127.0.0.1:8000/docs/_course_content/generated-concepts/ad-anomalyclip/wi021-clip-methods-d3-r04-desktop.png",
+    "http://127.0.0.1:8000/_course_content/generated-concepts/ad-anomalyclip/wi033-clip-shared-methods-r01-mobile.png",
+    "http://127.0.0.1:8000/docs/_course_content/generated-concepts/ad-anomalyclip/wi033-clip-shared-methods-r01-mobile.png",
+    "http://127.0.0.1:8000/_course_content/generated-concepts/ad-anomalyclip/wi021-clip-methods-d3-r04-desktop.png",
+    "http://127.0.0.1:8000/docs/_course_content/generated-concepts/ad-anomalyclip/wi021-clip-methods-d3-r04-desktop.png"
+  ],
+  "user_approval": "pending"
+}

@@ -1,0 +1,630 @@
+[
+  {
+    "id": "resnet-engineering-2",
+    "image": "resnet-engineering-2-r02-desktop.png",
+    "sha256": "4b2ae645166db246564c9f2f03e0bbd579705ad86c7b68b078a8d96aaa56b95f",
+    "scores": [
+      23,
+      24,
+      19,
+      18,
+      9
+    ],
+    "total": 93,
+    "evidence": [
+      "同一2×2特徵分流後逐格相加，3/1/2/2可追算；結果箭頭已對準和",
+      "算例抽象，首讀工件留在其他圖；三段重複輸入為追蹤所需",
+      "原生桌機及手機PNG實看；非模型實測，頁內另驗"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "精確淺底三段圖解，質感較簡化"
+      ],
+      "completeness": [
+        9,
+        "同形狀才能逐位置相加；換形狀需先對齊。"
+      ],
+      "professionalism": [
+        9,
+        "同一2×2特徵分流後逐格相加，3/1/2/2可追算；結果箭頭已對準和"
+      ],
+      "density": [
+        8,
+        "算例抽象，首讀工件留在其他圖；三段重複輸入為追蹤所需"
+      ],
+      "hierarchy": [
+        9,
+        "輸入/改變/結果與單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch3-page-assessment.json; batch3-deep-page-review.json"
+  },
+  {
+    "id": "resnet-engineering-2",
+    "image": "resnet-engineering-2-r02-mobile.png",
+    "sha256": "a6a2bc0143cf785a86b4d6683ed18ed9631a7a4abcddec1e43be7b70433aab8d",
+    "scores": [
+      23,
+      24,
+      19,
+      18,
+      9
+    ],
+    "total": 93,
+    "evidence": [
+      "同一2×2特徵分流後逐格相加，3/1/2/2可追算；結果箭頭已對準和",
+      "算例抽象，首讀工件留在其他圖；三段重複輸入為追蹤所需",
+      "原生桌機及手機PNG實看；非模型實測，頁內另驗"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "精確淺底三段圖解，質感較簡化"
+      ],
+      "completeness": [
+        9,
+        "同形狀才能逐位置相加；換形狀需先對齊。"
+      ],
+      "professionalism": [
+        9,
+        "同一2×2特徵分流後逐格相加，3/1/2/2可追算；結果箭頭已對準和"
+      ],
+      "density": [
+        8,
+        "算例抽象，首讀工件留在其他圖；三段重複輸入為追蹤所需"
+      ],
+      "hierarchy": [
+        9,
+        "輸入/改變/結果與單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch3-page-assessment.json; batch3-deep-page-review.json"
+  },
+  {
+    "id": "convnext-engineering-2",
+    "image": "convnext-engineering-2-r03-desktop.png",
+    "sha256": "4c0032dbf725a0c966a6409c74c5b3c64d5f744f5b7dc5e1a1b1778f64c390ce",
+    "scores": [
+      22,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 91,
+    "evidence": [
+      "同位2/5以½加權到3.5，與各通道鄰域1+2+0區分；殘差正確分支",
+      "鄰域小格只示意核範圍，不是完整特徵；手機通道數字完整但次字略小",
+      "原生桌機及手機PNG實看；非模型實測，頁內另驗"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "精確淺底三段圖解，質感較簡化"
+      ],
+      "completeness": [
+        9,
+        "空間混合不跨通道，通道混合在同位置組合。"
+      ],
+      "professionalism": [
+        9,
+        "同位2/5以½加權到3.5，與各通道鄰域1+2+0區分；殘差正確分支"
+      ],
+      "density": [
+        8,
+        "鄰域小格只示意核範圍，不是完整特徵；手機通道數字完整但次字略小"
+      ],
+      "hierarchy": [
+        9,
+        "輸入/改變/結果與單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch3-page-assessment.json; batch3-deep-page-review.json"
+  },
+  {
+    "id": "convnext-engineering-2",
+    "image": "convnext-engineering-2-r03-mobile.png",
+    "sha256": "c51c510032fa087a68e14beae36a7ec3a4b0dcd8eff7753496568659153dd029",
+    "scores": [
+      22,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 91,
+    "evidence": [
+      "同位2/5以½加權到3.5，與各通道鄰域1+2+0區分；殘差正確分支",
+      "鄰域小格只示意核範圍，不是完整特徵；手機通道數字完整但次字略小",
+      "原生桌機及手機PNG實看；非模型實測，頁內另驗"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "精確淺底三段圖解，質感較簡化"
+      ],
+      "completeness": [
+        9,
+        "空間混合不跨通道，通道混合在同位置組合。"
+      ],
+      "professionalism": [
+        9,
+        "同位2/5以½加權到3.5，與各通道鄰域1+2+0區分；殘差正確分支"
+      ],
+      "density": [
+        8,
+        "鄰域小格只示意核範圍，不是完整特徵；手機通道數字完整但次字略小"
+      ],
+      "hierarchy": [
+        9,
+        "輸入/改變/結果與單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch3-page-assessment.json; batch3-deep-page-review.json"
+  },
+  {
+    "id": "vit-classifier-engineering-2",
+    "image": "vit-classifier-engineering-2-r01-desktop.png",
+    "sha256": "55357ebcbdf569aaa00696efe6a9bf8536458614556e3410de85d603b4f4f41f",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "同板刮痕/孔邊片、兩路權重與[1.5,1]加權結果，CLS責任明示",
+      "單頭簡化算例省略Q/K計算；橘權重靠近箭頭但仍可辨",
+      "原生桌機及手機PNG實看；非模型實測，頁內另驗"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "精確淺底三段圖解，質感較簡化"
+      ],
+      "completeness": [
+        9,
+        "注意力加權其他表示，位置身份仍要保留。"
+      ],
+      "professionalism": [
+        9,
+        "同板刮痕/孔邊片、兩路權重與[1.5,1]加權結果，CLS責任明示"
+      ],
+      "density": [
+        8,
+        "單頭簡化算例省略Q/K計算；橘權重靠近箭頭但仍可辨"
+      ],
+      "hierarchy": [
+        9,
+        "輸入/改變/結果與單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "pending",
+    "user_approval": "pending"
+  },
+  {
+    "id": "vit-classifier-engineering-2",
+    "image": "vit-classifier-engineering-2-r01-mobile.png",
+    "sha256": "6d9b9ba76a4be6c88a4adb7a4324715e528bfb77348d41fab95306a51f18dd5b",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "同板刮痕/孔邊片、兩路權重與[1.5,1]加權結果，CLS責任明示",
+      "單頭簡化算例省略Q/K計算；橘權重靠近箭頭但仍可辨",
+      "原生桌機及手機PNG實看；非模型實測，頁內另驗"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "精確淺底三段圖解，質感較簡化"
+      ],
+      "completeness": [
+        9,
+        "注意力加權其他表示，位置身份仍要保留。"
+      ],
+      "professionalism": [
+        9,
+        "同板刮痕/孔邊片、兩路權重與[1.5,1]加權結果，CLS責任明示"
+      ],
+      "density": [
+        8,
+        "單頭簡化算例省略Q/K計算；橘權重靠近箭頭但仍可辨"
+      ],
+      "hierarchy": [
+        9,
+        "輸入/改變/結果與單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "pending",
+    "user_approval": "pending"
+  },
+  {
+    "id": "u-net-engineering-2",
+    "image": "u-net-engineering-2-r03-desktop.png",
+    "sha256": "eb13e5fc1d9474407ff29b55d8dbca6c568bdb5d206a84741c1cb31941e13946",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "下採樣、同尺度skip及融合後細線遮罩可追；串接不是相加",
+      "工程圖只示意代表尺度；手機圖說仍較接近圖底，無遮字",
+      "原生桌機及手機PNG實看；非模型實測，頁內另驗"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "精確淺底三段圖解，質感較簡化"
+      ],
+      "completeness": [
+        9,
+        "跳接提供對應特徵，解碼器仍要學會融合。"
+      ],
+      "professionalism": [
+        9,
+        "下採樣、同尺度skip及融合後細線遮罩可追；串接不是相加"
+      ],
+      "density": [
+        8,
+        "工程圖只示意代表尺度；手機圖說仍較接近圖底，無遮字"
+      ],
+      "hierarchy": [
+        9,
+        "輸入/改變/結果與單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch3-page-assessment.json; batch3-deep-page-review.json"
+  },
+  {
+    "id": "u-net-engineering-2",
+    "image": "u-net-engineering-2-r03-mobile.png",
+    "sha256": "1bd8a82ec4b8a3bd1be0185e1a569a0ba1742d7aa0ac46096452294d57104b1e",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "下採樣、同尺度skip及融合後細線遮罩可追；串接不是相加",
+      "工程圖只示意代表尺度；手機圖說仍較接近圖底，無遮字",
+      "原生桌機及手機PNG實看；非模型實測，頁內另驗"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "精確淺底三段圖解，質感較簡化"
+      ],
+      "completeness": [
+        9,
+        "跳接提供對應特徵，解碼器仍要學會融合。"
+      ],
+      "professionalism": [
+        9,
+        "下採樣、同尺度skip及融合後細線遮罩可追；串接不是相加"
+      ],
+      "density": [
+        8,
+        "工程圖只示意代表尺度；手機圖說仍較接近圖底，無遮字"
+      ],
+      "hierarchy": [
+        9,
+        "輸入/改變/結果與單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch3-page-assessment.json; batch3-deep-page-review.json"
+  },
+  {
+    "id": "segformer-engineering-2",
+    "image": "segformer-engineering-2-r03-desktop.png",
+    "sha256": "8198f3297731d50fecc8c326b5143cae6215959952c050e1ed949d60e48d3a47",
+    "scores": [
+      22,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 91,
+    "evidence": [
+      "四尺度先對齊最高解析度，再串接融合成語意線，未畫四遮罩投票",
+      "細格只表粒度，不需逐格讀數；工程示意質感較簡化",
+      "原生桌機及手機PNG實看；非模型實測，頁內另驗"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "精確淺底三段圖解，質感較簡化"
+      ],
+      "completeness": [
+        9,
+        "四路特徵共同進解碼器，不是四張遮罩投票。"
+      ],
+      "professionalism": [
+        9,
+        "四尺度先對齊最高解析度，再串接融合成語意線，未畫四遮罩投票"
+      ],
+      "density": [
+        8,
+        "細格只表粒度，不需逐格讀數；工程示意質感較簡化"
+      ],
+      "hierarchy": [
+        9,
+        "輸入/改變/結果與單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch3-page-assessment.json; batch3-deep-page-review.json"
+  },
+  {
+    "id": "segformer-engineering-2",
+    "image": "segformer-engineering-2-r03-mobile.png",
+    "sha256": "7eeebc3862bc48d4047559f862d38acd237f41326878b8f02f319fc87ac7c369",
+    "scores": [
+      22,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 91,
+    "evidence": [
+      "四尺度先對齊最高解析度，再串接融合成語意線，未畫四遮罩投票",
+      "細格只表粒度，不需逐格讀數；工程示意質感較簡化",
+      "原生桌機及手機PNG實看；非模型實測，頁內另驗"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "精確淺底三段圖解，質感較簡化"
+      ],
+      "completeness": [
+        9,
+        "四路特徵共同進解碼器，不是四張遮罩投票。"
+      ],
+      "professionalism": [
+        9,
+        "四尺度先對齊最高解析度，再串接融合成語意線，未畫四遮罩投票"
+      ],
+      "density": [
+        8,
+        "細格只表粒度，不需逐格讀數；工程示意質感較簡化"
+      ],
+      "hierarchy": [
+        9,
+        "輸入/改變/結果與單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch3-page-assessment.json; batch3-deep-page-review.json"
+  },
+  {
+    "id": "yolo-seg-engineering-2",
+    "image": "yolo-seg-engineering-2-r02-desktop.png",
+    "sha256": "e3e56520e2b9dd1d774c4cef681ea278d50f37de21ca2a6445c502c634b6b65c",
+    "scores": [
+      23,
+      24,
+      19,
+      18,
+      9
+    ],
+    "total": 93,
+    "evidence": [
+      "P1甲+乙/P2甲−乙，½係數組合後保留同孔洞與物件形狀",
+      "代數原型非實測；正負由顏色與減號同時標示，精確輪廓不是此圖責任",
+      "原生桌機及手機PNG實看；非模型實測，頁內另驗"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "精確淺底三段圖解，質感較簡化"
+      ],
+      "completeness": [
+        9,
+        "原型乘各件係數，再依物件框取回遮罩。"
+      ],
+      "professionalism": [
+        9,
+        "P1甲+乙/P2甲−乙，½係數組合後保留同孔洞與物件形狀"
+      ],
+      "density": [
+        8,
+        "代數原型非實測；正負由顏色與減號同時標示，精確輪廓不是此圖責任"
+      ],
+      "hierarchy": [
+        9,
+        "輸入/改變/結果與單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch3-page-assessment.json; batch3-deep-page-review.json"
+  },
+  {
+    "id": "yolo-seg-engineering-2",
+    "image": "yolo-seg-engineering-2-r02-mobile.png",
+    "sha256": "df353b95c90f1420863f18c774ea52ad595af1b6f4a9fb57920264d53a37d8f2",
+    "scores": [
+      23,
+      24,
+      19,
+      18,
+      9
+    ],
+    "total": 93,
+    "evidence": [
+      "P1甲+乙/P2甲−乙，½係數組合後保留同孔洞與物件形狀",
+      "代數原型非實測；正負由顏色與減號同時標示，精確輪廓不是此圖責任",
+      "原生桌機及手機PNG實看；非模型實測，頁內另驗"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "精確淺底三段圖解，質感較簡化"
+      ],
+      "completeness": [
+        9,
+        "原型乘各件係數，再依物件框取回遮罩。"
+      ],
+      "professionalism": [
+        9,
+        "P1甲+乙/P2甲−乙，½係數組合後保留同孔洞與物件形狀"
+      ],
+      "density": [
+        8,
+        "代數原型非實測；正負由顏色與減號同時標示，精確輪廓不是此圖責任"
+      ],
+      "hierarchy": [
+        9,
+        "輸入/改變/結果與單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch3-page-assessment.json; batch3-deep-page-review.json"
+  },
+  {
+    "id": "keypoint-rcnn-engineering-2",
+    "image": "keypoint-rcnn-engineering-2-r02-desktop.png",
+    "sha256": "16750deccd38b520edcf7d034c653b1d2dccc32efafc54dd8a5105f6ee00fe87",
+    "scores": [
+      23,
+      24,
+      19,
+      18,
+      9
+    ],
+    "total": 93,
+    "evidence": [
+      "框(100,50)200×160，A(155,100)相容u/v，三張位置分布點名獨立",
+      "熱圖小格為概念定位；精確格心解碼另依實作，不把所有峰值叫真值",
+      "原生桌機及手機PNG實看；非模型實測，頁內另驗"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "精確淺底三段圖解，質感較簡化"
+      ],
+      "completeness": [
+        9,
+        "同一個點沿ROI與原圖映射，A/B/C不能互換。"
+      ],
+      "professionalism": [
+        9,
+        "框(100,50)200×160，A(155,100)相容u/v，三張位置分布點名獨立"
+      ],
+      "density": [
+        8,
+        "熱圖小格為概念定位；精確格心解碼另依實作，不把所有峰值叫真值"
+      ],
+      "hierarchy": [
+        9,
+        "輸入/改變/結果與單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch3-page-assessment.json; batch3-deep-page-review.json"
+  },
+  {
+    "id": "keypoint-rcnn-engineering-2",
+    "image": "keypoint-rcnn-engineering-2-r02-mobile.png",
+    "sha256": "1a1607d336b0cc3496482cbe4143f897f6bdb5d7661d8dbd3083634d1723bda0",
+    "scores": [
+      23,
+      24,
+      19,
+      18,
+      9
+    ],
+    "total": 93,
+    "evidence": [
+      "框(100,50)200×160，A(155,100)相容u/v，三張位置分布點名獨立",
+      "熱圖小格為概念定位；精確格心解碼另依實作，不把所有峰值叫真值",
+      "原生桌機及手機PNG實看；非模型實測，頁內另驗"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "精確淺底三段圖解，質感較簡化"
+      ],
+      "completeness": [
+        9,
+        "同一個點沿ROI與原圖映射，A/B/C不能互換。"
+      ],
+      "professionalism": [
+        9,
+        "框(100,50)200×160，A(155,100)相容u/v，三張位置分布點名獨立"
+      ],
+      "density": [
+        8,
+        "熱圖小格為概念定位；精確格心解碼另依實作，不把所有峰值叫真值"
+      ],
+      "hierarchy": [
+        9,
+        "輸入/改變/結果與單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch3-page-assessment.json; batch3-deep-page-review.json"
+  }
+]

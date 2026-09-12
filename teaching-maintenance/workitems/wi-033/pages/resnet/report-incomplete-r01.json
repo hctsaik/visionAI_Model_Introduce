@@ -1,0 +1,324 @@
+[
+  {
+    "topic": "resnet",
+    "route": "interactive-learning.html",
+    "width": 1440,
+    "errors": [],
+    "images": [],
+    "zoom_checks": 0,
+    "complete": false,
+    "failure": "Locator.evaluate: Error: Image never loaded: http://127.0.0.1:8000/_course_content/generated-concepts/resnet/wi030-resnet-c1-r02-desktop.png complete=true width=0\n    at eval (eval at evaluate (:290:30), <anonymous>:8:8)\n    at async <anonymous>:316:30",
+    "trace": "Traceback (most recent call last):\n  File \"C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-033\\qa-pages.py\", line 25, in <module>\n    im=fig.locator('img:visible');assert im.count()==1;im.evaluate(READY)\n                                                       ~~~~~~~~~~~^^^^^^^\n  File \"C:\\Users\\hctsa\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\playwright\\sync_api\\_generated.py\", line 15837, in evaluate\n    self._sync(\n    ~~~~~~~~~~^\n        self._impl_obj.evaluate(\n        ^^^^^^^^^^^^^^^^^^^^^^^^\n            expression=expression, arg=mapping.to_impl(arg), timeout=timeout\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n        )\n        ^\n    )\n    ^\n  File \"C:\\Users\\hctsa\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\playwright\\_impl\\_sync_base.py\", line 115, in _sync\n    return task.result()\n           ~~~~~~~~~~~^^\n  File \"C:\\Users\\hctsa\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\playwright\\_impl\\_locator.py\", line 191, in evaluate\n    return await self._with_element(\n           ^^^^^^^^^^^^^^^^^^^^^^^^^\n    ...<2 lines>...\n    )\n    ^\n  File \"C:\\Users\\hctsa\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\playwright\\_impl\\_locator.py\", line 117, in _with_element\n    return await task(\n           ^^^^^^^^^^^\n    ...<2 lines>...\n    )\n    ^\n  File \"C:\\Users\\hctsa\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\playwright\\_impl\\_js_handle.py\", line 72, in evaluate\n    await self._channel.send(\n    ...<6 lines>...\n    )\n  File \"C:\\Users\\hctsa\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\playwright\\_impl\\_connection.py\", line 69, in send\n    return await self._connection.wrap_api_call(\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n    ...<3 lines>...\n    )\n    ^\n  File \"C:\\Users\\hctsa\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\playwright\\_impl\\_connection.py\", line 559, in wrap_api_call\n    raise rewrite_error(error, f\"{parsed_st['apiName']}: {error}\") from None\nplaywright._impl._errors.Error: Locator.evaluate: Error: Image never loaded: http://127.0.0.1:8000/_course_content/generated-concepts/resnet/wi030-resnet-c1-r02-desktop.png complete=true width=0\n    at eval (eval at evaluate (:290:30), <anonymous>:8:8)\n    at async <anonymous>:316:30\n"
+  },
+  {
+    "topic": "resnet",
+    "route": "interactive-learning.html",
+    "width": 360,
+    "errors": [],
+    "images": [
+      {
+        "src": "http://127.0.0.1:8000/_course_content/generated-concepts/resnet/wi030-resnet-c1-r02-mobile.png",
+        "nw": 768,
+        "nh": 2048,
+        "box": {
+          "x": 17,
+          "y": -80.515625,
+          "width": 326,
+          "height": 869.328125,
+          "top": -80.515625,
+          "right": 343,
+          "bottom": 788.8125,
+          "left": 17
+        },
+        "kind": "main-1"
+      },
+      {
+        "src": "http://127.0.0.1:8000/_course_content/generated-concepts/resnet/wi030-class-d2-r03-mobile.png",
+        "nw": 887,
+        "nh": 1774,
+        "box": {
+          "x": 17,
+          "y": 28.0625,
+          "width": 326,
+          "height": 652,
+          "top": 28.0625,
+          "right": 343,
+          "bottom": 680.0625,
+          "left": 17
+        },
+        "kind": "main-2"
+      },
+      {
+        "src": "http://127.0.0.1:8000/_course_content/generated-concepts/resnet/wi030-class-d3-r06-mobile.png",
+        "nw": 724,
+        "nh": 2172,
+        "box": {
+          "x": 17,
+          "y": -134.34375,
+          "width": 326,
+          "height": 978,
+          "top": -134.34375,
+          "right": 343,
+          "bottom": 843.65625,
+          "left": 17
+        },
+        "kind": "main-3"
+      },
+      {
+        "src": "http://127.0.0.1:8000/roadmap-model-selection/known-target-classification/resnet/images/final/WI033-RESNET-01-r01-mobile.png",
+        "nw": 768,
+        "nh": 2304,
+        "box": {
+          "x": 34,
+          "y": -69.5,
+          "width": 292,
+          "height": 876,
+          "top": -69.5,
+          "right": 326,
+          "bottom": 806.5,
+          "left": 34
+        },
+        "kind": "engineering-1"
+      },
+      {
+        "src": "http://127.0.0.1:8000/roadmap-model-selection/known-target-classification/resnet/images/final/WI033-RESNET-02-r02-mobile.png",
+        "nw": 768,
+        "nh": 2304,
+        "box": {
+          "x": 34,
+          "y": -69.6875,
+          "width": 292,
+          "height": 876,
+          "top": -69.6875,
+          "right": 326,
+          "bottom": 806.3125,
+          "left": 34
+        },
+        "kind": "engineering-2"
+      },
+      {
+        "src": "http://127.0.0.1:8000/roadmap-model-selection/known-target-classification/resnet/images/final/WI033-RESNET-03-r01-mobile.png",
+        "nw": 768,
+        "nh": 2304,
+        "box": {
+          "x": 34,
+          "y": -69.359375,
+          "width": 292,
+          "height": 876,
+          "top": -69.359375,
+          "right": 326,
+          "bottom": 806.640625,
+          "left": 34
+        },
+        "kind": "engineering-3"
+      },
+      {
+        "src": "http://127.0.0.1:8000/roadmap-model-selection/known-target-classification/resnet/images/final/WI033-RESNET-04-r01-mobile.png",
+        "nw": 768,
+        "nh": 2304,
+        "box": {
+          "x": 34,
+          "y": -69.78125,
+          "width": 292,
+          "height": 876,
+          "top": -69.78125,
+          "right": 326,
+          "bottom": 806.21875,
+          "left": 34
+        },
+        "kind": "engineering-4"
+      }
+    ],
+    "zoom_checks": 7,
+    "answer": true,
+    "overflow": false,
+    "navigation": true,
+    "complete": true
+  },
+  {
+    "topic": "resnet",
+    "route": "docs/index.html",
+    "width": 1440,
+    "errors": [],
+    "images": [
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/resnet/wi030-resnet-c1-r02-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 404.1875,
+          "y": 401.640625,
+          "width": 935.625,
+          "height": 526.5625,
+          "top": 401.640625,
+          "right": 1339.8125,
+          "bottom": 928.203125,
+          "left": 404.1875
+        },
+        "kind": "main-1"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/resnet/wi030-class-d2-r01-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 404.1875,
+          "y": 201.15625,
+          "width": 935.625,
+          "height": 526.5625,
+          "top": 201.15625,
+          "right": 1339.8125,
+          "bottom": 727.71875,
+          "left": 404.1875
+        },
+        "kind": "main-2"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/resnet/wi030-class-d3-r05-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 404.1875,
+          "y": 200.46875,
+          "width": 935.625,
+          "height": 526.5625,
+          "top": 200.46875,
+          "right": 1339.8125,
+          "bottom": 727.03125,
+          "left": 404.1875
+        },
+        "kind": "main-3"
+      }
+    ],
+    "zoom_checks": 3,
+    "answer": true,
+    "complete": false,
+    "failure": "Locator.evaluate: Error: Image never loaded: http://127.0.0.1:8000/docs/roadmap-model-selection/known-target-classification/resnet/images/final/WI033-RESNET-01-r01-desktop.png complete=true width=0\n    at eval (eval at evaluate (:290:30), <anonymous>:8:8)\n    at async <anonymous>:316:30",
+    "trace": "Traceback (most recent call last):\n  File \"C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-033\\qa-pages.py\", line 42, in <module>\n    fig.scroll_into_view_if_needed();im=fig.locator('img');im.evaluate(READY)\n                                                           ~~~~~~~~~~~^^^^^^^\n  File \"C:\\Users\\hctsa\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\playwright\\sync_api\\_generated.py\", line 15837, in evaluate\n    self._sync(\n    ~~~~~~~~~~^\n        self._impl_obj.evaluate(\n        ^^^^^^^^^^^^^^^^^^^^^^^^\n            expression=expression, arg=mapping.to_impl(arg), timeout=timeout\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n        )\n        ^\n    )\n    ^\n  File \"C:\\Users\\hctsa\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\playwright\\_impl\\_sync_base.py\", line 115, in _sync\n    return task.result()\n           ~~~~~~~~~~~^^\n  File \"C:\\Users\\hctsa\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\playwright\\_impl\\_locator.py\", line 191, in evaluate\n    return await self._with_element(\n           ^^^^^^^^^^^^^^^^^^^^^^^^^\n    ...<2 lines>...\n    )\n    ^\n  File \"C:\\Users\\hctsa\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\playwright\\_impl\\_locator.py\", line 117, in _with_element\n    return await task(\n           ^^^^^^^^^^^\n    ...<2 lines>...\n    )\n    ^\n  File \"C:\\Users\\hctsa\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\playwright\\_impl\\_js_handle.py\", line 72, in evaluate\n    await self._channel.send(\n    ...<6 lines>...\n    )\n  File \"C:\\Users\\hctsa\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\playwright\\_impl\\_connection.py\", line 69, in send\n    return await self._connection.wrap_api_call(\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n    ...<3 lines>...\n    )\n    ^\n  File \"C:\\Users\\hctsa\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\playwright\\_impl\\_connection.py\", line 559, in wrap_api_call\n    raise rewrite_error(error, f\"{parsed_st['apiName']}: {error}\") from None\nplaywright._impl._errors.Error: Locator.evaluate: Error: Image never loaded: http://127.0.0.1:8000/docs/roadmap-model-selection/known-target-classification/resnet/images/final/WI033-RESNET-01-r01-desktop.png complete=true width=0\n    at eval (eval at evaluate (:290:30), <anonymous>:8:8)\n    at async <anonymous>:316:30\n"
+  },
+  {
+    "topic": "resnet",
+    "route": "docs/index.html",
+    "width": 360,
+    "errors": [],
+    "images": [
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/resnet/wi030-resnet-c1-r02-mobile.png",
+        "nw": 768,
+        "nh": 2048,
+        "box": {
+          "x": 17,
+          "y": -80.515625,
+          "width": 326,
+          "height": 869.328125,
+          "top": -80.515625,
+          "right": 343,
+          "bottom": 788.8125,
+          "left": 17
+        },
+        "kind": "main-1"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/resnet/wi030-class-d2-r03-mobile.png",
+        "nw": 887,
+        "nh": 1774,
+        "box": {
+          "x": 17,
+          "y": 28.0625,
+          "width": 326,
+          "height": 652,
+          "top": 28.0625,
+          "right": 343,
+          "bottom": 680.0625,
+          "left": 17
+        },
+        "kind": "main-2"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/resnet/wi030-class-d3-r06-mobile.png",
+        "nw": 724,
+        "nh": 2172,
+        "box": {
+          "x": 17,
+          "y": -134.34375,
+          "width": 326,
+          "height": 978,
+          "top": -134.34375,
+          "right": 343,
+          "bottom": 843.65625,
+          "left": 17
+        },
+        "kind": "main-3"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/known-target-classification/resnet/images/final/WI033-RESNET-01-r01-mobile.png",
+        "nw": 768,
+        "nh": 2304,
+        "box": {
+          "x": 34,
+          "y": -69.5,
+          "width": 292,
+          "height": 876,
+          "top": -69.5,
+          "right": 326,
+          "bottom": 806.5,
+          "left": 34
+        },
+        "kind": "engineering-1"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/known-target-classification/resnet/images/final/WI033-RESNET-02-r02-mobile.png",
+        "nw": 768,
+        "nh": 2304,
+        "box": {
+          "x": 34,
+          "y": -69.6875,
+          "width": 292,
+          "height": 876,
+          "top": -69.6875,
+          "right": 326,
+          "bottom": 806.3125,
+          "left": 34
+        },
+        "kind": "engineering-2"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/known-target-classification/resnet/images/final/WI033-RESNET-03-r01-mobile.png",
+        "nw": 768,
+        "nh": 2304,
+        "box": {
+          "x": 34,
+          "y": 368.640625,
+          "width": 292,
+          "height": 876,
+          "top": 368.640625,
+          "right": 326,
+          "bottom": 1244.640625,
+          "left": 34
+        },
+        "kind": "engineering-3"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/known-target-classification/resnet/images/final/WI033-RESNET-04-r01-mobile.png",
+        "nw": 768,
+        "nh": 2304,
+        "box": {
+          "x": 34,
+          "y": -69.78125,
+          "width": 292,
+          "height": 876,
+          "top": -69.78125,
+          "right": 326,
+          "bottom": 806.21875,
+          "left": 34
+        },
+        "kind": "engineering-4"
+      }
+    ],
+    "zoom_checks": 7,
+    "answer": true,
+    "overflow": false,
+    "navigation": true,
+    "complete": true
+  }
+]

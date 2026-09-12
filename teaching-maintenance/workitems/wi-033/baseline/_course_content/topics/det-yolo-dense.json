@@ -1,0 +1,452 @@
+{
+  "model": "YOLO dense detector",
+  "beginner_path": {
+    "title": "從找框、失敗到選型：三圖讀懂",
+    "intro": "固定同板兩個電阻 A/B，追蹤候選如何形成與處理。圖為教學示意，非模型實測。",
+    "visuals": [
+      {
+        "id": "wi024-det-yolo-dense-1",
+        "title": "許多位置一起找框，再整理重複",
+        "prompt": "為什麼兩個真實電阻，會先得到四個候選框？",
+        "caption": "本課用 YOLOv8 式 anchor-free dense 偵測說明。骨幹與 neck 共用整圖特徵，形成多尺度表示；各位置預測已知類別與框，再解碼、分數篩選及 NMS。同一電阻 A 可被多處提出，B 也有候選；示意的四框去重成兩框，仍須回原圖看位置與漏件。",
+        "image": "_course_content/generated-concepts/det-yolo-dense/wi024-yolo-c1-r01-desktop.png",
+        "alt": "許多位置一起找框，再整理重複。本課用 YOLOv8 式 anchor-free dense 偵測說明。骨幹與 neck 共用整圖特徵，形成多尺度表示；各位置預測已知類別與框，再解碼、分數篩選及 NMS。同一電阻 A 可被多處提出，B 也有候選；示意的四框去重成兩框，仍須回原圖看位置與漏件。 本圖為 AI 生成教學示意，非模型實測。",
+        "callouts": [
+          {
+            "title": "先學過什麼",
+            "body": "以目標類別與框標註訓練；預訓練模型不保證已認得你的電阻。細／中／粗是特徵解析度，不是三種固定類別，也不是三次獨立裁圖分類。"
+          },
+          {
+            "title": "格點不等於框",
+            "body": "位置是預測的參考，網路學得的回歸量解碼成框；圖上特徵格是示意，不是本機抽取的真實激活。"
+          },
+          {
+            "title": "一階段仍有後處理",
+            "body": "本課路徑包含 NMS；不能推論所有 YOLO 版本都如此。圖中的框數為教學設定，不能證明定位準確率。"
+          }
+        ],
+        "reading_views": [
+          {
+            "title": "許多位置一起找框，再整理重複",
+            "image": "_course_content/generated-concepts/det-yolo-dense/wi024-yolo-c1-r01-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/det-yolo-dense/wi024-yolo-c1-r01-mobile.png",
+            "alt": "許多位置一起找框，再整理重複。本課用 YOLOv8 式 anchor-free dense 偵測說明。骨幹與 neck 共用整圖特徵，形成多尺度表示；各位置預測已知類別與框，再解碼、分數篩選及 NMS。同一電阻 A 可被多處提出，B 也有候選；示意的四框去重成兩框，仍須回原圖看位置與漏件。 本圖為 AI 生成教學示意，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              724,
+              2172
+            ],
+            "mobile_display_mode": "full-mobile",
+            "mobile_intrinsic_width": 724,
+            "mobile_intrinsic_height": 2172,
+            "desktop_intrinsic_width": 1672,
+            "desktop_intrinsic_height": 941
+          }
+        ],
+        "core_ideas": true
+      },
+      {
+        "id": "wi024-det-yolo-dense-2",
+        "title": "NMS 去重，也可能刪掉真正的鄰件",
+        "prompt": "候選少了一個，是去掉重複，還是漏掉另一件？",
+        "caption": "同板 A/B 都是真電阻。若兩個候選框過寬且同類別、重疊很大，較低分的 B 候選可能被抑制。NMS 保留的 A 框仍一樣寬，不會順便把框修好；B 物件沒有消失，但已沒有獨立候選可計數。這是假設失敗，不是模型實測。",
+        "image": "_course_content/generated-concepts/det-yolo-dense/wi024-yolo-d2-r02-desktop.png",
+        "alt": "NMS 去重，也可能刪掉真正的鄰件。同板 A/B 都是真電阻。若兩個候選框過寬且同類別、重疊很大，較低分的 B 候選可能被抑制。NMS 保留的 A 框仍一樣寬，不會順便把框修好；B 物件沒有消失，但已沒有獨立候選可計數。這是假設失敗，不是模型實測。 本圖為 AI 生成教學示意，非模型實測。",
+        "callouts": [
+          {
+            "title": "先追原圖與框",
+            "body": "核對兩件是否清楚、標註邊界及框回歸是否合理。圖末灰框是人工核對位置，不是後處理產生的新預測。"
+          },
+          {
+            "title": "門檻不能只朝一邊調",
+            "body": "放寬重疊抑制可能留住鄰件，也可能增加重複；提高分數門檻可能又漏掉弱訊號。保留獨立密集、小物與遮擋驗證，分開記錄漏件與重複。"
+          }
+        ],
+        "reading_views": [
+          {
+            "title": "NMS 去重，也可能刪掉真正的鄰件",
+            "image": "_course_content/generated-concepts/det-yolo-dense/wi024-yolo-d2-r02-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/det-yolo-dense/wi024-yolo-d2-r01-mobile.png",
+            "alt": "NMS 去重，也可能刪掉真正的鄰件。同板 A/B 都是真電阻。若兩個候選框過寬且同類別、重疊很大，較低分的 B 候選可能被抑制。NMS 保留的 A 框仍一樣寬，不會順便把框修好；B 物件沒有消失，但已沒有獨立候選可計數。這是假設失敗，不是模型實測。 本圖為 AI 生成教學示意，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              724,
+              2172
+            ],
+            "mobile_display_mode": "full-mobile",
+            "mobile_intrinsic_width": 724,
+            "mobile_intrinsic_height": 2172,
+            "desktop_intrinsic_width": 1672,
+            "desktop_intrinsic_height": 941
+          }
+        ],
+        "core_ideas": false
+      },
+      {
+        "id": "wi024-det-yolo-dense-3",
+        "title": "同樣要框，YOLO 與 RT-DETR 怎麼選？",
+        "prompt": "固定電阻類別、輸入像素與硬體，比較準備和候選整理。",
+        "caption": "兩者都以類別框標註訓練：YOLOv8 式路徑由多位置提案，再以分數與 NMS 去重；RT-DETR 以查詢逐步定位，一對一分工在訓練時學習。已有 YOLO 部署工具可先做基準；想比較集合式輸出可測 RT-DETR。用自己的漏件、重複、端到端延遲與人工覆核量選，圖中沒有性能勝負。 正常板也能標元件框，但不代表已學會找未知缺陷。",
+        "image": "_course_content/generated-concepts/det-yolo-dense/wi024-known-d3-r02-desktop.png",
+        "alt": "同樣要框，YOLO 與 RT-DETR 怎麼選？。兩者都以類別框標註訓練：YOLOv8 式路徑由多位置提案，再以分數與 NMS 去重；RT-DETR 以查詢逐步定位，一對一分工在訓練時學習。已有 YOLO 部署工具可先做基準；想比較集合式輸出可測 RT-DETR。用自己的漏件、重複、端到端延遲與人工覆核量選，圖中沒有性能勝負。 正常板也能標元件框，但不代表已學會找未知缺陷。 本圖為 AI 生成教學示意，非模型實測。",
+        "callouts": [
+          {
+            "title": "資料與候選處理",
+            "body": "正常板仍可標出電阻框，訓練物件定位；這不是訓練未知缺陷偵測。標註不足時，可先用 Grounding DINO／YOLOE 提示探索再人工確認，但小元件與自訂名稱仍需驗證。"
+          },
+          {
+            "title": "換產品、輸出與完整成本",
+            "body": "本比較交出物件框，用於計數或裁出區域。需要輪廓時需支援分割的模型或另接分割流程；框、mask 都不能直接當實體尺寸。 換類別或外觀要核對標註、重訓需求與門檻。固定資料切分及漏件容許量，包含前處理、推論、後處理與覆核量一起比較；減層、降解析度可能省時也可能漏小物。"
+          }
+        ],
+        "reading_views": [
+          {
+            "title": "同樣要框，YOLO 與 RT-DETR 怎麼選？",
+            "image": "_course_content/generated-concepts/det-yolo-dense/wi024-known-d3-r02-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/det-yolo-dense/wi024-known-d3-r01-mobile.png",
+            "alt": "同樣要框，YOLO 與 RT-DETR 怎麼選？。兩者都以類別框標註訓練：YOLOv8 式路徑由多位置提案，再以分數與 NMS 去重；RT-DETR 以查詢逐步定位，一對一分工在訓練時學習。已有 YOLO 部署工具可先做基準；想比較集合式輸出可測 RT-DETR。用自己的漏件、重複、端到端延遲與人工覆核量選，圖中沒有性能勝負。 正常板也能標元件框，但不代表已學會找未知缺陷。 本圖為 AI 生成教學示意，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              724,
+              2172
+            ],
+            "mobile_display_mode": "full-mobile",
+            "mobile_intrinsic_width": 724,
+            "mobile_intrinsic_height": 2172,
+            "desktop_intrinsic_width": 1672,
+            "desktop_intrinsic_height": 941
+          }
+        ],
+        "core_ideas": false
+      }
+    ]
+  },
+  "badge": "固定類別的物件定位",
+  "title": "YOLO dense：共同找框，再整理候選",
+  "scenario": {
+    "title": "已知要找電阻：希望一張板上同時定位多件，接到計數與局部覆核。",
+    "body": "同一綠色電路板上，左側 A 與右側 B 是兩個電阻；想知道在哪裡、有幾件，並保留原圖供覆核。"
+  },
+  "promise": {
+    "title": "交出框、類別與分數",
+    "body": "框可支援計數與裁出局部；還需驗證漏件、重複與誤框，不直接提供缺陷真值、精密輪廓或實體尺寸。"
+  },
+  "mental_model": {
+    "title": "YOLO：許多位置一起找，再整理重複框",
+    "body": "整圖分類只回答有什麼，產線還要知道在哪裡。這裡用YOLOv8式dense detector說明：共享全圖特徵，讓多尺度的許多位置同時提出框與類別，再整理成可覆核的候選，避免逐一裁出區域後重跑整個分類流程。",
+    "limit": "準備目標類別框標註、遮擋與小物樣本；回映候選裁圖供覆核。換產品要查類別與像素，必要時重訓；門檻改動重測漏件、重複及端到端P95。"
+  },
+  "micro_example": {
+    "title": "改成更密的電阻排列，計數反而變少",
+    "setup": "原流程在稀疏板上穩定，新板元件更靠近；保留的框有些跨到鄰件，產線又要求縮短延遲。",
+    "prediction": "先放寬 NMS、改善像素與標註，或比較 RT-DETR，你會怎麼安排驗證？",
+    "reveal": "先對回原圖區分框太寬與真正重複；NMS 不會修框。可比較抑制設定、取像／訓練改善及 RT-DETR，但用同一密集小物驗證集記漏件、重複、誤框與端到端時間。既有部署成熟可保留 YOLO 作基準；RT-DETR 省去 NMS 仍不保證零漏件。只有正常板也能標元件框，卻不能因此宣稱可找未知缺陷。"
+  },
+  "mechanism_steps": [
+    {
+      "title": "共享特徵，多尺度共同提案",
+      "body": "骨幹與neck形成不同解析度的特徵，dense head在各位置預測框和已知類別。細尺度不只負責小物，粗尺度也不是固定類別；同一件可能被多處提出。",
+      "why": "整圖分類只回答有什麼，產線還要知道在哪裡。這裡用YOLOv8式dense detector說明：共享全圖特徵，讓多尺度的許多位置同時提出框與類別，再整理成可覆核的候選，避免逐一裁出區域後重跑整個分類流程。",
+      "anchor": "D01核心／反例／共同決策；依原論文核對",
+      "diagram": {
+        "title": "共享特徵，多尺度共同提案",
+        "body": "骨幹與neck形成不同解析度的特徵，dense head在各位置預測框和已知類別。細尺度不只負責小物，粗尺度也不是固定類別；同一件可能被多處提出。",
+        "why": "整圖分類只回答有什麼，產線還要知道在哪裡。這裡用YOLOv8式dense detector說明：共享全圖特徵，讓多尺度的許多位置同時提出框與類別，再整理成可覆核的候選，避免逐一裁出區域後重跑整個分類流程。",
+        "anchor": "D01核心／反例／共同決策；依原論文核對"
+      }
+    },
+    {
+      "title": "框是學得的位置，不是格子本身",
+      "body": "格點是提出預測的參考位置，回歸與解碼產生不同大小的框。YOLOv8採anchor-free方式；其他YOLO版本的anchor、頭與後處理可能不同。",
+      "why": "這一步提供下游所需的資訊；核心原理與工程驗證不可互相替代。",
+      "anchor": "D01核心／反例／共同決策；依原論文核對",
+      "diagram": {
+        "title": "框是學得的位置，不是格子本身",
+        "body": "格點是提出預測的參考位置，回歸與解碼產生不同大小的框。YOLOv8採anchor-free方式；其他YOLO版本的anchor、頭與後處理可能不同。",
+        "why": "這一步提供下游所需的資訊；核心原理與工程驗證不可互相替代。",
+        "anchor": "D01核心／反例／共同決策；依原論文核對"
+      }
+    },
+    {
+      "title": "整理重複，才能接到計數與覆核",
+      "body": "此路徑用分數篩選與NMS處理重複框，再回映原圖。NMS可能壓掉真實相鄰件；一階段也不代表沒有後處理，更不代表所有YOLO都使用NMS。",
+      "why": "這一步提供下游所需的資訊；核心原理與工程驗證不可互相替代。",
+      "anchor": "D01核心／反例／共同決策；依原論文核對",
+      "diagram": {
+        "title": "整理重複，才能接到計數與覆核",
+        "body": "此路徑用分數篩選與NMS處理重複框，再回映原圖。NMS可能壓掉真實相鄰件；一階段也不代表沒有後處理，更不代表所有YOLO都使用NMS。",
+        "why": "這一步提供下游所需的資訊；核心原理與工程驗證不可互相替代。",
+        "anchor": "D01核心／反例／共同決策；依原論文核對"
+      }
+    },
+    {
+      "title": "回原圖確認並驗證",
+      "body": "準備目標類別框標註、遮擋與小物樣本；回映候選裁圖供覆核。換產品要查類別與像素，必要時重訓；門檻改動重測漏件、重複及端到端P95。",
+      "why": "可能把一件算成三件。Dense位置可對同一物件重複提案；NMS用分數和重疊度保留代表框。但真實重疊物也可能被錯刪，要分別檢查重複與漏件，不能只追求框少。",
+      "anchor": "D01核心／反例／共同決策；依原論文核對",
+      "diagram": {
+        "title": "回原圖確認並驗證",
+        "body": "準備目標類別框標註、遮擋與小物樣本；回映候選裁圖供覆核。換產品要查類別與像素，必要時重訓；門檻改動重測漏件、重複及端到端P95。",
+        "why": "可能把一件算成三件。Dense位置可對同一物件重複提案；NMS用分數和重疊度保留代表框。但真實重疊物也可能被錯刪，要分別檢查重複與漏件，不能只追求框少。",
+        "anchor": "D01核心／反例／共同決策；依原論文核對"
+      }
+    }
+  ],
+  "visual_intro": "以下補充圖沿用D01核心、反例及共同選型；詳讀原理後再核對工程條件。",
+  "concept_visuals": [
+    {
+      "id": "causal-chain",
+      "placement": "after_causal_chain",
+      "title": "YOLO：許多位置一起找，再整理重複框",
+      "prompt": "先看圖說明：輸入是什麼、哪一步改變、為什麼有用？",
+      "caption": "整圖分類只回答有什麼，產線還要知道在哪裡。這裡用YOLOv8式dense detector說明：共享全圖特徵，讓多尺度的許多位置同時提出框與類別，再整理成可覆核的候選，避免逐一裁出區域後重跑整個分類流程。",
+      "image": "_course_content/generated-concepts/det-yolo-dense/det-yolo-dense-d01-core.png",
+      "alt": "YOLO dense的核心因果；同PCB素材與設定框，非模型推論。",
+      "callouts": [
+        {
+          "title": "共享特徵，多尺度共同提案",
+          "body": "骨幹與neck形成不同解析度的特徵，dense head在各位置預測框和已知類別。細尺度不只負責小物，粗尺度也不是固定類別；同一件可能被多處提出。"
+        },
+        {
+          "title": "框是學得的位置，不是格子本身",
+          "body": "格點是提出預測的參考位置，回歸與解碼產生不同大小的框。YOLOv8採anchor-free方式；其他YOLO版本的anchor、頭與後處理可能不同。"
+        },
+        {
+          "title": "整理重複，才能接到計數與覆核",
+          "body": "此路徑用分數篩選與NMS處理重複框，再回映原圖。NMS可能壓掉真實相鄰件；一階段也不代表沒有後處理，更不代表所有YOLO都使用NMS。"
+        }
+      ]
+    },
+    {
+      "id": "worked-example",
+      "placement": "after_micro_example",
+      "title": "拿掉去重：一件可能被算三次",
+      "prompt": "同一元件有三個高分重疊框，拿掉NMS後直接把框數當件數，會發生什麼？",
+      "caption": "固定原圖和候選，只改是否做NMS。圖中A附近三框屬於同件，B是另一件；框數和實際件數不同。這是設定框的計算示例，沒有宣稱模型一定會產生這些框。",
+      "image": "_course_content/generated-concepts/det-yolo-dense/det-yolo-dense-d01-failure.svg",
+      "alt": "YOLO dense的反事實；同PCB素材與設定框，非模型推論。",
+      "callouts": [
+        {
+          "title": "理解這一步",
+          "body": "可能把一件算成三件。Dense位置可對同一物件重複提案；NMS用分數和重疊度保留代表框。但真實重疊物也可能被錯刪，要分別檢查重複與漏件，不能只追求框少。"
+        },
+        {
+          "title": "資料、輸出與下一步",
+          "body": "準備目標類別框標註、遮擋與小物樣本；回映候選裁圖供覆核。換產品要查類別與像素，必要時重訓；門檻改動重測漏件、重複及端到端P95。"
+        },
+        {
+          "title": "本題核心與證據範圍",
+          "body": "整圖分類只回答有什麼，產線還要知道在哪裡。這裡用YOLOv8式dense detector說明：共享全圖特徵，讓多尺度的許多位置同時提出框與類別，再整理成可覆核的候選，避免逐一裁出區域後重跑整個分類流程。 圖中候選是教學設定，效果須以本地樣本驗證。"
+        }
+      ]
+    },
+    {
+      "id": "comparison",
+      "placement": "after_comparison",
+      "title": "已知類別：YOLO／RT-DETR／DINO",
+      "prompt": "同一工作條件下，你需要固定類別框、文字搜尋、視覺範例，還是物件輪廓？",
+      "caption": "先固定要找的物件與輸出：前三者需已知類別框監督；後三者借助預訓練與提示探索。開放詞彙不等於免驗證，只有正常品時先做物件探索與覆核，不能宣稱已建立未知缺陷偵測。",
+      "image": "_course_content/generated-concepts/det-yolo-dense/det-yolo-dense-d01-compare-known.svg",
+      "alt": "六模型共同決策；同PCB素材，比較資料與模型資訊路徑，不是性能排名。",
+      "callouts": [
+        {
+          "title": "資料與輸出責任",
+          "body": "先固定要找的物件與輸出：前三者需已知類別框監督；後三者借助預訓練與提示探索。開放詞彙不等於免驗證，只有正常品時先做物件探索與覆核，不能宣稱已建立未知缺陷偵測。"
+        },
+        {
+          "title": "換產品與公平比較",
+          "body": "同一資料切分、輸入像素、硬體與漏件容許量下，量漏件／重複／誤框、P95、記憶體及人工覆核。換產品要重查標註、詞彙／範例與門檻；需要輪廓時選支援mask的checkpoint或另接分割，不把box當輪廓。"
+        },
+        {
+          "title": "本題核心與證據範圍",
+          "body": "整圖分類只回答有什麼，產線還要知道在哪裡。這裡用YOLOv8式dense detector說明：共享全圖特徵，讓多尺度的許多位置同時提出框與類別，再整理成可覆核的候選，避免逐一裁出區域後重跑整個分類流程。 圖中候選是教學設定，效果須以本地樣本驗證。"
+        }
+      ]
+    },
+    {
+      "id": "boundary-cases-explainer",
+      "placement": "before_boundary_cases",
+      "title": "可變提示：Grounding DINO／YOLO-World／YOLOE",
+      "prompt": "同一工作條件下，你需要固定類別框、文字搜尋、視覺範例，還是物件輪廓？",
+      "caption": "同一資料切分、輸入像素、硬體與漏件容許量下，量漏件／重複／誤框、P95、記憶體及人工覆核。換產品要重查標註、詞彙／範例與門檻；需要輪廓時選支援mask的checkpoint或另接分割，不把box當輪廓。",
+      "image": "_course_content/generated-concepts/det-yolo-dense/det-yolo-dense-d01-compare-prompt.svg",
+      "alt": "六模型共同決策；同PCB素材，比較資料與模型資訊路徑，不是性能排名。",
+      "callouts": [
+        {
+          "title": "資料與輸出責任",
+          "body": "先固定要找的物件與輸出：前三者需已知類別框監督；後三者借助預訓練與提示探索。開放詞彙不等於免驗證，只有正常品時先做物件探索與覆核，不能宣稱已建立未知缺陷偵測。"
+        },
+        {
+          "title": "換產品與公平比較",
+          "body": "同一資料切分、輸入像素、硬體與漏件容許量下，量漏件／重複／誤框、P95、記憶體及人工覆核。換產品要重查標註、詞彙／範例與門檻；需要輪廓時選支援mask的checkpoint或另接分割，不把box當輪廓。"
+        },
+        {
+          "title": "本題核心與證據範圍",
+          "body": "整圖分類只回答有什麼，產線還要知道在哪裡。這裡用YOLOv8式dense detector說明：共享全圖特徵，讓多尺度的許多位置同時提出框與類別，再整理成可覆核的候選，避免逐一裁出區域後重跑整個分類流程。 圖中候選是教學設定，效果須以本地樣本驗證。"
+        }
+      ]
+    }
+  ],
+  "boundary_cases": [
+    {
+      "condition": "tiny object 在 optics、letterbox、resize 或 stride feature 上欠採樣",
+      "effect": "dense head 可能沒有足夠訊號提出可靠 candidate，critical-size miss 被整體指標掩蓋。",
+      "action": "先檢查 effective pixels/critical-size bins；固定 input/letterbox/stride/tiling，量 size-bin recall 再決定。"
+    },
+    {
+      "condition": "密集重疊、NMS/threshold/class policy、tile border/merge 或 ignore-zone 改變",
+      "effect": "同一物件可能重複、被壓制或跨 tile 失去，raw scores 也無法跨版本直接比較。",
+      "action": "版本化 decode/NMS/output cap/tile merge/labels，量 overlap duplicate/miss、false alarms、inverse mapping 和 review load。"
+    },
+    {
+      "condition": "類別 taxonomy、產品/recipe/domain 或未知 defect 改變",
+      "effect": "closed-set detector 仍可能對舊類別輸出高 confidence box，卻沒有未知檢出保證。",
+      "action": "以 lot/recipe/equipment split、calibration、OOD/review 和 failure images gate；不要由 box score 直接 PASS/FAIL。"
+    }
+  ],
+  "comparison": [
+    {
+      "model": "YOLO dense detector",
+      "normality": "依據：multi-scale feature locations 上的版本指定 box/class/objectness dense candidates",
+      "candidate": "可用輸出：decode/filter/NMS/inverse map 後的 known-class boxes/ROI crops"
+    },
+    {
+      "model": "RT-DETR",
+      "normality": "依據：hybrid encoder 後選出的有限 object queries/reference points 與 set detection contract",
+      "candidate": "可用輸出：decoder layers 產生的 class/box set；每個 depth/runtime 要另驗 P95"
+    },
+    {
+      "model": "DINO detector",
+      "normality": "依據：multi-scale encoded features、mixed queries/reference boxes 與 supervised set labels",
+      "candidate": "可用輸出：iteratively refined class/box set；denoising groups 只在 training 使用"
+    }
+  ],
+  "selection": "兩者都以類別框標註訓練：YOLOv8 式路徑由多位置提案，再以分數與 NMS 去重；RT-DETR 以查詢逐步定位，一對一分工在訓練時學習。已有 YOLO 部署工具可先做基準；想比較集合式輸出可測 RT-DETR。用自己的漏件、重複、端到端延遲與人工覆核量選，圖中沒有性能勝負。 正常板也能標元件框，但不代表已學會找未知缺陷。",
+  "poc": {
+    "title": "POC 第一件事：驗證 box 是從可觀測 tiny signal 產生，不是從速度宣告產生",
+    "steps": [
+      "鎖 exact YOLO version/variant/weights、backbone/neck/head、input/letterbox/stride、labels/ignore zones、assignment/loss、decode/threshold/NMS/output cap、tile/merge、precision/export/runtime。",
+      "按 critical-size、dense overlap、tile border、background/recipe/product shift、unknown/OOD 建 split，保存 raw candidates、NMS、inverse maps、boxes、miss/duplicate/false alarm cases。",
+      "量 size-bin/per-class recall、calibration、overlap errors、false alarms、camera-to-decision P95、memory/throughput 和 review load，並同 contract 比 query detectors。"
+    ],
+    "hold": "tiny signal不可觀測、label/ignore/NMS/tile contract 未鎖、shift/OOD 未驗、critical recall 或 P95 未通過時，先 HOLD/REVIEW。",
+    "acceptance": {
+      "baseline": "以固定 image/ROI、box labels/ignore zones、pixels、decode/NMS/tile merge 和人工 ROI review 的 YOLO implementation/variant baseline 對照。",
+      "measure": "按 critical-size bins、dense overlap、tile border、background/recipe/product shift、unknown/OOD 分層量 size-bin/per-class recall、false alarms、duplicate/miss、calibration、camera-to-decision P95、throughput/memory、review load。",
+      "negative_control": "把已知 tiny defect 放在 tile 邊界，保留高 raw dense score 但不讓其先經 decode/NMS/inverse map；預期 raw grid 不能直接變 defect truth，size/overlap/tile gate 必須判定是否可交 ROI。",
+      "owner": "由製程／label owner 簽核 known classes、ignore zones 與 critical size；CV owner 簽核 version/decode/NMS evidence，review owner 決定 candidate ROI 的下游處置。"
+    }
+  },
+  "teach_back": {
+    "question": "YOLO 在許多 grid locations 都提出高 score candidate。你為什麼還不能在這一步直接把其中一格當成產品缺陷事實？",
+    "answer": "因為 dense head 只產生版本指定的 raw candidates；還需 decode、threshold/filter、NMS、inverse mapping、tile merge 和 size/overlap/calibration gate。即使 final box 高分也只是 known-class ROI candidate，不是未知檢出、尺寸或 release 結論。"
+  },
+  "slide_reading": [
+    {
+      "title": "YOLO：許多位置一起找，再整理重複框",
+      "question": "先看圖說明：輸入是什麼、哪一步改變、為什麼有用？",
+      "look": "YOLO dense的核心因果；同PCB素材與設定框，非模型推論。",
+      "relation": "整圖分類只回答有什麼，產線還要知道在哪裡。這裡用YOLOv8式dense detector說明：共享全圖特徵，讓多尺度的許多位置同時提出框與類別，再整理成可覆核的候選，避免逐一裁出區域後重跑整個分類流程。",
+      "takeaway": "準備目標類別框標註、遮擋與小物樣本；回映候選裁圖供覆核。換產品要查類別與像素，必要時重訓；門檻改動重測漏件、重複及端到端P95。",
+      "terms": [
+        "GT：訓練或獨立驗證的標註，不是正式推論的輸入",
+        "候選：需回到原圖核對的位置或區域"
+      ]
+    },
+    {
+      "title": "拿掉去重：一件可能被算三次",
+      "question": "同一元件有三個高分重疊框，拿掉NMS後直接把框數當件數，會發生什麼？",
+      "look": "YOLO dense的反事實；同PCB素材與設定框，非模型推論。",
+      "relation": "固定原圖和候選，只改是否做NMS。圖中A附近三框屬於同件，B是另一件；框數和實際件數不同。這是設定框的計算示例，沒有宣稱模型一定會產生這些框。",
+      "takeaway": "可能把一件算成三件。Dense位置可對同一物件重複提案；NMS用分數和重疊度保留代表框。但真實重疊物也可能被錯刪，要分別檢查重複與漏件，不能只追求框少。",
+      "terms": [
+        "GT：訓練或獨立驗證的標註，不是正式推論的輸入",
+        "候選：需回到原圖核對的位置或區域"
+      ]
+    },
+    {
+      "title": "已知類別：YOLO／RT-DETR／DINO",
+      "question": "同一工作條件下，你需要固定類別框、文字搜尋、視覺範例，還是物件輪廓？",
+      "look": "六模型共同決策；同PCB素材，比較資料與模型資訊路徑，不是性能排名。",
+      "relation": "先固定要找的物件與輸出：前三者需已知類別框監督；後三者借助預訓練與提示探索。開放詞彙不等於免驗證，只有正常品時先做物件探索與覆核，不能宣稱已建立未知缺陷偵測。",
+      "takeaway": "準備目標類別框標註、遮擋與小物樣本；回映候選裁圖供覆核。換產品要查類別與像素，必要時重訓；門檻改動重測漏件、重複及端到端P95。",
+      "terms": [
+        "GT：訓練或獨立驗證的標註，不是正式推論的輸入",
+        "候選：需回到原圖核對的位置或區域"
+      ]
+    },
+    {
+      "title": "可變提示：Grounding DINO／YOLO-World／YOLOE",
+      "question": "同一工作條件下，你需要固定類別框、文字搜尋、視覺範例，還是物件輪廓？",
+      "look": "六模型共同決策；同PCB素材，比較資料與模型資訊路徑，不是性能排名。",
+      "relation": "同一資料切分、輸入像素、硬體與漏件容許量下，量漏件／重複／誤框、P95、記憶體及人工覆核。換產品要重查標註、詞彙／範例與門檻；需要輪廓時選支援mask的checkpoint或另接分割，不把box當輪廓。",
+      "takeaway": "準備目標類別框標註、遮擋與小物樣本；回映候選裁圖供覆核。換產品要查類別與像素，必要時重訓；門檻改動重測漏件、重複及端到端P95。",
+      "terms": [
+        "GT：訓練或獨立驗證的標註，不是正式推論的輸入",
+        "候選：需回到原圖核對的位置或區域"
+      ]
+    }
+  ],
+  "comparison_headers": {
+    "title": "不要比名稱；比候選如何形成",
+    "basis": "候選如何形成／dense contract",
+    "output": "box candidate／decode-NMS-review gate"
+  },
+  "transfer_check": {
+    "title": "改成更密的電阻排列，計數反而變少",
+    "scenario": "原流程在稀疏板上穩定，新板元件更靠近；保留的框有些跨到鄰件，產線又要求縮短延遲。",
+    "question": "先放寬 NMS、改善像素與標註，或比較 RT-DETR，你會怎麼安排驗證？",
+    "answer": "先對回原圖區分框太寬與真正重複；NMS 不會修框。可比較抑制設定、取像／訓練改善及 RT-DETR，但用同一密集小物驗證集記漏件、重複、誤框與端到端時間。既有部署成熟可保留 YOLO 作基準；RT-DETR 省去 NMS 仍不保證零漏件。只有正常板也能標元件框，卻不能因此宣稱可找未知缺陷。"
+  },
+  "review_trace": {
+    "authority": "roadmap-model-selection/detector/det-yolo-dense/model.md",
+    "scope": "WI-024 三張首讀及獨立手機PNG重製，保留原工程圖。",
+    "claims": [
+      {
+        "id": "d01-visual-1",
+        "field": "beginner_path.visuals[d01-core]",
+        "source": "D01核心、反例與共同決策；https://docs.ultralytics.com/models/yolov8/"
+      },
+      {
+        "id": "d01-visual-2",
+        "field": "beginner_path.visuals[d01-failure]",
+        "source": "D01核心、反例與共同決策；https://docs.ultralytics.com/models/yolov8/"
+      },
+      {
+        "id": "d01-visual-3",
+        "field": "beginner_path.visuals[d01-compare-known]",
+        "source": "D01核心、反例與共同決策；https://docs.ultralytics.com/models/yolov8/"
+      },
+      {
+        "id": "d01-visual-4",
+        "field": "beginner_path.visuals[d01-compare-prompt]",
+        "source": "D01核心、反例與共同決策；https://docs.ultralytics.com/models/yolov8/"
+      },
+      {
+        "id": "d01-contract",
+        "field": "promise + mechanism_steps",
+        "source": "D01來源補正及工程輸出責任"
+      },
+      {
+        "id": "d01-transfer",
+        "field": "transfer_check",
+        "source": "D01資料、輸出與公平比較"
+      },
+      {
+        "id": "wi024-first-read",
+        "field": "beginner_path + micro_example + selection",
+        "source": "https://docs.ultralytics.com/models/yolov8/；https://docs.ultralytics.com/reference/utils/nms/"
+      }
+    ]
+  },
+  "teaching_preflight": {
+    "brief": "teaching-images/vision-ai-model-selection/workitems/wi-024/yolo-c1-r01.md",
+    "story": "C",
+    "major_visual_nodes": 4,
+    "visual_status": "self-reviewed",
+    "user_review": "pending"
+  }
+}

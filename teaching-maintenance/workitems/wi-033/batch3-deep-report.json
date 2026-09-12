@@ -1,0 +1,2026 @@
+[
+  {
+    "topic": "resnet",
+    "route": "interactive-learning.html",
+    "width": 1440,
+    "chapter": 1,
+    "views": [
+      {
+        "screenshot": "course-1440-c01-v01.png",
+        "images": [],
+        "box": {
+          "x": 366.1875,
+          "y": 359.390625,
+          "width": 1011.625,
+          "height": 641.703125
+        }
+      },
+      {
+        "screenshot": "course-1440-c01-v02.png",
+        "images": [],
+        "box": {
+          "x": 366.1875,
+          "y": 359.390625,
+          "width": 1011.625,
+          "height": 641.703125
+        }
+      }
+    ],
+    "zooms": 2,
+    "complete": true
+  },
+  {
+    "topic": "resnet",
+    "route": "interactive-learning.html",
+    "width": 1440,
+    "chapter": 2,
+    "views": [
+      {
+        "screenshot": "course-1440-c02-v01.png",
+        "images": [],
+        "box": {
+          "x": 366.1875,
+          "y": 359,
+          "width": 1011.625,
+          "height": 641.703125
+        }
+      },
+      {
+        "screenshot": "course-1440-c02-v02.png",
+        "images": [],
+        "box": {
+          "x": 366.1875,
+          "y": 359,
+          "width": 1011.625,
+          "height": 641.703125
+        }
+      }
+    ],
+    "zooms": 2,
+    "complete": true
+  },
+  {
+    "topic": "resnet",
+    "route": "interactive-learning.html",
+    "width": 1440,
+    "chapter": 3,
+    "views": [
+      {
+        "screenshot": "course-1440-c03-v01.png",
+        "images": [],
+        "box": {
+          "x": 366.1875,
+          "y": -0.65625,
+          "width": 1011.625,
+          "height": 641.703125
+        }
+      }
+    ],
+    "zooms": 1,
+    "complete": true
+  },
+  {
+    "topic": "resnet",
+    "route": "interactive-learning.html",
+    "width": 1440,
+    "chapter": 4,
+    "views": [
+      {
+        "screenshot": "course-1440-c04-v01.png",
+        "images": [],
+        "box": {
+          "x": 366.1875,
+          "y": -0.59375,
+          "width": 1011.625,
+          "height": 641.703125
+        }
+      }
+    ],
+    "zooms": 1,
+    "complete": true
+  },
+  {
+    "topic": "resnet",
+    "route": "interactive-learning.html",
+    "width": 1440,
+    "chapter": 5,
+    "views": [
+      {
+        "screenshot": "course-1440-c05-v01.png",
+        "images": [],
+        "box": {
+          "x": 366.1875,
+          "y": -0.53125,
+          "width": 1011.625,
+          "height": 641.703125
+        }
+      }
+    ],
+    "zooms": 1,
+    "complete": true
+  },
+  {
+    "topic": "resnet",
+    "route": "interactive-learning.html",
+    "width": 1440,
+    "chapter": 6,
+    "views": [
+      {
+        "screenshot": "course-1440-c06-v01.png",
+        "images": [],
+        "box": {
+          "x": 366.1875,
+          "y": -1.46875,
+          "width": 1011.625,
+          "height": 641.703125
+        }
+      }
+    ],
+    "zooms": 1,
+    "complete": true
+  },
+  {
+    "topic": "resnet",
+    "route": "interactive-learning.html",
+    "width": 1440,
+    "chapter": 7,
+    "views": [
+      {
+        "screenshot": "course-1440-c07-v01.png",
+        "images": [],
+        "box": {
+          "x": 366.1875,
+          "y": -0.890625,
+          "width": 1011.625,
+          "height": 641.703125
+        }
+      }
+    ],
+    "zooms": 1,
+    "complete": true
+  },
+  {
+    "topic": "resnet",
+    "route": "interactive-learning.html",
+    "width": 1440,
+    "chapter": 8,
+    "views": [
+      {
+        "screenshot": "course-1440-c08-v01.png",
+        "images": [],
+        "box": {
+          "x": 366.1875,
+          "y": 358.828125,
+          "width": 1011.625,
+          "height": 641.703125
+        }
+      },
+      {
+        "screenshot": "course-1440-c08-v02.png",
+        "images": [],
+        "box": {
+          "x": 366.1875,
+          "y": 358.828125,
+          "width": 1011.625,
+          "height": 641.703125
+        }
+      },
+      {
+        "screenshot": "course-1440-c08-v03.png",
+        "images": [],
+        "box": {
+          "x": 366.1875,
+          "y": 358.828125,
+          "width": 1011.625,
+          "height": 641.703125
+        }
+      },
+      {
+        "screenshot": "course-1440-c08-v04.png",
+        "images": [],
+        "box": {
+          "x": 366.1875,
+          "y": 358.828125,
+          "width": 1011.625,
+          "height": 641.703125
+        }
+      }
+    ],
+    "zooms": 4,
+    "complete": true
+  },
+  {
+    "topic": "resnet",
+    "route": "interactive-learning.html",
+    "width": 360,
+    "chapter": 1,
+    "views": [
+      {
+        "screenshot": "course-360-c01-v01.png",
+        "images": [],
+        "box": {
+          "x": 33,
+          "y": 325.015625,
+          "width": 294,
+          "height": 474.625
+        }
+      },
+      {
+        "screenshot": "course-360-c01-v02.png",
+        "images": [],
+        "box": {
+          "x": 33,
+          "y": 325.015625,
+          "width": 294,
+          "height": 474.625
+        }
+      }
+    ],
+    "zooms": 2,
+    "complete": true
+  },
+  {
+    "topic": "resnet",
+    "route": "interactive-learning.html",
+    "width": 360,
+    "chapter": 2,
+    "views": [
+      {
+        "screenshot": "course-360-c02-v01.png",
+        "images": [
+          {
+            "src": "http://127.0.0.1:8000/_course_content/generated-concepts/resnet/wi033-resnet-deep-skip-r01-mobile.png",
+            "nw": 768,
+            "nh": 2800,
+            "box": {
+              "x": 34,
+              "y": 1.34375,
+              "width": 292,
+              "height": 1064.578125,
+              "top": 1.34375,
+              "right": 326,
+              "bottom": 1065.921875,
+              "left": 34
+            }
+          }
+        ],
+        "box": {
+          "x": 33,
+          "y": 0.34375,
+          "width": 294,
+          "height": 1157.578125
+        }
+      },
+      {
+        "screenshot": "course-360-c02-v02.png",
+        "images": [
+          {
+            "src": "http://127.0.0.1:8000/_course_content/generated-concepts/resnet/wi033-resnet-deep-residual-r02-mobile.png",
+            "nw": 768,
+            "nh": 2800,
+            "box": {
+              "x": 34,
+              "y": 1.34375,
+              "width": 292,
+              "height": 1064.578125,
+              "top": 1.34375,
+              "right": 326,
+              "bottom": 1065.921875,
+              "left": 34
+            }
+          }
+        ],
+        "box": {
+          "x": 33,
+          "y": 0.34375,
+          "width": 294,
+          "height": 1157.578125
+        }
+      }
+    ],
+    "zooms": 2,
+    "complete": true
+  },
+  {
+    "topic": "resnet",
+    "route": "interactive-learning.html",
+    "width": 360,
+    "chapter": 3,
+    "views": [
+      {
+        "screenshot": "course-360-c03-v01.png",
+        "images": [],
+        "box": {
+          "x": 33,
+          "y": 162.515625,
+          "width": 294,
+          "height": 474.625
+        }
+      }
+    ],
+    "zooms": 1,
+    "complete": true
+  },
+  {
+    "topic": "resnet",
+    "route": "interactive-learning.html",
+    "width": 360,
+    "chapter": 4,
+    "views": [
+      {
+        "screenshot": "course-360-c04-v01.png",
+        "images": [
+          {
+            "src": "http://127.0.0.1:8000/_course_content/generated-concepts/resnet/wi033-resnet-deep-bn-r02-mobile.png",
+            "nw": 768,
+            "nh": 2800,
+            "box": {
+              "x": 34,
+              "y": -177.296875,
+              "width": 292,
+              "height": 1064.578125,
+              "top": -177.296875,
+              "right": 326,
+              "bottom": 887.28125,
+              "left": 34
+            }
+          }
+        ],
+        "box": {
+          "x": 33,
+          "y": -178.296875,
+          "width": 294,
+          "height": 1157.578125
+        }
+      }
+    ],
+    "zooms": 1,
+    "complete": true
+  },
+  {
+    "topic": "resnet",
+    "route": "interactive-learning.html",
+    "width": 360,
+    "chapter": 5,
+    "views": [
+      {
+        "screenshot": "course-360-c05-v01.png",
+        "images": [],
+        "box": {
+          "x": 33,
+          "y": 162.578125,
+          "width": 294,
+          "height": 474.625
+        }
+      }
+    ],
+    "zooms": 1,
+    "complete": true
+  },
+  {
+    "topic": "resnet",
+    "route": "interactive-learning.html",
+    "width": 360,
+    "chapter": 6,
+    "views": [
+      {
+        "screenshot": "course-360-c06-v01.png",
+        "images": [],
+        "box": {
+          "x": 33,
+          "y": 162.203125,
+          "width": 294,
+          "height": 474.625
+        }
+      }
+    ],
+    "zooms": 1,
+    "complete": true
+  },
+  {
+    "topic": "resnet",
+    "route": "interactive-learning.html",
+    "width": 360,
+    "chapter": 7,
+    "views": [
+      {
+        "screenshot": "course-360-c07-v01.png",
+        "images": [],
+        "box": {
+          "x": 33,
+          "y": 162.59375,
+          "width": 294,
+          "height": 474.625
+        }
+      }
+    ],
+    "zooms": 1,
+    "complete": true
+  },
+  {
+    "topic": "resnet",
+    "route": "interactive-learning.html",
+    "width": 360,
+    "chapter": 8,
+    "views": [
+      {
+        "screenshot": "course-360-c08-v01.png",
+        "images": [
+          {
+            "src": "http://127.0.0.1:8000/_course_content/generated-concepts/resnet/wi033-resnet-deep-residual-r02-mobile.png",
+            "nw": 768,
+            "nh": 2800,
+            "box": {
+              "x": 34,
+              "y": 0.5,
+              "width": 292,
+              "height": 1064.578125,
+              "top": 0.5,
+              "right": 326,
+              "bottom": 1065.078125,
+              "left": 34
+            }
+          }
+        ],
+        "box": {
+          "x": 33,
+          "y": -0.5,
+          "width": 294,
+          "height": 1157.578125
+        }
+      },
+      {
+        "screenshot": "course-360-c08-v02.png",
+        "images": [
+          {
+            "src": "http://127.0.0.1:8000/_course_content/generated-concepts/resnet/wi033-resnet-deep-cnx-spatial-r02-mobile.png",
+            "nw": 768,
+            "nh": 2800,
+            "box": {
+              "x": 34,
+              "y": 0.5,
+              "width": 292,
+              "height": 1064.578125,
+              "top": 0.5,
+              "right": 326,
+              "bottom": 1065.078125,
+              "left": 34
+            }
+          }
+        ],
+        "box": {
+          "x": 33,
+          "y": -0.5,
+          "width": 294,
+          "height": 1157.578125
+        }
+      },
+      {
+        "screenshot": "course-360-c08-v03.png",
+        "images": [
+          {
+            "src": "http://127.0.0.1:8000/_course_content/generated-concepts/resnet/wi033-resnet-deep-cnx-channel-r02-mobile.png",
+            "nw": 768,
+            "nh": 2800,
+            "box": {
+              "x": 34,
+              "y": 0.5,
+              "width": 292,
+              "height": 1064.578125,
+              "top": 0.5,
+              "right": 326,
+              "bottom": 1065.078125,
+              "left": 34
+            }
+          }
+        ],
+        "box": {
+          "x": 33,
+          "y": -0.5,
+          "width": 294,
+          "height": 1157.578125
+        }
+      },
+      {
+        "screenshot": "course-360-c08-v04.png",
+        "images": [
+          {
+            "src": "http://127.0.0.1:8000/_course_content/generated-concepts/resnet/wi033-resnet-deep-vit-attention-r01-mobile.png",
+            "nw": 768,
+            "nh": 2800,
+            "box": {
+              "x": 34,
+              "y": 0.5,
+              "width": 292,
+              "height": 1064.578125,
+              "top": 0.5,
+              "right": 326,
+              "bottom": 1065.078125,
+              "left": 34
+            }
+          }
+        ],
+        "box": {
+          "x": 33,
+          "y": -0.5,
+          "width": 294,
+          "height": 1157.578125
+        }
+      }
+    ],
+    "zooms": 4,
+    "complete": true
+  },
+  {
+    "topic": "resnet",
+    "route": "docs/index.html",
+    "width": 1440,
+    "chapter": 1,
+    "views": [
+      {
+        "screenshot": "docs-1440-c01-v01.png",
+        "images": [],
+        "box": {
+          "x": 366.1875,
+          "y": 359.390625,
+          "width": 1011.625,
+          "height": 641.703125
+        }
+      },
+      {
+        "screenshot": "docs-1440-c01-v02.png",
+        "images": [],
+        "box": {
+          "x": 366.1875,
+          "y": 359.390625,
+          "width": 1011.625,
+          "height": 641.703125
+        }
+      }
+    ],
+    "zooms": 2,
+    "complete": true
+  },
+  {
+    "topic": "resnet",
+    "route": "docs/index.html",
+    "width": 1440,
+    "chapter": 2,
+    "views": [
+      {
+        "screenshot": "docs-1440-c02-v01.png",
+        "images": [],
+        "box": {
+          "x": 366.1875,
+          "y": 359,
+          "width": 1011.625,
+          "height": 641.703125
+        }
+      },
+      {
+        "screenshot": "docs-1440-c02-v02.png",
+        "images": [],
+        "box": {
+          "x": 366.1875,
+          "y": 359,
+          "width": 1011.625,
+          "height": 641.703125
+        }
+      }
+    ],
+    "zooms": 2,
+    "complete": true
+  },
+  {
+    "topic": "resnet",
+    "route": "docs/index.html",
+    "width": 1440,
+    "chapter": 3,
+    "views": [
+      {
+        "screenshot": "docs-1440-c03-v01.png",
+        "images": [],
+        "box": {
+          "x": 366.1875,
+          "y": -0.65625,
+          "width": 1011.625,
+          "height": 641.703125
+        }
+      }
+    ],
+    "zooms": 1,
+    "complete": true
+  },
+  {
+    "topic": "resnet",
+    "route": "docs/index.html",
+    "width": 1440,
+    "chapter": 4,
+    "views": [
+      {
+        "screenshot": "docs-1440-c04-v01.png",
+        "images": [],
+        "box": {
+          "x": 366.1875,
+          "y": -0.59375,
+          "width": 1011.625,
+          "height": 641.703125
+        }
+      }
+    ],
+    "zooms": 1,
+    "complete": true
+  },
+  {
+    "topic": "resnet",
+    "route": "docs/index.html",
+    "width": 1440,
+    "chapter": 5,
+    "views": [
+      {
+        "screenshot": "docs-1440-c05-v01.png",
+        "images": [],
+        "box": {
+          "x": 366.1875,
+          "y": -0.53125,
+          "width": 1011.625,
+          "height": 641.703125
+        }
+      }
+    ],
+    "zooms": 1,
+    "complete": true
+  },
+  {
+    "topic": "resnet",
+    "route": "docs/index.html",
+    "width": 1440,
+    "chapter": 6,
+    "views": [
+      {
+        "screenshot": "docs-1440-c06-v01.png",
+        "images": [],
+        "box": {
+          "x": 366.1875,
+          "y": -1.46875,
+          "width": 1011.625,
+          "height": 641.703125
+        }
+      }
+    ],
+    "zooms": 1,
+    "complete": true
+  },
+  {
+    "topic": "resnet",
+    "route": "docs/index.html",
+    "width": 1440,
+    "chapter": 7,
+    "views": [
+      {
+        "screenshot": "docs-1440-c07-v01.png",
+        "images": [],
+        "box": {
+          "x": 366.1875,
+          "y": -0.890625,
+          "width": 1011.625,
+          "height": 641.703125
+        }
+      }
+    ],
+    "zooms": 1,
+    "complete": true
+  },
+  {
+    "topic": "resnet",
+    "route": "docs/index.html",
+    "width": 1440,
+    "chapter": 8,
+    "views": [
+      {
+        "screenshot": "docs-1440-c08-v01.png",
+        "images": [],
+        "box": {
+          "x": 366.1875,
+          "y": 358.828125,
+          "width": 1011.625,
+          "height": 641.703125
+        }
+      },
+      {
+        "screenshot": "docs-1440-c08-v02.png",
+        "images": [],
+        "box": {
+          "x": 366.1875,
+          "y": 358.828125,
+          "width": 1011.625,
+          "height": 641.703125
+        }
+      },
+      {
+        "screenshot": "docs-1440-c08-v03.png",
+        "images": [],
+        "box": {
+          "x": 366.1875,
+          "y": 358.828125,
+          "width": 1011.625,
+          "height": 641.703125
+        }
+      },
+      {
+        "screenshot": "docs-1440-c08-v04.png",
+        "images": [],
+        "box": {
+          "x": 366.1875,
+          "y": 358.828125,
+          "width": 1011.625,
+          "height": 641.703125
+        }
+      }
+    ],
+    "zooms": 4,
+    "complete": true
+  },
+  {
+    "topic": "resnet",
+    "route": "docs/index.html",
+    "width": 360,
+    "chapter": 1,
+    "views": [
+      {
+        "screenshot": "docs-360-c01-v01.png",
+        "images": [],
+        "box": {
+          "x": 33,
+          "y": 325.015625,
+          "width": 294,
+          "height": 474.625
+        }
+      },
+      {
+        "screenshot": "docs-360-c01-v02.png",
+        "images": [],
+        "box": {
+          "x": 33,
+          "y": 325.015625,
+          "width": 294,
+          "height": 474.625
+        }
+      }
+    ],
+    "zooms": 2,
+    "complete": true
+  },
+  {
+    "topic": "resnet",
+    "route": "docs/index.html",
+    "width": 360,
+    "chapter": 2,
+    "views": [
+      {
+        "screenshot": "docs-360-c02-v01.png",
+        "images": [
+          {
+            "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/resnet/wi033-resnet-deep-skip-r01-mobile.png",
+            "nw": 768,
+            "nh": 2800,
+            "box": {
+              "x": 34,
+              "y": 1.34375,
+              "width": 292,
+              "height": 1064.578125,
+              "top": 1.34375,
+              "right": 326,
+              "bottom": 1065.921875,
+              "left": 34
+            }
+          }
+        ],
+        "box": {
+          "x": 33,
+          "y": 0.34375,
+          "width": 294,
+          "height": 1157.578125
+        }
+      },
+      {
+        "screenshot": "docs-360-c02-v02.png",
+        "images": [
+          {
+            "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/resnet/wi033-resnet-deep-residual-r02-mobile.png",
+            "nw": 768,
+            "nh": 2800,
+            "box": {
+              "x": 34,
+              "y": 1.34375,
+              "width": 292,
+              "height": 1064.578125,
+              "top": 1.34375,
+              "right": 326,
+              "bottom": 1065.921875,
+              "left": 34
+            }
+          }
+        ],
+        "box": {
+          "x": 33,
+          "y": 0.34375,
+          "width": 294,
+          "height": 1157.578125
+        }
+      }
+    ],
+    "zooms": 2,
+    "complete": true
+  },
+  {
+    "topic": "resnet",
+    "route": "docs/index.html",
+    "width": 360,
+    "chapter": 3,
+    "views": [
+      {
+        "screenshot": "docs-360-c03-v01.png",
+        "images": [],
+        "box": {
+          "x": 33,
+          "y": 162.515625,
+          "width": 294,
+          "height": 474.625
+        }
+      }
+    ],
+    "zooms": 1,
+    "complete": true
+  },
+  {
+    "topic": "resnet",
+    "route": "docs/index.html",
+    "width": 360,
+    "chapter": 4,
+    "views": [
+      {
+        "screenshot": "docs-360-c04-v01.png",
+        "images": [
+          {
+            "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/resnet/wi033-resnet-deep-bn-r02-mobile.png",
+            "nw": 768,
+            "nh": 2800,
+            "box": {
+              "x": 34,
+              "y": -177.296875,
+              "width": 292,
+              "height": 1064.578125,
+              "top": -177.296875,
+              "right": 326,
+              "bottom": 887.28125,
+              "left": 34
+            }
+          }
+        ],
+        "box": {
+          "x": 33,
+          "y": -178.296875,
+          "width": 294,
+          "height": 1157.578125
+        }
+      }
+    ],
+    "zooms": 1,
+    "complete": true
+  },
+  {
+    "topic": "resnet",
+    "route": "docs/index.html",
+    "width": 360,
+    "chapter": 5,
+    "views": [
+      {
+        "screenshot": "docs-360-c05-v01.png",
+        "images": [],
+        "box": {
+          "x": 33,
+          "y": 162.578125,
+          "width": 294,
+          "height": 474.625
+        }
+      }
+    ],
+    "zooms": 1,
+    "complete": true
+  },
+  {
+    "topic": "resnet",
+    "route": "docs/index.html",
+    "width": 360,
+    "chapter": 6,
+    "views": [
+      {
+        "screenshot": "docs-360-c06-v01.png",
+        "images": [],
+        "box": {
+          "x": 33,
+          "y": 162.203125,
+          "width": 294,
+          "height": 474.625
+        }
+      }
+    ],
+    "zooms": 1,
+    "complete": true
+  },
+  {
+    "topic": "resnet",
+    "route": "docs/index.html",
+    "width": 360,
+    "chapter": 7,
+    "views": [
+      {
+        "screenshot": "docs-360-c07-v01.png",
+        "images": [],
+        "box": {
+          "x": 33,
+          "y": 162.59375,
+          "width": 294,
+          "height": 474.625
+        }
+      }
+    ],
+    "zooms": 1,
+    "complete": true
+  },
+  {
+    "topic": "resnet",
+    "route": "docs/index.html",
+    "width": 360,
+    "chapter": 8,
+    "views": [
+      {
+        "screenshot": "docs-360-c08-v01.png",
+        "images": [
+          {
+            "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/resnet/wi033-resnet-deep-residual-r02-mobile.png",
+            "nw": 768,
+            "nh": 2800,
+            "box": {
+              "x": 34,
+              "y": 0.5,
+              "width": 292,
+              "height": 1064.578125,
+              "top": 0.5,
+              "right": 326,
+              "bottom": 1065.078125,
+              "left": 34
+            }
+          }
+        ],
+        "box": {
+          "x": 33,
+          "y": -0.5,
+          "width": 294,
+          "height": 1157.578125
+        }
+      },
+      {
+        "screenshot": "docs-360-c08-v02.png",
+        "images": [
+          {
+            "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/resnet/wi033-resnet-deep-cnx-spatial-r02-mobile.png",
+            "nw": 768,
+            "nh": 2800,
+            "box": {
+              "x": 34,
+              "y": 0.5,
+              "width": 292,
+              "height": 1064.578125,
+              "top": 0.5,
+              "right": 326,
+              "bottom": 1065.078125,
+              "left": 34
+            }
+          }
+        ],
+        "box": {
+          "x": 33,
+          "y": -0.5,
+          "width": 294,
+          "height": 1157.578125
+        }
+      },
+      {
+        "screenshot": "docs-360-c08-v03.png",
+        "images": [
+          {
+            "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/resnet/wi033-resnet-deep-cnx-channel-r02-mobile.png",
+            "nw": 768,
+            "nh": 2800,
+            "box": {
+              "x": 34,
+              "y": 0.5,
+              "width": 292,
+              "height": 1064.578125,
+              "top": 0.5,
+              "right": 326,
+              "bottom": 1065.078125,
+              "left": 34
+            }
+          }
+        ],
+        "box": {
+          "x": 33,
+          "y": -0.5,
+          "width": 294,
+          "height": 1157.578125
+        }
+      },
+      {
+        "screenshot": "docs-360-c08-v04.png",
+        "images": [
+          {
+            "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/resnet/wi033-resnet-deep-vit-attention-r01-mobile.png",
+            "nw": 768,
+            "nh": 2800,
+            "box": {
+              "x": 34,
+              "y": 0.5,
+              "width": 292,
+              "height": 1064.578125,
+              "top": 0.5,
+              "right": 326,
+              "bottom": 1065.078125,
+              "left": 34
+            }
+          }
+        ],
+        "box": {
+          "x": 33,
+          "y": -0.5,
+          "width": 294,
+          "height": 1157.578125
+        }
+      }
+    ],
+    "zooms": 4,
+    "complete": true
+  },
+  {
+    "topic": "segformer",
+    "route": "interactive-learning.html",
+    "width": 1440,
+    "chapter": 1,
+    "views": [
+      {
+        "screenshot": "course-1440-c01-v01.png",
+        "images": [],
+        "box": {
+          "x": 366.1875,
+          "y": 359.578125,
+          "width": 1011.625,
+          "height": 641.703125
+        }
+      },
+      {
+        "screenshot": "course-1440-c01-v02.png",
+        "images": [],
+        "box": {
+          "x": 366.1875,
+          "y": 359.578125,
+          "width": 1011.625,
+          "height": 641.703125
+        }
+      }
+    ],
+    "zooms": 2,
+    "complete": true
+  },
+  {
+    "topic": "segformer",
+    "route": "interactive-learning.html",
+    "width": 1440,
+    "chapter": 2,
+    "views": [
+      {
+        "screenshot": "course-1440-c02-v01.png",
+        "images": [],
+        "box": {
+          "x": 366.1875,
+          "y": -1.171875,
+          "width": 1011.625,
+          "height": 641.703125
+        }
+      }
+    ],
+    "zooms": 1,
+    "complete": true
+  },
+  {
+    "topic": "segformer",
+    "route": "interactive-learning.html",
+    "width": 1440,
+    "chapter": 3,
+    "views": [
+      {
+        "screenshot": "course-1440-c03-v01.png",
+        "images": [],
+        "box": {
+          "x": 366.1875,
+          "y": -1.5,
+          "width": 1011.625,
+          "height": 641.703125
+        }
+      }
+    ],
+    "zooms": 1,
+    "complete": true
+  },
+  {
+    "topic": "segformer",
+    "route": "interactive-learning.html",
+    "width": 1440,
+    "chapter": 4,
+    "views": [
+      {
+        "screenshot": "course-1440-c04-v01.png",
+        "images": [],
+        "box": {
+          "x": 366.1875,
+          "y": -1.4375,
+          "width": 1011.625,
+          "height": 641.703125
+        }
+      }
+    ],
+    "zooms": 1,
+    "complete": true
+  },
+  {
+    "topic": "segformer",
+    "route": "interactive-learning.html",
+    "width": 1440,
+    "chapter": 5,
+    "views": [
+      {
+        "screenshot": "course-1440-c05-v01.png",
+        "images": [],
+        "box": {
+          "x": 366.1875,
+          "y": -0.765625,
+          "width": 1011.625,
+          "height": 641.703125
+        }
+      }
+    ],
+    "zooms": 1,
+    "complete": true
+  },
+  {
+    "topic": "segformer",
+    "route": "interactive-learning.html",
+    "width": 1440,
+    "chapter": 6,
+    "views": [
+      {
+        "screenshot": "course-1440-c06-v01.png",
+        "images": [],
+        "box": {
+          "x": 366.1875,
+          "y": -1.09375,
+          "width": 1011.625,
+          "height": 641.703125
+        }
+      }
+    ],
+    "zooms": 1,
+    "complete": true
+  },
+  {
+    "topic": "segformer",
+    "route": "interactive-learning.html",
+    "width": 1440,
+    "chapter": 7,
+    "views": [
+      {
+        "screenshot": "course-1440-c07-v01.png",
+        "images": [],
+        "box": {
+          "x": 366.1875,
+          "y": -0.515625,
+          "width": 1011.625,
+          "height": 641.703125
+        }
+      }
+    ],
+    "zooms": 1,
+    "complete": true
+  },
+  {
+    "topic": "segformer",
+    "route": "interactive-learning.html",
+    "width": 1440,
+    "chapter": 8,
+    "views": [
+      {
+        "screenshot": "course-1440-c08-v01.png",
+        "images": [],
+        "box": {
+          "x": 366.1875,
+          "y": 358.8125,
+          "width": 1011.625,
+          "height": 641.703125
+        }
+      },
+      {
+        "screenshot": "course-1440-c08-v02.png",
+        "images": [],
+        "box": {
+          "x": 366.1875,
+          "y": 358.8125,
+          "width": 1011.625,
+          "height": 641.703125
+        }
+      },
+      {
+        "screenshot": "course-1440-c08-v03.png",
+        "images": [],
+        "box": {
+          "x": 366.1875,
+          "y": 358.8125,
+          "width": 1011.625,
+          "height": 641.703125
+        }
+      },
+      {
+        "screenshot": "course-1440-c08-v04.png",
+        "images": [],
+        "box": {
+          "x": 366.1875,
+          "y": 358.8125,
+          "width": 1011.625,
+          "height": 641.703125
+        }
+      }
+    ],
+    "zooms": 4,
+    "complete": true
+  },
+  {
+    "topic": "segformer",
+    "route": "interactive-learning.html",
+    "width": 360,
+    "chapter": 1,
+    "views": [
+      {
+        "screenshot": "course-360-c01-v01.png",
+        "images": [
+          {
+            "src": "http://127.0.0.1:8000/_course_content/generated-concepts/segformer/wi033-segformer-deep-core-r04-mobile.png",
+            "nw": 768,
+            "nh": 2800,
+            "box": {
+              "x": 34,
+              "y": 0.5,
+              "width": 292,
+              "height": 1064.578125,
+              "top": 0.5,
+              "right": 326,
+              "bottom": 1065.078125,
+              "left": 34
+            }
+          }
+        ],
+        "box": {
+          "x": 33,
+          "y": -0.5,
+          "width": 294,
+          "height": 1157.578125
+        }
+      },
+      {
+        "screenshot": "course-360-c01-v02.png",
+        "images": [
+          {
+            "src": "http://127.0.0.1:8000/_course_content/generated-concepts/segformer/wi033-segformer-deep-task-r01-mobile.png",
+            "nw": 768,
+            "nh": 2800,
+            "box": {
+              "x": 34,
+              "y": 0.5,
+              "width": 292,
+              "height": 1064.578125,
+              "top": 0.5,
+              "right": 326,
+              "bottom": 1065.078125,
+              "left": 34
+            }
+          }
+        ],
+        "box": {
+          "x": 33,
+          "y": -0.5,
+          "width": 294,
+          "height": 1157.578125
+        }
+      }
+    ],
+    "zooms": 2,
+    "complete": true
+  },
+  {
+    "topic": "segformer",
+    "route": "interactive-learning.html",
+    "width": 360,
+    "chapter": 2,
+    "views": [
+      {
+        "screenshot": "course-360-c02-v01.png",
+        "images": [],
+        "box": {
+          "x": 33,
+          "y": 163.078125,
+          "width": 294,
+          "height": 474.625
+        }
+      }
+    ],
+    "zooms": 1,
+    "complete": true
+  },
+  {
+    "topic": "segformer",
+    "route": "interactive-learning.html",
+    "width": 360,
+    "chapter": 3,
+    "views": [
+      {
+        "screenshot": "course-360-c03-v01.png",
+        "images": [
+          {
+            "src": "http://127.0.0.1:8000/_course_content/generated-concepts/segformer/wi033-segformer-deep-scales-r01-mobile.png",
+            "nw": 768,
+            "nh": 2800,
+            "box": {
+              "x": 34,
+              "y": -178.25,
+              "width": 292,
+              "height": 1064.578125,
+              "top": -178.25,
+              "right": 326,
+              "bottom": 886.328125,
+              "left": 34
+            }
+          }
+        ],
+        "box": {
+          "x": 33,
+          "y": -179.25,
+          "width": 294,
+          "height": 1157.578125
+        }
+      }
+    ],
+    "zooms": 1,
+    "complete": true
+  },
+  {
+    "topic": "segformer",
+    "route": "interactive-learning.html",
+    "width": 360,
+    "chapter": 4,
+    "views": [
+      {
+        "screenshot": "course-360-c04-v01.png",
+        "images": [
+          {
+            "src": "http://127.0.0.1:8000/_course_content/generated-concepts/segformer/wi033-segformer-deep-sr-r02-mobile.png",
+            "nw": 768,
+            "nh": 2800,
+            "box": {
+              "x": 34,
+              "y": -177.328125,
+              "width": 292,
+              "height": 1064.578125,
+              "top": -177.328125,
+              "right": 326,
+              "bottom": 887.25,
+              "left": 34
+            }
+          }
+        ],
+        "box": {
+          "x": 33,
+          "y": -178.328125,
+          "width": 294,
+          "height": 1157.578125
+        }
+      }
+    ],
+    "zooms": 1,
+    "complete": true
+  },
+  {
+    "topic": "segformer",
+    "route": "interactive-learning.html",
+    "width": 360,
+    "chapter": 5,
+    "views": [
+      {
+        "screenshot": "course-360-c05-v01.png",
+        "images": [
+          {
+            "src": "http://127.0.0.1:8000/_course_content/generated-concepts/segformer/wi033-segformer-deep-decoder-r03-mobile.png",
+            "nw": 768,
+            "nh": 2800,
+            "box": {
+              "x": 34,
+              "y": -178.203125,
+              "width": 292,
+              "height": 1064.578125,
+              "top": -178.203125,
+              "right": 326,
+              "bottom": 886.375,
+              "left": 34
+            }
+          }
+        ],
+        "box": {
+          "x": 33,
+          "y": -179.203125,
+          "width": 294,
+          "height": 1157.578125
+        }
+      }
+    ],
+    "zooms": 1,
+    "complete": true
+  },
+  {
+    "topic": "segformer",
+    "route": "interactive-learning.html",
+    "width": 360,
+    "chapter": 6,
+    "views": [
+      {
+        "screenshot": "course-360-c06-v01.png",
+        "images": [],
+        "box": {
+          "x": 33,
+          "y": 162.234375,
+          "width": 294,
+          "height": 474.625
+        }
+      }
+    ],
+    "zooms": 1,
+    "complete": true
+  },
+  {
+    "topic": "segformer",
+    "route": "interactive-learning.html",
+    "width": 360,
+    "chapter": 7,
+    "views": [
+      {
+        "screenshot": "course-360-c07-v01.png",
+        "images": [],
+        "box": {
+          "x": 33,
+          "y": 163.03125,
+          "width": 294,
+          "height": 474.625
+        }
+      }
+    ],
+    "zooms": 1,
+    "complete": true
+  },
+  {
+    "topic": "segformer",
+    "route": "interactive-learning.html",
+    "width": 360,
+    "chapter": 8,
+    "views": [
+      {
+        "screenshot": "course-360-c08-v01.png",
+        "images": [],
+        "box": {
+          "x": 33,
+          "y": 325.546875,
+          "width": 294,
+          "height": 474.625
+        }
+      },
+      {
+        "screenshot": "course-360-c08-v02.png",
+        "images": [],
+        "box": {
+          "x": 33,
+          "y": 325.546875,
+          "width": 294,
+          "height": 474.625
+        }
+      },
+      {
+        "screenshot": "course-360-c08-v03.png",
+        "images": [],
+        "box": {
+          "x": 33,
+          "y": 325.546875,
+          "width": 294,
+          "height": 474.625
+        }
+      },
+      {
+        "screenshot": "course-360-c08-v04.png",
+        "images": [],
+        "box": {
+          "x": 33,
+          "y": 325.546875,
+          "width": 294,
+          "height": 474.625
+        }
+      }
+    ],
+    "zooms": 4,
+    "complete": true
+  },
+  {
+    "topic": "segformer",
+    "route": "docs/index.html",
+    "width": 1440,
+    "chapter": 1,
+    "views": [
+      {
+        "screenshot": "docs-1440-c01-v01.png",
+        "images": [],
+        "box": {
+          "x": 366.1875,
+          "y": 359.578125,
+          "width": 1011.625,
+          "height": 641.703125
+        }
+      },
+      {
+        "screenshot": "docs-1440-c01-v02.png",
+        "images": [],
+        "box": {
+          "x": 366.1875,
+          "y": 359.578125,
+          "width": 1011.625,
+          "height": 641.703125
+        }
+      }
+    ],
+    "zooms": 2,
+    "complete": true
+  },
+  {
+    "topic": "segformer",
+    "route": "docs/index.html",
+    "width": 1440,
+    "chapter": 2,
+    "views": [
+      {
+        "screenshot": "docs-1440-c02-v01.png",
+        "images": [],
+        "box": {
+          "x": 366.1875,
+          "y": -1.171875,
+          "width": 1011.625,
+          "height": 641.703125
+        }
+      }
+    ],
+    "zooms": 1,
+    "complete": true
+  },
+  {
+    "topic": "segformer",
+    "route": "docs/index.html",
+    "width": 1440,
+    "chapter": 3,
+    "views": [
+      {
+        "screenshot": "docs-1440-c03-v01.png",
+        "images": [],
+        "box": {
+          "x": 366.1875,
+          "y": -1.5,
+          "width": 1011.625,
+          "height": 641.703125
+        }
+      }
+    ],
+    "zooms": 1,
+    "complete": true
+  },
+  {
+    "topic": "segformer",
+    "route": "docs/index.html",
+    "width": 1440,
+    "chapter": 4,
+    "views": [
+      {
+        "screenshot": "docs-1440-c04-v01.png",
+        "images": [],
+        "box": {
+          "x": 366.1875,
+          "y": -1.4375,
+          "width": 1011.625,
+          "height": 641.703125
+        }
+      }
+    ],
+    "zooms": 1,
+    "complete": true
+  },
+  {
+    "topic": "segformer",
+    "route": "docs/index.html",
+    "width": 1440,
+    "chapter": 5,
+    "views": [
+      {
+        "screenshot": "docs-1440-c05-v01.png",
+        "images": [],
+        "box": {
+          "x": 366.1875,
+          "y": -0.765625,
+          "width": 1011.625,
+          "height": 641.703125
+        }
+      }
+    ],
+    "zooms": 1,
+    "complete": true
+  },
+  {
+    "topic": "segformer",
+    "route": "docs/index.html",
+    "width": 1440,
+    "chapter": 6,
+    "views": [
+      {
+        "screenshot": "docs-1440-c06-v01.png",
+        "images": [],
+        "box": {
+          "x": 366.1875,
+          "y": -1.09375,
+          "width": 1011.625,
+          "height": 641.703125
+        }
+      }
+    ],
+    "zooms": 1,
+    "complete": true
+  },
+  {
+    "topic": "segformer",
+    "route": "docs/index.html",
+    "width": 1440,
+    "chapter": 7,
+    "views": [
+      {
+        "screenshot": "docs-1440-c07-v01.png",
+        "images": [],
+        "box": {
+          "x": 366.1875,
+          "y": -0.515625,
+          "width": 1011.625,
+          "height": 641.703125
+        }
+      }
+    ],
+    "zooms": 1,
+    "complete": true
+  },
+  {
+    "topic": "segformer",
+    "route": "docs/index.html",
+    "width": 1440,
+    "chapter": 8,
+    "views": [
+      {
+        "screenshot": "docs-1440-c08-v01.png",
+        "images": [],
+        "box": {
+          "x": 366.1875,
+          "y": 358.8125,
+          "width": 1011.625,
+          "height": 641.703125
+        }
+      },
+      {
+        "screenshot": "docs-1440-c08-v02.png",
+        "images": [],
+        "box": {
+          "x": 366.1875,
+          "y": 358.8125,
+          "width": 1011.625,
+          "height": 641.703125
+        }
+      },
+      {
+        "screenshot": "docs-1440-c08-v03.png",
+        "images": [],
+        "box": {
+          "x": 366.1875,
+          "y": 358.8125,
+          "width": 1011.625,
+          "height": 641.703125
+        }
+      },
+      {
+        "screenshot": "docs-1440-c08-v04.png",
+        "images": [],
+        "box": {
+          "x": 366.1875,
+          "y": 358.8125,
+          "width": 1011.625,
+          "height": 641.703125
+        }
+      }
+    ],
+    "zooms": 4,
+    "complete": true
+  },
+  {
+    "topic": "segformer",
+    "route": "docs/index.html",
+    "width": 360,
+    "chapter": 1,
+    "views": [
+      {
+        "screenshot": "docs-360-c01-v01.png",
+        "images": [
+          {
+            "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/segformer/wi033-segformer-deep-core-r04-mobile.png",
+            "nw": 768,
+            "nh": 2800,
+            "box": {
+              "x": 34,
+              "y": 0.5,
+              "width": 292,
+              "height": 1064.578125,
+              "top": 0.5,
+              "right": 326,
+              "bottom": 1065.078125,
+              "left": 34
+            }
+          }
+        ],
+        "box": {
+          "x": 33,
+          "y": -0.5,
+          "width": 294,
+          "height": 1157.578125
+        }
+      },
+      {
+        "screenshot": "docs-360-c01-v02.png",
+        "images": [
+          {
+            "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/segformer/wi033-segformer-deep-task-r01-mobile.png",
+            "nw": 768,
+            "nh": 2800,
+            "box": {
+              "x": 34,
+              "y": 0.5,
+              "width": 292,
+              "height": 1064.578125,
+              "top": 0.5,
+              "right": 326,
+              "bottom": 1065.078125,
+              "left": 34
+            }
+          }
+        ],
+        "box": {
+          "x": 33,
+          "y": -0.5,
+          "width": 294,
+          "height": 1157.578125
+        }
+      }
+    ],
+    "zooms": 2,
+    "complete": true
+  },
+  {
+    "topic": "segformer",
+    "route": "docs/index.html",
+    "width": 360,
+    "chapter": 2,
+    "views": [
+      {
+        "screenshot": "docs-360-c02-v01.png",
+        "images": [],
+        "box": {
+          "x": 33,
+          "y": 163.078125,
+          "width": 294,
+          "height": 474.625
+        }
+      }
+    ],
+    "zooms": 1,
+    "complete": true
+  },
+  {
+    "topic": "segformer",
+    "route": "docs/index.html",
+    "width": 360,
+    "chapter": 3,
+    "views": [
+      {
+        "screenshot": "docs-360-c03-v01.png",
+        "images": [
+          {
+            "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/segformer/wi033-segformer-deep-scales-r01-mobile.png",
+            "nw": 768,
+            "nh": 2800,
+            "box": {
+              "x": 34,
+              "y": -178.25,
+              "width": 292,
+              "height": 1064.578125,
+              "top": -178.25,
+              "right": 326,
+              "bottom": 886.328125,
+              "left": 34
+            }
+          }
+        ],
+        "box": {
+          "x": 33,
+          "y": -179.25,
+          "width": 294,
+          "height": 1157.578125
+        }
+      }
+    ],
+    "zooms": 1,
+    "complete": true
+  },
+  {
+    "topic": "segformer",
+    "route": "docs/index.html",
+    "width": 360,
+    "chapter": 4,
+    "views": [
+      {
+        "screenshot": "docs-360-c04-v01.png",
+        "images": [
+          {
+            "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/segformer/wi033-segformer-deep-sr-r02-mobile.png",
+            "nw": 768,
+            "nh": 2800,
+            "box": {
+              "x": 34,
+              "y": -177.328125,
+              "width": 292,
+              "height": 1064.578125,
+              "top": -177.328125,
+              "right": 326,
+              "bottom": 887.25,
+              "left": 34
+            }
+          }
+        ],
+        "box": {
+          "x": 33,
+          "y": -178.328125,
+          "width": 294,
+          "height": 1157.578125
+        }
+      }
+    ],
+    "zooms": 1,
+    "complete": true
+  },
+  {
+    "topic": "segformer",
+    "route": "docs/index.html",
+    "width": 360,
+    "chapter": 5,
+    "views": [
+      {
+        "screenshot": "docs-360-c05-v01.png",
+        "images": [
+          {
+            "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/segformer/wi033-segformer-deep-decoder-r03-mobile.png",
+            "nw": 768,
+            "nh": 2800,
+            "box": {
+              "x": 34,
+              "y": -178.203125,
+              "width": 292,
+              "height": 1064.578125,
+              "top": -178.203125,
+              "right": 326,
+              "bottom": 886.375,
+              "left": 34
+            }
+          }
+        ],
+        "box": {
+          "x": 33,
+          "y": -179.203125,
+          "width": 294,
+          "height": 1157.578125
+        }
+      }
+    ],
+    "zooms": 1,
+    "complete": true
+  },
+  {
+    "topic": "segformer",
+    "route": "docs/index.html",
+    "width": 360,
+    "chapter": 6,
+    "views": [
+      {
+        "screenshot": "docs-360-c06-v01.png",
+        "images": [],
+        "box": {
+          "x": 33,
+          "y": 162.234375,
+          "width": 294,
+          "height": 474.625
+        }
+      }
+    ],
+    "zooms": 1,
+    "complete": true
+  },
+  {
+    "topic": "segformer",
+    "route": "docs/index.html",
+    "width": 360,
+    "chapter": 7,
+    "views": [
+      {
+        "screenshot": "docs-360-c07-v01.png",
+        "images": [],
+        "box": {
+          "x": 33,
+          "y": 163.03125,
+          "width": 294,
+          "height": 474.625
+        }
+      }
+    ],
+    "zooms": 1,
+    "complete": true
+  },
+  {
+    "topic": "segformer",
+    "route": "docs/index.html",
+    "width": 360,
+    "chapter": 8,
+    "views": [
+      {
+        "screenshot": "docs-360-c08-v01.png",
+        "images": [],
+        "box": {
+          "x": 33,
+          "y": 325.546875,
+          "width": 294,
+          "height": 474.625
+        }
+      },
+      {
+        "screenshot": "docs-360-c08-v02.png",
+        "images": [],
+        "box": {
+          "x": 33,
+          "y": 325.546875,
+          "width": 294,
+          "height": 474.625
+        }
+      },
+      {
+        "screenshot": "docs-360-c08-v03.png",
+        "images": [],
+        "box": {
+          "x": 33,
+          "y": 325.546875,
+          "width": 294,
+          "height": 474.625
+        }
+      },
+      {
+        "screenshot": "docs-360-c08-v04.png",
+        "images": [],
+        "box": {
+          "x": 33,
+          "y": 325.546875,
+          "width": 294,
+          "height": 474.625
+        }
+      }
+    ],
+    "zooms": 4,
+    "complete": true
+  }
+]

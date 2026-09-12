@@ -1,0 +1,502 @@
+[
+  {
+    "topic": "ad-anomalydino",
+    "route": "interactive-learning.html",
+    "width": 1440,
+    "errors": [],
+    "images": [
+      {
+        "src": "http://127.0.0.1:8000/_course_content/generated-concepts/ad-anomalydino/wi030-dino-c1-r03-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 404.1875,
+          "y": 401.640625,
+          "width": 935.625,
+          "height": 526.5625,
+          "top": 401.640625,
+          "right": 1339.8125,
+          "bottom": 928.203125,
+          "left": 404.1875
+        },
+        "kind": "main-1"
+      },
+      {
+        "src": "http://127.0.0.1:8000/_course_content/generated-concepts/ad-patchcore/wi030-ad-d2-r02-desktop.png",
+        "nw": 1670,
+        "nh": 941,
+        "box": {
+          "x": 404.1875,
+          "y": 201.15625,
+          "width": 935.625,
+          "height": 526.5625,
+          "top": 201.15625,
+          "right": 1339.8125,
+          "bottom": 727.71875,
+          "left": 404.1875
+        },
+        "kind": "main-2"
+      },
+      {
+        "src": "http://127.0.0.1:8000/_course_content/generated-concepts/ad-patchcore/wi030-ad-d3-r04-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 404.1875,
+          "y": 200.46875,
+          "width": 935.625,
+          "height": 526.5625,
+          "top": 200.46875,
+          "right": 1339.8125,
+          "bottom": 727.03125,
+          "left": 404.1875
+        },
+        "kind": "main-3"
+      },
+      {
+        "src": "http://127.0.0.1:8000/roadmap-model-selection/anomaly-detection/ad-anomalydino/images/final/WI033-ANOMALYDINO-01-r01-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 367.1875,
+          "y": 195.453125,
+          "width": 1009.625,
+          "height": 568.203125,
+          "top": 195.453125,
+          "right": 1376.8125,
+          "bottom": 763.65625,
+          "left": 367.1875
+        },
+        "kind": "engineering-1"
+      },
+      {
+        "src": "http://127.0.0.1:8000/roadmap-model-selection/anomaly-detection/ad-anomalydino/images/final/WI033-ANOMALYDINO-02-r02-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 367.1875,
+          "y": 196.359375,
+          "width": 1009.625,
+          "height": 568.203125,
+          "top": 196.359375,
+          "right": 1376.8125,
+          "bottom": 764.5625,
+          "left": 367.1875
+        },
+        "kind": "engineering-2"
+      },
+      {
+        "src": "http://127.0.0.1:8000/roadmap-model-selection/anomaly-detection/ad-anomalydino/images/final/WI033-ANOMALYDINO-03-r01-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 367.1875,
+          "y": 195.53125,
+          "width": 1009.625,
+          "height": 568.203125,
+          "top": 195.53125,
+          "right": 1376.8125,
+          "bottom": 763.734375,
+          "left": 367.1875
+        },
+        "kind": "engineering-3"
+      },
+      {
+        "src": "http://127.0.0.1:8000/roadmap-model-selection/anomaly-detection/ad-anomalydino/images/final/WI033-ANOMALYDINO-04-r01-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 367.1875,
+          "y": 196.203125,
+          "width": 1009.625,
+          "height": 568.203125,
+          "top": 196.203125,
+          "right": 1376.8125,
+          "bottom": 764.40625,
+          "left": 367.1875
+        },
+        "kind": "engineering-4"
+      }
+    ],
+    "zoom_checks": 7,
+    "answer": true,
+    "overflow": false,
+    "navigation": true,
+    "complete": true
+  },
+  {
+    "topic": "ad-anomalydino",
+    "route": "interactive-learning.html",
+    "width": 360,
+    "errors": [],
+    "images": [
+      {
+        "src": "http://127.0.0.1:8000/_course_content/generated-concepts/ad-anomalydino/wi030-dino-c1-r05-mobile.png",
+        "nw": 768,
+        "nh": 2048,
+        "box": {
+          "x": 17,
+          "y": -80.140625,
+          "width": 326,
+          "height": 869.328125,
+          "top": -80.140625,
+          "right": 343,
+          "bottom": 789.1875,
+          "left": 17
+        },
+        "kind": "main-1"
+      },
+      {
+        "src": "http://127.0.0.1:8000/_course_content/generated-concepts/ad-patchcore/wi030-ad-d2-r02-mobile.png",
+        "nw": 768,
+        "nh": 2048,
+        "box": {
+          "x": 17,
+          "y": -79.96875,
+          "width": 326,
+          "height": 869.328125,
+          "top": -79.96875,
+          "right": 343,
+          "bottom": 789.359375,
+          "left": 17
+        },
+        "kind": "main-2"
+      },
+      {
+        "src": "http://127.0.0.1:8000/_course_content/generated-concepts/ad-patchcore/wi030-ad-d3-r03-mobile.png",
+        "nw": 768,
+        "nh": 2048,
+        "box": {
+          "x": 17,
+          "y": -79.921875,
+          "width": 326,
+          "height": 869.328125,
+          "top": -79.921875,
+          "right": 343,
+          "bottom": 789.40625,
+          "left": 17
+        },
+        "kind": "main-3"
+      },
+      {
+        "src": "http://127.0.0.1:8000/roadmap-model-selection/anomaly-detection/ad-anomalydino/images/final/WI033-ANOMALYDINO-01-r01-mobile.png",
+        "nw": 768,
+        "nh": 2400,
+        "box": {
+          "x": 34,
+          "y": -87.59375,
+          "width": 292,
+          "height": 912.5,
+          "top": -87.59375,
+          "right": 326,
+          "bottom": 824.90625,
+          "left": 34
+        },
+        "kind": "engineering-1"
+      },
+      {
+        "src": "http://127.0.0.1:8000/roadmap-model-selection/anomaly-detection/ad-anomalydino/images/final/WI033-ANOMALYDINO-02-r02-mobile.png",
+        "nw": 768,
+        "nh": 2400,
+        "box": {
+          "x": 34,
+          "y": -87.578125,
+          "width": 292,
+          "height": 912.5,
+          "top": -87.578125,
+          "right": 326,
+          "bottom": 824.921875,
+          "left": 34
+        },
+        "kind": "engineering-2"
+      },
+      {
+        "src": "http://127.0.0.1:8000/roadmap-model-selection/anomaly-detection/ad-anomalydino/images/final/WI033-ANOMALYDINO-03-r01-mobile.png",
+        "nw": 768,
+        "nh": 2400,
+        "box": {
+          "x": 34,
+          "y": -88.03125,
+          "width": 292,
+          "height": 912.5,
+          "top": -88.03125,
+          "right": 326,
+          "bottom": 824.46875,
+          "left": 34
+        },
+        "kind": "engineering-3"
+      },
+      {
+        "src": "http://127.0.0.1:8000/roadmap-model-selection/anomaly-detection/ad-anomalydino/images/final/WI033-ANOMALYDINO-04-r01-mobile.png",
+        "nw": 768,
+        "nh": 2400,
+        "box": {
+          "x": 34,
+          "y": -87.484375,
+          "width": 292,
+          "height": 912.5,
+          "top": -87.484375,
+          "right": 326,
+          "bottom": 825.015625,
+          "left": 34
+        },
+        "kind": "engineering-4"
+      }
+    ],
+    "zoom_checks": 7,
+    "answer": true,
+    "overflow": false,
+    "navigation": true,
+    "complete": true
+  },
+  {
+    "topic": "ad-anomalydino",
+    "route": "docs/index.html",
+    "width": 1440,
+    "errors": [],
+    "images": [
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/ad-anomalydino/wi030-dino-c1-r03-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 404.1875,
+          "y": 401.640625,
+          "width": 935.625,
+          "height": 526.5625,
+          "top": 401.640625,
+          "right": 1339.8125,
+          "bottom": 928.203125,
+          "left": 404.1875
+        },
+        "kind": "main-1"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/ad-patchcore/wi030-ad-d2-r02-desktop.png",
+        "nw": 1670,
+        "nh": 941,
+        "box": {
+          "x": 404.1875,
+          "y": 201.15625,
+          "width": 935.625,
+          "height": 526.5625,
+          "top": 201.15625,
+          "right": 1339.8125,
+          "bottom": 727.71875,
+          "left": 404.1875
+        },
+        "kind": "main-2"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/ad-patchcore/wi030-ad-d3-r04-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 404.1875,
+          "y": 200.46875,
+          "width": 935.625,
+          "height": 526.5625,
+          "top": 200.46875,
+          "right": 1339.8125,
+          "bottom": 727.03125,
+          "left": 404.1875
+        },
+        "kind": "main-3"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/anomaly-detection/ad-anomalydino/images/final/WI033-ANOMALYDINO-01-r01-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 367.1875,
+          "y": 195.453125,
+          "width": 1009.625,
+          "height": 568.203125,
+          "top": 195.453125,
+          "right": 1376.8125,
+          "bottom": 763.65625,
+          "left": 367.1875
+        },
+        "kind": "engineering-1"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/anomaly-detection/ad-anomalydino/images/final/WI033-ANOMALYDINO-02-r02-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 367.1875,
+          "y": 196.359375,
+          "width": 1009.625,
+          "height": 568.203125,
+          "top": 196.359375,
+          "right": 1376.8125,
+          "bottom": 764.5625,
+          "left": 367.1875
+        },
+        "kind": "engineering-2"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/anomaly-detection/ad-anomalydino/images/final/WI033-ANOMALYDINO-03-r01-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 367.1875,
+          "y": 195.53125,
+          "width": 1009.625,
+          "height": 568.203125,
+          "top": 195.53125,
+          "right": 1376.8125,
+          "bottom": 763.734375,
+          "left": 367.1875
+        },
+        "kind": "engineering-3"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/anomaly-detection/ad-anomalydino/images/final/WI033-ANOMALYDINO-04-r01-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 367.1875,
+          "y": 196.203125,
+          "width": 1009.625,
+          "height": 568.203125,
+          "top": 196.203125,
+          "right": 1376.8125,
+          "bottom": 764.40625,
+          "left": 367.1875
+        },
+        "kind": "engineering-4"
+      }
+    ],
+    "zoom_checks": 7,
+    "answer": true,
+    "overflow": false,
+    "navigation": true,
+    "complete": true
+  },
+  {
+    "topic": "ad-anomalydino",
+    "route": "docs/index.html",
+    "width": 360,
+    "errors": [],
+    "images": [
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/ad-anomalydino/wi030-dino-c1-r05-mobile.png",
+        "nw": 768,
+        "nh": 2048,
+        "box": {
+          "x": 17,
+          "y": -80.140625,
+          "width": 326,
+          "height": 869.328125,
+          "top": -80.140625,
+          "right": 343,
+          "bottom": 789.1875,
+          "left": 17
+        },
+        "kind": "main-1"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/ad-patchcore/wi030-ad-d2-r02-mobile.png",
+        "nw": 768,
+        "nh": 2048,
+        "box": {
+          "x": 17,
+          "y": -79.96875,
+          "width": 326,
+          "height": 869.328125,
+          "top": -79.96875,
+          "right": 343,
+          "bottom": 789.359375,
+          "left": 17
+        },
+        "kind": "main-2"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/ad-patchcore/wi030-ad-d3-r03-mobile.png",
+        "nw": 768,
+        "nh": 2048,
+        "box": {
+          "x": 17,
+          "y": -79.921875,
+          "width": 326,
+          "height": 869.328125,
+          "top": -79.921875,
+          "right": 343,
+          "bottom": 789.40625,
+          "left": 17
+        },
+        "kind": "main-3"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/anomaly-detection/ad-anomalydino/images/final/WI033-ANOMALYDINO-01-r01-mobile.png",
+        "nw": 768,
+        "nh": 2400,
+        "box": {
+          "x": 34,
+          "y": -87.59375,
+          "width": 292,
+          "height": 912.5,
+          "top": -87.59375,
+          "right": 326,
+          "bottom": 824.90625,
+          "left": 34
+        },
+        "kind": "engineering-1"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/anomaly-detection/ad-anomalydino/images/final/WI033-ANOMALYDINO-02-r02-mobile.png",
+        "nw": 768,
+        "nh": 2400,
+        "box": {
+          "x": 34,
+          "y": -87.578125,
+          "width": 292,
+          "height": 912.5,
+          "top": -87.578125,
+          "right": 326,
+          "bottom": 824.921875,
+          "left": 34
+        },
+        "kind": "engineering-2"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/anomaly-detection/ad-anomalydino/images/final/WI033-ANOMALYDINO-03-r01-mobile.png",
+        "nw": 768,
+        "nh": 2400,
+        "box": {
+          "x": 34,
+          "y": -88.03125,
+          "width": 292,
+          "height": 912.5,
+          "top": -88.03125,
+          "right": 326,
+          "bottom": 824.46875,
+          "left": 34
+        },
+        "kind": "engineering-3"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/anomaly-detection/ad-anomalydino/images/final/WI033-ANOMALYDINO-04-r01-mobile.png",
+        "nw": 768,
+        "nh": 2400,
+        "box": {
+          "x": 34,
+          "y": -87.484375,
+          "width": 292,
+          "height": 912.5,
+          "top": -87.484375,
+          "right": 326,
+          "bottom": 825.015625,
+          "left": 34
+        },
+        "kind": "engineering-4"
+      }
+    ],
+    "zoom_checks": 7,
+    "answer": true,
+    "overflow": false,
+    "navigation": true,
+    "complete": true
+  }
+]

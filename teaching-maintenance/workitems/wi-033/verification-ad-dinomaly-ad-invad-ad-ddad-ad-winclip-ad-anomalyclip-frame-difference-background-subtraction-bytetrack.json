@@ -1,0 +1,1249 @@
+{
+  "owners": [
+    "ad-dinomaly",
+    "ad-invad",
+    "ad-ddad",
+    "ad-winclip",
+    "ad-anomalyclip",
+    "frame-difference",
+    "background-subtraction",
+    "bytetrack"
+  ],
+  "changed_topics": [
+    "ad-ae",
+    "ad-anomalyclip",
+    "ad-anomalydino",
+    "ad-anomalygpt",
+    "ad-ddad",
+    "ad-diffad",
+    "ad-dinomaly",
+    "ad-draem",
+    "ad-efficientad",
+    "ad-invad",
+    "ad-padim",
+    "ad-patchcore",
+    "ad-rd4ad",
+    "ad-stfpm",
+    "ad-subspacead",
+    "ad-uniad",
+    "ad-winclip",
+    "background-subtraction",
+    "bytetrack",
+    "clip",
+    "convnext",
+    "det-grounding-dino-interface",
+    "det-rtdetr",
+    "det-yolo-dense",
+    "dinov2",
+    "dinov3",
+    "frame-difference",
+    "gemini-vision",
+    "keypoint-r-cnn",
+    "llava",
+    "lucas-kanade",
+    "pose",
+    "qwen-vl",
+    "raft",
+    "resnet",
+    "segformer",
+    "siglip",
+    "u-net",
+    "vit-classifier",
+    "yolo-seg",
+    "yoloe"
+  ],
+  "unchanged_topics": 17,
+  "html_sha256": "885d24685d5474bfd590bc0dac25ea7184a1ea1306a69151bc2c8848e25728de",
+  "bundle_assets": 1370,
+  "bundle_hashes_match": true,
+  "ui_states": 32,
+  "zoom_checks": 224,
+  "answers": 32,
+  "navigation": 32,
+  "http_checks": 236,
+  "http": [
+    {
+      "url": "http://127.0.0.1:8000/_course_content/generated-concepts/ad-anomalyclip/wi021-anomalyclip-c1-r02-desktop.png",
+      "status": 200,
+      "sha256": "8655bd1925dc4aceda2e78cc68f7319993dba224611c8b828e5c1a6039b56ffd"
+    },
+    {
+      "url": "http://127.0.0.1:8000/_course_content/generated-concepts/ad-anomalyclip/wi021-anomalyclip-c1-r02-mobile.png",
+      "status": 200,
+      "sha256": "8d93d0e3c4bccb00aeaaac45331b4a2ee8cad38c7a337df0cb7919c8128da5fd"
+    },
+    {
+      "url": "http://127.0.0.1:8000/_course_content/generated-concepts/ad-anomalyclip/wi021-clip-methods-d2-r02-desktop.png",
+      "status": 200,
+      "sha256": "ea5c39cd6c9280c25d6b489fb27acd651df42156431bc06cf55a99141716bfaa"
+    },
+    {
+      "url": "http://127.0.0.1:8000/_course_content/generated-concepts/ad-anomalyclip/wi021-clip-methods-d3-r04-desktop.png",
+      "status": 200,
+      "sha256": "861b16c99eaf9824bcbea07f257f1c39b45901b4f5b204fc6922b7408373b57a"
+    },
+    {
+      "url": "http://127.0.0.1:8000/_course_content/generated-concepts/ad-anomalyclip/wi033-clip-shared-errors-r02-mobile.png",
+      "status": 200,
+      "sha256": "2791ba61aeab81d3ddbe0c54b300ed9e2d0be18fff1f44e1ca6cbca358e6bb59"
+    },
+    {
+      "url": "http://127.0.0.1:8000/_course_content/generated-concepts/ad-anomalyclip/wi033-clip-shared-methods-r01-mobile.png",
+      "status": 200,
+      "sha256": "67011025283115575d620346349c7a3bba9e1f54dd71fc3113a5cbd0c809bd80"
+    },
+    {
+      "url": "http://127.0.0.1:8000/_course_content/generated-concepts/ad-ddad/wi021-ddad-c1-r01-desktop.png",
+      "status": 200,
+      "sha256": "ae47498df8e67c6070061fe3241b3604d0699473f229d6ae7a921aef254384b7"
+    },
+    {
+      "url": "http://127.0.0.1:8000/_course_content/generated-concepts/ad-ddad/wi021-ddad-c1-r02-mobile.png",
+      "status": 200,
+      "sha256": "782829286efe235905c8044378bf326f86bd2b1e7dc8bb5fb22a4dfca243ef7e"
+    },
+    {
+      "url": "http://127.0.0.1:8000/_course_content/generated-concepts/ad-ddad/wi021-diffusion-methods-d2-r02-desktop.png",
+      "status": 200,
+      "sha256": "2954c5ebc2ef2f9cde77115492860d45d694c56a8f4c79a29dd078f9f7011a0e"
+    },
+    {
+      "url": "http://127.0.0.1:8000/_course_content/generated-concepts/ad-ddad/wi021-diffusion-methods-d2-r03-mobile.png",
+      "status": 200,
+      "sha256": "8f62dd499f8ac5252ab2fa39147a1bfcc50e2ab96bd7f49296827be32e2da7d4"
+    },
+    {
+      "url": "http://127.0.0.1:8000/_course_content/generated-concepts/ad-ddad/wi021-diffusion-methods-d3-r02-desktop.png",
+      "status": 200,
+      "sha256": "43132edead7efaa67e3e57d976e53f6d6c43b7596ae70185fad779e6676ff673"
+    },
+    {
+      "url": "http://127.0.0.1:8000/_course_content/generated-concepts/ad-ddad/wi021-diffusion-methods-d3-r04-mobile.png",
+      "status": 200,
+      "sha256": "51ab1a7621812bb08a2352fa410fcde8f58a25e8e0dbee09e19a590341736ab2"
+    },
+    {
+      "url": "http://127.0.0.1:8000/_course_content/generated-concepts/ad-dinomaly/wi021-dinomaly-c1-r01-mobile.png",
+      "status": 200,
+      "sha256": "222f5bece875fe8cb2ae0f0fe6ba0d29ee7b1a1233915c49bd647fcd097bac90"
+    },
+    {
+      "url": "http://127.0.0.1:8000/_course_content/generated-concepts/ad-dinomaly/wi021-dinomaly-c1-r04-desktop.png",
+      "status": 200,
+      "sha256": "14763d089c2fa0c54be6fa516e681a55facbfbe7f5854ba14d36b923fd6d7390"
+    },
+    {
+      "url": "http://127.0.0.1:8000/_course_content/generated-concepts/ad-dinomaly/wi021-multi-reconstruction-d2-r02-desktop.png",
+      "status": 200,
+      "sha256": "2252749e6e8574f1d0599518b49bb90528fcbca54fab653534f5a170ff17489e"
+    },
+    {
+      "url": "http://127.0.0.1:8000/_course_content/generated-concepts/ad-dinomaly/wi021-multi-reconstruction-d2-r03-mobile.png",
+      "status": 200,
+      "sha256": "9dedb96f380025424d5dc73c73e6cc26d7d835eedb01ea37d06b2fbf265daafe"
+    },
+    {
+      "url": "http://127.0.0.1:8000/_course_content/generated-concepts/ad-dinomaly/wi021-multi-reconstruction-d3-r02-desktop.png",
+      "status": 200,
+      "sha256": "6d245f368265c18398ef8515c78ba299c9e22c59766aeaf2538465eb294d527d"
+    },
+    {
+      "url": "http://127.0.0.1:8000/_course_content/generated-concepts/ad-dinomaly/wi021-multi-reconstruction-d3-r02-mobile.png",
+      "status": 200,
+      "sha256": "7b115e86de0a4668c8bc7408d3ef70c4bfdba1e490e04a85d2200887a6d7530d"
+    },
+    {
+      "url": "http://127.0.0.1:8000/_course_content/generated-concepts/ad-invad/wi021-invad-c1-r01-desktop.png",
+      "status": 200,
+      "sha256": "f4e97c1d02ea1334b1129348d8dea272bcbd18a9a23e125215ab3d69f1daa133"
+    },
+    {
+      "url": "http://127.0.0.1:8000/_course_content/generated-concepts/ad-invad/wi021-invad-c1-r03-mobile.png",
+      "status": 200,
+      "sha256": "5cdbd427e392f691be0fee193295e8c21d50c1e15f2d3c08a73b9e34ea456719"
+    },
+    {
+      "url": "http://127.0.0.1:8000/_course_content/generated-concepts/ad-winclip/wi021-winclip-c1-r01-mobile.png",
+      "status": 200,
+      "sha256": "c971147c7bd4a52eeb9bd19f85e19f9d6f6ce4600939d899ec7f09c77a9a91fc"
+    },
+    {
+      "url": "http://127.0.0.1:8000/_course_content/generated-concepts/ad-winclip/wi021-winclip-c1-r02-desktop.png",
+      "status": 200,
+      "sha256": "992e6e0188cf6e79707a59715239eb60b767a9b9dc30b6011326e44c6d7e568e"
+    },
+    {
+      "url": "http://127.0.0.1:8000/_course_content/generated-concepts/background-subtraction/wi028-bg-c1-r01-desktop.png",
+      "status": 200,
+      "sha256": "753161ee886be5b912d06d6df3c0eb39a173df0f2d3971db785e6881789c44f9"
+    },
+    {
+      "url": "http://127.0.0.1:8000/_course_content/generated-concepts/background-subtraction/wi028-bg-c1-r01-mobile.png",
+      "status": 200,
+      "sha256": "9dc425e871cddbb0787b0a11cea9e0b0338a6241b9c0be7f9a8ed87980836ec4"
+    },
+    {
+      "url": "http://127.0.0.1:8000/_course_content/generated-concepts/background-subtraction/wi028-bg-d2-r01-desktop.png",
+      "status": 200,
+      "sha256": "59eb2fa7b691acc5bda1d6f0a484eeef90ee2286e3e212aff4ce1034724f1c3b"
+    },
+    {
+      "url": "http://127.0.0.1:8000/_course_content/generated-concepts/background-subtraction/wi028-bg-d2-r01-mobile.png",
+      "status": 200,
+      "sha256": "08da87e318cb80d42d73898508ffe55cc03e2826d8d91f3cd7ad70b74c27f3ac"
+    },
+    {
+      "url": "http://127.0.0.1:8000/_course_content/generated-concepts/bytetrack/wi028-byte-c1-r02-desktop.png",
+      "status": 200,
+      "sha256": "94a7c84d0eb8cb07040b4d31b223eeb4dcee0e80556e0c2a420272a9efe18a8a"
+    },
+    {
+      "url": "http://127.0.0.1:8000/_course_content/generated-concepts/bytetrack/wi028-byte-c1-r03-mobile.png",
+      "status": 200,
+      "sha256": "e9ebc32a02b8136584917e3f0f8bd22ce7c01554423f9f727a5ff4441477f74a"
+    },
+    {
+      "url": "http://127.0.0.1:8000/_course_content/generated-concepts/bytetrack/wi028-byte-d2-r01-desktop.png",
+      "status": 200,
+      "sha256": "16d04b7a53cb36ee9d425cad455306a6dd0aaad6c2f080d048e98e1c00ad31ce"
+    },
+    {
+      "url": "http://127.0.0.1:8000/_course_content/generated-concepts/bytetrack/wi028-byte-d2-r01-mobile.png",
+      "status": 200,
+      "sha256": "799f2cebb770c03d88806c571cbd07a942d3df16019e89f3de7d513945a37360"
+    },
+    {
+      "url": "http://127.0.0.1:8000/_course_content/generated-concepts/bytetrack/wi028-track-d3-r01-desktop.png",
+      "status": 200,
+      "sha256": "4091ab72b4a7a2d743d71871cd01827239bb333087e01813a3950c867038414c"
+    },
+    {
+      "url": "http://127.0.0.1:8000/_course_content/generated-concepts/bytetrack/wi028-track-d3-r02-mobile.png",
+      "status": 200,
+      "sha256": "3fc1fcd20b35caa078cc94b9e7ed32127d5676a8586edc54f4be03ed24347a6e"
+    },
+    {
+      "url": "http://127.0.0.1:8000/_course_content/generated-concepts/frame-difference/wi028-change-d3-r02-desktop.png",
+      "status": 200,
+      "sha256": "c29daf8a025c695fe0d4e8cfc0937fffa80a745452554f3b0ba952d344a560ea"
+    },
+    {
+      "url": "http://127.0.0.1:8000/_course_content/generated-concepts/frame-difference/wi028-change-d3-r03-mobile.png",
+      "status": 200,
+      "sha256": "4871d2649252eccb6845864b238508972dae6730083f572b8949bd74227d3c5d"
+    },
+    {
+      "url": "http://127.0.0.1:8000/_course_content/generated-concepts/frame-difference/wi028-frame-c1-r02-desktop.png",
+      "status": 200,
+      "sha256": "1c57ad4d7c778836bcdc4963b279ab60223ef2282683d1bebae2da18f93ac646"
+    },
+    {
+      "url": "http://127.0.0.1:8000/_course_content/generated-concepts/frame-difference/wi028-frame-c1-r02-mobile.png",
+      "status": 200,
+      "sha256": "9b9aadb26244fbd7d046c9156d4751d87c43ffe9c69531b75b7399dc2a0e46ac"
+    },
+    {
+      "url": "http://127.0.0.1:8000/_course_content/generated-concepts/frame-difference/wi028-frame-d2-r01-desktop.png",
+      "status": 200,
+      "sha256": "a4654638e7c84769fa9dfe325f6a542942b97761f6ce5adca0e1db7a6a05298d"
+    },
+    {
+      "url": "http://127.0.0.1:8000/_course_content/generated-concepts/frame-difference/wi028-frame-d2-r01-mobile.png",
+      "status": 200,
+      "sha256": "5bfc622032eac8c67685c7819876f5383c7298c668e1ddb5b822a27b2193e36d"
+    },
+    {
+      "url": "http://127.0.0.1:8000/roadmap-model-selection/anomaly-detection/ad-anomalyclip/images/final/WI033-ANOCLIP-01-r01-desktop.png",
+      "status": 200,
+      "sha256": "effbaf9dae5f0f92bd4c6be3e0e5bd32213f7c0c514878ab8fac9265d5b8ee29"
+    },
+    {
+      "url": "http://127.0.0.1:8000/roadmap-model-selection/anomaly-detection/ad-anomalyclip/images/final/WI033-ANOCLIP-01-r01-mobile.png",
+      "status": 200,
+      "sha256": "f3b19c9c120405e0984a858f11b7126a5f03163b6a0aa04c2a097dc17add1593"
+    },
+    {
+      "url": "http://127.0.0.1:8000/roadmap-model-selection/anomaly-detection/ad-anomalyclip/images/final/WI033-ANOCLIP-02-r02-desktop.png",
+      "status": 200,
+      "sha256": "4865bea5b53670c305b922ffef3c03412a85754a3dbc1d68e615517f0fa7543f"
+    },
+    {
+      "url": "http://127.0.0.1:8000/roadmap-model-selection/anomaly-detection/ad-anomalyclip/images/final/WI033-ANOCLIP-02-r02-mobile.png",
+      "status": 200,
+      "sha256": "37986a83b64e81033107a986ca1fbdfaf9f5fe714d9d22c648eb7bdf9d3045d7"
+    },
+    {
+      "url": "http://127.0.0.1:8000/roadmap-model-selection/anomaly-detection/ad-anomalyclip/images/final/WI033-ANOCLIP-03-r02-desktop.png",
+      "status": 200,
+      "sha256": "6d468e0552737cab30b179e4f4a90aa3f7fdbbaaf00f980b6a5c44714cb697ee"
+    },
+    {
+      "url": "http://127.0.0.1:8000/roadmap-model-selection/anomaly-detection/ad-anomalyclip/images/final/WI033-ANOCLIP-03-r02-mobile.png",
+      "status": 200,
+      "sha256": "6ed95915ba04d7fc4dfc79fcc15824f2d1be6473ca94401d6bbfe19870565646"
+    },
+    {
+      "url": "http://127.0.0.1:8000/roadmap-model-selection/anomaly-detection/ad-anomalyclip/images/final/WI033-ANOCLIP-04-r02-desktop.png",
+      "status": 200,
+      "sha256": "d3e6e581563b4a6c992599e7f27f89649f5a4971beea108b4f18af47b29b1d85"
+    },
+    {
+      "url": "http://127.0.0.1:8000/roadmap-model-selection/anomaly-detection/ad-anomalyclip/images/final/WI033-ANOCLIP-04-r02-mobile.png",
+      "status": 200,
+      "sha256": "cd223de83a1f3bd1bff1f14ab33e66e11a040d96d1a10374cd6d4ab9cf202b52"
+    },
+    {
+      "url": "http://127.0.0.1:8000/roadmap-model-selection/anomaly-detection/ad-anomalyclip/model.md",
+      "status": 200,
+      "sha256": "5ef6f381c07c083e5ff9abfc4118848b456964a198a60b180d8e754e18d80a2a"
+    },
+    {
+      "url": "http://127.0.0.1:8000/roadmap-model-selection/anomaly-detection/ad-anomalyclip/slide-manifest.md",
+      "status": 200,
+      "sha256": "3623cc2f6c5bf1048b6609bbc3392b3bc95fcd8ae8242ba683a7d03a8f739416"
+    },
+    {
+      "url": "http://127.0.0.1:8000/roadmap-model-selection/anomaly-detection/ad-ddad/images/final/WI033-DDAD-01-r01-desktop.png",
+      "status": 200,
+      "sha256": "5fd56047248e1a909114ac44a57f682f1f756009682cda8722c368c986abfc97"
+    },
+    {
+      "url": "http://127.0.0.1:8000/roadmap-model-selection/anomaly-detection/ad-ddad/images/final/WI033-DDAD-01-r01-mobile.png",
+      "status": 200,
+      "sha256": "bb8c2cc78a4dda9d0a16b7ae67590619f1bcb8741a3d8d82e230098d4d7363cf"
+    },
+    {
+      "url": "http://127.0.0.1:8000/roadmap-model-selection/anomaly-detection/ad-ddad/images/final/WI033-DDAD-02-r02-desktop.png",
+      "status": 200,
+      "sha256": "72f620058223d530af7aaf8475ec0d3c68fe4faa394d9f72c86244e3e1e93b94"
+    },
+    {
+      "url": "http://127.0.0.1:8000/roadmap-model-selection/anomaly-detection/ad-ddad/images/final/WI033-DDAD-02-r02-mobile.png",
+      "status": 200,
+      "sha256": "ef68c107bd25dfd901082341d1c542d9c944ffabde89c2f5035aa50fd041877c"
+    },
+    {
+      "url": "http://127.0.0.1:8000/roadmap-model-selection/anomaly-detection/ad-ddad/images/final/WI033-DDAD-03-r01-desktop.png",
+      "status": 200,
+      "sha256": "89149667e69b0263a9c8ab4835465d4999d1fae10c26d31638fe2e3a9d093287"
+    },
+    {
+      "url": "http://127.0.0.1:8000/roadmap-model-selection/anomaly-detection/ad-ddad/images/final/WI033-DDAD-03-r01-mobile.png",
+      "status": 200,
+      "sha256": "3f358ae43be5bdfe5c52f50ba2ba92f550d4a846ae1266f7355bc8d10a306213"
+    },
+    {
+      "url": "http://127.0.0.1:8000/roadmap-model-selection/anomaly-detection/ad-ddad/images/final/WI033-DDAD-04-r02-desktop.png",
+      "status": 200,
+      "sha256": "622ebf7472835c76aec885b0802c2db72b2bb673b6ac46fc616b51306db98721"
+    },
+    {
+      "url": "http://127.0.0.1:8000/roadmap-model-selection/anomaly-detection/ad-ddad/images/final/WI033-DDAD-04-r02-mobile.png",
+      "status": 200,
+      "sha256": "5c899012415828aef6d43f4516413a2a4ac05cf7c343dd175dcb8daf0488c535"
+    },
+    {
+      "url": "http://127.0.0.1:8000/roadmap-model-selection/anomaly-detection/ad-ddad/model.md",
+      "status": 200,
+      "sha256": "f82c85b810200a4f51987e84f827a79c20114a5ce88fc282ebf3b5206176c241"
+    },
+    {
+      "url": "http://127.0.0.1:8000/roadmap-model-selection/anomaly-detection/ad-ddad/slide-manifest.md",
+      "status": 200,
+      "sha256": "8163c7d5e2a47ccccd79d251c28e761a28e92312cf03a648adace11aeef56cfb"
+    },
+    {
+      "url": "http://127.0.0.1:8000/roadmap-model-selection/anomaly-detection/ad-dinomaly/images/final/WI033-DINOMALY-01-r01-desktop.png",
+      "status": 200,
+      "sha256": "63d7b4e833033e2a11c1ee566f33d9f1abb7a0c796de7a823ecff27e2cb0ba54"
+    },
+    {
+      "url": "http://127.0.0.1:8000/roadmap-model-selection/anomaly-detection/ad-dinomaly/images/final/WI033-DINOMALY-01-r01-mobile.png",
+      "status": 200,
+      "sha256": "680ea9e6facf73b5f2946c41d2d77ad9c25384ce8b815ed9a536b8ac28636f46"
+    },
+    {
+      "url": "http://127.0.0.1:8000/roadmap-model-selection/anomaly-detection/ad-dinomaly/images/final/WI033-DINOMALY-02-r02-desktop.png",
+      "status": 200,
+      "sha256": "6d8449ee5624450934e18026e2880ff3c5fdfda3d6c8fad270b5dc1d8e340f66"
+    },
+    {
+      "url": "http://127.0.0.1:8000/roadmap-model-selection/anomaly-detection/ad-dinomaly/images/final/WI033-DINOMALY-02-r02-mobile.png",
+      "status": 200,
+      "sha256": "9236ca1256e8b76c7b45f7780c90a956b8c276d916fdb6d7ee5212ebdb23319a"
+    },
+    {
+      "url": "http://127.0.0.1:8000/roadmap-model-selection/anomaly-detection/ad-dinomaly/images/final/WI033-DINOMALY-03-r01-desktop.png",
+      "status": 200,
+      "sha256": "713c12e6c3b80cdecb77c6450d3c34993767c56730adffac761a184106f93d39"
+    },
+    {
+      "url": "http://127.0.0.1:8000/roadmap-model-selection/anomaly-detection/ad-dinomaly/images/final/WI033-DINOMALY-03-r01-mobile.png",
+      "status": 200,
+      "sha256": "a5d42edbda688fe1891e2667ab3f236ea236c8d17b1b5c3e859425f8c801f1d7"
+    },
+    {
+      "url": "http://127.0.0.1:8000/roadmap-model-selection/anomaly-detection/ad-dinomaly/images/final/WI033-DINOMALY-04-r01-desktop.png",
+      "status": 200,
+      "sha256": "814accc8ccb9e99da2c8a75fa4f3a6eb46853a11366473d2a2b2c07e23e691ea"
+    },
+    {
+      "url": "http://127.0.0.1:8000/roadmap-model-selection/anomaly-detection/ad-dinomaly/images/final/WI033-DINOMALY-04-r01-mobile.png",
+      "status": 200,
+      "sha256": "4d7831a28b6ddc2a4ce60bec5a9c03fbbb7a9a11a7ae56969d558acc447956e8"
+    },
+    {
+      "url": "http://127.0.0.1:8000/roadmap-model-selection/anomaly-detection/ad-dinomaly/model.md",
+      "status": 200,
+      "sha256": "d3a559987ee4c20155a0787297c8b41f5ff65fa583e8cf760f0538cbeec73bb7"
+    },
+    {
+      "url": "http://127.0.0.1:8000/roadmap-model-selection/anomaly-detection/ad-dinomaly/slide-manifest.md",
+      "status": 200,
+      "sha256": "71779498f385b6d10d45044953a9c771ce43453c4ea31c356d65d693fd875ac0"
+    },
+    {
+      "url": "http://127.0.0.1:8000/roadmap-model-selection/anomaly-detection/ad-invad/images/final/WI033-INVAD-01-r01-desktop.png",
+      "status": 200,
+      "sha256": "45879409fa4cdf5bd0b04cd998cd3f5baf4ab4c7b408f7737c67eb8c6956bf0b"
+    },
+    {
+      "url": "http://127.0.0.1:8000/roadmap-model-selection/anomaly-detection/ad-invad/images/final/WI033-INVAD-01-r01-mobile.png",
+      "status": 200,
+      "sha256": "e9e2a384623cddc2bf0dae7e4812307b0577fa7fd2be13cd9c956df645573709"
+    },
+    {
+      "url": "http://127.0.0.1:8000/roadmap-model-selection/anomaly-detection/ad-invad/images/final/WI033-INVAD-02-r02-desktop.png",
+      "status": 200,
+      "sha256": "fb2b8b8a79b3dd6954ff33a25a5049a721ce2ea7c3d51c1ea2488397a86e8f25"
+    },
+    {
+      "url": "http://127.0.0.1:8000/roadmap-model-selection/anomaly-detection/ad-invad/images/final/WI033-INVAD-02-r02-mobile.png",
+      "status": 200,
+      "sha256": "a0cdf1253e252613755e9065c5f0dc913205fba14c527189f91ba7115e232be2"
+    },
+    {
+      "url": "http://127.0.0.1:8000/roadmap-model-selection/anomaly-detection/ad-invad/images/final/WI033-INVAD-03-r01-desktop.png",
+      "status": 200,
+      "sha256": "fd7909c32c99ed60aadb1053a888a869bebddf7007c610d1ddb0f660524f76a4"
+    },
+    {
+      "url": "http://127.0.0.1:8000/roadmap-model-selection/anomaly-detection/ad-invad/images/final/WI033-INVAD-03-r01-mobile.png",
+      "status": 200,
+      "sha256": "397e48b1779f6780076640113fe8d1e2de4db6b259feeb6419b2158a5dbf00eb"
+    },
+    {
+      "url": "http://127.0.0.1:8000/roadmap-model-selection/anomaly-detection/ad-invad/images/final/WI033-INVAD-04-r01-desktop.png",
+      "status": 200,
+      "sha256": "8d7118c5604e746134099032a7768c0fdec593c7eecd333516b497c01cf815ab"
+    },
+    {
+      "url": "http://127.0.0.1:8000/roadmap-model-selection/anomaly-detection/ad-invad/images/final/WI033-INVAD-04-r01-mobile.png",
+      "status": 200,
+      "sha256": "d167cd041101b6552cab6908a313c70eeab37f4c0073708b25aad8f98ea15775"
+    },
+    {
+      "url": "http://127.0.0.1:8000/roadmap-model-selection/anomaly-detection/ad-invad/model.md",
+      "status": 200,
+      "sha256": "1b5e3bf0eb3e7e5095e71a8d0c3d254d2c70ab7a8df5990188b6ee10b409625d"
+    },
+    {
+      "url": "http://127.0.0.1:8000/roadmap-model-selection/anomaly-detection/ad-invad/slide-manifest.md",
+      "status": 200,
+      "sha256": "92602d12d89018af7c26003deff89505fdddce587ebd8037f6c6e94097ac6324"
+    },
+    {
+      "url": "http://127.0.0.1:8000/roadmap-model-selection/anomaly-detection/ad-winclip/images/final/WI033-WINCLIP-01-r02-desktop.png",
+      "status": 200,
+      "sha256": "a8c6d8a4f5ee6b46d48b7c7622ebb0c97907867f8aa55521d77e0d447e9cbf76"
+    },
+    {
+      "url": "http://127.0.0.1:8000/roadmap-model-selection/anomaly-detection/ad-winclip/images/final/WI033-WINCLIP-01-r02-mobile.png",
+      "status": 200,
+      "sha256": "2c9a6b7ae2fab77a8c4f006a9cb9b4fc0feabc17c2fd15276d19de956d9563da"
+    },
+    {
+      "url": "http://127.0.0.1:8000/roadmap-model-selection/anomaly-detection/ad-winclip/images/final/WI033-WINCLIP-02-r02-desktop.png",
+      "status": 200,
+      "sha256": "9928459ce8250fafd268e609b73926e931061259b95eb62dc6c55e4b7b87469d"
+    },
+    {
+      "url": "http://127.0.0.1:8000/roadmap-model-selection/anomaly-detection/ad-winclip/images/final/WI033-WINCLIP-02-r02-mobile.png",
+      "status": 200,
+      "sha256": "acbefdb9c50157d3cc3794bb5b0d401a4ce816a4877ae793de9237c51317b509"
+    },
+    {
+      "url": "http://127.0.0.1:8000/roadmap-model-selection/anomaly-detection/ad-winclip/images/final/WI033-WINCLIP-03-r02-desktop.png",
+      "status": 200,
+      "sha256": "be5b0eb45117c91470a77cd36bf3bcd0905edff43029a4b234746128381ce5e1"
+    },
+    {
+      "url": "http://127.0.0.1:8000/roadmap-model-selection/anomaly-detection/ad-winclip/images/final/WI033-WINCLIP-03-r02-mobile.png",
+      "status": 200,
+      "sha256": "cb07bbc544f87088281c737b3963368eff788dd12f3f13273307e2a66ea0fbd7"
+    },
+    {
+      "url": "http://127.0.0.1:8000/roadmap-model-selection/anomaly-detection/ad-winclip/images/final/WI033-WINCLIP-04-r02-desktop.png",
+      "status": 200,
+      "sha256": "4b40571acf308805a7c5f18621e71c98fe9e75a7719fe873c79d567ee35c861d"
+    },
+    {
+      "url": "http://127.0.0.1:8000/roadmap-model-selection/anomaly-detection/ad-winclip/images/final/WI033-WINCLIP-04-r02-mobile.png",
+      "status": 200,
+      "sha256": "eab43f3c4477457b5aa79485740586555b5b21f6290187432a88d1cef9c01151"
+    },
+    {
+      "url": "http://127.0.0.1:8000/roadmap-model-selection/anomaly-detection/ad-winclip/model.md",
+      "status": 200,
+      "sha256": "d97ca3b5473e089ad730a5383f09baeea89181e6501e7078c3cdb3d604565fdc"
+    },
+    {
+      "url": "http://127.0.0.1:8000/roadmap-model-selection/anomaly-detection/ad-winclip/slide-manifest.md",
+      "status": 200,
+      "sha256": "a89600750b84c8f5cff6942338b1af02ba1c76743b74868a84e6f4d524f4b8e5"
+    },
+    {
+      "url": "http://127.0.0.1:8000/roadmap-model-selection/video-temporal/background-subtraction/images/final/WI033-BGSUB-01-r01-desktop.png",
+      "status": 200,
+      "sha256": "22ff9c88efd698d515927585cd8f395c7916ccf4b03165686e3c1a99cebcc7fe"
+    },
+    {
+      "url": "http://127.0.0.1:8000/roadmap-model-selection/video-temporal/background-subtraction/images/final/WI033-BGSUB-01-r01-mobile.png",
+      "status": 200,
+      "sha256": "1cca69c2cde54ca32da17baf3c7aabcaa21350c87754a2d2939f9906aaaaceb0"
+    },
+    {
+      "url": "http://127.0.0.1:8000/roadmap-model-selection/video-temporal/background-subtraction/images/final/WI033-BGSUB-02-r02-desktop.png",
+      "status": 200,
+      "sha256": "1f369ffae22c72de5dc176885b7100f96b774c164813fbd7fbf5c45405756f7a"
+    },
+    {
+      "url": "http://127.0.0.1:8000/roadmap-model-selection/video-temporal/background-subtraction/images/final/WI033-BGSUB-02-r02-mobile.png",
+      "status": 200,
+      "sha256": "182dccf7ce8b651cd67ff3859654be6298b82ab11afd9a0da9ce68826cb5b698"
+    },
+    {
+      "url": "http://127.0.0.1:8000/roadmap-model-selection/video-temporal/background-subtraction/images/final/WI033-BGSUB-03-r02-desktop.png",
+      "status": 200,
+      "sha256": "399997078a509b0f124bdeab01ff5140745964d16b2cc4dc7d63ae0e61add887"
+    },
+    {
+      "url": "http://127.0.0.1:8000/roadmap-model-selection/video-temporal/background-subtraction/images/final/WI033-BGSUB-03-r02-mobile.png",
+      "status": 200,
+      "sha256": "41c6a3c506c4e5458d73c1550de87b410dd9156756bef7830709044f7372ec68"
+    },
+    {
+      "url": "http://127.0.0.1:8000/roadmap-model-selection/video-temporal/background-subtraction/images/final/WI033-BGSUB-04-r02-desktop.png",
+      "status": 200,
+      "sha256": "44355b5027d9493447490b692ea72593bae1f8b4cf8b97fb8ddc0b5506314948"
+    },
+    {
+      "url": "http://127.0.0.1:8000/roadmap-model-selection/video-temporal/background-subtraction/images/final/WI033-BGSUB-04-r02-mobile.png",
+      "status": 200,
+      "sha256": "89f62b28f9ffe749b4397c0f9afd197d2b9e2ee3e62c9627fd91a28a0b7b6d3c"
+    },
+    {
+      "url": "http://127.0.0.1:8000/roadmap-model-selection/video-temporal/background-subtraction/model.md",
+      "status": 200,
+      "sha256": "4c6da0ae7f25aa3dde7ab8cb79524ab8dad2cabf1ea2a8cb5e47b4f700579c9a"
+    },
+    {
+      "url": "http://127.0.0.1:8000/roadmap-model-selection/video-temporal/background-subtraction/slide-manifest.md",
+      "status": 200,
+      "sha256": "6dc05b7d8cef140f5c2d50837b1ecf7c0dd15df5b402405340014bb3f985fd40"
+    },
+    {
+      "url": "http://127.0.0.1:8000/roadmap-model-selection/video-temporal/bytetrack/images/final/WI033-BYTETRACK-01-r01-desktop.png",
+      "status": 200,
+      "sha256": "dd69b3e6c76a8e3eb9e421704d3d87250ec15654553154b75e7a28864bb062dc"
+    },
+    {
+      "url": "http://127.0.0.1:8000/roadmap-model-selection/video-temporal/bytetrack/images/final/WI033-BYTETRACK-01-r01-mobile.png",
+      "status": 200,
+      "sha256": "1efcfa1ac57c47ade4f31cbd58af2ef2d0f2dae6924329ec7a1d7dfaa420cf72"
+    },
+    {
+      "url": "http://127.0.0.1:8000/roadmap-model-selection/video-temporal/bytetrack/images/final/WI033-BYTETRACK-02-r02-desktop.png",
+      "status": 200,
+      "sha256": "cd6bd11d78705ef266b1dba603025ad93430149adb01951e66624112594881a2"
+    },
+    {
+      "url": "http://127.0.0.1:8000/roadmap-model-selection/video-temporal/bytetrack/images/final/WI033-BYTETRACK-02-r02-mobile.png",
+      "status": 200,
+      "sha256": "a0f09eee57c47d5274809da23c80983bb61a9deec04a7ba9856f3ff2e6a2adb9"
+    },
+    {
+      "url": "http://127.0.0.1:8000/roadmap-model-selection/video-temporal/bytetrack/images/final/WI033-BYTETRACK-03-r01-desktop.png",
+      "status": 200,
+      "sha256": "c9171d0b2b698c5b090062fe6ed94798228c01ff8300bb88d3c5fbfa328deefe"
+    },
+    {
+      "url": "http://127.0.0.1:8000/roadmap-model-selection/video-temporal/bytetrack/images/final/WI033-BYTETRACK-03-r01-mobile.png",
+      "status": 200,
+      "sha256": "27a4c6766de42d3e3c1ca02c82a8feaf4ba6f1aec88934a547b5b9add5e8fe12"
+    },
+    {
+      "url": "http://127.0.0.1:8000/roadmap-model-selection/video-temporal/bytetrack/images/final/WI033-BYTETRACK-04-r01-desktop.png",
+      "status": 200,
+      "sha256": "9a5c0c1186a4a1881b65ffb16c8bc8455feea7e1b22419b33d33a1bd3c53a317"
+    },
+    {
+      "url": "http://127.0.0.1:8000/roadmap-model-selection/video-temporal/bytetrack/images/final/WI033-BYTETRACK-04-r01-mobile.png",
+      "status": 200,
+      "sha256": "798fad23f5ea1a2ee7386386ec2cd81fd8ec201625e2a9737a3ac74f23b74212"
+    },
+    {
+      "url": "http://127.0.0.1:8000/roadmap-model-selection/video-temporal/bytetrack/model.md",
+      "status": 200,
+      "sha256": "c1e73366330ebd5401d88256e68299b249d5172e6d8f244048078e46a8516f71"
+    },
+    {
+      "url": "http://127.0.0.1:8000/roadmap-model-selection/video-temporal/bytetrack/slide-manifest.md",
+      "status": 200,
+      "sha256": "299565f75d7230e5451412da94220b517eb7dec6b1b627bde4520eb01aff2f44"
+    },
+    {
+      "url": "http://127.0.0.1:8000/roadmap-model-selection/video-temporal/frame-difference/images/final/WI033-FRAMEDIFF-01-r01-desktop.png",
+      "status": 200,
+      "sha256": "8a2f68cb9c811f192aeb6738fdcdd3259282ced8d80134a6ecaaa990bfbcd62a"
+    },
+    {
+      "url": "http://127.0.0.1:8000/roadmap-model-selection/video-temporal/frame-difference/images/final/WI033-FRAMEDIFF-01-r01-mobile.png",
+      "status": 200,
+      "sha256": "e952011c778081fd6124ce490a840c04cc447b375324951d5e6e2eb77de1421c"
+    },
+    {
+      "url": "http://127.0.0.1:8000/roadmap-model-selection/video-temporal/frame-difference/images/final/WI033-FRAMEDIFF-02-r02-desktop.png",
+      "status": 200,
+      "sha256": "2aef2fae1c37a709470cd19849c8e844a7fe5998e9ec333bcfbc76824186af9a"
+    },
+    {
+      "url": "http://127.0.0.1:8000/roadmap-model-selection/video-temporal/frame-difference/images/final/WI033-FRAMEDIFF-02-r02-mobile.png",
+      "status": 200,
+      "sha256": "b62ec57a84d2583d74b906cd7915a9e0639ca29541381f5c8406eead9c527d9e"
+    },
+    {
+      "url": "http://127.0.0.1:8000/roadmap-model-selection/video-temporal/frame-difference/images/final/WI033-FRAMEDIFF-03-r02-desktop.png",
+      "status": 200,
+      "sha256": "032c1699d153647736a1fbcc4ff41386dd4afc4f78e875c7dd7dc3a1017e8ab5"
+    },
+    {
+      "url": "http://127.0.0.1:8000/roadmap-model-selection/video-temporal/frame-difference/images/final/WI033-FRAMEDIFF-03-r02-mobile.png",
+      "status": 200,
+      "sha256": "8ecc81fbfd01874c34c3c98c3aa4fc308be7fdf2c218c58d4343d80027bb60c7"
+    },
+    {
+      "url": "http://127.0.0.1:8000/roadmap-model-selection/video-temporal/frame-difference/images/final/WI033-FRAMEDIFF-04-r02-desktop.png",
+      "status": 200,
+      "sha256": "a9bef17a3bbe77126011e8a59556e7ecb5c7f39ec6cf8ba2629f8129312ce08d"
+    },
+    {
+      "url": "http://127.0.0.1:8000/roadmap-model-selection/video-temporal/frame-difference/images/final/WI033-FRAMEDIFF-04-r02-mobile.png",
+      "status": 200,
+      "sha256": "cca88901639094cbb2b0221bd8a72b939efc41ac9fef4374bea9649bdd8c7452"
+    },
+    {
+      "url": "http://127.0.0.1:8000/roadmap-model-selection/video-temporal/frame-difference/model.md",
+      "status": 200,
+      "sha256": "716c2c25659a6bda24f4b4aa1338d02b3bad68fa82ec01ff4da4357d0c0a3248"
+    },
+    {
+      "url": "http://127.0.0.1:8000/roadmap-model-selection/video-temporal/frame-difference/slide-manifest.md",
+      "status": 200,
+      "sha256": "9d6d66652fa54e6baa79d89753766e5aa67e132edff083edb0dbf43bea0c4baa"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/ad-anomalyclip/wi021-anomalyclip-c1-r02-desktop.png",
+      "status": 200,
+      "sha256": "8655bd1925dc4aceda2e78cc68f7319993dba224611c8b828e5c1a6039b56ffd"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/ad-anomalyclip/wi021-anomalyclip-c1-r02-mobile.png",
+      "status": 200,
+      "sha256": "8d93d0e3c4bccb00aeaaac45331b4a2ee8cad38c7a337df0cb7919c8128da5fd"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/ad-anomalyclip/wi021-clip-methods-d2-r02-desktop.png",
+      "status": 200,
+      "sha256": "ea5c39cd6c9280c25d6b489fb27acd651df42156431bc06cf55a99141716bfaa"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/ad-anomalyclip/wi021-clip-methods-d3-r04-desktop.png",
+      "status": 200,
+      "sha256": "861b16c99eaf9824bcbea07f257f1c39b45901b4f5b204fc6922b7408373b57a"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/ad-anomalyclip/wi033-clip-shared-errors-r02-mobile.png",
+      "status": 200,
+      "sha256": "2791ba61aeab81d3ddbe0c54b300ed9e2d0be18fff1f44e1ca6cbca358e6bb59"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/ad-anomalyclip/wi033-clip-shared-methods-r01-mobile.png",
+      "status": 200,
+      "sha256": "67011025283115575d620346349c7a3bba9e1f54dd71fc3113a5cbd0c809bd80"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/ad-ddad/wi021-ddad-c1-r01-desktop.png",
+      "status": 200,
+      "sha256": "ae47498df8e67c6070061fe3241b3604d0699473f229d6ae7a921aef254384b7"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/ad-ddad/wi021-ddad-c1-r02-mobile.png",
+      "status": 200,
+      "sha256": "782829286efe235905c8044378bf326f86bd2b1e7dc8bb5fb22a4dfca243ef7e"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/ad-ddad/wi021-diffusion-methods-d2-r02-desktop.png",
+      "status": 200,
+      "sha256": "2954c5ebc2ef2f9cde77115492860d45d694c56a8f4c79a29dd078f9f7011a0e"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/ad-ddad/wi021-diffusion-methods-d2-r03-mobile.png",
+      "status": 200,
+      "sha256": "8f62dd499f8ac5252ab2fa39147a1bfcc50e2ab96bd7f49296827be32e2da7d4"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/ad-ddad/wi021-diffusion-methods-d3-r02-desktop.png",
+      "status": 200,
+      "sha256": "43132edead7efaa67e3e57d976e53f6d6c43b7596ae70185fad779e6676ff673"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/ad-ddad/wi021-diffusion-methods-d3-r04-mobile.png",
+      "status": 200,
+      "sha256": "51ab1a7621812bb08a2352fa410fcde8f58a25e8e0dbee09e19a590341736ab2"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/ad-dinomaly/wi021-dinomaly-c1-r01-mobile.png",
+      "status": 200,
+      "sha256": "222f5bece875fe8cb2ae0f0fe6ba0d29ee7b1a1233915c49bd647fcd097bac90"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/ad-dinomaly/wi021-dinomaly-c1-r04-desktop.png",
+      "status": 200,
+      "sha256": "14763d089c2fa0c54be6fa516e681a55facbfbe7f5854ba14d36b923fd6d7390"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/ad-dinomaly/wi021-multi-reconstruction-d2-r02-desktop.png",
+      "status": 200,
+      "sha256": "2252749e6e8574f1d0599518b49bb90528fcbca54fab653534f5a170ff17489e"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/ad-dinomaly/wi021-multi-reconstruction-d2-r03-mobile.png",
+      "status": 200,
+      "sha256": "9dedb96f380025424d5dc73c73e6cc26d7d835eedb01ea37d06b2fbf265daafe"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/ad-dinomaly/wi021-multi-reconstruction-d3-r02-desktop.png",
+      "status": 200,
+      "sha256": "6d245f368265c18398ef8515c78ba299c9e22c59766aeaf2538465eb294d527d"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/ad-dinomaly/wi021-multi-reconstruction-d3-r02-mobile.png",
+      "status": 200,
+      "sha256": "7b115e86de0a4668c8bc7408d3ef70c4bfdba1e490e04a85d2200887a6d7530d"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/ad-invad/wi021-invad-c1-r01-desktop.png",
+      "status": 200,
+      "sha256": "f4e97c1d02ea1334b1129348d8dea272bcbd18a9a23e125215ab3d69f1daa133"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/ad-invad/wi021-invad-c1-r03-mobile.png",
+      "status": 200,
+      "sha256": "5cdbd427e392f691be0fee193295e8c21d50c1e15f2d3c08a73b9e34ea456719"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/ad-winclip/wi021-winclip-c1-r01-mobile.png",
+      "status": 200,
+      "sha256": "c971147c7bd4a52eeb9bd19f85e19f9d6f6ce4600939d899ec7f09c77a9a91fc"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/ad-winclip/wi021-winclip-c1-r02-desktop.png",
+      "status": 200,
+      "sha256": "992e6e0188cf6e79707a59715239eb60b767a9b9dc30b6011326e44c6d7e568e"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/background-subtraction/wi028-bg-c1-r01-desktop.png",
+      "status": 200,
+      "sha256": "753161ee886be5b912d06d6df3c0eb39a173df0f2d3971db785e6881789c44f9"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/background-subtraction/wi028-bg-c1-r01-mobile.png",
+      "status": 200,
+      "sha256": "9dc425e871cddbb0787b0a11cea9e0b0338a6241b9c0be7f9a8ed87980836ec4"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/background-subtraction/wi028-bg-d2-r01-desktop.png",
+      "status": 200,
+      "sha256": "59eb2fa7b691acc5bda1d6f0a484eeef90ee2286e3e212aff4ce1034724f1c3b"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/background-subtraction/wi028-bg-d2-r01-mobile.png",
+      "status": 200,
+      "sha256": "08da87e318cb80d42d73898508ffe55cc03e2826d8d91f3cd7ad70b74c27f3ac"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/bytetrack/wi028-byte-c1-r02-desktop.png",
+      "status": 200,
+      "sha256": "94a7c84d0eb8cb07040b4d31b223eeb4dcee0e80556e0c2a420272a9efe18a8a"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/bytetrack/wi028-byte-c1-r03-mobile.png",
+      "status": 200,
+      "sha256": "e9ebc32a02b8136584917e3f0f8bd22ce7c01554423f9f727a5ff4441477f74a"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/bytetrack/wi028-byte-d2-r01-desktop.png",
+      "status": 200,
+      "sha256": "16d04b7a53cb36ee9d425cad455306a6dd0aaad6c2f080d048e98e1c00ad31ce"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/bytetrack/wi028-byte-d2-r01-mobile.png",
+      "status": 200,
+      "sha256": "799f2cebb770c03d88806c571cbd07a942d3df16019e89f3de7d513945a37360"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/bytetrack/wi028-track-d3-r01-desktop.png",
+      "status": 200,
+      "sha256": "4091ab72b4a7a2d743d71871cd01827239bb333087e01813a3950c867038414c"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/bytetrack/wi028-track-d3-r02-mobile.png",
+      "status": 200,
+      "sha256": "3fc1fcd20b35caa078cc94b9e7ed32127d5676a8586edc54f4be03ed24347a6e"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/frame-difference/wi028-change-d3-r02-desktop.png",
+      "status": 200,
+      "sha256": "c29daf8a025c695fe0d4e8cfc0937fffa80a745452554f3b0ba952d344a560ea"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/frame-difference/wi028-change-d3-r03-mobile.png",
+      "status": 200,
+      "sha256": "4871d2649252eccb6845864b238508972dae6730083f572b8949bd74227d3c5d"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/frame-difference/wi028-frame-c1-r02-desktop.png",
+      "status": 200,
+      "sha256": "1c57ad4d7c778836bcdc4963b279ab60223ef2282683d1bebae2da18f93ac646"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/frame-difference/wi028-frame-c1-r02-mobile.png",
+      "status": 200,
+      "sha256": "9b9aadb26244fbd7d046c9156d4751d87c43ffe9c69531b75b7399dc2a0e46ac"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/frame-difference/wi028-frame-d2-r01-desktop.png",
+      "status": 200,
+      "sha256": "a4654638e7c84769fa9dfe325f6a542942b97761f6ce5adca0e1db7a6a05298d"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/frame-difference/wi028-frame-d2-r01-mobile.png",
+      "status": 200,
+      "sha256": "5bfc622032eac8c67685c7819876f5383c7298c668e1ddb5b822a27b2193e36d"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/roadmap-model-selection/anomaly-detection/ad-anomalyclip/images/final/WI033-ANOCLIP-01-r01-desktop.png",
+      "status": 200,
+      "sha256": "effbaf9dae5f0f92bd4c6be3e0e5bd32213f7c0c514878ab8fac9265d5b8ee29"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/roadmap-model-selection/anomaly-detection/ad-anomalyclip/images/final/WI033-ANOCLIP-01-r01-mobile.png",
+      "status": 200,
+      "sha256": "f3b19c9c120405e0984a858f11b7126a5f03163b6a0aa04c2a097dc17add1593"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/roadmap-model-selection/anomaly-detection/ad-anomalyclip/images/final/WI033-ANOCLIP-02-r02-desktop.png",
+      "status": 200,
+      "sha256": "4865bea5b53670c305b922ffef3c03412a85754a3dbc1d68e615517f0fa7543f"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/roadmap-model-selection/anomaly-detection/ad-anomalyclip/images/final/WI033-ANOCLIP-02-r02-mobile.png",
+      "status": 200,
+      "sha256": "37986a83b64e81033107a986ca1fbdfaf9f5fe714d9d22c648eb7bdf9d3045d7"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/roadmap-model-selection/anomaly-detection/ad-anomalyclip/images/final/WI033-ANOCLIP-03-r02-desktop.png",
+      "status": 200,
+      "sha256": "6d468e0552737cab30b179e4f4a90aa3f7fdbbaaf00f980b6a5c44714cb697ee"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/roadmap-model-selection/anomaly-detection/ad-anomalyclip/images/final/WI033-ANOCLIP-03-r02-mobile.png",
+      "status": 200,
+      "sha256": "6ed95915ba04d7fc4dfc79fcc15824f2d1be6473ca94401d6bbfe19870565646"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/roadmap-model-selection/anomaly-detection/ad-anomalyclip/images/final/WI033-ANOCLIP-04-r02-desktop.png",
+      "status": 200,
+      "sha256": "d3e6e581563b4a6c992599e7f27f89649f5a4971beea108b4f18af47b29b1d85"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/roadmap-model-selection/anomaly-detection/ad-anomalyclip/images/final/WI033-ANOCLIP-04-r02-mobile.png",
+      "status": 200,
+      "sha256": "cd223de83a1f3bd1bff1f14ab33e66e11a040d96d1a10374cd6d4ab9cf202b52"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/roadmap-model-selection/anomaly-detection/ad-anomalyclip/model.md",
+      "status": 200,
+      "sha256": "5ef6f381c07c083e5ff9abfc4118848b456964a198a60b180d8e754e18d80a2a"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/roadmap-model-selection/anomaly-detection/ad-anomalyclip/slide-manifest.md",
+      "status": 200,
+      "sha256": "3623cc2f6c5bf1048b6609bbc3392b3bc95fcd8ae8242ba683a7d03a8f739416"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/roadmap-model-selection/anomaly-detection/ad-ddad/images/final/WI033-DDAD-01-r01-desktop.png",
+      "status": 200,
+      "sha256": "5fd56047248e1a909114ac44a57f682f1f756009682cda8722c368c986abfc97"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/roadmap-model-selection/anomaly-detection/ad-ddad/images/final/WI033-DDAD-01-r01-mobile.png",
+      "status": 200,
+      "sha256": "bb8c2cc78a4dda9d0a16b7ae67590619f1bcb8741a3d8d82e230098d4d7363cf"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/roadmap-model-selection/anomaly-detection/ad-ddad/images/final/WI033-DDAD-02-r02-desktop.png",
+      "status": 200,
+      "sha256": "72f620058223d530af7aaf8475ec0d3c68fe4faa394d9f72c86244e3e1e93b94"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/roadmap-model-selection/anomaly-detection/ad-ddad/images/final/WI033-DDAD-02-r02-mobile.png",
+      "status": 200,
+      "sha256": "ef68c107bd25dfd901082341d1c542d9c944ffabde89c2f5035aa50fd041877c"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/roadmap-model-selection/anomaly-detection/ad-ddad/images/final/WI033-DDAD-03-r01-desktop.png",
+      "status": 200,
+      "sha256": "89149667e69b0263a9c8ab4835465d4999d1fae10c26d31638fe2e3a9d093287"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/roadmap-model-selection/anomaly-detection/ad-ddad/images/final/WI033-DDAD-03-r01-mobile.png",
+      "status": 200,
+      "sha256": "3f358ae43be5bdfe5c52f50ba2ba92f550d4a846ae1266f7355bc8d10a306213"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/roadmap-model-selection/anomaly-detection/ad-ddad/images/final/WI033-DDAD-04-r02-desktop.png",
+      "status": 200,
+      "sha256": "622ebf7472835c76aec885b0802c2db72b2bb673b6ac46fc616b51306db98721"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/roadmap-model-selection/anomaly-detection/ad-ddad/images/final/WI033-DDAD-04-r02-mobile.png",
+      "status": 200,
+      "sha256": "5c899012415828aef6d43f4516413a2a4ac05cf7c343dd175dcb8daf0488c535"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/roadmap-model-selection/anomaly-detection/ad-ddad/model.md",
+      "status": 200,
+      "sha256": "f82c85b810200a4f51987e84f827a79c20114a5ce88fc282ebf3b5206176c241"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/roadmap-model-selection/anomaly-detection/ad-ddad/slide-manifest.md",
+      "status": 200,
+      "sha256": "8163c7d5e2a47ccccd79d251c28e761a28e92312cf03a648adace11aeef56cfb"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/roadmap-model-selection/anomaly-detection/ad-dinomaly/images/final/WI033-DINOMALY-01-r01-desktop.png",
+      "status": 200,
+      "sha256": "63d7b4e833033e2a11c1ee566f33d9f1abb7a0c796de7a823ecff27e2cb0ba54"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/roadmap-model-selection/anomaly-detection/ad-dinomaly/images/final/WI033-DINOMALY-01-r01-mobile.png",
+      "status": 200,
+      "sha256": "680ea9e6facf73b5f2946c41d2d77ad9c25384ce8b815ed9a536b8ac28636f46"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/roadmap-model-selection/anomaly-detection/ad-dinomaly/images/final/WI033-DINOMALY-02-r02-desktop.png",
+      "status": 200,
+      "sha256": "6d8449ee5624450934e18026e2880ff3c5fdfda3d6c8fad270b5dc1d8e340f66"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/roadmap-model-selection/anomaly-detection/ad-dinomaly/images/final/WI033-DINOMALY-02-r02-mobile.png",
+      "status": 200,
+      "sha256": "9236ca1256e8b76c7b45f7780c90a956b8c276d916fdb6d7ee5212ebdb23319a"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/roadmap-model-selection/anomaly-detection/ad-dinomaly/images/final/WI033-DINOMALY-03-r01-desktop.png",
+      "status": 200,
+      "sha256": "713c12e6c3b80cdecb77c6450d3c34993767c56730adffac761a184106f93d39"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/roadmap-model-selection/anomaly-detection/ad-dinomaly/images/final/WI033-DINOMALY-03-r01-mobile.png",
+      "status": 200,
+      "sha256": "a5d42edbda688fe1891e2667ab3f236ea236c8d17b1b5c3e859425f8c801f1d7"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/roadmap-model-selection/anomaly-detection/ad-dinomaly/images/final/WI033-DINOMALY-04-r01-desktop.png",
+      "status": 200,
+      "sha256": "814accc8ccb9e99da2c8a75fa4f3a6eb46853a11366473d2a2b2c07e23e691ea"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/roadmap-model-selection/anomaly-detection/ad-dinomaly/images/final/WI033-DINOMALY-04-r01-mobile.png",
+      "status": 200,
+      "sha256": "4d7831a28b6ddc2a4ce60bec5a9c03fbbb7a9a11a7ae56969d558acc447956e8"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/roadmap-model-selection/anomaly-detection/ad-dinomaly/model.md",
+      "status": 200,
+      "sha256": "d3a559987ee4c20155a0787297c8b41f5ff65fa583e8cf760f0538cbeec73bb7"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/roadmap-model-selection/anomaly-detection/ad-dinomaly/slide-manifest.md",
+      "status": 200,
+      "sha256": "71779498f385b6d10d45044953a9c771ce43453c4ea31c356d65d693fd875ac0"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/roadmap-model-selection/anomaly-detection/ad-invad/images/final/WI033-INVAD-01-r01-desktop.png",
+      "status": 200,
+      "sha256": "45879409fa4cdf5bd0b04cd998cd3f5baf4ab4c7b408f7737c67eb8c6956bf0b"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/roadmap-model-selection/anomaly-detection/ad-invad/images/final/WI033-INVAD-01-r01-mobile.png",
+      "status": 200,
+      "sha256": "e9e2a384623cddc2bf0dae7e4812307b0577fa7fd2be13cd9c956df645573709"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/roadmap-model-selection/anomaly-detection/ad-invad/images/final/WI033-INVAD-02-r02-desktop.png",
+      "status": 200,
+      "sha256": "fb2b8b8a79b3dd6954ff33a25a5049a721ce2ea7c3d51c1ea2488397a86e8f25"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/roadmap-model-selection/anomaly-detection/ad-invad/images/final/WI033-INVAD-02-r02-mobile.png",
+      "status": 200,
+      "sha256": "a0cdf1253e252613755e9065c5f0dc913205fba14c527189f91ba7115e232be2"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/roadmap-model-selection/anomaly-detection/ad-invad/images/final/WI033-INVAD-03-r01-desktop.png",
+      "status": 200,
+      "sha256": "fd7909c32c99ed60aadb1053a888a869bebddf7007c610d1ddb0f660524f76a4"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/roadmap-model-selection/anomaly-detection/ad-invad/images/final/WI033-INVAD-03-r01-mobile.png",
+      "status": 200,
+      "sha256": "397e48b1779f6780076640113fe8d1e2de4db6b259feeb6419b2158a5dbf00eb"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/roadmap-model-selection/anomaly-detection/ad-invad/images/final/WI033-INVAD-04-r01-desktop.png",
+      "status": 200,
+      "sha256": "8d7118c5604e746134099032a7768c0fdec593c7eecd333516b497c01cf815ab"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/roadmap-model-selection/anomaly-detection/ad-invad/images/final/WI033-INVAD-04-r01-mobile.png",
+      "status": 200,
+      "sha256": "d167cd041101b6552cab6908a313c70eeab37f4c0073708b25aad8f98ea15775"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/roadmap-model-selection/anomaly-detection/ad-invad/model.md",
+      "status": 200,
+      "sha256": "1b5e3bf0eb3e7e5095e71a8d0c3d254d2c70ab7a8df5990188b6ee10b409625d"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/roadmap-model-selection/anomaly-detection/ad-invad/slide-manifest.md",
+      "status": 200,
+      "sha256": "92602d12d89018af7c26003deff89505fdddce587ebd8037f6c6e94097ac6324"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/roadmap-model-selection/anomaly-detection/ad-winclip/images/final/WI033-WINCLIP-01-r02-desktop.png",
+      "status": 200,
+      "sha256": "a8c6d8a4f5ee6b46d48b7c7622ebb0c97907867f8aa55521d77e0d447e9cbf76"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/roadmap-model-selection/anomaly-detection/ad-winclip/images/final/WI033-WINCLIP-01-r02-mobile.png",
+      "status": 200,
+      "sha256": "2c9a6b7ae2fab77a8c4f006a9cb9b4fc0feabc17c2fd15276d19de956d9563da"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/roadmap-model-selection/anomaly-detection/ad-winclip/images/final/WI033-WINCLIP-02-r02-desktop.png",
+      "status": 200,
+      "sha256": "9928459ce8250fafd268e609b73926e931061259b95eb62dc6c55e4b7b87469d"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/roadmap-model-selection/anomaly-detection/ad-winclip/images/final/WI033-WINCLIP-02-r02-mobile.png",
+      "status": 200,
+      "sha256": "acbefdb9c50157d3cc3794bb5b0d401a4ce816a4877ae793de9237c51317b509"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/roadmap-model-selection/anomaly-detection/ad-winclip/images/final/WI033-WINCLIP-03-r02-desktop.png",
+      "status": 200,
+      "sha256": "be5b0eb45117c91470a77cd36bf3bcd0905edff43029a4b234746128381ce5e1"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/roadmap-model-selection/anomaly-detection/ad-winclip/images/final/WI033-WINCLIP-03-r02-mobile.png",
+      "status": 200,
+      "sha256": "cb07bbc544f87088281c737b3963368eff788dd12f3f13273307e2a66ea0fbd7"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/roadmap-model-selection/anomaly-detection/ad-winclip/images/final/WI033-WINCLIP-04-r02-desktop.png",
+      "status": 200,
+      "sha256": "4b40571acf308805a7c5f18621e71c98fe9e75a7719fe873c79d567ee35c861d"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/roadmap-model-selection/anomaly-detection/ad-winclip/images/final/WI033-WINCLIP-04-r02-mobile.png",
+      "status": 200,
+      "sha256": "eab43f3c4477457b5aa79485740586555b5b21f6290187432a88d1cef9c01151"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/roadmap-model-selection/anomaly-detection/ad-winclip/model.md",
+      "status": 200,
+      "sha256": "d97ca3b5473e089ad730a5383f09baeea89181e6501e7078c3cdb3d604565fdc"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/roadmap-model-selection/anomaly-detection/ad-winclip/slide-manifest.md",
+      "status": 200,
+      "sha256": "a89600750b84c8f5cff6942338b1af02ba1c76743b74868a84e6f4d524f4b8e5"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/roadmap-model-selection/video-temporal/background-subtraction/images/final/WI033-BGSUB-01-r01-desktop.png",
+      "status": 200,
+      "sha256": "22ff9c88efd698d515927585cd8f395c7916ccf4b03165686e3c1a99cebcc7fe"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/roadmap-model-selection/video-temporal/background-subtraction/images/final/WI033-BGSUB-01-r01-mobile.png",
+      "status": 200,
+      "sha256": "1cca69c2cde54ca32da17baf3c7aabcaa21350c87754a2d2939f9906aaaaceb0"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/roadmap-model-selection/video-temporal/background-subtraction/images/final/WI033-BGSUB-02-r02-desktop.png",
+      "status": 200,
+      "sha256": "1f369ffae22c72de5dc176885b7100f96b774c164813fbd7fbf5c45405756f7a"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/roadmap-model-selection/video-temporal/background-subtraction/images/final/WI033-BGSUB-02-r02-mobile.png",
+      "status": 200,
+      "sha256": "182dccf7ce8b651cd67ff3859654be6298b82ab11afd9a0da9ce68826cb5b698"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/roadmap-model-selection/video-temporal/background-subtraction/images/final/WI033-BGSUB-03-r02-desktop.png",
+      "status": 200,
+      "sha256": "399997078a509b0f124bdeab01ff5140745964d16b2cc4dc7d63ae0e61add887"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/roadmap-model-selection/video-temporal/background-subtraction/images/final/WI033-BGSUB-03-r02-mobile.png",
+      "status": 200,
+      "sha256": "41c6a3c506c4e5458d73c1550de87b410dd9156756bef7830709044f7372ec68"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/roadmap-model-selection/video-temporal/background-subtraction/images/final/WI033-BGSUB-04-r02-desktop.png",
+      "status": 200,
+      "sha256": "44355b5027d9493447490b692ea72593bae1f8b4cf8b97fb8ddc0b5506314948"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/roadmap-model-selection/video-temporal/background-subtraction/images/final/WI033-BGSUB-04-r02-mobile.png",
+      "status": 200,
+      "sha256": "89f62b28f9ffe749b4397c0f9afd197d2b9e2ee3e62c9627fd91a28a0b7b6d3c"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/roadmap-model-selection/video-temporal/background-subtraction/model.md",
+      "status": 200,
+      "sha256": "4c6da0ae7f25aa3dde7ab8cb79524ab8dad2cabf1ea2a8cb5e47b4f700579c9a"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/roadmap-model-selection/video-temporal/background-subtraction/slide-manifest.md",
+      "status": 200,
+      "sha256": "6dc05b7d8cef140f5c2d50837b1ecf7c0dd15df5b402405340014bb3f985fd40"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/roadmap-model-selection/video-temporal/bytetrack/images/final/WI033-BYTETRACK-01-r01-desktop.png",
+      "status": 200,
+      "sha256": "dd69b3e6c76a8e3eb9e421704d3d87250ec15654553154b75e7a28864bb062dc"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/roadmap-model-selection/video-temporal/bytetrack/images/final/WI033-BYTETRACK-01-r01-mobile.png",
+      "status": 200,
+      "sha256": "1efcfa1ac57c47ade4f31cbd58af2ef2d0f2dae6924329ec7a1d7dfaa420cf72"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/roadmap-model-selection/video-temporal/bytetrack/images/final/WI033-BYTETRACK-02-r02-desktop.png",
+      "status": 200,
+      "sha256": "cd6bd11d78705ef266b1dba603025ad93430149adb01951e66624112594881a2"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/roadmap-model-selection/video-temporal/bytetrack/images/final/WI033-BYTETRACK-02-r02-mobile.png",
+      "status": 200,
+      "sha256": "a0f09eee57c47d5274809da23c80983bb61a9deec04a7ba9856f3ff2e6a2adb9"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/roadmap-model-selection/video-temporal/bytetrack/images/final/WI033-BYTETRACK-03-r01-desktop.png",
+      "status": 200,
+      "sha256": "c9171d0b2b698c5b090062fe6ed94798228c01ff8300bb88d3c5fbfa328deefe"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/roadmap-model-selection/video-temporal/bytetrack/images/final/WI033-BYTETRACK-03-r01-mobile.png",
+      "status": 200,
+      "sha256": "27a4c6766de42d3e3c1ca02c82a8feaf4ba6f1aec88934a547b5b9add5e8fe12"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/roadmap-model-selection/video-temporal/bytetrack/images/final/WI033-BYTETRACK-04-r01-desktop.png",
+      "status": 200,
+      "sha256": "9a5c0c1186a4a1881b65ffb16c8bc8455feea7e1b22419b33d33a1bd3c53a317"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/roadmap-model-selection/video-temporal/bytetrack/images/final/WI033-BYTETRACK-04-r01-mobile.png",
+      "status": 200,
+      "sha256": "798fad23f5ea1a2ee7386386ec2cd81fd8ec201625e2a9737a3ac74f23b74212"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/roadmap-model-selection/video-temporal/bytetrack/model.md",
+      "status": 200,
+      "sha256": "c1e73366330ebd5401d88256e68299b249d5172e6d8f244048078e46a8516f71"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/roadmap-model-selection/video-temporal/bytetrack/slide-manifest.md",
+      "status": 200,
+      "sha256": "299565f75d7230e5451412da94220b517eb7dec6b1b627bde4520eb01aff2f44"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/roadmap-model-selection/video-temporal/frame-difference/images/final/WI033-FRAMEDIFF-01-r01-desktop.png",
+      "status": 200,
+      "sha256": "8a2f68cb9c811f192aeb6738fdcdd3259282ced8d80134a6ecaaa990bfbcd62a"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/roadmap-model-selection/video-temporal/frame-difference/images/final/WI033-FRAMEDIFF-01-r01-mobile.png",
+      "status": 200,
+      "sha256": "e952011c778081fd6124ce490a840c04cc447b375324951d5e6e2eb77de1421c"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/roadmap-model-selection/video-temporal/frame-difference/images/final/WI033-FRAMEDIFF-02-r02-desktop.png",
+      "status": 200,
+      "sha256": "2aef2fae1c37a709470cd19849c8e844a7fe5998e9ec333bcfbc76824186af9a"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/roadmap-model-selection/video-temporal/frame-difference/images/final/WI033-FRAMEDIFF-02-r02-mobile.png",
+      "status": 200,
+      "sha256": "b62ec57a84d2583d74b906cd7915a9e0639ca29541381f5c8406eead9c527d9e"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/roadmap-model-selection/video-temporal/frame-difference/images/final/WI033-FRAMEDIFF-03-r02-desktop.png",
+      "status": 200,
+      "sha256": "032c1699d153647736a1fbcc4ff41386dd4afc4f78e875c7dd7dc3a1017e8ab5"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/roadmap-model-selection/video-temporal/frame-difference/images/final/WI033-FRAMEDIFF-03-r02-mobile.png",
+      "status": 200,
+      "sha256": "8ecc81fbfd01874c34c3c98c3aa4fc308be7fdf2c218c58d4343d80027bb60c7"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/roadmap-model-selection/video-temporal/frame-difference/images/final/WI033-FRAMEDIFF-04-r02-desktop.png",
+      "status": 200,
+      "sha256": "a9bef17a3bbe77126011e8a59556e7ecb5c7f39ec6cf8ba2629f8129312ce08d"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/roadmap-model-selection/video-temporal/frame-difference/images/final/WI033-FRAMEDIFF-04-r02-mobile.png",
+      "status": 200,
+      "sha256": "cca88901639094cbb2b0221bd8a72b939efc41ac9fef4374bea9649bdd8c7452"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/roadmap-model-selection/video-temporal/frame-difference/model.md",
+      "status": 200,
+      "sha256": "716c2c25659a6bda24f4b4aa1338d02b3bad68fa82ec01ff4da4357d0c0a3248"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/roadmap-model-selection/video-temporal/frame-difference/slide-manifest.md",
+      "status": 200,
+      "sha256": "9d6d66652fa54e6baa79d89753766e5aa67e132edff083edb0dbf43bea0c4baa"
+    }
+  ],
+  "user_approval": "pending",
+  "published": false,
+  "model_inference": false
+}

@@ -1,0 +1,502 @@
+[
+  {
+    "topic": "gemini-vision",
+    "route": "interactive-learning.html",
+    "width": 1440,
+    "errors": [],
+    "images": [
+      {
+        "src": "http://127.0.0.1:8000/_course_content/generated-concepts/gemini-vision/wi027-gemini-vision-c1-r02-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 404.1875,
+          "y": 401.515625,
+          "width": 935.625,
+          "height": 526.5625,
+          "top": 401.515625,
+          "right": 1339.8125,
+          "bottom": 928.078125,
+          "left": 404.1875
+        },
+        "kind": "main-1"
+      },
+      {
+        "src": "http://127.0.0.1:8000/_course_content/generated-concepts/gemini-vision/wi033-gemini-vision-main-failure-r01-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 404.1875,
+          "y": 201.03125,
+          "width": 935.625,
+          "height": 526.5625,
+          "top": 201.03125,
+          "right": 1339.8125,
+          "bottom": 727.59375,
+          "left": 404.1875
+        },
+        "kind": "main-2"
+      },
+      {
+        "src": "http://127.0.0.1:8000/_course_content/generated-concepts/llava/wi027-vlm-d3-r03-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 404.1875,
+          "y": 201.34375,
+          "width": 935.625,
+          "height": 526.5625,
+          "top": 201.34375,
+          "right": 1339.8125,
+          "bottom": 727.90625,
+          "left": 404.1875
+        },
+        "kind": "main-3"
+      },
+      {
+        "src": "http://127.0.0.1:8000/roadmap-model-selection/foundation-vlm-open-world/gemini-vision/images/final/WI033-GEMINI-01-r02-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 367.1875,
+          "y": 195.875,
+          "width": 1009.625,
+          "height": 568.203125,
+          "top": 195.875,
+          "right": 1376.8125,
+          "bottom": 764.078125,
+          "left": 367.1875
+        },
+        "kind": "engineering-1"
+      },
+      {
+        "src": "http://127.0.0.1:8000/roadmap-model-selection/foundation-vlm-open-world/gemini-vision/images/final/WI033-GEMINI-02-r02-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 367.1875,
+          "y": 196.28125,
+          "width": 1009.625,
+          "height": 568.203125,
+          "top": 196.28125,
+          "right": 1376.8125,
+          "bottom": 764.484375,
+          "left": 367.1875
+        },
+        "kind": "engineering-2"
+      },
+      {
+        "src": "http://127.0.0.1:8000/roadmap-model-selection/foundation-vlm-open-world/gemini-vision/images/final/WI033-GEMINI-03-r02-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 367.1875,
+          "y": 195.453125,
+          "width": 1009.625,
+          "height": 568.203125,
+          "top": 195.453125,
+          "right": 1376.8125,
+          "bottom": 763.65625,
+          "left": 367.1875
+        },
+        "kind": "engineering-3"
+      },
+      {
+        "src": "http://127.0.0.1:8000/roadmap-model-selection/foundation-vlm-open-world/gemini-vision/images/final/WI033-GEMINI-04-r01-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 367.1875,
+          "y": 196.09375,
+          "width": 1009.625,
+          "height": 568.203125,
+          "top": 196.09375,
+          "right": 1376.8125,
+          "bottom": 764.296875,
+          "left": 367.1875
+        },
+        "kind": "engineering-4"
+      }
+    ],
+    "zoom_checks": 7,
+    "answer": true,
+    "overflow": false,
+    "navigation": true,
+    "complete": true
+  },
+  {
+    "topic": "gemini-vision",
+    "route": "interactive-learning.html",
+    "width": 360,
+    "errors": [],
+    "images": [
+      {
+        "src": "http://127.0.0.1:8000/_course_content/generated-concepts/gemini-vision/wi027-gemini-vision-c1-r02-mobile.png",
+        "nw": 725,
+        "nh": 2170,
+        "box": {
+          "x": 17,
+          "y": -133.734375,
+          "width": 326,
+          "height": 975.75,
+          "top": -133.734375,
+          "right": 343,
+          "bottom": 842.015625,
+          "left": 17
+        },
+        "kind": "main-1"
+      },
+      {
+        "src": "http://127.0.0.1:8000/_course_content/generated-concepts/gemini-vision/wi033-gemini-vision-main-failure-r01-mobile.png",
+        "nw": 768,
+        "nh": 2304,
+        "box": {
+          "x": 17,
+          "y": -134.359375,
+          "width": 326,
+          "height": 978,
+          "top": -134.359375,
+          "right": 343,
+          "bottom": 843.640625,
+          "left": 17
+        },
+        "kind": "main-2"
+      },
+      {
+        "src": "http://127.0.0.1:8000/_course_content/generated-concepts/llava/wi027-vlm-d3-r03-mobile.png",
+        "nw": 724,
+        "nh": 2172,
+        "box": {
+          "x": 17,
+          "y": -134.640625,
+          "width": 326,
+          "height": 978,
+          "top": -134.640625,
+          "right": 343,
+          "bottom": 843.359375,
+          "left": 17
+        },
+        "kind": "main-3"
+      },
+      {
+        "src": "http://127.0.0.1:8000/roadmap-model-selection/foundation-vlm-open-world/gemini-vision/images/final/WI033-GEMINI-01-r02-mobile.png",
+        "nw": 768,
+        "nh": 2304,
+        "box": {
+          "x": 34,
+          "y": -69.140625,
+          "width": 292,
+          "height": 876,
+          "top": -69.140625,
+          "right": 326,
+          "bottom": 806.859375,
+          "left": 34
+        },
+        "kind": "engineering-1"
+      },
+      {
+        "src": "http://127.0.0.1:8000/roadmap-model-selection/foundation-vlm-open-world/gemini-vision/images/final/WI033-GEMINI-02-r02-mobile.png",
+        "nw": 768,
+        "nh": 2304,
+        "box": {
+          "x": 34,
+          "y": -69.90625,
+          "width": 292,
+          "height": 876,
+          "top": -69.90625,
+          "right": 326,
+          "bottom": 806.09375,
+          "left": 34
+        },
+        "kind": "engineering-2"
+      },
+      {
+        "src": "http://127.0.0.1:8000/roadmap-model-selection/foundation-vlm-open-world/gemini-vision/images/final/WI033-GEMINI-03-r02-mobile.png",
+        "nw": 768,
+        "nh": 2304,
+        "box": {
+          "x": 34,
+          "y": -69.375,
+          "width": 292,
+          "height": 876,
+          "top": -69.375,
+          "right": 326,
+          "bottom": 806.625,
+          "left": 34
+        },
+        "kind": "engineering-3"
+      },
+      {
+        "src": "http://127.0.0.1:8000/roadmap-model-selection/foundation-vlm-open-world/gemini-vision/images/final/WI033-GEMINI-04-r01-mobile.png",
+        "nw": 768,
+        "nh": 2304,
+        "box": {
+          "x": 34,
+          "y": -69.171875,
+          "width": 292,
+          "height": 876,
+          "top": -69.171875,
+          "right": 326,
+          "bottom": 806.828125,
+          "left": 34
+        },
+        "kind": "engineering-4"
+      }
+    ],
+    "zoom_checks": 7,
+    "answer": true,
+    "overflow": false,
+    "navigation": true,
+    "complete": true
+  },
+  {
+    "topic": "gemini-vision",
+    "route": "docs/index.html",
+    "width": 1440,
+    "errors": [],
+    "images": [
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/gemini-vision/wi027-gemini-vision-c1-r02-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 404.1875,
+          "y": 401.515625,
+          "width": 935.625,
+          "height": 526.5625,
+          "top": 401.515625,
+          "right": 1339.8125,
+          "bottom": 928.078125,
+          "left": 404.1875
+        },
+        "kind": "main-1"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/gemini-vision/wi033-gemini-vision-main-failure-r01-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 404.1875,
+          "y": 201.03125,
+          "width": 935.625,
+          "height": 526.5625,
+          "top": 201.03125,
+          "right": 1339.8125,
+          "bottom": 727.59375,
+          "left": 404.1875
+        },
+        "kind": "main-2"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/llava/wi027-vlm-d3-r03-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 404.1875,
+          "y": 201.34375,
+          "width": 935.625,
+          "height": 526.5625,
+          "top": 201.34375,
+          "right": 1339.8125,
+          "bottom": 727.90625,
+          "left": 404.1875
+        },
+        "kind": "main-3"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/foundation-vlm-open-world/gemini-vision/images/final/WI033-GEMINI-01-r02-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 367.1875,
+          "y": 195.875,
+          "width": 1009.625,
+          "height": 568.203125,
+          "top": 195.875,
+          "right": 1376.8125,
+          "bottom": 764.078125,
+          "left": 367.1875
+        },
+        "kind": "engineering-1"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/foundation-vlm-open-world/gemini-vision/images/final/WI033-GEMINI-02-r02-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 367.1875,
+          "y": 196.28125,
+          "width": 1009.625,
+          "height": 568.203125,
+          "top": 196.28125,
+          "right": 1376.8125,
+          "bottom": 764.484375,
+          "left": 367.1875
+        },
+        "kind": "engineering-2"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/foundation-vlm-open-world/gemini-vision/images/final/WI033-GEMINI-03-r02-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 367.1875,
+          "y": 195.453125,
+          "width": 1009.625,
+          "height": 568.203125,
+          "top": 195.453125,
+          "right": 1376.8125,
+          "bottom": 763.65625,
+          "left": 367.1875
+        },
+        "kind": "engineering-3"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/foundation-vlm-open-world/gemini-vision/images/final/WI033-GEMINI-04-r01-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 367.1875,
+          "y": 196.09375,
+          "width": 1009.625,
+          "height": 568.203125,
+          "top": 196.09375,
+          "right": 1376.8125,
+          "bottom": 764.296875,
+          "left": 367.1875
+        },
+        "kind": "engineering-4"
+      }
+    ],
+    "zoom_checks": 7,
+    "answer": true,
+    "overflow": false,
+    "navigation": true,
+    "complete": true
+  },
+  {
+    "topic": "gemini-vision",
+    "route": "docs/index.html",
+    "width": 360,
+    "errors": [],
+    "images": [
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/gemini-vision/wi027-gemini-vision-c1-r02-mobile.png",
+        "nw": 725,
+        "nh": 2170,
+        "box": {
+          "x": 17,
+          "y": -133.734375,
+          "width": 326,
+          "height": 975.75,
+          "top": -133.734375,
+          "right": 343,
+          "bottom": 842.015625,
+          "left": 17
+        },
+        "kind": "main-1"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/gemini-vision/wi033-gemini-vision-main-failure-r01-mobile.png",
+        "nw": 768,
+        "nh": 2304,
+        "box": {
+          "x": 17,
+          "y": -134.359375,
+          "width": 326,
+          "height": 978,
+          "top": -134.359375,
+          "right": 343,
+          "bottom": 843.640625,
+          "left": 17
+        },
+        "kind": "main-2"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/llava/wi027-vlm-d3-r03-mobile.png",
+        "nw": 724,
+        "nh": 2172,
+        "box": {
+          "x": 17,
+          "y": -134.640625,
+          "width": 326,
+          "height": 978,
+          "top": -134.640625,
+          "right": 343,
+          "bottom": 843.359375,
+          "left": 17
+        },
+        "kind": "main-3"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/foundation-vlm-open-world/gemini-vision/images/final/WI033-GEMINI-01-r02-mobile.png",
+        "nw": 768,
+        "nh": 2304,
+        "box": {
+          "x": 34,
+          "y": -69.140625,
+          "width": 292,
+          "height": 876,
+          "top": -69.140625,
+          "right": 326,
+          "bottom": 806.859375,
+          "left": 34
+        },
+        "kind": "engineering-1"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/foundation-vlm-open-world/gemini-vision/images/final/WI033-GEMINI-02-r02-mobile.png",
+        "nw": 768,
+        "nh": 2304,
+        "box": {
+          "x": 34,
+          "y": -69.90625,
+          "width": 292,
+          "height": 876,
+          "top": -69.90625,
+          "right": 326,
+          "bottom": 806.09375,
+          "left": 34
+        },
+        "kind": "engineering-2"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/foundation-vlm-open-world/gemini-vision/images/final/WI033-GEMINI-03-r02-mobile.png",
+        "nw": 768,
+        "nh": 2304,
+        "box": {
+          "x": 34,
+          "y": -69.375,
+          "width": 292,
+          "height": 876,
+          "top": -69.375,
+          "right": 326,
+          "bottom": 806.625,
+          "left": 34
+        },
+        "kind": "engineering-3"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/foundation-vlm-open-world/gemini-vision/images/final/WI033-GEMINI-04-r01-mobile.png",
+        "nw": 768,
+        "nh": 2304,
+        "box": {
+          "x": 34,
+          "y": -69.171875,
+          "width": 292,
+          "height": 876,
+          "top": -69.171875,
+          "right": 326,
+          "bottom": 806.828125,
+          "left": 34
+        },
+        "kind": "engineering-4"
+      }
+    ],
+    "zoom_checks": 7,
+    "answer": true,
+    "overflow": false,
+    "navigation": true,
+    "complete": true
+  }
+]

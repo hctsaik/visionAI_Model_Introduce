@@ -101,3 +101,40 @@ U-Net和SegFormer提供語意分割：同類像素用同類標籤，未必區分
 
 版本及示意界線見工作項目 sources.md。使用者成品核准pending。
 <!-- wi030-model-core:end -->
+
+<!-- wi033-engineering:start -->
+## WI-033 工程圖修正
+
+### YOLO-Seg：同類零件也要各有一張遮罩
+
+以YOLOv8式prototype和mask coefficients路徑說明。訓練需各實例的類別與輪廓，推論保留各物件框、分數和實例遮罩；圖中甲乙只是這張影像的實例，不是跨影格追蹤ID。
+
+每件有框、類別與遮罩，身份只屬當前影像。
+
+來源：https://docs.ultralytics.com/reference/nn/modules/head/#ultralytics.nn.modules.head.Segment
+
+### YOLO-Seg：共用原型，每件用不同係數
+
+檢測頭預測框/類別和每個候選的mask coefficients；Proto支路產生共享basis maps。保留候選的係數線性組合原型，经相應後處理與裁框映回。兩原型是簡化代數例，實際通道數與後處理依所用版本；不能把每張原型直接叫某件物體。
+
+原型乘各件係數，再依物件框取回遮罩。
+
+來源：https://docs.ultralytics.com/reference/nn/modules/head/#ultralytics.nn.modules.head.Segment
+
+### YOLO-Seg：遮罩要和同一個框一起交付
+
+遵循實作的候選過濾與去重，索引必須同步框、類別、係數，不能將甲框配乙mask。映回需還原letterbox，輪廓不能填掉空孔；定位與量測仍須另外驗證，遮罩不是亞像素尺寸真值。
+
+把框、類別與遮罩綁定，映回原圖再核對。
+
+來源：https://docs.ultralytics.com/reference/nn/modules/head/#ultralytics.nn.modules.head.Segment
+
+### 語意與實例分割：同類是否需要分成兩件
+
+共同输入与物件外观不变。语意遮罩同色表示同類，不一定提供逐件身份；實例分割分出甲乙，可支援後續逐件統計。重疊與遮擋仍可能分錯，需要標註與域內驗證；不聲稱必然比語意分割更適合所有工作。
+
+需要逐件交付時，比較實例標註與分離品質。
+
+來源：https://docs.ultralytics.com/reference/nn/modules/head/#ultralytics.nn.modules.head.Segment
+
+<!-- wi033-engineering:end -->

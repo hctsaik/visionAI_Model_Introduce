@@ -1,0 +1,7 @@
+{
+  "passed": 15,
+  "subtests_passed": 120,
+  "failed": 2,
+  "seconds": 268.72,
+  "failure": "Runtime tests counted both desktop and full-mobile media as duplicate reading views; changed to count figures, desktop media, and authored full-mobile media separately. Focused rerun pending."
+}

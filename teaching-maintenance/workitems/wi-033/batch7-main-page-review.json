@@ -1,0 +1,30 @@
+{
+  "status": "passed",
+  "actual_viewed": [
+    {
+      "path": "pages/super-resolution/docs-1440-main-2.png",
+      "sha256": "5ab3bf28defa3339814ac8e6407afa836f879134d1b76a90c7e8a9380480be65"
+    },
+    {
+      "path": "pages/super-resolution/docs-360-main-2.png",
+      "sha256": "f8c9f76b625da986b51259d1cd04473ac52d574d7f234888a1732d8bde05952f"
+    },
+    {
+      "path": "pages/v-jepa/docs-360-main-1.png",
+      "sha256": "69bc42dd0647141cd2587e99ad97de061f09cb21c48cfaceed951cb6a2d844e6"
+    },
+    {
+      "path": "pages/v-jepa/docs-360-main-2.png",
+      "sha256": "d497eff112e7d7a071bbf3b0883a3c87c826765ad76a8bc084175403dfaecbec"
+    },
+    {
+      "path": "pages/v-jepa/docs-360-main-3.png",
+      "sha256": "385cb1ea0175498d44ef53b043f786e1db51add8a3a1b2c6904ba891cd7f89b8"
+    }
+  ],
+  "notes": [
+    "SR同板同q與兩候選，真實取像另驗，兩尺寸局部裁切完整",
+    "V-JEPA三手機圖說與放大按鈕獨立清楚；58課178caption自動檢查通過"
+  ],
+  "user_approval": "pending"
+}

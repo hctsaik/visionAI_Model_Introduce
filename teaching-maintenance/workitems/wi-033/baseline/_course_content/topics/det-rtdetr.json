@@ -1,0 +1,452 @@
+{
+  "model": "RT-DETR",
+  "beginner_path": {
+    "title": "從找框、失敗到選型：三圖讀懂",
+    "intro": "固定同板兩個電阻 A/B，追蹤候選如何形成與處理。圖為教學示意，非模型實測。",
+    "visuals": [
+      {
+        "id": "wi024-det-rtdetr-1",
+        "title": "讓查詢逐步定位物件",
+        "prompt": "RT-DETR 的即時設計，省的是哪一段工作？",
+        "caption": "原版 RT-DETR 將高層特徵的尺度內注意力，與卷積式跨尺度融合分開；細、中尺度直接參與融合。由編碼特徵選較好的查詢起點，解碼器再取影像線索逐步修正框。圖中 q1/q2 對應 A/B，灰色 q3 未選入輸出；數量與結果只是示意。",
+        "image": "_course_content/generated-concepts/det-rtdetr/wi024-rtdetr-c1-r02-desktop.png",
+        "alt": "讓查詢逐步定位物件。原版 RT-DETR 將高層特徵的尺度內注意力，與卷積式跨尺度融合分開；細、中尺度直接參與融合。由編碼特徵選較好的查詢起點，解碼器再取影像線索逐步修正框。圖中 q1/q2 對應 A/B，灰色 q3 未選入輸出；數量與結果只是示意。 本圖為 AI 生成教學示意，非模型實測。",
+        "callouts": [
+          {
+            "title": "效率的來源",
+            "body": "不是在所有細格上做同樣昂貴的注意力；高層先互動、再融合多尺度。省去 NMS 及可調解碼深度也影響成本，現場仍需量完整延遲。"
+          },
+          {
+            "title": "查詢起點怎麼準備",
+            "body": "分類與定位的一致性透過訓練改善候選品質，再選起點；不是測試時拿真值 IoU 來挑框。查詢不是固定類別，也不代表已找到物件。"
+          },
+          {
+            "title": "最後交出什麼",
+            "body": "框與類別分數仍要篩選、回映原圖及覆核；不用 NMS 不等於沒有門檻、零重複或零漏件。本課固定原版，不混用後續版本的設計。"
+          }
+        ],
+        "reading_views": [
+          {
+            "title": "讓查詢逐步定位物件",
+            "image": "_course_content/generated-concepts/det-rtdetr/wi024-rtdetr-c1-r02-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/det-rtdetr/wi024-rtdetr-c1-r01-mobile.png",
+            "alt": "讓查詢逐步定位物件。原版 RT-DETR 將高層特徵的尺度內注意力，與卷積式跨尺度融合分開；細、中尺度直接參與融合。由編碼特徵選較好的查詢起點，解碼器再取影像線索逐步修正框。圖中 q1/q2 對應 A/B，灰色 q3 未選入輸出；數量與結果只是示意。 本圖為 AI 生成教學示意，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              724,
+              2171
+            ],
+            "mobile_display_mode": "full-mobile",
+            "mobile_intrinsic_width": 724,
+            "mobile_intrinsic_height": 2171,
+            "desktop_intrinsic_width": 1672,
+            "desktop_intrinsic_height": 941
+          }
+        ],
+        "core_ideas": true
+      },
+      {
+        "id": "wi024-det-rtdetr-2",
+        "title": "查詢少，不代表自然不重複",
+        "prompt": "q1 和 q2 都追到 A，模型要在哪個階段學分工？",
+        "caption": "訓練時以標註做一對一匹配：圖例 q1 配 A、q3 配 B，q2 未配對；以這些責任更新框與類別，抑制未配對預測。正式推論只讀影像，不把標註拿來匹配。這張圖解釋訓練作用，沒有做移除匹配後的重訓消融，也不保證完全不重複。",
+        "image": "_course_content/generated-concepts/det-rtdetr/wi024-rtdetr-d2-r01-desktop.png",
+        "alt": "查詢少，不代表自然不重複。訓練時以標註做一對一匹配：圖例 q1 配 A、q3 配 B，q2 未配對；以這些責任更新框與類別，抑制未配對預測。正式推論只讀影像，不把標註拿來匹配。這張圖解釋訓練作用，沒有做移除匹配後的重訓消融，也不保證完全不重複。 本圖為 AI 生成教學示意，非模型實測。",
+        "callouts": [
+          {
+            "title": "不是把查詢砍少就好",
+            "body": "限制數量不會自動建立分工，數量不足反而可能漏掉密集物件；圖中三個查詢不是固定設定值。"
+          },
+          {
+            "title": "如何檢查實際代價",
+            "body": "調少解碼層或查詢數後，以相同小物／密集影像測召回、重複、延遲與記憶體；不能把推論改設定當作訓練機制的公平消融。"
+          }
+        ],
+        "reading_views": [
+          {
+            "title": "查詢少，不代表自然不重複",
+            "image": "_course_content/generated-concepts/det-rtdetr/wi024-rtdetr-d2-r01-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/det-rtdetr/wi024-rtdetr-d2-r02-mobile.png",
+            "alt": "查詢少，不代表自然不重複。訓練時以標註做一對一匹配：圖例 q1 配 A、q3 配 B，q2 未配對；以這些責任更新框與類別，抑制未配對預測。正式推論只讀影像，不把標註拿來匹配。這張圖解釋訓練作用，沒有做移除匹配後的重訓消融，也不保證完全不重複。 本圖為 AI 生成教學示意，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              724,
+              2172
+            ],
+            "mobile_display_mode": "full-mobile",
+            "mobile_intrinsic_width": 724,
+            "mobile_intrinsic_height": 2172,
+            "desktop_intrinsic_width": 1672,
+            "desktop_intrinsic_height": 941
+          }
+        ],
+        "core_ideas": false
+      },
+      {
+        "id": "wi024-det-rtdetr-3",
+        "title": "同樣要框，YOLO 與 RT-DETR 怎麼選？",
+        "prompt": "固定電阻類別、輸入像素與硬體，比較準備和候選整理。",
+        "caption": "兩者都以類別框標註訓練：YOLOv8 式路徑由多位置提案，再以分數與 NMS 去重；RT-DETR 以查詢逐步定位，一對一分工在訓練時學習。已有 YOLO 部署工具可先做基準；想比較集合式輸出可測 RT-DETR。用自己的漏件、重複、端到端延遲與人工覆核量選，圖中沒有性能勝負。 正常板也能標元件框，但不代表已學會找未知缺陷。",
+        "image": "_course_content/generated-concepts/det-yolo-dense/wi024-known-d3-r02-desktop.png",
+        "alt": "同樣要框，YOLO 與 RT-DETR 怎麼選？。兩者都以類別框標註訓練：YOLOv8 式路徑由多位置提案，再以分數與 NMS 去重；RT-DETR 以查詢逐步定位，一對一分工在訓練時學習。已有 YOLO 部署工具可先做基準；想比較集合式輸出可測 RT-DETR。用自己的漏件、重複、端到端延遲與人工覆核量選，圖中沒有性能勝負。 正常板也能標元件框，但不代表已學會找未知缺陷。 本圖為 AI 生成教學示意，非模型實測。",
+        "callouts": [
+          {
+            "title": "資料與候選處理",
+            "body": "正常板仍可標出電阻框，訓練物件定位；這不是訓練未知缺陷偵測。標註不足時，可先用 Grounding DINO／YOLOE 提示探索再人工確認，但小元件與自訂名稱仍需驗證。"
+          },
+          {
+            "title": "換產品、輸出與完整成本",
+            "body": "本比較交出物件框，用於計數或裁出區域。需要輪廓時需支援分割的模型或另接分割流程；框、mask 都不能直接當實體尺寸。 換類別或外觀要核對標註、重訓需求與門檻。固定資料切分及漏件容許量，包含前處理、推論、後處理與覆核量一起比較；減層、降解析度可能省時也可能漏小物。"
+          }
+        ],
+        "reading_views": [
+          {
+            "title": "同樣要框，YOLO 與 RT-DETR 怎麼選？",
+            "image": "_course_content/generated-concepts/det-yolo-dense/wi024-known-d3-r02-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/det-yolo-dense/wi024-known-d3-r01-mobile.png",
+            "alt": "同樣要框，YOLO 與 RT-DETR 怎麼選？。兩者都以類別框標註訓練：YOLOv8 式路徑由多位置提案，再以分數與 NMS 去重；RT-DETR 以查詢逐步定位，一對一分工在訓練時學習。已有 YOLO 部署工具可先做基準；想比較集合式輸出可測 RT-DETR。用自己的漏件、重複、端到端延遲與人工覆核量選，圖中沒有性能勝負。 正常板也能標元件框，但不代表已學會找未知缺陷。 本圖為 AI 生成教學示意，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              724,
+              2172
+            ],
+            "mobile_display_mode": "full-mobile",
+            "mobile_intrinsic_width": 724,
+            "mobile_intrinsic_height": 2172,
+            "desktop_intrinsic_width": 1672,
+            "desktop_intrinsic_height": 941
+          }
+        ],
+        "core_ideas": false
+      }
+    ]
+  },
+  "badge": "固定類別的物件定位",
+  "title": "RT-DETR：查詢逐步定位，訓練學分工",
+  "scenario": {
+    "title": "同樣要定位多個電阻：評估集合式輸出，並控制即時偵測的計算負擔。",
+    "body": "同一綠色電路板上，左側 A 與右側 B 是兩個電阻；想知道在哪裡、有幾件，並保留原圖供覆核。"
+  },
+  "promise": {
+    "title": "交出框、類別與分數",
+    "body": "框可支援計數與裁出局部；還需驗證漏件、重複與誤框，不直接提供缺陷真值、精密輪廓或實體尺寸。"
+  },
+  "mental_model": {
+    "title": "RT-DETR：直接學一組物件，並降低計算負擔",
+    "body": "Dense框通常要整理重複；DETR以集合預測減少對NMS的依賴，但全尺度Transformer計算昂貴。RT-DETR把尺度內互動和跨尺度融合分開，並選較好的初始queries，讓集合式偵測更適合即時工作。",
+    "limit": "準備一致框標註與真實密集／小物驗證集。換產品或decoder深度後，同時量漏件、重複、前後處理P95及記憶體；無NMS不等於無門檻或零重複。"
+  },
+  "micro_example": {
+    "title": "少跑幾層更快，但小元件開始漏掉",
+    "setup": "同一模型減少解碼層後符合節拍；較小電阻和遮擋位置的漏件卻增加。部署團隊也已有 YOLO 工具鏈。",
+    "prediction": "恢復解碼層、提高取像解析度，或比較 YOLO，如何做有條件的選擇？",
+    "reveal": "固定資料、硬體與漏件容許量，比不同解碼深度、取像條件和 YOLO 基準的漏件、重複、端到端延遲及人工覆核。恢復層數可能省去返工，但提高解析度會增加運算；不能只以無 NMS 判定較快。兩者皆需要類別框標註，換產品需核對重訓與門檻；要輪廓則另選分割能力。"
+  },
+  "mechanism_steps": [
+    {
+      "title": "高效編碼，分開兩種資訊交換",
+      "body": "Hybrid encoder在高層特徵做尺度內注意力，再用卷積式跨尺度融合傳遞細節與脈絡，避免在所有細格上做昂貴互動。省哪一段必須說清楚，不能只因叫real-time就保證本站節拍。",
+      "why": "Dense框通常要整理重複；DETR以集合預測減少對NMS的依賴，但全尺度Transformer計算昂貴。RT-DETR把尺度內互動和跨尺度融合分開，並選較好的初始queries，讓集合式偵測更適合即時工作。",
+      "anchor": "D01核心／反例／共同決策；依原論文核對",
+      "diagram": {
+        "title": "高效編碼，分開兩種資訊交換",
+        "body": "Hybrid encoder在高層特徵做尺度內注意力，再用卷積式跨尺度融合傳遞細節與脈絡，避免在所有細格上做昂貴互動。省哪一段必須說清楚，不能只因叫real-time就保證本站節拍。",
+        "why": "Dense框通常要整理重複；DETR以集合預測減少對NMS的依賴，但全尺度Transformer計算昂貴。RT-DETR把尺度內互動和跨尺度融合分開，並選較好的初始queries，讓集合式偵測更適合即時工作。",
+        "anchor": "D01核心／反例／共同決策；依原論文核對"
+      }
+    },
+    {
+      "title": "Query是一個逐步修正的物件假設",
+      "body": "從encoder候選選出有助分類和定位的起點；decoder透過影像證據更新queries及框。圖只畫三個query，實際數量依設定；query不是一種固定類別，也不等於已找到物件。",
+      "why": "這一步提供下游所需的資訊；核心原理與工程驗證不可互相替代。",
+      "anchor": "D01核心／反例／共同決策；依原論文核對",
+      "diagram": {
+        "title": "Query是一個逐步修正的物件假設",
+        "body": "從encoder候選選出有助分類和定位的起點；decoder透過影像證據更新queries及框。圖只畫三個query，實際數量依設定；query不是一種固定類別，也不等於已找到物件。",
+        "why": "這一步提供下游所需的資訊；核心原理與工程驗證不可互相替代。",
+        "anchor": "D01核心／反例／共同決策；依原論文核對"
+      }
+    },
+    {
+      "title": "一對一監督，訓練時分配責任",
+      "body": "訓練用匹配使不同預測對應不同真值，未匹配者學不輸出物件。推論不拿GT匹配，也不靠傳統NMS去重；仍需分數篩選、回映和覆核。decoder層數可調，但速度與漏件仍須一起量。",
+      "why": "這一步提供下游所需的資訊；核心原理與工程驗證不可互相替代。",
+      "anchor": "D01核心／反例／共同決策；依原論文核對",
+      "diagram": {
+        "title": "一對一監督，訓練時分配責任",
+        "body": "訓練用匹配使不同預測對應不同真值，未匹配者學不輸出物件。推論不拿GT匹配，也不靠傳統NMS去重；仍需分數篩選、回映和覆核。decoder層數可調，但速度與漏件仍須一起量。",
+        "why": "這一步提供下游所需的資訊；核心原理與工程驗證不可互相替代。",
+        "anchor": "D01核心／反例／共同決策；依原論文核對"
+      }
+    },
+    {
+      "title": "回原圖確認並驗證",
+      "body": "準備一致框標註與真實密集／小物驗證集。換產品或decoder深度後，同時量漏件、重複、前後處理P95及記憶體；無NMS不等於無門檻或零重複。",
+      "why": "多個query仍可能指向同一件；有限數量不等於彼此分工。集合監督讓不同預測學習不同物件及無物件責任。這是作用解釋，實際移除訓練約束的效果需重新訓練驗證，不是改一個推論開關就得到公平比較。",
+      "anchor": "D01核心／反例／共同決策；依原論文核對",
+      "diagram": {
+        "title": "回原圖確認並驗證",
+        "body": "準備一致框標註與真實密集／小物驗證集。換產品或decoder深度後，同時量漏件、重複、前後處理P95及記憶體；無NMS不等於無門檻或零重複。",
+        "why": "多個query仍可能指向同一件；有限數量不等於彼此分工。集合監督讓不同預測學習不同物件及無物件責任。這是作用解釋，實際移除訓練約束的效果需重新訓練驗證，不是改一個推論開關就得到公平比較。",
+        "anchor": "D01核心／反例／共同決策；依原論文核對"
+      }
+    }
+  ],
+  "visual_intro": "以下補充圖沿用D01核心、反例及共同選型；詳讀原理後再核對工程條件。",
+  "concept_visuals": [
+    {
+      "id": "causal-chain",
+      "placement": "after_causal_chain",
+      "title": "RT-DETR：直接學一組物件，並降低計算負擔",
+      "prompt": "先看圖說明：輸入是什麼、哪一步改變、為什麼有用？",
+      "caption": "Dense框通常要整理重複；DETR以集合預測減少對NMS的依賴，但全尺度Transformer計算昂貴。RT-DETR把尺度內互動和跨尺度融合分開，並選較好的初始queries，讓集合式偵測更適合即時工作。",
+      "image": "_course_content/generated-concepts/det-rtdetr/det-rtdetr-d01-core.png",
+      "alt": "RT-DETR的核心因果；同PCB素材與設定框，非模型推論。",
+      "callouts": [
+        {
+          "title": "高效編碼，分開兩種資訊交換",
+          "body": "Hybrid encoder在高層特徵做尺度內注意力，再用卷積式跨尺度融合傳遞細節與脈絡，避免在所有細格上做昂貴互動。省哪一段必須說清楚，不能只因叫real-time就保證本站節拍。"
+        },
+        {
+          "title": "Query是一個逐步修正的物件假設",
+          "body": "從encoder候選選出有助分類和定位的起點；decoder透過影像證據更新queries及框。圖只畫三個query，實際數量依設定；query不是一種固定類別，也不等於已找到物件。"
+        },
+        {
+          "title": "一對一監督，訓練時分配責任",
+          "body": "訓練用匹配使不同預測對應不同真值，未匹配者學不輸出物件。推論不拿GT匹配，也不靠傳統NMS去重；仍需分數篩選、回映和覆核。decoder層數可調，但速度與漏件仍須一起量。"
+        }
+      ]
+    },
+    {
+      "id": "worked-example",
+      "placement": "after_micro_example",
+      "title": "少量query，也可能同時追同一件",
+      "prompt": "拿掉訓練的一對一責任分配，卻仍要求推論不用NMS，為什麼不能只靠query數量少就保證不重複？",
+      "caption": "圖把訓練匹配畫成責任分配：A、B各有一個預測負責，多餘預測對無物件。拿掉這個约束的風險是重複，不能以「只有三個點」當免NMS的理由。",
+      "image": "_course_content/generated-concepts/det-rtdetr/det-rtdetr-d01-failure.svg",
+      "alt": "RT-DETR的反事實；同PCB素材與設定框，非模型推論。",
+      "callouts": [
+        {
+          "title": "理解這一步",
+          "body": "多個query仍可能指向同一件；有限數量不等於彼此分工。集合監督讓不同預測學習不同物件及無物件責任。這是作用解釋，實際移除訓練約束的效果需重新訓練驗證，不是改一個推論開關就得到公平比較。"
+        },
+        {
+          "title": "資料、輸出與下一步",
+          "body": "準備一致框標註與真實密集／小物驗證集。換產品或decoder深度後，同時量漏件、重複、前後處理P95及記憶體；無NMS不等於無門檻或零重複。"
+        },
+        {
+          "title": "本題核心與證據範圍",
+          "body": "Dense框通常要整理重複；DETR以集合預測減少對NMS的依賴，但全尺度Transformer計算昂貴。RT-DETR把尺度內互動和跨尺度融合分開，並選較好的初始queries，讓集合式偵測更適合即時工作。 圖中候選是教學設定，效果須以本地樣本驗證。"
+        }
+      ]
+    },
+    {
+      "id": "comparison",
+      "placement": "after_comparison",
+      "title": "已知類別：YOLO／RT-DETR／DINO",
+      "prompt": "同一工作條件下，你需要固定類別框、文字搜尋、視覺範例，還是物件輪廓？",
+      "caption": "先固定要找的物件與輸出：前三者需已知類別框監督；後三者借助預訓練與提示探索。開放詞彙不等於免驗證，只有正常品時先做物件探索與覆核，不能宣稱已建立未知缺陷偵測。",
+      "image": "_course_content/generated-concepts/det-yolo-dense/det-yolo-dense-d01-compare-known.svg",
+      "alt": "六模型共同決策；同PCB素材，比較資料與模型資訊路徑，不是性能排名。",
+      "callouts": [
+        {
+          "title": "資料與輸出責任",
+          "body": "先固定要找的物件與輸出：前三者需已知類別框監督；後三者借助預訓練與提示探索。開放詞彙不等於免驗證，只有正常品時先做物件探索與覆核，不能宣稱已建立未知缺陷偵測。"
+        },
+        {
+          "title": "換產品與公平比較",
+          "body": "同一資料切分、輸入像素、硬體與漏件容許量下，量漏件／重複／誤框、P95、記憶體及人工覆核。換產品要重查標註、詞彙／範例與門檻；需要輪廓時選支援mask的checkpoint或另接分割，不把box當輪廓。"
+        },
+        {
+          "title": "本題核心與證據範圍",
+          "body": "Dense框通常要整理重複；DETR以集合預測減少對NMS的依賴，但全尺度Transformer計算昂貴。RT-DETR把尺度內互動和跨尺度融合分開，並選較好的初始queries，讓集合式偵測更適合即時工作。 圖中候選是教學設定，效果須以本地樣本驗證。"
+        }
+      ]
+    },
+    {
+      "id": "boundary-cases-explainer",
+      "placement": "before_boundary_cases",
+      "title": "可變提示：Grounding DINO／YOLO-World／YOLOE",
+      "prompt": "同一工作條件下，你需要固定類別框、文字搜尋、視覺範例，還是物件輪廓？",
+      "caption": "同一資料切分、輸入像素、硬體與漏件容許量下，量漏件／重複／誤框、P95、記憶體及人工覆核。換產品要重查標註、詞彙／範例與門檻；需要輪廓時選支援mask的checkpoint或另接分割，不把box當輪廓。",
+      "image": "_course_content/generated-concepts/det-yolo-dense/det-yolo-dense-d01-compare-prompt.svg",
+      "alt": "六模型共同決策；同PCB素材，比較資料與模型資訊路徑，不是性能排名。",
+      "callouts": [
+        {
+          "title": "資料與輸出責任",
+          "body": "先固定要找的物件與輸出：前三者需已知類別框監督；後三者借助預訓練與提示探索。開放詞彙不等於免驗證，只有正常品時先做物件探索與覆核，不能宣稱已建立未知缺陷偵測。"
+        },
+        {
+          "title": "換產品與公平比較",
+          "body": "同一資料切分、輸入像素、硬體與漏件容許量下，量漏件／重複／誤框、P95、記憶體及人工覆核。換產品要重查標註、詞彙／範例與門檻；需要輪廓時選支援mask的checkpoint或另接分割，不把box當輪廓。"
+        },
+        {
+          "title": "本題核心與證據範圍",
+          "body": "Dense框通常要整理重複；DETR以集合預測減少對NMS的依賴，但全尺度Transformer計算昂貴。RT-DETR把尺度內互動和跨尺度融合分開，並選較好的初始queries，讓集合式偵測更適合即時工作。 圖中候選是教學設定，效果須以本地樣本驗證。"
+        }
+      ]
+    }
+  ],
+  "boundary_cases": [
+    {
+      "condition": "small object 欠採樣、query capacity 不足或密集重疊",
+      "effect": "可用 queries 可能不夠或 features 不含訊號，造成 miss/錯類；set output 不代表所有物件都已被覆蓋。",
+      "action": "先驗 effective pixels、query count/selection、size-bin/overlap recall 和 output capacity；gate 不通過則 HOLD。"
+    },
+    {
+      "condition": "decoder depth、export operators/fusion、precision、batch 或 postprocess 改變",
+      "effect": "recall、VRAM、latency、數值輸出和 camera-to-PLC P95 都可能變，論文 FPS 無法外推。",
+      "action": "把每個 depth/export/runtime 當成獨立 operating point，保存 graph/operators，量 end-to-end P95 與 failure cases。"
+    },
+    {
+      "condition": "labels/ignore zones、domain/taxonomy/OOD 或 decision policy 改變",
+      "effect": "closed-set boxes 可能高分但不代表未知檢出或可靠製程決策。",
+      "action": "以共同 split、calibration、false HOLD、OOD/review 和 owner action gate，不因「real-time」或 box score 直接 release。"
+    }
+  ],
+  "comparison": [
+    {
+      "model": "RT-DETR",
+      "normality": "依據：hybrid encoder 融合的多尺度 features、selected object queries/reference points 與 set labels",
+      "candidate": "可用輸出：指定 decoder depth 的 class/box set，經完整 runtime/P95/recall gate"
+    },
+    {
+      "model": "YOLO dense detector",
+      "normality": "依據：多尺度 feature locations 的 dense box/class/objectness candidates",
+      "candidate": "可用輸出：decode/NMS 後 boxes；不是 query set，也需 size/overlap/P95 驗證"
+    },
+    {
+      "model": "DINO detector",
+      "normality": "依據：multi-scale encoded features、mixed queries/reference boxes 和 supervised set matching",
+      "candidate": "可用輸出：iterative refined boxes/classes；training denoising groups 不進 production inference"
+    }
+  ],
+  "selection": "兩者都以類別框標註訓練：YOLOv8 式路徑由多位置提案，再以分數與 NMS 去重；RT-DETR 以查詢逐步定位，一對一分工在訓練時學習。已有 YOLO 部署工具可先做基準；想比較集合式輸出可測 RT-DETR。用自己的漏件、重複、端到端延遲與人工覆核量選，圖中沒有性能勝負。 正常板也能標元件框，但不代表已學會找未知缺陷。",
+  "poc": {
+    "title": "POC 第一件事：把每個 decoder depth 當成不同產品候選",
+    "steps": [
+      "鎖 implementation/variant/weights、backbone/hybrid encoder、query count/selection、decoder layers、input/padding、matching/loss、precision/export/engine、batch、postprocess、labels/ignore 和 decision policy。",
+      "針對每個 depth/export/hardware，以 critical-size、overlap、ROI/product、lot/recipe/OOD split 保存 box sets、false alarms/HOLD、VRAM、operators 和整條相機到決策時間。",
+      "比較 critical recall、overlap misses、calibration、false HOLD、camera-to-PLC P95、VRAM、throughput 和 review load；不合格的 depth 不因 forward 快而採用。"
+    ],
+    "hold": "pixel/query capacity不足、depth/export stack 未實測、small/overlap/OOD gate 不足、或 P95 沒涵蓋整條 camera-to-decision 路徑時，先 HOLD/REVIEW。",
+    "acceptance": {
+      "baseline": "以固定 labels/ignore、effective pixels、query count/selection、decoder depth、export/hardware、postprocess 和人工 ROI review 的 RT-DETR operating point 為 baseline。",
+      "measure": "把每個 decoder depth × export × hardware 當獨立 operating point，按 small/overlap/product/lot/recipe/OOD 分層量 critical recall、overlap miss、false HOLD、calibration、VRAM、camera-to-PLC P95、review load。",
+      "negative_control": "將 decoder 改淺或替換 export engine，只報 forward FPS；預期即使 FPS 提升，也不能代替 small/overlap recall 和完整 P95，未實測即 HOLD。",
+      "owner": "由產線／SLA owner 定義 camera-to-PLC 需求；CV owner 簽核 query/depth/export evidence，品質 owner 管 false HOLD/review，製程 owner 批准採用的 operating point。"
+    }
+  },
+  "teach_back": {
+    "question": "RT-DETR 把 decoder 從較深改成較淺後，模型 benchmark FPS 提升。你能直接宣稱它更適合產線嗎？",
+    "answer": "不能。depth 是 speed-quality knob，仍要在相同 labels/pixels/query capacity、export/hardware、postprocess 和 decision path 下量 critical-size/overlap recall、false HOLD、calibration、VRAM 和 camera-to-PLC P95。論文/forward FPS 不是 SLA。"
+  },
+  "slide_reading": [
+    {
+      "title": "RT-DETR：直接學一組物件，並降低計算負擔",
+      "question": "先看圖說明：輸入是什麼、哪一步改變、為什麼有用？",
+      "look": "RT-DETR的核心因果；同PCB素材與設定框，非模型推論。",
+      "relation": "Dense框通常要整理重複；DETR以集合預測減少對NMS的依賴，但全尺度Transformer計算昂貴。RT-DETR把尺度內互動和跨尺度融合分開，並選較好的初始queries，讓集合式偵測更適合即時工作。",
+      "takeaway": "準備一致框標註與真實密集／小物驗證集。換產品或decoder深度後，同時量漏件、重複、前後處理P95及記憶體；無NMS不等於無門檻或零重複。",
+      "terms": [
+        "GT：訓練或獨立驗證的標註，不是正式推論的輸入",
+        "候選：需回到原圖核對的位置或區域"
+      ]
+    },
+    {
+      "title": "少量query，也可能同時追同一件",
+      "question": "拿掉訓練的一對一責任分配，卻仍要求推論不用NMS，為什麼不能只靠query數量少就保證不重複？",
+      "look": "RT-DETR的反事實；同PCB素材與設定框，非模型推論。",
+      "relation": "圖把訓練匹配畫成責任分配：A、B各有一個預測負責，多餘預測對無物件。拿掉這個约束的風險是重複，不能以「只有三個點」當免NMS的理由。",
+      "takeaway": "多個query仍可能指向同一件；有限數量不等於彼此分工。集合監督讓不同預測學習不同物件及無物件責任。這是作用解釋，實際移除訓練約束的效果需重新訓練驗證，不是改一個推論開關就得到公平比較。",
+      "terms": [
+        "GT：訓練或獨立驗證的標註，不是正式推論的輸入",
+        "候選：需回到原圖核對的位置或區域"
+      ]
+    },
+    {
+      "title": "已知類別：YOLO／RT-DETR／DINO",
+      "question": "同一工作條件下，你需要固定類別框、文字搜尋、視覺範例，還是物件輪廓？",
+      "look": "六模型共同決策；同PCB素材，比較資料與模型資訊路徑，不是性能排名。",
+      "relation": "先固定要找的物件與輸出：前三者需已知類別框監督；後三者借助預訓練與提示探索。開放詞彙不等於免驗證，只有正常品時先做物件探索與覆核，不能宣稱已建立未知缺陷偵測。",
+      "takeaway": "準備一致框標註與真實密集／小物驗證集。換產品或decoder深度後，同時量漏件、重複、前後處理P95及記憶體；無NMS不等於無門檻或零重複。",
+      "terms": [
+        "GT：訓練或獨立驗證的標註，不是正式推論的輸入",
+        "候選：需回到原圖核對的位置或區域"
+      ]
+    },
+    {
+      "title": "可變提示：Grounding DINO／YOLO-World／YOLOE",
+      "question": "同一工作條件下，你需要固定類別框、文字搜尋、視覺範例，還是物件輪廓？",
+      "look": "六模型共同決策；同PCB素材，比較資料與模型資訊路徑，不是性能排名。",
+      "relation": "同一資料切分、輸入像素、硬體與漏件容許量下，量漏件／重複／誤框、P95、記憶體及人工覆核。換產品要重查標註、詞彙／範例與門檻；需要輪廓時選支援mask的checkpoint或另接分割，不把box當輪廓。",
+      "takeaway": "準備一致框標註與真實密集／小物驗證集。換產品或decoder深度後，同時量漏件、重複、前後處理P95及記憶體；無NMS不等於無門檻或零重複。",
+      "terms": [
+        "GT：訓練或獨立驗證的標註，不是正式推論的輸入",
+        "候選：需回到原圖核對的位置或區域"
+      ]
+    }
+  ],
+  "comparison_headers": {
+    "title": "不要比名稱；比 query set 如何形成",
+    "basis": "query set／operating point",
+    "output": "box set／完整 SLA gate"
+  },
+  "transfer_check": {
+    "title": "少跑幾層更快，但小元件開始漏掉",
+    "scenario": "同一模型減少解碼層後符合節拍；較小電阻和遮擋位置的漏件卻增加。部署團隊也已有 YOLO 工具鏈。",
+    "question": "恢復解碼層、提高取像解析度，或比較 YOLO，如何做有條件的選擇？",
+    "answer": "固定資料、硬體與漏件容許量，比不同解碼深度、取像條件和 YOLO 基準的漏件、重複、端到端延遲及人工覆核。恢復層數可能省去返工，但提高解析度會增加運算；不能只以無 NMS 判定較快。兩者皆需要類別框標註，換產品需核對重訓與門檻；要輪廓則另選分割能力。"
+  },
+  "review_trace": {
+    "authority": "roadmap-model-selection/detector/det-rtdetr/model.md",
+    "scope": "WI-024 三張首讀及獨立手機PNG重製，保留原工程圖。",
+    "claims": [
+      {
+        "id": "d01-visual-1",
+        "field": "beginner_path.visuals[d01-core]",
+        "source": "D01核心、反例與共同決策；https://arxiv.org/abs/2304.08069"
+      },
+      {
+        "id": "d01-visual-2",
+        "field": "beginner_path.visuals[d01-failure]",
+        "source": "D01核心、反例與共同決策；https://arxiv.org/abs/2304.08069"
+      },
+      {
+        "id": "d01-visual-3",
+        "field": "beginner_path.visuals[d01-compare-known]",
+        "source": "D01核心、反例與共同決策；https://arxiv.org/abs/2304.08069"
+      },
+      {
+        "id": "d01-visual-4",
+        "field": "beginner_path.visuals[d01-compare-prompt]",
+        "source": "D01核心、反例與共同決策；https://arxiv.org/abs/2304.08069"
+      },
+      {
+        "id": "d01-contract",
+        "field": "promise + mechanism_steps",
+        "source": "D01來源補正及工程輸出責任"
+      },
+      {
+        "id": "d01-transfer",
+        "field": "transfer_check",
+        "source": "D01資料、輸出與公平比較"
+      },
+      {
+        "id": "wi024-first-read",
+        "field": "beginner_path + micro_example + selection",
+        "source": "https://arxiv.org/html/2304.08069v3；https://github.com/lyuwenyu/RT-DETR"
+      }
+    ]
+  },
+  "teaching_preflight": {
+    "brief": "teaching-images/vision-ai-model-selection/workitems/wi-024/rtdetr-c1-r01.md",
+    "story": "C",
+    "major_visual_nodes": 4,
+    "visual_status": "self-reviewed",
+    "user_review": "pending"
+  }
+}

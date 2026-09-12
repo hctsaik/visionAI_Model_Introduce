@@ -1,8 +1,14 @@
 # ControlNet slide manifest
 
-| slide_id | logical page | purpose | visual type | active asset | status |
-| --- | --- | --- | --- | --- | --- |
-| `CONTROLNET-01` | `07-14` | Position ControlNet as a versioned conditional editing/generation tool, not physical or production evidence. | C | `images/final/CONTROLNET-01-positioning_v02-ppt-master-style.png` | approved |
-| `CONTROLNET-02` | `07-15` | Explain source/condition/prompt through matched base and ControlNet branches to a traceable output. | C | `images/final/CONTROLNET-02-architecture_v02-ppt-master-style.png` | approved |
-| `CONTROLNET-03` | `07-16` | Lock source, control extractor, base/control weights, prompt, sampling, review, P95 and safe action. | C | `images/final/CONTROLNET-03-build-inference_v02-ppt-master-style.png` | approved |
-| `CONTROLNET-04` | `07-17` | Reject controlled-image plausibility as selection evidence; compare routes only under a fixed evidence/action contract. | D | `images/final/CONTROLNET-04-selection-boundary_v02-ppt-comparison-style.png` | approved |
+| slide_id | 教學目標 | 版型 | active asset | 狀態 |
+| --- | --- | --- | --- | --- |
+| `CONTROLNET-01` | ControlNet：條件圖與文字共同交付 | C | `images/final/WI033-CONTROLNET-01-r01-desktop.png` | native_and_page_reviewed_user_pending |
+| `CONTROLNET-02` | ControlNet：控制殘差接入去噪主幹 | C | `images/final/WI033-CONTROLNET-02-r02-desktop.png` | native_and_page_reviewed_user_pending |
+| `CONTROLNET-03` | ControlNet：控制強度要配採樣驗證 | C | `images/final/WI033-CONTROLNET-03-r01-desktop.png` | native_and_page_reviewed_user_pending |
+| `CONTROLNET-04` | ControlNet：相同輪廓，不限定有無刮傷 | D | `images/final/WI033-CONTROLNET-04-r01-desktop.png` | native_and_page_reviewed_user_pending |
+
+## 保留的歷史來源（非目前啟用）
+- [CONTROLNET-01](images/final/CONTROLNET-01-positioning_v02-ppt-master-style.png)
+- [CONTROLNET-02](images/final/CONTROLNET-02-architecture_v02-ppt-master-style.png)
+- [CONTROLNET-03](images/final/CONTROLNET-03-build-inference_v02-ppt-master-style.png)
+- [CONTROLNET-04](images/final/CONTROLNET-04-selection-boundary_v02-ppt-comparison-style.png)

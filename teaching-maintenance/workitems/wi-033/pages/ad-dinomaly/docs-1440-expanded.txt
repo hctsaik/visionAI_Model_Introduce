@@ -1,0 +1,664 @@
+首頁
+/
+異常檢測：正常性建模
+/
+Dinomaly
+◌ 異常檢測：正常性建模
+先理解，再看工程圖
+Dinomaly
+
+多類產品共用檢測：用強特徵與受限制的重建，追查細刮傷及正常外觀。
+
+你會拿到：特徵差異位置圖與候選分數，不是精密輪廓或自動放行。
+先停下來：正常誤報或細缺陷漏檢時，按產品核對原圖、正常資料與重建設定。
+完成本主題
+☆ 收藏
+從案例理解 Dinomaly
+多類正常共訓：核心做法、逐類反例與條件選型
+
+三張首讀圖以金屬板、連接器與陶瓷板說明；全部為教學示意，非模型實測。
+
+第 01 張 · 看案例，再做判斷
+
+Dinomaly：正常特徵重建，避免逐點照抄
+
+從正常資料建立重建能力，再追待測金屬板 A 的刮傷 p。
+
+Dinomaly：正常特徵重建，避免逐點照抄
+放大完整圖
+為什麼需要這個設計？
+
+本課採原版 Dinomaly。固定 DINOv2 提取特徵，多類正常資料訓練瓶頸與解碼器；Dropout 在訓練時擾動表示，線性注意力分散聚合，多層分組與寬鬆重建減少硬性逐層逐點照抄。推論關閉 Dropout，比較特徵差異後回看 p。
+
+讀完要能說清楚的三個要點
+強特徵不是免訓練
+
+DINOv2 提供預訓練表示，但瓶頸與解碼器仍要學正常資料；換骨幹或解析度會改變表示，必須重新驗證。
+
+分組比較在改什麼
+
+圖中把多層特徵融合後對照，重建不必逐層一對一硬配；注意力聚合與訓練約束一起影響保留哪些正常資訊。
+
+怎麼理解效率
+
+純 Transformer 設計不等於任何硬體都快。骨幹大小、影像解析度與實作都影響延遲；細刮傷也可能在表示或重建中失去線索。
+
+想深入，再看這張圖的完整工程說明
+Dinomaly：正常特徵重建，避免逐點照抄
+
+原始問題：從正常資料建立重建能力，再追待測金屬板 A 的刮傷 p。
+
+本課採原版 Dinomaly。固定 DINOv2 提取特徵，多類正常資料訓練瓶頸與解碼器；Dropout 在訓練時擾動表示，線性注意力分散聚合，多層分組與寬鬆重建減少硬性逐層逐點照抄。推論關閉 Dropout，比較特徵差異後回看 p。
+
+強特徵不是免訓練
+
+DINOv2 提供預訓練表示，但瓶頸與解碼器仍要學正常資料；換骨幹或解析度會改變表示，必須重新驗證。
+
+分組比較在改什麼
+
+圖中把多層特徵融合後對照，重建不必逐層一對一硬配；注意力聚合與訓練約束一起影響保留哪些正常資訊。
+
+怎麼理解效率
+
+純 Transformer 設計不等於任何硬體都快。骨幹大小、影像解析度與實作都影響延遲；細刮傷也可能在表示或重建中失去線索。
+
+第 02 張 · 看案例，再做判斷
+
+共用模型，不能只看平均結果
+
+以正常孔邊 q 與細刮傷 p 對照誤報、漏檢，再分開檢查三種產品。
+
+共用模型，不能只看平均結果
+放大完整圖
+正常資料要涵蓋什麼
+
+正常外觀未被資料涵蓋，原始與重建特徵在 q 不同，可能誤報；刮傷 p 若也被重建得相近，反而可能漏檢。多類共訓可減少模型管理，但每類都要另留未見正常與真缺陷驗證。
+
+兩種錯誤一起看
+
+先回看 p、q 原圖確認可見度與允收範圍。按產品記錄誤報、漏檢和覆核量，不能讓大類別掩蓋小類別失敗。
+
+想深入，再看這張圖的完整工程說明
+共用模型，不能只看平均結果
+
+原始問題：以正常孔邊 q 與細刮傷 p 對照誤報、漏檢，再分開檢查三種產品。
+
+正常外觀未被資料涵蓋，原始與重建特徵在 q 不同，可能誤報；刮傷 p 若也被重建得相近，反而可能漏檢。多類共訓可減少模型管理，但每類都要另留未見正常與真缺陷驗證。
+
+正常資料要涵蓋什麼
+
+分開不同實體件與批次，涵蓋允收的反光、紋理與姿態；不要把近似照片分到訓練和驗證兩邊。
+
+兩種錯誤一起看
+
+先回看 p、q 原圖確認可見度與允收範圍。按產品記錄誤報、漏檢和覆核量，不能讓大類別掩蓋小類別失敗。
+
+成本怎麼量
+
+在相同硬體、解析度、前處理及風險要求下量端到端延遲與覆核量；提高門檻可能少誤報而多漏檢。
+
+第 03 張 · 看案例，再做判斷
+
+三種多類重建，差異在哪裡？
+
+固定多類正常資料與未見驗證，看限制複製、分散分組及輸入條件調制三條路。
+
+三種多類重建，差異在哪裡？
+放大完整圖
+只有正常品時怎麼起步
+
+UniAD 用注意力遮蔽、逐層查詢及特徵擾動限制照抄；原版 Dinomaly 結合基礎特徵、Dropout 瓶頸、線性注意力及寬鬆重建；InvAD 由輸入產生空間條件調制生成特徵。三者都需正常訓練，位置線索不能直接當精密輪廓。
+
+換產品與速度的取捨
+
+補新產品正常資料並核對適配或重訓需求。按同一漏檢風險要求，比誤報、端到端時間與人工覆核量；沒有共同實測就不排名。
+
+想深入，再看這張圖的完整工程說明
+三種多類重建，差異在哪裡？
+
+原始問題：固定多類正常資料與未見驗證，看限制複製、分散分組及輸入條件調制三條路。
+
+UniAD 用注意力遮蔽、逐層查詢及特徵擾動限制照抄；原版 Dinomaly 結合基礎特徵、Dropout 瓶頸、線性注意力及寬鬆重建；InvAD 由輸入產生空間條件調制生成特徵。三者都需正常訓練，位置線索不能直接當精密輪廓。
+
+只有正常品時怎麼起步
+
+三者均可列入正常訓練候選；選定既有骨幹與實作後，固定未見資料比較各類錯誤。缺正常資料時，不能把多類模型當免適配捷徑。
+
+換產品與速度的取捨
+
+補新產品正常資料並核對適配或重訓需求。按同一漏檢風險要求，比誤報、端到端時間與人工覆核量；沒有共同實測就不排名。
+
+怎麼選下一個實驗
+
+照抄是主要問題可先試 UniAD 的限制；想評估強特徵與分組策略可試 Dinomaly；想核對輸入條件式細節重建可試 InvAD。這是實驗起點，不是性能保證。
+
+換情境試著判斷
+
+換更大骨幹後，值得增加等待時間嗎？
+
+Dinomaly 換大骨幹與高解析度後，試看幾張細裂更清楚，但整體延遲變長，小類別正常品仍常誤報。
+
+保留大骨幹、調回較小設定，或比較 UniAD／InvAD，需要哪些證據？
+
+看解釋與可接受的取捨
+
+保留相同未見資料，逐類核對細裂漏檢與正常誤報，在同硬體量完整前處理到結果的時間。大骨幹若降低關鍵漏檢且符合節拍，可接受較高成本；若主要改善只出現在少數示例，先補驗證。不同設定需各自校準門檻，在相同風險要求比覆核量，不憑模型大小判勝負。
+
+需要時查看基本名詞與模型背景
+token：影像切成的特徵小格
+loose reconstruction：只重建大致正常結構，不精準複製細節
+Dinomaly：正常特徵重建，避免逐點照抄
+
+本課採原版 Dinomaly。固定 DINOv2 提取特徵，多類正常資料訓練瓶頸與解碼器；Dropout 在訓練時擾動表示，線性注意力分散聚合，多層分組與寬鬆重建減少硬性逐層逐點照抄。推論關閉 Dropout，比較特徵差異後回看 p。
+
+正常外觀可能誤報，缺陷也可能被重建；按產品保留未見資料驗證。
+
+工程參考：展開文字因果鏈與設定核對點不重複主圖；只核對每步要鎖定的設定。
+
+模型專屬因果鏈
+
+實作時逐步核對
+
+主圖已在上方第一遍。這裡只核對每一步要鎖定的設定與為什麼，不再重貼同一張圖。
+
+1
+以固定 foundation encoder 產生多層 tokens
+
+多類別 clean normal ROI 依固定 feature recipe 經選定 ViT layers，輸出 patch tokens 和其空間對應。
+
+因為：checkpoint、layer、stride、ROI 和類別取樣決定 token 正常性；frozen backbone 只固定前段，不保證整個系統不學習。
+
+設定核對：工程圖核對：ROI → selected foundation tokens
+
+2
+加入 anti-copy bottleneck 與 decoder controls
+
+tokens 經 noisy／dropout bottleneck、linear attention 與 loose reconstruction 設計進入 trainable decoder，僅用 normal data 訓練。
+
+因為：若路徑太容易逐 token copy，異常也會被重建；這些 controls 用來讓 residual 有機會代表超出正常規律的部分。
+
+設定核對：工程圖核對：noise / linear attention / loose decoder
+
+3
+比較原 token 與重建 token
+
+測試 tokens 與 decoder output 在選定 layer、位置與 distance rule 下比較，得到 token-wise residual maps。
+
+因為：candidate 的來源是 token reconstruction discrepancy；它既不是 raw pixel error，也不等於模型知道異常的名稱。
+
+設定核對：工程圖核對：token residual per layer
+
+4
+融合各層，保留每個類別的 evidence
+
+各層 residual 經固定 resize、fusion、aggregation、calibration/threshold 形成 map 和 image candidate score，並按 category 保存結果。
+
+因為：shared model 的 pooled result 可遮蔽稀有類別失敗；per-class low-FPR 和 review load 才能證明部署邊界。
+
+設定核對：工程圖核對：layer fusion → per-class review gate
+
+想深入：展開失效案例、模型比較與小規模試做（POC）
+初學者可先跳過；準備實作或驗收時再逐項核對。
+
+失效案例、選型與小規模試做
+
+什麼情況不能相信它？
+
+這一區保留完整工程條件，供準備實作或驗收的人逐項核對。
+
+anti-copy controls 太弱或 decoder 過度重建
+
+可能看到：異常 token 可能被原樣重建，residual 降低，造成 escape。
+
+正確下一步：HOLD；做 controls ablation、查看真實 escaped defects，而非只用平均 reconstruction loss。
+
+controls 太強、feature mismatch 或稀有類別 coverage 不足
+
+可能看到：合法 normal token 也無法重建，false reject 對某些類別特別高。
+
+正確下一步：以每類 support/future split、seed spread、teacher/domain fit 分層檢查，不能只報 pooled AUROC。
+
+patch stride、ROI/drift 或 global logic
+
+可能看到：tiny defect 低於 token 有效尺度；取像條件變動或缺件關係也可能不被 token residual 表達。
+
+正確下一步：驗 effective pixels、acquisition state 和適合的結構方法；條件不成立先 HOLD。
+
+相鄰方法比較
+
+先比 anti-copy path，不比 frozen backbone 標籤
+方法	如何限制 token 直接複製？	哪個 token residual 才是候選？
+Dinomaly	anti-copy decoder 對 foundation normal tokens 的可重建性	token reconstruction residual 大
+UniAD	masked layer-query decoder 對共享多類別 features 的可重建性	layer feature residual 大
+RD4AD	one-class reverse decoder 對 teacher features 的重建	teacher/reconstructed feature discrepancy 大
+
+UniAD 用注意力遮蔽、逐層查詢及特徵擾動限制照抄；原版 Dinomaly 結合基礎特徵、Dropout 瓶頸、線性注意力及寬鬆重建；InvAD 由輸入產生空間條件調制生成特徵。三者都需正常訓練，位置線索不能直接當精密輪廓。 補新產品正常資料並核對適配或重訓需求。按同一漏檢風險要求，比誤報、端到端時間與人工覆核量；沒有共同實測就不排名。
+
+工程第一步
+
+POC 第一件事：證明模型不是在抄 token
+固定 foundation checkpoint/layers、ROI/feature recipe、class roster/balance、decoder architecture、noise/dropout、linear attention、loose loss、seed 和 checkpoint。
+鎖 token residual、layer fusion、resize、aggregation、calibration、threshold 和 per-class candidate evidence。
+以 controls ablation、real challenge/future/drift split 報告 per-class escape、false reject/review load、tiny defect、P95、adaptation cost 和 seed spread。
+目前做法
+
+固定 Foundation checkpoint/layers、multi-class roster、normal balance、anti-copy controls、decoder/loss、token fusion 與每類 calibration。
+
+要量什麼
+
+逐類量 escape、false reject、review load、tiny-defect evidence、seed spread、controls ablation、adaptation cost 與完整 P95。
+
+反例測試
+
+移除或弱化 dropout／Linear Attention／Loose Reconstruction，或留出 rare class，確認 identity shortcut 與 pooled metric 如何掩蓋 per-class escape。
+
+誰確認
+
+各產品類別製程 owner、Vision ML owner、shared-model governance owner
+
+先停下來的訊號：anti-copy state未鎖、類別coverage不平衡、support受污染、domain mismatch、tiny defect/global logic或完整P95未驗時，先 HOLD。
+
+讀完請自己講回來
+
+為什麼重建誤差變小，不一定檢測變好？
+看本頁練習的核對說明
+
+正常與異常都重建得像，差異可能一起縮小；要分開看正常誤報與缺陷漏檢，才能判斷檢測能力。
+
+換一個現場再推理
+
+新產品能直接沿用嗎
+
+情境：加入外觀不同的新產品，想沿用既有模型和門檻。
+
+請先回答：共用模型是否代表不需新資料？
+
+核對這個遷移題
+
+仍需新產品正常涵蓋、獨立驗證與適配評估；更新後同時重驗既有產品，避免平均分掩蓋退步。
+
+內容依據：展開這頁主張的 model.md 可追溯範圍
+
+roadmap-model-selection/anomaly-detection/ad-dinomaly/model.md ↗
+
+WI-033：工程層四圖與手機比較修正；首讀有效內容保留。原生圖已審，整頁與使用者審閱另記。
+
+beginner_path.visuals[token-workpiece]：模型定位 / architecture_path
+beginner_path.visuals[foundation-support]：architecture_path
+beginner_path.visuals[anti-copy-controls]：representation_or_score
+beginner_path.visuals[token-residual]：failure_boundary
+beginner_path.visuals[review-hold]：selection_gate / evidence_bundle
+promise：模型定位 / representation_or_score
+mechanism_steps：architecture_path / representation_or_score
+boundary_cases：failure_boundary / selection_gate
+comparison + selection：selection_gate
+poc + acceptance：cost_and_operating_point / evidence_bundle
+transfer_check：failure_boundary / selection_gate
+beginner_path.visuals[0] + scenario + mental_model：https://github.com/guojiajeremy/Dinomaly
+micro_example + transfer_check：由原論文機制推論移除後果；https://github.com/guojiajeremy/Dinomaly
+beginner_path + micro_example + selection：https://github.com/guojiajeremy/Dinomaly；https://raw.githubusercontent.com/guojiajeremy/Dinomaly/master/dinomaly_mvtec_uni.py
+工程參考：展開四張工程圖與完整節點
+從輸入、機制、交付到限制，核對實作與驗證方式。
+
+先理解 anti-copy 為何必要，再核對 foundation tokens、decoder controls、token residual 和每類 evidence gate。
+
+01
+先看它交出什麼
+02
+再看它怎麼做
+03
+上線前先固定條件
+04
+選它前先看風險
+01
+
+先看它交出什麼
+
+Dinomaly：多类正常，共用重建路徑
+
+共同訓練仍需逐產品驗證。
+
+正式教學插圖 1/4 · 已可直接閱讀；點圖僅用於放大細節
+開啟原圖 ↗
+
+30 秒讀懂這張圖
+
+共同訓練仍需逐產品驗證。
+先看哪裡
+
+先看三種產品的正常資料，再核對固定骨幹，更新重建路徑，最後看位置差異交原圖覆核。
+
+框與框的關係
+
+固定DINOv2，多類正常共同訓練MLP及解碼器；位置差異是覆核線索。各類正常變化與真缺陷分開留出，不用整體平均掩蓋弱類。
+
+本圖只要帶走
+
+共同訓練仍需逐產品驗證。
+
+位置：對回同一輸入座標，不能任意混層或混影格。
+圖中數值：作者給定機制算例，非模型實測或建議門檻。
+想深入，再看工程細節與完整名詞
+
+技術版讀圖
+
+沿著資料流確認
+固定DINOv2，多類正常共同訓練MLP及解碼器；位置差異是覆核線索。各類正常變化與真缺陷分開留出，不用整體平均掩蓋弱類。
+先看三種產品的正常資料，再核對固定骨幹，更新重建路徑，最後看位置差異交原圖覆核。
+技術上不可誤讀
+正常外觀可能誤報，缺陷也可能被重建；按產品保留未見資料驗證。
+
+完整節點
+
+原始工程節點
+1
+三種產品的正常資料
+
+三種產品的正常資料；請對照圖內輸入、變化與結果。
+
+2
+固定骨幹，更新重建路徑
+
+固定骨幹，更新重建路徑；請對照圖內輸入、變化與結果。
+
+3
+位置差異交原圖覆核
+
+位置差異交原圖覆核；請對照圖內輸入、變化與結果。
+
+工程師先帶走：不用作答，先把這三句話記住。
+
+先看哪裡
+
+先看三種產品的正常資料，再核對固定骨幹，更新重建路徑，最後看位置差異交原圖覆核。
+
+怎麼理解
+
+固定DINOv2，多類正常共同訓練MLP及解碼器；位置差異是覆核線索。各類正常變化與真缺陷分開留出，不用整體平均掩蓋弱類。
+
+不要誤用
+
+正常誤報或細缺陷漏檢時，按產品核對原圖、正常資料與重建設定。
+
+繼續看第 2 張：再看它怎麼做 ↓
+
+02
+
+再看它怎麼做
+
+Dinomaly：限制照抄，再分組比較
+
+訓練擾動與分組對照，要和推論設定分開。
+
+正式教學插圖 2/4 · 已可直接閱讀；點圖僅用於放大細節
+開啟原圖 ↗
+
+30 秒讀懂這張圖
+
+訓練擾動與分組對照，要和推論設定分開。
+先看哪裡
+
+先看正常特徵，訓練才Dropout，再核對線性注意力分散聚合，最後看多層分組後比較差異。
+
+框與框的關係
+
+固定DINOv2，用正常特徵訓練瓶頸及解碼器；訓練MLP Dropout阻止直接照抄，eval關閉。線性注意力降低聚焦相同位置的捷徑；多層按組相加後比較，放寬逐層對應。訓練另降低已重建良好位置的梯度影響。圖中兩組/小格為機制示意，不是固定層號或維度。
+
+本圖只要帶走
+
+訓練擾動與分組對照，要和推論設定分開。
+
+位置：對回同一輸入座標，不能任意混層或混影格。
+圖中數值：作者給定機制算例，非模型實測或建議門檻。
+想深入，再看工程細節與完整名詞
+
+技術版讀圖
+
+沿著資料流確認
+固定DINOv2，用正常特徵訓練瓶頸及解碼器；訓練MLP Dropout阻止直接照抄，eval關閉。線性注意力降低聚焦相同位置的捷徑；多層按組相加後比較，放寬逐層對應。訓練另降低已重建良好位置的梯度影響。圖中兩組/小格為機制示意，不是固定層號或維度。
+先看正常特徵，訓練才Dropout，再核對線性注意力分散聚合，最後看多層分組後比較差異。
+技術上不可誤讀
+正常外觀可能誤報，缺陷也可能被重建；按產品保留未見資料驗證。
+
+完整節點
+
+原始工程節點
+1
+正常特徵，訓練才Dropout
+
+正常特徵，訓練才Dropout；請對照圖內輸入、變化與結果。
+
+2
+線性注意力分散聚合
+
+線性注意力分散聚合；請對照圖內輸入、變化與結果。
+
+3
+多層分組後比較差異
+
+多層分組後比較差異；請對照圖內輸入、變化與結果。
+
+工程師先帶走：不用作答，先把這三句話記住。
+
+先看哪裡
+
+先看正常特徵，訓練才Dropout，再核對線性注意力分散聚合，最後看多層分組後比較差異。
+
+怎麼理解
+
+固定DINOv2，用正常特徵訓練瓶頸及解碼器；訓練MLP Dropout阻止直接照抄，eval關閉。線性注意力降低聚焦相同位置的捷徑；多層按組相加後比較，放寬逐層對應。訓練另降低已重建良好位置的梯度影響。圖中兩組/小格為機制示意，不是固定層號或維度。
+
+不要誤用
+
+正常誤報或細缺陷漏檢時，按產品核對原圖、正常資料與重建設定。
+
+繼續看第 3 張：上線前先固定條件 ↓
+
+03
+
+上線前先固定條件
+
+Dinomaly：訓練擾動，部署要關閉
+
+保存層分組與eval設定，才可重現差異。
+
+正式教學插圖 3/4 · 已可直接閱讀；點圖僅用於放大細節
+開啟原圖 ↗
+
+30 秒讀懂這張圖
+
+保存層分組與eval設定，才可重現差異。
+先看哪裡
+
+先看訓練Dropout，推論關閉，再核對保存重建與分組版本，最後看按產品驗誤報和漏檢。
+
+框與框的關係
+
+保存骨幹、MLP、解碼器、使用層和分組、前處理及評分。Dropout只於訓練；放鬆逐層配對與難位置訓練策略不等於省略驗證。部署需eval，變更分組後重新驗。
+
+本圖只要帶走
+
+保存層分組與eval設定，才可重現差異。
+
+位置：對回同一輸入座標，不能任意混層或混影格。
+圖中數值：作者給定機制算例，非模型實測或建議門檻。
+想深入，再看工程細節與完整名詞
+
+技術版讀圖
+
+沿著資料流確認
+保存骨幹、MLP、解碼器、使用層和分組、前處理及評分。Dropout只於訓練；放鬆逐層配對與難位置訓練策略不等於省略驗證。部署需eval，變更分組後重新驗。
+先看訓練Dropout，推論關閉，再核對保存重建與分組版本，最後看按產品驗誤報和漏檢。
+技術上不可誤讀
+正常外觀可能誤報，缺陷也可能被重建；按產品保留未見資料驗證。
+
+完整節點
+
+原始工程節點
+1
+訓練Dropout，推論關閉
+
+訓練Dropout，推論關閉；請對照圖內輸入、變化與結果。
+
+2
+保存重建與分組版本
+
+保存重建與分組版本；請對照圖內輸入、變化與結果。
+
+3
+按產品驗誤報和漏檢
+
+按產品驗誤報和漏檢；請對照圖內輸入、變化與結果。
+
+工程師先帶走：不用作答，先把這三句話記住。
+
+先看哪裡
+
+先看訓練Dropout，推論關閉，再核對保存重建與分組版本，最後看按產品驗誤報和漏檢。
+
+怎麼理解
+
+保存骨幹、MLP、解碼器、使用層和分組、前處理及評分。Dropout只於訓練；放鬆逐層配對與難位置訓練策略不等於省略驗證。部署需eval，變更分組後重新驗。
+
+不要誤用
+
+正常誤報或細缺陷漏檢時，按產品核對原圖、正常資料與重建設定。
+
+繼續看第 4 張：選它前先看風險 ↓
+
+04
+
+選它前先看風險
+
+Dinomaly：低重建差，不保證無刮傷
+
+限制照抄是手段，缺陷仍要用真例驗證。
+
+正式教學插圖 4/4 · 已可直接閱讀；點圖僅用於放大細節
+開啟原圖 ↗
+
+30 秒讀懂這張圖
+
+限制照抄是手段，缺陷仍要用真例驗證。
+先看哪裡
+
+先看同板刮傷p仍然存在，再核對若原與重建表示相同，最後看獨立正常與缺陷分開驗。
+
+框與框的關係
+
+給定原與重建表示同為[.6,.8]，餘弦差0；原圖刮傷仍在。Dropout和線性注意力針對照抄捷徑，不保證每个缺陷有大差異。
+
+本圖只要帶走
+
+限制照抄是手段，缺陷仍要用真例驗證。
+
+位置：對回同一輸入座標，不能任意混層或混影格。
+圖中數值：作者給定機制算例，非模型實測或建議門檻。
+想深入，再看工程細節與完整名詞
+
+技術版讀圖
+
+沿著資料流確認
+給定原與重建表示同為[.6,.8]，餘弦差0；原圖刮傷仍在。Dropout和線性注意力針對照抄捷徑，不保證每个缺陷有大差異。
+先看同板刮傷p仍然存在，再核對若原與重建表示相同，最後看獨立正常與缺陷分開驗。
+技術上不可誤讀
+正常外觀可能誤報，缺陷也可能被重建；按產品保留未見資料驗證。
+
+完整節點
+
+原始工程節點
+1
+同板刮傷p仍然存在
+
+同板刮傷p仍然存在；請對照圖內輸入、變化與結果。
+
+2
+若原與重建表示相同
+
+若原與重建表示相同；請對照圖內輸入、變化與結果。
+
+3
+獨立正常與缺陷分開驗
+
+獨立正常與缺陷分開驗；請對照圖內輸入、變化與結果。
+
+工程師先帶走：不用作答，先把這三句話記住。
+
+先看哪裡
+
+先看同板刮傷p仍然存在，再核對若原與重建表示相同，最後看獨立正常與缺陷分開驗。
+
+怎麼理解
+
+給定原與重建表示同為[.6,.8]，餘弦差0；原圖刮傷仍在。Dropout和線性注意力針對照抄捷徑，不保證每个缺陷有大差異。
+
+不要誤用
+
+正常誤報或細缺陷漏檢時，按產品核對原圖、正常資料與重建設定。
+
+工程師操作卡
+
+把 Dinomaly 放進小規模試做（POC）前，先回答這五個問題。
+
+先讀白話版就能開始溝通；需要實作、驗證或交接時，再展開下方技術契約。
+
+1
+它會交出什麼？
+
+特徵差異位置圖與候選分數，不是精密輪廓或自動放行。
+
+2
+開始先做什麼？
+
+先追 Dinomaly 的正常訓練與特徵重建，再回看 p。
+
+3
+開始前要寫下來的四件事
+
+固定畫面範圍、資料來源、模型版本和驗收方式；詳細項目可在下方展開。
+
+4
+怎樣才算真的有用？
+
+保留原圖、乾淨正常品來源、畫面範圍、模型設定、可疑圖、誤報／漏失案例與人工覆核結果。
+
+5
+碰到什麼先停下來？
+
+正常誤報或細缺陷漏檢時，按產品核對原圖、正常資料與重建設定。
+
+工程師需要時，再展開原始技術契約
+
+原始建置項目
+
+這些設定要一併保存
+
+輸入與版本：先追 Dinomaly 的正常訓練與特徵重建，再回看 p。；關鍵機制：本課採原版 Dinomaly。固定 DINOv2 提取特徵，多類正常資料訓練瓶頸與解碼器；Dropout 在訓練時擾動表示，線性注意力分散聚合，多層分組與寬鬆重建減少硬性逐層逐點照抄。推論關閉 Dropout，比較特徵差異後回看 p。；獨立驗證：逐類量 escape、false reject、review load、tiny-defect evidence、seed spread、controls ablation、adaptation cost 與完整 P95。；失敗處理：正常誤報或細缺陷漏檢時，按產品核對原圖、正常資料與重建設定。
+
+原始選型條件：UniAD 用注意力遮蔽、逐層查詢及特徵擾動限制照抄；原版 Dinomaly 結合基礎特徵、Dropout 瓶頸、線性注意力及寬鬆重建；InvAD 由輸入產生空間條件調制生成特徵。三者都需正常訓練，位置線索不能直接當精密輪廓。 補新產品正常資料並核對適配或重訓需求。按同一漏檢風險要求，比誤報、端到端時間與人工覆核量；沒有共同實測就不排名。
+
+原始失效邊界
+
+下列情況不可忽略
+
+正常外觀可能誤報，缺陷也可能被重建；按產品保留未見資料驗證。
+
+工程結論
+提供可疑位置與候選分數；不直接交付尺寸、根因或放行判定。
+把這張操作卡帶入 POC 畫布 →
+查看 model.md ↗
+查看圖檔 manifest ↗
+
+相鄰比較
+
+下一個可比較的模型
+
+比較前，先把「看哪段畫面、用哪些資料、交出什麼、多久完成、誰覆核」固定；再到家族頁看共同條件與差異。
+
+PatchCore →
+PaDiM →
+AnomalyDINO →
+SubspaceAD →
+查看家族比較 →
+← UniAD
+InvAD →

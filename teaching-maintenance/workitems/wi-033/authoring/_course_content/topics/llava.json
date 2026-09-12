@@ -1,0 +1,571 @@
+{
+  "model": "LLaVA",
+  "badge": "生成式視覺語言模型",
+  "title": "LLaVA：讓語言模型接上影像線索",
+  "scenario": {
+    "title": "檢查人員希望對一張端子照片追問「哪一側需要檢查」，並得到可回看原圖的文字說明，而不只是固定類別。",
+    "body": "檢查人員希望對一張端子照片追問「哪一側需要檢查」，並得到可回看原圖的文字說明，而不只是固定類別。"
+  },
+  "promise": {
+    "title": "交付結果與接手工作",
+    "body": "生成對影像與問題的文字回答；本例描述右側未見螺絲，交由檢查人員核對和追問。不是實際 LLaVA 推論結果。"
+  },
+  "mental_model": {
+    "title": "生成式視覺語言模型",
+    "body": "本課以原始 LLaVA 為例：視覺編碼器先把照片轉成視覺特徵，學習到的投影把它們接到語言模型能使用的表示，再和問題文字一起產生回答。圖文對齊及指令微調讓這個橋接能支援看圖問答；這不同於 CLIP 只在候選文字間比相似度。",
+    "limit": "從空螺絲座可以提出「未見螺絲」的觀察，卻無法只靠這張照片知道是漏裝還是振動鬆脫。流暢的原因說明可能跨過影像支持的範圍。"
+  },
+  "micro_example": {
+    "title": "照片不足以說明原因",
+    "setup": "模型說「端子因振動鬆脫」，照片只顯示螺絲座是空的。你需要填維修單。",
+    "prediction": "可以保留哪些內容？還應準備什麼？",
+    "reveal": "可保留經原圖核對的未見螺絲現象，原因先標待查，再補裝配紀錄或現場檢查。若工作只需固定的缺件分流，專用檢測流程也可能更直接；VLM 的追問能力不等於根因證據。"
+  },
+  "beginner_path": {
+    "title": "從必要原理、具體反例到工作取捨",
+    "intro": "檢查人員希望對一張端子照片追問「哪一側需要檢查」，並得到可回看原圖的文字說明，而不只是固定類別。 下列圖像、特徵及回答為教學示意，不是模型實測。",
+    "visuals": [
+      {
+        "id": "wi027-llava-c1",
+        "title": "LLaVA：把看見的線索接進語言模型",
+        "prompt": "檢查人員希望對一張端子照片追問「哪一側需要檢查」，並得到可回看原圖的文字說明，而不只是固定類別。",
+        "caption": "本課以原始 LLaVA 為例：視覺編碼器先把照片轉成視覺特徵，學習到的投影把它們接到語言模型能使用的表示，再和問題文字一起產生回答。圖文對齊及指令微調讓這個橋接能支援看圖問答；這不同於 CLIP 只在候選文字間比相似度。",
+        "image": "_course_content/generated-concepts/llava/wi027-llava-c1-r02-desktop.png",
+        "alt": "LLaVA：把看見的線索接進語言模型。本課以原始 LLaVA 為例：視覺編碼器先把照片轉成視覺特徵，學習到的投影把它們接到語言模型能使用的表示，再和問題文字一起產生回答。圖文對齊及指令微調讓這個橋接能支援看圖問答；這不同於 CLIP 只在候選文字間比相似度。 AI生成教學示意，非模型實測。",
+        "callouts": [
+          {
+            "title": "投影讓視覺線索進入回答",
+            "body": "投影處理的是特徵表示，不是把照片轉成可靠檢測框。圖中右側空螺絲座是輸入線索，回答要能回到同一處核對。"
+          },
+          {
+            "title": "指令學習讓模型回應問題",
+            "body": "預訓練視覺與語言模型仍需透過對齊／指令資料建立合作；使用現成權重可省去從頭訓練，但不能省略自己的問答測試。不同 LLaVA 版本的橋接設計需另查。"
+          },
+          {
+            "title": "交付與接手",
+            "body": "生成對影像與問題的文字回答；本例描述右側未見螺絲，交由檢查人員核對和追問。不是實際 LLaVA 推論結果。"
+          }
+        ],
+        "reading_views": [
+          {
+            "title": "LLaVA：把看見的線索接進語言模型",
+            "image": "_course_content/generated-concepts/llava/wi027-llava-c1-r02-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/llava/wi027-llava-c1-r03-mobile.png",
+            "alt": "LLaVA：把看見的線索接進語言模型。本課以原始 LLaVA 為例：視覺編碼器先把照片轉成視覺特徵，學習到的投影把它們接到語言模型能使用的表示，再和問題文字一起產生回答。圖文對齊及指令微調讓這個橋接能支援看圖問答；這不同於 CLIP 只在候選文字間比相似度。 AI生成教學示意，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              724,
+              2172
+            ],
+            "mobile_display_mode": "full-mobile",
+            "desktop_intrinsic_width": 1672,
+            "desktop_intrinsic_height": 941,
+            "mobile_intrinsic_width": 724,
+            "mobile_intrinsic_height": 2172
+          }
+        ],
+        "core_ideas": true
+      },
+      {
+        "id": "wi027-llava-d2",
+        "title": "看到缺螺絲，推不出缺少的原因",
+        "prompt": "觀察哪個條件改變，讓原本的結果不夠可靠？",
+        "caption": "從空螺絲座可以提出「未見螺絲」的觀察，卻無法只靠這張照片知道是漏裝還是振動鬆脫。流暢的原因說明可能跨過影像支持的範圍。",
+        "image": "_course_content/generated-concepts/llava/wi027-llava-d2-r02-desktop.png",
+        "alt": "看到缺螺絲，推不出缺少的原因。從空螺絲座可以提出「未見螺絲」的觀察，卻無法只靠這張照片知道是漏裝還是振動鬆脫。流暢的原因說明可能跨過影像支持的範圍。 AI生成教學示意，非模型實測。",
+        "callouts": [
+          {
+            "title": "看哪裡",
+            "body": "從空螺絲座可以提出「未見螺絲」的觀察，卻無法只靠這張照片知道是漏裝還是振動鬆脫。流暢的原因說明可能跨過影像支持的範圍。"
+          },
+          {
+            "title": "接著怎麼做",
+            "body": "把可見現象和待查原因分開；回看原圖，再查裝配紀錄或現場狀態。要求答案承認看不清楚，不以語氣確定代替證據。"
+          }
+        ],
+        "reading_views": [
+          {
+            "title": "看到缺螺絲，推不出缺少的原因",
+            "image": "_course_content/generated-concepts/llava/wi027-llava-d2-r02-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/llava/wi027-llava-d2-r02-mobile.png",
+            "alt": "看到缺螺絲，推不出缺少的原因。從空螺絲座可以提出「未見螺絲」的觀察，卻無法只靠這張照片知道是漏裝還是振動鬆脫。流暢的原因說明可能跨過影像支持的範圍。 AI生成教學示意，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              724,
+              2172
+            ],
+            "mobile_display_mode": "full-mobile",
+            "desktop_intrinsic_width": 1672,
+            "desktop_intrinsic_height": 941,
+            "mobile_intrinsic_width": 724,
+            "mobile_intrinsic_height": 2172
+          }
+        ],
+        "core_ideas": false
+      },
+      {
+        "id": "wi027-vlm-d3",
+        "title": "看圖回答：先選部署方式，再比實際工作",
+        "prompt": "相同工作需求下，資料、輸出與成本如何取捨？",
+        "caption": "需要開放式問答與本機部署時，可評估具體 LLaVA 或 Qwen-VL 權重；需要託管工作流程時，可評估 Gemini API。圖中比較的是部署範例，並不表示每個家族只准用這一種部署方式。",
+        "image": "_course_content/generated-concepts/llava/wi027-vlm-d3-r03-desktop.png",
+        "alt": "看圖回答：先選部署方式，再比實際工作。需要開放式問答與本機部署時，可評估具體 LLaVA 或 Qwen-VL 權重；需要託管工作流程時，可評估 Gemini API。圖中比較的是部署範例，並不表示每個家族只准用這一種部署方式。 AI生成教學示意，非模型實測。",
+        "callouts": [
+          {
+            "title": "怎麼選",
+            "body": "需要開放式問答與本機部署時，可評估具體 LLaVA 或 Qwen-VL 權重；需要託管工作流程時，可評估 Gemini API。圖中比較的是部署範例，並不表示每個家族只准用這一種部署方式。"
+          },
+          {
+            "title": "資料與完整成本",
+            "body": "準備代表影像、真實問題、可接受答案和不確定案例；換產品需重測用詞、可見細節與回答。自建要計入 GPU、模型／前處理維護，託管要計入請求、網路和重試；兩者都看錯答、漏答、人工覆核及完整耗時。"
+          }
+        ],
+        "reading_views": [
+          {
+            "title": "看圖回答：先選部署方式，再比實際工作",
+            "image": "_course_content/generated-concepts/llava/wi027-vlm-d3-r03-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/llava/wi027-vlm-d3-r03-mobile.png",
+            "alt": "看圖回答：先選部署方式，再比實際工作。需要開放式問答與本機部署時，可評估具體 LLaVA 或 Qwen-VL 權重；需要託管工作流程時，可評估 Gemini API。圖中比較的是部署範例，並不表示每個家族只准用這一種部署方式。 AI生成教學示意，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              724,
+              2172
+            ],
+            "mobile_display_mode": "full-mobile",
+            "desktop_intrinsic_width": 1672,
+            "desktop_intrinsic_height": 941,
+            "mobile_intrinsic_width": 724,
+            "mobile_intrinsic_height": 2172
+          }
+        ],
+        "core_ideas": false
+      }
+    ]
+  },
+  "mechanism_steps": [
+    {
+      "title": "影像加問題",
+      "body": "檢查人員希望對一張端子照片追問「哪一側需要檢查」，並得到可回看原圖的文字說明，而不只是固定類別。",
+      "why": "由本課核心機制連接工作用途",
+      "anchor": "WI027-1",
+      "diagram": {
+        "title": "影像加問題",
+        "body": "檢查人員希望對一張端子照片追問「哪一側需要檢查」，並得到可回看原圖的文字說明，而不只是固定類別。",
+        "why": "詳見本課版本與來源",
+        "anchor": "WI027-1"
+      }
+    },
+    {
+      "title": "抽取視覺特徵",
+      "body": "投影處理的是特徵表示，不是把照片轉成可靠檢測框。圖中右側空螺絲座是輸入線索，回答要能回到同一處核對。",
+      "why": "由本課核心機制連接工作用途",
+      "anchor": "WI027-2",
+      "diagram": {
+        "title": "抽取視覺特徵",
+        "body": "投影處理的是特徵表示，不是把照片轉成可靠檢測框。圖中右側空螺絲座是輸入線索，回答要能回到同一處核對。",
+        "why": "詳見本課版本與來源",
+        "anchor": "WI027-2"
+      }
+    },
+    {
+      "title": "投影到語言上下文",
+      "body": "預訓練視覺與語言模型仍需透過對齊／指令資料建立合作；使用現成權重可省去從頭訓練，但不能省略自己的問答測試。不同 LLaVA 版本的橋接設計需另查。",
+      "why": "由本課核心機制連接工作用途",
+      "anchor": "WI027-3",
+      "diagram": {
+        "title": "投影到語言上下文",
+        "body": "預訓練視覺與語言模型仍需透過對齊／指令資料建立合作；使用現成權重可省去從頭訓練，但不能省略自己的問答測試。不同 LLaVA 版本的橋接設計需另查。",
+        "why": "詳見本課版本與來源",
+        "anchor": "WI027-3"
+      }
+    },
+    {
+      "title": "生成可核對回答",
+      "body": "生成對影像與問題的文字回答；本例描述右側未見螺絲，交由檢查人員核對和追問。不是實際 LLaVA 推論結果。",
+      "why": "由本課核心機制連接工作用途",
+      "anchor": "WI027-4",
+      "diagram": {
+        "title": "生成可核對回答",
+        "body": "生成對影像與問題的文字回答；本例描述右側未見螺絲，交由檢查人員核對和追問。不是實際 LLaVA 推論結果。",
+        "why": "詳見本課版本與來源",
+        "anchor": "WI027-4"
+      }
+    }
+  ],
+  "visual_intro": "本課以原始 LLaVA 為例：視覺編碼器先把照片轉成視覺特徵，學習到的投影把它們接到語言模型能使用的表示，再和問題文字一起產生回答。圖文對齊及指令微調讓這個橋接能支援看圖問答；這不同於 CLIP 只在候選文字間比相似度。",
+  "concept_visuals": [],
+  "boundary_cases": [
+    {
+      "condition": "本課具體反例",
+      "effect": "從空螺絲座可以提出「未見螺絲」的觀察，卻無法只靠這張照片知道是漏裝還是振動鬆脫。流暢的原因說明可能跨過影像支持的範圍。",
+      "action": "把可見現象和待查原因分開；回看原圖，再查裝配紀錄或現場狀態。要求答案承認看不清楚，不以語氣確定代替證據。"
+    },
+    {
+      "condition": "更換產品、模型或輸入設定",
+      "effect": "準備代表影像、真實問題、可接受答案和不確定案例；換產品需重測用詞、可見細節與回答。自建要計入 GPU、模型／前處理維護，託管要計入請求、網路和重試；兩者都看錯答、漏答、人工覆核及完整耗時。",
+      "action": "固定一個 LLaVA 版本與配套處理器，準備端子影像、問題及人工核對答案；測試集包含缺件、遮擋和看不清楚的情況。"
+    },
+    {
+      "condition": "把示意當成實際推論",
+      "effect": "本課特徵、排序、回答及圖像僅用於解釋，不支持現場準確率或耗時結論。",
+      "action": "逐項核對回答是否被原圖支持，統計漏掉的現象、捏造的原因及合理拒答；和人工直接讀圖的時間與錯誤比較，算入覆核。"
+    }
+  ],
+  "comparison": [
+    {
+      "model": "LLaVA 自建範例",
+      "normality": "選權重／處理器、GPU、影像問答驗證資料",
+      "candidate": "生成回答；自行維護模型與服務"
+    },
+    {
+      "model": "Qwen-VL 自建範例",
+      "normality": "選具體版本、輸入預算、GPU與驗證資料",
+      "candidate": "生成回答；細節、token和完整成本一起比較"
+    },
+    {
+      "model": "Gemini API 範例",
+      "normality": "選服務模型／輸入設定、可送出資料及問答驗證",
+      "candidate": "生成回覆；計入網路、重試、用量和覆核"
+    }
+  ],
+  "selection": "需要開放式問答與本機部署時，可評估具體 LLaVA 或 Qwen-VL 權重；需要託管工作流程時，可評估 Gemini API。圖中比較的是部署範例，並不表示每個家族只准用這一種部署方式。 準備代表影像、真實問題、可接受答案和不確定案例；換產品需重測用詞、可見細節與回答。自建要計入 GPU、模型／前處理維護，託管要計入請求、網路和重試；兩者都看錯答、漏答、人工覆核及完整耗時。",
+  "poc": {
+    "title": "以真實工作資料做小規模比較",
+    "steps": [
+      "固定一個 LLaVA 版本與配套處理器，準備端子影像、問題及人工核對答案；測試集包含缺件、遮擋和看不清楚的情況。",
+      "準備代表影像、真實問題、可接受答案和不確定案例；換產品需重測用詞、可見細節與回答。自建要計入 GPU、模型／前處理維護，託管要計入請求、網路和重試；兩者都看錯答、漏答、人工覆核及完整耗時。",
+      "逐項核對回答是否被原圖支持，統計漏掉的現象、捏造的原因及合理拒答；和人工直接讀圖的時間與錯誤比較，算入覆核。"
+    ],
+    "hold": "把可見現象和待查原因分開；回看原圖，再查裝配紀錄或現場狀態。要求答案承認看不清楚，不以語氣確定代替證據。",
+    "acceptance": {
+      "baseline": "既有流程或最簡單可行方法",
+      "measure": "逐項核對回答是否被原圖支持，統計漏掉的現象、捏造的原因及合理拒答；和人工直接讀圖的時間與錯誤比較，算入覆核。",
+      "negative_control": "從空螺絲座可以提出「未見螺絲」的觀察，卻無法只靠這張照片知道是漏裝還是振動鬆脫。流暢的原因說明可能跨過影像支持的範圍。",
+      "owner": "實作與影像核對負責人"
+    }
+  },
+  "teach_back": {
+    "question": "它改變什麼？何時選另一種做法？",
+    "answer": "本課以原始 LLaVA 為例：視覺編碼器先把照片轉成視覺特徵，學習到的投影把它們接到語言模型能使用的表示，再和問題文字一起產生回答。圖文對齊及指令微調讓這個橋接能支援看圖問答；這不同於 CLIP 只在候選文字間比相似度。 需要開放式問答與本機部署時，可評估具體 LLaVA 或 Qwen-VL 權重；需要託管工作流程時，可評估 Gemini API。圖中比較的是部署範例，並不表示每個家族只准用這一種部署方式。"
+  },
+  "slide_reading": [
+    {
+      "title": "LLaVA：影像與問題共同形成回答",
+      "question": "可見描述與原因推測要分開交付。",
+      "look": "先看同接頭加上檢查問題，再核對先核對左右可見內容，最後看交付描述與未知原因。",
+      "relation": "以原版LLaVA的投影橋接為界，不把所有家族版本當相同架構。固定接頭左有螺絲右空座，回答可描述右未見螺絲，但照片不能證明原因；所有回答為教學設計。",
+      "takeaway": "可見描述與原因推測要分開交付。",
+      "terms": [
+        "表示：模型由輸入得到的中間資料，並非標註真值。",
+        "本圖數值：作者給定的教學示意，不是本輪模型實測。"
+      ]
+    },
+    {
+      "title": "原版LLaVA：把影像表示接進語言模型",
+      "question": "投影橋接影像與文字，回答仍要有可見證據。",
+      "look": "先看同一接頭影像經視覺編碼，再核對投影後與問題文字一起送入，最後看語言模型逐token產生回答。",
+      "relation": "以原版LLaVA為界：預訓練視覺編碼器輸出表示，學習線性投影接入語言模型的embedding空間，再與問題文字共同產生回答。圖內小向量僅說明不同維度的橋接，不是該模型實際維度。右側空螺絲座支持未見螺絲，不能推出漏裝或振動鬆脫等原因。",
+      "takeaway": "投影橋接影像與文字，回答仍要有可見證據。",
+      "terms": [
+        "表示：模型由輸入得到的中間資料，並非標註真值。",
+        "本圖數值：作者給定的教學示意，不是本輪模型實測。"
+      ]
+    },
+    {
+      "title": "LLaVA：原圖、問題與版本一起保存",
+      "question": "回答要可追溯，錯誤與不確定都要留存。",
+      "look": "先看固定影像前處理與問題，再核對要求左右分開描述，最後看核對證據後交人工覆核。",
+      "relation": "保存checkpoint、processor、完整問題及生成設定，記錄原圖與回答。對同一接頭逐側查證，不能因句子流暢就放行；需要定位輪廓或自動放行時另建驗證，不把語言回答當校正後尺寸。",
+      "takeaway": "回答要可追溯，錯誤與不確定都要留存。",
+      "terms": [
+        "表示：模型由輸入得到的中間資料，並非標註真值。",
+        "本圖數值：作者給定的教學示意，不是本輪模型實測。"
+      ]
+    },
+    {
+      "title": "LLaVA與專用視覺：先定義交付",
+      "question": "可追問的回答與固定座位判定，各驗各的成本。",
+      "look": "先看共同接頭與左右座位，再核對VLM回答可見描述，最後看固定ROI可用專用分類。",
+      "relation": "同接頭若只問固定座位有無螺絲，可比較ROI分類或規則；若工作需要開放問題與說明，可評VLM。两者仍須影像證據、未知處理及漏判成本，不能只按模型大小決定。",
+      "takeaway": "可追問的回答與固定座位判定，各驗各的成本。",
+      "terms": [
+        "表示：模型由輸入得到的中間資料，並非標註真值。",
+        "本圖數值：作者給定的教學示意，不是本輪模型實測。"
+      ]
+    }
+  ],
+  "comparison_headers": {
+    "title": "看圖回答：先選部署方式，再比實際工作",
+    "basis": "所需資料與方法差異",
+    "output": "輸出與維護責任"
+  },
+  "transfer_check": {
+    "title": "照片不足以說明原因",
+    "scenario": "模型說「端子因振動鬆脫」，照片只顯示螺絲座是空的。你需要填維修單。",
+    "question": "可以保留哪些內容？還應準備什麼？",
+    "answer": "可保留經原圖核對的未見螺絲現象，原因先標待查，再補裝配紀錄或現場檢查。若工作只需固定的缺件分流，專用檢測流程也可能更直接；VLM 的追問能力不等於根因證據。"
+  },
+  "review_trace": {
+    "authority": "roadmap-model-selection/foundation-vlm-open-world/llava/model.md",
+    "scope": "WI-033：工程層四圖與手機比較修正；首讀有效內容保留。原生圖已審，整頁與使用者審閱另記。",
+    "claims": [
+      {
+        "id": "visual-1",
+        "field": "beginner_path.visuals[aoi-question-contract]",
+        "source": "模型定位 / architecture_path"
+      },
+      {
+        "id": "visual-2",
+        "field": "beginner_path.visuals[visual-token-context]",
+        "source": "architecture_path"
+      },
+      {
+        "id": "visual-3",
+        "field": "beginner_path.visuals[claim-evidence-gate]",
+        "source": "representation_or_score"
+      },
+      {
+        "id": "visual-4",
+        "field": "beginner_path.visuals[context-counterfactual]",
+        "source": "failure_boundary"
+      },
+      {
+        "id": "visual-5",
+        "field": "beginner_path.visuals[owner-handoff]",
+        "source": "selection_gate / evidence_bundle"
+      },
+      {
+        "id": "promise",
+        "field": "promise",
+        "source": "模型定位 / representation_or_score"
+      },
+      {
+        "id": "mechanism",
+        "field": "mechanism_steps",
+        "source": "architecture_path / representation_or_score"
+      },
+      {
+        "id": "boundaries",
+        "field": "boundary_cases",
+        "source": "failure_boundary / selection_gate"
+      },
+      {
+        "id": "comparison",
+        "field": "comparison + selection",
+        "source": "selection_gate"
+      },
+      {
+        "id": "poc",
+        "field": "poc + acceptance",
+        "source": "cost_and_operating_point / evidence_bundle"
+      },
+      {
+        "id": "transfer",
+        "field": "transfer_check",
+        "source": "failure_boundary / selection_gate"
+      },
+      {
+        "id": "f02-core",
+        "field": "beginner_path.visuals[0] + scenario + mental_model",
+        "source": "https://arxiv.org/abs/2304.08485"
+      },
+      {
+        "id": "f02-transfer",
+        "field": "micro_example + transfer_check + selection",
+        "source": "https://arxiv.org/abs/2304.08485"
+      },
+      {
+        "id": "wi027-first-read",
+        "field": "beginner_path + core + selection + transfer",
+        "source": "https://llava-vl.github.io/"
+      }
+    ]
+  },
+  "quality_status": {
+    "label": "首讀圖文已重製並自評；使用者核准待確認",
+    "state": "self-reviewed",
+    "round": "WI-027",
+    "reason": "30張不同PNG逐圖審查，七頁與互動證據見workitems/wi-027；原工程圖未重新評分。"
+  },
+  "teaching_preflight": {
+    "brief": "teaching-images/vision-ai-model-selection/workitems/wi-027/llava-c1-r02.md",
+    "mobile_brief": "teaching-images/vision-ai-model-selection/workitems/wi-027/llava-c1-r03.md",
+    "story": "C",
+    "major_visual_nodes": 4,
+    "visual_status": "self-reviewed",
+    "user_review": "pending"
+  },
+  "engineering_slides": [
+    {
+      "title": "LLaVA：影像與問題共同形成回答",
+      "question": "可見描述與原因推測要分開交付。",
+      "plain": {
+        "look": "先看同接頭加上檢查問題，再核對先核對左右可見內容，最後看交付描述與未知原因。",
+        "relation": "以原版LLaVA的投影橋接為界，不把所有家族版本當相同架構。固定接頭左有螺絲右空座，回答可描述右未見螺絲，但照片不能證明原因；所有回答為教學設計。",
+        "takeaway": "可見描述與原因推測要分開交付。"
+      },
+      "terms": [
+        "表示：模型由輸入得到的中間資料，並非標註真值。",
+        "本圖數值：作者給定的教學示意，不是本輪模型實測。"
+      ],
+      "guide": [
+        "以原版LLaVA的投影橋接為界，不把所有家族版本當相同架構。固定接頭左有螺絲右空座，回答可描述右未見螺絲，但照片不能證明原因；所有回答為教學設計。",
+        "先看同接頭加上檢查問題，再核對先核對左右可見內容，最後看交付描述與未知原因。"
+      ],
+      "stages": [
+        {
+          "title": "同接頭加上檢查問題",
+          "body": "同接頭加上檢查問題；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "先核對左右可見內容",
+          "body": "先核對左右可見內容；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "交付描述與未知原因",
+          "body": "交付描述與未知原因；請對照圖內輸入、變化與結果。"
+        }
+      ],
+      "misconception": "從空螺絲座可以提出「未見螺絲」的觀察，卻無法只靠這張照片知道是漏裝還是振動鬆脫。流暢的原因說明可能跨過影像支持的範圍。",
+      "alt": "LLaVA：影像與問題共同形成回答。可見描述與原因推測要分開交付。 教學示意，非模型實測。",
+      "mobile_image": "roadmap-model-selection/foundation-vlm-open-world/llava/images/final/WI033-LLAVA-01-r02-mobile.png",
+      "mobile_width": 768,
+      "mobile_height": 2304,
+      "engineering": {
+        "takeaway": "可見描述與原因推測要分開交付。",
+        "nextAction": "固定一個 LLaVA 版本與配套處理器，準備端子影像、問題及人工核對答案；測試集包含缺件、遮擋和看不清楚的情況。",
+        "redLine": "把可見現象和待查原因分開；回看原圖，再查裝配紀錄或現場狀態。要求答案承認看不清楚，不以語氣確定代替證據。"
+      },
+      "source": "https://arxiv.org/abs/2304.08485"
+    },
+    {
+      "title": "原版LLaVA：把影像表示接進語言模型",
+      "question": "投影橋接影像與文字，回答仍要有可見證據。",
+      "plain": {
+        "look": "先看同一接頭影像經視覺編碼，再核對投影後與問題文字一起送入，最後看語言模型逐token產生回答。",
+        "relation": "以原版LLaVA為界：預訓練視覺編碼器輸出表示，學習線性投影接入語言模型的embedding空間，再與問題文字共同產生回答。圖內小向量僅說明不同維度的橋接，不是該模型實際維度。右側空螺絲座支持未見螺絲，不能推出漏裝或振動鬆脫等原因。",
+        "takeaway": "投影橋接影像與文字，回答仍要有可見證據。"
+      },
+      "terms": [
+        "表示：模型由輸入得到的中間資料，並非標註真值。",
+        "本圖數值：作者給定的教學示意，不是本輪模型實測。"
+      ],
+      "guide": [
+        "以原版LLaVA為界：預訓練視覺編碼器輸出表示，學習線性投影接入語言模型的embedding空間，再與問題文字共同產生回答。圖內小向量僅說明不同維度的橋接，不是該模型實際維度。右側空螺絲座支持未見螺絲，不能推出漏裝或振動鬆脫等原因。",
+        "先看同一接頭影像經視覺編碼，再核對投影後與問題文字一起送入，最後看語言模型逐token產生回答。"
+      ],
+      "stages": [
+        {
+          "title": "同一接頭影像經視覺編碼",
+          "body": "同一接頭影像經視覺編碼；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "投影後與問題文字一起送入",
+          "body": "投影後與問題文字一起送入；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "語言模型逐token產生回答",
+          "body": "語言模型逐token產生回答；請對照圖內輸入、變化與結果。"
+        }
+      ],
+      "misconception": "從空螺絲座可以提出「未見螺絲」的觀察，卻無法只靠這張照片知道是漏裝還是振動鬆脫。流暢的原因說明可能跨過影像支持的範圍。",
+      "alt": "原版LLaVA：把影像表示接進語言模型。投影橋接影像與文字，回答仍要有可見證據。 教學示意，非模型實測。",
+      "mobile_image": "roadmap-model-selection/foundation-vlm-open-world/llava/images/final/WI033-LLAVA-02-r02-mobile.png",
+      "mobile_width": 768,
+      "mobile_height": 2304,
+      "engineering": {
+        "takeaway": "投影橋接影像與文字，回答仍要有可見證據。",
+        "nextAction": "固定一個 LLaVA 版本與配套處理器，準備端子影像、問題及人工核對答案；測試集包含缺件、遮擋和看不清楚的情況。",
+        "redLine": "把可見現象和待查原因分開；回看原圖，再查裝配紀錄或現場狀態。要求答案承認看不清楚，不以語氣確定代替證據。"
+      },
+      "source": "https://arxiv.org/abs/2304.08485"
+    },
+    {
+      "title": "LLaVA：原圖、問題與版本一起保存",
+      "question": "回答要可追溯，錯誤與不確定都要留存。",
+      "plain": {
+        "look": "先看固定影像前處理與問題，再核對要求左右分開描述，最後看核對證據後交人工覆核。",
+        "relation": "保存checkpoint、processor、完整問題及生成設定，記錄原圖與回答。對同一接頭逐側查證，不能因句子流暢就放行；需要定位輪廓或自動放行時另建驗證，不把語言回答當校正後尺寸。",
+        "takeaway": "回答要可追溯，錯誤與不確定都要留存。"
+      },
+      "terms": [
+        "表示：模型由輸入得到的中間資料，並非標註真值。",
+        "本圖數值：作者給定的教學示意，不是本輪模型實測。"
+      ],
+      "guide": [
+        "保存checkpoint、processor、完整問題及生成設定，記錄原圖與回答。對同一接頭逐側查證，不能因句子流暢就放行；需要定位輪廓或自動放行時另建驗證，不把語言回答當校正後尺寸。",
+        "先看固定影像前處理與問題，再核對要求左右分開描述，最後看核對證據後交人工覆核。"
+      ],
+      "stages": [
+        {
+          "title": "固定影像前處理與問題",
+          "body": "固定影像前處理與問題；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "要求左右分開描述",
+          "body": "要求左右分開描述；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "核對證據後交人工覆核",
+          "body": "核對證據後交人工覆核；請對照圖內輸入、變化與結果。"
+        }
+      ],
+      "misconception": "從空螺絲座可以提出「未見螺絲」的觀察，卻無法只靠這張照片知道是漏裝還是振動鬆脫。流暢的原因說明可能跨過影像支持的範圍。",
+      "alt": "LLaVA：原圖、問題與版本一起保存。回答要可追溯，錯誤與不確定都要留存。 教學示意，非模型實測。",
+      "mobile_image": "roadmap-model-selection/foundation-vlm-open-world/llava/images/final/WI033-LLAVA-03-r02-mobile.png",
+      "mobile_width": 768,
+      "mobile_height": 2304,
+      "engineering": {
+        "takeaway": "回答要可追溯，錯誤與不確定都要留存。",
+        "nextAction": "固定一個 LLaVA 版本與配套處理器，準備端子影像、問題及人工核對答案；測試集包含缺件、遮擋和看不清楚的情況。",
+        "redLine": "把可見現象和待查原因分開；回看原圖，再查裝配紀錄或現場狀態。要求答案承認看不清楚，不以語氣確定代替證據。"
+      },
+      "source": "https://arxiv.org/abs/2304.08485"
+    },
+    {
+      "title": "LLaVA與專用視覺：先定義交付",
+      "question": "可追問的回答與固定座位判定，各驗各的成本。",
+      "plain": {
+        "look": "先看共同接頭與左右座位，再核對VLM回答可見描述，最後看固定ROI可用專用分類。",
+        "relation": "同接頭若只問固定座位有無螺絲，可比較ROI分類或規則；若工作需要開放問題與說明，可評VLM。两者仍須影像證據、未知處理及漏判成本，不能只按模型大小決定。",
+        "takeaway": "可追問的回答與固定座位判定，各驗各的成本。"
+      },
+      "terms": [
+        "表示：模型由輸入得到的中間資料，並非標註真值。",
+        "本圖數值：作者給定的教學示意，不是本輪模型實測。"
+      ],
+      "guide": [
+        "同接頭若只問固定座位有無螺絲，可比較ROI分類或規則；若工作需要開放問題與說明，可評VLM。两者仍須影像證據、未知處理及漏判成本，不能只按模型大小決定。",
+        "先看共同接頭與左右座位，再核對VLM回答可見描述，最後看固定ROI可用專用分類。"
+      ],
+      "stages": [
+        {
+          "title": "共同接頭與左右座位",
+          "body": "共同接頭與左右座位；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "VLM回答可見描述",
+          "body": "VLM回答可見描述；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "固定ROI可用專用分類",
+          "body": "固定ROI可用專用分類；請對照圖內輸入、變化與結果。"
+        }
+      ],
+      "misconception": "從空螺絲座可以提出「未見螺絲」的觀察，卻無法只靠這張照片知道是漏裝還是振動鬆脫。流暢的原因說明可能跨過影像支持的範圍。",
+      "alt": "LLaVA與專用視覺：先定義交付。可追問的回答與固定座位判定，各驗各的成本。 教學示意，非模型實測。",
+      "mobile_image": "roadmap-model-selection/foundation-vlm-open-world/llava/images/final/WI033-LLAVA-04-r01-mobile.png",
+      "mobile_width": 768,
+      "mobile_height": 2304,
+      "engineering": {
+        "takeaway": "可追問的回答與固定座位判定，各驗各的成本。",
+        "nextAction": "固定一個 LLaVA 版本與配套處理器，準備端子影像、問題及人工核對答案；測試集包含缺件、遮擋和看不清楚的情況。",
+        "redLine": "把可見現象和待查原因分開；回看原圖，再查裝配紀錄或現場狀態。要求答案承認看不清楚，不以語氣確定代替證據。"
+      },
+      "source": "https://arxiv.org/abs/2304.08485"
+    }
+  ]
+}

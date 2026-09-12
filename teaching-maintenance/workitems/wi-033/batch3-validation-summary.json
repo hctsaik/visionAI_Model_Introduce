@@ -1,0 +1,18 @@
+{
+  "tests": "15 passed, 120 subtests passed; 2 corrected runtime tests subsequently passed in 21.23s",
+  "test_evidence": [
+    "batch3-tests-r01.json",
+    "batch3-tests-supplement.json"
+  ],
+  "main_states": 28,
+  "zooms": 196,
+  "http": 196,
+  "assets": 1365,
+  "deep_states": 64,
+  "new_engineering_pngs": 56,
+  "new_deep_mobile_pngs": 11,
+  "deep_mobile_references": 12,
+  "html_sha256": "0f8aea37ffc335382901db11329226770cfb687999ab16c38ab341ddb3fbd408",
+  "user_approval": "pending",
+  "published": false
+}

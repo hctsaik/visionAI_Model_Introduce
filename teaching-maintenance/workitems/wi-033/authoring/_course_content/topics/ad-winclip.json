@@ -1,0 +1,572 @@
+{
+  "model": "WinCLIP",
+  "badge": "圖文語意與異常位置",
+  "title": "WinCLIP：文字給語意，視窗保留位置",
+  "scenario": {
+    "title": "細刮傷與正常反光，如何接到工作",
+    "body": "金屬板的細痕 p 需要檢出，正常孔邊 q 又不能一直誤報；先確認資料與需要的位置或問答輸出。"
+  },
+  "promise": {
+    "title": "分數與位置，回原圖覆核",
+    "body": "交付可疑位置線索；文字或熱圖都不能直接代表精密輪廓、尺寸、根因或自動放行。"
+  },
+  "mental_model": {
+    "title": "WinCLIP：文字給語意，視窗保留位置",
+    "body": "人工組合正常／異常狀態詞與句型，固定 CLIP 把文字和視窗影像轉成可比較的表示。各視窗的異常分數排回覆蓋位置，以調和平均聚合重疊與多尺度線索。WinCLIP+ 再用少量正常品建立 patch／視窗特徵庫，找最相似正常特徵的距離，融合文字線索。",
+    "limit": "語意與位置仍可能錯；必須用未見正常與真缺陷檢查適用範圍。"
+  },
+  "micro_example": {
+    "title": "換一個工作條件，再做選擇",
+    "setup": "新金屬件只有幾張正常照片，要找細刮傷及錯裝；人工文字說得清刮傷，卻難描述哪個安裝方向才對。",
+    "prediction": "只改文字、加入正常參考，或先收集資料訓練定位模型，如何取捨？",
+    "reveal": "文字可先提供狀態語意；方向依賴外觀參考時可比較 WinCLIP+，但正常參考需涵蓋允收姿態且不能混入缺陷。另留未見正常與真刮傷／錯裝，分開驗證；有足夠資料也可試訓練式方法。固定影像條件與漏檢要求，比誤報、時間和覆核量，不預設少樣本一定較好。"
+  },
+  "mechanism_steps": [
+    {
+      "title": "鎖定文字側：class name、state words和prompt ensemble",
+      "body": "固定CLIP/text encoder、tokenizer、產品類別命名、normal/anomaly state vocabulary、templates、ensemble weights、text embedding normalization與cache revision。",
+      "why": "文字側不是說明文案而是模型輸入；一個詞、模板或tokenizer改變即可移動similarity margin。",
+      "anchor": "工程圖核對：state words/templates → normal/anomaly text embeddings",
+      "diagram": {
+        "title": "鎖定文字 prompt ensemble",
+        "body": "class name、state words 與模板形成 text embeddings。",
+        "why": "一個詞或 tokenizer 改動都會移動 margin。",
+        "anchor": "state words → text embeddings"
+      }
+    },
+    {
+      "title": "鎖定視覺側：ROI全圖、windows與patch layout",
+      "body": "固定ROI/registration、resize/crop/padding、full-image/window/patch extraction、sizes/strides/overlap/scales與selected CLIP features。",
+      "why": "每個window決定模型實際看見的有效像素與情境；改layout就改特徵、成本與小缺陷可見性。",
+      "anchor": "工程圖核對：ROI → image / windows / patches",
+      "diagram": {
+        "title": "ROI 取全圖、window 與 patch",
+        "body": "固定 sizes、strides 與 scales 產生視覺 features。",
+        "why": "layout 會改有效像素、成本與可見性。",
+        "anchor": "ROI → image / windows / patches"
+      }
+    },
+    {
+      "title": "比較normal與anomaly文字相似度",
+      "body": "frozen CLIP image embeddings 分別與兩個text ensembles算normalized similarities；WinCLIP+另按鎖定policy加入few-normal reference contribution。",
+      "why": "candidate來自相對margin，不是CLIP自然語言的自信；normal reference雖可補資訊，也帶來contamination、coverage、memory和latency依賴。",
+      "anchor": "工程圖核對：visual embeddings → similarity margins (+ references)",
+      "diagram": {
+        "title": "visual feature 對 prompts 比較",
+        "body": "image/window/patch margin 可加 few-normal references。",
+        "why": "reference 也帶來 coverage 與 contamination 風險。",
+        "anchor": "visual embeddings → similarity margins"
+      }
+    },
+    {
+      "title": "融合、校正與abstain後才輸出候選",
+      "body": "image/window/patch margins依固定weights、map resize/smoothing/mask、aggregation、local calibration、threshold與abstain/review rule形成candidate。",
+      "why": "不同尺度的margin不能靠視覺色彩比較；融合與校正可改低FPR，prompt score也不會自行轉成release decision。",
+      "anchor": "工程圖核對：margin fusion → calibration → review gate",
+      "diagram": {
+        "title": "margin 融合後進本地 gate",
+        "body": "多尺度 margins 經 weights、calibration 與 abstain 形成候選。",
+        "why": "prompt score 不是自動 release decision。",
+        "anchor": "margin fusion → calibration → review"
+      }
+    }
+  ],
+  "visual_intro": "先把prompt和window當成模型輸入，而非旁註；再核對文字ensemble、window layout、margins、optional references和local gate。",
+  "beginner_path": {
+    "title": "核心機制、反例覆核與條件選型",
+    "intro": "三張首讀圖；工件、位置圖與問答均為教學示意，非模型實測。",
+    "visuals": [
+      {
+        "id": "wi021-ad-winclip-1",
+        "title": "WinCLIP：文字給語意，視窗保留位置",
+        "prompt": "沿著同一塊金屬板 A，追提示、影像與位置的來源。",
+        "caption": "人工組合正常／異常狀態詞與句型，固定 CLIP 把文字和視窗影像轉成可比較的表示。各視窗的異常分數排回覆蓋位置，以調和平均聚合重疊與多尺度線索。WinCLIP+ 再用少量正常品建立 patch／視窗特徵庫，找最相似正常特徵的距離，融合文字線索。",
+        "image": "_course_content/generated-concepts/ad-winclip/wi021-winclip-c1-r02-desktop.png",
+        "alt": "WinCLIP：文字給語意，視窗保留位置。人工組合正常／異常狀態詞與句型，固定 CLIP 把文字和視窗影像轉成可比較的表示。各視窗的異常分數排回覆蓋位置，以調和平均聚合重疊與多尺度線索。WinCLIP+ 再用少量正常品建立 patch／視窗特徵庫，找最相似正常特徵的距離，融合文字線索。 本圖為 AI 生成教學示意，非模型實測。",
+        "callouts": [
+          {
+            "title": "固定模型仍有準備",
+            "body": "基本 WinCLIP 不更新目標產品權重，但要設計狀態描述與視窗設定；WinCLIP+ 還要挑正常參考，兩種設定分開報告。"
+          },
+          {
+            "title": "為什麼看視窗",
+            "body": "窗口內的整體表示保留局部上下文並與文字對齊；不是把任意原始 patch 特徵直接當成文字向量。細傷若已失去影像細節，視窗仍可能漏檢。"
+          },
+          {
+            "title": "分數怎麼讀",
+            "body": "正常／異常相似度形成異常分數後才聚合，不是把兩種相似度直接混成一個值。a、b 為示意符號，熱圖不是現場缺陷機率。"
+          }
+        ],
+        "reading_views": [
+          {
+            "title": "WinCLIP：文字給語意，視窗保留位置",
+            "image": "_course_content/generated-concepts/ad-winclip/wi021-winclip-c1-r02-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/ad-winclip/wi021-winclip-c1-r01-mobile.png",
+            "alt": "WinCLIP：文字給語意，視窗保留位置。人工組合正常／異常狀態詞與句型，固定 CLIP 把文字和視窗影像轉成可比較的表示。各視窗的異常分數排回覆蓋位置，以調和平均聚合重疊與多尺度線索。WinCLIP+ 再用少量正常品建立 patch／視窗特徵庫，找最相似正常特徵的距離，融合文字線索。 本圖為 AI 生成教學示意，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              724,
+              2172
+            ],
+            "mobile_display_mode": "full-mobile",
+            "mobile_intrinsic_width": 724,
+            "mobile_intrinsic_height": 2172,
+            "desktop_intrinsic_width": 1672,
+            "desktop_intrinsic_height": 941
+          }
+        ],
+        "core_ideas": true
+      },
+      {
+        "id": "wi021-ad-winclip-2",
+        "title": "文字懂異常，仍可能看錯細節",
+        "prompt": "用允收孔邊 q 與細刮傷 p，分開看誤報、漏檢。",
+        "caption": "正常孔邊 q 可能得到高分而誤報，細傷 p 也可能得低分而漏檢；圖中輸出是教學假設。先確認影像可見度，再用獨立正常與真缺陷比較設定，不能把語意相似當成缺陷機率。",
+        "image": "_course_content/generated-concepts/ad-anomalyclip/wi021-clip-methods-d2-r02-desktop.png",
+        "alt": "文字懂異常，仍可能看錯細節。正常孔邊 q 可能得到高分而誤報，細傷 p 也可能得低分而漏檢；圖中輸出是教學假設。先確認影像可見度，再用獨立正常與真缺陷比較設定，不能把語意相似當成缺陷機率。 本圖為 AI 生成教學示意，非模型實測。",
+        "callouts": [
+          {
+            "title": "提示來源不同",
+            "body": "WinCLIP 的文字由人工組合，AnomalyCLIP 的提示參數先在輔助資料學到；不是把兩個名字換在同一套手寫提示上。"
+          },
+          {
+            "title": "先改善什麼",
+            "body": "核對光照、對焦與有效解析度，確認 p 能看見、q 屬於允收變化；文字換得更強烈，不能找回影像沒有的細節。"
+          },
+          {
+            "title": "如何查兩種錯誤",
+            "body": "固定未見正常與真缺陷，按材質和缺陷尺寸記錄誤報、漏檢。WinCLIP+ 另查正常參考涵蓋，在同漏檢要求下比較完整延遲及覆核量。"
+          }
+        ],
+        "reading_views": [
+          {
+            "title": "文字懂異常，仍可能看錯細節",
+            "image": "_course_content/generated-concepts/ad-anomalyclip/wi021-clip-methods-d2-r02-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/ad-anomalyclip/wi033-clip-shared-errors-r02-mobile.png",
+            "alt": "文字懂異常，仍可能看錯細節。正常孔邊 q 可能得到高分而誤報，細傷 p 也可能得低分而漏檢；圖中輸出是教學假設。先確認影像可見度，再用獨立正常與真缺陷比較設定，不能把語意相似當成缺陷機率。 本圖為 AI 生成教學示意，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              768,
+              2400
+            ],
+            "mobile_display_mode": "full-mobile",
+            "mobile_intrinsic_width": 768,
+            "mobile_intrinsic_height": 2400,
+            "desktop_intrinsic_width": 1672,
+            "desktop_intrinsic_height": 941
+          }
+        ],
+        "core_ideas": false
+      },
+      {
+        "id": "wi021-ad-winclip-3",
+        "title": "三種圖文方法，先選工作結果",
+        "prompt": "同一金屬板 A，比資料準備、位置輸出與對話成本。",
+        "caption": "WinCLIP 用人工狀態文字與視窗，WinCLIP+ 可加正常參考；AnomalyCLIP 使用輔助資料學到的提示；AnomalyGPT 加入內建定位與對話。只有正常品可先評估參考路線，訓練型方法要先備妥已訓練模型。固定硬體、解析度與漏檢要求，比誤報、延遲和覆核量；位置圖不等於精密輪廓或尺寸。",
+        "image": "_course_content/generated-concepts/ad-anomalyclip/wi021-clip-methods-d3-r04-desktop.png",
+        "alt": "三種圖文方法，先選工作結果。WinCLIP 用人工狀態文字與視窗，WinCLIP+ 可加正常參考；AnomalyCLIP 使用輔助資料學到的提示；AnomalyGPT 加入內建定位與對話。只有正常品可先評估參考路線，訓練型方法要先備妥已訓練模型。固定硬體、解析度與漏檢要求，比誤報、延遲和覆核量；位置圖不等於精密輪廓或尺寸。 本圖為 AI 生成教學示意，非模型實測。",
+        "callouts": [
+          {
+            "title": "圖中比較範圍",
+            "body": "位置圖 p? 僅代表輸出形式，不表示三者檢測結果相同。手機以整個 AnomalyGPT 方塊比較輸出，完整的影像、位置提示與問題路徑見核心圖。"
+          },
+          {
+            "title": "新產品需要什麼",
+            "body": "重查人工提示、正常參考或已訓練提示的適用範圍；需要適配時另留驗證資料。輔助訓練資料與目標評測資料不能混用。"
+          },
+          {
+            "title": "何時值得用對話",
+            "body": "需要互動解讀才加入文字驗證；同時量回答有無證據、定位錯誤和人工覆核時間。只需要位置線索時，可先比較較簡單的輸出流程。"
+          }
+        ],
+        "reading_views": [
+          {
+            "title": "三種圖文方法，先選工作結果",
+            "image": "_course_content/generated-concepts/ad-anomalyclip/wi021-clip-methods-d3-r04-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/ad-anomalyclip/wi033-clip-shared-methods-r01-mobile.png",
+            "alt": "三種圖文方法，先選工作結果。WinCLIP 用人工狀態文字與視窗，WinCLIP+ 可加正常參考；AnomalyCLIP 使用輔助資料學到的提示；AnomalyGPT 加入內建定位與對話。只有正常品可先評估參考路線，訓練型方法要先備妥已訓練模型。固定硬體、解析度與漏檢要求，比誤報、延遲和覆核量；位置圖不等於精密輪廓或尺寸。 本圖為 AI 生成教學示意，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              768,
+              2400
+            ],
+            "mobile_display_mode": "full-mobile",
+            "mobile_intrinsic_width": 768,
+            "mobile_intrinsic_height": 2400,
+            "desktop_intrinsic_width": 1672,
+            "desktop_intrinsic_height": 941
+          }
+        ],
+        "core_ideas": false
+      }
+    ]
+  },
+  "concept_visuals": [],
+  "boundary_cases": [
+    {
+      "condition": "prompt wording、state words、class names、tokenizer或text embedding normalization改變",
+      "effect": "normal/anomaly margin可反轉；舊threshold與舊結果失去可比性。",
+      "action": "HOLD；保存prompt/cache revision，重做prompt sensitivity、local calibration、target holdout和regression。"
+    },
+    {
+      "condition": "window/patch尺度、stride、padding或aggregation不適合tiny defect",
+      "effect": "缺陷可能落在window邊界、被背景稀釋或在插值/平滑後消失。",
+      "action": "量effective pixels、window count/成本、small-defect evidence和low-FPR；無證據時不要宣稱localization。"
+    },
+    {
+      "condition": "WinCLIP+ reference bank未治理，或image/text domain/naming gap和global logic存在",
+      "effect": "contamination或coverage問題改變margin，產品名稱和視覺domain不合也會誤判；關係型錯誤仍可能未見。",
+      "action": "保存reference IDs/selection/contamination audit；檢查domain/naming transfer，必要時HOLD或用specialist path。"
+    }
+  ],
+  "comparison": [
+    {
+      "model": "WinCLIP",
+      "normality": "frozen normal/anomaly prompt ensemble，可選few-normal reference bank",
+      "candidate": "image/window/patch normal-anomaly similarity margin高"
+    },
+    {
+      "model": "AnomalyCLIP",
+      "normality": "auxiliary-learned normal/anomaly prompt tokens",
+      "candidate": "CLIP patch/global similarity margin高"
+    },
+    {
+      "model": "PatchCore",
+      "normality": "代表性normal patch-feature memory bank",
+      "candidate": "到最近normal exemplar的feature distance大"
+    }
+  ],
+  "selection": "WinCLIP 用人工狀態文字與視窗，WinCLIP+ 可加正常參考；AnomalyCLIP 使用輔助資料學到的提示；AnomalyGPT 加入內建定位與對話。只有正常品可先評估參考路線，訓練型方法要先備妥已訓練模型。固定硬體、解析度與漏檢要求，比誤報、延遲和覆核量；位置圖不等於精密輪廓或尺寸。",
+  "poc": {
+    "title": "POC 第一件事：先證明文字與視窗沒有替你偷換問題",
+    "steps": [
+      "固定 CLIP/tokenizer/precision、class names、normal/anomaly state words、templates/ensemble weights/text cache、ROI/registration 和 full/window/patch layouts。",
+      "若使用 WinCLIP+，鎖定 reference IDs、selection/count、preprocessing、aggregation 與 contamination audit；同時鎖定 margin normalization、fusion、calibration、threshold/abstain。",
+      "在 target holdout/unseen product/future/drift split 比較 prompt/naming sensitivity、small-defect effective pixels、low-FPR escape、false reject/review load、P95/P99、memory 和 window policy。"
+    ],
+    "hold": "prompt 或 window state 不可重播、reference 未治理、image/text domain gap、tiny defect/global logic 或完整 P95 未驗證時，先 HOLD。",
+    "acceptance": {
+      "baseline": "固定 CLIP/tokenizer、class/state words、prompt ensemble、ROI、image/window/patch layouts、optional reference bank 與 calibration。",
+      "measure": "量 prompt/naming variance、small-defect effective pixels、low-FPR escape、false reject、review load、reference benefit、P95/P99 與 drift。",
+      "negative_control": "以 prompt paraphrase、window-boundary placement 或受控 reference-bank contamination 測試，確認舊 margin／threshold 不會被錯誤重用。",
+      "owner": "prompt/model governance owner、AOI 品質 owner、Vision ML owner"
+    }
+  },
+  "teach_back": {
+    "question": "為什麼語意相似、熱區或肯定回答，都不足以直接放行？",
+    "answer": "它們只是模型線索，可能誤報、漏檢或超出影像證據。要回原圖，按允收規格及獨立資料驗證，再決定現場處置。"
+  },
+  "slide_reading": [
+    {
+      "title": "WinCLIP：文字與局部視窗檢查新件",
+      "question": "固定模型仍要固定提示、取像與驗證。",
+      "look": "先看同板待測p與正常留出，再核對人工文字狀態配局部視窗，最後看交出可疑位置並回看原件。",
+      "relation": "目標零樣本WinCLIP以人工文字狀態和視窗表示評局部異常，無目標訓練仍須目標留出驗證。WinCLIP+可另加少量正常視覺參考，需明列實際使用模式。",
+      "takeaway": "固定模型仍要固定提示、取像與驗證。",
+      "terms": [
+        "位置：對回同一輸入座標，不能任意混層或混影格。",
+        "圖中數值：作者給定機制算例，非模型實測或建議門檻。"
+      ]
+    },
+    {
+      "title": "WinCLIP：視窗分數，依覆蓋位置聚合",
+      "question": "文字定狀態，視窗分數依覆蓋回到位置。",
+      "look": "先看人工狀態詞與句型組合，再核對同圖的重疊視窗讀局部，最後看同位置視窗分數調和平均。",
+      "relation": "固定CLIP，人工正常/異常狀態詞與句型組合產生文字表示；每視窗整體表示與文字比相似。分數分給視窗所覆蓋位置，同位置重疊視窗使用調和平均，再融合多尺度。給定同尺度兩窗0.2/0.8，在共同覆蓋p的平均為2/(1/0.2+1/0.8)=0.32，不是算術平均0.5，也不是缺陷機率。",
+      "takeaway": "文字定狀態，視窗分數依覆蓋回到位置。",
+      "terms": [
+        "位置：對回同一輸入座標，不能任意混層或混影格。",
+        "圖中數值：作者給定機制算例，非模型實測或建議門檻。"
+      ]
+    },
+    {
+      "title": "WinCLIP：零樣本與正常參考要分清",
+      "question": "增加正常參考，資料與庫版本也成為設定。",
+      "look": "先看人工提示與視窗固定，再核對加正常參考是WinCLIP+，最後看反光誤報與細傷漏檢分開驗。",
+      "relation": "保存CLIP版本、人工提示、視窗尺度/聚合、前處理；WinCLIP+另外保存正常參考和視覺比對。不能用+的結果宣稱未用正常參考，也不把相似分數當概率。",
+      "takeaway": "增加正常參考，資料與庫版本也成為設定。",
+      "terms": [
+        "位置：對回同一輸入座標，不能任意混層或混影格。",
+        "圖中數值：作者給定機制算例，非模型實測或建議門檻。"
+      ]
+    },
+    {
+      "title": "WinCLIP：與學習提示比較",
+      "question": "同件比較人工提示與學習提示的成本。",
+      "look": "先看同板p與同一驗收題，再核對WinCLIP由人工組提示，最後看AnomalyCLIP用輔助資料學提示。",
+      "relation": "兩方法均以CLIP語意與局部特徵提供異常線索；前者人工設計文字，後者使用輔助標註學物件無關提示。同資料與錯誤成本比較，不預設固定排名。",
+      "takeaway": "同件比較人工提示與學習提示的成本。",
+      "terms": [
+        "位置：對回同一輸入座標，不能任意混層或混影格。",
+        "圖中數值：作者給定機制算例，非模型實測或建議門檻。"
+      ]
+    }
+  ],
+  "comparison_headers": {
+    "title": "先比 prompt/window state，不比語意流暢",
+    "basis": "prompt 與 window state 如何定義比較？",
+    "output": "similarity margin 究竟只表示什麼？"
+  },
+  "transfer_check": {
+    "title": "換產品要重做什麼",
+    "scenario": "新產品外觀、允收反光與缺陷型態都不同。",
+    "question": "哪些準備與驗證不能直接沿用？",
+    "answer": "重新核對提示來源、正常參考或既有模型的適用範圍；有適配時另留驗證資料。分開檢查正常誤報、真缺陷漏檢與成本；需要對話時再驗文字是否有據。"
+  },
+  "review_trace": {
+    "authority": "roadmap-model-selection/anomaly-detection/ad-winclip/model.md",
+    "scope": "WI-033：工程層四圖與手機比較修正；首讀有效內容保留。原生圖已審，整頁與使用者審閱另記。",
+    "claims": [
+      {
+        "id": "visual-1",
+        "field": "beginner_path.visuals[frozen-ensemble-workpiece]",
+        "source": "模型定位 / architecture_path"
+      },
+      {
+        "id": "visual-2",
+        "field": "beginner_path.visuals[prompt-ensemble]",
+        "source": "architecture_path"
+      },
+      {
+        "id": "visual-3",
+        "field": "beginner_path.visuals[window-layout]",
+        "source": "representation_or_score"
+      },
+      {
+        "id": "visual-4",
+        "field": "beginner_path.visuals[margin-fusion]",
+        "source": "failure_boundary"
+      },
+      {
+        "id": "visual-5",
+        "field": "beginner_path.visuals[review-hold]",
+        "source": "selection_gate / evidence_bundle"
+      },
+      {
+        "id": "promise",
+        "field": "promise",
+        "source": "模型定位 / representation_or_score"
+      },
+      {
+        "id": "mechanism",
+        "field": "mechanism_steps",
+        "source": "architecture_path / representation_or_score"
+      },
+      {
+        "id": "boundaries",
+        "field": "boundary_cases",
+        "source": "failure_boundary / selection_gate"
+      },
+      {
+        "id": "comparison",
+        "field": "comparison + selection",
+        "source": "selection_gate"
+      },
+      {
+        "id": "poc",
+        "field": "poc + acceptance",
+        "source": "cost_and_operating_point / evidence_bundle"
+      },
+      {
+        "id": "transfer",
+        "field": "transfer_check",
+        "source": "failure_boundary / selection_gate"
+      },
+      {
+        "id": "f01-core",
+        "field": "beginner_path.visuals[0] + scenario + mental_model",
+        "source": "https://arxiv.org/abs/2303.14814"
+      },
+      {
+        "id": "f01-transfer",
+        "field": "micro_example + transfer_check",
+        "source": "由原論文機制推論移除後果；https://arxiv.org/abs/2303.14814"
+      },
+      {
+        "id": "wi021-first-read",
+        "field": "beginner_path + micro_example + selection",
+        "source": "https://arxiv.org/abs/2303.14814"
+      }
+    ]
+  },
+  "teaching_preflight": {
+    "brief": "teaching-images/vision-ai-model-selection/workitems/wi-021/winclip-c1-r01.md",
+    "story": "C",
+    "major_visual_nodes": 4,
+    "visual_status": "self-reviewed",
+    "user_review": "pending"
+  },
+  "engineering_slides": [
+    {
+      "title": "WinCLIP：文字與局部視窗檢查新件",
+      "question": "固定模型仍要固定提示、取像與驗證。",
+      "plain": {
+        "look": "先看同板待測p與正常留出，再核對人工文字狀態配局部視窗，最後看交出可疑位置並回看原件。",
+        "relation": "目標零樣本WinCLIP以人工文字狀態和視窗表示評局部異常，無目標訓練仍須目標留出驗證。WinCLIP+可另加少量正常視覺參考，需明列實際使用模式。",
+        "takeaway": "固定模型仍要固定提示、取像與驗證。"
+      },
+      "terms": [
+        "位置：對回同一輸入座標，不能任意混層或混影格。",
+        "圖中數值：作者給定機制算例，非模型實測或建議門檻。"
+      ],
+      "guide": [
+        "目標零樣本WinCLIP以人工文字狀態和視窗表示評局部異常，無目標訓練仍須目標留出驗證。WinCLIP+可另加少量正常視覺參考，需明列實際使用模式。",
+        "先看同板待測p與正常留出，再核對人工文字狀態配局部視窗，最後看交出可疑位置並回看原件。"
+      ],
+      "stages": [
+        {
+          "title": "同板待測p與正常留出",
+          "body": "同板待測p與正常留出；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "人工文字狀態配局部視窗",
+          "body": "人工文字狀態配局部視窗；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "交出可疑位置並回看原件",
+          "body": "交出可疑位置並回看原件；請對照圖內輸入、變化與結果。"
+        }
+      ],
+      "misconception": "語意與位置仍可能錯；必須用未見正常與真缺陷檢查適用範圍。",
+      "alt": "WinCLIP：文字與局部視窗檢查新件。固定模型仍要固定提示、取像與驗證。 教學示意，非模型實測。",
+      "mobile_image": "roadmap-model-selection/anomaly-detection/ad-winclip/images/final/WI033-WINCLIP-01-r02-mobile.png",
+      "mobile_width": 768,
+      "mobile_height": 2304,
+      "engineering": {
+        "takeaway": "固定模型仍要固定提示、取像與驗證。",
+        "nextAction": "固定 CLIP/tokenizer/precision、class names、normal/anomaly state words、templates/ensemble weights/text cache、ROI/registration 和 full/window/patch layouts。",
+        "redLine": "prompt 或 window state 不可重播、reference 未治理、image/text domain gap、tiny defect/global logic 或完整 P95 未驗證時，先 HOLD。"
+      },
+      "source": "https://arxiv.org/html/2303.14814v1"
+    },
+    {
+      "title": "WinCLIP：視窗分數，依覆蓋位置聚合",
+      "question": "文字定狀態，視窗分數依覆蓋回到位置。",
+      "plain": {
+        "look": "先看人工狀態詞與句型組合，再核對同圖的重疊視窗讀局部，最後看同位置視窗分數調和平均。",
+        "relation": "固定CLIP，人工正常/異常狀態詞與句型組合產生文字表示；每視窗整體表示與文字比相似。分數分給視窗所覆蓋位置，同位置重疊視窗使用調和平均，再融合多尺度。給定同尺度兩窗0.2/0.8，在共同覆蓋p的平均為2/(1/0.2+1/0.8)=0.32，不是算術平均0.5，也不是缺陷機率。",
+        "takeaway": "文字定狀態，視窗分數依覆蓋回到位置。"
+      },
+      "terms": [
+        "位置：對回同一輸入座標，不能任意混層或混影格。",
+        "圖中數值：作者給定機制算例，非模型實測或建議門檻。"
+      ],
+      "guide": [
+        "固定CLIP，人工正常/異常狀態詞與句型組合產生文字表示；每視窗整體表示與文字比相似。分數分給視窗所覆蓋位置，同位置重疊視窗使用調和平均，再融合多尺度。給定同尺度兩窗0.2/0.8，在共同覆蓋p的平均為2/(1/0.2+1/0.8)=0.32，不是算術平均0.5，也不是缺陷機率。",
+        "先看人工狀態詞與句型組合，再核對同圖的重疊視窗讀局部，最後看同位置視窗分數調和平均。"
+      ],
+      "stages": [
+        {
+          "title": "人工狀態詞與句型組合",
+          "body": "人工狀態詞與句型組合；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "同圖的重疊視窗讀局部",
+          "body": "同圖的重疊視窗讀局部；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "同位置視窗分數調和平均",
+          "body": "同位置視窗分數調和平均；請對照圖內輸入、變化與結果。"
+        }
+      ],
+      "misconception": "語意與位置仍可能錯；必須用未見正常與真缺陷檢查適用範圍。",
+      "alt": "WinCLIP：視窗分數，依覆蓋位置聚合。文字定狀態，視窗分數依覆蓋回到位置。 教學示意，非模型實測。",
+      "mobile_image": "roadmap-model-selection/anomaly-detection/ad-winclip/images/final/WI033-WINCLIP-02-r02-mobile.png",
+      "mobile_width": 768,
+      "mobile_height": 2400,
+      "engineering": {
+        "takeaway": "文字定狀態，視窗分數依覆蓋回到位置。",
+        "nextAction": "固定 CLIP/tokenizer/precision、class names、normal/anomaly state words、templates/ensemble weights/text cache、ROI/registration 和 full/window/patch layouts。",
+        "redLine": "prompt 或 window state 不可重播、reference 未治理、image/text domain gap、tiny defect/global logic 或完整 P95 未驗證時，先 HOLD。"
+      },
+      "source": "https://arxiv.org/html/2303.14814v1"
+    },
+    {
+      "title": "WinCLIP：零樣本與正常參考要分清",
+      "question": "增加正常參考，資料與庫版本也成為設定。",
+      "plain": {
+        "look": "先看人工提示與視窗固定，再核對加正常參考是WinCLIP+，最後看反光誤報與細傷漏檢分開驗。",
+        "relation": "保存CLIP版本、人工提示、視窗尺度/聚合、前處理；WinCLIP+另外保存正常參考和視覺比對。不能用+的結果宣稱未用正常參考，也不把相似分數當概率。",
+        "takeaway": "增加正常參考，資料與庫版本也成為設定。"
+      },
+      "terms": [
+        "位置：對回同一輸入座標，不能任意混層或混影格。",
+        "圖中數值：作者給定機制算例，非模型實測或建議門檻。"
+      ],
+      "guide": [
+        "保存CLIP版本、人工提示、視窗尺度/聚合、前處理；WinCLIP+另外保存正常參考和視覺比對。不能用+的結果宣稱未用正常參考，也不把相似分數當概率。",
+        "先看人工提示與視窗固定，再核對加正常參考是WinCLIP+，最後看反光誤報與細傷漏檢分開驗。"
+      ],
+      "stages": [
+        {
+          "title": "人工提示與視窗固定",
+          "body": "人工提示與視窗固定；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "加正常參考是WinCLIP+",
+          "body": "加正常參考是WinCLIP+；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "反光誤報與細傷漏檢分開驗",
+          "body": "反光誤報與細傷漏檢分開驗；請對照圖內輸入、變化與結果。"
+        }
+      ],
+      "misconception": "語意與位置仍可能錯；必須用未見正常與真缺陷檢查適用範圍。",
+      "alt": "WinCLIP：零樣本與正常參考要分清。增加正常參考，資料與庫版本也成為設定。 教學示意，非模型實測。",
+      "mobile_image": "roadmap-model-selection/anomaly-detection/ad-winclip/images/final/WI033-WINCLIP-03-r02-mobile.png",
+      "mobile_width": 768,
+      "mobile_height": 2304,
+      "engineering": {
+        "takeaway": "增加正常參考，資料與庫版本也成為設定。",
+        "nextAction": "固定 CLIP/tokenizer/precision、class names、normal/anomaly state words、templates/ensemble weights/text cache、ROI/registration 和 full/window/patch layouts。",
+        "redLine": "prompt 或 window state 不可重播、reference 未治理、image/text domain gap、tiny defect/global logic 或完整 P95 未驗證時，先 HOLD。"
+      },
+      "source": "https://arxiv.org/html/2303.14814v1"
+    },
+    {
+      "title": "WinCLIP：與學習提示比較",
+      "question": "同件比較人工提示與學習提示的成本。",
+      "plain": {
+        "look": "先看同板p與同一驗收題，再核對WinCLIP由人工組提示，最後看AnomalyCLIP用輔助資料學提示。",
+        "relation": "兩方法均以CLIP語意與局部特徵提供異常線索；前者人工設計文字，後者使用輔助標註學物件無關提示。同資料與錯誤成本比較，不預設固定排名。",
+        "takeaway": "同件比較人工提示與學習提示的成本。"
+      },
+      "terms": [
+        "位置：對回同一輸入座標，不能任意混層或混影格。",
+        "圖中數值：作者給定機制算例，非模型實測或建議門檻。"
+      ],
+      "guide": [
+        "兩方法均以CLIP語意與局部特徵提供異常線索；前者人工設計文字，後者使用輔助標註學物件無關提示。同資料與錯誤成本比較，不預設固定排名。",
+        "先看同板p與同一驗收題，再核對WinCLIP由人工組提示，最後看AnomalyCLIP用輔助資料學提示。"
+      ],
+      "stages": [
+        {
+          "title": "同板p與同一驗收題",
+          "body": "同板p與同一驗收題；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "WinCLIP由人工組提示",
+          "body": "WinCLIP由人工組提示；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "AnomalyCLIP用輔助資料學提示",
+          "body": "AnomalyCLIP用輔助資料學提示；請對照圖內輸入、變化與結果。"
+        }
+      ],
+      "misconception": "語意與位置仍可能錯；必須用未見正常與真缺陷檢查適用範圍。",
+      "alt": "WinCLIP：與學習提示比較。同件比較人工提示與學習提示的成本。 教學示意，非模型實測。",
+      "mobile_image": "roadmap-model-selection/anomaly-detection/ad-winclip/images/final/WI033-WINCLIP-04-r02-mobile.png",
+      "mobile_width": 768,
+      "mobile_height": 2304,
+      "engineering": {
+        "takeaway": "同件比較人工提示與學習提示的成本。",
+        "nextAction": "固定 CLIP/tokenizer/precision、class names、normal/anomaly state words、templates/ensemble weights/text cache、ROI/registration 和 full/window/patch layouts。",
+        "redLine": "prompt 或 window state 不可重播、reference 未治理、image/text domain gap、tiny defect/global logic 或完整 P95 未驗證時，先 HOLD。"
+      },
+      "source": "https://arxiv.org/html/2303.14814v1"
+    }
+  ]
+}

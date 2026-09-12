@@ -116,3 +116,40 @@ Keep camera / lens / timestamp / frame-rate / frame-drop records; ROI / preproce
 ## Production gate
 
 The six model-specific fields, comparison contract and required visual primitives are complete. Pages 05-22 through 05-25 may proceed to versioned white high-density C / D visual production. Final assets must pass Chinese readability, engineering causality, no-fabricated-performance, manifest, QA and style validation before approval.
+
+<!-- wi033-engineering:start -->
+## WI-033 工程圖修正
+
+### ConvLSTM：影片狀態接上明確任務
+
+同夾爪方塊，夾取成功/失敗是另定義標籤；ConvLSTM產生H/C，分類頭需有監督。以整段影片或實體工件切分，不讓相鄰幀跨訓練驗證。
+
+時序表示要接任務頭，才有可驗的輸出。
+
+來源：https://arxiv.org/abs/1506.04214
+
+### ConvLSTM：卷積門控更新空間記憶
+
+同一夾爪與方塊依序張開、接近、夾住。X_t及H_(t-1)以卷積產生門控，C_t=f_t⊙C_(t-1)+i_t⊙候選；H_t=o_t⊙tanh(C_t)。原論文可有peephole。給定單位置Cprev=.4,f=.5,i=.8,candidate=.5得C=.6；其餘位置另有值。不是每張影格都重新歸零；任务頭另訓練。 r01實看修正：下一步明畫卷積門控與X(t+1)，避免誤讀直接預測圖像。
+
+新影格和舊狀態，逐位置決定記住什麼。
+
+來源：https://arxiv.org/abs/1506.04214
+
+### ConvLSTM：狀態生命週期要明定
+
+推論狀態初始化/持續/重設需符合訓練方式；不能讓相機A記憶污染B。保存幀距、解析度、網路及任務頭版本，量完整預處理/狀態更新/任務輸出延遲。 r01實看修正：时间刻度及標籤各自定位，避免SVG空白合併。
+
+換影片或相機時，依任務重設記憶。
+
+來源：https://arxiv.org/abs/1506.04214
+
+### ConvLSTM：有記憶也可能忘記關鍵
+
+作者單格例：後續不加入新候選，C初值1、每步f=.5，經三步變.125；不代表真模型門固定。關鍵事件若未取到/遭遺忘仍可能漏檢。
+
+記憶是一種可學狀態，不是完整影格存檔。
+
+來源：https://arxiv.org/abs/1506.04214
+
+<!-- wi033-engineering:end -->

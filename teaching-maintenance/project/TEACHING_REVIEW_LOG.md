@@ -2718,6 +2718,14 @@ ChArUco兩版生成的同角點與棋盤格位不一致，已依G6改原生SVG�
 
 詳見 [WI-032 報告](teaching-images/vision-ai-model-selection/workitems/wi-032/REPORT.md)、[來源與界線](teaching-images/vision-ai-model-selection/workitems/wi-032/sources.md)及[Overall Review](Overall_Review.md)。量表仍用v1.0，沒有改配分與門檻。
 
+## WI-033 第二部分製作前學習（2026-09-12）
+
+使用者已要求繼續 52 課局部修正，唯一接續 checklist 為 workitems/wi-033/PLAN.md。165 份來源基準與 52 課 inventory 已保存；第一批先修 CLIP／SigLIP／Pose／DINOv3／DiffusionAD／AnomalyGPT，批次不縮小總範圍。
+
+實看 CLIP 舊工程 2 發現兩編碼器串接、排名畫成熱點，採納修正為雙路表示→方向比較→排名／覆核。CLIP 新原型 r01 的表示超出邊界與三候選只畫一組表示已撤回；r02 修好邊界，但向量示意的 X／Y 比例不同，不能同時聲稱等長正規化與精確夾角，r03 改成單一半徑。沿用圖片指南的幾何一致規則，下一步在原生 PNG 與 360px 實頁查證，未通過前不擴展。
+
+參考必須實看而非沿用檔名：GEO-21 舊圖有頁碼、六欄及藍色結論，不當本輪合格母版；FDNIN-01 v03 作淺底／藍色標頭／黃色結論參考，細密英文及側欄不照抄。沒有改動量表，尚未宣稱任何課完成或使用者核准。
+
 ### WI-032-L 學習補記與下次驗證（2026-09-11）
 
 依使用者要求，將本輪學習整理成可接續的檢查方式。這裡補足前述紀錄，不另設評分規則；共用原則仍以圖片與網頁指南為準。
@@ -2736,3 +2744,58 @@ ChArUco兩版生成的同角點與棋盤格位不一致，已依G6改原生SVG�
 證據入口：[失敗候選與修正](teaching-images/vision-ai-model-selection/workitems/wi-032/prototype-review.md)、[逐圖評估](teaching-images/vision-ai-model-selection/workitems/wi-032/image-assessment.json)、[整頁評估](teaching-images/vision-ai-model-selection/workitems/wi-032/page-assessment.json)、[最終驗證與 final_html_freeze](teaching-images/vision-ai-model-selection/workitems/wi-032/final-verification.json)。
 
 本次僅補記 Markdown，引用的是 WI-032 已完成驗證，沒有重跑模型、網頁測試或重新產圖。第一部分六課本機完成，使用者成品核准仍 pending、未發布；第二部分 52 課尚未開始。
+
+## WI-033-L1：第二部分前兩課完成與學習（2026-09-12）
+
+- 舊工程圖的箭頭可能推翻正確正文：CLIP/SigLIP原來把兩編碼器串接，改成兩路表示再比較；用不同圖文表示與可追候選順位交代輸出。更名標籤不足以修正。
+- 原型座標也要驗證：CLIP方向圖曾使用不同X/Y半徑，修成同半徑；Gram算例需對稱與合理四捨五入。圖形漂亮不等於數學成立。
+- 手機驗收要看真正頁面：既有SigLIP核心仍密，補作三段原生SVG，不只修原清單中的比較圖。取樣尺寸採768×2304，不放寬全站尺寸契約。
+- 新工程圖保留具體工件與明確工作輸出，不再用泛用PCB熱點表示檢索結果。已有有效主線保留，工程圖另有責任。
+- 兩課完成證據在WI-033，18新PNG自評91–93，頁面92；8頁狀態56放大、56 HTTP及1351資產一致。這是內部圖文審查與工具驗證，沒有模型推論、真人學習測試或使用者成品核准。
+- 後续50課仍待完成；Pose分支原型修過「只有名詞、沒有點位變化」的問題，接下來依同樣實際輸入／中間變化／交付逐課核對。唯一細項入口為workitems/wi-033/PLAN.md。
+
+## WI-033-L2：機制修正必須走到來源與整頁（2026-09-12）
+
+Pose、DINOv3、DiffusionAD及AnomalyGPT工程圖與指定手機/反例本機完成；第一批累計6/52。分數和證據見workitems/wi-033，不代表使用者已核准，未做模型推論或真人學習測試。
+
+- DINOv3反例的粗格必須由同一缺口幾何取樣，不能換成另一種環形或任意熱圖。用解析式格平均保留可追算來源，並寫明是輸入取樣示意。
+- DiffusionAD去除刮傷是恢復方向，不可直接叫漏檢；要追A/R共同進分割後的最終位置。正常去噪訓練圖也不可誤帶刮痕。
+- AnomalyGPT內建位置經prompt learner影響回答。外部specialist、retrieval與structured schema是應用可選擴充，修圖時須同步查raw comparison與model.md，不能只新增一段正確文字而留下舊錯流程。
+- Pose示意點身份優先於裝飾；三點示意不可暗示能唯一求PnP。兩種2D找點方法需畫替代分支。
+- 原生圖可讀不保證手機頁可讀。AnomalyGPT三張首讀手機改為三段並實看328px圖框，保留p/q身份；桌機有效主線保留。評分仍沿用v1，工程手機細字和長捲動列扣分理由。
+- 來源建置失敗後不能繼續bundle；新增fail-fast建置入口，讓錯誤先停在來源階段。已跑的8 tests／120 subtests與新增圖的實頁補驗分開記錄。
+
+下批核對：LK與RAFT同時接受相同清楚/反光影像；旋轉反例的刻字須與整件一起旋轉；EfficientAD的global比較對象是AE與Student第二輸出，替代输出不可串成因果。
+
+## WI-033-L3：第二批四課收尾與第三批原型學習
+第二部分10/52課本機完成。第二批48張新PNG原生及頁內審查、四課主頁/指定深讀、11 tests/126 subtests完成；細項與扣分見workitems/wi-033/batch2-page-assessment.json、batch2-validation-summary.json。使用者成品核准pending，未模型實測或真人理解測試，未發布。
+既有指南的證據分層再次成立：圖片decode須等lazy/picture真正選圖載入；長SVG裁切元素截圖曾出現空白/放大紋理，逐步捲到同位置後正常，沒有因此重畫正確來源。逐段截圖見deep-detail-report.json；全站58課178手機圖說間距通過。標題另行/按鈕下排的CSS補修已回歸。
+第三批原型在擴展前發現：YOLO係數圖不能把支架結果换成無關矩形；關鍵點算例必須與圖上ROI和A座標完全一致；細格底部不能接觸圖說。修正版本與實看紀錄見prototype-review.md。這些沿用身份/圖文一致原則，不改量表門檻。
+
+## WI-033-L4：第三批七課本機完成
+56工程PNG及11種深讀手機重排，逐張原生與頁內審查。28主頁/196放大/196HTTP/1365資產一致、64深讀章節、17 tests與120 subtests通過，細項在batch3-validation-summary.json。原實測特徵/歷史圖錨點與概念身份保留；viewBox精確clip避免旁欄文字滲入，額外手機媒體須分別計數且測試限定深讀容器。局部工程用同件同尺度；標籤不得壓孔/邊界；注意力不是缺陷機率。第四批PNG曾有SVG節點存在但raster缺畫，候選未啟用，正在用軟體繪製及等待字型補驗；不能只憑檔存在給分。完成17/52，未發布，使用者審閱pending。
+
+## WI-033-L5：第四批八課完成與驗證更正
+64工程PNG及4同件主反例逐張原生/頁內實看；32狀態224放大，8 tests/120 subtests與來源docs/HTTP驗證通過，詳batch4-validation-summary.json。任務與機制不整張重複，NMS後驗收另列定位偏移/漏框，VLM回答與原因分開。更正L4「PNG缺畫」推斷：獨立重拍與逐像素比對一致，見render-diagnostic-result.json；是審查顯示誤判，未證明disable-gpu修復圖像。驗證腳本另修正模型背景應在展開後查核，未更動教材以迎合檢查。完成25/52，使用者核准pending，未發布。
+
+## WI-033-L6：第五批八課完成
+### WI-033 最新：33/52課本機完成
+
+第五批8課64工程PNG及PatchCore第二章2手機PNG已逐張原生與頁內實看。32主頁狀態240放大、32深讀狀態、8 tests/120 subtests、1370來源/docs資產一致與HTTP通過，見batch5-validation-summary.json。使用者核准pending，未發布，未新跑模型。第六批16原型PNG已生成，待審查修正及24擴展、2共用首讀手機；最後11課未完成。下一步逐張審第六批，全部52課持續；唯一checklist：workitems/wi-033/PLAN.md。
+驗頁應依各課實際首讀張數（RD4AD/AE/DRAEM為4/5/4），不可硬設3張使保留內容誤報。保留初次失敗報告並修正脚本重驗。正常訓練圖不得偷用帶刮傷輸入；實測描述值沿用全精度，顯示四捨五入需說明。
+
+## WI-033-L7：第六批八課完成
+### WI-033 最新：41/52課本機完成
+
+第六批8課64工程PNG及2共用首讀手機已原生/頁內逐張實看。32頁狀態224放大、8 tests/120 subtests、1370來源/docs資產一致、236HTTP及額外首讀來源核對通過。建置已納入768×2400原生尺寸。使用者核准pending，未發布，未新跑模型。最後11課的22機制PNG已生成，尚未審/修正；33擴展與SR同件主反例待做。下一步審第七批原型並完成剩餘全部課程與全站驗證；唯一checklist：workitems/wi-033/PLAN.md。
+零樣本圖不能借用正常訓練標籤；正常孔口圈要空心以免掩蓋孔。比較影片時保留方件位置與L身份標記，背景統計與身份追蹤分工。原生尺寸審查通過後才窄範圍加入建置白名單，保留失敗紀錄。
+
+## WI-033-L8：第七批十一課完成
+### WI-033 最新：52/52課本機修正完成，總驗證收尾中
+
+第七批88工程PNG與2張SR主反例均逐張原生及頁內實看；V-JEPA圖說另驗。44頁狀態308放大320HTTP、1370資產hash一致；8+16 tests、120+10 subtests及58課178圖說通過。52課均完成本機實作與逐課驗證；全52最新HTTP/資產重核、總報告與維護副本尚未完成。使用者核准pending，未發布，未新跑模型。下一步完成PLAN最後一項後交付。
+同一影片要分清自監督目標與下游標籤；平方差和特徵差不能按數值排名。固定權重仍可對latent求梯度；生成mask和實際缺陷逐區驗證。復原候選依退化與噪聲模型驗殘差，不假設已知真實噪聲；同孔q與獨立取像分開。頁內圖說留空間，裁切需在實際PNG核對。首次測試命令因PowerShell內引號消失而未啟動，改用持久Python脚本後通過；不當作產品測試失敗。
+
+## WI-033-L9：全52課收尾驗證
+
+52課逐課完成；最終1506HTTP、1370資產一致、累計208主頁/1472放大與160深讀、最後24 tests/130 subtests及58課178圖說通過。逐圖與頁面證據見WI-033 REPORT，使用者核准pending，未發布。觀察→規則：同板q與噪聲驗證、梯度更新對象和差異量已併入IMAGE_STYLE_GUIDE；caption/解碼/分批hash證據已併入TEACHING_WEBPAGE_GUIDE。下一輪依這些具體檢查驗證，不以舊分數代表新成品。資產彙總腳本初次將WindowsPath當字串而失敗；改明確as_posix後重驗，教材未受影響。

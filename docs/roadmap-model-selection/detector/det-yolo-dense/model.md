@@ -101,3 +101,40 @@ Tiny object 在 optics、resize 或高 stride feature 上欠採樣時無法由 d
 工作接法：準備目標類別框標註、遮擋與小物樣本；回映候選裁圖供覆核。換產品要查類別與像素，必要時重訓；門檻改動重測漏件、重複及端到端P95。
 
 [原論文／官方文件](https://docs.ultralytics.com/models/yolov8/)。D01核心與反例圖為既有素材加受控設定，沒有新模型推論。
+
+<!-- wi033-engineering:start -->
+## WI-033 工程圖修正
+
+### YOLOv8式：從有標註的物件學出框
+
+同PCB電阻A103/B272皆標resistor框；YOLOv8式骨幹與neck融合多尺度特徵，head預測類別與框，候選經門檻及NMS整理。輸出是影像框與類別，不是輪廓或物理尺寸；格位只示意候選位置。
+
+框與類別來自訓練，不能用熱點代替框。
+
+來源：https://docs.ultralytics.com/models/yolov8/
+
+### YOLOv8式：候選重複，按分數去重
+
+同一PCB有103與272兩顆電阻；A有三個重複候選，分數0.93/0.87/0.76，B為0.91。教學例採同類別NMS，A的候選IoU超過0.5，因此依分數保留A0.93與B0.91。門檻和分數為給定算例，不是模型推論。這裡限定YOLOv8式密集偵測，不推廣到所有YOLO版本。
+
+NMS整理重複框，最後仍要回原圖查漏件。
+
+來源：https://docs.ultralytics.com/models/yolov8/
+
+### YOLO：去重設定也屬於交付條件
+
+保留resize/letterbox映射、類別順序、權重、分數與IoU門檻。還原原圖座標後逐件驗漏框、重複與定位誤差，時間包括前後處理。圖中框分數為教學例，不是當前推論。
+
+模型、前處理與門檻一起固定，再驗漏件。
+
+來源：https://docs.ultralytics.com/models/yolov8/
+
+### YOLO與RT-DETR：同一PCB比較交付
+
+共同任務與硬體下，各用相容前處理與已驗證門檻，比較漏框、重複框、定位、記憶體及端到端時間。RT-DETR省NMS不保證本機更快；YOLOv8式作合理可部署基準。
+
+比較逐件錯誤與完整延遲，不只看有無NMS。
+
+來源：https://docs.ultralytics.com/models/yolov8/
+
+<!-- wi033-engineering:end -->

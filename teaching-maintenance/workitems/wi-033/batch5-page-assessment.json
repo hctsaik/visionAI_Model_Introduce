@@ -1,0 +1,362 @@
+[
+  {
+    "id": "ad-patchcore",
+    "total": 92,
+    "scores": [
+      19,
+      19,
+      19,
+      18,
+      8,
+      9
+    ],
+    "evidence": [
+      "正常局部查庫；取同位置描述後最近距離",
+      "保留PatchCore原ResNet50紀錄；手機明列全精度平均與顯示四捨五入",
+      "四工程桌機與手機頁內逐張實看；原首讀保留並通過實際張數載入/放大",
+      "幾何示意簡化、手機需長捲動與少數術語保留，密度和美感各8分"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "幾何示意簡化、手機需長捲動與少數術語保留，密度和美感各8分"
+      ],
+      "completeness": [
+        9,
+        "任務/機制/部署/比較及指定深讀完成"
+      ],
+      "professionalism": [
+        9,
+        "正常局部查庫；取同位置描述後最近距離"
+      ],
+      "density": [
+        8,
+        "幾何示意簡化、手機需長捲動與少數術語保留，密度和美感各8分"
+      ],
+      "hierarchy": [
+        9,
+        "三節點單一路徑"
+      ]
+    },
+    "veto": [],
+    "status": "local_complete",
+    "page_evidence": "pages/ad-patchcore/docs-{1440,360}-engineering-{1,2,3,4}.png",
+    "user_approval": "pending",
+    "model_inference": false
+  },
+  {
+    "id": "ad-padim",
+    "total": 92,
+    "scores": [
+      19,
+      19,
+      19,
+      18,
+      8,
+      9
+    ],
+    "evidence": [
+      "同位置正常分布；協方差方向與距離",
+      "同單孔板跨位置與尺寸需固定",
+      "四工程桌機與手機頁內逐張實看；原首讀保留並通過實際張數載入/放大",
+      "幾何示意簡化、手機需長捲動與少數術語保留，密度和美感各8分"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "幾何示意簡化、手機需長捲動與少數術語保留，密度和美感各8分"
+      ],
+      "completeness": [
+        9,
+        "任務/機制/部署/比較及指定深讀完成"
+      ],
+      "professionalism": [
+        9,
+        "同位置正常分布；協方差方向與距離"
+      ],
+      "density": [
+        8,
+        "幾何示意簡化、手機需長捲動與少數術語保留，密度和美感各8分"
+      ],
+      "hierarchy": [
+        9,
+        "三節點單一路徑"
+      ]
+    },
+    "veto": [],
+    "status": "local_complete",
+    "page_evidence": "pages/ad-padim/docs-{1440,360}-engineering-{1,2,3,4}.png",
+    "user_approval": "pending",
+    "model_inference": false
+  },
+  {
+    "id": "ad-subspacead",
+    "total": 92,
+    "scores": [
+      19,
+      19,
+      19,
+      18,
+      8,
+      9
+    ],
+    "evidence": [
+      "投影正常子空間；殘差另算",
+      "不把低維座標當殘差",
+      "四工程桌機與手機頁內逐張實看；原首讀保留並通過實際張數載入/放大",
+      "幾何示意簡化、手機需長捲動與少數術語保留，密度和美感各8分"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "幾何示意簡化、手機需長捲動與少數術語保留，密度和美感各8分"
+      ],
+      "completeness": [
+        9,
+        "任務/機制/部署/比較及指定深讀完成"
+      ],
+      "professionalism": [
+        9,
+        "投影正常子空間；殘差另算"
+      ],
+      "density": [
+        8,
+        "幾何示意簡化、手機需長捲動與少數術語保留，密度和美感各8分"
+      ],
+      "hierarchy": [
+        9,
+        "三節點單一路徑"
+      ]
+    },
+    "veto": [],
+    "status": "local_complete",
+    "page_evidence": "pages/ad-subspacead/docs-{1440,360}-engineering-{1,2,3,4}.png",
+    "user_approval": "pending",
+    "model_inference": false
+  },
+  {
+    "id": "ad-stfpm",
+    "total": 92,
+    "scores": [
+      19,
+      19,
+      19,
+      18,
+      8,
+      9
+    ],
+    "evidence": [
+      "固定教師、正常訓練學生；同位置多尺度差",
+      "同向不同幅值與正規化分開",
+      "四工程桌機與手機頁內逐張實看；原首讀保留並通過實際張數載入/放大",
+      "幾何示意簡化、手機需長捲動與少數術語保留，密度和美感各8分"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "幾何示意簡化、手機需長捲動與少數術語保留，密度和美感各8分"
+      ],
+      "completeness": [
+        9,
+        "任務/機制/部署/比較及指定深讀完成"
+      ],
+      "professionalism": [
+        9,
+        "固定教師、正常訓練學生；同位置多尺度差"
+      ],
+      "density": [
+        8,
+        "幾何示意簡化、手機需長捲動與少數術語保留，密度和美感各8分"
+      ],
+      "hierarchy": [
+        9,
+        "三節點單一路徑"
+      ]
+    },
+    "veto": [],
+    "status": "local_complete",
+    "page_evidence": "pages/ad-stfpm/docs-{1440,360}-engineering-{1,2,3,4}.png",
+    "user_approval": "pending",
+    "model_inference": false
+  },
+  {
+    "id": "ad-rd4ad",
+    "total": 92,
+    "scores": [
+      19,
+      19,
+      19,
+      18,
+      8,
+      9
+    ],
+    "evidence": [
+      "固定教師→瓶頸→反向學生",
+      "正常訓練輸入已移除刮傷；部署保存三部分",
+      "四工程桌機與手機頁內逐張實看；原首讀保留並通過實際張數載入/放大",
+      "幾何示意簡化、手機需長捲動與少數術語保留，密度和美感各8分"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "幾何示意簡化、手機需長捲動與少數術語保留，密度和美感各8分"
+      ],
+      "completeness": [
+        9,
+        "任務/機制/部署/比較及指定深讀完成"
+      ],
+      "professionalism": [
+        9,
+        "固定教師→瓶頸→反向學生"
+      ],
+      "density": [
+        8,
+        "幾何示意簡化、手機需長捲動與少數術語保留，密度和美感各8分"
+      ],
+      "hierarchy": [
+        9,
+        "三節點單一路徑"
+      ]
+    },
+    "veto": [],
+    "status": "local_complete",
+    "page_evidence": "pages/ad-rd4ad/docs-{1440,360}-engineering-{1,2,3,4}.png",
+    "user_approval": "pending",
+    "model_inference": false
+  },
+  {
+    "id": "ad-ae",
+    "total": 92,
+    "scores": [
+      19,
+      19,
+      19,
+      18,
+      8,
+      9
+    ],
+    "evidence": [
+      "像素重建差110；複製刮傷差0",
+      "小孔被模糊差70，漏檢/誤報分開",
+      "四工程桌機與手機頁內逐張實看；原首讀保留並通過實際張數載入/放大",
+      "幾何示意簡化、手機需長捲動與少數術語保留，密度和美感各8分"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "幾何示意簡化、手機需長捲動與少數術語保留，密度和美感各8分"
+      ],
+      "completeness": [
+        9,
+        "任務/機制/部署/比較及指定深讀完成"
+      ],
+      "professionalism": [
+        9,
+        "像素重建差110；複製刮傷差0"
+      ],
+      "density": [
+        8,
+        "幾何示意簡化、手機需長捲動與少數術語保留，密度和美感各8分"
+      ],
+      "hierarchy": [
+        9,
+        "三節點單一路徑"
+      ]
+    },
+    "veto": [],
+    "status": "local_complete",
+    "page_evidence": "pages/ad-ae/docs-{1440,360}-engineering-{1,2,3,4}.png",
+    "user_approval": "pending",
+    "model_inference": false
+  },
+  {
+    "id": "ad-draem",
+    "total": 92,
+    "scores": [
+      19,
+      19,
+      19,
+      18,
+      8,
+      9
+    ],
+    "evidence": [
+      "正常原圖和合成mask兩種監督",
+      "推論原圖與重建共同送判別器；真缺陷獨立驗",
+      "四工程桌機與手機頁內逐張實看；原首讀保留並通過實際張數載入/放大",
+      "幾何示意簡化、手機需長捲動與少數術語保留，密度和美感各8分"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "幾何示意簡化、手機需長捲動與少數術語保留，密度和美感各8分"
+      ],
+      "completeness": [
+        9,
+        "任務/機制/部署/比較及指定深讀完成"
+      ],
+      "professionalism": [
+        9,
+        "正常原圖和合成mask兩種監督"
+      ],
+      "density": [
+        8,
+        "幾何示意簡化、手機需長捲動與少數術語保留，密度和美感各8分"
+      ],
+      "hierarchy": [
+        9,
+        "三節點單一路徑"
+      ]
+    },
+    "veto": [],
+    "status": "local_complete",
+    "page_evidence": "pages/ad-draem/docs-{1440,360}-engineering-{1,2,3,4}.png",
+    "user_approval": "pending",
+    "model_inference": false
+  },
+  {
+    "id": "ad-uniad",
+    "total": 92,
+    "scores": [
+      19,
+      19,
+      19,
+      18,
+      8,
+      9
+    ],
+    "evidence": [
+      "局部遮的是特徵讀取連線",
+      "多類正常共同訓練；推論關閉特徵擾動",
+      "四工程桌機與手機頁內逐張實看；原首讀保留並通過實際張數載入/放大",
+      "幾何示意簡化、手機需長捲動與少數術語保留，密度和美感各8分"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "幾何示意簡化、手機需長捲動與少數術語保留，密度和美感各8分"
+      ],
+      "completeness": [
+        9,
+        "任務/機制/部署/比較及指定深讀完成"
+      ],
+      "professionalism": [
+        9,
+        "局部遮的是特徵讀取連線"
+      ],
+      "density": [
+        8,
+        "幾何示意簡化、手機需長捲動與少數術語保留，密度和美感各8分"
+      ],
+      "hierarchy": [
+        9,
+        "三節點單一路徑"
+      ]
+    },
+    "veto": [],
+    "status": "local_complete",
+    "page_evidence": "pages/ad-uniad/docs-{1440,360}-engineering-{1,2,3,4}.png",
+    "user_approval": "pending",
+    "model_inference": false
+  }
+]

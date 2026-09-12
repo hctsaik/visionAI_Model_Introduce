@@ -98,3 +98,40 @@ Preserve source normal/defect image and mask hashes, sensor/recipe/ROI, split as
 
 - Song et al., *DefectFill: Realistic Defect Generation with Inpainting Diffusion Model for Visual Inspection* (CVPR 2025), [arXiv:2503.13985](https://arxiv.org/abs/2503.13985).
 - `full-model-course/07-diffusion-generation-and-restoration.md` for course-scoped claims, page order, and release boundaries.
+
+<!-- wi033-engineering:start -->
+## WI-033 工程圖修正
+
+### DefectFill：合成資料先核對再加入
+
+正常底圖、參考缺陷、遮罩與來源保留；合成圖及mask一致才進訓練。真實缺陷留出不得被參考/候選挑選用過。
+
+合成圖供訓練增補，真實留出集負責驗收。
+
+來源：https://arxiv.org/html/2503.13985v1
+
+### DefectFill：學缺陷，再填指定區域
+
+同一上方雙孔板，下方中心刮傷。少量缺陷及mask微調文字編碼器及attention LoRA；缺陷/物件/attention三損失協同。正常影像+mask進inpainting，LFS挑遮罩內相對原正常图LPIPS更大的候選（較低保真）；給定.1/.3只是示例，不等於物理真實度，仍需逐件位置及真缺陷驗證。 r01實看修正：候選A改為淡刮傷，不把正常原圖配非零距離。
+
+先學缺陷外觀，再核對合成位置與真實性。
+
+來源：https://arxiv.org/html/2503.13985v1
+
+### DefectFill：適配與挑選成本分開算
+
+保存基模/LoRA、文字、mask、種子、採樣與LFS設定。作者例4候選×20步=80去噪呼叫，未含LPIPS與預處理；增加候選不保證增加資料效益。
+
+候選越多，生成與挑選的成本都會累積。
+
+來源：https://arxiv.org/html/2503.13985v1
+
+### DefectFill：局部差大，也可能是假傷
+
+感知距離較大也可能來自不合理塗塊，不等於真刮傷。以mask覆蓋、材質及真缺陷檢測效益核對。
+
+LFS挑局部差異，物理合理性仍需另驗。
+
+來源：https://arxiv.org/html/2503.13985v1
+
+<!-- wi033-engineering:end -->

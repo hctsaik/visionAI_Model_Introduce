@@ -1,0 +1,20 @@
+{
+  "reviewed": 22,
+  "revisions": {
+    "convlstm": "下一步明畫卷積門控與X(t+1)，避免誤讀直接預測圖像。",
+    "videomae": "解碼重建格上移，與caption保留間距。",
+    "v-jepa": "目標格與EMA文字分離。",
+    "defectfill": "候選A改為淡刮傷，不把正常原圖配非零距離。",
+    "anomalydiffusion": "恢復原板上方兩孔，保留大左下小右下雙傷；條件pill與caption分離。",
+    "controlnet": "輪廓外框與孔框同用白線。",
+    "inpainting": "保持原下方黑污點，不任意換成刮傷。"
+  },
+  "retained": [
+    "tf-idg",
+    "diffusion-restoration",
+    "deblur",
+    "super-resolution"
+  ],
+  "native_review": "all 22 viewed; seven need revision; other four pass",
+  "user_approval": "pending"
+}

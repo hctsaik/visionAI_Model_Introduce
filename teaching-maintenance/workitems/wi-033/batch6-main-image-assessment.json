@@ -1,0 +1,92 @@
+[
+  {
+    "id": "clip-shared-errors",
+    "image": "clip-shared-errors-r02-mobile.png",
+    "sha256": "2791ba61aeab81d3ddbe0c54b300ed9e2d0be18fff1f44e1ca6cbca358e6bb59",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "以同一雙孔板正常N的允收孔口q與異常A刮傷p，維持原身份；正常反光誤報與細傷漏檢為作者假設。第三節點要求固定可見度/取像、正常與真缺陷獨立留出、比較提示設定；不捏造分數。",
+      "選定桌機與手機PNG已逐張實看；修正版亦重新實看",
+      "幾何示意簡化；部分術語密度較高，未做真人理解試驗"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "圖文分離，幾何簡化"
+      ],
+      "completeness": [
+        9,
+        "以同一雙孔板正常N的允收孔口q與異常A刮傷p，維持原身份；正常反光誤報與細傷漏檢為作者假設。第三節點要求固定可見度/取像、正常與真缺陷獨立留出、比較提示設定；不捏造分數。"
+      ],
+      "professionalism": [
+        9,
+        "算例與模型實測明確分開"
+      ],
+      "density": [
+        8,
+        "三節點可讀，部分術語較密"
+      ],
+      "hierarchy": [
+        9,
+        "單讀序與單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch6-page-assessment.json; batch6-main-page-review.json"
+  },
+  {
+    "id": "clip-shared-methods",
+    "image": "clip-shared-methods-r01-mobile.png",
+    "sha256": "67011025283115575d620346349c7a3bba9e1f54dd71fc3113a5cbd0c809bd80",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "三節點各展示同金屬板p和一種方法：WinCLIP人工提示/可加正常參考的+模式；AnomalyCLIP預訓練提示和辅助標註；AnomalyGPT已訓練內建定位與對話。位置圖只示輸出形式，不表示相同成效或精密輪廓。保留原桌機和頁面補充解釋。",
+      "選定桌機與手機PNG已逐張實看；修正版亦重新實看",
+      "幾何示意簡化；部分術語密度較高，未做真人理解試驗"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "圖文分離，幾何簡化"
+      ],
+      "completeness": [
+        9,
+        "三節點各展示同金屬板p和一種方法：WinCLIP人工提示/可加正常參考的+模式；AnomalyCLIP預訓練提示和辅助標註；AnomalyGPT已訓練內建定位與對話。位置圖只示輸出形式，不表示相同成效或精密輪廓。保留原桌機和頁面補充解釋。"
+      ],
+      "professionalism": [
+        9,
+        "算例與模型實測明確分開"
+      ],
+      "density": [
+        8,
+        "三節點可讀，部分術語較密"
+      ],
+      "hierarchy": [
+        9,
+        "單讀序與單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch6-page-assessment.json; batch6-main-page-review.json"
+  }
+]

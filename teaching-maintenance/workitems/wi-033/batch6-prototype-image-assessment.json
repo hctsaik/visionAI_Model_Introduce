@@ -1,0 +1,722 @@
+[
+  {
+    "id": "ad-dinomaly-engineering-2",
+    "image": "ad-dinomaly-engineering-2-r02-desktop.png",
+    "sha256": "6d8449ee5624450934e18026e2880ff3c5fdfda3d6c8fad270b5dc1d8e340f66",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "兩側分組相加後比同組；train Dropout與eval分離。",
+      "r02桌機與手機逐張原生實看；三節點單黃結論",
+      "幾何示意簡化；部分專有術語密度仍高，未做真人理解測試"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "簡化幾何但圖文分離"
+      ],
+      "completeness": [
+        9,
+        "訓練擾動與分組對照，要和推論設定分開。"
+      ],
+      "professionalism": [
+        9,
+        "兩側分組相加後比同組；train Dropout與eval分離。"
+      ],
+      "density": [
+        8,
+        "術語较多，caption可讀"
+      ],
+      "hierarchy": [
+        9,
+        "三節點一讀序"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch6-page-assessment.json; batch6-main-page-review.json"
+  },
+  {
+    "id": "ad-dinomaly-engineering-2",
+    "image": "ad-dinomaly-engineering-2-r02-mobile.png",
+    "sha256": "9236ca1256e8b76c7b45f7780c90a956b8c276d916fdb6d7ee5212ebdb23319a",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "兩側分組相加後比同組；train Dropout與eval分離。",
+      "r02桌機與手機逐張原生實看；三節點單黃結論",
+      "幾何示意簡化；部分專有術語密度仍高，未做真人理解測試"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "簡化幾何但圖文分離"
+      ],
+      "completeness": [
+        9,
+        "訓練擾動與分組對照，要和推論設定分開。"
+      ],
+      "professionalism": [
+        9,
+        "兩側分組相加後比同組；train Dropout與eval分離。"
+      ],
+      "density": [
+        8,
+        "術語较多，caption可讀"
+      ],
+      "hierarchy": [
+        9,
+        "三節點一讀序"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch6-page-assessment.json; batch6-main-page-review.json"
+  },
+  {
+    "id": "ad-invad-engineering-2",
+    "image": "ad-invad-engineering-2-r02-desktop.png",
+    "sha256": "fb2b8b8a79b3dd6954ff33a25a5049a721ce2ea7c3d51c1ea2488397a86e8f25",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "空間條件/標準化值調制7與1.5/同位置餘弦差；格圖與字距修正。",
+      "r02桌機與手機逐張原生實看；三節點單黃結論",
+      "幾何示意簡化；部分專有術語密度仍高，未做真人理解測試"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "簡化幾何但圖文分離"
+      ],
+      "completeness": [
+        9,
+        "同一輸入形成空間條件，控制特徵重建。"
+      ],
+      "professionalism": [
+        9,
+        "空間條件/標準化值調制7與1.5/同位置餘弦差；格圖與字距修正。"
+      ],
+      "density": [
+        8,
+        "術語较多，caption可讀"
+      ],
+      "hierarchy": [
+        9,
+        "三節點一讀序"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch6-page-assessment.json; batch6-main-page-review.json"
+  },
+  {
+    "id": "ad-invad-engineering-2",
+    "image": "ad-invad-engineering-2-r02-mobile.png",
+    "sha256": "a0cdf1253e252613755e9065c5f0dc913205fba14c527189f91ba7115e232be2",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "空間條件/標準化值調制7與1.5/同位置餘弦差；格圖與字距修正。",
+      "r02桌機與手機逐張原生實看；三節點單黃結論",
+      "幾何示意簡化；部分專有術語密度仍高，未做真人理解測試"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "簡化幾何但圖文分離"
+      ],
+      "completeness": [
+        9,
+        "同一輸入形成空間條件，控制特徵重建。"
+      ],
+      "professionalism": [
+        9,
+        "空間條件/標準化值調制7與1.5/同位置餘弦差；格圖與字距修正。"
+      ],
+      "density": [
+        8,
+        "術語较多，caption可讀"
+      ],
+      "hierarchy": [
+        9,
+        "三節點一讀序"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch6-page-assessment.json; batch6-main-page-review.json"
+  },
+  {
+    "id": "ad-ddad-engineering-2",
+    "image": "ad-ddad-engineering-2-r02-desktop.png",
+    "sha256": "72f620058223d530af7aaf8475ec0d3c68fe4faa394d9f72c86244e3e1e93b94",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "原圖持續條件；加噪板保留刮傷；恢復估計雙路差異。",
+      "r02桌機與手機逐張原生實看；三節點單黃結論",
+      "幾何示意簡化；部分專有術語密度仍高，未做真人理解測試"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "簡化幾何但圖文分離"
+      ],
+      "completeness": [
+        9,
+        "恢復估計與原圖的兩種差異，共同提供線索。"
+      ],
+      "professionalism": [
+        9,
+        "原圖持續條件；加噪板保留刮傷；恢復估計雙路差異。"
+      ],
+      "density": [
+        8,
+        "術語较多，caption可讀"
+      ],
+      "hierarchy": [
+        9,
+        "三節點一讀序"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch6-page-assessment.json; batch6-main-page-review.json"
+  },
+  {
+    "id": "ad-ddad-engineering-2",
+    "image": "ad-ddad-engineering-2-r02-mobile.png",
+    "sha256": "ef68c107bd25dfd901082341d1c542d9c944ffabde89c2f5035aa50fd041877c",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "原圖持續條件；加噪板保留刮傷；恢復估計雙路差異。",
+      "r02桌機與手機逐張原生實看；三節點單黃結論",
+      "幾何示意簡化；部分專有術語密度仍高，未做真人理解測試"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "簡化幾何但圖文分離"
+      ],
+      "completeness": [
+        9,
+        "恢復估計與原圖的兩種差異，共同提供線索。"
+      ],
+      "professionalism": [
+        9,
+        "原圖持續條件；加噪板保留刮傷；恢復估計雙路差異。"
+      ],
+      "density": [
+        8,
+        "術語较多，caption可讀"
+      ],
+      "hierarchy": [
+        9,
+        "三節點一讀序"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch6-page-assessment.json; batch6-main-page-review.json"
+  },
+  {
+    "id": "ad-winclip-engineering-2",
+    "image": "ad-winclip-engineering-2-r02-desktop.png",
+    "sha256": "9928459ce8250fafd268e609b73926e931061259b95eb62dc6c55e4b7b87469d",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "同尺寸重疊窗覆蓋p，給定.2/.8調和.32。",
+      "r02桌機與手機逐張原生實看；三節點單黃結論",
+      "幾何示意簡化；部分專有術語密度仍高，未做真人理解測試"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "簡化幾何但圖文分離"
+      ],
+      "completeness": [
+        9,
+        "文字定狀態，視窗分數依覆蓋回到位置。"
+      ],
+      "professionalism": [
+        9,
+        "同尺寸重疊窗覆蓋p，給定.2/.8調和.32。"
+      ],
+      "density": [
+        8,
+        "術語较多，caption可讀"
+      ],
+      "hierarchy": [
+        9,
+        "三節點一讀序"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch6-page-assessment.json; batch6-main-page-review.json"
+  },
+  {
+    "id": "ad-winclip-engineering-2",
+    "image": "ad-winclip-engineering-2-r02-mobile.png",
+    "sha256": "acbefdb9c50157d3cc3794bb5b0d401a4ce816a4877ae793de9237c51317b509",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "同尺寸重疊窗覆蓋p，給定.2/.8調和.32。",
+      "r02桌機與手機逐張原生實看；三節點單黃結論",
+      "幾何示意簡化；部分專有術語密度仍高，未做真人理解測試"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "簡化幾何但圖文分離"
+      ],
+      "completeness": [
+        9,
+        "文字定狀態，視窗分數依覆蓋回到位置。"
+      ],
+      "professionalism": [
+        9,
+        "同尺寸重疊窗覆蓋p，給定.2/.8調和.32。"
+      ],
+      "density": [
+        8,
+        "術語较多，caption可讀"
+      ],
+      "hierarchy": [
+        9,
+        "三節點一讀序"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch6-page-assessment.json; batch6-main-page-review.json"
+  },
+  {
+    "id": "ad-anomalyclip-engineering-2",
+    "image": "ad-anomalyclip-engineering-2-r02-desktop.png",
+    "sha256": "4865bea5b53670c305b922ffef3c03412a85754a3dbc1d68e615517f0fa7543f",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "輔助標註學提示，固定骨幹DPAM；短字不再溢出。",
+      "r02桌機與手機逐張原生實看；三節點單黃結論",
+      "幾何示意簡化；部分專有術語密度仍高，未做真人理解測試"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "簡化幾何但圖文分離"
+      ],
+      "completeness": [
+        9,
+        "目標零樣本，仍有輔助資料學習的提示。"
+      ],
+      "professionalism": [
+        9,
+        "輔助標註學提示，固定骨幹DPAM；短字不再溢出。"
+      ],
+      "density": [
+        8,
+        "術語较多，caption可讀"
+      ],
+      "hierarchy": [
+        9,
+        "三節點一讀序"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch6-page-assessment.json; batch6-main-page-review.json"
+  },
+  {
+    "id": "ad-anomalyclip-engineering-2",
+    "image": "ad-anomalyclip-engineering-2-r02-mobile.png",
+    "sha256": "37986a83b64e81033107a986ca1fbdfaf9f5fe714d9d22c648eb7bdf9d3045d7",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "輔助標註學提示，固定骨幹DPAM；短字不再溢出。",
+      "r02桌機與手機逐張原生實看；三節點單黃結論",
+      "幾何示意簡化；部分專有術語密度仍高，未做真人理解測試"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "簡化幾何但圖文分離"
+      ],
+      "completeness": [
+        9,
+        "目標零樣本，仍有輔助資料學習的提示。"
+      ],
+      "professionalism": [
+        9,
+        "輔助標註學提示，固定骨幹DPAM；短字不再溢出。"
+      ],
+      "density": [
+        8,
+        "術語较多，caption可讀"
+      ],
+      "hierarchy": [
+        9,
+        "三節點一讀序"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch6-page-assessment.json; batch6-main-page-review.json"
+  },
+  {
+    "id": "frame-difference-engineering-2",
+    "image": "frame-difference-engineering-2-r02-desktop.png",
+    "sha256": "2aef2fae1c37a709470cd19849c8e844a7fe5998e9ec333bcfbc76824186af9a",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "同件移動三分之一寬，5格同位置差與雙帶一致；圖文分離。",
+      "r02桌機與手機逐張原生實看；三節點單黃結論",
+      "幾何示意簡化；部分專有術語密度仍高，未做真人理解測試"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "簡化幾何但圖文分離"
+      ],
+      "completeness": [
+        9,
+        "雙帶來自同物件前後位置，不能當兩個物件。"
+      ],
+      "professionalism": [
+        9,
+        "同件移動三分之一寬，5格同位置差與雙帶一致；圖文分離。"
+      ],
+      "density": [
+        8,
+        "術語较多，caption可讀"
+      ],
+      "hierarchy": [
+        9,
+        "三節點一讀序"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch6-page-assessment.json; batch6-main-page-review.json"
+  },
+  {
+    "id": "frame-difference-engineering-2",
+    "image": "frame-difference-engineering-2-r02-mobile.png",
+    "sha256": "b62ec57a84d2583d74b906cd7915a9e0639ca29541381f5c8406eead9c527d9e",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "同件移動三分之一寬，5格同位置差與雙帶一致；圖文分離。",
+      "r02桌機與手機逐張原生實看；三節點單黃結論",
+      "幾何示意簡化；部分專有術語密度仍高，未做真人理解測試"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "簡化幾何但圖文分離"
+      ],
+      "completeness": [
+        9,
+        "雙帶來自同物件前後位置，不能當兩個物件。"
+      ],
+      "professionalism": [
+        9,
+        "同件移動三分之一寬，5格同位置差與雙帶一致；圖文分離。"
+      ],
+      "density": [
+        8,
+        "術語较多，caption可讀"
+      ],
+      "hierarchy": [
+        9,
+        "三節點一讀序"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch6-page-assessment.json; batch6-main-page-review.json"
+  },
+  {
+    "id": "background-subtraction-engineering-2",
+    "image": "background-subtraction-engineering-2-r02-desktop.png",
+    "sha256": "1f369ffae22c72de5dc176885b7100f96b774c164813fbd7fbf5c45405756f7a",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "多時間統計/目前相對背景/停留吸收分開；背景圖不遮字。",
+      "r02桌機與手機逐張原生實看；三節點單黃結論",
+      "幾何示意簡化；部分專有術語密度仍高，未做真人理解測試"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "簡化幾何但圖文分離"
+      ],
+      "completeness": [
+        9,
+        "前景依賴背景歷史，停留物件也可能被吸收。"
+      ],
+      "professionalism": [
+        9,
+        "多時間統計/目前相對背景/停留吸收分開；背景圖不遮字。"
+      ],
+      "density": [
+        8,
+        "術語较多，caption可讀"
+      ],
+      "hierarchy": [
+        9,
+        "三節點一讀序"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch6-page-assessment.json; batch6-main-page-review.json"
+  },
+  {
+    "id": "background-subtraction-engineering-2",
+    "image": "background-subtraction-engineering-2-r02-mobile.png",
+    "sha256": "182dccf7ce8b651cd67ff3859654be6298b82ab11afd9a0da9ce68826cb5b698",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "多時間統計/目前相對背景/停留吸收分開；背景圖不遮字。",
+      "r02桌機與手機逐張原生實看；三節點單黃結論",
+      "幾何示意簡化；部分專有術語密度仍高，未做真人理解測試"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "簡化幾何但圖文分離"
+      ],
+      "completeness": [
+        9,
+        "前景依賴背景歷史，停留物件也可能被吸收。"
+      ],
+      "professionalism": [
+        9,
+        "多時間統計/目前相對背景/停留吸收分開；背景圖不遮字。"
+      ],
+      "density": [
+        8,
+        "術語较多，caption可讀"
+      ],
+      "hierarchy": [
+        9,
+        "三節點一讀序"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch6-page-assessment.json; batch6-main-page-review.json"
+  },
+  {
+    "id": "bytetrack-engineering-2",
+    "image": "bytetrack-engineering-2-r02-desktop.png",
+    "sha256": "cd6bd11d78705ef266b1dba603025ad93430149adb01951e66624112594881a2",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "兩工件對應高低分框；高分先配，剩餘活動軌跡低分續接；丟失超期。",
+      "r02桌機與手機逐張原生實看；三節點單黃結論",
+      "幾何示意簡化；部分專有術語密度仍高，未做真人理解測試"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "簡化幾何但圖文分離"
+      ],
+      "completeness": [
+        9,
+        "低分框要有軌跡依據，才可能接回原ID。"
+      ],
+      "professionalism": [
+        9,
+        "兩工件對應高低分框；高分先配，剩餘活動軌跡低分續接；丟失超期。"
+      ],
+      "density": [
+        8,
+        "術語较多，caption可讀"
+      ],
+      "hierarchy": [
+        9,
+        "三節點一讀序"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch6-page-assessment.json; batch6-main-page-review.json"
+  },
+  {
+    "id": "bytetrack-engineering-2",
+    "image": "bytetrack-engineering-2-r02-mobile.png",
+    "sha256": "a0f09eee57c47d5274809da23c80983bb61a9deec04a7ba9856f3ff2e6a2adb9",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "兩工件對應高低分框；高分先配，剩餘活動軌跡低分續接；丟失超期。",
+      "r02桌機與手機逐張原生實看；三節點單黃結論",
+      "幾何示意簡化；部分專有術語密度仍高，未做真人理解測試"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "簡化幾何但圖文分離"
+      ],
+      "completeness": [
+        9,
+        "低分框要有軌跡依據，才可能接回原ID。"
+      ],
+      "professionalism": [
+        9,
+        "兩工件對應高低分框；高分先配，剩餘活動軌跡低分續接；丟失超期。"
+      ],
+      "density": [
+        8,
+        "術語较多，caption可讀"
+      ],
+      "hierarchy": [
+        9,
+        "三節點一讀序"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch6-page-assessment.json; batch6-main-page-review.json"
+  }
+]

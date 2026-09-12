@@ -1,0 +1,182 @@
+[
+  {
+    "id": "flow-main-failure",
+    "mode": "desktop",
+    "path": "_course_content/generated-concepts/lucas-kanade/wi033-flow-main-failure-r02-desktop.png",
+    "sha256": "f70b5f82d5d1c98575b14c52edf4d82f9b06bab7a81b303334a79dab96a641d0",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch2-page-assessment.json; pages; deep; deep-detail-report.json",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "flow-main-failure",
+    "mode": "mobile",
+    "path": "_course_content/generated-concepts/lucas-kanade/wi033-flow-main-failure-r02-mobile.png",
+    "sha256": "e30e8a012e29402398e70924f66628b7b7cd9895ed4cf424d840b9c6e43625ba",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch2-page-assessment.json; pages; deep; deep-detail-report.json",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "flow-main-failure",
+    "mode": "desktop",
+    "path": "_course_content/generated-concepts/lucas-kanade/wi033-flow-main-failure-r02-desktop.png",
+    "sha256": "f70b5f82d5d1c98575b14c52edf4d82f9b06bab7a81b303334a79dab96a641d0",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch2-page-assessment.json; pages; deep; deep-detail-report.json",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "flow-main-failure",
+    "mode": "mobile",
+    "path": "_course_content/generated-concepts/lucas-kanade/wi033-flow-main-failure-r02-mobile.png",
+    "sha256": "e30e8a012e29402398e70924f66628b7b7cd9895ed4cf424d840b9c6e43625ba",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch2-page-assessment.json; pages; deep; deep-detail-report.json",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "adino-deep-rotation",
+    "mode": "desktop",
+    "path": "_course_content/generated-concepts/ad-anomalydino/wi033-adino-deep-rotation-r02-desktop.png",
+    "sha256": "a0661a51544bc06ea106f2a2068ac4c16416b55468f70364810b222788278674",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch2-page-assessment.json; pages; deep; deep-detail-report.json",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "adino-deep-rotation",
+    "mode": "mobile",
+    "path": "_course_content/generated-concepts/ad-anomalydino/wi033-adino-deep-rotation-r02-mobile.png",
+    "sha256": "fdf55fc82a606c5629b6e9d0d06da86c85ba9ccdffe705275b72c27a8c1e266e",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch2-page-assessment.json; pages; deep; deep-detail-report.json",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "eff-main-failure",
+    "mode": "desktop",
+    "path": "_course_content/generated-concepts/ad-efficientad/wi033-eff-main-failure-r01-desktop.png",
+    "sha256": "5c5b682f1550ac566aaee0a8f9e4135e054fb0d90c24fbc152083d084b49e3e6",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch2-page-assessment.json; pages; deep; deep-detail-report.json",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "eff-main-failure",
+    "mode": "mobile",
+    "path": "_course_content/generated-concepts/ad-efficientad/wi033-eff-main-failure-r01-mobile.png",
+    "sha256": "fbdba5dc1f373737f85ea88338638225ca86fb1c8725fddeb3c0a9555e47cbf4",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch2-page-assessment.json; pages; deep; deep-detail-report.json",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "eff-deep-01-core",
+    "mode": "mobile",
+    "path": "_course_content/generated-concepts/ad-efficientad/wi033-eff-deep-01-core-r02-mobile.png",
+    "sha256": "b48c9fa6dc44ab139f120de3acc447f650d3dd9d17592d1c6865137912bbdb70",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch2-page-assessment.json; pages; deep; deep-detail-report.json",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "eff-deep-01-work",
+    "mode": "mobile",
+    "path": "_course_content/generated-concepts/ad-efficientad/wi033-eff-deep-01-work-r02-mobile.png",
+    "sha256": "b448ae5b62de2822b75912c42292988e6ed4a29df23e6060ebf87c2498561fc3",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch2-page-assessment.json; pages; deep; deep-detail-report.json",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "eff-deep-02-data",
+    "mode": "mobile",
+    "path": "_course_content/generated-concepts/ad-efficientad/wi033-eff-deep-02-data-r01-mobile.png",
+    "sha256": "5003716f23ca652cda8280fc8fc078f6ce6dc2645537380cdbc2bc38a6825963",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch2-page-assessment.json; pages; deep; deep-detail-report.json",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "eff-deep-03-meaning",
+    "mode": "mobile",
+    "path": "_course_content/generated-concepts/ad-efficientad/wi033-eff-deep-03-meaning-r02-mobile.png",
+    "sha256": "319aa7992792b6580a431b9f20478971e37b6cb3f008a8e05a2ad4df8fe08d35",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch2-page-assessment.json; pages; deep; deep-detail-report.json",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "eff-deep-04-output",
+    "mode": "desktop",
+    "path": "_course_content/generated-concepts/ad-efficientad/wi033-eff-deep-04-output-r01-desktop.png",
+    "sha256": "e76ce9402bffd16583d21a96c9b32deb99405703e358c1c441d89acfce598422",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch2-page-assessment.json; pages; deep; deep-detail-report.json",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "eff-deep-04-output",
+    "mode": "mobile",
+    "path": "_course_content/generated-concepts/ad-efficientad/wi033-eff-deep-04-output-r01-mobile.png",
+    "sha256": "33215c0c84fd25cc460dc831fdb21073cd3107755a771a4e99e3f9cec846fc59",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch2-page-assessment.json; pages; deep; deep-detail-report.json",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "eff-deep-05-limits",
+    "mode": "mobile",
+    "path": "_course_content/generated-concepts/ad-efficientad/wi033-eff-deep-05-limits-r01-mobile.png",
+    "sha256": "0a777396f839da9d5b4e37998aaaa2179ac99cbcbfead2f392945537d4a8115e",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch2-page-assessment.json; pages; deep; deep-detail-report.json",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "eff-deep-07-comparison",
+    "mode": "desktop",
+    "path": "_course_content/generated-concepts/ad-efficientad/wi033-eff-deep-07-comparison-r01-desktop.png",
+    "sha256": "0053cc1219d9d554817c0a647e1db34d8e50f596dc8b6d5c919b85fce0431200",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch2-page-assessment.json; pages; deep; deep-detail-report.json",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "eff-deep-07-comparison",
+    "mode": "mobile",
+    "path": "_course_content/generated-concepts/ad-efficientad/wi033-eff-deep-07-comparison-r01-mobile.png",
+    "sha256": "28dbcd4a88a40d57728a5e5cafd47c0c9741b6c9896c2c79819cbbb75b8893a6",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch2-page-assessment.json; pages; deep; deep-detail-report.json",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "eff-deep-08-transfer",
+    "mode": "mobile",
+    "path": "_course_content/generated-concepts/ad-efficientad/wi033-eff-deep-08-transfer-r01-mobile.png",
+    "sha256": "1ec00094daf62ccb1a5707e1ae050047062121c8cbeb7c8aad0d8bec33c93890",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch2-page-assessment.json; pages; deep; deep-detail-report.json",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  }
+]

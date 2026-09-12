@@ -1,0 +1,562 @@
+[
+  {
+    "id": "resnet-engineering-1",
+    "mode": "desktop",
+    "path": "roadmap-model-selection/known-target-classification/resnet/images/final/WI033-RESNET-01-r01-desktop.png",
+    "sha256": "630dadb4b9f0867a9b6fca4b24f4e3f74d05521c29cc41e4c626c2b009a41f3d",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "resnet-engineering-1",
+    "mode": "mobile",
+    "path": "roadmap-model-selection/known-target-classification/resnet/images/final/WI033-RESNET-01-r01-mobile.png",
+    "sha256": "3dd0da5dd3c02cfcdd6e543be673f14fade6fdd6d452e08a1be7cedb5bc18a9e",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "resnet-engineering-2",
+    "mode": "desktop",
+    "path": "roadmap-model-selection/known-target-classification/resnet/images/final/WI033-RESNET-02-r02-desktop.png",
+    "sha256": "4b2ae645166db246564c9f2f03e0bbd579705ad86c7b68b078a8d96aaa56b95f",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "resnet-engineering-2",
+    "mode": "mobile",
+    "path": "roadmap-model-selection/known-target-classification/resnet/images/final/WI033-RESNET-02-r02-mobile.png",
+    "sha256": "a6a2bc0143cf785a86b4d6683ed18ed9631a7a4abcddec1e43be7b70433aab8d",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "resnet-engineering-3",
+    "mode": "desktop",
+    "path": "roadmap-model-selection/known-target-classification/resnet/images/final/WI033-RESNET-03-r01-desktop.png",
+    "sha256": "3c22c329e965ae24a69def7ff53449596f7da6a9ed5a73c59510f538cc89fe3b",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "resnet-engineering-3",
+    "mode": "mobile",
+    "path": "roadmap-model-selection/known-target-classification/resnet/images/final/WI033-RESNET-03-r01-mobile.png",
+    "sha256": "78f0a1ab03ab3a3bfe70570efbc5d0ee59f8f071ba5ecd692b7ce961aeb81eca",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "resnet-engineering-4",
+    "mode": "desktop",
+    "path": "roadmap-model-selection/known-target-classification/resnet/images/final/WI033-RESNET-04-r01-desktop.png",
+    "sha256": "1c6e4a6d61777aa439bc733d2d7dfbdd84aee3290828c4e949e767159c26e8f4",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "resnet-engineering-4",
+    "mode": "mobile",
+    "path": "roadmap-model-selection/known-target-classification/resnet/images/final/WI033-RESNET-04-r01-mobile.png",
+    "sha256": "85078e87e856166dbd9ea92acea0cb065b504f18a2b8279e1467015760911c55",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "convnext-engineering-1",
+    "mode": "desktop",
+    "path": "roadmap-model-selection/known-target-classification/convnext/images/final/WI033-CONVNEXT-01-r01-desktop.png",
+    "sha256": "c657c020bba221bcf545c63b83a57b21767180a1c940f4c2fe8b8f09450137b8",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "convnext-engineering-1",
+    "mode": "mobile",
+    "path": "roadmap-model-selection/known-target-classification/convnext/images/final/WI033-CONVNEXT-01-r01-mobile.png",
+    "sha256": "faa66a2036791a3aa55eb97ed3af8a96016407ec3b333969832e6a3c2eacafd3",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "convnext-engineering-2",
+    "mode": "desktop",
+    "path": "roadmap-model-selection/known-target-classification/convnext/images/final/WI033-CONVNEXT-02-r03-desktop.png",
+    "sha256": "4c0032dbf725a0c966a6409c74c5b3c64d5f744f5b7dc5e1a1b1778f64c390ce",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "convnext-engineering-2",
+    "mode": "mobile",
+    "path": "roadmap-model-selection/known-target-classification/convnext/images/final/WI033-CONVNEXT-02-r03-mobile.png",
+    "sha256": "c51c510032fa087a68e14beae36a7ec3a4b0dcd8eff7753496568659153dd029",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "convnext-engineering-3",
+    "mode": "desktop",
+    "path": "roadmap-model-selection/known-target-classification/convnext/images/final/WI033-CONVNEXT-03-r01-desktop.png",
+    "sha256": "1bc25cbc2be510c97fd03058745d3107faf15afd8b7996f85cdecd96590c5205",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "convnext-engineering-3",
+    "mode": "mobile",
+    "path": "roadmap-model-selection/known-target-classification/convnext/images/final/WI033-CONVNEXT-03-r01-mobile.png",
+    "sha256": "fed5f18f5267b9126e0f625fdbbeaa187c896e536e9603e967c53477c89f1c56",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "convnext-engineering-4",
+    "mode": "desktop",
+    "path": "roadmap-model-selection/known-target-classification/convnext/images/final/WI033-CONVNEXT-04-r01-desktop.png",
+    "sha256": "743007b5736f2db4aed424144f1a38bed30d8b2194a0a6d70e5847083b481e63",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "convnext-engineering-4",
+    "mode": "mobile",
+    "path": "roadmap-model-selection/known-target-classification/convnext/images/final/WI033-CONVNEXT-04-r01-mobile.png",
+    "sha256": "7f91edfd91c077295a436233e5a990fd76887711142497fabb11bc7c30db26d8",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "vit-classifier-engineering-1",
+    "mode": "desktop",
+    "path": "roadmap-model-selection/known-target-classification/vit-classifier/images/final/WI033-VIT-01-r01-desktop.png",
+    "sha256": "0051e787d612da14ea0ac5d5a2dad7a36c02d337521f4e185536c50bedd07f8c",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "vit-classifier-engineering-1",
+    "mode": "mobile",
+    "path": "roadmap-model-selection/known-target-classification/vit-classifier/images/final/WI033-VIT-01-r01-mobile.png",
+    "sha256": "5abda09d7b5680a4047bb4f3542083e15157e6800d13fee90d5f6d91261d3fb0",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "vit-classifier-engineering-2",
+    "mode": "desktop",
+    "path": "roadmap-model-selection/known-target-classification/vit-classifier/images/final/WI033-VIT-02-r03-desktop.png",
+    "sha256": "68359ac31e366852f7495bf932be6bcf589a86219b8aeb6677a6f62574679200",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "vit-classifier-engineering-2",
+    "mode": "mobile",
+    "path": "roadmap-model-selection/known-target-classification/vit-classifier/images/final/WI033-VIT-02-r03-mobile.png",
+    "sha256": "ceacbab75988c146842e95e792e58fd20463a459f301a7abdb6613384f96815a",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "vit-classifier-engineering-3",
+    "mode": "desktop",
+    "path": "roadmap-model-selection/known-target-classification/vit-classifier/images/final/WI033-VIT-03-r02-desktop.png",
+    "sha256": "94f200f8df0b7aad08989e3c1183ef6494b615634938e86f8b9f5427b4a46368",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "vit-classifier-engineering-3",
+    "mode": "mobile",
+    "path": "roadmap-model-selection/known-target-classification/vit-classifier/images/final/WI033-VIT-03-r02-mobile.png",
+    "sha256": "1ab95ecfb5c16278c4657f2db1b855508c6b418aaa92ecee1dd6d6ab3d19de01",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "vit-classifier-engineering-4",
+    "mode": "desktop",
+    "path": "roadmap-model-selection/known-target-classification/vit-classifier/images/final/WI033-VIT-04-r02-desktop.png",
+    "sha256": "9886c0bd7deb6e70da64f690d44d2a871ca042256344722b4be5400da2dc8bef",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "vit-classifier-engineering-4",
+    "mode": "mobile",
+    "path": "roadmap-model-selection/known-target-classification/vit-classifier/images/final/WI033-VIT-04-r02-mobile.png",
+    "sha256": "665f42644572693732ec197aea118fe18619102b79b7a13b5a574fcd246e37a0",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "u-net-engineering-1",
+    "mode": "desktop",
+    "path": "roadmap-model-selection/known-target-classification/u-net/images/final/WI033-UNET-01-r02-desktop.png",
+    "sha256": "9af33e01ccf7baf1678bfee5b1e0e3c53cc9394940ba1bdf58c2c8b3a04acf4c",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "u-net-engineering-1",
+    "mode": "mobile",
+    "path": "roadmap-model-selection/known-target-classification/u-net/images/final/WI033-UNET-01-r02-mobile.png",
+    "sha256": "2c1e3ba8c0ebfc401dd89f5437ac08a03a80700caf27df98ed3307e1e36bcdf3",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "u-net-engineering-2",
+    "mode": "desktop",
+    "path": "roadmap-model-selection/known-target-classification/u-net/images/final/WI033-UNET-02-r03-desktop.png",
+    "sha256": "eb13e5fc1d9474407ff29b55d8dbca6c568bdb5d206a84741c1cb31941e13946",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "u-net-engineering-2",
+    "mode": "mobile",
+    "path": "roadmap-model-selection/known-target-classification/u-net/images/final/WI033-UNET-02-r03-mobile.png",
+    "sha256": "1bd8a82ec4b8a3bd1be0185e1a569a0ba1742d7aa0ac46096452294d57104b1e",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "u-net-engineering-3",
+    "mode": "desktop",
+    "path": "roadmap-model-selection/known-target-classification/u-net/images/final/WI033-UNET-03-r02-desktop.png",
+    "sha256": "33207e66da1da573f9029ceb294e19eccb4dfaa4a64c15b6865dbefc2dc04c34",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "u-net-engineering-3",
+    "mode": "mobile",
+    "path": "roadmap-model-selection/known-target-classification/u-net/images/final/WI033-UNET-03-r02-mobile.png",
+    "sha256": "5ad0bf424fff7f1dda2bfec283dab92232ae3beddb26d210300addb94dac716a",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "u-net-engineering-4",
+    "mode": "desktop",
+    "path": "roadmap-model-selection/known-target-classification/u-net/images/final/WI033-UNET-04-r01-desktop.png",
+    "sha256": "14c9da09bcf7b784d3a777426abe139812b757953dd8822c25b564f62f1442c2",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "u-net-engineering-4",
+    "mode": "mobile",
+    "path": "roadmap-model-selection/known-target-classification/u-net/images/final/WI033-UNET-04-r01-mobile.png",
+    "sha256": "873522bd50f68cb777665c98143459022871ee89d5da8319f3d286777d10e99f",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "segformer-engineering-1",
+    "mode": "desktop",
+    "path": "roadmap-model-selection/known-target-classification/segformer/images/final/WI033-SEGFORMER-01-r01-desktop.png",
+    "sha256": "df904a875d9830bf76c270108eb9fc2fb3eb1db4daed97ebbcba4853af9dcbf7",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "segformer-engineering-1",
+    "mode": "mobile",
+    "path": "roadmap-model-selection/known-target-classification/segformer/images/final/WI033-SEGFORMER-01-r01-mobile.png",
+    "sha256": "7b3bde76c3bdf5fb2f96f56ba5c82b8c2f5f1399a3c435ed3446017523a5555f",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "segformer-engineering-2",
+    "mode": "desktop",
+    "path": "roadmap-model-selection/known-target-classification/segformer/images/final/WI033-SEGFORMER-02-r03-desktop.png",
+    "sha256": "8198f3297731d50fecc8c326b5143cae6215959952c050e1ed949d60e48d3a47",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "segformer-engineering-2",
+    "mode": "mobile",
+    "path": "roadmap-model-selection/known-target-classification/segformer/images/final/WI033-SEGFORMER-02-r03-mobile.png",
+    "sha256": "7eeebc3862bc48d4047559f862d38acd237f41326878b8f02f319fc87ac7c369",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "segformer-engineering-3",
+    "mode": "desktop",
+    "path": "roadmap-model-selection/known-target-classification/segformer/images/final/WI033-SEGFORMER-03-r02-desktop.png",
+    "sha256": "2e2ac3361de626be2bd0fbc8a7378613d109bd0ddda9b8d639a83be518a04f6e",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "segformer-engineering-3",
+    "mode": "mobile",
+    "path": "roadmap-model-selection/known-target-classification/segformer/images/final/WI033-SEGFORMER-03-r02-mobile.png",
+    "sha256": "52942ecb8d3e7de11b9a232bc1d0fc82a9296a769104e51df8e52b0ccf55da7f",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "segformer-engineering-4",
+    "mode": "desktop",
+    "path": "roadmap-model-selection/known-target-classification/segformer/images/final/WI033-SEGFORMER-04-r02-desktop.png",
+    "sha256": "3192b6b3d34f865219eb0d7961485df6bda443e57cb4ecff82ba325e46ad2c42",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "segformer-engineering-4",
+    "mode": "mobile",
+    "path": "roadmap-model-selection/known-target-classification/segformer/images/final/WI033-SEGFORMER-04-r02-mobile.png",
+    "sha256": "3ccd0595d385beb101e9bdda53993130465cb1b81261622ff62f4c2af85bbf80",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "yolo-seg-engineering-1",
+    "mode": "desktop",
+    "path": "roadmap-model-selection/known-target-classification/yolo-seg/images/final/WI033-YOLOSEG-01-r03-desktop.png",
+    "sha256": "acbd7dee50806da79f9c164e98204fba64b3b85df5819ade2e457af3a55f91f2",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "yolo-seg-engineering-1",
+    "mode": "mobile",
+    "path": "roadmap-model-selection/known-target-classification/yolo-seg/images/final/WI033-YOLOSEG-01-r03-mobile.png",
+    "sha256": "3c7aec3d179cf21d17a9c801febf1cff41440513dc2691ee95ea6b060652487a",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "yolo-seg-engineering-2",
+    "mode": "desktop",
+    "path": "roadmap-model-selection/known-target-classification/yolo-seg/images/final/WI033-YOLOSEG-02-r02-desktop.png",
+    "sha256": "e3e56520e2b9dd1d774c4cef681ea278d50f37de21ca2a6445c502c634b6b65c",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "yolo-seg-engineering-2",
+    "mode": "mobile",
+    "path": "roadmap-model-selection/known-target-classification/yolo-seg/images/final/WI033-YOLOSEG-02-r02-mobile.png",
+    "sha256": "df353b95c90f1420863f18c774ea52ad595af1b6f4a9fb57920264d53a37d8f2",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "yolo-seg-engineering-3",
+    "mode": "desktop",
+    "path": "roadmap-model-selection/known-target-classification/yolo-seg/images/final/WI033-YOLOSEG-03-r03-desktop.png",
+    "sha256": "a279c38ac1cedb9368a4d8c2d4beaa849a3cdff5da73cb28c354938ba9dbd882",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "yolo-seg-engineering-3",
+    "mode": "mobile",
+    "path": "roadmap-model-selection/known-target-classification/yolo-seg/images/final/WI033-YOLOSEG-03-r03-mobile.png",
+    "sha256": "544e53951ee9b6aced92df1d0f63d1c245340787fd5fe0036b07d09f9daa429e",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "yolo-seg-engineering-4",
+    "mode": "desktop",
+    "path": "roadmap-model-selection/known-target-classification/yolo-seg/images/final/WI033-YOLOSEG-04-r03-desktop.png",
+    "sha256": "a9ec871c28ee4a02ce000e762adc1053203e91eed34a08f444b5413a70f8e2c2",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "yolo-seg-engineering-4",
+    "mode": "mobile",
+    "path": "roadmap-model-selection/known-target-classification/yolo-seg/images/final/WI033-YOLOSEG-04-r03-mobile.png",
+    "sha256": "a2c11a84957f526b34dd034aa75a5560028a49a1e6f74ef37dbc7e3b4c493e7c",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "keypoint-rcnn-engineering-1",
+    "mode": "desktop",
+    "path": "roadmap-model-selection/known-target-classification/keypoint-r-cnn/images/final/WI033-KPRCNN-01-r01-desktop.png",
+    "sha256": "5f22a9b38711f068434928648ae36b426e5ba2b0c16fc9f6bfce519a98007053",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "keypoint-rcnn-engineering-1",
+    "mode": "mobile",
+    "path": "roadmap-model-selection/known-target-classification/keypoint-r-cnn/images/final/WI033-KPRCNN-01-r01-mobile.png",
+    "sha256": "79d7597fc65473587ef114ba76fbe5316ee66eb017fb572fb7f3588b8a6d7d49",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "keypoint-rcnn-engineering-2",
+    "mode": "desktop",
+    "path": "roadmap-model-selection/known-target-classification/keypoint-r-cnn/images/final/WI033-KPRCNN-02-r02-desktop.png",
+    "sha256": "16750deccd38b520edcf7d034c653b1d2dccc32efafc54dd8a5105f6ee00fe87",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "keypoint-rcnn-engineering-2",
+    "mode": "mobile",
+    "path": "roadmap-model-selection/known-target-classification/keypoint-r-cnn/images/final/WI033-KPRCNN-02-r02-mobile.png",
+    "sha256": "1a1607d336b0cc3496482cbe4143f897f6bdb5d7661d8dbd3083634d1723bda0",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "keypoint-rcnn-engineering-3",
+    "mode": "desktop",
+    "path": "roadmap-model-selection/known-target-classification/keypoint-r-cnn/images/final/WI033-KPRCNN-03-r02-desktop.png",
+    "sha256": "a8854180503aba1b6fa463c8f07e9bf2dfbfa8446fe7dc0b13272965e69307cd",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "keypoint-rcnn-engineering-3",
+    "mode": "mobile",
+    "path": "roadmap-model-selection/known-target-classification/keypoint-r-cnn/images/final/WI033-KPRCNN-03-r02-mobile.png",
+    "sha256": "2215f2cf83208eed7cc3cc6d43b130b2c941885cb081fcddd80c7e8e20819194",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "keypoint-rcnn-engineering-4",
+    "mode": "desktop",
+    "path": "roadmap-model-selection/known-target-classification/keypoint-r-cnn/images/final/WI033-KPRCNN-04-r01-desktop.png",
+    "sha256": "da2373229c2f244d9638ee019c3e6f43bff8273bcf8c60a0653a87e3ad0ce71a",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "keypoint-rcnn-engineering-4",
+    "mode": "mobile",
+    "path": "roadmap-model-selection/known-target-classification/keypoint-r-cnn/images/final/WI033-KPRCNN-04-r01-mobile.png",
+    "sha256": "d6b3890923c0184fe1ca19bf73fccf5df6d386bf5a7b2c9a7dd5871562289d7c",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  }
+]

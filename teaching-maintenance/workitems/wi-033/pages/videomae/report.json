@@ -1,0 +1,502 @@
+[
+  {
+    "topic": "videomae",
+    "route": "interactive-learning.html",
+    "width": 1440,
+    "errors": [],
+    "images": [
+      {
+        "src": "http://127.0.0.1:8000/_course_content/generated-concepts/videomae/wi028-mae-c1-r02-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 404.1875,
+          "y": 401.515625,
+          "width": 935.625,
+          "height": 526.5625,
+          "top": 401.515625,
+          "right": 1339.8125,
+          "bottom": 928.078125,
+          "left": 404.1875
+        },
+        "kind": "main-1"
+      },
+      {
+        "src": "http://127.0.0.1:8000/_course_content/generated-concepts/videomae/wi028-video-d2-r01-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 404.1875,
+          "y": 201.03125,
+          "width": 935.625,
+          "height": 526.5625,
+          "top": 201.03125,
+          "right": 1339.8125,
+          "bottom": 727.59375,
+          "left": 404.1875
+        },
+        "kind": "main-2"
+      },
+      {
+        "src": "http://127.0.0.1:8000/_course_content/generated-concepts/convlstm/wi028-video-d3-r02-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 404.1875,
+          "y": 201.34375,
+          "width": 935.625,
+          "height": 526.5625,
+          "top": 201.34375,
+          "right": 1339.8125,
+          "bottom": 727.90625,
+          "left": 404.1875
+        },
+        "kind": "main-3"
+      },
+      {
+        "src": "http://127.0.0.1:8000/roadmap-model-selection/video-temporal/videomae/images/final/WI033-VIDEOMAE-01-r01-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 367.1875,
+          "y": 196.265625,
+          "width": 1009.625,
+          "height": 568.203125,
+          "top": 196.265625,
+          "right": 1376.8125,
+          "bottom": 764.46875,
+          "left": 367.1875
+        },
+        "kind": "engineering-1"
+      },
+      {
+        "src": "http://127.0.0.1:8000/roadmap-model-selection/video-temporal/videomae/images/final/WI033-VIDEOMAE-02-r02-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 367.1875,
+          "y": 195.640625,
+          "width": 1009.625,
+          "height": 568.203125,
+          "top": 195.640625,
+          "right": 1376.8125,
+          "bottom": 763.84375,
+          "left": 367.1875
+        },
+        "kind": "engineering-2"
+      },
+      {
+        "src": "http://127.0.0.1:8000/roadmap-model-selection/video-temporal/videomae/images/final/WI033-VIDEOMAE-03-r02-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 367.1875,
+          "y": 195.578125,
+          "width": 1009.625,
+          "height": 568.203125,
+          "top": 195.578125,
+          "right": 1376.8125,
+          "bottom": 763.78125,
+          "left": 367.1875
+        },
+        "kind": "engineering-3"
+      },
+      {
+        "src": "http://127.0.0.1:8000/roadmap-model-selection/video-temporal/videomae/images/final/WI033-VIDEOMAE-04-r02-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 367.1875,
+          "y": 196.21875,
+          "width": 1009.625,
+          "height": 568.203125,
+          "top": 196.21875,
+          "right": 1376.8125,
+          "bottom": 764.421875,
+          "left": 367.1875
+        },
+        "kind": "engineering-4"
+      }
+    ],
+    "zoom_checks": 7,
+    "answer": true,
+    "overflow": false,
+    "navigation": true,
+    "complete": true
+  },
+  {
+    "topic": "videomae",
+    "route": "interactive-learning.html",
+    "width": 360,
+    "errors": [],
+    "images": [
+      {
+        "src": "http://127.0.0.1:8000/_course_content/generated-concepts/videomae/wi028-mae-c1-r05-mobile.png",
+        "nw": 768,
+        "nh": 2048,
+        "box": {
+          "x": 17,
+          "y": -79.796875,
+          "width": 326,
+          "height": 869.328125,
+          "top": -79.796875,
+          "right": 343,
+          "bottom": 789.53125,
+          "left": 17
+        },
+        "kind": "main-1"
+      },
+      {
+        "src": "http://127.0.0.1:8000/_course_content/generated-concepts/videomae/wi028-video-d2-r01-mobile.png",
+        "nw": 1024,
+        "nh": 1536,
+        "box": {
+          "x": 17,
+          "y": 110.375,
+          "width": 326,
+          "height": 489,
+          "top": 110.375,
+          "right": 343,
+          "bottom": 599.375,
+          "left": 17
+        },
+        "kind": "main-2"
+      },
+      {
+        "src": "http://127.0.0.1:8000/_course_content/generated-concepts/convlstm/wi028-video-d3-r02-mobile.png",
+        "nw": 887,
+        "nh": 1774,
+        "box": {
+          "x": 17,
+          "y": 28.09375,
+          "width": 326,
+          "height": 652,
+          "top": 28.09375,
+          "right": 343,
+          "bottom": 680.09375,
+          "left": 17
+        },
+        "kind": "main-3"
+      },
+      {
+        "src": "http://127.0.0.1:8000/roadmap-model-selection/video-temporal/videomae/images/final/WI033-VIDEOMAE-01-r01-mobile.png",
+        "nw": 768,
+        "nh": 2304,
+        "box": {
+          "x": 34,
+          "y": -69.171875,
+          "width": 292,
+          "height": 876,
+          "top": -69.171875,
+          "right": 326,
+          "bottom": 806.828125,
+          "left": 34
+        },
+        "kind": "engineering-1"
+      },
+      {
+        "src": "http://127.0.0.1:8000/roadmap-model-selection/video-temporal/videomae/images/final/WI033-VIDEOMAE-02-r02-mobile.png",
+        "nw": 768,
+        "nh": 2304,
+        "box": {
+          "x": 34,
+          "y": -69.8125,
+          "width": 292,
+          "height": 876,
+          "top": -69.8125,
+          "right": 326,
+          "bottom": 806.1875,
+          "left": 34
+        },
+        "kind": "engineering-2"
+      },
+      {
+        "src": "http://127.0.0.1:8000/roadmap-model-selection/video-temporal/videomae/images/final/WI033-VIDEOMAE-03-r02-mobile.png",
+        "nw": 768,
+        "nh": 2304,
+        "box": {
+          "x": 34,
+          "y": -69.828125,
+          "width": 292,
+          "height": 876,
+          "top": -69.828125,
+          "right": 326,
+          "bottom": 806.171875,
+          "left": 34
+        },
+        "kind": "engineering-3"
+      },
+      {
+        "src": "http://127.0.0.1:8000/roadmap-model-selection/video-temporal/videomae/images/final/WI033-VIDEOMAE-04-r02-mobile.png",
+        "nw": 768,
+        "nh": 2304,
+        "box": {
+          "x": 34,
+          "y": -69.125,
+          "width": 292,
+          "height": 876,
+          "top": -69.125,
+          "right": 326,
+          "bottom": 806.875,
+          "left": 34
+        },
+        "kind": "engineering-4"
+      }
+    ],
+    "zoom_checks": 7,
+    "answer": true,
+    "overflow": false,
+    "navigation": true,
+    "complete": true
+  },
+  {
+    "topic": "videomae",
+    "route": "docs/index.html",
+    "width": 1440,
+    "errors": [],
+    "images": [
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/videomae/wi028-mae-c1-r02-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 404.1875,
+          "y": 401.515625,
+          "width": 935.625,
+          "height": 526.5625,
+          "top": 401.515625,
+          "right": 1339.8125,
+          "bottom": 928.078125,
+          "left": 404.1875
+        },
+        "kind": "main-1"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/videomae/wi028-video-d2-r01-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 404.1875,
+          "y": 201.03125,
+          "width": 935.625,
+          "height": 526.5625,
+          "top": 201.03125,
+          "right": 1339.8125,
+          "bottom": 727.59375,
+          "left": 404.1875
+        },
+        "kind": "main-2"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/convlstm/wi028-video-d3-r02-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 404.1875,
+          "y": 201.34375,
+          "width": 935.625,
+          "height": 526.5625,
+          "top": 201.34375,
+          "right": 1339.8125,
+          "bottom": 727.90625,
+          "left": 404.1875
+        },
+        "kind": "main-3"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/video-temporal/videomae/images/final/WI033-VIDEOMAE-01-r01-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 367.1875,
+          "y": 196.265625,
+          "width": 1009.625,
+          "height": 568.203125,
+          "top": 196.265625,
+          "right": 1376.8125,
+          "bottom": 764.46875,
+          "left": 367.1875
+        },
+        "kind": "engineering-1"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/video-temporal/videomae/images/final/WI033-VIDEOMAE-02-r02-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 367.1875,
+          "y": 195.640625,
+          "width": 1009.625,
+          "height": 568.203125,
+          "top": 195.640625,
+          "right": 1376.8125,
+          "bottom": 763.84375,
+          "left": 367.1875
+        },
+        "kind": "engineering-2"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/video-temporal/videomae/images/final/WI033-VIDEOMAE-03-r02-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 367.1875,
+          "y": 195.578125,
+          "width": 1009.625,
+          "height": 568.203125,
+          "top": 195.578125,
+          "right": 1376.8125,
+          "bottom": 763.78125,
+          "left": 367.1875
+        },
+        "kind": "engineering-3"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/video-temporal/videomae/images/final/WI033-VIDEOMAE-04-r02-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 367.1875,
+          "y": 196.21875,
+          "width": 1009.625,
+          "height": 568.203125,
+          "top": 196.21875,
+          "right": 1376.8125,
+          "bottom": 764.421875,
+          "left": 367.1875
+        },
+        "kind": "engineering-4"
+      }
+    ],
+    "zoom_checks": 7,
+    "answer": true,
+    "overflow": false,
+    "navigation": true,
+    "complete": true
+  },
+  {
+    "topic": "videomae",
+    "route": "docs/index.html",
+    "width": 360,
+    "errors": [],
+    "images": [
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/videomae/wi028-mae-c1-r05-mobile.png",
+        "nw": 768,
+        "nh": 2048,
+        "box": {
+          "x": 17,
+          "y": -79.796875,
+          "width": 326,
+          "height": 869.328125,
+          "top": -79.796875,
+          "right": 343,
+          "bottom": 789.53125,
+          "left": 17
+        },
+        "kind": "main-1"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/videomae/wi028-video-d2-r01-mobile.png",
+        "nw": 1024,
+        "nh": 1536,
+        "box": {
+          "x": 17,
+          "y": 110.375,
+          "width": 326,
+          "height": 489,
+          "top": 110.375,
+          "right": 343,
+          "bottom": 599.375,
+          "left": 17
+        },
+        "kind": "main-2"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/convlstm/wi028-video-d3-r02-mobile.png",
+        "nw": 887,
+        "nh": 1774,
+        "box": {
+          "x": 17,
+          "y": 28.09375,
+          "width": 326,
+          "height": 652,
+          "top": 28.09375,
+          "right": 343,
+          "bottom": 680.09375,
+          "left": 17
+        },
+        "kind": "main-3"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/video-temporal/videomae/images/final/WI033-VIDEOMAE-01-r01-mobile.png",
+        "nw": 768,
+        "nh": 2304,
+        "box": {
+          "x": 34,
+          "y": -69.171875,
+          "width": 292,
+          "height": 876,
+          "top": -69.171875,
+          "right": 326,
+          "bottom": 806.828125,
+          "left": 34
+        },
+        "kind": "engineering-1"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/video-temporal/videomae/images/final/WI033-VIDEOMAE-02-r02-mobile.png",
+        "nw": 768,
+        "nh": 2304,
+        "box": {
+          "x": 34,
+          "y": -69.8125,
+          "width": 292,
+          "height": 876,
+          "top": -69.8125,
+          "right": 326,
+          "bottom": 806.1875,
+          "left": 34
+        },
+        "kind": "engineering-2"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/video-temporal/videomae/images/final/WI033-VIDEOMAE-03-r02-mobile.png",
+        "nw": 768,
+        "nh": 2304,
+        "box": {
+          "x": 34,
+          "y": -69.828125,
+          "width": 292,
+          "height": 876,
+          "top": -69.828125,
+          "right": 326,
+          "bottom": 806.171875,
+          "left": 34
+        },
+        "kind": "engineering-3"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/video-temporal/videomae/images/final/WI033-VIDEOMAE-04-r02-mobile.png",
+        "nw": 768,
+        "nh": 2304,
+        "box": {
+          "x": 34,
+          "y": -69.125,
+          "width": 292,
+          "height": 876,
+          "top": -69.125,
+          "right": 326,
+          "bottom": 806.875,
+          "left": 34
+        },
+        "kind": "engineering-4"
+      }
+    ],
+    "zoom_checks": 7,
+    "answer": true,
+    "overflow": false,
+    "navigation": true,
+    "complete": true
+  }
+]

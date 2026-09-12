@@ -122,3 +122,40 @@ Grounding DINO 是 text-conditioned open-set candidate detector：文字 phrase 
 工作接法：先以明確物件詞驗證，再用專家確認框；記錄prompt及同詞不同外觀。換詞／產品需重驗漏檢與誤框，必要時微調；只有正常品也能探索物件，但不能直接變成未知缺陷檢測。
 
 [原論文／官方文件](https://arxiv.org/abs/2303.05499)。D01核心與反例圖為既有素材加受控設定，沒有新模型推論。
+
+<!-- wi033-engineering:start -->
+## WI-033 工程圖修正
+
+### Grounding DINO：用詞語指定想找什麼
+
+開放詞彙偵測接受影像與文字，透過兩模態互動和語言引導query定位相關區域；輸出框與詞語相關分數。輸入resistor可說明想找的類別，不能保證辨識103/272的電性或料號。
+
+文字可以引導定位，專業料號仍需另驗。
+
+來源：https://arxiv.org/abs/2303.05499
+
+### Grounding DINO：詞與區域共同定位
+
+以同PCB的resistor文字查詢；影像特徵與文字token在feature enhancer互動，language-guided query selection挑相關起點，cross-modality decoder再利用兩種表示修框。圖中詞區域數字是相容性教學例，不是置信度實測。輸出詞語相關分數及框，並非像素遮罩。
+
+文字参与候選和解碼，交付詞語與框。
+
+來源：https://arxiv.org/abs/2303.05499
+
+### Grounding DINO：提示詞也是設定
+
+保存模型版本、提示詞、詞語門檻/框門檻和影像映射。文字變更可能改變候選，因此不能只保存圖片與框而漏提示；領域名稱與相似零件須獨立驗證。
+
+保存提示與門檻，框映回原圖後逐件核對。
+
+來源：https://arxiv.org/abs/2303.05499
+
+### 文字偵測與專用偵測：同題試驗
+
+開放文字查詢適合探索類別，但工業域詞語與小零件仍需驗。固定類別可比較標註訓練的專用YOLO/RT-DETR；以資料成本、漏框與部署成本選，而不把兩種模型串成必經流程。
+
+類別常變可試文字提示，穩定任務可訓練專用頭。
+
+來源：https://arxiv.org/abs/2303.05499
+
+<!-- wi033-engineering:end -->

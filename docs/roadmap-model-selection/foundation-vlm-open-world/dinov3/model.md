@@ -101,3 +101,40 @@ Preserve image/ROI/tile provenance, preprocess checksum, release/checkpoint hash
 
 - Siméoni et al., *DINOv3* (2025), [arXiv:2508.10104](https://arxiv.org/abs/2508.10104).
 - `full-model-course/06-foundation-vision-and-vlm.md` for course-scoped claims and page order.
+
+<!-- wi033-engineering:start -->
+## WI-033 工程圖修正
+
+### DINOv3：一張圖保留多個局部表示
+
+以ViT骨幹為例，影像轉成patch token並與其他位置交換資訊，輸出局部及全局表示。局部表示保留對應位置，但每個向量包含上下文，不等於該格像素值。異常判斷、分類或匹配要接下游方法；特徵色圖不是現成缺陷分數。
+
+骨幹交出特徵，局部位置與下游工作仍要對齊。
+
+來源：https://arxiv.org/html/2508.10104v1
+
+### DINOv3：訓練時守住局部關係
+
+Gram矩陣記錄同圖patch特徵的兩兩內積；以較早教師的關係當目標，約束目前學生，並保留原有自監督訓練目標。這不是把特徵逐點鎖成相同數值，也不是推論時要額外跑的模組。本圖數字為二維單位向量算例。
+
+Gram 只約束訓練，部署仍輸出特徵。
+
+來源：https://arxiv.org/html/2508.10104v1
+
+### DINOv3：換骨幹也要重建相容參考
+
+部署不跑Gram教師；用固定權重與前處理抽取表示，再建相容特徵庫或訓練下游頭。不能把DINOv2庫直接當DINOv3庫查詢。以同一留出集核對命中／漏檢、抽特徵和查庫時間、記憶體與重建成本，不能只比較色圖漂亮程度。
+
+保存權重與前處理，同條件重建庫並量完整成本。
+
+來源：https://arxiv.org/html/2508.10104v1
+
+### DINOv3：以工作結果決定是否換骨幹
+
+工程4不重複主反例。固定同一批正常與缺口墊圈及取像，各自使用相容骨幹與參考表示；記錄下游漏檢/誤報、抽特徵/查庫時間與重建負擔。新骨幹訓練機制不同，不代表每項域內指標一定進步。
+
+同題比較效果與重建代價，保留基準也合理。
+
+來源：https://arxiv.org/html/2508.10104v1
+
+<!-- wi033-engineering:end -->

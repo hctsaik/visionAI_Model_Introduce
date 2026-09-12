@@ -1,0 +1,1014 @@
+{
+  "model": "AnomalyDINO",
+  "badge": "預訓練Transformer特徵查參考",
+  "title": "AnomalyDINO：用預訓練特徵找正常先例",
+  "scenario": {
+    "title": "正常樣本有限，想利用既有視覺表示找出金屬板上缺少正常先例的局部。",
+    "body": "正常樣本有限，想利用既有視覺表示找出金屬板上缺少正常先例的局部。"
+  },
+  "promise": {
+    "title": "交付結果與接手工作",
+    "body": "可疑位置及影像分數，交人比對原圖；不是文字問答，也不是缺陷尺寸量測。"
+  },
+  "mental_model": {
+    "title": "預訓練Transformer特徵查參考",
+    "body": "AnomalyDINO利用已預訓練的DINOv2擷取區塊特徵，從正常圖建立參考。待測圖的區塊特徵與正常參考比相似度，局部差異映回原圖；Transformer讓區塊表示帶有全圖情境。免額外訓練指不為此異常偵測工作微調，並不是模型從未訓練或不需要正常資料。",
+    "limit": "同一片沒有刮傷的金屬板，換成斜照後出現亮帶，也可能被標成可疑。分數反映與既有正常的差異，不直接證明工件損壞。"
+  },
+  "micro_example": {
+    "title": "少樣本先做哪一步？",
+    "setup": "新產品只有少量確認正常影像，舊DINOv2特徵可用；一週內只能優先做補拍正常變化，或進行模型微調試驗。",
+    "prediction": "你先補拍並建立參考，還是先微調？什麼結果會支持下一步換路線？",
+    "reveal": "若問題是光照、批次或姿態覆蓋不足，先補正常參考通常更直接，也符合本方法免額外微調的起點。若獨立檢查顯示特徵無法分開任務關心的差異，再考慮微調或其他方法；那是新增方案，需另設訓練與驗證。少樣本與免微調都不代表免測誤報漏檢。"
+  },
+  "mechanism_steps": [
+    {
+      "title": "正常圖建立參考",
+      "body": "完整影像經DINOv2輸出patch tokens；示意來源框只解釋位置，不是把每個小裁片各自送模型。",
+      "why": "由本課核心機制連接工作用途",
+      "anchor": "WI030-1",
+      "diagram": {
+        "title": "正常圖建立參考",
+        "body": "完整影像經DINOv2輸出patch tokens；示意來源框只解釋位置，不是把每個小裁片各自送模型。",
+        "why": "詳見本課版本與來源",
+        "anchor": "WI030-1"
+      }
+    },
+    {
+      "title": "待測圖找相似特徵",
+      "body": "以正常特徵作最近鄰參考，通常不限制只查相同座標；不代表旋轉、背景或未知產品變化都不影響結果。",
+      "why": "由本課核心機制連接工作用途",
+      "anchor": "WI030-2",
+      "diagram": {
+        "title": "待測圖找相似特徵",
+        "body": "以正常特徵作最近鄰參考，通常不限制只查相同座標；不代表旋轉、背景或未知產品變化都不影響結果。",
+        "why": "詳見本課版本與來源",
+        "anchor": "WI030-2"
+      }
+    },
+    {
+      "title": "距離回到位置",
+      "body": "可疑位置及影像分數，交人比對原圖；不是文字問答，也不是缺陷尺寸量測。",
+      "why": "由本課核心機制連接工作用途",
+      "anchor": "WI030-3",
+      "diagram": {
+        "title": "距離回到位置",
+        "body": "可疑位置及影像分數，交人比對原圖；不是文字問答，也不是缺陷尺寸量測。",
+        "why": "詳見本課版本與來源",
+        "anchor": "WI030-3"
+      }
+    },
+    {
+      "title": "工作核對與接手",
+      "body": "保存真實原圖、版本、正常資料切分、熱圖與覆核結果；同批獨立正常／缺陷樣本分開計誤報、漏檢，並量包含取像、前處理、模型與交接的耗時及記憶體。圖中熱區不是模型推論。",
+      "why": "由本課核心機制連接工作用途",
+      "anchor": "WI030-4",
+      "diagram": {
+        "title": "工作核對與接手",
+        "body": "保存真實原圖、版本、正常資料切分、熱圖與覆核結果；同批獨立正常／缺陷樣本分開計誤報、漏檢，並量包含取像、前處理、模型與交接的耗時及記憶體。圖中熱區不是模型推論。",
+        "why": "詳見本課版本與來源",
+        "anchor": "WI030-4"
+      }
+    }
+  ],
+  "visual_intro": "AnomalyDINO利用已預訓練的DINOv2擷取區塊特徵，從正常圖建立參考。待測圖的區塊特徵與正常參考比相似度，局部差異映回原圖；Transformer讓區塊表示帶有全圖情境。免額外訓練指不為此異常偵測工作微調，並不是模型從未訓練或不需要正常資料。",
+  "beginner_path": {
+    "title": "從必要原理、具體反例到工作取捨",
+    "intro": "正常樣本有限，想利用既有視覺表示找出金屬板上缺少正常先例的局部。 下列圖像、特徵及回答為教學示意，不是模型實測。",
+    "visuals": [
+      {
+        "id": "wi030-dino-c1",
+        "title": "AnomalyDINO：用預訓練特徵找正常先例",
+        "prompt": "正常樣本有限，想利用既有視覺表示找出金屬板上缺少正常先例的局部。",
+        "caption": "AnomalyDINO利用已預訓練的DINOv2擷取區塊特徵，從正常圖建立參考。待測圖的區塊特徵與正常參考比相似度，局部差異映回原圖；Transformer讓區塊表示帶有全圖情境。免額外訓練指不為此異常偵測工作微調，並不是模型從未訓練或不需要正常資料。",
+        "image": "_course_content/generated-concepts/ad-anomalydino/wi030-dino-c1-r03-desktop.png",
+        "alt": "AnomalyDINO：用預訓練特徵找正常先例。AnomalyDINO利用已預訓練的DINOv2擷取區塊特徵，從正常圖建立參考。待測圖的區塊特徵與正常參考比相似度，局部差異映回原圖；Transformer讓區塊表示帶有全圖情境。免額外訓練指不為此異常偵測工作微調，並不是模型從未訓練或不需要正常資料。 AI生成教學示意，非模型實測。",
+        "callouts": [
+          {
+            "title": "全圖產生區塊表示",
+            "body": "完整影像經DINOv2輸出patch tokens；示意來源框只解釋位置，不是把每個小裁片各自送模型。"
+          },
+          {
+            "title": "正常先例仍要覆蓋",
+            "body": "以正常特徵作最近鄰參考，通常不限制只查相同座標；不代表旋轉、背景或未知產品變化都不影響結果。"
+          },
+          {
+            "title": "交付與接手",
+            "body": "可疑位置及影像分數，交人比對原圖；不是文字問答，也不是缺陷尺寸量測。"
+          }
+        ],
+        "reading_views": [
+          {
+            "title": "AnomalyDINO：用預訓練特徵找正常先例",
+            "image": "_course_content/generated-concepts/ad-anomalydino/wi030-dino-c1-r03-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/ad-anomalydino/wi030-dino-c1-r05-mobile.png",
+            "alt": "AnomalyDINO：用預訓練特徵找正常先例。AnomalyDINO利用已預訓練的DINOv2擷取區塊特徵，從正常圖建立參考。待測圖的區塊特徵與正常參考比相似度，局部差異映回原圖；Transformer讓區塊表示帶有全圖情境。免額外訓練指不為此異常偵測工作微調，並不是模型從未訓練或不需要正常資料。 AI生成教學示意，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              768,
+              2048
+            ],
+            "mobile_display_mode": "full-mobile",
+            "desktop_intrinsic_width": 1672,
+            "desktop_intrinsic_height": 941,
+            "mobile_intrinsic_width": 768,
+            "mobile_intrinsic_height": 2048
+          }
+        ],
+        "core_ideas": true
+      },
+      {
+        "id": "wi030-ad-d2",
+        "title": "正常改變了，異常分數也可能跟著變",
+        "prompt": "觀察哪個條件改變，讓原本的結果不夠可靠？",
+        "caption": "同一片沒有刮傷的金屬板，換成斜照後出現亮帶，也可能被標成可疑。分數反映與既有正常的差異，不直接證明工件損壞。",
+        "image": "_course_content/generated-concepts/ad-patchcore/wi030-ad-d2-r02-desktop.png",
+        "alt": "正常改變了，異常分數也可能跟著變。同一片沒有刮傷的金屬板，換成斜照後出現亮帶，也可能被標成可疑。分數反映與既有正常的差異，不直接證明工件損壞。 AI生成教學示意，非模型實測。",
+        "callouts": [
+          {
+            "title": "看哪裡",
+            "body": "同一片沒有刮傷的金屬板，換成斜照後出現亮帶，也可能被標成可疑。分數反映與既有正常的差異，不直接證明工件損壞。"
+          },
+          {
+            "title": "接著怎麼做",
+            "body": "先回看原圖、曝光與照明，穩定取像；新正常外觀須經允收確認，再以獨立正常與缺陷資料驗證，不能把高分樣本一律加進正常資料。"
+          }
+        ],
+        "reading_views": [
+          {
+            "title": "正常改變了，異常分數也可能跟著變",
+            "image": "_course_content/generated-concepts/ad-patchcore/wi030-ad-d2-r02-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/ad-patchcore/wi030-ad-d2-r02-mobile.png",
+            "alt": "正常改變了，異常分數也可能跟著變。同一片沒有刮傷的金屬板，換成斜照後出現亮帶，也可能被標成可疑。分數反映與既有正常的差異，不直接證明工件損壞。 AI生成教學示意，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              768,
+              2048
+            ],
+            "mobile_display_mode": "full-mobile",
+            "desktop_intrinsic_width": 1670,
+            "desktop_intrinsic_height": 941,
+            "mobile_intrinsic_width": 768,
+            "mobile_intrinsic_height": 2048
+          }
+        ],
+        "core_ideas": false
+      },
+      {
+        "id": "wi030-ad-d3",
+        "title": "正常資料相同，四種方法怎麼留下知識？",
+        "prompt": "相同工作需求下，資料、輸出與成本如何取捨？",
+        "caption": "PatchCore保存CNN代表局部供查找；PaDiM估計每個位置的正常分布；AnomalyDINO用DINOv2特徵建立參考；EfficientAD用正常資料學教師／學生與全域特徵關係。先固定取像與缺陷需求，再比錯誤與完整成本。",
+        "image": "_course_content/generated-concepts/ad-patchcore/wi030-ad-d3-r04-desktop.png",
+        "alt": "正常資料相同，四種方法怎麼留下知識？。PatchCore保存CNN代表局部供查找；PaDiM估計每個位置的正常分布；AnomalyDINO用DINOv2特徵建立參考；EfficientAD用正常資料學教師／學生與全域特徵關係。先固定取像與缺陷需求，再比錯誤與完整成本。 AI生成教學示意，非模型實測。",
+        "callouts": [
+          {
+            "title": "怎麼選",
+            "body": "PatchCore保存CNN代表局部供查找；PaDiM估計每個位置的正常分布；AnomalyDINO用DINOv2特徵建立參考；EfficientAD用正常資料學教師／學生與全域特徵關係。先固定取像與缺陷需求，再比錯誤與完整成本。"
+          },
+          {
+            "title": "資料與完整成本",
+            "body": "固定DINOv2版本、縮放、背景處理與參考策略；更換產品或前處理後重建參考並驗證。少樣本仍要記錄取樣代表性、特徵儲存及推論成本。"
+          }
+        ],
+        "reading_views": [
+          {
+            "title": "正常資料相同，四種方法怎麼留下知識？",
+            "image": "_course_content/generated-concepts/ad-patchcore/wi030-ad-d3-r04-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/ad-patchcore/wi030-ad-d3-r03-mobile.png",
+            "alt": "正常資料相同，四種方法怎麼留下知識？。PatchCore保存CNN代表局部供查找；PaDiM估計每個位置的正常分布；AnomalyDINO用DINOv2特徵建立參考；EfficientAD用正常資料學教師／學生與全域特徵關係。先固定取像與缺陷需求，再比錯誤與完整成本。 AI生成教學示意，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              768,
+              2048
+            ],
+            "mobile_display_mode": "full-mobile",
+            "desktop_intrinsic_width": 1672,
+            "desktop_intrinsic_height": 941,
+            "mobile_intrinsic_width": 768,
+            "mobile_intrinsic_height": 2048
+          }
+        ],
+        "core_ideas": false
+      }
+    ]
+  },
+  "concept_visuals": [
+    {
+      "id": "nearest-normal-example",
+      "placement": "after_micro_example",
+      "title": "AnomalyDINO：先懂核心再看細節",
+      "prompt": "固定 DINOv2 還在，卻把正常參考庫拿掉，原流程還能算什麼？",
+      "caption": "新產品可能只有幾張正常品。AnomalyDINO借用已學好的 DINOv2 表徵，把正常 patch tokens 留成小參考庫，再查待測局部是否有相近先例。",
+      "image": "_course_content/generated-concepts/ad-anomalydino/ad-anomalydino-f01-core.png",
+      "alt": "新產品可能只有幾張正常品。AnomalyDINO借用已學好的 DINOv2 表徵，把正常 patch tokens 留成小參考庫，再查待測局部是否有相近先例。 圖為既有生成工件與機制設定，不是模型推論。",
+      "callouts": [
+        {
+          "title": "固定 DINOv2",
+          "body": "整張影像進預訓練模型，取得帶有影像情境的局部 token；不是逐張裁片重新訓練。"
+        },
+        {
+          "title": "少量正常參考",
+          "body": "正常 tokens 組成記憶庫，待測局部不限同座標找近鄰；少樣本仍須涵蓋允收外觀。"
+        },
+        {
+          "title": "距離產生線索",
+          "body": "相近正常特徵找不到時，距離上升；patch 分數回映位置並聚合整圖，熱圖不等於精密邊界。"
+        }
+      ]
+    },
+    {
+      "id": "support-can-lie",
+      "placement": "before_boundary_cases",
+      "title": "support 不完整或被污染時，候選會被改寫",
+      "prompt": "三格都用同一種 ROI；真正改變的是「哪些局部被允許叫正常」。",
+      "caption": "由左到右：少了合法正常變化，正常品也可能亮起而 false HOLD；乾淨且涵蓋足夠的 support 才讓刮痕成為局部 candidate；若把刮痕或不合法變換混入 support，未來相似刮痕可能變淡。三種情況都不能直接 release。",
+      "image": "_course_content/generated-concepts/anomalydino-bridge-03-support-can-lie_v02.png",
+      "alt": "三欄無文字反事實圖：每欄上方有不同組成的金屬表面參考卡，下方是含網格的金屬 ROI；候選亮區在三欄間呈現不同程度。",
+      "callouts": [
+        {
+          "title": "左：coverage 缺口",
+          "body": "未收錄的合法外觀可能被誤當可疑；先 HOLD 並補足 qualification。"
+        },
+        {
+          "title": "中：乾淨、涵蓋足夠",
+          "body": "相同刮痕才有機會形成局部候選；仍須回看 raw ROI。"
+        },
+        {
+          "title": "右：support 被污染",
+          "body": "若可疑刮痕被當成正常參考，未來的 candidate 可能被壓低。"
+        }
+      ]
+    },
+    {
+      "id": "memory-versus-subspace",
+      "placement": "after_comparison",
+      "title": "同一個刮痕，兩種「正常」的定義",
+      "prompt": "先不要把兩種 anomaly score 混成同一件事：左邊找正常範例，右邊量離正常方向多遠。",
+      "caption": "左邊的 AnomalyDINO 將 query token 和 normal exemplar 做最近鄰比較；右邊的 SubspaceAD 讓 feature 投影到 PCA normal subspace，再量垂直 residual。兩邊回到 ROI 的橘色格都只是待 review 的 candidate。",
+      "image": "_course_content/generated-concepts/anomaly-bridge-memory-vs-subspace_v01.png",
+      "alt": "左右對照無文字圖：左邊是正常金屬表面參考卡和含刮痕的網格 ROI，右邊是同一個 ROI 對應到藍色點雲和平面，兩邊下方都回映為粗橘色候選格和放大鏡。",
+      "callouts": [
+        {
+          "title": "左：AnomalyDINO",
+          "body": "問的是：這個 query token 有沒有像它的 clean normal exemplar？"
+        },
+        {
+          "title": "右：SubspaceAD",
+          "body": "問的是：這個 feature 投影後，還留下多少 normal subspace 無法解釋的 residual？"
+        },
+        {
+          "title": "共同邊界",
+          "body": "候選格幫人找到該回看的位置，不能自己宣告 defect truth 或產線動作。"
+        }
+      ]
+    },
+    {
+      "id": "causal-chain-explainer",
+      "placement": "after_causal_chain",
+      "title": "把四步『為什麼』一次看成一張圖",
+      "prompt": "先沿著四張卡走一次：正常參考如何變成 token memory，距離又如何回到待 review 的候選格？",
+      "caption": "這張說明圖逐步對應上方因果鏈與後方工程圖：可信 support、可比較的 token contract、cosine 最近鄰，以及回映 candidate map。最後一格刻意停在 REVIEW／HOLD，因為距離不是缺陷真相。",
+      "image": "_course_content/generated-concepts/ad-anomalydino/ad-anomalydino-causal-chain_v01.svg",
+      "alt": "AnomalyDINO 的四步因果說明圖：收集乾淨正常參考、轉成可比較 token、每個測試局部找正常近鄰、距離回映為候選格並交人工 review；每步列出原因和工程圖核對點。",
+      "callouts": [
+        {
+          "title": "① support 決定什麼叫正常",
+          "body": "模型沒有缺陷類別老師；只有被核准納入的乾淨局部能成為正常參考。"
+        },
+        {
+          "title": "②～③ 先鎖可比較的量測契約",
+          "body": "共用 ROI、resize、encoder state；reference／test 的 mask、rotation 如何處理各自宣告，近鄰距離才主要反映局部外觀差異。"
+        },
+        {
+          "title": "④ candidate 只指出先看哪裡",
+          "body": "粗 patch-grid 可協助人工回看，不能變成 pixel mask、缺陷名稱或自動放行。"
+        }
+      ]
+    }
+  ],
+  "boundary_cases": [
+    {
+      "condition": "本課具體反例",
+      "effect": "同一片沒有刮傷的金屬板，換成斜照後出現亮帶，也可能被標成可疑。分數反映與既有正常的差異，不直接證明工件損壞。",
+      "action": "先回看原圖、曝光與照明，穩定取像；新正常外觀須經允收確認，再以獨立正常與缺陷資料驗證，不能把高分樣本一律加進正常資料。"
+    },
+    {
+      "condition": "更換產品、模型或輸入設定",
+      "effect": "固定DINOv2版本、縮放、背景處理與參考策略；更換產品或前處理後重建參考並驗證。少樣本仍要記錄取樣代表性、特徵儲存及推論成本。",
+      "action": "先確認少量正常參考可涵蓋哪些允收外觀，保留未見批次，再測小缺陷和背景變動。"
+    },
+    {
+      "condition": "把示意當成實際推論",
+      "effect": "本課特徵、排序、回答及圖像僅用於解釋，不支持現場準確率或耗時結論。",
+      "action": "保存真實原圖、版本、正常資料切分、熱圖與覆核結果；同批獨立正常／缺陷樣本分開計誤報、漏檢，並量包含取像、前處理、模型與交接的耗時及記憶體。圖中熱區不是模型推論。"
+    }
+  ],
+  "comparison": [
+    {
+      "model": "PatchCore",
+      "normality": "正常CNN局部特徵＋代表子集庫",
+      "candidate": "局部最近鄰差異；維護庫大小與覆蓋"
+    },
+    {
+      "model": "PaDiM",
+      "normality": "每位置平均與共變異",
+      "candidate": "位置條件距離；維護對位與分布"
+    },
+    {
+      "model": "AnomalyDINO",
+      "normality": "DINOv2區塊特徵正常參考",
+      "candidate": "特徵相似度；維護表示與參考"
+    },
+    {
+      "model": "EfficientAD",
+      "normality": "正常訓練教師／學生與AE關係",
+      "candidate": "局部＋全域差；維護權重及校準"
+    }
+  ],
+  "selection": "PatchCore保存CNN代表局部供查找；PaDiM估計每個位置的正常分布；AnomalyDINO用DINOv2特徵建立參考；EfficientAD用正常資料學教師／學生與全域特徵關係。先固定取像與缺陷需求，再比錯誤與完整成本。 固定DINOv2版本、縮放、背景處理與參考策略；更換產品或前處理後重建參考並驗證。少樣本仍要記錄取樣代表性、特徵儲存及推論成本。",
+  "poc": {
+    "title": "以真實工作資料做小規模比較",
+    "steps": [
+      "先確認少量正常參考可涵蓋哪些允收外觀，保留未見批次，再測小缺陷和背景變動。",
+      "固定DINOv2版本、縮放、背景處理與參考策略；更換產品或前處理後重建參考並驗證。少樣本仍要記錄取樣代表性、特徵儲存及推論成本。",
+      "保存真實原圖、版本、正常資料切分、熱圖與覆核結果；同批獨立正常／缺陷樣本分開計誤報、漏檢，並量包含取像、前處理、模型與交接的耗時及記憶體。圖中熱區不是模型推論。"
+    ],
+    "hold": "先回看原圖、曝光與照明，穩定取像；新正常外觀須經允收確認，再以獨立正常與缺陷資料驗證，不能把高分樣本一律加進正常資料。",
+    "acceptance": {
+      "baseline": "既有流程或最簡單可行方法",
+      "measure": "保存真實原圖、版本、正常資料切分、熱圖與覆核結果；同批獨立正常／缺陷樣本分開計誤報、漏檢，並量包含取像、前處理、模型與交接的耗時及記憶體。圖中熱區不是模型推論。",
+      "negative_control": "同一片沒有刮傷的金屬板，換成斜照後出現亮帶，也可能被標成可疑。分數反映與既有正常的差異，不直接證明工件損壞。",
+      "owner": "實作與影像核對負責人"
+    }
+  },
+  "teach_back": {
+    "question": "它改變什麼？何時選另一種做法？",
+    "answer": "AnomalyDINO利用已預訓練的DINOv2擷取區塊特徵，從正常圖建立參考。待測圖的區塊特徵與正常參考比相似度，局部差異映回原圖；Transformer讓區塊表示帶有全圖情境。免額外訓練指不為此異常偵測工作微調，並不是模型從未訓練或不需要正常資料。 PatchCore保存CNN代表局部供查找；PaDiM估計每個位置的正常分布；AnomalyDINO用DINOv2特徵建立參考；EfficientAD用正常資料學教師／學生與全域特徵關係。先固定取像與缺陷需求，再比錯誤與完整成本。"
+  },
+  "slide_reading": [
+    {
+      "title": "先找出：哪些局部被允許當正常參考？",
+      "question": "如果一個 test token 找不到相近 normal token，最後哪個位置會亮？",
+      "look": "依序找 support gallery、DINOv2 patches、token memory 與 candidate map。",
+      "relation": "少量乾淨正常局部先變成可搜尋的 token memory；test 局部再逐一比對。",
+      "takeaway": "AnomalyDINO 找的是『不像已知正常』，不是直接辨識缺陷類別。",
+      "terms": [
+        "token：模型對固定小區塊的數字描述",
+        "support：被允許當正常參考的乾淨樣本"
+      ]
+    },
+    {
+      "title": "這張圖要核對 cosine distance 從哪裡來",
+      "question": "哪些比較條件應共用，哪些 mask／rotation 規則必須分開宣告？",
+      "look": "找 ROI／resize、token grid、normal memory、cosine NN 與 map，並核對 reference／test 的 mask 與 rotation policy。",
+      "relation": "共用 ROI、resize、encoder state；但 mask／rotation 要寫清各自的處理，距離才比較局部外觀而不是取像條件。",
+      "takeaway": "每個 token 的最近鄰距離組成 patch-grid 候選熱圖。",
+      "terms": [
+        "cosine distance：兩個特徵方向有多不像",
+        "patch grid：token 所在的低解析位置網格"
+      ]
+    },
+    {
+      "title": "先鎖定 memory 的來源，才談分數",
+      "question": "哪些設定一改，原本的『最近正常』就可能換人？",
+      "look": "找 support IDs、ROI／mask、token grid、index 與 aggregation 的版本契約。",
+      "relation": "support 選擇與前處理共同決定 memory 裡有誰，也共同決定距離尺度。",
+      "takeaway": "可重播的 support 與 recipe，才值得比較候選分數。",
+      "terms": [
+        "aggregation：把多個 patch 分數合成整圖候選分數",
+        "contamination：把可疑樣本誤放進正常參考"
+      ]
+    },
+    {
+      "title": "選它前，先分清『陌生』與『缺陷』",
+      "question": "整片高分、極小缺陷不亮、或換 support 就變結果時，應怎麼做？",
+      "look": "看 support coverage、drift、token-grid 尺度與人工 evidence gate。",
+      "relation": "距離變大可能是產品差異，也可能是正常涵蓋、對位或取像條件失效。",
+      "takeaway": "條件不成立就 HOLD；熱圖不能直接變成 release 決策。",
+      "terms": [
+        "drift：取像或產品狀態逐漸偏離原先 qualification",
+        "HOLD：停止自動推論，先補證據或重新驗證"
+      ]
+    }
+  ],
+  "comparison_headers": {
+    "title": "正常資料相同，四種方法怎麼留下知識？",
+    "basis": "所需資料與方法差異",
+    "output": "輸出與維護責任"
+  },
+  "transfer_check": {
+    "title": "少樣本先做哪一步？",
+    "scenario": "新產品只有少量確認正常影像，舊DINOv2特徵可用；一週內只能優先做補拍正常變化，或進行模型微調試驗。",
+    "question": "你先補拍並建立參考，還是先微調？什麼結果會支持下一步換路線？",
+    "answer": "若問題是光照、批次或姿態覆蓋不足，先補正常參考通常更直接，也符合本方法免額外微調的起點。若獨立檢查顯示特徵無法分開任務關心的差異，再考慮微調或其他方法；那是新增方案，需另設訓練與驗證。少樣本與免微調都不代表免測誤報漏檢。"
+  },
+  "review_trace": {
+    "authority": "roadmap-model-selection/anomaly-detection/ad-anomalydino/model.md",
+    "scope": "WI-030 十二課首讀圖文與手機PNG、反例、比較及自測；原工程slide保留，未以首讀評分代替工程圖審查。",
+    "claims": [
+      {
+        "id": "visual-1",
+        "field": "beginner_path.visuals[global-normal-neighbor]",
+        "source": "模型定位 / architecture_path"
+      },
+      {
+        "id": "visual-2",
+        "field": "beginner_path.visuals[shared-transform]",
+        "source": "architecture_path"
+      },
+      {
+        "id": "visual-3",
+        "field": "beginner_path.visuals[raw-distance-fork]",
+        "source": "representation_or_score"
+      },
+      {
+        "id": "visual-4",
+        "field": "beginner_path.visuals[support-defines-normal]",
+        "source": "failure_boundary"
+      },
+      {
+        "id": "visual-5",
+        "field": "beginner_path.visuals[no-go-boundaries]",
+        "source": "selection_gate / evidence_bundle"
+      },
+      {
+        "id": "promise",
+        "field": "promise",
+        "source": "模型定位 / representation_or_score"
+      },
+      {
+        "id": "mechanism",
+        "field": "mechanism_steps",
+        "source": "architecture_path / representation_or_score"
+      },
+      {
+        "id": "boundaries",
+        "field": "boundary_cases",
+        "source": "failure_boundary / selection_gate"
+      },
+      {
+        "id": "comparison",
+        "field": "comparison + selection",
+        "source": "selection_gate"
+      },
+      {
+        "id": "poc",
+        "field": "poc + acceptance",
+        "source": "cost_and_operating_point / evidence_bundle"
+      },
+      {
+        "id": "transfer",
+        "field": "transfer_check",
+        "source": "failure_boundary / selection_gate"
+      },
+      {
+        "id": "f01-core",
+        "field": "beginner_path.visuals[0] + scenario + mental_model",
+        "source": "https://arxiv.org/abs/2405.14529"
+      },
+      {
+        "id": "f01-transfer",
+        "field": "micro_example + transfer_check",
+        "source": "由原論文機制推論移除後果；https://arxiv.org/abs/2405.14529"
+      },
+      {
+        "id": "wi030-first-read",
+        "field": "beginner_path + core + selection + transfer",
+        "source": "https://arxiv.org/abs/2405.14529"
+      }
+    ]
+  },
+  "deep_dive": {
+    "title": "AnomalyDINO：從少量正常參考到可追查的異常線索",
+    "intro": "每個視圖聚焦一個問題並保留必要對照。第1至5章沿用A-01工件；教學設定與第8章作者真實輸出清楚分開。",
+    "concept_path": "roadmap-model-selection/anomalydino-workplace-deep-dive.md",
+    "chapters": [
+      {
+        "id": "anomalydino-01",
+        "nav": "少量正常品起步",
+        "title": "AnomalyDINO：先懂核心，再準備資料",
+        "summary": "新產品可能只有幾張正常品。AnomalyDINO借用已學好的 DINOv2 表徵，把正常 patch tokens 留成小參考庫，再查待測局部是否有相近先例。",
+        "image": "_course_content/generated-concepts/ad-anomalydino/ad-anomalydino-f01-core.svg",
+        "alt": "新產品可能只有幾張正常品。AnomalyDINO借用已學好的 DINOv2 表徵，把正常 patch tokens 留成小參考庫，再查待測局部是否有相近先例。 圖為既有生成工件與機制設定，不是模型推論。",
+        "points": [
+          "固定 DINOv2：整張影像進預訓練模型，取得帶有影像情境的局部 token；不是逐張裁片重新訓練。",
+          "少量正常參考：正常 tokens 組成記憶庫，待測局部不限同座標找近鄰；少樣本仍須涵蓋允收外觀。",
+          "距離產生線索：相近正常特徵找不到時，距離上升；patch 分數回映位置並聚合整圖，熱圖不等於精密邊界。"
+        ],
+        "check": {
+          "question": "固定 DINOv2 還在，卻把正常參考庫拿掉，原流程還能算什麼？",
+          "answer": "可以抽 tokens，但失去本產品的正常近鄰比較，不能沿用原來的距離分數。DINOv2 預訓練不等於已知道此產品的允收規格。 正常樣本很少可先探索；換產品仍要建參考、驗證尺度和门檻。與 PatchCore 比較須固定影像解析度、參考數與硬體。"
+        },
+        "source_ids": [
+          "paper",
+          "code",
+          "f01-paper"
+        ],
+        "reading_views": [
+          {
+            "title": "AnomalyDINO：先懂核心再看細節",
+            "image": "_course_content/generated-concepts/ad-anomalydino/ad-anomalydino-f01-core.svg",
+            "mobile_image": "_course_content/generated-concepts/ad-anomalydino/ad-anomalydino-f01-core-mobile.svg",
+            "mobile_crop": [
+              0,
+              0,
+              720,
+              941
+            ],
+            "alt": "新產品可能只有幾張正常品。AnomalyDINO借用已學好的 DINOv2 表徵，把正常 patch tokens 留成小參考庫，再查待測局部是否有相近先例。 圖為既有生成工件與機制設定，不是模型推論。"
+          },
+          {
+            "image": "_course_content/generated-concepts/ad-anomalydino/anomalydino-01-prepare_a14.svg",
+            "mobile_image": "_course_content/generated-concepts/ad-anomalydino/anomalydino-01-prepare_a14-mobile.svg",
+            "mobile_crop": [
+              0,
+              0,
+              720,
+              941
+            ],
+            "title": "先備資料",
+            "alt": "合格參考建庫；另留正常品與缺陷驗證。圖示不是實際資料集。"
+          },
+          {
+            "image": "_course_content/generated-concepts/ad-anomalydino/anomalydino-01-interpret_a14.svg",
+            "mobile_image": "_course_content/generated-concepts/ad-anomalydino/anomalydino-01-interpret_a14-mobile.svg",
+            "mobile_crop": [
+              0,
+              0,
+              720,
+              941
+            ],
+            "title": "看圖覆核",
+            "alt": "同一A-01原圖與右下刮傷熱區示意；回查原圖與允收規格。"
+          }
+        ]
+      },
+      {
+        "id": "anomalydino-02",
+        "nav": "固定模型的分工",
+        "title": "不重訓 DINOv2，怎麼認識你的產品？",
+        "summary": "整張影像先進入固定 DINOv2，取得各位置的局部特徵；正常存庫，待測查庫。",
+        "image": "_course_content/generated-concepts/ad-anomalydino/anomalydino-02-store_a09.svg",
+        "alt": "整張影像經固定DINOv2得到局部特徵，正常存庫，待測查庫。",
+        "points": [
+          "整張前處理後的影像送入 DINOv2，再取得局部特徵；不是把圖中的放大框逐一裁好送入。模型已預訓練，本產品不再微調。圖中格子只示意局部特徵的位置，不是實際維度。",
+          "正常影像抽出的局部特徵放入參考庫；待測影像抽出特徵後，查庫找相似外觀。兩批影像使用相同的模型與一致前處理。",
+          "免額外訓練省去一部分起步工作，仍要整理正常品、建立參考、量資源並驗證門檻；不能等同零設定或零成本。"
+        ],
+        "check": {
+          "question": "新產品只多了一種合格表面紋理。先換參考，還是先重新訓練 DINOv2？",
+          "answer": "先在固定模型下加入經確認的新紋理參考，保留舊版做對照，重跑留出正常品與缺陷。若仍分不開，再調取像或比較其他特徵／模型；不是每次換產品都得微調 DINOv2。"
+        },
+        "source_ids": [
+          "paper",
+          "code",
+          "dino"
+        ],
+        "reading_views": [
+          {
+            "title": "正常存庫",
+            "image": "_course_content/generated-concepts/ad-anomalydino/anomalydino-02-store_a09.svg",
+            "alt": "整張影像進入固定 DINOv2；局部特徵存入正常參考庫，或拿待測特徵查庫。特徵形狀與距離皆示意。",
+            "mobile_image": "_course_content/generated-concepts/ad-anomalydino/anomalydino-02-store_a10-mobile.svg",
+            "mobile_crop": [
+              0,
+              0,
+              720,
+              941
+            ]
+          },
+          {
+            "title": "待測查庫",
+            "image": "_course_content/generated-concepts/ad-anomalydino/anomalydino-02-query_a14.svg",
+            "alt": "整張A-01經固定模型得到局部特徵；同一位置查正常庫，兩個示意距離0.40與0.62，取最近0.40。",
+            "mobile_image": "_course_content/generated-concepts/ad-anomalydino/anomalydino-02-query_a10-mobile.svg",
+            "mobile_crop": [
+              0,
+              0,
+              720,
+              941
+            ]
+          }
+        ]
+      },
+      {
+        "id": "anomalydino-03",
+        "nav": "距離從哪裡來",
+        "title": "這道刮傷，為什麼會得到高分？",
+        "summary": "刮傷與正常候選同時放在眼前；切到正常對照，看「最近」與「足夠接近」的不同。",
+        "image": "_course_content/generated-concepts/ad-anomalydino/anomalydino-03-scratch_a09.svg",
+        "alt": "待測局部與三種正常參考同時可見；數字為教學設定。",
+        "points": [
+          "圖中 0.40、0.62、0.55 是同一刮傷特徵與三個參考特徵的教學距離，取最小的 0.40；正常紋理的示意最近距離只有 0.02。",
+          "論文使用餘弦距離衡量特徵相似程度。主線只需記住小表示接近、大表示不像參考；不是兩張照片直接相減，也不是缺陷機率。",
+          "參考可來自不同正常影像與位置；但 DINO 特徵包含上下文，所以不能保證任意移位結果完全相同，也不是明確的裝配規則檢查器。"
+        ],
+        "check": {
+          "question": "零件移了一點位置就被報異常。全庫搜尋不是應該不怕移位嗎？",
+          "answer": "全庫搜尋沒有強制同座標，但裁切、背景、上下文與取像仍會改變特徵。先檢查對位與檢查範圍，用正常移位樣本測試，再決定是否補參考或固定治具。"
+        },
+        "source_ids": [
+          "paper",
+          "code"
+        ],
+        "reading_views": [
+          {
+            "title": "刮傷找近鄰",
+            "image": "_course_content/generated-concepts/ad-anomalydino/anomalydino-03-scratch_a09.svg",
+            "alt": "待測局部與三種正常參考同時可見；數字為教學設定。",
+            "mobile_image": "_course_content/generated-concepts/ad-anomalydino/anomalydino-03-scratch_a09-mobile.svg",
+            "mobile_crop": [
+              0,
+              0,
+              720,
+              941
+            ]
+          },
+          {
+            "title": "正常對照",
+            "image": "_course_content/generated-concepts/ad-anomalydino/anomalydino-03-normal_a13.svg",
+            "alt": "同一待測品的正常局部，與細紋、螺絲、直邊比較設定距離0.02、0.62、0.55；非圖片實測。",
+            "mobile_image": "_course_content/generated-concepts/ad-anomalydino/anomalydino-03-normal_a13-mobile.svg",
+            "mobile_crop": [
+              0,
+              0,
+              720,
+              941
+            ]
+          }
+        ]
+      },
+      {
+        "id": "anomalydino-04",
+        "nav": "完整判讀流程",
+        "title": "從同一件 A-01，一路走到人工覆核",
+        "summary": "先用整件分數分流，再回原圖找位置。可另外切換算術視圖，數字不占第一眼主線。",
+        "image": "_course_content/generated-concepts/ad-anomalydino/anomalydino-04-score_a09.svg",
+        "alt": "同一A-01與同一刮傷來源；分數分流、位置回查、算術分開呈現。",
+        "points": [
+          "承接刮傷位置的最近距離 0.40，鄰格設為 0.30，其餘 198 格各為 0.02。最高 1% 是兩格，平均為 0.35；不能把這個規則換成 EfficientAD 的最大值。",
+          "同一組局部距離有兩種用途：「再看哪裡」將距離保留在原位置，放大、平滑後形成熱圖；「展開算術」只取最高1%的兩格算整件分數。藍框讓你追查同一工件的右下位置。200格是簡化例，色塊不能當精密輪廓；分數不從顯示色階倒算。",
+          "0.25 只是教學覆核門檻，不是論文的通用設定。現場先用獨立驗證資料與漏檢／誤報成本選門檻，再以未參與調參的測試資料驗收；超過門檻先覆核，不直接宣告不合格。"
+        ],
+        "check": {
+          "question": "把熱圖顯示調得更紅，能讓這件的 0.35 分數變高嗎？如果覆核太多，怎麼辦？",
+          "answer": "只改顯示色階不會改原始距離與整圖分數。覆核太多先查正常參考涵蓋度與取像，再在驗證資料調門檻，同時檢查漏檢；直接提高門檻可能放過缺陷。"
+        },
+        "source_ids": [
+          "paper",
+          "code"
+        ],
+        "reading_views": [
+          {
+            "title": "先看哪件",
+            "image": "_course_content/generated-concepts/ad-anomalydino/anomalydino-04-score_a09.svg",
+            "alt": "同一A-01與同一刮傷來源；分數分流、位置回查、算術分開呈現。",
+            "mobile_image": "_course_content/generated-concepts/ad-anomalydino/anomalydino-04-score_a09-mobile.svg",
+            "mobile_crop": [
+              0,
+              0,
+              720,
+              941
+            ]
+          },
+          {
+            "title": "再看哪裡",
+            "image": "_course_content/generated-concepts/ad-anomalydino/anomalydino-04-location_a10.svg",
+            "alt": "同一A-01的右下刮傷對應距離圖的兩格；保留位置形成熱圖，最高1%的兩格另算0.35。示意數字不是模型實測。",
+            "mobile_image": "_course_content/generated-concepts/ad-anomalydino/anomalydino-04-location_a10-mobile.svg",
+            "mobile_crop": [
+              0,
+              0,
+              616,
+              941
+            ]
+          },
+          {
+            "title": "展開算術",
+            "image": "_course_content/generated-concepts/ad-anomalydino/anomalydino-04-arithmetic_a10.svg",
+            "alt": "同一A-01的右下刮傷對應距離圖的兩格；保留位置形成熱圖，最高1%的兩格另算0.35。示意數字不是模型實測。",
+            "mobile_image": "_course_content/generated-concepts/ad-anomalydino/anomalydino-04-arithmetic_a10-mobile.svg",
+            "mobile_crop": [
+              0,
+              0,
+              616,
+              941
+            ]
+          }
+        ]
+      },
+      {
+        "id": "anomalydino-05",
+        "nav": "參考庫就是正常定義",
+        "title": "同一刮傷，參考庫混入瑕疵後會怎樣？",
+        "summary": "固定同一待測刮傷，只比較乾淨參考庫與誤加入刮傷的參考庫；距離和熱區為教學示意。",
+        "image": "_course_content/generated-concepts/ad-anomalydino/anomalydino-05-clean_a14.svg",
+        "alt": "同一A-01、固定模型，正常候選距離設定0.40與0.55，最近0.40。",
+        "points": [
+          "切換乾淨參考與誤加刮傷：待測A-01、模型、前處理及原有正常候選不變，只多一個含刮傷的候選。兩個原候選距離設定為0.40與0.55；增加0.03候選後最近距離降低，這不代表缺陷消失。縮圖用來追溯外觀，實際比較的是特徵，數字並非由圖像計算。缺少合格外觀變化也可能讓正常品誤報，需用留出案例驗證。",
+          "在特徵與前處理固定、只增加參考候選的情況下，最近距離不會因候選變多而增加。但實際是否降低誤報、是否漏檢，仍需用留出影像檢查，不能由示意圖替代實測。",
+          "換參考庫要保留版本與來源；同時重跑正常品和已知缺陷，並記錄建庫耗時、記憶體與每件查詢耗時，不能只看新正常品不再亮。"
+        ],
+        "check": {
+          "question": "補了亮面參考，正常品不再誤報，但原本抓到的刮傷也變不明顯。要接受更新嗎？",
+          "answer": "先比較同一批留出測試，查新增參考是否含刮傷或掩蓋細紋的反光；移除污染、調整取像後再測。不能只以誤報下降接受更新，須一起看漏檢與覆核量。"
+        },
+        "source_ids": [
+          "paper",
+          "code"
+        ],
+        "reading_views": [
+          {
+            "image": "_course_content/generated-concepts/ad-anomalydino/anomalydino-05-clean_a14.svg",
+            "mobile_image": "_course_content/generated-concepts/ad-anomalydino/anomalydino-05-clean_a14-mobile.svg",
+            "mobile_crop": [
+              0,
+              0,
+              720,
+              941
+            ],
+            "title": "乾淨參考",
+            "alt": "同一A-01、固定模型，正常候選距離設定0.40與0.55，最近0.40。"
+          },
+          {
+            "image": "_course_content/generated-concepts/ad-anomalydino/anomalydino-05-contaminated_a14.svg",
+            "mobile_image": "_course_content/generated-concepts/ad-anomalydino/anomalydino-05-contaminated_a14-mobile.svg",
+            "mobile_crop": [
+              0,
+              0,
+              720,
+              941
+            ],
+            "title": "誤加刮傷",
+            "alt": "保留同一待測與原正常候選，只加刮傷候選0.03；最近距離降低不代表缺陷消失。"
+          }
+        ]
+      },
+      {
+        "id": "anomalydino-06",
+        "nav": "前處理與能力邊界",
+        "title": "先問：這種變化，在工作上算正常嗎？",
+        "summary": "先看朝向規格，再依需要切換遮罩或接線反例；一次只處理一個可能漏掉的問題。",
+        "image": "_course_content/generated-concepts/ad-anomalydino/anomalydino-06-rotation_a09.svg",
+        "alt": "一次比較一個正反例，維持待檢區與工作規格。",
+        "points": [
+          "作者提供可選的前景遮罩以減少背景干擾；物件被遮掉時，缺陷也可能被忽略。先檢查遮罩疊圖，不因名稱叫前景就假定一定正確；紋理類影像常不採物件遮罩。",
+          "自由擺放的零件可能受益於旋轉參考；若方向本身就是驗收條件，旋轉會把不該接受的方向納入可接受外觀，需另設方向檢查並做反例。",
+          "交換順序、缺數量與精密尺寸需求，不應只靠局部異常熱圖。DINO 有上下文訊息，但本方法沒有直接寫入裝配規則；可另用偵測／分類配位置規則，尺寸則走校正量測。"
+        ],
+        "check": {
+          "question": "同一零件可以平移，但必須標誌朝上。要不要收旋轉180度的正常參考？",
+          "answer": "不應把倒置當正常參考來消除警報。可限制方向，或獨立檢查標誌方向；平移和旋轉分開驗證。若產品規格允許自由方向，才測旋轉參考能否降低誤報。"
+        },
+        "source_ids": [
+          "paper",
+          "code"
+        ],
+        "reading_views": [
+          {
+            "title": "朝向規格",
+            "image": "_course_content/generated-concepts/ad-anomalydino/anomalydino-06-rotation_a09.svg",
+            "alt": "一次比較一個正反例，維持待檢區與工作規格。",
+            "mobile_image": "_course_content/generated-concepts/ad-anomalydino/anomalydino-06-rotation_a09-mobile.svg",
+            "mobile_crop": [
+              0,
+              0,
+              720,
+              941
+            ]
+          },
+          {
+            "title": "遮罩範圍",
+            "image": "_course_content/generated-concepts/ad-anomalydino/anomalydino-06-mask_a09.svg",
+            "alt": "一次比較一個正反例，維持待檢區與工作規格。",
+            "mobile_image": "_course_content/generated-concepts/ad-anomalydino/anomalydino-06-mask_a09-mobile.svg",
+            "mobile_crop": [
+              0,
+              0,
+              720,
+              941
+            ]
+          },
+          {
+            "title": "接線規則",
+            "image": "_course_content/generated-concepts/ad-anomalydino/anomalydino-06-wiring_a09.svg",
+            "alt": "一次比較一個正反例，維持待檢區與工作規格。",
+            "mobile_image": "_course_content/generated-concepts/ad-anomalydino/anomalydino-06-wiring_a09-mobile.svg",
+            "mobile_crop": [
+              0,
+              0,
+              720,
+              941
+            ]
+          }
+        ]
+      },
+      {
+        "id": "anomalydino-07",
+        "nav": "放在同一工作條件比較",
+        "title": "換產品時，三種方法要重做什麼？",
+        "summary": "三個視圖共用同一新產品B。分別看建庫、挑代表特徵建庫與訓練；每次換線都要再驗證。",
+        "image": "_course_content/generated-concepts/ad-anomalydino/anomalydino-07-0_a09.svg",
+        "alt": "同一產品B的正常影像，比較建庫、代表性建庫與訓練；均用留出正常品和缺陷驗證。",
+        "points": [
+          "AnomalyDINO 適合把少量正常參考作為起步候選；PatchCore 用預訓練特徵與代表性記憶庫，也是正常資料方法。不要僅因前者用 DINOv2 就宣稱更準；兩者都要檢查參考涵蓋與查詢資源。",
+          "EfficientAD 用正常資料訓練 Student 與 AE，設計重視推論效率；若節拍嚴格值得列為候選，仍要測自己的硬體。換產品時評估重新訓練與再驗證；查庫方法則重建或更新參考，再驗證。",
+          "公平試做需記錄正常參考數、訓練資料量、產品類別、解析度、硬體、模型版本、遮罩／增強及索引設定；分開量建庫／訓練時間、峰值記憶體、暖機後批次1的端到端 P95耗時，另報漏檢、誤報與人工覆核數。",
+          "三者提供異常程度和位置線索，都不能直接當精密輪廓。必須輸出缺陷輪廓時，把有像素標註的監督式分割納入比較，並驗收邊界誤差與未見缺陷的表現。"
+        ],
+        "check": {
+          "question": "每週換產品，只有少量正常品，但產線節拍很緊。先押哪個方法？",
+          "answer": "先把 AnomalyDINO 和 PatchCore 作為快速建參考的候選，同時用節拍預算測端到端耗時；若查庫成本不合格，測 EfficientAD 的推論與換線重訓成本。答案取決於跨批次檢查效果、換線時間與覆核負擔，不能只選標榜快的。"
+        },
+        "source_ids": [
+          "paper",
+          "code",
+          "patchcore",
+          "efficientad"
+        ],
+        "reading_views": [
+          {
+            "title": "AnomalyDINO",
+            "image": "_course_content/generated-concepts/ad-anomalydino/anomalydino-07-0_a09.svg",
+            "alt": "同一產品B的正常影像，比較建庫、代表性建庫與訓練；均用留出正常品和缺陷驗證。",
+            "mobile_image": "_course_content/generated-concepts/ad-anomalydino/anomalydino-07-0_a09-mobile.svg",
+            "mobile_crop": [
+              0,
+              0,
+              720,
+              941
+            ]
+          },
+          {
+            "title": "PatchCore",
+            "image": "_course_content/generated-concepts/ad-anomalydino/anomalydino-07-patch_a13.svg",
+            "alt": "同一產品B標出螺絲、開槽與表面來源；放大同源局部，對應特徵再挑子集建庫。特徵與選樣皆為示意。",
+            "mobile_image": "_course_content/generated-concepts/ad-anomalydino/anomalydino-07-patch_a13-mobile.svg",
+            "mobile_crop": [
+              0,
+              0,
+              720,
+              941
+            ]
+          },
+          {
+            "title": "EfficientAD",
+            "image": "_course_content/generated-concepts/ad-anomalydino/anomalydino-07-efficient_a13.svg",
+            "alt": "同一產品B正常影像、訓練與推論模型；完整圖示及文字，留出案例另驗證。",
+            "mobile_image": "_course_content/generated-concepts/ad-anomalydino/anomalydino-07-efficient_a13-mobile.svg",
+            "mobile_crop": [
+              0,
+              0,
+              720,
+              941
+            ]
+          }
+        ]
+      },
+      {
+        "id": "anomalydino-08",
+        "nav": "真實輸出與你的試做",
+        "title": "作者真實案例：成功、漏檢與誤報一起看",
+        "summary": "先看瓶口與磁磚的原圖、人工標註及作者熱圖，再看換線漏檢與正常膠囊誤報；四例分開查看。",
+        "image": "_course_content/generated-concepts/ad-anomalydino/anomalydino-08-bottle_a14.svg",
+        "alt": "作者Figure4瓶口案例的同一query、紅色人工標註与1-shot熱圖。",
+        "points": [
+          "Figure 4：瓶口與磁磚兩個不同物件，逐一對照同一待測圖、人工缺陷標註（GT）及作者AnomalyDINO-S (448)的1-shot熱圖。黃綠熱區可指向缺陷附近，但並不等同精密邊界；色階經作者按各類正常測試樣本最大分數正規化，不能跨類直接比較顏色強弱。",
+          "Figure 6：正常電纜有三種線；Cable Swap出現兩條藍線，作者熱圖卻不明顯。即使局部有相似外觀，種類與裝配規則仍可能錯，需另加規則檢查。",
+          "Figure 7：正常參考沒有充分呈現商標文字，另一張合格膠囊的文字可能亮起。補足合格外觀變化後，正常品與缺陷都要重測。",
+          "成功例保留作者Figure4原始PNG，每個來源區約254×254像素；僅裁切與排版，沒有AI補細節。原圖連結可核對整幅query/GT/1-shot/8-shot排列。這些作者案例不是本站推論，不能據此推算現場準確率；A-01、0.40與0.35是另一組教學設定。",
+          "你的試做：分開正常參考、調門檻的驗證集與最後測試集，涵蓋跨批正常變化及必抓缺陷。保存每件原圖、分數、熱圖、參考庫版本與人工判定，统计漏檢、誤報、覆核量與耗時。",
+          "來源：Damm et al., AnomalyDINO, arXiv:2405.14529v2，Figures4、6、7。論文CC BY 4.0；資料集依各自條款。"
+        ],
+        "check": {
+          "question": "改成檢查線束接線順序，同事說少量正常圖就夠。你會選什麼、準備什麼、為什麼？",
+          "answer": "先以接頭／線色辨識加位置與順序規則作候選，收正確與交換順序案例驗證；AnomalyDINO 可另試外觀異常，但不能替代明確接線規則。若同時檢查表面損傷，可保留異常熱圖輔助，兩種任務分開驗收。"
+        },
+        "source_ids": [
+          "paper",
+          "fig4-left",
+          "fig4-right"
+        ],
+        "reading_views": [
+          {
+            "image": "_course_content/generated-concepts/ad-anomalydino/anomalydino-08-bottle_a14.svg",
+            "mobile_image": "_course_content/generated-concepts/ad-anomalydino/anomalydino-08-bottle_a14-mobile.svg",
+            "mobile_crop": [
+              0,
+              0,
+              720,
+              941
+            ],
+            "title": "瓶口定位",
+            "alt": "作者Figure4瓶口案例的同一query、紅色人工標註与1-shot熱圖。"
+          },
+          {
+            "image": "_course_content/generated-concepts/ad-anomalydino/anomalydino-08-tile_a14.svg",
+            "mobile_image": "_course_content/generated-concepts/ad-anomalydino/anomalydino-08-tile_a14-mobile.svg",
+            "mobile_crop": [
+              0,
+              0,
+              720,
+              941
+            ],
+            "title": "磁磚定位",
+            "alt": "作者Figure4磁磚案例的同一query、紅色人工標註與1-shot熱圖。"
+          },
+          {
+            "title": "換線漏檢",
+            "image": "_course_content/generated-concepts/ad-anomalydino/anomalydino-08-cable_a09.svg",
+            "alt": "作者原像素的正常參考及異常圖；非本站推論。",
+            "mobile_image": "_course_content/generated-concepts/ad-anomalydino/anomalydino-08-cable_a09-mobile.svg",
+            "mobile_crop": [
+              0,
+              0,
+              720,
+              941
+            ]
+          },
+          {
+            "title": "正常誤報",
+            "image": "_course_content/generated-concepts/ad-anomalydino/anomalydino-08-capsule_a09.svg",
+            "alt": "作者原像素的正常參考及異常圖；非本站推論。",
+            "mobile_image": "_course_content/generated-concepts/ad-anomalydino/anomalydino-08-capsule_a09-mobile.svg",
+            "mobile_crop": [
+              0,
+              0,
+              720,
+              941
+            ]
+          }
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "id": "paper",
+        "label": "AnomalyDINO 原論文／Figures 4、6、7",
+        "url": "https://arxiv.org/html/2405.14529v2",
+        "scope": "固定 DINOv2、正常參考、最近鄰、最高1%與作者案例"
+      },
+      {
+        "id": "code",
+        "label": "AnomalyDINO 作者實作",
+        "url": "https://github.com/dammsi/AnomalyDINO",
+        "scope": "src/detection.py 與 src/post_eval.py：距離與 mean_top1p；設定需與版本一同保存"
+      },
+      {
+        "id": "dino",
+        "label": "DINOv2 官方實作",
+        "url": "https://github.com/facebookresearch/dinov2",
+        "scope": "預訓練視覺特徵；不是直接輸出工業缺陷判定"
+      },
+      {
+        "id": "patchcore",
+        "label": "PatchCore 原論文",
+        "url": "https://arxiv.org/abs/2106.08265",
+        "scope": "預訓練局部特徵與代表性記憶庫"
+      },
+      {
+        "id": "efficientad",
+        "label": "EfficientAD 原論文",
+        "url": "https://arxiv.org/abs/2303.14535",
+        "scope": "Student–Teacher、AE 與推論效率設計"
+      },
+      {
+        "id": "fig4-left",
+        "label": "Figure 4 原圖（瓶口等案例）",
+        "url": "https://arxiv.org/html/2405.14529v2/plots/MVTec/MVTec_examples_left.png",
+        "scope": "原始query、GT、1-shot、8-shot排列；完整圖可核對來源"
+      },
+      {
+        "id": "fig4-right",
+        "label": "Figure 4 原圖（磁磚等案例）",
+        "url": "https://arxiv.org/html/2405.14529v2/plots/MVTec/MVTec_examples_right.png",
+        "scope": "原始query、GT、1-shot、8-shot排列；完整圖可核對來源"
+      },
+      {
+        "id": "f01-paper",
+        "label": "F01 核心原論文",
+        "url": "https://arxiv.org/abs/2405.14529",
+        "scope": "首章存在理由、核心及移除設計的概念推論；非實測消融"
+      }
+    ],
+    "default_collapsed": true
+  },
+  "quality_status": {
+    "label": "首讀圖文已核對",
+    "state": "self-reviewed",
+    "round": "WI-030",
+    "reason": "新版逐圖與整頁自評、桌機手機驗證完成；使用者成品核准pending。原工程圖未納入本輪分數。"
+  },
+  "teaching_preflight": {
+    "brief": "teaching-images/vision-ai-model-selection/workitems/wi-030/dino-c1-r03-desktop.md",
+    "mobile_brief": "teaching-images/vision-ai-model-selection/workitems/wi-030/dino-c1-r05-mobile.md",
+    "story": "C",
+    "major_visual_nodes": 3,
+    "visual_status": "self-reviewed",
+    "user_review": "pending"
+  }
+}

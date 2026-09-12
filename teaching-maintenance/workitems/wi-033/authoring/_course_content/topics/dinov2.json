@@ -1,0 +1,571 @@
+{
+  "model": "DINOv2",
+  "badge": "自監督視覺特徵骨幹",
+  "title": "DINOv2：先學影像特徵，再接工作用途",
+  "scenario": {
+    "title": "工件照片很多，類別標註卻很少；你想先找出相似支架，或為後續分類與異常檢查建立起點。",
+    "body": "工件照片很多，類別標註卻很少；你想先找出相似支架，或為後續分類與異常檢查建立起點。"
+  },
+  "promise": {
+    "title": "交付結果與接手工作",
+    "body": "本課交出影像特徵；範例由下游查庫回傳相似工件候選。若要異常分數或定位，另接並驗證相應方法。"
+  },
+  "mental_model": {
+    "title": "自監督視覺特徵骨幹",
+    "body": "DINOv2 從大量無人工類別標籤的影像學可重用表示：訓練時，Student 對齊 Teacher 的整圖與局部特徵目標，讓不同視圖仍能保留有用線索。部署時只需選定的預訓練骨幹，把新影像轉成整圖及局部特徵；圖中的查庫再拿整圖特徵與參考庫比較，找出相似工件。",
+    "limit": "換一個墊圈案例：右側小缺口在原圖可見，整張縮小後卻可能變弱。相近的特徵不能證明工件無缺陷；DINOv2 本身也不自動輸出缺陷輪廓。"
+  },
+  "micro_example": {
+    "title": "換成只見正常品的新零件",
+    "setup": "你只有新零件的正常照片，需要找異常位置，現有系統只輸出整圖相似度。",
+    "prediction": "沿用查庫就能得到精確缺陷輪廓嗎？你會先改哪一步？",
+    "reveal": "不能。可從凍結骨幹＋正常局部參考方法起步，先確認細節可見並補局部特徵／異常比較，再以獨立正常與缺陷樣本驗證。若已有可靠的專用定位器，也可先用它做基準；選擇要對應需要的輸出。"
+  },
+  "beginner_path": {
+    "title": "從必要原理、具體反例到工作取捨",
+    "intro": "工件照片很多，類別標註卻很少；你想先找出相似支架，或為後續分類與異常檢查建立起點。 下列圖像、特徵及回答為教學示意，不是模型實測。",
+    "visuals": [
+      {
+        "id": "wi027-dinov2-c1",
+        "title": "DINOv2：先學影像特徵，再找相似工件",
+        "prompt": "工件照片很多，類別標註卻很少；你想先找出相似支架，或為後續分類與異常檢查建立起點。",
+        "caption": "DINOv2 從大量無人工類別標籤的影像學可重用表示：訓練時，Student 對齊 Teacher 的整圖與局部特徵目標，讓不同視圖仍能保留有用線索。部署時只需選定的預訓練骨幹，把新影像轉成整圖及局部特徵；圖中的查庫再拿整圖特徵與參考庫比較，找出相似工件。",
+        "image": "_course_content/generated-concepts/dinov2/wi027-dinov2-c1-r02-desktop.png",
+        "alt": "DINOv2：先學影像特徵，再找相似工件。DINOv2 從大量無人工類別標籤的影像學可重用表示：訓練時，Student 對齊 Teacher 的整圖與局部特徵目標，讓不同視圖仍能保留有用線索。部署時只需選定的預訓練骨幹，把新影像轉成整圖及局部特徵；圖中的查庫再拿整圖特徵與參考庫比較，找出相似工件。 AI生成教學示意，非模型實測。",
+        "callouts": [
+          {
+            "title": "同圖不同視圖",
+            "body": "訓練以不同裁切／擾動學整圖一致性，也透過遮蔽區域的特徵目標學局部表示；不是把照片像素重畫一次。"
+          },
+          {
+            "title": "一個骨幹，多種接法",
+            "body": "整圖特徵可供檢索；局部特徵可接配對、異常方法或任務頭。Teacher／Student 屬於訓練，推論不需要為每張圖同跑這兩條路。"
+          },
+          {
+            "title": "交付與接手",
+            "body": "本課交出影像特徵；範例由下游查庫回傳相似工件候選。若要異常分數或定位，另接並驗證相應方法。"
+          }
+        ],
+        "reading_views": [
+          {
+            "title": "DINOv2：先學影像特徵，再找相似工件",
+            "image": "_course_content/generated-concepts/dinov2/wi027-dinov2-c1-r02-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/dinov2/wi027-dinov2-c1-r01-mobile.png",
+            "alt": "DINOv2：先學影像特徵，再找相似工件。DINOv2 從大量無人工類別標籤的影像學可重用表示：訓練時，Student 對齊 Teacher 的整圖與局部特徵目標，讓不同視圖仍能保留有用線索。部署時只需選定的預訓練骨幹，把新影像轉成整圖及局部特徵；圖中的查庫再拿整圖特徵與參考庫比較，找出相似工件。 AI生成教學示意，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              724,
+              2172
+            ],
+            "mobile_display_mode": "full-mobile",
+            "desktop_intrinsic_width": 1672,
+            "desktop_intrinsic_height": 941,
+            "mobile_intrinsic_width": 724,
+            "mobile_intrinsic_height": 2172
+          }
+        ],
+        "core_ideas": true
+      },
+      {
+        "id": "wi027-dino-d2",
+        "title": "同一支架的小缺口，特徵仍可能很相近",
+        "prompt": "觀察哪個條件改變，讓原本的結果不夠可靠？",
+        "caption": "同一L支架只在右緣多一小缺口，整圖特徵仍可能很相近。圖中兩維表示與距離是給定反例，不是模型實測；相近不能證明完整，應回原圖檢查細節。",
+        "image": "_course_content/generated-concepts/dinov2/wi033-dinov2-main-failure-r01-desktop.png",
+        "alt": "同一支架的小缺口，特徵仍可能很相近。同一L支架只在右緣多一小缺口，整圖特徵仍可能很相近。圖中兩維表示與距離是給定反例，不是模型實測；相近不能證明完整，應回原圖檢查細節。 精確SVG教學示意，非模型實測。",
+        "callouts": [
+          {
+            "title": "看哪裡",
+            "body": "同一L支架只在右緣多一小缺口，整圖特徵仍可能很相近。圖中兩維表示與距離是給定反例，不是模型實測；相近不能證明完整，應回原圖檢查細節。"
+          },
+          {
+            "title": "接著怎麼做",
+            "body": "先回原始影像核對缺口是否仍可見，再比較局部取樣與下游方法；不要期待調整分數門檻找回已丟失的影像細節。"
+          }
+        ],
+        "reading_views": [
+          {
+            "title": "同一支架的小缺口，特徵仍可能很相近",
+            "image": "_course_content/generated-concepts/dinov2/wi033-dinov2-main-failure-r01-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/dinov2/wi033-dinov2-main-failure-r01-mobile.png",
+            "alt": "同一支架的小缺口，特徵仍可能很相近。同一L支架只在右緣多一小缺口，整圖特徵仍可能很相近。圖中兩維表示與距離是給定反例，不是模型實測；相近不能證明完整，應回原圖檢查細節。 精確SVG教學示意，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              768,
+              2304
+            ],
+            "mobile_display_mode": "full-mobile",
+            "desktop_intrinsic_width": 1672,
+            "desktop_intrinsic_height": 941,
+            "mobile_intrinsic_width": 768,
+            "mobile_intrinsic_height": 2304
+          }
+        ],
+        "core_ideas": false
+      },
+      {
+        "id": "wi027-features-d3",
+        "title": "DINOv2 與 DINOv3：比較的是整套用途",
+        "prompt": "相同工作需求下，資料、輸出與成本如何取捨？",
+        "caption": "只有未標類別或正常影像時，可先用凍結 DINOv2 做檢索或搭配正常參考方法；仍需整理參考資料與留出測試。DINOv3 也是特徵起點，新增局部關係穩定的訓練設計，是否值得更換要看自己的任務。",
+        "image": "_course_content/generated-concepts/dinov2/wi027-features-d3-r02-desktop.png",
+        "alt": "DINOv2 與 DINOv3：比較的是整套用途。只有未標類別或正常影像時，可先用凍結 DINOv2 做檢索或搭配正常參考方法；仍需整理參考資料與留出測試。DINOv3 也是特徵起點，新增局部關係穩定的訓練設計，是否值得更換要看自己的任務。 AI生成教學示意，非模型實測。",
+        "callouts": [
+          {
+            "title": "怎麼選",
+            "body": "只有未標類別或正常影像時，可先用凍結 DINOv2 做檢索或搭配正常參考方法；仍需整理參考資料與留出測試。DINOv3 也是特徵起點，新增局部關係穩定的訓練設計，是否值得更換要看自己的任務。"
+          },
+          {
+            "title": "資料與完整成本",
+            "body": "換產品要補足新外觀的參考與測試資料；換骨幹要重新抽取整個參考庫，重新調整下游，不能混用不相容特徵。固定任務、測試集與調整預算，同看候選命中、微小缺陷錯誤、建庫時間、記憶體和完整推論耗時。"
+          }
+        ],
+        "reading_views": [
+          {
+            "title": "DINOv2 與 DINOv3：比較的是整套用途",
+            "image": "_course_content/generated-concepts/dinov2/wi027-features-d3-r02-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/dinov2/wi027-features-d3-r03-mobile.png",
+            "alt": "DINOv2 與 DINOv3：比較的是整套用途。只有未標類別或正常影像時，可先用凍結 DINOv2 做檢索或搭配正常參考方法；仍需整理參考資料與留出測試。DINOv3 也是特徵起點，新增局部關係穩定的訓練設計，是否值得更換要看自己的任務。 AI生成教學示意，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              724,
+              2171
+            ],
+            "mobile_display_mode": "full-mobile",
+            "desktop_intrinsic_width": 1672,
+            "desktop_intrinsic_height": 941,
+            "mobile_intrinsic_width": 724,
+            "mobile_intrinsic_height": 2171
+          }
+        ],
+        "core_ideas": false
+      }
+    ]
+  },
+  "mechanism_steps": [
+    {
+      "title": "同圖不同視圖",
+      "body": "工件照片很多，類別標註卻很少；你想先找出相似支架，或為後續分類與異常檢查建立起點。",
+      "why": "由本課核心機制連接工作用途",
+      "anchor": "WI027-1",
+      "diagram": {
+        "title": "同圖不同視圖",
+        "body": "工件照片很多，類別標註卻很少；你想先找出相似支架，或為後續分類與異常檢查建立起點。",
+        "why": "詳見本課版本與來源",
+        "anchor": "WI027-1"
+      }
+    },
+    {
+      "title": "訓練學一致特徵",
+      "body": "訓練以不同裁切／擾動學整圖一致性，也透過遮蔽區域的特徵目標學局部表示；不是把照片像素重畫一次。",
+      "why": "由本課核心機制連接工作用途",
+      "anchor": "WI027-2",
+      "diagram": {
+        "title": "訓練學一致特徵",
+        "body": "訓練以不同裁切／擾動學整圖一致性，也透過遮蔽區域的特徵目標學局部表示；不是把照片像素重畫一次。",
+        "why": "詳見本課版本與來源",
+        "anchor": "WI027-2"
+      }
+    },
+    {
+      "title": "部署抽取特徵",
+      "body": "整圖特徵可供檢索；局部特徵可接配對、異常方法或任務頭。Teacher／Student 屬於訓練，推論不需要為每張圖同跑這兩條路。",
+      "why": "由本課核心機制連接工作用途",
+      "anchor": "WI027-3",
+      "diagram": {
+        "title": "部署抽取特徵",
+        "body": "整圖特徵可供檢索；局部特徵可接配對、異常方法或任務頭。Teacher／Student 屬於訓練，推論不需要為每張圖同跑這兩條路。",
+        "why": "詳見本課版本與來源",
+        "anchor": "WI027-3"
+      }
+    },
+    {
+      "title": "下游查相似工件",
+      "body": "本課交出影像特徵；範例由下游查庫回傳相似工件候選。若要異常分數或定位，另接並驗證相應方法。",
+      "why": "由本課核心機制連接工作用途",
+      "anchor": "WI027-4",
+      "diagram": {
+        "title": "下游查相似工件",
+        "body": "本課交出影像特徵；範例由下游查庫回傳相似工件候選。若要異常分數或定位，另接並驗證相應方法。",
+        "why": "詳見本課版本與來源",
+        "anchor": "WI027-4"
+      }
+    }
+  ],
+  "visual_intro": "DINOv2 從大量無人工類別標籤的影像學可重用表示：訓練時，Student 對齊 Teacher 的整圖與局部特徵目標，讓不同視圖仍能保留有用線索。部署時只需選定的預訓練骨幹，把新影像轉成整圖及局部特徵；圖中的查庫再拿整圖特徵與參考庫比較，找出相似工件。",
+  "concept_visuals": [],
+  "boundary_cases": [
+    {
+      "condition": "本課具體反例",
+      "effect": "換一個墊圈案例：右側小缺口在原圖可見，整張縮小後卻可能變弱。相近的特徵不能證明工件無缺陷；DINOv2 本身也不自動輸出缺陷輪廓。",
+      "action": "先回原始影像核對缺口是否仍可見，再比較局部取樣與下游方法；不要期待調整分數門檻找回已丟失的影像細節。"
+    },
+    {
+      "condition": "更換產品、模型或輸入設定",
+      "effect": "換產品要補足新外觀的參考與測試資料；換骨幹要重新抽取整個參考庫，重新調整下游，不能混用不相容特徵。固定任務、測試集與調整預算，同看候選命中、微小缺陷錯誤、建庫時間、記憶體和完整推論耗時。",
+      "action": "先收集代表性的支架／齒輪原圖，按實體工件分開參考與測試集，固定模型權重及取像／前處理。"
+    },
+    {
+      "condition": "把示意當成實際推論",
+      "effect": "本課特徵、排序、回答及圖像僅用於解釋，不支持現場準確率或耗時結論。",
+      "action": "和原有查庫流程比較候選是否找對；若接異常檢查，再看正常誤報、缺陷漏檢及人工覆核量，並計入建庫和查詢成本。"
+    }
+  ],
+  "comparison": [
+    {
+      "model": "DINOv2",
+      "normality": "預訓練視覺骨幹；整理參考及任務資料",
+      "candidate": "整圖／局部特徵，由下游完成檢索或判斷"
+    },
+    {
+      "model": "DINOv3",
+      "normality": "預訓練局部關係設計；換骨幹需重抽參考與調整下游",
+      "candidate": "相容的整圖／局部特徵；在同測試集評任務與成本"
+    },
+    {
+      "model": "既有檢索基準",
+      "normality": "保留目前參考庫與查詢設定，使用同一留出測試集",
+      "candidate": "原有候選與完整耗時，作為換骨幹是否有用的比較點"
+    }
+  ],
+  "selection": "只有未標類別或正常影像時，可先用凍結 DINOv2 做檢索或搭配正常參考方法；仍需整理參考資料與留出測試。DINOv3 也是特徵起點，新增局部關係穩定的訓練設計，是否值得更換要看自己的任務。 換產品要補足新外觀的參考與測試資料；換骨幹要重新抽取整個參考庫，重新調整下游，不能混用不相容特徵。固定任務、測試集與調整預算，同看候選命中、微小缺陷錯誤、建庫時間、記憶體和完整推論耗時。",
+  "poc": {
+    "title": "以真實工作資料做小規模比較",
+    "steps": [
+      "先收集代表性的支架／齒輪原圖，按實體工件分開參考與測試集，固定模型權重及取像／前處理。",
+      "換產品要補足新外觀的參考與測試資料；換骨幹要重新抽取整個參考庫，重新調整下游，不能混用不相容特徵。固定任務、測試集與調整預算，同看候選命中、微小缺陷錯誤、建庫時間、記憶體和完整推論耗時。",
+      "和原有查庫流程比較候選是否找對；若接異常檢查，再看正常誤報、缺陷漏檢及人工覆核量，並計入建庫和查詢成本。"
+    ],
+    "hold": "先回原始影像核對缺口是否仍可見，再比較局部取樣與下游方法；不要期待調整分數門檻找回已丟失的影像細節。",
+    "acceptance": {
+      "baseline": "既有流程或最簡單可行方法",
+      "measure": "和原有查庫流程比較候選是否找對；若接異常檢查，再看正常誤報、缺陷漏檢及人工覆核量，並計入建庫和查詢成本。",
+      "negative_control": "換一個墊圈案例：右側小缺口在原圖可見，整張縮小後卻可能變弱。相近的特徵不能證明工件無缺陷；DINOv2 本身也不自動輸出缺陷輪廓。",
+      "owner": "實作與影像核對負責人"
+    }
+  },
+  "teach_back": {
+    "question": "它改變什麼？何時選另一種做法？",
+    "answer": "DINOv2 從大量無人工類別標籤的影像學可重用表示：訓練時，Student 對齊 Teacher 的整圖與局部特徵目標，讓不同視圖仍能保留有用線索。部署時只需選定的預訓練骨幹，把新影像轉成整圖及局部特徵；圖中的查庫再拿整圖特徵與參考庫比較，找出相似工件。 只有未標類別或正常影像時，可先用凍結 DINOv2 做檢索或搭配正常參考方法；仍需整理參考資料與留出測試。DINOv3 也是特徵起點，新增局部關係穩定的訓練設計，是否值得更換要看自己的任務。"
+  },
+  "slide_reading": [
+    {
+      "title": "DINOv2：先抽表示，再定義下游任務",
+      "question": "骨幹交特徵，分類與異常判定還要另接。",
+      "look": "先看同一L支架作輸入，再核對骨幹抽整圖與局部表示，最後看下游可分類或查庫。",
+      "relation": "DINOv2預訓練表示可支援整圖與密集下游；本身不是工廠缺陷分類規格。部署選定骨幹和前處理，抽特徵後才用標註頭或參考庫決定任務；圖中向量為示意。",
+      "takeaway": "骨幹交特徵，分類與異常判定還要另接。",
+      "terms": [
+        "表示：模型由輸入得到的中間資料，並非標註真值。",
+        "本圖數值：作者給定的教學示意，不是本輪模型實測。"
+      ]
+    },
+    {
+      "title": "DINOv2：先學表示，部署再抽特徵",
+      "question": "訓練的Teacher目標與部署的骨幹要分開。",
+      "look": "先看同一支架產生不同視圖，再核對Teacher提供目標給Student，最後看部署只抽取整圖與局部特徵。",
+      "relation": "DINOv2組合整圖自蒸餾及局部遮蔽目標等訓練設計；Teacher用Student權重的EMA更新，目標停止梯度，Student學對齊表示而非重建原像素。部署使用選定的預訓練骨幹抽整圖和patch表示，下游分類、查庫或分割另接。圖中支架與數值皆教學示意，未重跑模型。 Teacher目標[.2,.8]與Student預測[.6,.4]只作對齊示意，並非真實表示维度。",
+      "takeaway": "訓練的Teacher目標與部署的骨幹要分開。",
+      "terms": [
+        "表示：模型由輸入得到的中間資料，並非標註真值。",
+        "本圖數值：作者給定的教學示意，不是本輪模型實測。"
+      ]
+    },
+    {
+      "title": "DINOv2：查庫必須使用相容特徵",
+      "question": "換骨幹或前處理，舊庫不能直接混用。",
+      "look": "先看正常支架建立參考庫，再核對待測表示查同一特徵空間，最後看把排名與原圖一起核對。",
+      "relation": "固定checkpoint、輸入縮放、正規化、所抽層與特徵彙整方式，參考庫與query必須相容。示意距離排名不等於缺陷概率；換設定需重建庫或驗證相容轉換，並用留出正常/異常評估。",
+      "takeaway": "換骨幹或前處理，舊庫不能直接混用。",
+      "terms": [
+        "表示：模型由輸入得到的中間資料，並非標註真值。",
+        "本圖數值：作者給定的教學示意，不是本輪模型實測。"
+      ]
+    },
+    {
+      "title": "DINOv2：外观差異不等於不良",
+      "question": "同件特徵受條件影響，判定要回到工作規格。",
+      "look": "先看同一支架只改背景，再核對相似度分數仍可能改變，最後看比較查庫與有標註任務頭。",
+      "relation": "控制同支架幾何與孔位，只改背景檢查表示是否穩定。特徵可能對背景、照明或小細節敏感，也可能忽略特定缺陷；需要下游資料決定允收。此反例與主要首讀統一為同L支架，不換成墊圈。",
+      "takeaway": "同件特徵受條件影響，判定要回到工作規格。",
+      "terms": [
+        "表示：模型由輸入得到的中間資料，並非標註真值。",
+        "本圖數值：作者給定的教學示意，不是本輪模型實測。"
+      ]
+    }
+  ],
+  "comparison_headers": {
+    "title": "DINOv2 與 DINOv3：比較的是整套用途",
+    "basis": "所需資料與方法差異",
+    "output": "輸出與維護責任"
+  },
+  "transfer_check": {
+    "title": "換成只見正常品的新零件",
+    "scenario": "你只有新零件的正常照片，需要找異常位置，現有系統只輸出整圖相似度。",
+    "question": "沿用查庫就能得到精確缺陷輪廓嗎？你會先改哪一步？",
+    "answer": "不能。可從凍結骨幹＋正常局部參考方法起步，先確認細節可見並補局部特徵／異常比較，再以獨立正常與缺陷樣本驗證。若已有可靠的專用定位器，也可先用它做基準；選擇要對應需要的輸出。"
+  },
+  "review_trace": {
+    "authority": "roadmap-model-selection/foundation-vlm-open-world/dinov2/model.md",
+    "scope": "WI-033：工程層四圖與手機比較修正；首讀有效內容保留。原生圖已審，整頁與使用者審閱另記。",
+    "claims": [
+      {
+        "id": "visual-1",
+        "field": "beginner_path.visuals[same-ceramic-workpiece]",
+        "source": "模型定位 / architecture_path"
+      },
+      {
+        "id": "visual-2",
+        "field": "beginner_path.visuals[fixed-to-features]",
+        "source": "architecture_path"
+      },
+      {
+        "id": "visual-3",
+        "field": "beginner_path.visuals[downstream-owner]",
+        "source": "representation_or_score"
+      },
+      {
+        "id": "visual-4",
+        "field": "beginner_path.visuals[model-boundary]",
+        "source": "failure_boundary"
+      },
+      {
+        "id": "visual-5",
+        "field": "beginner_path.visuals[observability-gate]",
+        "source": "selection_gate / evidence_bundle"
+      },
+      {
+        "id": "promise",
+        "field": "promise",
+        "source": "模型定位 / representation_or_score"
+      },
+      {
+        "id": "mechanism",
+        "field": "mechanism_steps",
+        "source": "architecture_path / representation_or_score"
+      },
+      {
+        "id": "boundaries",
+        "field": "boundary_cases",
+        "source": "failure_boundary / selection_gate"
+      },
+      {
+        "id": "comparison",
+        "field": "comparison + selection",
+        "source": "selection_gate"
+      },
+      {
+        "id": "poc",
+        "field": "poc + acceptance",
+        "source": "cost_and_operating_point / evidence_bundle"
+      },
+      {
+        "id": "transfer",
+        "field": "transfer_check",
+        "source": "failure_boundary / selection_gate"
+      },
+      {
+        "id": "f02-core",
+        "field": "beginner_path.visuals[0] + scenario + mental_model",
+        "source": "https://arxiv.org/abs/2304.07193"
+      },
+      {
+        "id": "f02-transfer",
+        "field": "micro_example + transfer_check + selection",
+        "source": "https://arxiv.org/abs/2304.07193"
+      },
+      {
+        "id": "wi027-first-read",
+        "field": "beginner_path + core + selection + transfer",
+        "source": "https://arxiv.org/abs/2304.07193"
+      }
+    ]
+  },
+  "quality_status": {
+    "label": "首讀圖文已重製並自評；使用者核准待確認",
+    "state": "self-reviewed",
+    "round": "WI-027",
+    "reason": "30張不同PNG逐圖審查，七頁與互動證據見workitems/wi-027；原工程圖未重新評分。"
+  },
+  "teaching_preflight": {
+    "brief": "teaching-images/vision-ai-model-selection/workitems/wi-027/dinov2-c1-r02.md",
+    "mobile_brief": "teaching-images/vision-ai-model-selection/workitems/wi-027/dinov2-c1-r01.md",
+    "story": "C",
+    "major_visual_nodes": 4,
+    "visual_status": "self-reviewed",
+    "user_review": "pending"
+  },
+  "engineering_slides": [
+    {
+      "title": "DINOv2：先抽表示，再定義下游任務",
+      "question": "骨幹交特徵，分類與異常判定還要另接。",
+      "plain": {
+        "look": "先看同一L支架作輸入，再核對骨幹抽整圖與局部表示，最後看下游可分類或查庫。",
+        "relation": "DINOv2預訓練表示可支援整圖與密集下游；本身不是工廠缺陷分類規格。部署選定骨幹和前處理，抽特徵後才用標註頭或參考庫決定任務；圖中向量為示意。",
+        "takeaway": "骨幹交特徵，分類與異常判定還要另接。"
+      },
+      "terms": [
+        "表示：模型由輸入得到的中間資料，並非標註真值。",
+        "本圖數值：作者給定的教學示意，不是本輪模型實測。"
+      ],
+      "guide": [
+        "DINOv2預訓練表示可支援整圖與密集下游；本身不是工廠缺陷分類規格。部署選定骨幹和前處理，抽特徵後才用標註頭或參考庫決定任務；圖中向量為示意。",
+        "先看同一L支架作輸入，再核對骨幹抽整圖與局部表示，最後看下游可分類或查庫。"
+      ],
+      "stages": [
+        {
+          "title": "同一L支架作輸入",
+          "body": "同一L支架作輸入；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "骨幹抽整圖與局部表示",
+          "body": "骨幹抽整圖與局部表示；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "下游可分類或查庫",
+          "body": "下游可分類或查庫；請對照圖內輸入、變化與結果。"
+        }
+      ],
+      "misconception": "換一個墊圈案例：右側小缺口在原圖可見，整張縮小後卻可能變弱。相近的特徵不能證明工件無缺陷；DINOv2 本身也不自動輸出缺陷輪廓。",
+      "alt": "DINOv2：先抽表示，再定義下游任務。骨幹交特徵，分類與異常判定還要另接。 教學示意，非模型實測。",
+      "mobile_image": "roadmap-model-selection/foundation-vlm-open-world/dinov2/images/final/WI033-DINOV2-01-r01-mobile.png",
+      "mobile_width": 768,
+      "mobile_height": 2304,
+      "engineering": {
+        "takeaway": "骨幹交特徵，分類與異常判定還要另接。",
+        "nextAction": "先收集代表性的支架／齒輪原圖，按實體工件分開參考與測試集，固定模型權重及取像／前處理。",
+        "redLine": "先回原始影像核對缺口是否仍可見，再比較局部取樣與下游方法；不要期待調整分數門檻找回已丟失的影像細節。"
+      },
+      "source": "https://arxiv.org/abs/2304.07193"
+    },
+    {
+      "title": "DINOv2：先學表示，部署再抽特徵",
+      "question": "訓練的Teacher目標與部署的骨幹要分開。",
+      "plain": {
+        "look": "先看同一支架產生不同視圖，再核對Teacher提供目標給Student，最後看部署只抽取整圖與局部特徵。",
+        "relation": "DINOv2組合整圖自蒸餾及局部遮蔽目標等訓練設計；Teacher用Student權重的EMA更新，目標停止梯度，Student學對齊表示而非重建原像素。部署使用選定的預訓練骨幹抽整圖和patch表示，下游分類、查庫或分割另接。圖中支架與數值皆教學示意，未重跑模型。 Teacher目標[.2,.8]與Student預測[.6,.4]只作對齊示意，並非真實表示维度。",
+        "takeaway": "訓練的Teacher目標與部署的骨幹要分開。"
+      },
+      "terms": [
+        "表示：模型由輸入得到的中間資料，並非標註真值。",
+        "本圖數值：作者給定的教學示意，不是本輪模型實測。"
+      ],
+      "guide": [
+        "DINOv2組合整圖自蒸餾及局部遮蔽目標等訓練設計；Teacher用Student權重的EMA更新，目標停止梯度，Student學對齊表示而非重建原像素。部署使用選定的預訓練骨幹抽整圖和patch表示，下游分類、查庫或分割另接。圖中支架與數值皆教學示意，未重跑模型。 Teacher目標[.2,.8]與Student預測[.6,.4]只作對齊示意，並非真實表示维度。",
+        "先看同一支架產生不同視圖，再核對Teacher提供目標給Student，最後看部署只抽取整圖與局部特徵。"
+      ],
+      "stages": [
+        {
+          "title": "同一支架產生不同視圖",
+          "body": "同一支架產生不同視圖；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "Teacher提供目標給Student",
+          "body": "Teacher提供目標給Student；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "部署只抽取整圖與局部特徵",
+          "body": "部署只抽取整圖與局部特徵；請對照圖內輸入、變化與結果。"
+        }
+      ],
+      "misconception": "換一個墊圈案例：右側小缺口在原圖可見，整張縮小後卻可能變弱。相近的特徵不能證明工件無缺陷；DINOv2 本身也不自動輸出缺陷輪廓。",
+      "alt": "DINOv2：先學表示，部署再抽特徵。訓練的Teacher目標與部署的骨幹要分開。 教學示意，非模型實測。",
+      "mobile_image": "roadmap-model-selection/foundation-vlm-open-world/dinov2/images/final/WI033-DINOV2-02-r03-mobile.png",
+      "mobile_width": 768,
+      "mobile_height": 2304,
+      "engineering": {
+        "takeaway": "訓練的Teacher目標與部署的骨幹要分開。",
+        "nextAction": "先收集代表性的支架／齒輪原圖，按實體工件分開參考與測試集，固定模型權重及取像／前處理。",
+        "redLine": "先回原始影像核對缺口是否仍可見，再比較局部取樣與下游方法；不要期待調整分數門檻找回已丟失的影像細節。"
+      },
+      "source": "https://arxiv.org/abs/2304.07193"
+    },
+    {
+      "title": "DINOv2：查庫必須使用相容特徵",
+      "question": "換骨幹或前處理，舊庫不能直接混用。",
+      "plain": {
+        "look": "先看正常支架建立參考庫，再核對待測表示查同一特徵空間，最後看把排名與原圖一起核對。",
+        "relation": "固定checkpoint、輸入縮放、正規化、所抽層與特徵彙整方式，參考庫與query必須相容。示意距離排名不等於缺陷概率；換設定需重建庫或驗證相容轉換，並用留出正常/異常評估。",
+        "takeaway": "換骨幹或前處理，舊庫不能直接混用。"
+      },
+      "terms": [
+        "表示：模型由輸入得到的中間資料，並非標註真值。",
+        "本圖數值：作者給定的教學示意，不是本輪模型實測。"
+      ],
+      "guide": [
+        "固定checkpoint、輸入縮放、正規化、所抽層與特徵彙整方式，參考庫與query必須相容。示意距離排名不等於缺陷概率；換設定需重建庫或驗證相容轉換，並用留出正常/異常評估。",
+        "先看正常支架建立參考庫，再核對待測表示查同一特徵空間，最後看把排名與原圖一起核對。"
+      ],
+      "stages": [
+        {
+          "title": "正常支架建立參考庫",
+          "body": "正常支架建立參考庫；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "待測表示查同一特徵空間",
+          "body": "待測表示查同一特徵空間；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "把排名與原圖一起核對",
+          "body": "把排名與原圖一起核對；請對照圖內輸入、變化與結果。"
+        }
+      ],
+      "misconception": "換一個墊圈案例：右側小缺口在原圖可見，整張縮小後卻可能變弱。相近的特徵不能證明工件無缺陷；DINOv2 本身也不自動輸出缺陷輪廓。",
+      "alt": "DINOv2：查庫必須使用相容特徵。換骨幹或前處理，舊庫不能直接混用。 教學示意，非模型實測。",
+      "mobile_image": "roadmap-model-selection/foundation-vlm-open-world/dinov2/images/final/WI033-DINOV2-03-r01-mobile.png",
+      "mobile_width": 768,
+      "mobile_height": 2304,
+      "engineering": {
+        "takeaway": "換骨幹或前處理，舊庫不能直接混用。",
+        "nextAction": "先收集代表性的支架／齒輪原圖，按實體工件分開參考與測試集，固定模型權重及取像／前處理。",
+        "redLine": "先回原始影像核對缺口是否仍可見，再比較局部取樣與下游方法；不要期待調整分數門檻找回已丟失的影像細節。"
+      },
+      "source": "https://arxiv.org/abs/2304.07193"
+    },
+    {
+      "title": "DINOv2：外观差異不等於不良",
+      "question": "同件特徵受條件影響，判定要回到工作規格。",
+      "plain": {
+        "look": "先看同一支架只改背景，再核對相似度分數仍可能改變，最後看比較查庫與有標註任務頭。",
+        "relation": "控制同支架幾何與孔位，只改背景檢查表示是否穩定。特徵可能對背景、照明或小細節敏感，也可能忽略特定缺陷；需要下游資料決定允收。此反例與主要首讀統一為同L支架，不換成墊圈。",
+        "takeaway": "同件特徵受條件影響，判定要回到工作規格。"
+      },
+      "terms": [
+        "表示：模型由輸入得到的中間資料，並非標註真值。",
+        "本圖數值：作者給定的教學示意，不是本輪模型實測。"
+      ],
+      "guide": [
+        "控制同支架幾何與孔位，只改背景檢查表示是否穩定。特徵可能對背景、照明或小細節敏感，也可能忽略特定缺陷；需要下游資料決定允收。此反例與主要首讀統一為同L支架，不換成墊圈。",
+        "先看同一支架只改背景，再核對相似度分數仍可能改變，最後看比較查庫與有標註任務頭。"
+      ],
+      "stages": [
+        {
+          "title": "同一支架只改背景",
+          "body": "同一支架只改背景；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "相似度分數仍可能改變",
+          "body": "相似度分數仍可能改變；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "比較查庫與有標註任務頭",
+          "body": "比較查庫與有標註任務頭；請對照圖內輸入、變化與結果。"
+        }
+      ],
+      "misconception": "換一個墊圈案例：右側小缺口在原圖可見，整張縮小後卻可能變弱。相近的特徵不能證明工件無缺陷；DINOv2 本身也不自動輸出缺陷輪廓。",
+      "alt": "DINOv2：外观差異不等於不良。同件特徵受條件影響，判定要回到工作規格。 教學示意，非模型實測。",
+      "mobile_image": "roadmap-model-selection/foundation-vlm-open-world/dinov2/images/final/WI033-DINOV2-04-r01-mobile.png",
+      "mobile_width": 768,
+      "mobile_height": 2304,
+      "engineering": {
+        "takeaway": "同件特徵受條件影響，判定要回到工作規格。",
+        "nextAction": "先收集代表性的支架／齒輪原圖，按實體工件分開參考與測試集，固定模型權重及取像／前處理。",
+        "redLine": "先回原始影像核對缺口是否仍可見，再比較局部取樣與下游方法；不要期待調整分數門檻找回已丟失的影像細節。"
+      },
+      "source": "https://arxiv.org/abs/2304.07193"
+    }
+  ]
+}

@@ -1,0 +1,497 @@
+{
+  "model": "Inpainting",
+  "badge": "局部影像填補任務",
+  "title": "Inpainting：指定一塊，補出合理的內容",
+  "scenario": {
+    "title": "製作外觀模擬圖時，想清除金屬板中央污漬，讓周圍拉絲紋理自然延續。",
+    "body": "製作外觀模擬圖時，想清除金屬板中央污漬，讓周圍拉絲紋理自然延續。"
+  },
+  "promise": {
+    "title": "交付結果與接手工作",
+    "body": "獨立保存的編修影像及遮罩；檢查接縫、紋理和區域外變化。"
+  },
+  "mental_model": {
+    "title": "局部影像填補任務",
+    "body": "Inpainting是一類填補任務，並非單一模型。遮罩指出可重畫的區域，未遮住的周邊提供上下文；擴散式實作以這些條件引導逐步去噪，讓局部從雜訊形成合理紋理。傳統修補或其他神經網路也能做Inpainting，本課用擴散式路徑說明。",
+    "limit": "第二圖改用下半部真的破洞：同樣能把它填成平整表面，但改變的是畫面，沒有修復金屬。兩個上方製造孔仍保留；這樣才能清楚追蹤是哪個區域被重畫。"
+  },
+  "micro_example": {
+    "title": "紋理簡單與結構缺失兩種填補",
+    "setup": "一張圖只有小污漬，另一張的孔邊整片被遮住；交付時間很短。",
+    "prediction": "會兩張都用同一擴散設定，還是分開處理？",
+    "reveal": "小污漬可先比較傳統或快速填補，核對紋理接縫；大面積結構缺失可用帶條件的生成方法探索，但可能有多個合理答案。按用途核對結構、外區變化及總時間；若需知道實體原狀，應重拍或取得其他觀測。"
+  },
+  "mechanism_steps": [
+    {
+      "title": "指定原圖與用途",
+      "body": "製作外觀模擬圖時，想清除金屬板中央污漬，讓周圍拉絲紋理自然延續。",
+      "why": "局部影像填補任務",
+      "anchor": "WI026-step-1",
+      "diagram": {
+        "title": "指定原圖與用途",
+        "body": "製作外觀模擬圖時，想清除金屬板中央污漬，讓周圍拉絲紋理自然延續。",
+        "why": "局部影像填補任務",
+        "anchor": "WI026-step-1"
+      }
+    },
+    {
+      "title": "以遮罩與周邊提供條件",
+      "body": "遮罩指定改哪裡，周邊提供紋理方向和結構線索；拿掉周邊約束，局部可能接不上。遮罩由人或上游流程提供，不是此步自行偵測出的缺陷真值。",
+      "why": "遮罩與周邊各管什麼",
+      "anchor": "WI026-step-2",
+      "diagram": {
+        "title": "以遮罩與周邊提供條件",
+        "body": "遮罩指定改哪裡，周邊提供紋理方向和結構線索；拿掉周邊約束，局部可能接不上。遮罩由人或上游流程提供，不是此步自行偵測出的缺陷真值。",
+        "why": "遮罩與周邊各管什麼",
+        "anchor": "WI026-step-2"
+      }
+    },
+    {
+      "title": "逐步生成填補紋理",
+      "body": "使用預訓練填補模型通常不需為每張圖重訓；要準備原圖、遮罩，視實作加文字或其他條件。遮罩外能否精確保留取決於管線、解碼與合成方式，應比較實際差異。",
+      "why": "準備與核對",
+      "anchor": "WI026-step-3",
+      "diagram": {
+        "title": "逐步生成填補紋理",
+        "body": "使用預訓練填補模型通常不需為每張圖重訓；要準備原圖、遮罩，視實作加文字或其他條件。遮罩外能否精確保留取決於管線、解碼與合成方式，應比較實際差異。",
+        "why": "準備與核對",
+        "anchor": "WI026-step-3"
+      }
+    },
+    {
+      "title": "檢查接縫與外區變化",
+      "body": "獨立保存的編修影像及遮罩；檢查接縫、紋理和區域外變化。",
+      "why": "核對後接入用途",
+      "anchor": "WI026-step-4",
+      "diagram": {
+        "title": "檢查接縫與外區變化",
+        "body": "獨立保存的編修影像及遮罩；檢查接縫、紋理和區域外變化。",
+        "why": "核對後接入用途",
+        "anchor": "WI026-step-4"
+      }
+    }
+  ],
+  "beginner_path": {
+    "title": "從核心做法、反例到方法選擇",
+    "intro": "製作外觀模擬圖時，想清除金屬板中央污漬，讓周圍拉絲紋理自然延續。 三張圖依序看做法、失敗與取捨；AI生成教學示意，非模型實測。",
+    "visuals": [
+      {
+        "id": "wi026-inpainting-c1",
+        "title": "Inpainting：指定一塊，補出連續紋理",
+        "prompt": "製作外觀模擬圖時，想清除金屬板中央污漬，讓周圍拉絲紋理自然延續。",
+        "caption": "Inpainting是一類填補任務，並非單一模型。遮罩指出可重畫的區域，未遮住的周邊提供上下文；擴散式實作以這些條件引導逐步去噪，讓局部從雜訊形成合理紋理。傳統修補或其他神經網路也能做Inpainting，本課用擴散式路徑說明。",
+        "image": "_course_content/generated-concepts/inpainting/wi026-inpainting-c1-r02-desktop.png",
+        "alt": "Inpainting：指定一塊，補出連續紋理。Inpainting是一類填補任務，並非單一模型。遮罩指出可重畫的區域，未遮住的周邊提供上下文；擴散式實作以這些條件引導逐步去噪，讓局部從雜訊形成合理紋理。傳統修補或其他神經網路也能做Inpainting，本課用擴散式路徑說明。 AI生成教學示意，非模型實測。",
+        "callouts": [
+          {
+            "title": "遮罩與周邊各管什麼",
+            "body": "遮罩指定改哪裡，周邊提供紋理方向和結構線索；拿掉周邊約束，局部可能接不上。遮罩由人或上游流程提供，不是此步自行偵測出的缺陷真值。"
+          },
+          {
+            "title": "準備與核對",
+            "body": "使用預訓練填補模型通常不需為每張圖重訓；要準備原圖、遮罩，視實作加文字或其他條件。遮罩外能否精確保留取決於管線、解碼與合成方式，應比較實際差異。"
+          },
+          {
+            "title": "交給誰",
+            "body": "獨立保存的編修影像及遮罩；檢查接縫、紋理和區域外變化。"
+          }
+        ],
+        "reading_views": [
+          {
+            "title": "Inpainting：指定一塊，補出連續紋理",
+            "image": "_course_content/generated-concepts/inpainting/wi026-inpainting-c1-r02-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/inpainting/wi026-inpainting-c1-r01-mobile.png",
+            "alt": "Inpainting：指定一塊，補出連續紋理。Inpainting是一類填補任務，並非單一模型。遮罩指出可重畫的區域，未遮住的周邊提供上下文；擴散式實作以這些條件引導逐步去噪，讓局部從雜訊形成合理紋理。傳統修補或其他神經網路也能做Inpainting，本課用擴散式路徑說明。 AI生成教學示意，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              724,
+              2172
+            ],
+            "mobile_display_mode": "full-mobile",
+            "mobile_intrinsic_width": 724,
+            "mobile_intrinsic_height": 2172,
+            "desktop_intrinsic_width": 1672,
+            "desktop_intrinsic_height": 941
+          }
+        ],
+        "core_ideas": true
+      },
+      {
+        "id": "wi026-inpainting-d2",
+        "title": "遮住真實孔洞，也能補出平整表面",
+        "prompt": "觀察同位置的變化：這個結果能支持什麼用途？",
+        "caption": "第二圖改用下半部真的破洞：同樣能把它填成平整表面，但改變的是畫面，沒有修復金屬。兩個上方製造孔仍保留；這樣才能清楚追蹤是哪個區域被重畫。",
+        "image": "_course_content/generated-concepts/inpainting/wi026-inpainting-d2-r01-desktop.png",
+        "alt": "遮住真實孔洞，也能補出平整表面。第二圖改用下半部真的破洞：同樣能把它填成平整表面，但改變的是畫面，沒有修復金屬。兩個上方製造孔仍保留；這樣才能清楚追蹤是哪個區域被重畫。 AI生成教學示意，非模型實測。",
+        "callouts": [
+          {
+            "title": "看哪裡",
+            "body": "第二圖改用下半部真的破洞：同樣能把它填成平整表面，但改變的是畫面，沒有修復金屬。兩個上方製造孔仍保留；這樣才能清楚追蹤是哪個區域被重畫。"
+          },
+          {
+            "title": "接著怎麼做",
+            "body": "模擬用途另存編修版；判斷原工件是否破損時查看原圖或實體，不能由填補結果反推。"
+          }
+        ],
+        "reading_views": [
+          {
+            "title": "遮住真實孔洞，也能補出平整表面",
+            "image": "_course_content/generated-concepts/inpainting/wi026-inpainting-d2-r01-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/inpainting/wi026-inpainting-d2-r01-mobile.png",
+            "alt": "遮住真實孔洞，也能補出平整表面。第二圖改用下半部真的破洞：同樣能把它填成平整表面，但改變的是畫面，沒有修復金屬。兩個上方製造孔仍保留；這樣才能清楚追蹤是哪個區域被重畫。 AI生成教學示意，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              724,
+              2172
+            ],
+            "mobile_display_mode": "full-mobile",
+            "mobile_intrinsic_width": 724,
+            "mobile_intrinsic_height": 2172,
+            "desktop_intrinsic_width": 1672,
+            "desktop_intrinsic_height": 941
+          }
+        ],
+        "core_ideas": false
+      },
+      {
+        "id": "wi026-editing-d3",
+        "title": "控制布局，還是只改一塊？",
+        "prompt": "固定需求與資料，哪種準備及處理成本較合適？",
+        "caption": "要局部修補，先測Inpainting；要生成整體布局相近的外觀，可用ControlNet。兩者能在支援的實作中搭配。若目標是生成某類真實刮傷，需要缺陷概念及資料準備，不能只因遮罩存在就當作已學會缺陷。",
+        "image": "_course_content/generated-concepts/controlnet/wi026-editing-d3-r02-desktop.png",
+        "alt": "控制布局，還是只改一塊？。要局部修補，先測Inpainting；要生成整體布局相近的外觀，可用ControlNet。兩者能在支援的實作中搭配。若目標是生成某類真實刮傷，需要缺陷概念及資料準備，不能只因遮罩存在就當作已學會缺陷。 AI生成教學示意，非模型實測。",
+        "callouts": [
+          {
+            "title": "如何選",
+            "body": "要局部修補，先測Inpainting；要生成整體布局相近的外觀，可用ControlNet。兩者能在支援的實作中搭配。若目標是生成某類真實刮傷，需要缺陷概念及資料準備，不能只因遮罩存在就當作已學會缺陷。"
+          },
+          {
+            "title": "換產品與完整成本",
+            "body": "只有正常影像也能測局部填補；新產品需重新核對材質、遮罩大小和周邊資訊。比較傳統修補、前饋或擴散實作時，固定用途與遮罩，記接縫、外區改動、生成時間及人工覆核量。結果是編修圖，不是精密分割或實體量測。"
+          }
+        ],
+        "reading_views": [
+          {
+            "title": "控制布局，還是只改一塊？",
+            "image": "_course_content/generated-concepts/controlnet/wi026-editing-d3-r02-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/controlnet/wi026-editing-d3-r02-mobile.png",
+            "alt": "控制布局，還是只改一塊？。要局部修補，先測Inpainting；要生成整體布局相近的外觀，可用ControlNet。兩者能在支援的實作中搭配。若目標是生成某類真實刮傷，需要缺陷概念及資料準備，不能只因遮罩存在就當作已學會缺陷。 AI生成教學示意，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              726,
+              2167
+            ],
+            "mobile_display_mode": "full-mobile",
+            "mobile_intrinsic_width": 726,
+            "mobile_intrinsic_height": 2167,
+            "desktop_intrinsic_width": 1672,
+            "desktop_intrinsic_height": 941
+          }
+        ],
+        "core_ideas": false
+      }
+    ]
+  },
+  "visual_intro": "Inpainting是一類填補任務，並非單一模型。遮罩指出可重畫的區域，未遮住的周邊提供上下文；擴散式實作以這些條件引導逐步去噪，讓局部從雜訊形成合理紋理。傳統修補或其他神經網路也能做Inpainting，本課用擴散式路徑說明。",
+  "concept_visuals": [
+    {
+      "id": "causal-chain",
+      "placement": "after_causal_chain",
+      "title": "Inpainting：先懂中心，再看細節",
+      "prompt": "填補後看不到缺陷，是否代表原始表面正常？",
+      "caption": "你有 original AOI image/ROI、binary 或 soft mask 與 mask 外 context，想用指定 inpainting implementation 填補遮罩內區域，並保留原圖／mask／output 關係。",
+      "image": "_course_content/generated-concepts/inpainting/inpainting-f02-core.png",
+      "alt": "Inpainting 的 F02 核心機制圖：案例輸入、模型專屬轉換、可交付線索與人的接手動作；非模型推論。",
+      "callouts": [
+        {
+          "title": "固定 original、mask 與 context",
+          "body": "保存 original image/ROI hash、mask generator/version、boundary policy、mask exterior context 與用途。"
+        },
+        {
+          "title": "釘選 inpainting implementation",
+          "body": "指定 latent/pixel implementation、base checkpoint/license、prompt/condition、resolution、tile/blend。"
+        },
+        {
+          "title": "在 mask 內 guided denoising/blend",
+          "body": "記錄 sampler/steps/guidance/seed，輸出 filled image 與 original/mask/output relation。"
+        }
+      ]
+    },
+    {
+      "id": "worked-example",
+      "placement": "after_micro_example",
+      "title": "Inpainting：同一案例的反事實",
+      "prompt": "同一可疑區：raw 中有 mark，mask 後填平。左側錯誤將 filled 當正常證據；右側保留 raw/mask/fill 並指向 human review/HOLD。",
+      "caption": "用同一案例看清楚參數或假設如何改變輸出，才知道何時該 HOLD。",
+      "image": "_course_content/generated-concepts/inpainting/inpainting-worked-example_v01.svg",
+      "alt": "Inpainting 的教學因果圖：輸入、轉換、輸出及其不可推論的界線。",
+      "callouts": [
+        {
+          "title": "情境",
+          "body": "工程師以 mask 圈出一個可疑缺陷，模型將區域填成平整紋理。"
+        },
+        {
+          "title": "直覺陷阱",
+          "body": "填補後看不到缺陷，是否代表原始表面正常？"
+        },
+        {
+          "title": "揭示",
+          "body": "絕對不能。mask 只是可編修區；filled pixels 是 synthetic。必須保留 original/mask/output，關鍵 defect/size/traceability 一律回到 raw image。"
+        },
+        {
+          "title": "POC 檢查",
+          "body": "要求讀者先指認 original、mask 和 filled output；若三者混成一張，就無法安全使用。"
+        }
+      ]
+    },
+    {
+      "id": "comparison",
+      "placement": "after_comparison",
+      "title": "Inpainting：和鄰近路徑的責任差異",
+      "prompt": "三欄：Inpainting mask-limited fill；ControlNet whole-image condition-controlled edit；DefectFill planned defect placement。都保存 synthetic/edit label，不混入 raw evidence。",
+      "caption": "比較時固定輸入、真值、硬體與 action contract；不要從單張視覺化決定排名。",
+      "image": "_course_content/generated-concepts/inpainting/inpainting-comparison_v01.svg",
+      "alt": "Inpainting 的教學因果圖：輸入、轉換、輸出及其不可推論的界線。",
+      "callouts": [
+        {
+          "title": "本模型",
+          "body": "original + binary/soft mask + surrounding context；輸出 filled plausible synthetic region + edit trace。"
+        },
+        {
+          "title": "對照：ControlNet",
+          "body": "source + spatial condition + prompt；輸出 controlled synthetic/edited image。"
+        },
+        {
+          "title": "選型結論",
+          "body": "只在用途明確限定為非證據性 data augmentation、展示或受控模擬時使用。先固定 mask policy、base implementation、sampling、original/mask/output 保存與 human review；以 mask-stratified quality、failure gallery、完整 P95 和 real-holdout effect 限定小規模用途。"
+        }
+      ]
+    },
+    {
+      "id": "boundary-cases-explainer",
+      "placement": "before_boundary_cases",
+      "title": "同一條因果鏈，在哪裡會被破壞？",
+      "prompt": "不要只記住風險名詞；先預測條件一變，畫面或候選結果會怎麼變，再決定何時應 HOLD。",
+      "caption": "Inpainting 的三個模型專屬反事實：每欄把條件、可觀察後果與正確下一步放在一起。它們不是自動修正規則；遇到條件超出驗證範圍時，先保存原始證據並進入 HOLD／REVIEW。",
+      "image": "_course_content/generated-concepts/inpainting/inpainting-boundary-cases_v01.svg",
+      "alt": "Inpainting 的三欄反事實說明圖：每欄依序說明一個失效條件、可能看到的候選或量測後果，以及應進入 HOLD、重驗或改選方法的安全下一步。",
+      "callouts": [
+        {
+          "title": "先看條件，而不是先改門檻",
+          "body": "候選改變可能是資料、取像、設定或模型假設被破壞，不能立刻解讀成產品真相。"
+        },
+        {
+          "title": "把可觀察後果說出來",
+          "body": "誤報、漏檢、整片異常或時間失序都需要回到原始資料與版本追查。"
+        },
+        {
+          "title": "HOLD 是設計的一部分",
+          "body": "先停止自動往下走、保存 evidence，確認條件後才重新 qualification 或交給適合的方法。"
+        }
+      ]
+    }
+  ],
+  "boundary_cases": [
+    {
+      "condition": "本課具體反例",
+      "effect": "第二圖改用下半部真的破洞：同樣能把它填成平整表面，但改變的是畫面，沒有修復金屬。兩個上方製造孔仍保留；這樣才能清楚追蹤是哪個區域被重畫。",
+      "action": "模擬用途另存編修版；判斷原工件是否破損時查看原圖或實體，不能由填補結果反推。"
+    },
+    {
+      "condition": "換產品或取像條件",
+      "effect": "只有正常影像也能測局部填補；新產品需重新核對材質、遮罩大小和周邊資訊。比較傳統修補、前饋或擴散實作時，固定用途與遮罩，記接縫、外區改動、生成時間及人工覆核量。結果是編修圖，不是精密分割或實體量測。",
+      "action": "先在固定真實留出資料重驗，再擴大用途。"
+    },
+    {
+      "condition": "把生成示意當成模型實測",
+      "effect": "本課圖像說明可能機制與失敗情況，不能據此計算現場準確率或節拍。",
+      "action": "保留真實原圖、模型設定與對照輸出，以符合工作需求的留出資料另行測量。"
+    }
+  ],
+  "comparison": [
+    {
+      "model": "ControlNet",
+      "normality": "空間條件與相應控制權重；需要時再訓練",
+      "candidate": "布局受引導的新影像"
+    },
+    {
+      "model": "Inpainting",
+      "normality": "原圖、遮罩與周邊；依實作另加條件",
+      "candidate": "指定區域填補後的編修圖"
+    },
+    {
+      "model": "支援兩者的管線",
+      "normality": "同時準備空間條件及編修遮罩",
+      "candidate": "局部編修時也受結構引導；仍需實測外區保留"
+    }
+  ],
+  "selection": "要局部修補，先測Inpainting；要生成整體布局相近的外觀，可用ControlNet。兩者能在支援的實作中搭配。若目標是生成某類真實刮傷，需要缺陷概念及資料準備，不能只因遮罩存在就當作已學會缺陷。 只有正常影像也能測局部填補；新產品需重新核對材質、遮罩大小和周邊資訊。比較傳統修補、前饋或擴散實作時，固定用途與遮罩，記接縫、外區改動、生成時間及人工覆核量。結果是編修圖，不是精密分割或實體量測。",
+  "poc": {
+    "title": "小規模比較：資料、效果與完整成本",
+    "steps": [
+      "保留原始資料，固定訓練與獨立真實留出切分，選定本課工作需求。",
+      "只有正常影像也能測局部填補；新產品需重新核對材質、遮罩大小和周邊資訊。比較傳統修補、前饋或擴散實作時，固定用途與遮罩，記接縫、外區改動、生成時間及人工覆核量。結果是編修圖，不是精密分割或實體量測。",
+      "記錄失敗影像、原圖與輸出關係、端到端時間和人工覆核量，再決定是否擴大。"
+    ],
+    "hold": "模擬用途另存編修版；判斷原工件是否破損時查看原圖或實體，不能由填補結果反推。",
+    "acceptance": {
+      "baseline": "原有流程或最簡單可行方法",
+      "measure": "關鍵細節、下游錯誤、總時間及覆核量",
+      "negative_control": "以本課反例檢查錯誤結論是否被排除",
+      "owner": "教材使用者指定的實作及覆核負責人"
+    }
+  },
+  "teach_back": {
+    "question": "它改變什麼？換條件後如何選？",
+    "answer": "Inpainting是一類填補任務，並非單一模型。遮罩指出可重畫的區域，未遮住的周邊提供上下文；擴散式實作以這些條件引導逐步去噪，讓局部從雜訊形成合理紋理。傳統修補或其他神經網路也能做Inpainting，本課用擴散式路徑說明。 要局部修補，先測Inpainting；要生成整體布局相近的外觀，可用ControlNet。兩者能在支援的實作中搭配。若目標是生成某類真實刮傷，需要缺陷概念及資料準備，不能只因遮罩存在就當作已學會缺陷。"
+  },
+  "slide_reading": [
+    {
+      "title": "Inpainting 先輸出什麼？",
+      "question": "它真正回答的問題",
+      "look": "看 Edit contract 到 Synthetic fill。",
+      "relation": "在固定 original、mask generator/boundary、context、base checkpoint、prompt/condition、sampler/steps/guidance/seed/blend 下，能產生什麼 filled candidate？它不是 defect detector、measurement、defect label 或 release decision。",
+      "takeaway": "把它想成「模型被允許在 mask 內猜一段合理內容」",
+      "terms": [
+        "binary / soft mask",
+        "surrounding context"
+      ]
+    },
+    {
+      "title": "核心機制：Synthetic fill",
+      "question": "為何「在 mask 內 guided denoising/blend」不是最後決策？",
+      "look": "Edit contract → Inpainting route → Synthetic fill → No-measurement gate",
+      "relation": "filled output 是 edit candidate，不是 defect evidence。",
+      "takeaway": "候選須回到 No-measurement gate。",
+      "terms": [
+        "guided denoising",
+        "blend policy"
+      ]
+    },
+    {
+      "title": "邊界：什麼情況該停下來？",
+      "question": "哪個輸入或假設一變，輸出不再可解讀？",
+      "look": "mask leakage、錯邊界或 context mismatch；raw 與 filled pixels 混用或無 edit label；用漂亮填補推論 defect/size/PASS-HOLD",
+      "relation": "模型可能抹除、幻覺或改寫重要結構。；觀測與 synthetic 無法區分，證據鏈失效。；plausible content 被誤當物理真實。",
+      "takeaway": "先保留證據並進 REVIEW/HOLD。",
+      "terms": [
+        "edit manifest",
+        "synthetic label"
+      ]
+    },
+    {
+      "title": "選型：何時值得用 Inpainting？",
+      "question": "要鎖定哪些條件才能公平比較？",
+      "look": "Inpainting / ControlNet / DefectFill",
+      "relation": "只在用途明確限定為非證據性 data augmentation、展示或受控模擬時使用。先固定 mask policy、base implementation、sampling、original/mask/output 保存與 human review；以 mask-stratified quality、failure gallery、完整 P95 和 real-holdout effect 限定小規模用途。",
+      "takeaway": "POC：驗證 edit 流程不偽裝成觀測",
+      "terms": [
+        "evidence bundle",
+        "complete P95/P99"
+      ]
+    }
+  ],
+  "comparison_headers": {
+    "title": "控制布局，還是只改一塊？",
+    "basis": "資料準備與方法分工",
+    "output": "交付結果與核對重點"
+  },
+  "transfer_check": {
+    "title": "紋理簡單與結構缺失兩種填補",
+    "scenario": "一張圖只有小污漬，另一張的孔邊整片被遮住；交付時間很短。",
+    "question": "會兩張都用同一擴散設定，還是分開處理？",
+    "answer": "小污漬可先比較傳統或快速填補，核對紋理接縫；大面積結構缺失可用帶條件的生成方法探索，但可能有多個合理答案。按用途核對結構、外區變化及總時間；若需知道實體原狀，應重拍或取得其他觀測。"
+  },
+  "review_trace": {
+    "authority": "roadmap-model-selection/diffusion-restoration/inpainting/model.md",
+    "scope": "WI-026 八課首讀圖文、獨立手機PNG、反例、比較與自測重製；原工程slide資產保留，未以首讀評分代替工程圖審查。",
+    "claims": [
+      {
+        "id": "visual-1",
+        "field": "beginner_path.visuals[aoi-masked-fill-contract]",
+        "source": "模型定位 / architecture_path"
+      },
+      {
+        "id": "visual-2",
+        "field": "beginner_path.visuals[mask-context-boundary]",
+        "source": "architecture_path"
+      },
+      {
+        "id": "visual-3",
+        "field": "beginner_path.visuals[versioned-inpaint-recipe]",
+        "source": "representation_or_score"
+      },
+      {
+        "id": "visual-4",
+        "field": "beginner_path.visuals[edit-manifest-review]",
+        "source": "failure_boundary"
+      },
+      {
+        "id": "visual-5",
+        "field": "beginner_path.visuals[boundary-change-hold]",
+        "source": "selection_gate / evidence_bundle"
+      },
+      {
+        "id": "promise",
+        "field": "promise",
+        "source": "模型定位 / representation_or_score"
+      },
+      {
+        "id": "mechanism",
+        "field": "mechanism_steps",
+        "source": "architecture_path / representation_or_score"
+      },
+      {
+        "id": "boundaries",
+        "field": "boundary_cases",
+        "source": "failure_boundary / selection_gate"
+      },
+      {
+        "id": "comparison",
+        "field": "comparison + selection",
+        "source": "selection_gate"
+      },
+      {
+        "id": "poc",
+        "field": "poc + acceptance",
+        "source": "cost_and_operating_point / evidence_bundle"
+      },
+      {
+        "id": "transfer",
+        "field": "transfer_check",
+        "source": "failure_boundary / selection_gate"
+      },
+      {
+        "id": "f02-core",
+        "field": "beginner_path.visuals[0] + scenario + mental_model",
+        "source": "roadmap-model-selection/diffusion-restoration/inpainting/model.md"
+      },
+      {
+        "id": "f02-transfer",
+        "field": "micro_example + transfer_check + selection",
+        "source": "roadmap-model-selection/diffusion-restoration/inpainting/model.md"
+      },
+      {
+        "id": "wi026-first-read",
+        "field": "beginner_path + core + selection + transfer",
+        "source": "https://arxiv.org/abs/2201.09865"
+      }
+    ]
+  },
+  "quality_status": {
+    "label": "首讀圖文已重製並自評；使用者核准待確認",
+    "state": "self-reviewed",
+    "round": "WI-026",
+    "reason": "38張不同PNG逐圖審查；整頁與互動證據見workitems/wi-026，原工程圖未重新評分。"
+  },
+  "teaching_preflight": {
+    "brief": "teaching-images/vision-ai-model-selection/workitems/wi-026/inpainting-c1-r02.md",
+    "story": "C",
+    "major_visual_nodes": 4,
+    "visual_status": "self-reviewed",
+    "user_review": "pending"
+  }
+}

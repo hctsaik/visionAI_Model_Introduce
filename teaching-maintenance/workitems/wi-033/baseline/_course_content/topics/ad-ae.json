@@ -1,0 +1,579 @@
+{
+  "model": "Autoencoder (AE)",
+  "badge": "同一工件，理解正常重建與差異",
+  "title": "AE：從正常品學重建，再比較同位置差異",
+  "scenario": {
+    "title": "正常照片多，缺陷種類卻收不齊",
+    "body": "固定相機檢查兩孔金屬板，先用允收正常影像學重建，再查看新板的刮傷 p 是否留下差異。"
+  },
+  "promise": {
+    "title": "取得可回看的差異線索",
+    "body": "原始影像、重建估計與差異圖；用來找值得回看的位置，不直接提供缺陷機率、精密邊界、尺寸或合格判定。"
+  },
+  "mental_model": {
+    "title": "學正常重建，再對照原圖",
+    "body": "AE 先用正常影像練習壓縮與還原；待測時比較原圖與生成的重建估計。不能被重建的差異是可疑線索，重建圖不是正常真值。",
+    "limit": "刮傷也被複製時，p 差異變小而可能漏檢；正常小孔被模糊時，q 差異變大而可能誤報。重建誤差小不等於異常檢測品質好。"
+  },
+  "micro_example": {
+    "title": "換成反光外殼，你會怎麼驗證？",
+    "setup": "新產品的正常外殼常有反光，缺陷是細刮傷。AE 把不少正常品標紅，但也漏掉一些刮傷。",
+    "prediction": "你會直接提高門檻，還是先查正常資料、取像與重建？怎麼分辨誤報和漏檢的來源？",
+    "reveal": "先對照原圖與重建：反光是否是允收變化、正常資料是否涵蓋、刮傷是否也被重建。提高門檻可能少誤報卻增加漏檢；應用獨立正常與真缺陷比較取像修正、訓練適配與門檻選擇。"
+  },
+  "mechanism_steps": [
+    {
+      "title": "先鎖定重建 target 與輸入 recipe",
+      "body": "選 image x 或 feature F 作為 target，固定 ROI、resize、mask、normalization、augmentation 與 support IDs。",
+      "why": "pixel residual 對照明與對位敏感；feature residual 可能忽略細節。兩者的分數不能無條件混用。",
+      "anchor": "工程圖核對：target x／F 與 input contract",
+      "diagram": {
+        "title": "先選 image 或 feature target",
+        "body": "固定 target、ROI 與輸入 recipe。",
+        "why": "pixel 與 feature residual 不是同一分數。",
+        "anchor": "target x/F → input contract"
+      }
+    },
+    {
+      "title": "讓 encoder 把正常訊號壓成 latent",
+      "body": "encoder 將正常 target 轉成 latent z；latent dimension、skip connections 與 architecture 都以版本保存。",
+      "why": "容量決定哪些正常變化能通過，也決定模型是否會把不該重建的異常一起帶過去。",
+      "anchor": "工程圖核對：encoder → latent z",
+      "diagram": {
+        "title": "encoder 壓成 latent z",
+        "body": "正常 target 經 encoder 進入有限容量 latent。",
+        "why": "容量太小誤拒，太大可能重建異常。",
+        "anchor": "target → encoder → z"
+      }
+    },
+    {
+      "title": "decoder 只從正常路徑重建 target",
+      "body": "decoder 由 z 產生 x-hat 或 F-hat，以鎖定 L1/L2、SSIM 或 feature loss 只對正常 support 訓練。",
+      "why": "loss、mask 與 normal coverage 決定『重建得好』的定義；不是任何視覺上平滑的結果都可靠。",
+      "anchor": "工程圖核對：decoder → reconstruction",
+      "diagram": {
+        "title": "decoder 重建指定 target",
+        "body": "z 依鎖定 loss 還原 x-hat 或 F-hat。",
+        "why": "平滑重建不必然代表正常。",
+        "anchor": "z → decoder → reconstruction"
+      }
+    },
+    {
+      "title": "把 residual 變成候選 evidence",
+      "body": "測試 target 與 reconstruction 依已鎖定 residual、smoothing、mask、aggregation 和 threshold 形成 map 與 image candidate score。",
+      "why": "同時看 input、reconstruction、residual 才能辨別刮痕、正常 blur 與取像偏移；分數本身不是 release probability。",
+      "anchor": "工程圖核對：residual map → aggregation → review",
+      "diagram": {
+        "title": "residual 聚合為候選",
+        "body": "target 與重建差距形成 map 與 image score。",
+        "why": "需連同 input 與重建一起 review。",
+        "anchor": "residual map → review"
+      }
+    }
+  ],
+  "visual_intro": "先判斷重建的是 image 還是 feature，再用工程圖核對 target、latent、decoder、residual 與 evidence gate。",
+  "beginner_path": {
+    "title": "用同一金屬板學懂 AE",
+    "intro": "先看做法，再看正常訓練、差異判讀、失敗例與鄰近方法。所有圖均為教學示意，非模型實測。",
+    "visuals": [
+      {
+        "id": "wi021-ae-1",
+        "title": "AE 如何從重建差異找刮傷？",
+        "prompt": "先看正常品如何教模型，再追蹤同一金屬板 A 的刮傷 p。",
+        "caption": "AE 先用正常影像練習壓縮與還原；待測時比較原圖與生成的重建估計。不能被重建的差異是可疑線索，重建圖不是正常真值。",
+        "image": "_course_content/generated-concepts/ad-ae/wi021-ae-c1-r02.png",
+        "alt": "AE 如何從重建差異找刮傷？。AE 先用正常影像練習壓縮與還原；待測時比較原圖與生成的重建估計。不能被重建的差異是可疑線索，重建圖不是正常真值。 本圖為 AI 生成教學示意，非模型實測。",
+        "callouts": [
+          {
+            "title": "正常知識來自哪裡",
+            "body": "正常訓練影像改變 AE 權重，待測推論使用學好的權重。"
+          },
+          {
+            "title": "比較的是哪兩張圖",
+            "body": "原始待測影像與同一張影像的重建估計；兩者必須在相同位置比較。"
+          },
+          {
+            "title": "看到差異之後",
+            "body": "回看 p 的原始影像；刮傷也可能被模型重建，不能把差異小當成必然正常。"
+          }
+        ],
+        "reading_views": [
+          {
+            "title": "AE 如何從重建差異找刮傷？",
+            "image": "_course_content/generated-concepts/ad-ae/wi021-ae-c1-r02.png",
+            "mobile_image": "_course_content/generated-concepts/ad-ae/wi021-ae-c1-r04-mobile.png",
+            "alt": "AE 如何從重建差異找刮傷？。AE 先用正常影像練習壓縮與還原；待測時比較原圖與生成的重建估計。不能被重建的差異是可疑線索，重建圖不是正常真值。 本圖為 AI 生成教學示意，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              724,
+              2172
+            ],
+            "mobile_display_mode": "full-mobile",
+            "mobile_intrinsic_width": 724,
+            "mobile_intrinsic_height": 2172,
+            "desktop_intrinsic_width": 1672,
+            "desktop_intrinsic_height": 941
+          }
+        ],
+        "core_ideas": true
+      },
+      {
+        "id": "wi021-ae-2",
+        "title": "AE 的正常知識，從哪裡來？",
+        "prompt": "允收的明暗與紋理要納入正常資料；驗證樣本不能參與權重更新。",
+        "caption": "訓練時將每張正常原圖與自己的重建比較，調整權重來保留正常結構。另留未參與訓練的正常品 V，檢查是否只記住了訓練樣本。",
+        "image": "_course_content/generated-concepts/ad-ae/wi021-ae-c2-r02-desktop.png",
+        "alt": "AE 的正常知識，從哪裡來？。訓練時將每張正常原圖與自己的重建比較，調整權重來保留正常結構。另留未參與訓練的正常品 V，檢查是否只記住了訓練樣本。 本圖為 AI 生成教學示意，非模型實測。",
+        "callouts": [
+          {
+            "title": "涵蓋允收變化",
+            "body": "不同實體正常品與合理取像變化應被涵蓋；同一件的多張影像不要跨訓練與驗證。"
+          },
+          {
+            "title": "驗證不是繼續訓練",
+            "body": "用 V 檢查正常重建差異，不能偷偷把 V 加進訓練後仍稱未見驗證。"
+          },
+          {
+            "title": "圖中改善是示意",
+            "body": "模糊孔緣變清楚用來說明學習目標，沒有宣稱真實模型已做到。"
+          }
+        ],
+        "reading_views": [
+          {
+            "title": "AE 的正常知識，從哪裡來？",
+            "image": "_course_content/generated-concepts/ad-ae/wi021-ae-c2-r02-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/ad-ae/wi021-ae-c2-r02-mobile.png",
+            "alt": "AE 的正常知識，從哪裡來？。訓練時將每張正常原圖與自己的重建比較，調整權重來保留正常結構。另留未參與訓練的正常品 V，檢查是否只記住了訓練樣本。 本圖為 AI 生成教學示意，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              724,
+              2172
+            ],
+            "mobile_display_mode": "full-mobile",
+            "mobile_intrinsic_width": 724,
+            "mobile_intrinsic_height": 2172,
+            "desktop_intrinsic_width": 1672,
+            "desktop_intrinsic_height": 941
+          }
+        ],
+        "core_ideas": false
+      },
+      {
+        "id": "wi021-ae-3",
+        "title": "紅色位置，為什麼值得回看？",
+        "prompt": "對齊 p 的原圖局部與重建局部，再核對差異來源。",
+        "caption": "本圖以 0–255 亮度的單點設定示範：原圖 p 為 40、重建 p 為 150，絕對差為 110。數字只用來解釋比較，不是模型推論或概率。",
+        "image": "_course_content/generated-concepts/ad-ae/wi021-ae-c3-r02-desktop.png",
+        "alt": "紅色位置，為什麼值得回看？。本圖以 0–255 亮度的單點設定示範：原圖 p 為 40、重建 p 為 150，絕對差為 110。數字只用來解釋比較，不是模型推論或概率。 本圖為 AI 生成教學示意，非模型實測。",
+        "callouts": [
+          {
+            "title": "同位置才有意義",
+            "body": "先確認取像與位置一致；反光及邊緣也可能產生差異。"
+          },
+          {
+            "title": "110 不是缺陷機率",
+            "body": "此處是單點亮度差；其他 AE 可採不同殘差度量，不能共用未校準門檻。"
+          },
+          {
+            "title": "熱圖不能直接量寬度",
+            "body": "回看原始影像確認缺陷；尺寸還需解析度、校正和可靠的邊界。"
+          }
+        ],
+        "reading_views": [
+          {
+            "title": "紅色位置，為什麼值得回看？",
+            "image": "_course_content/generated-concepts/ad-ae/wi021-ae-c3-r02-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/ad-ae/wi021-ae-c3-r01-mobile.png",
+            "alt": "紅色位置，為什麼值得回看？。本圖以 0–255 亮度的單點設定示範：原圖 p 為 40、重建 p 為 150，絕對差為 110。數字只用來解釋比較，不是模型推論或概率。 本圖為 AI 生成教學示意，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              724,
+              2172
+            ],
+            "mobile_display_mode": "full-mobile",
+            "mobile_intrinsic_width": 724,
+            "mobile_intrinsic_height": 2172,
+            "desktop_intrinsic_width": 1672,
+            "desktop_intrinsic_height": 941
+          }
+        ],
+        "core_ideas": false
+      },
+      {
+        "id": "wi021-ae-4",
+        "title": "重建得越像，就越會抓缺陷嗎？",
+        "prompt": "比較 p 的刮傷與 q 的正常小孔：缺陷複製和正常細節丟失造成不同錯誤。",
+        "caption": "刮傷也被複製時，p 差異變小而可能漏檢；正常小孔被模糊時，q 差異變大而可能誤報。重建誤差小不等於異常檢測品質好。",
+        "image": "_course_content/generated-concepts/ad-ae/wi021-ae-d4-r02-desktop.png",
+        "alt": "重建得越像，就越會抓缺陷嗎？。刮傷也被複製時，p 差異變小而可能漏檢；正常小孔被模糊時，q 差異變大而可能誤報。重建誤差小不等於異常檢測品質好。 本圖為 AI 生成教學示意，非模型實測。",
+        "callouts": [
+          {
+            "title": "漏檢看 p",
+            "body": "原圖與重建都保留刮傷，僅靠兩張圖的差異可能找不到它。"
+          },
+          {
+            "title": "誤報看 q",
+            "body": "正常孔緣未被還原，差異圖亮起並不表示原工件有缺陷。"
+          },
+          {
+            "title": "兩種資料一起驗證",
+            "body": "使用未見正常品與真缺陷，固定取像和前處理，一起看誤報、漏檢及人工覆核成本。"
+          }
+        ],
+        "reading_views": [
+          {
+            "title": "重建得越像，就越會抓缺陷嗎？",
+            "image": "_course_content/generated-concepts/ad-ae/wi021-ae-d4-r02-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/ad-ae/wi021-ae-d4-r01-mobile.png",
+            "alt": "重建得越像，就越會抓缺陷嗎？。刮傷也被複製時，p 差異變小而可能漏檢；正常小孔被模糊時，q 差異變大而可能誤報。重建誤差小不等於異常檢測品質好。 本圖為 AI 生成教學示意，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              724,
+              2172
+            ],
+            "mobile_display_mode": "full-mobile",
+            "mobile_intrinsic_width": 724,
+            "mobile_intrinsic_height": 2172,
+            "desktop_intrinsic_width": 1672,
+            "desktop_intrinsic_height": 941
+          }
+        ],
+        "core_ideas": false
+      },
+      {
+        "id": "wi021-ae-5",
+        "title": "AE、RD4AD、DRAEM 比較的是什麼？",
+        "prompt": "固定同一工作與驗證影像，先辨識三種結果來源，再談適用條件。",
+        "caption": "本課 image-AE 比較像素重建差異；RD4AD 比較教師與反向重建特徵；DRAEM 讓原圖和重建共同進入學習式判別器。圖是機制對照，沒有共同實測的性能排名。 固定硬體、解析度與前處理，按相同漏檢風險比較誤報、端到端時間及覆核量；較少模型部件不等於現場一定較快。",
+        "image": "_course_content/generated-concepts/ad-ae/wi021-ae-d5-r02-desktop.png",
+        "alt": "AE、RD4AD、DRAEM 比較的是什麼？。本課 image-AE 比較像素重建差異；RD4AD 比較教師與反向重建特徵；DRAEM 讓原圖和重建共同進入學習式判別器。圖是機制對照，沒有共同實測的性能排名。 本圖為 AI 生成教學示意，非模型實測。",
+        "callouts": [
+          {
+            "title": "先做 AE 基準",
+            "body": "正常資料可訓練時先建立可解釋的重建基準，但要確認缺陷不會一起被複製。"
+          },
+          {
+            "title": "何時比較另一條路",
+            "body": "考慮 RD4AD 的特徵比較，或在能設計合成異常訓練時試 DRAEM；不同線索未必在你的工件更好。"
+          },
+          {
+            "title": "換产品的工作量",
+            "body": "三者都要以目標產品驗證；正常表示與訓練資料適配可能要重建或重訓，不能沿用未驗證的分數門檻。"
+          }
+        ],
+        "reading_views": [
+          {
+            "title": "AE、RD4AD、DRAEM 比較的是什麼？",
+            "image": "_course_content/generated-concepts/ad-ae/wi021-ae-d5-r02-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/ad-ae/wi021-ae-d5-r02-mobile.png",
+            "alt": "AE、RD4AD、DRAEM 比較的是什麼？。本課 image-AE 比較像素重建差異；RD4AD 比較教師與反向重建特徵；DRAEM 讓原圖和重建共同進入學習式判別器。圖是機制對照，沒有共同實測的性能排名。 本圖為 AI 生成教學示意，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              724,
+              2172
+            ],
+            "mobile_display_mode": "full-mobile",
+            "mobile_intrinsic_width": 724,
+            "mobile_intrinsic_height": 2172,
+            "desktop_intrinsic_width": 1672,
+            "desktop_intrinsic_height": 941
+          }
+        ],
+        "core_ideas": false
+      }
+    ]
+  },
+  "concept_visuals": [
+    {
+      "id": "causal-chain",
+      "placement": "after_causal_chain",
+      "title": "Autoencoder：先懂核心再看細節",
+      "prompt": "拿掉容量限制，讓輸出直接等於輸入，異常分數會怎樣？",
+      "caption": "沒有各式缺陷標籤，想先學合格外觀。自編碼器把影像壓縮再重建，只練正常品時，不能還原的局部可能留下可疑差異。",
+      "image": "_course_content/generated-concepts/ad-ae/ad-ae-f01-core.png",
+      "alt": "沒有各式缺陷標籤，想先學合格外觀。自編碼器把影像壓縮再重建，只練正常品時，不能還原的局部可能留下可疑差異。 圖為既有生成工件與機制設定，不是模型推論。",
+      "callouts": [
+        {
+          "title": "先限定重建目標",
+          "body": "本圖用 image-AE：输入像素和重建像素比較；feature-AE 則重建特徵，兩者不可混叫同一張殘差。"
+        },
+        {
+          "title": "瓶頸限制直接照抄",
+          "body": "encoder 壓縮，decoder 還原，正常訓練希望保住允收外觀；限制太強會連正常細節也丟失。"
+        },
+        {
+          "title": "殘差只是線索",
+          "body": "原圖減重建得到差異；若模型連刮傷也複製成功，差異反而小，所以重建品質不是偵測品質。"
+        }
+      ]
+    },
+    {
+      "id": "worked-example",
+      "placement": "after_micro_example",
+      "title": "容量太小與太大，為何都可能出錯？",
+      "prompt": "三欄用同一正常紋理與同一刮痕，只改 AE 的 latent／skip 容量。",
+      "caption": "太小時正常紋理也重建失真，殘差到處亮；受控容量才可能凸顯刮痕；太大或 shortcut 太強時，刮痕也可能被重建，殘差反而消失。",
+      "image": "_course_content/generated-concepts/ad-ae/ad-ae-worked-example_v01.svg",
+      "alt": "三欄無文字圖：左欄正常與刮痕皆有橘色 residual，中欄只有刮痕，右欄重建幾乎複製刮痕且 residual 變淡。",
+      "callouts": [
+        {
+          "title": "太小",
+          "body": "合法 normal detail 被壓掉，false reject 上升。"
+        },
+        {
+          "title": "受控",
+          "body": "是否可用需在真實 holdout 驗證。"
+        },
+        {
+          "title": "太大",
+          "body": "異常也可能被重建，造成 escape。"
+        }
+      ]
+    },
+    {
+      "id": "comparison",
+      "placement": "after_comparison",
+      "title": "AE 的 target residual 不等於 RD4AD 的 teacher discrepancy",
+      "prompt": "兩者都叫重建，但被比較的對象不同。",
+      "caption": "AE 比較指定 image 或 feature target 與自己的 decoder reconstruction；RD4AD 比較 frozen teacher feature 與 reverse decoder feature reconstruction。兩者都不是 defect probability。",
+      "image": "_course_content/generated-concepts/ad-ae/ad-ae-comparison_v01.svg",
+      "alt": "左右比較圖：左側 input 到 encoder-latent-decoder再與原target差分，右側 teacher feature經瓶頸反向decoder後與teacher feature比較。",
+      "callouts": [
+        {
+          "title": "AE",
+          "body": "先明確 target，才知道 residual 在量什麼。"
+        },
+        {
+          "title": "RD4AD",
+          "body": "固定 teacher feature 是比較參考。"
+        },
+        {
+          "title": "共同邊界",
+          "body": "漂亮 reconstruction 不能取代 low-FPR 和 escaped-defect evidence。"
+        }
+      ]
+    },
+    {
+      "id": "boundary-cases-explainer",
+      "placement": "before_boundary_cases",
+      "title": "容量、support 與取像各會讓 residual 怎麼說錯？",
+      "prompt": "同一條 residual 路徑：容量太窄、容量／skip 太強或 ROI 漂移時，會先出現哪種可觀察後果？",
+      "caption": "Autoencoder (AE) 的三個模型專屬反事實：每欄把條件、可觀察後果與正確下一步放在一起。它們不是自動修正規則；遇到條件超出驗證範圍時，先保存原始證據並進入 HOLD／REVIEW。",
+      "image": "_course_content/generated-concepts/ad-ae/ad-ae-boundary-cases_v01.svg",
+      "alt": "Autoencoder (AE) 的三欄反事實說明圖：每欄依序說明一個失效條件、可能看到的候選或量測後果，以及應進入 HOLD、重驗或改選方法的安全下一步。",
+      "callouts": [
+        {
+          "title": "容量太窄",
+          "body": "合法 normal detail 也無法重建，map 廣泛亮起；先用隔離 normal holdout 查 false reject。"
+        },
+        {
+          "title": "容量或 skip 太強",
+          "body": "已知 defect 也可能被重建，residual 變淡；要查 escaped defects，不可只看 reconstruction loss。"
+        },
+        {
+          "title": "ROI 或任務邊界錯了",
+          "body": "整片 residual 或 logical anomaly 先 HOLD，查 acquisition；必要時轉 structure／rule path。"
+        }
+      ]
+    }
+  ],
+  "boundary_cases": [
+    {
+      "condition": "bottleneck 太弱、normal coverage 不足或輸入 blur",
+      "effect": "正常品也重建不好，residual 增加，造成 false HOLD。",
+      "action": "分層檢查 lot/view/light 的 input、reconstruction、residual；以隔離正常 holdout 調整容量與 recipe。"
+    },
+    {
+      "condition": "容量太強、skip 太直接或 support 受污染",
+      "effect": "異常可被重建，或污染模式被當作正常，殘差變小而漏檢。",
+      "action": "HOLD；檢查 escaped defects、contamination audit、latent／skip 設定，重訓後做 real challenge qualification。"
+    },
+    {
+      "condition": "ROI／照明／對位漂移或目標是 logical anomaly",
+      "effect": "pixel residual 可能被量測條件主導；缺件、錯件與關係規則未必會形成局部重建差。",
+      "action": "先查 acquisition state；對 logical anomaly 改採能檢查存在、位置或結構規則的方法。"
+    }
+  ],
+  "comparison": [
+    {
+      "model": "Autoencoder (AE)",
+      "normality": "指定 target 經 normal-trained encoder-decoder 的可重建性",
+      "candidate": "target 與 reconstruction residual 大"
+    },
+    {
+      "model": "RD4AD",
+      "normality": "reverse path 可重建 frozen teacher features",
+      "candidate": "teacher/reconstructed feature discrepancy 大"
+    },
+    {
+      "model": "DRAEM",
+      "normality": "reconstruction 加上辨別式 joint embedding",
+      "candidate": "discriminative segmentation map 高"
+    }
+  ],
+  "selection": "只有正常品資料且想建立重建基準，可先試 image-AE；若像素差異受取像干擾，可把 RD4AD 特徵路徑列為候選；能設計合成異常時也可試 DRAEM 學習式判別。固定同一批未見正常與真缺陷，比誤報、漏檢、處理時間和換產品工作量，不能只選重建最像的一個。",
+  "poc": {
+    "title": "POC 第一件事：先把 residual 的語言鎖死",
+    "steps": [
+      "固定 target image／feature、ROI/transform/mask、normal support IDs、encoder/decoder、latent/skip、loss、seed 和 checkpoint。",
+      "鎖 residual definition、resize/smoothing、aggregation、threshold、calibration 與 input/reconstruction/residual evidence format。",
+      "在 challenge／future／drift split 比較 escape、false reject/review load、tiny-defect evidence、P95/state size 與 capacity ablation。"
+    ],
+    "hold": "target 混用、support 受污染、正常模式不足、capacity failure、取像漂移或 logical anomaly 主導時，先 HOLD。",
+    "acceptance": {
+      "baseline": "固定 image-AE 或 feature-AE 的 target、clean normal support、capacity、loss、residual 與 map rule。",
+      "measure": "在 challenge、future、drift split 量 low-FPR escape、false reject、review load、input/reconstruction/residual 三聯證據與完整 P95。",
+      "negative_control": "分別使用過窄 bottleneck 與過強 capacity／skip，確認前者造成 normal false reject、後者可能讓已知 defect residual 消失。",
+      "owner": "AOI 製程 owner、Vision ML owner、品質覆核 owner"
+    }
+  },
+  "teach_back": {
+    "question": "為什麼正常影像重建很好，仍不保證抓得到刮傷？",
+    "answer": "因為模型也可能把刮傷複製進重建，原圖與重建差異反而小。也要確認正常細節不會被丟失而造成誤報。"
+  },
+  "slide_reading": [
+    {
+      "title": "先找：到底在重建什麼？",
+      "question": "這張圖的 target 是 image 還是 feature？",
+      "look": "找 x／F、input recipe 與 residual definition。",
+      "relation": "target 決定 AE 看見的訊息與 residual 對哪些變化敏感。",
+      "takeaway": "image-AE 與 feature-AE 的分數不可直接混比。",
+      "terms": [
+        "target：被要求重建的訊號",
+        "residual：target 與 reconstruction 的差距"
+      ]
+    },
+    {
+      "title": "這張圖要核對 latent capacity",
+      "question": "為何 latent／skip 會同時影響誤報與漏檢？",
+      "look": "找 encoder、z、decoder 和 skip path。",
+      "relation": "太少容量丟掉正常細節，太多容量又可能複製異常。",
+      "takeaway": "容量是部署的模型狀態，不是只看訓練 loss 的超參數。",
+      "terms": [
+        "latent：encoder 壓縮後的內部表示",
+        "skip connection：繞過瓶頸直接傳遞資訊的連接"
+      ]
+    },
+    {
+      "title": "先鎖 residual recipe，才看候選圖",
+      "question": "哪些步驟會改變一個小熱點的最終分數？",
+      "look": "找 loss、residual、mask、smoothing、aggregation 和 threshold。",
+      "relation": "重建後的差距仍要經後處理和整圖聚合才成 operating signal。",
+      "takeaway": "residual map 不是 native defect mask。",
+      "terms": [
+        "smoothing：平滑局部殘差的後處理",
+        "aggregation：把局部差異轉成整圖分數"
+      ]
+    },
+    {
+      "title": "選它前，先看 escape 與 drift",
+      "question": "重建變好時，為什麼仍需檢查 escaped defects？",
+      "look": "看 over-reconstruction、contamination、illumination／registration 與 logical anomaly。",
+      "relation": "低 residual 可能是正常，也可能是模型把異常一起重建；外部條件也能製造高 residual。",
+      "takeaway": "條件不明就 HOLD，並保留可回放的三聯證據。",
+      "terms": [
+        "over-reconstruction：異常被模型還原而不再顯著",
+        "logical anomaly：缺件、錯件或關係規則錯誤"
+      ]
+    }
+  ],
+  "comparison_headers": {
+    "title": "不要混稱重建；先看 target 與 residual",
+    "basis": "正常性是用哪個 target 重建？",
+    "output": "哪一種 residual 才只是回看候選？"
+  },
+  "transfer_check": {
+    "title": "熱圖要變成刮傷寬度，還缺什麼？",
+    "scenario": "另一條產線希望輸出每條刮傷的實際寬度，而非可疑位置。",
+    "question": "AE 差異圖能直接滿足需求嗎？還需要哪種量測流程與驗證？",
+    "answer": "不能直接把熱區當精確輪廓。需要足夠影像解析度、穩定取像、幾何與像素尺度校正、可信邊界及獨立量測真值；AE 可提供候選位置，再交給適合的分割與量測流程。"
+  },
+  "review_trace": {
+    "authority": "roadmap-model-selection/anomaly-detection/ad-ae/model.md",
+    "scope": "WI-021：五張首讀圖含獨立手機版，正常訓練、同位置差異、反例與相鄰方法；全部生成教學示意，未新增模型效能實測。",
+    "claims": [
+      {
+        "id": "visual-1",
+        "field": "beginner_path.visuals[normal-only-workpiece]",
+        "source": "模型定位 / architecture_path"
+      },
+      {
+        "id": "visual-2",
+        "field": "beginner_path.visuals[target-contract]",
+        "source": "architecture_path"
+      },
+      {
+        "id": "visual-3",
+        "field": "beginner_path.visuals[capacity-skip-counterfactual]",
+        "source": "representation_or_score"
+      },
+      {
+        "id": "visual-4",
+        "field": "beginner_path.visuals[residual-evidence-review]",
+        "source": "failure_boundary"
+      },
+      {
+        "id": "visual-5",
+        "field": "beginner_path.visuals[boundary-hold]",
+        "source": "selection_gate / evidence_bundle"
+      },
+      {
+        "id": "promise",
+        "field": "promise",
+        "source": "模型定位 / representation_or_score"
+      },
+      {
+        "id": "mechanism",
+        "field": "mechanism_steps",
+        "source": "architecture_path / representation_or_score"
+      },
+      {
+        "id": "boundaries",
+        "field": "boundary_cases",
+        "source": "failure_boundary / selection_gate"
+      },
+      {
+        "id": "comparison",
+        "field": "comparison + selection",
+        "source": "selection_gate"
+      },
+      {
+        "id": "poc",
+        "field": "poc + acceptance",
+        "source": "cost_and_operating_point / evidence_bundle"
+      },
+      {
+        "id": "transfer",
+        "field": "transfer_check",
+        "source": "failure_boundary / selection_gate"
+      },
+      {
+        "id": "f01-core",
+        "field": "beginner_path.visuals[0] + scenario + mental_model",
+        "source": "https://arxiv.org/abs/1807.02011"
+      },
+      {
+        "id": "f01-transfer",
+        "field": "micro_example + transfer_check",
+        "source": "由原論文機制推論移除後果；https://arxiv.org/abs/1807.02011"
+      },
+      {
+        "id": "wi021-reconstruction",
+        "field": "beginner_path + micro_example + selection",
+        "source": "https://arxiv.org/abs/1807.02011；RD4AD https://arxiv.org/abs/2201.10703；DRAEM https://arxiv.org/abs/2108.07610；教學假設亮度40/150，絕對差110。"
+      }
+    ]
+  },
+  "teaching_preflight": {
+    "brief": "teaching-images/vision-ai-model-selection/workitems/wi-021/ae-c1-r01.md",
+    "story": "C",
+    "major_visual_nodes": 4,
+    "visual_status": "self-reviewed",
+    "user_review": "pending"
+  }
+}

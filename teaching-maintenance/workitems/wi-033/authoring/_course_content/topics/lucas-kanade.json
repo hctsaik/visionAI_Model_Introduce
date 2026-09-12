@@ -1,0 +1,571 @@
+{
+  "model": "Lucas–Kanade",
+  "badge": "傳統稀疏光流追點",
+  "title": "Lucas–Kanade：追住紋理，估計點的位移",
+  "scenario": {
+    "title": "相機看金屬板移動，你只需要幾個清楚角點的影像位移，作為運動監看或後續對位線索。",
+    "body": "相機看金屬板移動，你只需要幾個清楚角點的影像位移，作為運動監看或後續對位線索。"
+  },
+  "promise": {
+    "title": "交付結果與接手工作",
+    "body": "選定點在下一影格的位置、追蹤狀態及可由座標差得到的位移；不直接提供整張光流、物件身分或毫米速度。"
+  },
+  "mental_model": {
+    "title": "傳統稀疏光流追點",
+    "body": "本課用金字塔 Lucas–Kanade 的稀疏追點形式：先選可辨認的角點，再在下一影格的局部鄰域找能讓亮度變化最一致的小位移。附近像素提供共同線索，比單一像素更能約束移動方向；金字塔先在縮小影像抓粗位移，再逐層修細。",
+    "limit": "L形刻痕被反光或遮擋蓋住，下一影格失去可對應紋理，點可能追丟或追錯。漂亮的箭頭本身不能證明對應正確。"
+  },
+  "micro_example": {
+    "title": "換成鏡面零件",
+    "setup": "鏡面表面很平，只有少量邊角偶爾可見，你只需要判斷整件是否移動。",
+    "prediction": "一定要改用RAFT嗎？",
+    "reveal": "不一定；可先改善光照或加可追蹤標記，再用LK驗證少量點；也可比較整體對位。RAFT能給稠密估計，但不能創造被反光或遮擋抹掉的真實對應。"
+  },
+  "mechanism_steps": [
+    {
+      "title": "挑可辨認角點",
+      "body": "清楚的L形角點有兩個方向的變化；單一直線或無紋理區可能無法唯一判定移動。",
+      "why": "由本課核心機制連接工作用途",
+      "anchor": "WI028-1",
+      "diagram": {
+        "title": "挑可辨認角點",
+        "body": "清楚的L形角點有兩個方向的變化；單一直線或無紋理區可能無法唯一判定移動。",
+        "why": "詳見本課版本與來源",
+        "anchor": "WI028-1"
+      }
+    },
+    {
+      "title": "在鄰域找小位移",
+      "body": "亮度近似不變、鄰域運動相近與每層位移適中是重要條件。成功狀態仍需搭配誤差或前後向核對。",
+      "why": "由本課核心機制連接工作用途",
+      "anchor": "WI028-2",
+      "diagram": {
+        "title": "在鄰域找小位移",
+        "body": "亮度近似不變、鄰域運動相近與每層位移適中是重要條件。成功狀態仍需搭配誤差或前後向核對。",
+        "why": "詳見本課版本與來源",
+        "anchor": "WI028-2"
+      }
+    },
+    {
+      "title": "交出點的移動",
+      "body": "選定點在下一影格的位置、追蹤狀態及可由座標差得到的位移；不直接提供整張光流、物件身分或毫米速度。",
+      "why": "由本課核心機制連接工作用途",
+      "anchor": "WI028-3",
+      "diagram": {
+        "title": "交出點的移動",
+        "body": "選定點在下一影格的位置、追蹤狀態及可由座標差得到的位移；不直接提供整張光流、物件身分或毫米速度。",
+        "why": "詳見本課版本與來源",
+        "anchor": "WI028-3"
+      }
+    },
+    {
+      "title": "工作核對與接手",
+      "body": "在同影片上比點對誤差、追丟比例、長序列漂移與成本；若與稠密方法比較，於相同點位置採樣並另外記錄覆蓋範圍。",
+      "why": "由本課核心機制連接工作用途",
+      "anchor": "WI028-4",
+      "diagram": {
+        "title": "工作核對與接手",
+        "body": "在同影片上比點對誤差、追丟比例、長序列漂移與成本；若與稠密方法比較，於相同點位置採樣並另外記錄覆蓋範圍。",
+        "why": "詳見本課版本與來源",
+        "anchor": "WI028-4"
+      }
+    }
+  ],
+  "visual_intro": "本課用金字塔 Lucas–Kanade 的稀疏追點形式：先選可辨認的角點，再在下一影格的局部鄰域找能讓亮度變化最一致的小位移。附近像素提供共同線索，比單一像素更能約束移動方向；金字塔先在縮小影像抓粗位移，再逐層修細。",
+  "beginner_path": {
+    "title": "從必要原理、具體反例到工作取捨",
+    "intro": "相機看金屬板移動，你只需要幾個清楚角點的影像位移，作為運動監看或後續對位線索。 下列圖像、特徵及回答為教學示意，不是模型實測。",
+    "visuals": [
+      {
+        "id": "wi028-lk-c1",
+        "title": "Lucas–Kanade：用局部紋理追住同一個點",
+        "prompt": "相機看金屬板移動，你只需要幾個清楚角點的影像位移，作為運動監看或後續對位線索。",
+        "caption": "本課用金字塔 Lucas–Kanade 的稀疏追點形式：先選可辨認的角點，再在下一影格的局部鄰域找能讓亮度變化最一致的小位移。附近像素提供共同線索，比單一像素更能約束移動方向；金字塔先在縮小影像抓粗位移，再逐層修細。",
+        "image": "_course_content/generated-concepts/lucas-kanade/wi028-lk-c1-r02-desktop.png",
+        "alt": "Lucas–Kanade：用局部紋理追住同一個點。本課用金字塔 Lucas–Kanade 的稀疏追點形式：先選可辨認的角點，再在下一影格的局部鄰域找能讓亮度變化最一致的小位移。附近像素提供共同線索，比單一像素更能約束移動方向；金字塔先在縮小影像抓粗位移，再逐層修細。 AI生成教學示意，非模型實測。",
+        "callouts": [
+          {
+            "title": "局部紋理提供方向",
+            "body": "清楚的L形角點有兩個方向的變化；單一直線或無紋理區可能無法唯一判定移動。"
+          },
+          {
+            "title": "相似條件才追得穩",
+            "body": "亮度近似不變、鄰域運動相近與每層位移適中是重要條件。成功狀態仍需搭配誤差或前後向核對。"
+          },
+          {
+            "title": "交付與接手",
+            "body": "選定點在下一影格的位置、追蹤狀態及可由座標差得到的位移；不直接提供整張光流、物件身分或毫米速度。"
+          }
+        ],
+        "reading_views": [
+          {
+            "title": "Lucas–Kanade：用局部紋理追住同一個點",
+            "image": "_course_content/generated-concepts/lucas-kanade/wi028-lk-c1-r02-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/lucas-kanade/wi028-lk-c1-r03-mobile.png",
+            "alt": "Lucas–Kanade：用局部紋理追住同一個點。本課用金字塔 Lucas–Kanade 的稀疏追點形式：先選可辨認的角點，再在下一影格的局部鄰域找能讓亮度變化最一致的小位移。附近像素提供共同線索，比單一像素更能約束移動方向；金字塔先在縮小影像抓粗位移，再逐層修細。 AI生成教學示意，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              1024,
+              1536
+            ],
+            "mobile_display_mode": "full-mobile",
+            "desktop_intrinsic_width": 1672,
+            "desktop_intrinsic_height": 941,
+            "mobile_intrinsic_width": 1024,
+            "mobile_intrinsic_height": 1536
+          }
+        ],
+        "core_ideas": true
+      },
+      {
+        "id": "wi033-flow-main-failure",
+        "title": "沒有可靠對應，兩種光流都要核對",
+        "prompt": "觀察哪個條件改變，讓原本的結果不夠可靠？",
+        "caption": "固定同一L形工件的影格對，清楚組與後影格反光組都交給LK和RAFT。兩者各自核對對應、錯誤與可用覆蓋，不能只把有利條件分給其中一種方法。",
+        "image": "_course_content/generated-concepts/lucas-kanade/wi033-flow-main-failure-r02-desktop.png",
+        "alt": "沒有可靠對應，兩種光流都要核對。固定同一L形工件的影格對，清楚組與後影格反光組都交給LK和RAFT。兩者各自核對對應、錯誤與可用覆蓋，不能只把有利條件分給其中一種方法。 教學示意，非模型實測。",
+        "callouts": [
+          {
+            "title": "看哪裡",
+            "body": "固定同一L形工件的影格對，清楚組與後影格反光組都交給LK和RAFT。兩者各自核對對應、錯誤與可用覆蓋，不能只把有利條件分給其中一種方法。"
+          },
+          {
+            "title": "接著怎麼做",
+            "body": "回原片看角點、檢查追蹤狀態與前後向一致性；重新選點或調取樣／金字塔。若要物理位移，另做影像尺度與時間校正。"
+          }
+        ],
+        "reading_views": [
+          {
+            "title": "沒有可靠對應，兩種光流都要核對",
+            "image": "_course_content/generated-concepts/lucas-kanade/wi033-flow-main-failure-r02-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/lucas-kanade/wi033-flow-main-failure-r02-mobile.png",
+            "alt": "沒有可靠對應，兩種光流都要核對。LK與RAFT都看相同輸入；數值不能補回不可見對應。 教學圖解，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              768,
+              2304
+            ],
+            "mobile_display_mode": "full-mobile",
+            "desktop_intrinsic_width": 1672,
+            "desktop_intrinsic_height": 941,
+            "mobile_intrinsic_width": 768,
+            "mobile_intrinsic_height": 2304
+          }
+        ],
+        "core_ideas": false
+      },
+      {
+        "id": "wi028-flow-d3",
+        "title": "少量追點，還是整張位移？",
+        "prompt": "相同工作需求下，資料、輸出與成本如何取捨？",
+        "caption": "只需少量穩定點，可先用LK，通常準備與計算較簡單；需要全畫面位移時可比較RAFT或傳統稠密光流。全圖覆蓋不代表每點都可信。",
+        "image": "_course_content/generated-concepts/lucas-kanade/wi028-flow-d3-r01-desktop.png",
+        "alt": "少量追點，還是整張位移？。只需少量穩定點，可先用LK，通常準備與計算較簡單；需要全畫面位移時可比較RAFT或傳統稠密光流。全圖覆蓋不代表每點都可信。 AI生成教學示意，非模型實測。",
+        "callouts": [
+          {
+            "title": "怎麼選",
+            "body": "只需少量穩定點，可先用LK，通常準備與計算較簡單；需要全畫面位移時可比較RAFT或傳統稠密光流。全圖覆蓋不代表每點都可信。"
+          },
+          {
+            "title": "資料與完整成本",
+            "body": "不用網路權重，仍需固定窗口、層數、角點選擇與時間戳。換材質與速度要重驗可追點比例、錯配、漂移及完整耗時；不要只比每秒張數。"
+          }
+        ],
+        "reading_views": [
+          {
+            "title": "少量追點，還是整張位移？",
+            "image": "_course_content/generated-concepts/lucas-kanade/wi028-flow-d3-r01-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/lucas-kanade/wi028-flow-d3-r01-mobile.png",
+            "alt": "少量追點，還是整張位移？。只需少量穩定點，可先用LK，通常準備與計算較簡單；需要全畫面位移時可比較RAFT或傳統稠密光流。全圖覆蓋不代表每點都可信。 AI生成教學示意，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              1024,
+              1536
+            ],
+            "mobile_display_mode": "full-mobile",
+            "desktop_intrinsic_width": 1672,
+            "desktop_intrinsic_height": 941,
+            "mobile_intrinsic_width": 1024,
+            "mobile_intrinsic_height": 1536
+          }
+        ],
+        "core_ideas": false
+      }
+    ]
+  },
+  "concept_visuals": [],
+  "boundary_cases": [
+    {
+      "condition": "本課具體反例",
+      "effect": "L形刻痕被反光或遮擋蓋住，下一影格失去可對應紋理，點可能追丟或追錯。漂亮的箭頭本身不能證明對應正確。",
+      "action": "回原片看角點、檢查追蹤狀態與前後向一致性；重新選點或調取樣／金字塔。若要物理位移，另做影像尺度與時間校正。"
+    },
+    {
+      "condition": "更換產品、模型或輸入設定",
+      "effect": "不用網路權重，仍需固定窗口、層數、角點選擇與時間戳。換材質與速度要重驗可追點比例、錯配、漂移及完整耗時；不要只比每秒張數。",
+      "action": "先取有清楚角點及反光／遮擋的影片，固定幀間隔，人工核對一批點對，再選窗口和金字塔。"
+    },
+    {
+      "condition": "把示意當成實際推論",
+      "effect": "本課特徵、排序、回答及圖像僅用於解釋，不支持現場準確率或耗時結論。",
+      "action": "在同影片上比點對誤差、追丟比例、長序列漂移與成本；若與稠密方法比較，於相同點位置採樣並另外記錄覆蓋範圍。"
+    }
+  ],
+  "comparison": [
+    {
+      "model": "Lucas–Kanade稀疏追點",
+      "normality": "不需權重；選角點、窗口、金字塔與幀間隔",
+      "candidate": "選定點位移；需檢查追丟與錯配"
+    },
+    {
+      "model": "原始RAFT",
+      "normality": "預訓練權重、相容前處理、迭代與運算預算",
+      "candidate": "稠密像素位移；遮擋仍可能不可靠"
+    },
+    {
+      "model": "傳統稠密光流基準",
+      "normality": "如Farnebäck；設定尺度和局部估計參數",
+      "candidate": "稠密位移；同影片比較誤差、覆蓋及成本"
+    }
+  ],
+  "selection": "只需少量穩定點，可先用LK，通常準備與計算較簡單；需要全畫面位移時可比較RAFT或傳統稠密光流。全圖覆蓋不代表每點都可信。 不用網路權重，仍需固定窗口、層數、角點選擇與時間戳。換材質與速度要重驗可追點比例、錯配、漂移及完整耗時；不要只比每秒張數。",
+  "poc": {
+    "title": "以真實工作資料做小規模比較",
+    "steps": [
+      "先取有清楚角點及反光／遮擋的影片，固定幀間隔，人工核對一批點對，再選窗口和金字塔。",
+      "不用網路權重，仍需固定窗口、層數、角點選擇與時間戳。換材質與速度要重驗可追點比例、錯配、漂移及完整耗時；不要只比每秒張數。",
+      "在同影片上比點對誤差、追丟比例、長序列漂移與成本；若與稠密方法比較，於相同點位置採樣並另外記錄覆蓋範圍。"
+    ],
+    "hold": "回原片看角點、檢查追蹤狀態與前後向一致性；重新選點或調取樣／金字塔。若要物理位移，另做影像尺度與時間校正。",
+    "acceptance": {
+      "baseline": "既有流程或最簡單可行方法",
+      "measure": "在同影片上比點對誤差、追丟比例、長序列漂移與成本；若與稠密方法比較，於相同點位置採樣並另外記錄覆蓋範圍。",
+      "negative_control": "L形刻痕被反光或遮擋蓋住，下一影格失去可對應紋理，點可能追丟或追錯。漂亮的箭頭本身不能證明對應正確。",
+      "owner": "實作與影像核對負責人"
+    }
+  },
+  "teach_back": {
+    "question": "它改變什麼？何時選另一種做法？",
+    "answer": "本課用金字塔 Lucas–Kanade 的稀疏追點形式：先選可辨認的角點，再在下一影格的局部鄰域找能讓亮度變化最一致的小位移。附近像素提供共同線索，比單一像素更能約束移動方向；金字塔先在縮小影像抓粗位移，再逐層修細。 只需少量穩定點，可先用LK，通常準備與計算較簡單；需要全畫面位移時可比較RAFT或傳統稠密光流。全圖覆蓋不代表每點都可信。"
+  },
+  "slide_reading": [
+    {
+      "title": "Lucas–Kanade：先讓角點有可追的鄰域",
+      "question": "清楚角點、穩定影格與小位移，是局部解的起點。",
+      "look": "先看同相機相鄰影格，再核對角點提供兩方向線索，最後看金字塔先粗後細。",
+      "relation": "同一L形標记随工件平移；先固定相機、時間間隔及取像，選有雙方向梯度的角點。金字塔由粗到細估計位移，傳遞估計再修細；它擴大可處理位移，但不能補回被反光遮住的內容。",
+      "takeaway": "清楚角點、穩定影格與小位移，是局部解的起點。",
+      "terms": [
+        "Ix/Iy：影像水平方向／垂直方向的亮度梯度。",
+        "It：同位置跨影格的亮度變化。"
+      ]
+    },
+    {
+      "title": "Lucas–Kanade：多個像素一起限制位移",
+      "question": "局部梯度支持共同位移，解出數字後仍要檢查。",
+      "look": "先看局部像素提供亮度變化，再核對共同的小位移符合多條式子，最後看把解變成可核對的向量。",
+      "relation": "在小位移、局部共同運動與亮度一致假設下，每個像素給Ix·u+Iy·v+It≈0。教學給定三組梯度(1,0,-2)、(0,1,-1)、(1,1,-3)，共同解u=2、v=1，單位是影格間像素位移。真實資料以最小平方近似求解，再查矩陣條件、殘差及往返一致性；示意數值不是對插圖執行光流的結果。",
+      "takeaway": "局部梯度支持共同位移，解出數字後仍要檢查。",
+      "terms": [
+        "Ix/Iy：影像水平方向／垂直方向的亮度梯度。",
+        "It：同位置跨影格的亮度變化。"
+      ]
+    },
+    {
+      "title": "Lucas–Kanade：把可追的點與失效分開",
+      "question": "保存點對、時間與有效性，再決定能否接量測。",
+      "look": "先看同名點保留前後座標，再核對失敗位置退出追蹤，最後看像素位移另接校正與時間。",
+      "relation": "保存前後影格ID、座標、時間差、狀態與殘差；追丟或一致性差的點不可沿用舊箭頭。需要物理位移或速度時，另有相機運動處理、平面/深度條件與尺度校正，不能把像素向量直接標成毫米或物件ID。",
+      "takeaway": "保存點對、時間與有效性，再決定能否接量測。",
+      "terms": [
+        "Ix/Iy：影像水平方向／垂直方向的亮度梯度。",
+        "It：同位置跨影格的亮度變化。"
+      ]
+    },
+    {
+      "title": "Lucas–Kanade：同題比較稀疏與稠密",
+      "question": "先確定需要哪些位置，再比較錯誤與完整成本。",
+      "look": "先看同一影格對與工作需求，再核對LK：只驗被選中的點，最後看RAFT：另驗整張位移場。",
+      "relation": "同一L形工件、影格間隔和原圖；若工作只需少數穩定角點，LK可作基準。需要稠密場時加入RAFT；在共同可評位置比較位移錯誤，另報各自覆蓋率和端到端耗時，不能把不同輸出數量當成精度優勢。",
+      "takeaway": "先確定需要哪些位置，再比較錯誤與完整成本。",
+      "terms": [
+        "Ix/Iy：影像水平方向／垂直方向的亮度梯度。",
+        "It：同位置跨影格的亮度變化。"
+      ]
+    }
+  ],
+  "comparison_headers": {
+    "title": "少量追點，還是整張位移？",
+    "basis": "所需資料與方法差異",
+    "output": "輸出與維護責任"
+  },
+  "transfer_check": {
+    "title": "換成鏡面零件",
+    "scenario": "鏡面表面很平，只有少量邊角偶爾可見，你只需要判斷整件是否移動。",
+    "question": "一定要改用RAFT嗎？",
+    "answer": "不一定；可先改善光照或加可追蹤標記，再用LK驗證少量點；也可比較整體對位。RAFT能給稠密估計，但不能創造被反光或遮擋抹掉的真實對應。"
+  },
+  "review_trace": {
+    "authority": "roadmap-model-selection/video-temporal/lucas-kanade/model.md",
+    "scope": "WI-033第二批：四工程圖重排，光流共用條件反例、AnomalyDINO旋轉深讀及EfficientAD同件反例／指定深讀修正；頁內與使用者審閱另記。",
+    "claims": [
+      {
+        "id": "visual-1",
+        "field": "beginner_path.visuals[same-conveyor-corner-pair]",
+        "source": "模型定位 / architecture_path"
+      },
+      {
+        "id": "visual-2",
+        "field": "beginner_path.visuals[pair-and-corner-sample]",
+        "source": "architecture_path"
+      },
+      {
+        "id": "visual-3",
+        "field": "beginner_path.visuals[gradient-local-solve]",
+        "source": "representation_or_score"
+      },
+      {
+        "id": "visual-4",
+        "field": "beginner_path.visuals[pyramid-conditioning]",
+        "source": "failure_boundary"
+      },
+      {
+        "id": "visual-5",
+        "field": "beginner_path.visuals[hold-and-output-choice]",
+        "source": "selection_gate / evidence_bundle"
+      },
+      {
+        "id": "promise",
+        "field": "promise",
+        "source": "模型定位 / representation_or_score"
+      },
+      {
+        "id": "mechanism",
+        "field": "mechanism_steps",
+        "source": "architecture_path / representation_or_score"
+      },
+      {
+        "id": "boundaries",
+        "field": "boundary_cases",
+        "source": "failure_boundary / selection_gate"
+      },
+      {
+        "id": "comparison",
+        "field": "comparison + selection",
+        "source": "selection_gate"
+      },
+      {
+        "id": "poc",
+        "field": "poc + acceptance",
+        "source": "cost_and_operating_point / evidence_bundle"
+      },
+      {
+        "id": "transfer",
+        "field": "transfer_check",
+        "source": "failure_boundary / selection_gate"
+      },
+      {
+        "id": "f02-core",
+        "field": "beginner_path.visuals[0] + scenario + mental_model",
+        "source": "roadmap-model-selection/video-temporal/lucas-kanade/model.md"
+      },
+      {
+        "id": "f02-transfer",
+        "field": "micro_example + transfer_check + selection",
+        "source": "roadmap-model-selection/video-temporal/lucas-kanade/model.md"
+      },
+      {
+        "id": "wi028-first-read",
+        "field": "beginner_path + core + selection + transfer",
+        "source": "https://docs.opencv.org/4.x/d4/dee/tutorial_optical_flow.html"
+      }
+    ]
+  },
+  "quality_status": {
+    "label": "首讀圖文已核對",
+    "state": "self-reviewed",
+    "round": "WI-028",
+    "reason": "新版首讀逐圖與整頁自評、桌機手機互動驗證完成；使用者核准pending。原工程圖未納入本輪分數。"
+  },
+  "teaching_preflight": {
+    "brief": "teaching-images/vision-ai-model-selection/workitems/wi-028/lk-c1-r02.md",
+    "mobile_brief": "teaching-images/vision-ai-model-selection/workitems/wi-028/lk-c1-r03.md",
+    "story": "C",
+    "major_visual_nodes": 3,
+    "visual_status": "self-reviewed",
+    "user_review": "pending"
+  },
+  "engineering_slides": [
+    {
+      "title": "Lucas–Kanade：先讓角點有可追的鄰域",
+      "question": "清楚角點、穩定影格與小位移，是局部解的起點。",
+      "plain": {
+        "look": "先看同相機相鄰影格，再核對角點提供兩方向線索，最後看金字塔先粗後細。",
+        "relation": "同一L形標记随工件平移；先固定相機、時間間隔及取像，選有雙方向梯度的角點。金字塔由粗到細估計位移，傳遞估計再修細；它擴大可處理位移，但不能補回被反光遮住的內容。",
+        "takeaway": "清楚角點、穩定影格與小位移，是局部解的起點。"
+      },
+      "terms": [
+        "Ix/Iy：影像水平方向／垂直方向的亮度梯度。",
+        "It：同位置跨影格的亮度變化。"
+      ],
+      "guide": [
+        "同一L形標记随工件平移；先固定相機、時間間隔及取像，選有雙方向梯度的角點。金字塔由粗到細估計位移，傳遞估計再修細；它擴大可處理位移，但不能補回被反光遮住的內容。",
+        "先看同相機相鄰影格，再核對角點提供兩方向線索，最後看金字塔先粗後細。"
+      ],
+      "stages": [
+        {
+          "title": "同相機相鄰影格",
+          "body": "同相機相鄰影格；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "角點提供兩方向線索",
+          "body": "角點提供兩方向線索；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "金字塔先粗後細",
+          "body": "金字塔先粗後細；請對照圖內輸入、變化與結果。"
+        }
+      ],
+      "misconception": "L形刻痕被反光或遮擋蓋住，下一影格失去可對應紋理，點可能追丟或追錯。漂亮的箭頭本身不能證明對應正確。",
+      "alt": "Lucas–Kanade：先讓角點有可追的鄰域。清楚角點、穩定影格與小位移，是局部解的起點。 教學示意，非模型實測。",
+      "mobile_image": "roadmap-model-selection/video-temporal/lucas-kanade/images/final/WI033-LK-01-r02-mobile.png",
+      "mobile_width": 768,
+      "mobile_height": 2400,
+      "engineering": {
+        "takeaway": "清楚角點、穩定影格與小位移，是局部解的起點。",
+        "nextAction": "先取有清楚角點及反光／遮擋的影片，固定幀間隔，人工核對一批點對，再選窗口和金字塔。",
+        "redLine": "回原片看角點、檢查追蹤狀態與前後向一致性；重新選點或調取樣／金字塔。若要物理位移，另做影像尺度與時間校正。"
+      },
+      "source": "https://docs.opencv.org/4.13.0/d4/dee/tutorial_optical_flow.html"
+    },
+    {
+      "title": "Lucas–Kanade：多個像素一起限制位移",
+      "question": "局部梯度支持共同位移，解出數字後仍要檢查。",
+      "plain": {
+        "look": "先看局部像素提供亮度變化，再核對共同的小位移符合多條式子，最後看把解變成可核對的向量。",
+        "relation": "在小位移、局部共同運動與亮度一致假設下，每個像素給Ix·u+Iy·v+It≈0。教學給定三組梯度(1,0,-2)、(0,1,-1)、(1,1,-3)，共同解u=2、v=1，單位是影格間像素位移。真實資料以最小平方近似求解，再查矩陣條件、殘差及往返一致性；示意數值不是對插圖執行光流的結果。",
+        "takeaway": "局部梯度支持共同位移，解出數字後仍要檢查。"
+      },
+      "terms": [
+        "Ix/Iy：影像水平方向／垂直方向的亮度梯度。",
+        "It：同位置跨影格的亮度變化。"
+      ],
+      "guide": [
+        "在小位移、局部共同運動與亮度一致假設下，每個像素給Ix·u+Iy·v+It≈0。教學給定三組梯度(1,0,-2)、(0,1,-1)、(1,1,-3)，共同解u=2、v=1，單位是影格間像素位移。真實資料以最小平方近似求解，再查矩陣條件、殘差及往返一致性；示意數值不是對插圖執行光流的結果。",
+        "先看局部像素提供亮度變化，再核對共同的小位移符合多條式子，最後看把解變成可核對的向量。"
+      ],
+      "stages": [
+        {
+          "title": "局部像素提供亮度變化",
+          "body": "局部像素提供亮度變化；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "共同的小位移符合多條式子",
+          "body": "共同的小位移符合多條式子；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "把解變成可核對的向量",
+          "body": "把解變成可核對的向量；請對照圖內輸入、變化與結果。"
+        }
+      ],
+      "misconception": "L形刻痕被反光或遮擋蓋住，下一影格失去可對應紋理，點可能追丟或追錯。漂亮的箭頭本身不能證明對應正確。",
+      "alt": "Lucas–Kanade：多個像素一起限制位移。局部梯度支持共同位移，解出數字後仍要檢查。 教學示意，非模型實測。",
+      "mobile_image": "roadmap-model-selection/video-temporal/lucas-kanade/images/final/WI033-LK-02-r02-mobile.png",
+      "mobile_width": 768,
+      "mobile_height": 2400,
+      "engineering": {
+        "takeaway": "局部梯度支持共同位移，解出數字後仍要檢查。",
+        "nextAction": "先取有清楚角點及反光／遮擋的影片，固定幀間隔，人工核對一批點對，再選窗口和金字塔。",
+        "redLine": "回原片看角點、檢查追蹤狀態與前後向一致性；重新選點或調取樣／金字塔。若要物理位移，另做影像尺度與時間校正。"
+      },
+      "source": "https://docs.opencv.org/4.13.0/d4/dee/tutorial_optical_flow.html"
+    },
+    {
+      "title": "Lucas–Kanade：把可追的點與失效分開",
+      "question": "保存點對、時間與有效性，再決定能否接量測。",
+      "plain": {
+        "look": "先看同名點保留前後座標，再核對失敗位置退出追蹤，最後看像素位移另接校正與時間。",
+        "relation": "保存前後影格ID、座標、時間差、狀態與殘差；追丟或一致性差的點不可沿用舊箭頭。需要物理位移或速度時，另有相機運動處理、平面/深度條件與尺度校正，不能把像素向量直接標成毫米或物件ID。",
+        "takeaway": "保存點對、時間與有效性，再決定能否接量測。"
+      },
+      "terms": [
+        "Ix/Iy：影像水平方向／垂直方向的亮度梯度。",
+        "It：同位置跨影格的亮度變化。"
+      ],
+      "guide": [
+        "保存前後影格ID、座標、時間差、狀態與殘差；追丟或一致性差的點不可沿用舊箭頭。需要物理位移或速度時，另有相機運動處理、平面/深度條件與尺度校正，不能把像素向量直接標成毫米或物件ID。",
+        "先看同名點保留前後座標，再核對失敗位置退出追蹤，最後看像素位移另接校正與時間。"
+      ],
+      "stages": [
+        {
+          "title": "同名點保留前後座標",
+          "body": "同名點保留前後座標；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "失敗位置退出追蹤",
+          "body": "失敗位置退出追蹤；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "像素位移另接校正與時間",
+          "body": "像素位移另接校正與時間；請對照圖內輸入、變化與結果。"
+        }
+      ],
+      "misconception": "L形刻痕被反光或遮擋蓋住，下一影格失去可對應紋理，點可能追丟或追錯。漂亮的箭頭本身不能證明對應正確。",
+      "alt": "Lucas–Kanade：把可追的點與失效分開。保存點對、時間與有效性，再決定能否接量測。 教學示意，非模型實測。",
+      "mobile_image": "roadmap-model-selection/video-temporal/lucas-kanade/images/final/WI033-LK-03-r02-mobile.png",
+      "mobile_width": 768,
+      "mobile_height": 2400,
+      "engineering": {
+        "takeaway": "保存點對、時間與有效性，再決定能否接量測。",
+        "nextAction": "先取有清楚角點及反光／遮擋的影片，固定幀間隔，人工核對一批點對，再選窗口和金字塔。",
+        "redLine": "回原片看角點、檢查追蹤狀態與前後向一致性；重新選點或調取樣／金字塔。若要物理位移，另做影像尺度與時間校正。"
+      },
+      "source": "https://docs.opencv.org/4.13.0/d4/dee/tutorial_optical_flow.html"
+    },
+    {
+      "title": "Lucas–Kanade：同題比較稀疏與稠密",
+      "question": "先確定需要哪些位置，再比較錯誤與完整成本。",
+      "plain": {
+        "look": "先看同一影格對與工作需求，再核對LK：只驗被選中的點，最後看RAFT：另驗整張位移場。",
+        "relation": "同一L形工件、影格間隔和原圖；若工作只需少數穩定角點，LK可作基準。需要稠密場時加入RAFT；在共同可評位置比較位移錯誤，另報各自覆蓋率和端到端耗時，不能把不同輸出數量當成精度優勢。",
+        "takeaway": "先確定需要哪些位置，再比較錯誤與完整成本。"
+      },
+      "terms": [
+        "Ix/Iy：影像水平方向／垂直方向的亮度梯度。",
+        "It：同位置跨影格的亮度變化。"
+      ],
+      "guide": [
+        "同一L形工件、影格間隔和原圖；若工作只需少數穩定角點，LK可作基準。需要稠密場時加入RAFT；在共同可評位置比較位移錯誤，另報各自覆蓋率和端到端耗時，不能把不同輸出數量當成精度優勢。",
+        "先看同一影格對與工作需求，再核對LK：只驗被選中的點，最後看RAFT：另驗整張位移場。"
+      ],
+      "stages": [
+        {
+          "title": "同一影格對與工作需求",
+          "body": "同一影格對與工作需求；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "LK：只驗被選中的點",
+          "body": "LK：只驗被選中的點；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "RAFT：另驗整張位移場",
+          "body": "RAFT：另驗整張位移場；請對照圖內輸入、變化與結果。"
+        }
+      ],
+      "misconception": "L形刻痕被反光或遮擋蓋住，下一影格失去可對應紋理，點可能追丟或追錯。漂亮的箭頭本身不能證明對應正確。",
+      "alt": "Lucas–Kanade：同題比較稀疏與稠密。先確定需要哪些位置，再比較錯誤與完整成本。 教學示意，非模型實測。",
+      "mobile_image": "roadmap-model-selection/video-temporal/lucas-kanade/images/final/WI033-LK-04-r02-mobile.png",
+      "mobile_width": 768,
+      "mobile_height": 2400,
+      "engineering": {
+        "takeaway": "先確定需要哪些位置，再比較錯誤與完整成本。",
+        "nextAction": "先取有清楚角點及反光／遮擋的影片，固定幀間隔，人工核對一批點對，再選窗口和金字塔。",
+        "redLine": "回原片看角點、檢查追蹤狀態與前後向一致性；重新選點或調取樣／金字塔。若要物理位移，另做影像尺度與時間校正。"
+      },
+      "source": "https://docs.opencv.org/4.13.0/d4/dee/tutorial_optical_flow.html"
+    }
+  ]
+}

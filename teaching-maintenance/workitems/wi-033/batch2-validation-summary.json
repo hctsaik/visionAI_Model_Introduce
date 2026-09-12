@@ -1,0 +1,14 @@
+{
+  "tests": "11 passed, 126 subtests passed in 112.67s",
+  "command": "python -m pytest tests/test_engineering_mobile_pages.py tests/test_deep_dive_mobile_steps.py tests/test_github_pages_bundle.py tests/test_interactive_navigation.py -q",
+  "main_states": 16,
+  "zooms": 112,
+  "http": 116,
+  "assets": 1364,
+  "deep_states": 64,
+  "mobile_caption_topics": 58,
+  "mobile_captions": 178,
+  "html_sha256": "3b1510e764f5c256948f2de475ec1cea9c8cc0907e47634e6b5d5992d6bb8282",
+  "user_approval": "pending",
+  "published": false
+}

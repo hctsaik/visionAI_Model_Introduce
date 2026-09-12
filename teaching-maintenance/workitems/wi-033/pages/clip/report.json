@@ -1,0 +1,502 @@
+[
+  {
+    "topic": "clip",
+    "route": "interactive-learning.html",
+    "width": 1440,
+    "errors": [],
+    "images": [
+      {
+        "src": "http://127.0.0.1:8000/_course_content/generated-concepts/clip/wi027-clip-c1-r01-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 404.1875,
+          "y": 401.515625,
+          "width": 935.625,
+          "height": 526.5625,
+          "top": 401.515625,
+          "right": 1339.8125,
+          "bottom": 928.078125,
+          "left": 404.1875
+        },
+        "kind": "main-1"
+      },
+      {
+        "src": "http://127.0.0.1:8000/_course_content/generated-concepts/clip/wi027-alignment-d2-r01-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 404.1875,
+          "y": 201.03125,
+          "width": 935.625,
+          "height": 526.5625,
+          "top": 201.03125,
+          "right": 1339.8125,
+          "bottom": 727.59375,
+          "left": 404.1875
+        },
+        "kind": "main-2"
+      },
+      {
+        "src": "http://127.0.0.1:8000/_course_content/generated-concepts/clip/wi027-alignment-d3-r03-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 404.1875,
+          "y": 201.34375,
+          "width": 935.625,
+          "height": 526.5625,
+          "top": 201.34375,
+          "right": 1339.8125,
+          "bottom": 727.90625,
+          "left": 404.1875
+        },
+        "kind": "main-3"
+      },
+      {
+        "src": "http://127.0.0.1:8000/roadmap-model-selection/foundation-vlm-open-world/clip/images/final/WI033-CLIP-01-r02-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 367.1875,
+          "y": 196.015625,
+          "width": 1009.625,
+          "height": 568.203125,
+          "top": 196.015625,
+          "right": 1376.8125,
+          "bottom": 764.21875,
+          "left": 367.1875
+        },
+        "kind": "engineering-1"
+      },
+      {
+        "src": "http://127.0.0.1:8000/roadmap-model-selection/foundation-vlm-open-world/clip/images/final/WI033-CLIP-02-r03-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 367.1875,
+          "y": 196.265625,
+          "width": 1009.625,
+          "height": 568.203125,
+          "top": 196.265625,
+          "right": 1376.8125,
+          "bottom": 764.46875,
+          "left": 367.1875
+        },
+        "kind": "engineering-2"
+      },
+      {
+        "src": "http://127.0.0.1:8000/roadmap-model-selection/foundation-vlm-open-world/clip/images/final/WI033-CLIP-03-r02-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 367.1875,
+          "y": 195.515625,
+          "width": 1009.625,
+          "height": 568.203125,
+          "top": 195.515625,
+          "right": 1376.8125,
+          "bottom": 763.71875,
+          "left": 367.1875
+        },
+        "kind": "engineering-3"
+      },
+      {
+        "src": "http://127.0.0.1:8000/roadmap-model-selection/foundation-vlm-open-world/clip/images/final/WI033-CLIP-04-r02-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 367.1875,
+          "y": 195.53125,
+          "width": 1009.625,
+          "height": 568.203125,
+          "top": 195.53125,
+          "right": 1376.8125,
+          "bottom": 763.734375,
+          "left": 367.1875
+        },
+        "kind": "engineering-4"
+      }
+    ],
+    "zoom_checks": 7,
+    "answer": true,
+    "overflow": false,
+    "navigation": true,
+    "complete": true
+  },
+  {
+    "topic": "clip",
+    "route": "interactive-learning.html",
+    "width": 360,
+    "errors": [],
+    "images": [
+      {
+        "src": "http://127.0.0.1:8000/_course_content/generated-concepts/clip/wi027-clip-c1-r01-mobile.png",
+        "nw": 724,
+        "nh": 2172,
+        "box": {
+          "x": 17,
+          "y": -124.859375,
+          "width": 326,
+          "height": 978,
+          "top": -124.859375,
+          "right": 343,
+          "bottom": 853.140625,
+          "left": 17
+        },
+        "kind": "main-1"
+      },
+      {
+        "src": "http://127.0.0.1:8000/_course_content/generated-concepts/clip/wi027-alignment-d2-r01-mobile.png",
+        "nw": 724,
+        "nh": 2172,
+        "box": {
+          "x": 17,
+          "y": -134.515625,
+          "width": 326,
+          "height": 978,
+          "top": -134.515625,
+          "right": 343,
+          "bottom": 843.484375,
+          "left": 17
+        },
+        "kind": "main-2"
+      },
+      {
+        "src": "http://127.0.0.1:8000/_course_content/generated-concepts/clip/wi033-alignment-comparison-r01-mobile.png",
+        "nw": 768,
+        "nh": 2304,
+        "box": {
+          "x": 17,
+          "y": -134.796875,
+          "width": 326,
+          "height": 978,
+          "top": -134.796875,
+          "right": 343,
+          "bottom": 843.203125,
+          "left": 17
+        },
+        "kind": "main-3"
+      },
+      {
+        "src": "http://127.0.0.1:8000/roadmap-model-selection/foundation-vlm-open-world/clip/images/final/WI033-CLIP-01-r02-mobile.png",
+        "nw": 768,
+        "nh": 2400,
+        "box": {
+          "x": 34,
+          "y": -87.234375,
+          "width": 292,
+          "height": 912.5,
+          "top": -87.234375,
+          "right": 326,
+          "bottom": 825.265625,
+          "left": 34
+        },
+        "kind": "engineering-1"
+      },
+      {
+        "src": "http://127.0.0.1:8000/roadmap-model-selection/foundation-vlm-open-world/clip/images/final/WI033-CLIP-02-r03-mobile.png",
+        "nw": 768,
+        "nh": 2400,
+        "box": {
+          "x": 34,
+          "y": -87.8125,
+          "width": 292,
+          "height": 912.5,
+          "top": -87.8125,
+          "right": 326,
+          "bottom": 824.6875,
+          "left": 34
+        },
+        "kind": "engineering-2"
+      },
+      {
+        "src": "http://127.0.0.1:8000/roadmap-model-selection/foundation-vlm-open-world/clip/images/final/WI033-CLIP-03-r02-mobile.png",
+        "nw": 768,
+        "nh": 2400,
+        "box": {
+          "x": 34,
+          "y": -87.984375,
+          "width": 292,
+          "height": 912.5,
+          "top": -87.984375,
+          "right": 326,
+          "bottom": 824.515625,
+          "left": 34
+        },
+        "kind": "engineering-3"
+      },
+      {
+        "src": "http://127.0.0.1:8000/roadmap-model-selection/foundation-vlm-open-world/clip/images/final/WI033-CLIP-04-r02-mobile.png",
+        "nw": 768,
+        "nh": 2400,
+        "box": {
+          "x": 34,
+          "y": -87.296875,
+          "width": 292,
+          "height": 912.5,
+          "top": -87.296875,
+          "right": 326,
+          "bottom": 825.203125,
+          "left": 34
+        },
+        "kind": "engineering-4"
+      }
+    ],
+    "zoom_checks": 7,
+    "answer": true,
+    "overflow": false,
+    "navigation": true,
+    "complete": true
+  },
+  {
+    "topic": "clip",
+    "route": "docs/index.html",
+    "width": 1440,
+    "errors": [],
+    "images": [
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/clip/wi027-clip-c1-r01-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 404.1875,
+          "y": 401.515625,
+          "width": 935.625,
+          "height": 526.5625,
+          "top": 401.515625,
+          "right": 1339.8125,
+          "bottom": 928.078125,
+          "left": 404.1875
+        },
+        "kind": "main-1"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/clip/wi027-alignment-d2-r01-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 404.1875,
+          "y": 201.03125,
+          "width": 935.625,
+          "height": 526.5625,
+          "top": 201.03125,
+          "right": 1339.8125,
+          "bottom": 727.59375,
+          "left": 404.1875
+        },
+        "kind": "main-2"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/clip/wi027-alignment-d3-r03-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 404.1875,
+          "y": 201.34375,
+          "width": 935.625,
+          "height": 526.5625,
+          "top": 201.34375,
+          "right": 1339.8125,
+          "bottom": 727.90625,
+          "left": 404.1875
+        },
+        "kind": "main-3"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/foundation-vlm-open-world/clip/images/final/WI033-CLIP-01-r02-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 367.1875,
+          "y": 196.015625,
+          "width": 1009.625,
+          "height": 568.203125,
+          "top": 196.015625,
+          "right": 1376.8125,
+          "bottom": 764.21875,
+          "left": 367.1875
+        },
+        "kind": "engineering-1"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/foundation-vlm-open-world/clip/images/final/WI033-CLIP-02-r03-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 367.1875,
+          "y": 196.265625,
+          "width": 1009.625,
+          "height": 568.203125,
+          "top": 196.265625,
+          "right": 1376.8125,
+          "bottom": 764.46875,
+          "left": 367.1875
+        },
+        "kind": "engineering-2"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/foundation-vlm-open-world/clip/images/final/WI033-CLIP-03-r02-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 367.1875,
+          "y": 195.515625,
+          "width": 1009.625,
+          "height": 568.203125,
+          "top": 195.515625,
+          "right": 1376.8125,
+          "bottom": 763.71875,
+          "left": 367.1875
+        },
+        "kind": "engineering-3"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/foundation-vlm-open-world/clip/images/final/WI033-CLIP-04-r02-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 367.1875,
+          "y": 195.53125,
+          "width": 1009.625,
+          "height": 568.203125,
+          "top": 195.53125,
+          "right": 1376.8125,
+          "bottom": 763.734375,
+          "left": 367.1875
+        },
+        "kind": "engineering-4"
+      }
+    ],
+    "zoom_checks": 7,
+    "answer": true,
+    "overflow": false,
+    "navigation": true,
+    "complete": true
+  },
+  {
+    "topic": "clip",
+    "route": "docs/index.html",
+    "width": 360,
+    "errors": [],
+    "images": [
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/clip/wi027-clip-c1-r01-mobile.png",
+        "nw": 724,
+        "nh": 2172,
+        "box": {
+          "x": 17,
+          "y": -124.859375,
+          "width": 326,
+          "height": 978,
+          "top": -124.859375,
+          "right": 343,
+          "bottom": 853.140625,
+          "left": 17
+        },
+        "kind": "main-1"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/clip/wi027-alignment-d2-r01-mobile.png",
+        "nw": 724,
+        "nh": 2172,
+        "box": {
+          "x": 17,
+          "y": -134.515625,
+          "width": 326,
+          "height": 978,
+          "top": -134.515625,
+          "right": 343,
+          "bottom": 843.484375,
+          "left": 17
+        },
+        "kind": "main-2"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/clip/wi033-alignment-comparison-r01-mobile.png",
+        "nw": 768,
+        "nh": 2304,
+        "box": {
+          "x": 17,
+          "y": -134.796875,
+          "width": 326,
+          "height": 978,
+          "top": -134.796875,
+          "right": 343,
+          "bottom": 843.203125,
+          "left": 17
+        },
+        "kind": "main-3"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/foundation-vlm-open-world/clip/images/final/WI033-CLIP-01-r02-mobile.png",
+        "nw": 768,
+        "nh": 2400,
+        "box": {
+          "x": 34,
+          "y": -87.234375,
+          "width": 292,
+          "height": 912.5,
+          "top": -87.234375,
+          "right": 326,
+          "bottom": 825.265625,
+          "left": 34
+        },
+        "kind": "engineering-1"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/foundation-vlm-open-world/clip/images/final/WI033-CLIP-02-r03-mobile.png",
+        "nw": 768,
+        "nh": 2400,
+        "box": {
+          "x": 34,
+          "y": -87.8125,
+          "width": 292,
+          "height": 912.5,
+          "top": -87.8125,
+          "right": 326,
+          "bottom": 824.6875,
+          "left": 34
+        },
+        "kind": "engineering-2"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/foundation-vlm-open-world/clip/images/final/WI033-CLIP-03-r02-mobile.png",
+        "nw": 768,
+        "nh": 2400,
+        "box": {
+          "x": 34,
+          "y": -87.984375,
+          "width": 292,
+          "height": 912.5,
+          "top": -87.984375,
+          "right": 326,
+          "bottom": 824.515625,
+          "left": 34
+        },
+        "kind": "engineering-3"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/foundation-vlm-open-world/clip/images/final/WI033-CLIP-04-r02-mobile.png",
+        "nw": 768,
+        "nh": 2400,
+        "box": {
+          "x": 34,
+          "y": -87.296875,
+          "width": 292,
+          "height": 912.5,
+          "top": -87.296875,
+          "right": 326,
+          "bottom": 825.203125,
+          "left": 34
+        },
+        "kind": "engineering-4"
+      }
+    ],
+    "zoom_checks": 7,
+    "answer": true,
+    "overflow": false,
+    "navigation": true,
+    "complete": true
+  }
+]

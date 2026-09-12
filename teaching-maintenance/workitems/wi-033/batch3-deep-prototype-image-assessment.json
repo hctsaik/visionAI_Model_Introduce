@@ -1,0 +1,92 @@
+[
+  {
+    "id": "resnet-deep-residual",
+    "image": "resnet-deep-residual-r02-mobile.png",
+    "sha256": "943c85e53e45c6312fa12185c080c69188eacd9cb3046c3ca4c6049340cf56c8",
+    "scores": [
+      23,
+      24,
+      19,
+      18,
+      9
+    ],
+    "total": 93,
+    "evidence": [
+      "原場景、layer1.1通道93與三張3×3實際特徵完全保留；中央格1.2−1.9經ReLU為0",
+      "前後數值經四捨五入，手機第一段次字較小但重點另重述；非新推論",
+      "兩張選定手機PNG已實看；來源桌機保留，實頁另驗"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "淺底三主節點"
+      ],
+      "completeness": [
+        9,
+        "原場景、layer1.1通道93與三張3×3實際特徵完全保留；中央格1.2−1.9經ReLU為0"
+      ],
+      "professionalism": [
+        9,
+        "原實測/示意身份保留"
+      ],
+      "density": [
+        8,
+        "前後數值經四捨五入，手機第一段次字較小但重點另重述；非新推論"
+      ],
+      "hierarchy": [
+        9,
+        "單讀序及單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch3-page-assessment.json; batch3-deep-page-review.json"
+  },
+  {
+    "id": "segformer-deep-core",
+    "image": "segformer-deep-core-r04-mobile.png",
+    "sha256": "ff3cea05567bab1b41d61dade5f0c4fdc76f429143a1092027ad772deb933d7a",
+    "scores": [
+      22,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 91,
+    "evidence": [
+      "W-01同亮線四尺度、融合與細線比較保留；精確clipPath與避開鄰行後沒有碎字或第二條黃色框",
+      "第二段留白較多，細格只是概念場；不把示意當MiT輸出",
+      "兩張選定手機PNG已實看；來源桌機保留，實頁另驗"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "淺底三主節點"
+      ],
+      "completeness": [
+        9,
+        "W-01同亮線四尺度、融合與細線比較保留；精確clipPath與避開鄰行後沒有碎字或第二條黃色框"
+      ],
+      "professionalism": [
+        9,
+        "原實測/示意身份保留"
+      ],
+      "density": [
+        8,
+        "第二段留白較多，細格只是概念場；不把示意當MiT輸出"
+      ],
+      "hierarchy": [
+        9,
+        "單讀序及單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch3-page-assessment.json; batch3-deep-page-review.json"
+  }
+]

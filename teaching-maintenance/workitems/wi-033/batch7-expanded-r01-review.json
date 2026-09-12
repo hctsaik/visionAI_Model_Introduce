@@ -1,0 +1,15 @@
+{
+  "native_reviewed": 66,
+  "revisions": {
+    "convlstm-engineering-3": "时间刻度及標籤各自定位，避免SVG空白合併。",
+    "videomae-engineering-3": "时间刻度及標籤各自定位。",
+    "v-jepa-engineering-3": "时间刻度及標籤各自定位。",
+    "videomae-engineering-4": "99格/1格都明寫平方差，避免把差100誤讀成平方後1萬。",
+    "diffusion-restoration-engineering-1": "比較A估計與原觀測，依噪聲模型檢殘差；不宣稱知道真實n。",
+    "diffusion-restoration-engineering-3": "依噪聲模型驗殘差，並將結論寫成明確可做的條件核對。",
+    "diffusion-restoration-engineering-4": "錯退化反例保留完整同板，在右外框畫多重邊；噪聲容許條件明寫。",
+    "deblur-engineering-3": "真邊/估計/差值移出影像並以同色標明，避免跨邊界。"
+  },
+  "main_r02_review": "2 PNG viewed; passed native",
+  "user_approval": "pending"
+}

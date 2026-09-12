@@ -107,3 +107,40 @@ Preserve image/document/video provenance and redaction state; API model ID/versi
 - [Gemini Developer API zero data retention](https://ai.google.dev/gemini-api/docs/zdr).
 - [Gemini API rate limits](https://ai.google.dev/gemini-api/docs/rate-limits).
 - `full-model-course/06-foundation-vision-and-vlm.md` for course-scoped claims and page order.
+
+<!-- wi033-engineering:start -->
+## WI-033 工程圖修正
+
+### Gemini Vision：交付可以核對的欄位
+
+依公開影像API的輸入與輸出介面設計工作欄位，未呼叫服務或猜測私有骨幹。先固定接頭與問題，定義left/right可見狀態及cause未知欄位，再回原圖核對；欄位設計不是API回覆，格式不能保證內容。工程2才深入請求與錯誤JSON處理。
+
+要求欄位能幫助核對，但不保證內容正確。
+
+來源：https://ai.google.dev/gemini-api/docs/structured-output
+
+### Gemini影像介面：請求、回覆、查證
+
+依公開Gemini API說明輸入/輸出，不臆測私有編碼器。以同一左右圓接頭，左有螺絲右空座，示意JSON先錯填兩側present；解析成功後逐欄對照原圖，右側應記not_visible且原因unknown。所有回覆為作者設計反例，未呼叫API；實際部署另固定可用模型、schema與輸入設定。
+
+JSON能解析，只代表格式；內容仍要對原圖。
+
+來源：https://ai.google.dev/gemini-api/docs/structured-output
+
+### Gemini Vision：格式與內容分開驗
+
+部署時固定可用模型標識、請求設定與schema，記錄服務版本變動和原始回覆。JSON/schema通過只證明格式，仍逐欄對照影像；低可信、拒答、缺欄位及服務失敗都需要可追溯處理。
+
+版本、請求與回覆都保存，異常欄位交覆核。
+
+來源：https://ai.google.dev/gemini-api/docs/structured-output
+
+### 雲端VLM與專用模型：同件比較
+
+以相同接頭和允收定義比較雲端API與本機專用視覺；包含網路耗時、資料流、服務可用性、維護與逐項錯誤。不能將API便利性或固定格式當自動放行證據，也不虛構內部架構。
+
+按問題彈性、資料流與錯誤成本選擇。
+
+來源：https://ai.google.dev/gemini-api/docs/structured-output
+
+<!-- wi033-engineering:end -->

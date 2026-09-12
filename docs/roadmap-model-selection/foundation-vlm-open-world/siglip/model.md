@@ -102,3 +102,40 @@ Preserve image/ROI/tile provenance, preprocessing checksum, checkpoint hash, pro
 
 - Zhai et al., *Sigmoid Loss for Language Image Pre-Training* (2023), [arXiv:2303.15343](https://arxiv.org/abs/2303.15343).
 - `full-model-course/06-foundation-vision-and-vlm.md` for course-scoped claims and page order.
+
+<!-- wi033-engineering:start -->
+## WI-033 工程圖修正
+
+### SigLIP：每個圖文配對都給學習訊號
+
+原始 SigLIP 的圖文編碼器分別產生表示，對正負圖文對計算 sigmoid 損失，梯度共同更新參數。每對有自己的二元目標，不需要 CLIP 式的整批 softmax 正規化；逐對計算不代表每對訓練一個獨立模型。
+
+正配對拉近、負配對分開，共同更新編碼器。
+
+來源：https://arxiv.org/abs/2303.15343
+
+### SigLIP：雙路編碼，逐對計算損失
+
+圖文表示的內積經可學習尺度與偏移後，以正／負標籤計算 sigmoid 損失。圖中高低分僅解釋學習方向，不是模型機率校正結果；部署時不需提供正負訓練標籤。
+
+改變的是配對訓練目標，兩個編碼器仍並行。
+
+來源：https://arxiv.org/abs/2303.15343
+
+### SigLIP：部署交出分數，不是回答
+
+部署用預訓練好的圖文表示比較相似性；可依实现轉換配對分數，但不把 sigmoid 值直接當作域內正確率。結果是候選分數或排名，不是逐字生成回答，也不自帶可靠未知類別拒答。
+
+以固定模型比較候選，再用域內資料設定覆核。
+
+來源：https://arxiv.org/abs/2303.15343
+
+### SigLIP：逐對學習不會補出缺少的類別
+
+CLIP 與 SigLIP 使用相同工件照片、相同缺少正確答案的候選時，都不能因有最高分就判定正確。比較需固定資料及候選，測誤配、拒答和完整成本；原論文的訓練優點不保證每個域內任務較好。
+
+選型要看本地錯誤與成本，不能只看損失名稱。
+
+來源：https://arxiv.org/abs/2303.15343
+
+<!-- wi033-engineering:end -->

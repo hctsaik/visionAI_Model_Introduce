@@ -1,8 +1,14 @@
 # SigLIP slide manifest
 
-| slide_id | logical page | purpose | visual type | active asset | status |
-| --- | --- | --- | --- | --- | --- |
-| `SIGLIP-01` | `06-06` | Position SigLIP as a local-contract dual-encoder candidate route and distinguish its sigmoid objective from a detector, probability or release claim. | C | `images/final/SIGLIP-01-positioning_v02-ppt-master-style.png` | approved |
-| `SIGLIP-02` | `06-07` | Explain SigLIP’s image/text encoder paths, pairwise sigmoid training distinction, and versioned embedding-rank deployment boundary. | C | `images/final/SIGLIP-02-architecture_v02-ppt-master-style.png` | approved |
-| `SIGLIP-03` | `06-08` | Lock the model/image, prompt/score and local validation contract before a SigLIP candidate can reach the downstream evidence owner. | C | `images/final/SIGLIP-03-build-inference_v02-ppt-master-style.png` | approved |
-| `SIGLIP-04` | `06-09` | Select SigLIP only when fixed-contract local evidence beats the CLIP baseline; reject objective-name or generic zero-shot slogan selection. | D | `images/final/SIGLIP-04-selection-boundary_v02-ppt-comparison-style.png` | approved |
+| slide_id | 教學目標 | 版型 | active asset | 狀態 |
+| --- | --- | --- | --- | --- |
+| `SIGLIP-01` | SigLIP：每個圖文配對都給學習訊號 | C | `images/final/WI033-SIGLIP-01-r02-desktop.png` | native_and_page_reviewed_user_pending |
+| `SIGLIP-02` | SigLIP：雙路編碼，逐對計算損失 | C | `images/final/WI033-SIGLIP-02-r02-desktop.png` | native_and_page_reviewed_user_pending |
+| `SIGLIP-03` | SigLIP：部署交出分數，不是回答 | C | `images/final/WI033-SIGLIP-03-r02-desktop.png` | native_and_page_reviewed_user_pending |
+| `SIGLIP-04` | SigLIP：逐對學習不會補出缺少的類別 | D | `images/final/WI033-SIGLIP-04-r02-desktop.png` | native_and_page_reviewed_user_pending |
+
+## 保留的歷史來源（非目前啟用）
+- [SIGLIP-01](images/final/SIGLIP-01-positioning_v02-ppt-master-style.png)
+- [SIGLIP-02](images/final/SIGLIP-02-architecture_v02-ppt-master-style.png)
+- [SIGLIP-03](images/final/SIGLIP-03-build-inference_v02-ppt-master-style.png)
+- [SIGLIP-04](images/final/SIGLIP-04-selection-boundary_v02-ppt-comparison-style.png)

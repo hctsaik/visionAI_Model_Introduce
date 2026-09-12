@@ -1,0 +1,48 @@
+[
+  {
+    "id": "pose",
+    "scores": [
+      19,
+      19,
+      19,
+      18,
+      8,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "同名影像点/CAD、遮擋與工站需求清楚",
+      "兩種2D方法分支，PnP/Rt/重投影分工成立",
+      "K、畸變、單位、外參與失敗狀態可接手",
+      "找點可串接姿態，非互斥排名；標記/視角有取捨",
+      "桌機手機主線与八新工程PNG均實看，工程次字偏細",
+      "遮擋且不能永久標記的遷移題須考慮表面/校正/節拍"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "新原生工程與既有生成主線風格略不同"
+      ],
+      "completeness": [
+        9,
+        "首讀、自測、四工程及操作卡俱全"
+      ],
+      "professionalism": [
+        9,
+        "三點僅示意，不宣稱唯一PnP"
+      ],
+      "density": [
+        8,
+        "工程手機長捲動，但點身份可辨"
+      ],
+      "hierarchy": [
+        9,
+        "主線与展開層分清"
+      ]
+    },
+    "veto": [],
+    "status": "local_complete",
+    "user_approval": "pending",
+    "model_inference": false
+  }
+]

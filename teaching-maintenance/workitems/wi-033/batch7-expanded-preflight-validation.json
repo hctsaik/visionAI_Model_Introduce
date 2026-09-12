@@ -1,0 +1,497 @@
+[
+  {
+    "brief": "C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-033/convlstm-engineering-1-r01.md",
+    "objective": "時序表示要接任務頭，才有可驗的輸出。",
+    "page_type": "C",
+    "node_count": 3,
+    "reference": "teaching-images/vision-ai-model-selection/course-delivery/section-pages/01-geometry-alignment-measurement/images/final/GEO-02-common-contract_v01.png",
+    "takeaway": "時序表示要接任務頭，才有可驗的輸出。 #FFF4CC",
+    "required_files_present": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "brief": "C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-033/convlstm-engineering-3-r01.md",
+    "objective": "換影片或相機時，依任務重設記憶。",
+    "page_type": "C",
+    "node_count": 3,
+    "reference": "teaching-images/vision-ai-model-selection/course-delivery/section-pages/01-geometry-alignment-measurement/images/final/GEO-02-common-contract_v01.png",
+    "takeaway": "換影片或相機時，依任務重設記憶。 #FFF4CC",
+    "required_files_present": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "brief": "C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-033/convlstm-engineering-4-r01.md",
+    "objective": "記憶是一種可學狀態，不是完整影格存檔。",
+    "page_type": "D",
+    "node_count": 3,
+    "reference": "teaching-images/vision-ai-model-selection/course-delivery/section-pages/01-geometry-alignment-measurement/images/final/GEO-02-common-contract_v01.png",
+    "takeaway": "記憶是一種可學狀態，不是完整影格存檔。 #FFF4CC",
+    "required_files_present": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "brief": "C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-033/videomae-engineering-1-r01.md",
+    "objective": "預訓練學表示，標註任務教答案。",
+    "page_type": "C",
+    "node_count": 3,
+    "reference": "teaching-images/vision-ai-model-selection/course-delivery/section-pages/01-geometry-alignment-measurement/images/final/GEO-02-common-contract_v01.png",
+    "takeaway": "預訓練學表示，標註任務教答案。 #FFF4CC",
+    "required_files_present": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "brief": "C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-033/videomae-engineering-3-r01.md",
+    "objective": "減少取樣可省成本，也可能漏掉短事件。",
+    "page_type": "C",
+    "node_count": 3,
+    "reference": "teaching-images/vision-ai-model-selection/course-delivery/section-pages/01-geometry-alignment-measurement/images/final/GEO-02-common-contract_v01.png",
+    "takeaway": "減少取樣可省成本，也可能漏掉短事件。 #FFF4CC",
+    "required_files_present": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "brief": "C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-033/videomae-engineering-4-r01.md",
+    "objective": "像素重建與任務判斷必須分開驗。",
+    "page_type": "D",
+    "node_count": 3,
+    "reference": "teaching-images/vision-ai-model-selection/course-delivery/section-pages/01-geometry-alignment-measurement/images/final/GEO-02-common-contract_v01.png",
+    "takeaway": "像素重建與任務判斷必須分開驗。 #FFF4CC",
+    "required_files_present": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "brief": "C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-033/v-jepa-engineering-1-r01.md",
+    "objective": "自監督訊號不會自動變成事件標籤。",
+    "page_type": "C",
+    "node_count": 3,
+    "reference": "teaching-images/vision-ai-model-selection/course-delivery/section-pages/01-geometry-alignment-measurement/images/final/GEO-02-common-contract_v01.png",
+    "takeaway": "自監督訊號不會自動變成事件標籤。 #FFF4CC",
+    "required_files_present": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "brief": "C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-033/v-jepa-engineering-3-r01.md",
+    "objective": "骨幹、讀出頭與取樣設定是一組。",
+    "page_type": "C",
+    "node_count": 3,
+    "reference": "teaching-images/vision-ai-model-selection/course-delivery/section-pages/01-geometry-alignment-measurement/images/final/GEO-02-common-contract_v01.png",
+    "takeaway": "骨幹、讀出頭與取樣設定是一組。 #FFF4CC",
+    "required_files_present": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "brief": "C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-033/v-jepa-engineering-4-r01.md",
+    "objective": "同影片比較任務成果，不能比兩種損失值。",
+    "page_type": "D",
+    "node_count": 3,
+    "reference": "teaching-images/vision-ai-model-selection/course-delivery/section-pages/01-geometry-alignment-measurement/images/final/GEO-02-common-contract_v01.png",
+    "takeaway": "同影片比較任務成果，不能比兩種損失值。 #FFF4CC",
+    "required_files_present": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "brief": "C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-033/defectfill-engineering-1-r01.md",
+    "objective": "合成圖供訓練增補，真實留出集負責驗收。",
+    "page_type": "C",
+    "node_count": 3,
+    "reference": "teaching-images/vision-ai-model-selection/course-delivery/section-pages/01-geometry-alignment-measurement/images/final/GEO-02-common-contract_v01.png",
+    "takeaway": "合成圖供訓練增補，真實留出集負責驗收。 #FFF4CC",
+    "required_files_present": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "brief": "C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-033/defectfill-engineering-3-r01.md",
+    "objective": "候選越多，生成與挑選的成本都會累積。",
+    "page_type": "C",
+    "node_count": 3,
+    "reference": "teaching-images/vision-ai-model-selection/course-delivery/section-pages/01-geometry-alignment-measurement/images/final/GEO-02-common-contract_v01.png",
+    "takeaway": "候選越多，生成與挑選的成本都會累積。 #FFF4CC",
+    "required_files_present": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "brief": "C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-033/defectfill-engineering-4-r01.md",
+    "objective": "LFS挑局部差異，物理合理性仍需另驗。",
+    "page_type": "D",
+    "node_count": 3,
+    "reference": "teaching-images/vision-ai-model-selection/course-delivery/section-pages/01-geometry-alignment-measurement/images/final/GEO-02-common-contract_v01.png",
+    "takeaway": "LFS挑局部差異，物理合理性仍需另驗。 #FFF4CC",
+    "required_files_present": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "brief": "C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-033/anomalydiffusion-engineering-1-r01.md",
+    "objective": "圖與遮罩要逐區一致，才可當訓練樣本。",
+    "page_type": "C",
+    "node_count": 3,
+    "reference": "teaching-images/vision-ai-model-selection/course-delivery/section-pages/01-geometry-alignment-measurement/images/final/GEO-02-common-contract_v01.png",
+    "takeaway": "圖與遮罩要逐區一致，才可當訓練樣本。 #FFF4CC",
+    "required_files_present": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "brief": "C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-033/anomalydiffusion-engineering-3-r01.md",
+    "objective": "保存嵌入、遮罩編碼與採樣設定。",
+    "page_type": "C",
+    "node_count": 3,
+    "reference": "teaching-images/vision-ai-model-selection/course-delivery/section-pages/01-geometry-alignment-measurement/images/final/GEO-02-common-contract_v01.png",
+    "takeaway": "保存嵌入、遮罩編碼與採樣設定。 #FFF4CC",
+    "required_files_present": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "brief": "C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-033/anomalydiffusion-engineering-4-r01.md",
+    "objective": "未生成的區域，不能沿用缺陷標籤。",
+    "page_type": "D",
+    "node_count": 3,
+    "reference": "teaching-images/vision-ai-model-selection/course-delivery/section-pages/01-geometry-alignment-measurement/images/final/GEO-02-common-contract_v01.png",
+    "takeaway": "未生成的區域，不能沿用缺陷標籤。 #FFF4CC",
+    "required_files_present": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "brief": "C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-033/tf-idg-engineering-1-r01.md",
+    "objective": "不微調權重，仍需要參考、遮罩與驗證。",
+    "page_type": "C",
+    "node_count": 3,
+    "reference": "teaching-images/vision-ai-model-selection/course-delivery/section-pages/01-geometry-alignment-measurement/images/final/GEO-02-common-contract_v01.png",
+    "takeaway": "不微調權重，仍需要參考、遮罩與驗證。 #FFF4CC",
+    "required_files_present": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "brief": "C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-033/tf-idg-engineering-3-r01.md",
+    "objective": "每步特徵梯度也要算進延遲與記憶體。",
+    "page_type": "C",
+    "node_count": 3,
+    "reference": "teaching-images/vision-ai-model-selection/course-delivery/section-pages/01-geometry-alignment-measurement/images/final/GEO-02-common-contract_v01.png",
+    "takeaway": "每步特徵梯度也要算進延遲與記憶體。 #FFF4CC",
+    "required_files_present": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "brief": "C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-033/tf-idg-engineering-4-r01.md",
+    "objective": "梯度對齊外觀，不保證符合目標材質。",
+    "page_type": "D",
+    "node_count": 3,
+    "reference": "teaching-images/vision-ai-model-selection/course-delivery/section-pages/01-geometry-alignment-measurement/images/final/GEO-02-common-contract_v01.png",
+    "takeaway": "梯度對齊外觀，不保證符合目標材質。 #FFF4CC",
+    "required_files_present": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "brief": "C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-033/controlnet-engineering-1-r01.md",
+    "objective": "先定義控制什麼，再檢查生成是否遵守。",
+    "page_type": "C",
+    "node_count": 3,
+    "reference": "teaching-images/vision-ai-model-selection/course-delivery/section-pages/01-geometry-alignment-measurement/images/final/GEO-02-common-contract_v01.png",
+    "takeaway": "先定義控制什麼，再檢查生成是否遵守。 #FFF4CC",
+    "required_files_present": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "brief": "C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-033/controlnet-engineering-3-r01.md",
+    "objective": "強度只是設定，遵守條件與品質要同時看。",
+    "page_type": "C",
+    "node_count": 3,
+    "reference": "teaching-images/vision-ai-model-selection/course-delivery/section-pages/01-geometry-alignment-measurement/images/final/GEO-02-common-contract_v01.png",
+    "takeaway": "強度只是設定，遵守條件與品質要同時看。 #FFF4CC",
+    "required_files_present": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "brief": "C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-033/controlnet-engineering-4-r01.md",
+    "objective": "條件未描述的細節，不能當成觀測證據。",
+    "page_type": "D",
+    "node_count": 3,
+    "reference": "teaching-images/vision-ai-model-selection/course-delivery/section-pages/01-geometry-alignment-measurement/images/final/GEO-02-common-contract_v01.png",
+    "takeaway": "條件未描述的細節，不能當成觀測證據。 #FFF4CC",
+    "required_files_present": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "brief": "C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-033/inpainting-engineering-1-r01.md",
+    "objective": "編修輸出另存，保留原觀測供追查。",
+    "page_type": "C",
+    "node_count": 3,
+    "reference": "teaching-images/vision-ai-model-selection/course-delivery/section-pages/01-geometry-alignment-measurement/images/final/GEO-02-common-contract_v01.png",
+    "takeaway": "編修輸出另存，保留原觀測供追查。 #FFF4CC",
+    "required_files_present": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "brief": "C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-033/inpainting-engineering-3-r01.md",
+    "objective": "按原位置驗接縫、孔位與遮罩外變化。",
+    "page_type": "C",
+    "node_count": 3,
+    "reference": "teaching-images/vision-ai-model-selection/course-delivery/section-pages/01-geometry-alignment-measurement/images/final/GEO-02-common-contract_v01.png",
+    "takeaway": "按原位置驗接縫、孔位與遮罩外變化。 #FFF4CC",
+    "required_files_present": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "brief": "C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-033/inpainting-engineering-4-r01.md",
+    "objective": "影像編修只改像素，不能當實物修復。",
+    "page_type": "D",
+    "node_count": 3,
+    "reference": "teaching-images/vision-ai-model-selection/course-delivery/section-pages/01-geometry-alignment-measurement/images/final/GEO-02-common-contract_v01.png",
+    "takeaway": "影像編修只改像素，不能當實物修復。 #FFF4CC",
+    "required_files_present": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "brief": "C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-033/diffusion-restoration-engineering-1-r01.md",
+    "objective": "復原候選與原始觀測需一起交付。",
+    "page_type": "C",
+    "node_count": 3,
+    "reference": "teaching-images/vision-ai-model-selection/course-delivery/section-pages/01-geometry-alignment-measurement/images/final/GEO-02-common-contract_v01.png",
+    "takeaway": "復原候選與原始觀測需一起交付。 #FFF4CC",
+    "required_files_present": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "brief": "C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-033/diffusion-restoration-engineering-3-r01.md",
+    "objective": "不同退化條件，不能只換同一張結果圖。",
+    "page_type": "C",
+    "node_count": 3,
+    "reference": "teaching-images/vision-ai-model-selection/course-delivery/section-pages/01-geometry-alignment-measurement/images/final/GEO-02-common-contract_v01.png",
+    "takeaway": "不同退化條件，不能只換同一張結果圖。 #FFF4CC",
+    "required_files_present": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "brief": "C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-033/diffusion-restoration-engineering-4-r01.md",
+    "objective": "先驗看起來合理，仍可能不符合取像原因。",
+    "page_type": "D",
+    "node_count": 3,
+    "reference": "teaching-images/vision-ai-model-selection/course-delivery/section-pages/01-geometry-alignment-measurement/images/final/GEO-02-common-contract_v01.png",
+    "takeaway": "先驗看起來合理，仍可能不符合取像原因。 #FFF4CC",
+    "required_files_present": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "brief": "C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-033/deblur-engineering-1-r01.md",
+    "objective": "去模糊是估計，量測需驗邊緣偏差。",
+    "page_type": "C",
+    "node_count": 3,
+    "reference": "teaching-images/vision-ai-model-selection/course-delivery/section-pages/01-geometry-alignment-measurement/images/final/GEO-02-common-contract_v01.png",
+    "takeaway": "去模糊是估計，量測需驗邊緣偏差。 #FFF4CC",
+    "required_files_present": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "brief": "C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-033/deblur-engineering-3-r01.md",
+    "objective": "按實際曝光與運動條件驗完整流程。",
+    "page_type": "C",
+    "node_count": 3,
+    "reference": "teaching-images/vision-ai-model-selection/course-delivery/section-pages/01-geometry-alignment-measurement/images/final/GEO-02-common-contract_v01.png",
+    "takeaway": "按實際曝光與運動條件驗完整流程。 #FFF4CC",
+    "required_files_present": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "brief": "C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-033/deblur-engineering-4-r01.md",
+    "objective": "銳利度增加，不能取代真邊位置證據。",
+    "page_type": "D",
+    "node_count": 3,
+    "reference": "teaching-images/vision-ai-model-selection/course-delivery/section-pages/01-geometry-alignment-measurement/images/final/GEO-02-common-contract_v01.png",
+    "takeaway": "銳利度增加，不能取代真邊位置證據。 #FFF4CC",
+    "required_files_present": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "brief": "C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-033/super-resolution-engineering-1-r01.md",
+    "objective": "輸出更密，仍要保留原始低解析影像。",
+    "page_type": "C",
+    "node_count": 3,
+    "reference": "teaching-images/vision-ai-model-selection/course-delivery/section-pages/01-geometry-alignment-measurement/images/final/GEO-02-common-contract_v01.png",
+    "takeaway": "輸出更密，仍要保留原始低解析影像。 #FFF4CC",
+    "required_files_present": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "brief": "C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-033/super-resolution-engineering-3-r01.md",
+    "objective": "放大倍率和真實細節改善要分開驗。",
+    "page_type": "C",
+    "node_count": 3,
+    "reference": "teaching-images/vision-ai-model-selection/course-delivery/section-pages/01-geometry-alignment-measurement/images/final/GEO-02-common-contract_v01.png",
+    "takeaway": "放大倍率和真實細節改善要分開驗。 #FFF4CC",
+    "required_files_present": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "brief": "C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-033/super-resolution-engineering-4-r01.md",
+    "objective": "同原圖比較細節保真與成本，不只看銳利。",
+    "page_type": "D",
+    "node_count": 3,
+    "reference": "teaching-images/vision-ai-model-selection/course-delivery/section-pages/01-geometry-alignment-measurement/images/final/GEO-02-common-contract_v01.png",
+    "takeaway": "同原圖比較細節保真與成本，不只看銳利。 #FFF4CC",
+    "required_files_present": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  }
+]

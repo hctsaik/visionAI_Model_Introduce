@@ -1,0 +1,304 @@
+{
+  "owners": [
+    "clip",
+    "siglip"
+  ],
+  "changed_topics": [
+    "clip",
+    "siglip"
+  ],
+  "unchanged_topics": 56,
+  "html_sha256": "c3962a12f20bbef9d3b87edd56659a4f452d31ae3c53ccaf4e36788a563b305e",
+  "bundle_assets": 1351,
+  "bundle_hashes_match": true,
+  "ui_states": 8,
+  "zoom_checks": 56,
+  "answers": 8,
+  "navigation": 8,
+  "http_checks": 56,
+  "http": [
+    {
+      "url": "http://127.0.0.1:8000/_course_content/generated-concepts/clip/wi027-alignment-d2-r01-desktop.png",
+      "status": 200,
+      "sha256": "ef00684f591c9ecc9ddf4b4646f3ae47764e90f0e28abbec78b16c1dfd041f0e"
+    },
+    {
+      "url": "http://127.0.0.1:8000/_course_content/generated-concepts/clip/wi027-alignment-d2-r01-mobile.png",
+      "status": 200,
+      "sha256": "77c6b8f76eceeea53bf77c505618be6d946be9bd4f240270f55924c0d62b35de"
+    },
+    {
+      "url": "http://127.0.0.1:8000/_course_content/generated-concepts/clip/wi027-alignment-d3-r03-desktop.png",
+      "status": 200,
+      "sha256": "b70f445d2045a7e6ba5a34d451045e3c52379da7de9eeb21d1703502fdf17b68"
+    },
+    {
+      "url": "http://127.0.0.1:8000/_course_content/generated-concepts/clip/wi027-clip-c1-r01-desktop.png",
+      "status": 200,
+      "sha256": "2b8505cee344eb220ab6b923637b70e971df6a8c4283cbbbafae25d33943d258"
+    },
+    {
+      "url": "http://127.0.0.1:8000/_course_content/generated-concepts/clip/wi027-clip-c1-r01-mobile.png",
+      "status": 200,
+      "sha256": "b848e5f6b0fbf9276a626f780dbce1bdc98b0da0813c3fea02950f27baf33b67"
+    },
+    {
+      "url": "http://127.0.0.1:8000/_course_content/generated-concepts/clip/wi033-alignment-comparison-r01-mobile.png",
+      "status": 200,
+      "sha256": "2fe7922731c0ca0da90e882760c969327c444c7f49dadfabb9ecc9ad7d046484"
+    },
+    {
+      "url": "http://127.0.0.1:8000/_course_content/generated-concepts/siglip/wi027-siglip-c1-r03-desktop.png",
+      "status": 200,
+      "sha256": "08256f45463216cd7c8cfc62b27c215de26f44ef8bfc83c2527cac87094e3a46"
+    },
+    {
+      "url": "http://127.0.0.1:8000/_course_content/generated-concepts/siglip/wi033-core-r02-mobile.png",
+      "status": 200,
+      "sha256": "16600b8f33f4ba23b09c94bf38b7fa89f939bc04f5be781177b5e82cec0f12ed"
+    },
+    {
+      "url": "http://127.0.0.1:8000/roadmap-model-selection/foundation-vlm-open-world/clip/images/final/WI033-CLIP-01-r02-desktop.png",
+      "status": 200,
+      "sha256": "d281fab8fa2f4576ebbd760318394d65198b14b0e32599ae24ae0c96b23a8be6"
+    },
+    {
+      "url": "http://127.0.0.1:8000/roadmap-model-selection/foundation-vlm-open-world/clip/images/final/WI033-CLIP-01-r02-mobile.png",
+      "status": 200,
+      "sha256": "92612a214ce929f7608a48fe41ffa636f7d319310cfc082b66b82511be8341a5"
+    },
+    {
+      "url": "http://127.0.0.1:8000/roadmap-model-selection/foundation-vlm-open-world/clip/images/final/WI033-CLIP-02-r03-desktop.png",
+      "status": 200,
+      "sha256": "9eea02eb23c19d628bc33c921551f89ab389f07ef436b59e47f4b5ebedd82c83"
+    },
+    {
+      "url": "http://127.0.0.1:8000/roadmap-model-selection/foundation-vlm-open-world/clip/images/final/WI033-CLIP-02-r03-mobile.png",
+      "status": 200,
+      "sha256": "ebc7b85ed9783b04aed32835db3e5e59b6b61527c0e4aad135c1f34a1f8f58cf"
+    },
+    {
+      "url": "http://127.0.0.1:8000/roadmap-model-selection/foundation-vlm-open-world/clip/images/final/WI033-CLIP-03-r02-desktop.png",
+      "status": 200,
+      "sha256": "17260f913c8b2d4e18c8f642b192cbf440006d617d756c22ea03a4ea1e56d8c0"
+    },
+    {
+      "url": "http://127.0.0.1:8000/roadmap-model-selection/foundation-vlm-open-world/clip/images/final/WI033-CLIP-03-r02-mobile.png",
+      "status": 200,
+      "sha256": "590c16a79e2307530e5791d1574e01935e66a5a516f07912a6a36f7b8922e06b"
+    },
+    {
+      "url": "http://127.0.0.1:8000/roadmap-model-selection/foundation-vlm-open-world/clip/images/final/WI033-CLIP-04-r02-desktop.png",
+      "status": 200,
+      "sha256": "c13c245d4190ba5c0bd24b0c7edb6d7bd132572c10102ca7b99c31a2bad5270a"
+    },
+    {
+      "url": "http://127.0.0.1:8000/roadmap-model-selection/foundation-vlm-open-world/clip/images/final/WI033-CLIP-04-r02-mobile.png",
+      "status": 200,
+      "sha256": "15b696df8a72d317e580406fad9769757ea0a96188b472ceebc4aca7fa840771"
+    },
+    {
+      "url": "http://127.0.0.1:8000/roadmap-model-selection/foundation-vlm-open-world/clip/model.md",
+      "status": 200,
+      "sha256": "77522a59489089aa8014d1480ca0f26bad07f4909f89232f145e0f4cce426811"
+    },
+    {
+      "url": "http://127.0.0.1:8000/roadmap-model-selection/foundation-vlm-open-world/clip/slide-manifest.md",
+      "status": 200,
+      "sha256": "9ff9729bb39bdb287d5a19f0b5e8a4076c1f317f74edfd5f4681187ea561f74d"
+    },
+    {
+      "url": "http://127.0.0.1:8000/roadmap-model-selection/foundation-vlm-open-world/siglip/images/final/WI033-SIGLIP-01-r02-desktop.png",
+      "status": 200,
+      "sha256": "1ed2c2295d900f46a1eb6177ab592301ea6fc52e9d6870d0a034b0a0abcba5c6"
+    },
+    {
+      "url": "http://127.0.0.1:8000/roadmap-model-selection/foundation-vlm-open-world/siglip/images/final/WI033-SIGLIP-01-r02-mobile.png",
+      "status": 200,
+      "sha256": "9d06d11bce2c2f34a29a86089d484ad5c7a125af530744b472e734d37864c4da"
+    },
+    {
+      "url": "http://127.0.0.1:8000/roadmap-model-selection/foundation-vlm-open-world/siglip/images/final/WI033-SIGLIP-02-r02-desktop.png",
+      "status": 200,
+      "sha256": "33e99f18ecca122f2f5c10ba9e46ef98a09b56b1beb20b05e9773f96b3f14c66"
+    },
+    {
+      "url": "http://127.0.0.1:8000/roadmap-model-selection/foundation-vlm-open-world/siglip/images/final/WI033-SIGLIP-02-r02-mobile.png",
+      "status": 200,
+      "sha256": "b159b6a245dd9b192137c266b5647ad8cb9f7b7653d00b808e96e5485b2332bf"
+    },
+    {
+      "url": "http://127.0.0.1:8000/roadmap-model-selection/foundation-vlm-open-world/siglip/images/final/WI033-SIGLIP-03-r02-desktop.png",
+      "status": 200,
+      "sha256": "ccde0d8d6d23673a8388dd0ba8801baaa86cc3c89f03f76be5b2d8ba78ab186c"
+    },
+    {
+      "url": "http://127.0.0.1:8000/roadmap-model-selection/foundation-vlm-open-world/siglip/images/final/WI033-SIGLIP-03-r02-mobile.png",
+      "status": 200,
+      "sha256": "c110684dfc02b416fcfb2b1312ffe5a0f24809c475a3bc857d73c9de51a9762e"
+    },
+    {
+      "url": "http://127.0.0.1:8000/roadmap-model-selection/foundation-vlm-open-world/siglip/images/final/WI033-SIGLIP-04-r02-desktop.png",
+      "status": 200,
+      "sha256": "0c21ee8df331b2082f14ce11ff39bd49bdd212acaff952844a2d13fef81fb1ef"
+    },
+    {
+      "url": "http://127.0.0.1:8000/roadmap-model-selection/foundation-vlm-open-world/siglip/images/final/WI033-SIGLIP-04-r02-mobile.png",
+      "status": 200,
+      "sha256": "7f80e5e0815af0c6c3035e3c8ce14121f7739818efcb933a84cda926da67d855"
+    },
+    {
+      "url": "http://127.0.0.1:8000/roadmap-model-selection/foundation-vlm-open-world/siglip/model.md",
+      "status": 200,
+      "sha256": "0c7c2235497a4e34255a653c1f241a888be00358e412611d7b058828debc717f"
+    },
+    {
+      "url": "http://127.0.0.1:8000/roadmap-model-selection/foundation-vlm-open-world/siglip/slide-manifest.md",
+      "status": 200,
+      "sha256": "e1bed4c6dd2f56cdbf624fb67c7831e193d213a9b4555610b73378434a60cc9a"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/clip/wi027-alignment-d2-r01-desktop.png",
+      "status": 200,
+      "sha256": "ef00684f591c9ecc9ddf4b4646f3ae47764e90f0e28abbec78b16c1dfd041f0e"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/clip/wi027-alignment-d2-r01-mobile.png",
+      "status": 200,
+      "sha256": "77c6b8f76eceeea53bf77c505618be6d946be9bd4f240270f55924c0d62b35de"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/clip/wi027-alignment-d3-r03-desktop.png",
+      "status": 200,
+      "sha256": "b70f445d2045a7e6ba5a34d451045e3c52379da7de9eeb21d1703502fdf17b68"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/clip/wi027-clip-c1-r01-desktop.png",
+      "status": 200,
+      "sha256": "2b8505cee344eb220ab6b923637b70e971df6a8c4283cbbbafae25d33943d258"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/clip/wi027-clip-c1-r01-mobile.png",
+      "status": 200,
+      "sha256": "b848e5f6b0fbf9276a626f780dbce1bdc98b0da0813c3fea02950f27baf33b67"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/clip/wi033-alignment-comparison-r01-mobile.png",
+      "status": 200,
+      "sha256": "2fe7922731c0ca0da90e882760c969327c444c7f49dadfabb9ecc9ad7d046484"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/siglip/wi027-siglip-c1-r03-desktop.png",
+      "status": 200,
+      "sha256": "08256f45463216cd7c8cfc62b27c215de26f44ef8bfc83c2527cac87094e3a46"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/siglip/wi033-core-r02-mobile.png",
+      "status": 200,
+      "sha256": "16600b8f33f4ba23b09c94bf38b7fa89f939bc04f5be781177b5e82cec0f12ed"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/roadmap-model-selection/foundation-vlm-open-world/clip/images/final/WI033-CLIP-01-r02-desktop.png",
+      "status": 200,
+      "sha256": "d281fab8fa2f4576ebbd760318394d65198b14b0e32599ae24ae0c96b23a8be6"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/roadmap-model-selection/foundation-vlm-open-world/clip/images/final/WI033-CLIP-01-r02-mobile.png",
+      "status": 200,
+      "sha256": "92612a214ce929f7608a48fe41ffa636f7d319310cfc082b66b82511be8341a5"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/roadmap-model-selection/foundation-vlm-open-world/clip/images/final/WI033-CLIP-02-r03-desktop.png",
+      "status": 200,
+      "sha256": "9eea02eb23c19d628bc33c921551f89ab389f07ef436b59e47f4b5ebedd82c83"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/roadmap-model-selection/foundation-vlm-open-world/clip/images/final/WI033-CLIP-02-r03-mobile.png",
+      "status": 200,
+      "sha256": "ebc7b85ed9783b04aed32835db3e5e59b6b61527c0e4aad135c1f34a1f8f58cf"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/roadmap-model-selection/foundation-vlm-open-world/clip/images/final/WI033-CLIP-03-r02-desktop.png",
+      "status": 200,
+      "sha256": "17260f913c8b2d4e18c8f642b192cbf440006d617d756c22ea03a4ea1e56d8c0"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/roadmap-model-selection/foundation-vlm-open-world/clip/images/final/WI033-CLIP-03-r02-mobile.png",
+      "status": 200,
+      "sha256": "590c16a79e2307530e5791d1574e01935e66a5a516f07912a6a36f7b8922e06b"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/roadmap-model-selection/foundation-vlm-open-world/clip/images/final/WI033-CLIP-04-r02-desktop.png",
+      "status": 200,
+      "sha256": "c13c245d4190ba5c0bd24b0c7edb6d7bd132572c10102ca7b99c31a2bad5270a"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/roadmap-model-selection/foundation-vlm-open-world/clip/images/final/WI033-CLIP-04-r02-mobile.png",
+      "status": 200,
+      "sha256": "15b696df8a72d317e580406fad9769757ea0a96188b472ceebc4aca7fa840771"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/roadmap-model-selection/foundation-vlm-open-world/clip/model.md",
+      "status": 200,
+      "sha256": "77522a59489089aa8014d1480ca0f26bad07f4909f89232f145e0f4cce426811"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/roadmap-model-selection/foundation-vlm-open-world/clip/slide-manifest.md",
+      "status": 200,
+      "sha256": "9ff9729bb39bdb287d5a19f0b5e8a4076c1f317f74edfd5f4681187ea561f74d"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/roadmap-model-selection/foundation-vlm-open-world/siglip/images/final/WI033-SIGLIP-01-r02-desktop.png",
+      "status": 200,
+      "sha256": "1ed2c2295d900f46a1eb6177ab592301ea6fc52e9d6870d0a034b0a0abcba5c6"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/roadmap-model-selection/foundation-vlm-open-world/siglip/images/final/WI033-SIGLIP-01-r02-mobile.png",
+      "status": 200,
+      "sha256": "9d06d11bce2c2f34a29a86089d484ad5c7a125af530744b472e734d37864c4da"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/roadmap-model-selection/foundation-vlm-open-world/siglip/images/final/WI033-SIGLIP-02-r02-desktop.png",
+      "status": 200,
+      "sha256": "33e99f18ecca122f2f5c10ba9e46ef98a09b56b1beb20b05e9773f96b3f14c66"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/roadmap-model-selection/foundation-vlm-open-world/siglip/images/final/WI033-SIGLIP-02-r02-mobile.png",
+      "status": 200,
+      "sha256": "b159b6a245dd9b192137c266b5647ad8cb9f7b7653d00b808e96e5485b2332bf"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/roadmap-model-selection/foundation-vlm-open-world/siglip/images/final/WI033-SIGLIP-03-r02-desktop.png",
+      "status": 200,
+      "sha256": "ccde0d8d6d23673a8388dd0ba8801baaa86cc3c89f03f76be5b2d8ba78ab186c"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/roadmap-model-selection/foundation-vlm-open-world/siglip/images/final/WI033-SIGLIP-03-r02-mobile.png",
+      "status": 200,
+      "sha256": "c110684dfc02b416fcfb2b1312ffe5a0f24809c475a3bc857d73c9de51a9762e"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/roadmap-model-selection/foundation-vlm-open-world/siglip/images/final/WI033-SIGLIP-04-r02-desktop.png",
+      "status": 200,
+      "sha256": "0c21ee8df331b2082f14ce11ff39bd49bdd212acaff952844a2d13fef81fb1ef"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/roadmap-model-selection/foundation-vlm-open-world/siglip/images/final/WI033-SIGLIP-04-r02-mobile.png",
+      "status": 200,
+      "sha256": "7f80e5e0815af0c6c3035e3c8ce14121f7739818efcb933a84cda926da67d855"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/roadmap-model-selection/foundation-vlm-open-world/siglip/model.md",
+      "status": 200,
+      "sha256": "0c7c2235497a4e34255a653c1f241a888be00358e412611d7b058828debc717f"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/roadmap-model-selection/foundation-vlm-open-world/siglip/slide-manifest.md",
+      "status": 200,
+      "sha256": "e1bed4c6dd2f56cdbf624fb67c7831e193d213a9b4555610b73378434a60cc9a"
+    }
+  ],
+  "user_approval": "pending",
+  "published": false,
+  "model_inference": false
+}

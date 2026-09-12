@@ -1,0 +1,182 @@
+[
+  {
+    "id": "dinov2-main-failure",
+    "image": "dinov2-main-failure-r01-desktop.png",
+    "sha256": "821c46ca8d5a14bebc5add47b318df637fa556092e1ac096f6332b3f2b433bd3",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "改用首讀同L支架兩孔工件，完整/缺口只在右緣小段不同。兩維特徵[.20,.80]/[.21,.79]距離約.014是作者給定反例，不是模型實測；近距離不代表沒有缺口。先核對原圖，必要時比較局部取樣或下游方法，不期待門檻補回已丟失線索。",
+      "桌機與手機原生逐張實看；同件身份、缺口/右空座與錯誤推論對應清楚",
+      "幾何簡化與長捲动扣分；非實測模型特徵/非API回覆"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "簡化具體工件"
+      ],
+      "completeness": [
+        9,
+        "反例與核對行動完整"
+      ],
+      "professionalism": [
+        9,
+        "來源與示意身份明示"
+      ],
+      "density": [
+        8,
+        "三節點保留必要文字"
+      ],
+      "hierarchy": [
+        9,
+        "同件對照與單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch4-page-assessment.json; batch4-failure-page-review.json"
+  },
+  {
+    "id": "dinov2-main-failure",
+    "image": "dinov2-main-failure-r01-mobile.png",
+    "sha256": "e54b05dca67ae9c7ad36ca8ddf318b2ea6f48e0cbbdcb331e71a85f90932c034",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "改用首讀同L支架兩孔工件，完整/缺口只在右緣小段不同。兩維特徵[.20,.80]/[.21,.79]距離約.014是作者給定反例，不是模型實測；近距離不代表沒有缺口。先核對原圖，必要時比較局部取樣或下游方法，不期待門檻補回已丟失線索。",
+      "桌機與手機原生逐張實看；同件身份、缺口/右空座與錯誤推論對應清楚",
+      "幾何簡化與長捲动扣分；非實測模型特徵/非API回覆"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "簡化具體工件"
+      ],
+      "completeness": [
+        9,
+        "反例與核對行動完整"
+      ],
+      "professionalism": [
+        9,
+        "來源與示意身份明示"
+      ],
+      "density": [
+        8,
+        "三節點保留必要文字"
+      ],
+      "hierarchy": [
+        9,
+        "同件對照與單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch4-page-assessment.json; batch4-failure-page-review.json"
+  },
+  {
+    "id": "gemini-vision-main-failure",
+    "image": "gemini-vision-main-failure-r01-desktop.png",
+    "sha256": "0c14ef6ced3aeaff297250c36b0a13f7af3bdd7fc5c2390fbf0dccbab231c2d5",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "保留主線左右圓接頭，左有螺絲右空座。作者設計的JSON把兩側填present，格式可解析但右欄與影像矛盾；應核對not_visible，原因仍未知。未呼叫API、未猜測內部模型結構。",
+      "桌機與手機原生逐張實看；同件身份、缺口/右空座與錯誤推論對應清楚",
+      "幾何簡化與長捲动扣分；非實測模型特徵/非API回覆"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "簡化具體工件"
+      ],
+      "completeness": [
+        9,
+        "反例與核對行動完整"
+      ],
+      "professionalism": [
+        9,
+        "來源與示意身份明示"
+      ],
+      "density": [
+        8,
+        "三節點保留必要文字"
+      ],
+      "hierarchy": [
+        9,
+        "同件對照與單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch4-page-assessment.json; batch4-failure-page-review.json"
+  },
+  {
+    "id": "gemini-vision-main-failure",
+    "image": "gemini-vision-main-failure-r01-mobile.png",
+    "sha256": "a98496ea204dfeae6d20f924faa915fbeabbc16e06146ed59f7a4f58097e0266",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "保留主線左右圓接頭，左有螺絲右空座。作者設計的JSON把兩側填present，格式可解析但右欄與影像矛盾；應核對not_visible，原因仍未知。未呼叫API、未猜測內部模型結構。",
+      "桌機與手機原生逐張實看；同件身份、缺口/右空座與錯誤推論對應清楚",
+      "幾何簡化與長捲动扣分；非實測模型特徵/非API回覆"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "簡化具體工件"
+      ],
+      "completeness": [
+        9,
+        "反例與核對行動完整"
+      ],
+      "professionalism": [
+        9,
+        "來源與示意身份明示"
+      ],
+      "density": [
+        8,
+        "三節點保留必要文字"
+      ],
+      "hierarchy": [
+        9,
+        "同件對照與單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch4-page-assessment.json; batch4-failure-page-review.json"
+  }
+]

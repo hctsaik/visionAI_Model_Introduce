@@ -1,0 +1,614 @@
+{
+  "owners": [
+    "lucas-kanade",
+    "raft",
+    "ad-anomalydino",
+    "ad-efficientad"
+  ],
+  "changed_topics": [
+    "ad-anomalydino",
+    "ad-anomalygpt",
+    "ad-diffad",
+    "ad-efficientad",
+    "clip",
+    "dinov3",
+    "lucas-kanade",
+    "pose",
+    "raft",
+    "siglip"
+  ],
+  "unchanged_topics": 48,
+  "html_sha256": "3b1510e764f5c256948f2de475ec1cea9c8cc0907e47634e6b5d5992d6bb8282",
+  "bundle_assets": 1364,
+  "bundle_hashes_match": true,
+  "ui_states": 16,
+  "zoom_checks": 112,
+  "answers": 16,
+  "navigation": 16,
+  "http_checks": 116,
+  "http": [
+    {
+      "url": "http://127.0.0.1:8000/_course_content/generated-concepts/ad-anomalydino/wi030-dino-c1-r03-desktop.png",
+      "status": 200,
+      "sha256": "6d58b027c00c6d3c8ffdc7505304d80aebb7afb54a6e3f075991472d71b77ba1"
+    },
+    {
+      "url": "http://127.0.0.1:8000/_course_content/generated-concepts/ad-anomalydino/wi030-dino-c1-r05-mobile.png",
+      "status": 200,
+      "sha256": "b6e70d569d12948b2dce19e58797ea0f02df89639d6786244b05d5abf0cdf0e8"
+    },
+    {
+      "url": "http://127.0.0.1:8000/_course_content/generated-concepts/ad-efficientad/wi030-efficient-c1-r05-mobile.png",
+      "status": 200,
+      "sha256": "5daf214bec6d4fb965798005ed03b8d672a219ef965dced625935944e00b4cdd"
+    },
+    {
+      "url": "http://127.0.0.1:8000/_course_content/generated-concepts/ad-efficientad/wi030-efficient-c1-r06-desktop.png",
+      "status": 200,
+      "sha256": "d2944ee11e772219a692c5a05321c91fe3860f6c4acfddfd7fed83a163f922f3"
+    },
+    {
+      "url": "http://127.0.0.1:8000/_course_content/generated-concepts/ad-efficientad/wi033-eff-main-failure-r01-desktop.png",
+      "status": 200,
+      "sha256": "5c5b682f1550ac566aaee0a8f9e4135e054fb0d90c24fbc152083d084b49e3e6"
+    },
+    {
+      "url": "http://127.0.0.1:8000/_course_content/generated-concepts/ad-efficientad/wi033-eff-main-failure-r01-mobile.png",
+      "status": 200,
+      "sha256": "fbdba5dc1f373737f85ea88338638225ca86fb1c8725fddeb3c0a9555e47cbf4"
+    },
+    {
+      "url": "http://127.0.0.1:8000/_course_content/generated-concepts/ad-patchcore/wi030-ad-d2-r02-desktop.png",
+      "status": 200,
+      "sha256": "d56c08d7588472f11713eac0dab1ca34422786a397efdcac25d1e403fda4a6fa"
+    },
+    {
+      "url": "http://127.0.0.1:8000/_course_content/generated-concepts/ad-patchcore/wi030-ad-d2-r02-mobile.png",
+      "status": 200,
+      "sha256": "3be092ace4a2ad992abb639f4488633f9b2bdf46406bb0f4c40f2b278ddf053c"
+    },
+    {
+      "url": "http://127.0.0.1:8000/_course_content/generated-concepts/ad-patchcore/wi030-ad-d3-r03-mobile.png",
+      "status": 200,
+      "sha256": "59a2b3f67f7c57a03c44f9afbaf7661635abc687988178198d25d458852e445b"
+    },
+    {
+      "url": "http://127.0.0.1:8000/_course_content/generated-concepts/ad-patchcore/wi030-ad-d3-r04-desktop.png",
+      "status": 200,
+      "sha256": "9e48067e72008111295867622d66457e6a03e8d08526021f24813f4826b5aa1b"
+    },
+    {
+      "url": "http://127.0.0.1:8000/_course_content/generated-concepts/lucas-kanade/wi028-flow-d3-r01-desktop.png",
+      "status": 200,
+      "sha256": "fbd02d803658dd4200d35dc6a6a888cf4eab37cd27bc56b3a7d265dc0a659e98"
+    },
+    {
+      "url": "http://127.0.0.1:8000/_course_content/generated-concepts/lucas-kanade/wi028-flow-d3-r01-mobile.png",
+      "status": 200,
+      "sha256": "2e01d29715e1a93faa4d069f15dc140f8a6d3d747f705785844f94eaa66d2635"
+    },
+    {
+      "url": "http://127.0.0.1:8000/_course_content/generated-concepts/lucas-kanade/wi028-lk-c1-r02-desktop.png",
+      "status": 200,
+      "sha256": "8bfc8f5d76b7fe49b0ac00e369d62485957084b50190289260849be1ee1dd21b"
+    },
+    {
+      "url": "http://127.0.0.1:8000/_course_content/generated-concepts/lucas-kanade/wi028-lk-c1-r03-mobile.png",
+      "status": 200,
+      "sha256": "f997f89684c77db8e600d782e44e71010a940bd2eab70f15c88bcae7df400e5b"
+    },
+    {
+      "url": "http://127.0.0.1:8000/_course_content/generated-concepts/lucas-kanade/wi033-flow-main-failure-r02-desktop.png",
+      "status": 200,
+      "sha256": "f70b5f82d5d1c98575b14c52edf4d82f9b06bab7a81b303334a79dab96a641d0"
+    },
+    {
+      "url": "http://127.0.0.1:8000/_course_content/generated-concepts/lucas-kanade/wi033-flow-main-failure-r02-mobile.png",
+      "status": 200,
+      "sha256": "e30e8a012e29402398e70924f66628b7b7cd9895ed4cf424d840b9c6e43625ba"
+    },
+    {
+      "url": "http://127.0.0.1:8000/_course_content/generated-concepts/raft/wi028-raft-c1-r01-desktop.png",
+      "status": 200,
+      "sha256": "2849d0a0b95ff36df972a50cf9d50bb88c9e3e49eacb93235a961f4a689a05c3"
+    },
+    {
+      "url": "http://127.0.0.1:8000/_course_content/generated-concepts/raft/wi028-raft-c1-r01-mobile.png",
+      "status": 200,
+      "sha256": "2e1870722dab6a40e761ea7c380aee04affb78ec4438e523de30113c5079ad2d"
+    },
+    {
+      "url": "http://127.0.0.1:8000/roadmap-model-selection/anomaly-detection/ad-anomalydino/images/final/WI033-ANOMALYDINO-01-r01-desktop.png",
+      "status": 200,
+      "sha256": "62e93825276f27e79ba4847608c65b3f39f666a96c14c0e0cbb1c15fcc96d973"
+    },
+    {
+      "url": "http://127.0.0.1:8000/roadmap-model-selection/anomaly-detection/ad-anomalydino/images/final/WI033-ANOMALYDINO-01-r01-mobile.png",
+      "status": 200,
+      "sha256": "2c1b122ea72c2e243ecefabb0343da1c85028c26311766dcdeb27b83e35a3dc9"
+    },
+    {
+      "url": "http://127.0.0.1:8000/roadmap-model-selection/anomaly-detection/ad-anomalydino/images/final/WI033-ANOMALYDINO-02-r02-desktop.png",
+      "status": 200,
+      "sha256": "a39faeff5c6238a107d6b22cc323f390cb0163d6091c54360680ca1888c962e8"
+    },
+    {
+      "url": "http://127.0.0.1:8000/roadmap-model-selection/anomaly-detection/ad-anomalydino/images/final/WI033-ANOMALYDINO-02-r02-mobile.png",
+      "status": 200,
+      "sha256": "aaf94d7201b8392aa1368a9c7857c91c0271900456490ead75583f3359e6ee28"
+    },
+    {
+      "url": "http://127.0.0.1:8000/roadmap-model-selection/anomaly-detection/ad-anomalydino/images/final/WI033-ANOMALYDINO-03-r01-desktop.png",
+      "status": 200,
+      "sha256": "47a9615b932c97221e710e1c3f4565f269117367eec38a579e28431f68e6a349"
+    },
+    {
+      "url": "http://127.0.0.1:8000/roadmap-model-selection/anomaly-detection/ad-anomalydino/images/final/WI033-ANOMALYDINO-03-r01-mobile.png",
+      "status": 200,
+      "sha256": "a1b2bccab07650d6d30c2cd8ab55a3c305eeb182821713105fb65007681c80a1"
+    },
+    {
+      "url": "http://127.0.0.1:8000/roadmap-model-selection/anomaly-detection/ad-anomalydino/images/final/WI033-ANOMALYDINO-04-r01-desktop.png",
+      "status": 200,
+      "sha256": "dbc2883edd99f0784c3a03e0c8371a2f5c63f20305d6043ffee41cd8db8585a9"
+    },
+    {
+      "url": "http://127.0.0.1:8000/roadmap-model-selection/anomaly-detection/ad-anomalydino/images/final/WI033-ANOMALYDINO-04-r01-mobile.png",
+      "status": 200,
+      "sha256": "26a3b245ff7f86e151a870b9902a028fc433ea05690aeac400413e0ed81fb051"
+    },
+    {
+      "url": "http://127.0.0.1:8000/roadmap-model-selection/anomaly-detection/ad-anomalydino/model.md",
+      "status": 200,
+      "sha256": "9a833aa736299bcb84ef0457689da706c37edee8cc7d9b130d5536f2223e3028"
+    },
+    {
+      "url": "http://127.0.0.1:8000/roadmap-model-selection/anomaly-detection/ad-anomalydino/slide-manifest.md",
+      "status": 200,
+      "sha256": "4a89693a6cfb7dbd2a793b257c6765d5d8d6c96356f69c8b0ee3a00adb56c6d6"
+    },
+    {
+      "url": "http://127.0.0.1:8000/roadmap-model-selection/anomaly-detection/ad-efficientad/images/final/WI033-EFFICIENTAD-01-r02-desktop.png",
+      "status": 200,
+      "sha256": "8106cb32a572a78d4e777bdc547032bbddbd574c69bdedbf0feea65bad9cee0d"
+    },
+    {
+      "url": "http://127.0.0.1:8000/roadmap-model-selection/anomaly-detection/ad-efficientad/images/final/WI033-EFFICIENTAD-01-r02-mobile.png",
+      "status": 200,
+      "sha256": "19e7941f992cd3191a0c27f86048c70b29e9974cafceb09a1df255932800e819"
+    },
+    {
+      "url": "http://127.0.0.1:8000/roadmap-model-selection/anomaly-detection/ad-efficientad/images/final/WI033-EFFICIENTAD-02-r02-desktop.png",
+      "status": 200,
+      "sha256": "530894dd73a5d1473155f3feed24b12f0a132f2ebf2d58a5d4343aa2bdc8ad6d"
+    },
+    {
+      "url": "http://127.0.0.1:8000/roadmap-model-selection/anomaly-detection/ad-efficientad/images/final/WI033-EFFICIENTAD-02-r02-mobile.png",
+      "status": 200,
+      "sha256": "d420c2f893fb1dabb33df6687a987a5eb2376a9738ee70f632120be6810d36e3"
+    },
+    {
+      "url": "http://127.0.0.1:8000/roadmap-model-selection/anomaly-detection/ad-efficientad/images/final/WI033-EFFICIENTAD-03-r02-desktop.png",
+      "status": 200,
+      "sha256": "2d314f18640a5d8da7c58fcd506744cdab9a4c07577df8b76dab26b0c83934e2"
+    },
+    {
+      "url": "http://127.0.0.1:8000/roadmap-model-selection/anomaly-detection/ad-efficientad/images/final/WI033-EFFICIENTAD-03-r02-mobile.png",
+      "status": 200,
+      "sha256": "13acc65f2258e072aec90709ff776453e138254f44a57bb890876977b2ef738e"
+    },
+    {
+      "url": "http://127.0.0.1:8000/roadmap-model-selection/anomaly-detection/ad-efficientad/images/final/WI033-EFFICIENTAD-04-r01-desktop.png",
+      "status": 200,
+      "sha256": "0f54b826306ea6fc7d4ee0a212b13a13583bfbf865a9129fe0dbc76925bfde4f"
+    },
+    {
+      "url": "http://127.0.0.1:8000/roadmap-model-selection/anomaly-detection/ad-efficientad/images/final/WI033-EFFICIENTAD-04-r01-mobile.png",
+      "status": 200,
+      "sha256": "8f44b8e862b3aa51a981240a93be214203af68a4a001e87e5962e38201bf1324"
+    },
+    {
+      "url": "http://127.0.0.1:8000/roadmap-model-selection/anomaly-detection/ad-efficientad/model.md",
+      "status": 200,
+      "sha256": "046b71258dfc2053042aec36a2d4db91f4ac4690de7bd592eaf9a80f57280176"
+    },
+    {
+      "url": "http://127.0.0.1:8000/roadmap-model-selection/anomaly-detection/ad-efficientad/slide-manifest.md",
+      "status": 200,
+      "sha256": "3c2b96c242100d4589ebd10b5e9406eb5b6996288b215a9cf49ea31fae378d81"
+    },
+    {
+      "url": "http://127.0.0.1:8000/roadmap-model-selection/video-temporal/lucas-kanade/images/final/WI033-LK-01-r02-desktop.png",
+      "status": 200,
+      "sha256": "36adaa57e4ecdf990dc853e91063bdc6e69406209628948e926255d9a053ff11"
+    },
+    {
+      "url": "http://127.0.0.1:8000/roadmap-model-selection/video-temporal/lucas-kanade/images/final/WI033-LK-01-r02-mobile.png",
+      "status": 200,
+      "sha256": "671225c19c41181b15a4ab4d543fe61b5fd17b02567df632d0ff2cda83db1a37"
+    },
+    {
+      "url": "http://127.0.0.1:8000/roadmap-model-selection/video-temporal/lucas-kanade/images/final/WI033-LK-02-r02-desktop.png",
+      "status": 200,
+      "sha256": "9e7bb2812927a082c292e1c2c8df01e4b4b7a09fc882427e94827dfe4f3fd480"
+    },
+    {
+      "url": "http://127.0.0.1:8000/roadmap-model-selection/video-temporal/lucas-kanade/images/final/WI033-LK-02-r02-mobile.png",
+      "status": 200,
+      "sha256": "80ad1d73c4c17fc996c219cf6c4ee10a8fc02a4f213f65f6b1e80e9fe2660b12"
+    },
+    {
+      "url": "http://127.0.0.1:8000/roadmap-model-selection/video-temporal/lucas-kanade/images/final/WI033-LK-03-r02-desktop.png",
+      "status": 200,
+      "sha256": "7b202c5a2b7816bb82c11dc486c9d640e63658dedf892554d3269e8701ea9873"
+    },
+    {
+      "url": "http://127.0.0.1:8000/roadmap-model-selection/video-temporal/lucas-kanade/images/final/WI033-LK-03-r02-mobile.png",
+      "status": 200,
+      "sha256": "f897495628e557738144da7a0278ff8a58c41afe377513e66712af298002bf46"
+    },
+    {
+      "url": "http://127.0.0.1:8000/roadmap-model-selection/video-temporal/lucas-kanade/images/final/WI033-LK-04-r02-desktop.png",
+      "status": 200,
+      "sha256": "3adc796af48c9bc464fb770b70e1c81c6861e769bf13bc71934cb3176dba8541"
+    },
+    {
+      "url": "http://127.0.0.1:8000/roadmap-model-selection/video-temporal/lucas-kanade/images/final/WI033-LK-04-r02-mobile.png",
+      "status": 200,
+      "sha256": "0716230b9d586ec28efb385f99d3c57864a931f6f0d9a89822363d4922a37a11"
+    },
+    {
+      "url": "http://127.0.0.1:8000/roadmap-model-selection/video-temporal/lucas-kanade/model.md",
+      "status": 200,
+      "sha256": "b4e7fa853306a65aa0b5c84e87501453be76324e9caf841ac3bbd3aa00da2892"
+    },
+    {
+      "url": "http://127.0.0.1:8000/roadmap-model-selection/video-temporal/lucas-kanade/slide-manifest.md",
+      "status": 200,
+      "sha256": "ea0f8dff5079e9ad3425954e2f5ae2540d373496e602463bc9dbbc7c449d88c1"
+    },
+    {
+      "url": "http://127.0.0.1:8000/roadmap-model-selection/video-temporal/raft/images/final/WI033-RAFT-01-r02-desktop.png",
+      "status": 200,
+      "sha256": "fcc75c983bcff1cfaec9d15bec2338819037b3d30b81cb20d8d5d16e5ce6d4e6"
+    },
+    {
+      "url": "http://127.0.0.1:8000/roadmap-model-selection/video-temporal/raft/images/final/WI033-RAFT-01-r02-mobile.png",
+      "status": 200,
+      "sha256": "a6743103d69764a8288cabb727f05dadd6e2e653aac95fe999605173c157f1a3"
+    },
+    {
+      "url": "http://127.0.0.1:8000/roadmap-model-selection/video-temporal/raft/images/final/WI033-RAFT-02-r03-desktop.png",
+      "status": 200,
+      "sha256": "901c6286c331b407e3b2581e2a559b34fa7fd3deca085b0adb82a97cb4c1eab2"
+    },
+    {
+      "url": "http://127.0.0.1:8000/roadmap-model-selection/video-temporal/raft/images/final/WI033-RAFT-02-r03-mobile.png",
+      "status": 200,
+      "sha256": "9b8482a0a3722cb498f082413a5586232ec39a8ad5a8172cdd44a30d9fe01928"
+    },
+    {
+      "url": "http://127.0.0.1:8000/roadmap-model-selection/video-temporal/raft/images/final/WI033-RAFT-03-r02-desktop.png",
+      "status": 200,
+      "sha256": "8850aebb00c7133ac53eb206d882e6183eb3bc4474b20a32a360bb5d603c936a"
+    },
+    {
+      "url": "http://127.0.0.1:8000/roadmap-model-selection/video-temporal/raft/images/final/WI033-RAFT-03-r02-mobile.png",
+      "status": 200,
+      "sha256": "823e574a91a697af01f9f4cffb451d79c7edf2f49884b3a9cd661abe73352c3c"
+    },
+    {
+      "url": "http://127.0.0.1:8000/roadmap-model-selection/video-temporal/raft/images/final/WI033-RAFT-04-r02-desktop.png",
+      "status": 200,
+      "sha256": "ba593043714791e5fc2166811d3fdefbbd0107c6291be0bc4e0a525d93bd4625"
+    },
+    {
+      "url": "http://127.0.0.1:8000/roadmap-model-selection/video-temporal/raft/images/final/WI033-RAFT-04-r02-mobile.png",
+      "status": 200,
+      "sha256": "e6ff90da9a7055259663f6fec7da7d3ced3186cf364c5e44175985fb4b418ffa"
+    },
+    {
+      "url": "http://127.0.0.1:8000/roadmap-model-selection/video-temporal/raft/model.md",
+      "status": 200,
+      "sha256": "a1cda72deb732237022b0e730e72b7f4e09f495f33a5fdd054de7d886664a860"
+    },
+    {
+      "url": "http://127.0.0.1:8000/roadmap-model-selection/video-temporal/raft/slide-manifest.md",
+      "status": 200,
+      "sha256": "042f3973797cb55b4174b809978ed4e11019e927dd5f0cd3ecca7df38cb379ed"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/ad-anomalydino/wi030-dino-c1-r03-desktop.png",
+      "status": 200,
+      "sha256": "6d58b027c00c6d3c8ffdc7505304d80aebb7afb54a6e3f075991472d71b77ba1"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/ad-anomalydino/wi030-dino-c1-r05-mobile.png",
+      "status": 200,
+      "sha256": "b6e70d569d12948b2dce19e58797ea0f02df89639d6786244b05d5abf0cdf0e8"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/ad-efficientad/wi030-efficient-c1-r05-mobile.png",
+      "status": 200,
+      "sha256": "5daf214bec6d4fb965798005ed03b8d672a219ef965dced625935944e00b4cdd"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/ad-efficientad/wi030-efficient-c1-r06-desktop.png",
+      "status": 200,
+      "sha256": "d2944ee11e772219a692c5a05321c91fe3860f6c4acfddfd7fed83a163f922f3"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/ad-efficientad/wi033-eff-main-failure-r01-desktop.png",
+      "status": 200,
+      "sha256": "5c5b682f1550ac566aaee0a8f9e4135e054fb0d90c24fbc152083d084b49e3e6"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/ad-efficientad/wi033-eff-main-failure-r01-mobile.png",
+      "status": 200,
+      "sha256": "fbdba5dc1f373737f85ea88338638225ca86fb1c8725fddeb3c0a9555e47cbf4"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/ad-patchcore/wi030-ad-d2-r02-desktop.png",
+      "status": 200,
+      "sha256": "d56c08d7588472f11713eac0dab1ca34422786a397efdcac25d1e403fda4a6fa"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/ad-patchcore/wi030-ad-d2-r02-mobile.png",
+      "status": 200,
+      "sha256": "3be092ace4a2ad992abb639f4488633f9b2bdf46406bb0f4c40f2b278ddf053c"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/ad-patchcore/wi030-ad-d3-r03-mobile.png",
+      "status": 200,
+      "sha256": "59a2b3f67f7c57a03c44f9afbaf7661635abc687988178198d25d458852e445b"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/ad-patchcore/wi030-ad-d3-r04-desktop.png",
+      "status": 200,
+      "sha256": "9e48067e72008111295867622d66457e6a03e8d08526021f24813f4826b5aa1b"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/lucas-kanade/wi028-flow-d3-r01-desktop.png",
+      "status": 200,
+      "sha256": "fbd02d803658dd4200d35dc6a6a888cf4eab37cd27bc56b3a7d265dc0a659e98"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/lucas-kanade/wi028-flow-d3-r01-mobile.png",
+      "status": 200,
+      "sha256": "2e01d29715e1a93faa4d069f15dc140f8a6d3d747f705785844f94eaa66d2635"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/lucas-kanade/wi028-lk-c1-r02-desktop.png",
+      "status": 200,
+      "sha256": "8bfc8f5d76b7fe49b0ac00e369d62485957084b50190289260849be1ee1dd21b"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/lucas-kanade/wi028-lk-c1-r03-mobile.png",
+      "status": 200,
+      "sha256": "f997f89684c77db8e600d782e44e71010a940bd2eab70f15c88bcae7df400e5b"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/lucas-kanade/wi033-flow-main-failure-r02-desktop.png",
+      "status": 200,
+      "sha256": "f70b5f82d5d1c98575b14c52edf4d82f9b06bab7a81b303334a79dab96a641d0"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/lucas-kanade/wi033-flow-main-failure-r02-mobile.png",
+      "status": 200,
+      "sha256": "e30e8a012e29402398e70924f66628b7b7cd9895ed4cf424d840b9c6e43625ba"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/raft/wi028-raft-c1-r01-desktop.png",
+      "status": 200,
+      "sha256": "2849d0a0b95ff36df972a50cf9d50bb88c9e3e49eacb93235a961f4a689a05c3"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/raft/wi028-raft-c1-r01-mobile.png",
+      "status": 200,
+      "sha256": "2e1870722dab6a40e761ea7c380aee04affb78ec4438e523de30113c5079ad2d"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/roadmap-model-selection/anomaly-detection/ad-anomalydino/images/final/WI033-ANOMALYDINO-01-r01-desktop.png",
+      "status": 200,
+      "sha256": "62e93825276f27e79ba4847608c65b3f39f666a96c14c0e0cbb1c15fcc96d973"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/roadmap-model-selection/anomaly-detection/ad-anomalydino/images/final/WI033-ANOMALYDINO-01-r01-mobile.png",
+      "status": 200,
+      "sha256": "2c1b122ea72c2e243ecefabb0343da1c85028c26311766dcdeb27b83e35a3dc9"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/roadmap-model-selection/anomaly-detection/ad-anomalydino/images/final/WI033-ANOMALYDINO-02-r02-desktop.png",
+      "status": 200,
+      "sha256": "a39faeff5c6238a107d6b22cc323f390cb0163d6091c54360680ca1888c962e8"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/roadmap-model-selection/anomaly-detection/ad-anomalydino/images/final/WI033-ANOMALYDINO-02-r02-mobile.png",
+      "status": 200,
+      "sha256": "aaf94d7201b8392aa1368a9c7857c91c0271900456490ead75583f3359e6ee28"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/roadmap-model-selection/anomaly-detection/ad-anomalydino/images/final/WI033-ANOMALYDINO-03-r01-desktop.png",
+      "status": 200,
+      "sha256": "47a9615b932c97221e710e1c3f4565f269117367eec38a579e28431f68e6a349"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/roadmap-model-selection/anomaly-detection/ad-anomalydino/images/final/WI033-ANOMALYDINO-03-r01-mobile.png",
+      "status": 200,
+      "sha256": "a1b2bccab07650d6d30c2cd8ab55a3c305eeb182821713105fb65007681c80a1"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/roadmap-model-selection/anomaly-detection/ad-anomalydino/images/final/WI033-ANOMALYDINO-04-r01-desktop.png",
+      "status": 200,
+      "sha256": "dbc2883edd99f0784c3a03e0c8371a2f5c63f20305d6043ffee41cd8db8585a9"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/roadmap-model-selection/anomaly-detection/ad-anomalydino/images/final/WI033-ANOMALYDINO-04-r01-mobile.png",
+      "status": 200,
+      "sha256": "26a3b245ff7f86e151a870b9902a028fc433ea05690aeac400413e0ed81fb051"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/roadmap-model-selection/anomaly-detection/ad-anomalydino/model.md",
+      "status": 200,
+      "sha256": "9a833aa736299bcb84ef0457689da706c37edee8cc7d9b130d5536f2223e3028"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/roadmap-model-selection/anomaly-detection/ad-anomalydino/slide-manifest.md",
+      "status": 200,
+      "sha256": "4a89693a6cfb7dbd2a793b257c6765d5d8d6c96356f69c8b0ee3a00adb56c6d6"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/roadmap-model-selection/anomaly-detection/ad-efficientad/images/final/WI033-EFFICIENTAD-01-r02-desktop.png",
+      "status": 200,
+      "sha256": "8106cb32a572a78d4e777bdc547032bbddbd574c69bdedbf0feea65bad9cee0d"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/roadmap-model-selection/anomaly-detection/ad-efficientad/images/final/WI033-EFFICIENTAD-01-r02-mobile.png",
+      "status": 200,
+      "sha256": "19e7941f992cd3191a0c27f86048c70b29e9974cafceb09a1df255932800e819"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/roadmap-model-selection/anomaly-detection/ad-efficientad/images/final/WI033-EFFICIENTAD-02-r02-desktop.png",
+      "status": 200,
+      "sha256": "530894dd73a5d1473155f3feed24b12f0a132f2ebf2d58a5d4343aa2bdc8ad6d"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/roadmap-model-selection/anomaly-detection/ad-efficientad/images/final/WI033-EFFICIENTAD-02-r02-mobile.png",
+      "status": 200,
+      "sha256": "d420c2f893fb1dabb33df6687a987a5eb2376a9738ee70f632120be6810d36e3"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/roadmap-model-selection/anomaly-detection/ad-efficientad/images/final/WI033-EFFICIENTAD-03-r02-desktop.png",
+      "status": 200,
+      "sha256": "2d314f18640a5d8da7c58fcd506744cdab9a4c07577df8b76dab26b0c83934e2"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/roadmap-model-selection/anomaly-detection/ad-efficientad/images/final/WI033-EFFICIENTAD-03-r02-mobile.png",
+      "status": 200,
+      "sha256": "13acc65f2258e072aec90709ff776453e138254f44a57bb890876977b2ef738e"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/roadmap-model-selection/anomaly-detection/ad-efficientad/images/final/WI033-EFFICIENTAD-04-r01-desktop.png",
+      "status": 200,
+      "sha256": "0f54b826306ea6fc7d4ee0a212b13a13583bfbf865a9129fe0dbc76925bfde4f"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/roadmap-model-selection/anomaly-detection/ad-efficientad/images/final/WI033-EFFICIENTAD-04-r01-mobile.png",
+      "status": 200,
+      "sha256": "8f44b8e862b3aa51a981240a93be214203af68a4a001e87e5962e38201bf1324"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/roadmap-model-selection/anomaly-detection/ad-efficientad/model.md",
+      "status": 200,
+      "sha256": "046b71258dfc2053042aec36a2d4db91f4ac4690de7bd592eaf9a80f57280176"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/roadmap-model-selection/anomaly-detection/ad-efficientad/slide-manifest.md",
+      "status": 200,
+      "sha256": "3c2b96c242100d4589ebd10b5e9406eb5b6996288b215a9cf49ea31fae378d81"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/roadmap-model-selection/video-temporal/lucas-kanade/images/final/WI033-LK-01-r02-desktop.png",
+      "status": 200,
+      "sha256": "36adaa57e4ecdf990dc853e91063bdc6e69406209628948e926255d9a053ff11"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/roadmap-model-selection/video-temporal/lucas-kanade/images/final/WI033-LK-01-r02-mobile.png",
+      "status": 200,
+      "sha256": "671225c19c41181b15a4ab4d543fe61b5fd17b02567df632d0ff2cda83db1a37"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/roadmap-model-selection/video-temporal/lucas-kanade/images/final/WI033-LK-02-r02-desktop.png",
+      "status": 200,
+      "sha256": "9e7bb2812927a082c292e1c2c8df01e4b4b7a09fc882427e94827dfe4f3fd480"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/roadmap-model-selection/video-temporal/lucas-kanade/images/final/WI033-LK-02-r02-mobile.png",
+      "status": 200,
+      "sha256": "80ad1d73c4c17fc996c219cf6c4ee10a8fc02a4f213f65f6b1e80e9fe2660b12"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/roadmap-model-selection/video-temporal/lucas-kanade/images/final/WI033-LK-03-r02-desktop.png",
+      "status": 200,
+      "sha256": "7b202c5a2b7816bb82c11dc486c9d640e63658dedf892554d3269e8701ea9873"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/roadmap-model-selection/video-temporal/lucas-kanade/images/final/WI033-LK-03-r02-mobile.png",
+      "status": 200,
+      "sha256": "f897495628e557738144da7a0278ff8a58c41afe377513e66712af298002bf46"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/roadmap-model-selection/video-temporal/lucas-kanade/images/final/WI033-LK-04-r02-desktop.png",
+      "status": 200,
+      "sha256": "3adc796af48c9bc464fb770b70e1c81c6861e769bf13bc71934cb3176dba8541"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/roadmap-model-selection/video-temporal/lucas-kanade/images/final/WI033-LK-04-r02-mobile.png",
+      "status": 200,
+      "sha256": "0716230b9d586ec28efb385f99d3c57864a931f6f0d9a89822363d4922a37a11"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/roadmap-model-selection/video-temporal/lucas-kanade/model.md",
+      "status": 200,
+      "sha256": "b4e7fa853306a65aa0b5c84e87501453be76324e9caf841ac3bbd3aa00da2892"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/roadmap-model-selection/video-temporal/lucas-kanade/slide-manifest.md",
+      "status": 200,
+      "sha256": "ea0f8dff5079e9ad3425954e2f5ae2540d373496e602463bc9dbbc7c449d88c1"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/roadmap-model-selection/video-temporal/raft/images/final/WI033-RAFT-01-r02-desktop.png",
+      "status": 200,
+      "sha256": "fcc75c983bcff1cfaec9d15bec2338819037b3d30b81cb20d8d5d16e5ce6d4e6"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/roadmap-model-selection/video-temporal/raft/images/final/WI033-RAFT-01-r02-mobile.png",
+      "status": 200,
+      "sha256": "a6743103d69764a8288cabb727f05dadd6e2e653aac95fe999605173c157f1a3"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/roadmap-model-selection/video-temporal/raft/images/final/WI033-RAFT-02-r03-desktop.png",
+      "status": 200,
+      "sha256": "901c6286c331b407e3b2581e2a559b34fa7fd3deca085b0adb82a97cb4c1eab2"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/roadmap-model-selection/video-temporal/raft/images/final/WI033-RAFT-02-r03-mobile.png",
+      "status": 200,
+      "sha256": "9b8482a0a3722cb498f082413a5586232ec39a8ad5a8172cdd44a30d9fe01928"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/roadmap-model-selection/video-temporal/raft/images/final/WI033-RAFT-03-r02-desktop.png",
+      "status": 200,
+      "sha256": "8850aebb00c7133ac53eb206d882e6183eb3bc4474b20a32a360bb5d603c936a"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/roadmap-model-selection/video-temporal/raft/images/final/WI033-RAFT-03-r02-mobile.png",
+      "status": 200,
+      "sha256": "823e574a91a697af01f9f4cffb451d79c7edf2f49884b3a9cd661abe73352c3c"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/roadmap-model-selection/video-temporal/raft/images/final/WI033-RAFT-04-r02-desktop.png",
+      "status": 200,
+      "sha256": "ba593043714791e5fc2166811d3fdefbbd0107c6291be0bc4e0a525d93bd4625"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/roadmap-model-selection/video-temporal/raft/images/final/WI033-RAFT-04-r02-mobile.png",
+      "status": 200,
+      "sha256": "e6ff90da9a7055259663f6fec7da7d3ced3186cf364c5e44175985fb4b418ffa"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/roadmap-model-selection/video-temporal/raft/model.md",
+      "status": 200,
+      "sha256": "a1cda72deb732237022b0e730e72b7f4e09f495f33a5fdd054de7d886664a860"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/roadmap-model-selection/video-temporal/raft/slide-manifest.md",
+      "status": 200,
+      "sha256": "042f3973797cb55b4174b809978ed4e11019e927dd5f0cd3ecca7df38cb379ed"
+    }
+  ],
+  "user_approval": "pending",
+  "published": false,
+  "model_inference": false
+}

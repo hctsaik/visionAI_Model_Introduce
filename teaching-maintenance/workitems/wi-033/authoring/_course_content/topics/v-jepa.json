@@ -1,0 +1,571 @@
+{
+  "model": "V-JEPA",
+  "badge": "自監督影片特徵預測",
+  "title": "V-JEPA：在特徵空間學影片關係",
+  "scenario": {
+    "title": "你有許多未標動作的工業影片，想先學可以交給不同工作任務使用的表示，而不是要求模型逐像素重畫每段影片。",
+    "body": "你有許多未標動作的工業影片，想先學可以交給不同工作任務使用的表示，而不是要求模型逐像素重畫每段影片。"
+  },
+  "promise": {
+    "title": "交付結果與接手工作",
+    "body": "影片表示與下游任務候選。本課不把特徵差直接命名為缺陷機率，也不宣稱輸出未來影片、精密位置或動作指令。"
+  },
+  "mental_model": {
+    "title": "自監督影片特徵預測",
+    "body": "本課講2024原版V-JEPA：上下文編碼器看未被遮住的影片部分，預測器估計被遮區的特徵，對齊另一個目標編碼器從完整影片提供的對應特徵。訓練比較發生在表示空間，不是把缺少的像素或未來影片重畫出來。",
+    "limit": "若輸入時間窗漏掉短暫滑落，預測特徵也可能保留不了工作需要的事件；預訓練可遷移性不能取代域內驗證。"
+  },
+  "micro_example": {
+    "title": "換成要預測未來影片的需求",
+    "setup": "同事看到V-JEPA的預測二字，想直接輸出下一秒的影像給操作員。",
+    "prediction": "本課原版能直接接成這個功能嗎？",
+    "reveal": "不能；這裡預測的是被遮區的特徵，不是像素影片。若要未來影像須另選生成／預測方案並驗證；若要判目前動作，則可用原版特徵搭配任務頭。"
+  },
+  "beginner_path": {
+    "title": "從必要原理、具體反例到工作取捨",
+    "intro": "你有許多未標動作的工業影片，想先學可以交給不同工作任務使用的表示，而不是要求模型逐像素重畫每段影片。 下列圖像、特徵及回答為教學示意，不是模型實測。",
+    "visuals": [
+      {
+        "id": "wi028-jepa-c1",
+        "title": "V-JEPA：預測被遮住部分的特徵",
+        "prompt": "你有許多未標動作的工業影片，想先學可以交給不同工作任務使用的表示，而不是要求模型逐像素重畫每段影片。",
+        "caption": "本課講2024原版V-JEPA：上下文編碼器看未被遮住的影片部分，預測器估計被遮區的特徵，對齊另一個目標編碼器從完整影片提供的對應特徵。訓練比較發生在表示空間，不是把缺少的像素或未來影片重畫出來。",
+        "image": "_course_content/generated-concepts/v-jepa/wi028-jepa-c1-r02-desktop.png",
+        "alt": "V-JEPA：預測被遮住部分的特徵。本課講2024原版V-JEPA：上下文編碼器看未被遮住的影片部分，預測器估計被遮區的特徵，對齊另一個目標編碼器從完整影片提供的對應特徵。訓練比較發生在表示空間，不是把缺少的像素或未來影片重畫出來。 AI生成教學示意，非模型實測。",
+        "callouts": [
+          {
+            "title": "目標也是編碼特徵",
+            "body": "目標編碼器的權重隨上下文編碼器緩慢更新；目標不是人工動作標籤，也不是預測器提前拿到完整影格答案。"
+          },
+          {
+            "title": "表示與判斷分工",
+            "body": "學到的編碼器可交出影片特徵；本例用有標註資料訓練任務頭，才產生夾取階段候選。原版不等於機器人控制模型。"
+          },
+          {
+            "title": "交付與接手",
+            "body": "影片表示與下游任務候選。本課不把特徵差直接命名為缺陷機率，也不宣稱輸出未來影片、精密位置或動作指令。"
+          }
+        ],
+        "reading_views": [
+          {
+            "title": "V-JEPA：預測被遮住部分的特徵",
+            "image": "_course_content/generated-concepts/v-jepa/wi028-jepa-c1-r02-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/v-jepa/wi028-jepa-c1-r02-mobile.png",
+            "alt": "V-JEPA：預測被遮住部分的特徵。本課講2024原版V-JEPA：上下文編碼器看未被遮住的影片部分，預測器估計被遮區的特徵，對齊另一個目標編碼器從完整影片提供的對應特徵。訓練比較發生在表示空間，不是把缺少的像素或未來影片重畫出來。 AI生成教學示意，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              881,
+              1785
+            ],
+            "mobile_display_mode": "full-mobile",
+            "desktop_intrinsic_width": 1672,
+            "desktop_intrinsic_height": 941,
+            "mobile_intrinsic_width": 881,
+            "mobile_intrinsic_height": 1785
+          }
+        ],
+        "core_ideas": true
+      },
+      {
+        "id": "wi028-video-d2",
+        "title": "關鍵動作沒拍進去，影片特徵也不夠",
+        "prompt": "觀察哪個條件改變，讓原本的結果不夠可靠？",
+        "caption": "若輸入時間窗漏掉短暫滑落，預測特徵也可能保留不了工作需要的事件；預訓練可遷移性不能取代域內驗證。",
+        "image": "_course_content/generated-concepts/videomae/wi028-video-d2-r01-desktop.png",
+        "alt": "關鍵動作沒拍進去，影片特徵也不夠。若輸入時間窗漏掉短暫滑落，預測特徵也可能保留不了工作需要的事件；預訓練可遷移性不能取代域內驗證。 AI生成教學示意，非模型實測。",
+        "callouts": [
+          {
+            "title": "看哪裡",
+            "body": "若輸入時間窗漏掉短暫滑落，預測特徵也可能保留不了工作需要的事件；預訓練可遷移性不能取代域內驗證。"
+          },
+          {
+            "title": "接著怎麼做",
+            "body": "先確認關鍵動作進入片段，再用標註資料比較任務頭與取樣設定；回原片判讀不確定情況。"
+          }
+        ],
+        "reading_views": [
+          {
+            "title": "關鍵動作沒拍進去，影片特徵也不夠",
+            "image": "_course_content/generated-concepts/videomae/wi028-video-d2-r01-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/videomae/wi028-video-d2-r01-mobile.png",
+            "alt": "關鍵動作沒拍進去，影片特徵也不夠。若輸入時間窗漏掉短暫滑落，預測特徵也可能保留不了工作需要的事件；預訓練可遷移性不能取代域內驗證。 AI生成教學示意，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              1024,
+              1536
+            ],
+            "mobile_display_mode": "full-mobile",
+            "desktop_intrinsic_width": 1672,
+            "desktop_intrinsic_height": 941,
+            "mobile_intrinsic_width": 1024,
+            "mobile_intrinsic_height": 1536
+          }
+        ],
+        "core_ideas": false
+      },
+      {
+        "id": "wi028-video-d3",
+        "title": "記住序列、補像素、預測特徵：學習方式不同",
+        "prompt": "相同工作需求下，資料、輸出與成本如何取捨？",
+        "caption": "VideoMAE在預訓練補像素，V-JEPA預測特徵；兩者是否有利要看同一工作任務與成本。若少量時間狀態已足夠，也可先比較簡單規則或ConvLSTM。",
+        "image": "_course_content/generated-concepts/convlstm/wi028-video-d3-r02-desktop.png",
+        "alt": "記住序列、補像素、預測特徵：學習方式不同。VideoMAE在預訓練補像素，V-JEPA預測特徵；兩者是否有利要看同一工作任務與成本。若少量時間狀態已足夠，也可先比較簡單規則或ConvLSTM。 AI生成教學示意，非模型實測。",
+        "callouts": [
+          {
+            "title": "怎麼選",
+            "body": "VideoMAE在預訓練補像素，V-JEPA預測特徵；兩者是否有利要看同一工作任務與成本。若少量時間狀態已足夠，也可先比較簡單規則或ConvLSTM。"
+          },
+          {
+            "title": "資料與完整成本",
+            "body": "可用2024原版相容預訓練權重起步，仍需下游標註與測試；換場景、視角或動作後重驗特徵與任務頭。比較凍結或微調方案時記錄調整預算，不混入V-JEPA2／2.1能力。"
+          }
+        ],
+        "reading_views": [
+          {
+            "title": "記住序列、補像素、預測特徵：學習方式不同",
+            "image": "_course_content/generated-concepts/convlstm/wi028-video-d3-r02-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/convlstm/wi028-video-d3-r02-mobile.png",
+            "alt": "記住序列、補像素、預測特徵：學習方式不同。VideoMAE在預訓練補像素，V-JEPA預測特徵；兩者是否有利要看同一工作任務與成本。若少量時間狀態已足夠，也可先比較簡單規則或ConvLSTM。 AI生成教學示意，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              887,
+              1774
+            ],
+            "mobile_display_mode": "full-mobile",
+            "desktop_intrinsic_width": 1672,
+            "desktop_intrinsic_height": 941,
+            "mobile_intrinsic_width": 887,
+            "mobile_intrinsic_height": 1774
+          }
+        ],
+        "core_ideas": false
+      }
+    ]
+  },
+  "mechanism_steps": [
+    {
+      "title": "可見影片內容",
+      "body": "目標編碼器的權重隨上下文編碼器緩慢更新；目標不是人工動作標籤，也不是預測器提前拿到完整影格答案。",
+      "why": "由本課核心機制連接工作用途",
+      "anchor": "WI028-1",
+      "diagram": {
+        "title": "可見影片內容",
+        "body": "目標編碼器的權重隨上下文編碼器緩慢更新；目標不是人工動作標籤，也不是預測器提前拿到完整影格答案。",
+        "why": "詳見本課版本與來源",
+        "anchor": "WI028-1"
+      }
+    },
+    {
+      "title": "預測特徵對齊目標",
+      "body": "學到的編碼器可交出影片特徵；本例用有標註資料訓練任務頭，才產生夾取階段候選。原版不等於機器人控制模型。",
+      "why": "由本課核心機制連接工作用途",
+      "anchor": "WI028-2",
+      "diagram": {
+        "title": "預測特徵對齊目標",
+        "body": "學到的編碼器可交出影片特徵；本例用有標註資料訓練任務頭，才產生夾取階段候選。原版不等於機器人控制模型。",
+        "why": "詳見本課版本與來源",
+        "anchor": "WI028-2"
+      }
+    },
+    {
+      "title": "特徵接工作任務",
+      "body": "影片表示與下游任務候選。本課不把特徵差直接命名為缺陷機率，也不宣稱輸出未來影片、精密位置或動作指令。",
+      "why": "由本課核心機制連接工作用途",
+      "anchor": "WI028-3",
+      "diagram": {
+        "title": "特徵接工作任務",
+        "body": "影片表示與下游任務候選。本課不把特徵差直接命名為缺陷機率，也不宣稱輸出未來影片、精密位置或動作指令。",
+        "why": "詳見本課版本與來源",
+        "anchor": "WI028-3"
+      }
+    },
+    {
+      "title": "工作核對與接手",
+      "body": "在相同影片／標註預算下比較任務錯誤、短事件漏報、片段等待、完整推論成本及換產品後維護量；不以特徵圖漂亮排名。",
+      "why": "由本課核心機制連接工作用途",
+      "anchor": "WI028-4",
+      "diagram": {
+        "title": "工作核對與接手",
+        "body": "在相同影片／標註預算下比較任務錯誤、短事件漏報、片段等待、完整推論成本及換產品後維護量；不以特徵圖漂亮排名。",
+        "why": "詳見本課版本與來源",
+        "anchor": "WI028-4"
+      }
+    }
+  ],
+  "visual_intro": "本課講2024原版V-JEPA：上下文編碼器看未被遮住的影片部分，預測器估計被遮區的特徵，對齊另一個目標編碼器從完整影片提供的對應特徵。訓練比較發生在表示空間，不是把缺少的像素或未來影片重畫出來。",
+  "concept_visuals": [],
+  "boundary_cases": [
+    {
+      "condition": "本課具體反例",
+      "effect": "若輸入時間窗漏掉短暫滑落，預測特徵也可能保留不了工作需要的事件；預訓練可遷移性不能取代域內驗證。",
+      "action": "先確認關鍵動作進入片段，再用標註資料比較任務頭與取樣設定；回原片判讀不確定情況。"
+    },
+    {
+      "condition": "更換產品、模型或輸入設定",
+      "effect": "可用2024原版相容預訓練權重起步，仍需下游標註與測試；換場景、視角或動作後重驗特徵與任務頭。比較凍結或微調方案時記錄調整預算，不混入V-JEPA2／2.1能力。",
+      "action": "先定義工作要判斷的動作與時間範圍，準備完整作業影片、少量下游標註與獨立測試，再固定原版權重與取樣。"
+    },
+    {
+      "condition": "把示意當成實際推論",
+      "effect": "本課特徵、排序、回答及圖像僅用於解釋，不支持現場準確率或耗時結論。",
+      "action": "在相同影片／標註預算下比較任務錯誤、短事件漏報、片段等待、完整推論成本及換產品後維護量；不以特徵圖漂亮排名。"
+    }
+  ],
+  "comparison": [
+    {
+      "model": "ConvLSTM應用",
+      "normality": "連續片段、任務標註；訓練空間記憶與任務頭",
+      "candidate": "依任務定義的序列輸出；管理狀態／重置"
+    },
+    {
+      "model": "VideoMAE原版",
+      "normality": "像素重建預訓練；可用現有權重，需下游標註",
+      "candidate": "影片表示＋任務頭；重建不是現場判定"
+    },
+    {
+      "model": "V-JEPA 2024原版",
+      "normality": "特徵預測預訓練；可用現有權重，需下游標註",
+      "candidate": "影片表示＋任務頭；不是未來影片生成"
+    }
+  ],
+  "selection": "VideoMAE在預訓練補像素，V-JEPA預測特徵；兩者是否有利要看同一工作任務與成本。若少量時間狀態已足夠，也可先比較簡單規則或ConvLSTM。 可用2024原版相容預訓練權重起步，仍需下游標註與測試；換場景、視角或動作後重驗特徵與任務頭。比較凍結或微調方案時記錄調整預算，不混入V-JEPA2／2.1能力。",
+  "poc": {
+    "title": "以真實工作資料做小規模比較",
+    "steps": [
+      "先定義工作要判斷的動作與時間範圍，準備完整作業影片、少量下游標註與獨立測試，再固定原版權重與取樣。",
+      "可用2024原版相容預訓練權重起步，仍需下游標註與測試；換場景、視角或動作後重驗特徵與任務頭。比較凍結或微調方案時記錄調整預算，不混入V-JEPA2／2.1能力。",
+      "在相同影片／標註預算下比較任務錯誤、短事件漏報、片段等待、完整推論成本及換產品後維護量；不以特徵圖漂亮排名。"
+    ],
+    "hold": "先確認關鍵動作進入片段，再用標註資料比較任務頭與取樣設定；回原片判讀不確定情況。",
+    "acceptance": {
+      "baseline": "既有流程或最簡單可行方法",
+      "measure": "在相同影片／標註預算下比較任務錯誤、短事件漏報、片段等待、完整推論成本及換產品後維護量；不以特徵圖漂亮排名。",
+      "negative_control": "若輸入時間窗漏掉短暫滑落，預測特徵也可能保留不了工作需要的事件；預訓練可遷移性不能取代域內驗證。",
+      "owner": "實作與影像核對負責人"
+    }
+  },
+  "teach_back": {
+    "question": "它改變什麼？何時選另一種做法？",
+    "answer": "本課講2024原版V-JEPA：上下文編碼器看未被遮住的影片部分，預測器估計被遮區的特徵，對齊另一個目標編碼器從完整影片提供的對應特徵。訓練比較發生在表示空間，不是把缺少的像素或未來影片重畫出來。 VideoMAE在預訓練補像素，V-JEPA預測特徵；兩者是否有利要看同一工作任務與成本。若少量時間狀態已足夠，也可先比較簡單規則或ConvLSTM。"
+  },
+  "slide_reading": [
+    {
+      "title": "V-JEPA：特徵預測之後再學任務",
+      "question": "自監督訊號不會自動變成事件標籤。",
+      "look": "先看未標註影片學特徵預測，再核對標註夾取影片教任務頭，最後看新片特徵交任務判斷。",
+      "relation": "原版2024 V-JEPA預測表徵而非像素；下游可固定骨幹學注意力探針，或另選微調策略須記清。目標編碼器和預測器不是部署任務頭。",
+      "takeaway": "自監督訊號不會自動變成事件標籤。",
+      "terms": [
+        "示意數值：作者給定局部算例，非模型實測或建議參數。",
+        "同位置：比較保持相同影像座標與時間身份，不能任意換工件。"
+      ]
+    },
+    {
+      "title": "V-JEPA：預測同位置的目標特徵",
+      "question": "目標特徵提供訓練訊號，部署另學任務。",
+      "look": "先看可見區編碼並指定遮蔽位置，再核對完整影片產生停止梯度目標，最後看同遮蔽位置比較特徵差。",
+      "relation": "2024原版V-JEPA；上下文編碼器讀可見tokens，預測器加遮蔽位置資訊預測目標tokens。完整影片只進目標編碼器，目標stop-gradient，其權重由上下文EMA更新。L1比較同位置特徵。作者兩維算例預測[.2,.8]目標[.4,.7]平均絕對差.15，不是異常分數。 r01實看修正：目標格與EMA文字分離。",
+      "takeaway": "目標特徵提供訓練訊號，部署另學任務。",
+      "terms": [
+        "示意數值：作者給定局部算例，非模型實測或建議參數。",
+        "同位置：比較保持相同影像座標與時間身份，不能任意換工件。"
+      ]
+    },
+    {
+      "title": "V-JEPA：保存取樣與下游模式",
+      "question": "骨幹、讀出頭與取樣設定是一組。",
+      "look": "先看固定時空取樣，再核對固定骨幹或微調需寫明，最後看片長、事件和延遲一起驗。",
+      "relation": "保存2024骨幹checkpoint、影格取樣、裁切與下游讀出頭。EMA是預訓練目標權重更新，不是現場每片自動更新模型；原版不宣稱未來影像生成。 r01實看修正：时间刻度及標籤各自定位。",
+      "takeaway": "骨幹、讀出頭與取樣設定是一組。",
+      "terms": [
+        "示意數值：作者給定局部算例，非模型實測或建議參數。",
+        "同位置：比較保持相同影像座標與時間身份，不能任意換工件。"
+      ]
+    },
+    {
+      "title": "V-JEPA與VideoMAE：監督目標不同",
+      "question": "同影片比較任務成果，不能比兩種損失值。",
+      "look": "先看同一夾取影片與同一標籤，再核對VideoMAE對像素平方差，最後看V-JEPA對目標特徵L1差。",
+      "relation": "兩者預訓練目標及尺度不同，L1=.15不能對MSE=1排名。固定資料、讀出方式、硬體與事件指標比較；沒有本輪共同實測。",
+      "takeaway": "同影片比較任務成果，不能比兩種損失值。",
+      "terms": [
+        "示意數值：作者給定局部算例，非模型實測或建議參數。",
+        "同位置：比較保持相同影像座標與時間身份，不能任意換工件。"
+      ]
+    }
+  ],
+  "comparison_headers": {
+    "title": "記住序列、補像素、預測特徵：學習方式不同",
+    "basis": "所需資料與方法差異",
+    "output": "輸出與維護責任"
+  },
+  "transfer_check": {
+    "title": "換成要預測未來影片的需求",
+    "scenario": "同事看到V-JEPA的預測二字，想直接輸出下一秒的影像給操作員。",
+    "question": "本課原版能直接接成這個功能嗎？",
+    "answer": "不能；這裡預測的是被遮區的特徵，不是像素影片。若要未來影像須另選生成／預測方案並驗證；若要判目前動作，則可用原版特徵搭配任務頭。"
+  },
+  "review_trace": {
+    "authority": "roadmap-model-selection/video-temporal/v-jepa/model.md",
+    "scope": "WI-033：工程層四圖與手機比較修正；首讀有效內容保留。原生圖已審，整頁與使用者審閱另記。",
+    "claims": [
+      {
+        "id": "visual-1",
+        "field": "beginner_path.visuals[conveyor-context-workpiece]",
+        "source": "模型定位 / architecture_path"
+      },
+      {
+        "id": "visual-2",
+        "field": "beginner_path.visuals[context-target-mask]",
+        "source": "architecture_path"
+      },
+      {
+        "id": "visual-3",
+        "field": "beginner_path.visuals[dual-encoder-latent]",
+        "source": "representation_or_score"
+      },
+      {
+        "id": "visual-4",
+        "field": "beginner_path.visuals[latent-not-pixel]",
+        "source": "failure_boundary"
+      },
+      {
+        "id": "visual-5",
+        "field": "beginner_path.visuals[downstream-event-gate]",
+        "source": "selection_gate / evidence_bundle"
+      },
+      {
+        "id": "promise",
+        "field": "promise",
+        "source": "模型定位 / representation_or_score"
+      },
+      {
+        "id": "mechanism",
+        "field": "mechanism_steps",
+        "source": "architecture_path / representation_or_score"
+      },
+      {
+        "id": "boundaries",
+        "field": "boundary_cases",
+        "source": "failure_boundary / selection_gate"
+      },
+      {
+        "id": "comparison",
+        "field": "comparison + selection",
+        "source": "selection_gate"
+      },
+      {
+        "id": "poc",
+        "field": "poc + acceptance",
+        "source": "cost_and_operating_point / evidence_bundle"
+      },
+      {
+        "id": "transfer",
+        "field": "transfer_check",
+        "source": "failure_boundary / selection_gate"
+      },
+      {
+        "id": "f02-core",
+        "field": "beginner_path.visuals[0] + scenario + mental_model",
+        "source": "roadmap-model-selection/video-temporal/v-jepa/model.md"
+      },
+      {
+        "id": "f02-transfer",
+        "field": "micro_example + transfer_check + selection",
+        "source": "roadmap-model-selection/video-temporal/v-jepa/model.md"
+      },
+      {
+        "id": "wi028-first-read",
+        "field": "beginner_path + core + selection + transfer",
+        "source": "https://arxiv.org/abs/2404.08471"
+      }
+    ]
+  },
+  "quality_status": {
+    "label": "首讀圖文已核對",
+    "state": "self-reviewed",
+    "round": "WI-028",
+    "reason": "新版首讀逐圖與整頁自評、桌機手機互動驗證完成；使用者核准pending。原工程圖未納入本輪分數。"
+  },
+  "teaching_preflight": {
+    "brief": "teaching-images/vision-ai-model-selection/workitems/wi-028/jepa-c1-r02.md",
+    "mobile_brief": "teaching-images/vision-ai-model-selection/workitems/wi-028/jepa-c1-r02.md",
+    "story": "C",
+    "major_visual_nodes": 3,
+    "visual_status": "self-reviewed",
+    "user_review": "pending"
+  },
+  "engineering_slides": [
+    {
+      "title": "V-JEPA：特徵預測之後再學任務",
+      "question": "自監督訊號不會自動變成事件標籤。",
+      "plain": {
+        "look": "先看未標註影片學特徵預測，再核對標註夾取影片教任務頭，最後看新片特徵交任務判斷。",
+        "relation": "原版2024 V-JEPA預測表徵而非像素；下游可固定骨幹學注意力探針，或另選微調策略須記清。目標編碼器和預測器不是部署任務頭。",
+        "takeaway": "自監督訊號不會自動變成事件標籤。"
+      },
+      "terms": [
+        "示意數值：作者給定局部算例，非模型實測或建議參數。",
+        "同位置：比較保持相同影像座標與時間身份，不能任意換工件。"
+      ],
+      "guide": [
+        "原版2024 V-JEPA預測表徵而非像素；下游可固定骨幹學注意力探針，或另選微調策略須記清。目標編碼器和預測器不是部署任務頭。",
+        "先看未標註影片學特徵預測，再核對標註夾取影片教任務頭，最後看新片特徵交任務判斷。"
+      ],
+      "stages": [
+        {
+          "title": "未標註影片學特徵預測",
+          "body": "未標註影片學特徵預測；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "標註夾取影片教任務頭",
+          "body": "標註夾取影片教任務頭；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "新片特徵交任務判斷",
+          "body": "新片特徵交任務判斷；請對照圖內輸入、變化與結果。"
+        }
+      ],
+      "misconception": "若輸入時間窗漏掉短暫滑落，預測特徵也可能保留不了工作需要的事件；預訓練可遷移性不能取代域內驗證。",
+      "alt": "V-JEPA：特徵預測之後再學任務。自監督訊號不會自動變成事件標籤。 教學示意，非模型實測。",
+      "mobile_image": "roadmap-model-selection/video-temporal/v-jepa/images/final/WI033-VJEPA-01-r01-mobile.png",
+      "mobile_width": 768,
+      "mobile_height": 2304,
+      "engineering": {
+        "takeaway": "自監督訊號不會自動變成事件標籤。",
+        "nextAction": "先定義工作要判斷的動作與時間範圍，準備完整作業影片、少量下游標註與獨立測試，再固定原版權重與取樣。",
+        "redLine": "先確認關鍵動作進入片段，再用標註資料比較任務頭與取樣設定；回原片判讀不確定情況。"
+      },
+      "source": "https://arxiv.org/html/2404.08471v1"
+    },
+    {
+      "title": "V-JEPA：預測同位置的目標特徵",
+      "question": "目標特徵提供訓練訊號，部署另學任務。",
+      "plain": {
+        "look": "先看可見區編碼並指定遮蔽位置，再核對完整影片產生停止梯度目標，最後看同遮蔽位置比較特徵差。",
+        "relation": "2024原版V-JEPA；上下文編碼器讀可見tokens，預測器加遮蔽位置資訊預測目標tokens。完整影片只進目標編碼器，目標stop-gradient，其權重由上下文EMA更新。L1比較同位置特徵。作者兩維算例預測[.2,.8]目標[.4,.7]平均絕對差.15，不是異常分數。 r01實看修正：目標格與EMA文字分離。",
+        "takeaway": "目標特徵提供訓練訊號，部署另學任務。"
+      },
+      "terms": [
+        "示意數值：作者給定局部算例，非模型實測或建議參數。",
+        "同位置：比較保持相同影像座標與時間身份，不能任意換工件。"
+      ],
+      "guide": [
+        "2024原版V-JEPA；上下文編碼器讀可見tokens，預測器加遮蔽位置資訊預測目標tokens。完整影片只進目標編碼器，目標stop-gradient，其權重由上下文EMA更新。L1比較同位置特徵。作者兩維算例預測[.2,.8]目標[.4,.7]平均絕對差.15，不是異常分數。 r01實看修正：目標格與EMA文字分離。",
+        "先看可見區編碼並指定遮蔽位置，再核對完整影片產生停止梯度目標，最後看同遮蔽位置比較特徵差。"
+      ],
+      "stages": [
+        {
+          "title": "可見區編碼並指定遮蔽位置",
+          "body": "可見區編碼並指定遮蔽位置；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "完整影片產生停止梯度目標",
+          "body": "完整影片產生停止梯度目標；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "同遮蔽位置比較特徵差",
+          "body": "同遮蔽位置比較特徵差；請對照圖內輸入、變化與結果。"
+        }
+      ],
+      "misconception": "若輸入時間窗漏掉短暫滑落，預測特徵也可能保留不了工作需要的事件；預訓練可遷移性不能取代域內驗證。",
+      "alt": "V-JEPA：預測同位置的目標特徵。目標特徵提供訓練訊號，部署另學任務。 教學示意，非模型實測。",
+      "mobile_image": "roadmap-model-selection/video-temporal/v-jepa/images/final/WI033-VJEPA-02-r02-mobile.png",
+      "mobile_width": 768,
+      "mobile_height": 2304,
+      "engineering": {
+        "takeaway": "目標特徵提供訓練訊號，部署另學任務。",
+        "nextAction": "先定義工作要判斷的動作與時間範圍，準備完整作業影片、少量下游標註與獨立測試，再固定原版權重與取樣。",
+        "redLine": "先確認關鍵動作進入片段，再用標註資料比較任務頭與取樣設定；回原片判讀不確定情況。"
+      },
+      "source": "https://arxiv.org/html/2404.08471v1"
+    },
+    {
+      "title": "V-JEPA：保存取樣與下游模式",
+      "question": "骨幹、讀出頭與取樣設定是一組。",
+      "plain": {
+        "look": "先看固定時空取樣，再核對固定骨幹或微調需寫明，最後看片長、事件和延遲一起驗。",
+        "relation": "保存2024骨幹checkpoint、影格取樣、裁切與下游讀出頭。EMA是預訓練目標權重更新，不是現場每片自動更新模型；原版不宣稱未來影像生成。 r01實看修正：时间刻度及標籤各自定位。",
+        "takeaway": "骨幹、讀出頭與取樣設定是一組。"
+      },
+      "terms": [
+        "示意數值：作者給定局部算例，非模型實測或建議參數。",
+        "同位置：比較保持相同影像座標與時間身份，不能任意換工件。"
+      ],
+      "guide": [
+        "保存2024骨幹checkpoint、影格取樣、裁切與下游讀出頭。EMA是預訓練目標權重更新，不是現場每片自動更新模型；原版不宣稱未來影像生成。 r01實看修正：时间刻度及標籤各自定位。",
+        "先看固定時空取樣，再核對固定骨幹或微調需寫明，最後看片長、事件和延遲一起驗。"
+      ],
+      "stages": [
+        {
+          "title": "固定時空取樣",
+          "body": "固定時空取樣；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "固定骨幹或微調需寫明",
+          "body": "固定骨幹或微調需寫明；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "片長、事件和延遲一起驗",
+          "body": "片長、事件和延遲一起驗；請對照圖內輸入、變化與結果。"
+        }
+      ],
+      "misconception": "若輸入時間窗漏掉短暫滑落，預測特徵也可能保留不了工作需要的事件；預訓練可遷移性不能取代域內驗證。",
+      "alt": "V-JEPA：保存取樣與下游模式。骨幹、讀出頭與取樣設定是一組。 教學示意，非模型實測。",
+      "mobile_image": "roadmap-model-selection/video-temporal/v-jepa/images/final/WI033-VJEPA-03-r02-mobile.png",
+      "mobile_width": 768,
+      "mobile_height": 2304,
+      "engineering": {
+        "takeaway": "骨幹、讀出頭與取樣設定是一組。",
+        "nextAction": "先定義工作要判斷的動作與時間範圍，準備完整作業影片、少量下游標註與獨立測試，再固定原版權重與取樣。",
+        "redLine": "先確認關鍵動作進入片段，再用標註資料比較任務頭與取樣設定；回原片判讀不確定情況。"
+      },
+      "source": "https://arxiv.org/html/2404.08471v1"
+    },
+    {
+      "title": "V-JEPA與VideoMAE：監督目標不同",
+      "question": "同影片比較任務成果，不能比兩種損失值。",
+      "plain": {
+        "look": "先看同一夾取影片與同一標籤，再核對VideoMAE對像素平方差，最後看V-JEPA對目標特徵L1差。",
+        "relation": "兩者預訓練目標及尺度不同，L1=.15不能對MSE=1排名。固定資料、讀出方式、硬體與事件指標比較；沒有本輪共同實測。",
+        "takeaway": "同影片比較任務成果，不能比兩種損失值。"
+      },
+      "terms": [
+        "示意數值：作者給定局部算例，非模型實測或建議參數。",
+        "同位置：比較保持相同影像座標與時間身份，不能任意換工件。"
+      ],
+      "guide": [
+        "兩者預訓練目標及尺度不同，L1=.15不能對MSE=1排名。固定資料、讀出方式、硬體與事件指標比較；沒有本輪共同實測。",
+        "先看同一夾取影片與同一標籤，再核對VideoMAE對像素平方差，最後看V-JEPA對目標特徵L1差。"
+      ],
+      "stages": [
+        {
+          "title": "同一夾取影片與同一標籤",
+          "body": "同一夾取影片與同一標籤；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "VideoMAE對像素平方差",
+          "body": "VideoMAE對像素平方差；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "V-JEPA對目標特徵L1差",
+          "body": "V-JEPA對目標特徵L1差；請對照圖內輸入、變化與結果。"
+        }
+      ],
+      "misconception": "若輸入時間窗漏掉短暫滑落，預測特徵也可能保留不了工作需要的事件；預訓練可遷移性不能取代域內驗證。",
+      "alt": "V-JEPA與VideoMAE：監督目標不同。同影片比較任務成果，不能比兩種損失值。 教學示意，非模型實測。",
+      "mobile_image": "roadmap-model-selection/video-temporal/v-jepa/images/final/WI033-VJEPA-04-r01-mobile.png",
+      "mobile_width": 768,
+      "mobile_height": 2304,
+      "engineering": {
+        "takeaway": "同影片比較任務成果，不能比兩種損失值。",
+        "nextAction": "先定義工作要判斷的動作與時間範圍，準備完整作業影片、少量下游標註與獨立測試，再固定原版權重與取樣。",
+        "redLine": "先確認關鍵動作進入片段，再用標註資料比較任務頭與取樣設定；回原片判讀不確定情況。"
+      },
+      "source": "https://arxiv.org/html/2404.08471v1"
+    }
+  ]
+}

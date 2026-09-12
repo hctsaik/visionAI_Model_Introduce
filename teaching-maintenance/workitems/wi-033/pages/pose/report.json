@@ -1,0 +1,502 @@
+[
+  {
+    "topic": "pose",
+    "route": "interactive-learning.html",
+    "width": 1440,
+    "errors": [],
+    "images": [
+      {
+        "src": "http://127.0.0.1:8000/_course_content/generated-concepts/pose/wi030-pose-c1-r03-desktop.png",
+        "nw": 1670,
+        "nh": 942,
+        "box": {
+          "x": 404.1875,
+          "y": 401.515625,
+          "width": 935.625,
+          "height": 526.5625,
+          "top": 401.515625,
+          "right": 1339.8125,
+          "bottom": 928.078125,
+          "left": 404.1875
+        },
+        "kind": "main-1"
+      },
+      {
+        "src": "http://127.0.0.1:8000/_course_content/generated-concepts/pose/wi030-pose-d2-r02-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 404.1875,
+          "y": 201.03125,
+          "width": 935.625,
+          "height": 526.5625,
+          "top": 201.03125,
+          "right": 1339.8125,
+          "bottom": 727.59375,
+          "left": 404.1875
+        },
+        "kind": "main-2"
+      },
+      {
+        "src": "http://127.0.0.1:8000/_course_content/generated-concepts/pose/wi030-pose-d3-r03-desktop.png",
+        "nw": 1670,
+        "nh": 941,
+        "box": {
+          "x": 404.1875,
+          "y": 201.34375,
+          "width": 935.625,
+          "height": 526.5625,
+          "top": 201.34375,
+          "right": 1339.8125,
+          "bottom": 727.90625,
+          "left": 404.1875
+        },
+        "kind": "main-3"
+      },
+      {
+        "src": "http://127.0.0.1:8000/roadmap-model-selection/known-target-classification/pose/images/final/WI033-POSE-01-r02-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 367.1875,
+          "y": 196.34375,
+          "width": 1009.625,
+          "height": 568.203125,
+          "top": 196.34375,
+          "right": 1376.8125,
+          "bottom": 764.546875,
+          "left": 367.1875
+        },
+        "kind": "engineering-1"
+      },
+      {
+        "src": "http://127.0.0.1:8000/roadmap-model-selection/known-target-classification/pose/images/final/WI033-POSE-02-r02-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 367.1875,
+          "y": 196.09375,
+          "width": 1009.625,
+          "height": 568.203125,
+          "top": 196.09375,
+          "right": 1376.8125,
+          "bottom": 764.296875,
+          "left": 367.1875
+        },
+        "kind": "engineering-2"
+      },
+      {
+        "src": "http://127.0.0.1:8000/roadmap-model-selection/known-target-classification/pose/images/final/WI033-POSE-03-r02-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 367.1875,
+          "y": 195.875,
+          "width": 1009.625,
+          "height": 568.203125,
+          "top": 195.875,
+          "right": 1376.8125,
+          "bottom": 764.078125,
+          "left": 367.1875
+        },
+        "kind": "engineering-3"
+      },
+      {
+        "src": "http://127.0.0.1:8000/roadmap-model-selection/known-target-classification/pose/images/final/WI033-POSE-04-r01-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 367.1875,
+          "y": 196.390625,
+          "width": 1009.625,
+          "height": 568.203125,
+          "top": 196.390625,
+          "right": 1376.8125,
+          "bottom": 764.59375,
+          "left": 367.1875
+        },
+        "kind": "engineering-4"
+      }
+    ],
+    "zoom_checks": 7,
+    "answer": true,
+    "overflow": false,
+    "navigation": true,
+    "complete": true
+  },
+  {
+    "topic": "pose",
+    "route": "interactive-learning.html",
+    "width": 360,
+    "errors": [],
+    "images": [
+      {
+        "src": "http://127.0.0.1:8000/_course_content/generated-concepts/pose/wi030-pose-c1-r04-mobile.png",
+        "nw": 836,
+        "nh": 1882,
+        "box": {
+          "x": 17,
+          "y": -12.1875,
+          "width": 326,
+          "height": 733.875,
+          "top": -12.1875,
+          "right": 343,
+          "bottom": 721.6875,
+          "left": 17
+        },
+        "kind": "main-1"
+      },
+      {
+        "src": "http://127.0.0.1:8000/_course_content/generated-concepts/pose/wi030-pose-d2-r02-mobile.png",
+        "nw": 836,
+        "nh": 1881,
+        "box": {
+          "x": 17,
+          "y": -11.875,
+          "width": 326,
+          "height": 733.5,
+          "top": -11.875,
+          "right": 343,
+          "bottom": 721.625,
+          "left": 17
+        },
+        "kind": "main-2"
+      },
+      {
+        "src": "http://127.0.0.1:8000/_course_content/generated-concepts/pose/wi030-pose-d3-r03-mobile.png",
+        "nw": 724,
+        "nh": 2172,
+        "box": {
+          "x": 17,
+          "y": -124.78125,
+          "width": 326,
+          "height": 978,
+          "top": -124.78125,
+          "right": 343,
+          "bottom": 853.21875,
+          "left": 17
+        },
+        "kind": "main-3"
+      },
+      {
+        "src": "http://127.0.0.1:8000/roadmap-model-selection/known-target-classification/pose/images/final/WI033-POSE-01-r02-mobile.png",
+        "nw": 768,
+        "nh": 2400,
+        "box": {
+          "x": 34,
+          "y": -87.84375,
+          "width": 292,
+          "height": 912.5,
+          "top": -87.84375,
+          "right": 326,
+          "bottom": 824.65625,
+          "left": 34
+        },
+        "kind": "engineering-1"
+      },
+      {
+        "src": "http://127.0.0.1:8000/roadmap-model-selection/known-target-classification/pose/images/final/WI033-POSE-02-r02-mobile.png",
+        "nw": 768,
+        "nh": 2400,
+        "box": {
+          "x": 34,
+          "y": -87.984375,
+          "width": 292,
+          "height": 912.5,
+          "top": -87.984375,
+          "right": 326,
+          "bottom": 824.515625,
+          "left": 34
+        },
+        "kind": "engineering-2"
+      },
+      {
+        "src": "http://127.0.0.1:8000/roadmap-model-selection/known-target-classification/pose/images/final/WI033-POSE-03-r02-mobile.png",
+        "nw": 768,
+        "nh": 2400,
+        "box": {
+          "x": 34,
+          "y": -87.640625,
+          "width": 292,
+          "height": 912.5,
+          "top": -87.640625,
+          "right": 326,
+          "bottom": 824.859375,
+          "left": 34
+        },
+        "kind": "engineering-3"
+      },
+      {
+        "src": "http://127.0.0.1:8000/roadmap-model-selection/known-target-classification/pose/images/final/WI033-POSE-04-r01-mobile.png",
+        "nw": 768,
+        "nh": 2400,
+        "box": {
+          "x": 34,
+          "y": -87.75,
+          "width": 292,
+          "height": 912.5,
+          "top": -87.75,
+          "right": 326,
+          "bottom": 824.75,
+          "left": 34
+        },
+        "kind": "engineering-4"
+      }
+    ],
+    "zoom_checks": 7,
+    "answer": true,
+    "overflow": false,
+    "navigation": true,
+    "complete": true
+  },
+  {
+    "topic": "pose",
+    "route": "docs/index.html",
+    "width": 1440,
+    "errors": [],
+    "images": [
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/pose/wi030-pose-c1-r03-desktop.png",
+        "nw": 1670,
+        "nh": 942,
+        "box": {
+          "x": 404.1875,
+          "y": 401.515625,
+          "width": 935.625,
+          "height": 526.5625,
+          "top": 401.515625,
+          "right": 1339.8125,
+          "bottom": 928.078125,
+          "left": 404.1875
+        },
+        "kind": "main-1"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/pose/wi030-pose-d2-r02-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 404.1875,
+          "y": 201.03125,
+          "width": 935.625,
+          "height": 526.5625,
+          "top": 201.03125,
+          "right": 1339.8125,
+          "bottom": 727.59375,
+          "left": 404.1875
+        },
+        "kind": "main-2"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/pose/wi030-pose-d3-r03-desktop.png",
+        "nw": 1670,
+        "nh": 941,
+        "box": {
+          "x": 404.1875,
+          "y": 201.34375,
+          "width": 935.625,
+          "height": 526.5625,
+          "top": 201.34375,
+          "right": 1339.8125,
+          "bottom": 727.90625,
+          "left": 404.1875
+        },
+        "kind": "main-3"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/known-target-classification/pose/images/final/WI033-POSE-01-r02-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 367.1875,
+          "y": 196.34375,
+          "width": 1009.625,
+          "height": 568.203125,
+          "top": 196.34375,
+          "right": 1376.8125,
+          "bottom": 764.546875,
+          "left": 367.1875
+        },
+        "kind": "engineering-1"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/known-target-classification/pose/images/final/WI033-POSE-02-r02-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 367.1875,
+          "y": 196.09375,
+          "width": 1009.625,
+          "height": 568.203125,
+          "top": 196.09375,
+          "right": 1376.8125,
+          "bottom": 764.296875,
+          "left": 367.1875
+        },
+        "kind": "engineering-2"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/known-target-classification/pose/images/final/WI033-POSE-03-r02-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 367.1875,
+          "y": 195.875,
+          "width": 1009.625,
+          "height": 568.203125,
+          "top": 195.875,
+          "right": 1376.8125,
+          "bottom": 764.078125,
+          "left": 367.1875
+        },
+        "kind": "engineering-3"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/known-target-classification/pose/images/final/WI033-POSE-04-r01-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 367.1875,
+          "y": 196.390625,
+          "width": 1009.625,
+          "height": 568.203125,
+          "top": 196.390625,
+          "right": 1376.8125,
+          "bottom": 764.59375,
+          "left": 367.1875
+        },
+        "kind": "engineering-4"
+      }
+    ],
+    "zoom_checks": 7,
+    "answer": true,
+    "overflow": false,
+    "navigation": true,
+    "complete": true
+  },
+  {
+    "topic": "pose",
+    "route": "docs/index.html",
+    "width": 360,
+    "errors": [],
+    "images": [
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/pose/wi030-pose-c1-r04-mobile.png",
+        "nw": 836,
+        "nh": 1882,
+        "box": {
+          "x": 17,
+          "y": -12.1875,
+          "width": 326,
+          "height": 733.875,
+          "top": -12.1875,
+          "right": 343,
+          "bottom": 721.6875,
+          "left": 17
+        },
+        "kind": "main-1"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/pose/wi030-pose-d2-r02-mobile.png",
+        "nw": 836,
+        "nh": 1881,
+        "box": {
+          "x": 17,
+          "y": -11.875,
+          "width": 326,
+          "height": 733.5,
+          "top": -11.875,
+          "right": 343,
+          "bottom": 721.625,
+          "left": 17
+        },
+        "kind": "main-2"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/pose/wi030-pose-d3-r03-mobile.png",
+        "nw": 724,
+        "nh": 2172,
+        "box": {
+          "x": 17,
+          "y": -124.78125,
+          "width": 326,
+          "height": 978,
+          "top": -124.78125,
+          "right": 343,
+          "bottom": 853.21875,
+          "left": 17
+        },
+        "kind": "main-3"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/known-target-classification/pose/images/final/WI033-POSE-01-r02-mobile.png",
+        "nw": 768,
+        "nh": 2400,
+        "box": {
+          "x": 34,
+          "y": -87.84375,
+          "width": 292,
+          "height": 912.5,
+          "top": -87.84375,
+          "right": 326,
+          "bottom": 824.65625,
+          "left": 34
+        },
+        "kind": "engineering-1"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/known-target-classification/pose/images/final/WI033-POSE-02-r02-mobile.png",
+        "nw": 768,
+        "nh": 2400,
+        "box": {
+          "x": 34,
+          "y": -87.984375,
+          "width": 292,
+          "height": 912.5,
+          "top": -87.984375,
+          "right": 326,
+          "bottom": 824.515625,
+          "left": 34
+        },
+        "kind": "engineering-2"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/known-target-classification/pose/images/final/WI033-POSE-03-r02-mobile.png",
+        "nw": 768,
+        "nh": 2400,
+        "box": {
+          "x": 34,
+          "y": -87.640625,
+          "width": 292,
+          "height": 912.5,
+          "top": -87.640625,
+          "right": 326,
+          "bottom": 824.859375,
+          "left": 34
+        },
+        "kind": "engineering-3"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/known-target-classification/pose/images/final/WI033-POSE-04-r01-mobile.png",
+        "nw": 768,
+        "nh": 2400,
+        "box": {
+          "x": 34,
+          "y": -87.75,
+          "width": 292,
+          "height": 912.5,
+          "top": -87.75,
+          "right": 326,
+          "bottom": 824.75,
+          "left": 34
+        },
+        "kind": "engineering-4"
+      }
+    ],
+    "zoom_checks": 7,
+    "answer": true,
+    "overflow": false,
+    "navigation": true,
+    "complete": true
+  }
+]

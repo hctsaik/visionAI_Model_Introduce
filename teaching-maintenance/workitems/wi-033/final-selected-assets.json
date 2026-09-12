@@ -1,0 +1,3232 @@
+{
+  "status": "passed",
+  "active_pngs": 460,
+  "engineering_pngs": 416,
+  "other_pngs": 44,
+  "min_score": 91,
+  "max_score": 93,
+  "assets": [
+    {
+      "path": "_course_content/generated-concepts/ad-anomalyclip/wi033-clip-shared-errors-r02-mobile.png",
+      "sha256": "2791ba61aeab81d3ddbe0c54b300ed9e2d0be18fff1f44e1ca6cbca358e6bb59",
+      "assessment": "batch6-main-image-assessment.json",
+      "total": 92,
+      "native_source": "clip-shared-errors-r02-mobile.png"
+    },
+    {
+      "path": "_course_content/generated-concepts/ad-anomalyclip/wi033-clip-shared-methods-r01-mobile.png",
+      "sha256": "67011025283115575d620346349c7a3bba9e1f54dd71fc3113a5cbd0c809bd80",
+      "assessment": "batch6-main-image-assessment.json",
+      "total": 92,
+      "native_source": "clip-shared-methods-r01-mobile.png"
+    },
+    {
+      "path": "_course_content/generated-concepts/ad-anomalydino/wi033-adino-deep-rotation-r02-desktop.png",
+      "sha256": "a0661a51544bc06ea106f2a2068ac4c16416b55468f70364810b222788278674",
+      "assessment": "batch2-image-assessment.json",
+      "total": 93,
+      "native_source": "adino-deep-rotation-r02-desktop.png"
+    },
+    {
+      "path": "_course_content/generated-concepts/ad-anomalydino/wi033-adino-deep-rotation-r02-mobile.png",
+      "sha256": "fdf55fc82a606c5629b6e9d0d06da86c85ba9ccdffe705275b72c27a8c1e266e",
+      "assessment": "batch2-image-assessment.json",
+      "total": 92,
+      "native_source": "adino-deep-rotation-r02-mobile.png"
+    },
+    {
+      "path": "_course_content/generated-concepts/ad-anomalygpt/wi033-comparison-r01-mobile.png",
+      "sha256": "c4529ecf5e57d953660b2ca59ed6b09dc12b0d52202467a88bcdc738604600f7",
+      "assessment": "gpt-mobile-image-assessment.json",
+      "total": 93,
+      "native_source": "anomalygpt-mobile-comparison-r01-mobile.png"
+    },
+    {
+      "path": "_course_content/generated-concepts/ad-anomalygpt/wi033-core-r01-mobile.png",
+      "sha256": "568505e1ca00e627f4261631879200feed9a8853b0f4da8f6381cc15eb68612e",
+      "assessment": "gpt-mobile-image-assessment.json",
+      "total": 93,
+      "native_source": "anomalygpt-mobile-core-r01-mobile.png"
+    },
+    {
+      "path": "_course_content/generated-concepts/ad-anomalygpt/wi033-failure-r01-mobile.png",
+      "sha256": "cff912c175d90c9086f7ab68803036bd95f319c1735f513c4b38baba92068201",
+      "assessment": "gpt-mobile-image-assessment.json",
+      "total": 93,
+      "native_source": "anomalygpt-mobile-failure-r01-mobile.png"
+    },
+    {
+      "path": "_course_content/generated-concepts/ad-efficientad/wi033-eff-deep-01-core-r02-mobile.png",
+      "sha256": "b48c9fa6dc44ab139f120de3acc447f650d3dd9d17592d1c6865137912bbdb70",
+      "assessment": "batch2-image-assessment.json",
+      "total": 92,
+      "native_source": "eff-deep-01-core-r02-mobile.png"
+    },
+    {
+      "path": "_course_content/generated-concepts/ad-efficientad/wi033-eff-deep-01-work-r02-mobile.png",
+      "sha256": "b448ae5b62de2822b75912c42292988e6ed4a29df23e6060ebf87c2498561fc3",
+      "assessment": "batch2-image-assessment.json",
+      "total": 92,
+      "native_source": "eff-deep-01-work-r02-mobile.png"
+    },
+    {
+      "path": "_course_content/generated-concepts/ad-efficientad/wi033-eff-deep-02-data-r01-mobile.png",
+      "sha256": "5003716f23ca652cda8280fc8fc078f6ce6dc2645537380cdbc2bc38a6825963",
+      "assessment": "batch2-image-assessment.json",
+      "total": 92,
+      "native_source": "eff-deep-02-data-r01-mobile.png"
+    },
+    {
+      "path": "_course_content/generated-concepts/ad-efficientad/wi033-eff-deep-03-meaning-r02-mobile.png",
+      "sha256": "319aa7992792b6580a431b9f20478971e37b6cb3f008a8e05a2ad4df8fe08d35",
+      "assessment": "batch2-image-assessment.json",
+      "total": 92,
+      "native_source": "eff-deep-03-meaning-r02-mobile.png"
+    },
+    {
+      "path": "_course_content/generated-concepts/ad-efficientad/wi033-eff-deep-04-output-r01-desktop.png",
+      "sha256": "e76ce9402bffd16583d21a96c9b32deb99405703e358c1c441d89acfce598422",
+      "assessment": "batch2-image-assessment.json",
+      "total": 93,
+      "native_source": "eff-deep-04-output-r01-desktop.png"
+    },
+    {
+      "path": "_course_content/generated-concepts/ad-efficientad/wi033-eff-deep-04-output-r01-mobile.png",
+      "sha256": "33215c0c84fd25cc460dc831fdb21073cd3107755a771a4e99e3f9cec846fc59",
+      "assessment": "batch2-image-assessment.json",
+      "total": 92,
+      "native_source": "eff-deep-04-output-r01-mobile.png"
+    },
+    {
+      "path": "_course_content/generated-concepts/ad-efficientad/wi033-eff-deep-05-limits-r01-mobile.png",
+      "sha256": "0a777396f839da9d5b4e37998aaaa2179ac99cbcbfead2f392945537d4a8115e",
+      "assessment": "batch2-image-assessment.json",
+      "total": 92,
+      "native_source": "eff-deep-05-limits-r01-mobile.png"
+    },
+    {
+      "path": "_course_content/generated-concepts/ad-efficientad/wi033-eff-deep-07-comparison-r01-desktop.png",
+      "sha256": "0053cc1219d9d554817c0a647e1db34d8e50f596dc8b6d5c919b85fce0431200",
+      "assessment": "batch2-image-assessment.json",
+      "total": 93,
+      "native_source": "eff-deep-07-comparison-r01-desktop.png"
+    },
+    {
+      "path": "_course_content/generated-concepts/ad-efficientad/wi033-eff-deep-07-comparison-r01-mobile.png",
+      "sha256": "28dbcd4a88a40d57728a5e5cafd47c0c9741b6c9896c2c79819cbbb75b8893a6",
+      "assessment": "batch2-image-assessment.json",
+      "total": 92,
+      "native_source": "eff-deep-07-comparison-r01-mobile.png"
+    },
+    {
+      "path": "_course_content/generated-concepts/ad-efficientad/wi033-eff-deep-08-transfer-r01-mobile.png",
+      "sha256": "1ec00094daf62ccb1a5707e1ae050047062121c8cbeb7c8aad0d8bec33c93890",
+      "assessment": "batch2-image-assessment.json",
+      "total": 92,
+      "native_source": "eff-deep-08-transfer-r01-mobile.png"
+    },
+    {
+      "path": "_course_content/generated-concepts/ad-efficientad/wi033-eff-main-failure-r01-desktop.png",
+      "sha256": "5c5b682f1550ac566aaee0a8f9e4135e054fb0d90c24fbc152083d084b49e3e6",
+      "assessment": "batch2-image-assessment.json",
+      "total": 93,
+      "native_source": "eff-main-failure-r01-desktop.png"
+    },
+    {
+      "path": "_course_content/generated-concepts/ad-efficientad/wi033-eff-main-failure-r01-mobile.png",
+      "sha256": "fbdba5dc1f373737f85ea88338638225ca86fb1c8725fddeb3c0a9555e47cbf4",
+      "assessment": "batch2-image-assessment.json",
+      "total": 92,
+      "native_source": "eff-main-failure-r01-mobile.png"
+    },
+    {
+      "path": "_course_content/generated-concepts/ad-patchcore/wi033-patchcore-deep-context-r01-mobile.png",
+      "sha256": "d8b19537d8fef828e218249a90a29f71b06a037370a175e8e04e2e6eee5f961d",
+      "assessment": "batch5-deep-image-assessment.json",
+      "total": 92,
+      "native_source": "patchcore-deep-context-r01-mobile.png"
+    },
+    {
+      "path": "_course_content/generated-concepts/ad-patchcore/wi033-patchcore-deep-features-r02-mobile.png",
+      "sha256": "bb5b86e2cd8e4d8289702214e1a799bd1a70f8e12d6a6caae028648c5fbf24d2",
+      "assessment": "batch5-deep-image-assessment.json",
+      "total": 92,
+      "native_source": "patchcore-deep-features-r02-mobile.png"
+    },
+    {
+      "path": "_course_content/generated-concepts/clip/wi033-alignment-comparison-r01-mobile.png",
+      "sha256": "2fe7922731c0ca0da90e882760c969327c444c7f49dadfabb9ecc9ad7d046484",
+      "assessment": "alignment-image-assessment.json",
+      "total": 92,
+      "native_source": "alignment-comparison-r01-mobile.png"
+    },
+    {
+      "path": "_course_content/generated-concepts/dinov2/wi033-dinov2-main-failure-r01-desktop.png",
+      "sha256": "821c46ca8d5a14bebc5add47b318df637fa556092e1ac096f6332b3f2b433bd3",
+      "assessment": "batch4-failure-image-assessment.json",
+      "total": 92,
+      "native_source": "dinov2-main-failure-r01-desktop.png"
+    },
+    {
+      "path": "_course_content/generated-concepts/dinov2/wi033-dinov2-main-failure-r01-mobile.png",
+      "sha256": "e54b05dca67ae9c7ad36ca8ddf318b2ea6f48e0cbbdcb331e71a85f90932c034",
+      "assessment": "batch4-failure-image-assessment.json",
+      "total": 92,
+      "native_source": "dinov2-main-failure-r01-mobile.png"
+    },
+    {
+      "path": "_course_content/generated-concepts/dinov3/wi033-failure-r03-desktop.png",
+      "sha256": "209985e5f6a1011a5394fec0a2ce42bfe77674af1307cf6207840c2d0acf66b9",
+      "assessment": "first-rest-image-assessment.json",
+      "total": 93,
+      "native_source": "dinov3-main-failure-r03-desktop.png"
+    },
+    {
+      "path": "_course_content/generated-concepts/dinov3/wi033-failure-r03-mobile.png",
+      "sha256": "35e8120b7421d1f11220f54a79c9d04dda83a619f226877cf37c5bb4314a0859",
+      "assessment": "first-rest-image-assessment.json",
+      "total": 92,
+      "native_source": "dinov3-main-failure-r03-mobile.png"
+    },
+    {
+      "path": "_course_content/generated-concepts/gemini-vision/wi033-gemini-vision-main-failure-r01-desktop.png",
+      "sha256": "0c14ef6ced3aeaff297250c36b0a13f7af3bdd7fc5c2390fbf0dccbab231c2d5",
+      "assessment": "batch4-failure-image-assessment.json",
+      "total": 92,
+      "native_source": "gemini-vision-main-failure-r01-desktop.png"
+    },
+    {
+      "path": "_course_content/generated-concepts/gemini-vision/wi033-gemini-vision-main-failure-r01-mobile.png",
+      "sha256": "a98496ea204dfeae6d20f924faa915fbeabbc16e06146ed59f7a4f58097e0266",
+      "assessment": "batch4-failure-image-assessment.json",
+      "total": 92,
+      "native_source": "gemini-vision-main-failure-r01-mobile.png"
+    },
+    {
+      "path": "_course_content/generated-concepts/lucas-kanade/wi033-flow-main-failure-r02-desktop.png",
+      "sha256": "f70b5f82d5d1c98575b14c52edf4d82f9b06bab7a81b303334a79dab96a641d0",
+      "assessment": "batch2-image-assessment.json",
+      "total": 93,
+      "native_source": "flow-main-failure-r02-desktop.png"
+    },
+    {
+      "path": "_course_content/generated-concepts/lucas-kanade/wi033-flow-main-failure-r02-mobile.png",
+      "sha256": "e30e8a012e29402398e70924f66628b7b7cd9895ed4cf424d840b9c6e43625ba",
+      "assessment": "batch2-image-assessment.json",
+      "total": 92,
+      "native_source": "flow-main-failure-r02-mobile.png"
+    },
+    {
+      "path": "_course_content/generated-concepts/resnet/wi033-resnet-deep-bn-r02-mobile.png",
+      "sha256": "f3365ecf479c552587cfa43f8bdd39dbb1c53fac3d587cedd2d754dec6485fbf",
+      "assessment": "batch3-deep-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "resnet-deep-bn-r02-mobile.png"
+    },
+    {
+      "path": "_course_content/generated-concepts/resnet/wi033-resnet-deep-cnx-channel-r02-mobile.png",
+      "sha256": "6a019f8f7da8cf63af0643ec806f659d4eecb3b4aa25643ae7157154d4c3ad4d",
+      "assessment": "batch3-deep-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "resnet-deep-cnx-channel-r02-mobile.png"
+    },
+    {
+      "path": "_course_content/generated-concepts/resnet/wi033-resnet-deep-cnx-spatial-r02-mobile.png",
+      "sha256": "54aaf84a80d7dcb1320755e3ae5e2302cff23c7151eb085109fb57ad353027e8",
+      "assessment": "batch3-deep-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "resnet-deep-cnx-spatial-r02-mobile.png"
+    },
+    {
+      "path": "_course_content/generated-concepts/resnet/wi033-resnet-deep-residual-r02-mobile.png",
+      "sha256": "943c85e53e45c6312fa12185c080c69188eacd9cb3046c3ca4c6049340cf56c8",
+      "assessment": "batch3-deep-prototype-image-assessment.json",
+      "total": 93,
+      "native_source": "resnet-deep-residual-r02-mobile.png"
+    },
+    {
+      "path": "_course_content/generated-concepts/resnet/wi033-resnet-deep-skip-r01-mobile.png",
+      "sha256": "0ab5dde01ed3eeff7ecebfde33450a1734ff6effd023463c6c8d5967a1f0538a",
+      "assessment": "batch3-deep-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "resnet-deep-skip-r01-mobile.png"
+    },
+    {
+      "path": "_course_content/generated-concepts/resnet/wi033-resnet-deep-vit-attention-r01-mobile.png",
+      "sha256": "187cc2cd35b19535ebbd12fc71875b7237c582f792e60ef1c38f3e98363b544f",
+      "assessment": "batch3-deep-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "resnet-deep-vit-attention-r01-mobile.png"
+    },
+    {
+      "path": "_course_content/generated-concepts/segformer/wi033-segformer-deep-core-r04-mobile.png",
+      "sha256": "ff3cea05567bab1b41d61dade5f0c4fdc76f429143a1092027ad772deb933d7a",
+      "assessment": "batch3-deep-prototype-image-assessment.json",
+      "total": 91,
+      "native_source": "segformer-deep-core-r04-mobile.png"
+    },
+    {
+      "path": "_course_content/generated-concepts/segformer/wi033-segformer-deep-decoder-r03-mobile.png",
+      "sha256": "fdb6b9b27e43ff1545741f5685c4a710a6320b8a03a2c5f7c410bb4b6eddf559",
+      "assessment": "batch3-deep-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "segformer-deep-decoder-r03-mobile.png"
+    },
+    {
+      "path": "_course_content/generated-concepts/segformer/wi033-segformer-deep-scales-r01-mobile.png",
+      "sha256": "ecaf0dba33d2fb7e7b923bd73057b01fb5534b6d55be955b0ba24d4b4f9e31a0",
+      "assessment": "batch3-deep-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "segformer-deep-scales-r01-mobile.png"
+    },
+    {
+      "path": "_course_content/generated-concepts/segformer/wi033-segformer-deep-sr-r02-mobile.png",
+      "sha256": "d0d2f0d596901b4b7b69462bd00ec1e2eec83b5730fb85cf01586d0335b07fdb",
+      "assessment": "batch3-deep-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "segformer-deep-sr-r02-mobile.png"
+    },
+    {
+      "path": "_course_content/generated-concepts/segformer/wi033-segformer-deep-task-r01-mobile.png",
+      "sha256": "b27e8d8eac637c10cece334433aa0cb93fa7ced510095aae6ba3f893babc6a84",
+      "assessment": "batch3-deep-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "segformer-deep-task-r01-mobile.png"
+    },
+    {
+      "path": "_course_content/generated-concepts/siglip/wi033-core-r02-mobile.png",
+      "sha256": "16600b8f33f4ba23b09c94bf38b7fa89f939bc04f5be781177b5e82cec0f12ed",
+      "assessment": "siglip-core-assessment.json",
+      "total": 92,
+      "native_source": "siglip-core-mobile-r02-mobile.png"
+    },
+    {
+      "path": "_course_content/generated-concepts/super-resolution/wi033-sr-same-board-counterexample-r02-desktop.png",
+      "sha256": "b1b48809833a2daab018f99a3950cc5668b59f4ae53ba4bb8bbda5cf5cdca157",
+      "assessment": "batch7-main-image-assessment.json",
+      "total": 92,
+      "native_source": "sr-same-board-counterexample-r02-desktop.png"
+    },
+    {
+      "path": "_course_content/generated-concepts/super-resolution/wi033-sr-same-board-counterexample-r02-mobile.png",
+      "sha256": "786b0aec250297c2b9050a3a778e9bf4e63ae3e47eda367a4f96a5ee52de7e88",
+      "assessment": "batch7-main-image-assessment.json",
+      "total": 92,
+      "native_source": "sr-same-board-counterexample-r02-mobile.png"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-ae/images/final/WI033-AE-01-r01-desktop.png",
+      "sha256": "77de19e8ab2a2a93d998d811e3f3049de39c7f6f4965c8d05a58695dbd6c4dc7",
+      "assessment": "batch5-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "ad-ae-engineering-1-r01-desktop.png"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-ae/images/final/WI033-AE-01-r01-mobile.png",
+      "sha256": "d74acfe0aac46536245540262f87b50e28d4ef8e757da7758a37e97366546809",
+      "assessment": "batch5-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "ad-ae-engineering-1-r01-mobile.png"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-ae/images/final/WI033-AE-02-r02-desktop.png",
+      "sha256": "800954af40f5299b8c6cb5f249cd18707c954bcc916d2ed7b56a9e7748d82dd0",
+      "assessment": "batch5-prototype-image-assessment.json",
+      "total": 92,
+      "native_source": "ad-ae-engineering-2-r02-desktop.png"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-ae/images/final/WI033-AE-02-r02-mobile.png",
+      "sha256": "e4b222b526a61928a7cd5eb21024e9fbdce3772020d1b7ef0c172f6f8592b9dc",
+      "assessment": "batch5-prototype-image-assessment.json",
+      "total": 92,
+      "native_source": "ad-ae-engineering-2-r02-mobile.png"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-ae/images/final/WI033-AE-03-r01-desktop.png",
+      "sha256": "943f89dbe6436697de5565d715082925037410fb771954fa1b87cec9f2adda66",
+      "assessment": "batch5-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "ad-ae-engineering-3-r01-desktop.png"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-ae/images/final/WI033-AE-03-r01-mobile.png",
+      "sha256": "baeb7d91577b0e0c0da19a638e204a5bd78bf087c22caf6ca10f696c54e777e7",
+      "assessment": "batch5-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "ad-ae-engineering-3-r01-mobile.png"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-ae/images/final/WI033-AE-04-r01-desktop.png",
+      "sha256": "5f64b9a09d9b1b5ce1dcb27672902d7870975fc24375b1e676dc5a07809617af",
+      "assessment": "batch5-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "ad-ae-engineering-4-r01-desktop.png"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-ae/images/final/WI033-AE-04-r01-mobile.png",
+      "sha256": "d8c106ddf802c11fa3da1f42c7031d79521d4572b5a057e535c2891dc235a81e",
+      "assessment": "batch5-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "ad-ae-engineering-4-r01-mobile.png"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-anomalyclip/images/final/WI033-ANOCLIP-01-r01-desktop.png",
+      "sha256": "effbaf9dae5f0f92bd4c6be3e0e5bd32213f7c0c514878ab8fac9265d5b8ee29",
+      "assessment": "batch6-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "ad-anomalyclip-engineering-1-r01-desktop.png"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-anomalyclip/images/final/WI033-ANOCLIP-01-r01-mobile.png",
+      "sha256": "f3b19c9c120405e0984a858f11b7126a5f03163b6a0aa04c2a097dc17add1593",
+      "assessment": "batch6-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "ad-anomalyclip-engineering-1-r01-mobile.png"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-anomalyclip/images/final/WI033-ANOCLIP-02-r02-desktop.png",
+      "sha256": "4865bea5b53670c305b922ffef3c03412a85754a3dbc1d68e615517f0fa7543f",
+      "assessment": "batch6-prototype-image-assessment.json",
+      "total": 92,
+      "native_source": "ad-anomalyclip-engineering-2-r02-desktop.png"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-anomalyclip/images/final/WI033-ANOCLIP-02-r02-mobile.png",
+      "sha256": "37986a83b64e81033107a986ca1fbdfaf9f5fe714d9d22c648eb7bdf9d3045d7",
+      "assessment": "batch6-prototype-image-assessment.json",
+      "total": 92,
+      "native_source": "ad-anomalyclip-engineering-2-r02-mobile.png"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-anomalyclip/images/final/WI033-ANOCLIP-03-r02-desktop.png",
+      "sha256": "6d468e0552737cab30b179e4f4a90aa3f7fdbbaaf00f980b6a5c44714cb697ee",
+      "assessment": "batch6-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "ad-anomalyclip-engineering-3-r02-desktop.png"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-anomalyclip/images/final/WI033-ANOCLIP-03-r02-mobile.png",
+      "sha256": "6ed95915ba04d7fc4dfc79fcc15824f2d1be6473ca94401d6bbfe19870565646",
+      "assessment": "batch6-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "ad-anomalyclip-engineering-3-r02-mobile.png"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-anomalyclip/images/final/WI033-ANOCLIP-04-r02-desktop.png",
+      "sha256": "d3e6e581563b4a6c992599e7f27f89649f5a4971beea108b4f18af47b29b1d85",
+      "assessment": "batch6-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "ad-anomalyclip-engineering-4-r02-desktop.png"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-anomalyclip/images/final/WI033-ANOCLIP-04-r02-mobile.png",
+      "sha256": "cd223de83a1f3bd1bff1f14ab33e66e11a040d96d1a10374cd6d4ab9cf202b52",
+      "assessment": "batch6-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "ad-anomalyclip-engineering-4-r02-mobile.png"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-anomalydino/images/final/WI033-ANOMALYDINO-01-r01-desktop.png",
+      "sha256": "62e93825276f27e79ba4847608c65b3f39f666a96c14c0e0cbb1c15fcc96d973",
+      "assessment": "batch2-image-assessment.json",
+      "total": 93,
+      "native_source": "ad-anomalydino-engineering-1-r01-desktop.png"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-anomalydino/images/final/WI033-ANOMALYDINO-01-r01-mobile.png",
+      "sha256": "2c1b122ea72c2e243ecefabb0343da1c85028c26311766dcdeb27b83e35a3dc9",
+      "assessment": "batch2-image-assessment.json",
+      "total": 92,
+      "native_source": "ad-anomalydino-engineering-1-r01-mobile.png"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-anomalydino/images/final/WI033-ANOMALYDINO-02-r02-desktop.png",
+      "sha256": "a39faeff5c6238a107d6b22cc323f390cb0163d6091c54360680ca1888c962e8",
+      "assessment": "batch2-image-assessment.json",
+      "total": 93,
+      "native_source": "ad-anomalydino-engineering-2-r02-desktop.png"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-anomalydino/images/final/WI033-ANOMALYDINO-02-r02-mobile.png",
+      "sha256": "aaf94d7201b8392aa1368a9c7857c91c0271900456490ead75583f3359e6ee28",
+      "assessment": "batch2-image-assessment.json",
+      "total": 92,
+      "native_source": "ad-anomalydino-engineering-2-r02-mobile.png"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-anomalydino/images/final/WI033-ANOMALYDINO-03-r01-desktop.png",
+      "sha256": "47a9615b932c97221e710e1c3f4565f269117367eec38a579e28431f68e6a349",
+      "assessment": "batch2-image-assessment.json",
+      "total": 93,
+      "native_source": "ad-anomalydino-engineering-3-r01-desktop.png"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-anomalydino/images/final/WI033-ANOMALYDINO-03-r01-mobile.png",
+      "sha256": "a1b2bccab07650d6d30c2cd8ab55a3c305eeb182821713105fb65007681c80a1",
+      "assessment": "batch2-image-assessment.json",
+      "total": 92,
+      "native_source": "ad-anomalydino-engineering-3-r01-mobile.png"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-anomalydino/images/final/WI033-ANOMALYDINO-04-r01-desktop.png",
+      "sha256": "dbc2883edd99f0784c3a03e0c8371a2f5c63f20305d6043ffee41cd8db8585a9",
+      "assessment": "batch2-image-assessment.json",
+      "total": 93,
+      "native_source": "ad-anomalydino-engineering-4-r01-desktop.png"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-anomalydino/images/final/WI033-ANOMALYDINO-04-r01-mobile.png",
+      "sha256": "26a3b245ff7f86e151a870b9902a028fc433ea05690aeac400413e0ed81fb051",
+      "assessment": "batch2-image-assessment.json",
+      "total": 92,
+      "native_source": "ad-anomalydino-engineering-4-r01-mobile.png"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-anomalygpt/images/final/WI033-ANOGPT-01-r01-desktop.png",
+      "sha256": "2502c66b296acb91dec1c00dad5675be49586768afc2fd806951431dd2efcf26",
+      "assessment": "first-rest-image-assessment.json",
+      "total": 92,
+      "native_source": "ad-anomalygpt-engineering-1-r01-desktop.png"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-anomalygpt/images/final/WI033-ANOGPT-01-r01-mobile.png",
+      "sha256": "22aa0da9d836d062478f8cf25015440da2acfc909f6d18d1c8e2c352adf122b8",
+      "assessment": "first-rest-image-assessment.json",
+      "total": 91,
+      "native_source": "ad-anomalygpt-engineering-1-r01-mobile.png"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-anomalygpt/images/final/WI033-ANOGPT-02-r02-desktop.png",
+      "sha256": "e1c00e16d779b6f750edc5cdbda4e8beecb2863e8d5576771ad4a070ca4cc77a",
+      "assessment": "first-rest-image-assessment.json",
+      "total": 93,
+      "native_source": "ad-anomalygpt-engineering-2-r02-desktop.png"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-anomalygpt/images/final/WI033-ANOGPT-02-r02-mobile.png",
+      "sha256": "c3a9f6014c08e725d0bf15eae112b46b2e43c30ff477533f9fdc689dc7db09b8",
+      "assessment": "first-rest-image-assessment.json",
+      "total": 92,
+      "native_source": "ad-anomalygpt-engineering-2-r02-mobile.png"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-anomalygpt/images/final/WI033-ANOGPT-03-r01-desktop.png",
+      "sha256": "cf0051fe28d269e3bd4401a2992bd609617c8d80a956b00ff92210d205aa47a3",
+      "assessment": "first-rest-image-assessment.json",
+      "total": 92,
+      "native_source": "ad-anomalygpt-engineering-3-r01-desktop.png"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-anomalygpt/images/final/WI033-ANOGPT-03-r01-mobile.png",
+      "sha256": "1475cff3f13052540ef8621bf859e55c243c11207b632ef58554e54297918f48",
+      "assessment": "first-rest-image-assessment.json",
+      "total": 91,
+      "native_source": "ad-anomalygpt-engineering-3-r01-mobile.png"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-anomalygpt/images/final/WI033-ANOGPT-04-r01-desktop.png",
+      "sha256": "74e657110106b0b6778f5907cebf6873308014eef552c84737039a78b22cbee7",
+      "assessment": "first-rest-image-assessment.json",
+      "total": 93,
+      "native_source": "ad-anomalygpt-engineering-4-r01-desktop.png"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-anomalygpt/images/final/WI033-ANOGPT-04-r01-mobile.png",
+      "sha256": "f529f3db0c2d1957cab4a528e1677b809376ec97fc0fbff722e92363a4fffdcc",
+      "assessment": "first-rest-image-assessment.json",
+      "total": 92,
+      "native_source": "ad-anomalygpt-engineering-4-r01-mobile.png"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-ddad/images/final/WI033-DDAD-01-r01-desktop.png",
+      "sha256": "5fd56047248e1a909114ac44a57f682f1f756009682cda8722c368c986abfc97",
+      "assessment": "batch6-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "ad-ddad-engineering-1-r01-desktop.png"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-ddad/images/final/WI033-DDAD-01-r01-mobile.png",
+      "sha256": "bb8c2cc78a4dda9d0a16b7ae67590619f1bcb8741a3d8d82e230098d4d7363cf",
+      "assessment": "batch6-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "ad-ddad-engineering-1-r01-mobile.png"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-ddad/images/final/WI033-DDAD-02-r02-desktop.png",
+      "sha256": "72f620058223d530af7aaf8475ec0d3c68fe4faa394d9f72c86244e3e1e93b94",
+      "assessment": "batch6-prototype-image-assessment.json",
+      "total": 92,
+      "native_source": "ad-ddad-engineering-2-r02-desktop.png"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-ddad/images/final/WI033-DDAD-02-r02-mobile.png",
+      "sha256": "ef68c107bd25dfd901082341d1c542d9c944ffabde89c2f5035aa50fd041877c",
+      "assessment": "batch6-prototype-image-assessment.json",
+      "total": 92,
+      "native_source": "ad-ddad-engineering-2-r02-mobile.png"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-ddad/images/final/WI033-DDAD-03-r01-desktop.png",
+      "sha256": "89149667e69b0263a9c8ab4835465d4999d1fae10c26d31638fe2e3a9d093287",
+      "assessment": "batch6-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "ad-ddad-engineering-3-r01-desktop.png"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-ddad/images/final/WI033-DDAD-03-r01-mobile.png",
+      "sha256": "3f358ae43be5bdfe5c52f50ba2ba92f550d4a846ae1266f7355bc8d10a306213",
+      "assessment": "batch6-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "ad-ddad-engineering-3-r01-mobile.png"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-ddad/images/final/WI033-DDAD-04-r02-desktop.png",
+      "sha256": "622ebf7472835c76aec885b0802c2db72b2bb673b6ac46fc616b51306db98721",
+      "assessment": "batch6-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "ad-ddad-engineering-4-r02-desktop.png"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-ddad/images/final/WI033-DDAD-04-r02-mobile.png",
+      "sha256": "5c899012415828aef6d43f4516413a2a4ac05cf7c343dd175dcb8daf0488c535",
+      "assessment": "batch6-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "ad-ddad-engineering-4-r02-mobile.png"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-diffad/images/final/WI033-DIFFAD-01-r02-desktop.png",
+      "sha256": "17d167872268453f2c1fffb69d19c9cba5b8bc18682344e7d8ba4607c552fc42",
+      "assessment": "first-rest-image-assessment.json",
+      "total": 93,
+      "native_source": "ad-diffad-engineering-1-r02-desktop.png"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-diffad/images/final/WI033-DIFFAD-01-r02-mobile.png",
+      "sha256": "62d085c66a86b9ee090993a0dd22d3a76e5fdffd79a7c23d510419659be6b031",
+      "assessment": "first-rest-image-assessment.json",
+      "total": 92,
+      "native_source": "ad-diffad-engineering-1-r02-mobile.png"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-diffad/images/final/WI033-DIFFAD-02-r02-desktop.png",
+      "sha256": "e6d45ef3b23329fa11057955877f6e3560e1d1442ea0c0f1a9db1ee4a600fc05",
+      "assessment": "first-rest-image-assessment.json",
+      "total": 93,
+      "native_source": "ad-diffad-engineering-2-r02-desktop.png"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-diffad/images/final/WI033-DIFFAD-02-r02-mobile.png",
+      "sha256": "f59850eec4b1ed4130bec7233c2fbbbd502e6c74207c11afc77ea27d1f7c9011",
+      "assessment": "first-rest-image-assessment.json",
+      "total": 92,
+      "native_source": "ad-diffad-engineering-2-r02-mobile.png"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-diffad/images/final/WI033-DIFFAD-03-r01-desktop.png",
+      "sha256": "9857d99f68ff48694cba1cd4b970999659e19e17626e0cc2c4160869230e8845",
+      "assessment": "first-rest-image-assessment.json",
+      "total": 92,
+      "native_source": "ad-diffad-engineering-3-r01-desktop.png"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-diffad/images/final/WI033-DIFFAD-03-r01-mobile.png",
+      "sha256": "fe42f73e18f4ffbc4536f262c7112fe130f1cb57de4e463761a6d7835fee2dd1",
+      "assessment": "first-rest-image-assessment.json",
+      "total": 91,
+      "native_source": "ad-diffad-engineering-3-r01-mobile.png"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-diffad/images/final/WI033-DIFFAD-04-r02-desktop.png",
+      "sha256": "bcc60257193a89bc1a5e6c36fe0b8d6dd0c208a20f2973e0364ee0fe42b7c63b",
+      "assessment": "first-rest-image-assessment.json",
+      "total": 93,
+      "native_source": "ad-diffad-engineering-4-r02-desktop.png"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-diffad/images/final/WI033-DIFFAD-04-r02-mobile.png",
+      "sha256": "be3289264fd683166e5696d3721f934b58bfd35a4398c94c1bacb2613fdc3c81",
+      "assessment": "first-rest-image-assessment.json",
+      "total": 92,
+      "native_source": "ad-diffad-engineering-4-r02-mobile.png"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-dinomaly/images/final/WI033-DINOMALY-01-r01-desktop.png",
+      "sha256": "63d7b4e833033e2a11c1ee566f33d9f1abb7a0c796de7a823ecff27e2cb0ba54",
+      "assessment": "batch6-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "ad-dinomaly-engineering-1-r01-desktop.png"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-dinomaly/images/final/WI033-DINOMALY-01-r01-mobile.png",
+      "sha256": "680ea9e6facf73b5f2946c41d2d77ad9c25384ce8b815ed9a536b8ac28636f46",
+      "assessment": "batch6-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "ad-dinomaly-engineering-1-r01-mobile.png"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-dinomaly/images/final/WI033-DINOMALY-02-r02-desktop.png",
+      "sha256": "6d8449ee5624450934e18026e2880ff3c5fdfda3d6c8fad270b5dc1d8e340f66",
+      "assessment": "batch6-prototype-image-assessment.json",
+      "total": 92,
+      "native_source": "ad-dinomaly-engineering-2-r02-desktop.png"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-dinomaly/images/final/WI033-DINOMALY-02-r02-mobile.png",
+      "sha256": "9236ca1256e8b76c7b45f7780c90a956b8c276d916fdb6d7ee5212ebdb23319a",
+      "assessment": "batch6-prototype-image-assessment.json",
+      "total": 92,
+      "native_source": "ad-dinomaly-engineering-2-r02-mobile.png"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-dinomaly/images/final/WI033-DINOMALY-03-r01-desktop.png",
+      "sha256": "713c12e6c3b80cdecb77c6450d3c34993767c56730adffac761a184106f93d39",
+      "assessment": "batch6-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "ad-dinomaly-engineering-3-r01-desktop.png"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-dinomaly/images/final/WI033-DINOMALY-03-r01-mobile.png",
+      "sha256": "a5d42edbda688fe1891e2667ab3f236ea236c8d17b1b5c3e859425f8c801f1d7",
+      "assessment": "batch6-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "ad-dinomaly-engineering-3-r01-mobile.png"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-dinomaly/images/final/WI033-DINOMALY-04-r01-desktop.png",
+      "sha256": "814accc8ccb9e99da2c8a75fa4f3a6eb46853a11366473d2a2b2c07e23e691ea",
+      "assessment": "batch6-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "ad-dinomaly-engineering-4-r01-desktop.png"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-dinomaly/images/final/WI033-DINOMALY-04-r01-mobile.png",
+      "sha256": "4d7831a28b6ddc2a4ce60bec5a9c03fbbb7a9a11a7ae56969d558acc447956e8",
+      "assessment": "batch6-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "ad-dinomaly-engineering-4-r01-mobile.png"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-draem/images/final/WI033-DRAEM-01-r01-desktop.png",
+      "sha256": "d2c59375c5ab99081959f4d4e0b0d23a65c9cbb949a2522ff5b69987a45fc5eb",
+      "assessment": "batch5-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "ad-draem-engineering-1-r01-desktop.png"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-draem/images/final/WI033-DRAEM-01-r01-mobile.png",
+      "sha256": "2cea3691e9f0cff696fcdeeee6705ed414799d2f9d923041a38a6cdc7c9b90f2",
+      "assessment": "batch5-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "ad-draem-engineering-1-r01-mobile.png"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-draem/images/final/WI033-DRAEM-02-r02-desktop.png",
+      "sha256": "3a8e2f2a45193044cc3e069cd4f0c9a24eeceac5527fac518b32af8b24814764",
+      "assessment": "batch5-prototype-image-assessment.json",
+      "total": 92,
+      "native_source": "ad-draem-engineering-2-r02-desktop.png"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-draem/images/final/WI033-DRAEM-02-r02-mobile.png",
+      "sha256": "c61ec8c0a72a976d79ce89cb239153458f22fff0f585204b47eb7ec62d142a13",
+      "assessment": "batch5-prototype-image-assessment.json",
+      "total": 92,
+      "native_source": "ad-draem-engineering-2-r02-mobile.png"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-draem/images/final/WI033-DRAEM-03-r01-desktop.png",
+      "sha256": "d05f4e1506b2aad280d5963c1665983937d8b44018bded0e6833630223242848",
+      "assessment": "batch5-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "ad-draem-engineering-3-r01-desktop.png"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-draem/images/final/WI033-DRAEM-03-r01-mobile.png",
+      "sha256": "24604d16835f693fb493c80d16a98fe12ebdc80e239a0f6fc6c3badce6edcde2",
+      "assessment": "batch5-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "ad-draem-engineering-3-r01-mobile.png"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-draem/images/final/WI033-DRAEM-04-r01-desktop.png",
+      "sha256": "ea8892538c69a0e2db09e80ea4a2ca6188d81736860766c61346c975734a6c58",
+      "assessment": "batch5-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "ad-draem-engineering-4-r01-desktop.png"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-draem/images/final/WI033-DRAEM-04-r01-mobile.png",
+      "sha256": "b5e2cafb2250b55ac6654036dad44db5d06bf7f6fd938f89ca7f23057f192692",
+      "assessment": "batch5-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "ad-draem-engineering-4-r01-mobile.png"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-efficientad/images/final/WI033-EFFICIENTAD-01-r02-desktop.png",
+      "sha256": "8106cb32a572a78d4e777bdc547032bbddbd574c69bdedbf0feea65bad9cee0d",
+      "assessment": "batch2-image-assessment.json",
+      "total": 93,
+      "native_source": "ad-efficientad-engineering-1-r02-desktop.png"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-efficientad/images/final/WI033-EFFICIENTAD-01-r02-mobile.png",
+      "sha256": "19e7941f992cd3191a0c27f86048c70b29e9974cafceb09a1df255932800e819",
+      "assessment": "batch2-image-assessment.json",
+      "total": 92,
+      "native_source": "ad-efficientad-engineering-1-r02-mobile.png"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-efficientad/images/final/WI033-EFFICIENTAD-02-r02-desktop.png",
+      "sha256": "530894dd73a5d1473155f3feed24b12f0a132f2ebf2d58a5d4343aa2bdc8ad6d",
+      "assessment": "batch2-image-assessment.json",
+      "total": 93,
+      "native_source": "ad-efficientad-engineering-2-r02-desktop.png"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-efficientad/images/final/WI033-EFFICIENTAD-02-r02-mobile.png",
+      "sha256": "d420c2f893fb1dabb33df6687a987a5eb2376a9738ee70f632120be6810d36e3",
+      "assessment": "batch2-image-assessment.json",
+      "total": 92,
+      "native_source": "ad-efficientad-engineering-2-r02-mobile.png"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-efficientad/images/final/WI033-EFFICIENTAD-03-r02-desktop.png",
+      "sha256": "2d314f18640a5d8da7c58fcd506744cdab9a4c07577df8b76dab26b0c83934e2",
+      "assessment": "batch2-image-assessment.json",
+      "total": 93,
+      "native_source": "ad-efficientad-engineering-3-r02-desktop.png"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-efficientad/images/final/WI033-EFFICIENTAD-03-r02-mobile.png",
+      "sha256": "13acc65f2258e072aec90709ff776453e138254f44a57bb890876977b2ef738e",
+      "assessment": "batch2-image-assessment.json",
+      "total": 92,
+      "native_source": "ad-efficientad-engineering-3-r02-mobile.png"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-efficientad/images/final/WI033-EFFICIENTAD-04-r01-desktop.png",
+      "sha256": "0f54b826306ea6fc7d4ee0a212b13a13583bfbf865a9129fe0dbc76925bfde4f",
+      "assessment": "batch2-image-assessment.json",
+      "total": 93,
+      "native_source": "ad-efficientad-engineering-4-r01-desktop.png"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-efficientad/images/final/WI033-EFFICIENTAD-04-r01-mobile.png",
+      "sha256": "8f44b8e862b3aa51a981240a93be214203af68a4a001e87e5962e38201bf1324",
+      "assessment": "batch2-image-assessment.json",
+      "total": 92,
+      "native_source": "ad-efficientad-engineering-4-r01-mobile.png"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-invad/images/final/WI033-INVAD-01-r01-desktop.png",
+      "sha256": "45879409fa4cdf5bd0b04cd998cd3f5baf4ab4c7b408f7737c67eb8c6956bf0b",
+      "assessment": "batch6-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "ad-invad-engineering-1-r01-desktop.png"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-invad/images/final/WI033-INVAD-01-r01-mobile.png",
+      "sha256": "e9e2a384623cddc2bf0dae7e4812307b0577fa7fd2be13cd9c956df645573709",
+      "assessment": "batch6-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "ad-invad-engineering-1-r01-mobile.png"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-invad/images/final/WI033-INVAD-02-r02-desktop.png",
+      "sha256": "fb2b8b8a79b3dd6954ff33a25a5049a721ce2ea7c3d51c1ea2488397a86e8f25",
+      "assessment": "batch6-prototype-image-assessment.json",
+      "total": 92,
+      "native_source": "ad-invad-engineering-2-r02-desktop.png"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-invad/images/final/WI033-INVAD-02-r02-mobile.png",
+      "sha256": "a0cdf1253e252613755e9065c5f0dc913205fba14c527189f91ba7115e232be2",
+      "assessment": "batch6-prototype-image-assessment.json",
+      "total": 92,
+      "native_source": "ad-invad-engineering-2-r02-mobile.png"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-invad/images/final/WI033-INVAD-03-r01-desktop.png",
+      "sha256": "fd7909c32c99ed60aadb1053a888a869bebddf7007c610d1ddb0f660524f76a4",
+      "assessment": "batch6-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "ad-invad-engineering-3-r01-desktop.png"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-invad/images/final/WI033-INVAD-03-r01-mobile.png",
+      "sha256": "397e48b1779f6780076640113fe8d1e2de4db6b259feeb6419b2158a5dbf00eb",
+      "assessment": "batch6-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "ad-invad-engineering-3-r01-mobile.png"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-invad/images/final/WI033-INVAD-04-r01-desktop.png",
+      "sha256": "8d7118c5604e746134099032a7768c0fdec593c7eecd333516b497c01cf815ab",
+      "assessment": "batch6-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "ad-invad-engineering-4-r01-desktop.png"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-invad/images/final/WI033-INVAD-04-r01-mobile.png",
+      "sha256": "d167cd041101b6552cab6908a313c70eeab37f4c0073708b25aad8f98ea15775",
+      "assessment": "batch6-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "ad-invad-engineering-4-r01-mobile.png"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-padim/images/final/WI033-PADIM-01-r01-desktop.png",
+      "sha256": "8d7f9deea2dddacb3301e86e99ba37293f906e84b3e5c14612d741f6c7730b3c",
+      "assessment": "batch5-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "ad-padim-engineering-1-r01-desktop.png"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-padim/images/final/WI033-PADIM-01-r01-mobile.png",
+      "sha256": "f7a4695f7627593e8676efde90ae063a0df269ce9b5c2feab408f28ab7000dc5",
+      "assessment": "batch5-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "ad-padim-engineering-1-r01-mobile.png"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-padim/images/final/WI033-PADIM-02-r02-desktop.png",
+      "sha256": "473bd6484c0bffe94ccec717807736bbc7df1f94a932880c8997b86b01eb7a0c",
+      "assessment": "batch5-prototype-image-assessment.json",
+      "total": 92,
+      "native_source": "ad-padim-engineering-2-r02-desktop.png"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-padim/images/final/WI033-PADIM-02-r02-mobile.png",
+      "sha256": "e647dd0a7da6431d595f17c2b6a609f21329a86c224b16c66933da50eaf46e7c",
+      "assessment": "batch5-prototype-image-assessment.json",
+      "total": 92,
+      "native_source": "ad-padim-engineering-2-r02-mobile.png"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-padim/images/final/WI033-PADIM-03-r01-desktop.png",
+      "sha256": "685edd836c13422dee9c84fdd9b336e332d21777ee4744c131c9601f59d52478",
+      "assessment": "batch5-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "ad-padim-engineering-3-r01-desktop.png"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-padim/images/final/WI033-PADIM-03-r01-mobile.png",
+      "sha256": "65d7828905d275d2e9e20e59f7af41687f97b443ce9a6efc5cf4b01af39e667b",
+      "assessment": "batch5-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "ad-padim-engineering-3-r01-mobile.png"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-padim/images/final/WI033-PADIM-04-r01-desktop.png",
+      "sha256": "27f1a112ea6a6ad0822e45ef1be4c0c2a735f864bf0c5f9ec15e0c4616df5927",
+      "assessment": "batch5-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "ad-padim-engineering-4-r01-desktop.png"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-padim/images/final/WI033-PADIM-04-r01-mobile.png",
+      "sha256": "5178d79e852409121a9cc120cd911094bfa58b61af68c19c5bd20f8a3cb4c8d5",
+      "assessment": "batch5-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "ad-padim-engineering-4-r01-mobile.png"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-patchcore/images/final/WI033-PATCHCORE-01-r01-desktop.png",
+      "sha256": "50f5b7f93371bd8df9c1e80129b0a1b93f650d89efef4befc4476a9c9aeeeb7b",
+      "assessment": "batch5-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "ad-patchcore-engineering-1-r01-desktop.png"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-patchcore/images/final/WI033-PATCHCORE-01-r01-mobile.png",
+      "sha256": "7e52f550398290df647fca61cc3e6192d90e0b3869efacb339be40cea8b59378",
+      "assessment": "batch5-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "ad-patchcore-engineering-1-r01-mobile.png"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-patchcore/images/final/WI033-PATCHCORE-02-r02-desktop.png",
+      "sha256": "220af8e6367ec2693f682dc248efded0a5c4a5203adc32e12a27dd01e9fa3eab",
+      "assessment": "batch5-prototype-image-assessment.json",
+      "total": 92,
+      "native_source": "ad-patchcore-engineering-2-r02-desktop.png"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-patchcore/images/final/WI033-PATCHCORE-02-r02-mobile.png",
+      "sha256": "ef60ca9baade0c7a6b7ff6fe3e2363274af465898d33b9a84cfc3c3ba4717e7d",
+      "assessment": "batch5-prototype-image-assessment.json",
+      "total": 92,
+      "native_source": "ad-patchcore-engineering-2-r02-mobile.png"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-patchcore/images/final/WI033-PATCHCORE-03-r01-desktop.png",
+      "sha256": "0a0ba4d0e23b74efb5d13697101a2d01d3aaa8075c1842588e51215430d9cda0",
+      "assessment": "batch5-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "ad-patchcore-engineering-3-r01-desktop.png"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-patchcore/images/final/WI033-PATCHCORE-03-r01-mobile.png",
+      "sha256": "febb66dfc795822425344e9e1b5acd53805a3f915183bd15a7c49295e66465bf",
+      "assessment": "batch5-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "ad-patchcore-engineering-3-r01-mobile.png"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-patchcore/images/final/WI033-PATCHCORE-04-r01-desktop.png",
+      "sha256": "9d13f2bf6691d37a00d519ae34aaefb17e0e668c29a75f9a9458698620fb0fe2",
+      "assessment": "batch5-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "ad-patchcore-engineering-4-r01-desktop.png"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-patchcore/images/final/WI033-PATCHCORE-04-r01-mobile.png",
+      "sha256": "38dbed2560f42c885729aa2165a1fcc873e2d863fcc3893b5cbc1f35c09ac8fe",
+      "assessment": "batch5-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "ad-patchcore-engineering-4-r01-mobile.png"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-rd4ad/images/final/WI033-RD4AD-01-r02-desktop.png",
+      "sha256": "b6965ac37b157e12ab6b864cfb2594f21db579137364aa748789991a499e1de0",
+      "assessment": "batch5-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "ad-rd4ad-engineering-1-r02-desktop.png"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-rd4ad/images/final/WI033-RD4AD-01-r02-mobile.png",
+      "sha256": "cd4c2027005449d6795bf7190f504255fcd90a6d41bfd8bb7ea7c7686ec742b5",
+      "assessment": "batch5-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "ad-rd4ad-engineering-1-r02-mobile.png"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-rd4ad/images/final/WI033-RD4AD-02-r02-desktop.png",
+      "sha256": "b8cc7d3b1f8c8caea675757588913b9c877610a66ca4df31d8061b7ac0093b73",
+      "assessment": "batch5-prototype-image-assessment.json",
+      "total": 92,
+      "native_source": "ad-rd4ad-engineering-2-r02-desktop.png"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-rd4ad/images/final/WI033-RD4AD-02-r02-mobile.png",
+      "sha256": "cebf1cfe39a923d68bbc2891647acf9fc78e807293849df7906f200bae2734d2",
+      "assessment": "batch5-prototype-image-assessment.json",
+      "total": 92,
+      "native_source": "ad-rd4ad-engineering-2-r02-mobile.png"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-rd4ad/images/final/WI033-RD4AD-03-r01-desktop.png",
+      "sha256": "63364ef7d78262ad7dabc79884ad86f58971b1ae6bc446da42ba2c86794f66f5",
+      "assessment": "batch5-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "ad-rd4ad-engineering-3-r01-desktop.png"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-rd4ad/images/final/WI033-RD4AD-03-r01-mobile.png",
+      "sha256": "42f69ec3f4ab4134c54701ff7a709368a44b0780de06f62d53c90efaa5bfd9b6",
+      "assessment": "batch5-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "ad-rd4ad-engineering-3-r01-mobile.png"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-rd4ad/images/final/WI033-RD4AD-04-r01-desktop.png",
+      "sha256": "d58364a8f6ee7df7108582aa1744b3408a35047147b51d6dc5a7ccf1a94fbce1",
+      "assessment": "batch5-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "ad-rd4ad-engineering-4-r01-desktop.png"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-rd4ad/images/final/WI033-RD4AD-04-r01-mobile.png",
+      "sha256": "4deb8862179e14d370a419a362d517fbfab29e3ca9b2b5d16fd1e8834861411a",
+      "assessment": "batch5-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "ad-rd4ad-engineering-4-r01-mobile.png"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-stfpm/images/final/WI033-STFPM-01-r01-desktop.png",
+      "sha256": "e8b160a0c089dce8d87df6acc3c246a3fd0fff235d75044c651a6edd1f5ee004",
+      "assessment": "batch5-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "ad-stfpm-engineering-1-r01-desktop.png"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-stfpm/images/final/WI033-STFPM-01-r01-mobile.png",
+      "sha256": "a19a688ff0cad4c6851a63dd07746d1c41f276be8976bb60c126a282a27304ac",
+      "assessment": "batch5-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "ad-stfpm-engineering-1-r01-mobile.png"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-stfpm/images/final/WI033-STFPM-02-r02-desktop.png",
+      "sha256": "5cb5618e2b12e5d6c61e7db7ae763bcecfbb1f7393e65076b986d7e53c172e7c",
+      "assessment": "batch5-prototype-image-assessment.json",
+      "total": 92,
+      "native_source": "ad-stfpm-engineering-2-r02-desktop.png"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-stfpm/images/final/WI033-STFPM-02-r02-mobile.png",
+      "sha256": "72831e8a723caf14bfbd5556051bc43423432999ccadd49fc4f0b9e47b98570b",
+      "assessment": "batch5-prototype-image-assessment.json",
+      "total": 92,
+      "native_source": "ad-stfpm-engineering-2-r02-mobile.png"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-stfpm/images/final/WI033-STFPM-03-r01-desktop.png",
+      "sha256": "587efa79bbf6059e3215b98c8fa2486a75e537bfff9ab5a5d4225c944c7d4a58",
+      "assessment": "batch5-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "ad-stfpm-engineering-3-r01-desktop.png"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-stfpm/images/final/WI033-STFPM-03-r01-mobile.png",
+      "sha256": "5b1e1d1611be1b9235c18abac448fdd960989c7c759380d821ec5ffdfb0acb70",
+      "assessment": "batch5-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "ad-stfpm-engineering-3-r01-mobile.png"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-stfpm/images/final/WI033-STFPM-04-r01-desktop.png",
+      "sha256": "265872ef00d81491ef8dcfc79478ff38384051b9e118f519891a5badc9c32aee",
+      "assessment": "batch5-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "ad-stfpm-engineering-4-r01-desktop.png"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-stfpm/images/final/WI033-STFPM-04-r01-mobile.png",
+      "sha256": "277ed68217eaeaebbaa0132cadec437c3dce76616b78fb0ef47664ece920d3d1",
+      "assessment": "batch5-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "ad-stfpm-engineering-4-r01-mobile.png"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-subspacead/images/final/WI033-SUBSPACEAD-01-r01-desktop.png",
+      "sha256": "4316e9f4bf6ef36da7224db16d42674b565c336ffba40745f284fccd8b35a3f3",
+      "assessment": "batch5-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "ad-subspacead-engineering-1-r01-desktop.png"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-subspacead/images/final/WI033-SUBSPACEAD-01-r01-mobile.png",
+      "sha256": "589999164bf32376d71534081f17e4561ec23aab65d29cd277cb56129c0db95a",
+      "assessment": "batch5-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "ad-subspacead-engineering-1-r01-mobile.png"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-subspacead/images/final/WI033-SUBSPACEAD-02-r02-desktop.png",
+      "sha256": "e717d2c159901d7455935e8c504d48769e80a745e483e9157f1ff1f705007473",
+      "assessment": "batch5-prototype-image-assessment.json",
+      "total": 92,
+      "native_source": "ad-subspacead-engineering-2-r02-desktop.png"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-subspacead/images/final/WI033-SUBSPACEAD-02-r02-mobile.png",
+      "sha256": "6454fd52bf500ab977a67bdbb63e4f898e01aa7eda196c02577f844464dbd25d",
+      "assessment": "batch5-prototype-image-assessment.json",
+      "total": 92,
+      "native_source": "ad-subspacead-engineering-2-r02-mobile.png"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-subspacead/images/final/WI033-SUBSPACEAD-03-r01-desktop.png",
+      "sha256": "51686b49521a03df4ab44b1c9933f28a36b18fe73070f8366102a8b5a07927b6",
+      "assessment": "batch5-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "ad-subspacead-engineering-3-r01-desktop.png"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-subspacead/images/final/WI033-SUBSPACEAD-03-r01-mobile.png",
+      "sha256": "32e78471f2b67014707fffd74a704b1e3e490691117834a655e2936e6f5e9f50",
+      "assessment": "batch5-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "ad-subspacead-engineering-3-r01-mobile.png"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-subspacead/images/final/WI033-SUBSPACEAD-04-r01-desktop.png",
+      "sha256": "e44c632edf58b3d677de8e1cc7a8b6599866ff7e662e768e805f775873d59600",
+      "assessment": "batch5-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "ad-subspacead-engineering-4-r01-desktop.png"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-subspacead/images/final/WI033-SUBSPACEAD-04-r01-mobile.png",
+      "sha256": "0b7bb0badb092814613b8a5038732f18df39106e76b5b50331f7b820dd16ff69",
+      "assessment": "batch5-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "ad-subspacead-engineering-4-r01-mobile.png"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-uniad/images/final/WI033-UNIAD-01-r01-desktop.png",
+      "sha256": "ccb59029f90be84628137331f1bf4b63dc72e4a131fdbbadd74b9a443a94734d",
+      "assessment": "batch5-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "ad-uniad-engineering-1-r01-desktop.png"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-uniad/images/final/WI033-UNIAD-01-r01-mobile.png",
+      "sha256": "3a006f1b19d11811d7f372098bca77e7f028bf6f1466fd373de3d3c86eebc409",
+      "assessment": "batch5-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "ad-uniad-engineering-1-r01-mobile.png"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-uniad/images/final/WI033-UNIAD-02-r02-desktop.png",
+      "sha256": "19cd171e9484409a57c45ec4ad09a24cbc04079feeffb249cd3ab15c1367453c",
+      "assessment": "batch5-prototype-image-assessment.json",
+      "total": 92,
+      "native_source": "ad-uniad-engineering-2-r02-desktop.png"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-uniad/images/final/WI033-UNIAD-02-r02-mobile.png",
+      "sha256": "f60d751e22c6dd0adcfba130c249ca1c43bdc5c0ee78da51c8ce4aa31ccbb803",
+      "assessment": "batch5-prototype-image-assessment.json",
+      "total": 92,
+      "native_source": "ad-uniad-engineering-2-r02-mobile.png"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-uniad/images/final/WI033-UNIAD-03-r01-desktop.png",
+      "sha256": "39079d963d42b08e7267a903e4e4d1ab7f8abbe14e113aa0944947860514ecf3",
+      "assessment": "batch5-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "ad-uniad-engineering-3-r01-desktop.png"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-uniad/images/final/WI033-UNIAD-03-r01-mobile.png",
+      "sha256": "78bdba7a6266c50cae134321ae29c038ef4f66c1e98f57080c0438a11781573a",
+      "assessment": "batch5-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "ad-uniad-engineering-3-r01-mobile.png"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-uniad/images/final/WI033-UNIAD-04-r01-desktop.png",
+      "sha256": "b16015c3c4e189aef4b51711ba68c67c362c83f7b17b14df68f9bd5a1d0310a4",
+      "assessment": "batch5-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "ad-uniad-engineering-4-r01-desktop.png"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-uniad/images/final/WI033-UNIAD-04-r01-mobile.png",
+      "sha256": "f60404624818ba4f9d1073627f0451e0359e89d0e9149ea0b15dfd27e626728a",
+      "assessment": "batch5-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "ad-uniad-engineering-4-r01-mobile.png"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-winclip/images/final/WI033-WINCLIP-01-r02-desktop.png",
+      "sha256": "a8c6d8a4f5ee6b46d48b7c7622ebb0c97907867f8aa55521d77e0d447e9cbf76",
+      "assessment": "batch6-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "ad-winclip-engineering-1-r02-desktop.png"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-winclip/images/final/WI033-WINCLIP-01-r02-mobile.png",
+      "sha256": "2c9a6b7ae2fab77a8c4f006a9cb9b4fc0feabc17c2fd15276d19de956d9563da",
+      "assessment": "batch6-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "ad-winclip-engineering-1-r02-mobile.png"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-winclip/images/final/WI033-WINCLIP-02-r02-desktop.png",
+      "sha256": "9928459ce8250fafd268e609b73926e931061259b95eb62dc6c55e4b7b87469d",
+      "assessment": "batch6-prototype-image-assessment.json",
+      "total": 92,
+      "native_source": "ad-winclip-engineering-2-r02-desktop.png"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-winclip/images/final/WI033-WINCLIP-02-r02-mobile.png",
+      "sha256": "acbefdb9c50157d3cc3794bb5b0d401a4ce816a4877ae793de9237c51317b509",
+      "assessment": "batch6-prototype-image-assessment.json",
+      "total": 92,
+      "native_source": "ad-winclip-engineering-2-r02-mobile.png"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-winclip/images/final/WI033-WINCLIP-03-r02-desktop.png",
+      "sha256": "be5b0eb45117c91470a77cd36bf3bcd0905edff43029a4b234746128381ce5e1",
+      "assessment": "batch6-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "ad-winclip-engineering-3-r02-desktop.png"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-winclip/images/final/WI033-WINCLIP-03-r02-mobile.png",
+      "sha256": "cb07bbc544f87088281c737b3963368eff788dd12f3f13273307e2a66ea0fbd7",
+      "assessment": "batch6-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "ad-winclip-engineering-3-r02-mobile.png"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-winclip/images/final/WI033-WINCLIP-04-r02-desktop.png",
+      "sha256": "4b40571acf308805a7c5f18621e71c98fe9e75a7719fe873c79d567ee35c861d",
+      "assessment": "batch6-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "ad-winclip-engineering-4-r02-desktop.png"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-winclip/images/final/WI033-WINCLIP-04-r02-mobile.png",
+      "sha256": "eab43f3c4477457b5aa79485740586555b5b21f6290187432a88d1cef9c01151",
+      "assessment": "batch6-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "ad-winclip-engineering-4-r02-mobile.png"
+    },
+    {
+      "path": "roadmap-model-selection/detector/det-grounding-dino-interface/images/final/WI033-GROUNDING-DINO-01-r02-desktop.png",
+      "sha256": "236b2d16592bb04c6c33ebfb5dd6784beda48c8300c812b9b95d5766cd6dcf02",
+      "assessment": "batch4-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "det-grounding-dino-interface-engineering-1-r02-desktop.png"
+    },
+    {
+      "path": "roadmap-model-selection/detector/det-grounding-dino-interface/images/final/WI033-GROUNDING-DINO-01-r02-mobile.png",
+      "sha256": "cc436289c8b86f423ecb5b33529d1a4ec054e44f503ba32eb71a54eec1e54c68",
+      "assessment": "batch4-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "det-grounding-dino-interface-engineering-1-r02-mobile.png"
+    },
+    {
+      "path": "roadmap-model-selection/detector/det-grounding-dino-interface/images/final/WI033-GROUNDING-DINO-02-r02-desktop.png",
+      "sha256": "6f3fcf01696d21835411fc713cc62fe369b760891429e61e7b8ef616037c23aa",
+      "assessment": "batch4-prototype-image-assessment.json",
+      "total": 92,
+      "native_source": "det-grounding-dino-interface-engineering-2-r02-desktop.png"
+    },
+    {
+      "path": "roadmap-model-selection/detector/det-grounding-dino-interface/images/final/WI033-GROUNDING-DINO-02-r02-mobile.png",
+      "sha256": "9428c183138a78e2d67bc7f9882c54ab9c62ddffcb645062b3b1a3ead02ff5a2",
+      "assessment": "batch4-prototype-image-assessment.json",
+      "total": 92,
+      "native_source": "det-grounding-dino-interface-engineering-2-r02-mobile.png"
+    },
+    {
+      "path": "roadmap-model-selection/detector/det-grounding-dino-interface/images/final/WI033-GROUNDING-DINO-03-r02-desktop.png",
+      "sha256": "897981dfdafcf8118f3a2d59ae211db1dd618da853ed424ed41058e917ac5d5d",
+      "assessment": "batch4-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "det-grounding-dino-interface-engineering-3-r02-desktop.png"
+    },
+    {
+      "path": "roadmap-model-selection/detector/det-grounding-dino-interface/images/final/WI033-GROUNDING-DINO-03-r02-mobile.png",
+      "sha256": "e73a25bad3e0443c6e2a5f7e549c4ae7472d784fdfc4cd0f976893701f1a5a83",
+      "assessment": "batch4-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "det-grounding-dino-interface-engineering-3-r02-mobile.png"
+    },
+    {
+      "path": "roadmap-model-selection/detector/det-grounding-dino-interface/images/final/WI033-GROUNDING-DINO-04-r01-desktop.png",
+      "sha256": "40494da96ad89722b2e2d1ec05cf48262579d0a7650712e05c08744f52105c2c",
+      "assessment": "batch4-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "det-grounding-dino-interface-engineering-4-r01-desktop.png"
+    },
+    {
+      "path": "roadmap-model-selection/detector/det-grounding-dino-interface/images/final/WI033-GROUNDING-DINO-04-r01-mobile.png",
+      "sha256": "b0d4fc7b2825be0199ce7c8da6af75320dd1c24a62b0603cca4a6e7ac10fd669",
+      "assessment": "batch4-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "det-grounding-dino-interface-engineering-4-r01-mobile.png"
+    },
+    {
+      "path": "roadmap-model-selection/detector/det-rtdetr/images/final/WI033-RTDETR-01-r01-desktop.png",
+      "sha256": "114e38590190a9384c624400d57c314a088393553fcdf28bf72819a516c68667",
+      "assessment": "batch4-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "det-rtdetr-engineering-1-r01-desktop.png"
+    },
+    {
+      "path": "roadmap-model-selection/detector/det-rtdetr/images/final/WI033-RTDETR-01-r01-mobile.png",
+      "sha256": "00f1af11bb852fd57a8d2cd1d43f408c1c237201452aa01d8dad96abef2beee3",
+      "assessment": "batch4-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "det-rtdetr-engineering-1-r01-mobile.png"
+    },
+    {
+      "path": "roadmap-model-selection/detector/det-rtdetr/images/final/WI033-RTDETR-02-r02-desktop.png",
+      "sha256": "819a561fed50fd5e50738da58f29e49c9c0421c00ee513b48f803b3da9d214c0",
+      "assessment": "batch4-prototype-image-assessment.json",
+      "total": 92,
+      "native_source": "det-rtdetr-engineering-2-r02-desktop.png"
+    },
+    {
+      "path": "roadmap-model-selection/detector/det-rtdetr/images/final/WI033-RTDETR-02-r02-mobile.png",
+      "sha256": "6e2c161d6fb3c3b0978ba32f2b2ecb21e1810d327d64dd2c5c7a7dfaabec7daf",
+      "assessment": "batch4-prototype-image-assessment.json",
+      "total": 92,
+      "native_source": "det-rtdetr-engineering-2-r02-mobile.png"
+    },
+    {
+      "path": "roadmap-model-selection/detector/det-rtdetr/images/final/WI033-RTDETR-03-r02-desktop.png",
+      "sha256": "d967d8ef570c269271a0cded828ecf49ecac3a59fbcbcd9d039eb649aa3f0b6b",
+      "assessment": "batch4-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "det-rtdetr-engineering-3-r02-desktop.png"
+    },
+    {
+      "path": "roadmap-model-selection/detector/det-rtdetr/images/final/WI033-RTDETR-03-r02-mobile.png",
+      "sha256": "2bb94479dd434b5b8fa23ee24c2724d40c5e94c7f5667ab2e909f0286ef13d83",
+      "assessment": "batch4-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "det-rtdetr-engineering-3-r02-mobile.png"
+    },
+    {
+      "path": "roadmap-model-selection/detector/det-rtdetr/images/final/WI033-RTDETR-04-r01-desktop.png",
+      "sha256": "e37fec1773c45452ee350437f5f79f081824b9c27584081853fe93a826affebb",
+      "assessment": "batch4-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "det-rtdetr-engineering-4-r01-desktop.png"
+    },
+    {
+      "path": "roadmap-model-selection/detector/det-rtdetr/images/final/WI033-RTDETR-04-r01-mobile.png",
+      "sha256": "2a133ba5582136b37e4519e0a5b07007057826d83441371ec57bffaf3f7b3cc5",
+      "assessment": "batch4-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "det-rtdetr-engineering-4-r01-mobile.png"
+    },
+    {
+      "path": "roadmap-model-selection/detector/det-yolo-dense/images/final/WI033-YOLO-01-r01-desktop.png",
+      "sha256": "9b584fb9bb515911272f39bdc833fc30ce092387a8004b565fb0d51951190486",
+      "assessment": "batch4-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "det-yolo-dense-engineering-1-r01-desktop.png"
+    },
+    {
+      "path": "roadmap-model-selection/detector/det-yolo-dense/images/final/WI033-YOLO-01-r01-mobile.png",
+      "sha256": "4b4e970ac2566172e5df5c0de0e6566ab0e201cb7f8c9b96510ab36391359a61",
+      "assessment": "batch4-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "det-yolo-dense-engineering-1-r01-mobile.png"
+    },
+    {
+      "path": "roadmap-model-selection/detector/det-yolo-dense/images/final/WI033-YOLO-02-r02-desktop.png",
+      "sha256": "08bead40bc763f98d4bdfdecedf8bdf8eb981c392dbb2e789a3342a412eeeb68",
+      "assessment": "batch4-prototype-image-assessment.json",
+      "total": 92,
+      "native_source": "det-yolo-dense-engineering-2-r02-desktop.png"
+    },
+    {
+      "path": "roadmap-model-selection/detector/det-yolo-dense/images/final/WI033-YOLO-02-r02-mobile.png",
+      "sha256": "8da0d099942d1b7d19077246050a4ec0103309b6074771bbeb618eff877c99cb",
+      "assessment": "batch4-prototype-image-assessment.json",
+      "total": 92,
+      "native_source": "det-yolo-dense-engineering-2-r02-mobile.png"
+    },
+    {
+      "path": "roadmap-model-selection/detector/det-yolo-dense/images/final/WI033-YOLO-03-r02-desktop.png",
+      "sha256": "07148480ae876747b089d6af8634035f94210a5e51ee1ccd9955949424eee0c3",
+      "assessment": "batch4-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "det-yolo-dense-engineering-3-r02-desktop.png"
+    },
+    {
+      "path": "roadmap-model-selection/detector/det-yolo-dense/images/final/WI033-YOLO-03-r02-mobile.png",
+      "sha256": "3d2004337dafeb60afa0a6ffcc00a23589cabb7fc1b12f770758cf1a540f8f7c",
+      "assessment": "batch4-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "det-yolo-dense-engineering-3-r02-mobile.png"
+    },
+    {
+      "path": "roadmap-model-selection/detector/det-yolo-dense/images/final/WI033-YOLO-04-r01-desktop.png",
+      "sha256": "01aa4b1d07f8e0857f447184093e6f66252d94297e6e45c6ad7be3cf1e2c8f96",
+      "assessment": "batch4-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "det-yolo-dense-engineering-4-r01-desktop.png"
+    },
+    {
+      "path": "roadmap-model-selection/detector/det-yolo-dense/images/final/WI033-YOLO-04-r01-mobile.png",
+      "sha256": "803d71eb2bd50f988915240ed38bb40e92cdeb2f4eca1759129faffbc913e7dd",
+      "assessment": "batch4-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "det-yolo-dense-engineering-4-r01-mobile.png"
+    },
+    {
+      "path": "roadmap-model-selection/detector/yoloe/images/final/WI033-YOLOE-01-r01-desktop.png",
+      "sha256": "20218b6b4a4fec8569dcbb87c181fa9fa7712ecfe7b41cbcab6e1cd359be0cab",
+      "assessment": "batch4-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "yoloe-engineering-1-r01-desktop.png"
+    },
+    {
+      "path": "roadmap-model-selection/detector/yoloe/images/final/WI033-YOLOE-01-r01-mobile.png",
+      "sha256": "7d6b7eaf6f06d51edb9448be390342e59dcc8852f21ad593e12b89fa71d34e61",
+      "assessment": "batch4-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "yoloe-engineering-1-r01-mobile.png"
+    },
+    {
+      "path": "roadmap-model-selection/detector/yoloe/images/final/WI033-YOLOE-02-r02-desktop.png",
+      "sha256": "88d24e3c8485c4c83b2c4319a04ea232bae50e069d81222898d0cf04668dfd1e",
+      "assessment": "batch4-prototype-image-assessment.json",
+      "total": 92,
+      "native_source": "yoloe-engineering-2-r02-desktop.png"
+    },
+    {
+      "path": "roadmap-model-selection/detector/yoloe/images/final/WI033-YOLOE-02-r02-mobile.png",
+      "sha256": "70652c92709d5d67a00b735a6a5b1a43198fbd32def423d8c2b937d37a3bf45f",
+      "assessment": "batch4-prototype-image-assessment.json",
+      "total": 92,
+      "native_source": "yoloe-engineering-2-r02-mobile.png"
+    },
+    {
+      "path": "roadmap-model-selection/detector/yoloe/images/final/WI033-YOLOE-03-r01-desktop.png",
+      "sha256": "8494ebe8ae63709dfd137fbec31e77658af4d8297072ee569d5acc697f766177",
+      "assessment": "batch4-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "yoloe-engineering-3-r01-desktop.png"
+    },
+    {
+      "path": "roadmap-model-selection/detector/yoloe/images/final/WI033-YOLOE-03-r01-mobile.png",
+      "sha256": "71208f264801bf35a00db0cbc45dddcaa293e516a98cda4a1f6db3d51ed522a8",
+      "assessment": "batch4-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "yoloe-engineering-3-r01-mobile.png"
+    },
+    {
+      "path": "roadmap-model-selection/detector/yoloe/images/final/WI033-YOLOE-04-r01-desktop.png",
+      "sha256": "8669e2837574324e4713fa0e91a5830af0e952642eb5805fdf7bd8701843b73f",
+      "assessment": "batch4-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "yoloe-engineering-4-r01-desktop.png"
+    },
+    {
+      "path": "roadmap-model-selection/detector/yoloe/images/final/WI033-YOLOE-04-r01-mobile.png",
+      "sha256": "bcecfaf484b80074d0203708d4eb5307e4f23fd286bf17405872b60a4d28b858",
+      "assessment": "batch4-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "yoloe-engineering-4-r01-mobile.png"
+    },
+    {
+      "path": "roadmap-model-selection/diffusion-restoration/anomalydiffusion/images/final/WI033-ANOMALYDIFFUSION-01-r01-desktop.png",
+      "sha256": "8fb5db2268aff62034d19ab380a528ec7a9e2c28ae950f6fece6b39487bdf318",
+      "assessment": "batch7-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "anomalydiffusion-engineering-1-r01-desktop.png"
+    },
+    {
+      "path": "roadmap-model-selection/diffusion-restoration/anomalydiffusion/images/final/WI033-ANOMALYDIFFUSION-01-r01-mobile.png",
+      "sha256": "97329df8996a533df0689f1023d6072fa536f4535ccc3c7acf5428a18165c488",
+      "assessment": "batch7-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "anomalydiffusion-engineering-1-r01-mobile.png"
+    },
+    {
+      "path": "roadmap-model-selection/diffusion-restoration/anomalydiffusion/images/final/WI033-ANOMALYDIFFUSION-02-r02-desktop.png",
+      "sha256": "5ee1f4e813dcd07ae40cec8fbeab87db584babc2de8467cce2cd943922d5fb81",
+      "assessment": "batch7-prototype-image-assessment.json",
+      "total": 92,
+      "native_source": "anomalydiffusion-engineering-2-r02-desktop.png"
+    },
+    {
+      "path": "roadmap-model-selection/diffusion-restoration/anomalydiffusion/images/final/WI033-ANOMALYDIFFUSION-02-r02-mobile.png",
+      "sha256": "a7cfccbe9e303821583f4d7a424cc3ebe524b7c783ad61f16eb56e1a5a0cb5bf",
+      "assessment": "batch7-prototype-image-assessment.json",
+      "total": 92,
+      "native_source": "anomalydiffusion-engineering-2-r02-mobile.png"
+    },
+    {
+      "path": "roadmap-model-selection/diffusion-restoration/anomalydiffusion/images/final/WI033-ANOMALYDIFFUSION-03-r01-desktop.png",
+      "sha256": "593413c24d0c013c8f3ee3e86a5cb04f262bbcdfdf6b18ffd8760a11855cd9df",
+      "assessment": "batch7-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "anomalydiffusion-engineering-3-r01-desktop.png"
+    },
+    {
+      "path": "roadmap-model-selection/diffusion-restoration/anomalydiffusion/images/final/WI033-ANOMALYDIFFUSION-03-r01-mobile.png",
+      "sha256": "1f5817ed2c9c2e3fa8fc45825cd9045be40606461a379136eb35a1742abd2c1c",
+      "assessment": "batch7-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "anomalydiffusion-engineering-3-r01-mobile.png"
+    },
+    {
+      "path": "roadmap-model-selection/diffusion-restoration/anomalydiffusion/images/final/WI033-ANOMALYDIFFUSION-04-r01-desktop.png",
+      "sha256": "7115dadf2e262f46566213810f0f3b75a264037d9a8997d6479b6a8197042d88",
+      "assessment": "batch7-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "anomalydiffusion-engineering-4-r01-desktop.png"
+    },
+    {
+      "path": "roadmap-model-selection/diffusion-restoration/anomalydiffusion/images/final/WI033-ANOMALYDIFFUSION-04-r01-mobile.png",
+      "sha256": "df16b27c40720252b9248140e2d39056b92c4a5ab8a5588c63d1318743bd5b52",
+      "assessment": "batch7-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "anomalydiffusion-engineering-4-r01-mobile.png"
+    },
+    {
+      "path": "roadmap-model-selection/diffusion-restoration/controlnet/images/final/WI033-CONTROLNET-01-r01-desktop.png",
+      "sha256": "1559180a2f03f7c9e375c837ba28a6a09232cd488ae9cd4c3a433c9f068ec9c5",
+      "assessment": "batch7-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "controlnet-engineering-1-r01-desktop.png"
+    },
+    {
+      "path": "roadmap-model-selection/diffusion-restoration/controlnet/images/final/WI033-CONTROLNET-01-r01-mobile.png",
+      "sha256": "49d4874bcd2c71a7e46dbda92012f33188fe28e7e5d72b0957d153223bbcbeb2",
+      "assessment": "batch7-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "controlnet-engineering-1-r01-mobile.png"
+    },
+    {
+      "path": "roadmap-model-selection/diffusion-restoration/controlnet/images/final/WI033-CONTROLNET-02-r02-desktop.png",
+      "sha256": "8abed0c2e3ab4aa6f2fc66b8e4a801112830ad13a2a77054c25c71a97f71b0a0",
+      "assessment": "batch7-prototype-image-assessment.json",
+      "total": 92,
+      "native_source": "controlnet-engineering-2-r02-desktop.png"
+    },
+    {
+      "path": "roadmap-model-selection/diffusion-restoration/controlnet/images/final/WI033-CONTROLNET-02-r02-mobile.png",
+      "sha256": "e7c2f1239fdc382f539be79c2b3be923d8e520232664f68e47d503a5501d9a60",
+      "assessment": "batch7-prototype-image-assessment.json",
+      "total": 92,
+      "native_source": "controlnet-engineering-2-r02-mobile.png"
+    },
+    {
+      "path": "roadmap-model-selection/diffusion-restoration/controlnet/images/final/WI033-CONTROLNET-03-r01-desktop.png",
+      "sha256": "78c624b9036872694fdc00bfd54d603b5f58a421566467152edc705f0a7cbdf1",
+      "assessment": "batch7-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "controlnet-engineering-3-r01-desktop.png"
+    },
+    {
+      "path": "roadmap-model-selection/diffusion-restoration/controlnet/images/final/WI033-CONTROLNET-03-r01-mobile.png",
+      "sha256": "63391f78a329f93402ffef91d065da8fec73595a884b7668ae3fcaf730b60b2c",
+      "assessment": "batch7-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "controlnet-engineering-3-r01-mobile.png"
+    },
+    {
+      "path": "roadmap-model-selection/diffusion-restoration/controlnet/images/final/WI033-CONTROLNET-04-r01-desktop.png",
+      "sha256": "4d7b17fc1fdff3532d858133ebefb8ea83b34fff5fd4c0cc13a38372efb1edf9",
+      "assessment": "batch7-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "controlnet-engineering-4-r01-desktop.png"
+    },
+    {
+      "path": "roadmap-model-selection/diffusion-restoration/controlnet/images/final/WI033-CONTROLNET-04-r01-mobile.png",
+      "sha256": "9c62570f3caaaee5819498400b436a19cb38a1fa18f7da85d64f467914d0034f",
+      "assessment": "batch7-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "controlnet-engineering-4-r01-mobile.png"
+    },
+    {
+      "path": "roadmap-model-selection/diffusion-restoration/deblur/images/final/WI033-DEBLUR-01-r01-desktop.png",
+      "sha256": "f836dc25e8141a329231cbe315a9850975dc892044855f8a3e2ccf79f0f2ebcf",
+      "assessment": "batch7-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "deblur-engineering-1-r01-desktop.png"
+    },
+    {
+      "path": "roadmap-model-selection/diffusion-restoration/deblur/images/final/WI033-DEBLUR-01-r01-mobile.png",
+      "sha256": "a6af0ba2ee021da6357e9c7f4dd492d42da130f660325cb272e0f606faa94b32",
+      "assessment": "batch7-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "deblur-engineering-1-r01-mobile.png"
+    },
+    {
+      "path": "roadmap-model-selection/diffusion-restoration/deblur/images/final/WI033-DEBLUR-02-r01-desktop.png",
+      "sha256": "5f14c1ec368ef9c78de72f727da8c1256ebcd4e68c0cb1735b15986e16411c7f",
+      "assessment": "batch7-prototype-image-assessment.json",
+      "total": 92,
+      "native_source": "deblur-engineering-2-r01-desktop.png"
+    },
+    {
+      "path": "roadmap-model-selection/diffusion-restoration/deblur/images/final/WI033-DEBLUR-02-r01-mobile.png",
+      "sha256": "829b5f9b7b0fec6374d11397ec4896439b328e097c3976661679abe53fc0efcf",
+      "assessment": "batch7-prototype-image-assessment.json",
+      "total": 92,
+      "native_source": "deblur-engineering-2-r01-mobile.png"
+    },
+    {
+      "path": "roadmap-model-selection/diffusion-restoration/deblur/images/final/WI033-DEBLUR-03-r02-desktop.png",
+      "sha256": "0faa83f7b30996b4b878a52dc3fc62849de4a8d5a91ba95f11bca579ed93d88d",
+      "assessment": "batch7-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "deblur-engineering-3-r02-desktop.png"
+    },
+    {
+      "path": "roadmap-model-selection/diffusion-restoration/deblur/images/final/WI033-DEBLUR-03-r02-mobile.png",
+      "sha256": "db06e232ef5be1f0343887611fe86163d312c171e94e5540998dfffe3d2df7c5",
+      "assessment": "batch7-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "deblur-engineering-3-r02-mobile.png"
+    },
+    {
+      "path": "roadmap-model-selection/diffusion-restoration/deblur/images/final/WI033-DEBLUR-04-r01-desktop.png",
+      "sha256": "e5581693f9f97e4b9167dfe5797faac597de8204b3e8621764ae31e54448428e",
+      "assessment": "batch7-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "deblur-engineering-4-r01-desktop.png"
+    },
+    {
+      "path": "roadmap-model-selection/diffusion-restoration/deblur/images/final/WI033-DEBLUR-04-r01-mobile.png",
+      "sha256": "d53ba471ad9d5e8fb55e3ae1673295787a10ff79e7004695ff55c32b41e37caf",
+      "assessment": "batch7-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "deblur-engineering-4-r01-mobile.png"
+    },
+    {
+      "path": "roadmap-model-selection/diffusion-restoration/defectfill/images/final/WI033-DEFECTFILL-01-r01-desktop.png",
+      "sha256": "3e466c7ae315e3aa38ec6101d73e8054c5d171cc8241f0c3025c4b4d80b21c2b",
+      "assessment": "batch7-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "defectfill-engineering-1-r01-desktop.png"
+    },
+    {
+      "path": "roadmap-model-selection/diffusion-restoration/defectfill/images/final/WI033-DEFECTFILL-01-r01-mobile.png",
+      "sha256": "c3657f69d7b96ea3c778c5d697b85c05482d3f428172ce1ceabeef05165b1ad2",
+      "assessment": "batch7-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "defectfill-engineering-1-r01-mobile.png"
+    },
+    {
+      "path": "roadmap-model-selection/diffusion-restoration/defectfill/images/final/WI033-DEFECTFILL-02-r02-desktop.png",
+      "sha256": "492bbaba99a8ca4eadaf80e1cf70fb665b1451f6293b9146b0cb13362a5b6323",
+      "assessment": "batch7-prototype-image-assessment.json",
+      "total": 92,
+      "native_source": "defectfill-engineering-2-r02-desktop.png"
+    },
+    {
+      "path": "roadmap-model-selection/diffusion-restoration/defectfill/images/final/WI033-DEFECTFILL-02-r02-mobile.png",
+      "sha256": "3872b8b6c3f1c5c392d83dc354c511e456ab030b7378fe4ff8f82e12b2c7e9be",
+      "assessment": "batch7-prototype-image-assessment.json",
+      "total": 92,
+      "native_source": "defectfill-engineering-2-r02-mobile.png"
+    },
+    {
+      "path": "roadmap-model-selection/diffusion-restoration/defectfill/images/final/WI033-DEFECTFILL-03-r01-desktop.png",
+      "sha256": "5bdd31e4975ce9662ff0ddbe0c36b6835d17619a06ad45f860b9a7067e0eb155",
+      "assessment": "batch7-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "defectfill-engineering-3-r01-desktop.png"
+    },
+    {
+      "path": "roadmap-model-selection/diffusion-restoration/defectfill/images/final/WI033-DEFECTFILL-03-r01-mobile.png",
+      "sha256": "b61cd96375fef8476d83db6acdce83d1377cb6bd976c05709253476fa9cd5b70",
+      "assessment": "batch7-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "defectfill-engineering-3-r01-mobile.png"
+    },
+    {
+      "path": "roadmap-model-selection/diffusion-restoration/defectfill/images/final/WI033-DEFECTFILL-04-r01-desktop.png",
+      "sha256": "5d3398f0c0a6efade206bcf0b015459e4f853c334a4a7f2dd3f4eb17457a79c6",
+      "assessment": "batch7-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "defectfill-engineering-4-r01-desktop.png"
+    },
+    {
+      "path": "roadmap-model-selection/diffusion-restoration/defectfill/images/final/WI033-DEFECTFILL-04-r01-mobile.png",
+      "sha256": "c284c44f19234ab9d37add49c6729915447c15c2180e7fa4ffaae8aeeb8176a2",
+      "assessment": "batch7-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "defectfill-engineering-4-r01-mobile.png"
+    },
+    {
+      "path": "roadmap-model-selection/diffusion-restoration/diffusion-restoration/images/final/WI033-DIFFUSION-RESTORATION-01-r02-desktop.png",
+      "sha256": "fad8928a5dd7c885452a4251a0dd285fe46035dbbf158c8b5f04ca3db7cedc88",
+      "assessment": "batch7-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "diffusion-restoration-engineering-1-r02-desktop.png"
+    },
+    {
+      "path": "roadmap-model-selection/diffusion-restoration/diffusion-restoration/images/final/WI033-DIFFUSION-RESTORATION-01-r02-mobile.png",
+      "sha256": "bfea800031a36912d958e4f795ce3112153d17c73880a56ef7bf36f57a98214b",
+      "assessment": "batch7-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "diffusion-restoration-engineering-1-r02-mobile.png"
+    },
+    {
+      "path": "roadmap-model-selection/diffusion-restoration/diffusion-restoration/images/final/WI033-DIFFUSION-RESTORATION-02-r01-desktop.png",
+      "sha256": "b9c79f66e1baffa21a0d15c77d6b2c8bd7ee3ac0802982516bdddb717a0feca1",
+      "assessment": "batch7-prototype-image-assessment.json",
+      "total": 92,
+      "native_source": "diffusion-restoration-engineering-2-r01-desktop.png"
+    },
+    {
+      "path": "roadmap-model-selection/diffusion-restoration/diffusion-restoration/images/final/WI033-DIFFUSION-RESTORATION-02-r01-mobile.png",
+      "sha256": "6d56b1e0bef1c5aa2077e2befc7c6b30d102d194307ea73d223a24b5e44e7678",
+      "assessment": "batch7-prototype-image-assessment.json",
+      "total": 92,
+      "native_source": "diffusion-restoration-engineering-2-r01-mobile.png"
+    },
+    {
+      "path": "roadmap-model-selection/diffusion-restoration/diffusion-restoration/images/final/WI033-DIFFUSION-RESTORATION-03-r02-desktop.png",
+      "sha256": "0ba32d75e3613e92a8f5079583ba29620a6b1e5595b53f2f18cf2a69df7d5e63",
+      "assessment": "batch7-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "diffusion-restoration-engineering-3-r02-desktop.png"
+    },
+    {
+      "path": "roadmap-model-selection/diffusion-restoration/diffusion-restoration/images/final/WI033-DIFFUSION-RESTORATION-03-r02-mobile.png",
+      "sha256": "bd1a3c41b134a4a6af6252d66785bd4498b85fa959173bc07b0ed72088d05618",
+      "assessment": "batch7-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "diffusion-restoration-engineering-3-r02-mobile.png"
+    },
+    {
+      "path": "roadmap-model-selection/diffusion-restoration/diffusion-restoration/images/final/WI033-DIFFUSION-RESTORATION-04-r02-desktop.png",
+      "sha256": "33215d6c675db785490ee908588a3464f2cb48decad2c707ba899e13ea362396",
+      "assessment": "batch7-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "diffusion-restoration-engineering-4-r02-desktop.png"
+    },
+    {
+      "path": "roadmap-model-selection/diffusion-restoration/diffusion-restoration/images/final/WI033-DIFFUSION-RESTORATION-04-r02-mobile.png",
+      "sha256": "d0e5dce864c4e8e92dd725c930c8696cfb4581fec719ababfbaf623f6fa68a05",
+      "assessment": "batch7-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "diffusion-restoration-engineering-4-r02-mobile.png"
+    },
+    {
+      "path": "roadmap-model-selection/diffusion-restoration/inpainting/images/final/WI033-INPAINTING-01-r01-desktop.png",
+      "sha256": "ad48cb7358c7a4aaca0035b5b2ee8f89f20de508f8301ab7b93053f4efe765f1",
+      "assessment": "batch7-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "inpainting-engineering-1-r01-desktop.png"
+    },
+    {
+      "path": "roadmap-model-selection/diffusion-restoration/inpainting/images/final/WI033-INPAINTING-01-r01-mobile.png",
+      "sha256": "ab3bc4f71d5c0b6642a178af5551eb5fb50f22cd4d9e627c0b446d8beb7975ff",
+      "assessment": "batch7-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "inpainting-engineering-1-r01-mobile.png"
+    },
+    {
+      "path": "roadmap-model-selection/diffusion-restoration/inpainting/images/final/WI033-INPAINTING-02-r02-desktop.png",
+      "sha256": "ba05005e738b7e839f20a274363b5e152028eb5eb4640154271923692974a0e2",
+      "assessment": "batch7-prototype-image-assessment.json",
+      "total": 92,
+      "native_source": "inpainting-engineering-2-r02-desktop.png"
+    },
+    {
+      "path": "roadmap-model-selection/diffusion-restoration/inpainting/images/final/WI033-INPAINTING-02-r02-mobile.png",
+      "sha256": "2b8fce9414a1329e9903f992ea6a9a3f6399ea77b5bda537bff2ef2de5ff4cec",
+      "assessment": "batch7-prototype-image-assessment.json",
+      "total": 92,
+      "native_source": "inpainting-engineering-2-r02-mobile.png"
+    },
+    {
+      "path": "roadmap-model-selection/diffusion-restoration/inpainting/images/final/WI033-INPAINTING-03-r01-desktop.png",
+      "sha256": "14c5443221b6e1e89b0f42802ac9a203608a964b155d86f2114420ea9e3e0a62",
+      "assessment": "batch7-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "inpainting-engineering-3-r01-desktop.png"
+    },
+    {
+      "path": "roadmap-model-selection/diffusion-restoration/inpainting/images/final/WI033-INPAINTING-03-r01-mobile.png",
+      "sha256": "c41e94bda9619a54097fbf1af242d7749f0829ddd3bd8919c7e27d52fda8e45c",
+      "assessment": "batch7-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "inpainting-engineering-3-r01-mobile.png"
+    },
+    {
+      "path": "roadmap-model-selection/diffusion-restoration/inpainting/images/final/WI033-INPAINTING-04-r01-desktop.png",
+      "sha256": "23b02964fafdf74931ed18341416d343c0c4149b4aed9c6fe7993110e5b7ad6e",
+      "assessment": "batch7-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "inpainting-engineering-4-r01-desktop.png"
+    },
+    {
+      "path": "roadmap-model-selection/diffusion-restoration/inpainting/images/final/WI033-INPAINTING-04-r01-mobile.png",
+      "sha256": "36c9bff067147488c558c6313de91eca7f698e90ff2f0349227a4dfeb0d1d7e7",
+      "assessment": "batch7-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "inpainting-engineering-4-r01-mobile.png"
+    },
+    {
+      "path": "roadmap-model-selection/diffusion-restoration/super-resolution/images/final/WI033-SUPERRES-01-r01-desktop.png",
+      "sha256": "f0fb40f8a3ebb08cab656e5b2d19608fe38a9759bed487baedbf77d2789e1d23",
+      "assessment": "batch7-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "super-resolution-engineering-1-r01-desktop.png"
+    },
+    {
+      "path": "roadmap-model-selection/diffusion-restoration/super-resolution/images/final/WI033-SUPERRES-01-r01-mobile.png",
+      "sha256": "35476ee4084b4059faed3d2873238dcd336a2ea783ef5703d884ca44beffec2d",
+      "assessment": "batch7-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "super-resolution-engineering-1-r01-mobile.png"
+    },
+    {
+      "path": "roadmap-model-selection/diffusion-restoration/super-resolution/images/final/WI033-SUPERRES-02-r01-desktop.png",
+      "sha256": "d42a0851ba3579d391c646e08f8ee10e73eb5e431dcc3010cbf638d52ca14c3f",
+      "assessment": "batch7-prototype-image-assessment.json",
+      "total": 92,
+      "native_source": "super-resolution-engineering-2-r01-desktop.png"
+    },
+    {
+      "path": "roadmap-model-selection/diffusion-restoration/super-resolution/images/final/WI033-SUPERRES-02-r01-mobile.png",
+      "sha256": "666ab693b55aad595773626056015a06e40ddb83a317a91305a3efcc11a1418a",
+      "assessment": "batch7-prototype-image-assessment.json",
+      "total": 92,
+      "native_source": "super-resolution-engineering-2-r01-mobile.png"
+    },
+    {
+      "path": "roadmap-model-selection/diffusion-restoration/super-resolution/images/final/WI033-SUPERRES-03-r01-desktop.png",
+      "sha256": "e7380b6b9aae50280339e1e57455a68494090ccc98fd3854a36bbf9fbb8a8a35",
+      "assessment": "batch7-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "super-resolution-engineering-3-r01-desktop.png"
+    },
+    {
+      "path": "roadmap-model-selection/diffusion-restoration/super-resolution/images/final/WI033-SUPERRES-03-r01-mobile.png",
+      "sha256": "c049f421da9a61d88aae1198c50ff266841e64aad0f722d52340ba43d7ec7d85",
+      "assessment": "batch7-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "super-resolution-engineering-3-r01-mobile.png"
+    },
+    {
+      "path": "roadmap-model-selection/diffusion-restoration/super-resolution/images/final/WI033-SUPERRES-04-r01-desktop.png",
+      "sha256": "6e0720e53658125d423710cdd74b6577fa5f0c129368dd4549d9298b8881b5ba",
+      "assessment": "batch7-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "super-resolution-engineering-4-r01-desktop.png"
+    },
+    {
+      "path": "roadmap-model-selection/diffusion-restoration/super-resolution/images/final/WI033-SUPERRES-04-r01-mobile.png",
+      "sha256": "a0832eed8f512fc79292c2e08eea38a5839f01fa987d7d986b92180b3cb24fa9",
+      "assessment": "batch7-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "super-resolution-engineering-4-r01-mobile.png"
+    },
+    {
+      "path": "roadmap-model-selection/diffusion-restoration/tf-idg/images/final/WI033-TFIDG-01-r01-desktop.png",
+      "sha256": "60ad31f9d56541573d0e1616b596d54ae8aba128be5c46e16be394e152619dce",
+      "assessment": "batch7-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "tf-idg-engineering-1-r01-desktop.png"
+    },
+    {
+      "path": "roadmap-model-selection/diffusion-restoration/tf-idg/images/final/WI033-TFIDG-01-r01-mobile.png",
+      "sha256": "1056d4d9f3bb3fdff41332799fd778c6c12b943200e666f19348191467fb8023",
+      "assessment": "batch7-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "tf-idg-engineering-1-r01-mobile.png"
+    },
+    {
+      "path": "roadmap-model-selection/diffusion-restoration/tf-idg/images/final/WI033-TFIDG-02-r01-desktop.png",
+      "sha256": "c769572287011179a6d4ee85c830dcd34ec985a3f960d4a39462cd4ef1bcc306",
+      "assessment": "batch7-prototype-image-assessment.json",
+      "total": 92,
+      "native_source": "tf-idg-engineering-2-r01-desktop.png"
+    },
+    {
+      "path": "roadmap-model-selection/diffusion-restoration/tf-idg/images/final/WI033-TFIDG-02-r01-mobile.png",
+      "sha256": "5f8e3ddec5395c217bb730ec95b5ea946aa82483325b596866d979a521b1e4f7",
+      "assessment": "batch7-prototype-image-assessment.json",
+      "total": 92,
+      "native_source": "tf-idg-engineering-2-r01-mobile.png"
+    },
+    {
+      "path": "roadmap-model-selection/diffusion-restoration/tf-idg/images/final/WI033-TFIDG-03-r01-desktop.png",
+      "sha256": "049f913a6cb3afddaf6886e859fe4c4a24dfe6f6ed14f3ab907f3aa6ba26a299",
+      "assessment": "batch7-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "tf-idg-engineering-3-r01-desktop.png"
+    },
+    {
+      "path": "roadmap-model-selection/diffusion-restoration/tf-idg/images/final/WI033-TFIDG-03-r01-mobile.png",
+      "sha256": "348bf9436ca7838674d991b0b5259b82d9766614196081c83ad02522a5485eba",
+      "assessment": "batch7-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "tf-idg-engineering-3-r01-mobile.png"
+    },
+    {
+      "path": "roadmap-model-selection/diffusion-restoration/tf-idg/images/final/WI033-TFIDG-04-r01-desktop.png",
+      "sha256": "8112d211e7e55072203381e8fea23015586fe174a551ef209fab9b8b706beb76",
+      "assessment": "batch7-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "tf-idg-engineering-4-r01-desktop.png"
+    },
+    {
+      "path": "roadmap-model-selection/diffusion-restoration/tf-idg/images/final/WI033-TFIDG-04-r01-mobile.png",
+      "sha256": "0cf0c736527c3ade92abdf358065f6798c7304ef38cbb94dc01a4595b309e852",
+      "assessment": "batch7-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "tf-idg-engineering-4-r01-mobile.png"
+    },
+    {
+      "path": "roadmap-model-selection/foundation-vlm-open-world/clip/images/final/WI033-CLIP-01-r02-desktop.png",
+      "sha256": "d281fab8fa2f4576ebbd760318394d65198b14b0e32599ae24ae0c96b23a8be6",
+      "assessment": "alignment-image-assessment.json",
+      "total": 92,
+      "native_source": "clip-engineering-1-r02-desktop.png"
+    },
+    {
+      "path": "roadmap-model-selection/foundation-vlm-open-world/clip/images/final/WI033-CLIP-01-r02-mobile.png",
+      "sha256": "92612a214ce929f7608a48fe41ffa636f7d319310cfc082b66b82511be8341a5",
+      "assessment": "alignment-image-assessment.json",
+      "total": 91,
+      "native_source": "clip-engineering-1-r02-mobile.png"
+    },
+    {
+      "path": "roadmap-model-selection/foundation-vlm-open-world/clip/images/final/WI033-CLIP-02-r03-desktop.png",
+      "sha256": "9eea02eb23c19d628bc33c921551f89ab389f07ef436b59e47f4b5ebedd82c83",
+      "assessment": "alignment-image-assessment.json",
+      "total": 93,
+      "native_source": "clip-engineering-2-r03-desktop.png"
+    },
+    {
+      "path": "roadmap-model-selection/foundation-vlm-open-world/clip/images/final/WI033-CLIP-02-r03-mobile.png",
+      "sha256": "ebc7b85ed9783b04aed32835db3e5e59b6b61527c0e4aad135c1f34a1f8f58cf",
+      "assessment": "alignment-image-assessment.json",
+      "total": 92,
+      "native_source": "clip-engineering-2-r03-mobile.png"
+    },
+    {
+      "path": "roadmap-model-selection/foundation-vlm-open-world/clip/images/final/WI033-CLIP-03-r02-desktop.png",
+      "sha256": "17260f913c8b2d4e18c8f642b192cbf440006d617d756c22ea03a4ea1e56d8c0",
+      "assessment": "alignment-image-assessment.json",
+      "total": 92,
+      "native_source": "clip-engineering-3-r02-desktop.png"
+    },
+    {
+      "path": "roadmap-model-selection/foundation-vlm-open-world/clip/images/final/WI033-CLIP-03-r02-mobile.png",
+      "sha256": "590c16a79e2307530e5791d1574e01935e66a5a516f07912a6a36f7b8922e06b",
+      "assessment": "alignment-image-assessment.json",
+      "total": 91,
+      "native_source": "clip-engineering-3-r02-mobile.png"
+    },
+    {
+      "path": "roadmap-model-selection/foundation-vlm-open-world/clip/images/final/WI033-CLIP-04-r02-desktop.png",
+      "sha256": "c13c245d4190ba5c0bd24b0c7edb6d7bd132572c10102ca7b99c31a2bad5270a",
+      "assessment": "alignment-image-assessment.json",
+      "total": 93,
+      "native_source": "clip-engineering-4-r02-desktop.png"
+    },
+    {
+      "path": "roadmap-model-selection/foundation-vlm-open-world/clip/images/final/WI033-CLIP-04-r02-mobile.png",
+      "sha256": "15b696df8a72d317e580406fad9769757ea0a96188b472ceebc4aca7fa840771",
+      "assessment": "alignment-image-assessment.json",
+      "total": 92,
+      "native_source": "clip-engineering-4-r02-mobile.png"
+    },
+    {
+      "path": "roadmap-model-selection/foundation-vlm-open-world/dinov2/images/final/WI033-DINOV2-01-r01-desktop.png",
+      "sha256": "c95cff0085e6f3258d2b86f1d84c66876fc21e5084550abd8ed5e1d706521f4e",
+      "assessment": "batch4-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "dinov2-engineering-1-r01-desktop.png"
+    },
+    {
+      "path": "roadmap-model-selection/foundation-vlm-open-world/dinov2/images/final/WI033-DINOV2-01-r01-mobile.png",
+      "sha256": "f769fe1acf5518318f2a6a842418f5572d41041b3eed3e859d74709c0a24d822",
+      "assessment": "batch4-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "dinov2-engineering-1-r01-mobile.png"
+    },
+    {
+      "path": "roadmap-model-selection/foundation-vlm-open-world/dinov2/images/final/WI033-DINOV2-02-r03-desktop.png",
+      "sha256": "89090cadd09a1969bbb351f0ecc0239b6639d957ac0a990dab9c9a409f417c67",
+      "assessment": "batch4-prototype-image-assessment.json",
+      "total": 92,
+      "native_source": "dinov2-engineering-2-r03-desktop.png"
+    },
+    {
+      "path": "roadmap-model-selection/foundation-vlm-open-world/dinov2/images/final/WI033-DINOV2-02-r03-mobile.png",
+      "sha256": "6eb0cc431e5e824607c31bfed5148b129f53df0d1b860942b3731a56887e4427",
+      "assessment": "batch4-prototype-image-assessment.json",
+      "total": 92,
+      "native_source": "dinov2-engineering-2-r03-mobile.png"
+    },
+    {
+      "path": "roadmap-model-selection/foundation-vlm-open-world/dinov2/images/final/WI033-DINOV2-03-r01-desktop.png",
+      "sha256": "6fc8d3224f7bc472cc27937c22edac5a1beacca26e7c7c7c38fd3332d75e275c",
+      "assessment": "batch4-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "dinov2-engineering-3-r01-desktop.png"
+    },
+    {
+      "path": "roadmap-model-selection/foundation-vlm-open-world/dinov2/images/final/WI033-DINOV2-03-r01-mobile.png",
+      "sha256": "87983006b8900166bfef912136a1a2557ac5a33b257e215594dcd555c48cb4bb",
+      "assessment": "batch4-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "dinov2-engineering-3-r01-mobile.png"
+    },
+    {
+      "path": "roadmap-model-selection/foundation-vlm-open-world/dinov2/images/final/WI033-DINOV2-04-r01-desktop.png",
+      "sha256": "7e284cf2cf07f0a458b0a975f32eb321db3f01bb3b98ada4bf250194edbc6aa5",
+      "assessment": "batch4-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "dinov2-engineering-4-r01-desktop.png"
+    },
+    {
+      "path": "roadmap-model-selection/foundation-vlm-open-world/dinov2/images/final/WI033-DINOV2-04-r01-mobile.png",
+      "sha256": "58483bd3a8066953cfc98eacbe4413299b37785dfc324cf6ac2f109dd6e78600",
+      "assessment": "batch4-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "dinov2-engineering-4-r01-mobile.png"
+    },
+    {
+      "path": "roadmap-model-selection/foundation-vlm-open-world/dinov3/images/final/WI033-DINOV3-01-r02-desktop.png",
+      "sha256": "5aafdd0ed376c47f2440b3f566de59c45a56747030e03c78218d6fa729af3e84",
+      "assessment": "first-rest-image-assessment.json",
+      "total": 92,
+      "native_source": "dinov3-engineering-1-r02-desktop.png"
+    },
+    {
+      "path": "roadmap-model-selection/foundation-vlm-open-world/dinov3/images/final/WI033-DINOV3-01-r02-mobile.png",
+      "sha256": "c9f7ae34940e301fb500261bd9793923a4d4d24ff7553710b224583d28132175",
+      "assessment": "first-rest-image-assessment.json",
+      "total": 91,
+      "native_source": "dinov3-engineering-1-r02-mobile.png"
+    },
+    {
+      "path": "roadmap-model-selection/foundation-vlm-open-world/dinov3/images/final/WI033-DINOV3-02-r02-desktop.png",
+      "sha256": "4003610f235115079f0fbd17ec3c4ea2c16f35db98498c3ed5d7a4a86f144d26",
+      "assessment": "first-rest-image-assessment.json",
+      "total": 92,
+      "native_source": "dinov3-engineering-2-r02-desktop.png"
+    },
+    {
+      "path": "roadmap-model-selection/foundation-vlm-open-world/dinov3/images/final/WI033-DINOV3-02-r02-mobile.png",
+      "sha256": "a6577f95edcc75d363cf4d7feacedf6b8021944d0b7e97b77cf1643395a51bc9",
+      "assessment": "first-rest-image-assessment.json",
+      "total": 91,
+      "native_source": "dinov3-engineering-2-r02-mobile.png"
+    },
+    {
+      "path": "roadmap-model-selection/foundation-vlm-open-world/dinov3/images/final/WI033-DINOV3-03-r01-desktop.png",
+      "sha256": "5e4ed3519bb59be9f883c8f242981a517deb1f1482f5ec1c8a0ad9a745b11ef6",
+      "assessment": "first-rest-image-assessment.json",
+      "total": 92,
+      "native_source": "dinov3-engineering-3-r01-desktop.png"
+    },
+    {
+      "path": "roadmap-model-selection/foundation-vlm-open-world/dinov3/images/final/WI033-DINOV3-03-r01-mobile.png",
+      "sha256": "66531144bbc91a56b8c5362664a7702da6b74a493dfad09765f118bc69fc49a4",
+      "assessment": "first-rest-image-assessment.json",
+      "total": 91,
+      "native_source": "dinov3-engineering-3-r01-mobile.png"
+    },
+    {
+      "path": "roadmap-model-selection/foundation-vlm-open-world/dinov3/images/final/WI033-DINOV3-04-r02-desktop.png",
+      "sha256": "a54f9fa3bb2cfcf475d1cc90755f1a54c206b4e79b809b922dd281e8ee912aea",
+      "assessment": "first-rest-image-assessment.json",
+      "total": 93,
+      "native_source": "dinov3-engineering-4-r02-desktop.png"
+    },
+    {
+      "path": "roadmap-model-selection/foundation-vlm-open-world/dinov3/images/final/WI033-DINOV3-04-r02-mobile.png",
+      "sha256": "fa236e96dddb3ca3679d4ce16d9d8e972454b0b963a6a667b95178d82195643d",
+      "assessment": "first-rest-image-assessment.json",
+      "total": 92,
+      "native_source": "dinov3-engineering-4-r02-mobile.png"
+    },
+    {
+      "path": "roadmap-model-selection/foundation-vlm-open-world/gemini-vision/images/final/WI033-GEMINI-01-r02-desktop.png",
+      "sha256": "0b2dd5f33064fb2747ee60376c8cef9061d3f31bb1ddc9b5729fca31079bb553",
+      "assessment": "batch4-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "gemini-vision-engineering-1-r02-desktop.png"
+    },
+    {
+      "path": "roadmap-model-selection/foundation-vlm-open-world/gemini-vision/images/final/WI033-GEMINI-01-r02-mobile.png",
+      "sha256": "45c6377c3fb62ee29b74a985ce249179c869f45b2d39a22c6cb0f9227f66064d",
+      "assessment": "batch4-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "gemini-vision-engineering-1-r02-mobile.png"
+    },
+    {
+      "path": "roadmap-model-selection/foundation-vlm-open-world/gemini-vision/images/final/WI033-GEMINI-02-r02-desktop.png",
+      "sha256": "803c8b3111064df8a20bcdee80d94a93cf908989ff76d5088fc70adf3f1abaea",
+      "assessment": "batch4-prototype-image-assessment.json",
+      "total": 92,
+      "native_source": "gemini-vision-engineering-2-r02-desktop.png"
+    },
+    {
+      "path": "roadmap-model-selection/foundation-vlm-open-world/gemini-vision/images/final/WI033-GEMINI-02-r02-mobile.png",
+      "sha256": "49f3a87704a85bfaac47a87d034ea52b29405969b443fde20e8d5282bd54e0c0",
+      "assessment": "batch4-prototype-image-assessment.json",
+      "total": 92,
+      "native_source": "gemini-vision-engineering-2-r02-mobile.png"
+    },
+    {
+      "path": "roadmap-model-selection/foundation-vlm-open-world/gemini-vision/images/final/WI033-GEMINI-03-r02-desktop.png",
+      "sha256": "853a42986c3e4241157f6312ac1d7ae276646712d4c68219683d6b081bc20f43",
+      "assessment": "batch4-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "gemini-vision-engineering-3-r02-desktop.png"
+    },
+    {
+      "path": "roadmap-model-selection/foundation-vlm-open-world/gemini-vision/images/final/WI033-GEMINI-03-r02-mobile.png",
+      "sha256": "e2a28ee54df46b0b58f0ccecbdc1f53ff468431724976c934224ef64fcc04dbb",
+      "assessment": "batch4-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "gemini-vision-engineering-3-r02-mobile.png"
+    },
+    {
+      "path": "roadmap-model-selection/foundation-vlm-open-world/gemini-vision/images/final/WI033-GEMINI-04-r01-desktop.png",
+      "sha256": "bb44e1eb5f77b7e5c91ec4cd25684f6f377da39c65252c509b8584812c5ae570",
+      "assessment": "batch4-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "gemini-vision-engineering-4-r01-desktop.png"
+    },
+    {
+      "path": "roadmap-model-selection/foundation-vlm-open-world/gemini-vision/images/final/WI033-GEMINI-04-r01-mobile.png",
+      "sha256": "d7829dbe8712d8e8097221990f490bfa31c6aaa9bd61cb510189baa95f4ab9bc",
+      "assessment": "batch4-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "gemini-vision-engineering-4-r01-mobile.png"
+    },
+    {
+      "path": "roadmap-model-selection/foundation-vlm-open-world/llava/images/final/WI033-LLAVA-01-r02-desktop.png",
+      "sha256": "2c307434204b9316eef21cc6807bb308b43b8b6ea69583243609ee2bcdcb2ef7",
+      "assessment": "batch4-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "llava-engineering-1-r02-desktop.png"
+    },
+    {
+      "path": "roadmap-model-selection/foundation-vlm-open-world/llava/images/final/WI033-LLAVA-01-r02-mobile.png",
+      "sha256": "38c01b2bfe0aabd6edf68193c622f1349772a9f692547b367fd2049f24a4b0d1",
+      "assessment": "batch4-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "llava-engineering-1-r02-mobile.png"
+    },
+    {
+      "path": "roadmap-model-selection/foundation-vlm-open-world/llava/images/final/WI033-LLAVA-02-r02-desktop.png",
+      "sha256": "d1a26ed26b60c41e5c9b5502e0991fbd86de5d706c2ac2db191102d1a8aa18af",
+      "assessment": "batch4-prototype-image-assessment.json",
+      "total": 92,
+      "native_source": "llava-engineering-2-r02-desktop.png"
+    },
+    {
+      "path": "roadmap-model-selection/foundation-vlm-open-world/llava/images/final/WI033-LLAVA-02-r02-mobile.png",
+      "sha256": "1ae0f771a2f7c8923cc1573aaf5eb8148c7190a80074a4172df743017e19eb2e",
+      "assessment": "batch4-prototype-image-assessment.json",
+      "total": 92,
+      "native_source": "llava-engineering-2-r02-mobile.png"
+    },
+    {
+      "path": "roadmap-model-selection/foundation-vlm-open-world/llava/images/final/WI033-LLAVA-03-r02-desktop.png",
+      "sha256": "690c145fcc879b3892ae45e68e4c2cef867819b6a498f2672ef11870e669fc0a",
+      "assessment": "batch4-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "llava-engineering-3-r02-desktop.png"
+    },
+    {
+      "path": "roadmap-model-selection/foundation-vlm-open-world/llava/images/final/WI033-LLAVA-03-r02-mobile.png",
+      "sha256": "1193eaafb3f397ed3fcd9c3521537be5dcc2c2d8b5b805421749d7b5ae1301d3",
+      "assessment": "batch4-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "llava-engineering-3-r02-mobile.png"
+    },
+    {
+      "path": "roadmap-model-selection/foundation-vlm-open-world/llava/images/final/WI033-LLAVA-04-r01-desktop.png",
+      "sha256": "26bc0af731d46c4c664d4ba7f3dbe8522c7f177e5edb5674089033eb6ac3516d",
+      "assessment": "batch4-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "llava-engineering-4-r01-desktop.png"
+    },
+    {
+      "path": "roadmap-model-selection/foundation-vlm-open-world/llava/images/final/WI033-LLAVA-04-r01-mobile.png",
+      "sha256": "957f58033641aa3b7a7c918be32146d05823b203183b0248f3260be363a9def6",
+      "assessment": "batch4-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "llava-engineering-4-r01-mobile.png"
+    },
+    {
+      "path": "roadmap-model-selection/foundation-vlm-open-world/qwen-vl/images/final/WI033-QWEN-01-r01-desktop.png",
+      "sha256": "44cad0b20ee32bc316d4b9cecf461cd20e54f6a981f6aba89ebb404661ba6f46",
+      "assessment": "batch4-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "qwen-vl-engineering-1-r01-desktop.png"
+    },
+    {
+      "path": "roadmap-model-selection/foundation-vlm-open-world/qwen-vl/images/final/WI033-QWEN-01-r01-mobile.png",
+      "sha256": "12d25dfcc3e54b5d09c7b7307f991da5f3949f2d9c3877549cf6a14b509e26fa",
+      "assessment": "batch4-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "qwen-vl-engineering-1-r01-mobile.png"
+    },
+    {
+      "path": "roadmap-model-selection/foundation-vlm-open-world/qwen-vl/images/final/WI033-QWEN-02-r02-desktop.png",
+      "sha256": "5c3ae3523ea0170b83ffdd2673e3454db5b85641f6ec979f936e03c3ef9708d3",
+      "assessment": "batch4-prototype-image-assessment.json",
+      "total": 92,
+      "native_source": "qwen-vl-engineering-2-r02-desktop.png"
+    },
+    {
+      "path": "roadmap-model-selection/foundation-vlm-open-world/qwen-vl/images/final/WI033-QWEN-02-r02-mobile.png",
+      "sha256": "370f2ece756461b3ce17044d7983d99a9eb7ef04bbbd4ffbfa3e7e58caca6fa0",
+      "assessment": "batch4-prototype-image-assessment.json",
+      "total": 92,
+      "native_source": "qwen-vl-engineering-2-r02-mobile.png"
+    },
+    {
+      "path": "roadmap-model-selection/foundation-vlm-open-world/qwen-vl/images/final/WI033-QWEN-03-r01-desktop.png",
+      "sha256": "c150f34a1216848d625b12e3da4f539319d4a079ff76d5a78e8ce729abbf7219",
+      "assessment": "batch4-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "qwen-vl-engineering-3-r01-desktop.png"
+    },
+    {
+      "path": "roadmap-model-selection/foundation-vlm-open-world/qwen-vl/images/final/WI033-QWEN-03-r01-mobile.png",
+      "sha256": "23f80915964d8c9f7c65f338fb5298bca795e45f71294ab9403aa6d5c692de35",
+      "assessment": "batch4-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "qwen-vl-engineering-3-r01-mobile.png"
+    },
+    {
+      "path": "roadmap-model-selection/foundation-vlm-open-world/qwen-vl/images/final/WI033-QWEN-04-r01-desktop.png",
+      "sha256": "6ac4075b8e151f82c182f158248fcfd7588918573662a4c85c493114913d1981",
+      "assessment": "batch4-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "qwen-vl-engineering-4-r01-desktop.png"
+    },
+    {
+      "path": "roadmap-model-selection/foundation-vlm-open-world/qwen-vl/images/final/WI033-QWEN-04-r01-mobile.png",
+      "sha256": "a3d77a733116126d8b597666406f4d342a95bf10d7fa0a5efe414c056f19b57f",
+      "assessment": "batch4-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "qwen-vl-engineering-4-r01-mobile.png"
+    },
+    {
+      "path": "roadmap-model-selection/foundation-vlm-open-world/siglip/images/final/WI033-SIGLIP-01-r02-desktop.png",
+      "sha256": "1ed2c2295d900f46a1eb6177ab592301ea6fc52e9d6870d0a034b0a0abcba5c6",
+      "assessment": "alignment-image-assessment.json",
+      "total": 92,
+      "native_source": "siglip-engineering-1-r02-desktop.png"
+    },
+    {
+      "path": "roadmap-model-selection/foundation-vlm-open-world/siglip/images/final/WI033-SIGLIP-01-r02-mobile.png",
+      "sha256": "9d06d11bce2c2f34a29a86089d484ad5c7a125af530744b472e734d37864c4da",
+      "assessment": "alignment-image-assessment.json",
+      "total": 91,
+      "native_source": "siglip-engineering-1-r02-mobile.png"
+    },
+    {
+      "path": "roadmap-model-selection/foundation-vlm-open-world/siglip/images/final/WI033-SIGLIP-02-r02-desktop.png",
+      "sha256": "33e99f18ecca122f2f5c10ba9e46ef98a09b56b1beb20b05e9773f96b3f14c66",
+      "assessment": "alignment-image-assessment.json",
+      "total": 92,
+      "native_source": "siglip-engineering-2-r02-desktop.png"
+    },
+    {
+      "path": "roadmap-model-selection/foundation-vlm-open-world/siglip/images/final/WI033-SIGLIP-02-r02-mobile.png",
+      "sha256": "b159b6a245dd9b192137c266b5647ad8cb9f7b7653d00b808e96e5485b2332bf",
+      "assessment": "alignment-image-assessment.json",
+      "total": 91,
+      "native_source": "siglip-engineering-2-r02-mobile.png"
+    },
+    {
+      "path": "roadmap-model-selection/foundation-vlm-open-world/siglip/images/final/WI033-SIGLIP-03-r02-desktop.png",
+      "sha256": "ccde0d8d6d23673a8388dd0ba8801baaa86cc3c89f03f76be5b2d8ba78ab186c",
+      "assessment": "alignment-image-assessment.json",
+      "total": 92,
+      "native_source": "siglip-engineering-3-r02-desktop.png"
+    },
+    {
+      "path": "roadmap-model-selection/foundation-vlm-open-world/siglip/images/final/WI033-SIGLIP-03-r02-mobile.png",
+      "sha256": "c110684dfc02b416fcfb2b1312ffe5a0f24809c475a3bc857d73c9de51a9762e",
+      "assessment": "alignment-image-assessment.json",
+      "total": 91,
+      "native_source": "siglip-engineering-3-r02-mobile.png"
+    },
+    {
+      "path": "roadmap-model-selection/foundation-vlm-open-world/siglip/images/final/WI033-SIGLIP-04-r02-desktop.png",
+      "sha256": "0c21ee8df331b2082f14ce11ff39bd49bdd212acaff952844a2d13fef81fb1ef",
+      "assessment": "alignment-image-assessment.json",
+      "total": 93,
+      "native_source": "siglip-engineering-4-r02-desktop.png"
+    },
+    {
+      "path": "roadmap-model-selection/foundation-vlm-open-world/siglip/images/final/WI033-SIGLIP-04-r02-mobile.png",
+      "sha256": "7f80e5e0815af0c6c3035e3c8ce14121f7739818efcb933a84cda926da67d855",
+      "assessment": "alignment-image-assessment.json",
+      "total": 92,
+      "native_source": "siglip-engineering-4-r02-mobile.png"
+    },
+    {
+      "path": "roadmap-model-selection/known-target-classification/convnext/images/final/WI033-CONVNEXT-01-r01-desktop.png",
+      "sha256": "c657c020bba221bcf545c63b83a57b21767180a1c940f4c2fe8b8f09450137b8",
+      "assessment": "batch3-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "convnext-engineering-1-r01-desktop.png"
+    },
+    {
+      "path": "roadmap-model-selection/known-target-classification/convnext/images/final/WI033-CONVNEXT-01-r01-mobile.png",
+      "sha256": "faa66a2036791a3aa55eb97ed3af8a96016407ec3b333969832e6a3c2eacafd3",
+      "assessment": "batch3-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "convnext-engineering-1-r01-mobile.png"
+    },
+    {
+      "path": "roadmap-model-selection/known-target-classification/convnext/images/final/WI033-CONVNEXT-02-r03-desktop.png",
+      "sha256": "4c0032dbf725a0c966a6409c74c5b3c64d5f744f5b7dc5e1a1b1778f64c390ce",
+      "assessment": "batch3-prototype-image-assessment.json",
+      "total": 91,
+      "native_source": "convnext-engineering-2-r03-desktop.png"
+    },
+    {
+      "path": "roadmap-model-selection/known-target-classification/convnext/images/final/WI033-CONVNEXT-02-r03-mobile.png",
+      "sha256": "c51c510032fa087a68e14beae36a7ec3a4b0dcd8eff7753496568659153dd029",
+      "assessment": "batch3-prototype-image-assessment.json",
+      "total": 91,
+      "native_source": "convnext-engineering-2-r03-mobile.png"
+    },
+    {
+      "path": "roadmap-model-selection/known-target-classification/convnext/images/final/WI033-CONVNEXT-03-r01-desktop.png",
+      "sha256": "1bc25cbc2be510c97fd03058745d3107faf15afd8b7996f85cdecd96590c5205",
+      "assessment": "batch3-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "convnext-engineering-3-r01-desktop.png"
+    },
+    {
+      "path": "roadmap-model-selection/known-target-classification/convnext/images/final/WI033-CONVNEXT-03-r01-mobile.png",
+      "sha256": "fed5f18f5267b9126e0f625fdbbeaa187c896e536e9603e967c53477c89f1c56",
+      "assessment": "batch3-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "convnext-engineering-3-r01-mobile.png"
+    },
+    {
+      "path": "roadmap-model-selection/known-target-classification/convnext/images/final/WI033-CONVNEXT-04-r01-desktop.png",
+      "sha256": "743007b5736f2db4aed424144f1a38bed30d8b2194a0a6d70e5847083b481e63",
+      "assessment": "batch3-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "convnext-engineering-4-r01-desktop.png"
+    },
+    {
+      "path": "roadmap-model-selection/known-target-classification/convnext/images/final/WI033-CONVNEXT-04-r01-mobile.png",
+      "sha256": "7f91edfd91c077295a436233e5a990fd76887711142497fabb11bc7c30db26d8",
+      "assessment": "batch3-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "convnext-engineering-4-r01-mobile.png"
+    },
+    {
+      "path": "roadmap-model-selection/known-target-classification/keypoint-r-cnn/images/final/WI033-KPRCNN-01-r01-desktop.png",
+      "sha256": "5f22a9b38711f068434928648ae36b426e5ba2b0c16fc9f6bfce519a98007053",
+      "assessment": "batch3-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "keypoint-rcnn-engineering-1-r01-desktop.png"
+    },
+    {
+      "path": "roadmap-model-selection/known-target-classification/keypoint-r-cnn/images/final/WI033-KPRCNN-01-r01-mobile.png",
+      "sha256": "79d7597fc65473587ef114ba76fbe5316ee66eb017fb572fb7f3588b8a6d7d49",
+      "assessment": "batch3-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "keypoint-rcnn-engineering-1-r01-mobile.png"
+    },
+    {
+      "path": "roadmap-model-selection/known-target-classification/keypoint-r-cnn/images/final/WI033-KPRCNN-02-r02-desktop.png",
+      "sha256": "16750deccd38b520edcf7d034c653b1d2dccc32efafc54dd8a5105f6ee00fe87",
+      "assessment": "batch3-prototype-image-assessment.json",
+      "total": 93,
+      "native_source": "keypoint-rcnn-engineering-2-r02-desktop.png"
+    },
+    {
+      "path": "roadmap-model-selection/known-target-classification/keypoint-r-cnn/images/final/WI033-KPRCNN-02-r02-mobile.png",
+      "sha256": "1a1607d336b0cc3496482cbe4143f897f6bdb5d7661d8dbd3083634d1723bda0",
+      "assessment": "batch3-prototype-image-assessment.json",
+      "total": 93,
+      "native_source": "keypoint-rcnn-engineering-2-r02-mobile.png"
+    },
+    {
+      "path": "roadmap-model-selection/known-target-classification/keypoint-r-cnn/images/final/WI033-KPRCNN-03-r02-desktop.png",
+      "sha256": "a8854180503aba1b6fa463c8f07e9bf2dfbfa8446fe7dc0b13272965e69307cd",
+      "assessment": "batch3-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "keypoint-rcnn-engineering-3-r02-desktop.png"
+    },
+    {
+      "path": "roadmap-model-selection/known-target-classification/keypoint-r-cnn/images/final/WI033-KPRCNN-03-r02-mobile.png",
+      "sha256": "2215f2cf83208eed7cc3cc6d43b130b2c941885cb081fcddd80c7e8e20819194",
+      "assessment": "batch3-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "keypoint-rcnn-engineering-3-r02-mobile.png"
+    },
+    {
+      "path": "roadmap-model-selection/known-target-classification/keypoint-r-cnn/images/final/WI033-KPRCNN-04-r01-desktop.png",
+      "sha256": "da2373229c2f244d9638ee019c3e6f43bff8273bcf8c60a0653a87e3ad0ce71a",
+      "assessment": "batch3-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "keypoint-rcnn-engineering-4-r01-desktop.png"
+    },
+    {
+      "path": "roadmap-model-selection/known-target-classification/keypoint-r-cnn/images/final/WI033-KPRCNN-04-r01-mobile.png",
+      "sha256": "d6b3890923c0184fe1ca19bf73fccf5df6d386bf5a7b2c9a7dd5871562289d7c",
+      "assessment": "batch3-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "keypoint-rcnn-engineering-4-r01-mobile.png"
+    },
+    {
+      "path": "roadmap-model-selection/known-target-classification/pose/images/final/WI033-POSE-01-r02-desktop.png",
+      "sha256": "5d24729269dddf66074b416f943aa628e502e383b61a7790b57970747ea971eb",
+      "assessment": "pose-image-assessment.json",
+      "total": 92,
+      "native_source": "pose-engineering-1-r02-desktop.png"
+    },
+    {
+      "path": "roadmap-model-selection/known-target-classification/pose/images/final/WI033-POSE-01-r02-mobile.png",
+      "sha256": "f72fc3bc7ef3209935b99f4aa08d6ea7fbf5dab563d32771a09d28659dff631b",
+      "assessment": "pose-image-assessment.json",
+      "total": 91,
+      "native_source": "pose-engineering-1-r02-mobile.png"
+    },
+    {
+      "path": "roadmap-model-selection/known-target-classification/pose/images/final/WI033-POSE-02-r02-desktop.png",
+      "sha256": "6bdcf0f303e521efae4543f61d4ebb734882fdf7884ccc65cc5486c2964fd1c5",
+      "assessment": "pose-image-assessment.json",
+      "total": 93,
+      "native_source": "pose-engineering-2-r02-desktop.png"
+    },
+    {
+      "path": "roadmap-model-selection/known-target-classification/pose/images/final/WI033-POSE-02-r02-mobile.png",
+      "sha256": "f799d73ef2741611c8db5999f75d64489427c45b707fdac0956148db90e2544c",
+      "assessment": "pose-image-assessment.json",
+      "total": 92,
+      "native_source": "pose-engineering-2-r02-mobile.png"
+    },
+    {
+      "path": "roadmap-model-selection/known-target-classification/pose/images/final/WI033-POSE-03-r02-desktop.png",
+      "sha256": "e14c460cb12bee87fa5e572e382d8e5ccc0a54bd749a9e19ebb457b19c75a42d",
+      "assessment": "pose-image-assessment.json",
+      "total": 92,
+      "native_source": "pose-engineering-3-r02-desktop.png"
+    },
+    {
+      "path": "roadmap-model-selection/known-target-classification/pose/images/final/WI033-POSE-03-r02-mobile.png",
+      "sha256": "08c08106760ab4318e7cccb2f2e8543197d5fb3b8b2af88493664d16b11437e3",
+      "assessment": "pose-image-assessment.json",
+      "total": 91,
+      "native_source": "pose-engineering-3-r02-mobile.png"
+    },
+    {
+      "path": "roadmap-model-selection/known-target-classification/pose/images/final/WI033-POSE-04-r01-desktop.png",
+      "sha256": "841738c6886529c5d3e177f4f7c04d11807a3f38713e91dcc375c53ff9ed7dd5",
+      "assessment": "pose-image-assessment.json",
+      "total": 93,
+      "native_source": "pose-engineering-4-r01-desktop.png"
+    },
+    {
+      "path": "roadmap-model-selection/known-target-classification/pose/images/final/WI033-POSE-04-r01-mobile.png",
+      "sha256": "678b50f469669647b4553f6b4e5f0bac768982c15e7b502a9424a41437ca4075",
+      "assessment": "pose-image-assessment.json",
+      "total": 92,
+      "native_source": "pose-engineering-4-r01-mobile.png"
+    },
+    {
+      "path": "roadmap-model-selection/known-target-classification/resnet/images/final/WI033-RESNET-01-r01-desktop.png",
+      "sha256": "630dadb4b9f0867a9b6fca4b24f4e3f74d05521c29cc41e4c626c2b009a41f3d",
+      "assessment": "batch3-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "resnet-engineering-1-r01-desktop.png"
+    },
+    {
+      "path": "roadmap-model-selection/known-target-classification/resnet/images/final/WI033-RESNET-01-r01-mobile.png",
+      "sha256": "3dd0da5dd3c02cfcdd6e543be673f14fade6fdd6d452e08a1be7cedb5bc18a9e",
+      "assessment": "batch3-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "resnet-engineering-1-r01-mobile.png"
+    },
+    {
+      "path": "roadmap-model-selection/known-target-classification/resnet/images/final/WI033-RESNET-02-r02-desktop.png",
+      "sha256": "4b2ae645166db246564c9f2f03e0bbd579705ad86c7b68b078a8d96aaa56b95f",
+      "assessment": "batch3-prototype-image-assessment.json",
+      "total": 93,
+      "native_source": "resnet-engineering-2-r02-desktop.png"
+    },
+    {
+      "path": "roadmap-model-selection/known-target-classification/resnet/images/final/WI033-RESNET-02-r02-mobile.png",
+      "sha256": "a6a2bc0143cf785a86b4d6683ed18ed9631a7a4abcddec1e43be7b70433aab8d",
+      "assessment": "batch3-prototype-image-assessment.json",
+      "total": 93,
+      "native_source": "resnet-engineering-2-r02-mobile.png"
+    },
+    {
+      "path": "roadmap-model-selection/known-target-classification/resnet/images/final/WI033-RESNET-03-r01-desktop.png",
+      "sha256": "3c22c329e965ae24a69def7ff53449596f7da6a9ed5a73c59510f538cc89fe3b",
+      "assessment": "batch3-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "resnet-engineering-3-r01-desktop.png"
+    },
+    {
+      "path": "roadmap-model-selection/known-target-classification/resnet/images/final/WI033-RESNET-03-r01-mobile.png",
+      "sha256": "78f0a1ab03ab3a3bfe70570efbc5d0ee59f8f071ba5ecd692b7ce961aeb81eca",
+      "assessment": "batch3-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "resnet-engineering-3-r01-mobile.png"
+    },
+    {
+      "path": "roadmap-model-selection/known-target-classification/resnet/images/final/WI033-RESNET-04-r01-desktop.png",
+      "sha256": "1c6e4a6d61777aa439bc733d2d7dfbdd84aee3290828c4e949e767159c26e8f4",
+      "assessment": "batch3-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "resnet-engineering-4-r01-desktop.png"
+    },
+    {
+      "path": "roadmap-model-selection/known-target-classification/resnet/images/final/WI033-RESNET-04-r01-mobile.png",
+      "sha256": "85078e87e856166dbd9ea92acea0cb065b504f18a2b8279e1467015760911c55",
+      "assessment": "batch3-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "resnet-engineering-4-r01-mobile.png"
+    },
+    {
+      "path": "roadmap-model-selection/known-target-classification/segformer/images/final/WI033-SEGFORMER-01-r01-desktop.png",
+      "sha256": "df904a875d9830bf76c270108eb9fc2fb3eb1db4daed97ebbcba4853af9dcbf7",
+      "assessment": "batch3-expanded-image-assessment.json",
+      "total": 91,
+      "native_source": "segformer-engineering-1-r01-desktop.png"
+    },
+    {
+      "path": "roadmap-model-selection/known-target-classification/segformer/images/final/WI033-SEGFORMER-01-r01-mobile.png",
+      "sha256": "7b3bde76c3bdf5fb2f96f56ba5c82b8c2f5f1399a3c435ed3446017523a5555f",
+      "assessment": "batch3-expanded-image-assessment.json",
+      "total": 91,
+      "native_source": "segformer-engineering-1-r01-mobile.png"
+    },
+    {
+      "path": "roadmap-model-selection/known-target-classification/segformer/images/final/WI033-SEGFORMER-02-r03-desktop.png",
+      "sha256": "8198f3297731d50fecc8c326b5143cae6215959952c050e1ed949d60e48d3a47",
+      "assessment": "batch3-prototype-image-assessment.json",
+      "total": 91,
+      "native_source": "segformer-engineering-2-r03-desktop.png"
+    },
+    {
+      "path": "roadmap-model-selection/known-target-classification/segformer/images/final/WI033-SEGFORMER-02-r03-mobile.png",
+      "sha256": "7eeebc3862bc48d4047559f862d38acd237f41326878b8f02f319fc87ac7c369",
+      "assessment": "batch3-prototype-image-assessment.json",
+      "total": 91,
+      "native_source": "segformer-engineering-2-r03-mobile.png"
+    },
+    {
+      "path": "roadmap-model-selection/known-target-classification/segformer/images/final/WI033-SEGFORMER-03-r02-desktop.png",
+      "sha256": "2e2ac3361de626be2bd0fbc8a7378613d109bd0ddda9b8d639a83be518a04f6e",
+      "assessment": "batch3-expanded-image-assessment.json",
+      "total": 91,
+      "native_source": "segformer-engineering-3-r02-desktop.png"
+    },
+    {
+      "path": "roadmap-model-selection/known-target-classification/segformer/images/final/WI033-SEGFORMER-03-r02-mobile.png",
+      "sha256": "52942ecb8d3e7de11b9a232bc1d0fc82a9296a769104e51df8e52b0ccf55da7f",
+      "assessment": "batch3-expanded-image-assessment.json",
+      "total": 91,
+      "native_source": "segformer-engineering-3-r02-mobile.png"
+    },
+    {
+      "path": "roadmap-model-selection/known-target-classification/segformer/images/final/WI033-SEGFORMER-04-r02-desktop.png",
+      "sha256": "3192b6b3d34f865219eb0d7961485df6bda443e57cb4ecff82ba325e46ad2c42",
+      "assessment": "batch3-expanded-image-assessment.json",
+      "total": 91,
+      "native_source": "segformer-engineering-4-r02-desktop.png"
+    },
+    {
+      "path": "roadmap-model-selection/known-target-classification/segformer/images/final/WI033-SEGFORMER-04-r02-mobile.png",
+      "sha256": "3ccd0595d385beb101e9bdda53993130465cb1b81261622ff62f4c2af85bbf80",
+      "assessment": "batch3-expanded-image-assessment.json",
+      "total": 91,
+      "native_source": "segformer-engineering-4-r02-mobile.png"
+    },
+    {
+      "path": "roadmap-model-selection/known-target-classification/u-net/images/final/WI033-UNET-01-r02-desktop.png",
+      "sha256": "9af33e01ccf7baf1678bfee5b1e0e3c53cc9394940ba1bdf58c2c8b3a04acf4c",
+      "assessment": "batch3-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "u-net-engineering-1-r02-desktop.png"
+    },
+    {
+      "path": "roadmap-model-selection/known-target-classification/u-net/images/final/WI033-UNET-01-r02-mobile.png",
+      "sha256": "2c1e3ba8c0ebfc401dd89f5437ac08a03a80700caf27df98ed3307e1e36bcdf3",
+      "assessment": "batch3-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "u-net-engineering-1-r02-mobile.png"
+    },
+    {
+      "path": "roadmap-model-selection/known-target-classification/u-net/images/final/WI033-UNET-02-r03-desktop.png",
+      "sha256": "eb13e5fc1d9474407ff29b55d8dbca6c568bdb5d206a84741c1cb31941e13946",
+      "assessment": "batch3-prototype-image-assessment.json",
+      "total": 92,
+      "native_source": "u-net-engineering-2-r03-desktop.png"
+    },
+    {
+      "path": "roadmap-model-selection/known-target-classification/u-net/images/final/WI033-UNET-02-r03-mobile.png",
+      "sha256": "1bd8a82ec4b8a3bd1be0185e1a569a0ba1742d7aa0ac46096452294d57104b1e",
+      "assessment": "batch3-prototype-image-assessment.json",
+      "total": 92,
+      "native_source": "u-net-engineering-2-r03-mobile.png"
+    },
+    {
+      "path": "roadmap-model-selection/known-target-classification/u-net/images/final/WI033-UNET-03-r02-desktop.png",
+      "sha256": "33207e66da1da573f9029ceb294e19eccb4dfaa4a64c15b6865dbefc2dc04c34",
+      "assessment": "batch3-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "u-net-engineering-3-r02-desktop.png"
+    },
+    {
+      "path": "roadmap-model-selection/known-target-classification/u-net/images/final/WI033-UNET-03-r02-mobile.png",
+      "sha256": "5ad0bf424fff7f1dda2bfec283dab92232ae3beddb26d210300addb94dac716a",
+      "assessment": "batch3-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "u-net-engineering-3-r02-mobile.png"
+    },
+    {
+      "path": "roadmap-model-selection/known-target-classification/u-net/images/final/WI033-UNET-04-r01-desktop.png",
+      "sha256": "14c9da09bcf7b784d3a777426abe139812b757953dd8822c25b564f62f1442c2",
+      "assessment": "batch3-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "u-net-engineering-4-r01-desktop.png"
+    },
+    {
+      "path": "roadmap-model-selection/known-target-classification/u-net/images/final/WI033-UNET-04-r01-mobile.png",
+      "sha256": "873522bd50f68cb777665c98143459022871ee89d5da8319f3d286777d10e99f",
+      "assessment": "batch3-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "u-net-engineering-4-r01-mobile.png"
+    },
+    {
+      "path": "roadmap-model-selection/known-target-classification/vit-classifier/images/final/WI033-VIT-01-r01-desktop.png",
+      "sha256": "0051e787d612da14ea0ac5d5a2dad7a36c02d337521f4e185536c50bedd07f8c",
+      "assessment": "batch3-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "vit-classifier-engineering-1-r01-desktop.png"
+    },
+    {
+      "path": "roadmap-model-selection/known-target-classification/vit-classifier/images/final/WI033-VIT-01-r01-mobile.png",
+      "sha256": "5abda09d7b5680a4047bb4f3542083e15157e6800d13fee90d5f6d91261d3fb0",
+      "assessment": "batch3-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "vit-classifier-engineering-1-r01-mobile.png"
+    },
+    {
+      "path": "roadmap-model-selection/known-target-classification/vit-classifier/images/final/WI033-VIT-02-r03-desktop.png",
+      "sha256": "68359ac31e366852f7495bf932be6bcf589a86219b8aeb6677a6f62574679200",
+      "assessment": "batch3-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "vit-classifier-engineering-2-r03-desktop.png"
+    },
+    {
+      "path": "roadmap-model-selection/known-target-classification/vit-classifier/images/final/WI033-VIT-02-r03-mobile.png",
+      "sha256": "ceacbab75988c146842e95e792e58fd20463a459f301a7abdb6613384f96815a",
+      "assessment": "batch3-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "vit-classifier-engineering-2-r03-mobile.png"
+    },
+    {
+      "path": "roadmap-model-selection/known-target-classification/vit-classifier/images/final/WI033-VIT-03-r02-desktop.png",
+      "sha256": "94f200f8df0b7aad08989e3c1183ef6494b615634938e86f8b9f5427b4a46368",
+      "assessment": "batch3-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "vit-classifier-engineering-3-r02-desktop.png"
+    },
+    {
+      "path": "roadmap-model-selection/known-target-classification/vit-classifier/images/final/WI033-VIT-03-r02-mobile.png",
+      "sha256": "1ab95ecfb5c16278c4657f2db1b855508c6b418aaa92ecee1dd6d6ab3d19de01",
+      "assessment": "batch3-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "vit-classifier-engineering-3-r02-mobile.png"
+    },
+    {
+      "path": "roadmap-model-selection/known-target-classification/vit-classifier/images/final/WI033-VIT-04-r02-desktop.png",
+      "sha256": "9886c0bd7deb6e70da64f690d44d2a871ca042256344722b4be5400da2dc8bef",
+      "assessment": "batch3-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "vit-classifier-engineering-4-r02-desktop.png"
+    },
+    {
+      "path": "roadmap-model-selection/known-target-classification/vit-classifier/images/final/WI033-VIT-04-r02-mobile.png",
+      "sha256": "665f42644572693732ec197aea118fe18619102b79b7a13b5a574fcd246e37a0",
+      "assessment": "batch3-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "vit-classifier-engineering-4-r02-mobile.png"
+    },
+    {
+      "path": "roadmap-model-selection/known-target-classification/yolo-seg/images/final/WI033-YOLOSEG-01-r03-desktop.png",
+      "sha256": "acbd7dee50806da79f9c164e98204fba64b3b85df5819ade2e457af3a55f91f2",
+      "assessment": "batch3-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "yolo-seg-engineering-1-r03-desktop.png"
+    },
+    {
+      "path": "roadmap-model-selection/known-target-classification/yolo-seg/images/final/WI033-YOLOSEG-01-r03-mobile.png",
+      "sha256": "3c7aec3d179cf21d17a9c801febf1cff41440513dc2691ee95ea6b060652487a",
+      "assessment": "batch3-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "yolo-seg-engineering-1-r03-mobile.png"
+    },
+    {
+      "path": "roadmap-model-selection/known-target-classification/yolo-seg/images/final/WI033-YOLOSEG-02-r02-desktop.png",
+      "sha256": "e3e56520e2b9dd1d774c4cef681ea278d50f37de21ca2a6445c502c634b6b65c",
+      "assessment": "batch3-prototype-image-assessment.json",
+      "total": 93,
+      "native_source": "yolo-seg-engineering-2-r02-desktop.png"
+    },
+    {
+      "path": "roadmap-model-selection/known-target-classification/yolo-seg/images/final/WI033-YOLOSEG-02-r02-mobile.png",
+      "sha256": "df353b95c90f1420863f18c774ea52ad595af1b6f4a9fb57920264d53a37d8f2",
+      "assessment": "batch3-prototype-image-assessment.json",
+      "total": 93,
+      "native_source": "yolo-seg-engineering-2-r02-mobile.png"
+    },
+    {
+      "path": "roadmap-model-selection/known-target-classification/yolo-seg/images/final/WI033-YOLOSEG-03-r03-desktop.png",
+      "sha256": "a279c38ac1cedb9368a4d8c2d4beaa849a3cdff5da73cb28c354938ba9dbd882",
+      "assessment": "batch3-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "yolo-seg-engineering-3-r03-desktop.png"
+    },
+    {
+      "path": "roadmap-model-selection/known-target-classification/yolo-seg/images/final/WI033-YOLOSEG-03-r03-mobile.png",
+      "sha256": "544e53951ee9b6aced92df1d0f63d1c245340787fd5fe0036b07d09f9daa429e",
+      "assessment": "batch3-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "yolo-seg-engineering-3-r03-mobile.png"
+    },
+    {
+      "path": "roadmap-model-selection/known-target-classification/yolo-seg/images/final/WI033-YOLOSEG-04-r03-desktop.png",
+      "sha256": "a9ec871c28ee4a02ce000e762adc1053203e91eed34a08f444b5413a70f8e2c2",
+      "assessment": "batch3-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "yolo-seg-engineering-4-r03-desktop.png"
+    },
+    {
+      "path": "roadmap-model-selection/known-target-classification/yolo-seg/images/final/WI033-YOLOSEG-04-r03-mobile.png",
+      "sha256": "a2c11a84957f526b34dd034aa75a5560028a49a1e6f74ef37dbc7e3b4c493e7c",
+      "assessment": "batch3-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "yolo-seg-engineering-4-r03-mobile.png"
+    },
+    {
+      "path": "roadmap-model-selection/video-temporal/background-subtraction/images/final/WI033-BGSUB-01-r01-desktop.png",
+      "sha256": "22ff9c88efd698d515927585cd8f395c7916ccf4b03165686e3c1a99cebcc7fe",
+      "assessment": "batch6-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "background-subtraction-engineering-1-r01-desktop.png"
+    },
+    {
+      "path": "roadmap-model-selection/video-temporal/background-subtraction/images/final/WI033-BGSUB-01-r01-mobile.png",
+      "sha256": "1cca69c2cde54ca32da17baf3c7aabcaa21350c87754a2d2939f9906aaaaceb0",
+      "assessment": "batch6-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "background-subtraction-engineering-1-r01-mobile.png"
+    },
+    {
+      "path": "roadmap-model-selection/video-temporal/background-subtraction/images/final/WI033-BGSUB-02-r02-desktop.png",
+      "sha256": "1f369ffae22c72de5dc176885b7100f96b774c164813fbd7fbf5c45405756f7a",
+      "assessment": "batch6-prototype-image-assessment.json",
+      "total": 92,
+      "native_source": "background-subtraction-engineering-2-r02-desktop.png"
+    },
+    {
+      "path": "roadmap-model-selection/video-temporal/background-subtraction/images/final/WI033-BGSUB-02-r02-mobile.png",
+      "sha256": "182dccf7ce8b651cd67ff3859654be6298b82ab11afd9a0da9ce68826cb5b698",
+      "assessment": "batch6-prototype-image-assessment.json",
+      "total": 92,
+      "native_source": "background-subtraction-engineering-2-r02-mobile.png"
+    },
+    {
+      "path": "roadmap-model-selection/video-temporal/background-subtraction/images/final/WI033-BGSUB-03-r02-desktop.png",
+      "sha256": "399997078a509b0f124bdeab01ff5140745964d16b2cc4dc7d63ae0e61add887",
+      "assessment": "batch6-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "background-subtraction-engineering-3-r02-desktop.png"
+    },
+    {
+      "path": "roadmap-model-selection/video-temporal/background-subtraction/images/final/WI033-BGSUB-03-r02-mobile.png",
+      "sha256": "41c6a3c506c4e5458d73c1550de87b410dd9156756bef7830709044f7372ec68",
+      "assessment": "batch6-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "background-subtraction-engineering-3-r02-mobile.png"
+    },
+    {
+      "path": "roadmap-model-selection/video-temporal/background-subtraction/images/final/WI033-BGSUB-04-r02-desktop.png",
+      "sha256": "44355b5027d9493447490b692ea72593bae1f8b4cf8b97fb8ddc0b5506314948",
+      "assessment": "batch6-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "background-subtraction-engineering-4-r02-desktop.png"
+    },
+    {
+      "path": "roadmap-model-selection/video-temporal/background-subtraction/images/final/WI033-BGSUB-04-r02-mobile.png",
+      "sha256": "89f62b28f9ffe749b4397c0f9afd197d2b9e2ee3e62c9627fd91a28a0b7b6d3c",
+      "assessment": "batch6-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "background-subtraction-engineering-4-r02-mobile.png"
+    },
+    {
+      "path": "roadmap-model-selection/video-temporal/bytetrack/images/final/WI033-BYTETRACK-01-r01-desktop.png",
+      "sha256": "dd69b3e6c76a8e3eb9e421704d3d87250ec15654553154b75e7a28864bb062dc",
+      "assessment": "batch6-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "bytetrack-engineering-1-r01-desktop.png"
+    },
+    {
+      "path": "roadmap-model-selection/video-temporal/bytetrack/images/final/WI033-BYTETRACK-01-r01-mobile.png",
+      "sha256": "1efcfa1ac57c47ade4f31cbd58af2ef2d0f2dae6924329ec7a1d7dfaa420cf72",
+      "assessment": "batch6-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "bytetrack-engineering-1-r01-mobile.png"
+    },
+    {
+      "path": "roadmap-model-selection/video-temporal/bytetrack/images/final/WI033-BYTETRACK-02-r02-desktop.png",
+      "sha256": "cd6bd11d78705ef266b1dba603025ad93430149adb01951e66624112594881a2",
+      "assessment": "batch6-prototype-image-assessment.json",
+      "total": 92,
+      "native_source": "bytetrack-engineering-2-r02-desktop.png"
+    },
+    {
+      "path": "roadmap-model-selection/video-temporal/bytetrack/images/final/WI033-BYTETRACK-02-r02-mobile.png",
+      "sha256": "a0f09eee57c47d5274809da23c80983bb61a9deec04a7ba9856f3ff2e6a2adb9",
+      "assessment": "batch6-prototype-image-assessment.json",
+      "total": 92,
+      "native_source": "bytetrack-engineering-2-r02-mobile.png"
+    },
+    {
+      "path": "roadmap-model-selection/video-temporal/bytetrack/images/final/WI033-BYTETRACK-03-r01-desktop.png",
+      "sha256": "c9171d0b2b698c5b090062fe6ed94798228c01ff8300bb88d3c5fbfa328deefe",
+      "assessment": "batch6-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "bytetrack-engineering-3-r01-desktop.png"
+    },
+    {
+      "path": "roadmap-model-selection/video-temporal/bytetrack/images/final/WI033-BYTETRACK-03-r01-mobile.png",
+      "sha256": "27a4c6766de42d3e3c1ca02c82a8feaf4ba6f1aec88934a547b5b9add5e8fe12",
+      "assessment": "batch6-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "bytetrack-engineering-3-r01-mobile.png"
+    },
+    {
+      "path": "roadmap-model-selection/video-temporal/bytetrack/images/final/WI033-BYTETRACK-04-r01-desktop.png",
+      "sha256": "9a5c0c1186a4a1881b65ffb16c8bc8455feea7e1b22419b33d33a1bd3c53a317",
+      "assessment": "batch6-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "bytetrack-engineering-4-r01-desktop.png"
+    },
+    {
+      "path": "roadmap-model-selection/video-temporal/bytetrack/images/final/WI033-BYTETRACK-04-r01-mobile.png",
+      "sha256": "798fad23f5ea1a2ee7386386ec2cd81fd8ec201625e2a9737a3ac74f23b74212",
+      "assessment": "batch6-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "bytetrack-engineering-4-r01-mobile.png"
+    },
+    {
+      "path": "roadmap-model-selection/video-temporal/convlstm/images/final/WI033-CONVLSTM-01-r01-desktop.png",
+      "sha256": "bbc0df0001d0dc9257598428fef5aaca57dda6db9a23dbb9974c92bbca337450",
+      "assessment": "batch7-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "convlstm-engineering-1-r01-desktop.png"
+    },
+    {
+      "path": "roadmap-model-selection/video-temporal/convlstm/images/final/WI033-CONVLSTM-01-r01-mobile.png",
+      "sha256": "18acf209865eea8ac4aa230eaf298233b5527740522078488b509a876a5b9443",
+      "assessment": "batch7-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "convlstm-engineering-1-r01-mobile.png"
+    },
+    {
+      "path": "roadmap-model-selection/video-temporal/convlstm/images/final/WI033-CONVLSTM-02-r02-desktop.png",
+      "sha256": "12a3c9282991828f2ef5a4c02a545c1fe7a395867a22951e5561ca866b17853a",
+      "assessment": "batch7-prototype-image-assessment.json",
+      "total": 92,
+      "native_source": "convlstm-engineering-2-r02-desktop.png"
+    },
+    {
+      "path": "roadmap-model-selection/video-temporal/convlstm/images/final/WI033-CONVLSTM-02-r02-mobile.png",
+      "sha256": "ca7be131568471777c3852c64e2f5659485932e31fde1346175f14e28acfb749",
+      "assessment": "batch7-prototype-image-assessment.json",
+      "total": 92,
+      "native_source": "convlstm-engineering-2-r02-mobile.png"
+    },
+    {
+      "path": "roadmap-model-selection/video-temporal/convlstm/images/final/WI033-CONVLSTM-03-r02-desktop.png",
+      "sha256": "5de7ac71fa3c6d169ee9284521e03b0d1c590e7c5a55f0f0745e8d7b918282e6",
+      "assessment": "batch7-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "convlstm-engineering-3-r02-desktop.png"
+    },
+    {
+      "path": "roadmap-model-selection/video-temporal/convlstm/images/final/WI033-CONVLSTM-03-r02-mobile.png",
+      "sha256": "82c71801a84cfd77ad7d4e60b40e822c349998fb6f13aed103f7380d1d600680",
+      "assessment": "batch7-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "convlstm-engineering-3-r02-mobile.png"
+    },
+    {
+      "path": "roadmap-model-selection/video-temporal/convlstm/images/final/WI033-CONVLSTM-04-r01-desktop.png",
+      "sha256": "c69a56a51b7cadaee7151d46100e9bc65e2a28af7be1b42e16a7c3c8fecf71b3",
+      "assessment": "batch7-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "convlstm-engineering-4-r01-desktop.png"
+    },
+    {
+      "path": "roadmap-model-selection/video-temporal/convlstm/images/final/WI033-CONVLSTM-04-r01-mobile.png",
+      "sha256": "696f9ee926ca4c15db34ddf5a40d3df19bc213400f33f4a5cc9d3872f995efb2",
+      "assessment": "batch7-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "convlstm-engineering-4-r01-mobile.png"
+    },
+    {
+      "path": "roadmap-model-selection/video-temporal/frame-difference/images/final/WI033-FRAMEDIFF-01-r01-desktop.png",
+      "sha256": "8a2f68cb9c811f192aeb6738fdcdd3259282ced8d80134a6ecaaa990bfbcd62a",
+      "assessment": "batch6-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "frame-difference-engineering-1-r01-desktop.png"
+    },
+    {
+      "path": "roadmap-model-selection/video-temporal/frame-difference/images/final/WI033-FRAMEDIFF-01-r01-mobile.png",
+      "sha256": "e952011c778081fd6124ce490a840c04cc447b375324951d5e6e2eb77de1421c",
+      "assessment": "batch6-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "frame-difference-engineering-1-r01-mobile.png"
+    },
+    {
+      "path": "roadmap-model-selection/video-temporal/frame-difference/images/final/WI033-FRAMEDIFF-02-r02-desktop.png",
+      "sha256": "2aef2fae1c37a709470cd19849c8e844a7fe5998e9ec333bcfbc76824186af9a",
+      "assessment": "batch6-prototype-image-assessment.json",
+      "total": 92,
+      "native_source": "frame-difference-engineering-2-r02-desktop.png"
+    },
+    {
+      "path": "roadmap-model-selection/video-temporal/frame-difference/images/final/WI033-FRAMEDIFF-02-r02-mobile.png",
+      "sha256": "b62ec57a84d2583d74b906cd7915a9e0639ca29541381f5c8406eead9c527d9e",
+      "assessment": "batch6-prototype-image-assessment.json",
+      "total": 92,
+      "native_source": "frame-difference-engineering-2-r02-mobile.png"
+    },
+    {
+      "path": "roadmap-model-selection/video-temporal/frame-difference/images/final/WI033-FRAMEDIFF-03-r02-desktop.png",
+      "sha256": "032c1699d153647736a1fbcc4ff41386dd4afc4f78e875c7dd7dc3a1017e8ab5",
+      "assessment": "batch6-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "frame-difference-engineering-3-r02-desktop.png"
+    },
+    {
+      "path": "roadmap-model-selection/video-temporal/frame-difference/images/final/WI033-FRAMEDIFF-03-r02-mobile.png",
+      "sha256": "8ecc81fbfd01874c34c3c98c3aa4fc308be7fdf2c218c58d4343d80027bb60c7",
+      "assessment": "batch6-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "frame-difference-engineering-3-r02-mobile.png"
+    },
+    {
+      "path": "roadmap-model-selection/video-temporal/frame-difference/images/final/WI033-FRAMEDIFF-04-r02-desktop.png",
+      "sha256": "a9bef17a3bbe77126011e8a59556e7ecb5c7f39ec6cf8ba2629f8129312ce08d",
+      "assessment": "batch6-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "frame-difference-engineering-4-r02-desktop.png"
+    },
+    {
+      "path": "roadmap-model-selection/video-temporal/frame-difference/images/final/WI033-FRAMEDIFF-04-r02-mobile.png",
+      "sha256": "cca88901639094cbb2b0221bd8a72b939efc41ac9fef4374bea9649bdd8c7452",
+      "assessment": "batch6-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "frame-difference-engineering-4-r02-mobile.png"
+    },
+    {
+      "path": "roadmap-model-selection/video-temporal/lucas-kanade/images/final/WI033-LK-01-r02-desktop.png",
+      "sha256": "36adaa57e4ecdf990dc853e91063bdc6e69406209628948e926255d9a053ff11",
+      "assessment": "batch2-image-assessment.json",
+      "total": 93,
+      "native_source": "lucas-kanade-engineering-1-r02-desktop.png"
+    },
+    {
+      "path": "roadmap-model-selection/video-temporal/lucas-kanade/images/final/WI033-LK-01-r02-mobile.png",
+      "sha256": "671225c19c41181b15a4ab4d543fe61b5fd17b02567df632d0ff2cda83db1a37",
+      "assessment": "batch2-image-assessment.json",
+      "total": 92,
+      "native_source": "lucas-kanade-engineering-1-r02-mobile.png"
+    },
+    {
+      "path": "roadmap-model-selection/video-temporal/lucas-kanade/images/final/WI033-LK-02-r02-desktop.png",
+      "sha256": "9e7bb2812927a082c292e1c2c8df01e4b4b7a09fc882427e94827dfe4f3fd480",
+      "assessment": "batch2-image-assessment.json",
+      "total": 93,
+      "native_source": "lucas-kanade-engineering-2-r02-desktop.png"
+    },
+    {
+      "path": "roadmap-model-selection/video-temporal/lucas-kanade/images/final/WI033-LK-02-r02-mobile.png",
+      "sha256": "80ad1d73c4c17fc996c219cf6c4ee10a8fc02a4f213f65f6b1e80e9fe2660b12",
+      "assessment": "batch2-image-assessment.json",
+      "total": 92,
+      "native_source": "lucas-kanade-engineering-2-r02-mobile.png"
+    },
+    {
+      "path": "roadmap-model-selection/video-temporal/lucas-kanade/images/final/WI033-LK-03-r02-desktop.png",
+      "sha256": "7b202c5a2b7816bb82c11dc486c9d640e63658dedf892554d3269e8701ea9873",
+      "assessment": "batch2-image-assessment.json",
+      "total": 93,
+      "native_source": "lucas-kanade-engineering-3-r02-desktop.png"
+    },
+    {
+      "path": "roadmap-model-selection/video-temporal/lucas-kanade/images/final/WI033-LK-03-r02-mobile.png",
+      "sha256": "f897495628e557738144da7a0278ff8a58c41afe377513e66712af298002bf46",
+      "assessment": "batch2-image-assessment.json",
+      "total": 92,
+      "native_source": "lucas-kanade-engineering-3-r02-mobile.png"
+    },
+    {
+      "path": "roadmap-model-selection/video-temporal/lucas-kanade/images/final/WI033-LK-04-r02-desktop.png",
+      "sha256": "3adc796af48c9bc464fb770b70e1c81c6861e769bf13bc71934cb3176dba8541",
+      "assessment": "batch2-image-assessment.json",
+      "total": 93,
+      "native_source": "lucas-kanade-engineering-4-r02-desktop.png"
+    },
+    {
+      "path": "roadmap-model-selection/video-temporal/lucas-kanade/images/final/WI033-LK-04-r02-mobile.png",
+      "sha256": "0716230b9d586ec28efb385f99d3c57864a931f6f0d9a89822363d4922a37a11",
+      "assessment": "batch2-image-assessment.json",
+      "total": 92,
+      "native_source": "lucas-kanade-engineering-4-r02-mobile.png"
+    },
+    {
+      "path": "roadmap-model-selection/video-temporal/raft/images/final/WI033-RAFT-01-r02-desktop.png",
+      "sha256": "fcc75c983bcff1cfaec9d15bec2338819037b3d30b81cb20d8d5d16e5ce6d4e6",
+      "assessment": "batch2-image-assessment.json",
+      "total": 93,
+      "native_source": "raft-engineering-1-r02-desktop.png"
+    },
+    {
+      "path": "roadmap-model-selection/video-temporal/raft/images/final/WI033-RAFT-01-r02-mobile.png",
+      "sha256": "a6743103d69764a8288cabb727f05dadd6e2e653aac95fe999605173c157f1a3",
+      "assessment": "batch2-image-assessment.json",
+      "total": 92,
+      "native_source": "raft-engineering-1-r02-mobile.png"
+    },
+    {
+      "path": "roadmap-model-selection/video-temporal/raft/images/final/WI033-RAFT-02-r03-desktop.png",
+      "sha256": "901c6286c331b407e3b2581e2a559b34fa7fd3deca085b0adb82a97cb4c1eab2",
+      "assessment": "batch2-image-assessment.json",
+      "total": 93,
+      "native_source": "raft-engineering-2-r03-desktop.png"
+    },
+    {
+      "path": "roadmap-model-selection/video-temporal/raft/images/final/WI033-RAFT-02-r03-mobile.png",
+      "sha256": "9b8482a0a3722cb498f082413a5586232ec39a8ad5a8172cdd44a30d9fe01928",
+      "assessment": "batch2-image-assessment.json",
+      "total": 92,
+      "native_source": "raft-engineering-2-r03-mobile.png"
+    },
+    {
+      "path": "roadmap-model-selection/video-temporal/raft/images/final/WI033-RAFT-03-r02-desktop.png",
+      "sha256": "8850aebb00c7133ac53eb206d882e6183eb3bc4474b20a32a360bb5d603c936a",
+      "assessment": "batch2-image-assessment.json",
+      "total": 93,
+      "native_source": "raft-engineering-3-r02-desktop.png"
+    },
+    {
+      "path": "roadmap-model-selection/video-temporal/raft/images/final/WI033-RAFT-03-r02-mobile.png",
+      "sha256": "823e574a91a697af01f9f4cffb451d79c7edf2f49884b3a9cd661abe73352c3c",
+      "assessment": "batch2-image-assessment.json",
+      "total": 92,
+      "native_source": "raft-engineering-3-r02-mobile.png"
+    },
+    {
+      "path": "roadmap-model-selection/video-temporal/raft/images/final/WI033-RAFT-04-r02-desktop.png",
+      "sha256": "ba593043714791e5fc2166811d3fdefbbd0107c6291be0bc4e0a525d93bd4625",
+      "assessment": "batch2-image-assessment.json",
+      "total": 93,
+      "native_source": "raft-engineering-4-r02-desktop.png"
+    },
+    {
+      "path": "roadmap-model-selection/video-temporal/raft/images/final/WI033-RAFT-04-r02-mobile.png",
+      "sha256": "e6ff90da9a7055259663f6fec7da7d3ced3186cf364c5e44175985fb4b418ffa",
+      "assessment": "batch2-image-assessment.json",
+      "total": 92,
+      "native_source": "raft-engineering-4-r02-mobile.png"
+    },
+    {
+      "path": "roadmap-model-selection/video-temporal/v-jepa/images/final/WI033-VJEPA-01-r01-desktop.png",
+      "sha256": "5ac15e381b73a1e8b2b3dc1d148b92042a05ba7ef06df2b894597a3af8f1f3d8",
+      "assessment": "batch7-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "v-jepa-engineering-1-r01-desktop.png"
+    },
+    {
+      "path": "roadmap-model-selection/video-temporal/v-jepa/images/final/WI033-VJEPA-01-r01-mobile.png",
+      "sha256": "fc11299263f9e688a8048af9cf820ece2be9bc23d5c8374681f236b6cf55cb25",
+      "assessment": "batch7-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "v-jepa-engineering-1-r01-mobile.png"
+    },
+    {
+      "path": "roadmap-model-selection/video-temporal/v-jepa/images/final/WI033-VJEPA-02-r02-desktop.png",
+      "sha256": "f6ede3dadb25a5bf0a826124113d9212ac2394f462f645c03929483518b31458",
+      "assessment": "batch7-prototype-image-assessment.json",
+      "total": 92,
+      "native_source": "v-jepa-engineering-2-r02-desktop.png"
+    },
+    {
+      "path": "roadmap-model-selection/video-temporal/v-jepa/images/final/WI033-VJEPA-02-r02-mobile.png",
+      "sha256": "5657a3ae0febe1b72fdd70a538ccb92db7f7aa0eadd502fd301d663ac8a65756",
+      "assessment": "batch7-prototype-image-assessment.json",
+      "total": 92,
+      "native_source": "v-jepa-engineering-2-r02-mobile.png"
+    },
+    {
+      "path": "roadmap-model-selection/video-temporal/v-jepa/images/final/WI033-VJEPA-03-r02-desktop.png",
+      "sha256": "41d210a47b05f1193d590c83dffa575677f25f4465db649b1ff8d48c5ba88cfe",
+      "assessment": "batch7-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "v-jepa-engineering-3-r02-desktop.png"
+    },
+    {
+      "path": "roadmap-model-selection/video-temporal/v-jepa/images/final/WI033-VJEPA-03-r02-mobile.png",
+      "sha256": "b3b68fb7a3b684dfc84bfacafa52e4e931a398fe9e00d0f19fac07c4db6c2dc7",
+      "assessment": "batch7-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "v-jepa-engineering-3-r02-mobile.png"
+    },
+    {
+      "path": "roadmap-model-selection/video-temporal/v-jepa/images/final/WI033-VJEPA-04-r01-desktop.png",
+      "sha256": "5c9a9fabb45c8453ca46a4f8abdd11366076dd118a4c8adfe186f945b70894d1",
+      "assessment": "batch7-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "v-jepa-engineering-4-r01-desktop.png"
+    },
+    {
+      "path": "roadmap-model-selection/video-temporal/v-jepa/images/final/WI033-VJEPA-04-r01-mobile.png",
+      "sha256": "337ff8a79fefdae06b7b607b36c7ac19b6b7dcfa8a09a86f0520f11e84dd915e",
+      "assessment": "batch7-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "v-jepa-engineering-4-r01-mobile.png"
+    },
+    {
+      "path": "roadmap-model-selection/video-temporal/videomae/images/final/WI033-VIDEOMAE-01-r01-desktop.png",
+      "sha256": "015639ad3a7ac1fa15327bd6977844519f1479b625dfd3d1e7ee2b46b4cbbc54",
+      "assessment": "batch7-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "videomae-engineering-1-r01-desktop.png"
+    },
+    {
+      "path": "roadmap-model-selection/video-temporal/videomae/images/final/WI033-VIDEOMAE-01-r01-mobile.png",
+      "sha256": "0369f1322f02428206f2d3a37d511ee513958449bab99ccf254e6f0744a0221c",
+      "assessment": "batch7-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "videomae-engineering-1-r01-mobile.png"
+    },
+    {
+      "path": "roadmap-model-selection/video-temporal/videomae/images/final/WI033-VIDEOMAE-02-r02-desktop.png",
+      "sha256": "4ac1133e5bd91af6bfb9223c86509ba33041086b7787dae69ec86fb933496225",
+      "assessment": "batch7-prototype-image-assessment.json",
+      "total": 92,
+      "native_source": "videomae-engineering-2-r02-desktop.png"
+    },
+    {
+      "path": "roadmap-model-selection/video-temporal/videomae/images/final/WI033-VIDEOMAE-02-r02-mobile.png",
+      "sha256": "dda1e9dda4b8ceb1b806bb65209b04ba01c36e954d1a3c4b0465df9c16c5a2a3",
+      "assessment": "batch7-prototype-image-assessment.json",
+      "total": 92,
+      "native_source": "videomae-engineering-2-r02-mobile.png"
+    },
+    {
+      "path": "roadmap-model-selection/video-temporal/videomae/images/final/WI033-VIDEOMAE-03-r02-desktop.png",
+      "sha256": "0af8b2a94847a59f012bb1cce4d1ed12d2ece8dc9af7729e02dbfe2ff96f7cf1",
+      "assessment": "batch7-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "videomae-engineering-3-r02-desktop.png"
+    },
+    {
+      "path": "roadmap-model-selection/video-temporal/videomae/images/final/WI033-VIDEOMAE-03-r02-mobile.png",
+      "sha256": "f792e29cf2d155d2001dd9377fc72660f9d76819d13571ec7c0b28e817b19e44",
+      "assessment": "batch7-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "videomae-engineering-3-r02-mobile.png"
+    },
+    {
+      "path": "roadmap-model-selection/video-temporal/videomae/images/final/WI033-VIDEOMAE-04-r02-desktop.png",
+      "sha256": "7c316490eb9d044f48eccafc8874c9e1d33a89f506152a014a3ddd81591baf66",
+      "assessment": "batch7-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "videomae-engineering-4-r02-desktop.png"
+    },
+    {
+      "path": "roadmap-model-selection/video-temporal/videomae/images/final/WI033-VIDEOMAE-04-r02-mobile.png",
+      "sha256": "1f17c33044017a13c60d0bf005ef14d62e57878de8d0e5a3d4e276018a2a707d",
+      "assessment": "batch7-expanded-image-assessment.json",
+      "total": 92,
+      "native_source": "videomae-engineering-4-r02-mobile.png"
+    }
+  ],
+  "user_approval": "pending",
+  "model_inference": false
+}

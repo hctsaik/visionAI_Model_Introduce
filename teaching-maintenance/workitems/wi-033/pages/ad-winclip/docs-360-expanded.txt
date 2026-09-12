@@ -1,0 +1,665 @@
+首頁
+/
+異常檢測：正常性建模
+/
+WinCLIP
+◌ 異常檢測：正常性建模
+先理解，再看工程圖
+WinCLIP
+
+目標樣本少：用人工正常／異常描述與局部視窗，先找金屬板可疑處。
+
+你會拿到：候選分數與位置，不是缺陷機率或尺寸。
+先停下來：看不清細節先改善取像；位置或文字矛盾就回原圖覆核。
+完成本主題
+☆ 收藏
+從案例理解 WinCLIP
+核心機制、反例覆核與條件選型
+
+三張首讀圖；工件、位置圖與問答均為教學示意，非模型實測。
+
+第 01 張 · 看案例，再做判斷
+
+WinCLIP：文字給語意，視窗保留位置
+
+沿著同一塊金屬板 A，追提示、影像與位置的來源。
+
+WinCLIP：文字給語意，視窗保留位置
+放大完整圖
+為什麼需要這個設計？
+
+人工組合正常／異常狀態詞與句型，固定 CLIP 把文字和視窗影像轉成可比較的表示。各視窗的異常分數排回覆蓋位置，以調和平均聚合重疊與多尺度線索。WinCLIP+ 再用少量正常品建立 patch／視窗特徵庫，找最相似正常特徵的距離，融合文字線索。
+
+讀完要能說清楚的三個要點
+固定模型仍有準備
+
+基本 WinCLIP 不更新目標產品權重，但要設計狀態描述與視窗設定；WinCLIP+ 還要挑正常參考，兩種設定分開報告。
+
+為什麼看視窗
+
+窗口內的整體表示保留局部上下文並與文字對齊；不是把任意原始 patch 特徵直接當成文字向量。細傷若已失去影像細節，視窗仍可能漏檢。
+
+分數怎麼讀
+
+正常／異常相似度形成異常分數後才聚合，不是把兩種相似度直接混成一個值。a、b 為示意符號，熱圖不是現場缺陷機率。
+
+想深入，再看這張圖的完整工程說明
+WinCLIP：文字給語意，視窗保留位置
+
+原始問題：沿著同一塊金屬板 A，追提示、影像與位置的來源。
+
+人工組合正常／異常狀態詞與句型，固定 CLIP 把文字和視窗影像轉成可比較的表示。各視窗的異常分數排回覆蓋位置，以調和平均聚合重疊與多尺度線索。WinCLIP+ 再用少量正常品建立 patch／視窗特徵庫，找最相似正常特徵的距離，融合文字線索。
+
+固定模型仍有準備
+
+基本 WinCLIP 不更新目標產品權重，但要設計狀態描述與視窗設定；WinCLIP+ 還要挑正常參考，兩種設定分開報告。
+
+為什麼看視窗
+
+窗口內的整體表示保留局部上下文並與文字對齊；不是把任意原始 patch 特徵直接當成文字向量。細傷若已失去影像細節，視窗仍可能漏檢。
+
+分數怎麼讀
+
+正常／異常相似度形成異常分數後才聚合，不是把兩種相似度直接混成一個值。a、b 為示意符號，熱圖不是現場缺陷機率。
+
+第 02 張 · 看案例，再做判斷
+
+文字懂異常，仍可能看錯細節
+
+用允收孔邊 q 與細刮傷 p，分開看誤報、漏檢。
+
+文字懂異常，仍可能看錯細節
+放大完整圖
+提示來源不同
+
+正常孔邊 q 可能得到高分而誤報，細傷 p 也可能得低分而漏檢；圖中輸出是教學假設。先確認影像可見度，再用獨立正常與真缺陷比較設定，不能把語意相似當成缺陷機率。
+
+先改善什麼
+
+核對光照、對焦與有效解析度，確認 p 能看見、q 屬於允收變化；文字換得更強烈，不能找回影像沒有的細節。
+
+想深入，再看這張圖的完整工程說明
+文字懂異常，仍可能看錯細節
+
+原始問題：用允收孔邊 q 與細刮傷 p，分開看誤報、漏檢。
+
+正常孔邊 q 可能得到高分而誤報，細傷 p 也可能得低分而漏檢；圖中輸出是教學假設。先確認影像可見度，再用獨立正常與真缺陷比較設定，不能把語意相似當成缺陷機率。
+
+提示來源不同
+
+WinCLIP 的文字由人工組合，AnomalyCLIP 的提示參數先在輔助資料學到；不是把兩個名字換在同一套手寫提示上。
+
+先改善什麼
+
+核對光照、對焦與有效解析度，確認 p 能看見、q 屬於允收變化；文字換得更強烈，不能找回影像沒有的細節。
+
+如何查兩種錯誤
+
+固定未見正常與真缺陷，按材質和缺陷尺寸記錄誤報、漏檢。WinCLIP+ 另查正常參考涵蓋，在同漏檢要求下比較完整延遲及覆核量。
+
+第 03 張 · 看案例，再做判斷
+
+三種圖文方法，先選工作結果
+
+同一金屬板 A，比資料準備、位置輸出與對話成本。
+
+三種圖文方法，先選工作結果
+放大完整圖
+圖中比較範圍
+
+WinCLIP 用人工狀態文字與視窗，WinCLIP+ 可加正常參考；AnomalyCLIP 使用輔助資料學到的提示；AnomalyGPT 加入內建定位與對話。只有正常品可先評估參考路線，訓練型方法要先備妥已訓練模型。固定硬體、解析度與漏檢要求，比誤報、延遲和覆核量；位置圖不等於精密輪廓或尺寸。
+
+新產品需要什麼
+
+重查人工提示、正常參考或已訓練提示的適用範圍；需要適配時另留驗證資料。輔助訓練資料與目標評測資料不能混用。
+
+想深入，再看這張圖的完整工程說明
+三種圖文方法，先選工作結果
+
+原始問題：同一金屬板 A，比資料準備、位置輸出與對話成本。
+
+WinCLIP 用人工狀態文字與視窗，WinCLIP+ 可加正常參考；AnomalyCLIP 使用輔助資料學到的提示；AnomalyGPT 加入內建定位與對話。只有正常品可先評估參考路線，訓練型方法要先備妥已訓練模型。固定硬體、解析度與漏檢要求，比誤報、延遲和覆核量；位置圖不等於精密輪廓或尺寸。
+
+圖中比較範圍
+
+位置圖 p? 僅代表輸出形式，不表示三者檢測結果相同。手機以整個 AnomalyGPT 方塊比較輸出，完整的影像、位置提示與問題路徑見核心圖。
+
+新產品需要什麼
+
+重查人工提示、正常參考或已訓練提示的適用範圍；需要適配時另留驗證資料。輔助訓練資料與目標評測資料不能混用。
+
+何時值得用對話
+
+需要互動解讀才加入文字驗證；同時量回答有無證據、定位錯誤和人工覆核時間。只需要位置線索時，可先比較較簡單的輸出流程。
+
+換情境試著判斷
+
+換一個工作條件，再做選擇
+
+新金屬件只有幾張正常照片，要找細刮傷及錯裝；人工文字說得清刮傷，卻難描述哪個安裝方向才對。
+
+只改文字、加入正常參考，或先收集資料訓練定位模型，如何取捨？
+
+看解釋與可接受的取捨
+
+文字可先提供狀態語意；方向依賴外觀參考時可比較 WinCLIP+，但正常參考需涵蓋允收姿態且不能混入缺陷。另留未見正常與真刮傷／錯裝，分開驗證；有足夠資料也可試訓練式方法。固定影像條件與漏檢要求，比誤報、時間和覆核量，不預設少樣本一定較好。
+
+需要時查看基本名詞與模型背景
+prompt：給模型的文字描述
+window：在影像上切出的局部視窗
+WinCLIP：文字給語意，視窗保留位置
+
+人工組合正常／異常狀態詞與句型，固定 CLIP 把文字和視窗影像轉成可比較的表示。各視窗的異常分數排回覆蓋位置，以調和平均聚合重疊與多尺度線索。WinCLIP+ 再用少量正常品建立 patch／視窗特徵庫，找最相似正常特徵的距離，融合文字線索。
+
+語意與位置仍可能錯；必須用未見正常與真缺陷檢查適用範圍。
+
+工程參考：展開文字因果鏈與設定核對點不重複主圖；只核對每步要鎖定的設定。
+
+模型專屬因果鏈
+
+實作時逐步核對
+
+主圖已在上方第一遍。這裡只核對每一步要鎖定的設定與為什麼，不再重貼同一張圖。
+
+1
+鎖定文字側：class name、state words和prompt ensemble
+
+固定CLIP/text encoder、tokenizer、產品類別命名、normal/anomaly state vocabulary、templates、ensemble weights、text embedding normalization與cache revision。
+
+因為：文字側不是說明文案而是模型輸入；一個詞、模板或tokenizer改變即可移動similarity margin。
+
+設定核對：工程圖核對：state words/templates → normal/anomaly text embeddings
+
+2
+鎖定視覺側：ROI全圖、windows與patch layout
+
+固定ROI/registration、resize/crop/padding、full-image/window/patch extraction、sizes/strides/overlap/scales與selected CLIP features。
+
+因為：每個window決定模型實際看見的有效像素與情境；改layout就改特徵、成本與小缺陷可見性。
+
+設定核對：工程圖核對：ROI → image / windows / patches
+
+3
+比較normal與anomaly文字相似度
+
+frozen CLIP image embeddings 分別與兩個text ensembles算normalized similarities；WinCLIP+另按鎖定policy加入few-normal reference contribution。
+
+因為：candidate來自相對margin，不是CLIP自然語言的自信；normal reference雖可補資訊，也帶來contamination、coverage、memory和latency依賴。
+
+設定核對：工程圖核對：visual embeddings → similarity margins (+ references)
+
+4
+融合、校正與abstain後才輸出候選
+
+image/window/patch margins依固定weights、map resize/smoothing/mask、aggregation、local calibration、threshold與abstain/review rule形成candidate。
+
+因為：不同尺度的margin不能靠視覺色彩比較；融合與校正可改低FPR，prompt score也不會自行轉成release decision。
+
+設定核對：工程圖核對：margin fusion → calibration → review gate
+
+想深入：展開失效案例、模型比較與小規模試做（POC）
+初學者可先跳過；準備實作或驗收時再逐項核對。
+
+失效案例、選型與小規模試做
+
+什麼情況不能相信它？
+
+這一區保留完整工程條件，供準備實作或驗收的人逐項核對。
+
+prompt wording、state words、class names、tokenizer或text embedding normalization改變
+
+可能看到：normal/anomaly margin可反轉；舊threshold與舊結果失去可比性。
+
+正確下一步：HOLD；保存prompt/cache revision，重做prompt sensitivity、local calibration、target holdout和regression。
+
+window/patch尺度、stride、padding或aggregation不適合tiny defect
+
+可能看到：缺陷可能落在window邊界、被背景稀釋或在插值/平滑後消失。
+
+正確下一步：量effective pixels、window count/成本、small-defect evidence和low-FPR；無證據時不要宣稱localization。
+
+WinCLIP+ reference bank未治理，或image/text domain/naming gap和global logic存在
+
+可能看到：contamination或coverage問題改變margin，產品名稱和視覺domain不合也會誤判；關係型錯誤仍可能未見。
+
+正確下一步：保存reference IDs/selection/contamination audit；檢查domain/naming transfer，必要時HOLD或用specialist path。
+
+相鄰方法比較
+
+先比 prompt/window state，不比語意流暢
+WinCLIP
+frozen normal/anomaly prompt ensemble，可選few-normal reference bank
+image/window/patch normal-anomaly similarity margin高
+AnomalyCLIP
+auxiliary-learned normal/anomaly prompt tokens
+CLIP patch/global similarity margin高
+PatchCore
+代表性normal patch-feature memory bank
+到最近normal exemplar的feature distance大
+
+WinCLIP 用人工狀態文字與視窗，WinCLIP+ 可加正常參考；AnomalyCLIP 使用輔助資料學到的提示；AnomalyGPT 加入內建定位與對話。只有正常品可先評估參考路線，訓練型方法要先備妥已訓練模型。固定硬體、解析度與漏檢要求，比誤報、延遲和覆核量；位置圖不等於精密輪廓或尺寸。
+
+工程第一步
+
+POC 第一件事：先證明文字與視窗沒有替你偷換問題
+固定 CLIP/tokenizer/precision、class names、normal/anomaly state words、templates/ensemble weights/text cache、ROI/registration 和 full/window/patch layouts。
+若使用 WinCLIP+，鎖定 reference IDs、selection/count、preprocessing、aggregation 與 contamination audit；同時鎖定 margin normalization、fusion、calibration、threshold/abstain。
+在 target holdout/unseen product/future/drift split 比較 prompt/naming sensitivity、small-defect effective pixels、low-FPR escape、false reject/review load、P95/P99、memory 和 window policy。
+目前做法
+
+固定 CLIP/tokenizer、class/state words、prompt ensemble、ROI、image/window/patch layouts、optional reference bank 與 calibration。
+
+要量什麼
+
+量 prompt/naming variance、small-defect effective pixels、low-FPR escape、false reject、review load、reference benefit、P95/P99 與 drift。
+
+反例測試
+
+以 prompt paraphrase、window-boundary placement 或受控 reference-bank contamination 測試，確認舊 margin／threshold 不會被錯誤重用。
+
+誰確認
+
+prompt/model governance owner、AOI 品質 owner、Vision ML owner
+
+先停下來的訊號：prompt 或 window state 不可重播、reference 未治理、image/text domain gap、tiny defect/global logic 或完整 P95 未驗證時，先 HOLD。
+
+讀完請自己講回來
+
+為什麼語意相似、熱區或肯定回答，都不足以直接放行？
+看本頁練習的核對說明
+
+它們只是模型線索，可能誤報、漏檢或超出影像證據。要回原圖，按允收規格及獨立資料驗證，再決定現場處置。
+
+換一個現場再推理
+
+換產品要重做什麼
+
+情境：新產品外觀、允收反光與缺陷型態都不同。
+
+請先回答：哪些準備與驗證不能直接沿用？
+
+核對這個遷移題
+
+重新核對提示來源、正常參考或既有模型的適用範圍；有適配時另留驗證資料。分開檢查正常誤報、真缺陷漏檢與成本；需要對話時再驗文字是否有據。
+
+內容依據：展開這頁主張的 model.md 可追溯範圍
+
+roadmap-model-selection/anomaly-detection/ad-winclip/model.md ↗
+
+WI-033：工程層四圖與手機比較修正；首讀有效內容保留。原生圖已審，整頁與使用者審閱另記。
+
+beginner_path.visuals[frozen-ensemble-workpiece]：模型定位 / architecture_path
+beginner_path.visuals[prompt-ensemble]：architecture_path
+beginner_path.visuals[window-layout]：representation_or_score
+beginner_path.visuals[margin-fusion]：failure_boundary
+beginner_path.visuals[review-hold]：selection_gate / evidence_bundle
+promise：模型定位 / representation_or_score
+mechanism_steps：architecture_path / representation_or_score
+boundary_cases：failure_boundary / selection_gate
+comparison + selection：selection_gate
+poc + acceptance：cost_and_operating_point / evidence_bundle
+transfer_check：failure_boundary / selection_gate
+beginner_path.visuals[0] + scenario + mental_model：https://arxiv.org/abs/2303.14814
+micro_example + transfer_check：由原論文機制推論移除後果；https://arxiv.org/abs/2303.14814
+beginner_path + micro_example + selection：https://arxiv.org/abs/2303.14814
+工程參考：展開四張工程圖與完整節點
+從輸入、機制、交付到限制，核對實作與驗證方式。
+
+先把prompt和window當成模型輸入，而非旁註；再核對文字ensemble、window layout、margins、optional references和local gate。
+
+01
+先看它交出什麼
+02
+再看它怎麼做
+03
+上線前先固定條件
+04
+選它前先看風險
+01
+
+先看它交出什麼
+
+WinCLIP：文字與局部視窗檢查新件
+
+固定模型仍要固定提示、取像與驗證。
+
+正式教學插圖 1/4 · 已可直接閱讀；點圖僅用於放大細節開啟原圖 ↗
+
+30 秒讀懂這張圖
+
+固定模型仍要固定提示、取像與驗證。
+先看哪裡
+
+先看同板待測p與正常留出，再核對人工文字狀態配局部視窗，最後看交出可疑位置並回看原件。
+
+框與框的關係
+
+目標零樣本WinCLIP以人工文字狀態和視窗表示評局部異常，無目標訓練仍須目標留出驗證。WinCLIP+可另加少量正常視覺參考，需明列實際使用模式。
+
+本圖只要帶走
+
+固定模型仍要固定提示、取像與驗證。
+
+位置：對回同一輸入座標，不能任意混層或混影格。
+圖中數值：作者給定機制算例，非模型實測或建議門檻。
+想深入，再看工程細節與完整名詞
+
+技術版讀圖
+
+沿著資料流確認
+目標零樣本WinCLIP以人工文字狀態和視窗表示評局部異常，無目標訓練仍須目標留出驗證。WinCLIP+可另加少量正常視覺參考，需明列實際使用模式。
+先看同板待測p與正常留出，再核對人工文字狀態配局部視窗，最後看交出可疑位置並回看原件。
+技術上不可誤讀
+語意與位置仍可能錯；必須用未見正常與真缺陷檢查適用範圍。
+
+完整節點
+
+原始工程節點
+1
+同板待測p與正常留出
+
+同板待測p與正常留出；請對照圖內輸入、變化與結果。
+
+2
+人工文字狀態配局部視窗
+
+人工文字狀態配局部視窗；請對照圖內輸入、變化與結果。
+
+3
+交出可疑位置並回看原件
+
+交出可疑位置並回看原件；請對照圖內輸入、變化與結果。
+
+工程師先帶走：不用作答，先把這三句話記住。
+
+先看哪裡
+
+先看同板待測p與正常留出，再核對人工文字狀態配局部視窗，最後看交出可疑位置並回看原件。
+
+怎麼理解
+
+目標零樣本WinCLIP以人工文字狀態和視窗表示評局部異常，無目標訓練仍須目標留出驗證。WinCLIP+可另加少量正常視覺參考，需明列實際使用模式。
+
+不要誤用
+
+看不清細節先改善取像；位置或文字矛盾就回原圖覆核。
+
+繼續看第 2 張：再看它怎麼做 ↓
+
+02
+
+再看它怎麼做
+
+WinCLIP：視窗分數，依覆蓋位置聚合
+
+文字定狀態，視窗分數依覆蓋回到位置。
+
+正式教學插圖 2/4 · 已可直接閱讀；點圖僅用於放大細節開啟原圖 ↗
+
+30 秒讀懂這張圖
+
+文字定狀態，視窗分數依覆蓋回到位置。
+先看哪裡
+
+先看人工狀態詞與句型組合，再核對同圖的重疊視窗讀局部，最後看同位置視窗分數調和平均。
+
+框與框的關係
+
+固定CLIP，人工正常/異常狀態詞與句型組合產生文字表示；每視窗整體表示與文字比相似。分數分給視窗所覆蓋位置，同位置重疊視窗使用調和平均，再融合多尺度。給定同尺度兩窗0.2/0.8，在共同覆蓋p的平均為2/(1/0.2+1/0.8)=0.32，不是算術平均0.5，也不是缺陷機率。
+
+本圖只要帶走
+
+文字定狀態，視窗分數依覆蓋回到位置。
+
+位置：對回同一輸入座標，不能任意混層或混影格。
+圖中數值：作者給定機制算例，非模型實測或建議門檻。
+想深入，再看工程細節與完整名詞
+
+技術版讀圖
+
+沿著資料流確認
+固定CLIP，人工正常/異常狀態詞與句型組合產生文字表示；每視窗整體表示與文字比相似。分數分給視窗所覆蓋位置，同位置重疊視窗使用調和平均，再融合多尺度。給定同尺度兩窗0.2/0.8，在共同覆蓋p的平均為2/(1/0.2+1/0.8)=0.32，不是算術平均0.5，也不是缺陷機率。
+先看人工狀態詞與句型組合，再核對同圖的重疊視窗讀局部，最後看同位置視窗分數調和平均。
+技術上不可誤讀
+語意與位置仍可能錯；必須用未見正常與真缺陷檢查適用範圍。
+
+完整節點
+
+原始工程節點
+1
+人工狀態詞與句型組合
+
+人工狀態詞與句型組合；請對照圖內輸入、變化與結果。
+
+2
+同圖的重疊視窗讀局部
+
+同圖的重疊視窗讀局部；請對照圖內輸入、變化與結果。
+
+3
+同位置視窗分數調和平均
+
+同位置視窗分數調和平均；請對照圖內輸入、變化與結果。
+
+工程師先帶走：不用作答，先把這三句話記住。
+
+先看哪裡
+
+先看人工狀態詞與句型組合，再核對同圖的重疊視窗讀局部，最後看同位置視窗分數調和平均。
+
+怎麼理解
+
+固定CLIP，人工正常/異常狀態詞與句型組合產生文字表示；每視窗整體表示與文字比相似。分數分給視窗所覆蓋位置，同位置重疊視窗使用調和平均，再融合多尺度。給定同尺度兩窗0.2/0.8，在共同覆蓋p的平均為2/(1/0.2+1/0.8)=0.32，不是算術平均0.5，也不是缺陷機率。
+
+不要誤用
+
+看不清細節先改善取像；位置或文字矛盾就回原圖覆核。
+
+繼續看第 3 張：上線前先固定條件 ↓
+
+03
+
+上線前先固定條件
+
+WinCLIP：零樣本與正常參考要分清
+
+增加正常參考，資料與庫版本也成為設定。
+
+正式教學插圖 3/4 · 已可直接閱讀；點圖僅用於放大細節開啟原圖 ↗
+
+30 秒讀懂這張圖
+
+增加正常參考，資料與庫版本也成為設定。
+先看哪裡
+
+先看人工提示與視窗固定，再核對加正常參考是WinCLIP+，最後看反光誤報與細傷漏檢分開驗。
+
+框與框的關係
+
+保存CLIP版本、人工提示、視窗尺度/聚合、前處理；WinCLIP+另外保存正常參考和視覺比對。不能用+的結果宣稱未用正常參考，也不把相似分數當概率。
+
+本圖只要帶走
+
+增加正常參考，資料與庫版本也成為設定。
+
+位置：對回同一輸入座標，不能任意混層或混影格。
+圖中數值：作者給定機制算例，非模型實測或建議門檻。
+想深入，再看工程細節與完整名詞
+
+技術版讀圖
+
+沿著資料流確認
+保存CLIP版本、人工提示、視窗尺度/聚合、前處理；WinCLIP+另外保存正常參考和視覺比對。不能用+的結果宣稱未用正常參考，也不把相似分數當概率。
+先看人工提示與視窗固定，再核對加正常參考是WinCLIP+，最後看反光誤報與細傷漏檢分開驗。
+技術上不可誤讀
+語意與位置仍可能錯；必須用未見正常與真缺陷檢查適用範圍。
+
+完整節點
+
+原始工程節點
+1
+人工提示與視窗固定
+
+人工提示與視窗固定；請對照圖內輸入、變化與結果。
+
+2
+加正常參考是WinCLIP+
+
+加正常參考是WinCLIP+；請對照圖內輸入、變化與結果。
+
+3
+反光誤報與細傷漏檢分開驗
+
+反光誤報與細傷漏檢分開驗；請對照圖內輸入、變化與結果。
+
+工程師先帶走：不用作答，先把這三句話記住。
+
+先看哪裡
+
+先看人工提示與視窗固定，再核對加正常參考是WinCLIP+，最後看反光誤報與細傷漏檢分開驗。
+
+怎麼理解
+
+保存CLIP版本、人工提示、視窗尺度/聚合、前處理；WinCLIP+另外保存正常參考和視覺比對。不能用+的結果宣稱未用正常參考，也不把相似分數當概率。
+
+不要誤用
+
+看不清細節先改善取像；位置或文字矛盾就回原圖覆核。
+
+繼續看第 4 張：選它前先看風險 ↓
+
+04
+
+選它前先看風險
+
+WinCLIP：與學習提示比較
+
+同件比較人工提示與學習提示的成本。
+
+正式教學插圖 4/4 · 已可直接閱讀；點圖僅用於放大細節開啟原圖 ↗
+
+30 秒讀懂這張圖
+
+同件比較人工提示與學習提示的成本。
+先看哪裡
+
+先看同板p與同一驗收題，再核對WinCLIP由人工組提示，最後看AnomalyCLIP用輔助資料學提示。
+
+框與框的關係
+
+兩方法均以CLIP語意與局部特徵提供異常線索；前者人工設計文字，後者使用輔助標註學物件無關提示。同資料與錯誤成本比較，不預設固定排名。
+
+本圖只要帶走
+
+同件比較人工提示與學習提示的成本。
+
+位置：對回同一輸入座標，不能任意混層或混影格。
+圖中數值：作者給定機制算例，非模型實測或建議門檻。
+想深入，再看工程細節與完整名詞
+
+技術版讀圖
+
+沿著資料流確認
+兩方法均以CLIP語意與局部特徵提供異常線索；前者人工設計文字，後者使用輔助標註學物件無關提示。同資料與錯誤成本比較，不預設固定排名。
+先看同板p與同一驗收題，再核對WinCLIP由人工組提示，最後看AnomalyCLIP用輔助資料學提示。
+技術上不可誤讀
+語意與位置仍可能錯；必須用未見正常與真缺陷檢查適用範圍。
+
+完整節點
+
+原始工程節點
+1
+同板p與同一驗收題
+
+同板p與同一驗收題；請對照圖內輸入、變化與結果。
+
+2
+WinCLIP由人工組提示
+
+WinCLIP由人工組提示；請對照圖內輸入、變化與結果。
+
+3
+AnomalyCLIP用輔助資料學提示
+
+AnomalyCLIP用輔助資料學提示；請對照圖內輸入、變化與結果。
+
+工程師先帶走：不用作答，先把這三句話記住。
+
+先看哪裡
+
+先看同板p與同一驗收題，再核對WinCLIP由人工組提示，最後看AnomalyCLIP用輔助資料學提示。
+
+怎麼理解
+
+兩方法均以CLIP語意與局部特徵提供異常線索；前者人工設計文字，後者使用輔助標註學物件無關提示。同資料與錯誤成本比較，不預設固定排名。
+
+不要誤用
+
+看不清細節先改善取像；位置或文字矛盾就回原圖覆核。
+
+工程師操作卡
+
+把 WinCLIP 放進小規模試做（POC）前，先回答這五個問題。
+
+先讀白話版就能開始溝通；需要實作、驗證或交接時，再展開下方技術契約。
+
+1
+它會交出什麼？
+
+候選分數與位置，不是缺陷機率或尺寸。
+
+2
+開始先做什麼？
+
+先看文字與視窗怎麼對齊，再看 WinCLIP+ 的正常參考。
+
+3
+開始前要寫下來的四件事
+
+固定畫面範圍、資料來源、模型版本和驗收方式；詳細項目可在下方展開。
+
+4
+怎樣才算真的有用？
+
+保留原圖、乾淨正常品來源、畫面範圍、模型設定、可疑圖、誤報／漏失案例與人工覆核結果。
+
+5
+碰到什麼先停下來？
+
+看不清細節先改善取像；位置或文字矛盾就回原圖覆核。
+
+工程師需要時，再展開原始技術契約
+
+原始建置項目
+
+這些設定要一併保存
+
+輸入與版本：先看文字與視窗怎麼對齊，再看 WinCLIP+ 的正常參考。；關鍵機制：人工組合正常／異常狀態詞與句型，固定 CLIP 把文字和視窗影像轉成可比較的表示。各視窗的異常分數排回覆蓋位置，以調和平均聚合重疊與多尺度線索。WinCLIP+ 再用少量正常品建立 patch／視窗特徵庫，找最相似正常特徵的距離，融合文字線索。；獨立驗證：量 prompt/naming variance、small-defect effective pixels、low-FPR escape、false reject、review load、reference benefit、P95/P99 與 drift。；失敗處理：看不清細節先改善取像；位置或文字矛盾就回原圖覆核。
+
+原始選型條件：WinCLIP 用人工狀態文字與視窗，WinCLIP+ 可加正常參考；AnomalyCLIP 使用輔助資料學到的提示；AnomalyGPT 加入內建定位與對話。只有正常品可先評估參考路線，訓練型方法要先備妥已訓練模型。固定硬體、解析度與漏檢要求，比誤報、延遲和覆核量；位置圖不等於精密輪廓或尺寸。
+
+原始失效邊界
+
+下列情況不可忽略
+
+語意與位置仍可能錯；必須用未見正常與真缺陷檢查適用範圍。
+
+工程結論
+交付可疑位置線索；文字或熱圖都不能直接代表精密輪廓、尺寸、根因或自動放行。
+把這張操作卡帶入 POC 畫布 →
+查看 model.md ↗
+查看圖檔 manifest ↗
+
+相鄰比較
+
+下一個可比較的模型
+
+比較前，先把「看哪段畫面、用哪些資料、交出什麼、多久完成、誰覆核」固定；再到家族頁看共同條件與差異。
+
+PatchCore →
+PaDiM →
+AnomalyDINO →
+SubspaceAD →
+查看家族比較 →
+← DDAD
+AnomalyCLIP →

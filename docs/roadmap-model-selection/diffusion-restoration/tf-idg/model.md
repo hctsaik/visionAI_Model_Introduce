@@ -97,3 +97,40 @@ Preserve source-image/ROI/recipe hashes, split assignment, defect taxonomy and r
 
 - Xu et al., *Training-Free Industrial Defect Generation with Diffusion Models* (ICCV 2025), [CVF Open Access](https://openaccess.thecvf.com/content/ICCV2025/html/Xu_Training-Free_Industrial_Defect_Generation_with_Diffusion_Models_ICCV_2025_paper.html).
 - `full-model-course/07-diffusion-generation-and-restoration.md` for course-scoped claims, page order, and release boundaries.
+
+<!-- wi033-engineering:start -->
+## WI-033 工程圖修正
+
+### TF-IDG：參考外觀引導局部合成
+
+免微調不是零資料。正常底圖與外觀參考及mask是每次生成條件；同中部雙孔板下方兩區，保存合成來源。
+
+不微調權重，仍需要參考、遮罩與驗證。
+
+來源：https://github.com/rubymiaomiao/TF-IDG ; https://raw.githubusercontent.com/rubymiaomiao/TF-IDG/main/cldm/ddim_hacked.py
+
+### TF-IDG：梯度引導生成，不改模型權重
+
+同中部兩孔板，下方兩刮傷區。TF-IDG固定預訓練權重；生成局部特徵與參考對齊，梯度對latent求得並進入採樣更新，不是optimizer更新模型權重。自適應遮罩補弱區，AdaIN及背景融合保持紋理；跨材質參考仍可能錯。官方cldm/ddim_hacked.py autograd.grad(loss,latent)可核對；圖中z→z_next只示意引導不是完整採樣公式。
+
+更新生成中的潛變量，模型權重保持固定。
+
+來源：https://github.com/rubymiaomiao/TF-IDG ; https://raw.githubusercontent.com/rubymiaomiao/TF-IDG/main/cldm/ddim_hacked.py
+
+### TF-IDG：免訓練仍有反向計算
+
+官方autograd.grad(loss,latent)是採樣引導；不要把免微調等同只有一次前向。計入特徵、梯度、採樣與背景融合時間；未實測不給速度排名。
+
+每步特徵梯度也要算進延遲與記憶體。
+
+來源：https://github.com/rubymiaomiao/TF-IDG ; https://raw.githubusercontent.com/rubymiaomiao/TF-IDG/main/cldm/ddim_hacked.py
+
+### TF-IDG：参考換材質，可能帶錯紋理
+
+作者失敗示意：木紋參考可能使金屬局部出現木質纹理；背景保持不能保證mask內物理正確。
+
+梯度對齊外觀，不保證符合目標材質。
+
+來源：https://github.com/rubymiaomiao/TF-IDG ; https://raw.githubusercontent.com/rubymiaomiao/TF-IDG/main/cldm/ddim_hacked.py
+
+<!-- wi033-engineering:end -->

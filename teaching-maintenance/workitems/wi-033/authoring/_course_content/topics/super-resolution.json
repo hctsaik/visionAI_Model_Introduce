@@ -1,0 +1,570 @@
+{
+  "model": "Super-resolution",
+  "badge": "提高影像解析度的任務",
+  "title": "超解析度：由少量像素估計更細的影像",
+  "scenario": {
+    "title": "舊相機拍到的金屬邊緣只有少量像素，放大後呈階梯，想提升檢視細節。",
+    "body": "舊相機拍到的金屬邊緣只有少量像素，放大後呈階梯，想提升檢視細節。"
+  },
+  "promise": {
+    "title": "交付結果與接手工作",
+    "body": "高解析度估計圖，供檢視或另行驗證的下游處理；保留低解析原圖。"
+  },
+  "mental_model": {
+    "title": "提高影像解析度的任務",
+    "body": "插值只依既有像素計算放大後的值；學習式超解析使用訓練所得的邊緣與紋理規律，估計較高解析度的內容。CNN、Transformer或擴散模型都可做這個任務。圖中插值和學習式路徑是可比較的方案，不是每個模型都必須先插值再生成。",
+    "limit": "沿用矩形雙孔板，固定左大孔邊的q。低解析觀測可能無法分辨平滑或微小缺口；兩種高解析候選是作者可能性示意，不宣稱精確降採樣相同。模型選出一種不等於量到缺口，須以真正有解析力的取像及位置對準核對。"
+  },
+  "micro_example": {
+    "title": "需要看外觀，也需要量微小缺口",
+    "setup": "放大圖讓拉絲更漂亮，但缺口位置在不同方法間不一致；更高解析相機要增加取像成本。",
+    "prediction": "哪些工作可以先用超解析，哪些應投資取像？",
+    "reveal": "外觀檢視可測超解析並標明估計；關鍵缺口量測要以具有足夠解析力的真實取像及校正驗證。用相同已知缺口比較插值、前饋與擴散的假細節、定位誤差和時間；更漂亮不等於更適合量測。"
+  },
+  "beginner_path": {
+    "title": "從核心做法、反例到方法選擇",
+    "intro": "舊相機拍到的金屬邊緣只有少量像素，放大後呈階梯，想提升檢視細節。 三張圖依序看做法、失敗與取捨；AI生成教學示意，非模型實測。",
+    "visuals": [
+      {
+        "id": "wi026-super-resolution-c1",
+        "title": "超解析度：增加像素，並估計缺少的細節",
+        "prompt": "舊相機拍到的金屬邊緣只有少量像素，放大後呈階梯，想提升檢視細節。",
+        "caption": "插值只依既有像素計算放大後的值；學習式超解析使用訓練所得的邊緣與紋理規律，估計較高解析度的內容。CNN、Transformer或擴散模型都可做這個任務。圖中插值和學習式路徑是可比較的方案，不是每個模型都必須先插值再生成。",
+        "image": "_course_content/generated-concepts/super-resolution/wi026-super-resolution-c1-r02-desktop.png",
+        "alt": "超解析度：增加像素，並估計缺少的細節。插值只依既有像素計算放大後的值；學習式超解析使用訓練所得的邊緣與紋理規律，估計較高解析度的內容。CNN、Transformer或擴散模型都可做這個任務。圖中插值和學習式路徑是可比較的方案，不是每個模型都必須先插值再生成。 AI生成教學示意，非模型實測。",
+        "callouts": [
+          {
+            "title": "細節從哪裡來",
+            "body": "額外細節是依觀測和先驗估計，不是相機補拍了更多像素。SR3是逐步去噪的代表，前饋方法則可一次產生輸出；具體速度和品質依實作與資料測量。"
+          },
+          {
+            "title": "準備與驗證",
+            "body": "使用現成權重前核對放大倍率及退化方式；適配常需高／低解析配對或受控降採樣。低解析輸入能對回候選只是線索，不足以證明微小紋理唯一正確。"
+          },
+          {
+            "title": "交給誰",
+            "body": "高解析度估計圖，供檢視或另行驗證的下游處理；保留低解析原圖。"
+          }
+        ],
+        "reading_views": [
+          {
+            "title": "超解析度：增加像素，並估計缺少的細節",
+            "image": "_course_content/generated-concepts/super-resolution/wi026-super-resolution-c1-r02-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/super-resolution/wi026-super-resolution-c1-r01-mobile.png",
+            "alt": "超解析度：增加像素，並估計缺少的細節。插值只依既有像素計算放大後的值；學習式超解析使用訓練所得的邊緣與紋理規律，估計較高解析度的內容。CNN、Transformer或擴散模型都可做這個任務。圖中插值和學習式路徑是可比較的方案，不是每個模型都必須先插值再生成。 AI生成教學示意，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              724,
+              2172
+            ],
+            "mobile_display_mode": "full-mobile",
+            "mobile_intrinsic_width": 724,
+            "mobile_intrinsic_height": 2172,
+            "desktop_intrinsic_width": 1672,
+            "desktop_intrinsic_height": 941
+          }
+        ],
+        "core_ideas": true
+      },
+      {
+        "id": "wi026-sr-d2",
+        "title": "超解析反例：同一孔邊，細節仍不確定",
+        "prompt": "同一孔邊q的不同估計，能直接當成量測證據嗎？",
+        "caption": "沿用矩形雙孔板，固定左大孔邊的q。低解析觀測可能無法分辨平滑或微小缺口；兩種高解析候選是作者可能性示意，不宣稱精確降採樣相同。模型選出一種不等於量到缺口，須以真正有解析力的取像及位置對準核對。",
+        "image": "_course_content/generated-concepts/super-resolution/wi033-sr-same-board-counterexample-r02-desktop.png",
+        "alt": "超解析反例：同一孔邊，細節仍不確定。沿用矩形雙孔板，固定左大孔邊的q。低解析觀測可能無法分辨平滑或微小缺口；兩種高解析候選是作者可能性示意，不宣稱精確降採樣相同。模型選出一種不等於量到缺口，須以真正有解析力的取像及位置對準核對。 作者教學示意，非模型實測。",
+        "callouts": [
+          {
+            "title": "看哪裡",
+            "body": "沿用矩形雙孔板，固定左大孔邊的q。低解析觀測可能無法分辨平滑或微小缺口；兩種高解析候選是作者可能性示意，不宣稱精確降採樣相同。模型選出一種不等於量到缺口，須以真正有解析力的取像及位置對準核對。"
+          },
+          {
+            "title": "接著怎麼做",
+            "body": "對關鍵微小特徵做高解析取像核對；生成圖適合的用途與可量測範圍分開驗證。"
+          }
+        ],
+        "reading_views": [
+          {
+            "title": "超解析反例：同一孔邊，細節仍不確定",
+            "image": "_course_content/generated-concepts/super-resolution/wi033-sr-same-board-counterexample-r02-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/super-resolution/wi033-sr-same-board-counterexample-r02-mobile.png",
+            "alt": "超解析反例：同一孔邊，細節仍不確定。沿用矩形雙孔板，固定左大孔邊的q。低解析觀測可能無法分辨平滑或微小缺口；兩種高解析候選是作者可能性示意，不宣稱精確降採樣相同。模型選出一種不等於量到缺口，須以真正有解析力的取像及位置對準核對。 作者教學示意，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              768,
+              2304
+            ],
+            "mobile_display_mode": "full-mobile",
+            "mobile_intrinsic_width": 768,
+            "mobile_intrinsic_height": 2304,
+            "desktop_intrinsic_width": 1672,
+            "desktop_intrinsic_height": 941
+          }
+        ],
+        "core_ideas": false
+      },
+      {
+        "id": "wi026-restoration-d3",
+        "title": "先看影像壞在哪裡，再選復原方法",
+        "prompt": "固定需求與資料，哪種準備及處理成本較合適？",
+        "caption": "先與插值基準比較，再按延遲與細節需求測前饋或擴散式超解析。去模糊解拖影，超解析解低採樣，混合退化要選能處理相應條件的流程；擴散是做法而非第三個互斥任務。",
+        "image": "_course_content/generated-concepts/diffusion-restoration/wi026-restoration-d3-r01-desktop.png",
+        "alt": "先看影像壞在哪裡，再選復原方法。先與插值基準比較，再按延遲與細節需求測前饋或擴散式超解析。去模糊解拖影，超解析解低採樣，混合退化要選能處理相應條件的流程；擴散是做法而非第三個互斥任務。 AI生成教學示意，非模型實測。",
+        "callouts": [
+          {
+            "title": "如何選",
+            "body": "先與插值基準比較，再按延遲與細節需求測前饋或擴散式超解析。去模糊解拖影，超解析解低採樣，混合退化要選能處理相應條件的流程；擴散是做法而非第三個互斥任務。"
+          },
+          {
+            "title": "換產品與完整成本",
+            "body": "只有正常高解析圖可以做降採樣對照，但不能證明未知微缺陷保留。換相機與材質需重驗噪聲、採樣與紋理。輸出不是像素真值或直接尺寸；同資料比較假紋理、邊界偏差、下游錯誤和總時間，別只看圖片變大。"
+          }
+        ],
+        "reading_views": [
+          {
+            "title": "先看影像壞在哪裡，再選復原方法",
+            "image": "_course_content/generated-concepts/diffusion-restoration/wi026-restoration-d3-r01-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/diffusion-restoration/wi026-restoration-d3-r01-mobile.png",
+            "alt": "先看影像壞在哪裡，再選復原方法。先與插值基準比較，再按延遲與細節需求測前饋或擴散式超解析。去模糊解拖影，超解析解低採樣，混合退化要選能處理相應條件的流程；擴散是做法而非第三個互斥任務。 AI生成教學示意，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              724,
+              2172
+            ],
+            "mobile_display_mode": "full-mobile",
+            "mobile_intrinsic_width": 724,
+            "mobile_intrinsic_height": 2172,
+            "desktop_intrinsic_width": 1672,
+            "desktop_intrinsic_height": 941
+          }
+        ],
+        "core_ideas": false
+      }
+    ]
+  },
+  "mechanism_steps": [
+    {
+      "title": "低解析兩孔板與粗像素邊緣",
+      "body": "舊相機拍到的金屬邊緣只有少量像素，放大後呈階梯，想提升檢視細節。",
+      "why": "提高影像解析度的任務",
+      "anchor": "WI026-step-1",
+      "diagram": {
+        "title": "低解析兩孔板與粗像素邊緣",
+        "body": "舊相機拍到的金屬邊緣只有少量像素，放大後呈階梯，想提升檢視細節。",
+        "why": "提高影像解析度的任務",
+        "anchor": "WI026-step-1"
+      }
+    },
+    {
+      "title": "插值只能平滑放大既有像素",
+      "body": "額外細節是依觀測和先驗估計，不是相機補拍了更多像素。SR3是逐步去噪的代表，前饋方法則可一次產生輸出；具體速度和品質依實作與資料測量。",
+      "why": "細節從哪裡來",
+      "anchor": "WI026-step-2",
+      "diagram": {
+        "title": "插值只能平滑放大既有像素",
+        "body": "額外細節是依觀測和先驗估計，不是相機補拍了更多像素。SR3是逐步去噪的代表，前饋方法則可一次產生輸出；具體速度和品質依實作與資料測量。",
+        "why": "細節從哪裡來",
+        "anchor": "WI026-step-2"
+      }
+    },
+    {
+      "title": "學習先驗估計較細的邊緣紋理",
+      "body": "使用現成權重前核對放大倍率及退化方式；適配常需高／低解析配對或受控降採樣。低解析輸入能對回候選只是線索，不足以證明微小紋理唯一正確。",
+      "why": "準備與驗證",
+      "anchor": "WI026-step-3",
+      "diagram": {
+        "title": "學習先驗估計較細的邊緣紋理",
+        "body": "使用現成權重前核對放大倍率及退化方式；適配常需高／低解析配對或受控降採樣。低解析輸入能對回候選只是線索，不足以證明微小紋理唯一正確。",
+        "why": "準備與驗證",
+        "anchor": "WI026-step-3"
+      }
+    },
+    {
+      "title": "對回低解析觀測並保留估計身分",
+      "body": "高解析度估計圖，供檢視或另行驗證的下游處理；保留低解析原圖。",
+      "why": "核對後接入用途",
+      "anchor": "WI026-step-4",
+      "diagram": {
+        "title": "對回低解析觀測並保留估計身分",
+        "body": "高解析度估計圖，供檢視或另行驗證的下游處理；保留低解析原圖。",
+        "why": "核對後接入用途",
+        "anchor": "WI026-step-4"
+      }
+    }
+  ],
+  "visual_intro": "插值只依既有像素計算放大後的值；學習式超解析使用訓練所得的邊緣與紋理規律，估計較高解析度的內容。CNN、Transformer或擴散模型都可做這個任務。圖中插值和學習式路徑是可比較的方案，不是每個模型都必須先插值再生成。",
+  "concept_visuals": [],
+  "boundary_cases": [
+    {
+      "condition": "本課具體反例",
+      "effect": "沿用矩形雙孔板，固定左大孔邊的q。低解析觀測可能無法分辨平滑或微小缺口；兩種高解析候選是作者可能性示意，不宣稱精確降採樣相同。模型選出一種不等於量到缺口，須以真正有解析力的取像及位置對準核對。",
+      "action": "對關鍵微小特徵做高解析取像核對；生成圖適合的用途與可量測範圍分開驗證。"
+    },
+    {
+      "condition": "換產品或取像條件",
+      "effect": "只有正常高解析圖可以做降採樣對照，但不能證明未知微缺陷保留。換相機與材質需重驗噪聲、採樣與紋理。輸出不是像素真值或直接尺寸；同資料比較假紋理、邊界偏差、下游錯誤和總時間，別只看圖片變大。",
+      "action": "先在固定真實留出資料重驗，再擴大用途。"
+    },
+    {
+      "condition": "把生成示意當成模型實測",
+      "effect": "本課圖像說明可能機制與失敗情況，不能據此計算現場準確率或節拍。",
+      "action": "保留真實原圖、模型設定與對照輸出，以符合工作需求的留出資料另行測量。"
+    }
+  ],
+  "comparison": [
+    {
+      "model": "去模糊任務",
+      "normality": "辨識運動／失焦等退化，準備對照",
+      "candidate": "反推清晰估計；核對振鈴及假邊"
+    },
+    {
+      "model": "超解析任務",
+      "normality": "核對採樣、倍率與高低解析對照",
+      "candidate": "高解析估計；核對假紋理及微細邊界"
+    },
+    {
+      "model": "擴散方法",
+      "normality": "選支援目標任務的模型與條件；反覆去噪",
+      "candidate": "可作上述任務的候選做法；比較品質與總成本"
+    }
+  ],
+  "selection": "先與插值基準比較，再按延遲與細節需求測前饋或擴散式超解析。去模糊解拖影，超解析解低採樣，混合退化要選能處理相應條件的流程；擴散是做法而非第三個互斥任務。 只有正常高解析圖可以做降採樣對照，但不能證明未知微缺陷保留。換相機與材質需重驗噪聲、採樣與紋理。輸出不是像素真值或直接尺寸；同資料比較假紋理、邊界偏差、下游錯誤和總時間，別只看圖片變大。",
+  "poc": {
+    "title": "小規模比較：資料、效果與完整成本",
+    "steps": [
+      "保留原始資料，固定訓練與獨立真實留出切分，選定本課工作需求。",
+      "只有正常高解析圖可以做降採樣對照，但不能證明未知微缺陷保留。換相機與材質需重驗噪聲、採樣與紋理。輸出不是像素真值或直接尺寸；同資料比較假紋理、邊界偏差、下游錯誤和總時間，別只看圖片變大。",
+      "記錄失敗影像、原圖與輸出關係、端到端時間和人工覆核量，再決定是否擴大。"
+    ],
+    "hold": "對關鍵微小特徵做高解析取像核對；生成圖適合的用途與可量測範圍分開驗證。",
+    "acceptance": {
+      "baseline": "原有流程或最簡單可行方法",
+      "measure": "關鍵細節、下游錯誤、總時間及覆核量",
+      "negative_control": "以本課反例檢查錯誤結論是否被排除",
+      "owner": "教材使用者指定的實作及覆核負責人"
+    }
+  },
+  "teach_back": {
+    "question": "它改變什麼？換條件後如何選？",
+    "answer": "插值只依既有像素計算放大後的值；學習式超解析使用訓練所得的邊緣與紋理規律，估計較高解析度的內容。CNN、Transformer或擴散模型都可做這個任務。圖中插值和學習式路徑是可比較的方案，不是每個模型都必須先插值再生成。 先與插值基準比較，再按延遲與細節需求測前饋或擴散式超解析。去模糊解拖影，超解析解低採樣，混合退化要選能處理相應條件的流程；擴散是做法而非第三個互斥任務。"
+  },
+  "slide_reading": [
+    {
+      "title": "超解析：輸入採樣與輸出像素分清",
+      "question": "輸出更密，仍要保留原始低解析影像。",
+      "look": "先看矩形板左孔q的粗採樣，再核對插值或學習先驗放大，最後看另存候選與原採樣條件。",
+      "relation": "同矩形板大左小右孔，固定q；保存原解析度、縮放倍率、退化假設與模型版本，輸出不是新增相機資料。",
+      "takeaway": "輸出更密，仍要保留原始低解析影像。",
+      "terms": [
+        "示意數值：作者給定局部算例，非模型實測或建議參數。",
+        "同位置：比較保持相同影像座標與時間身份，不能任意換工件。"
+      ]
+    },
+    {
+      "title": "超解析：由低採樣估計高解析候選",
+      "question": "更多輸出像素，不等於更多相機觀測。",
+      "look": "先看同一矩形雙孔板的粗採樣，再核對插值與學習估計各自放大，最後看縮回低解析核對一致性。",
+      "relation": "維持大左孔/小右孔矩形板，固定左孔邊q。低解析格可經插值或學習先驗變高解析；輸出細節是估計。給定局部兩子像素[20,80]與[40,60]平均同50，只說明非唯一，不聲稱這兩例直接對應有缺口/無缺口。指定主反例也改矩形同板同q。",
+      "takeaway": "更多輸出像素，不等於更多相機觀測。",
+      "terms": [
+        "示意數值：作者給定局部算例，非模型實測或建議參數。",
+        "同位置：比較保持相同影像座標與時間身份，不能任意換工件。"
+      ]
+    },
+    {
+      "title": "超解析：倍率改變像素量與成本",
+      "question": "放大倍率和真實細節改善要分開驗。",
+      "look": "先看寬高各兩倍，像素變四倍，再核對保存模型與低解析來源，最後看真實高解析取像驗q細節。",
+      "relation": "作者100×100到200×200由1萬到4萬像素，只是存儲/輸出量，不保證速度固定四倍。需實测延遲與細節保真，沒有本輪實測。",
+      "takeaway": "放大倍率和真實細節改善要分開驗。",
+      "terms": [
+        "示意數值：作者給定局部算例，非模型實測或建議參數。",
+        "同位置：比較保持相同影像座標與時間身份，不能任意換工件。"
+      ]
+    },
+    {
+      "title": "超解析：插值與生成如何取捨",
+      "question": "同原圖比較細節保真與成本，不只看銳利。",
+      "look": "先看同一左孔q與低解析觀測，再核對插值不學先驗，模型估細節，最後看用真實高解析留出驗證。",
+      "relation": "插值成本通常較簡但不能恢復缺失細節；學習式使用先驗且可能幻覺。固定真實取像、退化、硬體與下游任務比較，不用跨論文排名。",
+      "takeaway": "同原圖比較細節保真與成本，不只看銳利。",
+      "terms": [
+        "示意數值：作者給定局部算例，非模型實測或建議參數。",
+        "同位置：比較保持相同影像座標與時間身份，不能任意換工件。"
+      ]
+    }
+  ],
+  "comparison_headers": {
+    "title": "先看影像壞在哪裡，再選復原方法",
+    "basis": "資料準備與方法分工",
+    "output": "交付結果與核對重點"
+  },
+  "transfer_check": {
+    "title": "需要看外觀，也需要量微小缺口",
+    "scenario": "放大圖讓拉絲更漂亮，但缺口位置在不同方法間不一致；更高解析相機要增加取像成本。",
+    "question": "哪些工作可以先用超解析，哪些應投資取像？",
+    "answer": "外觀檢視可測超解析並標明估計；關鍵缺口量測要以具有足夠解析力的真實取像及校正驗證。用相同已知缺口比較插值、前饋與擴散的假細節、定位誤差和時間；更漂亮不等於更適合量測。"
+  },
+  "review_trace": {
+    "authority": "roadmap-model-selection/diffusion-restoration/super-resolution/model.md",
+    "scope": "WI-033：工程層四圖與手機比較修正；首讀有效內容保留。原生圖已審，整頁與使用者審閱另記。",
+    "claims": [
+      {
+        "id": "visual-1",
+        "field": "beginner_path.visuals[low-resolution-bracket]",
+        "source": "模型定位 / architecture_path"
+      },
+      {
+        "id": "visual-2",
+        "field": "beginner_path.visuals[sampling-scale]",
+        "source": "architecture_path"
+      },
+      {
+        "id": "visual-3",
+        "field": "beginner_path.visuals[known-target-evidence]",
+        "source": "representation_or_score"
+      },
+      {
+        "id": "visual-4",
+        "field": "beginner_path.visuals[scale-counterfactual]",
+        "source": "failure_boundary"
+      },
+      {
+        "id": "visual-5",
+        "field": "beginner_path.visuals[evidence-gate]",
+        "source": "selection_gate / evidence_bundle"
+      },
+      {
+        "id": "promise",
+        "field": "promise",
+        "source": "模型定位 / representation_or_score"
+      },
+      {
+        "id": "mechanism",
+        "field": "mechanism_steps",
+        "source": "architecture_path / representation_or_score"
+      },
+      {
+        "id": "boundaries",
+        "field": "boundary_cases",
+        "source": "failure_boundary / selection_gate"
+      },
+      {
+        "id": "comparison",
+        "field": "comparison + selection",
+        "source": "selection_gate"
+      },
+      {
+        "id": "poc",
+        "field": "poc + acceptance",
+        "source": "cost_and_operating_point / evidence_bundle"
+      },
+      {
+        "id": "transfer",
+        "field": "transfer_check",
+        "source": "failure_boundary / selection_gate"
+      },
+      {
+        "id": "f02-core",
+        "field": "beginner_path.visuals[0] + scenario + mental_model",
+        "source": "roadmap-model-selection/diffusion-restoration/super-resolution/model.md"
+      },
+      {
+        "id": "f02-transfer",
+        "field": "micro_example + transfer_check + selection",
+        "source": "roadmap-model-selection/diffusion-restoration/super-resolution/model.md"
+      },
+      {
+        "id": "wi026-first-read",
+        "field": "beginner_path + core + selection + transfer",
+        "source": "https://arxiv.org/abs/2104.07636"
+      }
+    ]
+  },
+  "quality_status": {
+    "label": "首讀圖文已重製並自評；使用者核准待確認",
+    "state": "self-reviewed",
+    "round": "WI-026",
+    "reason": "38張不同PNG逐圖審查；整頁與互動證據見workitems/wi-026，原工程圖未重新評分。"
+  },
+  "teaching_preflight": {
+    "brief": "teaching-images/vision-ai-model-selection/workitems/wi-026/super-resolution-c1-r01.md",
+    "story": "C",
+    "major_visual_nodes": 4,
+    "visual_status": "self-reviewed",
+    "user_review": "pending"
+  },
+  "engineering_slides": [
+    {
+      "title": "超解析：輸入採樣與輸出像素分清",
+      "question": "輸出更密，仍要保留原始低解析影像。",
+      "plain": {
+        "look": "先看矩形板左孔q的粗採樣，再核對插值或學習先驗放大，最後看另存候選與原採樣條件。",
+        "relation": "同矩形板大左小右孔，固定q；保存原解析度、縮放倍率、退化假設與模型版本，輸出不是新增相機資料。",
+        "takeaway": "輸出更密，仍要保留原始低解析影像。"
+      },
+      "terms": [
+        "示意數值：作者給定局部算例，非模型實測或建議參數。",
+        "同位置：比較保持相同影像座標與時間身份，不能任意換工件。"
+      ],
+      "guide": [
+        "同矩形板大左小右孔，固定q；保存原解析度、縮放倍率、退化假設與模型版本，輸出不是新增相機資料。",
+        "先看矩形板左孔q的粗採樣，再核對插值或學習先驗放大，最後看另存候選與原採樣條件。"
+      ],
+      "stages": [
+        {
+          "title": "矩形板左孔q的粗採樣",
+          "body": "矩形板左孔q的粗採樣；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "插值或學習先驗放大",
+          "body": "插值或學習先驗放大；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "另存候選與原採樣條件",
+          "body": "另存候選與原採樣條件；請對照圖內輸入、變化與結果。"
+        }
+      ],
+      "misconception": "沿用矩形雙孔板，固定左大孔邊的q。低解析觀測可能無法分辨平滑或微小缺口；兩種高解析候選是作者可能性示意，不宣稱精確降採樣相同。模型選出一種不等於量到缺口，須以真正有解析力的取像及位置對準核對。",
+      "alt": "超解析：輸入採樣與輸出像素分清。輸出更密，仍要保留原始低解析影像。 教學示意，非模型實測。",
+      "mobile_image": "roadmap-model-selection/diffusion-restoration/super-resolution/images/final/WI033-SUPERRES-01-r01-mobile.png",
+      "mobile_width": 768,
+      "mobile_height": 2304,
+      "engineering": {
+        "takeaway": "輸出更密，仍要保留原始低解析影像。",
+        "nextAction": "保留原始資料，固定訓練與獨立真實留出切分，選定本課工作需求。",
+        "redLine": "對關鍵微小特徵做高解析取像核對；生成圖適合的用途與可量測範圍分開驗證。"
+      },
+      "source": "https://arxiv.org/abs/2104.07636"
+    },
+    {
+      "title": "超解析：由低採樣估計高解析候選",
+      "question": "更多輸出像素，不等於更多相機觀測。",
+      "plain": {
+        "look": "先看同一矩形雙孔板的粗採樣，再核對插值與學習估計各自放大，最後看縮回低解析核對一致性。",
+        "relation": "維持大左孔/小右孔矩形板，固定左孔邊q。低解析格可經插值或學習先驗變高解析；輸出細節是估計。給定局部兩子像素[20,80]與[40,60]平均同50，只說明非唯一，不聲稱這兩例直接對應有缺口/無缺口。指定主反例也改矩形同板同q。",
+        "takeaway": "更多輸出像素，不等於更多相機觀測。"
+      },
+      "terms": [
+        "示意數值：作者給定局部算例，非模型實測或建議參數。",
+        "同位置：比較保持相同影像座標與時間身份，不能任意換工件。"
+      ],
+      "guide": [
+        "維持大左孔/小右孔矩形板，固定左孔邊q。低解析格可經插值或學習先驗變高解析；輸出細節是估計。給定局部兩子像素[20,80]與[40,60]平均同50，只說明非唯一，不聲稱這兩例直接對應有缺口/無缺口。指定主反例也改矩形同板同q。",
+        "先看同一矩形雙孔板的粗採樣，再核對插值與學習估計各自放大，最後看縮回低解析核對一致性。"
+      ],
+      "stages": [
+        {
+          "title": "同一矩形雙孔板的粗採樣",
+          "body": "同一矩形雙孔板的粗採樣；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "插值與學習估計各自放大",
+          "body": "插值與學習估計各自放大；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "縮回低解析核對一致性",
+          "body": "縮回低解析核對一致性；請對照圖內輸入、變化與結果。"
+        }
+      ],
+      "misconception": "沿用矩形雙孔板，固定左大孔邊的q。低解析觀測可能無法分辨平滑或微小缺口；兩種高解析候選是作者可能性示意，不宣稱精確降採樣相同。模型選出一種不等於量到缺口，須以真正有解析力的取像及位置對準核對。",
+      "alt": "超解析：由低採樣估計高解析候選。更多輸出像素，不等於更多相機觀測。 教學示意，非模型實測。",
+      "mobile_image": "roadmap-model-selection/diffusion-restoration/super-resolution/images/final/WI033-SUPERRES-02-r01-mobile.png",
+      "mobile_width": 768,
+      "mobile_height": 2304,
+      "engineering": {
+        "takeaway": "更多輸出像素，不等於更多相機觀測。",
+        "nextAction": "保留原始資料，固定訓練與獨立真實留出切分，選定本課工作需求。",
+        "redLine": "對關鍵微小特徵做高解析取像核對；生成圖適合的用途與可量測範圍分開驗證。"
+      },
+      "source": "https://arxiv.org/abs/2104.07636"
+    },
+    {
+      "title": "超解析：倍率改變像素量與成本",
+      "question": "放大倍率和真實細節改善要分開驗。",
+      "plain": {
+        "look": "先看寬高各兩倍，像素變四倍，再核對保存模型與低解析來源，最後看真實高解析取像驗q細節。",
+        "relation": "作者100×100到200×200由1萬到4萬像素，只是存儲/輸出量，不保證速度固定四倍。需實测延遲與細節保真，沒有本輪實測。",
+        "takeaway": "放大倍率和真實細節改善要分開驗。"
+      },
+      "terms": [
+        "示意數值：作者給定局部算例，非模型實測或建議參數。",
+        "同位置：比較保持相同影像座標與時間身份，不能任意換工件。"
+      ],
+      "guide": [
+        "作者100×100到200×200由1萬到4萬像素，只是存儲/輸出量，不保證速度固定四倍。需實测延遲與細節保真，沒有本輪實測。",
+        "先看寬高各兩倍，像素變四倍，再核對保存模型與低解析來源，最後看真實高解析取像驗q細節。"
+      ],
+      "stages": [
+        {
+          "title": "寬高各兩倍，像素變四倍",
+          "body": "寬高各兩倍，像素變四倍；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "保存模型與低解析來源",
+          "body": "保存模型與低解析來源；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "真實高解析取像驗q細節",
+          "body": "真實高解析取像驗q細節；請對照圖內輸入、變化與結果。"
+        }
+      ],
+      "misconception": "沿用矩形雙孔板，固定左大孔邊的q。低解析觀測可能無法分辨平滑或微小缺口；兩種高解析候選是作者可能性示意，不宣稱精確降採樣相同。模型選出一種不等於量到缺口，須以真正有解析力的取像及位置對準核對。",
+      "alt": "超解析：倍率改變像素量與成本。放大倍率和真實細節改善要分開驗。 教學示意，非模型實測。",
+      "mobile_image": "roadmap-model-selection/diffusion-restoration/super-resolution/images/final/WI033-SUPERRES-03-r01-mobile.png",
+      "mobile_width": 768,
+      "mobile_height": 2304,
+      "engineering": {
+        "takeaway": "放大倍率和真實細節改善要分開驗。",
+        "nextAction": "保留原始資料，固定訓練與獨立真實留出切分，選定本課工作需求。",
+        "redLine": "對關鍵微小特徵做高解析取像核對；生成圖適合的用途與可量測範圍分開驗證。"
+      },
+      "source": "https://arxiv.org/abs/2104.07636"
+    },
+    {
+      "title": "超解析：插值與生成如何取捨",
+      "question": "同原圖比較細節保真與成本，不只看銳利。",
+      "plain": {
+        "look": "先看同一左孔q與低解析觀測，再核對插值不學先驗，模型估細節，最後看用真實高解析留出驗證。",
+        "relation": "插值成本通常較簡但不能恢復缺失細節；學習式使用先驗且可能幻覺。固定真實取像、退化、硬體與下游任務比較，不用跨論文排名。",
+        "takeaway": "同原圖比較細節保真與成本，不只看銳利。"
+      },
+      "terms": [
+        "示意數值：作者給定局部算例，非模型實測或建議參數。",
+        "同位置：比較保持相同影像座標與時間身份，不能任意換工件。"
+      ],
+      "guide": [
+        "插值成本通常較簡但不能恢復缺失細節；學習式使用先驗且可能幻覺。固定真實取像、退化、硬體與下游任務比較，不用跨論文排名。",
+        "先看同一左孔q與低解析觀測，再核對插值不學先驗，模型估細節，最後看用真實高解析留出驗證。"
+      ],
+      "stages": [
+        {
+          "title": "同一左孔q與低解析觀測",
+          "body": "同一左孔q與低解析觀測；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "插值不學先驗，模型估細節",
+          "body": "插值不學先驗，模型估細節；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "用真實高解析留出驗證",
+          "body": "用真實高解析留出驗證；請對照圖內輸入、變化與結果。"
+        }
+      ],
+      "misconception": "沿用矩形雙孔板，固定左大孔邊的q。低解析觀測可能無法分辨平滑或微小缺口；兩種高解析候選是作者可能性示意，不宣稱精確降採樣相同。模型選出一種不等於量到缺口，須以真正有解析力的取像及位置對準核對。",
+      "alt": "超解析：插值與生成如何取捨。同原圖比較細節保真與成本，不只看銳利。 教學示意，非模型實測。",
+      "mobile_image": "roadmap-model-selection/diffusion-restoration/super-resolution/images/final/WI033-SUPERRES-04-r01-mobile.png",
+      "mobile_width": 768,
+      "mobile_height": 2304,
+      "engineering": {
+        "takeaway": "同原圖比較細節保真與成本，不只看銳利。",
+        "nextAction": "保留原始資料，固定訓練與獨立真實留出切分，選定本課工作需求。",
+        "redLine": "對關鍵微小特徵做高解析取像核對；生成圖適合的用途與可量測範圍分開驗證。"
+      },
+      "source": "https://arxiv.org/abs/2104.07636"
+    }
+  ]
+}

@@ -1,3 +1,9 @@
+## WI-033 第二部分52課本機完成（2026-09-12）
+
+[報告](workitems/wi-033/REPORT.md)、[逐圖資產](workitems/wi-033/final-selected-assets.json)、[全52課驗證](workitems/wi-033/verification-all52.json)及[維護核對](workitems/wi-033/maintenance-verification.json)保存第二部分成果。52課208組工程故事、指定主線／深讀修正，共460張新啟用PNG；使用者核准pending，尚未commit/push或發布。
+
+維護副本保存原生SVG、版本preflight、審查/失敗/驗證紀錄、生成與整合程式、頁面JSON/文字、基準來源及52課authoring。啟用PNG位於docs，完整頁面截圖和歷史PNG仍在本機workitems/wi-033；不是整個工作區備份。從PLAN核對現行引用後接續，不直接重跑舊生成器。根Markdown與已安裝skill仍為編輯權威。
+
 ## WI-032 發布完成（2026-09-11）
 
 第一部分六課成果已 commit 並 push：2e218926e2ff5d1a8d21ca5cb7bbe381fde27819；GitHub Pages 部署成功，公開 93 個檔案逐一 hash 與已提交內容一致（本機部分 Markdown 為 CRLF，Git 為 LF，文字內容一致）。發布證據為 workitems/wi-032/public-release-verification.json。最新學習及接續資料同步保存在 Git 的 teaching-maintenance。使用者成品核准仍 pending；第二部分 52 課未開始，下次依根 Overall_Review.md 第二部分接續。此段取代下方歷史未發布狀態。

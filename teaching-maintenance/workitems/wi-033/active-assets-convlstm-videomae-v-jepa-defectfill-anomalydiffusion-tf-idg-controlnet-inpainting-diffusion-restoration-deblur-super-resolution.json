@@ -1,0 +1,882 @@
+[
+  {
+    "id": "convlstm-engineering-1",
+    "mode": "desktop",
+    "path": "roadmap-model-selection/video-temporal/convlstm/images/final/WI033-CONVLSTM-01-r01-desktop.png",
+    "sha256": "bbc0df0001d0dc9257598428fef5aaca57dda6db9a23dbb9974c92bbca337450",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "convlstm-engineering-1",
+    "mode": "mobile",
+    "path": "roadmap-model-selection/video-temporal/convlstm/images/final/WI033-CONVLSTM-01-r01-mobile.png",
+    "sha256": "18acf209865eea8ac4aa230eaf298233b5527740522078488b509a876a5b9443",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "convlstm-engineering-2",
+    "mode": "desktop",
+    "path": "roadmap-model-selection/video-temporal/convlstm/images/final/WI033-CONVLSTM-02-r02-desktop.png",
+    "sha256": "12a3c9282991828f2ef5a4c02a545c1fe7a395867a22951e5561ca866b17853a",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "convlstm-engineering-2",
+    "mode": "mobile",
+    "path": "roadmap-model-selection/video-temporal/convlstm/images/final/WI033-CONVLSTM-02-r02-mobile.png",
+    "sha256": "ca7be131568471777c3852c64e2f5659485932e31fde1346175f14e28acfb749",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "convlstm-engineering-3",
+    "mode": "desktop",
+    "path": "roadmap-model-selection/video-temporal/convlstm/images/final/WI033-CONVLSTM-03-r02-desktop.png",
+    "sha256": "5de7ac71fa3c6d169ee9284521e03b0d1c590e7c5a55f0f0745e8d7b918282e6",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "convlstm-engineering-3",
+    "mode": "mobile",
+    "path": "roadmap-model-selection/video-temporal/convlstm/images/final/WI033-CONVLSTM-03-r02-mobile.png",
+    "sha256": "82c71801a84cfd77ad7d4e60b40e822c349998fb6f13aed103f7380d1d600680",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "convlstm-engineering-4",
+    "mode": "desktop",
+    "path": "roadmap-model-selection/video-temporal/convlstm/images/final/WI033-CONVLSTM-04-r01-desktop.png",
+    "sha256": "c69a56a51b7cadaee7151d46100e9bc65e2a28af7be1b42e16a7c3c8fecf71b3",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "convlstm-engineering-4",
+    "mode": "mobile",
+    "path": "roadmap-model-selection/video-temporal/convlstm/images/final/WI033-CONVLSTM-04-r01-mobile.png",
+    "sha256": "696f9ee926ca4c15db34ddf5a40d3df19bc213400f33f4a5cc9d3872f995efb2",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "videomae-engineering-1",
+    "mode": "desktop",
+    "path": "roadmap-model-selection/video-temporal/videomae/images/final/WI033-VIDEOMAE-01-r01-desktop.png",
+    "sha256": "015639ad3a7ac1fa15327bd6977844519f1479b625dfd3d1e7ee2b46b4cbbc54",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "videomae-engineering-1",
+    "mode": "mobile",
+    "path": "roadmap-model-selection/video-temporal/videomae/images/final/WI033-VIDEOMAE-01-r01-mobile.png",
+    "sha256": "0369f1322f02428206f2d3a37d511ee513958449bab99ccf254e6f0744a0221c",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "videomae-engineering-2",
+    "mode": "desktop",
+    "path": "roadmap-model-selection/video-temporal/videomae/images/final/WI033-VIDEOMAE-02-r02-desktop.png",
+    "sha256": "4ac1133e5bd91af6bfb9223c86509ba33041086b7787dae69ec86fb933496225",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "videomae-engineering-2",
+    "mode": "mobile",
+    "path": "roadmap-model-selection/video-temporal/videomae/images/final/WI033-VIDEOMAE-02-r02-mobile.png",
+    "sha256": "dda1e9dda4b8ceb1b806bb65209b04ba01c36e954d1a3c4b0465df9c16c5a2a3",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "videomae-engineering-3",
+    "mode": "desktop",
+    "path": "roadmap-model-selection/video-temporal/videomae/images/final/WI033-VIDEOMAE-03-r02-desktop.png",
+    "sha256": "0af8b2a94847a59f012bb1cce4d1ed12d2ece8dc9af7729e02dbfe2ff96f7cf1",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "videomae-engineering-3",
+    "mode": "mobile",
+    "path": "roadmap-model-selection/video-temporal/videomae/images/final/WI033-VIDEOMAE-03-r02-mobile.png",
+    "sha256": "f792e29cf2d155d2001dd9377fc72660f9d76819d13571ec7c0b28e817b19e44",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "videomae-engineering-4",
+    "mode": "desktop",
+    "path": "roadmap-model-selection/video-temporal/videomae/images/final/WI033-VIDEOMAE-04-r02-desktop.png",
+    "sha256": "7c316490eb9d044f48eccafc8874c9e1d33a89f506152a014a3ddd81591baf66",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "videomae-engineering-4",
+    "mode": "mobile",
+    "path": "roadmap-model-selection/video-temporal/videomae/images/final/WI033-VIDEOMAE-04-r02-mobile.png",
+    "sha256": "1f17c33044017a13c60d0bf005ef14d62e57878de8d0e5a3d4e276018a2a707d",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "v-jepa-engineering-1",
+    "mode": "desktop",
+    "path": "roadmap-model-selection/video-temporal/v-jepa/images/final/WI033-VJEPA-01-r01-desktop.png",
+    "sha256": "5ac15e381b73a1e8b2b3dc1d148b92042a05ba7ef06df2b894597a3af8f1f3d8",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "v-jepa-engineering-1",
+    "mode": "mobile",
+    "path": "roadmap-model-selection/video-temporal/v-jepa/images/final/WI033-VJEPA-01-r01-mobile.png",
+    "sha256": "fc11299263f9e688a8048af9cf820ece2be9bc23d5c8374681f236b6cf55cb25",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "v-jepa-engineering-2",
+    "mode": "desktop",
+    "path": "roadmap-model-selection/video-temporal/v-jepa/images/final/WI033-VJEPA-02-r02-desktop.png",
+    "sha256": "f6ede3dadb25a5bf0a826124113d9212ac2394f462f645c03929483518b31458",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "v-jepa-engineering-2",
+    "mode": "mobile",
+    "path": "roadmap-model-selection/video-temporal/v-jepa/images/final/WI033-VJEPA-02-r02-mobile.png",
+    "sha256": "5657a3ae0febe1b72fdd70a538ccb92db7f7aa0eadd502fd301d663ac8a65756",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "v-jepa-engineering-3",
+    "mode": "desktop",
+    "path": "roadmap-model-selection/video-temporal/v-jepa/images/final/WI033-VJEPA-03-r02-desktop.png",
+    "sha256": "41d210a47b05f1193d590c83dffa575677f25f4465db649b1ff8d48c5ba88cfe",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "v-jepa-engineering-3",
+    "mode": "mobile",
+    "path": "roadmap-model-selection/video-temporal/v-jepa/images/final/WI033-VJEPA-03-r02-mobile.png",
+    "sha256": "b3b68fb7a3b684dfc84bfacafa52e4e931a398fe9e00d0f19fac07c4db6c2dc7",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "v-jepa-engineering-4",
+    "mode": "desktop",
+    "path": "roadmap-model-selection/video-temporal/v-jepa/images/final/WI033-VJEPA-04-r01-desktop.png",
+    "sha256": "5c9a9fabb45c8453ca46a4f8abdd11366076dd118a4c8adfe186f945b70894d1",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "v-jepa-engineering-4",
+    "mode": "mobile",
+    "path": "roadmap-model-selection/video-temporal/v-jepa/images/final/WI033-VJEPA-04-r01-mobile.png",
+    "sha256": "337ff8a79fefdae06b7b607b36c7ac19b6b7dcfa8a09a86f0520f11e84dd915e",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "defectfill-engineering-1",
+    "mode": "desktop",
+    "path": "roadmap-model-selection/diffusion-restoration/defectfill/images/final/WI033-DEFECTFILL-01-r01-desktop.png",
+    "sha256": "3e466c7ae315e3aa38ec6101d73e8054c5d171cc8241f0c3025c4b4d80b21c2b",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "defectfill-engineering-1",
+    "mode": "mobile",
+    "path": "roadmap-model-selection/diffusion-restoration/defectfill/images/final/WI033-DEFECTFILL-01-r01-mobile.png",
+    "sha256": "c3657f69d7b96ea3c778c5d697b85c05482d3f428172ce1ceabeef05165b1ad2",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "defectfill-engineering-2",
+    "mode": "desktop",
+    "path": "roadmap-model-selection/diffusion-restoration/defectfill/images/final/WI033-DEFECTFILL-02-r02-desktop.png",
+    "sha256": "492bbaba99a8ca4eadaf80e1cf70fb665b1451f6293b9146b0cb13362a5b6323",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "defectfill-engineering-2",
+    "mode": "mobile",
+    "path": "roadmap-model-selection/diffusion-restoration/defectfill/images/final/WI033-DEFECTFILL-02-r02-mobile.png",
+    "sha256": "3872b8b6c3f1c5c392d83dc354c511e456ab030b7378fe4ff8f82e12b2c7e9be",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "defectfill-engineering-3",
+    "mode": "desktop",
+    "path": "roadmap-model-selection/diffusion-restoration/defectfill/images/final/WI033-DEFECTFILL-03-r01-desktop.png",
+    "sha256": "5bdd31e4975ce9662ff0ddbe0c36b6835d17619a06ad45f860b9a7067e0eb155",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "defectfill-engineering-3",
+    "mode": "mobile",
+    "path": "roadmap-model-selection/diffusion-restoration/defectfill/images/final/WI033-DEFECTFILL-03-r01-mobile.png",
+    "sha256": "b61cd96375fef8476d83db6acdce83d1377cb6bd976c05709253476fa9cd5b70",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "defectfill-engineering-4",
+    "mode": "desktop",
+    "path": "roadmap-model-selection/diffusion-restoration/defectfill/images/final/WI033-DEFECTFILL-04-r01-desktop.png",
+    "sha256": "5d3398f0c0a6efade206bcf0b015459e4f853c334a4a7f2dd3f4eb17457a79c6",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "defectfill-engineering-4",
+    "mode": "mobile",
+    "path": "roadmap-model-selection/diffusion-restoration/defectfill/images/final/WI033-DEFECTFILL-04-r01-mobile.png",
+    "sha256": "c284c44f19234ab9d37add49c6729915447c15c2180e7fa4ffaae8aeeb8176a2",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "anomalydiffusion-engineering-1",
+    "mode": "desktop",
+    "path": "roadmap-model-selection/diffusion-restoration/anomalydiffusion/images/final/WI033-ANOMALYDIFFUSION-01-r01-desktop.png",
+    "sha256": "8fb5db2268aff62034d19ab380a528ec7a9e2c28ae950f6fece6b39487bdf318",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "anomalydiffusion-engineering-1",
+    "mode": "mobile",
+    "path": "roadmap-model-selection/diffusion-restoration/anomalydiffusion/images/final/WI033-ANOMALYDIFFUSION-01-r01-mobile.png",
+    "sha256": "97329df8996a533df0689f1023d6072fa536f4535ccc3c7acf5428a18165c488",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "anomalydiffusion-engineering-2",
+    "mode": "desktop",
+    "path": "roadmap-model-selection/diffusion-restoration/anomalydiffusion/images/final/WI033-ANOMALYDIFFUSION-02-r02-desktop.png",
+    "sha256": "5ee1f4e813dcd07ae40cec8fbeab87db584babc2de8467cce2cd943922d5fb81",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "anomalydiffusion-engineering-2",
+    "mode": "mobile",
+    "path": "roadmap-model-selection/diffusion-restoration/anomalydiffusion/images/final/WI033-ANOMALYDIFFUSION-02-r02-mobile.png",
+    "sha256": "a7cfccbe9e303821583f4d7a424cc3ebe524b7c783ad61f16eb56e1a5a0cb5bf",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "anomalydiffusion-engineering-3",
+    "mode": "desktop",
+    "path": "roadmap-model-selection/diffusion-restoration/anomalydiffusion/images/final/WI033-ANOMALYDIFFUSION-03-r01-desktop.png",
+    "sha256": "593413c24d0c013c8f3ee3e86a5cb04f262bbcdfdf6b18ffd8760a11855cd9df",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "anomalydiffusion-engineering-3",
+    "mode": "mobile",
+    "path": "roadmap-model-selection/diffusion-restoration/anomalydiffusion/images/final/WI033-ANOMALYDIFFUSION-03-r01-mobile.png",
+    "sha256": "1f5817ed2c9c2e3fa8fc45825cd9045be40606461a379136eb35a1742abd2c1c",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "anomalydiffusion-engineering-4",
+    "mode": "desktop",
+    "path": "roadmap-model-selection/diffusion-restoration/anomalydiffusion/images/final/WI033-ANOMALYDIFFUSION-04-r01-desktop.png",
+    "sha256": "7115dadf2e262f46566213810f0f3b75a264037d9a8997d6479b6a8197042d88",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "anomalydiffusion-engineering-4",
+    "mode": "mobile",
+    "path": "roadmap-model-selection/diffusion-restoration/anomalydiffusion/images/final/WI033-ANOMALYDIFFUSION-04-r01-mobile.png",
+    "sha256": "df16b27c40720252b9248140e2d39056b92c4a5ab8a5588c63d1318743bd5b52",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "tf-idg-engineering-1",
+    "mode": "desktop",
+    "path": "roadmap-model-selection/diffusion-restoration/tf-idg/images/final/WI033-TFIDG-01-r01-desktop.png",
+    "sha256": "60ad31f9d56541573d0e1616b596d54ae8aba128be5c46e16be394e152619dce",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "tf-idg-engineering-1",
+    "mode": "mobile",
+    "path": "roadmap-model-selection/diffusion-restoration/tf-idg/images/final/WI033-TFIDG-01-r01-mobile.png",
+    "sha256": "1056d4d9f3bb3fdff41332799fd778c6c12b943200e666f19348191467fb8023",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "tf-idg-engineering-2",
+    "mode": "desktop",
+    "path": "roadmap-model-selection/diffusion-restoration/tf-idg/images/final/WI033-TFIDG-02-r01-desktop.png",
+    "sha256": "c769572287011179a6d4ee85c830dcd34ec985a3f960d4a39462cd4ef1bcc306",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "tf-idg-engineering-2",
+    "mode": "mobile",
+    "path": "roadmap-model-selection/diffusion-restoration/tf-idg/images/final/WI033-TFIDG-02-r01-mobile.png",
+    "sha256": "5f8e3ddec5395c217bb730ec95b5ea946aa82483325b596866d979a521b1e4f7",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "tf-idg-engineering-3",
+    "mode": "desktop",
+    "path": "roadmap-model-selection/diffusion-restoration/tf-idg/images/final/WI033-TFIDG-03-r01-desktop.png",
+    "sha256": "049f913a6cb3afddaf6886e859fe4c4a24dfe6f6ed14f3ab907f3aa6ba26a299",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "tf-idg-engineering-3",
+    "mode": "mobile",
+    "path": "roadmap-model-selection/diffusion-restoration/tf-idg/images/final/WI033-TFIDG-03-r01-mobile.png",
+    "sha256": "348bf9436ca7838674d991b0b5259b82d9766614196081c83ad02522a5485eba",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "tf-idg-engineering-4",
+    "mode": "desktop",
+    "path": "roadmap-model-selection/diffusion-restoration/tf-idg/images/final/WI033-TFIDG-04-r01-desktop.png",
+    "sha256": "8112d211e7e55072203381e8fea23015586fe174a551ef209fab9b8b706beb76",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "tf-idg-engineering-4",
+    "mode": "mobile",
+    "path": "roadmap-model-selection/diffusion-restoration/tf-idg/images/final/WI033-TFIDG-04-r01-mobile.png",
+    "sha256": "0cf0c736527c3ade92abdf358065f6798c7304ef38cbb94dc01a4595b309e852",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "controlnet-engineering-1",
+    "mode": "desktop",
+    "path": "roadmap-model-selection/diffusion-restoration/controlnet/images/final/WI033-CONTROLNET-01-r01-desktop.png",
+    "sha256": "1559180a2f03f7c9e375c837ba28a6a09232cd488ae9cd4c3a433c9f068ec9c5",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "controlnet-engineering-1",
+    "mode": "mobile",
+    "path": "roadmap-model-selection/diffusion-restoration/controlnet/images/final/WI033-CONTROLNET-01-r01-mobile.png",
+    "sha256": "49d4874bcd2c71a7e46dbda92012f33188fe28e7e5d72b0957d153223bbcbeb2",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "controlnet-engineering-2",
+    "mode": "desktop",
+    "path": "roadmap-model-selection/diffusion-restoration/controlnet/images/final/WI033-CONTROLNET-02-r02-desktop.png",
+    "sha256": "8abed0c2e3ab4aa6f2fc66b8e4a801112830ad13a2a77054c25c71a97f71b0a0",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "controlnet-engineering-2",
+    "mode": "mobile",
+    "path": "roadmap-model-selection/diffusion-restoration/controlnet/images/final/WI033-CONTROLNET-02-r02-mobile.png",
+    "sha256": "e7c2f1239fdc382f539be79c2b3be923d8e520232664f68e47d503a5501d9a60",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "controlnet-engineering-3",
+    "mode": "desktop",
+    "path": "roadmap-model-selection/diffusion-restoration/controlnet/images/final/WI033-CONTROLNET-03-r01-desktop.png",
+    "sha256": "78c624b9036872694fdc00bfd54d603b5f58a421566467152edc705f0a7cbdf1",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "controlnet-engineering-3",
+    "mode": "mobile",
+    "path": "roadmap-model-selection/diffusion-restoration/controlnet/images/final/WI033-CONTROLNET-03-r01-mobile.png",
+    "sha256": "63391f78a329f93402ffef91d065da8fec73595a884b7668ae3fcaf730b60b2c",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "controlnet-engineering-4",
+    "mode": "desktop",
+    "path": "roadmap-model-selection/diffusion-restoration/controlnet/images/final/WI033-CONTROLNET-04-r01-desktop.png",
+    "sha256": "4d7b17fc1fdff3532d858133ebefb8ea83b34fff5fd4c0cc13a38372efb1edf9",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "controlnet-engineering-4",
+    "mode": "mobile",
+    "path": "roadmap-model-selection/diffusion-restoration/controlnet/images/final/WI033-CONTROLNET-04-r01-mobile.png",
+    "sha256": "9c62570f3caaaee5819498400b436a19cb38a1fa18f7da85d64f467914d0034f",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "inpainting-engineering-1",
+    "mode": "desktop",
+    "path": "roadmap-model-selection/diffusion-restoration/inpainting/images/final/WI033-INPAINTING-01-r01-desktop.png",
+    "sha256": "ad48cb7358c7a4aaca0035b5b2ee8f89f20de508f8301ab7b93053f4efe765f1",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "inpainting-engineering-1",
+    "mode": "mobile",
+    "path": "roadmap-model-selection/diffusion-restoration/inpainting/images/final/WI033-INPAINTING-01-r01-mobile.png",
+    "sha256": "ab3bc4f71d5c0b6642a178af5551eb5fb50f22cd4d9e627c0b446d8beb7975ff",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "inpainting-engineering-2",
+    "mode": "desktop",
+    "path": "roadmap-model-selection/diffusion-restoration/inpainting/images/final/WI033-INPAINTING-02-r02-desktop.png",
+    "sha256": "ba05005e738b7e839f20a274363b5e152028eb5eb4640154271923692974a0e2",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "inpainting-engineering-2",
+    "mode": "mobile",
+    "path": "roadmap-model-selection/diffusion-restoration/inpainting/images/final/WI033-INPAINTING-02-r02-mobile.png",
+    "sha256": "2b8fce9414a1329e9903f992ea6a9a3f6399ea77b5bda537bff2ef2de5ff4cec",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "inpainting-engineering-3",
+    "mode": "desktop",
+    "path": "roadmap-model-selection/diffusion-restoration/inpainting/images/final/WI033-INPAINTING-03-r01-desktop.png",
+    "sha256": "14c5443221b6e1e89b0f42802ac9a203608a964b155d86f2114420ea9e3e0a62",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "inpainting-engineering-3",
+    "mode": "mobile",
+    "path": "roadmap-model-selection/diffusion-restoration/inpainting/images/final/WI033-INPAINTING-03-r01-mobile.png",
+    "sha256": "c41e94bda9619a54097fbf1af242d7749f0829ddd3bd8919c7e27d52fda8e45c",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "inpainting-engineering-4",
+    "mode": "desktop",
+    "path": "roadmap-model-selection/diffusion-restoration/inpainting/images/final/WI033-INPAINTING-04-r01-desktop.png",
+    "sha256": "23b02964fafdf74931ed18341416d343c0c4149b4aed9c6fe7993110e5b7ad6e",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "inpainting-engineering-4",
+    "mode": "mobile",
+    "path": "roadmap-model-selection/diffusion-restoration/inpainting/images/final/WI033-INPAINTING-04-r01-mobile.png",
+    "sha256": "36c9bff067147488c558c6313de91eca7f698e90ff2f0349227a4dfeb0d1d7e7",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "diffusion-restoration-engineering-1",
+    "mode": "desktop",
+    "path": "roadmap-model-selection/diffusion-restoration/diffusion-restoration/images/final/WI033-DIFFUSION-RESTORATION-01-r02-desktop.png",
+    "sha256": "fad8928a5dd7c885452a4251a0dd285fe46035dbbf158c8b5f04ca3db7cedc88",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "diffusion-restoration-engineering-1",
+    "mode": "mobile",
+    "path": "roadmap-model-selection/diffusion-restoration/diffusion-restoration/images/final/WI033-DIFFUSION-RESTORATION-01-r02-mobile.png",
+    "sha256": "bfea800031a36912d958e4f795ce3112153d17c73880a56ef7bf36f57a98214b",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "diffusion-restoration-engineering-2",
+    "mode": "desktop",
+    "path": "roadmap-model-selection/diffusion-restoration/diffusion-restoration/images/final/WI033-DIFFUSION-RESTORATION-02-r01-desktop.png",
+    "sha256": "b9c79f66e1baffa21a0d15c77d6b2c8bd7ee3ac0802982516bdddb717a0feca1",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "diffusion-restoration-engineering-2",
+    "mode": "mobile",
+    "path": "roadmap-model-selection/diffusion-restoration/diffusion-restoration/images/final/WI033-DIFFUSION-RESTORATION-02-r01-mobile.png",
+    "sha256": "6d56b1e0bef1c5aa2077e2befc7c6b30d102d194307ea73d223a24b5e44e7678",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "diffusion-restoration-engineering-3",
+    "mode": "desktop",
+    "path": "roadmap-model-selection/diffusion-restoration/diffusion-restoration/images/final/WI033-DIFFUSION-RESTORATION-03-r02-desktop.png",
+    "sha256": "0ba32d75e3613e92a8f5079583ba29620a6b1e5595b53f2f18cf2a69df7d5e63",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "diffusion-restoration-engineering-3",
+    "mode": "mobile",
+    "path": "roadmap-model-selection/diffusion-restoration/diffusion-restoration/images/final/WI033-DIFFUSION-RESTORATION-03-r02-mobile.png",
+    "sha256": "bd1a3c41b134a4a6af6252d66785bd4498b85fa959173bc07b0ed72088d05618",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "diffusion-restoration-engineering-4",
+    "mode": "desktop",
+    "path": "roadmap-model-selection/diffusion-restoration/diffusion-restoration/images/final/WI033-DIFFUSION-RESTORATION-04-r02-desktop.png",
+    "sha256": "33215d6c675db785490ee908588a3464f2cb48decad2c707ba899e13ea362396",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "diffusion-restoration-engineering-4",
+    "mode": "mobile",
+    "path": "roadmap-model-selection/diffusion-restoration/diffusion-restoration/images/final/WI033-DIFFUSION-RESTORATION-04-r02-mobile.png",
+    "sha256": "d0e5dce864c4e8e92dd725c930c8696cfb4581fec719ababfbaf623f6fa68a05",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "deblur-engineering-1",
+    "mode": "desktop",
+    "path": "roadmap-model-selection/diffusion-restoration/deblur/images/final/WI033-DEBLUR-01-r01-desktop.png",
+    "sha256": "f836dc25e8141a329231cbe315a9850975dc892044855f8a3e2ccf79f0f2ebcf",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "deblur-engineering-1",
+    "mode": "mobile",
+    "path": "roadmap-model-selection/diffusion-restoration/deblur/images/final/WI033-DEBLUR-01-r01-mobile.png",
+    "sha256": "a6af0ba2ee021da6357e9c7f4dd492d42da130f660325cb272e0f606faa94b32",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "deblur-engineering-2",
+    "mode": "desktop",
+    "path": "roadmap-model-selection/diffusion-restoration/deblur/images/final/WI033-DEBLUR-02-r01-desktop.png",
+    "sha256": "5f14c1ec368ef9c78de72f727da8c1256ebcd4e68c0cb1735b15986e16411c7f",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "deblur-engineering-2",
+    "mode": "mobile",
+    "path": "roadmap-model-selection/diffusion-restoration/deblur/images/final/WI033-DEBLUR-02-r01-mobile.png",
+    "sha256": "829b5f9b7b0fec6374d11397ec4896439b328e097c3976661679abe53fc0efcf",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "deblur-engineering-3",
+    "mode": "desktop",
+    "path": "roadmap-model-selection/diffusion-restoration/deblur/images/final/WI033-DEBLUR-03-r02-desktop.png",
+    "sha256": "0faa83f7b30996b4b878a52dc3fc62849de4a8d5a91ba95f11bca579ed93d88d",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "deblur-engineering-3",
+    "mode": "mobile",
+    "path": "roadmap-model-selection/diffusion-restoration/deblur/images/final/WI033-DEBLUR-03-r02-mobile.png",
+    "sha256": "db06e232ef5be1f0343887611fe86163d312c171e94e5540998dfffe3d2df7c5",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "deblur-engineering-4",
+    "mode": "desktop",
+    "path": "roadmap-model-selection/diffusion-restoration/deblur/images/final/WI033-DEBLUR-04-r01-desktop.png",
+    "sha256": "e5581693f9f97e4b9167dfe5797faac597de8204b3e8621764ae31e54448428e",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "deblur-engineering-4",
+    "mode": "mobile",
+    "path": "roadmap-model-selection/diffusion-restoration/deblur/images/final/WI033-DEBLUR-04-r01-mobile.png",
+    "sha256": "d53ba471ad9d5e8fb55e3ae1673295787a10ff79e7004695ff55c32b41e37caf",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "super-resolution-engineering-1",
+    "mode": "desktop",
+    "path": "roadmap-model-selection/diffusion-restoration/super-resolution/images/final/WI033-SUPERRES-01-r01-desktop.png",
+    "sha256": "f0fb40f8a3ebb08cab656e5b2d19608fe38a9759bed487baedbf77d2789e1d23",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "super-resolution-engineering-1",
+    "mode": "mobile",
+    "path": "roadmap-model-selection/diffusion-restoration/super-resolution/images/final/WI033-SUPERRES-01-r01-mobile.png",
+    "sha256": "35476ee4084b4059faed3d2873238dcd336a2ea783ef5703d884ca44beffec2d",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "super-resolution-engineering-2",
+    "mode": "desktop",
+    "path": "roadmap-model-selection/diffusion-restoration/super-resolution/images/final/WI033-SUPERRES-02-r01-desktop.png",
+    "sha256": "d42a0851ba3579d391c646e08f8ee10e73eb5e431dcc3010cbf638d52ca14c3f",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "super-resolution-engineering-2",
+    "mode": "mobile",
+    "path": "roadmap-model-selection/diffusion-restoration/super-resolution/images/final/WI033-SUPERRES-02-r01-mobile.png",
+    "sha256": "666ab693b55aad595773626056015a06e40ddb83a317a91305a3efcc11a1418a",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "super-resolution-engineering-3",
+    "mode": "desktop",
+    "path": "roadmap-model-selection/diffusion-restoration/super-resolution/images/final/WI033-SUPERRES-03-r01-desktop.png",
+    "sha256": "e7380b6b9aae50280339e1e57455a68494090ccc98fd3854a36bbf9fbb8a8a35",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "super-resolution-engineering-3",
+    "mode": "mobile",
+    "path": "roadmap-model-selection/diffusion-restoration/super-resolution/images/final/WI033-SUPERRES-03-r01-mobile.png",
+    "sha256": "c049f421da9a61d88aae1198c50ff266841e64aad0f722d52340ba43d7ec7d85",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "super-resolution-engineering-4",
+    "mode": "desktop",
+    "path": "roadmap-model-selection/diffusion-restoration/super-resolution/images/final/WI033-SUPERRES-04-r01-desktop.png",
+    "sha256": "6e0720e53658125d423710cdd74b6577fa5f0c129368dd4549d9298b8881b5ba",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "super-resolution-engineering-4",
+    "mode": "mobile",
+    "path": "roadmap-model-selection/diffusion-restoration/super-resolution/images/final/WI033-SUPERRES-04-r01-mobile.png",
+    "sha256": "a0832eed8f512fc79292c2e08eea38a5839f01fa987d7d986b92180b3cb24fa9",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  }
+]

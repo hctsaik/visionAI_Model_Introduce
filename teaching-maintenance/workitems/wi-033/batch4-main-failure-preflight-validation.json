@@ -1,0 +1,32 @@
+[
+  {
+    "brief": "C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-033/dinov2-main-failure-r01.md",
+    "objective": "相近特徵不能證明完整，先回原圖查細節。",
+    "page_type": "D",
+    "node_count": 3,
+    "reference": "teaching-images/vision-ai-model-selection/course-delivery/section-pages/01-geometry-alignment-measurement/images/final/GEO-02-common-contract_v01.png",
+    "takeaway": "相近特徵不能證明完整，先回原圖查細節。 #FFF4CC",
+    "required_files_present": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "brief": "C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-033/gemini-vision-main-failure-r01.md",
+    "objective": "格式通過不等於內容通過，欄位要對回原圖。",
+    "page_type": "D",
+    "node_count": 3,
+    "reference": "teaching-images/vision-ai-model-selection/course-delivery/section-pages/01-geometry-alignment-measurement/images/final/GEO-02-common-contract_v01.png",
+    "takeaway": "格式通過不等於內容通過，欄位要對回原圖。 #FFF4CC",
+    "required_files_present": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  }
+]

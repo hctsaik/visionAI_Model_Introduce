@@ -1,0 +1,146 @@
+[
+  {
+    "id": "anomalygpt-mobile-core",
+    "image": "anomalygpt-mobile-core-r01-mobile.png",
+    "active_path": "_course_content/generated-concepts/ad-anomalygpt/wi033-core-r01-mobile.png",
+    "sha256": "568505e1ca00e627f4261631879200feed9a8853b0f4da8f6381cc15eb68612e",
+    "scores": [
+      23,
+      24,
+      19,
+      18,
+      9
+    ],
+    "total": 93,
+    "evidence": [
+      "同板兩孔和右側痕跡身份保持",
+      "訓練、內建定位、位置轉提示三責任完整",
+      "影像與問題另接LLM，回原圖核對",
+      "手機三段字量減少，仍需捲動",
+      "原生SVG示意，無模型實測宣稱"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "既有桌機與新手機風格不同"
+      ],
+      "completeness": [
+        9,
+        "三段完整承接正文"
+      ],
+      "professionalism": [
+        9,
+        "訓練、內建定位、位置轉提示三責任完整"
+      ],
+      "density": [
+        8,
+        "字量下降，三段長捲動"
+      ],
+      "hierarchy": [
+        9,
+        "藍標頭與單一黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "pages/dinov3, pages/ad-diffad, pages/ad-anomalygpt; native and actual desktop/mobile figures inspected"
+  },
+  {
+    "id": "anomalygpt-mobile-failure",
+    "image": "anomalygpt-mobile-failure-r01-mobile.png",
+    "active_path": "_course_content/generated-concepts/ad-anomalygpt/wi033-failure-r01-mobile.png",
+    "sha256": "cff912c175d90c9086f7ab68803036bd95f319c1735f513c4b38baba92068201",
+    "scores": [
+      23,
+      24,
+      19,
+      18,
+      9
+    ],
+    "total": 93,
+    "evidence": [
+      "p細痕與q正常孔邊在三段一致",
+      "錯定位和無據根因分清",
+      "觀察、推測、未知各有下一步",
+      "錯誤框與原圖並列，不需找小人物",
+      "假設錯答明示，非真實推論"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "既有桌機與新手機風格不同"
+      ],
+      "completeness": [
+        9,
+        "三段完整承接正文"
+      ],
+      "professionalism": [
+        9,
+        "錯定位和無據根因分清"
+      ],
+      "density": [
+        8,
+        "字量下降，三段長捲動"
+      ],
+      "hierarchy": [
+        9,
+        "藍標頭與單一黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "pages/dinov3, pages/ad-diffad, pages/ad-anomalygpt; native and actual desktop/mobile figures inspected"
+  },
+  {
+    "id": "anomalygpt-mobile-comparison",
+    "image": "anomalygpt-mobile-comparison-r01-mobile.png",
+    "active_path": "_course_content/generated-concepts/ad-anomalygpt/wi033-comparison-r01-mobile.png",
+    "sha256": "c4529ecf5e57d953660b2ca59ed6b09dc12b0d52202467a88bcdc738604600f7",
+    "scores": [
+      23,
+      24,
+      19,
+      18,
+      9
+    ],
+    "total": 93,
+    "evidence": [
+      "三方法固定同件與位置問題",
+      "人工視窗、學提示、定位對話三種機制分清",
+      "先驗位置再驗對話成本，正文固定條件",
+      "三段各只留一種方法，標頭與黃結論清楚",
+      "位置圖為示意，不把相同色塊當同精度"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "既有桌機與新手機風格不同"
+      ],
+      "completeness": [
+        9,
+        "三段完整承接正文"
+      ],
+      "professionalism": [
+        9,
+        "人工視窗、學提示、定位對話三種機制分清"
+      ],
+      "density": [
+        8,
+        "字量下降，三段長捲動"
+      ],
+      "hierarchy": [
+        9,
+        "藍標頭與單一黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "pages/dinov3, pages/ad-diffad, pages/ad-anomalygpt; native and actual desktop/mobile figures inspected"
+  }
+]

@@ -1,0 +1,722 @@
+[
+  {
+    "id": "ad-patchcore-engineering-2",
+    "image": "ad-patchcore-engineering-2-r02-desktop.png",
+    "sha256": "220af8e6367ec2693f682dc248efded0a5c4a5203adc32e12a27dd01e9fa3eab",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "兩正常代表到最近鄰√13/√5可追，局部2.24排回p；距離簡式不超框。",
+      "選定r02桌機手機逐張實看，3節點與單黃結論可讀",
+      "格圖為概念簡化，部分caption稍近/術語密，非真人理解驗證"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "精確幾何；質感簡化"
+      ],
+      "completeness": [
+        9,
+        "局部距離來自特徵查庫，熱區要回原圖核對。"
+      ],
+      "professionalism": [
+        9,
+        "兩正常代表到最近鄰√13/√5可追，局部2.24排回p；距離簡式不超框。"
+      ],
+      "density": [
+        8,
+        "三段與算例可讀；術語較密"
+      ],
+      "hierarchy": [
+        9,
+        "單讀序與單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch5-page-assessment.json; batch5-deep-page-review.json"
+  },
+  {
+    "id": "ad-patchcore-engineering-2",
+    "image": "ad-patchcore-engineering-2-r02-mobile.png",
+    "sha256": "ef60ca9baade0c7a6b7ff6fe3e2363274af465898d33b9a84cfc3c3ba4717e7d",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "兩正常代表到最近鄰√13/√5可追，局部2.24排回p；距離簡式不超框。",
+      "選定r02桌機手機逐張實看，3節點與單黃結論可讀",
+      "格圖為概念簡化，部分caption稍近/術語密，非真人理解驗證"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "精確幾何；質感簡化"
+      ],
+      "completeness": [
+        9,
+        "局部距離來自特徵查庫，熱區要回原圖核對。"
+      ],
+      "professionalism": [
+        9,
+        "兩正常代表到最近鄰√13/√5可追，局部2.24排回p；距離簡式不超框。"
+      ],
+      "density": [
+        8,
+        "三段與算例可讀；術語較密"
+      ],
+      "hierarchy": [
+        9,
+        "單讀序與單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch5-page-assessment.json; batch5-deep-page-review.json"
+  },
+  {
+    "id": "ad-padim-engineering-2",
+    "image": "ad-padim-engineering-2-r02-desktop.png",
+    "sha256": "473bd6484c0bffe94ccec717807736bbc7df1f94a932880c8997b86b01eb7a0c",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "孔q與平面p分布分開，斜主軸變異4/.25對應偏移2的距離1/4，橢圓未壓字。",
+      "選定r02桌機手機逐張實看，3節點與單黃結論可讀",
+      "格圖為概念簡化，部分caption稍近/術語密，非真人理解驗證"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "精確幾何；質感簡化"
+      ],
+      "completeness": [
+        9,
+        "距離要讀同位置的平均與相關方向。"
+      ],
+      "professionalism": [
+        9,
+        "孔q與平面p分布分開，斜主軸變異4/.25對應偏移2的距離1/4，橢圓未壓字。"
+      ],
+      "density": [
+        8,
+        "三段與算例可讀；術語較密"
+      ],
+      "hierarchy": [
+        9,
+        "單讀序與單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch5-page-assessment.json; batch5-deep-page-review.json"
+  },
+  {
+    "id": "ad-padim-engineering-2",
+    "image": "ad-padim-engineering-2-r02-mobile.png",
+    "sha256": "e647dd0a7da6431d595f17c2b6a609f21329a86c224b16c66933da50eaf46e7c",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "孔q與平面p分布分開，斜主軸變異4/.25對應偏移2的距離1/4，橢圓未壓字。",
+      "選定r02桌機手機逐張實看，3節點與單黃結論可讀",
+      "格圖為概念簡化，部分caption稍近/術語密，非真人理解驗證"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "精確幾何；質感簡化"
+      ],
+      "completeness": [
+        9,
+        "距離要讀同位置的平均與相關方向。"
+      ],
+      "professionalism": [
+        9,
+        "孔q與平面p分布分開，斜主軸變異4/.25對應偏移2的距離1/4，橢圓未壓字。"
+      ],
+      "density": [
+        8,
+        "三段與算例可讀；術語較密"
+      ],
+      "hierarchy": [
+        9,
+        "單讀序與單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch5-page-assessment.json; batch5-deep-page-review.json"
+  },
+  {
+    "id": "ad-subspacead-engineering-2",
+    "image": "ad-subspacead-engineering-2-r02-desktop.png",
+    "sha256": "e717d2c159901d7455935e8c504d48769e80a745e483e9157f1ff1f705007473",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "中心化x[3,2]垂直投影[3,0]殘差2可追，原圖刮傷p與特徵空間分開。",
+      "選定r02桌機手機逐張實看，3節點與單黃結論可讀",
+      "格圖為概念簡化，部分caption稍近/術語密，非真人理解驗證"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "精確幾何；質感簡化"
+      ],
+      "completeness": [
+        9,
+        "未被正常方向解釋的殘差，才是異常線索。"
+      ],
+      "professionalism": [
+        9,
+        "中心化x[3,2]垂直投影[3,0]殘差2可追，原圖刮傷p與特徵空間分開。"
+      ],
+      "density": [
+        8,
+        "三段與算例可讀；術語較密"
+      ],
+      "hierarchy": [
+        9,
+        "單讀序與單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch5-page-assessment.json; batch5-deep-page-review.json"
+  },
+  {
+    "id": "ad-subspacead-engineering-2",
+    "image": "ad-subspacead-engineering-2-r02-mobile.png",
+    "sha256": "6454fd52bf500ab977a67bdbb63e4f898e01aa7eda196c02577f844464dbd25d",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "中心化x[3,2]垂直投影[3,0]殘差2可追，原圖刮傷p與特徵空間分開。",
+      "選定r02桌機手機逐張實看，3節點與單黃結論可讀",
+      "格圖為概念簡化，部分caption稍近/術語密，非真人理解驗證"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "精確幾何；質感簡化"
+      ],
+      "completeness": [
+        9,
+        "未被正常方向解釋的殘差，才是異常線索。"
+      ],
+      "professionalism": [
+        9,
+        "中心化x[3,2]垂直投影[3,0]殘差2可追，原圖刮傷p與特徵空間分開。"
+      ],
+      "density": [
+        8,
+        "三段與算例可讀；術語較密"
+      ],
+      "hierarchy": [
+        9,
+        "單讀序與單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch5-page-assessment.json; batch5-deep-page-review.json"
+  },
+  {
+    "id": "ad-stfpm-engineering-2",
+    "image": "ad-stfpm-engineering-2-r02-desktop.png",
+    "sha256": "5cb5618e2b12e5d6c61e7db7ae763bcecfbb1f7393e65076b986d7e53c172e7c",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "正常學生模仿固定教師，單位向量半平方距離.2；已對齊三層p乘得.04。",
+      "選定r02桌機手機逐張實看，3節點與單黃結論可讀",
+      "格圖為概念簡化，部分caption稍近/術語密，非真人理解驗證"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "精確幾何；質感簡化"
+      ],
+      "completeness": [
+        9,
+        "教師學生的逐層差異，經對齊後整合。"
+      ],
+      "professionalism": [
+        9,
+        "正常學生模仿固定教師，單位向量半平方距離.2；已對齊三層p乘得.04。"
+      ],
+      "density": [
+        8,
+        "三段與算例可讀；術語較密"
+      ],
+      "hierarchy": [
+        9,
+        "單讀序與單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch5-page-assessment.json; batch5-deep-page-review.json"
+  },
+  {
+    "id": "ad-stfpm-engineering-2",
+    "image": "ad-stfpm-engineering-2-r02-mobile.png",
+    "sha256": "72831e8a723caf14bfbd5556051bc43423432999ccadd49fc4f0b9e47b98570b",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "正常學生模仿固定教師，單位向量半平方距離.2；已對齊三層p乘得.04。",
+      "選定r02桌機手機逐張實看，3節點與單黃結論可讀",
+      "格圖為概念簡化，部分caption稍近/術語密，非真人理解驗證"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "精確幾何；質感簡化"
+      ],
+      "completeness": [
+        9,
+        "教師學生的逐層差異，經對齊後整合。"
+      ],
+      "professionalism": [
+        9,
+        "正常學生模仿固定教師，單位向量半平方距離.2；已對齊三層p乘得.04。"
+      ],
+      "density": [
+        8,
+        "三段與算例可讀；術語較密"
+      ],
+      "hierarchy": [
+        9,
+        "單讀序與單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch5-page-assessment.json; batch5-deep-page-review.json"
+  },
+  {
+    "id": "ad-rd4ad-engineering-2",
+    "image": "ad-rd4ad-engineering-2-r02-desktop.png",
+    "sha256": "b8cc7d3b1f8c8caea675757588913b9c877610a66ca4df31d8061b7ac0093b73",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "教師特徵進單類瓶頸，粗到細學生重建，同尺度各自比餘弦差；瓶頸圖說已分開。",
+      "選定r02桌機手機逐張實看，3節點與單黃結論可讀",
+      "格圖為概念簡化，部分caption稍近/術語密，非真人理解驗證"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "精確幾何；質感簡化"
+      ],
+      "completeness": [
+        9,
+        "學生從教師嵌入重建，逐尺度對照教師。"
+      ],
+      "professionalism": [
+        9,
+        "教師特徵進單類瓶頸，粗到細學生重建，同尺度各自比餘弦差；瓶頸圖說已分開。"
+      ],
+      "density": [
+        8,
+        "三段與算例可讀；術語較密"
+      ],
+      "hierarchy": [
+        9,
+        "單讀序與單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch5-page-assessment.json; batch5-deep-page-review.json"
+  },
+  {
+    "id": "ad-rd4ad-engineering-2",
+    "image": "ad-rd4ad-engineering-2-r02-mobile.png",
+    "sha256": "cebf1cfe39a923d68bbc2891647acf9fc78e807293849df7906f200bae2734d2",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "教師特徵進單類瓶頸，粗到細學生重建，同尺度各自比餘弦差；瓶頸圖說已分開。",
+      "選定r02桌機手機逐張實看，3節點與單黃結論可讀",
+      "格圖為概念簡化，部分caption稍近/術語密，非真人理解驗證"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "精確幾何；質感簡化"
+      ],
+      "completeness": [
+        9,
+        "學生從教師嵌入重建，逐尺度對照教師。"
+      ],
+      "professionalism": [
+        9,
+        "教師特徵進單類瓶頸，粗到細學生重建，同尺度各自比餘弦差；瓶頸圖說已分開。"
+      ],
+      "density": [
+        8,
+        "三段與算例可讀；術語較密"
+      ],
+      "hierarchy": [
+        9,
+        "單讀序與單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch5-page-assessment.json; batch5-deep-page-review.json"
+  },
+  {
+    "id": "ad-ae-engineering-2",
+    "image": "ad-ae-engineering-2-r02-desktop.png",
+    "sha256": "800954af40f5299b8c6cb5f249cd18707c954bcc916d2ed7b56a9e7748d82dd0",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "同板p原40重建150差110，q小孔標名，重建估計非真值。",
+      "選定r02桌機手機逐張實看，3節點與單黃結論可讀",
+      "格圖為概念簡化，部分caption稍近/術語密，非真人理解驗證"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "精確幾何；質感簡化"
+      ],
+      "completeness": [
+        9,
+        "比較原圖與重建估計，重建不是正常真值。"
+      ],
+      "professionalism": [
+        9,
+        "同板p原40重建150差110，q小孔標名，重建估計非真值。"
+      ],
+      "density": [
+        8,
+        "三段與算例可讀；術語較密"
+      ],
+      "hierarchy": [
+        9,
+        "單讀序與單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch5-page-assessment.json; batch5-deep-page-review.json"
+  },
+  {
+    "id": "ad-ae-engineering-2",
+    "image": "ad-ae-engineering-2-r02-mobile.png",
+    "sha256": "e4b222b526a61928a7cd5eb21024e9fbdce3772020d1b7ef0c172f6f8592b9dc",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "同板p原40重建150差110，q小孔標名，重建估計非真值。",
+      "選定r02桌機手機逐張實看，3節點與單黃結論可讀",
+      "格圖為概念簡化，部分caption稍近/術語密，非真人理解驗證"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "精確幾何；質感簡化"
+      ],
+      "completeness": [
+        9,
+        "比較原圖與重建估計，重建不是正常真值。"
+      ],
+      "professionalism": [
+        9,
+        "同板p原40重建150差110，q小孔標名，重建估計非真值。"
+      ],
+      "density": [
+        8,
+        "三段與算例可讀；術語較密"
+      ],
+      "hierarchy": [
+        9,
+        "單讀序與單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch5-page-assessment.json; batch5-deep-page-review.json"
+  },
+  {
+    "id": "ad-draem-engineering-2",
+    "image": "ad-draem-engineering-2-r02-desktop.png",
+    "sha256": "3a8e2f2a45193044cc3e069cd4f0c9a24eeceac5527fac518b32af8b24814764",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "正常圖和實際mask小圖各教重建/定位，兩圖共同判別並非純相減。",
+      "選定r02桌機手機逐張實看，3節點與單黃結論可讀",
+      "格圖為概念簡化，部分caption稍近/術語密，非真人理解驗證"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "精確幾何；質感簡化"
+      ],
+      "completeness": [
+        9,
+        "重建提供對照，判別器學習位置輸出。"
+      ],
+      "professionalism": [
+        9,
+        "正常圖和實際mask小圖各教重建/定位，兩圖共同判別並非純相減。"
+      ],
+      "density": [
+        8,
+        "三段與算例可讀；術語較密"
+      ],
+      "hierarchy": [
+        9,
+        "單讀序與單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch5-page-assessment.json; batch5-deep-page-review.json"
+  },
+  {
+    "id": "ad-draem-engineering-2",
+    "image": "ad-draem-engineering-2-r02-mobile.png",
+    "sha256": "c61ec8c0a72a976d79ce89cb239153458f22fff0f585204b47eb7ec62d142a13",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "正常圖和實際mask小圖各教重建/定位，兩圖共同判別並非純相減。",
+      "選定r02桌機手機逐張實看，3節點與單黃結論可讀",
+      "格圖為概念簡化，部分caption稍近/術語密，非真人理解驗證"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "精確幾何；質感簡化"
+      ],
+      "completeness": [
+        9,
+        "重建提供對照，判別器學習位置輸出。"
+      ],
+      "professionalism": [
+        9,
+        "正常圖和實際mask小圖各教重建/定位，兩圖共同判別並非純相減。"
+      ],
+      "density": [
+        8,
+        "三段與算例可讀；術語較密"
+      ],
+      "hierarchy": [
+        9,
+        "單讀序與單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch5-page-assessment.json; batch5-deep-page-review.json"
+  },
+  {
+    "id": "ad-uniad-engineering-2",
+    "image": "ad-uniad-engineering-2-r02-desktop.png",
+    "sha256": "19cd171e9484409a57c45ec4ad09a24cbc04079feeffb249cd3ab15c1367453c",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "影像完整，灰格限制以p為中心的注意力連線；query重建與訓練擾動分開。",
+      "選定r02桌機手機逐張實看，3節點與單黃結論可讀",
+      "格圖為概念簡化，部分caption稍近/術語密，非真人理解驗證"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "精確幾何；質感簡化"
+      ],
+      "completeness": [
+        9,
+        "遮的是特徵取用連線，原影像仍完整。"
+      ],
+      "professionalism": [
+        9,
+        "影像完整，灰格限制以p為中心的注意力連線；query重建與訓練擾動分開。"
+      ],
+      "density": [
+        8,
+        "三段與算例可讀；術語較密"
+      ],
+      "hierarchy": [
+        9,
+        "單讀序與單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch5-page-assessment.json; batch5-deep-page-review.json"
+  },
+  {
+    "id": "ad-uniad-engineering-2",
+    "image": "ad-uniad-engineering-2-r02-mobile.png",
+    "sha256": "f60d751e22c6dd0adcfba130c249ca1c43bdc5c0ee78da51c8ce4aa31ccbb803",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "影像完整，灰格限制以p為中心的注意力連線；query重建與訓練擾動分開。",
+      "選定r02桌機手機逐張實看，3節點與單黃結論可讀",
+      "格圖為概念簡化，部分caption稍近/術語密，非真人理解驗證"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "精確幾何；質感簡化"
+      ],
+      "completeness": [
+        9,
+        "遮的是特徵取用連線，原影像仍完整。"
+      ],
+      "professionalism": [
+        9,
+        "影像完整，灰格限制以p為中心的注意力連線；query重建與訓練擾動分開。"
+      ],
+      "density": [
+        8,
+        "三段與算例可讀；術語較密"
+      ],
+      "hierarchy": [
+        9,
+        "單讀序與單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch5-page-assessment.json; batch5-deep-page-review.json"
+  }
+]

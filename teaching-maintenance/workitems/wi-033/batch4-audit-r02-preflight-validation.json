@@ -1,0 +1,47 @@
+[
+  {
+    "brief": "C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-033/det-yolo-dense-engineering-3-r02.md",
+    "objective": "模型、前處理與門檻一起固定，再驗漏件。",
+    "page_type": "C",
+    "node_count": 3,
+    "reference": "teaching-images/vision-ai-model-selection/course-delivery/section-pages/01-geometry-alignment-measurement/images/final/GEO-02-common-contract_v01.png",
+    "takeaway": "模型、前處理與門檻一起固定，再驗漏件。 #FFF4CC",
+    "required_files_present": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "brief": "C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-033/det-rtdetr-engineering-3-r02.md",
+    "objective": "減少decoder層可改成本，不能預設品質不變。",
+    "page_type": "C",
+    "node_count": 3,
+    "reference": "teaching-images/vision-ai-model-selection/course-delivery/section-pages/01-geometry-alignment-measurement/images/final/GEO-02-common-contract_v01.png",
+    "takeaway": "減少decoder層可改成本，不能預設品質不變。 #FFF4CC",
+    "required_files_present": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "brief": "C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-033/det-grounding-dino-interface-engineering-3-r02.md",
+    "objective": "保存提示與門檻，框映回原圖後逐件核對。",
+    "page_type": "C",
+    "node_count": 3,
+    "reference": "teaching-images/vision-ai-model-selection/course-delivery/section-pages/01-geometry-alignment-measurement/images/final/GEO-02-common-contract_v01.png",
+    "takeaway": "保存提示與門檻，框映回原圖後逐件核對。 #FFF4CC",
+    "required_files_present": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  }
+]

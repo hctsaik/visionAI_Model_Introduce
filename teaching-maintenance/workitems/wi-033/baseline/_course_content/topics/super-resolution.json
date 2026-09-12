@@ -1,0 +1,497 @@
+{
+  "model": "Super-resolution",
+  "badge": "提高影像解析度的任務",
+  "title": "超解析度：由少量像素估計更細的影像",
+  "scenario": {
+    "title": "舊相機拍到的金屬邊緣只有少量像素，放大後呈階梯，想提升檢視細節。",
+    "body": "舊相機拍到的金屬邊緣只有少量像素，放大後呈階梯，想提升檢視細節。"
+  },
+  "promise": {
+    "title": "交付結果與接手工作",
+    "body": "高解析度估計圖，供檢視或另行驗證的下游處理；保留低解析原圖。"
+  },
+  "mental_model": {
+    "title": "提高影像解析度的任務",
+    "body": "插值只依既有像素計算放大後的值；學習式超解析使用訓練所得的邊緣與紋理規律，估計較高解析度的內容。CNN、Transformer或擴散模型都可做這個任務。圖中插值和學習式路徑是可比較的方案，不是每個模型都必須先插值再生成。",
+    "limit": "第二圖改用兩孔圓板的右下邊緣。同一粗像素區可能由有小缺口或無缺口的高解析邊緣降採樣而來。超解析選出其中一種，不表示缺口已被量到；需要真正有解析力的取像或獨立證據判斷。"
+  },
+  "micro_example": {
+    "title": "需要看外觀，也需要量微小缺口",
+    "setup": "放大圖讓拉絲更漂亮，但缺口位置在不同方法間不一致；更高解析相機要增加取像成本。",
+    "prediction": "哪些工作可以先用超解析，哪些應投資取像？",
+    "reveal": "外觀檢視可測超解析並標明估計；關鍵缺口量測要以具有足夠解析力的真實取像及校正驗證。用相同已知缺口比較插值、前饋與擴散的假細節、定位誤差和時間；更漂亮不等於更適合量測。"
+  },
+  "beginner_path": {
+    "title": "從核心做法、反例到方法選擇",
+    "intro": "舊相機拍到的金屬邊緣只有少量像素，放大後呈階梯，想提升檢視細節。 三張圖依序看做法、失敗與取捨；AI生成教學示意，非模型實測。",
+    "visuals": [
+      {
+        "id": "wi026-super-resolution-c1",
+        "title": "超解析度：增加像素，並估計缺少的細節",
+        "prompt": "舊相機拍到的金屬邊緣只有少量像素，放大後呈階梯，想提升檢視細節。",
+        "caption": "插值只依既有像素計算放大後的值；學習式超解析使用訓練所得的邊緣與紋理規律，估計較高解析度的內容。CNN、Transformer或擴散模型都可做這個任務。圖中插值和學習式路徑是可比較的方案，不是每個模型都必須先插值再生成。",
+        "image": "_course_content/generated-concepts/super-resolution/wi026-super-resolution-c1-r02-desktop.png",
+        "alt": "超解析度：增加像素，並估計缺少的細節。插值只依既有像素計算放大後的值；學習式超解析使用訓練所得的邊緣與紋理規律，估計較高解析度的內容。CNN、Transformer或擴散模型都可做這個任務。圖中插值和學習式路徑是可比較的方案，不是每個模型都必須先插值再生成。 AI生成教學示意，非模型實測。",
+        "callouts": [
+          {
+            "title": "細節從哪裡來",
+            "body": "額外細節是依觀測和先驗估計，不是相機補拍了更多像素。SR3是逐步去噪的代表，前饋方法則可一次產生輸出；具體速度和品質依實作與資料測量。"
+          },
+          {
+            "title": "準備與驗證",
+            "body": "使用現成權重前核對放大倍率及退化方式；適配常需高／低解析配對或受控降採樣。低解析輸入能對回候選只是線索，不足以證明微小紋理唯一正確。"
+          },
+          {
+            "title": "交給誰",
+            "body": "高解析度估計圖，供檢視或另行驗證的下游處理；保留低解析原圖。"
+          }
+        ],
+        "reading_views": [
+          {
+            "title": "超解析度：增加像素，並估計缺少的細節",
+            "image": "_course_content/generated-concepts/super-resolution/wi026-super-resolution-c1-r02-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/super-resolution/wi026-super-resolution-c1-r01-mobile.png",
+            "alt": "超解析度：增加像素，並估計缺少的細節。插值只依既有像素計算放大後的值；學習式超解析使用訓練所得的邊緣與紋理規律，估計較高解析度的內容。CNN、Transformer或擴散模型都可做這個任務。圖中插值和學習式路徑是可比較的方案，不是每個模型都必須先插值再生成。 AI生成教學示意，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              724,
+              2172
+            ],
+            "mobile_display_mode": "full-mobile",
+            "mobile_intrinsic_width": 724,
+            "mobile_intrinsic_height": 2172,
+            "desktop_intrinsic_width": 1672,
+            "desktop_intrinsic_height": 941
+          }
+        ],
+        "core_ideas": true
+      },
+      {
+        "id": "wi026-sr-d2",
+        "title": "低解析看不見的缺口，放大後也難確定",
+        "prompt": "觀察同位置的變化：這個結果能支持什麼用途？",
+        "caption": "第二圖改用兩孔圓板的右下邊緣。同一粗像素區可能由有小缺口或無缺口的高解析邊緣降採樣而來。超解析選出其中一種，不表示缺口已被量到；需要真正有解析力的取像或獨立證據判斷。",
+        "image": "_course_content/generated-concepts/super-resolution/wi026-sr-d2-r02-desktop.png",
+        "alt": "低解析看不見的缺口，放大後也難確定。第二圖改用兩孔圓板的右下邊緣。同一粗像素區可能由有小缺口或無缺口的高解析邊緣降採樣而來。超解析選出其中一種，不表示缺口已被量到；需要真正有解析力的取像或獨立證據判斷。 AI生成教學示意，非模型實測。",
+        "callouts": [
+          {
+            "title": "看哪裡",
+            "body": "第二圖改用兩孔圓板的右下邊緣。同一粗像素區可能由有小缺口或無缺口的高解析邊緣降採樣而來。超解析選出其中一種，不表示缺口已被量到；需要真正有解析力的取像或獨立證據判斷。"
+          },
+          {
+            "title": "接著怎麼做",
+            "body": "對關鍵微小特徵做高解析取像核對；生成圖適合的用途與可量測範圍分開驗證。"
+          }
+        ],
+        "reading_views": [
+          {
+            "title": "低解析看不見的缺口，放大後也難確定",
+            "image": "_course_content/generated-concepts/super-resolution/wi026-sr-d2-r02-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/super-resolution/wi026-sr-d2-r01-mobile.png",
+            "alt": "低解析看不見的缺口，放大後也難確定。第二圖改用兩孔圓板的右下邊緣。同一粗像素區可能由有小缺口或無缺口的高解析邊緣降採樣而來。超解析選出其中一種，不表示缺口已被量到；需要真正有解析力的取像或獨立證據判斷。 AI生成教學示意，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              724,
+              2172
+            ],
+            "mobile_display_mode": "full-mobile",
+            "mobile_intrinsic_width": 724,
+            "mobile_intrinsic_height": 2172,
+            "desktop_intrinsic_width": 1673,
+            "desktop_intrinsic_height": 940
+          }
+        ],
+        "core_ideas": false
+      },
+      {
+        "id": "wi026-restoration-d3",
+        "title": "先看影像壞在哪裡，再選復原方法",
+        "prompt": "固定需求與資料，哪種準備及處理成本較合適？",
+        "caption": "先與插值基準比較，再按延遲與細節需求測前饋或擴散式超解析。去模糊解拖影，超解析解低採樣，混合退化要選能處理相應條件的流程；擴散是做法而非第三個互斥任務。",
+        "image": "_course_content/generated-concepts/diffusion-restoration/wi026-restoration-d3-r01-desktop.png",
+        "alt": "先看影像壞在哪裡，再選復原方法。先與插值基準比較，再按延遲與細節需求測前饋或擴散式超解析。去模糊解拖影，超解析解低採樣，混合退化要選能處理相應條件的流程；擴散是做法而非第三個互斥任務。 AI生成教學示意，非模型實測。",
+        "callouts": [
+          {
+            "title": "如何選",
+            "body": "先與插值基準比較，再按延遲與細節需求測前饋或擴散式超解析。去模糊解拖影，超解析解低採樣，混合退化要選能處理相應條件的流程；擴散是做法而非第三個互斥任務。"
+          },
+          {
+            "title": "換產品與完整成本",
+            "body": "只有正常高解析圖可以做降採樣對照，但不能證明未知微缺陷保留。換相機與材質需重驗噪聲、採樣與紋理。輸出不是像素真值或直接尺寸；同資料比較假紋理、邊界偏差、下游錯誤和總時間，別只看圖片變大。"
+          }
+        ],
+        "reading_views": [
+          {
+            "title": "先看影像壞在哪裡，再選復原方法",
+            "image": "_course_content/generated-concepts/diffusion-restoration/wi026-restoration-d3-r01-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/diffusion-restoration/wi026-restoration-d3-r01-mobile.png",
+            "alt": "先看影像壞在哪裡，再選復原方法。先與插值基準比較，再按延遲與細節需求測前饋或擴散式超解析。去模糊解拖影，超解析解低採樣，混合退化要選能處理相應條件的流程；擴散是做法而非第三個互斥任務。 AI生成教學示意，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              724,
+              2172
+            ],
+            "mobile_display_mode": "full-mobile",
+            "mobile_intrinsic_width": 724,
+            "mobile_intrinsic_height": 2172,
+            "desktop_intrinsic_width": 1672,
+            "desktop_intrinsic_height": 941
+          }
+        ],
+        "core_ideas": false
+      }
+    ]
+  },
+  "mechanism_steps": [
+    {
+      "title": "低解析兩孔板與粗像素邊緣",
+      "body": "舊相機拍到的金屬邊緣只有少量像素，放大後呈階梯，想提升檢視細節。",
+      "why": "提高影像解析度的任務",
+      "anchor": "WI026-step-1",
+      "diagram": {
+        "title": "低解析兩孔板與粗像素邊緣",
+        "body": "舊相機拍到的金屬邊緣只有少量像素，放大後呈階梯，想提升檢視細節。",
+        "why": "提高影像解析度的任務",
+        "anchor": "WI026-step-1"
+      }
+    },
+    {
+      "title": "插值只能平滑放大既有像素",
+      "body": "額外細節是依觀測和先驗估計，不是相機補拍了更多像素。SR3是逐步去噪的代表，前饋方法則可一次產生輸出；具體速度和品質依實作與資料測量。",
+      "why": "細節從哪裡來",
+      "anchor": "WI026-step-2",
+      "diagram": {
+        "title": "插值只能平滑放大既有像素",
+        "body": "額外細節是依觀測和先驗估計，不是相機補拍了更多像素。SR3是逐步去噪的代表，前饋方法則可一次產生輸出；具體速度和品質依實作與資料測量。",
+        "why": "細節從哪裡來",
+        "anchor": "WI026-step-2"
+      }
+    },
+    {
+      "title": "學習先驗估計較細的邊緣紋理",
+      "body": "使用現成權重前核對放大倍率及退化方式；適配常需高／低解析配對或受控降採樣。低解析輸入能對回候選只是線索，不足以證明微小紋理唯一正確。",
+      "why": "準備與驗證",
+      "anchor": "WI026-step-3",
+      "diagram": {
+        "title": "學習先驗估計較細的邊緣紋理",
+        "body": "使用現成權重前核對放大倍率及退化方式；適配常需高／低解析配對或受控降採樣。低解析輸入能對回候選只是線索，不足以證明微小紋理唯一正確。",
+        "why": "準備與驗證",
+        "anchor": "WI026-step-3"
+      }
+    },
+    {
+      "title": "對回低解析觀測並保留估計身分",
+      "body": "高解析度估計圖，供檢視或另行驗證的下游處理；保留低解析原圖。",
+      "why": "核對後接入用途",
+      "anchor": "WI026-step-4",
+      "diagram": {
+        "title": "對回低解析觀測並保留估計身分",
+        "body": "高解析度估計圖，供檢視或另行驗證的下游處理；保留低解析原圖。",
+        "why": "核對後接入用途",
+        "anchor": "WI026-step-4"
+      }
+    }
+  ],
+  "visual_intro": "插值只依既有像素計算放大後的值；學習式超解析使用訓練所得的邊緣與紋理規律，估計較高解析度的內容。CNN、Transformer或擴散模型都可做這個任務。圖中插值和學習式路徑是可比較的方案，不是每個模型都必須先插值再生成。",
+  "concept_visuals": [
+    {
+      "id": "causal-chain",
+      "placement": "after_causal_chain",
+      "title": "Super-resolution：先懂中心，再看細節",
+      "prompt": "更高解析外觀是否證明亮點原本真的存在，或可量它的 CD？",
+      "caption": "你有 low-resolution wafer ROI、pixel grid、scale factor、resize/degradation trace 與可用 paired LR/HR 或 calibration target；想以 CNN/transformer/diffusion prior 估 high-resolution x-hat。",
+      "image": "_course_content/generated-concepts/super-resolution/super-resolution-f02-core.png",
+      "alt": "Super-resolution 的 F02 核心機制圖：案例輸入、模型專屬轉換、可交付線索與人的接手動作；非模型推論。",
+      "callouts": [
+        {
+          "title": "固定 LR 觀測與 scale/degradation",
+          "body": "保存 low-resolution raw、ROI/pixel grid、scale factor、resize kernel/degradation、paired LR/HR 或 calibration reference。"
+        },
+        {
+          "title": "釘選 SR prior 與切圖契約",
+          "body": "指定 upsampling CNN/transformer/diffusion prior、checkpoint、resolution、tile overlap/stitch、seed/steps/guidance。"
+        },
+        {
+          "title": "輸出 x-hat 與已宣告 alias/hallucination diagnostics",
+          "body": "保存 high-resolution estimate、raw comparison、由已宣告方法產生的 texture/alias/hallucination diagnostic、tile seam/failure trace；uncertainty 只有在命名 estimator/repeat-sampling 並被校準時才能標示。"
+        }
+      ]
+    },
+    {
+      "id": "worked-example",
+      "placement": "after_micro_example",
+      "title": "Super-resolution：同一案例的反事實",
+      "prompt": "同一 4× SR 亮點：左錯誤把 texture 當 micro-defect/CD，右用 paired HR/calibration target 顯示 artifact risk，回到 capture/review。",
+      "caption": "用同一案例看清楚參數或假設如何改變輸出，才知道何時該 HOLD。",
+      "image": "_course_content/generated-concepts/super-resolution/super-resolution-worked-example_v01.svg",
+      "alt": "Super-resolution 的教學因果圖：輸入、轉換、輸出及其不可推論的界線。",
+      "callouts": [
+        {
+          "title": "情境",
+          "body": "低解析 ROI 經 4× SR 後出現顯眼 micro-detail。"
+        },
+        {
+          "title": "直覺陷阱",
+          "body": "更高解析外觀是否證明亮點原本真的存在，或可量它的 CD？"
+        },
+        {
+          "title": "揭示",
+          "body": "不。它可能是 hallucinated texture/alias；保存 LR raw、scale/degradation、tile/seed、已宣告 artifact diagnostic（若有命名 estimator 並校準的 uncertainty），用 paired HR/calibration target 與 human review 限定用途。"
+        },
+        {
+          "title": "POC 檢查",
+          "body": "要求每個 SR micro-detail 都能回查 LR raw 和 paired/calibration reference；回不去就不是量測主張。"
+        }
+      ]
+    },
+    {
+      "id": "comparison",
+      "placement": "after_comparison",
+      "title": "Super-resolution：和鄰近路徑的責任差異",
+      "prompt": "三欄：SR 以 scale/degradation 填更多 pixels；Deblur 以 k/PSF 估清晰；Diffusion Restoration 以 general degradation estimate。所有輸出皆標 estimate，不作唯一 evidence。",
+      "caption": "比較時固定輸入、真值、硬體與 action contract；不要從單張視覺化決定排名。",
+      "image": "_course_content/generated-concepts/super-resolution/super-resolution-comparison_v01.svg",
+      "alt": "Super-resolution 的教學因果圖：輸入、轉換、輸出及其不可推論的界線。",
+      "callouts": [
+        {
+          "title": "本模型",
+          "body": "low-resolution y + scale/resize/degradation + SR prior；輸出 high-resolution estimate + 依已宣告方法的 texture/alias diagnostic evidence。"
+        },
+        {
+          "title": "對照：Deblur",
+          "body": "blurred y + k/PSF/inverse；輸出 deblurred estimate + 依已宣告方法的 false-edge/ringing diagnostic evidence。"
+        },
+        {
+          "title": "選型結論",
+          "body": "只在 paired LR/HR 或 calibration target 已驗證 fidelity、hallucination/tile seam 被顯式量測、LR raw/scale/trace 完整保存且 human/specialist 已限定用途時，作非關鍵 inspection assist 或 training research。不能用 SR output 宣稱實際 CD、defect 或唯一 PASS/FAIL。"
+        }
+      ]
+    },
+    {
+      "id": "boundary-cases-explainer",
+      "placement": "before_boundary_cases",
+      "title": "同一條因果鏈，在哪裡會被破壞？",
+      "prompt": "不要只記住風險名詞；先預測條件一變，畫面或候選結果會怎麼變，再決定何時應 HOLD。",
+      "caption": "Super-resolution 的三個模型專屬反事實：每欄把條件、可觀察後果與正確下一步放在一起。它們不是自動修正規則；遇到條件超出驗證範圍時，先保存原始證據並進入 HOLD／REVIEW。",
+      "image": "_course_content/generated-concepts/super-resolution/super-resolution-boundary-cases_v01.svg",
+      "alt": "Super-resolution 的三欄反事實說明圖：每欄依序說明一個失效條件、可能看到的候選或量測後果，以及應進入 HOLD、重驗或改選方法的安全下一步。",
+      "callouts": [
+        {
+          "title": "先看條件，而不是先改門檻",
+          "body": "候選改變可能是資料、取像、設定或模型假設被破壞，不能立刻解讀成產品真相。"
+        },
+        {
+          "title": "把可觀察後果說出來",
+          "body": "誤報、漏檢、整片異常或時間失序都需要回到原始資料與版本追查。"
+        },
+        {
+          "title": "HOLD 是設計的一部分",
+          "body": "先停止自動往下走、保存 evidence，確認條件後才重新 qualification 或交給適合的方法。"
+        }
+      ]
+    }
+  ],
+  "boundary_cases": [
+    {
+      "condition": "本課具體反例",
+      "effect": "第二圖改用兩孔圓板的右下邊緣。同一粗像素區可能由有小缺口或無缺口的高解析邊緣降採樣而來。超解析選出其中一種，不表示缺口已被量到；需要真正有解析力的取像或獨立證據判斷。",
+      "action": "對關鍵微小特徵做高解析取像核對；生成圖適合的用途與可量測範圍分開驗證。"
+    },
+    {
+      "condition": "換產品或取像條件",
+      "effect": "只有正常高解析圖可以做降採樣對照，但不能證明未知微缺陷保留。換相機與材質需重驗噪聲、採樣與紋理。輸出不是像素真值或直接尺寸；同資料比較假紋理、邊界偏差、下游錯誤和總時間，別只看圖片變大。",
+      "action": "先在固定真實留出資料重驗，再擴大用途。"
+    },
+    {
+      "condition": "把生成示意當成模型實測",
+      "effect": "本課圖像說明可能機制與失敗情況，不能據此計算現場準確率或節拍。",
+      "action": "保留真實原圖、模型設定與對照輸出，以符合工作需求的留出資料另行測量。"
+    }
+  ],
+  "comparison": [
+    {
+      "model": "去模糊任務",
+      "normality": "辨識運動／失焦等退化，準備對照",
+      "candidate": "反推清晰估計；核對振鈴及假邊"
+    },
+    {
+      "model": "超解析任務",
+      "normality": "核對採樣、倍率與高低解析對照",
+      "candidate": "高解析估計；核對假紋理及微細邊界"
+    },
+    {
+      "model": "擴散方法",
+      "normality": "選支援目標任務的模型與條件；反覆去噪",
+      "candidate": "可作上述任務的候選做法；比較品質與總成本"
+    }
+  ],
+  "selection": "先與插值基準比較，再按延遲與細節需求測前饋或擴散式超解析。去模糊解拖影，超解析解低採樣，混合退化要選能處理相應條件的流程；擴散是做法而非第三個互斥任務。 只有正常高解析圖可以做降採樣對照，但不能證明未知微缺陷保留。換相機與材質需重驗噪聲、採樣與紋理。輸出不是像素真值或直接尺寸；同資料比較假紋理、邊界偏差、下游錯誤和總時間，別只看圖片變大。",
+  "poc": {
+    "title": "小規模比較：資料、效果與完整成本",
+    "steps": [
+      "保留原始資料，固定訓練與獨立真實留出切分，選定本課工作需求。",
+      "只有正常高解析圖可以做降採樣對照，但不能證明未知微缺陷保留。換相機與材質需重驗噪聲、採樣與紋理。輸出不是像素真值或直接尺寸；同資料比較假紋理、邊界偏差、下游錯誤和總時間，別只看圖片變大。",
+      "記錄失敗影像、原圖與輸出關係、端到端時間和人工覆核量，再決定是否擴大。"
+    ],
+    "hold": "對關鍵微小特徵做高解析取像核對；生成圖適合的用途與可量測範圍分開驗證。",
+    "acceptance": {
+      "baseline": "原有流程或最簡單可行方法",
+      "measure": "關鍵細節、下游錯誤、總時間及覆核量",
+      "negative_control": "以本課反例檢查錯誤結論是否被排除",
+      "owner": "教材使用者指定的實作及覆核負責人"
+    }
+  },
+  "teach_back": {
+    "question": "它改變什麼？換條件後如何選？",
+    "answer": "插值只依既有像素計算放大後的值；學習式超解析使用訓練所得的邊緣與紋理規律，估計較高解析度的內容。CNN、Transformer或擴散模型都可做這個任務。圖中插值和學習式路徑是可比較的方案，不是每個模型都必須先插值再生成。 先與插值基準比較，再按延遲與細節需求測前饋或擴散式超解析。去模糊解拖影，超解析解低採樣，混合退化要選能處理相應條件的流程；擴散是做法而非第三個互斥任務。"
+  },
+  "slide_reading": [
+    {
+      "title": "Super-resolution 先輸出什麼？",
+      "question": "它真正回答的問題",
+      "look": "看 LR contract 到 Artifact-aware estimate。",
+      "relation": "在固定 LR y、scale、resize kernel/degradation、checkpoint、tile overlap、sampling 與 artifact policy 下，能產生什麼 high-resolution estimate x-hat、依已宣告方法的 texture/alias/hallucination diagnostic evidence？它不能創造感測器未量到的可靠 micro-defect、CD 或唯一 PASS/FAIL 證據。",
+      "takeaway": "把它想成「依 scale 與退化假設填補更多像素」",
+      "terms": [
+        "low-resolution y",
+        "scale factor"
+      ]
+    },
+    {
+      "title": "核心機制：Artifact-aware estimate",
+      "question": "為何「輸出 x-hat 與 alias/hallucination evidence」不是最後決策？",
+      "look": "LR contract → SR route → Artifact-aware estimate → Raw-measurement gate",
+      "relation": "高解析 pixels 是 estimate，不能直接當 CD 或 defect truth。",
+      "takeaway": "候選須回到 Raw-measurement gate。",
+      "terms": [
+        "resize kernel / degradation",
+        "SR prior"
+      ]
+    },
+    {
+      "title": "邊界：什麼情況該停下來？",
+      "question": "哪個輸入或假設一變，輸出不再可解讀？",
+      "look": "hallucinated texture、alias、scale/degradation mismatch；tile overlap/stitch、checkpoint/seed/steps 改動；把 SR 當 CD、defect existence 或唯一 PASS/FAIL",
+      "relation": "更多像素可能沒有對應原始量測。；seam、細節與 P95/VRAM 改變，舊結果不可直接比。；生成 detail 被誤當物理證據。",
+      "takeaway": "先保留證據並進 REVIEW/HOLD。",
+      "terms": [
+        "tile seam",
+        "texture / alias risk"
+      ]
+    },
+    {
+      "title": "選型：何時值得用 Super-resolution？",
+      "question": "要鎖定哪些條件才能公平比較？",
+      "look": "Super-resolution / Deblur / Diffusion Restoration",
+      "relation": "只在 paired LR/HR 或 calibration target 已驗證 fidelity、hallucination/tile seam 被顯式量測、LR raw/scale/trace 完整保存且 human/specialist 已限定用途時，作非關鍵 inspection assist 或 training research。不能用 SR output 宣稱實際 CD、defect 或唯一 PASS/FAIL。",
+      "takeaway": "POC：讓放大的細節有對照物",
+      "terms": [
+        "evidence bundle",
+        "complete P95/P99"
+      ]
+    }
+  ],
+  "comparison_headers": {
+    "title": "先看影像壞在哪裡，再選復原方法",
+    "basis": "資料準備與方法分工",
+    "output": "交付結果與核對重點"
+  },
+  "transfer_check": {
+    "title": "需要看外觀，也需要量微小缺口",
+    "scenario": "放大圖讓拉絲更漂亮，但缺口位置在不同方法間不一致；更高解析相機要增加取像成本。",
+    "question": "哪些工作可以先用超解析，哪些應投資取像？",
+    "answer": "外觀檢視可測超解析並標明估計；關鍵缺口量測要以具有足夠解析力的真實取像及校正驗證。用相同已知缺口比較插值、前饋與擴散的假細節、定位誤差和時間；更漂亮不等於更適合量測。"
+  },
+  "review_trace": {
+    "authority": "roadmap-model-selection/diffusion-restoration/super-resolution/model.md",
+    "scope": "WI-026 八課首讀圖文、獨立手機PNG、反例、比較與自測重製；原工程slide資產保留，未以首讀評分代替工程圖審查。",
+    "claims": [
+      {
+        "id": "visual-1",
+        "field": "beginner_path.visuals[low-resolution-bracket]",
+        "source": "模型定位 / architecture_path"
+      },
+      {
+        "id": "visual-2",
+        "field": "beginner_path.visuals[sampling-scale]",
+        "source": "architecture_path"
+      },
+      {
+        "id": "visual-3",
+        "field": "beginner_path.visuals[known-target-evidence]",
+        "source": "representation_or_score"
+      },
+      {
+        "id": "visual-4",
+        "field": "beginner_path.visuals[scale-counterfactual]",
+        "source": "failure_boundary"
+      },
+      {
+        "id": "visual-5",
+        "field": "beginner_path.visuals[evidence-gate]",
+        "source": "selection_gate / evidence_bundle"
+      },
+      {
+        "id": "promise",
+        "field": "promise",
+        "source": "模型定位 / representation_or_score"
+      },
+      {
+        "id": "mechanism",
+        "field": "mechanism_steps",
+        "source": "architecture_path / representation_or_score"
+      },
+      {
+        "id": "boundaries",
+        "field": "boundary_cases",
+        "source": "failure_boundary / selection_gate"
+      },
+      {
+        "id": "comparison",
+        "field": "comparison + selection",
+        "source": "selection_gate"
+      },
+      {
+        "id": "poc",
+        "field": "poc + acceptance",
+        "source": "cost_and_operating_point / evidence_bundle"
+      },
+      {
+        "id": "transfer",
+        "field": "transfer_check",
+        "source": "failure_boundary / selection_gate"
+      },
+      {
+        "id": "f02-core",
+        "field": "beginner_path.visuals[0] + scenario + mental_model",
+        "source": "roadmap-model-selection/diffusion-restoration/super-resolution/model.md"
+      },
+      {
+        "id": "f02-transfer",
+        "field": "micro_example + transfer_check + selection",
+        "source": "roadmap-model-selection/diffusion-restoration/super-resolution/model.md"
+      },
+      {
+        "id": "wi026-first-read",
+        "field": "beginner_path + core + selection + transfer",
+        "source": "https://arxiv.org/abs/2104.07636"
+      }
+    ]
+  },
+  "quality_status": {
+    "label": "首讀圖文已重製並自評；使用者核准待確認",
+    "state": "self-reviewed",
+    "round": "WI-026",
+    "reason": "38張不同PNG逐圖審查；整頁與互動證據見workitems/wi-026，原工程圖未重新評分。"
+  },
+  "teaching_preflight": {
+    "brief": "teaching-images/vision-ai-model-selection/workitems/wi-026/super-resolution-c1-r01.md",
+    "story": "C",
+    "major_visual_nodes": 4,
+    "visual_status": "self-reviewed",
+    "user_review": "pending"
+  }
+}

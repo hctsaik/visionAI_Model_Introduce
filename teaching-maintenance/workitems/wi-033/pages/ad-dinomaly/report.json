@@ -1,0 +1,502 @@
+[
+  {
+    "topic": "ad-dinomaly",
+    "route": "interactive-learning.html",
+    "width": 1440,
+    "errors": [],
+    "images": [
+      {
+        "src": "http://127.0.0.1:8000/_course_content/generated-concepts/ad-dinomaly/wi021-dinomaly-c1-r04-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 404.1875,
+          "y": 401.640625,
+          "width": 935.625,
+          "height": 526.5625,
+          "top": 401.640625,
+          "right": 1339.8125,
+          "bottom": 928.203125,
+          "left": 404.1875
+        },
+        "kind": "main-1"
+      },
+      {
+        "src": "http://127.0.0.1:8000/_course_content/generated-concepts/ad-dinomaly/wi021-multi-reconstruction-d2-r02-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 404.1875,
+          "y": 201.15625,
+          "width": 935.625,
+          "height": 526.5625,
+          "top": 201.15625,
+          "right": 1339.8125,
+          "bottom": 727.71875,
+          "left": 404.1875
+        },
+        "kind": "main-2"
+      },
+      {
+        "src": "http://127.0.0.1:8000/_course_content/generated-concepts/ad-dinomaly/wi021-multi-reconstruction-d3-r02-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 404.1875,
+          "y": 200.46875,
+          "width": 935.625,
+          "height": 526.5625,
+          "top": 200.46875,
+          "right": 1339.8125,
+          "bottom": 727.03125,
+          "left": 404.1875
+        },
+        "kind": "main-3"
+      },
+      {
+        "src": "http://127.0.0.1:8000/roadmap-model-selection/anomaly-detection/ad-dinomaly/images/final/WI033-DINOMALY-01-r01-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 367.1875,
+          "y": 195.984375,
+          "width": 1009.625,
+          "height": 568.203125,
+          "top": 195.984375,
+          "right": 1376.8125,
+          "bottom": 764.1875,
+          "left": 367.1875
+        },
+        "kind": "engineering-1"
+      },
+      {
+        "src": "http://127.0.0.1:8000/roadmap-model-selection/anomaly-detection/ad-dinomaly/images/final/WI033-DINOMALY-02-r02-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 367.1875,
+          "y": 195.515625,
+          "width": 1009.625,
+          "height": 568.203125,
+          "top": 195.515625,
+          "right": 1376.8125,
+          "bottom": 763.71875,
+          "left": 367.1875
+        },
+        "kind": "engineering-2"
+      },
+      {
+        "src": "http://127.0.0.1:8000/roadmap-model-selection/anomaly-detection/ad-dinomaly/images/final/WI033-DINOMALY-03-r01-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 367.1875,
+          "y": 196.078125,
+          "width": 1009.625,
+          "height": 568.203125,
+          "top": 196.078125,
+          "right": 1376.8125,
+          "bottom": 764.28125,
+          "left": 367.1875
+        },
+        "kind": "engineering-3"
+      },
+      {
+        "src": "http://127.0.0.1:8000/roadmap-model-selection/anomaly-detection/ad-dinomaly/images/final/WI033-DINOMALY-04-r01-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 367.1875,
+          "y": 196.109375,
+          "width": 1009.625,
+          "height": 568.203125,
+          "top": 196.109375,
+          "right": 1376.8125,
+          "bottom": 764.3125,
+          "left": 367.1875
+        },
+        "kind": "engineering-4"
+      }
+    ],
+    "zoom_checks": 7,
+    "answer": true,
+    "overflow": false,
+    "navigation": true,
+    "complete": true
+  },
+  {
+    "topic": "ad-dinomaly",
+    "route": "interactive-learning.html",
+    "width": 360,
+    "errors": [],
+    "images": [
+      {
+        "src": "http://127.0.0.1:8000/_course_content/generated-concepts/ad-dinomaly/wi021-dinomaly-c1-r01-mobile.png",
+        "nw": 724,
+        "nh": 2172,
+        "box": {
+          "x": 17,
+          "y": -134.890625,
+          "width": 326,
+          "height": 978,
+          "top": -134.890625,
+          "right": 343,
+          "bottom": 843.109375,
+          "left": 17
+        },
+        "kind": "main-1"
+      },
+      {
+        "src": "http://127.0.0.1:8000/_course_content/generated-concepts/ad-dinomaly/wi021-multi-reconstruction-d2-r03-mobile.png",
+        "nw": 724,
+        "nh": 2172,
+        "box": {
+          "x": 17,
+          "y": -134.21875,
+          "width": 326,
+          "height": 978,
+          "top": -134.21875,
+          "right": 343,
+          "bottom": 843.78125,
+          "left": 17
+        },
+        "kind": "main-2"
+      },
+      {
+        "src": "http://127.0.0.1:8000/_course_content/generated-concepts/ad-dinomaly/wi021-multi-reconstruction-d3-r02-mobile.png",
+        "nw": 724,
+        "nh": 2172,
+        "box": {
+          "x": 17,
+          "y": -134.796875,
+          "width": 326,
+          "height": 978,
+          "top": -134.796875,
+          "right": 343,
+          "bottom": 843.203125,
+          "left": 17
+        },
+        "kind": "main-3"
+      },
+      {
+        "src": "http://127.0.0.1:8000/roadmap-model-selection/anomaly-detection/ad-dinomaly/images/final/WI033-DINOMALY-01-r01-mobile.png",
+        "nw": 768,
+        "nh": 2304,
+        "box": {
+          "x": 34,
+          "y": -69.5625,
+          "width": 292,
+          "height": 876,
+          "top": -69.5625,
+          "right": 326,
+          "bottom": 806.4375,
+          "left": 34
+        },
+        "kind": "engineering-1"
+      },
+      {
+        "src": "http://127.0.0.1:8000/roadmap-model-selection/anomaly-detection/ad-dinomaly/images/final/WI033-DINOMALY-02-r02-mobile.png",
+        "nw": 768,
+        "nh": 2400,
+        "box": {
+          "x": 34,
+          "y": -87.875,
+          "width": 292,
+          "height": 912.5,
+          "top": -87.875,
+          "right": 326,
+          "bottom": 824.625,
+          "left": 34
+        },
+        "kind": "engineering-2"
+      },
+      {
+        "src": "http://127.0.0.1:8000/roadmap-model-selection/anomaly-detection/ad-dinomaly/images/final/WI033-DINOMALY-03-r01-mobile.png",
+        "nw": 768,
+        "nh": 2304,
+        "box": {
+          "x": 34,
+          "y": -69.1875,
+          "width": 292,
+          "height": 876,
+          "top": -69.1875,
+          "right": 326,
+          "bottom": 806.8125,
+          "left": 34
+        },
+        "kind": "engineering-3"
+      },
+      {
+        "src": "http://127.0.0.1:8000/roadmap-model-selection/anomaly-detection/ad-dinomaly/images/final/WI033-DINOMALY-04-r01-mobile.png",
+        "nw": 768,
+        "nh": 2304,
+        "box": {
+          "x": 34,
+          "y": -69.828125,
+          "width": 292,
+          "height": 876,
+          "top": -69.828125,
+          "right": 326,
+          "bottom": 806.171875,
+          "left": 34
+        },
+        "kind": "engineering-4"
+      }
+    ],
+    "zoom_checks": 7,
+    "answer": true,
+    "overflow": false,
+    "navigation": true,
+    "complete": true
+  },
+  {
+    "topic": "ad-dinomaly",
+    "route": "docs/index.html",
+    "width": 1440,
+    "errors": [],
+    "images": [
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/ad-dinomaly/wi021-dinomaly-c1-r04-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 404.1875,
+          "y": 401.640625,
+          "width": 935.625,
+          "height": 526.5625,
+          "top": 401.640625,
+          "right": 1339.8125,
+          "bottom": 928.203125,
+          "left": 404.1875
+        },
+        "kind": "main-1"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/ad-dinomaly/wi021-multi-reconstruction-d2-r02-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 404.1875,
+          "y": 201.15625,
+          "width": 935.625,
+          "height": 526.5625,
+          "top": 201.15625,
+          "right": 1339.8125,
+          "bottom": 727.71875,
+          "left": 404.1875
+        },
+        "kind": "main-2"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/ad-dinomaly/wi021-multi-reconstruction-d3-r02-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 404.1875,
+          "y": 200.46875,
+          "width": 935.625,
+          "height": 526.5625,
+          "top": 200.46875,
+          "right": 1339.8125,
+          "bottom": 727.03125,
+          "left": 404.1875
+        },
+        "kind": "main-3"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/anomaly-detection/ad-dinomaly/images/final/WI033-DINOMALY-01-r01-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 367.1875,
+          "y": 195.984375,
+          "width": 1009.625,
+          "height": 568.203125,
+          "top": 195.984375,
+          "right": 1376.8125,
+          "bottom": 764.1875,
+          "left": 367.1875
+        },
+        "kind": "engineering-1"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/anomaly-detection/ad-dinomaly/images/final/WI033-DINOMALY-02-r02-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 367.1875,
+          "y": 195.515625,
+          "width": 1009.625,
+          "height": 568.203125,
+          "top": 195.515625,
+          "right": 1376.8125,
+          "bottom": 763.71875,
+          "left": 367.1875
+        },
+        "kind": "engineering-2"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/anomaly-detection/ad-dinomaly/images/final/WI033-DINOMALY-03-r01-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 367.1875,
+          "y": 196.078125,
+          "width": 1009.625,
+          "height": 568.203125,
+          "top": 196.078125,
+          "right": 1376.8125,
+          "bottom": 764.28125,
+          "left": 367.1875
+        },
+        "kind": "engineering-3"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/anomaly-detection/ad-dinomaly/images/final/WI033-DINOMALY-04-r01-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 367.1875,
+          "y": 196.109375,
+          "width": 1009.625,
+          "height": 568.203125,
+          "top": 196.109375,
+          "right": 1376.8125,
+          "bottom": 764.3125,
+          "left": 367.1875
+        },
+        "kind": "engineering-4"
+      }
+    ],
+    "zoom_checks": 7,
+    "answer": true,
+    "overflow": false,
+    "navigation": true,
+    "complete": true
+  },
+  {
+    "topic": "ad-dinomaly",
+    "route": "docs/index.html",
+    "width": 360,
+    "errors": [],
+    "images": [
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/ad-dinomaly/wi021-dinomaly-c1-r01-mobile.png",
+        "nw": 724,
+        "nh": 2172,
+        "box": {
+          "x": 17,
+          "y": -134.890625,
+          "width": 326,
+          "height": 978,
+          "top": -134.890625,
+          "right": 343,
+          "bottom": 843.109375,
+          "left": 17
+        },
+        "kind": "main-1"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/ad-dinomaly/wi021-multi-reconstruction-d2-r03-mobile.png",
+        "nw": 724,
+        "nh": 2172,
+        "box": {
+          "x": 17,
+          "y": -134.21875,
+          "width": 326,
+          "height": 978,
+          "top": -134.21875,
+          "right": 343,
+          "bottom": 843.78125,
+          "left": 17
+        },
+        "kind": "main-2"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/ad-dinomaly/wi021-multi-reconstruction-d3-r02-mobile.png",
+        "nw": 724,
+        "nh": 2172,
+        "box": {
+          "x": 17,
+          "y": -134.796875,
+          "width": 326,
+          "height": 978,
+          "top": -134.796875,
+          "right": 343,
+          "bottom": 843.203125,
+          "left": 17
+        },
+        "kind": "main-3"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/anomaly-detection/ad-dinomaly/images/final/WI033-DINOMALY-01-r01-mobile.png",
+        "nw": 768,
+        "nh": 2304,
+        "box": {
+          "x": 34,
+          "y": -69.5625,
+          "width": 292,
+          "height": 876,
+          "top": -69.5625,
+          "right": 326,
+          "bottom": 806.4375,
+          "left": 34
+        },
+        "kind": "engineering-1"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/anomaly-detection/ad-dinomaly/images/final/WI033-DINOMALY-02-r02-mobile.png",
+        "nw": 768,
+        "nh": 2400,
+        "box": {
+          "x": 34,
+          "y": -87.875,
+          "width": 292,
+          "height": 912.5,
+          "top": -87.875,
+          "right": 326,
+          "bottom": 824.625,
+          "left": 34
+        },
+        "kind": "engineering-2"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/anomaly-detection/ad-dinomaly/images/final/WI033-DINOMALY-03-r01-mobile.png",
+        "nw": 768,
+        "nh": 2304,
+        "box": {
+          "x": 34,
+          "y": -69.1875,
+          "width": 292,
+          "height": 876,
+          "top": -69.1875,
+          "right": 326,
+          "bottom": 806.8125,
+          "left": 34
+        },
+        "kind": "engineering-3"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/anomaly-detection/ad-dinomaly/images/final/WI033-DINOMALY-04-r01-mobile.png",
+        "nw": 768,
+        "nh": 2304,
+        "box": {
+          "x": 34,
+          "y": -69.828125,
+          "width": 292,
+          "height": 876,
+          "top": -69.828125,
+          "right": 326,
+          "bottom": 806.171875,
+          "left": 34
+        },
+        "kind": "engineering-4"
+      }
+    ],
+    "zoom_checks": 7,
+    "answer": true,
+    "overflow": false,
+    "navigation": true,
+    "complete": true
+  }
+]

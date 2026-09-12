@@ -117,3 +117,40 @@ Keep camera / lens / exposure / frame-rate settings; timestamp and frame-drop re
 ## Production gate
 
 The six model-specific fields, comparison contract, and required visual primitives are complete. Pages 05-02 through 05-05 may proceed to versioned white high-density C / D visual production. Final assets must pass Chinese readability, engineering-causality, no-fabricated-performance, manifest, QA and style validation before approval.
+
+<!-- wi033-engineering:start -->
+## WI-033 工程圖修正
+
+### Frame Difference：找前後變化的位置
+
+相鄰灰階前後相減取絕對值，再二值門檻。給定差80大於示意門檻30為前景，但0不亮；門檻不是建議值。不能直接把帶數當件數。
+
+差分回答哪裡變了，物件數需另推論。
+
+來源：https://docs.opencv.org/4.x/d2/de8/group__core__array.html
+
+### Frame Difference：同座標相減，留下雙帶
+
+給定一維橫切灰階：前幀[20,100,100,100,20]，後幀[20,20,100,100,100]，差[0,80,0,0,80]。方件向右移一格，中間重疊不變；兩條亮帶是同一物件的離開與進入，不是兩物件或完整輪廓。教學算例未跑影像演算法。
+
+雙帶來自同物件前後位置，不能當兩個物件。
+
+來源：https://docs.opencv.org/4.x/d2/de8/group__core__array.html
+
+### Frame Difference：相機與時間間隔要固定
+
+保存幀距、曝光、相機位置、ROI、灰階/門檻與後處理。曝光跳變或震動造成非物件運動差；靜止物件會消失於兩幀差。異常動作或缺陷判定須下游另作。
+
+不同取像條件，差異的原因也會改變。
+
+來源：https://docs.opencv.org/4.x/d2/de8/group__core__array.html
+
+### 相鄰差分與背景相減：參考不同
+
+相鄰差分只比較選定兩幀；背景相減對歷史常態比較，初停物件可仍為前景，但背景更新後也可能被吸收。此差異不代表方法固定更準。
+
+同件停住，兩方法的時間記憶不同。
+
+來源：https://docs.opencv.org/4.x/d2/de8/group__core__array.html
+
+<!-- wi033-engineering:end -->

@@ -1,0 +1,502 @@
+[
+  {
+    "topic": "siglip",
+    "route": "interactive-learning.html",
+    "width": 1440,
+    "errors": [],
+    "images": [
+      {
+        "src": "http://127.0.0.1:8000/_course_content/generated-concepts/siglip/wi027-siglip-c1-r03-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 404.1875,
+          "y": 401.515625,
+          "width": 935.625,
+          "height": 526.5625,
+          "top": 401.515625,
+          "right": 1339.8125,
+          "bottom": 928.078125,
+          "left": 404.1875
+        },
+        "kind": "main-1"
+      },
+      {
+        "src": "http://127.0.0.1:8000/_course_content/generated-concepts/clip/wi027-alignment-d2-r01-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 404.1875,
+          "y": 200.625,
+          "width": 935.625,
+          "height": 526.5625,
+          "top": 200.625,
+          "right": 1339.8125,
+          "bottom": 727.1875,
+          "left": 404.1875
+        },
+        "kind": "main-2"
+      },
+      {
+        "src": "http://127.0.0.1:8000/_course_content/generated-concepts/clip/wi027-alignment-d3-r03-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 404.1875,
+          "y": 200.9375,
+          "width": 935.625,
+          "height": 526.5625,
+          "top": 200.9375,
+          "right": 1339.8125,
+          "bottom": 727.5,
+          "left": 404.1875
+        },
+        "kind": "main-3"
+      },
+      {
+        "src": "http://127.0.0.1:8000/roadmap-model-selection/foundation-vlm-open-world/siglip/images/final/WI033-SIGLIP-01-r02-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 367.1875,
+          "y": 195.796875,
+          "width": 1009.625,
+          "height": 568.203125,
+          "top": 195.796875,
+          "right": 1376.8125,
+          "bottom": 764,
+          "left": 367.1875
+        },
+        "kind": "engineering-1"
+      },
+      {
+        "src": "http://127.0.0.1:8000/roadmap-model-selection/foundation-vlm-open-world/siglip/images/final/WI033-SIGLIP-02-r02-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 367.1875,
+          "y": 195.8125,
+          "width": 1009.625,
+          "height": 568.203125,
+          "top": 195.8125,
+          "right": 1376.8125,
+          "bottom": 764.015625,
+          "left": 367.1875
+        },
+        "kind": "engineering-2"
+      },
+      {
+        "src": "http://127.0.0.1:8000/roadmap-model-selection/foundation-vlm-open-world/siglip/images/final/WI033-SIGLIP-03-r02-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 367.1875,
+          "y": 196.0625,
+          "width": 1009.625,
+          "height": 568.203125,
+          "top": 196.0625,
+          "right": 1376.8125,
+          "bottom": 764.265625,
+          "left": 367.1875
+        },
+        "kind": "engineering-3"
+      },
+      {
+        "src": "http://127.0.0.1:8000/roadmap-model-selection/foundation-vlm-open-world/siglip/images/final/WI033-SIGLIP-04-r02-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 367.1875,
+          "y": 196.3125,
+          "width": 1009.625,
+          "height": 568.203125,
+          "top": 196.3125,
+          "right": 1376.8125,
+          "bottom": 764.515625,
+          "left": 367.1875
+        },
+        "kind": "engineering-4"
+      }
+    ],
+    "zoom_checks": 7,
+    "answer": true,
+    "overflow": false,
+    "navigation": true,
+    "complete": true
+  },
+  {
+    "topic": "siglip",
+    "route": "interactive-learning.html",
+    "width": 360,
+    "errors": [],
+    "images": [
+      {
+        "src": "http://127.0.0.1:8000/_course_content/generated-concepts/siglip/wi033-core-r02-mobile.png",
+        "nw": 768,
+        "nh": 2304,
+        "box": {
+          "x": 17,
+          "y": -124.859375,
+          "width": 326,
+          "height": 978,
+          "top": -124.859375,
+          "right": 343,
+          "bottom": 853.140625,
+          "left": 17
+        },
+        "kind": "main-1"
+      },
+      {
+        "src": "http://127.0.0.1:8000/_course_content/generated-concepts/clip/wi027-alignment-d2-r01-mobile.png",
+        "nw": 724,
+        "nh": 2172,
+        "box": {
+          "x": 17,
+          "y": -134.734375,
+          "width": 326,
+          "height": 978,
+          "top": -134.734375,
+          "right": 343,
+          "bottom": 843.265625,
+          "left": 17
+        },
+        "kind": "main-2"
+      },
+      {
+        "src": "http://127.0.0.1:8000/_course_content/generated-concepts/clip/wi033-alignment-comparison-r01-mobile.png",
+        "nw": 768,
+        "nh": 2304,
+        "box": {
+          "x": 17,
+          "y": -134.015625,
+          "width": 326,
+          "height": 978,
+          "top": -134.015625,
+          "right": 343,
+          "bottom": 843.984375,
+          "left": 17
+        },
+        "kind": "main-3"
+      },
+      {
+        "src": "http://127.0.0.1:8000/roadmap-model-selection/foundation-vlm-open-world/siglip/images/final/WI033-SIGLIP-01-r02-mobile.png",
+        "nw": 768,
+        "nh": 2400,
+        "box": {
+          "x": 34,
+          "y": -87.5,
+          "width": 292,
+          "height": 912.5,
+          "top": -87.5,
+          "right": 326,
+          "bottom": 825,
+          "left": 34
+        },
+        "kind": "engineering-1"
+      },
+      {
+        "src": "http://127.0.0.1:8000/roadmap-model-selection/foundation-vlm-open-world/siglip/images/final/WI033-SIGLIP-02-r02-mobile.png",
+        "nw": 768,
+        "nh": 2400,
+        "box": {
+          "x": 34,
+          "y": -87.53125,
+          "width": 292,
+          "height": 912.5,
+          "top": -87.53125,
+          "right": 326,
+          "bottom": 824.96875,
+          "left": 34
+        },
+        "kind": "engineering-2"
+      },
+      {
+        "src": "http://127.0.0.1:8000/roadmap-model-selection/foundation-vlm-open-world/siglip/images/final/WI033-SIGLIP-03-r02-mobile.png",
+        "nw": 768,
+        "nh": 2400,
+        "box": {
+          "x": 34,
+          "y": -87.59375,
+          "width": 292,
+          "height": 912.5,
+          "top": -87.59375,
+          "right": 326,
+          "bottom": 824.90625,
+          "left": 34
+        },
+        "kind": "engineering-3"
+      },
+      {
+        "src": "http://127.0.0.1:8000/roadmap-model-selection/foundation-vlm-open-world/siglip/images/final/WI033-SIGLIP-04-r02-mobile.png",
+        "nw": 768,
+        "nh": 2400,
+        "box": {
+          "x": 34,
+          "y": -87.390625,
+          "width": 292,
+          "height": 912.5,
+          "top": -87.390625,
+          "right": 326,
+          "bottom": 825.109375,
+          "left": 34
+        },
+        "kind": "engineering-4"
+      }
+    ],
+    "zoom_checks": 7,
+    "answer": true,
+    "overflow": false,
+    "navigation": true,
+    "complete": true
+  },
+  {
+    "topic": "siglip",
+    "route": "docs/index.html",
+    "width": 1440,
+    "errors": [],
+    "images": [
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/siglip/wi027-siglip-c1-r03-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 404.1875,
+          "y": 401.515625,
+          "width": 935.625,
+          "height": 526.5625,
+          "top": 401.515625,
+          "right": 1339.8125,
+          "bottom": 928.078125,
+          "left": 404.1875
+        },
+        "kind": "main-1"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/clip/wi027-alignment-d2-r01-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 404.1875,
+          "y": 200.625,
+          "width": 935.625,
+          "height": 526.5625,
+          "top": 200.625,
+          "right": 1339.8125,
+          "bottom": 727.1875,
+          "left": 404.1875
+        },
+        "kind": "main-2"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/clip/wi027-alignment-d3-r03-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 404.1875,
+          "y": 200.9375,
+          "width": 935.625,
+          "height": 526.5625,
+          "top": 200.9375,
+          "right": 1339.8125,
+          "bottom": 727.5,
+          "left": 404.1875
+        },
+        "kind": "main-3"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/foundation-vlm-open-world/siglip/images/final/WI033-SIGLIP-01-r02-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 367.1875,
+          "y": 195.796875,
+          "width": 1009.625,
+          "height": 568.203125,
+          "top": 195.796875,
+          "right": 1376.8125,
+          "bottom": 764,
+          "left": 367.1875
+        },
+        "kind": "engineering-1"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/foundation-vlm-open-world/siglip/images/final/WI033-SIGLIP-02-r02-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 367.1875,
+          "y": 195.8125,
+          "width": 1009.625,
+          "height": 568.203125,
+          "top": 195.8125,
+          "right": 1376.8125,
+          "bottom": 764.015625,
+          "left": 367.1875
+        },
+        "kind": "engineering-2"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/foundation-vlm-open-world/siglip/images/final/WI033-SIGLIP-03-r02-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 367.1875,
+          "y": 196.0625,
+          "width": 1009.625,
+          "height": 568.203125,
+          "top": 196.0625,
+          "right": 1376.8125,
+          "bottom": 764.265625,
+          "left": 367.1875
+        },
+        "kind": "engineering-3"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/foundation-vlm-open-world/siglip/images/final/WI033-SIGLIP-04-r02-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 367.1875,
+          "y": 196.3125,
+          "width": 1009.625,
+          "height": 568.203125,
+          "top": 196.3125,
+          "right": 1376.8125,
+          "bottom": 764.515625,
+          "left": 367.1875
+        },
+        "kind": "engineering-4"
+      }
+    ],
+    "zoom_checks": 7,
+    "answer": true,
+    "overflow": false,
+    "navigation": true,
+    "complete": true
+  },
+  {
+    "topic": "siglip",
+    "route": "docs/index.html",
+    "width": 360,
+    "errors": [],
+    "images": [
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/siglip/wi033-core-r02-mobile.png",
+        "nw": 768,
+        "nh": 2304,
+        "box": {
+          "x": 17,
+          "y": -124.859375,
+          "width": 326,
+          "height": 978,
+          "top": -124.859375,
+          "right": 343,
+          "bottom": 853.140625,
+          "left": 17
+        },
+        "kind": "main-1"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/clip/wi027-alignment-d2-r01-mobile.png",
+        "nw": 724,
+        "nh": 2172,
+        "box": {
+          "x": 17,
+          "y": -134.734375,
+          "width": 326,
+          "height": 978,
+          "top": -134.734375,
+          "right": 343,
+          "bottom": 843.265625,
+          "left": 17
+        },
+        "kind": "main-2"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/clip/wi033-alignment-comparison-r01-mobile.png",
+        "nw": 768,
+        "nh": 2304,
+        "box": {
+          "x": 17,
+          "y": -134.015625,
+          "width": 326,
+          "height": 978,
+          "top": -134.015625,
+          "right": 343,
+          "bottom": 843.984375,
+          "left": 17
+        },
+        "kind": "main-3"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/foundation-vlm-open-world/siglip/images/final/WI033-SIGLIP-01-r02-mobile.png",
+        "nw": 768,
+        "nh": 2400,
+        "box": {
+          "x": 34,
+          "y": -87.5,
+          "width": 292,
+          "height": 912.5,
+          "top": -87.5,
+          "right": 326,
+          "bottom": 825,
+          "left": 34
+        },
+        "kind": "engineering-1"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/foundation-vlm-open-world/siglip/images/final/WI033-SIGLIP-02-r02-mobile.png",
+        "nw": 768,
+        "nh": 2400,
+        "box": {
+          "x": 34,
+          "y": -87.53125,
+          "width": 292,
+          "height": 912.5,
+          "top": -87.53125,
+          "right": 326,
+          "bottom": 824.96875,
+          "left": 34
+        },
+        "kind": "engineering-2"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/foundation-vlm-open-world/siglip/images/final/WI033-SIGLIP-03-r02-mobile.png",
+        "nw": 768,
+        "nh": 2400,
+        "box": {
+          "x": 34,
+          "y": -87.59375,
+          "width": 292,
+          "height": 912.5,
+          "top": -87.59375,
+          "right": 326,
+          "bottom": 824.90625,
+          "left": 34
+        },
+        "kind": "engineering-3"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/foundation-vlm-open-world/siglip/images/final/WI033-SIGLIP-04-r02-mobile.png",
+        "nw": 768,
+        "nh": 2400,
+        "box": {
+          "x": 34,
+          "y": -87.390625,
+          "width": 292,
+          "height": 912.5,
+          "top": -87.390625,
+          "right": 326,
+          "bottom": 825.109375,
+          "left": 34
+        },
+        "kind": "engineering-4"
+      }
+    ],
+    "zoom_checks": 7,
+    "answer": true,
+    "overflow": false,
+    "navigation": true,
+    "complete": true
+  }
+]

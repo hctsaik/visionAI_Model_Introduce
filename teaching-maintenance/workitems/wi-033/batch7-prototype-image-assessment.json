@@ -1,0 +1,992 @@
+[
+  {
+    "id": "convlstm-engineering-2",
+    "image": "convlstm-engineering-2-r02-desktop.png",
+    "sha256": "12a3c9282991828f2ef5a4c02a545c1fe7a395867a22951e5561ca866b17853a",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "門控.5×.4+.8×.5=.6；C/H與下一步輸入清楚分離。",
+      "逐張原生實看；三節點單黃結論、caption與圖形分離。",
+      "幾何示意簡化，術語密度仍高；未做真人學習測試。"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "簡化工件，主要身份與位置清楚"
+      ],
+      "completeness": [
+        9,
+        "門控.5×.4+.8×.5=.6；C/H與下一步輸入清楚分離。"
+      ],
+      "professionalism": [
+        9,
+        "原論文機制與作者示例分開"
+      ],
+      "density": [
+        8,
+        "部分英文術語仍需正文支援"
+      ],
+      "hierarchy": [
+        9,
+        "三節點、一讀序、一結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch7-page-assessment.json; batch7-main-page-review.json"
+  },
+  {
+    "id": "convlstm-engineering-2",
+    "image": "convlstm-engineering-2-r02-mobile.png",
+    "sha256": "ca7be131568471777c3852c64e2f5659485932e31fde1346175f14e28acfb749",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "門控.5×.4+.8×.5=.6；C/H與下一步輸入清楚分離。",
+      "逐張原生實看；三節點單黃結論、caption與圖形分離。",
+      "幾何示意簡化，術語密度仍高；未做真人學習測試。"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "簡化工件，主要身份與位置清楚"
+      ],
+      "completeness": [
+        9,
+        "門控.5×.4+.8×.5=.6；C/H與下一步輸入清楚分離。"
+      ],
+      "professionalism": [
+        9,
+        "原論文機制與作者示例分開"
+      ],
+      "density": [
+        8,
+        "部分英文術語仍需正文支援"
+      ],
+      "hierarchy": [
+        9,
+        "三節點、一讀序、一結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch7-page-assessment.json; batch7-main-page-review.json"
+  },
+  {
+    "id": "videomae-engineering-2",
+    "image": "videomae-engineering-2-r02-desktop.png",
+    "sha256": "4ac1133e5bd91af6bfb9223c86509ba33041086b7787dae69ec86fb933496225",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "tube位置一致；可見編碼、mask解碼與像素監督分開。",
+      "逐張原生實看；三節點單黃結論、caption與圖形分離。",
+      "幾何示意簡化，術語密度仍高；未做真人學習測試。"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "簡化工件，主要身份與位置清楚"
+      ],
+      "completeness": [
+        9,
+        "tube位置一致；可見編碼、mask解碼與像素監督分開。"
+      ],
+      "professionalism": [
+        9,
+        "原論文機制與作者示例分開"
+      ],
+      "density": [
+        8,
+        "部分英文術語仍需正文支援"
+      ],
+      "hierarchy": [
+        9,
+        "三節點、一讀序、一結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch7-page-assessment.json; batch7-main-page-review.json"
+  },
+  {
+    "id": "videomae-engineering-2",
+    "image": "videomae-engineering-2-r02-mobile.png",
+    "sha256": "dda1e9dda4b8ceb1b806bb65209b04ba01c36e954d1a3c4b0465df9c16c5a2a3",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "tube位置一致；可見編碼、mask解碼與像素監督分開。",
+      "逐張原生實看；三節點單黃結論、caption與圖形分離。",
+      "幾何示意簡化，術語密度仍高；未做真人學習測試。"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "簡化工件，主要身份與位置清楚"
+      ],
+      "completeness": [
+        9,
+        "tube位置一致；可見編碼、mask解碼與像素監督分開。"
+      ],
+      "professionalism": [
+        9,
+        "原論文機制與作者示例分開"
+      ],
+      "density": [
+        8,
+        "部分英文術語仍需正文支援"
+      ],
+      "hierarchy": [
+        9,
+        "三節點、一讀序、一結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch7-page-assessment.json; batch7-main-page-review.json"
+  },
+  {
+    "id": "v-jepa-engineering-2",
+    "image": "v-jepa-engineering-2-r02-desktop.png",
+    "sha256": "f6ede3dadb25a5bf0a826124113d9212ac2394f462f645c03929483518b31458",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "完整目標stop-grad/EMA；兩維L1=.15可追算。",
+      "逐張原生實看；三節點單黃結論、caption與圖形分離。",
+      "幾何示意簡化，術語密度仍高；未做真人學習測試。"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "簡化工件，主要身份與位置清楚"
+      ],
+      "completeness": [
+        9,
+        "完整目標stop-grad/EMA；兩維L1=.15可追算。"
+      ],
+      "professionalism": [
+        9,
+        "原論文機制與作者示例分開"
+      ],
+      "density": [
+        8,
+        "部分英文術語仍需正文支援"
+      ],
+      "hierarchy": [
+        9,
+        "三節點、一讀序、一結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch7-page-assessment.json; batch7-main-page-review.json"
+  },
+  {
+    "id": "v-jepa-engineering-2",
+    "image": "v-jepa-engineering-2-r02-mobile.png",
+    "sha256": "5657a3ae0febe1b72fdd70a538ccb92db7f7aa0eadd502fd301d663ac8a65756",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "完整目標stop-grad/EMA；兩維L1=.15可追算。",
+      "逐張原生實看；三節點單黃結論、caption與圖形分離。",
+      "幾何示意簡化，術語密度仍高；未做真人學習測試。"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "簡化工件，主要身份與位置清楚"
+      ],
+      "completeness": [
+        9,
+        "完整目標stop-grad/EMA；兩維L1=.15可追算。"
+      ],
+      "professionalism": [
+        9,
+        "原論文機制與作者示例分開"
+      ],
+      "density": [
+        8,
+        "部分英文術語仍需正文支援"
+      ],
+      "hierarchy": [
+        9,
+        "三節點、一讀序、一結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch7-page-assessment.json; batch7-main-page-review.json"
+  },
+  {
+    "id": "defectfill-engineering-2",
+    "image": "defectfill-engineering-2-r02-desktop.png",
+    "sha256": "492bbaba99a8ca4eadaf80e1cf70fb665b1451f6293b9146b0cb13362a5b6323",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "淡傷A與深傷B同板同mask；LFS給定距離不當真實度。",
+      "逐張原生實看；三節點單黃結論、caption與圖形分離。",
+      "幾何示意簡化，術語密度仍高；未做真人學習測試。"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "簡化工件，主要身份與位置清楚"
+      ],
+      "completeness": [
+        9,
+        "淡傷A與深傷B同板同mask；LFS給定距離不當真實度。"
+      ],
+      "professionalism": [
+        9,
+        "原論文機制與作者示例分開"
+      ],
+      "density": [
+        8,
+        "部分英文術語仍需正文支援"
+      ],
+      "hierarchy": [
+        9,
+        "三節點、一讀序、一結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch7-page-assessment.json; batch7-main-page-review.json"
+  },
+  {
+    "id": "defectfill-engineering-2",
+    "image": "defectfill-engineering-2-r02-mobile.png",
+    "sha256": "3872b8b6c3f1c5c392d83dc354c511e456ab030b7378fe4ff8f82e12b2c7e9be",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "淡傷A與深傷B同板同mask；LFS給定距離不當真實度。",
+      "逐張原生實看；三節點單黃結論、caption與圖形分離。",
+      "幾何示意簡化，術語密度仍高；未做真人學習測試。"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "簡化工件，主要身份與位置清楚"
+      ],
+      "completeness": [
+        9,
+        "淡傷A與深傷B同板同mask；LFS給定距離不當真實度。"
+      ],
+      "professionalism": [
+        9,
+        "原論文機制與作者示例分開"
+      ],
+      "density": [
+        8,
+        "部分英文術語仍需正文支援"
+      ],
+      "hierarchy": [
+        9,
+        "三節點、一讀序、一結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch7-page-assessment.json; batch7-main-page-review.json"
+  },
+  {
+    "id": "anomalydiffusion-engineering-2",
+    "image": "anomalydiffusion-engineering-2-r02-desktop.png",
+    "sha256": "5ee1f4e813dcd07ae40cec8fbeab87db584babc2de8467cce2cd943922d5fb81",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "原上方兩孔与大左下/小右下mask保持一致；弱區補強與結果核對。",
+      "逐張原生實看；三節點單黃結論、caption與圖形分離。",
+      "幾何示意簡化，術語密度仍高；未做真人學習測試。"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "簡化工件，主要身份與位置清楚"
+      ],
+      "completeness": [
+        9,
+        "原上方兩孔与大左下/小右下mask保持一致；弱區補強與結果核對。"
+      ],
+      "professionalism": [
+        9,
+        "原論文機制與作者示例分開"
+      ],
+      "density": [
+        8,
+        "部分英文術語仍需正文支援"
+      ],
+      "hierarchy": [
+        9,
+        "三節點、一讀序、一結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch7-page-assessment.json; batch7-main-page-review.json"
+  },
+  {
+    "id": "anomalydiffusion-engineering-2",
+    "image": "anomalydiffusion-engineering-2-r02-mobile.png",
+    "sha256": "a7cfccbe9e303821583f4d7a424cc3ebe524b7c783ad61f16eb56e1a5a0cb5bf",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "原上方兩孔与大左下/小右下mask保持一致；弱區補強與結果核對。",
+      "逐張原生實看；三節點單黃結論、caption與圖形分離。",
+      "幾何示意簡化，術語密度仍高；未做真人學習測試。"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "簡化工件，主要身份與位置清楚"
+      ],
+      "completeness": [
+        9,
+        "原上方兩孔与大左下/小右下mask保持一致；弱區補強與結果核對。"
+      ],
+      "professionalism": [
+        9,
+        "原論文機制與作者示例分開"
+      ],
+      "density": [
+        8,
+        "部分英文術語仍需正文支援"
+      ],
+      "hierarchy": [
+        9,
+        "三節點、一讀序、一結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch7-page-assessment.json; batch7-main-page-review.json"
+  },
+  {
+    "id": "tf-idg-engineering-2",
+    "image": "tf-idg-engineering-2-r01-desktop.png",
+    "sha256": "c769572287011179a6d4ee85c830dcd34ec985a3f960d4a39462cd4ef1bcc306",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "模型權重固定與latent梯度更新分開，兩刮傷區位置一致。",
+      "逐張原生實看；三節點單黃結論、caption與圖形分離。",
+      "幾何示意簡化，術語密度仍高；未做真人學習測試。"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "簡化工件，主要身份與位置清楚"
+      ],
+      "completeness": [
+        9,
+        "模型權重固定與latent梯度更新分開，兩刮傷區位置一致。"
+      ],
+      "professionalism": [
+        9,
+        "原論文機制與作者示例分開"
+      ],
+      "density": [
+        8,
+        "部分英文術語仍需正文支援"
+      ],
+      "hierarchy": [
+        9,
+        "三節點、一讀序、一結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch7-page-assessment.json; batch7-main-page-review.json"
+  },
+  {
+    "id": "tf-idg-engineering-2",
+    "image": "tf-idg-engineering-2-r01-mobile.png",
+    "sha256": "5f8e3ddec5395c217bb730ec95b5ea946aa82483325b596866d979a521b1e4f7",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "模型權重固定與latent梯度更新分開，兩刮傷區位置一致。",
+      "逐張原生實看；三節點單黃結論、caption與圖形分離。",
+      "幾何示意簡化，術語密度仍高；未做真人學習測試。"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "簡化工件，主要身份與位置清楚"
+      ],
+      "completeness": [
+        9,
+        "模型權重固定與latent梯度更新分開，兩刮傷區位置一致。"
+      ],
+      "professionalism": [
+        9,
+        "原論文機制與作者示例分開"
+      ],
+      "density": [
+        8,
+        "部分英文術語仍需正文支援"
+      ],
+      "hierarchy": [
+        9,
+        "三節點、一讀序、一結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch7-page-assessment.json; batch7-main-page-review.json"
+  },
+  {
+    "id": "controlnet-engineering-2",
+    "image": "controlnet-engineering-2-r02-desktop.png",
+    "sha256": "8abed0c2e3ab4aa6f2fc66b8e4a801112830ad13a2a77054c25c71a97f71b0a0",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "白外框及雙孔形成條件；零初始化與後續可訓練分開。",
+      "逐張原生實看；三節點單黃結論、caption與圖形分離。",
+      "幾何示意簡化，術語密度仍高；未做真人學習測試。"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "簡化工件，主要身份與位置清楚"
+      ],
+      "completeness": [
+        9,
+        "白外框及雙孔形成條件；零初始化與後續可訓練分開。"
+      ],
+      "professionalism": [
+        9,
+        "原論文機制與作者示例分開"
+      ],
+      "density": [
+        8,
+        "部分英文術語仍需正文支援"
+      ],
+      "hierarchy": [
+        9,
+        "三節點、一讀序、一結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch7-page-assessment.json; batch7-main-page-review.json"
+  },
+  {
+    "id": "controlnet-engineering-2",
+    "image": "controlnet-engineering-2-r02-mobile.png",
+    "sha256": "e7c2f1239fdc382f539be79c2b3be923d8e520232664f68e47d503a5501d9a60",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "白外框及雙孔形成條件；零初始化與後續可訓練分開。",
+      "逐張原生實看；三節點單黃結論、caption與圖形分離。",
+      "幾何示意簡化，術語密度仍高；未做真人學習測試。"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "簡化工件，主要身份與位置清楚"
+      ],
+      "completeness": [
+        9,
+        "白外框及雙孔形成條件；零初始化與後續可訓練分開。"
+      ],
+      "professionalism": [
+        9,
+        "原論文機制與作者示例分開"
+      ],
+      "density": [
+        8,
+        "部分英文術語仍需正文支援"
+      ],
+      "hierarchy": [
+        9,
+        "三節點、一讀序、一結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch7-page-assessment.json; batch7-main-page-review.json"
+  },
+  {
+    "id": "inpainting-engineering-2",
+    "image": "inpainting-engineering-2-r02-desktop.png",
+    "sha256": "ba05005e738b7e839f20a274363b5e152028eb5eb4640154271923692974a0e2",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "同板黑污點、遮罩與編修對照；接縫/外部核對。",
+      "逐張原生實看；三節點單黃結論、caption與圖形分離。",
+      "幾何示意簡化，術語密度仍高；未做真人學習測試。"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "簡化工件，主要身份與位置清楚"
+      ],
+      "completeness": [
+        9,
+        "同板黑污點、遮罩與編修對照；接縫/外部核對。"
+      ],
+      "professionalism": [
+        9,
+        "原論文機制與作者示例分開"
+      ],
+      "density": [
+        8,
+        "部分英文術語仍需正文支援"
+      ],
+      "hierarchy": [
+        9,
+        "三節點、一讀序、一結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch7-page-assessment.json; batch7-main-page-review.json"
+  },
+  {
+    "id": "inpainting-engineering-2",
+    "image": "inpainting-engineering-2-r02-mobile.png",
+    "sha256": "2b8fce9414a1329e9903f992ea6a9a3f6399ea77b5bda537bff2ef2de5ff4cec",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "同板黑污點、遮罩與編修對照；接縫/外部核對。",
+      "逐張原生實看；三節點單黃結論、caption與圖形分離。",
+      "幾何示意簡化，術語密度仍高；未做真人學習測試。"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "簡化工件，主要身份與位置清楚"
+      ],
+      "completeness": [
+        9,
+        "同板黑污點、遮罩與編修對照；接縫/外部核對。"
+      ],
+      "professionalism": [
+        9,
+        "原論文機制與作者示例分開"
+      ],
+      "density": [
+        8,
+        "部分英文術語仍需正文支援"
+      ],
+      "hierarchy": [
+        9,
+        "三節點、一讀序、一結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch7-page-assessment.json; batch7-main-page-review.json"
+  },
+  {
+    "id": "diffusion-restoration-engineering-2",
+    "image": "diffusion-restoration-engineering-2-r01-desktop.png",
+    "sha256": "b9c79f66e1baffa21a0d15c77d6b2c8bd7ee3ac0802982516bdddb717a0feca1",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "同板退化及先驗候選；兩像素平均同50說明非唯一。",
+      "逐張原生實看；三節點單黃結論、caption與圖形分離。",
+      "幾何示意簡化，術語密度仍高；未做真人學習測試。"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "簡化工件，主要身份與位置清楚"
+      ],
+      "completeness": [
+        9,
+        "同板退化及先驗候選；兩像素平均同50說明非唯一。"
+      ],
+      "professionalism": [
+        9,
+        "原論文機制與作者示例分開"
+      ],
+      "density": [
+        8,
+        "部分英文術語仍需正文支援"
+      ],
+      "hierarchy": [
+        9,
+        "三節點、一讀序、一結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch7-page-assessment.json; batch7-main-page-review.json"
+  },
+  {
+    "id": "diffusion-restoration-engineering-2",
+    "image": "diffusion-restoration-engineering-2-r01-mobile.png",
+    "sha256": "6d56b1e0bef1c5aa2077e2befc7c6b30d102d194307ea73d223a24b5e44e7678",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "同板退化及先驗候選；兩像素平均同50說明非唯一。",
+      "逐張原生實看；三節點單黃結論、caption與圖形分離。",
+      "幾何示意簡化，術語密度仍高；未做真人學習測試。"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "簡化工件，主要身份與位置清楚"
+      ],
+      "completeness": [
+        9,
+        "同板退化及先驗候選；兩像素平均同50說明非唯一。"
+      ],
+      "professionalism": [
+        9,
+        "原論文機制與作者示例分開"
+      ],
+      "density": [
+        8,
+        "部分英文術語仍需正文支援"
+      ],
+      "hierarchy": [
+        9,
+        "三節點、一讀序、一結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch7-page-assessment.json; batch7-main-page-review.json"
+  },
+  {
+    "id": "deblur-engineering-2",
+    "image": "deblur-engineering-2-r01-desktop.png",
+    "sha256": "5f14c1ec368ef9c78de72f727da8c1256ebcd4e68c0cb1735b15986e16411c7f",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "同一直邊展寬與振鈴可見，独立清晰觀測分開。",
+      "逐張原生實看；三節點單黃結論、caption與圖形分離。",
+      "幾何示意簡化，術語密度仍高；未做真人學習測試。"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "簡化工件，主要身份與位置清楚"
+      ],
+      "completeness": [
+        9,
+        "同一直邊展寬與振鈴可見，独立清晰觀測分開。"
+      ],
+      "professionalism": [
+        9,
+        "原論文機制與作者示例分開"
+      ],
+      "density": [
+        8,
+        "部分英文術語仍需正文支援"
+      ],
+      "hierarchy": [
+        9,
+        "三節點、一讀序、一結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch7-page-assessment.json; batch7-main-page-review.json"
+  },
+  {
+    "id": "deblur-engineering-2",
+    "image": "deblur-engineering-2-r01-mobile.png",
+    "sha256": "829b5f9b7b0fec6374d11397ec4896439b328e097c3976661679abe53fc0efcf",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "同一直邊展寬與振鈴可見，独立清晰觀測分開。",
+      "逐張原生實看；三節點單黃結論、caption與圖形分離。",
+      "幾何示意簡化，術語密度仍高；未做真人學習測試。"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "簡化工件，主要身份與位置清楚"
+      ],
+      "completeness": [
+        9,
+        "同一直邊展寬與振鈴可見，独立清晰觀測分開。"
+      ],
+      "professionalism": [
+        9,
+        "原論文機制與作者示例分開"
+      ],
+      "density": [
+        8,
+        "部分英文術語仍需正文支援"
+      ],
+      "hierarchy": [
+        9,
+        "三節點、一讀序、一結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch7-page-assessment.json; batch7-main-page-review.json"
+  },
+  {
+    "id": "super-resolution-engineering-2",
+    "image": "super-resolution-engineering-2-r01-desktop.png",
+    "sha256": "d42a0851ba3579d391c646e08f8ee10e73eb5e431dcc3010cbf638d52ca14c3f",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "矩形雙孔板固定左孔q；兩組子像素平均50可追算。",
+      "逐張原生實看；三節點單黃結論、caption與圖形分離。",
+      "幾何示意簡化，術語密度仍高；未做真人學習測試。"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "簡化工件，主要身份與位置清楚"
+      ],
+      "completeness": [
+        9,
+        "矩形雙孔板固定左孔q；兩組子像素平均50可追算。"
+      ],
+      "professionalism": [
+        9,
+        "原論文機制與作者示例分開"
+      ],
+      "density": [
+        8,
+        "部分英文術語仍需正文支援"
+      ],
+      "hierarchy": [
+        9,
+        "三節點、一讀序、一結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch7-page-assessment.json; batch7-main-page-review.json"
+  },
+  {
+    "id": "super-resolution-engineering-2",
+    "image": "super-resolution-engineering-2-r01-mobile.png",
+    "sha256": "666ab693b55aad595773626056015a06e40ddb83a317a91305a3efcc11a1418a",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "矩形雙孔板固定左孔q；兩組子像素平均50可追算。",
+      "逐張原生實看；三節點單黃結論、caption與圖形分離。",
+      "幾何示意簡化，術語密度仍高；未做真人學習測試。"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "簡化工件，主要身份與位置清楚"
+      ],
+      "completeness": [
+        9,
+        "矩形雙孔板固定左孔q；兩組子像素平均50可追算。"
+      ],
+      "professionalism": [
+        9,
+        "原論文機制與作者示例分開"
+      ],
+      "density": [
+        8,
+        "部分英文術語仍需正文支援"
+      ],
+      "hierarchy": [
+        9,
+        "三節點、一讀序、一結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch7-page-assessment.json; batch7-main-page-review.json"
+  }
+]

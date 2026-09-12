@@ -1,0 +1,140 @@
+[
+  {
+    "id": "dinov3",
+    "scores": [
+      19,
+      19,
+      19,
+      18,
+      8,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "接頭主線及同墊圈缺口反例分工明示，縮圖不換件",
+      "Gram教師/學生對称算例與部署分開，不把局部顏色當分割",
+      "換骨幹重建相容庫，輸入/成本/驗證可接手",
+      "同任務比較DINOv2/v3，允許各自相容前處理",
+      "主線手機四段偏長；新反例与八工程三段可讀",
+      "遷移題要求留出集、任務命中、建庫与記憶體成本"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "保留生成主線與新SVG風格略異"
+      ],
+      "completeness": [
+        9,
+        "主線、反例、比較、自測、工程與操作卡"
+      ],
+      "professionalism": [
+        9,
+        "Gram教師/學生對称算例與部署分開，不把局部顏色當分割"
+      ],
+      "density": [
+        8,
+        "主線手機四段偏長；新反例与八工程三段可讀"
+      ],
+      "hierarchy": [
+        9,
+        "首讀与展開工程分開"
+      ]
+    },
+    "veto": [],
+    "status": "local_complete",
+    "user_approval": "pending",
+    "model_inference": false
+  },
+  {
+    "id": "ad-diffad",
+    "scores": [
+      19,
+      19,
+      19,
+      18,
+      8,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "相同原圖與恢復，局部刮痕與正常孔邊反例可追",
+      "兩尺度N引導低噪聲恢復，A/R進學習分割",
+      "保存A/R/位置圖；完整時間含兩分支、分割与前後處理",
+      "與DRAEM/DDAD分數來源不同，無共同測量不排名",
+      "工程手機讀得出箭頭和A/R；保留主線部分次字細",
+      "題目涵蓋細傷、大缺陷與門檻，承認速度/漏檢取捨"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "保留生成主線與新SVG風格略異"
+      ],
+      "completeness": [
+        9,
+        "主線、反例、比較、自測、工程與操作卡"
+      ],
+      "professionalism": [
+        9,
+        "兩尺度N引導低噪聲恢復，A/R進學習分割"
+      ],
+      "density": [
+        8,
+        "工程手機讀得出箭頭和A/R；保留主線部分次字細"
+      ],
+      "hierarchy": [
+        9,
+        "首讀与展開工程分開"
+      ]
+    },
+    "veto": [],
+    "status": "local_complete",
+    "user_approval": "pending",
+    "model_inference": false
+  },
+  {
+    "id": "ad-anomalygpt",
+    "scores": [
+      19,
+      19,
+      19,
+      18,
+      8,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "同金屬板p細痕/q孔邊，手機三圖已減量",
+      "固定encoder/LLM，內建定位經提示器入LLM；三種輸入清楚",
+      "model.md与raw比較表舊外部證據說法已修正",
+      "三方法同定位任務，再比額外對話工時與錯誤",
+      "新手機三段實頁328px可讀；工程次字仍偏細",
+      "遷移題允許保留只看位置流程，文字流暢不是有據"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "保留生成主線與新SVG風格略異"
+      ],
+      "completeness": [
+        9,
+        "主線、反例、比較、自測、工程與操作卡"
+      ],
+      "professionalism": [
+        9,
+        "固定encoder/LLM，內建定位經提示器入LLM；三種輸入清楚"
+      ],
+      "density": [
+        8,
+        "新手機三段實頁328px可讀；工程次字仍偏細"
+      ],
+      "hierarchy": [
+        9,
+        "首讀与展開工程分開"
+      ]
+    },
+    "veto": [],
+    "status": "local_complete",
+    "user_approval": "pending",
+    "model_inference": false
+  }
+]

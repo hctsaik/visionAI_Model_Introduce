@@ -1,0 +1,422 @@
+[
+  {
+    "brief": "C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-033/resnet-engineering-1-r01.md",
+    "objective": "整圖分類要類別標註，細傷位置不會自動交付。",
+    "page_type": "C — 真實資料變換用C，同條件比較用D。",
+    "node_count": 3,
+    "reference": "teaching-images/vision-ai-model-selection/course-delivery/section-pages/01-geometry-alignment-measurement/images/final/GEO-02-common-contract_v01.png",
+    "takeaway": "整圖分類要類別標註，細傷位置不會自動交付。 #FFF4CC",
+    "required_files_present": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "brief": "C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-033/resnet-engineering-2-r01.md",
+    "objective": "同形狀才能逐位置相加；換形狀需先對齊。",
+    "page_type": "C — 真實資料變換用C，同條件比較用D。",
+    "node_count": 3,
+    "reference": "teaching-images/vision-ai-model-selection/course-delivery/section-pages/01-geometry-alignment-measurement/images/final/GEO-02-common-contract_v01.png",
+    "takeaway": "同形狀才能逐位置相加；換形狀需先對齊。 #FFF4CC",
+    "required_files_present": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "brief": "C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-033/resnet-engineering-3-r01.md",
+    "objective": "保存類別映射與前處理，換批次後重驗誤判。",
+    "page_type": "C — 真實資料變換用C，同條件比較用D。",
+    "node_count": 3,
+    "reference": "teaching-images/vision-ai-model-selection/course-delivery/section-pages/01-geometry-alignment-measurement/images/final/GEO-02-common-contract_v01.png",
+    "takeaway": "保存類別映射與前處理，換批次後重驗誤判。 #FFF4CC",
+    "required_files_present": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "brief": "C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-033/resnet-engineering-4-r01.md",
+    "objective": "同件換背景測捷徑，定位需求另選位置輸出。",
+    "page_type": "D — 真實資料變換用C，同條件比較用D。",
+    "node_count": 3,
+    "reference": "teaching-images/vision-ai-model-selection/course-delivery/section-pages/01-geometry-alignment-measurement/images/final/GEO-02-common-contract_v01.png",
+    "takeaway": "同件換背景測捷徑，定位需求另選位置輸出。 #FFF4CC",
+    "required_files_present": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "brief": "C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-033/convnext-engineering-1-r01.md",
+    "objective": "先定義類別，再用分層卷積彙整影像。",
+    "page_type": "C — 真實資料變換用C，同條件比較用D。",
+    "node_count": 3,
+    "reference": "teaching-images/vision-ai-model-selection/course-delivery/section-pages/01-geometry-alignment-measurement/images/final/GEO-02-common-contract_v01.png",
+    "takeaway": "先定義類別，再用分層卷積彙整影像。 #FFF4CC",
+    "required_files_present": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "brief": "C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-033/convnext-engineering-2-r01.md",
+    "objective": "空間混合不跨通道，通道混合在同位置組合。",
+    "page_type": "C — 真實資料變換用C，同條件比較用D。",
+    "node_count": 3,
+    "reference": "teaching-images/vision-ai-model-selection/course-delivery/section-pages/01-geometry-alignment-measurement/images/final/GEO-02-common-contract_v01.png",
+    "takeaway": "空間混合不跨通道，通道混合在同位置組合。 #FFF4CC",
+    "required_files_present": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "brief": "C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-033/convnext-engineering-3-r01.md",
+    "objective": "保存模型配置，測完整分類流程與錯分代價。",
+    "page_type": "C — 真實資料變換用C，同條件比較用D。",
+    "node_count": 3,
+    "reference": "teaching-images/vision-ai-model-selection/course-delivery/section-pages/01-geometry-alignment-measurement/images/final/GEO-02-common-contract_v01.png",
+    "takeaway": "保存模型配置，測完整分類流程與錯分代價。 #FFF4CC",
+    "required_files_present": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "brief": "C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-033/convnext-engineering-4-r01.md",
+    "objective": "兩者都需域內驗證，架構新舊不能替代結果。",
+    "page_type": "D — 真實資料變換用C，同條件比較用D。",
+    "node_count": 3,
+    "reference": "teaching-images/vision-ai-model-selection/course-delivery/section-pages/01-geometry-alignment-measurement/images/final/GEO-02-common-contract_v01.png",
+    "takeaway": "兩者都需域內驗證，架構新舊不能替代結果。 #FFF4CC",
+    "required_files_present": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "brief": "C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-033/vit-classifier-engineering-1-r01.md",
+    "objective": "切片保留位置，分類仍需資料與任務頭。",
+    "page_type": "C — 真實資料變換用C，同條件比較用D。",
+    "node_count": 3,
+    "reference": "teaching-images/vision-ai-model-selection/course-delivery/section-pages/01-geometry-alignment-measurement/images/final/GEO-02-common-contract_v01.png",
+    "takeaway": "切片保留位置，分類仍需資料與任務頭。 #FFF4CC",
+    "required_files_present": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "brief": "C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-033/vit-classifier-engineering-2-r01.md",
+    "objective": "注意力加權其他表示，位置身份仍要保留。",
+    "page_type": "C — 真實資料變換用C，同條件比較用D。",
+    "node_count": 3,
+    "reference": "teaching-images/vision-ai-model-selection/course-delivery/section-pages/01-geometry-alignment-measurement/images/final/GEO-02-common-contract_v01.png",
+    "takeaway": "注意力加權其他表示，位置身份仍要保留。 #FFF4CC",
+    "required_files_present": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "brief": "C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-033/vit-classifier-engineering-3-r01.md",
+    "objective": "先確認細傷還可見，再測分類與記憶體。",
+    "page_type": "C — 真實資料變換用C，同條件比較用D。",
+    "node_count": 3,
+    "reference": "teaching-images/vision-ai-model-selection/course-delivery/section-pages/01-geometry-alignment-measurement/images/final/GEO-02-common-contract_v01.png",
+    "takeaway": "先確認細傷還可見，再測分類與記憶體。 #FFF4CC",
+    "required_files_present": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "brief": "C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-033/vit-classifier-engineering-4-r01.md",
+    "objective": "全局交流是能力來源，不保證小資料就更準。",
+    "page_type": "D — 真實資料變換用C，同條件比較用D。",
+    "node_count": 3,
+    "reference": "teaching-images/vision-ai-model-selection/course-delivery/section-pages/01-geometry-alignment-measurement/images/final/GEO-02-common-contract_v01.png",
+    "takeaway": "全局交流是能力來源，不保證小資料就更準。 #FFF4CC",
+    "required_files_present": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "brief": "C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-033/u-net-engineering-1-r01.md",
+    "objective": "像素標註教會區域，輸出仍需回原圖核對。",
+    "page_type": "C — 真實資料變換用C，同條件比較用D。",
+    "node_count": 3,
+    "reference": "teaching-images/vision-ai-model-selection/course-delivery/section-pages/01-geometry-alignment-measurement/images/final/GEO-02-common-contract_v01.png",
+    "takeaway": "像素標註教會區域，輸出仍需回原圖核對。 #FFF4CC",
+    "required_files_present": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "brief": "C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-033/u-net-engineering-2-r01.md",
+    "objective": "跳接提供對應特徵，解碼器仍要學會融合。",
+    "page_type": "C — 真實資料變換用C，同條件比較用D。",
+    "node_count": 3,
+    "reference": "teaching-images/vision-ai-model-selection/course-delivery/section-pages/01-geometry-alignment-measurement/images/final/GEO-02-common-contract_v01.png",
+    "takeaway": "跳接提供對應特徵，解碼器仍要學會融合。 #FFF4CC",
+    "required_files_present": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "brief": "C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-033/u-net-engineering-3-r01.md",
+    "objective": "記錄resize與裁切，像素遮罩不能直接當毫米。",
+    "page_type": "C — 真實資料變換用C，同條件比較用D。",
+    "node_count": 3,
+    "reference": "teaching-images/vision-ai-model-selection/course-delivery/section-pages/01-geometry-alignment-measurement/images/final/GEO-02-common-contract_v01.png",
+    "takeaway": "記錄resize與裁切，像素遮罩不能直接當毫米。 #FFF4CC",
+    "required_files_present": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "brief": "C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-033/u-net-engineering-4-r01.md",
+    "objective": "同件檢查細線連通，不能只看大區域重疊。",
+    "page_type": "D — 真實資料變換用C，同條件比較用D。",
+    "node_count": 3,
+    "reference": "teaching-images/vision-ai-model-selection/course-delivery/section-pages/01-geometry-alignment-measurement/images/final/GEO-02-common-contract_v01.png",
+    "takeaway": "同件檢查細線連通，不能只看大區域重疊。 #FFF4CC",
+    "required_files_present": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "brief": "C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-033/segformer-engineering-1-r01.md",
+    "objective": "多尺度補上下文，輸出仍是語意類別圖。",
+    "page_type": "C — 真實資料變換用C，同條件比較用D。",
+    "node_count": 3,
+    "reference": "teaching-images/vision-ai-model-selection/course-delivery/section-pages/01-geometry-alignment-measurement/images/final/GEO-02-common-contract_v01.png",
+    "takeaway": "多尺度補上下文，輸出仍是語意類別圖。 #FFF4CC",
+    "required_files_present": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "brief": "C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-033/segformer-engineering-2-r01.md",
+    "objective": "四路特徵共同進解碼器，不是四張遮罩投票。",
+    "page_type": "C — 真實資料變換用C，同條件比較用D。",
+    "node_count": 3,
+    "reference": "teaching-images/vision-ai-model-selection/course-delivery/section-pages/01-geometry-alignment-measurement/images/final/GEO-02-common-contract_v01.png",
+    "takeaway": "四路特徵共同進解碼器，不是四張遮罩投票。 #FFF4CC",
+    "required_files_present": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "brief": "C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-033/segformer-engineering-3-r01.md",
+    "objective": "多尺度不能補回取像已消失的細線。",
+    "page_type": "C — 真實資料變換用C，同條件比較用D。",
+    "node_count": 3,
+    "reference": "teaching-images/vision-ai-model-selection/course-delivery/section-pages/01-geometry-alignment-measurement/images/final/GEO-02-common-contract_v01.png",
+    "takeaway": "多尺度不能補回取像已消失的細線。 #FFF4CC",
+    "required_files_present": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "brief": "C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-033/segformer-engineering-4-r01.md",
+    "objective": "語意相同、標註一致，再比細節與運算代價。",
+    "page_type": "D — 真實資料變換用C，同條件比較用D。",
+    "node_count": 3,
+    "reference": "teaching-images/vision-ai-model-selection/course-delivery/section-pages/01-geometry-alignment-measurement/images/final/GEO-02-common-contract_v01.png",
+    "takeaway": "語意相同、標註一致，再比細節與運算代價。 #FFF4CC",
+    "required_files_present": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "brief": "C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-033/yolo-seg-engineering-1-r01.md",
+    "objective": "每件有框、類別與遮罩，身份只屬當前影像。",
+    "page_type": "C — 真實資料變換用C，同條件比較用D。",
+    "node_count": 3,
+    "reference": "teaching-images/vision-ai-model-selection/course-delivery/section-pages/01-geometry-alignment-measurement/images/final/GEO-02-common-contract_v01.png",
+    "takeaway": "每件有框、類別與遮罩，身份只屬當前影像。 #FFF4CC",
+    "required_files_present": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "brief": "C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-033/yolo-seg-engineering-2-r01.md",
+    "objective": "原型乘各件係數，再依物件框取回遮罩。",
+    "page_type": "C — 真實資料變換用C，同條件比較用D。",
+    "node_count": 3,
+    "reference": "teaching-images/vision-ai-model-selection/course-delivery/section-pages/01-geometry-alignment-measurement/images/final/GEO-02-common-contract_v01.png",
+    "takeaway": "原型乘各件係數，再依物件框取回遮罩。 #FFF4CC",
+    "required_files_present": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "brief": "C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-033/yolo-seg-engineering-3-r01.md",
+    "objective": "把框、類別與遮罩綁定，映回原圖再核對。",
+    "page_type": "C — 真實資料變換用C，同條件比較用D。",
+    "node_count": 3,
+    "reference": "teaching-images/vision-ai-model-selection/course-delivery/section-pages/01-geometry-alignment-measurement/images/final/GEO-02-common-contract_v01.png",
+    "takeaway": "把框、類別與遮罩綁定，映回原圖再核對。 #FFF4CC",
+    "required_files_present": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "brief": "C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-033/yolo-seg-engineering-4-r01.md",
+    "objective": "需要逐件交付時，比較實例標註與分離品質。",
+    "page_type": "D — 真實資料變換用C，同條件比較用D。",
+    "node_count": 3,
+    "reference": "teaching-images/vision-ai-model-selection/course-delivery/section-pages/01-geometry-alignment-measurement/images/final/GEO-02-common-contract_v01.png",
+    "takeaway": "需要逐件交付時，比較實例標註與分離品質。 #FFF4CC",
+    "required_files_present": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "brief": "C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-033/keypoint-rcnn-engineering-1-r01.md",
+    "objective": "點的身份要先定義，座標不能混成無名熱區。",
+    "page_type": "C — 真實資料變換用C，同條件比較用D。",
+    "node_count": 3,
+    "reference": "teaching-images/vision-ai-model-selection/course-delivery/section-pages/01-geometry-alignment-measurement/images/final/GEO-02-common-contract_v01.png",
+    "takeaway": "點的身份要先定義，座標不能混成無名熱區。 #FFF4CC",
+    "required_files_present": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "brief": "C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-033/keypoint-rcnn-engineering-2-r01.md",
+    "objective": "同一個點沿ROI與原圖映射，A/B/C不能互換。",
+    "page_type": "C — 真實資料變換用C，同條件比較用D。",
+    "node_count": 3,
+    "reference": "teaching-images/vision-ai-model-selection/course-delivery/section-pages/01-geometry-alignment-measurement/images/final/GEO-02-common-contract_v01.png",
+    "takeaway": "同一個點沿ROI與原圖映射，A/B/C不能互換。 #FFF4CC",
+    "required_files_present": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "brief": "C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-033/keypoint-rcnn-engineering-3-r01.md",
+    "objective": "估計位置與可見證據分開，可信度不足要覆核。",
+    "page_type": "C — 真實資料變換用C，同條件比較用D。",
+    "node_count": 3,
+    "reference": "teaching-images/vision-ai-model-selection/course-delivery/section-pages/01-geometry-alignment-measurement/images/final/GEO-02-common-contract_v01.png",
+    "takeaway": "估計位置與可見證據分開，可信度不足要覆核。 #FFF4CC",
+    "required_files_present": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "brief": "C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-033/keypoint-rcnn-engineering-4-r01.md",
+    "objective": "按交付選標註：具名點、輪廓與姿態各有責任。",
+    "page_type": "D — 真實資料變換用C，同條件比較用D。",
+    "node_count": 3,
+    "reference": "teaching-images/vision-ai-model-selection/course-delivery/section-pages/01-geometry-alignment-measurement/images/final/GEO-02-common-contract_v01.png",
+    "takeaway": "按交付選標註：具名點、輪廓與姿態各有責任。 #FFF4CC",
+    "required_files_present": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  }
+]

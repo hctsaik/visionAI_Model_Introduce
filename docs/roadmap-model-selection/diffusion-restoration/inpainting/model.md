@@ -99,3 +99,40 @@ Inpainting 是依據 binary／soft mask 與周邊 context 填補區域內容的�
 ## Sources
 
 - `full-model-course/07-diffusion-generation-and-restoration.md` 的 `07-18` 至 `07-21` 課程內容。
+
+<!-- wi033-engineering:start -->
+## WI-033 工程圖修正
+
+### Inpainting：原圖、遮罩、候選三者留存
+
+同上方雙孔板下方黑污點，明列mask 1修改約定及預處理縮放，保存原圖與生成版本。
+
+編修輸出另存，保留原觀測供追查。
+
+來源：https://arxiv.org/abs/2201.09865
+
+### Inpainting：指定內區，保留外部上下文
+
+同上方雙孔板，下方污點為可編修區。以擴散修補為例，原圖與二值mask定義位置；mask 1為修改的本圖約定，API可能相反。生成內區與外部上下文融合，不保證所有pipeline遮罩外逐像素不變；比較原圖與編修版並另存。真孔被影像填平不代表實體補材。 r01實看修正：保持原下方黑污點，不任意換成刮傷。
+
+編修影像可以補平，實物狀態並未改變。
+
+來源：https://arxiv.org/abs/2201.09865
+
+### Inpainting：遮罩太緊或太大各有代價
+
+遮罩需包含預期修改區；羽化/膨脹可能改善接縫也擴大修改範圍，實作各異。不能推薦固定像素寬度。
+
+按原位置驗接縫、孔位與遮罩外變化。
+
+來源：https://arxiv.org/abs/2201.09865
+
+### Inpainting：照片填孔，實體仍有孔
+
+同上方兩孔板，仅改左孔影像。原檢測與實物量測不能拿編修版本作真值。
+
+影像編修只改像素，不能當實物修復。
+
+來源：https://arxiv.org/abs/2201.09865
+
+<!-- wi033-engineering:end -->

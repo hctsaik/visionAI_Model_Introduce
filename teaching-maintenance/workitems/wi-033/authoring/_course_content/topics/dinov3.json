@@ -1,0 +1,571 @@
+{
+  "model": "DINOv3",
+  "badge": "自監督視覺特徵骨幹",
+  "title": "DINOv3：讓局部特徵關係更穩定",
+  "scenario": {
+    "title": "你要比較接頭上不同位置的線索，既希望整件可辨識，也希望局部特徵在長時間預訓練後仍保留一致的關係。",
+    "body": "你要比較接頭上不同位置的線索，既希望整件可辨識，也希望局部特徵在長時間預訓練後仍保留一致的關係。"
+  },
+  "promise": {
+    "title": "交付結果與接手工作",
+    "body": "提供可供檢索、局部配對或任務頭使用的整圖與局部特徵；本課不把特徵色圖當成精確輪廓。"
+  },
+  "mental_model": {
+    "title": "自監督視覺特徵骨幹",
+    "body": "DINOv3 延續大規模自監督特徵學習。本課以 ViT 版本的 Gram anchoring 說明關鍵設計：訓練時，不只關心整圖表現，也讓目前模型的局部特徵兩兩關係，接近較早模型提供的關係目標，以緩解長訓練中局部一致性退化。部署得到的是特徵，配對、分類或異常判斷仍由下游完成。",
+    "limit": "更好的局部表示仍受到影像細節限制。墊圈右側小缺口若在縮圖後變弱，DINOv3 的名稱或漂亮特徵色圖，都不能代替輸入可見性與下游漏檢測試。"
+  },
+  "micro_example": {
+    "title": "新骨幹的特徵圖更漂亮",
+    "setup": "DINOv3 的局部色圖更整齊，但在相同資料上重新建庫需要更久，候選命中尚未測量。",
+    "prediction": "現在應直接更換，還是先比較什麼？",
+    "reveal": "先保留基準，以同一留出集比較實際命中或定位錯誤，再把重新建庫、記憶體、查詢時間算進去。只有當改善符合工作需求，且維護代價可接受時才換；保留 DINOv2 也可能合理。"
+  },
+  "beginner_path": {
+    "title": "從必要原理、具體反例到工作取捨",
+    "intro": "你要比較接頭上不同位置的線索，既希望整件可辨識，也希望局部特徵在長時間預訓練後仍保留一致的關係。 下列圖像、特徵及回答為教學示意，不是模型實測。",
+    "visuals": [
+      {
+        "id": "wi027-dinov3-c1",
+        "title": "DINOv3：把局部之間的關係學穩",
+        "prompt": "你要比較接頭上不同位置的線索，既希望整件可辨識，也希望局部特徵在長時間預訓練後仍保留一致的關係。",
+        "caption": "DINOv3 延續大規模自監督特徵學習。本課以 ViT 版本的 Gram anchoring 說明關鍵設計：訓練時，不只關心整圖表現，也讓目前模型的局部特徵兩兩關係，接近較早模型提供的關係目標，以緩解長訓練中局部一致性退化。部署得到的是特徵，配對、分類或異常判斷仍由下游完成。",
+        "image": "_course_content/generated-concepts/dinov3/wi027-dinov3-c1-r02-desktop.png",
+        "alt": "DINOv3：把局部之間的關係學穩。DINOv3 延續大規模自監督特徵學習。本課以 ViT 版本的 Gram anchoring 說明關鍵設計：訓練時，不只關心整圖表現，也讓目前模型的局部特徵兩兩關係，接近較早模型提供的關係目標，以緩解長訓練中局部一致性退化。部署得到的是特徵，配對、分類或異常判斷仍由下游完成。 AI生成教學示意，非模型實測。",
+        "callouts": [
+          {
+            "title": "比較關係，而非複製像素",
+            "body": "Gram 矩陣記錄影像內局部特徵兩兩內積。圖中 A／B 插針、C 外殼只用來示意關係，藍色不是人工分割真值，也不保證金屬位置一定得到相同特徵。"
+          },
+          {
+            "title": "訓練約束與部署用途分開",
+            "body": "較早模型提供訓練中的關係目標；正式使用時提取選定骨幹的整圖／局部表示，再接自己的用途。Gram anchoring 不是每次推論時運行的缺陷判定頭。"
+          },
+          {
+            "title": "交付與接手",
+            "body": "提供可供檢索、局部配對或任務頭使用的整圖與局部特徵；本課不把特徵色圖當成精確輪廓。"
+          }
+        ],
+        "reading_views": [
+          {
+            "title": "DINOv3：把局部之間的關係學穩",
+            "image": "_course_content/generated-concepts/dinov3/wi027-dinov3-c1-r02-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/dinov3/wi027-dinov3-c1-r02-mobile.png",
+            "alt": "DINOv3：把局部之間的關係學穩。DINOv3 延續大規模自監督特徵學習。本課以 ViT 版本的 Gram anchoring 說明關鍵設計：訓練時，不只關心整圖表現，也讓目前模型的局部特徵兩兩關係，接近較早模型提供的關係目標，以緩解長訓練中局部一致性退化。部署得到的是特徵，配對、分類或異常判斷仍由下游完成。 AI生成教學示意，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              725,
+              2170
+            ],
+            "mobile_display_mode": "full-mobile",
+            "desktop_intrinsic_width": 1672,
+            "desktop_intrinsic_height": 941,
+            "mobile_intrinsic_width": 725,
+            "mobile_intrinsic_height": 2170
+          }
+        ],
+        "core_ideas": true
+      },
+      {
+        "id": "wi027-dino-d2",
+        "title": "特徵很相近，仍可能漏掉小缺口",
+        "prompt": "觀察哪個條件改變，讓原本的結果不夠可靠？",
+        "caption": "更好的局部表示仍受到影像細節限制。墊圈右側小缺口若在縮圖後變弱，DINOv3 的名稱或漂亮特徵色圖，都不能代替輸入可見性與下游漏檢測試。",
+        "image": "_course_content/generated-concepts/dinov3/wi033-failure-r03-desktop.png",
+        "alt": "局部特徵也救不回看不清的缺口。同一缺口先看輸入，再看特徵與下游漏檢。 原生SVG教學示意，非模型實測。",
+        "callouts": [
+          {
+            "title": "看哪裡",
+            "body": "更好的局部表示仍受到影像細節限制。墊圈右側小缺口若在縮圖後變弱，DINOv3 的名稱或漂亮特徵色圖，都不能代替輸入可見性與下游漏檢測試。"
+          },
+          {
+            "title": "接著怎麼做",
+            "body": "先從原圖確認細節，固定合適的輸入設定；再把局部特徵交給可驗證的配對或異常方法，回查其失敗樣本。"
+          }
+        ],
+        "reading_views": [
+          {
+            "title": "特徵很相近，仍可能漏掉小缺口",
+            "image": "_course_content/generated-concepts/dinov3/wi033-failure-r03-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/dinov3/wi033-failure-r03-mobile.png",
+            "alt": "局部特徵也救不回看不清的缺口。同一缺口先看輸入，再看特徵與下游漏檢。 原生SVG教學示意，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              768,
+              2304
+            ],
+            "mobile_display_mode": "full-mobile",
+            "desktop_intrinsic_width": 1672,
+            "desktop_intrinsic_height": 941,
+            "mobile_intrinsic_width": 768,
+            "mobile_intrinsic_height": 2304
+          }
+        ],
+        "core_ideas": false
+      },
+      {
+        "id": "wi027-features-d3",
+        "title": "DINOv2 與 DINOv3：比較的是整套用途",
+        "prompt": "相同工作需求下，資料、輸出與成本如何取捨？",
+        "caption": "與 DINOv2 比較時，固定相同影像、工作任務、留出測試集與調整預算；允許各自使用相容的前處理與下游設定，並如實記錄。不要要求不同模型硬接同一維度的參考庫。",
+        "image": "_course_content/generated-concepts/dinov2/wi027-features-d3-r02-desktop.png",
+        "alt": "DINOv2 與 DINOv3：比較的是整套用途。與 DINOv2 比較時，固定相同影像、工作任務、留出測試集與調整預算；允許各自使用相容的前處理與下游設定，並如實記錄。不要要求不同模型硬接同一維度的參考庫。 AI生成教學示意，非模型實測。",
+        "callouts": [
+          {
+            "title": "怎麼選",
+            "body": "與 DINOv2 比較時，固定相同影像、工作任務、留出測試集與調整預算；允許各自使用相容的前處理與下游設定，並如實記錄。不要要求不同模型硬接同一維度的參考庫。"
+          },
+          {
+            "title": "資料與完整成本",
+            "body": "更換骨幹後，重新抽取參考特徵、調整下游和驗證新門檻；換產品也需補參考及失敗案例。比較候選命中或定位誤差、正常誤報／缺陷漏檢，以及建庫、記憶體和完整耗時；局部圖好看不等於工作改善。"
+          }
+        ],
+        "reading_views": [
+          {
+            "title": "DINOv2 與 DINOv3：比較的是整套用途",
+            "image": "_course_content/generated-concepts/dinov2/wi027-features-d3-r02-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/dinov2/wi027-features-d3-r03-mobile.png",
+            "alt": "DINOv2 與 DINOv3：比較的是整套用途。與 DINOv2 比較時，固定相同影像、工作任務、留出測試集與調整預算；允許各自使用相容的前處理與下游設定，並如實記錄。不要要求不同模型硬接同一維度的參考庫。 AI生成教學示意，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              724,
+              2171
+            ],
+            "mobile_display_mode": "full-mobile",
+            "desktop_intrinsic_width": 1672,
+            "desktop_intrinsic_height": 941,
+            "mobile_intrinsic_width": 724,
+            "mobile_intrinsic_height": 2171
+          }
+        ],
+        "core_ideas": false
+      }
+    ]
+  },
+  "mechanism_steps": [
+    {
+      "title": "選定影像局部",
+      "body": "你要比較接頭上不同位置的線索，既希望整件可辨識，也希望局部特徵在長時間預訓練後仍保留一致的關係。",
+      "why": "由本課核心機制連接工作用途",
+      "anchor": "WI027-1",
+      "diagram": {
+        "title": "選定影像局部",
+        "body": "你要比較接頭上不同位置的線索，既希望整件可辨識，也希望局部特徵在長時間預訓練後仍保留一致的關係。",
+        "why": "詳見本課版本與來源",
+        "anchor": "WI027-1"
+      }
+    },
+    {
+      "title": "保留早期特徵關係",
+      "body": "Gram 矩陣記錄影像內局部特徵兩兩內積。圖中 A／B 插針、C 外殼只用來示意關係，藍色不是人工分割真值，也不保證金屬位置一定得到相同特徵。",
+      "why": "由本課核心機制連接工作用途",
+      "anchor": "WI027-2",
+      "diagram": {
+        "title": "保留早期特徵關係",
+        "body": "Gram 矩陣記錄影像內局部特徵兩兩內積。圖中 A／B 插針、C 外殼只用來示意關係，藍色不是人工分割真值，也不保證金屬位置一定得到相同特徵。",
+        "why": "詳見本課版本與來源",
+        "anchor": "WI027-2"
+      }
+    },
+    {
+      "title": "訓練中對齊關係",
+      "body": "較早模型提供訓練中的關係目標；正式使用時提取選定骨幹的整圖／局部表示，再接自己的用途。Gram anchoring 不是每次推論時運行的缺陷判定頭。",
+      "why": "由本課核心機制連接工作用途",
+      "anchor": "WI027-3",
+      "diagram": {
+        "title": "訓練中對齊關係",
+        "body": "較早模型提供訓練中的關係目標；正式使用時提取選定骨幹的整圖／局部表示，再接自己的用途。Gram anchoring 不是每次推論時運行的缺陷判定頭。",
+        "why": "詳見本課版本與來源",
+        "anchor": "WI027-3"
+      }
+    },
+    {
+      "title": "部署後交給下游",
+      "body": "提供可供檢索、局部配對或任務頭使用的整圖與局部特徵；本課不把特徵色圖當成精確輪廓。",
+      "why": "由本課核心機制連接工作用途",
+      "anchor": "WI027-4",
+      "diagram": {
+        "title": "部署後交給下游",
+        "body": "提供可供檢索、局部配對或任務頭使用的整圖與局部特徵；本課不把特徵色圖當成精確輪廓。",
+        "why": "詳見本課版本與來源",
+        "anchor": "WI027-4"
+      }
+    }
+  ],
+  "visual_intro": "DINOv3 延續大規模自監督特徵學習。本課以 ViT 版本的 Gram anchoring 說明關鍵設計：訓練時，不只關心整圖表現，也讓目前模型的局部特徵兩兩關係，接近較早模型提供的關係目標，以緩解長訓練中局部一致性退化。部署得到的是特徵，配對、分類或異常判斷仍由下游完成。",
+  "concept_visuals": [],
+  "boundary_cases": [
+    {
+      "condition": "本課具體反例",
+      "effect": "更好的局部表示仍受到影像細節限制。墊圈右側小缺口若在縮圖後變弱，DINOv3 的名稱或漂亮特徵色圖，都不能代替輸入可見性與下游漏檢測試。",
+      "action": "先從原圖確認細節，固定合適的輸入設定；再把局部特徵交給可驗證的配對或異常方法，回查其失敗樣本。"
+    },
+    {
+      "condition": "更換產品、模型或輸入設定",
+      "effect": "更換骨幹後，重新抽取參考特徵、調整下游和驗證新門檻；換產品也需補參考及失敗案例。比較候選命中或定位誤差、正常誤報／缺陷漏檢，以及建庫、記憶體和完整耗時；局部圖好看不等於工作改善。",
+      "action": "保留既有 DINOv2 基準，選定一個 DINOv3 ViT 權重；用相同實體隔離的參考／測試資料，為兩者各自建立相容的下游。"
+    },
+    {
+      "condition": "把示意當成實際推論",
+      "effect": "本課特徵、排序、回答及圖像僅用於解釋，不支持現場準確率或耗時結論。",
+      "action": "在同一留出集比較任務錯誤與完整成本；若要局部配對，用可核對的點位或對應標註驗證，不以彩色特徵圖評輸贏。"
+    }
+  ],
+  "comparison": [
+    {
+      "model": "DINOv2",
+      "normality": "預訓練視覺骨幹；整理參考及任務資料",
+      "candidate": "整圖／局部特徵，由下游完成檢索或判斷"
+    },
+    {
+      "model": "DINOv3",
+      "normality": "預訓練局部關係設計；換骨幹需重抽參考與調整下游",
+      "candidate": "相容的整圖／局部特徵；在同測試集評任務與成本"
+    },
+    {
+      "model": "既有檢索基準",
+      "normality": "保留目前參考庫與查詢設定，使用同一留出測試集",
+      "candidate": "原有候選與完整耗時，作為換骨幹是否有用的比較點"
+    }
+  ],
+  "selection": "與 DINOv2 比較時，固定相同影像、工作任務、留出測試集與調整預算；允許各自使用相容的前處理與下游設定，並如實記錄。不要要求不同模型硬接同一維度的參考庫。 更換骨幹後，重新抽取參考特徵、調整下游和驗證新門檻；換產品也需補參考及失敗案例。比較候選命中或定位誤差、正常誤報／缺陷漏檢，以及建庫、記憶體和完整耗時；局部圖好看不等於工作改善。",
+  "poc": {
+    "title": "以真實工作資料做小規模比較",
+    "steps": [
+      "保留既有 DINOv2 基準，選定一個 DINOv3 ViT 權重；用相同實體隔離的參考／測試資料，為兩者各自建立相容的下游。",
+      "更換骨幹後，重新抽取參考特徵、調整下游和驗證新門檻；換產品也需補參考及失敗案例。比較候選命中或定位誤差、正常誤報／缺陷漏檢，以及建庫、記憶體和完整耗時；局部圖好看不等於工作改善。",
+      "在同一留出集比較任務錯誤與完整成本；若要局部配對，用可核對的點位或對應標註驗證，不以彩色特徵圖評輸贏。"
+    ],
+    "hold": "先從原圖確認細節，固定合適的輸入設定；再把局部特徵交給可驗證的配對或異常方法，回查其失敗樣本。",
+    "acceptance": {
+      "baseline": "既有流程或最簡單可行方法",
+      "measure": "在同一留出集比較任務錯誤與完整成本；若要局部配對，用可核對的點位或對應標註驗證，不以彩色特徵圖評輸贏。",
+      "negative_control": "更好的局部表示仍受到影像細節限制。墊圈右側小缺口若在縮圖後變弱，DINOv3 的名稱或漂亮特徵色圖，都不能代替輸入可見性與下游漏檢測試。",
+      "owner": "實作與影像核對負責人"
+    }
+  },
+  "teach_back": {
+    "question": "它改變什麼？何時選另一種做法？",
+    "answer": "DINOv3 延續大規模自監督特徵學習。本課以 ViT 版本的 Gram anchoring 說明關鍵設計：訓練時，不只關心整圖表現，也讓目前模型的局部特徵兩兩關係，接近較早模型提供的關係目標，以緩解長訓練中局部一致性退化。部署得到的是特徵，配對、分類或異常判斷仍由下游完成。 與 DINOv2 比較時，固定相同影像、工作任務、留出測試集與調整預算；允許各自使用相容的前處理與下游設定，並如實記錄。不要要求不同模型硬接同一維度的參考庫。"
+  },
+  "slide_reading": [
+    {
+      "title": "DINOv3：一張圖保留多個局部表示",
+      "question": "骨幹交出特徵，局部位置與下游工作仍要對齊。",
+      "look": "先看輸入一個墊圈影像，再核對每個區塊各有特徵，最後看下游才解讀相似或不同。",
+      "relation": "以ViT骨幹為例，影像轉成patch token並與其他位置交換資訊，輸出局部及全局表示。局部表示保留對應位置，但每個向量包含上下文，不等於該格像素值。異常判斷、分類或匹配要接下游方法；特徵色圖不是現成缺陷分數。",
+      "takeaway": "骨幹交出特徵，局部位置與下游工作仍要對齊。",
+      "terms": [
+        "patch：影像的局部區塊，特徵可包含其他位置的資訊。",
+        "Gram：同一影像內，各patch特徵兩兩相似關係的矩陣。"
+      ]
+    },
+    {
+      "title": "DINOv3：訓練時守住局部關係",
+      "question": "Gram 只約束訓練，部署仍輸出特徵。",
+      "look": "先看同一影像，對照兩個模型，再核對比較 patch 之間的關係，最後看用關係差異更新學生。",
+      "relation": "Gram矩陣記錄同圖patch特徵的兩兩內積；以較早教師的關係當目標，約束目前學生，並保留原有自監督訓練目標。這不是把特徵逐點鎖成相同數值，也不是推論時要額外跑的模組。本圖數字為二維單位向量算例。",
+      "takeaway": "Gram 只約束訓練，部署仍輸出特徵。",
+      "terms": [
+        "patch：影像的局部區塊，特徵可包含其他位置的資訊。",
+        "Gram：同一影像內，各patch特徵兩兩相似關係的矩陣。"
+      ]
+    },
+    {
+      "title": "DINOv3：換骨幹也要重建相容參考",
+      "question": "保存權重與前處理，同條件重建庫並量完整成本。",
+      "look": "先看固定取像與骨幹版本，再核對建立相容的參考表示，最後看核對下游結果與成本。",
+      "relation": "部署不跑Gram教師；用固定權重與前處理抽取表示，再建相容特徵庫或訓練下游頭。不能把DINOv2庫直接當DINOv3庫查詢。以同一留出集核對命中／漏檢、抽特徵和查庫時間、記憶體與重建成本，不能只比較色圖漂亮程度。",
+      "takeaway": "保存權重與前處理，同條件重建庫並量完整成本。",
+      "terms": [
+        "patch：影像的局部區塊，特徵可包含其他位置的資訊。",
+        "Gram：同一影像內，各patch特徵兩兩相似關係的矩陣。"
+      ]
+    },
+    {
+      "title": "DINOv3：以工作結果決定是否換骨幹",
+      "question": "同題比較效果與重建代價，保留基準也合理。",
+      "look": "先看同一批正常與缺口件，再核對既有骨幹：保留相容基準，最後看新骨幹：重建後再比較。",
+      "relation": "工程4不重複主反例。固定同一批正常與缺口墊圈及取像，各自使用相容骨幹與參考表示；記錄下游漏檢/誤報、抽特徵/查庫時間與重建負擔。新骨幹訓練機制不同，不代表每項域內指標一定進步。",
+      "takeaway": "同題比較效果與重建代價，保留基準也合理。",
+      "terms": [
+        "patch：影像的局部區塊，特徵可包含其他位置的資訊。",
+        "Gram：同一影像內，各patch特徵兩兩相似關係的矩陣。"
+      ]
+    }
+  ],
+  "comparison_headers": {
+    "title": "DINOv2 與 DINOv3：比較的是整套用途",
+    "basis": "所需資料與方法差異",
+    "output": "輸出與維護責任"
+  },
+  "transfer_check": {
+    "title": "新骨幹的特徵圖更漂亮",
+    "scenario": "DINOv3 的局部色圖更整齊，但在相同資料上重新建庫需要更久，候選命中尚未測量。",
+    "question": "現在應直接更換，還是先比較什麼？",
+    "answer": "先保留基準，以同一留出集比較實際命中或定位錯誤，再把重新建庫、記憶體、查詢時間算進去。只有當改善符合工作需求，且維護代價可接受時才換；保留 DINOv2 也可能合理。"
+  },
+  "review_trace": {
+    "authority": "roadmap-model-selection/foundation-vlm-open-world/dinov3/model.md",
+    "scope": "WI-033：工程層四圖與手機比較修正；首讀有效內容保留。原生圖已審，整頁與使用者審閱另記。",
+    "claims": [
+      {
+        "id": "visual-1",
+        "field": "beginner_path.visuals[same-ceramic-baseline]",
+        "source": "模型定位 / architecture_path"
+      },
+      {
+        "id": "visual-2",
+        "field": "beginner_path.visuals[gram-training-boundary]",
+        "source": "architecture_path"
+      },
+      {
+        "id": "visual-3",
+        "field": "beginner_path.visuals[versioned-feature-route]",
+        "source": "representation_or_score"
+      },
+      {
+        "id": "visual-4",
+        "field": "beginner_path.visuals[same-baseline-evidence]",
+        "source": "failure_boundary"
+      },
+      {
+        "id": "visual-5",
+        "field": "beginner_path.visuals[observability-release-gate]",
+        "source": "selection_gate / evidence_bundle"
+      },
+      {
+        "id": "promise",
+        "field": "promise",
+        "source": "模型定位 / representation_or_score"
+      },
+      {
+        "id": "mechanism",
+        "field": "mechanism_steps",
+        "source": "architecture_path / representation_or_score"
+      },
+      {
+        "id": "boundaries",
+        "field": "boundary_cases",
+        "source": "failure_boundary / selection_gate"
+      },
+      {
+        "id": "comparison",
+        "field": "comparison + selection",
+        "source": "selection_gate"
+      },
+      {
+        "id": "poc",
+        "field": "poc + acceptance",
+        "source": "cost_and_operating_point / evidence_bundle"
+      },
+      {
+        "id": "transfer",
+        "field": "transfer_check",
+        "source": "failure_boundary / selection_gate"
+      },
+      {
+        "id": "f02-core",
+        "field": "beginner_path.visuals[0] + scenario + mental_model",
+        "source": "https://arxiv.org/abs/2508.10104"
+      },
+      {
+        "id": "f02-transfer",
+        "field": "micro_example + transfer_check + selection",
+        "source": "https://arxiv.org/abs/2508.10104"
+      },
+      {
+        "id": "wi027-first-read",
+        "field": "beginner_path + core + selection + transfer",
+        "source": "https://arxiv.org/html/2508.10104v1"
+      }
+    ]
+  },
+  "quality_status": {
+    "label": "首讀圖文已重製並自評；使用者核准待確認",
+    "state": "self-reviewed",
+    "round": "WI-027",
+    "reason": "30張不同PNG逐圖審查，七頁與互動證據見workitems/wi-027；原工程圖未重新評分。"
+  },
+  "teaching_preflight": {
+    "brief": "teaching-images/vision-ai-model-selection/workitems/wi-027/dinov3-c1-r02.md",
+    "mobile_brief": "teaching-images/vision-ai-model-selection/workitems/wi-027/dinov3-c1-r02.md",
+    "story": "C",
+    "major_visual_nodes": 4,
+    "visual_status": "self-reviewed",
+    "user_review": "pending"
+  },
+  "engineering_slides": [
+    {
+      "title": "DINOv3：一張圖保留多個局部表示",
+      "question": "骨幹交出特徵，局部位置與下游工作仍要對齊。",
+      "plain": {
+        "look": "先看輸入一個墊圈影像，再核對每個區塊各有特徵，最後看下游才解讀相似或不同。",
+        "relation": "以ViT骨幹為例，影像轉成patch token並與其他位置交換資訊，輸出局部及全局表示。局部表示保留對應位置，但每個向量包含上下文，不等於該格像素值。異常判斷、分類或匹配要接下游方法；特徵色圖不是現成缺陷分數。",
+        "takeaway": "骨幹交出特徵，局部位置與下游工作仍要對齊。"
+      },
+      "terms": [
+        "patch：影像的局部區塊，特徵可包含其他位置的資訊。",
+        "Gram：同一影像內，各patch特徵兩兩相似關係的矩陣。"
+      ],
+      "guide": [
+        "以ViT骨幹為例，影像轉成patch token並與其他位置交換資訊，輸出局部及全局表示。局部表示保留對應位置，但每個向量包含上下文，不等於該格像素值。異常判斷、分類或匹配要接下游方法；特徵色圖不是現成缺陷分數。",
+        "先看輸入一個墊圈影像，再核對每個區塊各有特徵，最後看下游才解讀相似或不同。"
+      ],
+      "stages": [
+        {
+          "title": "輸入一個墊圈影像",
+          "body": "輸入一個墊圈影像；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "每個區塊各有特徵",
+          "body": "每個區塊各有特徵；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "下游才解讀相似或不同",
+          "body": "下游才解讀相似或不同；請對照圖內輸入、變化與結果。"
+        }
+      ],
+      "misconception": "更好的局部表示仍受到影像細節限制。墊圈右側小缺口若在縮圖後變弱，DINOv3 的名稱或漂亮特徵色圖，都不能代替輸入可見性與下游漏檢測試。",
+      "alt": "DINOv3：一張圖保留多個局部表示。骨幹交出特徵，局部位置與下游工作仍要對齊。 教學示意，非模型實測。",
+      "mobile_image": "roadmap-model-selection/foundation-vlm-open-world/dinov3/images/final/WI033-DINOV3-01-r02-mobile.png",
+      "mobile_width": 768,
+      "mobile_height": 2400,
+      "engineering": {
+        "takeaway": "骨幹交出特徵，局部位置與下游工作仍要對齊。",
+        "nextAction": "保留既有 DINOv2 基準，選定一個 DINOv3 ViT 權重；用相同實體隔離的參考／測試資料，為兩者各自建立相容的下游。",
+        "redLine": "先從原圖確認細節，固定合適的輸入設定；再把局部特徵交給可驗證的配對或異常方法，回查其失敗樣本。"
+      },
+      "source": "https://arxiv.org/html/2508.10104v1"
+    },
+    {
+      "title": "DINOv3：訓練時守住局部關係",
+      "question": "Gram 只約束訓練，部署仍輸出特徵。",
+      "plain": {
+        "look": "先看同一影像，對照兩個模型，再核對比較 patch 之間的關係，最後看用關係差異更新學生。",
+        "relation": "Gram矩陣記錄同圖patch特徵的兩兩內積；以較早教師的關係當目標，約束目前學生，並保留原有自監督訓練目標。這不是把特徵逐點鎖成相同數值，也不是推論時要額外跑的模組。本圖數字為二維單位向量算例。",
+        "takeaway": "Gram 只約束訓練，部署仍輸出特徵。"
+      },
+      "terms": [
+        "patch：影像的局部區塊，特徵可包含其他位置的資訊。",
+        "Gram：同一影像內，各patch特徵兩兩相似關係的矩陣。"
+      ],
+      "guide": [
+        "Gram矩陣記錄同圖patch特徵的兩兩內積；以較早教師的關係當目標，約束目前學生，並保留原有自監督訓練目標。這不是把特徵逐點鎖成相同數值，也不是推論時要額外跑的模組。本圖數字為二維單位向量算例。",
+        "先看同一影像，對照兩個模型，再核對比較 patch 之間的關係，最後看用關係差異更新學生。"
+      ],
+      "stages": [
+        {
+          "title": "同一影像，對照兩個模型",
+          "body": "同一影像，對照兩個模型；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "比較 patch 之間的關係",
+          "body": "比較 patch 之間的關係；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "用關係差異更新學生",
+          "body": "用關係差異更新學生；請對照圖內輸入、變化與結果。"
+        }
+      ],
+      "misconception": "更好的局部表示仍受到影像細節限制。墊圈右側小缺口若在縮圖後變弱，DINOv3 的名稱或漂亮特徵色圖，都不能代替輸入可見性與下游漏檢測試。",
+      "alt": "DINOv3：訓練時守住局部關係。Gram 只約束訓練，部署仍輸出特徵。 教學示意，非模型實測。",
+      "mobile_image": "roadmap-model-selection/foundation-vlm-open-world/dinov3/images/final/WI033-DINOV3-02-r02-mobile.png",
+      "mobile_width": 768,
+      "mobile_height": 2400,
+      "engineering": {
+        "takeaway": "Gram 只約束訓練，部署仍輸出特徵。",
+        "nextAction": "保留既有 DINOv2 基準，選定一個 DINOv3 ViT 權重；用相同實體隔離的參考／測試資料，為兩者各自建立相容的下游。",
+        "redLine": "先從原圖確認細節，固定合適的輸入設定；再把局部特徵交給可驗證的配對或異常方法，回查其失敗樣本。"
+      },
+      "source": "https://arxiv.org/html/2508.10104v1"
+    },
+    {
+      "title": "DINOv3：換骨幹也要重建相容參考",
+      "question": "保存權重與前處理，同條件重建庫並量完整成本。",
+      "plain": {
+        "look": "先看固定取像與骨幹版本，再核對建立相容的參考表示，最後看核對下游結果與成本。",
+        "relation": "部署不跑Gram教師；用固定權重與前處理抽取表示，再建相容特徵庫或訓練下游頭。不能把DINOv2庫直接當DINOv3庫查詢。以同一留出集核對命中／漏檢、抽特徵和查庫時間、記憶體與重建成本，不能只比較色圖漂亮程度。",
+        "takeaway": "保存權重與前處理，同條件重建庫並量完整成本。"
+      },
+      "terms": [
+        "patch：影像的局部區塊，特徵可包含其他位置的資訊。",
+        "Gram：同一影像內，各patch特徵兩兩相似關係的矩陣。"
+      ],
+      "guide": [
+        "部署不跑Gram教師；用固定權重與前處理抽取表示，再建相容特徵庫或訓練下游頭。不能把DINOv2庫直接當DINOv3庫查詢。以同一留出集核對命中／漏檢、抽特徵和查庫時間、記憶體與重建成本，不能只比較色圖漂亮程度。",
+        "先看固定取像與骨幹版本，再核對建立相容的參考表示，最後看核對下游結果與成本。"
+      ],
+      "stages": [
+        {
+          "title": "固定取像與骨幹版本",
+          "body": "固定取像與骨幹版本；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "建立相容的參考表示",
+          "body": "建立相容的參考表示；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "核對下游結果與成本",
+          "body": "核對下游結果與成本；請對照圖內輸入、變化與結果。"
+        }
+      ],
+      "misconception": "更好的局部表示仍受到影像細節限制。墊圈右側小缺口若在縮圖後變弱，DINOv3 的名稱或漂亮特徵色圖，都不能代替輸入可見性與下游漏檢測試。",
+      "alt": "DINOv3：換骨幹也要重建相容參考。保存權重與前處理，同條件重建庫並量完整成本。 教學示意，非模型實測。",
+      "mobile_image": "roadmap-model-selection/foundation-vlm-open-world/dinov3/images/final/WI033-DINOV3-03-r01-mobile.png",
+      "mobile_width": 768,
+      "mobile_height": 2400,
+      "engineering": {
+        "takeaway": "保存權重與前處理，同條件重建庫並量完整成本。",
+        "nextAction": "保留既有 DINOv2 基準，選定一個 DINOv3 ViT 權重；用相同實體隔離的參考／測試資料，為兩者各自建立相容的下游。",
+        "redLine": "先從原圖確認細節，固定合適的輸入設定；再把局部特徵交給可驗證的配對或異常方法，回查其失敗樣本。"
+      },
+      "source": "https://arxiv.org/html/2508.10104v1"
+    },
+    {
+      "title": "DINOv3：以工作結果決定是否換骨幹",
+      "question": "同題比較效果與重建代價，保留基準也合理。",
+      "plain": {
+        "look": "先看同一批正常與缺口件，再核對既有骨幹：保留相容基準，最後看新骨幹：重建後再比較。",
+        "relation": "工程4不重複主反例。固定同一批正常與缺口墊圈及取像，各自使用相容骨幹與參考表示；記錄下游漏檢/誤報、抽特徵/查庫時間與重建負擔。新骨幹訓練機制不同，不代表每項域內指標一定進步。",
+        "takeaway": "同題比較效果與重建代價，保留基準也合理。"
+      },
+      "terms": [
+        "patch：影像的局部區塊，特徵可包含其他位置的資訊。",
+        "Gram：同一影像內，各patch特徵兩兩相似關係的矩陣。"
+      ],
+      "guide": [
+        "工程4不重複主反例。固定同一批正常與缺口墊圈及取像，各自使用相容骨幹與參考表示；記錄下游漏檢/誤報、抽特徵/查庫時間與重建負擔。新骨幹訓練機制不同，不代表每項域內指標一定進步。",
+        "先看同一批正常與缺口件，再核對既有骨幹：保留相容基準，最後看新骨幹：重建後再比較。"
+      ],
+      "stages": [
+        {
+          "title": "同一批正常與缺口件",
+          "body": "同一批正常與缺口件；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "既有骨幹：保留相容基準",
+          "body": "既有骨幹：保留相容基準；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "新骨幹：重建後再比較",
+          "body": "新骨幹：重建後再比較；請對照圖內輸入、變化與結果。"
+        }
+      ],
+      "misconception": "更好的局部表示仍受到影像細節限制。墊圈右側小缺口若在縮圖後變弱，DINOv3 的名稱或漂亮特徵色圖，都不能代替輸入可見性與下游漏檢測試。",
+      "alt": "DINOv3：以工作結果決定是否換骨幹。同題比較效果與重建代價，保留基準也合理。 教學示意，非模型實測。",
+      "mobile_image": "roadmap-model-selection/foundation-vlm-open-world/dinov3/images/final/WI033-DINOV3-04-r02-mobile.png",
+      "mobile_width": 768,
+      "mobile_height": 2400,
+      "engineering": {
+        "takeaway": "同題比較效果與重建代價，保留基準也合理。",
+        "nextAction": "保留既有 DINOv2 基準，選定一個 DINOv3 ViT 權重；用相同實體隔離的參考／測試資料，為兩者各自建立相容的下游。",
+        "redLine": "先從原圖確認細節，固定合適的輸入設定；再把局部特徵交給可驗證的配對或異常方法，回查其失敗樣本。"
+      },
+      "source": "https://arxiv.org/html/2508.10104v1"
+    }
+  ]
+}

@@ -1,0 +1,502 @@
+[
+  {
+    "topic": "det-grounding-dino-interface",
+    "route": "interactive-learning.html",
+    "width": 1440,
+    "errors": [],
+    "images": [
+      {
+        "src": "http://127.0.0.1:8000/_course_content/generated-concepts/det-grounding-dino-interface/wi024-grounding-c1-r03-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 404.1875,
+          "y": 401.640625,
+          "width": 935.625,
+          "height": 526.5625,
+          "top": 401.640625,
+          "right": 1339.8125,
+          "bottom": 928.203125,
+          "left": 404.1875
+        },
+        "kind": "main-1"
+      },
+      {
+        "src": "http://127.0.0.1:8000/_course_content/generated-concepts/det-grounding-dino-interface/wi024-grounding-d2-r01-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 404.1875,
+          "y": 200.75,
+          "width": 935.625,
+          "height": 526.5625,
+          "top": 200.75,
+          "right": 1339.8125,
+          "bottom": 727.3125,
+          "left": 404.1875
+        },
+        "kind": "main-2"
+      },
+      {
+        "src": "http://127.0.0.1:8000/_course_content/generated-concepts/det-grounding-dino-interface/wi024-prompt-d3-r01-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 404.1875,
+          "y": 200.9375,
+          "width": 935.625,
+          "height": 526.5625,
+          "top": 200.9375,
+          "right": 1339.8125,
+          "bottom": 727.5,
+          "left": 404.1875
+        },
+        "kind": "main-3"
+      },
+      {
+        "src": "http://127.0.0.1:8000/roadmap-model-selection/detector/det-grounding-dino-interface/images/final/WI033-GROUNDING-DINO-01-r02-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 367.1875,
+          "y": 196.265625,
+          "width": 1009.625,
+          "height": 568.203125,
+          "top": 196.265625,
+          "right": 1376.8125,
+          "bottom": 764.46875,
+          "left": 367.1875
+        },
+        "kind": "engineering-1"
+      },
+      {
+        "src": "http://127.0.0.1:8000/roadmap-model-selection/detector/det-grounding-dino-interface/images/final/WI033-GROUNDING-DINO-02-r02-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 367.1875,
+          "y": 195.515625,
+          "width": 1009.625,
+          "height": 568.203125,
+          "top": 195.515625,
+          "right": 1376.8125,
+          "bottom": 763.71875,
+          "left": 367.1875
+        },
+        "kind": "engineering-2"
+      },
+      {
+        "src": "http://127.0.0.1:8000/roadmap-model-selection/detector/det-grounding-dino-interface/images/final/WI033-GROUNDING-DINO-03-r02-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 367.1875,
+          "y": 196.296875,
+          "width": 1009.625,
+          "height": 568.203125,
+          "top": 196.296875,
+          "right": 1376.8125,
+          "bottom": 764.5,
+          "left": 367.1875
+        },
+        "kind": "engineering-3"
+      },
+      {
+        "src": "http://127.0.0.1:8000/roadmap-model-selection/detector/det-grounding-dino-interface/images/final/WI033-GROUNDING-DINO-04-r01-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 367.1875,
+          "y": 195.546875,
+          "width": 1009.625,
+          "height": 568.203125,
+          "top": 195.546875,
+          "right": 1376.8125,
+          "bottom": 763.75,
+          "left": 367.1875
+        },
+        "kind": "engineering-4"
+      }
+    ],
+    "zoom_checks": 7,
+    "answer": true,
+    "overflow": false,
+    "navigation": true,
+    "complete": true
+  },
+  {
+    "topic": "det-grounding-dino-interface",
+    "route": "interactive-learning.html",
+    "width": 360,
+    "errors": [],
+    "images": [
+      {
+        "src": "http://127.0.0.1:8000/_course_content/generated-concepts/det-grounding-dino-interface/wi024-grounding-c1-r01-mobile.png",
+        "nw": 724,
+        "nh": 2171,
+        "box": {
+          "x": 17,
+          "y": -134.515625,
+          "width": 326,
+          "height": 977.546875,
+          "top": -134.515625,
+          "right": 343,
+          "bottom": 843.03125,
+          "left": 17
+        },
+        "kind": "main-1"
+      },
+      {
+        "src": "http://127.0.0.1:8000/_course_content/generated-concepts/det-grounding-dino-interface/wi024-grounding-d2-r01-mobile.png",
+        "nw": 724,
+        "nh": 2172,
+        "box": {
+          "x": 17,
+          "y": -134.109375,
+          "width": 326,
+          "height": 978,
+          "top": -134.109375,
+          "right": 343,
+          "bottom": 843.890625,
+          "left": 17
+        },
+        "kind": "main-2"
+      },
+      {
+        "src": "http://127.0.0.1:8000/_course_content/generated-concepts/det-grounding-dino-interface/wi024-prompt-d3-r01-mobile.png",
+        "nw": 727,
+        "nh": 2164,
+        "box": {
+          "x": 17,
+          "y": -130.640625,
+          "width": 326,
+          "height": 970.375,
+          "top": -130.640625,
+          "right": 343,
+          "bottom": 839.734375,
+          "left": 17
+        },
+        "kind": "main-3"
+      },
+      {
+        "src": "http://127.0.0.1:8000/roadmap-model-selection/detector/det-grounding-dino-interface/images/final/WI033-GROUNDING-DINO-01-r02-mobile.png",
+        "nw": 768,
+        "nh": 2304,
+        "box": {
+          "x": 34,
+          "y": -69.078125,
+          "width": 292,
+          "height": 876,
+          "top": -69.078125,
+          "right": 326,
+          "bottom": 806.921875,
+          "left": 34
+        },
+        "kind": "engineering-1"
+      },
+      {
+        "src": "http://127.0.0.1:8000/roadmap-model-selection/detector/det-grounding-dino-interface/images/final/WI033-GROUNDING-DINO-02-r02-mobile.png",
+        "nw": 768,
+        "nh": 2304,
+        "box": {
+          "x": 34,
+          "y": -69.859375,
+          "width": 292,
+          "height": 876,
+          "top": -69.859375,
+          "right": 326,
+          "bottom": 806.140625,
+          "left": 34
+        },
+        "kind": "engineering-2"
+      },
+      {
+        "src": "http://127.0.0.1:8000/roadmap-model-selection/detector/det-grounding-dino-interface/images/final/WI033-GROUNDING-DINO-03-r02-mobile.png",
+        "nw": 768,
+        "nh": 2304,
+        "box": {
+          "x": 34,
+          "y": -69.34375,
+          "width": 292,
+          "height": 876,
+          "top": -69.34375,
+          "right": 326,
+          "bottom": 806.65625,
+          "left": 34
+        },
+        "kind": "engineering-3"
+      },
+      {
+        "src": "http://127.0.0.1:8000/roadmap-model-selection/detector/det-grounding-dino-interface/images/final/WI033-GROUNDING-DINO-04-r01-mobile.png",
+        "nw": 768,
+        "nh": 2304,
+        "box": {
+          "x": 34,
+          "y": -69.65625,
+          "width": 292,
+          "height": 876,
+          "top": -69.65625,
+          "right": 326,
+          "bottom": 806.34375,
+          "left": 34
+        },
+        "kind": "engineering-4"
+      }
+    ],
+    "zoom_checks": 7,
+    "answer": true,
+    "overflow": false,
+    "navigation": true,
+    "complete": true
+  },
+  {
+    "topic": "det-grounding-dino-interface",
+    "route": "docs/index.html",
+    "width": 1440,
+    "errors": [],
+    "images": [
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/det-grounding-dino-interface/wi024-grounding-c1-r03-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 404.1875,
+          "y": 401.640625,
+          "width": 935.625,
+          "height": 526.5625,
+          "top": 401.640625,
+          "right": 1339.8125,
+          "bottom": 928.203125,
+          "left": 404.1875
+        },
+        "kind": "main-1"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/det-grounding-dino-interface/wi024-grounding-d2-r01-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 404.1875,
+          "y": 200.75,
+          "width": 935.625,
+          "height": 526.5625,
+          "top": 200.75,
+          "right": 1339.8125,
+          "bottom": 727.3125,
+          "left": 404.1875
+        },
+        "kind": "main-2"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/det-grounding-dino-interface/wi024-prompt-d3-r01-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 404.1875,
+          "y": 200.9375,
+          "width": 935.625,
+          "height": 526.5625,
+          "top": 200.9375,
+          "right": 1339.8125,
+          "bottom": 727.5,
+          "left": 404.1875
+        },
+        "kind": "main-3"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/detector/det-grounding-dino-interface/images/final/WI033-GROUNDING-DINO-01-r02-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 367.1875,
+          "y": 196.265625,
+          "width": 1009.625,
+          "height": 568.203125,
+          "top": 196.265625,
+          "right": 1376.8125,
+          "bottom": 764.46875,
+          "left": 367.1875
+        },
+        "kind": "engineering-1"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/detector/det-grounding-dino-interface/images/final/WI033-GROUNDING-DINO-02-r02-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 367.1875,
+          "y": 195.515625,
+          "width": 1009.625,
+          "height": 568.203125,
+          "top": 195.515625,
+          "right": 1376.8125,
+          "bottom": 763.71875,
+          "left": 367.1875
+        },
+        "kind": "engineering-2"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/detector/det-grounding-dino-interface/images/final/WI033-GROUNDING-DINO-03-r02-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 367.1875,
+          "y": 196.296875,
+          "width": 1009.625,
+          "height": 568.203125,
+          "top": 196.296875,
+          "right": 1376.8125,
+          "bottom": 764.5,
+          "left": 367.1875
+        },
+        "kind": "engineering-3"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/detector/det-grounding-dino-interface/images/final/WI033-GROUNDING-DINO-04-r01-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 367.1875,
+          "y": 195.546875,
+          "width": 1009.625,
+          "height": 568.203125,
+          "top": 195.546875,
+          "right": 1376.8125,
+          "bottom": 763.75,
+          "left": 367.1875
+        },
+        "kind": "engineering-4"
+      }
+    ],
+    "zoom_checks": 7,
+    "answer": true,
+    "overflow": false,
+    "navigation": true,
+    "complete": true
+  },
+  {
+    "topic": "det-grounding-dino-interface",
+    "route": "docs/index.html",
+    "width": 360,
+    "errors": [],
+    "images": [
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/det-grounding-dino-interface/wi024-grounding-c1-r01-mobile.png",
+        "nw": 724,
+        "nh": 2171,
+        "box": {
+          "x": 17,
+          "y": -134.515625,
+          "width": 326,
+          "height": 977.546875,
+          "top": -134.515625,
+          "right": 343,
+          "bottom": 843.03125,
+          "left": 17
+        },
+        "kind": "main-1"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/det-grounding-dino-interface/wi024-grounding-d2-r01-mobile.png",
+        "nw": 724,
+        "nh": 2172,
+        "box": {
+          "x": 17,
+          "y": -134.109375,
+          "width": 326,
+          "height": 978,
+          "top": -134.109375,
+          "right": 343,
+          "bottom": 843.890625,
+          "left": 17
+        },
+        "kind": "main-2"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/det-grounding-dino-interface/wi024-prompt-d3-r01-mobile.png",
+        "nw": 727,
+        "nh": 2164,
+        "box": {
+          "x": 17,
+          "y": -130.640625,
+          "width": 326,
+          "height": 970.375,
+          "top": -130.640625,
+          "right": 343,
+          "bottom": 839.734375,
+          "left": 17
+        },
+        "kind": "main-3"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/detector/det-grounding-dino-interface/images/final/WI033-GROUNDING-DINO-01-r02-mobile.png",
+        "nw": 768,
+        "nh": 2304,
+        "box": {
+          "x": 34,
+          "y": -69.078125,
+          "width": 292,
+          "height": 876,
+          "top": -69.078125,
+          "right": 326,
+          "bottom": 806.921875,
+          "left": 34
+        },
+        "kind": "engineering-1"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/detector/det-grounding-dino-interface/images/final/WI033-GROUNDING-DINO-02-r02-mobile.png",
+        "nw": 768,
+        "nh": 2304,
+        "box": {
+          "x": 34,
+          "y": -69.859375,
+          "width": 292,
+          "height": 876,
+          "top": -69.859375,
+          "right": 326,
+          "bottom": 806.140625,
+          "left": 34
+        },
+        "kind": "engineering-2"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/detector/det-grounding-dino-interface/images/final/WI033-GROUNDING-DINO-03-r02-mobile.png",
+        "nw": 768,
+        "nh": 2304,
+        "box": {
+          "x": 34,
+          "y": -69.34375,
+          "width": 292,
+          "height": 876,
+          "top": -69.34375,
+          "right": 326,
+          "bottom": 806.65625,
+          "left": 34
+        },
+        "kind": "engineering-3"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/detector/det-grounding-dino-interface/images/final/WI033-GROUNDING-DINO-04-r01-mobile.png",
+        "nw": 768,
+        "nh": 2304,
+        "box": {
+          "x": 34,
+          "y": -69.65625,
+          "width": 292,
+          "height": 876,
+          "top": -69.65625,
+          "right": 326,
+          "bottom": 806.34375,
+          "left": 34
+        },
+        "kind": "engineering-4"
+      }
+    ],
+    "zoom_checks": 7,
+    "answer": true,
+    "overflow": false,
+    "navigation": true,
+    "complete": true
+  }
+]

@@ -1,0 +1,22 @@
+{
+  "image": "_course_content/generated-concepts/gemini-vision/wi027-gemini-d2-r02-desktop.png",
+  "reading_views": [
+    {
+      "title": "JSON 格式正確，內容仍可能看錯",
+      "image": "_course_content/generated-concepts/gemini-vision/wi027-gemini-d2-r02-desktop.png",
+      "mobile_image": "_course_content/generated-concepts/gemini-vision/wi027-gemini-d2-r02-mobile.png",
+      "alt": "JSON 格式正確，內容仍可能看錯。若回覆 JSON 把左、右螺絲都填成 present，語法仍可能完全可解析；原圖右側卻是空座。通過格式檢查，不能直接變成通過內容檢查。 AI生成教學示意，非模型實測。",
+      "mobile_crop": [
+        0,
+        0,
+        724,
+        2172
+      ],
+      "mobile_display_mode": "full-mobile",
+      "desktop_intrinsic_width": 1672,
+      "desktop_intrinsic_height": 941,
+      "mobile_intrinsic_width": 724,
+      "mobile_intrinsic_height": 2172
+    }
+  ]
+}

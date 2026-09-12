@@ -1,0 +1,54 @@
+[
+  {
+    "id": "clip-shared-errors",
+    "topic": "ad-winclip",
+    "visual": 2,
+    "path": "_course_content/generated-concepts/ad-anomalyclip/wi033-clip-shared-errors-r02-mobile.png",
+    "old_mobile": "_course_content/generated-concepts/ad-anomalyclip/wi021-clip-methods-d2-r01-mobile.png",
+    "sha256": "2791ba61aeab81d3ddbe0c54b300ed9e2d0be18fff1f44e1ca6cbca358e6bb59",
+    "desktop_source": "_course_content/generated-concepts/ad-anomalyclip/wi021-clip-methods-d2-r02-desktop.png",
+    "desktop_sha256": "ea5c39cd6c9280c25d6b489fb27acd651df42156431bc06cf55a99141716bfaa",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "clip-shared-errors",
+    "topic": "ad-anomalyclip",
+    "visual": 2,
+    "path": "_course_content/generated-concepts/ad-anomalyclip/wi033-clip-shared-errors-r02-mobile.png",
+    "old_mobile": "_course_content/generated-concepts/ad-anomalyclip/wi021-clip-methods-d2-r01-mobile.png",
+    "sha256": "2791ba61aeab81d3ddbe0c54b300ed9e2d0be18fff1f44e1ca6cbca358e6bb59",
+    "desktop_source": "_course_content/generated-concepts/ad-anomalyclip/wi021-clip-methods-d2-r02-desktop.png",
+    "desktop_sha256": "ea5c39cd6c9280c25d6b489fb27acd651df42156431bc06cf55a99141716bfaa",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "clip-shared-methods",
+    "topic": "ad-winclip",
+    "visual": 3,
+    "path": "_course_content/generated-concepts/ad-anomalyclip/wi033-clip-shared-methods-r01-mobile.png",
+    "old_mobile": "_course_content/generated-concepts/ad-anomalyclip/wi021-clip-methods-d3-r07-mobile.png",
+    "sha256": "67011025283115575d620346349c7a3bba9e1f54dd71fc3113a5cbd0c809bd80",
+    "desktop_source": "_course_content/generated-concepts/ad-anomalyclip/wi021-clip-methods-d3-r04-desktop.png",
+    "desktop_sha256": "861b16c99eaf9824bcbea07f257f1c39b45901b4f5b204fc6922b7408373b57a",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "clip-shared-methods",
+    "topic": "ad-anomalyclip",
+    "visual": 3,
+    "path": "_course_content/generated-concepts/ad-anomalyclip/wi033-clip-shared-methods-r01-mobile.png",
+    "old_mobile": "_course_content/generated-concepts/ad-anomalyclip/wi021-clip-methods-d3-r07-mobile.png",
+    "sha256": "67011025283115575d620346349c7a3bba9e1f54dd71fc3113a5cbd0c809bd80",
+    "desktop_source": "_course_content/generated-concepts/ad-anomalyclip/wi021-clip-methods-d3-r04-desktop.png",
+    "desktop_sha256": "861b16c99eaf9824bcbea07f257f1c39b45901b4f5b204fc6922b7408373b57a",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  }
+]

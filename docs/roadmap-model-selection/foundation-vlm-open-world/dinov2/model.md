@@ -104,3 +104,40 @@ Store image/ROI/tile provenance, resize/normalization checksum, model size/patch
 
 - Oquab et al., *DINOv2: Learning Robust Visual Features without Supervision* (2023), [arXiv:2304.07193](https://arxiv.org/abs/2304.07193).
 - `full-model-course/06-foundation-vision-and-vlm.md` for course-scoped claims and page order.
+
+<!-- wi033-engineering:start -->
+## WI-033 工程圖修正
+
+### DINOv2：先抽表示，再定義下游任務
+
+DINOv2預訓練表示可支援整圖與密集下游；本身不是工廠缺陷分類規格。部署選定骨幹和前處理，抽特徵後才用標註頭或參考庫決定任務；圖中向量為示意。
+
+骨幹交特徵，分類與異常判定還要另接。
+
+來源：https://arxiv.org/abs/2304.07193
+
+### DINOv2：先學表示，部署再抽特徵
+
+DINOv2組合整圖自蒸餾及局部遮蔽目標等訓練設計；Teacher用Student權重的EMA更新，目標停止梯度，Student學對齊表示而非重建原像素。部署使用選定的預訓練骨幹抽整圖和patch表示，下游分類、查庫或分割另接。圖中支架與數值皆教學示意，未重跑模型。 Teacher目標[.2,.8]與Student預測[.6,.4]只作對齊示意，並非真實表示维度。
+
+訓練的Teacher目標與部署的骨幹要分開。
+
+來源：https://arxiv.org/abs/2304.07193
+
+### DINOv2：查庫必須使用相容特徵
+
+固定checkpoint、輸入縮放、正規化、所抽層與特徵彙整方式，參考庫與query必須相容。示意距離排名不等於缺陷概率；換設定需重建庫或驗證相容轉換，並用留出正常/異常評估。
+
+換骨幹或前處理，舊庫不能直接混用。
+
+來源：https://arxiv.org/abs/2304.07193
+
+### DINOv2：外观差異不等於不良
+
+控制同支架幾何與孔位，只改背景檢查表示是否穩定。特徵可能對背景、照明或小細節敏感，也可能忽略特定缺陷；需要下游資料決定允收。此反例與主要首讀統一為同L支架，不換成墊圈。
+
+同件特徵受條件影響，判定要回到工作規格。
+
+來源：https://arxiv.org/abs/2304.07193
+
+<!-- wi033-engineering:end -->

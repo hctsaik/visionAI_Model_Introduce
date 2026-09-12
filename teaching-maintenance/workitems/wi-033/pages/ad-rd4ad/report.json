@@ -1,0 +1,566 @@
+[
+  {
+    "topic": "ad-rd4ad",
+    "route": "interactive-learning.html",
+    "width": 1440,
+    "errors": [],
+    "images": [
+      {
+        "src": "http://127.0.0.1:8000/_course_content/generated-concepts/ad-rd4ad/wi021-rd4ad-c1-r04-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 404.1875,
+          "y": 401.640625,
+          "width": 935.625,
+          "height": 526.5625,
+          "top": 401.640625,
+          "right": 1339.8125,
+          "bottom": 928.203125,
+          "left": 404.1875
+        },
+        "kind": "main-1"
+      },
+      {
+        "src": "http://127.0.0.1:8000/_course_content/generated-concepts/ad-rd4ad/wi021-rd4ad-c2-r02-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 404.1875,
+          "y": 201.15625,
+          "width": 935.625,
+          "height": 526.5625,
+          "top": 201.15625,
+          "right": 1339.8125,
+          "bottom": 727.71875,
+          "left": 404.1875
+        },
+        "kind": "main-2"
+      },
+      {
+        "src": "http://127.0.0.1:8000/_course_content/generated-concepts/ad-rd4ad/wi021-rd4ad-d3-r01-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 404.1875,
+          "y": 200.46875,
+          "width": 935.625,
+          "height": 526.5625,
+          "top": 200.46875,
+          "right": 1339.8125,
+          "bottom": 727.03125,
+          "left": 404.1875
+        },
+        "kind": "main-3"
+      },
+      {
+        "src": "http://127.0.0.1:8000/_course_content/generated-concepts/ad-ae/wi021-ae-d5-r02-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 404.1875,
+          "y": 200.78125,
+          "width": 935.625,
+          "height": 526.5625,
+          "top": 200.78125,
+          "right": 1339.8125,
+          "bottom": 727.34375,
+          "left": 404.1875
+        },
+        "kind": "main-4"
+      },
+      {
+        "src": "http://127.0.0.1:8000/roadmap-model-selection/anomaly-detection/ad-rd4ad/images/final/WI033-RD4AD-01-r02-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 367.1875,
+          "y": 195.546875,
+          "width": 1009.625,
+          "height": 568.203125,
+          "top": 195.546875,
+          "right": 1376.8125,
+          "bottom": 763.75,
+          "left": 367.1875
+        },
+        "kind": "engineering-1"
+      },
+      {
+        "src": "http://127.0.0.1:8000/roadmap-model-selection/anomaly-detection/ad-rd4ad/images/final/WI033-RD4AD-02-r02-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 367.1875,
+          "y": 195.6875,
+          "width": 1009.625,
+          "height": 568.203125,
+          "top": 195.6875,
+          "right": 1376.8125,
+          "bottom": 763.890625,
+          "left": 367.1875
+        },
+        "kind": "engineering-2"
+      },
+      {
+        "src": "http://127.0.0.1:8000/roadmap-model-selection/anomaly-detection/ad-rd4ad/images/final/WI033-RD4AD-03-r01-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 367.1875,
+          "y": 196.09375,
+          "width": 1009.625,
+          "height": 568.203125,
+          "top": 196.09375,
+          "right": 1376.8125,
+          "bottom": 764.296875,
+          "left": 367.1875
+        },
+        "kind": "engineering-3"
+      },
+      {
+        "src": "http://127.0.0.1:8000/roadmap-model-selection/anomaly-detection/ad-rd4ad/images/final/WI033-RD4AD-04-r01-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 367.1875,
+          "y": 196.234375,
+          "width": 1009.625,
+          "height": 568.203125,
+          "top": 196.234375,
+          "right": 1376.8125,
+          "bottom": 764.4375,
+          "left": 367.1875
+        },
+        "kind": "engineering-4"
+      }
+    ],
+    "zoom_checks": 8,
+    "answer": true,
+    "overflow": false,
+    "navigation": true,
+    "complete": true
+  },
+  {
+    "topic": "ad-rd4ad",
+    "route": "interactive-learning.html",
+    "width": 360,
+    "errors": [],
+    "images": [
+      {
+        "src": "http://127.0.0.1:8000/_course_content/generated-concepts/ad-rd4ad/wi021-rd4ad-c1-r01-mobile.png",
+        "nw": 724,
+        "nh": 2172,
+        "box": {
+          "x": 17,
+          "y": -134.015625,
+          "width": 326,
+          "height": 978,
+          "top": -134.015625,
+          "right": 343,
+          "bottom": 843.984375,
+          "left": 17
+        },
+        "kind": "main-1"
+      },
+      {
+        "src": "http://127.0.0.1:8000/_course_content/generated-concepts/ad-rd4ad/wi021-rd4ad-c2-r01-mobile.png",
+        "nw": 724,
+        "nh": 2172,
+        "box": {
+          "x": 17,
+          "y": -134.953125,
+          "width": 326,
+          "height": 978,
+          "top": -134.953125,
+          "right": 343,
+          "bottom": 843.046875,
+          "left": 17
+        },
+        "kind": "main-2"
+      },
+      {
+        "src": "http://127.0.0.1:8000/_course_content/generated-concepts/ad-rd4ad/wi021-rd4ad-d3-r01-mobile.png",
+        "nw": 724,
+        "nh": 2172,
+        "box": {
+          "x": 17,
+          "y": -134.96875,
+          "width": 326,
+          "height": 978,
+          "top": -134.96875,
+          "right": 343,
+          "bottom": 843.03125,
+          "left": 17
+        },
+        "kind": "main-3"
+      },
+      {
+        "src": "http://127.0.0.1:8000/_course_content/generated-concepts/ad-ae/wi021-ae-d5-r02-mobile.png",
+        "nw": 724,
+        "nh": 2172,
+        "box": {
+          "x": 17,
+          "y": -134.15625,
+          "width": 326,
+          "height": 978,
+          "top": -134.15625,
+          "right": 343,
+          "bottom": 843.84375,
+          "left": 17
+        },
+        "kind": "main-4"
+      },
+      {
+        "src": "http://127.0.0.1:8000/roadmap-model-selection/anomaly-detection/ad-rd4ad/images/final/WI033-RD4AD-01-r02-mobile.png",
+        "nw": 768,
+        "nh": 2304,
+        "box": {
+          "x": 34,
+          "y": -69.8125,
+          "width": 292,
+          "height": 876,
+          "top": -69.8125,
+          "right": 326,
+          "bottom": 806.1875,
+          "left": 34
+        },
+        "kind": "engineering-1"
+      },
+      {
+        "src": "http://127.0.0.1:8000/roadmap-model-selection/anomaly-detection/ad-rd4ad/images/final/WI033-RD4AD-02-r02-mobile.png",
+        "nw": 768,
+        "nh": 2304,
+        "box": {
+          "x": 34,
+          "y": -69.296875,
+          "width": 292,
+          "height": 876,
+          "top": -69.296875,
+          "right": 326,
+          "bottom": 806.703125,
+          "left": 34
+        },
+        "kind": "engineering-2"
+      },
+      {
+        "src": "http://127.0.0.1:8000/roadmap-model-selection/anomaly-detection/ad-rd4ad/images/final/WI033-RD4AD-03-r01-mobile.png",
+        "nw": 768,
+        "nh": 2304,
+        "box": {
+          "x": 34,
+          "y": -69.71875,
+          "width": 292,
+          "height": 876,
+          "top": -69.71875,
+          "right": 326,
+          "bottom": 806.28125,
+          "left": 34
+        },
+        "kind": "engineering-3"
+      },
+      {
+        "src": "http://127.0.0.1:8000/roadmap-model-selection/anomaly-detection/ad-rd4ad/images/final/WI033-RD4AD-04-r01-mobile.png",
+        "nw": 768,
+        "nh": 2304,
+        "box": {
+          "x": 34,
+          "y": -69.203125,
+          "width": 292,
+          "height": 876,
+          "top": -69.203125,
+          "right": 326,
+          "bottom": 806.796875,
+          "left": 34
+        },
+        "kind": "engineering-4"
+      }
+    ],
+    "zoom_checks": 8,
+    "answer": true,
+    "overflow": false,
+    "navigation": true,
+    "complete": true
+  },
+  {
+    "topic": "ad-rd4ad",
+    "route": "docs/index.html",
+    "width": 1440,
+    "errors": [],
+    "images": [
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/ad-rd4ad/wi021-rd4ad-c1-r04-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 404.1875,
+          "y": 401.640625,
+          "width": 935.625,
+          "height": 526.5625,
+          "top": 401.640625,
+          "right": 1339.8125,
+          "bottom": 928.203125,
+          "left": 404.1875
+        },
+        "kind": "main-1"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/ad-rd4ad/wi021-rd4ad-c2-r02-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 404.1875,
+          "y": 201.15625,
+          "width": 935.625,
+          "height": 526.5625,
+          "top": 201.15625,
+          "right": 1339.8125,
+          "bottom": 727.71875,
+          "left": 404.1875
+        },
+        "kind": "main-2"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/ad-rd4ad/wi021-rd4ad-d3-r01-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 404.1875,
+          "y": 200.46875,
+          "width": 935.625,
+          "height": 526.5625,
+          "top": 200.46875,
+          "right": 1339.8125,
+          "bottom": 727.03125,
+          "left": 404.1875
+        },
+        "kind": "main-3"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/ad-ae/wi021-ae-d5-r02-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 404.1875,
+          "y": 200.78125,
+          "width": 935.625,
+          "height": 526.5625,
+          "top": 200.78125,
+          "right": 1339.8125,
+          "bottom": 727.34375,
+          "left": 404.1875
+        },
+        "kind": "main-4"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/anomaly-detection/ad-rd4ad/images/final/WI033-RD4AD-01-r02-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 367.1875,
+          "y": 195.546875,
+          "width": 1009.625,
+          "height": 568.203125,
+          "top": 195.546875,
+          "right": 1376.8125,
+          "bottom": 763.75,
+          "left": 367.1875
+        },
+        "kind": "engineering-1"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/anomaly-detection/ad-rd4ad/images/final/WI033-RD4AD-02-r02-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 367.1875,
+          "y": 195.6875,
+          "width": 1009.625,
+          "height": 568.203125,
+          "top": 195.6875,
+          "right": 1376.8125,
+          "bottom": 763.890625,
+          "left": 367.1875
+        },
+        "kind": "engineering-2"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/anomaly-detection/ad-rd4ad/images/final/WI033-RD4AD-03-r01-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 367.1875,
+          "y": 196.09375,
+          "width": 1009.625,
+          "height": 568.203125,
+          "top": 196.09375,
+          "right": 1376.8125,
+          "bottom": 764.296875,
+          "left": 367.1875
+        },
+        "kind": "engineering-3"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/anomaly-detection/ad-rd4ad/images/final/WI033-RD4AD-04-r01-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 367.1875,
+          "y": 196.234375,
+          "width": 1009.625,
+          "height": 568.203125,
+          "top": 196.234375,
+          "right": 1376.8125,
+          "bottom": 764.4375,
+          "left": 367.1875
+        },
+        "kind": "engineering-4"
+      }
+    ],
+    "zoom_checks": 8,
+    "answer": true,
+    "overflow": false,
+    "navigation": true,
+    "complete": true
+  },
+  {
+    "topic": "ad-rd4ad",
+    "route": "docs/index.html",
+    "width": 360,
+    "errors": [],
+    "images": [
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/ad-rd4ad/wi021-rd4ad-c1-r01-mobile.png",
+        "nw": 724,
+        "nh": 2172,
+        "box": {
+          "x": 17,
+          "y": -134.015625,
+          "width": 326,
+          "height": 978,
+          "top": -134.015625,
+          "right": 343,
+          "bottom": 843.984375,
+          "left": 17
+        },
+        "kind": "main-1"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/ad-rd4ad/wi021-rd4ad-c2-r01-mobile.png",
+        "nw": 724,
+        "nh": 2172,
+        "box": {
+          "x": 17,
+          "y": -134.953125,
+          "width": 326,
+          "height": 978,
+          "top": -134.953125,
+          "right": 343,
+          "bottom": 843.046875,
+          "left": 17
+        },
+        "kind": "main-2"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/ad-rd4ad/wi021-rd4ad-d3-r01-mobile.png",
+        "nw": 724,
+        "nh": 2172,
+        "box": {
+          "x": 17,
+          "y": -134.96875,
+          "width": 326,
+          "height": 978,
+          "top": -134.96875,
+          "right": 343,
+          "bottom": 843.03125,
+          "left": 17
+        },
+        "kind": "main-3"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/ad-ae/wi021-ae-d5-r02-mobile.png",
+        "nw": 724,
+        "nh": 2172,
+        "box": {
+          "x": 17,
+          "y": -134.15625,
+          "width": 326,
+          "height": 978,
+          "top": -134.15625,
+          "right": 343,
+          "bottom": 843.84375,
+          "left": 17
+        },
+        "kind": "main-4"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/anomaly-detection/ad-rd4ad/images/final/WI033-RD4AD-01-r02-mobile.png",
+        "nw": 768,
+        "nh": 2304,
+        "box": {
+          "x": 34,
+          "y": -69.8125,
+          "width": 292,
+          "height": 876,
+          "top": -69.8125,
+          "right": 326,
+          "bottom": 806.1875,
+          "left": 34
+        },
+        "kind": "engineering-1"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/anomaly-detection/ad-rd4ad/images/final/WI033-RD4AD-02-r02-mobile.png",
+        "nw": 768,
+        "nh": 2304,
+        "box": {
+          "x": 34,
+          "y": -69.296875,
+          "width": 292,
+          "height": 876,
+          "top": -69.296875,
+          "right": 326,
+          "bottom": 806.703125,
+          "left": 34
+        },
+        "kind": "engineering-2"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/anomaly-detection/ad-rd4ad/images/final/WI033-RD4AD-03-r01-mobile.png",
+        "nw": 768,
+        "nh": 2304,
+        "box": {
+          "x": 34,
+          "y": -69.71875,
+          "width": 292,
+          "height": 876,
+          "top": -69.71875,
+          "right": 326,
+          "bottom": 806.28125,
+          "left": 34
+        },
+        "kind": "engineering-3"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/anomaly-detection/ad-rd4ad/images/final/WI033-RD4AD-04-r01-mobile.png",
+        "nw": 768,
+        "nh": 2304,
+        "box": {
+          "x": 34,
+          "y": -69.203125,
+          "width": 292,
+          "height": 876,
+          "top": -69.203125,
+          "right": 326,
+          "bottom": 806.796875,
+          "left": 34
+        },
+        "kind": "engineering-4"
+      }
+    ],
+    "zoom_checks": 8,
+    "answer": true,
+    "overflow": false,
+    "navigation": true,
+    "complete": true
+  }
+]

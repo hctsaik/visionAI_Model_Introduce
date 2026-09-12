@@ -117,3 +117,40 @@ Keep camera / lens / exposure / frame-rate / timestamp and frame-drop records; f
 ## Production gate
 
 The six model-specific fields, comparison contract and required visual primitives are complete. Pages 05-10 through 05-13 may proceed to versioned white high-density C / D visual production. Final assets must pass Chinese readability, engineering-causality, no-fabricated-performance, manifest, QA and style validation before approval.
+
+<!-- wi033-engineering:start -->
+## WI-033 工程圖修正
+
+### Lucas–Kanade：先讓角點有可追的鄰域
+
+同一L形標记随工件平移；先固定相機、時間間隔及取像，選有雙方向梯度的角點。金字塔由粗到細估計位移，傳遞估計再修細；它擴大可處理位移，但不能補回被反光遮住的內容。
+
+清楚角點、穩定影格與小位移，是局部解的起點。
+
+來源：https://docs.opencv.org/4.13.0/d4/dee/tutorial_optical_flow.html
+
+### Lucas–Kanade：多個像素一起限制位移
+
+在小位移、局部共同運動與亮度一致假設下，每個像素給Ix·u+Iy·v+It≈0。教學給定三組梯度(1,0,-2)、(0,1,-1)、(1,1,-3)，共同解u=2、v=1，單位是影格間像素位移。真實資料以最小平方近似求解，再查矩陣條件、殘差及往返一致性；示意數值不是對插圖執行光流的結果。
+
+局部梯度支持共同位移，解出數字後仍要檢查。
+
+來源：https://docs.opencv.org/4.13.0/d4/dee/tutorial_optical_flow.html
+
+### Lucas–Kanade：把可追的點與失效分開
+
+保存前後影格ID、座標、時間差、狀態與殘差；追丟或一致性差的點不可沿用舊箭頭。需要物理位移或速度時，另有相機運動處理、平面/深度條件與尺度校正，不能把像素向量直接標成毫米或物件ID。
+
+保存點對、時間與有效性，再決定能否接量測。
+
+來源：https://docs.opencv.org/4.13.0/d4/dee/tutorial_optical_flow.html
+
+### Lucas–Kanade：同題比較稀疏與稠密
+
+同一L形工件、影格間隔和原圖；若工作只需少數穩定角點，LK可作基準。需要稠密場時加入RAFT；在共同可評位置比較位移錯誤，另報各自覆蓋率和端到端耗時，不能把不同輸出數量當成精度優勢。
+
+先確定需要哪些位置，再比較錯誤與完整成本。
+
+來源：https://docs.opencv.org/4.13.0/d4/dee/tutorial_optical_flow.html
+
+<!-- wi033-engineering:end -->

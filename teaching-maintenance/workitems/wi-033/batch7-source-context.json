@@ -1,0 +1,871 @@
+[
+  {
+    "id": "convlstm",
+    "visuals": [
+      {
+        "title": "ConvLSTM：把位置與時間一起留在記憶裡",
+        "caption": "ConvLSTM 在每個時間點把新輸入與舊狀態一起處理，以卷積更新保留空間結構的記憶，選擇保留、加入或忘掉哪些線索。相較把整張攤平處理，它保留鄰近位置的關係；相較只看單張，它可以利用前面看到的變化。",
+        "image": "_course_content/generated-concepts/convlstm/wi028-conv-c1-r01-desktop.png",
+        "reading_views": [
+          {
+            "title": "ConvLSTM：把位置與時間一起留在記憶裡",
+            "image": "_course_content/generated-concepts/convlstm/wi028-conv-c1-r01-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/convlstm/wi028-conv-c1-r01-mobile.png",
+            "alt": "ConvLSTM：把位置與時間一起留在記憶裡。ConvLSTM 在每個時間點把新輸入與舊狀態一起處理，以卷積更新保留空間結構的記憶，選擇保留、加入或忘掉哪些線索。相較把整張攤平處理，它保留鄰近位置的關係；相較只看單張，它可以利用前面看到的變化。 AI生成教學示意，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              887,
+              1774
+            ],
+            "mobile_display_mode": "full-mobile",
+            "desktop_intrinsic_width": 1672,
+            "desktop_intrinsic_height": 941,
+            "mobile_intrinsic_width": 887,
+            "mobile_intrinsic_height": 1774
+          }
+        ]
+      },
+      {
+        "title": "時間接錯，記憶就會帶著舊狀態",
+        "caption": "一段影片結束後直接沿用記憶到另一段，舊的已夾住狀態可能干擾新片段；掉幀、順序錯誤或取樣間隔改變也會改變時間意義。 圖中的夾爪小圖用來表示狀態意義，不是記憶張量的實際外觀。",
+        "image": "_course_content/generated-concepts/convlstm/wi028-conv-d2-r01-desktop.png",
+        "reading_views": [
+          {
+            "title": "時間接錯，記憶就會帶著舊狀態",
+            "image": "_course_content/generated-concepts/convlstm/wi028-conv-d2-r01-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/convlstm/wi028-conv-d2-r01-mobile.png",
+            "alt": "時間接錯，記憶就會帶著舊狀態。一段影片結束後直接沿用記憶到另一段，舊的已夾住狀態可能干擾新片段；掉幀、順序錯誤或取樣間隔改變也會改變時間意義。 圖中的夾爪小圖用來表示狀態意義，不是記憶張量的實際外觀。 AI生成教學示意，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              887,
+              1774
+            ],
+            "mobile_display_mode": "full-mobile",
+            "desktop_intrinsic_width": 1672,
+            "desktop_intrinsic_height": 941,
+            "mobile_intrinsic_width": 887,
+            "mobile_intrinsic_height": 1774
+          }
+        ]
+      },
+      {
+        "title": "記住序列、補像素、預測特徵：學習方式不同",
+        "caption": "少量明確動作任務，可比較單張分類、簡單時序規則與ConvLSTM；較通用影片表示可比較VideoMAE或V-JEPA。後兩者提供預訓練表示，不是免標註的現成夾爪判定器。",
+        "image": "_course_content/generated-concepts/convlstm/wi028-video-d3-r02-desktop.png",
+        "reading_views": [
+          {
+            "title": "記住序列、補像素、預測特徵：學習方式不同",
+            "image": "_course_content/generated-concepts/convlstm/wi028-video-d3-r02-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/convlstm/wi028-video-d3-r02-mobile.png",
+            "alt": "記住序列、補像素、預測特徵：學習方式不同。少量明確動作任務，可比較單張分類、簡單時序規則與ConvLSTM；較通用影片表示可比較VideoMAE或V-JEPA。後兩者提供預訓練表示，不是免標註的現成夾爪判定器。 AI生成教學示意，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              887,
+              1774
+            ],
+            "mobile_display_mode": "full-mobile",
+            "desktop_intrinsic_width": 1672,
+            "desktop_intrinsic_height": 941,
+            "mobile_intrinsic_width": 887,
+            "mobile_intrinsic_height": 1774
+          }
+        ]
+      }
+    ],
+    "mechanism": null,
+    "sources": null
+  },
+  {
+    "id": "videomae",
+    "visuals": [
+      {
+        "title": "VideoMAE：遮住影片，學會補回像素線索",
+        "caption": "原始 VideoMAE 把影片切成時空小塊，遮住大部分塊，只將可見部分送進編碼器，再用解碼器學著補回遮蔽位置的像素。跨影格相同位置的遮蔽降低直接抄鄰幀的捷徑，讓預訓練練習推動編碼器學習時空線索。",
+        "image": "_course_content/generated-concepts/videomae/wi028-mae-c1-r02-desktop.png",
+        "reading_views": [
+          {
+            "title": "VideoMAE：遮住影片，學會補回像素線索",
+            "image": "_course_content/generated-concepts/videomae/wi028-mae-c1-r02-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/videomae/wi028-mae-c1-r05-mobile.png",
+            "alt": "VideoMAE：遮住影片，學會補回像素線索。原始 VideoMAE 把影片切成時空小塊，遮住大部分塊，只將可見部分送進編碼器，再用解碼器學著補回遮蔽位置的像素。跨影格相同位置的遮蔽降低直接抄鄰幀的捷徑，讓預訓練練習推動編碼器學習時空線索。 AI生成教學示意，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              768,
+              2048
+            ],
+            "mobile_display_mode": "full-mobile",
+            "desktop_intrinsic_width": 1672,
+            "desktop_intrinsic_height": 941,
+            "mobile_intrinsic_width": 768,
+            "mobile_intrinsic_height": 2048
+          }
+        ]
+      },
+      {
+        "title": "關鍵動作沒拍進去，影片特徵也不夠",
+        "caption": "稀疏取樣剛好漏掉瞬間滑落，模型輸入只有前後看似正常的姿態；即使編碼器預訓練很強，也不能據此保證發現沒看見的事件。",
+        "image": "_course_content/generated-concepts/videomae/wi028-video-d2-r01-desktop.png",
+        "reading_views": [
+          {
+            "title": "關鍵動作沒拍進去，影片特徵也不夠",
+            "image": "_course_content/generated-concepts/videomae/wi028-video-d2-r01-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/videomae/wi028-video-d2-r01-mobile.png",
+            "alt": "關鍵動作沒拍進去，影片特徵也不夠。稀疏取樣剛好漏掉瞬間滑落，模型輸入只有前後看似正常的姿態；即使編碼器預訓練很強，也不能據此保證發現沒看見的事件。 AI生成教學示意，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              1024,
+              1536
+            ],
+            "mobile_display_mode": "full-mobile",
+            "desktop_intrinsic_width": 1672,
+            "desktop_intrinsic_height": 941,
+            "mobile_intrinsic_width": 1024,
+            "mobile_intrinsic_height": 1536
+          }
+        ]
+      },
+      {
+        "title": "記住序列、補像素、預測特徵：學習方式不同",
+        "caption": "與V-JEPA相比，VideoMAE預訓練重建像素，V-JEPA預測特徵；兩者都要對應下游任務。ConvLSTM適合比較如何維持連續狀態，但不是相同的預訓練方法。",
+        "image": "_course_content/generated-concepts/convlstm/wi028-video-d3-r02-desktop.png",
+        "reading_views": [
+          {
+            "title": "記住序列、補像素、預測特徵：學習方式不同",
+            "image": "_course_content/generated-concepts/convlstm/wi028-video-d3-r02-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/convlstm/wi028-video-d3-r02-mobile.png",
+            "alt": "記住序列、補像素、預測特徵：學習方式不同。與V-JEPA相比，VideoMAE預訓練重建像素，V-JEPA預測特徵；兩者都要對應下游任務。ConvLSTM適合比較如何維持連續狀態，但不是相同的預訓練方法。 AI生成教學示意，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              887,
+              1774
+            ],
+            "mobile_display_mode": "full-mobile",
+            "desktop_intrinsic_width": 1672,
+            "desktop_intrinsic_height": 941,
+            "mobile_intrinsic_width": 887,
+            "mobile_intrinsic_height": 1774
+          }
+        ]
+      }
+    ],
+    "mechanism": null,
+    "sources": null
+  },
+  {
+    "id": "v-jepa",
+    "visuals": [
+      {
+        "title": "V-JEPA：預測被遮住部分的特徵",
+        "caption": "本課講2024原版V-JEPA：上下文編碼器看未被遮住的影片部分，預測器估計被遮區的特徵，對齊另一個目標編碼器從完整影片提供的對應特徵。訓練比較發生在表示空間，不是把缺少的像素或未來影片重畫出來。",
+        "image": "_course_content/generated-concepts/v-jepa/wi028-jepa-c1-r02-desktop.png",
+        "reading_views": [
+          {
+            "title": "V-JEPA：預測被遮住部分的特徵",
+            "image": "_course_content/generated-concepts/v-jepa/wi028-jepa-c1-r02-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/v-jepa/wi028-jepa-c1-r02-mobile.png",
+            "alt": "V-JEPA：預測被遮住部分的特徵。本課講2024原版V-JEPA：上下文編碼器看未被遮住的影片部分，預測器估計被遮區的特徵，對齊另一個目標編碼器從完整影片提供的對應特徵。訓練比較發生在表示空間，不是把缺少的像素或未來影片重畫出來。 AI生成教學示意，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              881,
+              1785
+            ],
+            "mobile_display_mode": "full-mobile",
+            "desktop_intrinsic_width": 1672,
+            "desktop_intrinsic_height": 941,
+            "mobile_intrinsic_width": 881,
+            "mobile_intrinsic_height": 1785
+          }
+        ]
+      },
+      {
+        "title": "關鍵動作沒拍進去，影片特徵也不夠",
+        "caption": "若輸入時間窗漏掉短暫滑落，預測特徵也可能保留不了工作需要的事件；預訓練可遷移性不能取代域內驗證。",
+        "image": "_course_content/generated-concepts/videomae/wi028-video-d2-r01-desktop.png",
+        "reading_views": [
+          {
+            "title": "關鍵動作沒拍進去，影片特徵也不夠",
+            "image": "_course_content/generated-concepts/videomae/wi028-video-d2-r01-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/videomae/wi028-video-d2-r01-mobile.png",
+            "alt": "關鍵動作沒拍進去，影片特徵也不夠。若輸入時間窗漏掉短暫滑落，預測特徵也可能保留不了工作需要的事件；預訓練可遷移性不能取代域內驗證。 AI生成教學示意，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              1024,
+              1536
+            ],
+            "mobile_display_mode": "full-mobile",
+            "desktop_intrinsic_width": 1672,
+            "desktop_intrinsic_height": 941,
+            "mobile_intrinsic_width": 1024,
+            "mobile_intrinsic_height": 1536
+          }
+        ]
+      },
+      {
+        "title": "記住序列、補像素、預測特徵：學習方式不同",
+        "caption": "VideoMAE在預訓練補像素，V-JEPA預測特徵；兩者是否有利要看同一工作任務與成本。若少量時間狀態已足夠，也可先比較簡單規則或ConvLSTM。",
+        "image": "_course_content/generated-concepts/convlstm/wi028-video-d3-r02-desktop.png",
+        "reading_views": [
+          {
+            "title": "記住序列、補像素、預測特徵：學習方式不同",
+            "image": "_course_content/generated-concepts/convlstm/wi028-video-d3-r02-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/convlstm/wi028-video-d3-r02-mobile.png",
+            "alt": "記住序列、補像素、預測特徵：學習方式不同。VideoMAE在預訓練補像素，V-JEPA預測特徵；兩者是否有利要看同一工作任務與成本。若少量時間狀態已足夠，也可先比較簡單規則或ConvLSTM。 AI生成教學示意，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              887,
+              1774
+            ],
+            "mobile_display_mode": "full-mobile",
+            "desktop_intrinsic_width": 1672,
+            "desktop_intrinsic_height": 941,
+            "mobile_intrinsic_width": 887,
+            "mobile_intrinsic_height": 1774
+          }
+        ]
+      }
+    ],
+    "mechanism": null,
+    "sources": null
+  },
+  {
+    "id": "defectfill",
+    "visuals": [
+      {
+        "title": "DefectFill：把少量缺陷，學成可填入的外觀",
+        "caption": "先用少量真實缺陷照片及遮罩，微調預訓練填補模型的部分權重。學習同時關注刮傷細節、刮傷與物件的關係，以及缺陷詞應對應的位置。生成時給正常板與預定遮罩，逐步把缺陷填進去；LFS 再從多個候選挑出缺陷表現較明顯的一張。",
+        "image": "_course_content/generated-concepts/defectfill/wi026-defectfill-c1-r03-desktop.png",
+        "reading_views": [
+          {
+            "title": "DefectFill：把少量缺陷，學成可填入的外觀",
+            "image": "_course_content/generated-concepts/defectfill/wi026-defectfill-c1-r03-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/defectfill/wi026-defectfill-c1-r02-mobile.png",
+            "alt": "DefectFill：把少量缺陷，學成可填入的外觀。先用少量真實缺陷照片及遮罩，微調預訓練填補模型的部分權重。學習同時關注刮傷細節、刮傷與物件的關係，以及缺陷詞應對應的位置。生成時給正常板與預定遮罩，逐步把缺陷填進去；LFS 再從多個候選挑出缺陷表現較明顯的一張。 AI生成教學示意，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              724,
+              2172
+            ],
+            "mobile_display_mode": "full-mobile",
+            "mobile_intrinsic_width": 724,
+            "mobile_intrinsic_height": 2172,
+            "desktop_intrinsic_width": 1672,
+            "desktop_intrinsic_height": 941
+          }
+        ]
+      },
+      {
+        "title": "缺陷很明顯，也可能長錯地方",
+        "caption": "本例把放置區移到孔邊。刮傷即使明顯，若在原本沒有材料的孔內長出橋接紋理，仍是幾何不合理的候選。LFS不負責檢查工件幾何；要先檢查位置、形狀與遮罩對應，再進資料集。",
+        "image": "_course_content/generated-concepts/defectfill/wi026-defectfill-d2-r02-desktop.png",
+        "reading_views": [
+          {
+            "title": "缺陷很明顯，也可能長錯地方",
+            "image": "_course_content/generated-concepts/defectfill/wi026-defectfill-d2-r02-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/defectfill/wi026-defectfill-d2-r01-mobile.png",
+            "alt": "缺陷很明顯，也可能長錯地方。本例把放置區移到孔邊。刮傷即使明顯，若在原本沒有材料的孔內長出橋接紋理，仍是幾何不合理的候選。LFS不負責檢查工件幾何；要先檢查位置、形狀與遮罩對應，再進資料集。 AI生成教學示意，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              724,
+              2172
+            ],
+            "mobile_display_mode": "full-mobile",
+            "mobile_intrinsic_width": 724,
+            "mobile_intrinsic_height": 2172,
+            "desktop_intrinsic_width": 1672,
+            "desktop_intrinsic_height": 941
+          }
+        ]
+      },
+      {
+        "title": "要補缺陷資料：先比較學習與生成成本",
+        "caption": "有少量缺陷與遮罩、願意支付微調及多候選選樣成本，可測DefectFill；想分開學外觀與位置，可比較AnomalyDiffusion；不想為新案例微調權重，可試TF-IDG，但仍有參考準備與迭代生成成本。只有正常品時，先建立正常性偵測基準或受控人工擾動，不能假定這些少樣本方法已學過真實刮傷。",
+        "image": "_course_content/generated-concepts/defectfill/wi026-generation-d3-r02-desktop.png",
+        "reading_views": [
+          {
+            "title": "要補缺陷資料：先比較學習與生成成本",
+            "image": "_course_content/generated-concepts/defectfill/wi026-generation-d3-r02-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/defectfill/wi026-generation-d3-r01-mobile.png",
+            "alt": "要補缺陷資料：先比較學習與生成成本。有少量缺陷與遮罩、願意支付微調及多候選選樣成本，可測DefectFill；想分開學外觀與位置，可比較AnomalyDiffusion；不想為新案例微調權重，可試TF-IDG，但仍有參考準備與迭代生成成本。只有正常品時，先建立正常性偵測基準或受控人工擾動，不能假定這些少樣本方法已學過真實刮傷。 AI生成教學示意，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              724,
+              2172
+            ],
+            "mobile_display_mode": "full-mobile",
+            "mobile_intrinsic_width": 724,
+            "mobile_intrinsic_height": 2172,
+            "desktop_intrinsic_width": 1672,
+            "desktop_intrinsic_height": 941
+          }
+        ]
+      }
+    ],
+    "mechanism": null,
+    "sources": null
+  },
+  {
+    "id": "anomalydiffusion",
+    "visuals": [
+      {
+        "title": "AnomalyDiffusion：外觀與位置分開控制",
+        "caption": "方法把『刮傷長什麼樣』與『要放在哪裡』拆開：用少量缺陷學外觀嵌入，另把遮罩編成位置訊號，一起引導擴散生成。去噪中比較暫時結果與正常影像，對尚不明顯的預定缺陷區加強注意力，減少小區域被忽略。",
+        "image": "_course_content/generated-concepts/anomalydiffusion/wi026-anomalydiffusion-c1-r01-desktop.png",
+        "reading_views": [
+          {
+            "title": "AnomalyDiffusion：外觀與位置分開控制",
+            "image": "_course_content/generated-concepts/anomalydiffusion/wi026-anomalydiffusion-c1-r01-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/anomalydiffusion/wi026-anomalydiffusion-c1-r01-mobile.png",
+            "alt": "AnomalyDiffusion：外觀與位置分開控制。方法把『刮傷長什麼樣』與『要放在哪裡』拆開：用少量缺陷學外觀嵌入，另把遮罩編成位置訊號，一起引導擴散生成。去噪中比較暫時結果與正常影像，對尚不明顯的預定缺陷區加強注意力，減少小區域被忽略。 AI生成教學示意，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              724,
+              2172
+            ],
+            "mobile_display_mode": "full-mobile",
+            "mobile_intrinsic_width": 724,
+            "mobile_intrinsic_height": 2172,
+            "desktop_intrinsic_width": 1672,
+            "desktop_intrinsic_height": 941
+          }
+        ]
+      },
+      {
+        "title": "給了兩塊遮罩，小缺陷仍要逐一核對",
+        "caption": "第二圖另換大、小菱形遮罩測試。圖中預定生成大、小兩處刮傷，假設結果只出現大刮傷。小區放大仍平整，卻保留了缺陷標註，會給下游錯誤監督。適應性注意力的設計目的就是改善這類對應，但不是逐張成功保證。",
+        "image": "_course_content/generated-concepts/anomalydiffusion/wi026-anomalydiffusion-d2-r02-desktop.png",
+        "reading_views": [
+          {
+            "title": "給了兩塊遮罩，小缺陷仍要逐一核對",
+            "image": "_course_content/generated-concepts/anomalydiffusion/wi026-anomalydiffusion-d2-r02-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/anomalydiffusion/wi026-anomalydiffusion-d2-r01-mobile.png",
+            "alt": "給了兩塊遮罩，小缺陷仍要逐一核對。第二圖另換大、小菱形遮罩測試。圖中預定生成大、小兩處刮傷，假設結果只出現大刮傷。小區放大仍平整，卻保留了缺陷標註，會給下游錯誤監督。適應性注意力的設計目的就是改善這類對應，但不是逐張成功保證。 AI生成教學示意，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              724,
+              2172
+            ],
+            "mobile_display_mode": "full-mobile",
+            "mobile_intrinsic_width": 724,
+            "mobile_intrinsic_height": 2172,
+            "desktop_intrinsic_width": 1672,
+            "desktop_intrinsic_height": 941
+          }
+        ]
+      },
+      {
+        "title": "要補缺陷資料：先比較學習與生成成本",
+        "caption": "希望外觀概念與位置控制分開，可選AnomalyDiffusion做候選；重視填補模型的局部概念適配可比較DefectFill；不做案例微調可比較TF-IDG。只有正常品而無缺陷參考時，先用正常性方法建立偵測基準，別把少樣本生成當成已知道所有缺陷。",
+        "image": "_course_content/generated-concepts/defectfill/wi026-generation-d3-r02-desktop.png",
+        "reading_views": [
+          {
+            "title": "要補缺陷資料：先比較學習與生成成本",
+            "image": "_course_content/generated-concepts/defectfill/wi026-generation-d3-r02-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/defectfill/wi026-generation-d3-r01-mobile.png",
+            "alt": "要補缺陷資料：先比較學習與生成成本。希望外觀概念與位置控制分開，可選AnomalyDiffusion做候選；重視填補模型的局部概念適配可比較DefectFill；不做案例微調可比較TF-IDG。只有正常品而無缺陷參考時，先用正常性方法建立偵測基準，別把少樣本生成當成已知道所有缺陷。 AI生成教學示意，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              724,
+              2172
+            ],
+            "mobile_display_mode": "full-mobile",
+            "mobile_intrinsic_width": 724,
+            "mobile_intrinsic_height": 2172,
+            "desktop_intrinsic_width": 1672,
+            "desktop_intrinsic_height": 941
+          }
+        ]
+      }
+    ],
+    "mechanism": null,
+    "sources": null
+  },
+  {
+    "id": "tf-idg",
+    "visuals": [
+      {
+        "title": "TF-IDG：不微調權重，生成時對齊缺陷",
+        "caption": "TF-IDG建立在預訓練影像編修框架上：缺陷參考提供外觀，目標遮罩提供形狀與位置。生成初期讓局部特徵向參考對齊；再找出遮罩內仍像正常面的區域，補強容易漏掉的小缺陷；後期引入原背景資訊，維持紋理連續。它調整生成中的表示，保持模型權重固定。",
+        "image": "_course_content/generated-concepts/tf-idg/wi026-tf-idg-c1-r02-desktop.png",
+        "reading_views": [
+          {
+            "title": "TF-IDG：不微調權重，生成時對齊缺陷",
+            "image": "_course_content/generated-concepts/tf-idg/wi026-tf-idg-c1-r02-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/tf-idg/wi026-tf-idg-c1-r03-mobile.png",
+            "alt": "TF-IDG：不微調權重，生成時對齊缺陷。TF-IDG建立在預訓練影像編修框架上：缺陷參考提供外觀，目標遮罩提供形狀與位置。生成初期讓局部特徵向參考對齊；再找出遮罩內仍像正常面的區域，補強容易漏掉的小缺陷；後期引入原背景資訊，維持紋理連續。它調整生成中的表示，保持模型權重固定。 AI生成教學示意，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              724,
+              2172
+            ],
+            "mobile_display_mode": "full-mobile",
+            "mobile_intrinsic_width": 724,
+            "mobile_intrinsic_height": 2172,
+            "desktop_intrinsic_width": 1672,
+            "desktop_intrinsic_height": 941
+          }
+        ]
+      },
+      {
+        "title": "免微調，也會把參考外觀帶錯",
+        "caption": "本例把黑色粗糙表面的刮傷轉到銀色拉絲板。假設刮傷長出來，卻把一塊黑色粗紋理也帶入，接縫明顯不自然。紋理保存能提供背景約束，仍要檢查跨材質參考是否合適。",
+        "image": "_course_content/generated-concepts/tf-idg/wi026-tf-idg-d2-r02-desktop.png",
+        "reading_views": [
+          {
+            "title": "免微調，也會把參考外觀帶錯",
+            "image": "_course_content/generated-concepts/tf-idg/wi026-tf-idg-d2-r02-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/tf-idg/wi026-tf-idg-d2-r01-mobile.png",
+            "alt": "免微調，也會把參考外觀帶錯。本例把黑色粗糙表面的刮傷轉到銀色拉絲板。假設刮傷長出來，卻把一塊黑色粗紋理也帶入，接縫明顯不自然。紋理保存能提供背景約束，仍要檢查跨材質參考是否合適。 AI生成教學示意，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              724,
+              2172
+            ],
+            "mobile_display_mode": "full-mobile",
+            "mobile_intrinsic_width": 724,
+            "mobile_intrinsic_height": 2172,
+            "desktop_intrinsic_width": 1672,
+            "desktop_intrinsic_height": 941
+          }
+        ]
+      },
+      {
+        "title": "要補缺陷資料：先比較學習與生成成本",
+        "caption": "不想為案例微調時，可先試TF-IDG；願意學外觀嵌入可比較AnomalyDiffusion；願意適配填補模型可比較DefectFill。TF-IDG原方法需要正常影像、缺陷參考及遮罩，不能簡化成『只輸入一句文字』。只有正常品時，先建正常性基準或取得參考。",
+        "image": "_course_content/generated-concepts/defectfill/wi026-generation-d3-r02-desktop.png",
+        "reading_views": [
+          {
+            "title": "要補缺陷資料：先比較學習與生成成本",
+            "image": "_course_content/generated-concepts/defectfill/wi026-generation-d3-r02-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/defectfill/wi026-generation-d3-r01-mobile.png",
+            "alt": "要補缺陷資料：先比較學習與生成成本。不想為案例微調時，可先試TF-IDG；願意學外觀嵌入可比較AnomalyDiffusion；願意適配填補模型可比較DefectFill。TF-IDG原方法需要正常影像、缺陷參考及遮罩，不能簡化成『只輸入一句文字』。只有正常品時，先建正常性基準或取得參考。 AI生成教學示意，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              724,
+              2172
+            ],
+            "mobile_display_mode": "full-mobile",
+            "mobile_intrinsic_width": 724,
+            "mobile_intrinsic_height": 2172,
+            "desktop_intrinsic_width": 1672,
+            "desktop_intrinsic_height": 941
+          }
+        ]
+      }
+    ],
+    "mechanism": null,
+    "sources": null
+  },
+  {
+    "id": "controlnet",
+    "visuals": [
+      {
+        "title": "ControlNet：把輪廓條件送進生成過程",
+        "caption": "ControlNet增加可訓練的控制分支，把邊緣、深度或姿態等空間條件轉成訊號，注入基礎擴散模型的去噪過程。原論文訓練時固定基礎模型權重，以零初始化連接逐步學會利用條件；使用時載入對應條件類型的權重，讓生成布局跟著條件走。",
+        "image": "_course_content/generated-concepts/controlnet/wi026-controlnet-c1-r02-desktop.png",
+        "reading_views": [
+          {
+            "title": "ControlNet：把輪廓條件送進生成過程",
+            "image": "_course_content/generated-concepts/controlnet/wi026-controlnet-c1-r02-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/controlnet/wi026-controlnet-c1-r01-mobile.png",
+            "alt": "ControlNet：把輪廓條件送進生成過程。ControlNet增加可訓練的控制分支，把邊緣、深度或姿態等空間條件轉成訊號，注入基礎擴散模型的去噪過程。原論文訓練時固定基礎模型權重，以零初始化連接逐步學會利用條件；使用時載入對應條件類型的權重，讓生成布局跟著條件走。 AI生成教學示意，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              724,
+              2172
+            ],
+            "mobile_display_mode": "full-mobile",
+            "mobile_intrinsic_width": 724,
+            "mobile_intrinsic_height": 2172,
+            "desktop_intrinsic_width": 1672,
+            "desktop_intrinsic_height": 941
+          }
+        ]
+      },
+      {
+        "title": "輪廓相同，細小裂紋仍可能不同",
+        "caption": "輪廓只包含外框與孔，沒描述細裂紋。相同輪廓可能生成有裂紋或沒有裂紋的外觀；條件滿足與原細節忠實是不同問題。本圖是可能情況示意，不是兩次實測輸出。",
+        "image": "_course_content/generated-concepts/controlnet/wi026-controlnet-d2-r01-desktop.png",
+        "reading_views": [
+          {
+            "title": "輪廓相同，細小裂紋仍可能不同",
+            "image": "_course_content/generated-concepts/controlnet/wi026-controlnet-d2-r01-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/controlnet/wi026-controlnet-d2-r01-mobile.png",
+            "alt": "輪廓相同，細小裂紋仍可能不同。輪廓只包含外框與孔，沒描述細裂紋。相同輪廓可能生成有裂紋或沒有裂紋的外觀；條件滿足與原細節忠實是不同問題。本圖是可能情況示意，不是兩次實測輸出。 AI生成教學示意，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              724,
+              2172
+            ],
+            "mobile_display_mode": "full-mobile",
+            "mobile_intrinsic_width": 724,
+            "mobile_intrinsic_height": 2172,
+            "desktop_intrinsic_width": 1672,
+            "desktop_intrinsic_height": 941
+          }
+        ]
+      },
+      {
+        "title": "控制布局，還是只改一塊？",
+        "caption": "要控制整體布局，考慮ControlNet；要指定局部重畫，考慮Inpainting。前者是控制機制，後者是任務，支援的管線可以搭配兩者。要學真實缺陷外觀再放入正常品，可另外比較DefectFill等少樣本生成方法。",
+        "image": "_course_content/generated-concepts/controlnet/wi026-editing-d3-r02-desktop.png",
+        "reading_views": [
+          {
+            "title": "控制布局，還是只改一塊？",
+            "image": "_course_content/generated-concepts/controlnet/wi026-editing-d3-r02-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/controlnet/wi026-editing-d3-r02-mobile.png",
+            "alt": "控制布局，還是只改一塊？。要控制整體布局，考慮ControlNet；要指定局部重畫，考慮Inpainting。前者是控制機制，後者是任務，支援的管線可以搭配兩者。要學真實缺陷外觀再放入正常品，可另外比較DefectFill等少樣本生成方法。 AI生成教學示意，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              726,
+              2167
+            ],
+            "mobile_display_mode": "full-mobile",
+            "mobile_intrinsic_width": 726,
+            "mobile_intrinsic_height": 2167,
+            "desktop_intrinsic_width": 1672,
+            "desktop_intrinsic_height": 941
+          }
+        ]
+      }
+    ],
+    "mechanism": null,
+    "sources": null
+  },
+  {
+    "id": "inpainting",
+    "visuals": [
+      {
+        "title": "Inpainting：指定一塊，補出連續紋理",
+        "caption": "Inpainting是一類填補任務，並非單一模型。遮罩指出可重畫的區域，未遮住的周邊提供上下文；擴散式實作以這些條件引導逐步去噪，讓局部從雜訊形成合理紋理。傳統修補或其他神經網路也能做Inpainting，本課用擴散式路徑說明。",
+        "image": "_course_content/generated-concepts/inpainting/wi026-inpainting-c1-r02-desktop.png",
+        "reading_views": [
+          {
+            "title": "Inpainting：指定一塊，補出連續紋理",
+            "image": "_course_content/generated-concepts/inpainting/wi026-inpainting-c1-r02-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/inpainting/wi026-inpainting-c1-r01-mobile.png",
+            "alt": "Inpainting：指定一塊，補出連續紋理。Inpainting是一類填補任務，並非單一模型。遮罩指出可重畫的區域，未遮住的周邊提供上下文；擴散式實作以這些條件引導逐步去噪，讓局部從雜訊形成合理紋理。傳統修補或其他神經網路也能做Inpainting，本課用擴散式路徑說明。 AI生成教學示意，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              724,
+              2172
+            ],
+            "mobile_display_mode": "full-mobile",
+            "mobile_intrinsic_width": 724,
+            "mobile_intrinsic_height": 2172,
+            "desktop_intrinsic_width": 1672,
+            "desktop_intrinsic_height": 941
+          }
+        ]
+      },
+      {
+        "title": "遮住真實孔洞，也能補出平整表面",
+        "caption": "第二圖改用下半部真的破洞：同樣能把它填成平整表面，但改變的是畫面，沒有修復金屬。兩個上方製造孔仍保留；這樣才能清楚追蹤是哪個區域被重畫。",
+        "image": "_course_content/generated-concepts/inpainting/wi026-inpainting-d2-r01-desktop.png",
+        "reading_views": [
+          {
+            "title": "遮住真實孔洞，也能補出平整表面",
+            "image": "_course_content/generated-concepts/inpainting/wi026-inpainting-d2-r01-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/inpainting/wi026-inpainting-d2-r01-mobile.png",
+            "alt": "遮住真實孔洞，也能補出平整表面。第二圖改用下半部真的破洞：同樣能把它填成平整表面，但改變的是畫面，沒有修復金屬。兩個上方製造孔仍保留；這樣才能清楚追蹤是哪個區域被重畫。 AI生成教學示意，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              724,
+              2172
+            ],
+            "mobile_display_mode": "full-mobile",
+            "mobile_intrinsic_width": 724,
+            "mobile_intrinsic_height": 2172,
+            "desktop_intrinsic_width": 1672,
+            "desktop_intrinsic_height": 941
+          }
+        ]
+      },
+      {
+        "title": "控制布局，還是只改一塊？",
+        "caption": "要局部修補，先測Inpainting；要生成整體布局相近的外觀，可用ControlNet。兩者能在支援的實作中搭配。若目標是生成某類真實刮傷，需要缺陷概念及資料準備，不能只因遮罩存在就當作已學會缺陷。",
+        "image": "_course_content/generated-concepts/controlnet/wi026-editing-d3-r02-desktop.png",
+        "reading_views": [
+          {
+            "title": "控制布局，還是只改一塊？",
+            "image": "_course_content/generated-concepts/controlnet/wi026-editing-d3-r02-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/controlnet/wi026-editing-d3-r02-mobile.png",
+            "alt": "控制布局，還是只改一塊？。要局部修補，先測Inpainting；要生成整體布局相近的外觀，可用ControlNet。兩者能在支援的實作中搭配。若目標是生成某類真實刮傷，需要缺陷概念及資料準備，不能只因遮罩存在就當作已學會缺陷。 AI生成教學示意，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              726,
+              2167
+            ],
+            "mobile_display_mode": "full-mobile",
+            "mobile_intrinsic_width": 726,
+            "mobile_intrinsic_height": 2167,
+            "desktop_intrinsic_width": 1672,
+            "desktop_intrinsic_height": 941
+          }
+        ]
+      }
+    ],
+    "mechanism": null,
+    "sources": null
+  },
+  {
+    "id": "diffusion-restoration",
+    "visuals": [
+      {
+        "title": "擴散復原：用影像先驗，逐步估回細節",
+        "caption": "擴散模型先從訓練資料學會清晰影像的規律。復原時把退化觀測或退化模型當條件，在反覆去噪中估計可能的清晰影像。圖中的『套回退化再比觀測』說明一致性檢查：候選不能只符合外觀先驗，也要能解釋原觀測；具體約束位置與方式依方法而異。",
+        "image": "_course_content/generated-concepts/diffusion-restoration/wi026-diffusion-restoration-c1-r01-desktop.png",
+        "reading_views": [
+          {
+            "title": "擴散復原：用影像先驗，逐步估回細節",
+            "image": "_course_content/generated-concepts/diffusion-restoration/wi026-diffusion-restoration-c1-r01-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/diffusion-restoration/wi026-diffusion-restoration-c1-r02-mobile.png",
+            "alt": "擴散復原：用影像先驗，逐步估回細節。擴散模型先從訓練資料學會清晰影像的規律。復原時把退化觀測或退化模型當條件，在反覆去噪中估計可能的清晰影像。圖中的『套回退化再比觀測』說明一致性檢查：候選不能只符合外觀先驗，也要能解釋原觀測；具體約束位置與方式依方法而異。 AI生成教學示意，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              724,
+              2172
+            ],
+            "mobile_display_mode": "full-mobile",
+            "mobile_intrinsic_width": 724,
+            "mobile_intrinsic_height": 2172,
+            "desktop_intrinsic_width": 1672,
+            "desktop_intrinsic_height": 941
+          }
+        ]
+      },
+      {
+        "title": "同一退化影像，可能對應不同細節",
+        "caption": "原觀測太模糊時，有裂紋及無裂紋兩個清晰候選，套回退化後都可能近似同一觀測。觀測一致是必要線索，仍不能唯一確定原來的細節；殘差也不直接等於缺陷機率或可信度。",
+        "image": "_course_content/generated-concepts/diffusion-restoration/wi026-restoration-d2-r02-desktop.png",
+        "reading_views": [
+          {
+            "title": "同一退化影像，可能對應不同細節",
+            "image": "_course_content/generated-concepts/diffusion-restoration/wi026-restoration-d2-r02-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/diffusion-restoration/wi026-restoration-d2-r02-mobile.png",
+            "alt": "同一退化影像，可能對應不同細節。原觀測太模糊時，有裂紋及無裂紋兩個清晰候選，套回退化後都可能近似同一觀測。觀測一致是必要線索，仍不能唯一確定原來的細節；殘差也不直接等於缺陷機率或可信度。 AI生成教學示意，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              724,
+              2172
+            ],
+            "mobile_display_mode": "full-mobile",
+            "mobile_intrinsic_width": 724,
+            "mobile_intrinsic_height": 2172,
+            "desktop_intrinsic_width": 1672,
+            "desktop_intrinsic_height": 941
+          }
+        ]
+      },
+      {
+        "title": "先看影像壞在哪裡，再選復原方法",
+        "caption": "先分任務：模糊要去模糊，低解析要超解析，雜訊要去噪；擴散是可支援這些任務的一種做法。延遲嚴格時可先測傳統或前饋基準；多步生成的細節能力是否值得成本，須由相同資料上的錯誤與時間判斷。",
+        "image": "_course_content/generated-concepts/diffusion-restoration/wi026-restoration-d3-r01-desktop.png",
+        "reading_views": [
+          {
+            "title": "先看影像壞在哪裡，再選復原方法",
+            "image": "_course_content/generated-concepts/diffusion-restoration/wi026-restoration-d3-r01-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/diffusion-restoration/wi026-restoration-d3-r01-mobile.png",
+            "alt": "先看影像壞在哪裡，再選復原方法。先分任務：模糊要去模糊，低解析要超解析，雜訊要去噪；擴散是可支援這些任務的一種做法。延遲嚴格時可先測傳統或前饋基準；多步生成的細節能力是否值得成本，須由相同資料上的錯誤與時間判斷。 AI生成教學示意，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              724,
+              2172
+            ],
+            "mobile_display_mode": "full-mobile",
+            "mobile_intrinsic_width": 724,
+            "mobile_intrinsic_height": 2172,
+            "desktop_intrinsic_width": 1672,
+            "desktop_intrinsic_height": 941
+          }
+        ]
+      }
+    ],
+    "mechanism": null,
+    "sources": null
+  },
+  {
+    "id": "deblur",
+    "visuals": [
+      {
+        "title": "Deblur：把拖開的邊緣，估回清楚位置",
+        "caption": "模糊把原本局部的訊號散到周圍：運動可能形成方向性拖影，失焦則有不同的擴散形狀。去模糊利用已知或估計的退化線索與影像先驗，反推清晰候選；可用傳統反卷積，也可用直接學模糊到清晰的網路，不一定顯式輸出模糊核。",
+        "image": "_course_content/generated-concepts/deblur/wi026-deblur-c1-r02-desktop.png",
+        "reading_views": [
+          {
+            "title": "Deblur：把拖開的邊緣，估回清楚位置",
+            "image": "_course_content/generated-concepts/deblur/wi026-deblur-c1-r02-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/deblur/wi026-deblur-c1-r02-mobile.png",
+            "alt": "Deblur：把拖開的邊緣，估回清楚位置。模糊把原本局部的訊號散到周圍：運動可能形成方向性拖影，失焦則有不同的擴散形狀。去模糊利用已知或估計的退化線索與影像先驗，反推清晰候選；可用傳統反卷積，也可用直接學模糊到清晰的網路，不一定顯式輸出模糊核。 AI生成教學示意，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              724,
+              2172
+            ],
+            "mobile_display_mode": "full-mobile",
+            "mobile_intrinsic_width": 724,
+            "mobile_intrinsic_height": 2172,
+            "desktop_intrinsic_width": 1672,
+            "desktop_intrinsic_height": 941
+          }
+        ]
+      },
+      {
+        "title": "去模糊後的雙邊，可能是振鈴假影",
+        "caption": "假設復原後在直邊旁多出平行明暗線，這可能是振鈴假影。獨立清晰重拍只有一條邊；因此不能把復原後所有銳利線都當成裂紋或實體結構。",
+        "image": "_course_content/generated-concepts/deblur/wi026-deblur-d2-r01-desktop.png",
+        "reading_views": [
+          {
+            "title": "去模糊後的雙邊，可能是振鈴假影",
+            "image": "_course_content/generated-concepts/deblur/wi026-deblur-d2-r01-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/deblur/wi026-deblur-d2-r01-mobile.png",
+            "alt": "去模糊後的雙邊，可能是振鈴假影。假設復原後在直邊旁多出平行明暗線，這可能是振鈴假影。獨立清晰重拍只有一條邊；因此不能把復原後所有銳利線都當成裂紋或實體結構。 AI生成教學示意，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              728,
+              2161
+            ],
+            "mobile_display_mode": "full-mobile",
+            "mobile_intrinsic_width": 728,
+            "mobile_intrinsic_height": 2161,
+            "desktop_intrinsic_width": 1672,
+            "desktop_intrinsic_height": 941
+          }
+        ]
+      },
+      {
+        "title": "先看影像壞在哪裡，再選復原方法",
+        "caption": "需求是去模糊，候選可含反卷積、前饋網路與擴散方法；超解析主要處理採樣不足，不能把兩者當同一件事。可改善取像時也把取像方案納入成本比較。",
+        "image": "_course_content/generated-concepts/diffusion-restoration/wi026-restoration-d3-r01-desktop.png",
+        "reading_views": [
+          {
+            "title": "先看影像壞在哪裡，再選復原方法",
+            "image": "_course_content/generated-concepts/diffusion-restoration/wi026-restoration-d3-r01-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/diffusion-restoration/wi026-restoration-d3-r01-mobile.png",
+            "alt": "先看影像壞在哪裡，再選復原方法。需求是去模糊，候選可含反卷積、前饋網路與擴散方法；超解析主要處理採樣不足，不能把兩者當同一件事。可改善取像時也把取像方案納入成本比較。 AI生成教學示意，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              724,
+              2172
+            ],
+            "mobile_display_mode": "full-mobile",
+            "mobile_intrinsic_width": 724,
+            "mobile_intrinsic_height": 2172,
+            "desktop_intrinsic_width": 1672,
+            "desktop_intrinsic_height": 941
+          }
+        ]
+      }
+    ],
+    "mechanism": null,
+    "sources": null
+  },
+  {
+    "id": "super-resolution",
+    "visuals": [
+      {
+        "title": "超解析度：增加像素，並估計缺少的細節",
+        "caption": "插值只依既有像素計算放大後的值；學習式超解析使用訓練所得的邊緣與紋理規律，估計較高解析度的內容。CNN、Transformer或擴散模型都可做這個任務。圖中插值和學習式路徑是可比較的方案，不是每個模型都必須先插值再生成。",
+        "image": "_course_content/generated-concepts/super-resolution/wi026-super-resolution-c1-r02-desktop.png",
+        "reading_views": [
+          {
+            "title": "超解析度：增加像素，並估計缺少的細節",
+            "image": "_course_content/generated-concepts/super-resolution/wi026-super-resolution-c1-r02-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/super-resolution/wi026-super-resolution-c1-r01-mobile.png",
+            "alt": "超解析度：增加像素，並估計缺少的細節。插值只依既有像素計算放大後的值；學習式超解析使用訓練所得的邊緣與紋理規律，估計較高解析度的內容。CNN、Transformer或擴散模型都可做這個任務。圖中插值和學習式路徑是可比較的方案，不是每個模型都必須先插值再生成。 AI生成教學示意，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              724,
+              2172
+            ],
+            "mobile_display_mode": "full-mobile",
+            "mobile_intrinsic_width": 724,
+            "mobile_intrinsic_height": 2172,
+            "desktop_intrinsic_width": 1672,
+            "desktop_intrinsic_height": 941
+          }
+        ]
+      },
+      {
+        "title": "低解析看不見的缺口，放大後也難確定",
+        "caption": "第二圖改用兩孔圓板的右下邊緣。同一粗像素區可能由有小缺口或無缺口的高解析邊緣降採樣而來。超解析選出其中一種，不表示缺口已被量到；需要真正有解析力的取像或獨立證據判斷。",
+        "image": "_course_content/generated-concepts/super-resolution/wi026-sr-d2-r02-desktop.png",
+        "reading_views": [
+          {
+            "title": "低解析看不見的缺口，放大後也難確定",
+            "image": "_course_content/generated-concepts/super-resolution/wi026-sr-d2-r02-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/super-resolution/wi026-sr-d2-r01-mobile.png",
+            "alt": "低解析看不見的缺口，放大後也難確定。第二圖改用兩孔圓板的右下邊緣。同一粗像素區可能由有小缺口或無缺口的高解析邊緣降採樣而來。超解析選出其中一種，不表示缺口已被量到；需要真正有解析力的取像或獨立證據判斷。 AI生成教學示意，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              724,
+              2172
+            ],
+            "mobile_display_mode": "full-mobile",
+            "mobile_intrinsic_width": 724,
+            "mobile_intrinsic_height": 2172,
+            "desktop_intrinsic_width": 1673,
+            "desktop_intrinsic_height": 940
+          }
+        ]
+      },
+      {
+        "title": "先看影像壞在哪裡，再選復原方法",
+        "caption": "先與插值基準比較，再按延遲與細節需求測前饋或擴散式超解析。去模糊解拖影，超解析解低採樣，混合退化要選能處理相應條件的流程；擴散是做法而非第三個互斥任務。",
+        "image": "_course_content/generated-concepts/diffusion-restoration/wi026-restoration-d3-r01-desktop.png",
+        "reading_views": [
+          {
+            "title": "先看影像壞在哪裡，再選復原方法",
+            "image": "_course_content/generated-concepts/diffusion-restoration/wi026-restoration-d3-r01-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/diffusion-restoration/wi026-restoration-d3-r01-mobile.png",
+            "alt": "先看影像壞在哪裡，再選復原方法。先與插值基準比較，再按延遲與細節需求測前饋或擴散式超解析。去模糊解拖影，超解析解低採樣，混合退化要選能處理相應條件的流程；擴散是做法而非第三個互斥任務。 AI生成教學示意，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              724,
+              2172
+            ],
+            "mobile_display_mode": "full-mobile",
+            "mobile_intrinsic_width": 724,
+            "mobile_intrinsic_height": 2172,
+            "desktop_intrinsic_width": 1672,
+            "desktop_intrinsic_height": 941
+          }
+        ]
+      }
+    ],
+    "mechanism": null,
+    "sources": null
+  }
+]

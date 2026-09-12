@@ -1,0 +1,92 @@
+[
+  {
+    "id": "patchcore-deep-features",
+    "image": "patchcore-deep-features-r02-mobile.png",
+    "sha256": "bb5b86e2cd8e4d8289702214e1a799bd1a70f8e12d6a6caae028648c5fbf24d2",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "A-01原位置、28×28實際通道與3×3數值平均分段；4.695003到4.70保留，殘字已清除",
+      "桌機與手機選定PNG已逐張原生實看",
+      "幾何工件简化、局部caption略近；未做真人理解試驗"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "幾何簡化但同件一致"
+      ],
+      "completeness": [
+        9,
+        "A-01原位置、28×28實際通道與3×3數值平均分段；4.695003到4.70保留，殘字已清除"
+      ],
+      "professionalism": [
+        9,
+        "原理、給定算例與推論證據身份分開"
+      ],
+      "density": [
+        8,
+        "三節點可讀，部分術語較密"
+      ],
+      "hierarchy": [
+        9,
+        "單路徑、單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch5-page-assessment.json; batch5-deep-page-review.json"
+  },
+  {
+    "id": "patchcore-deep-context",
+    "image": "patchcore-deep-context-r01-mobile.png",
+    "sha256": "d8b19537d8fef828e218249a90a29f71b06a037370a175e8e04e2e6eee5f961d",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "原待測A-01與同位置，兩層4.07/3.91與對齊串接；色階獨立明示",
+      "桌機與手機選定PNG已逐張原生實看",
+      "幾何工件简化、局部caption略近；未做真人理解試驗"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "幾何簡化但同件一致"
+      ],
+      "completeness": [
+        9,
+        "原待測A-01與同位置，兩層4.07/3.91與對齊串接；色階獨立明示"
+      ],
+      "professionalism": [
+        9,
+        "原理、給定算例與推論證據身份分開"
+      ],
+      "density": [
+        8,
+        "三節點可讀，部分術語較密"
+      ],
+      "hierarchy": [
+        9,
+        "單路徑、單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch5-page-assessment.json; batch5-deep-page-review.json"
+  }
+]

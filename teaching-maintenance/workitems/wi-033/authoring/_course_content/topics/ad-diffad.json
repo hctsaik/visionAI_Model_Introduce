@@ -1,0 +1,572 @@
+{
+  "model": "DiffusionAD",
+  "badge": "擴散恢復與異常定位",
+  "title": "DiffusionAD：兩尺度恢復，再學習定位",
+  "scenario": {
+    "title": "恢復刮傷，又不能改壞正常孔邊",
+    "body": "金屬板表面有刮傷 p，正常孔邊 q 也會反光；需要定位線索並控制誤報、漏檢與時間。"
+  },
+  "promise": {
+    "title": "可回看原圖的位置線索",
+    "body": "輸出候選異常位置和分數；不是正常真值、尺寸或自動放行結果。"
+  },
+  "mental_model": {
+    "title": "DiffusionAD：兩尺度恢復，再學習定位",
+    "body": "正常影像學去噪，合成異常及遮罩教定位。測試時同一原圖加入兩種尺度的噪聲，高噪聲分支的正常估計 N 引導低噪聲分支估計 R；原圖 A 與 R 一起輸入分割網路產生位置圖。每個尺度用單步估計，不代表整套只呼叫一次網路。",
+    "limit": "恢復可能保留缺陷或改動正常外觀，需以獨立資料驗證。"
+  },
+  "micro_example": {
+    "title": "品質與速度能否一起改善？",
+    "setup": "產線要縮短延遲，DiffusionAD 看起來恢復較快，但細刮傷偶爾被保留、大面積缺陷又需要較強恢復。",
+    "prediction": "直接減少運算並提高門檻，還是調整噪聲與合成練習後重驗？",
+    "reveal": "先固定解析度和硬體，分開保留細刮傷、大缺陷及允收正常品。兩尺度與合成設計影響恢復和定位；提高門檻可能壓低誤報卻漏掉細傷。把整套恢復、分割、前後處理時間一起量，在同漏檢要求下比較誤報和覆核量，不能由單步估計直接推論整套最快。"
+  },
+  "mechanism_steps": [
+    {
+      "title": "鎖定 one-step norm-guided diffusion recipe",
+      "body": "以乾淨 normal support 訓練並保存 denoiser、noise schedule、固定 timestep、norm guidance、precision、loss、seed、ROI/transform 和 checkpoint。",
+      "why": "one-step 的定義、重建品質與成本都由這組 state 決定；不能以多步 sampler 的畫面或延遲替代它。",
+      "anchor": "工程圖核對：normal support → fixed timestep/norm guidance → denoiser",
+      "diagram": {
+        "title": "鎖定 one-step 去噪 recipe",
+        "body": "normal support 建立固定 timestep 與 norm guidance。",
+        "why": "不能用多步 sampler 替代它的成本。",
+        "anchor": "normal support → one-step denoiser"
+      }
+    },
+    {
+      "title": "測試圖一次 forward 得到 restoration",
+      "body": "test ROI 依同一 recipe 經 one-step denoiser 產生 normal-like restoration，保存 input/restoration pair。",
+      "why": "restoration 只是供比較的對照；它可能保留 defect、消除正常 microstructure 或產生自己特有的 artefact。",
+      "anchor": "工程圖核對：test image → one-step restoration",
+      "diagram": {
+        "title": "一次 forward 得 restoration",
+        "body": "test ROI 經 one-step denoiser 形成 normal-like 對照。",
+        "why": "restoration 可能保留缺陷或製造 artefact。",
+        "anchor": "test image → restoration"
+      }
+    },
+    {
+      "title": "segmentation head 同看原圖和對照",
+      "body": "將 test image 與 restoration 的聯合表示送進 discriminative segmentation path，輸出 pixel anomaly map。",
+      "why": "DiffusionAD 的 local evidence 不等於直接相減；segmentation supervision、joint input 與其 synthetic/real policy 決定模型學到什麼。",
+      "anchor": "工程圖核對：input + restoration → segmentation map",
+      "diagram": {
+        "title": "joint input 產生 segmentation",
+        "body": "原圖與 restoration 一起輸出 pixel anomaly map。",
+        "why": "local evidence 不只是 raw residual。",
+        "anchor": "input + restoration → map"
+      }
+    },
+    {
+      "title": "map 經固定後處理才成 candidate",
+      "body": "map 依鎖定 smoothing、resize、mask、aggregation、calibration、threshold 與 decision unit 成為 review candidate。",
+      "why": "後處理可以隱藏小 anomaly 或改低 FPR；one-step forward 很快也不代表 acquisition 到 hand-off 的完整 P95 可接受。",
+      "anchor": "工程圖核對：map → aggregation → calibrated gate",
+      "diagram": {
+        "title": "固定 map rule 交 review",
+        "body": "segmentation map 經校正與聚合形成候選。",
+        "why": "後處理與完整 P95 都會改部署行為。",
+        "anchor": "map → calibration → gate"
+      }
+    }
+  ],
+  "visual_intro": "先把 restoration 當成受檢查的對照，再核對 one-step recipe、joint segmentation、map rule 與完整 P95。",
+  "beginner_path": {
+    "title": "恢復、錯誤與分數來源：三圖讀懂",
+    "intro": "同一金屬板 A 的刮傷 p 與正常孔邊 q；插圖是機制示意，非模型實測。",
+    "visuals": [
+      {
+        "id": "wi021-ad-diffad-1",
+        "title": "DiffusionAD：兩尺度恢復，再學習定位",
+        "prompt": "從正常訓練走到待測 A 的恢復與定位。",
+        "caption": "正常影像學去噪，合成異常及遮罩教定位。測試時同一原圖加入兩種尺度的噪聲，高噪聲分支的正常估計 N 引導低噪聲分支估計 R；原圖 A 與 R 一起輸入分割網路產生位置圖。每個尺度用單步估計，不代表整套只呼叫一次網路。",
+        "image": "_course_content/generated-concepts/ad-diffad/wi021-diffusionad-c1-r04-desktop.png",
+        "alt": "DiffusionAD：兩尺度恢復，再學習定位。正常影像學去噪，合成異常及遮罩教定位。測試時同一原圖加入兩種尺度的噪聲，高噪聲分支的正常估計 N 引導低噪聲分支估計 R；原圖 A 與 R 一起輸入分割網路產生位置圖。每個尺度用單步估計，不代表整套只呼叫一次網路。 本圖為 AI 生成教學示意，非模型實測。",
+        "callouts": [
+          {
+            "title": "訓練答案不會隨測試輸入",
+            "body": "合成遮罩只用來監督定位；正常去噪重建與合成定位是不同訓練職責。"
+          },
+          {
+            "title": "N 從哪來",
+            "body": "N 由同一待測影像的高噪聲分支估計，不是外部取得的正確正常照片；它也可能不準。噪聲縮圖為生成紋理示意，並非實際高斯樣本。"
+          },
+          {
+            "title": "最後不是單純相減",
+            "body": "分割網路同時看原圖和恢復估計，學習輸出異常位置；恢復漂亮不等於定位可靠。"
+          }
+        ],
+        "reading_views": [
+          {
+            "title": "DiffusionAD：兩尺度恢復，再學習定位",
+            "image": "_course_content/generated-concepts/ad-diffad/wi021-diffusionad-c1-r04-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/ad-diffad/wi021-diffusionad-c1-r03-mobile.png",
+            "alt": "DiffusionAD：兩尺度恢復，再學習定位。正常影像學去噪，合成異常及遮罩教定位。測試時同一原圖加入兩種尺度的噪聲，高噪聲分支的正常估計 N 引導低噪聲分支估計 R；原圖 A 與 R 一起輸入分割網路產生位置圖。每個尺度用單步估計，不代表整套只呼叫一次網路。 本圖為 AI 生成教學示意，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              724,
+              2171
+            ],
+            "mobile_display_mode": "full-mobile",
+            "mobile_intrinsic_width": 724,
+            "mobile_intrinsic_height": 2171,
+            "desktop_intrinsic_width": 1672,
+            "desktop_intrinsic_height": 941
+          }
+        ],
+        "core_ideas": true
+      },
+      {
+        "id": "wi021-ad-diffad-2",
+        "title": "恢復得像，不代表檢測得好",
+        "prompt": "追刮傷 p 與正常孔邊 q，分開看漏檢和誤報。",
+        "caption": "恢復保留刮傷，p 的差異可能太小而漏檢；恢復改掉正常孔邊，q 又可能誤報。這是兩個反例，並非噪聲越大必定越好或越差。相同原圖與恢復圖，學習式定位和差異整合仍會產生不同輸出。",
+        "image": "_course_content/generated-concepts/ad-ddad/wi021-diffusion-methods-d2-r02-desktop.png",
+        "alt": "恢復得像，不代表檢測得好。恢復保留刮傷，p 的差異可能太小而漏檢；恢復改掉正常孔邊，q 又可能誤報。這是兩個反例，並非噪聲越大必定越好或越差。相同原圖與恢復圖，學習式定位和差異整合仍會產生不同輸出。 本圖為 AI 生成教學示意，非模型實測。",
+        "callouts": [
+          {
+            "title": "先查原圖",
+            "body": "先確認缺陷在原圖可見、孔邊變化是否允收；不要用生成估計取代實體正常真值。"
+          },
+          {
+            "title": "再查兩種錯誤",
+            "body": "保留獨立正常與真缺陷，按尺寸、材質及光照記錄漏檢和誤報；不要只看恢復圖是否漂亮。"
+          },
+          {
+            "title": "調參的代價",
+            "body": "噪聲、引導、步數或門檻改動後，重驗兩種錯誤及端到端時間。圖中的 p?、q? 是待查位置，不是實測熱圖。"
+          }
+        ],
+        "reading_views": [
+          {
+            "title": "恢復得像，不代表檢測得好",
+            "image": "_course_content/generated-concepts/ad-ddad/wi021-diffusion-methods-d2-r02-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/ad-ddad/wi021-diffusion-methods-d2-r03-mobile.png",
+            "alt": "恢復得像，不代表檢測得好。恢復保留刮傷，p 的差異可能太小而漏檢；恢復改掉正常孔邊，q 又可能誤報。這是兩個反例，並非噪聲越大必定越好或越差。相同原圖與恢復圖，學習式定位和差異整合仍會產生不同輸出。 本圖為 AI 生成教學示意，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              725,
+              2170
+            ],
+            "mobile_display_mode": "full-mobile",
+            "mobile_intrinsic_width": 725,
+            "mobile_intrinsic_height": 2170,
+            "desktop_intrinsic_width": 1672,
+            "desktop_intrinsic_height": 941
+          }
+        ],
+        "core_ideas": false
+      },
+      {
+        "id": "wi021-ad-diffad-3",
+        "title": "恢復以後，誰來判斷異常？",
+        "prompt": "固定原圖 A 與恢復估計 R，比較分數來源與準備成本。",
+        "caption": "DiffusionAD／DRAEM 把原圖與恢復圖一起交給學習式定位網路；DDAD 整合像素差異與適配特徵差異。前兩者需要合成異常與定位訓練，DDAD 則需正常去噪與特徵適配。在同硬體、解析度與漏檢風險要求下，比誤報、延遲和人工覆核量；沒有共同實測就不排名。",
+        "image": "_course_content/generated-concepts/ad-ddad/wi021-diffusion-methods-d3-r02-desktop.png",
+        "alt": "恢復以後，誰來判斷異常？。DiffusionAD／DRAEM 把原圖與恢復圖一起交給學習式定位網路；DDAD 整合像素差異與適配特徵差異。前兩者需要合成異常與定位訓練，DDAD 則需正常去噪與特徵適配。在同硬體、解析度與漏檢風險要求下，比誤報、延遲和人工覆核量；沒有共同實測就不排名。 本圖為 AI 生成教學示意，非模型實測。",
+        "callouts": [
+          {
+            "title": "共同輸入的用途",
+            "body": "本圖刻意固定 A／R，只比較產生分數的部分；不表示三個方法實際會生成相同 R。R 不是正常真值。"
+          },
+          {
+            "title": "如何開始選型",
+            "body": "能設計代表性合成異常，可評估學習式定位；希望使用差異整合，可評估 DDAD 的適配和多步成本。最終以未見真缺陷驗證。"
+          },
+          {
+            "title": "換產品之後",
+            "body": "重新檢查正常涵蓋、合成練習或特徵適配與門檻。異常位置圖是覆核線索，精密輪廓及尺寸需另驗。"
+          }
+        ],
+        "reading_views": [
+          {
+            "title": "恢復以後，誰來判斷異常？",
+            "image": "_course_content/generated-concepts/ad-ddad/wi021-diffusion-methods-d3-r02-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/ad-ddad/wi021-diffusion-methods-d3-r04-mobile.png",
+            "alt": "恢復以後，誰來判斷異常？。DiffusionAD／DRAEM 把原圖與恢復圖一起交給學習式定位網路；DDAD 整合像素差異與適配特徵差異。前兩者需要合成異常與定位訓練，DDAD 則需正常去噪與特徵適配。在同硬體、解析度與漏檢風險要求下，比誤報、延遲和人工覆核量；沒有共同實測就不排名。 本圖為 AI 生成教學示意，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              724,
+              2171
+            ],
+            "mobile_display_mode": "full-mobile",
+            "mobile_intrinsic_width": 724,
+            "mobile_intrinsic_height": 2171,
+            "desktop_intrinsic_width": 1672,
+            "desktop_intrinsic_height": 941
+          }
+        ],
+        "core_ideas": false
+      }
+    ]
+  },
+  "concept_visuals": [],
+  "boundary_cases": [
+    {
+      "condition": "noise/timestep/guidance 導致 defect preservation、erasure 或正常 artefact",
+      "effect": "restoration 或 map 可能對正常亮、對真異常淡；外觀好看無法判斷哪種失敗。",
+      "action": "HOLD；以 input/restoration/map 三聯證據、真實 failure images 和低 FPR 分開檢驗。"
+    },
+    {
+      "condition": "segmentation head 過擬合 synthetic anomaly 或 restoration artefact",
+      "effect": "模型辨認的是訓練捷徑而非產線異常，real challenge 可能漏檢。",
+      "action": "保存 supervision policy、synthetic/real protocol 和 error taxonomy；用 real holdout 驗證。"
+    },
+    {
+      "condition": "ROI/照明/焦距/壓縮漂移、tiny defect 或 global logic",
+      "effect": "外部條件主導 restoration 差異，小缺陷低於有效解析度，邏輯問題仍未被表達。",
+      "action": "先查 acquisition/effective pixels；對 logical anomaly 改用結構或規則型 evidence path。"
+    }
+  ],
+  "comparison": [
+    {
+      "model": "DiffusionAD",
+      "normality": "norm-guided one-step restoration 加 segmentation state",
+      "candidate": "joint input/restoration segmentation map 高"
+    },
+    {
+      "model": "DDAD",
+      "normality": "conditioned diffusion reconstruction 加 feature-comparison state",
+      "candidate": "fused pixel/feature residual 高"
+    },
+    {
+      "model": "DRAEM",
+      "normality": "synthetic-anomaly trained reconstruction 加 joint discriminator",
+      "candidate": "original/reconstruction discriminative map 高"
+    }
+  ],
+  "selection": "DiffusionAD／DRAEM 把原圖與恢復圖一起交給學習式定位網路；DDAD 整合像素差異與適配特徵差異。前兩者需要合成異常與定位訓練，DDAD 則需正常去噪與特徵適配。在同硬體、解析度與漏檢風險要求下，比誤報、延遲和人工覆核量；沒有共同實測就不排名。",
+  "poc": {
+    "title": "POC 第一件事：用真實資料拆開『修復偏差』與『缺陷訊號』",
+    "steps": [
+      "固定 release、denoiser/segmentation checkpoint、schedule/timestep/guidance、normal IDs、ROI/transform、synthetic/real supervision policy、loss、seed。",
+      "鎖 restoration definition、joint segmentation input、map resize/smoothing/mask、aggregation、calibration、threshold 和三聯 evidence trace。",
+      "在 real challenge/future/drift split 比較 defect erasure、restoration false reject、low-FPR escape、review load、one-step完整P95/P99和失敗樣本。"
+    ],
+    "hold": "one-step state 未鎖、synthetic-to-real 未驗、normal support 受污染、取像漂移、tiny defect/global logic 或端到端P95不符時，先 HOLD。",
+    "acceptance": {
+      "baseline": "固定 clean normal support、one-step schedule／timestep／guidance、denoiser、segmentation head、supervision policy 與 map rule。",
+      "measure": "量 defect erasure、restoration-caused false reject、real low-FPR escape、review load、synthetic-to-real gap 與完整 P95/P99。",
+      "negative_control": "以已知真實 defect 與合法 normal microstructure 組成 failure set，確認 restoration preserve／erasure 與 segmentation shortcut 都會被記錄並觸發 HOLD。",
+      "owner": "AOI 品質 owner、diffusion AD owner、量產 runtime owner"
+    }
+  },
+  "teach_back": {
+    "question": "為什麼 R 看起來正常仍不足以證明檢測有效？",
+    "answer": "R 只是估計；缺陷可能被保留、正常可能被改掉，最後定位方式也不同。需回看原圖並統計漏檢、誤報和成本。"
+  },
+  "slide_reading": [
+    {
+      "title": "DiffusionAD：去噪與定位要分別學",
+      "question": "正常資料教恢復，合成異常和遮罩教定位。",
+      "look": "先看正常影像加噪聲練恢復，再核對合成異常有已知位置，最後看兩個網路各有訓練責任。",
+      "relation": "正常圖用於學習噪聲估計及恢復；合成異常與已知遮罩提供分割監督。兩個網路不能只用一張異常熱圖概括。合成資料仍需覆盖任務變化，最後以未見正常與真缺陷驗證。",
+      "takeaway": "正常資料教恢復，合成異常和遮罩教定位。",
+      "terms": [
+        "A/R：原始影像與恢復影像，兩者都送進分割。",
+        "N：高噪聲分支的正常估計，用來引導恢復。"
+      ]
+    },
+    {
+      "title": "DiffusionAD：恢復與定位分兩個工作",
+      "question": "原圖與恢復圖一起進分割，最後才交出異常位置。",
+      "look": "先看同一原圖走兩個噪聲尺度，再核對高噪聲估計引導低噪聲恢復，最後看原圖＋恢復圖 → 分割位置。",
+      "relation": "同一原圖A加入高低噪聲；高噪聲正常估計N引導低噪聲恢復R。各尺度用單步估計，不是整套只呼叫一次網路；A和R一起進學習的分割網路，不是直接拿R當最終檢測答案。",
+      "takeaway": "原圖與恢復圖一起進分割，最後才交出異常位置。",
+      "terms": [
+        "A/R：原始影像與恢復影像，兩者都送進分割。",
+        "N：高噪聲分支的正常估計，用來引導恢復。"
+      ]
+    },
+    {
+      "title": "DiffusionAD：要交付最後的位置結果",
+      "question": "保存 A／R／位置圖，連同完整耗時一起驗收。",
+      "look": "先看把恢復前後成對保存，再核對位置圖映回原圖覆核，最後看計入兩尺度與分割時間。",
+      "relation": "保存原圖A、恢復R與分割位置圖能追查恢復或定位失敗。位置圖須映回原始影像座標，配合域內門檻及覆核；延遲包含兩尺度估計、分割和前後處理，不能由單步估計直接宣稱整套最快。",
+      "takeaway": "保存 A／R／位置圖，連同完整耗時一起驗收。",
+      "terms": [
+        "A/R：原始影像與恢復影像，兩者都送進分割。",
+        "N：高噪聲分支的正常估計，用來引導恢復。"
+      ]
+    },
+    {
+      "title": "DiffusionAD：恢復變乾淨不等於漏檢",
+      "question": "檢查最後位置圖，分清恢復成功與定位失敗。",
+      "look": "先看共同原圖：支架有刮痕，再核對恢復乾淨，分割仍可定位，最後看恢復保留刮痕，另查漏檢。",
+      "relation": "固定同一刮痕影像，比較恢復是否去除異常及最後分割是否找到位置。去掉異常本來就是恢復子任務的方向，不直接等於漏檢；缺陷留在R也不必然漏，但會改變可用線索。兩條示意結果需以真實留出集驗證。",
+      "takeaway": "檢查最後位置圖，分清恢復成功與定位失敗。",
+      "terms": [
+        "A/R：原始影像與恢復影像，兩者都送進分割。",
+        "N：高噪聲分支的正常估計，用來引導恢復。"
+      ]
+    }
+  ],
+  "comparison_headers": {
+    "title": "先比 joint segmentation，不比 restoration 外觀",
+    "basis": "one-step restoration 加上什麼辨別狀態？",
+    "output": "哪張 map 才是 candidate，而非 raw residual？"
+  },
+  "transfer_check": {
+    "title": "換材質怎麼辦",
+    "scenario": "從霧面金屬換到鏡面金屬。",
+    "question": "原有正常知識和門檻可直接沿用嗎？",
+    "answer": "先核對光照及允收反光，補正常涵蓋並評估重訓／適配；再用未見正常和真缺陷重驗，不能把反光熱點直接當缺陷。"
+  },
+  "review_trace": {
+    "authority": "roadmap-model-selection/anomaly-detection/ad-diffad/model.md",
+    "scope": "WI-033：工程層四圖與手機比較修正；首讀有效內容保留。原生圖已審，整頁與使用者審閱另記。",
+    "claims": [
+      {
+        "id": "visual-1",
+        "field": "beginner_path.visuals[one-step-workpiece]",
+        "source": "模型定位 / architecture_path"
+      },
+      {
+        "id": "visual-2",
+        "field": "beginner_path.visuals[one-step-recipe]",
+        "source": "architecture_path"
+      },
+      {
+        "id": "visual-3",
+        "field": "beginner_path.visuals[restoration-reference]",
+        "source": "representation_or_score"
+      },
+      {
+        "id": "visual-4",
+        "field": "beginner_path.visuals[joint-segmentation]",
+        "source": "failure_boundary"
+      },
+      {
+        "id": "visual-5",
+        "field": "beginner_path.visuals[map-hold]",
+        "source": "selection_gate / evidence_bundle"
+      },
+      {
+        "id": "promise",
+        "field": "promise",
+        "source": "模型定位 / representation_or_score"
+      },
+      {
+        "id": "mechanism",
+        "field": "mechanism_steps",
+        "source": "architecture_path / representation_or_score"
+      },
+      {
+        "id": "boundaries",
+        "field": "boundary_cases",
+        "source": "failure_boundary / selection_gate"
+      },
+      {
+        "id": "comparison",
+        "field": "comparison + selection",
+        "source": "selection_gate"
+      },
+      {
+        "id": "poc",
+        "field": "poc + acceptance",
+        "source": "cost_and_operating_point / evidence_bundle"
+      },
+      {
+        "id": "transfer",
+        "field": "transfer_check",
+        "source": "failure_boundary / selection_gate"
+      },
+      {
+        "id": "f01-core",
+        "field": "beginner_path.visuals[0] + scenario + mental_model",
+        "source": "https://arxiv.org/abs/2303.08730"
+      },
+      {
+        "id": "f01-transfer",
+        "field": "micro_example + transfer_check",
+        "source": "由原論文機制推論移除後果；https://arxiv.org/abs/2303.08730"
+      },
+      {
+        "id": "wi021-first-read",
+        "field": "beginner_path + micro_example + selection",
+        "source": "https://arxiv.org/html/2303.08730v4"
+      }
+    ]
+  },
+  "teaching_preflight": {
+    "brief": "teaching-images/vision-ai-model-selection/workitems/wi-021/diffusionad-c1-r01.md",
+    "story": "C",
+    "major_visual_nodes": 4,
+    "visual_status": "self-reviewed",
+    "user_review": "pending"
+  },
+  "engineering_slides": [
+    {
+      "title": "DiffusionAD：去噪與定位要分別學",
+      "question": "正常資料教恢復，合成異常和遮罩教定位。",
+      "plain": {
+        "look": "先看正常影像加噪聲練恢復，再核對合成異常有已知位置，最後看兩個網路各有訓練責任。",
+        "relation": "正常圖用於學習噪聲估計及恢復；合成異常與已知遮罩提供分割監督。兩個網路不能只用一張異常熱圖概括。合成資料仍需覆盖任務變化，最後以未見正常與真缺陷驗證。",
+        "takeaway": "正常資料教恢復，合成異常和遮罩教定位。"
+      },
+      "terms": [
+        "A/R：原始影像與恢復影像，兩者都送進分割。",
+        "N：高噪聲分支的正常估計，用來引導恢復。"
+      ],
+      "guide": [
+        "正常圖用於學習噪聲估計及恢復；合成異常與已知遮罩提供分割監督。兩個網路不能只用一張異常熱圖概括。合成資料仍需覆盖任務變化，最後以未見正常與真缺陷驗證。",
+        "先看正常影像加噪聲練恢復，再核對合成異常有已知位置，最後看兩個網路各有訓練責任。"
+      ],
+      "stages": [
+        {
+          "title": "正常影像加噪聲練恢復",
+          "body": "正常影像加噪聲練恢復；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "合成異常有已知位置",
+          "body": "合成異常有已知位置；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "兩個網路各有訓練責任",
+          "body": "兩個網路各有訓練責任；請對照圖內輸入、變化與結果。"
+        }
+      ],
+      "misconception": "恢復可能保留缺陷或改動正常外觀，需以獨立資料驗證。",
+      "alt": "DiffusionAD：去噪與定位要分別學。正常資料教恢復，合成異常和遮罩教定位。 教學示意，非模型實測。",
+      "mobile_image": "roadmap-model-selection/anomaly-detection/ad-diffad/images/final/WI033-DIFFAD-01-r02-mobile.png",
+      "mobile_width": 768,
+      "mobile_height": 2400,
+      "engineering": {
+        "takeaway": "正常資料教恢復，合成異常和遮罩教定位。",
+        "nextAction": "固定 release、denoiser/segmentation checkpoint、schedule/timestep/guidance、normal IDs、ROI/transform、synthetic/real supervision policy、loss、seed。",
+        "redLine": "one-step state 未鎖、synthetic-to-real 未驗、normal support 受污染、取像漂移、tiny defect/global logic 或端到端P95不符時，先 HOLD。"
+      },
+      "source": "https://github.com/HuiZhang0812/DiffusionAD"
+    },
+    {
+      "title": "DiffusionAD：恢復與定位分兩個工作",
+      "question": "原圖與恢復圖一起進分割，最後才交出異常位置。",
+      "plain": {
+        "look": "先看同一原圖走兩個噪聲尺度，再核對高噪聲估計引導低噪聲恢復，最後看原圖＋恢復圖 → 分割位置。",
+        "relation": "同一原圖A加入高低噪聲；高噪聲正常估計N引導低噪聲恢復R。各尺度用單步估計，不是整套只呼叫一次網路；A和R一起進學習的分割網路，不是直接拿R當最終檢測答案。",
+        "takeaway": "原圖與恢復圖一起進分割，最後才交出異常位置。"
+      },
+      "terms": [
+        "A/R：原始影像與恢復影像，兩者都送進分割。",
+        "N：高噪聲分支的正常估計，用來引導恢復。"
+      ],
+      "guide": [
+        "同一原圖A加入高低噪聲；高噪聲正常估計N引導低噪聲恢復R。各尺度用單步估計，不是整套只呼叫一次網路；A和R一起進學習的分割網路，不是直接拿R當最終檢測答案。",
+        "先看同一原圖走兩個噪聲尺度，再核對高噪聲估計引導低噪聲恢復，最後看原圖＋恢復圖 → 分割位置。"
+      ],
+      "stages": [
+        {
+          "title": "同一原圖走兩個噪聲尺度",
+          "body": "同一原圖走兩個噪聲尺度；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "高噪聲估計引導低噪聲恢復",
+          "body": "高噪聲估計引導低噪聲恢復；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "原圖＋恢復圖 → 分割位置",
+          "body": "原圖＋恢復圖 → 分割位置；請對照圖內輸入、變化與結果。"
+        }
+      ],
+      "misconception": "恢復可能保留缺陷或改動正常外觀，需以獨立資料驗證。",
+      "alt": "DiffusionAD：恢復與定位分兩個工作。原圖與恢復圖一起進分割，最後才交出異常位置。 教學示意，非模型實測。",
+      "mobile_image": "roadmap-model-selection/anomaly-detection/ad-diffad/images/final/WI033-DIFFAD-02-r02-mobile.png",
+      "mobile_width": 768,
+      "mobile_height": 2400,
+      "engineering": {
+        "takeaway": "原圖與恢復圖一起進分割，最後才交出異常位置。",
+        "nextAction": "固定 release、denoiser/segmentation checkpoint、schedule/timestep/guidance、normal IDs、ROI/transform、synthetic/real supervision policy、loss、seed。",
+        "redLine": "one-step state 未鎖、synthetic-to-real 未驗、normal support 受污染、取像漂移、tiny defect/global logic 或端到端P95不符時，先 HOLD。"
+      },
+      "source": "https://github.com/HuiZhang0812/DiffusionAD"
+    },
+    {
+      "title": "DiffusionAD：要交付最後的位置結果",
+      "question": "保存 A／R／位置圖，連同完整耗時一起驗收。",
+      "plain": {
+        "look": "先看把恢復前後成對保存，再核對位置圖映回原圖覆核，最後看計入兩尺度與分割時間。",
+        "relation": "保存原圖A、恢復R與分割位置圖能追查恢復或定位失敗。位置圖須映回原始影像座標，配合域內門檻及覆核；延遲包含兩尺度估計、分割和前後處理，不能由單步估計直接宣稱整套最快。",
+        "takeaway": "保存 A／R／位置圖，連同完整耗時一起驗收。"
+      },
+      "terms": [
+        "A/R：原始影像與恢復影像，兩者都送進分割。",
+        "N：高噪聲分支的正常估計，用來引導恢復。"
+      ],
+      "guide": [
+        "保存原圖A、恢復R與分割位置圖能追查恢復或定位失敗。位置圖須映回原始影像座標，配合域內門檻及覆核；延遲包含兩尺度估計、分割和前後處理，不能由單步估計直接宣稱整套最快。",
+        "先看把恢復前後成對保存，再核對位置圖映回原圖覆核，最後看計入兩尺度與分割時間。"
+      ],
+      "stages": [
+        {
+          "title": "把恢復前後成對保存",
+          "body": "把恢復前後成對保存；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "位置圖映回原圖覆核",
+          "body": "位置圖映回原圖覆核；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "計入兩尺度與分割時間",
+          "body": "計入兩尺度與分割時間；請對照圖內輸入、變化與結果。"
+        }
+      ],
+      "misconception": "恢復可能保留缺陷或改動正常外觀，需以獨立資料驗證。",
+      "alt": "DiffusionAD：要交付最後的位置結果。保存 A／R／位置圖，連同完整耗時一起驗收。 教學示意，非模型實測。",
+      "mobile_image": "roadmap-model-selection/anomaly-detection/ad-diffad/images/final/WI033-DIFFAD-03-r01-mobile.png",
+      "mobile_width": 768,
+      "mobile_height": 2400,
+      "engineering": {
+        "takeaway": "保存 A／R／位置圖，連同完整耗時一起驗收。",
+        "nextAction": "固定 release、denoiser/segmentation checkpoint、schedule/timestep/guidance、normal IDs、ROI/transform、synthetic/real supervision policy、loss、seed。",
+        "redLine": "one-step state 未鎖、synthetic-to-real 未驗、normal support 受污染、取像漂移、tiny defect/global logic 或端到端P95不符時，先 HOLD。"
+      },
+      "source": "https://github.com/HuiZhang0812/DiffusionAD"
+    },
+    {
+      "title": "DiffusionAD：恢復變乾淨不等於漏檢",
+      "question": "檢查最後位置圖，分清恢復成功與定位失敗。",
+      "plain": {
+        "look": "先看共同原圖：支架有刮痕，再核對恢復乾淨，分割仍可定位，最後看恢復保留刮痕，另查漏檢。",
+        "relation": "固定同一刮痕影像，比較恢復是否去除異常及最後分割是否找到位置。去掉異常本來就是恢復子任務的方向，不直接等於漏檢；缺陷留在R也不必然漏，但會改變可用線索。兩條示意結果需以真實留出集驗證。",
+        "takeaway": "檢查最後位置圖，分清恢復成功與定位失敗。"
+      },
+      "terms": [
+        "A/R：原始影像與恢復影像，兩者都送進分割。",
+        "N：高噪聲分支的正常估計，用來引導恢復。"
+      ],
+      "guide": [
+        "固定同一刮痕影像，比較恢復是否去除異常及最後分割是否找到位置。去掉異常本來就是恢復子任務的方向，不直接等於漏檢；缺陷留在R也不必然漏，但會改變可用線索。兩條示意結果需以真實留出集驗證。",
+        "先看共同原圖：支架有刮痕，再核對恢復乾淨，分割仍可定位，最後看恢復保留刮痕，另查漏檢。"
+      ],
+      "stages": [
+        {
+          "title": "共同原圖：支架有刮痕",
+          "body": "共同原圖：支架有刮痕；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "恢復乾淨，分割仍可定位",
+          "body": "恢復乾淨，分割仍可定位；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "恢復保留刮痕，另查漏檢",
+          "body": "恢復保留刮痕，另查漏檢；請對照圖內輸入、變化與結果。"
+        }
+      ],
+      "misconception": "恢復可能保留缺陷或改動正常外觀，需以獨立資料驗證。",
+      "alt": "DiffusionAD：恢復變乾淨不等於漏檢。檢查最後位置圖，分清恢復成功與定位失敗。 教學示意，非模型實測。",
+      "mobile_image": "roadmap-model-selection/anomaly-detection/ad-diffad/images/final/WI033-DIFFAD-04-r02-mobile.png",
+      "mobile_width": 768,
+      "mobile_height": 2400,
+      "engineering": {
+        "takeaway": "檢查最後位置圖，分清恢復成功與定位失敗。",
+        "nextAction": "固定 release、denoiser/segmentation checkpoint、schedule/timestep/guidance、normal IDs、ROI/transform、synthetic/real supervision policy、loss、seed。",
+        "redLine": "one-step state 未鎖、synthetic-to-real 未驗、normal support 受污染、取像漂移、tiny defect/global logic 或端到端P95不符時，先 HOLD。"
+      },
+      "source": "https://github.com/HuiZhang0812/DiffusionAD"
+    }
+  ]
+}

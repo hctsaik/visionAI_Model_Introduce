@@ -1,0 +1,14 @@
+{
+  "status": "passed",
+  "actual_viewed": [
+    "pages/dinov2/docs-1440-main-2.png",
+    "pages/dinov2/docs-360-main-2.png",
+    "pages/gemini-vision/docs-1440-main-2.png",
+    "pages/gemini-vision/docs-360-main-2.png"
+  ],
+  "notes": [
+    "DINOv2同支架缺口、.014算例及同位置放大對應",
+    "Gemini同圓接頭，格式通過/內容錯誤有分開驗"
+  ],
+  "user_approval": "pending"
+}

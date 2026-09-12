@@ -1,0 +1,338 @@
+[
+  {
+    "id": "resnet",
+    "total": 92,
+    "scores": [
+      19,
+      19,
+      19,
+      18,
+      8,
+      9
+    ],
+    "evidence": [
+      "同件完整/刮傷對應類別；保留已審首讀",
+      "殘差x+F(x)逐格可追，形狀改變須對齊；深讀原實測值保留",
+      "前處理、類別映射與錯分回原圖核對",
+      "同件換背景測捷徑，位置輸出另需標註",
+      "四工程桌機手機與指定深讀實看；長捲動、歷史次標小字扣分",
+      "自測允許先補資料而不只加深模型"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "精確三段圖，與保留首讀質感略異"
+      ],
+      "completeness": [
+        9,
+        "四工程及指定深讀完成"
+      ],
+      "professionalism": [
+        9,
+        "殘差x+F(x)逐格可追，形狀改變須對齊；深讀原實測值保留"
+      ],
+      "density": [
+        8,
+        "四工程桌機手機與指定深讀實看；長捲動、歷史次標小字扣分"
+      ],
+      "hierarchy": [
+        9,
+        "首讀/工程/深讀責任清楚"
+      ]
+    },
+    "veto": [],
+    "status": "local_complete",
+    "page_evidence": "pages/resnet; batch3-deep-page-review.json",
+    "preserved_main": "unchanged WI-031 audited sources; automated actual page load/zoom/text checks passed",
+    "user_approval": "pending",
+    "model_inference": false
+  },
+  {
+    "id": "convnext",
+    "total": 92,
+    "scores": [
+      19,
+      19,
+      19,
+      18,
+      8,
+      9
+    ],
+    "evidence": [
+      "共同支架與整件分類，不把分數當位置",
+      "逐通道鄰域、同位通道混合與殘差各有具體圖證",
+      "保存裁切、類別順序及部署錯分成本",
+      "同資料對比ResNet/ConvNeXt，不以年代定勝負",
+      "四工程桌機手機逐張實看；簡化幾何與空白扣分",
+      "自測保留穩定ResNet或有條件分流都可接受"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "精確三段圖，與保留首讀質感略異"
+      ],
+      "completeness": [
+        9,
+        "四工程及指定深讀完成"
+      ],
+      "professionalism": [
+        9,
+        "逐通道鄰域、同位通道混合與殘差各有具體圖證"
+      ],
+      "density": [
+        8,
+        "四工程桌機手機逐張實看；簡化幾何與空白扣分"
+      ],
+      "hierarchy": [
+        9,
+        "首讀/工程/深讀責任清楚"
+      ]
+    },
+    "veto": [],
+    "status": "local_complete",
+    "page_evidence": "pages/convnext; batch3-deep-page-review.json",
+    "preserved_main": "unchanged WI-031 audited sources; automated actual page load/zoom/text checks passed",
+    "user_approval": "pending",
+    "model_inference": false
+  },
+  {
+    "id": "vit-classifier",
+    "total": 92,
+    "scores": [
+      19,
+      19,
+      19,
+      18,
+      8,
+      9
+    ],
+    "evidence": [
+      "同件切片加位置，分類頭交類別",
+      "Q權重乘V可追算，非缺陷機率；刮傷與孔邊身份一致",
+      "解析度/token配對成本與留出集錯分類別一起驗",
+      "共同分類任務比較ConvNeXt空間通道與跨片交流",
+      "四工程桌機手機逐張實看；分片示意和較長術語扣分",
+      "自測分類覆核與像素分割依交付需求選"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "精確三段圖，與保留首讀質感略異"
+      ],
+      "completeness": [
+        9,
+        "四工程及指定深讀完成"
+      ],
+      "professionalism": [
+        9,
+        "Q權重乘V可追算，非缺陷機率；刮傷與孔邊身份一致"
+      ],
+      "density": [
+        8,
+        "四工程桌機手機逐張實看；分片示意和較長術語扣分"
+      ],
+      "hierarchy": [
+        9,
+        "首讀/工程/深讀責任清楚"
+      ]
+    },
+    "veto": [],
+    "status": "local_complete",
+    "page_evidence": "pages/vit-classifier; batch3-deep-page-review.json",
+    "preserved_main": "unchanged WI-031 audited sources; automated actual page load/zoom/text checks passed",
+    "user_approval": "pending",
+    "model_inference": false
+  },
+  {
+    "id": "u-net",
+    "total": 92,
+    "scores": [
+      19,
+      19,
+      19,
+      18,
+      8,
+      9
+    ],
+    "evidence": [
+      "同焊線影像/像素標註/輸出對應",
+      "同尺度串接細節，上採樣後再學融合；不是直接相加",
+      "ROI/resize/padding映回原圖，量測另校正",
+      "同位置連續/中斷對比，不能只看大區域重疊",
+      "四工程桌機手機實看無壓字；抽象格圖與長捲動扣分",
+      "整圖/重疊切圖須比較上下文、細線及節拍"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "精確三段圖，與保留首讀質感略異"
+      ],
+      "completeness": [
+        9,
+        "四工程及指定深讀完成"
+      ],
+      "professionalism": [
+        9,
+        "同尺度串接細節，上採樣後再學融合；不是直接相加"
+      ],
+      "density": [
+        8,
+        "四工程桌機手機實看無壓字；抽象格圖與長捲動扣分"
+      ],
+      "hierarchy": [
+        9,
+        "首讀/工程/深讀責任清楚"
+      ]
+    },
+    "veto": [],
+    "status": "local_complete",
+    "page_evidence": "pages/u-net; batch3-deep-page-review.json",
+    "preserved_main": "unchanged WI-031 audited sources; automated actual page load/zoom/text checks passed",
+    "user_approval": "pending",
+    "model_inference": false
+  },
+  {
+    "id": "segformer",
+    "total": 92,
+    "scores": [
+      19,
+      19,
+      19,
+      18,
+      8,
+      9
+    ],
+    "evidence": [
+      "同件四尺度，輸出仍是語意類別",
+      "投影/對齊/串接後分類，深讀保留原概念/實測身份",
+      "粗取樣不能補回線索，映回原圖才量邊界",
+      "與U-Net共用標註比較；不混語意與逐件ID",
+      "四工程及五種指定深讀手機實看；小格僅示意，長頁扣分",
+      "自測允許受限連通區方案，須驗相接例外"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "精確三段圖，與保留首讀質感略異"
+      ],
+      "completeness": [
+        9,
+        "四工程及指定深讀完成"
+      ],
+      "professionalism": [
+        9,
+        "投影/對齊/串接後分類，深讀保留原概念/實測身份"
+      ],
+      "density": [
+        8,
+        "四工程及五種指定深讀手機實看；小格僅示意，長頁扣分"
+      ],
+      "hierarchy": [
+        9,
+        "首讀/工程/深讀責任清楚"
+      ]
+    },
+    "veto": [],
+    "status": "local_complete",
+    "page_evidence": "pages/segformer; batch3-deep-page-review.json",
+    "preserved_main": "unchanged WI-031 audited sources; automated actual page load/zoom/text checks passed",
+    "user_approval": "pending",
+    "model_inference": false
+  },
+  {
+    "id": "yolo-seg",
+    "total": 92,
+    "scores": [
+      19,
+      19,
+      19,
+      18,
+      8,
+      9
+    ],
+    "evidence": [
+      "兩件同類支架保留甲乙與孔洞",
+      "共享P與每件c給出可追代數例，組合後依框取遮罩",
+      "框索引/係數索引一起過濾，去重前後幾何一致",
+      "同件語意/實例比較，孔洞背景未填滿",
+      "四工程桌機手機實看；輪廓是概念而非實測扣分",
+      "自測允許先改分料/視角或補重疊標註"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "精確三段圖，與保留首讀質感略異"
+      ],
+      "completeness": [
+        9,
+        "四工程及指定深讀完成"
+      ],
+      "professionalism": [
+        9,
+        "共享P與每件c給出可追代數例，組合後依框取遮罩"
+      ],
+      "density": [
+        8,
+        "四工程桌機手機實看；輪廓是概念而非實測扣分"
+      ],
+      "hierarchy": [
+        9,
+        "首讀/工程/深讀責任清楚"
+      ]
+    },
+    "veto": [],
+    "status": "local_complete",
+    "page_evidence": "pages/yolo-seg; batch3-deep-page-review.json",
+    "preserved_main": "unchanged WI-031 audited sources; automated actual page load/zoom/text checks passed",
+    "user_approval": "pending",
+    "model_inference": false
+  },
+  {
+    "id": "keypoint-r-cnn",
+    "total": 92,
+    "scores": [
+      19,
+      19,
+      19,
+      18,
+      8,
+      9
+    ],
+    "evidence": [
+      "支架A缺口角/B/C孔心點名一致",
+      "同ROI內三張位置分布，A映回(155,100)可算",
+      "遮擋估計与可見證據分開，PnP另有幾何責任",
+      "同件具名點/像素區域依交付需求比較",
+      "四工程桌機手機實看；ROI小工件與術語較密扣分",
+      "自測可先交2D，不預設本輪需要3D"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "精確三段圖，與保留首讀質感略異"
+      ],
+      "completeness": [
+        9,
+        "四工程及指定深讀完成"
+      ],
+      "professionalism": [
+        9,
+        "同ROI內三張位置分布，A映回(155,100)可算"
+      ],
+      "density": [
+        8,
+        "四工程桌機手機實看；ROI小工件與術語較密扣分"
+      ],
+      "hierarchy": [
+        9,
+        "首讀/工程/深讀責任清楚"
+      ]
+    },
+    "veto": [],
+    "status": "local_complete",
+    "page_evidence": "pages/keypoint-r-cnn; batch3-deep-page-review.json",
+    "preserved_main": "unchanged WI-031 audited sources; automated actual page load/zoom/text checks passed",
+    "user_approval": "pending",
+    "model_inference": false
+  }
+]

@@ -1,0 +1,531 @@
+{
+  "model": "Grounding DINO",
+  "beginner_path": {
+    "title": "提示、反例與選型：三圖讀懂",
+    "intro": "同板 A/B 追蹤提示如何影響結果，再檢查候選與邊界。全部圖為教學示意，非模型實測。",
+    "visuals": [
+      {
+        "id": "wi024-det-grounding-dino-interface-1",
+        "title": "文字一路參與定位，不只是最後貼標籤",
+        "prompt": "同樣輸入 resistor，為什麼文字會影響找框的位置？",
+        "caption": "影像與文字分別編碼後，區域與詞語交換訊息；文字再引導挑選影像特徵中的查詢起點。解碼器同時讀影像與文字，逐步修框，交出框與相關詞語。圖上的 A/B 與 q1/q2 是簡化示意，不是模型固定查詢數或實測結果。",
+        "image": "_course_content/generated-concepts/det-grounding-dino-interface/wi024-grounding-c1-r03-desktop.png",
+        "alt": "文字一路參與定位，不只是最後貼標籤。影像與文字分別編碼後，區域與詞語交換訊息；文字再引導挑選影像特徵中的查詢起點。解碼器同時讀影像與文字，逐步修框，交出框與相關詞語。圖上的 A/B 與 q1/q2 是簡化示意，不是模型固定查詢數或實測結果。 本圖為 AI 生成教學示意，非模型實測。",
+        "callouts": [
+          {
+            "title": "三次交接要看清楚",
+            "body": "特徵增強保留區域位置；文字引導查詢選擇，再於解碼時參與定位。不是先用固定類別偵測器找完物件，最後才把 resistor 貼上去。"
+          },
+          {
+            "title": "收到的是候選",
+            "body": "詞語相關分數不是缺陷機率或合格率；需設定篩選門檻、映回原圖及覆核。resistor 可能同時涵蓋不同料號，仍要看位置與規格。"
+          },
+          {
+            "title": "找框和分割分開",
+            "body": "原版不直接產生像素遮罩；若需要輪廓，可另接分割工具或比較具分割頭的模型。本課不把外接能力當成本體能力。"
+          }
+        ],
+        "reading_views": [
+          {
+            "title": "文字一路參與定位，不只是最後貼標籤",
+            "image": "_course_content/generated-concepts/det-grounding-dino-interface/wi024-grounding-c1-r03-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/det-grounding-dino-interface/wi024-grounding-c1-r01-mobile.png",
+            "alt": "文字一路參與定位，不只是最後貼標籤。影像與文字分別編碼後，區域與詞語交換訊息；文字再引導挑選影像特徵中的查詢起點。解碼器同時讀影像與文字，逐步修框，交出框與相關詞語。圖上的 A/B 與 q1/q2 是簡化示意，不是模型固定查詢數或實測結果。 本圖為 AI 生成教學示意，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              724,
+              2171
+            ],
+            "mobile_display_mode": "full-mobile",
+            "mobile_intrinsic_width": 724,
+            "mobile_intrinsic_height": 2171,
+            "desktop_intrinsic_width": 1672,
+            "desktop_intrinsic_height": 941
+          }
+        ],
+        "core_ideas": true
+      },
+      {
+        "id": "wi024-det-grounding-dino-interface-2",
+        "title": "候選為空，先回原圖核對",
+        "prompt": "R-17 明明在板上，為什麼不能把「零框」當成缺件？",
+        "caption": "工廠物料清單把左側 A 稱為 R-17，預訓練模型未必知道這個內部代號。圖例假設以此提示未留下候選；原圖 A/B 都還在。需要核對語義、可見像素及分數門檻，而不是把空結果當合格或不存在。",
+        "image": "_course_content/generated-concepts/det-grounding-dino-interface/wi024-grounding-d2-r01-desktop.png",
+        "alt": "候選為空，先回原圖核對。工廠物料清單把左側 A 稱為 R-17，預訓練模型未必知道這個內部代號。圖例假設以此提示未留下候選；原圖 A/B 都還在。需要核對語義、可見像素及分數門檻，而不是把空結果當合格或不存在。 本圖為 AI 生成教學示意，非模型實測。",
+        "callouts": [
+          {
+            "title": "改提示也要查對象",
+            "body": "可以試 resistor 等通用描述，但可能同時找到 A、B，不能保證只找到指定料號。位置、料表與規格比對仍是下一段工作。"
+          },
+          {
+            "title": "保留失敗影像",
+            "body": "把查無候選、小物、遮擋及外觀變化另列驗證。這是設定的失敗例，不代表所有內部代號都失效，也不是以示意圖測得模型錯誤率。"
+          }
+        ],
+        "reading_views": [
+          {
+            "title": "候選為空，先回原圖核對",
+            "image": "_course_content/generated-concepts/det-grounding-dino-interface/wi024-grounding-d2-r01-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/det-grounding-dino-interface/wi024-grounding-d2-r01-mobile.png",
+            "alt": "候選為空，先回原圖核對。工廠物料清單把左側 A 稱為 R-17，預訓練模型未必知道這個內部代號。圖例假設以此提示未留下候選；原圖 A/B 都還在。需要核對語義、可見像素及分數門檻，而不是把空結果當合格或不存在。 本圖為 AI 生成教學示意，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              724,
+              2172
+            ],
+            "mobile_display_mode": "full-mobile",
+            "mobile_intrinsic_width": 724,
+            "mobile_intrinsic_height": 2172,
+            "desktop_intrinsic_width": 1672,
+            "desktop_intrinsic_height": 941
+          }
+        ],
+        "core_ideas": false
+      },
+      {
+        "id": "wi024-det-grounding-dino-interface-3",
+        "title": "先選提示與交付物，再比較現場代價",
+        "prompt": "要快速探索新物件、固定類別量產，還是需要輪廓？",
+        "caption": "Grounding DINO 用文字參與定位，主要交出框與詞語；需要 mask 時另接分割。YOLOE 支援文字、視覺範例或無外部提示模式，並具有框與遮罩輸出。圖中是兩種候選工具，不是前後串接，也沒有速度或準確率排名。",
+        "image": "_course_content/generated-concepts/det-grounding-dino-interface/wi024-prompt-d3-r01-desktop.png",
+        "alt": "先選提示與交付物，再比較現場代價。Grounding DINO 用文字參與定位，主要交出框與詞語；需要 mask 時另接分割。YOLOE 支援文字、視覺範例或無外部提示模式，並具有框與遮罩輸出。圖中是兩種候選工具，不是前後串接，也沒有速度或準確率排名。 本圖為 AI 生成教學示意，非模型實測。",
+        "callouts": [
+          {
+            "title": "提示與交付物",
+            "body": "YOLOE 文字模式 RepRTA 學習調整文字表示，固定詞彙後可快取並重參數化到分類頭；視覺模式 SAVPE 從圈選區域聚合表示。無外部提示的 LRPC 先篩出可能有物件的位置，再查內建詞庫，並非無限認得新類別。三種模式可分別使用。"
+          },
+          {
+            "title": "資料、換產品與完整成本",
+            "body": "可先用預訓練模型加提示探索，仍要保留人工覆核的現場影像；只有正常板也能標元件框，不能因此找到未知缺陷。若類別與外觀固定且能標註，可把 YOLO／RT-DETR 作受控定位基準；要穩定輪廓，需驗證或微調分割能力。 比較相同取像、資料與硬體下的漏件、誤框、遮罩邊界和完整延遲，包含提示準備、文字編碼、後處理及人工覆核。換產品要重驗提示、詞庫涵蓋與門檻；框或 mask 都不自動給出實體尺寸。"
+          }
+        ],
+        "reading_views": [
+          {
+            "title": "先選提示與交付物，再比較現場代價",
+            "image": "_course_content/generated-concepts/det-grounding-dino-interface/wi024-prompt-d3-r01-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/det-grounding-dino-interface/wi024-prompt-d3-r01-mobile.png",
+            "alt": "先選提示與交付物，再比較現場代價。Grounding DINO 用文字參與定位，主要交出框與詞語；需要 mask 時另接分割。YOLOE 支援文字、視覺範例或無外部提示模式，並具有框與遮罩輸出。圖中是兩種候選工具，不是前後串接，也沒有速度或準確率排名。 本圖為 AI 生成教學示意，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              727,
+              2164
+            ],
+            "mobile_display_mode": "full-mobile",
+            "mobile_intrinsic_width": 727,
+            "mobile_intrinsic_height": 2164,
+            "desktop_intrinsic_width": 1672,
+            "desktop_intrinsic_height": 941
+          }
+        ],
+        "core_ideas": false
+      }
+    ]
+  },
+  "badge": "提示引導的物件定位",
+  "title": "Grounding DINO：文字參與找框",
+  "scenario": {
+    "title": "新產品尚未整理固定類別，先用文字描述探索電阻位置，保留原圖人工確認。",
+    "body": "同一綠色電路板上，左 A 印 103、右 B 印 272；相似外觀不保證相同料號。"
+  },
+  "promise": {
+    "title": "先拿到可覆核的候選",
+    "body": "Grounding DINO 交出框與詞語；YOLOE 支援框與遮罩。需要確認對象、邊界與漏件後，才能接計數、裁圖或量測流程。"
+  },
+  "mental_model": {
+    "title": "Grounding DINO：讓文字參與尋找物件",
+    "body": "固定類別偵測器不方便臨時指定要找的物件。Grounding DINO將影像與語言一起處理，讓文字不只替既有框命名，而是參與挑選候選與定位；它利用大規模grounded預訓練支持開放集合搜尋。",
+    "limit": "先以明確物件詞驗證，再用專家確認框；記錄prompt及同詞不同外觀。換詞／產品需重驗漏檢與誤框，必要時微調；只有正常品也能探索物件，但不能直接變成未知缺陷檢測。"
+  },
+  "micro_example": {
+    "title": "換板後只有料號，提示卻找不到物件",
+    "setup": "新板上的電阻仍清楚可見，但用 R-17 提示沒有框；改成 resistor 後又出現多個候選，下一站還想量輪廓。",
+    "prediction": "你會修改提示、改用視覺範例，還是訓練固定類別模型？輪廓要怎麼交付？",
+    "reveal": "先回原圖確認像素與物件存在，將通用詞候選對照位置／料表；空結果不能當缺件。可用 Grounding DINO 加外接分割，或比較 YOLOE 視覺提示與 mask；類別固定且有框標註時，再比較 YOLO／RT-DETR。保留同批小物影像評估漏件、誤框、邊界與完整延遲，換板後重驗，不能以更多候選或單一成功圖決定。"
+  },
+  "mechanism_steps": [
+    {
+      "title": "先融合圖像與文字證據",
+      "body": "影像骨幹與文字編碼器各自產生表示，feature enhancer做跨模態互動；詞語需與可見區域建立關係，不是把字串附在最後結果。",
+      "why": "固定類別偵測器不方便臨時指定要找的物件。Grounding DINO將影像與語言一起處理，讓文字不只替既有框命名，而是參與挑選候選與定位；它利用大規模grounded預訓練支持開放集合搜尋。",
+      "anchor": "D01核心／反例／共同決策；依原論文核對",
+      "diagram": {
+        "title": "先融合圖像與文字證據",
+        "body": "影像骨幹與文字編碼器各自產生表示，feature enhancer做跨模態互動；詞語需與可見區域建立關係，不是把字串附在最後結果。",
+        "why": "固定類別偵測器不方便臨時指定要找的物件。Grounding DINO將影像與語言一起處理，讓文字不只替既有框命名，而是參與挑選候選與定位；它利用大規模grounded預訓練支持開放集合搜尋。",
+        "anchor": "D01核心／反例／共同決策；依原論文核對"
+      }
+    },
+    {
+      "title": "文字引導query選擇",
+      "body": "從圖像特徵中選與輸入文字較相關的候選作為解碼起點。改問什麼，可能改變哪些區域被選入；詞句、分詞、門檻都要可追查。",
+      "why": "這一步提供下游所需的資訊；核心原理與工程驗證不可互相替代。",
+      "anchor": "D01核心／反例／共同決策；依原論文核對",
+      "diagram": {
+        "title": "文字引導query選擇",
+        "body": "從圖像特徵中選與輸入文字較相關的候選作為解碼起點。改問什麼，可能改變哪些區域被選入；詞句、分詞、門檻都要可追查。",
+        "why": "這一步提供下游所需的資訊；核心原理與工程驗證不可互相替代。",
+        "anchor": "D01核心／反例／共同決策；依原論文核對"
+      }
+    },
+    {
+      "title": "跨模態解碼，交出詞語對應的框",
+      "body": "decoder同時取用影像與文字來修正物件queries與框，輸出詞語相關分數和位置。空結果不能證明不存在，框也不是mask；需要精細輪廓可另接分割流程。",
+      "why": "這一步提供下游所需的資訊；核心原理與工程驗證不可互相替代。",
+      "anchor": "D01核心／反例／共同決策；依原論文核對",
+      "diagram": {
+        "title": "跨模態解碼，交出詞語對應的框",
+        "body": "decoder同時取用影像與文字來修正物件queries與框，輸出詞語相關分數和位置。空結果不能證明不存在，框也不是mask；需要精細輪廓可另接分割流程。",
+        "why": "這一步提供下游所需的資訊；核心原理與工程驗證不可互相替代。",
+        "anchor": "D01核心／反例／共同決策；依原論文核對"
+      }
+    },
+    {
+      "title": "回原圖確認並驗證",
+      "body": "先以明確物件詞驗證，再用專家確認框；記錄prompt及同詞不同外觀。換詞／產品需重驗漏檢與誤框，必要時微調；只有正常品也能探索物件，但不能直接變成未知缺陷檢測。",
+      "why": "事後改標籤沒有讓文字參與特徵融合、query選擇與框修正，原本沒提出的區域不會因此被搜尋。Grounding需要影像與語言互動；即使有此機制，也不保證模型理解任意缺陷詞或空間關係。",
+      "anchor": "D01核心／反例／共同決策；依原論文核對",
+      "diagram": {
+        "title": "回原圖確認並驗證",
+        "body": "先以明確物件詞驗證，再用專家確認框；記錄prompt及同詞不同外觀。換詞／產品需重驗漏檢與誤框，必要時微調；只有正常品也能探索物件，但不能直接變成未知缺陷檢測。",
+        "why": "事後改標籤沒有讓文字參與特徵融合、query選擇與框修正，原本沒提出的區域不會因此被搜尋。Grounding需要影像與語言互動；即使有此機制，也不保證模型理解任意缺陷詞或空間關係。",
+        "anchor": "D01核心／反例／共同決策；依原論文核對"
+      }
+    }
+  ],
+  "visual_intro": "以下補充圖沿用D01核心、反例及共同選型；詳讀原理後再核對工程條件。",
+  "concept_visuals": [],
+  "boundary_cases": [
+    {
+      "condition": "phrase ambiguity、domain vocabulary gap、同義詞/tokenization/prompt drift",
+      "effect": "query/score space 改變，candidate boxes 可能移位、消失或新增，zero-shot score 不可跨 prompt 直接比較。",
+      "action": "固定並保存 vocabulary/template/tokenization，量 seen/unseen grounding recall、prompt sensitivity、specialist confirmation rate 和 P95。",
+      "visual_action": "固定 vocabulary/template/tokenization，量 prompt stability、grounding recall 與專家確認率。"
+    },
+    {
+      "condition": "tiny object、false localization、ROI inverse mapping 或 threshold/NMS 未鎖",
+      "effect": "phrase 候選可能框錯位置、漏掉小目標或無法回到 raw image 供專業檢查。",
+      "action": "鎖 pixels/ROI/threshold/NMS/coordinate transform，量 grounding recall/IoU、failure images 和 inverse-map 可追溯性。",
+      "visual_action": "鎖 pixels/ROI/threshold/NMS/coordinate transform，量 grounding recall、IoU 與 inverse-map 可追溯性。"
+    },
+    {
+      "condition": "把 phrase box 直接視為 defect truth、metrology 或 release",
+      "effect": "跳過 prompt bias、語意不確定、局部驗證與產品證據，造成高信心危險誤用。",
+      "action": "禁止直接 release；candidate 必須 inverse map 後交 detector/AD/人工 specialist，保留 confirmation result。"
+    }
+  ],
+  "comparison": [
+    {
+      "model": "Grounding DINO",
+      "normality": "依據：AOI image features、phrase tokens、prompt template 與 language-guided query selection",
+      "candidate": "可用輸出：phrase-conditioned boxes/scores/inverse ROIs；只供 specialist confirmation"
+    },
+    {
+      "model": "YOLO-World",
+      "normality": "依據：vocabulary text embeddings/cache 與 YOLO-like multi-scale dense image features",
+      "candidate": "可用輸出：open-vocabulary dense scores/boxes 經 NMS 的 candidate ROIs；非 defect probability"
+    },
+    {
+      "model": "YOLOE",
+      "normality": "依據：text 或 visual exemplar prompt representation，以及選定 detection/segmentation mode",
+      "candidate": "可用輸出：mode-specific boxes/masks/scores；不同粒度各自需要 specialist evidence"
+    }
+  ],
+  "selection": "Grounding DINO 用文字參與定位，主要交出框與詞語；需要 mask 時另接分割。YOLOE 支援文字、視覺範例或無外部提示模式，並具有框與遮罩輸出。圖中是兩種候選工具，不是前後串接，也沒有速度或準確率排名。",
+  "poc": {
+    "title": "POC 第一件事：把 phrase 到專家確認的證據鏈完整記下來",
+    "steps": [
+      "鎖 raw AOI/ROI、prompt vocabulary/template/version、tokenization、text/image preprocessing、phrase/box threshold、NMS、coordinate transform、specialist owner 與不得 release 的政策。",
+      "以 seen/unseen terms、synonyms、tiny/false-localization、domain vocabulary、product/recipe split 蒐集 candidate boxes/scores、prompt sensitivity、inverse ROIs、confirmation/failure images 和 P95。",
+      "量 grounding recall/IoU、prompt stability、specialist confirmation rate、embedding/forward/postprocess P95，並讓後續 detector/AD/人工決定 defect。"
+    ],
+    "hold": "prompt/ROI/threshold/inverse-map 未版本化、詞彙敏感度或 tiny/localization 未通過、specialist owner 不明，或有人想由 phrase box 直接 release 時，先 HOLD。",
+    "acceptance": {
+      "baseline": "以固定 raw AOI/ROI、prompt vocabulary/template/tokenization、text/image preprocessing、phrase/box thresholds、NMS、inverse map 和 specialist route 的 candidate workflow 為 baseline。",
+      "measure": "按 seen/unseen terms、synonyms、tiny/false-localization、domain vocabulary、product/recipe split 分層量 grounding recall/IoU、prompt sensitivity、inverse-map success、specialist confirmation rate、embedding/forward/postprocess P95。",
+      "negative_control": "同一 AOI 僅替換相近 phrase 或 tokenization，保留不同高分 boxes；預期 score 不可跨 prompt 當 defect probability，必須保存 prompt bundle 並交 specialist confirmation。",
+      "owner": "由工程 vocabulary owner 管 phrase/template revision；CV/VLM owner 簽核 grounding/prompt evidence，具名 detector/AD/人工 specialist owner 判定 defect，release owner 保有最終權限。"
+    }
+  },
+  "teach_back": {
+    "question": "Grounding DINO 對 phrase「疑似污染」畫出高分框。為什麼正確下一步不是直接把該框判成 defect？",
+    "answer": "phrase 改變 query/score space，高分只表示該詞條件下的 candidate；語意、tiny/localization、threshold 和 prompt drift 都仍可能失敗。保存 prompt 和 inverse ROI，讓高解析 detector、AD 或人工專家在 raw evidence 上確認後才做 defect/release 決策。"
+  },
+  "slide_reading": [
+    {
+      "title": "Grounding DINO：用詞語指定想找什麼",
+      "question": "文字可以引導定位，專業料號仍需另驗。",
+      "look": "先看影像與文字定義想找的類別，再核對一個詞語對應兩件物件，最後看交付詞語相關的框。",
+      "relation": "開放詞彙偵測接受影像與文字，透過兩模態互動和語言引導query定位相關區域；輸出框與詞語相關分數。輸入resistor可說明想找的類別，不能保證辨識103/272的電性或料號。",
+      "takeaway": "文字可以引導定位，專業料號仍需另驗。",
+      "terms": [
+        "表示：模型由輸入得到的中間資料，並非標註真值。",
+        "本圖數值：作者給定的教學示意，不是本輪模型實測。"
+      ]
+    },
+    {
+      "title": "Grounding DINO：詞與區域共同定位",
+      "question": "文字参与候選和解碼，交付詞語與框。",
+      "look": "先看影像與文字各自編碼，再核對詞token與區域交換訊息，最後看詞引導query，解碼成框。",
+      "relation": "以同PCB的resistor文字查詢；影像特徵與文字token在feature enhancer互動，language-guided query selection挑相關起點，cross-modality decoder再利用兩種表示修框。圖中詞區域數字是相容性教學例，不是置信度實測。輸出詞語相關分數及框，並非像素遮罩。",
+      "takeaway": "文字参与候選和解碼，交付詞語與框。",
+      "terms": [
+        "表示：模型由輸入得到的中間資料，並非標註真值。",
+        "本圖數值：作者給定的教學示意，不是本輪模型實測。"
+      ]
+    },
+    {
+      "title": "Grounding DINO：提示詞也是設定",
+      "question": "保存提示與門檻，框映回原圖後逐件核對。",
+      "look": "先看固定查詢與模型設定，再核對詞與框門檻影響保留，最後看另驗定位偏移與漏框。",
+      "relation": "保存模型版本、提示詞、詞語門檻/框門檻和影像映射。文字變更可能改變候選，因此不能只保存圖片與框而漏提示；領域名稱與相似零件須獨立驗證。",
+      "takeaway": "保存提示與門檻，框映回原圖後逐件核對。",
+      "terms": [
+        "表示：模型由輸入得到的中間資料，並非標註真值。",
+        "本圖數值：作者給定的教學示意，不是本輪模型實測。"
+      ]
+    },
+    {
+      "title": "文字偵測與專用偵測：同題試驗",
+      "question": "類別常變可試文字提示，穩定任務可訓練專用頭。",
+      "look": "先看同一PCB與驗收類別，再核對文字查詢resistor，最後看固定類別監督訓練。",
+      "relation": "開放文字查詢適合探索類別，但工業域詞語與小零件仍需驗。固定類別可比較標註訓練的專用YOLO/RT-DETR；以資料成本、漏框與部署成本選，而不把兩種模型串成必經流程。",
+      "takeaway": "類別常變可試文字提示，穩定任務可訓練專用頭。",
+      "terms": [
+        "表示：模型由輸入得到的中間資料，並非標註真值。",
+        "本圖數值：作者給定的教學示意，不是本輪模型實測。"
+      ]
+    }
+  ],
+  "comparison_headers": {
+    "title": "不要比名稱；比 phrase 如何定義候選問題",
+    "basis": "phrase 如何定義候選問題",
+    "output": "candidate ROI／specialist confirmation"
+  },
+  "transfer_check": {
+    "title": "換板後只有料號，提示卻找不到物件",
+    "scenario": "新板上的電阻仍清楚可見，但用 R-17 提示沒有框；改成 resistor 後又出現多個候選，下一站還想量輪廓。",
+    "question": "你會修改提示、改用視覺範例，還是訓練固定類別模型？輪廓要怎麼交付？",
+    "answer": "先回原圖確認像素與物件存在，將通用詞候選對照位置／料表；空結果不能當缺件。可用 Grounding DINO 加外接分割，或比較 YOLOE 視覺提示與 mask；類別固定且有框標註時，再比較 YOLO／RT-DETR。保留同批小物影像評估漏件、誤框、邊界與完整延遲，換板後重驗，不能以更多候選或單一成功圖決定。"
+  },
+  "review_trace": {
+    "authority": "roadmap-model-selection/detector/det-grounding-dino-interface/model.md",
+    "scope": "WI-033：工程層四圖與手機比較修正；首讀有效內容保留。原生圖已審，整頁與使用者審閱另記。",
+    "claims": [
+      {
+        "id": "d01-visual-1",
+        "field": "beginner_path.visuals[d01-core]",
+        "source": "D01核心、反例與共同決策；https://arxiv.org/abs/2303.05499"
+      },
+      {
+        "id": "d01-visual-2",
+        "field": "beginner_path.visuals[d01-failure]",
+        "source": "D01核心、反例與共同決策；https://arxiv.org/abs/2303.05499"
+      },
+      {
+        "id": "d01-visual-3",
+        "field": "beginner_path.visuals[d01-compare-known]",
+        "source": "D01核心、反例與共同決策；https://arxiv.org/abs/2303.05499"
+      },
+      {
+        "id": "d01-visual-4",
+        "field": "beginner_path.visuals[d01-compare-prompt]",
+        "source": "D01核心、反例與共同決策；https://arxiv.org/abs/2303.05499"
+      },
+      {
+        "id": "d01-contract",
+        "field": "promise + mechanism_steps",
+        "source": "D01來源補正及工程輸出責任"
+      },
+      {
+        "id": "d01-transfer",
+        "field": "transfer_check",
+        "source": "D01資料、輸出與公平比較"
+      },
+      {
+        "id": "wi024-first-read",
+        "field": "beginner_path + micro_example + selection",
+        "source": "https://arxiv.org/html/2303.05499v4；https://github.com/IDEA-Research/GroundingDINO"
+      }
+    ]
+  },
+  "teaching_preflight": {
+    "brief": "teaching-images/vision-ai-model-selection/workitems/wi-024/grounding-c1-r01.md",
+    "story": "C",
+    "major_visual_nodes": 4,
+    "visual_status": "self-reviewed",
+    "user_review": "pending"
+  },
+  "engineering_slides": [
+    {
+      "title": "Grounding DINO：用詞語指定想找什麼",
+      "question": "文字可以引導定位，專業料號仍需另驗。",
+      "plain": {
+        "look": "先看影像與文字定義想找的類別，再核對一個詞語對應兩件物件，最後看交付詞語相關的框。",
+        "relation": "開放詞彙偵測接受影像與文字，透過兩模態互動和語言引導query定位相關區域；輸出框與詞語相關分數。輸入resistor可說明想找的類別，不能保證辨識103/272的電性或料號。",
+        "takeaway": "文字可以引導定位，專業料號仍需另驗。"
+      },
+      "terms": [
+        "表示：模型由輸入得到的中間資料，並非標註真值。",
+        "本圖數值：作者給定的教學示意，不是本輪模型實測。"
+      ],
+      "guide": [
+        "開放詞彙偵測接受影像與文字，透過兩模態互動和語言引導query定位相關區域；輸出框與詞語相關分數。輸入resistor可說明想找的類別，不能保證辨識103/272的電性或料號。",
+        "先看影像與文字定義想找的類別，再核對一個詞語對應兩件物件，最後看交付詞語相關的框。"
+      ],
+      "stages": [
+        {
+          "title": "影像與文字定義想找的類別",
+          "body": "影像與文字定義想找的類別；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "一個詞語對應兩件物件",
+          "body": "一個詞語對應兩件物件；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "交付詞語相關的框",
+          "body": "交付詞語相關的框；請對照圖內輸入、變化與結果。"
+        }
+      ],
+      "misconception": "先以明確物件詞驗證，再用專家確認框；記錄prompt及同詞不同外觀。換詞／產品需重驗漏檢與誤框，必要時微調；只有正常品也能探索物件，但不能直接變成未知缺陷檢測。",
+      "alt": "Grounding DINO：用詞語指定想找什麼。文字可以引導定位，專業料號仍需另驗。 教學示意，非模型實測。",
+      "mobile_image": "roadmap-model-selection/detector/det-grounding-dino-interface/images/final/WI033-GROUNDING-DINO-01-r02-mobile.png",
+      "mobile_width": 768,
+      "mobile_height": 2304,
+      "engineering": {
+        "takeaway": "文字可以引導定位，專業料號仍需另驗。",
+        "nextAction": "鎖 raw AOI/ROI、prompt vocabulary/template/version、tokenization、text/image preprocessing、phrase/box threshold、NMS、coordinate transform、specialist owner 與不得 release 的政策。",
+        "redLine": "prompt/ROI/threshold/inverse-map 未版本化、詞彙敏感度或 tiny/localization 未通過、specialist owner 不明，或有人想由 phrase box 直接 release 時，先 HOLD。"
+      },
+      "source": "https://arxiv.org/abs/2303.05499"
+    },
+    {
+      "title": "Grounding DINO：詞與區域共同定位",
+      "question": "文字参与候選和解碼，交付詞語與框。",
+      "plain": {
+        "look": "先看影像與文字各自編碼，再核對詞token與區域交換訊息，最後看詞引導query，解碼成框。",
+        "relation": "以同PCB的resistor文字查詢；影像特徵與文字token在feature enhancer互動，language-guided query selection挑相關起點，cross-modality decoder再利用兩種表示修框。圖中詞區域數字是相容性教學例，不是置信度實測。輸出詞語相關分數及框，並非像素遮罩。",
+        "takeaway": "文字参与候選和解碼，交付詞語與框。"
+      },
+      "terms": [
+        "表示：模型由輸入得到的中間資料，並非標註真值。",
+        "本圖數值：作者給定的教學示意，不是本輪模型實測。"
+      ],
+      "guide": [
+        "以同PCB的resistor文字查詢；影像特徵與文字token在feature enhancer互動，language-guided query selection挑相關起點，cross-modality decoder再利用兩種表示修框。圖中詞區域數字是相容性教學例，不是置信度實測。輸出詞語相關分數及框，並非像素遮罩。",
+        "先看影像與文字各自編碼，再核對詞token與區域交換訊息，最後看詞引導query，解碼成框。"
+      ],
+      "stages": [
+        {
+          "title": "影像與文字各自編碼",
+          "body": "影像與文字各自編碼；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "詞token與區域交換訊息",
+          "body": "詞token與區域交換訊息；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "詞引導query，解碼成框",
+          "body": "詞引導query，解碼成框；請對照圖內輸入、變化與結果。"
+        }
+      ],
+      "misconception": "先以明確物件詞驗證，再用專家確認框；記錄prompt及同詞不同外觀。換詞／產品需重驗漏檢與誤框，必要時微調；只有正常品也能探索物件，但不能直接變成未知缺陷檢測。",
+      "alt": "Grounding DINO：詞與區域共同定位。文字参与候選和解碼，交付詞語與框。 教學示意，非模型實測。",
+      "mobile_image": "roadmap-model-selection/detector/det-grounding-dino-interface/images/final/WI033-GROUNDING-DINO-02-r02-mobile.png",
+      "mobile_width": 768,
+      "mobile_height": 2304,
+      "engineering": {
+        "takeaway": "文字参与候選和解碼，交付詞語與框。",
+        "nextAction": "鎖 raw AOI/ROI、prompt vocabulary/template/version、tokenization、text/image preprocessing、phrase/box threshold、NMS、coordinate transform、specialist owner 與不得 release 的政策。",
+        "redLine": "prompt/ROI/threshold/inverse-map 未版本化、詞彙敏感度或 tiny/localization 未通過、specialist owner 不明，或有人想由 phrase box 直接 release 時，先 HOLD。"
+      },
+      "source": "https://arxiv.org/abs/2303.05499"
+    },
+    {
+      "title": "Grounding DINO：提示詞也是設定",
+      "question": "保存提示與門檻，框映回原圖後逐件核對。",
+      "plain": {
+        "look": "先看固定查詢與模型設定，再核對詞與框門檻影響保留，最後看另驗定位偏移與漏框。",
+        "relation": "保存模型版本、提示詞、詞語門檻/框門檻和影像映射。文字變更可能改變候選，因此不能只保存圖片與框而漏提示；領域名稱與相似零件須獨立驗證。",
+        "takeaway": "保存提示與門檻，框映回原圖後逐件核對。"
+      },
+      "terms": [
+        "表示：模型由輸入得到的中間資料，並非標註真值。",
+        "本圖數值：作者給定的教學示意，不是本輪模型實測。"
+      ],
+      "guide": [
+        "保存模型版本、提示詞、詞語門檻/框門檻和影像映射。文字變更可能改變候選，因此不能只保存圖片與框而漏提示；領域名稱與相似零件須獨立驗證。",
+        "先看固定查詢與模型設定，再核對詞與框門檻影響保留，最後看另驗定位偏移與漏框。"
+      ],
+      "stages": [
+        {
+          "title": "固定查詢與模型設定",
+          "body": "固定查詢與模型設定；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "詞與框門檻影響保留",
+          "body": "詞與框門檻影響保留；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "另驗定位偏移與漏框",
+          "body": "另驗定位偏移與漏框；請對照圖內輸入、變化與結果。"
+        }
+      ],
+      "misconception": "先以明確物件詞驗證，再用專家確認框；記錄prompt及同詞不同外觀。換詞／產品需重驗漏檢與誤框，必要時微調；只有正常品也能探索物件，但不能直接變成未知缺陷檢測。",
+      "alt": "Grounding DINO：提示詞也是設定。保存提示與門檻，框映回原圖後逐件核對。 教學示意，非模型實測。",
+      "mobile_image": "roadmap-model-selection/detector/det-grounding-dino-interface/images/final/WI033-GROUNDING-DINO-03-r02-mobile.png",
+      "mobile_width": 768,
+      "mobile_height": 2304,
+      "engineering": {
+        "takeaway": "保存提示與門檻，框映回原圖後逐件核對。",
+        "nextAction": "鎖 raw AOI/ROI、prompt vocabulary/template/version、tokenization、text/image preprocessing、phrase/box threshold、NMS、coordinate transform、specialist owner 與不得 release 的政策。",
+        "redLine": "prompt/ROI/threshold/inverse-map 未版本化、詞彙敏感度或 tiny/localization 未通過、specialist owner 不明，或有人想由 phrase box 直接 release 時，先 HOLD。"
+      },
+      "source": "https://arxiv.org/abs/2303.05499"
+    },
+    {
+      "title": "文字偵測與專用偵測：同題試驗",
+      "question": "類別常變可試文字提示，穩定任務可訓練專用頭。",
+      "plain": {
+        "look": "先看同一PCB與驗收類別，再核對文字查詢resistor，最後看固定類別監督訓練。",
+        "relation": "開放文字查詢適合探索類別，但工業域詞語與小零件仍需驗。固定類別可比較標註訓練的專用YOLO/RT-DETR；以資料成本、漏框與部署成本選，而不把兩種模型串成必經流程。",
+        "takeaway": "類別常變可試文字提示，穩定任務可訓練專用頭。"
+      },
+      "terms": [
+        "表示：模型由輸入得到的中間資料，並非標註真值。",
+        "本圖數值：作者給定的教學示意，不是本輪模型實測。"
+      ],
+      "guide": [
+        "開放文字查詢適合探索類別，但工業域詞語與小零件仍需驗。固定類別可比較標註訓練的專用YOLO/RT-DETR；以資料成本、漏框與部署成本選，而不把兩種模型串成必經流程。",
+        "先看同一PCB與驗收類別，再核對文字查詢resistor，最後看固定類別監督訓練。"
+      ],
+      "stages": [
+        {
+          "title": "同一PCB與驗收類別",
+          "body": "同一PCB與驗收類別；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "文字查詢resistor",
+          "body": "文字查詢resistor；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "固定類別監督訓練",
+          "body": "固定類別監督訓練；請對照圖內輸入、變化與結果。"
+        }
+      ],
+      "misconception": "先以明確物件詞驗證，再用專家確認框；記錄prompt及同詞不同外觀。換詞／產品需重驗漏檢與誤框，必要時微調；只有正常品也能探索物件，但不能直接變成未知缺陷檢測。",
+      "alt": "文字偵測與專用偵測：同題試驗。類別常變可試文字提示，穩定任務可訓練專用頭。 教學示意，非模型實測。",
+      "mobile_image": "roadmap-model-selection/detector/det-grounding-dino-interface/images/final/WI033-GROUNDING-DINO-04-r01-mobile.png",
+      "mobile_width": 768,
+      "mobile_height": 2304,
+      "engineering": {
+        "takeaway": "類別常變可試文字提示，穩定任務可訓練專用頭。",
+        "nextAction": "鎖 raw AOI/ROI、prompt vocabulary/template/version、tokenization、text/image preprocessing、phrase/box threshold、NMS、coordinate transform、specialist owner 與不得 release 的政策。",
+        "redLine": "prompt/ROI/threshold/inverse-map 未版本化、詞彙敏感度或 tiny/localization 未通過、specialist owner 不明，或有人想由 phrase box 直接 release 時，先 HOLD。"
+      },
+      "source": "https://arxiv.org/abs/2303.05499"
+    }
+  ]
+}

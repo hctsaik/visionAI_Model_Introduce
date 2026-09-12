@@ -117,3 +117,40 @@ Keep camera / lens / exposure / frame-rate settings; timestamp and frame-drop re
 ## Production gate
 
 The six model-specific fields, comparison contract, and required visual primitives are complete. Pages 05-06 through 05-09 may proceed to versioned white high-density C / D visual production. Final assets must pass Chinese readability, engineering-causality, no-fabricated-performance, manifest, QA and style validation before approval.
+
+<!-- wi033-engineering:start -->
+## WI-033 工程圖修正
+
+### 背景相減：先建立场景常態
+
+固定相機常用MOG2累積背景，交付前景mask。mask不自帶類別或永久ID；後段需處理陰影/雜訊、連通區或偵測與追蹤。
+
+前景是相對背景的變化，不是物件類別。
+
+來源：https://docs.opencv.org/4.x/d1/dc5/tutorial_background_subtraction.html
+
+### 背景相減：累積常態，再比較現在
+
+以MOG2為例，同位置累積常見外觀的混合高斯模型，當前影像相對背景分類前景。方件長期停留時可能成為背景，前景遮罩下降；不是只和上一幀相減。更新速率/歷史/陰影處理影響結果，圖中示意不是固定吸收時間。
+
+前景依賴背景歷史，停留物件也可能被吸收。
+
+來源：https://docs.opencv.org/4.x/d1/dc5/tutorial_background_subtraction.html
+
+### 背景相減：啟動與更新速度都要驗
+
+相機重置或場景切换須重建背景。較快更新能適應變化，也可能較快吸收停留物；較慢更新可能留下照明變化前景。保存history/learningRate、陰影標籤處理與重置規則，實際驗證，不給固定適用參數。
+
+先穩定背景，再評停留和光照變化。
+
+來源：https://docs.opencv.org/4.x/d1/dc5/tutorial_background_subtraction.html
+
+### 背景相減：物件沒動，不保證一直亮
+
+前景mask空不代表現場無物件。停留物件可能被模型吸收；需保存事件/狀態並視任務接偵測追蹤，而追蹤本身也有丟失限制。
+
+背景模型會更新，遮罩不等於物件存在。
+
+來源：https://docs.opencv.org/4.x/d1/dc5/tutorial_background_subtraction.html
+
+<!-- wi033-engineering:end -->

@@ -1,0 +1,19 @@
+{
+  "status": "passed",
+  "reviewed": [
+    "resnet/docs-360-c02-v01",
+    "resnet/docs-360-c02-v02",
+    "resnet/docs-360-c04-v01",
+    "resnet/docs-360-c08-v02",
+    "resnet/docs-360-c08-v03",
+    "resnet/docs-360-c08-v04",
+    "segformer/docs-360-c01-v01",
+    "segformer/docs-360-c01-v02",
+    "segformer/docs-360-c03-v01",
+    "segformer/docs-360-c04-v01",
+    "segformer/docs-360-c05-v01"
+  ],
+  "evidence": "11 selected new deep mobile designs viewed individually in actual docs at 360px. Equations, original anchor images, scale grids, 3-panel flow and captions visible without clipping. Native assessment remains separate. Long vertical scrolling and smaller historical metadata are limitations.",
+  "automated_states": 64,
+  "user_approval": "pending"
+}

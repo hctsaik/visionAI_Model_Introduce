@@ -1,0 +1,184 @@
+{
+  "owners": [
+    "pose"
+  ],
+  "changed_topics": [
+    "clip",
+    "pose",
+    "siglip"
+  ],
+  "unchanged_topics": 55,
+  "html_sha256": "1424b86bbc568eadb0c69180ce154291453e99e2b0f0a525c615c719e0b2fb48",
+  "bundle_assets": 1351,
+  "bundle_hashes_match": true,
+  "ui_states": 4,
+  "zoom_checks": 28,
+  "answers": 4,
+  "navigation": 4,
+  "http_checks": 32,
+  "http": [
+    {
+      "url": "http://127.0.0.1:8000/_course_content/generated-concepts/pose/wi030-pose-c1-r03-desktop.png",
+      "status": 200,
+      "sha256": "220d9ef760ea49b655c4358b6af7db075f73e382b36a0ed40fb3168f71776561"
+    },
+    {
+      "url": "http://127.0.0.1:8000/_course_content/generated-concepts/pose/wi030-pose-c1-r04-mobile.png",
+      "status": 200,
+      "sha256": "4e7535ae0eddfc681fbffb9be439dbef8a26219f65bc6a14facb7dd693355ee0"
+    },
+    {
+      "url": "http://127.0.0.1:8000/_course_content/generated-concepts/pose/wi030-pose-d2-r02-desktop.png",
+      "status": 200,
+      "sha256": "9ae272c90dd2bc31e387a5aa7795c9d3db52c49648d069924aff94ae20492005"
+    },
+    {
+      "url": "http://127.0.0.1:8000/_course_content/generated-concepts/pose/wi030-pose-d2-r02-mobile.png",
+      "status": 200,
+      "sha256": "26f117b04fae08da4a385547947d1177cf1c5bdf46259a2fbc8def5309136405"
+    },
+    {
+      "url": "http://127.0.0.1:8000/_course_content/generated-concepts/pose/wi030-pose-d3-r03-desktop.png",
+      "status": 200,
+      "sha256": "b98525406995d0f18378c44ed1aa01a904022b8384b58c5ea3595177f33cb928"
+    },
+    {
+      "url": "http://127.0.0.1:8000/_course_content/generated-concepts/pose/wi030-pose-d3-r03-mobile.png",
+      "status": 200,
+      "sha256": "133661e1880292f9d4bd064739352251af7ee7c3ddbd60106ef7a3a9e91d72c9"
+    },
+    {
+      "url": "http://127.0.0.1:8000/roadmap-model-selection/known-target-classification/pose/images/final/WI033-POSE-01-r02-desktop.png",
+      "status": 200,
+      "sha256": "5d24729269dddf66074b416f943aa628e502e383b61a7790b57970747ea971eb"
+    },
+    {
+      "url": "http://127.0.0.1:8000/roadmap-model-selection/known-target-classification/pose/images/final/WI033-POSE-01-r02-mobile.png",
+      "status": 200,
+      "sha256": "f72fc3bc7ef3209935b99f4aa08d6ea7fbf5dab563d32771a09d28659dff631b"
+    },
+    {
+      "url": "http://127.0.0.1:8000/roadmap-model-selection/known-target-classification/pose/images/final/WI033-POSE-02-r02-desktop.png",
+      "status": 200,
+      "sha256": "6bdcf0f303e521efae4543f61d4ebb734882fdf7884ccc65cc5486c2964fd1c5"
+    },
+    {
+      "url": "http://127.0.0.1:8000/roadmap-model-selection/known-target-classification/pose/images/final/WI033-POSE-02-r02-mobile.png",
+      "status": 200,
+      "sha256": "f799d73ef2741611c8db5999f75d64489427c45b707fdac0956148db90e2544c"
+    },
+    {
+      "url": "http://127.0.0.1:8000/roadmap-model-selection/known-target-classification/pose/images/final/WI033-POSE-03-r02-desktop.png",
+      "status": 200,
+      "sha256": "e14c460cb12bee87fa5e572e382d8e5ccc0a54bd749a9e19ebb457b19c75a42d"
+    },
+    {
+      "url": "http://127.0.0.1:8000/roadmap-model-selection/known-target-classification/pose/images/final/WI033-POSE-03-r02-mobile.png",
+      "status": 200,
+      "sha256": "08c08106760ab4318e7cccb2f2e8543197d5fb3b8b2af88493664d16b11437e3"
+    },
+    {
+      "url": "http://127.0.0.1:8000/roadmap-model-selection/known-target-classification/pose/images/final/WI033-POSE-04-r01-desktop.png",
+      "status": 200,
+      "sha256": "841738c6886529c5d3e177f4f7c04d11807a3f38713e91dcc375c53ff9ed7dd5"
+    },
+    {
+      "url": "http://127.0.0.1:8000/roadmap-model-selection/known-target-classification/pose/images/final/WI033-POSE-04-r01-mobile.png",
+      "status": 200,
+      "sha256": "678b50f469669647b4553f6b4e5f0bac768982c15e7b502a9424a41437ca4075"
+    },
+    {
+      "url": "http://127.0.0.1:8000/roadmap-model-selection/known-target-classification/pose/model.md",
+      "status": 200,
+      "sha256": "606bbb2f678a3c6c9e795d6a1fbf27a4b136db4484532d17631efcd0b87ea04b"
+    },
+    {
+      "url": "http://127.0.0.1:8000/roadmap-model-selection/known-target-classification/pose/slide-manifest.md",
+      "status": 200,
+      "sha256": "15c962ec2db3e2360a58e54d58411d95521b9ea0463397f4725bd850a68ac2c2"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/pose/wi030-pose-c1-r03-desktop.png",
+      "status": 200,
+      "sha256": "220d9ef760ea49b655c4358b6af7db075f73e382b36a0ed40fb3168f71776561"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/pose/wi030-pose-c1-r04-mobile.png",
+      "status": 200,
+      "sha256": "4e7535ae0eddfc681fbffb9be439dbef8a26219f65bc6a14facb7dd693355ee0"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/pose/wi030-pose-d2-r02-desktop.png",
+      "status": 200,
+      "sha256": "9ae272c90dd2bc31e387a5aa7795c9d3db52c49648d069924aff94ae20492005"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/pose/wi030-pose-d2-r02-mobile.png",
+      "status": 200,
+      "sha256": "26f117b04fae08da4a385547947d1177cf1c5bdf46259a2fbc8def5309136405"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/pose/wi030-pose-d3-r03-desktop.png",
+      "status": 200,
+      "sha256": "b98525406995d0f18378c44ed1aa01a904022b8384b58c5ea3595177f33cb928"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/pose/wi030-pose-d3-r03-mobile.png",
+      "status": 200,
+      "sha256": "133661e1880292f9d4bd064739352251af7ee7c3ddbd60106ef7a3a9e91d72c9"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/roadmap-model-selection/known-target-classification/pose/images/final/WI033-POSE-01-r02-desktop.png",
+      "status": 200,
+      "sha256": "5d24729269dddf66074b416f943aa628e502e383b61a7790b57970747ea971eb"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/roadmap-model-selection/known-target-classification/pose/images/final/WI033-POSE-01-r02-mobile.png",
+      "status": 200,
+      "sha256": "f72fc3bc7ef3209935b99f4aa08d6ea7fbf5dab563d32771a09d28659dff631b"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/roadmap-model-selection/known-target-classification/pose/images/final/WI033-POSE-02-r02-desktop.png",
+      "status": 200,
+      "sha256": "6bdcf0f303e521efae4543f61d4ebb734882fdf7884ccc65cc5486c2964fd1c5"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/roadmap-model-selection/known-target-classification/pose/images/final/WI033-POSE-02-r02-mobile.png",
+      "status": 200,
+      "sha256": "f799d73ef2741611c8db5999f75d64489427c45b707fdac0956148db90e2544c"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/roadmap-model-selection/known-target-classification/pose/images/final/WI033-POSE-03-r02-desktop.png",
+      "status": 200,
+      "sha256": "e14c460cb12bee87fa5e572e382d8e5ccc0a54bd749a9e19ebb457b19c75a42d"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/roadmap-model-selection/known-target-classification/pose/images/final/WI033-POSE-03-r02-mobile.png",
+      "status": 200,
+      "sha256": "08c08106760ab4318e7cccb2f2e8543197d5fb3b8b2af88493664d16b11437e3"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/roadmap-model-selection/known-target-classification/pose/images/final/WI033-POSE-04-r01-desktop.png",
+      "status": 200,
+      "sha256": "841738c6886529c5d3e177f4f7c04d11807a3f38713e91dcc375c53ff9ed7dd5"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/roadmap-model-selection/known-target-classification/pose/images/final/WI033-POSE-04-r01-mobile.png",
+      "status": 200,
+      "sha256": "678b50f469669647b4553f6b4e5f0bac768982c15e7b502a9424a41437ca4075"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/roadmap-model-selection/known-target-classification/pose/model.md",
+      "status": 200,
+      "sha256": "606bbb2f678a3c6c9e795d6a1fbf27a4b136db4484532d17631efcd0b87ea04b"
+    },
+    {
+      "url": "http://127.0.0.1:8000/docs/roadmap-model-selection/known-target-classification/pose/slide-manifest.md",
+      "status": 200,
+      "sha256": "15c962ec2db3e2360a58e54d58411d95521b9ea0463397f4725bd850a68ac2c2"
+    }
+  ],
+  "user_approval": "pending",
+  "published": false,
+  "model_inference": false
+}

@@ -1,0 +1,502 @@
+[
+  {
+    "topic": "dinov3",
+    "route": "interactive-learning.html",
+    "width": 1440,
+    "errors": [],
+    "images": [
+      {
+        "src": "http://127.0.0.1:8000/_course_content/generated-concepts/dinov3/wi027-dinov3-c1-r02-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 404.1875,
+          "y": 401.515625,
+          "width": 935.625,
+          "height": 526.5625,
+          "top": 401.515625,
+          "right": 1339.8125,
+          "bottom": 928.078125,
+          "left": 404.1875
+        },
+        "kind": "main-1"
+      },
+      {
+        "src": "http://127.0.0.1:8000/_course_content/generated-concepts/dinov3/wi033-failure-r03-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 404.1875,
+          "y": 200.8125,
+          "width": 935.625,
+          "height": 526.5625,
+          "top": 200.8125,
+          "right": 1339.8125,
+          "bottom": 727.375,
+          "left": 404.1875
+        },
+        "kind": "main-2"
+      },
+      {
+        "src": "http://127.0.0.1:8000/_course_content/generated-concepts/dinov2/wi027-features-d3-r02-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 404.1875,
+          "y": 201.125,
+          "width": 935.625,
+          "height": 526.5625,
+          "top": 201.125,
+          "right": 1339.8125,
+          "bottom": 727.6875,
+          "left": 404.1875
+        },
+        "kind": "main-3"
+      },
+      {
+        "src": "http://127.0.0.1:8000/roadmap-model-selection/foundation-vlm-open-world/dinov3/images/final/WI033-DINOV3-01-r02-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 367.1875,
+          "y": 196.015625,
+          "width": 1009.625,
+          "height": 568.203125,
+          "top": 196.015625,
+          "right": 1376.8125,
+          "bottom": 764.21875,
+          "left": 367.1875
+        },
+        "kind": "engineering-1"
+      },
+      {
+        "src": "http://127.0.0.1:8000/roadmap-model-selection/foundation-vlm-open-world/dinov3/images/final/WI033-DINOV3-02-r02-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 367.1875,
+          "y": 196.03125,
+          "width": 1009.625,
+          "height": 568.203125,
+          "top": 196.03125,
+          "right": 1376.8125,
+          "bottom": 764.234375,
+          "left": 367.1875
+        },
+        "kind": "engineering-2"
+      },
+      {
+        "src": "http://127.0.0.1:8000/roadmap-model-selection/foundation-vlm-open-world/dinov3/images/final/WI033-DINOV3-03-r01-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 367.1875,
+          "y": 196.046875,
+          "width": 1009.625,
+          "height": 568.203125,
+          "top": 196.046875,
+          "right": 1376.8125,
+          "bottom": 764.25,
+          "left": 367.1875
+        },
+        "kind": "engineering-3"
+      },
+      {
+        "src": "http://127.0.0.1:8000/roadmap-model-selection/foundation-vlm-open-world/dinov3/images/final/WI033-DINOV3-04-r02-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 367.1875,
+          "y": 196.0625,
+          "width": 1009.625,
+          "height": 568.203125,
+          "top": 196.0625,
+          "right": 1376.8125,
+          "bottom": 764.265625,
+          "left": 367.1875
+        },
+        "kind": "engineering-4"
+      }
+    ],
+    "zoom_checks": 7,
+    "answer": true,
+    "overflow": false,
+    "navigation": true,
+    "complete": true
+  },
+  {
+    "topic": "dinov3",
+    "route": "interactive-learning.html",
+    "width": 360,
+    "errors": [],
+    "images": [
+      {
+        "src": "http://127.0.0.1:8000/_course_content/generated-concepts/dinov3/wi027-dinov3-c1-r02-mobile.png",
+        "nw": 725,
+        "nh": 2170,
+        "box": {
+          "x": 17,
+          "y": -123.234375,
+          "width": 326,
+          "height": 975.75,
+          "top": -123.234375,
+          "right": 343,
+          "bottom": 852.515625,
+          "left": 17
+        },
+        "kind": "main-1"
+      },
+      {
+        "src": "http://127.0.0.1:8000/_course_content/generated-concepts/dinov3/wi033-failure-r03-mobile.png",
+        "nw": 768,
+        "nh": 2304,
+        "box": {
+          "x": 17,
+          "y": -125.171875,
+          "width": 326,
+          "height": 978,
+          "top": -125.171875,
+          "right": 343,
+          "bottom": 852.828125,
+          "left": 17
+        },
+        "kind": "main-2"
+      },
+      {
+        "src": "http://127.0.0.1:8000/_course_content/generated-concepts/dinov2/wi027-features-d3-r03-mobile.png",
+        "nw": 724,
+        "nh": 2171,
+        "box": {
+          "x": 17,
+          "y": -133.953125,
+          "width": 326,
+          "height": 977.546875,
+          "top": -133.953125,
+          "right": 343,
+          "bottom": 843.59375,
+          "left": 17
+        },
+        "kind": "main-3"
+      },
+      {
+        "src": "http://127.0.0.1:8000/roadmap-model-selection/foundation-vlm-open-world/dinov3/images/final/WI033-DINOV3-01-r02-mobile.png",
+        "nw": 768,
+        "nh": 2400,
+        "box": {
+          "x": 34,
+          "y": -87.359375,
+          "width": 292,
+          "height": 912.5,
+          "top": -87.359375,
+          "right": 326,
+          "bottom": 825.140625,
+          "left": 34
+        },
+        "kind": "engineering-1"
+      },
+      {
+        "src": "http://127.0.0.1:8000/roadmap-model-selection/foundation-vlm-open-world/dinov3/images/final/WI033-DINOV3-02-r02-mobile.png",
+        "nw": 768,
+        "nh": 2400,
+        "box": {
+          "x": 34,
+          "y": -87.625,
+          "width": 292,
+          "height": 912.5,
+          "top": -87.625,
+          "right": 326,
+          "bottom": 824.875,
+          "left": 34
+        },
+        "kind": "engineering-2"
+      },
+      {
+        "src": "http://127.0.0.1:8000/roadmap-model-selection/foundation-vlm-open-world/dinov3/images/final/WI033-DINOV3-03-r01-mobile.png",
+        "nw": 768,
+        "nh": 2400,
+        "box": {
+          "x": 34,
+          "y": -87.65625,
+          "width": 292,
+          "height": 912.5,
+          "top": -87.65625,
+          "right": 326,
+          "bottom": 824.84375,
+          "left": 34
+        },
+        "kind": "engineering-3"
+      },
+      {
+        "src": "http://127.0.0.1:8000/roadmap-model-selection/foundation-vlm-open-world/dinov3/images/final/WI033-DINOV3-04-r02-mobile.png",
+        "nw": 768,
+        "nh": 2400,
+        "box": {
+          "x": 34,
+          "y": -87.921875,
+          "width": 292,
+          "height": 912.5,
+          "top": -87.921875,
+          "right": 326,
+          "bottom": 824.578125,
+          "left": 34
+        },
+        "kind": "engineering-4"
+      }
+    ],
+    "zoom_checks": 7,
+    "answer": true,
+    "overflow": false,
+    "navigation": true,
+    "complete": true
+  },
+  {
+    "topic": "dinov3",
+    "route": "docs/index.html",
+    "width": 1440,
+    "errors": [],
+    "images": [
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/dinov3/wi027-dinov3-c1-r02-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 404.1875,
+          "y": 401.515625,
+          "width": 935.625,
+          "height": 526.5625,
+          "top": 401.515625,
+          "right": 1339.8125,
+          "bottom": 928.078125,
+          "left": 404.1875
+        },
+        "kind": "main-1"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/dinov3/wi033-failure-r03-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 404.1875,
+          "y": 200.8125,
+          "width": 935.625,
+          "height": 526.5625,
+          "top": 200.8125,
+          "right": 1339.8125,
+          "bottom": 727.375,
+          "left": 404.1875
+        },
+        "kind": "main-2"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/dinov2/wi027-features-d3-r02-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 404.1875,
+          "y": 201.125,
+          "width": 935.625,
+          "height": 526.5625,
+          "top": 201.125,
+          "right": 1339.8125,
+          "bottom": 727.6875,
+          "left": 404.1875
+        },
+        "kind": "main-3"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/foundation-vlm-open-world/dinov3/images/final/WI033-DINOV3-01-r02-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 367.1875,
+          "y": 196.015625,
+          "width": 1009.625,
+          "height": 568.203125,
+          "top": 196.015625,
+          "right": 1376.8125,
+          "bottom": 764.21875,
+          "left": 367.1875
+        },
+        "kind": "engineering-1"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/foundation-vlm-open-world/dinov3/images/final/WI033-DINOV3-02-r02-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 367.1875,
+          "y": 196.03125,
+          "width": 1009.625,
+          "height": 568.203125,
+          "top": 196.03125,
+          "right": 1376.8125,
+          "bottom": 764.234375,
+          "left": 367.1875
+        },
+        "kind": "engineering-2"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/foundation-vlm-open-world/dinov3/images/final/WI033-DINOV3-03-r01-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 367.1875,
+          "y": 196.046875,
+          "width": 1009.625,
+          "height": 568.203125,
+          "top": 196.046875,
+          "right": 1376.8125,
+          "bottom": 764.25,
+          "left": 367.1875
+        },
+        "kind": "engineering-3"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/foundation-vlm-open-world/dinov3/images/final/WI033-DINOV3-04-r02-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 367.1875,
+          "y": 196.0625,
+          "width": 1009.625,
+          "height": 568.203125,
+          "top": 196.0625,
+          "right": 1376.8125,
+          "bottom": 764.265625,
+          "left": 367.1875
+        },
+        "kind": "engineering-4"
+      }
+    ],
+    "zoom_checks": 7,
+    "answer": true,
+    "overflow": false,
+    "navigation": true,
+    "complete": true
+  },
+  {
+    "topic": "dinov3",
+    "route": "docs/index.html",
+    "width": 360,
+    "errors": [],
+    "images": [
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/dinov3/wi027-dinov3-c1-r02-mobile.png",
+        "nw": 725,
+        "nh": 2170,
+        "box": {
+          "x": 17,
+          "y": -123.234375,
+          "width": 326,
+          "height": 975.75,
+          "top": -123.234375,
+          "right": 343,
+          "bottom": 852.515625,
+          "left": 17
+        },
+        "kind": "main-1"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/dinov3/wi033-failure-r03-mobile.png",
+        "nw": 768,
+        "nh": 2304,
+        "box": {
+          "x": 17,
+          "y": -125.171875,
+          "width": 326,
+          "height": 978,
+          "top": -125.171875,
+          "right": 343,
+          "bottom": 852.828125,
+          "left": 17
+        },
+        "kind": "main-2"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/dinov2/wi027-features-d3-r03-mobile.png",
+        "nw": 724,
+        "nh": 2171,
+        "box": {
+          "x": 17,
+          "y": -133.953125,
+          "width": 326,
+          "height": 977.546875,
+          "top": -133.953125,
+          "right": 343,
+          "bottom": 843.59375,
+          "left": 17
+        },
+        "kind": "main-3"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/foundation-vlm-open-world/dinov3/images/final/WI033-DINOV3-01-r02-mobile.png",
+        "nw": 768,
+        "nh": 2400,
+        "box": {
+          "x": 34,
+          "y": -87.359375,
+          "width": 292,
+          "height": 912.5,
+          "top": -87.359375,
+          "right": 326,
+          "bottom": 825.140625,
+          "left": 34
+        },
+        "kind": "engineering-1"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/foundation-vlm-open-world/dinov3/images/final/WI033-DINOV3-02-r02-mobile.png",
+        "nw": 768,
+        "nh": 2400,
+        "box": {
+          "x": 34,
+          "y": -87.625,
+          "width": 292,
+          "height": 912.5,
+          "top": -87.625,
+          "right": 326,
+          "bottom": 824.875,
+          "left": 34
+        },
+        "kind": "engineering-2"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/foundation-vlm-open-world/dinov3/images/final/WI033-DINOV3-03-r01-mobile.png",
+        "nw": 768,
+        "nh": 2400,
+        "box": {
+          "x": 34,
+          "y": -87.65625,
+          "width": 292,
+          "height": 912.5,
+          "top": -87.65625,
+          "right": 326,
+          "bottom": 824.84375,
+          "left": 34
+        },
+        "kind": "engineering-3"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/foundation-vlm-open-world/dinov3/images/final/WI033-DINOV3-04-r02-mobile.png",
+        "nw": 768,
+        "nh": 2400,
+        "box": {
+          "x": 34,
+          "y": -87.921875,
+          "width": 292,
+          "height": 912.5,
+          "top": -87.921875,
+          "right": 326,
+          "bottom": 824.578125,
+          "left": 34
+        },
+        "kind": "engineering-4"
+      }
+    ],
+    "zoom_checks": 7,
+    "answer": true,
+    "overflow": false,
+    "navigation": true,
+    "complete": true
+  }
+]

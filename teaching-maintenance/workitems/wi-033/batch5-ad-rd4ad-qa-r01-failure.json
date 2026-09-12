@@ -1,0 +1,46 @@
+[
+  {
+    "topic": "ad-rd4ad",
+    "route": "interactive-learning.html",
+    "width": 1440,
+    "errors": [],
+    "images": [],
+    "zoom_checks": 0,
+    "complete": false,
+    "failure": "",
+    "trace": "Traceback (most recent call last):\n  File \"C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-033\\qa-pages.py\", line 21, in <module>\n    assert p.locator('.beginner-visual').count()==3\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n"
+  },
+  {
+    "topic": "ad-rd4ad",
+    "route": "interactive-learning.html",
+    "width": 360,
+    "errors": [],
+    "images": [],
+    "zoom_checks": 0,
+    "complete": false,
+    "failure": "",
+    "trace": "Traceback (most recent call last):\n  File \"C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-033\\qa-pages.py\", line 21, in <module>\n    assert p.locator('.beginner-visual').count()==3\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n"
+  },
+  {
+    "topic": "ad-rd4ad",
+    "route": "docs/index.html",
+    "width": 1440,
+    "errors": [],
+    "images": [],
+    "zoom_checks": 0,
+    "complete": false,
+    "failure": "",
+    "trace": "Traceback (most recent call last):\n  File \"C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-033\\qa-pages.py\", line 21, in <module>\n    assert p.locator('.beginner-visual').count()==3\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n"
+  },
+  {
+    "topic": "ad-rd4ad",
+    "route": "docs/index.html",
+    "width": 360,
+    "errors": [],
+    "images": [],
+    "zoom_checks": 0,
+    "complete": false,
+    "failure": "",
+    "trace": "Traceback (most recent call last):\n  File \"C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-033\\qa-pages.py\", line 21, in <module>\n    assert p.locator('.beginner-visual').count()==3\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n"
+  }
+]

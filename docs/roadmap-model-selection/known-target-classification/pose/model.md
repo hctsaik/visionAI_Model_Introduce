@@ -102,3 +102,40 @@ Keypoint R-CNN負責影像中的2D點及所屬物件；Pose Pipeline把這些同
 
 版本及示意界線見工作項目 sources.md。使用者成品核准pending。
 <!-- wi030-model-core:end -->
+
+<!-- wi033-engineering:start -->
+## WI-033 工程圖修正
+
+### Pose：影像點必須對上實體點
+
+同一支架的點名應跨影像與CAD一致。三點圖解只教對應；實際點數、幾何形狀與PnP方法影響可解性。需固定K、畸變、座標系及CAD單位，輸出的R/t才有意義；不以關鍵點熱區直接當姿態。
+
+先鎖定點名與相機設定，才能解讀姿態。
+
+來源：https://docs.opencv.org/4.x/d5/d1f/calib3d_solvePnP.html
+
+### Pose：先框再找點，或先找點再分組
+
+兩種2D關鍵點方法是替代方案。Top-down先偵測每個物件，再於各ROI估點並映回原圖；Bottom-up先估全圖點，再歸到不同實例。兩者都須保留物件ID、點名與原圖座標。求3D姿態仍需已知3D對應、K與畸變，這裡的三點僅解釋分組，不聲稱足以唯一求PnP。
+
+兩條替代路徑都交出有身份的 2D 點。
+
+來源：https://mmpose.readthedocs.io/en/latest/guide_to_framework.html ; https://docs.opencv.org/4.x/d5/d1f/calib3d_solvePnP.html
+
+### Pose：姿態還要投回原图檢查
+
+R/t表示物體到相機的變換，t單位跟3D工件座標一致。重投影把已知3D點經R/t與相機模型映回原圖，逐點比較觀測與投影；若用去畸變影像須搭配相應相機設定。交付點ID、可見性、誤差、版本與失敗狀態，外部機器人座標另需外參。
+
+交付 R／t、座標單位與逐點誤差，再核對實體。
+
+來源：https://docs.opencv.org/4.x/d5/d1f/calib3d_solvePnP.html
+
+### Pose：對稱件的小誤差也可能騙人
+
+近對稱工件上缺口被擋，錯誤ID也可能有低重投影誤差。比較有標記與第二視角的選擇時，需核對表面限制、可見性、校正與節拍，不只挑分數略低的姿態。不能確認就輸出失敗狀態並覆核。
+
+遇到身份歧義，補可見證據並攔下不確定姿態。
+
+來源：https://docs.opencv.org/4.x/d5/d1f/calib3d_solvePnP.html
+
+<!-- wi033-engineering:end -->

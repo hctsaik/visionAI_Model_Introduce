@@ -1,0 +1,495 @@
+{
+  "model": "DDAD",
+  "badge": "擴散恢復與異常定位",
+  "title": "DDAD：原圖引導多步恢復，整合兩種差異",
+  "scenario": {
+    "title": "恢復刮傷，又不能改壞正常孔邊",
+    "body": "金屬板表面有刮傷 p，正常孔邊 q 也會反光；需要定位線索並控制誤報、漏檢與時間。"
+  },
+  "promise": {
+    "title": "可回看原圖的位置線索",
+    "body": "輸出候選異常位置和分數；不是正常真值、尺寸或自動放行結果。"
+  },
+  "mental_model": {
+    "title": "DDAD：原圖引導多步恢復，整合兩種差異",
+    "body": "先以正常資料訓練去噪模型，並用正常／近似恢復影像做特徵適配。測試時以原圖 A 為條件，逐步去噪得到恢復估計 R；像素差異與適配特徵差異加權整合，產生異常位置圖。原圖條件不是正常真值，也沒有額外學習式分割頭。",
+    "limit": "恢復可能保留缺陷或改動正常外觀，需以獨立資料驗證。"
+  },
+  "micro_example": {
+    "title": "品質與速度能否一起改善？",
+    "setup": "正常孔邊常被恢復得模糊而誤報，細刮傷卻可能被保留；多步推論又接近產線時間上限。",
+    "prediction": "增加原圖引導或減少步數能否同時解決三件事？",
+    "reveal": "更強保留原圖可能減少正常孔邊變形，也可能把刮傷一起留下；減少步數能改變時間與恢復品質，不能預設雙贏。用獨立正常與真缺陷，分開驗證像素／特徵兩項、引導與步數，量完整延遲和覆核量；只在同一漏檢要求下選擇可接受設定。"
+  },
+  "mechanism_steps": [
+    {
+      "title": "鎖定 conditioned diffusion 的正常重建契約",
+      "body": "正常 support、已宣告 defect／synthetic／generated-example policy、image recipe、start noise、schedule、target-conditioning rule/strength、sampler、steps、denoiser checkpoint 和 precision 一起版本化。",
+      "why": "換 sampler、noise 或 steps 就會改重建行為、成本與可重播性；它們不是可以在展示時自由替換的參數。",
+      "anchor": "工程圖核對：noise + target condition → conditional denoiser",
+      "diagram": {
+        "title": "鎖定 conditioned diffusion state",
+        "body": "noise、condition、sampler 與 steps 共同定義重建。",
+        "why": "任一項改動都會改成本與 x-hat。",
+        "anchor": "noise + condition → denoiser"
+      }
+    },
+    {
+      "title": "由測試輸入得到 normal-like x-hat",
+      "body": "測試 x 依鎖定 sampling path 生成 x-hat，並保存完整 input/reconstruction trace。",
+      "why": "x-hat 是比較對照而不是 ground truth；它可以保留 defect、擦掉正常微結構或產生假紋理。",
+      "anchor": "工程圖核對：conditioned reconstruction x-hat",
+      "diagram": {
+        "title": "sampling 生成 x-hat 對照",
+        "body": "測試 x 經條件式去噪得到 normal-like x-hat。",
+        "why": "x-hat 可能保留缺陷或改寫正常細節。",
+        "anchor": "x → conditioned reconstruction"
+      }
+    },
+    {
+      "title": "分別量 pixel 與 feature residual",
+      "body": "比較 x 與 x-hat 的 pixel residual，並以固定 feature extractor／adaptation path 比較 feature residual，再記錄各自 normalization。",
+      "why": "pixel 對外觀變動敏感，feature 對細小訊號或 domain mismatch 有盲區；把它們混成單一無來源分數會失去可診斷性。",
+      "anchor": "工程圖核對：pixel map + feature map",
+      "diagram": {
+        "title": "分開量兩種 residual",
+        "body": "x 與 x-hat 形成 pixel map 和 feature map。",
+        "why": "兩種比較的盲區不同，需分開保存。",
+        "anchor": "pixel residual + feature residual"
+      }
+    },
+    {
+      "title": "以固定規則融合為候選 evidence",
+      "body": "兩張 map 經 resize、smoothing、mask、fusion weights、aggregation、calibration 和 threshold 成為 candidate map 和 review trace。",
+      "why": "normalization 與 fusion 可以改低 FPR，即使每張 component map 看起來合理；需要真實 holdout 驗證。",
+      "anchor": "工程圖核對：dual residual fusion → gate",
+      "diagram": {
+        "title": "雙 residual 融合為候選",
+        "body": "兩張 map 依固定 weights 與 gate 形成分數。",
+        "why": "normalization 與 fusion 會改低 FPR。",
+        "anchor": "dual residual → fusion → gate"
+      }
+    }
+  ],
+  "visual_intro": "先把 reconstruction 當成可疑的對照圖，而不是答案；再核對 sampling contract、pixel/feature residual 和融合候選。",
+  "beginner_path": {
+    "title": "恢復、錯誤與分數來源：三圖讀懂",
+    "intro": "同一金屬板 A 的刮傷 p 與正常孔邊 q；插圖是機制示意，非模型實測。",
+    "visuals": [
+      {
+        "id": "wi021-ad-ddad-1",
+        "title": "DDAD：原圖引導多步恢復，整合兩種差異",
+        "prompt": "從正常訓練走到待測 A 的恢復與定位。",
+        "caption": "先以正常資料訓練去噪模型，並用正常／近似恢復影像做特徵適配。測試時以原圖 A 為條件，逐步去噪得到恢復估計 R；像素差異與適配特徵差異加權整合，產生異常位置圖。原圖條件不是正常真值，也沒有額外學習式分割頭。",
+        "image": "_course_content/generated-concepts/ad-ddad/wi021-ddad-c1-r01-desktop.png",
+        "alt": "DDAD：原圖引導多步恢復，整合兩種差異。先以正常資料訓練去噪模型，並用正常／近似恢復影像做特徵適配。測試時以原圖 A 為條件，逐步去噪得到恢復估計 R；像素差異與適配特徵差異加權整合，產生異常位置圖。原圖條件不是正常真值，也沒有額外學習式分割頭。 本圖為 AI 生成教學示意，非模型實測。",
+        "callouts": [
+          {
+            "title": "哪些部分需要準備",
+            "body": "正常去噪訓練之外，適配特徵提取器；以固定教師的蒸餾約束保留知識。不能把預訓練骨幹誤解為整套免訓練。"
+          },
+          {
+            "title": "條件與步數",
+            "body": "原圖條件進入去噪過程以維持內容，推論不更新模型權重。圖中步數只是示意；步數與引導強度需按延遲及缺陷驗證。"
+          },
+          {
+            "title": "差異如何合成",
+            "body": "像素項比較同位置外觀，特徵項比較適配後表示的餘弦距離，再按權重整合；兩項尺度及權重會影響結果。"
+          }
+        ],
+        "reading_views": [
+          {
+            "title": "DDAD：原圖引導多步恢復，整合兩種差異",
+            "image": "_course_content/generated-concepts/ad-ddad/wi021-ddad-c1-r01-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/ad-ddad/wi021-ddad-c1-r02-mobile.png",
+            "alt": "DDAD：原圖引導多步恢復，整合兩種差異。先以正常資料訓練去噪模型，並用正常／近似恢復影像做特徵適配。測試時以原圖 A 為條件，逐步去噪得到恢復估計 R；像素差異與適配特徵差異加權整合，產生異常位置圖。原圖條件不是正常真值，也沒有額外學習式分割頭。 本圖為 AI 生成教學示意，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              724,
+              2172
+            ],
+            "mobile_display_mode": "full-mobile",
+            "mobile_intrinsic_width": 724,
+            "mobile_intrinsic_height": 2172,
+            "desktop_intrinsic_width": 1672,
+            "desktop_intrinsic_height": 941
+          }
+        ],
+        "core_ideas": true
+      },
+      {
+        "id": "wi021-ad-ddad-2",
+        "title": "恢復得像，不代表檢測得好",
+        "prompt": "追刮傷 p 與正常孔邊 q，分開看漏檢和誤報。",
+        "caption": "恢復保留刮傷，p 的差異可能太小而漏檢；恢復改掉正常孔邊，q 又可能誤報。這是兩個反例，並非噪聲越大必定越好或越差。相同原圖與恢復圖，學習式定位和差異整合仍會產生不同輸出。",
+        "image": "_course_content/generated-concepts/ad-ddad/wi021-diffusion-methods-d2-r02-desktop.png",
+        "alt": "恢復得像，不代表檢測得好。恢復保留刮傷，p 的差異可能太小而漏檢；恢復改掉正常孔邊，q 又可能誤報。這是兩個反例，並非噪聲越大必定越好或越差。相同原圖與恢復圖，學習式定位和差異整合仍會產生不同輸出。 本圖為 AI 生成教學示意，非模型實測。",
+        "callouts": [
+          {
+            "title": "先查原圖",
+            "body": "先確認缺陷在原圖可見、孔邊變化是否允收；不要用生成估計取代實體正常真值。"
+          },
+          {
+            "title": "再查兩種錯誤",
+            "body": "保留獨立正常與真缺陷，按尺寸、材質及光照記錄漏檢和誤報；不要只看恢復圖是否漂亮。"
+          },
+          {
+            "title": "調參的代價",
+            "body": "噪聲、引導、步數或門檻改動後，重驗兩種錯誤及端到端時間。圖中的 p?、q? 是待查位置，不是實測熱圖。"
+          }
+        ],
+        "reading_views": [
+          {
+            "title": "恢復得像，不代表檢測得好",
+            "image": "_course_content/generated-concepts/ad-ddad/wi021-diffusion-methods-d2-r02-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/ad-ddad/wi021-diffusion-methods-d2-r03-mobile.png",
+            "alt": "恢復得像，不代表檢測得好。恢復保留刮傷，p 的差異可能太小而漏檢；恢復改掉正常孔邊，q 又可能誤報。這是兩個反例，並非噪聲越大必定越好或越差。相同原圖與恢復圖，學習式定位和差異整合仍會產生不同輸出。 本圖為 AI 生成教學示意，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              725,
+              2170
+            ],
+            "mobile_display_mode": "full-mobile",
+            "mobile_intrinsic_width": 725,
+            "mobile_intrinsic_height": 2170,
+            "desktop_intrinsic_width": 1672,
+            "desktop_intrinsic_height": 941
+          }
+        ],
+        "core_ideas": false
+      },
+      {
+        "id": "wi021-ad-ddad-3",
+        "title": "恢復以後，誰來判斷異常？",
+        "prompt": "固定原圖 A 與恢復估計 R，比較分數來源與準備成本。",
+        "caption": "DiffusionAD／DRAEM 把原圖與恢復圖一起交給學習式定位網路；DDAD 整合像素差異與適配特徵差異。前兩者需要合成異常與定位訓練，DDAD 則需正常去噪與特徵適配。在同硬體、解析度與漏檢風險要求下，比誤報、延遲和人工覆核量；沒有共同實測就不排名。",
+        "image": "_course_content/generated-concepts/ad-ddad/wi021-diffusion-methods-d3-r02-desktop.png",
+        "alt": "恢復以後，誰來判斷異常？。DiffusionAD／DRAEM 把原圖與恢復圖一起交給學習式定位網路；DDAD 整合像素差異與適配特徵差異。前兩者需要合成異常與定位訓練，DDAD 則需正常去噪與特徵適配。在同硬體、解析度與漏檢風險要求下，比誤報、延遲和人工覆核量；沒有共同實測就不排名。 本圖為 AI 生成教學示意，非模型實測。",
+        "callouts": [
+          {
+            "title": "共同輸入的用途",
+            "body": "本圖刻意固定 A／R，只比較產生分數的部分；不表示三個方法實際會生成相同 R。R 不是正常真值。"
+          },
+          {
+            "title": "如何開始選型",
+            "body": "能設計代表性合成異常，可評估學習式定位；希望使用差異整合，可評估 DDAD 的適配和多步成本。最終以未見真缺陷驗證。"
+          },
+          {
+            "title": "換產品之後",
+            "body": "重新檢查正常涵蓋、合成練習或特徵適配與門檻。異常位置圖是覆核線索，精密輪廓及尺寸需另驗。"
+          }
+        ],
+        "reading_views": [
+          {
+            "title": "恢復以後，誰來判斷異常？",
+            "image": "_course_content/generated-concepts/ad-ddad/wi021-diffusion-methods-d3-r02-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/ad-ddad/wi021-diffusion-methods-d3-r04-mobile.png",
+            "alt": "恢復以後，誰來判斷異常？。DiffusionAD／DRAEM 把原圖與恢復圖一起交給學習式定位網路；DDAD 整合像素差異與適配特徵差異。前兩者需要合成異常與定位訓練，DDAD 則需正常去噪與特徵適配。在同硬體、解析度與漏檢風險要求下，比誤報、延遲和人工覆核量；沒有共同實測就不排名。 本圖為 AI 生成教學示意，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              724,
+              2171
+            ],
+            "mobile_display_mode": "full-mobile",
+            "mobile_intrinsic_width": 724,
+            "mobile_intrinsic_height": 2171,
+            "desktop_intrinsic_width": 1672,
+            "desktop_intrinsic_height": 941
+          }
+        ],
+        "core_ideas": false
+      }
+    ]
+  },
+  "concept_visuals": [
+    {
+      "id": "causal-chain",
+      "placement": "after_causal_chain",
+      "title": "DDAD：先懂核心再看細節",
+      "prompt": "只追求重建和輸入完全相同，對异常偵測有什麼風險？",
+      "caption": "想產生與待測工件對得上的正常對照，又怕只看像素差會受細微對位影響。DDAD用待測影像條件引導去噪，結合像素與特徵兩種差異。",
+      "image": "_course_content/generated-concepts/ad-ddad/ad-ddad-f01-core.png",
+      "alt": "想產生與待測工件對得上的正常對照，又怕只看像素差會受細微對位影響。DDAD用待測影像條件引導去噪，結合像素與特徵兩種差異。 圖為既有生成工件與機制設定，不是模型推論。",
+      "callouts": [
+        {
+          "title": "正常資料學去噪",
+          "body": "擴散模型以正常影像學習；推論從帶噪狀態出發，由待測影像提供條件以保留相應結構。"
+        },
+        {
+          "title": "條件式復原",
+          "body": "採樣逐步產生較正常的重建；條件太強可能保留異常，太弱則可能改掉正常結構。"
+        },
+        {
+          "title": "兩種差異互補",
+          "body": "像素差和經域適應的特徵差共同形成定位線索；特徵模型的域適應也是方法一部分，不只換一張差分圖。"
+        }
+      ]
+    },
+    {
+      "id": "worked-example",
+      "placement": "after_micro_example",
+      "title": "漂亮的 x-hat，為何不是可接受證據？",
+      "prompt": "兩列都呈現平滑正常樣的 reconstruction：一列把真刮痕抹掉，一列把正常微結構抹掉。",
+      "caption": "刮痕被抹掉可能讓 residual 有用，也可能因 condition 保留 defect 而失敗；正常微結構被抹掉會造成 false reject。只看重建美觀無法判別，需用 input/pixel map/feature map/fused map 與 real holdout。",
+      "image": "_course_content/generated-concepts/ad-ddad/ad-ddad-worked-example_v01.svg",
+      "alt": "兩列無文字圖：一列真刮痕和被平滑的對照圖，另一列正常微結構和過度平滑對照圖，皆配像素與特徵候選圖及review符號。",
+      "callouts": [
+        {
+          "title": "defect persistence/erasure",
+          "body": "conditioned reconstruction 可能保留或消除缺陷，兩者都要實測。"
+        },
+        {
+          "title": "normal detail loss",
+          "body": "正常微結構被改寫也能造成大 residual。"
+        },
+        {
+          "title": "五聯 evidence",
+          "body": "input、reconstruction、pixel map、feature map、fused map 要一起看。"
+        }
+      ]
+    },
+    {
+      "id": "comparison",
+      "placement": "after_comparison",
+      "title": "DDAD 的多步 conditioned diffusion 不等於 DiffusionAD 的 one-step path",
+      "prompt": "兩者都稱 diffusion anomaly detection，但 sampling 和 map 形成方式不同。",
+      "caption": "DDAD 有鎖定 schedule／noise／sampler／steps 並融合 pixel/feature residual；DiffusionAD 使用 norm-guided one-step denoising 加 joint segmentation。不可拿不同 steps 的品質或成本直接比較。",
+      "image": "_course_content/generated-concepts/ad-ddad/ad-ddad-comparison_v01.svg",
+      "alt": "左右比較圖：左側多個去噪步驟生成對照再分出pixel/feature雙residual，右側單一步norm-guided restoration接segmentation map。",
+      "callouts": [
+        {
+          "title": "DDAD",
+          "body": "sampling setting 與 dual residual 是模型身分。"
+        },
+        {
+          "title": "DiffusionAD",
+          "body": "one-step 不是較少畫幾個箭頭，而是不同 operating contract。"
+        },
+        {
+          "title": "公平比較",
+          "body": "同時固定 ROI、support、calibration、decision unit、hardware 和完整 P95。"
+        }
+      ]
+    },
+    {
+      "id": "boundary-cases-explainer",
+      "placement": "before_boundary_cases",
+      "title": "condition、雙 residual 與 sampling state 各會怎麼破壞證據？",
+      "prompt": "DDAD 的 normal-like reconstruction 依賴 conditioning 與 sampling；pixel／feature residual 不一致時，先追哪條因果？",
+      "caption": "DDAD 的三個模型專屬反事實：每欄把條件、可觀察後果與正確下一步放在一起。它們不是自動修正規則；遇到條件超出驗證範圍時，先保存原始證據並進入 HOLD／REVIEW。",
+      "image": "_course_content/generated-concepts/ad-ddad/ad-ddad-boundary-cases_v01.svg",
+      "alt": "DDAD 的三欄反事實說明圖：每欄依序說明一個失效條件、可能看到的候選或量測後果，以及應進入 HOLD、重驗或改選方法的安全下一步。",
+      "callouts": [
+        {
+          "title": "conditioning 或 domain 不合",
+          "body": "正常品也可能被重建成陌生外觀，雙 residual 同時升高；先查 condition、ROI、normal support 與 acquisition。"
+        },
+        {
+          "title": "pixel 與 feature 證據衝突",
+          "body": "平滑重建可抹掉真缺陷或製造紋理差；保留兩張 map、weight、seed 與 real-defect challenge。"
+        },
+        {
+          "title": "sampling／fusion state 不可重播",
+          "body": "不能以一張漂亮重建作結論；先 HOLD，固定 schedule、steps、seed、fusion 與完整 P95 再 qualification。"
+        }
+      ]
+    }
+  ],
+  "boundary_cases": [
+    {
+      "condition": "target conditioning 保留、抹掉或幻覺出結構",
+      "effect": "平滑重建不代表正確；defect persistence、erasure 和 normal detail loss 都可能扭曲 residual。",
+      "action": "HOLD；保存五聯 evidence，在真實 challenge 檢查 escaped defects 與 false reject。"
+    },
+    {
+      "condition": "pixel 對位/照明敏感，feature extractor/domain adaptation 偏差",
+      "effect": "pixel map 可被 acquisition state 主導，feature map 又可能忽略細小 defect 或過擬合 generated protocol。",
+      "action": "分開報告兩張 map、no-adaptation ablation、ROI/registration/illumination tests 和 real holdout。"
+    },
+    {
+      "condition": "sampling schedule、steps、fusion 或 drift 未鎖定",
+      "effect": "不同設定有不同延遲、重建和 low-FPR；看似同一模型的比較其實不是同一 operating point。",
+      "action": "保存 sampler/steps、fusion、calibration、hardware 與完整 P95/P99；改動後重新 qualification。"
+    }
+  ],
+  "comparison": [
+    {
+      "model": "DDAD",
+      "normality": "target-conditioned diffusion reconstruction 加 feature-comparison state",
+      "candidate": "fused pixel/feature residual 高"
+    },
+    {
+      "model": "DiffusionAD",
+      "normality": "norm-guided one-step restoration 加 segmentation state",
+      "candidate": "joint restoration/segmentation map 高"
+    },
+    {
+      "model": "InvAD",
+      "normality": "一次 feature inversion 的 recovered normal-like features",
+      "candidate": "input/recovered feature residual 大"
+    }
+  ],
+  "selection": "DiffusionAD／DRAEM 把原圖與恢復圖一起交給學習式定位網路；DDAD 整合像素差異與適配特徵差異。前兩者需要合成異常與定位訓練，DDAD 則需正常去噪與特徵適配。在同硬體、解析度與漏檢風險要求下，比誤報、延遲和人工覆核量；沒有共同實測就不排名。",
+  "poc": {
+    "title": "POC 第一件事：驗證 x-hat 沒有替你偷偷決定答案",
+    "steps": [
+      "固定 DDAD release、denoiser, schedule,start noise,target condition/sampler/steps、feature extractor/adaptation、normal IDs、defect protocol、ROI/transform 和 checkpoints。",
+      "鎖 pixel/feature residual normalization、resize/smoothing/mask、fusion,aggregation,calibration,threshold 和五聯 evidence trace。",
+      "在 real challenge/future/drift split 比較 persistence/erasure、false reject、low-FPR escape、review load、P95/P99、steps ablation 和 no-adaptation baseline。"
+    ],
+    "hold": "conditioning/defect protocol 不可稽核、feature adaptation 無 real evidence、sampling state 未鎖、微缺陷/global logic 或完整 P95 不符時，先 HOLD。",
+    "acceptance": {
+      "baseline": "固定 target condition、start noise、schedule、sampler、steps、feature extractor/adaptation、dual-residual normalization 與 fusion rule。",
+      "measure": "量 pixel／feature component 行為、persistence／erasure、low-FPR escape、false reject、review load、no-adaptation baseline 與完整 P95/P99。",
+      "negative_control": "只改 sampler、step count 或 feature-adaptation state，確認分數分布與 threshold 不可直接沿用，必須重新 qualification。",
+      "owner": "AOI 品質 owner、diffusion/feature ML owner、MLOps runtime owner"
+    }
+  },
+  "teach_back": {
+    "question": "為什麼 R 看起來正常仍不足以證明檢測有效？",
+    "answer": "R 只是估計；缺陷可能被保留、正常可能被改掉，最後定位方式也不同。需回看原圖並統計漏檢、誤報和成本。"
+  },
+  "slide_reading": [
+    {
+      "title": "先找：重建對照是如何生成的？",
+      "question": "哪些項目共同決定 x-hat？",
+      "look": "找 noise start、schedule、target condition、sampler、steps、denoiser。",
+      "relation": "這些不是背景設定，而是產生 normal-like對照的完整 sampling contract。",
+      "takeaway": "改 sampler 或 steps 就改模型的 operating point。",
+      "terms": [
+        "sampler：依擴散規則生成x-hat的取樣方法",
+        "target conditioning：引導去噪重建的條件訊號"
+      ]
+    },
+    {
+      "title": "這張圖要核對 dual residual",
+      "question": "pixel 與 feature map 分別補足什麼？",
+      "look": "找 x/x-hat pixel map、feature extractor、feature map 和 fusion。",
+      "relation": "像素差保留外觀變化，feature差提供另一種抽象比較；兩者都有盲區。",
+      "takeaway": "component maps 要分開保存，不能只留融合色圖。",
+      "terms": [
+        "pixel residual：原圖與重建圖的外觀差距",
+        "feature residual：兩張圖經特徵表示後的差距"
+      ]
+    },
+    {
+      "title": "先鎖 fusion 與 calibration，才談分數",
+      "question": "為何正常化、權重與 threshold 會改低 FPR？",
+      "look": "找 residual normalization、fusion weights、aggregation、calibration 和 threshold。",
+      "relation": "不同尺度分數經這些規則才變成一個可操作候選。",
+      "takeaway": "好看的 component map 不等於安全的 fused score。",
+      "terms": [
+        "fusion weights：兩種residual在融合圖中的權重",
+        "low FPR：很低誤報率下仍需維持的檢出條件"
+      ]
+    },
+    {
+      "title": "選它前，先看重建偏差與成本",
+      "question": "x-hat 平滑時，哪三件事仍要驗？",
+      "look": "看 defect persistence/erasure、normal detail loss、drift、steps與完整P95。",
+      "relation": "重建可以幫助比較，也可能破壞真正 evidence；成本隨 sampling state 改變。",
+      "takeaway": "不確定時先 HOLD，拿五聯 evidence 回到真實 challenge。",
+      "terms": [
+        "defect erasure：重建將真缺陷抹掉的情況",
+        "P99：99%請求不超過的端到端延遲"
+      ]
+    }
+  ],
+  "comparison_headers": {
+    "title": "先比 condition 與雙 residual，不比 reconstruction 漂亮",
+    "basis": "normal-like 對照如何由條件式 sampling 生成？",
+    "output": "雙 residual 如何才形成候選？"
+  },
+  "transfer_check": {
+    "title": "換材質怎麼辦",
+    "scenario": "從霧面金屬換到鏡面金屬。",
+    "question": "原有正常知識和門檻可直接沿用嗎？",
+    "answer": "先核對光照及允收反光，補正常涵蓋並評估重訓／適配；再用未見正常和真缺陷重驗，不能把反光熱點直接當缺陷。"
+  },
+  "review_trace": {
+    "authority": "roadmap-model-selection/anomaly-detection/ad-ddad/model.md",
+    "scope": "WI-021 三張首讀與原生手機圖重製，保留工程參考。",
+    "claims": [
+      {
+        "id": "visual-1",
+        "field": "beginner_path.visuals[conditioned-workpiece]",
+        "source": "模型定位 / architecture_path"
+      },
+      {
+        "id": "visual-2",
+        "field": "beginner_path.visuals[declared-support-policy]",
+        "source": "architecture_path"
+      },
+      {
+        "id": "visual-3",
+        "field": "beginner_path.visuals[conditioned-sampling]",
+        "source": "representation_or_score"
+      },
+      {
+        "id": "visual-4",
+        "field": "beginner_path.visuals[dual-residuals]",
+        "source": "failure_boundary"
+      },
+      {
+        "id": "visual-5",
+        "field": "beginner_path.visuals[fusion-hold]",
+        "source": "selection_gate / evidence_bundle"
+      },
+      {
+        "id": "promise",
+        "field": "promise",
+        "source": "模型定位 / representation_or_score"
+      },
+      {
+        "id": "mechanism",
+        "field": "mechanism_steps",
+        "source": "architecture_path / representation_or_score"
+      },
+      {
+        "id": "boundaries",
+        "field": "boundary_cases",
+        "source": "failure_boundary / selection_gate"
+      },
+      {
+        "id": "comparison",
+        "field": "comparison + selection",
+        "source": "selection_gate"
+      },
+      {
+        "id": "poc",
+        "field": "poc + acceptance",
+        "source": "cost_and_operating_point / evidence_bundle"
+      },
+      {
+        "id": "transfer",
+        "field": "transfer_check",
+        "source": "failure_boundary / selection_gate"
+      },
+      {
+        "id": "f01-core",
+        "field": "beginner_path.visuals[0] + scenario + mental_model",
+        "source": "https://arxiv.org/abs/2305.15956"
+      },
+      {
+        "id": "f01-transfer",
+        "field": "micro_example + transfer_check",
+        "source": "由原論文機制推論移除後果；https://arxiv.org/abs/2305.15956"
+      },
+      {
+        "id": "wi021-first-read",
+        "field": "beginner_path + micro_example + selection",
+        "source": "https://arxiv.org/html/2305.15956v2"
+      }
+    ]
+  },
+  "teaching_preflight": {
+    "brief": "teaching-images/vision-ai-model-selection/workitems/wi-021/ddad-c1-r01.md",
+    "story": "C",
+    "major_visual_nodes": 4,
+    "visual_status": "self-reviewed",
+    "user_review": "pending"
+  }
+}

@@ -99,3 +99,40 @@ Preserve reference anomaly image/mask and normal-source hashes, recipe/ROI, spli
 - Hu et al., *AnomalyDiffusion: Few-Shot Anomaly Image Generation with Diffusion Model* (AAAI 2024), [arXiv:2312.05767](https://arxiv.org/abs/2312.05767).
 - [Official AnomalyDiffusion repository](https://github.com/sjtuplayer/anomalydiffusion) for the authors' reference implementation.
 - `full-model-course/07-diffusion-generation-and-restoration.md` for course-scoped claims, page order, and release boundaries.
+
+<!-- wi033-engineering:start -->
+## WI-033 工程圖修正
+
+### AnomalyDiffusion：兩區各有資料責任
+
+保持原上方雙孔板及大左下小右下兩傷。合成mask是生成條件，不自動成為真值；空mask區或越界都要剔除或修標。
+
+圖與遮罩要逐區一致，才可當訓練樣本。
+
+來源：https://arxiv.org/html/2312.05767v1
+
+### AnomalyDiffusion：外觀與位置共同引導
+
+同上方双孔板，大左下/小右下兩區。學異常外觀embedding及mask編碼器，固定擴散主幹；空間及外觀條件引導。AAR用生成估計與正常圖遮罩內差找較弱區域調注意力，背景與正常圖融合。給两mask只生成一傷仍是需剔除的錯標反例，不聲稱自適應必成功。 r01實看修正：恢復原板上方兩孔，保留大左下小右下雙傷；條件pill與caption分離。
+
+逐區核對合成缺陷，不能只相信指定遮罩。
+
+來源：https://arxiv.org/html/2312.05767v1
+
+### AnomalyDiffusion：外觀與位置都要版本
+
+保存基模、外觀embedding、mask編碼、AAR/背景融合與採樣設定。不同大小缺陷不能只看整圖平均；位置覆蓋與背景孔位分開驗。
+
+保存嵌入、遮罩編碼與採樣設定。
+
+來源：https://arxiv.org/html/2312.05767v1
+
+### AnomalyDiffusion：兩個遮罩只長一傷
+
+同板同mask，一傷對兩標籤是錯標反例；AAR可能改善但不保證避免。不得用合成量取代真實留出集。
+
+未生成的區域，不能沿用缺陷標籤。
+
+來源：https://arxiv.org/html/2312.05767v1
+
+<!-- wi033-engineering:end -->

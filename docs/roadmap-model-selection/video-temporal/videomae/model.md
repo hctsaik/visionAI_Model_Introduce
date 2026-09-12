@@ -116,3 +116,40 @@ Keep camera / lens / timestamps / frame-rate / missing-frame records; ROI / prep
 ## Production gate
 
 The six model-specific fields, comparison contract and required visual primitives are complete. Pages 05-26 through 05-29 may proceed to versioned white high-density C / D visual production. Final assets must pass Chinese readability, engineering causality, no-fabricated-performance, manifest, QA and style validation before approval.
+
+<!-- wi033-engineering:start -->
+## WI-033 工程圖修正
+
+### VideoMAE：預訓練與分類分工
+
+重建預訓練不直接定義夾取失敗；下游以標註片段微調或固定編碼器學頭，必須明列模式。部署用新影片與分類路徑。
+
+預訓練學表示，標註任務教答案。
+
+來源：https://arxiv.org/abs/2203.12602
+
+### VideoMAE：遮時空塊，訓練補像素
+
+原版VideoMAE預訓練使用跨時間一致tube mask，通常90–95%高比例；圖中小格只示意對位，不代表實際比例。編碼器處理可見tokens，輕量解碼器加入mask tokens重建像素，以原遮蔽位置像素監督；下游動作分類使用編碼器及另外訓練任務頭，不使用預訓練解碼器。 r01實看修正：解碼重建格上移，與caption保留間距。
+
+補像素訓練表示，部署另接任務頭。
+
+來源：https://arxiv.org/abs/2203.12602
+
+### VideoMAE：token與取樣決定成本
+
+全注意力成對數約隨N平方；給定100與200 tokens，其N平方1萬/4萬只是計算量尺度示例，不是實測毫秒。取樣跨距大可能漏短失敗。 r01實看修正：时间刻度及標籤各自定位。
+
+減少取樣可省成本，也可能漏掉短事件。
+
+來源：https://arxiv.org/abs/2203.12602
+
+### VideoMAE：補得像，不保證分類對
+
+作者例：100格中99格平方差0、關鍵格100，平均1；平均重建差不能直接當事件成功率。少數關鍵動作需標註與下游驗證。 r01實看修正：99格/1格都明寫平方差，避免把差100誤讀成平方後1萬。
+
+像素重建與任務判斷必須分開驗。
+
+來源：https://arxiv.org/abs/2203.12602
+
+<!-- wi033-engineering:end -->

@@ -1,0 +1,6 @@
+{
+  "result": "2 passed, 7 deselected in 21.23s",
+  "prior": "15 passed, 120 subtests passed; two old runtime assertions failed",
+  "fix": "scope deep-dive assertions to deep container, count desktop and authored full-mobile separately; beginner main remains outside",
+  "command": "python -m pytest tests/test_resnet_deep_dive.py tests/test_segformer_deep_dive.py -q -k runtime_renders_only"
+}

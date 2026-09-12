@@ -1,0 +1,590 @@
+{
+  "model": "ECC",
+  "beginner_path": {
+    "title": "從必要原理、具體反例到工作取捨",
+    "intro": "治具已把同一金屬件放到大致位置，但每次仍有小偏移。若直接做固定ROI檢查，孔邊緣的位置差會混進結果；ECC用模板與待對圖的外觀，微調它們的幾何對齊。 下列圖像、特徵及回答為教學示意，不是模型實測。",
+    "visuals": [
+      {
+        "id": "wi032-ecc-core",
+        "title": "ECC：依外觀微調幾何對齊",
+        "prompt": "治具已把同一金屬件放到大致位置，但每次仍有小偏移。若直接做固定ROI檢查，孔邊緣的位置差會混進結果；ECC用模板與待對圖的外觀，微調它們的幾何對齊。",
+        "caption": "每輪依目前幾何變換把待對圖重採樣到可比較的座標，再比較與模板的外觀相關，計算變換更新並繼續迭代。圖中同孔的雙邊與強度曲線由錯位變接近，解釋它靠什麼調整；不是逐點描述子匹配，也不是缺陷分類。",
+        "image": "_course_content/generated-concepts/ecc/wi032-ecc-core-r01-desktop.png",
+        "alt": "ECC：依外觀微調幾何對齊。每輪依目前幾何變換把待對圖重採樣到可比較的座標，再比較與模板的外觀相關，計算變換更新並繼續迭代。圖中同孔的雙邊與強度曲線由錯位變接近，解釋它靠什麼調整；不是逐點描述子匹配，也不是缺陷分類。 教學示意，非模型實測。",
+        "callouts": [
+          {
+            "title": "先有合理起點",
+            "body": "ECC是局部迭代，通常接在治具、粗定位或特徵幾何估計後；起點太遠可能不收斂或對到錯的位置。"
+          },
+          {
+            "title": "用外觀更新變換",
+            "body": "模板固定，待對圖隨目前變換重採樣，靠強度相似性的目標計算更新；不能把每一輪都一定變好的示意當演算法保證。"
+          },
+          {
+            "title": "變換與驗證分開",
+            "body": "OpenCV findTransformECC回傳相關值與warp矩陣；獨立地標殘差、對齊影像與下游缺陷檢查是另外產生與核對的結果。"
+          }
+        ],
+        "reading_views": [
+          {
+            "title": "ECC：依外觀微調幾何對齊",
+            "image": "_course_content/generated-concepts/ecc/wi032-ecc-core-r01-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/ecc/wi032-ecc-core-r01-mobile.png",
+            "alt": "ECC：依外觀微調幾何對齊。每輪依目前幾何變換把待對圖重採樣到可比較的座標，再比較與模板的外觀相關，計算變換更新並繼續迭代。圖中同孔的雙邊與強度曲線由錯位變接近，解釋它靠什麼調整；不是逐點描述子匹配，也不是缺陷分類。 教學示意，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              941,
+              1672
+            ],
+            "mobile_display_mode": "full-mobile",
+            "desktop_intrinsic_width": 1672,
+            "desktop_intrinsic_height": 941,
+            "mobile_intrinsic_width": 941,
+            "mobile_intrinsic_height": 1672
+          }
+        ],
+        "core_ideas": true
+      },
+      {
+        "id": "wi032-ecc-failure",
+        "title": "起點太遠，ECC可能對錯位置",
+        "prompt": "觀察哪個條件改變，讓原本的結果不夠可靠？",
+        "caption": "同一兩孔件若從太遠的位置開始，局部孔緣相似可能產生錯誤解；必須同時看整件外框與同身份孔位。局部重合不代表整件對齊，相關值也不能取代獨立幾何核對。",
+        "image": "_course_content/generated-concepts/ecc/wi032-ecc-failure-native-r05-desktop.png",
+        "alt": "起點太遠，ECC可能對錯位置。同一兩孔件若從太遠的位置開始，局部孔緣相似可能產生錯誤解；必須同時看整件外框與同身份孔位。局部重合不代表整件對齊，相關值也不能取代獨立幾何核對。 教學示意，非模型實測。",
+        "callouts": [
+          {
+            "title": "看哪裡",
+            "body": "同一兩孔件若從太遠的位置開始，局部孔緣相似可能產生錯誤解；必須同時看整件外框與同身份孔位。局部重合不代表整件對齊，相關值也不能取代獨立幾何核對。"
+          },
+          {
+            "title": "接著怎麼做",
+            "body": "遇到大位移、遮擋、強反光或非選定變換模型能描述的視差時，先改善輸入或找粗定位；不把更多迭代次數當作一定能解決。失敗或超出殘差預算的影像交回定位／取像檢查。"
+          }
+        ],
+        "reading_views": [
+          {
+            "title": "起點太遠，ECC可能對錯位置",
+            "image": "_course_content/generated-concepts/ecc/wi032-ecc-failure-native-r05-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/ecc/wi032-ecc-failure-native-r05-mobile.png",
+            "alt": "起點太遠，ECC可能對錯位置。同一兩孔件若從太遠的位置開始，局部孔緣相似可能產生錯誤解；必須同時看整件外框與同身份孔位。局部重合不代表整件對齊，相關值也不能取代獨立幾何核對。 教學示意，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              768,
+              3050
+            ],
+            "mobile_display_mode": "full-mobile",
+            "desktop_intrinsic_width": 1672,
+            "desktop_intrinsic_height": 941,
+            "mobile_intrinsic_width": 768,
+            "mobile_intrinsic_height": 3050
+          }
+        ],
+        "core_ideas": false
+      },
+      {
+        "id": "wi032-geometry-compare",
+        "title": "幾何四種工具，負責的工作不同",
+        "prompt": "相同工作需求下，資料、輸出與成本如何取捨？",
+        "caption": "已經接近且外觀穩定時，可先用ECC微調；有可區分局部且需要較大範圍定位時，可先試SIFT匹配再做幾何估計，含糊匹配可評估LightGlue及相容extractor。ChArUco負責相機幾何，並非這些逐件定位的直接替代品。",
+        "image": "_course_content/generated-concepts/ecc/wi032-geometry-compare-native-r05-desktop.png",
+        "alt": "幾何四種工具，負責的工作不同。已經接近且外觀穩定時，可先用ECC微調；有可區分局部且需要較大範圍定位時，可先試SIFT匹配再做幾何估計，含糊匹配可評估LightGlue及相容extractor。ChArUco負責相機幾何，並非這些逐件定位的直接替代品。 教學示意，非模型實測。",
+        "callouts": [
+          {
+            "title": "怎麼選",
+            "body": "已經接近且外觀穩定時，可先用ECC微調；有可區分局部且需要較大範圍定位時，可先試SIFT匹配再做幾何估計，含糊匹配可評估LightGlue及相容extractor。ChArUco負責相機幾何，並非這些逐件定位的直接替代品。"
+          },
+          {
+            "title": "資料與完整成本",
+            "body": "換產品時要換模板、ROI／mask並重新驗證變換模型與起點範圍；固定相機也可能因光照或遮擋增加錯收斂。比較成本要包含粗定位、ECC迭代、重採樣與失敗覆核，不只計單次函式耗時。"
+          }
+        ],
+        "reading_views": [
+          {
+            "title": "幾何四種工具，負責的工作不同",
+            "image": "_course_content/generated-concepts/ecc/wi032-geometry-compare-native-r05-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/ecc/wi032-geometry-compare-native-r05-mobile.png",
+            "alt": "幾何四種工具，負責的工作不同。已經接近且外觀穩定時，可先用ECC微調；有可區分局部且需要較大範圍定位時，可先試SIFT匹配再做幾何估計，含糊匹配可評估LightGlue及相容extractor。ChArUco負責相機幾何，並非這些逐件定位的直接替代品。 教學示意，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              768,
+              3050
+            ],
+            "mobile_display_mode": "full-mobile",
+            "desktop_intrinsic_width": 1672,
+            "desktop_intrinsic_height": 941,
+            "mobile_intrinsic_width": 768,
+            "mobile_intrinsic_height": 3050
+          }
+        ],
+        "core_ideas": false
+      }
+    ]
+  },
+  "badge": "依外觀相關迭代的對位算法，不需訓練權重",
+  "title": "把已接近的影像微調對齊，再檢查工件",
+  "scenario": {
+    "title": "治具已把同一金屬件放到大致位置，但每次仍有小偏移。若直接做固定ROI檢查，孔邊緣的位置差會混進結果；ECC用模板與待對圖的外觀，微調它們的幾何對齊。",
+    "body": "治具已把同一金屬件放到大致位置，但每次仍有小偏移。若直接做固定ROI檢查，孔邊緣的位置差會混進結果；ECC用模板與待對圖的外觀，微調它們的幾何對齊。"
+  },
+  "promise": {
+    "title": "交付結果與接手工作",
+    "body": "交付帶方向定義的warp、相關值及對齊取樣設定；另保存獨立殘差與原圖。後續ROI檢查接對齊影像，但不能把warp或相關分數當成缺陷標記。"
+  },
+  "mental_model": {
+    "title": "依外觀相關迭代的對位算法，不需訓練權重",
+    "body": "每輪依目前幾何變換把待對圖重採樣到可比較的座標，再比較與模板的外觀相關，計算變換更新並繼續迭代。圖中同孔的雙邊與強度曲線由錯位變接近，解釋它靠什麼調整；不是逐點描述子匹配，也不是缺陷分類。",
+    "limit": "同一兩孔件若從太遠的位置開始，局部孔緣相似可能產生錯誤解；必須同時看整件外框與同身份孔位。局部重合不代表整件對齊，相關值也不能取代獨立幾何核對。"
+  },
+  "micro_example": {
+    "title": "節拍有限，該先加迭代還是加粗定位？",
+    "setup": "同一產線95%的工件已由治具放得很接近，另外5%會偏移很遠；每件容許的完整處理時間有限。",
+    "prediction": "全部增加ECC迭代，與先判起點／必要時做粗定位，兩條路各有什麼條件？",
+    "reveal": "若失敗主要來自近起點但迭代尚未收斂，可在時間預算內比較較多迭代；不能預設它會救回遠起點。若遠移動是主要失敗來源，可用粗定位或特徵匹配先建立合理起點，再接ECC；增加的前處理要與漏對、錯收斂及覆核成本一起量。用相同測試影像核對完整時間和獨立殘差後再選，不憑相關值最高就放行。"
+  },
+  "mechanism_steps": [
+    {
+      "title": "模板與合理起點",
+      "body": "ECC是局部迭代，通常接在治具、粗定位或特徵幾何估計後；起點太遠可能不收斂或對到錯的位置。",
+      "why": "由本課核心機制連接工作用途",
+      "anchor": "WI032-1",
+      "diagram": {
+        "title": "模板與合理起點",
+        "body": "ECC是局部迭代，通常接在治具、粗定位或特徵幾何估計後；起點太遠可能不收斂或對到錯的位置。",
+        "why": "詳見本課版本與來源",
+        "anchor": "WI032-1"
+      }
+    },
+    {
+      "title": "重採樣、相關與更新",
+      "body": "模板固定，待對圖隨目前變換重採樣，靠強度相似性的目標計算更新；不能把每一輪都一定變好的示意當演算法保證。",
+      "why": "由本課核心機制連接工作用途",
+      "anchor": "WI032-2",
+      "diagram": {
+        "title": "重採樣、相關與更新",
+        "body": "模板固定，待對圖隨目前變換重採樣，靠強度相似性的目標計算更新；不能把每一輪都一定變好的示意當演算法保證。",
+        "why": "詳見本課版本與來源",
+        "anchor": "WI032-2"
+      }
+    },
+    {
+      "title": "warp與獨立核對",
+      "body": "交付帶方向定義的warp、相關值及對齊取樣設定；另保存獨立殘差與原圖。後續ROI檢查接對齊影像，但不能把warp或相關分數當成缺陷標記。",
+      "why": "由本課核心機制連接工作用途",
+      "anchor": "WI032-3",
+      "diagram": {
+        "title": "warp與獨立核對",
+        "body": "交付帶方向定義的warp、相關值及對齊取樣設定；另保存獨立殘差與原圖。後續ROI檢查接對齊影像，但不能把warp或相關分數當成缺陷標記。",
+        "why": "詳見本課版本與來源",
+        "anchor": "WI032-3"
+      }
+    },
+    {
+      "title": "工作核對與接手",
+      "body": "保存原圖、初始／最終warp、相關值、迭代設定及獨立地標殘差，測不同起點、光照、遮擋與重拍。既有32/12位移與遠起點失敗資料保留來源；本輪新圖是概念示意，不是新跑的ECC結果。",
+      "why": "由本課核心機制連接工作用途",
+      "anchor": "WI032-4",
+      "diagram": {
+        "title": "工作核對與接手",
+        "body": "保存原圖、初始／最終warp、相關值、迭代設定及獨立地標殘差，測不同起點、光照、遮擋與重拍。既有32/12位移與遠起點失敗資料保留來源；本輪新圖是概念示意，不是新跑的ECC結果。",
+        "why": "詳見本課版本與來源",
+        "anchor": "WI032-4"
+      }
+    }
+  ],
+  "visual_intro": "每輪依目前幾何變換把待對圖重採樣到可比較的座標，再比較與模板的外觀相關，計算變換更新並繼續迭代。圖中同孔的雙邊與強度曲線由錯位變接近，解釋它靠什麼調整；不是逐點描述子匹配，也不是缺陷分類。",
+  "concept_visuals": [],
+  "boundary_cases": [
+    {
+      "condition": "本課具體反例",
+      "effect": "同一兩孔件若從太遠的位置開始，局部孔緣相似可能產生錯誤解；必須同時看整件外框與同身份孔位。局部重合不代表整件對齊，相關值也不能取代獨立幾何核對。",
+      "action": "遇到大位移、遮擋、強反光或非選定變換模型能描述的視差時，先改善輸入或找粗定位；不把更多迭代次數當作一定能解決。失敗或超出殘差預算的影像交回定位／取像檢查。"
+    },
+    {
+      "condition": "更換產品、模型或輸入設定",
+      "effect": "換產品時要換模板、ROI／mask並重新驗證變換模型與起點範圍；固定相機也可能因光照或遮擋增加錯收斂。比較成本要包含粗定位、ECC迭代、重採樣與失敗覆核，不只計單次函式耗時。",
+      "action": "準備同工作座標下的模板與待對圖，選平移／剛性／仿射或單應模型及合理起點，確認灰階、mask、解析度與重採樣方向一致。"
+    },
+    {
+      "condition": "把示意當成實際推論",
+      "effect": "本課特徵、排序、回答及圖像僅用於解釋，不支持現場準確率或耗時結論。",
+      "action": "保存原圖、初始／最終warp、相關值、迭代設定及獨立地標殘差，測不同起點、光照、遮擋與重拍。既有32/12位移與遠起點失敗資料保留來源；本輪新圖是概念示意，不是新跑的ECC結果。"
+    }
+  ],
+  "comparison": [
+    {
+      "model": "ChArUco",
+      "normality": "已知尺寸標靶、多位置與傾角觀測",
+      "candidate": "內參／畸變；姿態與工站關係另求"
+    },
+    {
+      "model": "SIFT＋matcher",
+      "normality": "局部紋理清楚；尺度方向描述與比對",
+      "candidate": "影像點對；幾何估計與驗證另接"
+    },
+    {
+      "model": "LightGlue＋extractor",
+      "normality": "相容預訓練權重、點與描述；上下文配對",
+      "candidate": "點對與信心；納入完整計算成本"
+    },
+    {
+      "model": "ECC",
+      "normality": "合理起點、外觀穩定；密集相關迭代",
+      "candidate": "warp與相關值；獨立殘差另驗"
+    }
+  ],
+  "selection": "已經接近且外觀穩定時，可先用ECC微調；有可區分局部且需要較大範圍定位時，可先試SIFT匹配再做幾何估計，含糊匹配可評估LightGlue及相容extractor。ChArUco負責相機幾何，並非這些逐件定位的直接替代品。 換產品時要換模板、ROI／mask並重新驗證變換模型與起點範圍；固定相機也可能因光照或遮擋增加錯收斂。比較成本要包含粗定位、ECC迭代、重採樣與失敗覆核，不只計單次函式耗時。",
+  "poc": {
+    "title": "以真實工作資料做小規模比較",
+    "steps": [
+      "準備同工作座標下的模板與待對圖，選平移／剛性／仿射或單應模型及合理起點，確認灰階、mask、解析度與重採樣方向一致。",
+      "換產品時要換模板、ROI／mask並重新驗證變換模型與起點範圍；固定相機也可能因光照或遮擋增加錯收斂。比較成本要包含粗定位、ECC迭代、重採樣與失敗覆核，不只計單次函式耗時。",
+      "保存原圖、初始／最終warp、相關值、迭代設定及獨立地標殘差，測不同起點、光照、遮擋與重拍。既有32/12位移與遠起點失敗資料保留來源；本輪新圖是概念示意，不是新跑的ECC結果。"
+    ],
+    "hold": "遇到大位移、遮擋、強反光或非選定變換模型能描述的視差時，先改善輸入或找粗定位；不把更多迭代次數當作一定能解決。失敗或超出殘差預算的影像交回定位／取像檢查。",
+    "acceptance": {
+      "baseline": "既有流程或最簡單可行方法",
+      "measure": "保存原圖、初始／最終warp、相關值、迭代設定及獨立地標殘差，測不同起點、光照、遮擋與重拍。既有32/12位移與遠起點失敗資料保留來源；本輪新圖是概念示意，不是新跑的ECC結果。",
+      "negative_control": "同一兩孔件若從太遠的位置開始，局部孔緣相似可能產生錯誤解；必須同時看整件外框與同身份孔位。局部重合不代表整件對齊，相關值也不能取代獨立幾何核對。",
+      "owner": "實作與影像核對負責人"
+    }
+  },
+  "teach_back": {
+    "question": "它改變什麼？何時選另一種做法？",
+    "answer": "每輪依目前幾何變換把待對圖重採樣到可比較的座標，再比較與模板的外觀相關，計算變換更新並繼續迭代。圖中同孔的雙邊與強度曲線由錯位變接近，解釋它靠什麼調整；不是逐點描述子匹配，也不是缺陷分類。 已經接近且外觀穩定時，可先用ECC微調；有可區分局部且需要較大範圍定位時，可先試SIFT匹配再做幾何估計，含糊匹配可評估LightGlue及相容extractor。ChArUco負責相機幾何，並非這些逐件定位的直接替代品。"
+  },
+  "slide_reading": [
+    {
+      "title": "ECC交付的是warp與相關值",
+      "question": "相關值不是缺陷標記，也不是獨立定位誤差。",
+      "look": "先看模板與待對圖，再看依外觀做局部更新，最後核對輸出與核對分開。",
+      "relation": "OpenCV findTransformECC回傳相關值並更新warpMatrix。對齊影像需另行warp，獨立地標殘差與下游檢查也需另外計算；不把概念曲線當真實迭代紀錄。",
+      "takeaway": "相關值不是缺陷標記，也不是獨立定位誤差。",
+      "terms": [
+        "模板與待對圖：模板固定、待對圖可重採樣；需要合理初始位置",
+        "依外觀做局部更新：比較共同座標的強度；依目標更新幾何參數"
+      ]
+    },
+    {
+      "title": "一輪ECC：取樣、比較、更新",
+      "question": "靠密集外觀更新幾何，不靠逐點描述子。",
+      "look": "先看目前warp重採樣，再看對比模板強度，最後核對更新後重新取樣。",
+      "relation": "同一物件的強度曲線僅用來顯示錯位如何影響比較。ECC局部最優化依照當前幾何和強度計算參數更新；過遠初始位置、遮擋或模型不適用仍可能失敗。",
+      "takeaway": "靠密集外觀更新幾何，不靠逐點描述子。",
+      "terms": [
+        "目前warp重採樣：待對圖映到可比較座標；插值與mask影響可用像素",
+        "對比模板強度：對齊前曲線位置不合；目標是外觀相關"
+      ]
+    },
+    {
+      "title": "warp方向錯了，影像就會往反方向移",
+      "question": "先寫清楚映射方向，再決定反矩陣與取樣設定。",
+      "look": "先看定義座標與方向，再看明確定義W，最後核對取樣旗標須相符。",
+      "relation": "OpenCV findTransformECC的warp常配warpAffine/warpPerspective及WARP_INVERSE_MAP，把input重採樣至template座標。若交換角色或自行取逆矩陣，旗標也必須一致；用已知平移點做驗證，不憑圖看起來像就認為方向正確。",
+      "takeaway": "先寫清楚映射方向，再決定反矩陣與取樣設定。",
+      "terms": [
+        "定義座標與方向：模板座標 xT；待對圖座標 xI",
+        "明確定義W：xI = W(xT)；用待對圖取樣填模板格點"
+      ]
+    },
+    {
+      "title": "局部相關高，整件仍可能對錯",
+      "question": "用獨立幾何與完整失敗成本決定是否採用。",
+      "look": "先看同身份地標核對，再看遠起點或遮擋，最後核對保留失敗案例。",
+      "relation": "既有32/12平移及遠起點失敗案例保留在舊正式圖及來源紀錄，並非本輪重新執行。這張圖補說如何核對孔位身份、外框與失敗處理，不用單一相關值放行。",
+      "takeaway": "用獨立幾何與完整失敗成本決定是否採用。",
+      "terms": [
+        "同身份地標核對：孔位與外框都要查；不能只挑相似局部",
+        "遠起點或遮擋：先找粗定位／改善取像；多迭代未必救得回"
+      ]
+    }
+  ],
+  "comparison_headers": {
+    "title": "幾何四種工具，負責的工作不同",
+    "basis": "所需資料與方法差異",
+    "output": "輸出與維護責任"
+  },
+  "transfer_check": {
+    "title": "節拍有限，該先加迭代還是加粗定位？",
+    "scenario": "同一產線95%的工件已由治具放得很接近，另外5%會偏移很遠；每件容許的完整處理時間有限。",
+    "question": "全部增加ECC迭代，與先判起點／必要時做粗定位，兩條路各有什麼條件？",
+    "answer": "若失敗主要來自近起點但迭代尚未收斂，可在時間預算內比較較多迭代；不能預設它會救回遠起點。若遠移動是主要失敗來源，可用粗定位或特徵匹配先建立合理起點，再接ECC；增加的前處理要與漏對、錯收斂及覆核成本一起量。用相同測試影像核對完整時間和獨立殘差後再選，不憑相關值最高就放行。"
+  },
+  "review_trace": {
+    "authority": "roadmap-model-selection/geometry-alignment-measurement/ecc/model.md",
+    "scope": "WI-032：六課主線及工程層圖文重建；既有ECC案例保留。頁內驗證與使用者核准另記。",
+    "claims": [
+      {
+        "id": "visual-1",
+        "field": "beginner_path.visuals[reference-and-moving-roi]",
+        "source": "模型定位 / architecture_path"
+      },
+      {
+        "id": "visual-2",
+        "field": "beginner_path.visuals[warp-and-objective]",
+        "source": "architecture_path"
+      },
+      {
+        "id": "visual-3",
+        "field": "beginner_path.visuals[residual-convergence-review]",
+        "source": "representation_or_score"
+      },
+      {
+        "id": "visual-4",
+        "field": "beginner_path.visuals[initialization-counterfactual]",
+        "source": "failure_boundary"
+      },
+      {
+        "id": "visual-5",
+        "field": "beginner_path.visuals[drift-parallax-boundary]",
+        "source": "selection_gate / evidence_bundle"
+      },
+      {
+        "id": "promise",
+        "field": "promise",
+        "source": "模型定位 / representation_or_score"
+      },
+      {
+        "id": "mechanism",
+        "field": "mechanism_steps",
+        "source": "architecture_path / representation_or_score"
+      },
+      {
+        "id": "boundaries",
+        "field": "boundary_cases",
+        "source": "failure_boundary / selection_gate"
+      },
+      {
+        "id": "comparison",
+        "field": "comparison + selection",
+        "source": "selection_gate"
+      },
+      {
+        "id": "poc",
+        "field": "poc + acceptance",
+        "source": "cost_and_operating_point / evidence_bundle"
+      },
+      {
+        "id": "transfer",
+        "field": "transfer_check",
+        "source": "failure_boundary / selection_gate"
+      },
+      {
+        "id": "f02-core",
+        "field": "beginner_path.visuals[0] + scenario + mental_model",
+        "source": "roadmap-model-selection/geometry-alignment-measurement/ecc/model.md"
+      },
+      {
+        "id": "f02-transfer",
+        "field": "micro_example + transfer_check + selection",
+        "source": "roadmap-model-selection/geometry-alignment-measurement/ecc/model.md"
+      },
+      {
+        "id": "wi032-first-read",
+        "field": "beginner_path + core + selection + transfer",
+        "source": "https://docs.opencv.org/4.13.0/dc/d6b/group__video__track.html"
+      }
+    ]
+  },
+  "quality_status": {
+    "label": "本機重建、自評與驗證完成",
+    "state": "self_reviewed",
+    "round": "WI-032",
+    "reason": "逐圖及整頁自評、實頁操作與必要回歸已完成；使用者成品核准pending，未發布。"
+  },
+  "teaching_preflight": {
+    "brief": "teaching-images/vision-ai-model-selection/workitems/wi-032/ecc-core-r01.md",
+    "mobile_brief": "teaching-images/vision-ai-model-selection/workitems/wi-032/ecc-core-r01.md",
+    "story": "C",
+    "major_visual_nodes": 3,
+    "visual_status": "self-reviewed",
+    "user_review": "pending"
+  },
+  "engineering_slides": [
+    {
+      "title": "ECC交付的是warp與相關值",
+      "question": "相關值不是缺陷標記，也不是獨立定位誤差。",
+      "plain": {
+        "look": "先看模板與待對圖，再看依外觀做局部更新，最後核對輸出與核對分開。",
+        "relation": "OpenCV findTransformECC回傳相關值並更新warpMatrix。對齊影像需另行warp，獨立地標殘差與下游檢查也需另外計算；不把概念曲線當真實迭代紀錄。",
+        "takeaway": "相關值不是缺陷標記，也不是獨立定位誤差。"
+      },
+      "terms": [
+        "模板與待對圖：模板固定、待對圖可重採樣；需要合理初始位置",
+        "依外觀做局部更新：比較共同座標的強度；依目標更新幾何參數"
+      ],
+      "guide": [
+        "OpenCV findTransformECC回傳相關值並更新warpMatrix。對齊影像需另行warp，獨立地標殘差與下游檢查也需另外計算；不把概念曲線當真實迭代紀錄。",
+        "讀圖：模板與待對圖 → 依外觀做局部更新 → 輸出與核對分開"
+      ],
+      "stages": [
+        {
+          "title": "模板與待對圖",
+          "body": "模板固定、待對圖可重採樣；需要合理初始位置"
+        },
+        {
+          "title": "依外觀做局部更新",
+          "body": "比較共同座標的強度；依目標更新幾何參數"
+        },
+        {
+          "title": "輸出與核對分開",
+          "body": "函式：相關值＋warp；另產生對齊圖及獨立殘差"
+        }
+      ],
+      "misconception": "示意只解釋本步驟，不可當作模型實測或省略後續核對。",
+      "alt": "ECC交付的是warp與相關值。相關值不是缺陷標記，也不是獨立定位誤差。 教學示意，非本輪模型實測。",
+      "mobile_image": "roadmap-model-selection/geometry-alignment-measurement/ecc/images/final/WI032-ECC-01-r04-mobile.png",
+      "mobile_width": 768,
+      "mobile_height": 2770,
+      "engineering": {
+        "takeaway": "相關值不是缺陷標記，也不是獨立定位誤差。",
+        "nextAction": "準備同工作座標下的模板與待對圖，選平移／剛性／仿射或單應模型及合理起點，確認灰階、mask、解析度與重採樣方向一致。",
+        "redLine": "遇到大位移、遮擋、強反光或非選定變換模型能描述的視差時，先改善輸入或找粗定位；不把更多迭代次數當作一定能解決。失敗或超出殘差預算的影像交回定位／取像檢查。"
+      },
+      "source": "https://docs.opencv.org/4.13.0/dc/d6b/group__video__track.html"
+    },
+    {
+      "title": "一輪ECC：取樣、比較、更新",
+      "question": "靠密集外觀更新幾何，不靠逐點描述子。",
+      "plain": {
+        "look": "先看目前warp重採樣，再看對比模板強度，最後核對更新後重新取樣。",
+        "relation": "同一物件的強度曲線僅用來顯示錯位如何影響比較。ECC局部最優化依照當前幾何和強度計算參數更新；過遠初始位置、遮擋或模型不適用仍可能失敗。",
+        "takeaway": "靠密集外觀更新幾何，不靠逐點描述子。"
+      },
+      "terms": [
+        "目前warp重採樣：待對圖映到可比較座標；插值與mask影響可用像素",
+        "對比模板強度：對齊前曲線位置不合；目標是外觀相關"
+      ],
+      "guide": [
+        "同一物件的強度曲線僅用來顯示錯位如何影響比較。ECC局部最優化依照當前幾何和強度計算參數更新；過遠初始位置、遮擋或模型不適用仍可能失敗。",
+        "讀圖：目前warp重採樣 → 對比模板強度 → 更新後重新取樣"
+      ],
+      "stages": [
+        {
+          "title": "目前warp重採樣",
+          "body": "待對圖映到可比較座標；插值與mask影響可用像素"
+        },
+        {
+          "title": "對比模板強度",
+          "body": "對齊前曲線位置不合；目標是外觀相關"
+        },
+        {
+          "title": "更新後重新取樣",
+          "body": "重複直到停止或失敗；不是每一步都保證改善"
+        }
+      ],
+      "misconception": "示意只解釋本步驟，不可當作模型實測或省略後續核對。",
+      "alt": "一輪ECC：取樣、比較、更新。靠密集外觀更新幾何，不靠逐點描述子。 教學示意，非本輪模型實測。",
+      "mobile_image": "roadmap-model-selection/geometry-alignment-measurement/ecc/images/final/WI032-ECC-02-r04-mobile.png",
+      "mobile_width": 768,
+      "mobile_height": 2770,
+      "engineering": {
+        "takeaway": "靠密集外觀更新幾何，不靠逐點描述子。",
+        "nextAction": "準備同工作座標下的模板與待對圖，選平移／剛性／仿射或單應模型及合理起點，確認灰階、mask、解析度與重採樣方向一致。",
+        "redLine": "遇到大位移、遮擋、強反光或非選定變換模型能描述的視差時，先改善輸入或找粗定位；不把更多迭代次數當作一定能解決。失敗或超出殘差預算的影像交回定位／取像檢查。"
+      },
+      "source": "https://docs.opencv.org/4.13.0/dc/d6b/group__video__track.html"
+    },
+    {
+      "title": "warp方向錯了，影像就會往反方向移",
+      "question": "先寫清楚映射方向，再決定反矩陣與取樣設定。",
+      "plain": {
+        "look": "先看定義座標與方向，再看明確定義W，最後核對取樣旗標須相符。",
+        "relation": "OpenCV findTransformECC的warp常配warpAffine/warpPerspective及WARP_INVERSE_MAP，把input重採樣至template座標。若交換角色或自行取逆矩陣，旗標也必須一致；用已知平移點做驗證，不憑圖看起來像就認為方向正確。",
+        "takeaway": "先寫清楚映射方向，再決定反矩陣與取樣設定。"
+      },
+      "terms": [
+        "定義座標與方向：模板座標 xT；待對圖座標 xI",
+        "明確定義W：xI = W(xT)；用待對圖取樣填模板格點"
+      ],
+      "guide": [
+        "OpenCV findTransformECC的warp常配warpAffine/warpPerspective及WARP_INVERSE_MAP，把input重採樣至template座標。若交換角色或自行取逆矩陣，旗標也必須一致；用已知平移點做驗證，不憑圖看起來像就認為方向正確。",
+        "讀圖：定義座標與方向 → 明確定義W → 取樣旗標須相符"
+      ],
+      "stages": [
+        {
+          "title": "定義座標與方向",
+          "body": "模板座標 xT；待對圖座標 xI"
+        },
+        {
+          "title": "明確定義W",
+          "body": "xI = W(xT)；用待對圖取樣填模板格點"
+        },
+        {
+          "title": "取樣旗標須相符",
+          "body": "常見OpenCV用法：；warp＋WARP_INVERSE_MAP"
+        }
+      ],
+      "misconception": "示意只解釋本步驟，不可當作模型實測或省略後續核對。",
+      "alt": "warp方向錯了，影像就會往反方向移。先寫清楚映射方向，再決定反矩陣與取樣設定。 教學示意，非本輪模型實測。",
+      "mobile_image": "roadmap-model-selection/geometry-alignment-measurement/ecc/images/final/WI032-ECC-03-r04-mobile.png",
+      "mobile_width": 768,
+      "mobile_height": 2770,
+      "engineering": {
+        "takeaway": "先寫清楚映射方向，再決定反矩陣與取樣設定。",
+        "nextAction": "準備同工作座標下的模板與待對圖，選平移／剛性／仿射或單應模型及合理起點，確認灰階、mask、解析度與重採樣方向一致。",
+        "redLine": "遇到大位移、遮擋、強反光或非選定變換模型能描述的視差時，先改善輸入或找粗定位；不把更多迭代次數當作一定能解決。失敗或超出殘差預算的影像交回定位／取像檢查。"
+      },
+      "source": "https://docs.opencv.org/4.13.0/dc/d6b/group__video__track.html"
+    },
+    {
+      "title": "局部相關高，整件仍可能對錯",
+      "question": "用獨立幾何與完整失敗成本決定是否採用。",
+      "plain": {
+        "look": "先看同身份地標核對，再看遠起點或遮擋，最後核對保留失敗案例。",
+        "relation": "既有32/12平移及遠起點失敗案例保留在舊正式圖及來源紀錄，並非本輪重新執行。這張圖補說如何核對孔位身份、外框與失敗處理，不用單一相關值放行。",
+        "takeaway": "用獨立幾何與完整失敗成本決定是否採用。"
+      },
+      "terms": [
+        "同身份地標核對：孔位與外框都要查；不能只挑相似局部",
+        "遠起點或遮擋：先找粗定位／改善取像；多迭代未必救得回"
+      ],
+      "guide": [
+        "既有32/12平移及遠起點失敗案例保留在舊正式圖及來源紀錄，並非本輪重新執行。這張圖補說如何核對孔位身份、外框與失敗處理，不用單一相關值放行。",
+        "讀圖：同身份地標核對 → 遠起點或遮擋 → 保留失敗案例"
+      ],
+      "stages": [
+        {
+          "title": "同身份地標核對",
+          "body": "孔位與外框都要查；不能只挑相似局部"
+        },
+        {
+          "title": "遠起點或遮擋",
+          "body": "先找粗定位／改善取像；多迭代未必救得回"
+        },
+        {
+          "title": "保留失敗案例",
+          "body": "保存起點、warp與設定；既有實測另附原圖與來源"
+        }
+      ],
+      "misconception": "同一兩孔件若從太遠的位置開始，局部孔緣相似可能產生錯誤解；必須同時看整件外框與同身份孔位。局部重合不代表整件對齊，相關值也不能取代獨立幾何核對。",
+      "alt": "局部相關高，整件仍可能對錯。用獨立幾何與完整失敗成本決定是否採用。 教學示意，非本輪模型實測。",
+      "mobile_image": "roadmap-model-selection/geometry-alignment-measurement/ecc/images/final/WI032-ECC-04-r04-mobile.png",
+      "mobile_width": 768,
+      "mobile_height": 2770,
+      "engineering": {
+        "takeaway": "用獨立幾何與完整失敗成本決定是否採用。",
+        "nextAction": "準備同工作座標下的模板與待對圖，選平移／剛性／仿射或單應模型及合理起點，確認灰階、mask、解析度與重採樣方向一致。",
+        "redLine": "遇到大位移、遮擋、強反光或非選定變換模型能描述的視差時，先改善輸入或找粗定位；不把更多迭代次數當作一定能解決。失敗或超出殘差預算的影像交回定位／取像檢查。"
+      },
+      "source": "https://docs.opencv.org/4.13.0/dc/d6b/group__video__track.html",
+      "evidence_links": [
+        {
+          "title": "保留的反光／遮擋／視差案例原圖（依原圖標示判讀，本輪未重跑）",
+          "image": "roadmap-model-selection/geometry-alignment-measurement/ecc/images/final/ECC-04-selection-boundary_v03-r04.png"
+        },
+        {
+          "title": "歷史R06教學示意原圖：位移與起點案例（非本輪實測）",
+          "image": "roadmap-model-selection/geometry-alignment-measurement/ecc/images/final/WI032-retained-ecc-r06-c3-get.png"
+        },
+        {
+          "title": "歷史R06教學示意原圖：位移與起點案例（非本輪實測）",
+          "image": "roadmap-model-selection/geometry-alignment-measurement/ecc/images/final/WI032-retained-ecc-r06-d4-stop.png"
+        }
+      ]
+    }
+  ]
+}

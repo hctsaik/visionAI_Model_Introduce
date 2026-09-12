@@ -1,0 +1,495 @@
+{
+  "model": "InvAD",
+  "badge": "多類正常共訓，特徵重建",
+  "title": "InvAD：用輸入條件，引導特徵重建",
+  "scenario": {
+    "title": "三種產品，共用模型如何驗證",
+    "body": "想保留多產品正常細節：以輸入條件調制特徵重建，再用差異找可疑處。"
+  },
+  "promise": {
+    "title": "可覆核的特徵差異位置圖",
+    "body": "提供可疑位置與候選分數；不直接交付尺寸、根因或放行判定。"
+  },
+  "mental_model": {
+    "title": "InvAD：用輸入條件，引導特徵重建",
+    "body": "固定影像骨幹提取特徵，經融合、重新縮放與風格轉換得到空間條件。解碼器從共享起始特徵出發，以 SSM 空間風格調制各位置的表示；用正常資料學重建路徑，推論比較原始與生成特徵的差異。",
+    "limit": "正常外觀可能誤報，缺陷也可能被重建；按產品保留未見資料驗證。"
+  },
+  "micro_example": {
+    "title": "正常紋理重建更像，檢測就改善了嗎？",
+    "setup": "InvAD 適配新紋理板後，正常重建更像、誤報較少；細裂的差異也變小。",
+    "prediction": "該繼續強化重建、重新校準，還是比較 UniAD／Dinomaly？",
+    "reveal": "分別記錄正常誤報和真缺陷漏檢，不能只用正常重建誤差選版本。先確認細裂在原圖可見，再用同一獨立驗證集比較調整門檻、重建設定及限制照抄的候選方法。若可接受的漏檢風險相同，再比延遲與覆核量；正常圖更漂亮本身不構成上線證據。"
+  },
+  "mechanism_steps": [
+    {
+      "title": "把 ROI 轉成被鎖定的多尺度 feature",
+      "body": "測試與 normal ROI 經固定 image encoder、layers、ROI/resize/normalization，輸出 selected input features。",
+      "why": "encoder checkpoint、layer、feature alignment 和 image recipe 定義 inversion 的語言；改其中一項會改 residual 與成本。",
+      "anchor": "工程圖核對：image encoder → selected features",
+      "diagram": {
+        "title": "encoder 取多尺度 feature",
+        "body": "固定 ROI recipe 產生 selected input features。",
+        "why": "layer 與對齊會改 residual 的語言。",
+        "anchor": "ROI → image encoder → features"
+      }
+    },
+    {
+      "title": "將空間樣式轉成 decoder 控制",
+      "body": "rescaling upsampler 與 style translator 將 feature 轉為空間相關的 scale/shift controls，和 constant query 一起送入 SSM decoder。",
+      "why": "InvAD 的 identity 不是泛稱『重建』，而是以 style modulation 與固定 query 限制 feature inversion path。",
+      "anchor": "工程圖核對：rescale → style translator → constant query / SSM",
+      "diagram": {
+        "title": "style 控制 SSM decoder",
+        "body": "rescale 與 style translator 調制 constant query。",
+        "why": "這是一次 feature inversion 的特有路徑。",
+        "anchor": "style → query / SSM decoder"
+      }
+    },
+    {
+      "title": "一次 forward 得到 normal-like recovered features",
+      "body": "normal-trained SSM decoder 產生對應尺度的 recovered features，並保存 checkpoint、stack/channel、loss、seed 與 class sampling policy。",
+      "why": "decoder 容量與多類別 coverage 共同決定什麼能被當作正常重建；不是所有低 residual 都代表安全。",
+      "anchor": "工程圖核對：SSM decoder → recovered feature",
+      "diagram": {
+        "title": "一次 forward 重建 feature",
+        "body": "SSM decoder 輸出 normal-like recovered features。",
+        "why": "decoder 也可能重建異常而壓低 residual。",
+        "anchor": "SSM decoder → recovered feature"
+      }
+    },
+    {
+      "title": "輸入與 recovered feature 的差距成為候選",
+      "body": "以鎖定 distance、scale weights、resize/smoothing/mask、aggregation 和 threshold，將 residual 變成 map 和 image candidate score。",
+      "why": "distance 與後處理會改定位和低 FPR；local feature residual 也不會自動檢查缺件、數量或關係錯誤。",
+      "anchor": "工程圖核對：feature residual → map → evidence gate",
+      "diagram": {
+        "title": "feature residual 形成候選",
+        "body": "input 與 recovered feature 的差距聚合成 map。",
+        "why": "局部 residual 不會檢查關係型錯誤。",
+        "anchor": "feature residual → review gate"
+      }
+    }
+  ],
+  "visual_intro": "先沿著一次 feature-inversion path 看懂輸入、style control、SSM decoder 和 residual，再用工程圖核對狀態。",
+  "beginner_path": {
+    "title": "多類正常共訓：核心做法、逐類反例與條件選型",
+    "intro": "三張首讀圖以金屬板、連接器與陶瓷板說明；全部為教學示意，非模型實測。",
+    "visuals": [
+      {
+        "id": "wi021-ad-invad-1",
+        "title": "InvAD：用輸入條件，引導特徵重建",
+        "prompt": "從正常資料建立重建能力，再追待測金屬板 A 的刮傷 p。",
+        "caption": "固定影像骨幹提取特徵，經融合、重新縮放與風格轉換得到空間條件。解碼器從共享起始特徵出發，以 SSM 空間風格調制各位置的表示；用正常資料學重建路徑，推論比較原始與生成特徵的差異。",
+        "image": "_course_content/generated-concepts/ad-invad/wi021-invad-c1-r01-desktop.png",
+        "alt": "InvAD：用輸入條件，引導特徵重建。固定影像骨幹提取特徵，經融合、重新縮放與風格轉換得到空間條件。解碼器從共享起始特徵出發，以 SSM 空間風格調制各位置的表示；用正常資料學重建路徑，推論比較原始與生成特徵的差異。 本圖為 AI 生成教學示意，非模型實測。",
+        "callouts": [
+          {
+            "title": "條件來自哪裡",
+            "body": "來自這張輸入的特徵，依位置控制生成特徵的調整；圖中的風格是表示條件，不是藝術濾鏡，SSM 也不是狀態空間模型。"
+          },
+          {
+            "title": "誰在訓練",
+            "body": "骨幹固定，其後融合與重建路徑從正常資料學習。這是已訓練的前向推論，不是每張待測圖都重新最佳化模型。"
+          },
+          {
+            "title": "輸出仍是位置線索",
+            "body": "推論以原始與生成特徵的餘弦距離形成異常線索；圖中熱區供回看 p，不能直接當精密輪廓。正常重建精細也不保證缺陷一定有大殘差。"
+          }
+        ],
+        "reading_views": [
+          {
+            "title": "InvAD：用輸入條件，引導特徵重建",
+            "image": "_course_content/generated-concepts/ad-invad/wi021-invad-c1-r01-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/ad-invad/wi021-invad-c1-r03-mobile.png",
+            "alt": "InvAD：用輸入條件，引導特徵重建。固定影像骨幹提取特徵，經融合、重新縮放與風格轉換得到空間條件。解碼器從共享起始特徵出發，以 SSM 空間風格調制各位置的表示；用正常資料學重建路徑，推論比較原始與生成特徵的差異。 本圖為 AI 生成教學示意，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              724,
+              2171
+            ],
+            "mobile_display_mode": "full-mobile",
+            "mobile_intrinsic_width": 724,
+            "mobile_intrinsic_height": 2171,
+            "desktop_intrinsic_width": 1672,
+            "desktop_intrinsic_height": 941
+          }
+        ],
+        "core_ideas": true
+      },
+      {
+        "id": "wi021-ad-invad-2",
+        "title": "共用模型，不能只看平均結果",
+        "prompt": "以正常孔邊 q 與細刮傷 p 對照誤報、漏檢，再分開檢查三種產品。",
+        "caption": "正常外觀未被資料涵蓋，原始與重建特徵在 q 不同，可能誤報；刮傷 p 若也被重建得相近，反而可能漏檢。多類共訓可減少模型管理，但每類都要另留未見正常與真缺陷驗證。",
+        "image": "_course_content/generated-concepts/ad-dinomaly/wi021-multi-reconstruction-d2-r02-desktop.png",
+        "alt": "共用模型，不能只看平均結果。正常外觀未被資料涵蓋，原始與重建特徵在 q 不同，可能誤報；刮傷 p 若也被重建得相近，反而可能漏檢。多類共訓可減少模型管理，但每類都要另留未見正常與真缺陷驗證。 本圖為 AI 生成教學示意，非模型實測。",
+        "callouts": [
+          {
+            "title": "正常資料要涵蓋什麼",
+            "body": "分開不同實體件與批次，涵蓋允收的反光、紋理與姿態；不要把近似照片分到訓練和驗證兩邊。"
+          },
+          {
+            "title": "兩種錯誤一起看",
+            "body": "先回看 p、q 原圖確認可見度與允收範圍。按產品記錄誤報、漏檢和覆核量，不能讓大類別掩蓋小類別失敗。"
+          },
+          {
+            "title": "成本怎麼量",
+            "body": "在相同硬體、解析度、前處理及風險要求下量端到端延遲與覆核量；提高門檻可能少誤報而多漏檢。"
+          }
+        ],
+        "reading_views": [
+          {
+            "title": "共用模型，不能只看平均結果",
+            "image": "_course_content/generated-concepts/ad-dinomaly/wi021-multi-reconstruction-d2-r02-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/ad-dinomaly/wi021-multi-reconstruction-d2-r03-mobile.png",
+            "alt": "共用模型，不能只看平均結果。正常外觀未被資料涵蓋，原始與重建特徵在 q 不同，可能誤報；刮傷 p 若也被重建得相近，反而可能漏檢。多類共訓可減少模型管理，但每類都要另留未見正常與真缺陷驗證。 本圖為 AI 生成教學示意，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              724,
+              2172
+            ],
+            "mobile_display_mode": "full-mobile",
+            "mobile_intrinsic_width": 724,
+            "mobile_intrinsic_height": 2172,
+            "desktop_intrinsic_width": 1672,
+            "desktop_intrinsic_height": 941
+          }
+        ],
+        "core_ideas": false
+      },
+      {
+        "id": "wi021-ad-invad-3",
+        "title": "三種多類重建，差異在哪裡？",
+        "prompt": "固定多類正常資料與未見驗證，看限制複製、分散分組及輸入條件調制三條路。",
+        "caption": "UniAD 用注意力遮蔽、逐層查詢及特徵擾動限制照抄；原版 Dinomaly 結合基礎特徵、Dropout 瓶頸、線性注意力及寬鬆重建；InvAD 由輸入產生空間條件調制生成特徵。三者都需正常訓練，位置線索不能直接當精密輪廓。",
+        "image": "_course_content/generated-concepts/ad-dinomaly/wi021-multi-reconstruction-d3-r02-desktop.png",
+        "alt": "三種多類重建，差異在哪裡？。UniAD 用注意力遮蔽、逐層查詢及特徵擾動限制照抄；原版 Dinomaly 結合基礎特徵、Dropout 瓶頸、線性注意力及寬鬆重建；InvAD 由輸入產生空間條件調制生成特徵。三者都需正常訓練，位置線索不能直接當精密輪廓。 本圖為 AI 生成教學示意，非模型實測。",
+        "callouts": [
+          {
+            "title": "只有正常品時怎麼起步",
+            "body": "三者均可列入正常訓練候選；選定既有骨幹與實作後，固定未見資料比較各類錯誤。缺正常資料時，不能把多類模型當免適配捷徑。"
+          },
+          {
+            "title": "換產品與速度的取捨",
+            "body": "補新產品正常資料並核對適配或重訓需求。按同一漏檢風險要求，比誤報、端到端時間與人工覆核量；沒有共同實測就不排名。"
+          },
+          {
+            "title": "怎麼選下一個實驗",
+            "body": "照抄是主要問題可先試 UniAD 的限制；想評估強特徵與分組策略可試 Dinomaly；想核對輸入條件式細節重建可試 InvAD。這是實驗起點，不是性能保證。"
+          }
+        ],
+        "reading_views": [
+          {
+            "title": "三種多類重建，差異在哪裡？",
+            "image": "_course_content/generated-concepts/ad-dinomaly/wi021-multi-reconstruction-d3-r02-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/ad-dinomaly/wi021-multi-reconstruction-d3-r02-mobile.png",
+            "alt": "三種多類重建，差異在哪裡？。UniAD 用注意力遮蔽、逐層查詢及特徵擾動限制照抄；原版 Dinomaly 結合基礎特徵、Dropout 瓶頸、線性注意力及寬鬆重建；InvAD 由輸入產生空間條件調制生成特徵。三者都需正常訓練，位置線索不能直接當精密輪廓。 本圖為 AI 生成教學示意，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              724,
+              2172
+            ],
+            "mobile_display_mode": "full-mobile",
+            "mobile_intrinsic_width": 724,
+            "mobile_intrinsic_height": 2172,
+            "desktop_intrinsic_width": 1672,
+            "desktop_intrinsic_height": 941
+          }
+        ],
+        "core_ideas": false
+      }
+    ]
+  },
+  "concept_visuals": [
+    {
+      "id": "causal-chain",
+      "placement": "after_causal_chain",
+      "title": "InvAD：先懂核心再看細節",
+      "prompt": "拿掉空間樣式條件，只讓 decoder 從同一固定 query 生成，會失去什麼？",
+      "caption": "多類產品既有形狀又有細節，單純重建可能還原得不合適。InvAD學習把編碼特徵反演回去，用空間相關的樣式資訊控制特徵重建。",
+      "image": "_course_content/generated-concepts/ad-invad/ad-invad-f01-core.png",
+      "alt": "多類產品既有形狀又有細節，單純重建可能還原得不合適。InvAD學習把編碼特徵反演回去，用空間相關的樣式資訊控制特徵重建。 圖為既有生成工件與機制設定，不是模型推論。",
+      "callouts": [
+        {
+          "title": "特徵作為輸入條件",
+          "body": "影像 encoder 提供多尺度特徵；rescaling 和 style translator 將它們轉為重建的控制資訊。"
+        },
+        {
+          "title": "從固定 query 重建",
+          "body": "解碼端從可學習的固定輸入出發，以空間樣式調制引導生成特徵；這裡的 SSM 指 Spatial Style Modulation。"
+        },
+        {
+          "title": "比较特徵差異",
+          "body": "原始與反演特徵逐尺度比較形成線索；模型訓練後是前向運算，不是每張測試圖再做反覆最佳化。"
+        }
+      ]
+    },
+    {
+      "id": "worked-example",
+      "placement": "after_micro_example",
+      "title": "新光澤與真刮痕：高 residual 要先分原因",
+      "prompt": "兩列都是高 residual：一列來自未涵蓋的合法光澤，另一列來自真刮痕。",
+      "caption": "residual map 本身不會告訴你是新的 normal style 還是 defect。對比 raw ROI、lot/view/illumination、per-class support 與 future split，才可把候選分類為 review 或重新 qualification。",
+      "image": "_course_content/generated-concepts/ad-invad/ad-invad-worked-example_v01.svg",
+      "alt": "兩列無文字圖：上列正常光澤改變與橘色feature residual，下列刮痕與類似候選圖，旁邊均指向review放大鏡而非PASS。",
+      "callouts": [
+        {
+          "title": "樣式 drift",
+          "body": "沒被 support 覆蓋的合法變化可造成高 residual。"
+        },
+        {
+          "title": "真異常",
+          "body": "也會高 residual，但要藉 raw evidence 與流程確認。"
+        },
+        {
+          "title": "先 HOLD",
+          "body": "不能把同一張熱圖的顏色直接翻譯成根因。"
+        }
+      ]
+    },
+    {
+      "id": "comparison",
+      "placement": "after_comparison",
+      "title": "InvAD 的 feature inversion 不是 DDAD 的 diffusion reconstruction",
+      "prompt": "兩者都建立 normal-like 對照，但生成路徑與成本契約不同。",
+      "caption": "InvAD 是 encoder 到 style-aware SSM decoder 的一次 forward feature inversion；DDAD 是有固定 noise schedule／sampler／steps 的 conditioned diffusion reconstruction，並融合 pixel 和 feature residual。",
+      "image": "_course_content/generated-concepts/ad-invad/ad-invad-comparison_v01.svg",
+      "alt": "左右比較圖：左側一次feature encoder到style控制SSM decoder，右側噪聲與條件輸入經多步diffusion重建並有雙residual，兩側皆回映候選格。",
+      "callouts": [
+        {
+          "title": "InvAD",
+          "body": "一次前向特徵反推，不能假裝成逐圖迭代 inversion。"
+        },
+        {
+          "title": "DDAD",
+          "body": "sampling schedule、steps 與 target conditioning 都是 operating state。"
+        },
+        {
+          "title": "共同邊界",
+          "body": "normal-like reconstruction 不是 defect proof 或自動 release。"
+        }
+      ]
+    },
+    {
+      "id": "boundary-cases-explainer",
+      "placement": "before_boundary_cases",
+      "title": "decoder capacity、style drift 與 class imbalance 會怎麼改 residual？",
+      "prompt": "InvAD 反推 normal-like feature；當 inversion path、正常模式或量測條件改變，先區分哪一種高 residual。",
+      "caption": "InvAD 的三個模型專屬反事實：每欄把條件、可觀察後果與正確下一步放在一起。它們不是自動修正規則；遇到條件超出驗證範圍時，先保存原始證據並進入 HOLD／REVIEW。",
+      "image": "_course_content/generated-concepts/ad-invad/ad-invad-boundary-cases_v01.svg",
+      "alt": "InvAD 的三欄反事實說明圖：每欄依序說明一個失效條件、可能看到的候選或量測後果，以及應進入 HOLD、重驗或改選方法的安全下一步。",
+      "callouts": [
+        {
+          "title": "decoder 太能重建",
+          "body": "真 defect feature 也可能被反推回 normal-like，residual 變小；用 escaped-defect challenge 檢查 capacity。"
+        },
+        {
+          "title": "未涵蓋 style 或 illumination",
+          "body": "合法光澤／材質變化也會留下高 residual；先追 source、normal mode、ROI 與 acquisition，而非直接調 threshold。"
+        },
+        {
+          "title": "global logic 或 tiny signal 不可保證",
+          "body": "feature inversion candidate 不是幾何關係或未解析微缺陷的證明；HOLD，驗有效尺度或換專門檢查器。"
+        }
+      ]
+    }
+  ],
+  "boundary_cases": [
+    {
+      "condition": "decoder 太有能力或 normal support 受污染",
+      "effect": "異常 feature 可能被 recovered 得太好，或污染型態被學成正常，殘差變小而漏檢。",
+      "action": "HOLD；保存容量、loss、class sampling 與 contamination audit，檢查 real escaped defects 而非只看平均 loss。"
+    },
+    {
+      "condition": "style／illumination／view drift 或多類別 coverage 不平衡",
+      "effect": "合法新樣式可能讓 residual 升高，稀有類別也可能被大宗類別的訓練偏好掩蓋。",
+      "action": "按類別、lot、view 分層檢查，保存 style/encoder state 與 per-class future evidence。"
+    },
+    {
+      "condition": "tiny defect 小於有效 feature 尺度，或目標是 global logic",
+      "effect": "rescaling、stride、smoothing 可抹掉小訊號；feature residual 不會自動驗缺件、數量與關係。",
+      "action": "先驗 effective pixels；對結構／規則問題改用適合的 specialist path。"
+    }
+  ],
+  "comparison": [
+    {
+      "model": "InvAD",
+      "normality": "style-aware feature inversion path 的 recovered normal-like features",
+      "candidate": "input/recovered feature residual 大"
+    },
+    {
+      "model": "DDAD",
+      "normality": "conditioned diffusion reconstruction 加 pixel/feature comparison",
+      "candidate": "fused pixel/feature residual 高"
+    },
+    {
+      "model": "Autoencoder (AE)",
+      "normality": "指定 target 的 encoder-decoder reconstruction",
+      "candidate": "target/reconstruction residual 大"
+    }
+  ],
+  "selection": "UniAD 用注意力遮蔽、逐層查詢及特徵擾動限制照抄；原版 Dinomaly 結合基礎特徵、Dropout 瓶頸、線性注意力及寬鬆重建；InvAD 由輸入產生空間條件調制生成特徵。三者都需正常訓練，位置線索不能直接當精密輪廓。 補新產品正常資料並核對適配或重訓需求。按同一漏檢風險要求，比誤報、端到端時間與人工覆核量；沒有共同實測就不排名。",
+  "poc": {
+    "title": "POC 第一件事：先證明 low residual 沒有把異常藏起來",
+    "steps": [
+      "固定 encoder/layers/freeze policy、rescaling、style translator、constant query、SSM stack/channels、normal IDs/category sampling、loss、seed 和 checkpoints。",
+      "鎖 feature distance/normalization/scale weights、map resize/smoothing/mask、aggregation、calibration、threshold 和 evidence trace。",
+      "按類別、challenge/future/drift split 比較 escape、false reject/review load、local/global localization、P95/P99、memory 和 style/decoder ablation。"
+    ],
+    "hold": "feature path 無法重播、support 受污染、類別或樣式 coverage 不足、tiny defect/global logic 未驗或 P95 不符時，先 HOLD。",
+    "acceptance": {
+      "baseline": "固定 encoder/layers、rescaling、style translator、constant query、SSM decoder、class roster、residual rule 與 per-class calibration。",
+      "measure": "按類別量 escape、normal-style false reject、review load、localization、style/decoder ablation、P95/P99 與 drift。",
+      "negative_control": "以未涵蓋光澤／view mode 與 decoder-capacity ablation 測試，確認高 residual 不會被直接說成 defect，低 residual 也不會掩蓋 known defect。",
+      "owner": "多類別 AOI owner、Vision ML owner、品質 owner"
+    }
+  },
+  "teach_back": {
+    "question": "為什麼重建誤差變小，不一定檢測變好？",
+    "answer": "正常與異常都重建得像，差異可能一起縮小；要分開看正常誤報與缺陷漏檢，才能判斷檢測能力。"
+  },
+  "slide_reading": [
+    {
+      "title": "先找：input feature 如何進入 inversion path？",
+      "question": "哪些部件把 ROI 轉成可被反推的 feature？",
+      "look": "找 image encoder、selected layers 與 rescaling upsampler。",
+      "relation": "encoder和尺度對齊決定 decoder 接收到的語言與局部解析度。",
+      "takeaway": "InvAD 的分數基礎是 feature path，不是 pixel residual。",
+      "terms": [
+        "feature inversion：由輸入feature反推normal-like feature的路徑",
+        "rescaling：把不同尺度feature對齊給後續模組"
+      ]
+    },
+    {
+      "title": "這張圖要核對 style-aware decoder",
+      "question": "style translator、constant query 和 SSM 各在限制什麼？",
+      "look": "找 spatial style control、constant query、SSM decoder 與 recovered features。",
+      "relation": "樣式控制引導空間變化，固定 query與decoder狀態共同決定可重建的 normality。",
+      "takeaway": "這些都是模型身分與成本契約，不能省略稱為『一般重建』。",
+      "terms": [
+        "constant query：固定初始化的解碼查詢表示",
+        "SSM decoder：以狀態空間模型構成的解碼路徑"
+      ]
+    },
+    {
+      "title": "先鎖 residual rule，才看候選",
+      "question": "哪些設定會改變 feature heatmap 的位置和大小？",
+      "look": "找 distance、scale weights、resize、smoothing、mask、aggregation。",
+      "relation": "recovered feature 的差距需要跨尺度對齊與後處理，才成整圖 score。",
+      "takeaway": "feature residual 是版本化 evidence，不是 defect mask。",
+      "terms": [
+        "scale weights：不同feature尺度在分數中的權重",
+        "aggregation：把局部residual合成整圖候選分數"
+      ]
+    },
+    {
+      "title": "選它前，先看 decoder escape 與 style drift",
+      "question": "低 residual 為何不一定表示安全？",
+      "look": "看 over-reconstruction、contamination、per-class coverage、effective pixels 與 global logic。",
+      "relation": "decoder可能重建異常，或新樣式造成正常高殘差；兩者都需分開驗。",
+      "takeaway": "保留每類 evidence，原因不清楚就 HOLD。",
+      "terms": [
+        "escape：異常未形成可用候選而漏過",
+        "per-class evidence：每個產品類別各自的驗證證據"
+      ]
+    }
+  ],
+  "comparison_headers": {
+    "title": "先比 feature-inversion path，不比 inversion 名稱",
+    "basis": "normal-like feature 如何由 style inversion 反推？",
+    "output": "哪個 feature 差才是 candidate？"
+  },
+  "transfer_check": {
+    "title": "新產品能直接沿用嗎",
+    "scenario": "加入外觀不同的新產品，想沿用既有模型和門檻。",
+    "question": "共用模型是否代表不需新資料？",
+    "answer": "仍需新產品正常涵蓋、獨立驗證與適配評估；更新後同時重驗既有產品，避免平均分掩蓋退步。"
+  },
+  "review_trace": {
+    "authority": "roadmap-model-selection/anomaly-detection/ad-invad/model.md",
+    "scope": "WI-021 三張新首讀圖與原生手機版，保留工程參考層。",
+    "claims": [
+      {
+        "id": "visual-1",
+        "field": "beginner_path.visuals[forward-workpiece]",
+        "source": "模型定位 / architecture_path"
+      },
+      {
+        "id": "visual-2",
+        "field": "beginner_path.visuals[encoder-rescale]",
+        "source": "architecture_path"
+      },
+      {
+        "id": "visual-3",
+        "field": "beginner_path.visuals[style-query-ssm]",
+        "source": "representation_or_score"
+      },
+      {
+        "id": "visual-4",
+        "field": "beginner_path.visuals[feature-residual-review]",
+        "source": "failure_boundary"
+      },
+      {
+        "id": "visual-5",
+        "field": "beginner_path.visuals[boundary-hold]",
+        "source": "selection_gate / evidence_bundle"
+      },
+      {
+        "id": "promise",
+        "field": "promise",
+        "source": "模型定位 / representation_or_score"
+      },
+      {
+        "id": "mechanism",
+        "field": "mechanism_steps",
+        "source": "architecture_path / representation_or_score"
+      },
+      {
+        "id": "boundaries",
+        "field": "boundary_cases",
+        "source": "failure_boundary / selection_gate"
+      },
+      {
+        "id": "comparison",
+        "field": "comparison + selection",
+        "source": "selection_gate"
+      },
+      {
+        "id": "poc",
+        "field": "poc + acceptance",
+        "source": "cost_and_operating_point / evidence_bundle"
+      },
+      {
+        "id": "transfer",
+        "field": "transfer_check",
+        "source": "failure_boundary / selection_gate"
+      },
+      {
+        "id": "f01-core",
+        "field": "beginner_path.visuals[0] + scenario + mental_model",
+        "source": "https://arxiv.org/abs/2404.10760"
+      },
+      {
+        "id": "f01-transfer",
+        "field": "micro_example + transfer_check",
+        "source": "由原論文機制推論移除後果；https://arxiv.org/abs/2404.10760"
+      },
+      {
+        "id": "wi021-first-read",
+        "field": "beginner_path + micro_example + selection",
+        "source": "https://arxiv.org/html/2404.10760v1 section 4"
+      }
+    ]
+  },
+  "teaching_preflight": {
+    "brief": "teaching-images/vision-ai-model-selection/workitems/wi-021/invad-c1-r01.md",
+    "story": "C",
+    "major_visual_nodes": 4,
+    "visual_status": "self-reviewed",
+    "user_review": "pending"
+  }
+}

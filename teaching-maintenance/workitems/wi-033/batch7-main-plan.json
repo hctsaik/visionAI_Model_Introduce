@@ -1,0 +1,26 @@
+[
+  {
+    "id": "sr-same-board-counterexample",
+    "version": "r02",
+    "title": "超解析反例：同一孔邊，細節仍不確定",
+    "takeaway": "缺口是否存在，要靠真正有解析力的取像。",
+    "kind": "D",
+    "mobile_height": 2304,
+    "panels": [
+      {
+        "title": "矩形雙孔板，固定左孔邊q",
+        "graphic": "sr-main-source"
+      },
+      {
+        "title": "同一q可有不同高解析候選",
+        "graphic": "sr-main-alternatives"
+      },
+      {
+        "title": "重新取像確認q的真實邊界",
+        "graphic": "sr-main-evidence"
+      }
+    ],
+    "detail": "恢復首讀同一矩形板大左孔小右孔與四角固定點。固定左大孔左邊q；粗格只示意資訊不足，不聲稱兩幾何候選精確降採樣相等。候選A平滑、B有小缺口（白色孔向左延伸）；兩者是作者可能性示意，均非實測。第三節點區分模型放大估計與實際更高解析取像，需校正/位置對準後判斷。替換原圓板右下邊主反例桌機及手機，連動圖說/mental_model限制。 r01兩設備實看：局部圓孔跨出裁切框，r02以SVG viewport截取真正局部；去除學生無需知道的換圖歷史。",
+    "source": "https://arxiv.org/abs/2104.07636"
+  }
+]

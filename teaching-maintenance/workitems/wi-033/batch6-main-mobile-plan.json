@@ -1,0 +1,50 @@
+[
+  {
+    "id": "clip-shared-errors",
+    "title": "文字懂異常，仍可能看錯細節",
+    "takeaway": "語意相似需回原圖，分開驗誤報與漏檢。",
+    "kind": "D",
+    "mobile_height": 2400,
+    "panels": [
+      {
+        "title": "同一金屬板：正常q與刮傷p",
+        "graphic": "b6-clip-pair"
+      },
+      {
+        "title": "作者反例：正常誤報、刮傷漏檢",
+        "graphic": "b6-clip-errors"
+      },
+      {
+        "title": "固定取像與真值，再比較設定",
+        "graphic": "main-verify"
+      }
+    ],
+    "detail": "以同一雙孔板正常N的允收孔口q與異常A刮傷p，維持原身份；正常反光誤報與細傷漏檢為作者假設。第三節點要求固定可見度/取像、正常與真缺陷獨立留出、比較提示設定；不捏造分數。",
+    "version": "r02",
+    "source": "https://arxiv.org/html/2303.14814v1 ; https://arxiv.org/html/2310.18961v3 ; https://github.com/CASIA-IVA-Lab/AnomalyGPT"
+  },
+  {
+    "id": "clip-shared-methods",
+    "title": "三種圖文方法，先選工作結果",
+    "takeaway": "同件、同漏檢要求，再比資料與覆核成本。",
+    "kind": "D",
+    "mobile_height": 2400,
+    "panels": [
+      {
+        "title": "WinCLIP：人工文字＋局部視窗",
+        "graphic": "main-win"
+      },
+      {
+        "title": "AnomalyCLIP：輔助資料學提示",
+        "graphic": "main-ac"
+      },
+      {
+        "title": "AnomalyGPT：位置線索＋對話",
+        "graphic": "main-gpt"
+      }
+    ],
+    "detail": "三節點各展示同金屬板p和一種方法：WinCLIP人工提示/可加正常參考的+模式；AnomalyCLIP預訓練提示和辅助標註；AnomalyGPT已訓練內建定位與對話。位置圖只示輸出形式，不表示相同成效或精密輪廓。保留原桌機和頁面補充解釋。",
+    "version": "r01",
+    "source": "https://arxiv.org/html/2303.14814v1 ; https://arxiv.org/html/2310.18961v3 ; https://github.com/CASIA-IVA-Lab/AnomalyGPT"
+  }
+]

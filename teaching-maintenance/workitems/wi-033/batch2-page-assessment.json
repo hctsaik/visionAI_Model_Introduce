@@ -1,0 +1,194 @@
+[
+  {
+    "id": "lucas-kanade",
+    "scores": [
+      19,
+      19,
+      19,
+      18,
+      8,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "同L形工件、清楚/反光兩組共同輸入，輸出p到p′",
+      "局部梯度算例u=2/v=1可追算，單邊與無紋理限制可見",
+      "保存坐標、status、時間與相機校正後接物理量",
+      "與RAFT同資料比較選點及覆蓋，不將稠密當更可信",
+      "四工程桌機手機讀圖可追；手機需要長捲動",
+      "鏡面件情境允許改善照明、加標記與整體對位"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "精確圖解與保留主線質感略異"
+      ],
+      "completeness": [
+        9,
+        "已列工程/主反例/指定深讀修正完整"
+      ],
+      "professionalism": [
+        9,
+        "局部梯度算例u=2/v=1可追算，單邊與無紋理限制可見"
+      ],
+      "density": [
+        8,
+        "四工程桌機手機讀圖可追；手機需要長捲動"
+      ],
+      "hierarchy": [
+        9,
+        "首讀、四工程、深讀分工"
+      ]
+    },
+    "veto": [],
+    "status": "local_complete",
+    "user_approval": "pending",
+    "page_evidence": "pages/lucas-kanade",
+    "deep_evidence": "batch2-deep-report.json; deep-detail-report.json",
+    "model_inference": false
+  },
+  {
+    "id": "raft",
+    "scores": [
+      19,
+      19,
+      19,
+      18,
+      8,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "同影格對建立稠密位移，反光區仍可能輸出數值",
+      "全配對/情境/隱狀態共同更新，(1,0)+(1,1)=(2,1)",
+      "輸出向量不是追蹤ID；遮擋一致性是外部核對",
+      "比較更新次數和LK需求，沒有捏造模型勝負",
+      "四工程三段可讀；少數英文次字與長捲動扣分",
+      "只需三點的CPU情境允許LK基準"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "精確圖解與保留主線質感略異"
+      ],
+      "completeness": [
+        9,
+        "已列工程/主反例/指定深讀修正完整"
+      ],
+      "professionalism": [
+        9,
+        "全配對/情境/隱狀態共同更新，(1,0)+(1,1)=(2,1)"
+      ],
+      "density": [
+        8,
+        "四工程三段可讀；少數英文次字與長捲動扣分"
+      ],
+      "hierarchy": [
+        9,
+        "首讀、四工程、深讀分工"
+      ]
+    },
+    "veto": [],
+    "status": "local_complete",
+    "user_approval": "pending",
+    "page_evidence": "pages/raft",
+    "deep_evidence": "batch2-deep-report.json; deep-detail-report.json",
+    "model_inference": false
+  },
+  {
+    "id": "ad-anomalydino",
+    "scores": [
+      19,
+      19,
+      19,
+      18,
+      8,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "同四孔A-01刮痕位置連續，旋轉含刻字共同變換",
+      "整圖DINOv2出tokens，局部查全庫最近距離",
+      "庫來源與前處理需相容；位置圖與整圖分數分開",
+      "污染參考可降距離，旋轉是否正常依工作規格",
+      "新旋轉/工程手機可讀；舊有效深讀沿用WI-031審查，未虛增逐圖分數",
+      "少正常樣本情境先補覆蓋，特徵不足再評其他方案"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "精確圖解與保留主線質感略異"
+      ],
+      "completeness": [
+        9,
+        "已列工程/主反例/指定深讀修正完整"
+      ],
+      "professionalism": [
+        9,
+        "整圖DINOv2出tokens，局部查全庫最近距離"
+      ],
+      "density": [
+        8,
+        "新旋轉/工程手機可讀；舊有效深讀沿用WI-031審查，未虛增逐圖分數"
+      ],
+      "hierarchy": [
+        9,
+        "首讀、四工程、深讀分工"
+      ]
+    },
+    "veto": [],
+    "status": "local_complete",
+    "user_approval": "pending",
+    "page_evidence": "pages/ad-anomalydino",
+    "deep_evidence": "batch2-deep-report.json; deep-detail-report.json",
+    "model_inference": false
+  },
+  {
+    "id": "ad-efficientad",
+    "scores": [
+      19,
+      19,
+      19,
+      18,
+      8,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "首讀同托盤缺件與污點，深讀另有明示A-01算例",
+      "T/S1與AE/S2比較，正常分位數校正後融合",
+      "兩路、融合與原圖一同核對；位置熱圖不是輪廓",
+      "換產品重訓/校正對比查庫與監督分割成本",
+      "七章手机重排和保留第六章逐段實看；長元素截圖合成錯誤已另取細節",
+      "兩路與獨立裝配規則並列可接受取捨"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "精確圖解與保留主線質感略異"
+      ],
+      "completeness": [
+        9,
+        "已列工程/主反例/指定深讀修正完整"
+      ],
+      "professionalism": [
+        9,
+        "T/S1與AE/S2比較，正常分位數校正後融合"
+      ],
+      "density": [
+        8,
+        "七章手机重排和保留第六章逐段實看；長元素截圖合成錯誤已另取細節"
+      ],
+      "hierarchy": [
+        9,
+        "首讀、四工程、深讀分工"
+      ]
+    },
+    "veto": [],
+    "status": "local_complete",
+    "user_approval": "pending",
+    "page_evidence": "pages/ad-efficientad",
+    "deep_evidence": "batch2-deep-report.json; deep-detail-report.json",
+    "model_inference": false
+  }
+]

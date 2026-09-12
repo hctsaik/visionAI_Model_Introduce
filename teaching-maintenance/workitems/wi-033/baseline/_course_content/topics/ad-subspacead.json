@@ -1,0 +1,514 @@
+{
+  "model": "SubspaceAD",
+  "badge": "固定特徵，正常樣本擬合子空間",
+  "title": "SubspaceAD：從正常子空間的投影殘差找異常",
+  "scenario": {
+    "title": "正常樣本少，想先建立可解釋基準",
+    "body": "固定相機檢查兩孔金屬板，已有少量正常品。用正常局部的主要變化建立子空間，檢查新板刮傷 p 是否留下解釋不了的特徵。"
+  },
+  "promise": {
+    "title": "交付局部殘差的位置線索",
+    "body": "patch 網格的可疑熱圖與候選分數，用於回看原始影像；不直接提供缺陷名稱、精密像素輪廓、尺寸或放行結論。"
+  },
+  "mental_model": {
+    "title": "正常方向能解釋多少？",
+    "body": "固定 DINOv2 提取局部特徵，PCA 從正常資料估計主要變動方向。待測特徵投影回子空間，未被解釋的殘差形成異常線索。",
+    "limit": "正常資料涵蓋不足可能誤報；保留太多方向可能吸收異常。線性子空間也未必適合所有正常分布。"
+  },
+  "micro_example": {
+    "title": "提高保留維度，誤報少了就算改善嗎？",
+    "setup": "新金屬外殼有更多允收紋理。增加保留維度後，正常品誤報變少，但細刮傷也更不容易亮起。",
+    "prediction": "你會繼續增加維度、改善正常資料，還是比較 STFPM／RD4AD？需要保留哪些獨立證據？",
+    "reveal": "更多方向可解釋正常變化，也可能一起解釋異常；提高門檻同樣可能少誤報而多漏檢。先查資料乾淨度與涵蓋，用固定的未見正常和真缺陷比較維度、取像及候選方法的誤報、漏檢、時間與覆核量；能訓練時可測 STFPM 或 RD4AD，不預設一定勝過子空間。"
+  },
+  "mechanism_steps": [
+    {
+      "title": "把正常局部變成特徵",
+      "body": "乾淨 normal ROI 經相同 recipe 與 frozen DINOv2，形成每個 patch 的 feature。",
+      "why": "PCA 要壓縮的是模型對局部外觀的數字描述，而不是直接壓縮原始像素。",
+      "anchor": "工程圖核對：Feature recipe",
+      "diagram": {
+        "title": "正常 ROI 轉為 patch features",
+        "body": "same recipe 與 frozen DINOv2 產生每個 patch feature",
+        "why": "PCA 壓縮的是 feature，不是 raw pixels",
+        "anchor": "feature recipe"
+      }
+    },
+    {
+      "title": "用 PCA 留下主要正常方向",
+      "body": "從正常 feature 得到平均值 μ 與正交標準 basis C，形成 global normal subspace。",
+      "why": "這表示少量正常資料中可重複出現的主要變化，不是記住每一張正常影像。",
+      "anchor": "工程圖核對：Fit μ and C",
+      "diagram": {
+        "title": "PCA 擬合正常方向與 rank",
+        "body": "fit μ、basis C 與固定 rank／explained-variance policy",
+        "why": "rank 決定可容納的正常變化，不是越高越好",
+        "anchor": "μ / C / rank policy"
+      }
+    },
+    {
+      "title": "測試局部投影後看剩餘",
+      "body": "測試 feature z 先以 z−μ 中心化，再投影到 C Cᵀ；留在平面外的 r=(I−C Cᵀ)(z−μ) 是 orthogonal residual。",
+      "why": "大 residual 代表這個局部不能被已知正常主要方向充分解釋。",
+      "anchor": "工程圖核對：Orthogonal residual",
+      "diagram": {
+        "title": "投影後量平面外 residual",
+        "body": "中心化 z 後投影到 C，再保留 orthogonal residual r",
+        "why": "大 residual 表示局部未被正常方向解釋",
+        "anchor": "orthogonal residual"
+      }
+    },
+    {
+      "title": "把每個 residual 變成候選地圖",
+      "body": "每個 patch 的 score 是 ||r||；它們組成 patch-grid heatmap，再依已鎖定規則聚合成 image candidate score。",
+      "why": "工程師需要先回看哪個局部，但熱圖仍不是原生 pixel mask 或 release probability。",
+      "anchor": "工程圖核對：Image score／residual gate",
+      "diagram": {
+        "title": "residual 聚成候選熱圖",
+        "body": "每個 patch 的 ||r|| 組成 heatmap 與 image score",
+        "why": "熱圖不是 native pixel mask 或 release probability",
+        "anchor": "residual evidence map"
+      }
+    }
+  ],
+  "visual_intro": "現在才拿四張工程圖核對：依序找 Feature recipe、Fit μ and C、Orthogonal residual 與 Image score。圖是工程參考，不是第一次解釋 PCA 的老師。",
+  "beginner_path": {
+    "title": "正常方向、投影殘差與資料取捨",
+    "intro": "三張圖看正常子空間怎麼建立、殘差如何指出可疑位置、什麼情況會失效，以及鄰近特徵方法。全部為示意，非模型實測。",
+    "visuals": [
+      {
+        "id": "wi021-ad-subspacead-1",
+        "title": "SubspaceAD：正常變化解釋不了的部分，就是線索",
+        "prompt": "從正常樣本建立子空間，再追待測板 A 的局部 p。",
+        "caption": "固定 DINOv2 把影像變成局部特徵；正常特徵經 PCA 擬合保留主要變動方向。待測特徵投影到子空間後，剩餘殘差排回影像，形成可疑位置線索。",
+        "image": "_course_content/generated-concepts/ad-subspacead/wi021-subspacead-c1-r03-desktop.png",
+        "alt": "SubspaceAD：正常變化解釋不了的部分，就是線索。固定 DINOv2 把影像變成局部特徵；正常特徵經 PCA 擬合保留主要變動方向。待測特徵投影到子空間後，剩餘殘差排回影像，形成可疑位置線索。 本圖為 AI 生成教學示意，非模型實測。",
+        "callouts": [
+          {
+            "title": "免訓練不等於免準備",
+            "body": "不做骨幹梯度更新，仍需要正常樣本、固定前處理與 PCA 擬合，並保存特徵設定和子空間。"
+          },
+          {
+            "title": "平面代表什麼",
+            "body": "圖中的平面是高維特徵空間的降維示意，不是工件平面。整圖先編碼，再取局部 p 的表示。"
+          },
+          {
+            "title": "從殘差回看原圖",
+            "body": "局部殘差大代表正常表示較難解釋，不保證一定缺陷。patch 網格熱區不是精密輪廓，尺寸需另外量測與驗證。"
+          }
+        ],
+        "reading_views": [
+          {
+            "title": "SubspaceAD：正常變化解釋不了的部分，就是線索",
+            "image": "_course_content/generated-concepts/ad-subspacead/wi021-subspacead-c1-r03-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/ad-subspacead/wi021-subspacead-c1-r02-mobile.png",
+            "alt": "SubspaceAD：正常變化解釋不了的部分，就是線索。固定 DINOv2 把影像變成局部特徵；正常特徵經 PCA 擬合保留主要變動方向。待測特徵投影到子空間後，剩餘殘差排回影像，形成可疑位置線索。 本圖為 AI 生成教學示意，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              724,
+              2172
+            ],
+            "mobile_display_mode": "full-mobile",
+            "mobile_intrinsic_width": 724,
+            "mobile_intrinsic_height": 2172,
+            "desktop_intrinsic_width": 1672,
+            "desktop_intrinsic_height": 941
+          }
+        ],
+        "core_ideas": true
+      },
+      {
+        "id": "wi021-ad-subspacead-2",
+        "title": "SubspaceAD 的正常子空間，也會失準",
+        "prompt": "對照正常 q 未被涵蓋與完整維度吸收 p 的兩種極端情境。",
+        "caption": "正常光澤若未被資料或子空間涵蓋，q 也可能有大殘差而誤報。另一極端是保留完整特徵空間，投影等於原特徵，殘差為零，這條異常線索失效。",
+        "image": "_course_content/generated-concepts/ad-subspacead/wi021-subspacead-d2-r01-desktop.png",
+        "alt": "SubspaceAD 的正常子空間，也會失準。正常光澤若未被資料或子空間涵蓋，q 也可能有大殘差而誤報。另一極端是保留完整特徵空間，投影等於原特徵，殘差為零，這條異常線索失效。 本圖為 AI 生成教學示意，非模型實測。",
+        "callouts": [
+          {
+            "title": "先查正常樣本",
+            "body": "確認資料乾淨且涵蓋允收光澤、紋理與實體件差異；不能把每個新正常外觀都当缺陷。"
+          },
+          {
+            "title": "保留維度不是越多越好",
+            "body": "較多維度可解釋更多變化，也可能解釋掉異常。全維度是恆等投影極端例，不是建議設定。"
+          },
+          {
+            "title": "獨立驗證才知道取捨",
+            "body": "按實體件或批次分開正常擬合與驗證資料，用未見正常和真缺陷比較誤報、漏檢與時間；換產品需重估表示並驗證。"
+          }
+        ],
+        "reading_views": [
+          {
+            "title": "SubspaceAD 的正常子空間，也會失準",
+            "image": "_course_content/generated-concepts/ad-subspacead/wi021-subspacead-d2-r01-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/ad-subspacead/wi021-subspacead-d2-r01-mobile.png",
+            "alt": "SubspaceAD 的正常子空間，也會失準。正常光澤若未被資料或子空間涵蓋，q 也可能有大殘差而誤報。另一極端是保留完整特徵空間，投影等於原特徵，殘差為零，這條異常線索失效。 本圖為 AI 生成教學示意，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              724,
+              2172
+            ],
+            "mobile_display_mode": "full-mobile",
+            "mobile_intrinsic_width": 724,
+            "mobile_intrinsic_height": 2172,
+            "desktop_intrinsic_width": 1672,
+            "desktop_intrinsic_height": 941
+          }
+        ],
+        "core_ideas": false
+      },
+      {
+        "id": "wi021-ad-subspacead-3",
+        "title": "SubspaceAD 與教師學生方法，差在哪裡？",
+        "prompt": "同一工件需求，比正常知識如何建立及差異來源。",
+        "caption": "STFPM 用正常資料訓練同架構學生；RD4AD 訓練瓶頸與反向學生還原教師特徵；SubspaceAD 固定 DINOv2，以正常特徵擬合 PCA 後比較投影殘差。圖不作性能排名。 固定硬體、解析度與前處理，按相同漏檢風險比較誤報、端到端時間及覆核量；較少模型部件不等於現場一定較快。",
+        "image": "_course_content/generated-concepts/ad-stfpm/wi021-feature-methods-d3-r02-desktop.png",
+        "alt": "SubspaceAD 與教師學生方法，差在哪裡？。STFPM 用正常資料訓練同架構學生；RD4AD 訓練瓶頸與反向學生還原教師特徵；SubspaceAD 固定 DINOv2，以正常特徵擬合 PCA 後比較投影殘差。圖不作性能排名。 本圖為 AI 生成教學示意，非模型實測。",
+        "callouts": [
+          {
+            "title": "正常樣本少時起步",
+            "body": "SubspaceAD 可用少量正常樣本擬合，但少樣本仍可能缺少允收變化；教師學生方法則需相應訓練與驗證。"
+          },
+          {
+            "title": "換產品的工作",
+            "body": "子空間要核對正常資料並重新擬合；訓練路徑需核對重訓／適配需求。骨幹、解析度或前處理改動也要重驗。"
+          },
+          {
+            "title": "成本和錯誤一起比較",
+            "body": "固定硬體、影像與前處理，比建模成本、推論時間、誤報、漏檢及覆核量。免梯度更新不代表全流程零成本或一定最快。"
+          }
+        ],
+        "reading_views": [
+          {
+            "title": "SubspaceAD 與教師學生方法，差在哪裡？",
+            "image": "_course_content/generated-concepts/ad-stfpm/wi021-feature-methods-d3-r02-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/ad-stfpm/wi021-feature-methods-d3-r03-mobile.png",
+            "alt": "SubspaceAD 與教師學生方法，差在哪裡？。STFPM 用正常資料訓練同架構學生；RD4AD 訓練瓶頸與反向學生還原教師特徵；SubspaceAD 固定 DINOv2，以正常特徵擬合 PCA 後比較投影殘差。圖不作性能排名。 本圖為 AI 生成教學示意，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              724,
+              2172
+            ],
+            "mobile_display_mode": "full-mobile",
+            "mobile_intrinsic_width": 724,
+            "mobile_intrinsic_height": 2172,
+            "desktop_intrinsic_width": 1672,
+            "desktop_intrinsic_height": 941
+          }
+        ],
+        "core_ideas": false
+      }
+    ]
+  },
+  "concept_visuals": [
+    {
+      "id": "projection-residual",
+      "placement": "after_micro_example",
+      "title": "SubspaceAD：先懂核心再看細節",
+      "prompt": "如果保留全部特徵維度，投影殘差會怎樣？",
+      "caption": "正常局部很多，卻可能只沿少數特徵方向變動。SubspaceAD用正常特徵估計低維子空間，檢查新局部是否留下正常變化解釋不了的部分。",
+      "image": "_course_content/generated-concepts/ad-subspacead/ad-subspacead-f01-core.png",
+      "alt": "正常局部很多，卻可能只沿少數特徵方向變動。SubspaceAD用正常特徵估計低維子空間，檢查新局部是否留下正常變化解釋不了的部分。 圖為既有生成工件與機制設定，不是模型推論。",
+      "callouts": [
+        {
+          "title": "借用固定特徵",
+          "body": "使用預訓練 DINOv2 的局部特徵；免梯度訓練仍要以正常樣本擬合 PCA。"
+        },
+        {
+          "title": "正常方向成子空間",
+          "body": "PCA 保留主要正常變動方向；它在特徵空間，不是工件上的實體平面。"
+        },
+        {
+          "title": "投影後看殘差",
+          "body": "將待測特徵投影回正常子空間，剩餘距離形成異常線索；rank 太大可能也解釋掉异常。"
+        }
+      ]
+    },
+    {
+      "id": "rank-counterfactual",
+      "placement": "before_boundary_cases",
+      "title": "rank 不是越大越好",
+      "prompt": "三欄都放同一批合法正常點和同一個刮痕 feature；改變的是 PCA 子空間容納的方向數量。",
+      "caption": "由左到右：rank 太低時，合法正常變化也離平面很遠，容易 false HOLD；合格 rank 應容納已驗證的正常變化，同時保留同一個刮痕 feature 的長 residual；rank 太高時，子空間可能朝同一個刮痕方向延伸，讓 residual 變短並增加漏檢風險。三欄都要以本地 holdout qualification，不能直接選一個放行。",
+      "image": "_course_content/generated-concepts/subspacead-bridge-03-rank-linear-span_v01.svg",
+      "alt": "三欄無文字反事實圖：每欄都有同樣的藍色正常特徵點雲與橘色刮痕 feature 點；左欄是窄線狀子空間，中欄是平直平面，右欄是加入額外線性方向的平直半透明 slab／volume，靠近同一橘色 query。",
+      "callouts": [
+        {
+          "title": "左：rank 太低",
+          "body": "合法正常點也留下長差距；高 residual 不必然等於 defect。"
+        },
+        {
+          "title": "中：受控的 rank",
+          "body": "先以乾淨 support 和未參與 fitting 的 holdout，確認正常與候選的行為。"
+        },
+        {
+          "title": "右：rank 太高",
+          "body": "同一個刮痕方向可能被吸收，殘差變短；不是更安全，而是可能更容易漏檢。"
+        }
+      ]
+    },
+    {
+      "id": "three-way-comparison",
+      "placement": "after_comparison",
+      "title": "三種方法都會亮格子，但各自問的問題不同",
+      "prompt": "同一個 candidate map 前，先分清楚它是在找最近的正常例子、量每個位置的統計距離，還是量 feature 平面外的 residual。",
+      "caption": "由左到右：SubspaceAD 用 clean support 的 global PCA mean／basis 量測平面外 residual；AnomalyDINO 對 normal patch-token exemplar 做最近鄰距離；PaDiM 在固定位置對 feature distribution 算距離。三者都只交 candidate evidence，仍要回看 raw ROI 與 REVIEW／HOLD。",
+      "image": "_course_content/generated-concepts/ad-subspacead/ad-subspacead-comparison_v01.svg",
+      "alt": "三欄比較圖：SubspaceAD 的特徵點投影到 PCA 子空間後量 residual、AnomalyDINO 的 query token 對 normal exemplar memory 找近鄰、PaDiM 的固定位置特徵對位置分布量距離；三欄都回到候選 evidence 而非自動決策。",
+      "callouts": [
+        {
+          "title": "SubspaceAD：整體主要方向",
+          "body": "它以所有有效 normal patch feature 的 global PCA span 作為參考；長 residual 仍可能是 drift 或 coverage 缺口。"
+        },
+        {
+          "title": "AnomalyDINO：有沒有相近 exemplar",
+          "body": "它問 query token 能否在 clean normal support 找到近鄰；它不是 PCA plane。"
+        },
+        {
+          "title": "PaDiM：同一位置是否合常態",
+          "body": "它保留位置對應，對固定 patch position 的 feature distribution 量距離；先確認 registration。"
+        }
+      ]
+    },
+    {
+      "id": "memory-versus-subspace",
+      "placement": "after_comparison",
+      "title": "用同一張 ROI 分清：最近鄰不是 residual",
+      "prompt": "同一個刮痕可被兩種方法標成 candidate，但它們在問的問題不同。",
+      "caption": "左邊的 AnomalyDINO 將 query token 和 normal exemplar 做最近鄰比較；右邊的 SubspaceAD 讓 feature 投影到 PCA normal subspace，再量垂直 residual。兩邊回到 ROI 的橘色格都只是待 review 的 candidate。",
+      "image": "_course_content/generated-concepts/anomaly-bridge-memory-vs-subspace_v01.png",
+      "alt": "左右對照無文字圖：左邊是正常金屬表面參考卡和含刮痕的網格 ROI，右邊是同一個 ROI 對應到藍色點雲和平面，兩邊下方都回映為粗橘色候選格和放大鏡。",
+      "callouts": [
+        {
+          "title": "左：example lookup",
+          "body": "AnomalyDINO 的正常性是 clean normal token exemplar；不是 PCA 平面。"
+        },
+        {
+          "title": "右：projection residual",
+          "body": "SubspaceAD 的正常性是 global PCA subspace；不是 memory-bank 最近鄰搜尋。"
+        },
+        {
+          "title": "共同邊界",
+          "body": "兩者的 candidate 都需對照 raw ROI、recipe 與 evidence gate，不能自行 release。"
+        }
+      ]
+    },
+    {
+      "id": "causal-chain-explainer",
+      "placement": "after_causal_chain",
+      "title": "把 PCA residual 的『為什麼』一次看成一張圖",
+      "prompt": "從正常 patch feature、PCA 主要方向、投影後殘差到 candidate map：哪一個關係最能解釋熱圖為何亮起？",
+      "caption": "這張說明圖逐步對應上方因果鏈與後方工程圖：先固定 feature recipe，再用 clean normal support fit 出 μ 與 C；測試 patch 的平面外 residual 才回映為候選格。候選格仍需回看 raw ROI 並由人員 REVIEW／HOLD。",
+      "image": "_course_content/generated-concepts/ad-subspacead/ad-subspacead-causal-chain_v01.svg",
+      "alt": "SubspaceAD 的四步因果說明圖：正常局部轉成 feature、PCA 留下主要正常方向、測試 feature 投影後量正交 residual、殘差回映為候選格並交人工 review；每步列出原因和工程圖核對點。",
+      "callouts": [
+        {
+          "title": "① feature 不是原始像素",
+          "body": "PCA 壓縮的是模型對局部外觀的數字描述，不是把影像壓成一張實體平面。"
+        },
+        {
+          "title": "②～③ normal subspace 只解釋主要正常方向",
+          "body": "投影後仍留下的正交差距才成為 residual；它也可能反映 drift 或正常涵蓋不足。"
+        },
+        {
+          "title": "④ 熱圖是候選證據",
+          "body": "它協助決定先回看哪個局部，不是缺陷類別、精確 mask 或 PASS／FAIL。"
+        }
+      ]
+    }
+  ],
+  "boundary_cases": [
+    {
+      "condition": "rank 太低",
+      "effect": "合法正常變化沒被容納，residual 變大，false HOLD 與人工覆核上升。",
+      "action": "不要只看單張熱圖；以本地 holdout 與多個 support 抽樣比較低誤報下的漏檢與覆核量。"
+    },
+    {
+      "condition": "rank 太高",
+      "effect": "缺陷方向可能也被吸收進 normal subspace；已知刮痕熱點反而變淡，漏檢風險上升。",
+      "action": "HOLD；不能把熱圖變淡當成變好，重新做 rank policy qualification。"
+    },
+    {
+      "condition": "ROI／照明／recipe 漂移，或目標是缺件、錯件、位置關係",
+      "effect": "整片一起偏離，或局部外觀 residual 根本不能表達 logical anomaly。",
+      "action": "先查 acquisition／registration state；對 logical anomaly 改用能檢查存在、位置或結構規則的方法。"
+    }
+  ],
+  "comparison": [
+    {
+      "model": "SubspaceAD",
+      "normality": "global PCA 的平均與少數主要正常方向",
+      "candidate": "投影後仍留下大的 orthogonal residual"
+    },
+    {
+      "model": "AnomalyDINO",
+      "normality": "少量 normal patch token 的 exemplar memory",
+      "candidate": "找不到相近 normal token，cosine distance 大"
+    },
+    {
+      "model": "PaDiM",
+      "normality": "每個固定位置的特徵分布",
+      "candidate": "同一位置超出它的正常統計範圍"
+    }
+  ],
+  "selection": "正常樣本少、希望免骨幹梯度更新時可先評估 SubspaceAD，但仍需擬合 PCA 與驗證資料涵蓋。可與 STFPM 同圖雙路、RD4AD 反向特徵重建比較。換產品、骨幹或前處理需重估正常表示；固定同樣資料與硬體比較建模成本、推論時間及兩側錯誤。",
+  "poc": {
+    "title": "POC 第一件事：先驗證 normal subspace 沒有騙你",
+    "steps": [
+      "固定 ROI、mask、registration、clean normal support、DINOv2 checkpoint／layer、feature normalization 與 support IDs。",
+      "鎖定 PCA 的 μ、正交 basis C、rank policy、patch score ||r||、aggregation、threshold 與 candidate evidence format。",
+      "以不同 support 抽樣與多個 rank，在 challenge／future／drift split 比較 low-FPR escape、false HOLD、review load、P95 與 state size。"
+    ],
+    "hold": "正常模式多群或非線性、support 受污染、ROI／照明／recipe 漂移、缺陷小於可觀測 patch 尺度，或目標是 logical anomaly 時，先 HOLD 或改選方法。",
+    "acceptance": {
+      "baseline": "固定 DINOv2 feature recipe、clean support、μ、basis C、rank policy、residual norm、aggregation 與 calibration。",
+      "measure": "量 rank/support sensitivity、low-FPR escape、false HOLD、review load、state size、P95 與 future/drift split。",
+      "negative_control": "對同一 challenge 使用過低與過高 rank；前者必須暴露合法 normal false HOLD，後者必須檢查 known defect residual 被吸收的 escape。",
+      "owner": "AOI 製程 owner、PCA/feature ML owner、品質 owner"
+    }
+  },
+  "teach_back": {
+    "question": "為什麼免訓練仍要正常樣本？",
+    "answer": "固定的是 DINOv2 骨幹；PCA 子空間仍由正常特徵擬合。沒有代表性正常樣本，就缺少可比較的正常方向。"
+  },
+  "slide_reading": [
+    {
+      "title": "先找出：哪些正常變化被壓成 PCA 子空間？",
+      "question": "哪個新 patch 投影回 normal plane 後，仍留下很大的距離？",
+      "look": "依序找 one/few normal、DINOv2 patches、PCA subspace 與 residual gate。",
+      "relation": "正常局部先形成 feature；PCA 留下主要正常方向；不能被方向解釋的部分才成候選。",
+      "takeaway": "SubspaceAD 壓縮的是正常 feature 變化，不是把正常影像逐張記住。",
+      "terms": [
+        "feature：模型對局部外觀的數字描述",
+        "PCA：把主要正常變化壓成少數方向"
+      ]
+    },
+    {
+      "title": "這張圖要核對 residual 怎麼形成",
+      "question": "為什麼先扣掉 μ、再投影到 C Cᵀ，最後才看 r？",
+      "look": "找 Feature recipe、Fit μ and C、Orthogonal residual 與 Image score。",
+      "relation": "μ 是正常中心；C 是主要正常方向；r 是這些方向仍解釋不了的剩餘距離。",
+      "takeaway": "patch score 是 ||r||；它形成候選熱圖，不是缺陷機率或像素真值。",
+      "terms": [
+        "μ：正常 feature 的平均中心",
+        "C：PCA 的正交標準主要方向",
+        "residual：正常方向解釋不了的剩餘差距"
+      ]
+    },
+    {
+      "title": "先鎖住 μ、C 與 rank，才談結果",
+      "question": "哪些設定一改，就等於改了『什麼叫正常』？",
+      "look": "找 feature recipe、support、μ／C、rank、aggregation 與 evidence gate。",
+      "relation": "support 與 PCA policy 決定 normal subspace；aggregation 才把 patch residual 變成整圖候選。",
+      "takeaway": "rank、support、ROI 與 recipe 都是可重播的工程契約。",
+      "terms": [
+        "rank：保留多少個正常主要方向",
+        "aggregation：把 patch 分數合成整圖候選分數"
+      ]
+    },
+    {
+      "title": "選它前，先看 rank、drift 與問題型態",
+      "question": "已知刮痕熱點變淡、整片一起偏離或缺件時，能直接放行嗎？",
+      "look": "看 rank 兩端風險、drift、logical anomaly 與 evidence review。",
+      "relation": "候選 residual 可能反映缺陷、正常變化不足或 acquisition state 改變；需要分辨後再決策。",
+      "takeaway": "條件不成立就 HOLD；SubspaceAD 不是所有 anomaly 的自動答案。",
+      "terms": [
+        "drift：取像或產品狀態逐漸偏離原先 qualification",
+        "logical anomaly：缺件、錯件、位置關係等外觀 residual 未必能表達的問題"
+      ]
+    }
+  ],
+  "comparison_headers": {
+    "title": "先比 PCA span，不比 residual 顏色",
+    "basis": "正常性是哪些 PCA 方向，而非哪些 exemplar？",
+    "output": "平面外 residual 知道什麼？"
+  },
+  "transfer_check": {
+    "title": "零件有兩種合法外形，都能用一個平面說明嗎？",
+    "scenario": "新產品有兩種差別很大的合法構型，合併後正常特徵分成兩群。",
+    "question": "是否直接增加維度就足夠？",
+    "answer": "不保證。先確認兩種構型、取像與樣本量，檢查單一線性子空間能否同時解釋正常又分開缺陷；可考慮分產品／構型建模或其他特徵方法，用獨立驗證選擇，不能只看擬合殘差變小。"
+  },
+  "review_trace": {
+    "authority": "roadmap-model-selection/anomaly-detection/ad-subspacead/model.md",
+    "scope": "WI-021：新製核心及失敗圖含手機；復用本輪 STFPM/RD4AD/SubspaceAD 比較圖，三張首讀。",
+    "claims": [
+      {
+        "id": "visual-1",
+        "field": "beginner_path.visuals[normal-support-to-plane]",
+        "source": "模型定位 / architecture_path"
+      },
+      {
+        "id": "visual-2",
+        "field": "beginner_path.visuals[rank-policy]",
+        "source": "architecture_path"
+      },
+      {
+        "id": "visual-3",
+        "field": "beginner_path.visuals[memory-versus-subspace]",
+        "source": "representation_or_score"
+      },
+      {
+        "id": "visual-4",
+        "field": "beginner_path.visuals[state-and-task-boundary]",
+        "source": "failure_boundary"
+      },
+      {
+        "id": "promise",
+        "field": "promise",
+        "source": "模型定位 / representation_or_score"
+      },
+      {
+        "id": "mechanism",
+        "field": "mechanism_steps",
+        "source": "architecture_path / representation_or_score"
+      },
+      {
+        "id": "boundaries",
+        "field": "boundary_cases",
+        "source": "failure_boundary / selection_gate"
+      },
+      {
+        "id": "comparison",
+        "field": "comparison + selection",
+        "source": "selection_gate"
+      },
+      {
+        "id": "poc",
+        "field": "poc + acceptance",
+        "source": "cost_and_operating_point / evidence_bundle"
+      },
+      {
+        "id": "transfer",
+        "field": "transfer_check",
+        "source": "failure_boundary / selection_gate"
+      },
+      {
+        "id": "f01-core",
+        "field": "beginner_path.visuals[0] + scenario + mental_model",
+        "source": "https://arxiv.org/abs/2602.23013"
+      },
+      {
+        "id": "f01-transfer",
+        "field": "micro_example + transfer_check",
+        "source": "由原論文機制推論移除後果；https://arxiv.org/abs/2602.23013"
+      },
+      {
+        "id": "wi021-first-read",
+        "field": "beginner_path + micro_example + selection",
+        "source": "https://arxiv.org/abs/2602.23013（v3）；STFPM https://arxiv.org/abs/2103.04257；RD4AD https://arxiv.org/abs/2201.10703；全維度投影為恆等是教學極端例，非性能數據。"
+      }
+    ]
+  },
+  "teaching_preflight": {
+    "brief": "teaching-images/vision-ai-model-selection/workitems/wi-021/subspacead-c1-r01.md",
+    "story": "C",
+    "major_visual_nodes": 4,
+    "visual_status": "self-reviewed",
+    "user_review": "pending"
+  }
+}

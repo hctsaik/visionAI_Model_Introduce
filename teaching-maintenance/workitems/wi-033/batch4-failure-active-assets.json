@@ -1,0 +1,38 @@
+[
+  {
+    "owner": "dinov2",
+    "path": "_course_content/generated-concepts/dinov2/wi033-dinov2-main-failure-r01-desktop.png",
+    "sha256": "821c46ca8d5a14bebc5add47b318df637fa556092e1ac096f6332b3f2b433bd3",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "owner": "dinov2",
+    "path": "_course_content/generated-concepts/dinov2/wi033-dinov2-main-failure-r01-mobile.png",
+    "sha256": "e54b05dca67ae9c7ad36ca8ddf318b2ea6f48e0cbbdcb331e71a85f90932c034",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "owner": "gemini-vision",
+    "path": "_course_content/generated-concepts/gemini-vision/wi033-gemini-vision-main-failure-r01-desktop.png",
+    "sha256": "0c14ef6ced3aeaff297250c36b0a13f7af3bdd7fc5c2390fbf0dccbab231c2d5",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "owner": "gemini-vision",
+    "path": "_course_content/generated-concepts/gemini-vision/wi033-gemini-vision-main-failure-r01-mobile.png",
+    "sha256": "a98496ea204dfeae6d20f924faa915fbeabbc16e06146ed59f7a4f58097e0266",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  }
+]

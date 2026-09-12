@@ -1,0 +1,92 @@
+[
+  {
+    "id": "sr-same-board-counterexample",
+    "image": "sr-same-board-counterexample-r02-desktop.png",
+    "sha256": "b1b48809833a2daab018f99a3950cc5668b59f4ae53ba4bb8bbda5cf5cdca157",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "恢復首讀同一矩形板大左孔小右孔與四角固定點。固定左大孔左邊q；粗格只示意資訊不足，不聲稱兩幾何候選精確降採樣相等。候選A平滑、B有小缺口（白色孔向左延伸）；兩者是作者可能性示意，均非實測。第三節點區分模型放大估計與實際更高解析取像，需校正/位置對準後判斷。替換原圓板右下邊主反例桌機及手機，連動圖說/mental_model限制。 r01兩設備實看：局部圓孔跨出裁切框，r02以SVG viewport截取真正局部；去除學生無需知道的換圖歷史。",
+      "SR主反例r02桌機及手機均逐張原生實看；局部裁切已修正，同板同q與候選/真實取像分開。",
+      "幾何簡化與部分術語密度保留；未做真人理解試驗。"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "簡化幾何與圖文分區"
+      ],
+      "completeness": [
+        9,
+        "缺口是否存在，要靠真正有解析力的取像。"
+      ],
+      "professionalism": [
+        9,
+        "作者示例與實測分開，訓練及部署條件明列"
+      ],
+      "density": [
+        8,
+        "三節點但術語仍需正文支援"
+      ],
+      "hierarchy": [
+        9,
+        "一讀序，單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch7-page-assessment.json; batch7-main-page-review.json"
+  },
+  {
+    "id": "sr-same-board-counterexample",
+    "image": "sr-same-board-counterexample-r02-mobile.png",
+    "sha256": "786b0aec250297c2b9050a3a778e9bf4e63ae3e47eda367a4f96a5ee52de7e88",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "恢復首讀同一矩形板大左孔小右孔與四角固定點。固定左大孔左邊q；粗格只示意資訊不足，不聲稱兩幾何候選精確降採樣相等。候選A平滑、B有小缺口（白色孔向左延伸）；兩者是作者可能性示意，均非實測。第三節點區分模型放大估計與實際更高解析取像，需校正/位置對準後判斷。替換原圓板右下邊主反例桌機及手機，連動圖說/mental_model限制。 r01兩設備實看：局部圓孔跨出裁切框，r02以SVG viewport截取真正局部；去除學生無需知道的換圖歷史。",
+      "SR主反例r02桌機及手機均逐張原生實看；局部裁切已修正，同板同q與候選/真實取像分開。",
+      "幾何簡化與部分術語密度保留；未做真人理解試驗。"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "簡化幾何與圖文分區"
+      ],
+      "completeness": [
+        9,
+        "缺口是否存在，要靠真正有解析力的取像。"
+      ],
+      "professionalism": [
+        9,
+        "作者示例與實測分開，訓練及部署條件明列"
+      ],
+      "density": [
+        8,
+        "三節點但術語仍需正文支援"
+      ],
+      "hierarchy": [
+        9,
+        "一讀序，單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch7-page-assessment.json; batch7-main-page-review.json"
+  }
+]

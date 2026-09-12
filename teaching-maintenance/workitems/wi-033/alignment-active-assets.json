@@ -1,0 +1,178 @@
+[
+  {
+    "id": "clip-engineering-1",
+    "mode": "desktop",
+    "path": "roadmap-model-selection/foundation-vlm-open-world/clip/images/final/WI033-CLIP-01-r02-desktop.png",
+    "sha256": "d281fab8fa2f4576ebbd760318394d65198b14b0e32599ae24ae0c96b23a8be6",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "pages/clip and pages/siglip; native + rendered desktop/mobile individually inspected",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "clip-engineering-1",
+    "mode": "mobile",
+    "path": "roadmap-model-selection/foundation-vlm-open-world/clip/images/final/WI033-CLIP-01-r02-mobile.png",
+    "sha256": "92612a214ce929f7608a48fe41ffa636f7d319310cfc082b66b82511be8341a5",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "pages/clip and pages/siglip; native + rendered desktop/mobile individually inspected",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "clip-engineering-2",
+    "mode": "desktop",
+    "path": "roadmap-model-selection/foundation-vlm-open-world/clip/images/final/WI033-CLIP-02-r03-desktop.png",
+    "sha256": "9eea02eb23c19d628bc33c921551f89ab389f07ef436b59e47f4b5ebedd82c83",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "pages/clip and pages/siglip; native + rendered desktop/mobile individually inspected",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "clip-engineering-2",
+    "mode": "mobile",
+    "path": "roadmap-model-selection/foundation-vlm-open-world/clip/images/final/WI033-CLIP-02-r03-mobile.png",
+    "sha256": "ebc7b85ed9783b04aed32835db3e5e59b6b61527c0e4aad135c1f34a1f8f58cf",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "pages/clip and pages/siglip; native + rendered desktop/mobile individually inspected",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "clip-engineering-3",
+    "mode": "desktop",
+    "path": "roadmap-model-selection/foundation-vlm-open-world/clip/images/final/WI033-CLIP-03-r02-desktop.png",
+    "sha256": "17260f913c8b2d4e18c8f642b192cbf440006d617d756c22ea03a4ea1e56d8c0",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "pages/clip and pages/siglip; native + rendered desktop/mobile individually inspected",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "clip-engineering-3",
+    "mode": "mobile",
+    "path": "roadmap-model-selection/foundation-vlm-open-world/clip/images/final/WI033-CLIP-03-r02-mobile.png",
+    "sha256": "590c16a79e2307530e5791d1574e01935e66a5a516f07912a6a36f7b8922e06b",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "pages/clip and pages/siglip; native + rendered desktop/mobile individually inspected",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "clip-engineering-4",
+    "mode": "desktop",
+    "path": "roadmap-model-selection/foundation-vlm-open-world/clip/images/final/WI033-CLIP-04-r02-desktop.png",
+    "sha256": "c13c245d4190ba5c0bd24b0c7edb6d7bd132572c10102ca7b99c31a2bad5270a",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "pages/clip and pages/siglip; native + rendered desktop/mobile individually inspected",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "clip-engineering-4",
+    "mode": "mobile",
+    "path": "roadmap-model-selection/foundation-vlm-open-world/clip/images/final/WI033-CLIP-04-r02-mobile.png",
+    "sha256": "15b696df8a72d317e580406fad9769757ea0a96188b472ceebc4aca7fa840771",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "pages/clip and pages/siglip; native + rendered desktop/mobile individually inspected",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "siglip-engineering-1",
+    "mode": "desktop",
+    "path": "roadmap-model-selection/foundation-vlm-open-world/siglip/images/final/WI033-SIGLIP-01-r02-desktop.png",
+    "sha256": "1ed2c2295d900f46a1eb6177ab592301ea6fc52e9d6870d0a034b0a0abcba5c6",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "pages/clip and pages/siglip; native + rendered desktop/mobile individually inspected",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "siglip-engineering-1",
+    "mode": "mobile",
+    "path": "roadmap-model-selection/foundation-vlm-open-world/siglip/images/final/WI033-SIGLIP-01-r02-mobile.png",
+    "sha256": "9d06d11bce2c2f34a29a86089d484ad5c7a125af530744b472e734d37864c4da",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "pages/clip and pages/siglip; native + rendered desktop/mobile individually inspected",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "siglip-engineering-2",
+    "mode": "desktop",
+    "path": "roadmap-model-selection/foundation-vlm-open-world/siglip/images/final/WI033-SIGLIP-02-r02-desktop.png",
+    "sha256": "33e99f18ecca122f2f5c10ba9e46ef98a09b56b1beb20b05e9773f96b3f14c66",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "pages/clip and pages/siglip; native + rendered desktop/mobile individually inspected",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "siglip-engineering-2",
+    "mode": "mobile",
+    "path": "roadmap-model-selection/foundation-vlm-open-world/siglip/images/final/WI033-SIGLIP-02-r02-mobile.png",
+    "sha256": "b159b6a245dd9b192137c266b5647ad8cb9f7b7653d00b808e96e5485b2332bf",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "pages/clip and pages/siglip; native + rendered desktop/mobile individually inspected",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "siglip-engineering-3",
+    "mode": "desktop",
+    "path": "roadmap-model-selection/foundation-vlm-open-world/siglip/images/final/WI033-SIGLIP-03-r02-desktop.png",
+    "sha256": "ccde0d8d6d23673a8388dd0ba8801baaa86cc3c89f03f76be5b2d8ba78ab186c",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "pages/clip and pages/siglip; native + rendered desktop/mobile individually inspected",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "siglip-engineering-3",
+    "mode": "mobile",
+    "path": "roadmap-model-selection/foundation-vlm-open-world/siglip/images/final/WI033-SIGLIP-03-r02-mobile.png",
+    "sha256": "c110684dfc02b416fcfb2b1312ffe5a0f24809c475a3bc857d73c9de51a9762e",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "pages/clip and pages/siglip; native + rendered desktop/mobile individually inspected",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "siglip-engineering-4",
+    "mode": "desktop",
+    "path": "roadmap-model-selection/foundation-vlm-open-world/siglip/images/final/WI033-SIGLIP-04-r02-desktop.png",
+    "sha256": "0c21ee8df331b2082f14ce11ff39bd49bdd212acaff952844a2d13fef81fb1ef",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "pages/clip and pages/siglip; native + rendered desktop/mobile individually inspected",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "siglip-engineering-4",
+    "mode": "mobile",
+    "path": "roadmap-model-selection/foundation-vlm-open-world/siglip/images/final/WI033-SIGLIP-04-r02-mobile.png",
+    "sha256": "7f80e5e0815af0c6c3035e3c8ce14121f7739818efcb933a84cda926da67d855",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "pages/clip and pages/siglip; native + rendered desktop/mobile individually inspected",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  }
+]

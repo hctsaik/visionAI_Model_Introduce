@@ -1,10 +1,14 @@
 # SegFormer slide manifest
 
-| slide_id | 講義對照 | 教學目標 | 版型 | active asset | 狀態 |
-| --- | --- | --- | --- | --- | --- |
-| `SEGFORMER-01` | 02-23 | 定位 SegFormer 為 hierarchical Transformer＋MLP decoder semantic segmentation family，並區分 instance 與 metrology。 | C | `images/final/SEGFORMER-01-positioning_v02-ppt-master-style.png` | reference-only |
-| `SEGFORMER-02` | 02-24 | 顯示 overlapping patch embedding、MiT stages、efficient attention、multi-scale MLP fuse 與 output-resolution contract。 | C | `images/final/SEGFORMER-02-architecture_v02-ppt-master-style.png` | reference-only |
-| `SEGFORMER-03` | 02-25 | 說明 variant/pretraining/data recipe、sliding-window crop、MLP fuse、stitch、inverse mapping 與量產證據。 | C | `images/final/SEGFORMER-03-build-inference_v02-ppt-master-style.png` | reference-only |
-| `SEGFORMER-04` | 02-26 | 對照 stride/data/context/boundary/tile/shift 邊界，並以共同 contract 比較 SegFormer 與 U-Net。 | D | `images/final/SEGFORMER-04-selection-boundary_v02-ppt-comparison-style.png` | reference-only |
+| slide_id | 教學目標 | 版型 | active asset | 狀態 |
+| --- | --- | --- | --- | --- |
+| `SEGFORMER-01` | SegFormer：四個尺度一起判讀每個位置 | C | `images/final/WI033-SEGFORMER-01-r01-desktop.png` | native_and_page_reviewed_user_pending |
+| `SEGFORMER-02` | SegFormer：先對齊尺度，再融合線索 | C | `images/final/WI033-SEGFORMER-02-r03-desktop.png` | native_and_page_reviewed_user_pending |
+| `SEGFORMER-03` | SegFormer：解析度與細邊界一起驗 | C | `images/final/WI033-SEGFORMER-03-r02-desktop.png` | native_and_page_reviewed_user_pending |
+| `SEGFORMER-04` | SegFormer與U-Net：共同標註才可比較 | D | `images/final/WI033-SEGFORMER-04-r02-desktop.png` | native_and_page_reviewed_user_pending |
 
-> 2026-08-20：這四張歷史工程 PNG 仍保留為資料與術語核對來源，但不再渲染於 SegFormer 的主要學習頁。公開頁改用八章 deep dive 與全幅 SVG；完成桌機／手機檢查後仍待使用者做最終視覺確認。
+## 保留的歷史來源（非目前啟用）
+- [SEGFORMER-01](images/final/SEGFORMER-01-positioning_v02-ppt-master-style.png)
+- [SEGFORMER-02](images/final/SEGFORMER-02-architecture_v02-ppt-master-style.png)
+- [SEGFORMER-03](images/final/SEGFORMER-03-build-inference_v02-ppt-master-style.png)
+- [SEGFORMER-04](images/final/SEGFORMER-04-selection-boundary_v02-ppt-comparison-style.png)

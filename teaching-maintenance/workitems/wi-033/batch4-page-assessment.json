@@ -1,0 +1,386 @@
+[
+  {
+    "id": "det-yolo-dense",
+    "total": 92,
+    "scores": [
+      19,
+      19,
+      19,
+      18,
+      8,
+      9
+    ],
+    "evidence": [
+      "同PCB兩電阻，YOLOv8式多位置候選",
+      "四候選分數排序/同類IoU去重，框幾何可追",
+      "模型座標減補邊除比例，另驗定位偏移與漏框",
+      "同PCB與RT-DETR按逐件錯誤/完整成本比較",
+      "四工程桌機手機頁內逐張實看；幾何简化、長頁與部分專有術語扣分",
+      "自測解釋與可接受取捨可展開，兩網址桌機手機均通過"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "精確示意圖與保留首讀質感略異"
+      ],
+      "completeness": [
+        9,
+        "四工程和指定同件反例完成"
+      ],
+      "professionalism": [
+        9,
+        "四候選分數排序/同類IoU去重，框幾何可追"
+      ],
+      "density": [
+        8,
+        "四工程桌機手機頁內逐張實看；幾何简化、長頁與部分專有術語扣分"
+      ],
+      "hierarchy": [
+        9,
+        "任務/機制/部署/比較分工"
+      ]
+    },
+    "veto": [],
+    "status": "local_complete",
+    "page_evidence": "pages/det-yolo-dense/docs-{1440,360}-engineering-{1,2,3,4}.png",
+    "preserved_main": "WI-031 audited sources preserved except two WI-033 same-object failure figures; all main images load/zoom/text verified",
+    "user_approval": "pending",
+    "model_inference": false
+  },
+  {
+    "id": "det-rtdetr",
+    "total": 92,
+    "scores": [
+      19,
+      19,
+      19,
+      18,
+      8,
+      9
+    ],
+    "evidence": [
+      "query集合逐步修框，交付候選框",
+      "一對一分工限定訓練，推論分數篩選",
+      "少層/多層更新需同資料驗品质",
+      "與YOLO共用工件，NMS省去不保證勝出",
+      "四工程桌機手機頁內逐張實看；幾何简化、長頁與部分專有術語扣分",
+      "自測解釋與可接受取捨可展開，兩網址桌機手機均通過"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "精確示意圖與保留首讀質感略異"
+      ],
+      "completeness": [
+        9,
+        "四工程和指定同件反例完成"
+      ],
+      "professionalism": [
+        9,
+        "一對一分工限定訓練，推論分數篩選"
+      ],
+      "density": [
+        8,
+        "四工程桌機手機頁內逐張實看；幾何简化、長頁與部分專有術語扣分"
+      ],
+      "hierarchy": [
+        9,
+        "任務/機制/部署/比較分工"
+      ]
+    },
+    "veto": [],
+    "status": "local_complete",
+    "page_evidence": "pages/det-rtdetr/docs-{1440,360}-engineering-{1,2,3,4}.png",
+    "preserved_main": "WI-031 audited sources preserved except two WI-033 same-object failure figures; all main images load/zoom/text verified",
+    "user_approval": "pending",
+    "model_inference": false
+  },
+  {
+    "id": "det-grounding-dino-interface",
+    "total": 92,
+    "scores": [
+      19,
+      19,
+      19,
+      18,
+      8,
+      9
+    ],
+    "evidence": [
+      "resistor一詞對應PCB兩件",
+      "詞區域相容數值及雙向交互為示意",
+      "固定提示與門檻，分數不是定位誤差",
+      "開放詞與固定類別比較不預設勝負",
+      "四工程桌機手機頁內逐張實看；幾何简化、長頁與部分專有術語扣分",
+      "自測解釋與可接受取捨可展開，兩網址桌機手機均通過"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "精確示意圖與保留首讀質感略異"
+      ],
+      "completeness": [
+        9,
+        "四工程和指定同件反例完成"
+      ],
+      "professionalism": [
+        9,
+        "詞區域相容數值及雙向交互為示意"
+      ],
+      "density": [
+        8,
+        "四工程桌機手機頁內逐張實看；幾何简化、長頁與部分專有術語扣分"
+      ],
+      "hierarchy": [
+        9,
+        "任務/機制/部署/比較分工"
+      ]
+    },
+    "veto": [],
+    "status": "local_complete",
+    "page_evidence": "pages/det-grounding-dino-interface/docs-{1440,360}-engineering-{1,2,3,4}.png",
+    "preserved_main": "WI-031 audited sources preserved except two WI-033 same-object failure figures; all main images load/zoom/text verified",
+    "user_approval": "pending",
+    "model_inference": false
+  },
+  {
+    "id": "yoloe",
+    "total": 92,
+    "scores": [
+      19,
+      19,
+      19,
+      18,
+      8,
+      9
+    ],
+    "evidence": [
+      "文字/視覺/免提示為不同模式入口",
+      "SAVPE加權[1.5,.5]可算，半透明遮罩保留印字",
+      "保存ROI與逐件遮罩來源",
+      "103/272同類不同規格，外觀不證可互換",
+      "四工程桌機手機頁內逐張實看；幾何简化、長頁與部分專有術語扣分",
+      "自測解釋與可接受取捨可展開，兩網址桌機手機均通過"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "精確示意圖與保留首讀質感略異"
+      ],
+      "completeness": [
+        9,
+        "四工程和指定同件反例完成"
+      ],
+      "professionalism": [
+        9,
+        "SAVPE加權[1.5,.5]可算，半透明遮罩保留印字"
+      ],
+      "density": [
+        8,
+        "四工程桌機手機頁內逐張實看；幾何简化、長頁與部分專有術語扣分"
+      ],
+      "hierarchy": [
+        9,
+        "任務/機制/部署/比較分工"
+      ]
+    },
+    "veto": [],
+    "status": "local_complete",
+    "page_evidence": "pages/yoloe/docs-{1440,360}-engineering-{1,2,3,4}.png",
+    "preserved_main": "WI-031 audited sources preserved except two WI-033 same-object failure figures; all main images load/zoom/text verified",
+    "user_approval": "pending",
+    "model_inference": false
+  },
+  {
+    "id": "dinov2",
+    "total": 92,
+    "scores": [
+      19,
+      19,
+      19,
+      18,
+      8,
+      9
+    ],
+    "evidence": [
+      "同L支架抽特徵，任務頭另接",
+      "teacher目標、student預測、EMA與部署分開",
+      "查庫同空間距離.283/.141可算",
+      "同件背景變化與小缺口反例；近距離不證完整",
+      "四工程桌機手機頁內逐張實看；幾何简化、長頁與部分專有術語扣分",
+      "自測解釋與可接受取捨可展開，兩網址桌機手機均通過"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "精確示意圖與保留首讀質感略異"
+      ],
+      "completeness": [
+        9,
+        "四工程和指定同件反例完成"
+      ],
+      "professionalism": [
+        9,
+        "teacher目標、student預測、EMA與部署分開"
+      ],
+      "density": [
+        8,
+        "四工程桌機手機頁內逐張實看；幾何简化、長頁與部分專有術語扣分"
+      ],
+      "hierarchy": [
+        9,
+        "任務/機制/部署/比較分工"
+      ]
+    },
+    "veto": [],
+    "status": "local_complete",
+    "page_evidence": "pages/dinov2/docs-{1440,360}-engineering-{1,2,3,4}.png",
+    "preserved_main": "WI-031 audited sources preserved except two WI-033 same-object failure figures; all main images load/zoom/text verified",
+    "user_approval": "pending",
+    "model_inference": false
+  },
+  {
+    "id": "llava",
+    "total": 92,
+    "scores": [
+      19,
+      19,
+      19,
+      18,
+      8,
+      9
+    ],
+    "evidence": [
+      "同接頭左有右未見，未知原因分開",
+      "原版線性投影橋接視覺和文字",
+      "保存圖/問題/processor/回答，覆核可見部位",
+      "固定ROI分類與可追問VLM按交付比較",
+      "四工程桌機手機頁內逐張實看；幾何简化、長頁與部分專有術語扣分",
+      "自測解釋與可接受取捨可展開，兩網址桌機手機均通過"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "精確示意圖與保留首讀質感略異"
+      ],
+      "completeness": [
+        9,
+        "四工程和指定同件反例完成"
+      ],
+      "professionalism": [
+        9,
+        "原版線性投影橋接視覺和文字"
+      ],
+      "density": [
+        8,
+        "四工程桌機手機頁內逐張實看；幾何简化、長頁與部分專有術語扣分"
+      ],
+      "hierarchy": [
+        9,
+        "任務/機制/部署/比較分工"
+      ]
+    },
+    "veto": [],
+    "status": "local_complete",
+    "page_evidence": "pages/llava/docs-{1440,360}-engineering-{1,2,3,4}.png",
+    "preserved_main": "WI-031 audited sources preserved except two WI-033 same-object failure figures; all main images load/zoom/text verified",
+    "user_approval": "pending",
+    "model_inference": false
+  },
+  {
+    "id": "qwen-vl",
+    "total": 92,
+    "scores": [
+      19,
+      19,
+      19,
+      18,
+      8,
+      9
+    ],
+    "evidence": [
+      "同銘牌批號B08局部讀取",
+      "Qwen2-VL可變token與t/h/w位置",
+      "像素預算要連小字/未知率驗證",
+      "共同欄位真值比較OCR與VLM，不捏造性能",
+      "四工程桌機手機頁內逐張實看；幾何简化、長頁與部分專有術語扣分",
+      "自測解釋與可接受取捨可展開，兩網址桌機手機均通過"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "精確示意圖與保留首讀質感略異"
+      ],
+      "completeness": [
+        9,
+        "四工程和指定同件反例完成"
+      ],
+      "professionalism": [
+        9,
+        "Qwen2-VL可變token與t/h/w位置"
+      ],
+      "density": [
+        8,
+        "四工程桌機手機頁內逐張實看；幾何简化、長頁與部分專有術語扣分"
+      ],
+      "hierarchy": [
+        9,
+        "任務/機制/部署/比較分工"
+      ]
+    },
+    "veto": [],
+    "status": "local_complete",
+    "page_evidence": "pages/qwen-vl/docs-{1440,360}-engineering-{1,2,3,4}.png",
+    "preserved_main": "WI-031 audited sources preserved except two WI-033 same-object failure figures; all main images load/zoom/text verified",
+    "user_approval": "pending",
+    "model_inference": false
+  },
+  {
+    "id": "gemini-vision",
+    "total": 92,
+    "scores": [
+      19,
+      19,
+      19,
+      18,
+      8,
+      9
+    ],
+    "evidence": [
+      "同圓接頭與left/right/cause欄位",
+      "只畫公開請求回覆，不猜私有架構",
+      "JSON格式與可見內容兩項檢查",
+      "固定座位本機分類與API按資料流/錯誤成本比較",
+      "四工程桌機手機頁內逐張實看；幾何简化、長頁與部分專有術語扣分",
+      "自測解釋與可接受取捨可展開，兩網址桌機手機均通過"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "精確示意圖與保留首讀質感略異"
+      ],
+      "completeness": [
+        9,
+        "四工程和指定同件反例完成"
+      ],
+      "professionalism": [
+        9,
+        "只畫公開請求回覆，不猜私有架構"
+      ],
+      "density": [
+        8,
+        "四工程桌機手機頁內逐張實看；幾何简化、長頁與部分專有術語扣分"
+      ],
+      "hierarchy": [
+        9,
+        "任務/機制/部署/比較分工"
+      ]
+    },
+    "veto": [],
+    "status": "local_complete",
+    "page_evidence": "pages/gemini-vision/docs-{1440,360}-engineering-{1,2,3,4}.png",
+    "preserved_main": "WI-031 audited sources preserved except two WI-033 same-object failure figures; all main images load/zoom/text verified",
+    "user_approval": "pending",
+    "model_inference": false
+  }
+]

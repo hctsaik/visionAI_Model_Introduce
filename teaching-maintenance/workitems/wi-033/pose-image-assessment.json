@@ -1,0 +1,378 @@
+[
+  {
+    "id": "pose-engineering-2",
+    "image": "pose-engineering-2-r02-desktop.png",
+    "sha256": "6bdcf0f303e521efae4543f61d4ebb734882fdf7884ccc65cc5486c2964fd1c5",
+    "scores": [
+      24,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 93,
+    "evidence": [
+      "兩件同型支架保持位置",
+      "先框後點與未分組點到實例明顯不同",
+      "有身份2D點交付，PnP另頁",
+      "不串接替代法，手機兩組點仍可辨",
+      "A/B/C與物件1/2一致"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "藍頭黃結論，原生幾何較簡化"
+      ],
+      "completeness": [
+        9,
+        "兩條替代路徑都交出有身份的 2D 點。"
+      ],
+      "professionalism": [
+        9,
+        "先框後點與未分組點到實例明顯不同"
+      ],
+      "density": [
+        8,
+        "保留本圖責任，手機長捲動"
+      ],
+      "hierarchy": [
+        9,
+        "不串接替代法，手機兩組點仍可辨"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "pages/pose; native and desktop/mobile rendered figures inspected"
+  },
+  {
+    "id": "pose-engineering-2",
+    "image": "pose-engineering-2-r02-mobile.png",
+    "sha256": "f799d73ef2741611c8db5999f75d64489427c45b707fdac0956148db90e2544c",
+    "scores": [
+      24,
+      24,
+      18,
+      17,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "兩件同型支架保持位置",
+      "先框後點與未分組點到實例明顯不同",
+      "有身份2D點交付，PnP另頁",
+      "不串接替代法，手機兩組點仍可辨",
+      "A/B/C與物件1/2一致"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "藍頭黃結論，原生幾何較簡化"
+      ],
+      "completeness": [
+        9,
+        "兩條替代路徑都交出有身份的 2D 點。"
+      ],
+      "professionalism": [
+        9,
+        "先框後點與未分組點到實例明顯不同"
+      ],
+      "density": [
+        8,
+        "保留本圖責任，手機長捲動"
+      ],
+      "hierarchy": [
+        9,
+        "不串接替代法，手機兩組點仍可辨"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "pages/pose; native and desktop/mobile rendered figures inspected"
+  },
+  {
+    "id": "pose-engineering-1",
+    "image": "pose-engineering-1-r02-desktop.png",
+    "sha256": "5d24729269dddf66074b416f943aa628e502e383b61a7790b57970747ea971eb",
+    "scores": [
+      23,
+      23,
+      19,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "同名A/B/C固定工件部位，三點只作示意",
+      "K/畸變、平面例與R/t責任分開",
+      "CAD單位、校正与解法須固定",
+      "三區可讀，軸旁Z=0較小",
+      "同形孔位與點名；無假解算數據"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "藍頭黃結論，原生幾何較簡化"
+      ],
+      "completeness": [
+        9,
+        "先鎖定點名與相機設定，才能解讀姿態。"
+      ],
+      "professionalism": [
+        9,
+        "K/畸變、平面例與R/t責任分開"
+      ],
+      "density": [
+        8,
+        "保留本圖責任，手機長捲動"
+      ],
+      "hierarchy": [
+        9,
+        "三區可讀，軸旁Z=0較小"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "pages/pose; native and desktop/mobile rendered figures inspected"
+  },
+  {
+    "id": "pose-engineering-1",
+    "image": "pose-engineering-1-r02-mobile.png",
+    "sha256": "f72fc3bc7ef3209935b99f4aa08d6ea7fbf5dab563d32771a09d28659dff631b",
+    "scores": [
+      23,
+      23,
+      19,
+      17,
+      9
+    ],
+    "total": 91,
+    "evidence": [
+      "同名A/B/C固定工件部位，三點只作示意",
+      "K/畸變、平面例與R/t責任分開",
+      "CAD單位、校正与解法須固定",
+      "三區可讀，軸旁Z=0較小",
+      "同形孔位與點名；無假解算數據"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "藍頭黃結論，原生幾何較簡化"
+      ],
+      "completeness": [
+        9,
+        "先鎖定點名與相機設定，才能解讀姿態。"
+      ],
+      "professionalism": [
+        9,
+        "K/畸變、平面例與R/t責任分開"
+      ],
+      "density": [
+        8,
+        "保留本圖責任，手機長捲動"
+      ],
+      "hierarchy": [
+        9,
+        "三區可讀，軸旁Z=0較小"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "pages/pose; native and desktop/mobile rendered figures inspected"
+  },
+  {
+    "id": "pose-engineering-3",
+    "image": "pose-engineering-3-r02-desktop.png",
+    "sha256": "e14c460cb12bee87fa5e572e382d8e5ccc0a54bd749a9e19ebb457b19c75a42d",
+    "scores": [
+      23,
+      23,
+      19,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "觀測與投影重疊及各點殘差可見",
+      "R/t→相機投影→逐點比較；未把熱圖當姿態",
+      "保存身份、可見性、外參與單位",
+      "橘實心/綠空心圖例已修",
+      "示意殘差不冒充精確量測"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "藍頭黃結論，原生幾何較簡化"
+      ],
+      "completeness": [
+        9,
+        "交付 R／t、座標單位與逐點誤差，再核對實體。"
+      ],
+      "professionalism": [
+        9,
+        "R/t→相機投影→逐點比較；未把熱圖當姿態"
+      ],
+      "density": [
+        8,
+        "保留本圖責任，手機長捲動"
+      ],
+      "hierarchy": [
+        9,
+        "橘實心/綠空心圖例已修"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "pages/pose; native and desktop/mobile rendered figures inspected"
+  },
+  {
+    "id": "pose-engineering-3",
+    "image": "pose-engineering-3-r02-mobile.png",
+    "sha256": "08c08106760ab4318e7cccb2f2e8543197d5fb3b8b2af88493664d16b11437e3",
+    "scores": [
+      23,
+      23,
+      19,
+      17,
+      9
+    ],
+    "total": 91,
+    "evidence": [
+      "觀測與投影重疊及各點殘差可見",
+      "R/t→相機投影→逐點比較；未把熱圖當姿態",
+      "保存身份、可見性、外參與單位",
+      "橘實心/綠空心圖例已修",
+      "示意殘差不冒充精確量測"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "藍頭黃結論，原生幾何較簡化"
+      ],
+      "completeness": [
+        9,
+        "交付 R／t、座標單位與逐點誤差，再核對實體。"
+      ],
+      "professionalism": [
+        9,
+        "R/t→相機投影→逐點比較；未把熱圖當姿態"
+      ],
+      "density": [
+        8,
+        "保留本圖責任，手機長捲動"
+      ],
+      "hierarchy": [
+        9,
+        "橘實心/綠空心圖例已修"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "pages/pose; native and desktop/mobile rendered figures inspected"
+  },
+  {
+    "id": "pose-engineering-4",
+    "image": "pose-engineering-4-r01-desktop.png",
+    "sha256": "841738c6886529c5d3e177f4f7c04d11807a3f38713e91dcc375c53ff9ed7dd5",
+    "scores": [
+      24,
+      23,
+      19,
+      18,
+      9
+    ],
+    "total": 93,
+    "evidence": [
+      "同件缺口遮擋與相似孔洞",
+      "小殘差不能排除錯誤身份",
+      "標記/額外視角與校正節拍取捨",
+      "候選分區清楚，機制細節另頁",
+      "不以小分數直接放行"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "藍頭黃結論，原生幾何較簡化"
+      ],
+      "completeness": [
+        9,
+        "遇到身份歧義，補可見證據並攔下不確定姿態。"
+      ],
+      "professionalism": [
+        9,
+        "小殘差不能排除錯誤身份"
+      ],
+      "density": [
+        8,
+        "保留本圖責任，手機長捲動"
+      ],
+      "hierarchy": [
+        9,
+        "候選分區清楚，機制細節另頁"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "pages/pose; native and desktop/mobile rendered figures inspected"
+  },
+  {
+    "id": "pose-engineering-4",
+    "image": "pose-engineering-4-r01-mobile.png",
+    "sha256": "678b50f469669647b4553f6b4e5f0bac768982c15e7b502a9424a41437ca4075",
+    "scores": [
+      24,
+      23,
+      19,
+      17,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "同件缺口遮擋與相似孔洞",
+      "小殘差不能排除錯誤身份",
+      "標記/額外視角與校正節拍取捨",
+      "候選分區清楚，機制細節另頁",
+      "不以小分數直接放行"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "藍頭黃結論，原生幾何較簡化"
+      ],
+      "completeness": [
+        9,
+        "遇到身份歧義，補可見證據並攔下不確定姿態。"
+      ],
+      "professionalism": [
+        9,
+        "小殘差不能排除錯誤身份"
+      ],
+      "density": [
+        8,
+        "保留本圖責任，手機長捲動"
+      ],
+      "hierarchy": [
+        9,
+        "候選分區清楚，機制細節另頁"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "pages/pose; native and desktop/mobile rendered figures inspected"
+  }
+]

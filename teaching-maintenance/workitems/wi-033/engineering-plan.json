@@ -1,0 +1,7014 @@
+[
+  {
+    "id": "clip-engineering-2",
+    "owner": "clip",
+    "index": 2,
+    "version": "r03",
+    "title": "CLIP：圖文各自編碼，再比較候選",
+    "kind": "C",
+    "takeaway": "圖文各走一條路，匯合後才比較候選。",
+    "panels": [
+      {
+        "title": "兩種輸入，各自編碼",
+        "graphic": "clip-dual"
+      },
+      {
+        "title": "在共同空間比較方向",
+        "graphic": "cosine"
+      },
+      {
+        "title": "排名交給檢索與覆核",
+        "graphic": "clip-rank"
+      }
+    ],
+    "steps": [
+      "分別產生可比較的表示",
+      "夾角小，cosine 相似度高",
+      "候選排序不等於物件定位"
+    ],
+    "detail": "影像和候選文字各自通過編碼器，正規化後比較相似度。圖以二維向量示意 0、15、60、80 度的方向；cosine 約 0.97、0.50、0.17 是教學計算，不是 CLIP 的實測特徵或正確率。",
+    "source": "https://arxiv.org/abs/2103.00020",
+    "review": "pending"
+  },
+  {
+    "id": "clip-engineering-1",
+    "owner": "clip",
+    "index": 1,
+    "version": "r02",
+    "title": "CLIP：用描述整理零件照片",
+    "kind": "C",
+    "takeaway": "文字定義候選，影像與描述的相似度幫你找圖。",
+    "panels": [
+      {
+        "title": "照片庫裡有不同零件",
+        "graphic": "catalog"
+      },
+      {
+        "title": "把工作需求寫成候選",
+        "graphic": "descriptions"
+      },
+      {
+        "title": "用候選排名找出照片",
+        "graphic": "retrieval"
+      }
+    ],
+    "steps": [],
+    "detail": "工件照片與候選描述各自編碼。新增描述可定義新的比較集合，無須為每次檢索重新訓練固定類別頭；預訓練及域內驗證仍不可省略。相似度排名不是缺陷位置或合格證明。",
+    "source": "https://arxiv.org/abs/2103.00020",
+    "review": "pending"
+  },
+  {
+    "id": "clip-engineering-3",
+    "owner": "clip",
+    "index": 3,
+    "version": "r02",
+    "title": "CLIP：文字可快取，改字就要更新",
+    "kind": "C",
+    "takeaway": "換文字或權重後，更新表示並重測候選排名。",
+    "panels": [
+      {
+        "title": "先保存文字及其表示",
+        "graphic": "text-cache"
+      },
+      {
+        "title": "新影像與快取表示比較",
+        "graphic": "cache-match"
+      },
+      {
+        "title": "更換候選後重新核對",
+        "graphic": "cache-refresh"
+      }
+    ],
+    "steps": [],
+    "detail": "同一模型／前處理下可預先計算候選文字表示。新影像只需走影像編碼器，再與相容文字表示比較。改文字、權重或設定時更新相關快取，使用已知和未知零件重新驗證；文字快取並不是把影像直接送進文字編碼器。",
+    "source": "https://arxiv.org/abs/2103.00020",
+    "review": "pending"
+  },
+  {
+    "id": "clip-engineering-4",
+    "owner": "clip",
+    "index": 4,
+    "version": "r02",
+    "title": "CLIP：第一名也可能沒有正確答案",
+    "kind": "C",
+    "takeaway": "先確認候選涵蓋需求，再決定排序能否交付。",
+    "panels": [
+      {
+        "title": "待測照片確實是齒輪",
+        "graphic": "gear-input"
+      },
+      {
+        "title": "候選只有支架與軸承",
+        "graphic": "missing-candidate"
+      },
+      {
+        "title": "加入候選仍要驗證",
+        "graphic": "candidate-review"
+      }
+    ],
+    "steps": [],
+    "detail": "同一齒輪影像遇到缺少齒輪的候選集合，仍會有第一名。補齊描述後先檢查易混淆與未知資料；若工作要求細微尺寸或缺陷差別，可準備標註資料測專用分類器。以下排名為反例示意，不代表模型實測。",
+    "source": "https://arxiv.org/abs/2103.00020",
+    "review": "pending"
+  },
+  {
+    "id": "siglip-engineering-1",
+    "owner": "siglip",
+    "index": 1,
+    "version": "r02",
+    "title": "SigLIP：每個圖文配對都給學習訊號",
+    "kind": "C",
+    "takeaway": "正配對拉近、負配對分開，共同更新編碼器。",
+    "panels": [
+      {
+        "title": "先知道哪個描述配哪張圖",
+        "graphic": "paired-training"
+      },
+      {
+        "title": "逐對比較配對與不配對",
+        "graphic": "pair-matrix"
+      },
+      {
+        "title": "損失共同更新兩編碼器",
+        "graphic": "pair-update"
+      }
+    ],
+    "steps": [],
+    "detail": "原始 SigLIP 的圖文編碼器分別產生表示，對正負圖文對計算 sigmoid 損失，梯度共同更新參數。每對有自己的二元目標，不需要 CLIP 式的整批 softmax 正規化；逐對計算不代表每對訓練一個獨立模型。",
+    "source": "https://arxiv.org/abs/2303.15343",
+    "review": "pending"
+  },
+  {
+    "id": "siglip-engineering-2",
+    "owner": "siglip",
+    "index": 2,
+    "version": "r02",
+    "title": "SigLIP：雙路編碼，逐對計算損失",
+    "kind": "C",
+    "takeaway": "改變的是配對訓練目標，兩個編碼器仍並行。",
+    "panels": [
+      {
+        "title": "影像與文字分別進模型",
+        "graphic": "clip-dual"
+      },
+      {
+        "title": "每一對依正負標籤學習",
+        "graphic": "sigmoid-pairs"
+      },
+      {
+        "title": "全部配對訊號一起更新",
+        "graphic": "loss-aggregate"
+      }
+    ],
+    "steps": [],
+    "detail": "圖文表示的內積經可學習尺度與偏移後，以正／負標籤計算 sigmoid 損失。圖中高低分僅解釋學習方向，不是模型機率校正結果；部署時不需提供正負訓練標籤。",
+    "source": "https://arxiv.org/abs/2303.15343",
+    "review": "pending"
+  },
+  {
+    "id": "siglip-engineering-3",
+    "owner": "siglip",
+    "index": 3,
+    "version": "r02",
+    "title": "SigLIP：部署交出分數，不是回答",
+    "kind": "C",
+    "takeaway": "以固定模型比較候選，再用域內資料設定覆核。",
+    "panels": [
+      {
+        "title": "保存候選文字表示",
+        "graphic": "text-cache"
+      },
+      {
+        "title": "新影像與候選逐一比",
+        "graphic": "siglip-match"
+      },
+      {
+        "title": "依工作風險核對結果",
+        "graphic": "score-review"
+      }
+    ],
+    "steps": [],
+    "detail": "部署用預訓練好的圖文表示比較相似性；可依实现轉換配對分數，但不把 sigmoid 值直接當作域內正確率。結果是候選分數或排名，不是逐字生成回答，也不自帶可靠未知類別拒答。",
+    "source": "https://arxiv.org/abs/2303.15343",
+    "review": "pending"
+  },
+  {
+    "id": "siglip-engineering-4",
+    "owner": "siglip",
+    "index": 4,
+    "version": "r02",
+    "title": "SigLIP：逐對學習不會補出缺少的類別",
+    "kind": "D",
+    "takeaway": "選型要看本地錯誤與成本，不能只看損失名稱。",
+    "panels": [
+      {
+        "title": "兩種模型看同一齒輪",
+        "graphic": "gear-input"
+      },
+      {
+        "title": "兩者候選都缺齒輪",
+        "graphic": "both-missing"
+      },
+      {
+        "title": "固定條件後比較取捨",
+        "graphic": "comparison-work"
+      }
+    ],
+    "steps": [],
+    "detail": "CLIP 與 SigLIP 使用相同工件照片、相同缺少正確答案的候選時，都不能因有最高分就判定正確。比較需固定資料及候選，測誤配、拒答和完整成本；原論文的訓練優點不保證每個域內任務較好。",
+    "source": "https://arxiv.org/abs/2303.15343",
+    "review": "pending"
+  },
+  {
+    "id": "alignment-comparison",
+    "owner": "clip",
+    "index": 0,
+    "version": "r01",
+    "title": "CLIP 與 SigLIP：訓練不同，選型同題",
+    "kind": "D",
+    "mobile_height": 2304,
+    "takeaway": "訓練目標不同，工作選型仍要同題驗證。",
+    "panels": [
+      {
+        "title": "CLIP：行列間比較正配對",
+        "graphic": "clip-softmax"
+      },
+      {
+        "title": "SigLIP：逐對給學習訊號",
+        "graphic": "siglip-local"
+      },
+      {
+        "title": "部署仍用共同條件驗證",
+        "graphic": "comparison-work"
+      }
+    ],
+    "detail": "同一圖文配對；CLIP訓練以行列softmax對比，原始SigLIP使用逐對sigmoid目標。兩者選型需固定資料與候選，核對誤配、未知樣本和完整成本。",
+    "source": "https://arxiv.org/abs/2103.00020 ; https://arxiv.org/abs/2303.15343",
+    "review": "pending"
+  },
+  {
+    "id": "siglip-core-mobile",
+    "owner": "siglip",
+    "index": 0,
+    "version": "r02",
+    "title": "SigLIP：逐對學習，再比較候選",
+    "kind": "C",
+    "takeaway": "每對各算損失，部署仍須驗證候選排名。",
+    "panels": [
+      {
+        "title": "訓練：圖文身份決定正負",
+        "graphic": "paired-training"
+      },
+      {
+        "title": "逐對損失，共同更新參數",
+        "graphic": "siglip-local"
+      },
+      {
+        "title": "部署：編碼後比較候選",
+        "graphic": "siglip-match"
+      }
+    ],
+    "steps": [],
+    "detail": "手機核心原圖細字過密。本圖以同一支架／齒輪展示配對身份、2×2正負配對與共享更新，再接部署候選排名；具體雙編碼器已在工程2展開。部署不提供訓練標籤，排名不是生成回答或定位。",
+    "source": "https://arxiv.org/abs/2303.15343",
+    "review": "pending",
+    "mobile_height": 2304
+  },
+  {
+    "id": "pose-engineering-2",
+    "owner": "pose",
+    "index": 2,
+    "version": "r02",
+    "title": "Pose：先框再找點，或先找點再分組",
+    "kind": "D",
+    "takeaway": "兩條替代路徑都交出有身份的 2D 點。",
+    "panels": [
+      {
+        "title": "共同輸入：兩個支架",
+        "graphic": "pose-two"
+      },
+      {
+        "title": "Top-down：先框後找點",
+        "graphic": "pose-topdown"
+      },
+      {
+        "title": "Bottom-up：先點後分組",
+        "graphic": "pose-bottomup"
+      }
+    ],
+    "steps": [],
+    "detail": "兩種2D關鍵點方法是替代方案。Top-down先偵測每個物件，再於各ROI估點並映回原圖；Bottom-up先估全圖點，再歸到不同實例。兩者都須保留物件ID、點名與原圖座標。求3D姿態仍需已知3D對應、K與畸變，這裡的三點僅解釋分組，不聲稱足以唯一求PnP。",
+    "source": "https://mmpose.readthedocs.io/en/latest/guide_to_framework.html ; https://docs.opencv.org/4.x/d5/d1f/calib3d_solvePnP.html",
+    "review": "pending"
+  },
+  {
+    "id": "pose-engineering-1",
+    "owner": "pose",
+    "index": 1,
+    "version": "r02",
+    "title": "Pose：影像點必須對上實體點",
+    "kind": "C",
+    "takeaway": "先鎖定點名與相機設定，才能解讀姿態。",
+    "panels": [
+      {
+        "title": "影像中找得到同名點",
+        "graphic": "pose-correspondence"
+      },
+      {
+        "title": "已知 3D 點與相機設定",
+        "graphic": "pose-calibration"
+      },
+      {
+        "title": "PnP 求物體到相機的姿態",
+        "graphic": "pose-transform"
+      }
+    ],
+    "steps": [],
+    "detail": "同一支架的點名應跨影像與CAD一致。三點圖解只教對應；實際點數、幾何形狀與PnP方法影響可解性。需固定K、畸變、座標系及CAD單位，輸出的R/t才有意義；不以關鍵點熱區直接當姿態。",
+    "source": "https://docs.opencv.org/4.x/d5/d1f/calib3d_solvePnP.html",
+    "review": "pending"
+  },
+  {
+    "id": "pose-engineering-3",
+    "owner": "pose",
+    "index": 3,
+    "version": "r02",
+    "title": "Pose：姿態還要投回原图檢查",
+    "kind": "C",
+    "takeaway": "交付 R／t、座標單位與逐點誤差，再核對實體。",
+    "panels": [
+      {
+        "title": "保存姿態與座標契約",
+        "graphic": "pose-transform"
+      },
+      {
+        "title": "把 3D 點投回相機影像",
+        "graphic": "pose-reproject"
+      },
+      {
+        "title": "逐點誤差與站點交付",
+        "graphic": "pose-delivery"
+      }
+    ],
+    "steps": [],
+    "detail": "R/t表示物體到相機的變換，t單位跟3D工件座標一致。重投影把已知3D點經R/t與相機模型映回原圖，逐點比較觀測與投影；若用去畸變影像須搭配相應相機設定。交付點ID、可見性、誤差、版本與失敗狀態，外部機器人座標另需外參。",
+    "source": "https://docs.opencv.org/4.x/d5/d1f/calib3d_solvePnP.html",
+    "review": "pending"
+  },
+  {
+    "id": "pose-engineering-4",
+    "owner": "pose",
+    "index": 4,
+    "version": "r01",
+    "title": "Pose：對稱件的小誤差也可能騙人",
+    "kind": "C",
+    "takeaway": "遇到身份歧義，補可見證據並攔下不確定姿態。",
+    "panels": [
+      {
+        "title": "遮擋讓點身份變模糊",
+        "graphic": "pose-ambiguous"
+      },
+      {
+        "title": "候選都能貼近觀測點",
+        "graphic": "pose-ambiguity-error"
+      },
+      {
+        "title": "增加可辨認的觀測",
+        "graphic": "pose-disambiguate"
+      }
+    ],
+    "steps": [],
+    "detail": "近對稱工件上缺口被擋，錯誤ID也可能有低重投影誤差。比較有標記與第二視角的選擇時，需核對表面限制、可見性、校正與節拍，不只挑分數略低的姿態。不能確認就輸出失敗狀態並覆核。",
+    "source": "https://docs.opencv.org/4.x/d5/d1f/calib3d_solvePnP.html",
+    "review": "pending"
+  },
+  {
+    "id": "dinov3-engineering-2",
+    "owner": "dinov3",
+    "index": 2,
+    "version": "r02",
+    "title": "DINOv3：訓練時守住局部關係",
+    "kind": "C",
+    "takeaway": "Gram 只約束訓練，部署仍輸出特徵。",
+    "panels": [
+      {
+        "title": "同一影像，對照兩個模型",
+        "graphic": "dino-gram-input"
+      },
+      {
+        "title": "比較 patch 之間的關係",
+        "graphic": "dino-gram-matrix"
+      },
+      {
+        "title": "用關係差異更新學生",
+        "graphic": "dino-gram-update"
+      }
+    ],
+    "steps": [],
+    "detail": "Gram矩陣記錄同圖patch特徵的兩兩內積；以較早教師的關係當目標，約束目前學生，並保留原有自監督訓練目標。這不是把特徵逐點鎖成相同數值，也不是推論時要額外跑的模組。本圖數字為二維單位向量算例。",
+    "source": "https://arxiv.org/html/2508.10104v1",
+    "review": "pending"
+  },
+  {
+    "id": "dinov3-engineering-1",
+    "owner": "dinov3",
+    "index": 1,
+    "version": "r02",
+    "title": "DINOv3：一張圖保留多個局部表示",
+    "kind": "C",
+    "takeaway": "骨幹交出特徵，局部位置與下游工作仍要對齊。",
+    "panels": [
+      {
+        "title": "輸入一個墊圈影像",
+        "graphic": "dino-washer"
+      },
+      {
+        "title": "每個區塊各有特徵",
+        "graphic": "dino-patchfeatures"
+      },
+      {
+        "title": "下游才解讀相似或不同",
+        "graphic": "dino-nearest"
+      }
+    ],
+    "steps": [],
+    "detail": "以ViT骨幹為例，影像轉成patch token並與其他位置交換資訊，輸出局部及全局表示。局部表示保留對應位置，但每個向量包含上下文，不等於該格像素值。異常判斷、分類或匹配要接下游方法；特徵色圖不是現成缺陷分數。",
+    "source": "https://arxiv.org/html/2508.10104v1",
+    "review": "pending"
+  },
+  {
+    "id": "dinov3-engineering-3",
+    "owner": "dinov3",
+    "index": 3,
+    "version": "r01",
+    "title": "DINOv3：換骨幹也要重建相容參考",
+    "kind": "C",
+    "takeaway": "保存權重與前處理，同條件重建庫並量完整成本。",
+    "panels": [
+      {
+        "title": "固定取像與骨幹版本",
+        "graphic": "dino-version"
+      },
+      {
+        "title": "建立相容的參考表示",
+        "graphic": "dino-library"
+      },
+      {
+        "title": "核對下游結果與成本",
+        "graphic": "dino-evaluate"
+      }
+    ],
+    "steps": [],
+    "detail": "部署不跑Gram教師；用固定權重與前處理抽取表示，再建相容特徵庫或訓練下游頭。不能把DINOv2庫直接當DINOv3庫查詢。以同一留出集核對命中／漏檢、抽特徵和查庫時間、記憶體與重建成本，不能只比較色圖漂亮程度。",
+    "source": "https://arxiv.org/html/2508.10104v1",
+    "review": "pending"
+  },
+  {
+    "id": "dinov3-engineering-4",
+    "owner": "dinov3",
+    "index": 4,
+    "version": "r02",
+    "title": "DINOv3：以工作結果決定是否換骨幹",
+    "kind": "D",
+    "takeaway": "同題比較效果與重建代價，保留基準也合理。",
+    "panels": [
+      {
+        "title": "同一批正常與缺口件",
+        "graphic": "dino-comparison-data"
+      },
+      {
+        "title": "既有骨幹：保留相容基準",
+        "graphic": "dino-compare-v2"
+      },
+      {
+        "title": "新骨幹：重建後再比較",
+        "graphic": "dino-compare-v3"
+      }
+    ],
+    "steps": [],
+    "detail": "工程4不重複主反例。固定同一批正常與缺口墊圈及取像，各自使用相容骨幹與參考表示；記錄下游漏檢/誤報、抽特徵/查庫時間與重建負擔。新骨幹訓練機制不同，不代表每項域內指標一定進步。",
+    "source": "https://arxiv.org/html/2508.10104v1",
+    "review": "pending"
+  },
+  {
+    "id": "dinov3-main-failure",
+    "owner": "dinov3",
+    "index": 0,
+    "version": "r03",
+    "title": "局部特徵也救不回看不清的缺口",
+    "kind": "C",
+    "takeaway": "同一缺口先看輸入，再看特徵與下游漏檢。",
+    "panels": [
+      {
+        "title": "原圖：右側缺口可見",
+        "graphic": "dino-notch"
+      },
+      {
+        "title": "粗取樣：細節變弱",
+        "graphic": "dino-resolution"
+      },
+      {
+        "title": "重新取像後再驗證",
+        "graphic": "dino-retake"
+      }
+    ],
+    "steps": [],
+    "detail": "替換DINOv3原反例工件切換及手机小字。三段使用同一右側有缺口墊圈；取樣格為分析式SVG示意，不冒充真實模型輸出。保留原桌機核心與方法比較。",
+    "source": "https://arxiv.org/html/2508.10104v1",
+    "review": "pending",
+    "mobile_height": 2304
+  },
+  {
+    "id": "ad-diffad-engineering-2",
+    "owner": "ad-diffad",
+    "index": 2,
+    "version": "r02",
+    "title": "DiffusionAD：恢復與定位分兩個工作",
+    "kind": "C",
+    "takeaway": "原圖與恢復圖一起進分割，最後才交出異常位置。",
+    "panels": [
+      {
+        "title": "同一原圖走兩個噪聲尺度",
+        "graphic": "diff-noise-branches"
+      },
+      {
+        "title": "高噪聲估計引導低噪聲恢復",
+        "graphic": "diff-guidance"
+      },
+      {
+        "title": "原圖＋恢復圖 → 分割位置",
+        "graphic": "diff-segment"
+      }
+    ],
+    "steps": [],
+    "detail": "同一原圖A加入高低噪聲；高噪聲正常估計N引導低噪聲恢復R。各尺度用單步估計，不是整套只呼叫一次網路；A和R一起進學習的分割網路，不是直接拿R當最終檢測答案。",
+    "source": "https://github.com/HuiZhang0812/DiffusionAD",
+    "review": "pending"
+  },
+  {
+    "id": "ad-anomalygpt-engineering-2",
+    "owner": "ad-anomalygpt",
+    "index": 2,
+    "version": "r02",
+    "title": "AnomalyGPT：定位由內建支路產生",
+    "kind": "C",
+    "takeaway": "內建位置圖先轉提示，再連同影像與問題產生回答。",
+    "panels": [
+      {
+        "title": "同一影像產生全局與局部表示",
+        "graphic": "gpt-features"
+      },
+      {
+        "title": "內建解碼與圖文匹配定位",
+        "graphic": "gpt-localize"
+      },
+      {
+        "title": "位置轉提示後接入 LLM",
+        "graphic": "gpt-prompt"
+      }
+    ],
+    "steps": [],
+    "detail": "影像編碼器提供全局與局部表示。局部表示經影像解碼器，與正常／異常文字特徵匹配得位置圖，再由prompt learner轉為提示；LLM另接全局影像表示與使用者問題。此圖是原模型內建支路，不把任意外部檢測器當必要輸入。",
+    "source": "https://github.com/CASIA-LMC-Lab/AnomalyGPT",
+    "review": "pending"
+  },
+  {
+    "id": "ad-diffad-engineering-1",
+    "owner": "ad-diffad",
+    "index": 1,
+    "version": "r02",
+    "title": "DiffusionAD：去噪與定位要分別學",
+    "kind": "C",
+    "takeaway": "正常資料教恢復，合成異常和遮罩教定位。",
+    "panels": [
+      {
+        "title": "正常影像加噪聲練恢復",
+        "graphic": "diff-normal-training"
+      },
+      {
+        "title": "合成異常有已知位置",
+        "graphic": "diff-synthetic"
+      },
+      {
+        "title": "兩個網路各有訓練責任",
+        "graphic": "diff-training-targets"
+      }
+    ],
+    "steps": [],
+    "detail": "正常圖用於學習噪聲估計及恢復；合成異常與已知遮罩提供分割監督。兩個網路不能只用一張異常熱圖概括。合成資料仍需覆盖任務變化，最後以未見正常與真缺陷驗證。",
+    "source": "https://github.com/HuiZhang0812/DiffusionAD",
+    "review": "pending"
+  },
+  {
+    "id": "ad-diffad-engineering-3",
+    "owner": "ad-diffad",
+    "index": 3,
+    "version": "r01",
+    "title": "DiffusionAD：要交付最後的位置結果",
+    "kind": "C",
+    "takeaway": "保存 A／R／位置圖，連同完整耗時一起驗收。",
+    "panels": [
+      {
+        "title": "把恢復前後成對保存",
+        "graphic": "diff-save-pair"
+      },
+      {
+        "title": "位置圖映回原圖覆核",
+        "graphic": "diff-output"
+      },
+      {
+        "title": "計入兩尺度與分割時間",
+        "graphic": "diff-time"
+      }
+    ],
+    "steps": [],
+    "detail": "保存原圖A、恢復R與分割位置圖能追查恢復或定位失敗。位置圖須映回原始影像座標，配合域內門檻及覆核；延遲包含兩尺度估計、分割和前後處理，不能由單步估計直接宣稱整套最快。",
+    "source": "https://github.com/HuiZhang0812/DiffusionAD",
+    "review": "pending"
+  },
+  {
+    "id": "ad-diffad-engineering-4",
+    "owner": "ad-diffad",
+    "index": 4,
+    "version": "r02",
+    "title": "DiffusionAD：恢復變乾淨不等於漏檢",
+    "kind": "D",
+    "takeaway": "檢查最後位置圖，分清恢復成功與定位失敗。",
+    "panels": [
+      {
+        "title": "共同原圖：支架有刮痕",
+        "graphic": "diff-defect-input"
+      },
+      {
+        "title": "恢復乾淨，分割仍可定位",
+        "graphic": "diff-clean-detected"
+      },
+      {
+        "title": "恢復保留刮痕，另查漏檢",
+        "graphic": "diff-retained-missed"
+      }
+    ],
+    "steps": [],
+    "detail": "固定同一刮痕影像，比較恢復是否去除異常及最後分割是否找到位置。去掉異常本來就是恢復子任務的方向，不直接等於漏檢；缺陷留在R也不必然漏，但會改變可用線索。兩條示意結果需以真實留出集驗證。",
+    "source": "https://github.com/HuiZhang0812/DiffusionAD",
+    "review": "pending"
+  },
+  {
+    "id": "ad-anomalygpt-engineering-1",
+    "owner": "ad-anomalygpt",
+    "index": 1,
+    "version": "r01",
+    "title": "AnomalyGPT：用成對資料學定位與回答",
+    "kind": "C",
+    "takeaway": "合成影像、遮罩與文字要描述同一處异常。",
+    "panels": [
+      {
+        "title": "影像異常與遮罩對齊",
+        "graphic": "diff-synthetic"
+      },
+      {
+        "title": "文字描述同一位置與外觀",
+        "graphic": "gpt-training-text"
+      },
+      {
+        "title": "更新解碼器與提示學習器",
+        "graphic": "gpt-training-targets"
+      }
+    ],
+    "steps": [],
+    "detail": "用合成異常影像、位置遮罩及文字配對訓練；預訓練影像編碼器和LLM保持固定，更新影像解碼器及提示學習器。遮罩和描述須對上同一異常，否則不同監督互相矛盾；真實未見缺陷仍需獨立驗證。",
+    "source": "https://github.com/CASIA-LMC-Lab/AnomalyGPT",
+    "review": "pending"
+  },
+  {
+    "id": "ad-anomalygpt-engineering-3",
+    "owner": "ad-anomalygpt",
+    "index": 3,
+    "version": "r01",
+    "title": "AnomalyGPT：文字與位置一起交付",
+    "kind": "C",
+    "takeaway": "回答、位置和原圖一起覆核，對不上就保留疑問。",
+    "panels": [
+      {
+        "title": "保留同一影像的定位",
+        "graphic": "gpt-localize"
+      },
+      {
+        "title": "問題與位置提示參與回答",
+        "graphic": "gpt-prompt"
+      },
+      {
+        "title": "核對文字是否有原圖證據",
+        "graphic": "gpt-review"
+      }
+    ],
+    "steps": [],
+    "detail": "交付原圖、內建定位與對話記錄，逐項核對文字描述的部位和異常類型。對話可協助判讀但不能替代定位驗證；若回答與圖不一致，保留失敗狀態並回原圖。額外外部檢測器是應用整合選擇，不是原模型必需支路。",
+    "source": "https://github.com/CASIA-LMC-Lab/AnomalyGPT",
+    "review": "pending"
+  },
+  {
+    "id": "ad-anomalygpt-engineering-4",
+    "owner": "ad-anomalygpt",
+    "index": 4,
+    "version": "r01",
+    "title": "AnomalyGPT：會回答不代表會判對",
+    "kind": "D",
+    "takeaway": "同圖比較定位與文字證據，再量覆核成本。",
+    "panels": [
+      {
+        "title": "共同原圖：刮痕在中部",
+        "graphic": "diff-defect-input"
+      },
+      {
+        "title": "位置在中部，文字卻說孔邊",
+        "graphic": "gpt-mismatch"
+      },
+      {
+        "title": "帶對話是否真能減少工時",
+        "graphic": "gpt-work-comparison"
+      }
+    ],
+    "steps": [],
+    "detail": "同一支架若位置圖指中部，回答卻描述孔邊，不能因語句流暢就放行。以同一批真缺陷與正常圖比較只看位置或加問答的錯誤、延遲和人工覆核时间；沒有收益時保留簡單流程也合理。",
+    "source": "https://github.com/CASIA-LMC-Lab/AnomalyGPT",
+    "review": "pending"
+  },
+  {
+    "id": "anomalygpt-mobile-core",
+    "owner": "ad-anomalygpt",
+    "index": 0,
+    "version": "r01",
+    "title": "AnomalyGPT：先定位，再接看圖對話",
+    "kind": "C",
+    "takeaway": "內建位置提供線索，回答仍回原圖核對。",
+    "panels": [
+      {
+        "title": "訓練：合成影像與位置對齊",
+        "graphic": "gpt-mobile-training"
+      },
+      {
+        "title": "測試：同圖內建定位",
+        "graphic": "gpt-mobile-location"
+      },
+      {
+        "title": "位置轉提示，連同圖文回答",
+        "graphic": "gpt-mobile-answer"
+      }
+    ],
+    "steps": [],
+    "detail": "手機核心原四段密圖減為三段。保留原金屬板兩孔對角佈局、右側細痕，改以新SVG重建同一類幾何示意；訓練、內建定位與提示/影像/問題接LLM分清。原桌機主線保留，沒有修改既有bitmap。",
+    "source": "https://github.com/CASIA-LMC-Lab/AnomalyGPT",
+    "review": "pending",
+    "mobile_height": 2304
+  },
+  {
+    "id": "anomalygpt-mobile-failure",
+    "owner": "ad-anomalygpt",
+    "index": 0,
+    "version": "r01",
+    "title": "AnomalyGPT：回答肯定仍要查證",
+    "kind": "C",
+    "takeaway": "位置、觀察和推測分開核對，不能由流暢度放行。",
+    "panels": [
+      {
+        "title": "同一原圖：p 細痕、q 孔邊",
+        "graphic": "gpt-mobile-evidence"
+      },
+      {
+        "title": "錯誤假設：位置與根因無據",
+        "graphic": "gpt-mobile-wrong"
+      },
+      {
+        "title": "分開記錄，再補需要的證據",
+        "graphic": "gpt-mobile-review"
+      }
+    ],
+    "steps": [],
+    "detail": "保留原反例p/q身份與原圖兩孔幾何，不用工程4的另一種錯答替換。錯誤熱區指q，文字宣稱裂縫和夾具根因；學習者須分觀察、推測、未知，回原圖補證據。",
+    "source": "https://github.com/CASIA-LMC-Lab/AnomalyGPT",
+    "review": "pending",
+    "mobile_height": 2304
+  },
+  {
+    "id": "anomalygpt-mobile-comparison",
+    "owner": "ad-anomalygpt",
+    "index": 0,
+    "version": "r01",
+    "title": "三種圖文方法：先選工作結果",
+    "kind": "D",
+    "takeaway": "先驗定位，再驗對話能否減少覆核成本。",
+    "panels": [
+      {
+        "title": "WinCLIP：人工狀態與視窗",
+        "graphic": "gpt-mobile-winclip"
+      },
+      {
+        "title": "AnomalyCLIP：學到的提示",
+        "graphic": "gpt-mobile-anomalyclip"
+      },
+      {
+        "title": "AnomalyGPT：定位加對話",
+        "graphic": "gpt-mobile-gpt"
+      }
+    ],
+    "steps": [],
+    "detail": "同一工件与取像比較三種工作輸出：WinCLIP人工狀態提示/視窗与可選正常參考；AnomalyCLIP輔助資料學提示；AnomalyGPT合成資料對齊後內建定位/對話。圖中位置皆為機制示意，不宣稱同精度。成本與驗收在正文固定正常/真缺陷、硬體、解析度与漏檢要求。",
+    "source": "https://github.com/CASIA-LMC-Lab/AnomalyGPT ; https://arxiv.org/abs/2303.14814 ; https://arxiv.org/abs/2310.18961",
+    "review": "pending",
+    "mobile_height": 2304
+  },
+  {
+    "id": "lucas-kanade-engineering-1",
+    "owner": "lucas-kanade",
+    "index": 1,
+    "version": "r02",
+    "title": "Lucas–Kanade：先讓角點有可追的鄰域",
+    "kind": "C",
+    "takeaway": "清楚角點、穩定影格與小位移，是局部解的起點。",
+    "panels": [
+      {
+        "title": "同相機相鄰影格",
+        "graphic": "flow-pair"
+      },
+      {
+        "title": "角點提供兩方向線索",
+        "graphic": "lk-texture"
+      },
+      {
+        "title": "金字塔先粗後細",
+        "graphic": "lk-pyramid"
+      }
+    ],
+    "detail": "同一L形標记随工件平移；先固定相機、時間間隔及取像，選有雙方向梯度的角點。金字塔由粗到細估計位移，傳遞估計再修細；它擴大可處理位移，但不能補回被反光遮住的內容。",
+    "terms": [
+      "Ix/Iy：影像水平方向／垂直方向的亮度梯度。",
+      "It：同位置跨影格的亮度變化。"
+    ],
+    "steps": [],
+    "source": "https://docs.opencv.org/4.13.0/d4/dee/tutorial_optical_flow.html",
+    "review": "pending",
+    "mobile_height": 2400
+  },
+  {
+    "id": "lucas-kanade-engineering-2",
+    "owner": "lucas-kanade",
+    "index": 2,
+    "version": "r02",
+    "title": "Lucas–Kanade：多個像素一起限制位移",
+    "kind": "C",
+    "takeaway": "局部梯度支持共同位移，解出數字後仍要檢查。",
+    "panels": [
+      {
+        "title": "局部像素提供亮度變化",
+        "graphic": "lk-gradients"
+      },
+      {
+        "title": "共同的小位移符合多條式子",
+        "graphic": "lk-equations"
+      },
+      {
+        "title": "把解變成可核對的向量",
+        "graphic": "lk-solution"
+      }
+    ],
+    "detail": "在小位移、局部共同運動與亮度一致假設下，每個像素給Ix·u+Iy·v+It≈0。教學給定三組梯度(1,0,-2)、(0,1,-1)、(1,1,-3)，共同解u=2、v=1，單位是影格間像素位移。真實資料以最小平方近似求解，再查矩陣條件、殘差及往返一致性；示意數值不是對插圖執行光流的結果。",
+    "terms": [
+      "Ix/Iy：影像水平方向／垂直方向的亮度梯度。",
+      "It：同位置跨影格的亮度變化。"
+    ],
+    "steps": [],
+    "source": "https://docs.opencv.org/4.13.0/d4/dee/tutorial_optical_flow.html",
+    "review": "pending",
+    "mobile_height": 2400
+  },
+  {
+    "id": "lucas-kanade-engineering-3",
+    "owner": "lucas-kanade",
+    "index": 3,
+    "version": "r02",
+    "title": "Lucas–Kanade：把可追的點與失效分開",
+    "kind": "C",
+    "takeaway": "保存點對、時間與有效性，再決定能否接量測。",
+    "panels": [
+      {
+        "title": "同名點保留前後座標",
+        "graphic": "flow-points"
+      },
+      {
+        "title": "失敗位置退出追蹤",
+        "graphic": "lk-reject"
+      },
+      {
+        "title": "像素位移另接校正與時間",
+        "graphic": "flow-measure"
+      }
+    ],
+    "detail": "保存前後影格ID、座標、時間差、狀態與殘差；追丟或一致性差的點不可沿用舊箭頭。需要物理位移或速度時，另有相機運動處理、平面/深度條件與尺度校正，不能把像素向量直接標成毫米或物件ID。",
+    "terms": [
+      "Ix/Iy：影像水平方向／垂直方向的亮度梯度。",
+      "It：同位置跨影格的亮度變化。"
+    ],
+    "steps": [],
+    "source": "https://docs.opencv.org/4.13.0/d4/dee/tutorial_optical_flow.html",
+    "review": "pending",
+    "mobile_height": 2400
+  },
+  {
+    "id": "lucas-kanade-engineering-4",
+    "owner": "lucas-kanade",
+    "index": 4,
+    "version": "r02",
+    "title": "Lucas–Kanade：同題比較稀疏與稠密",
+    "kind": "D",
+    "takeaway": "先確定需要哪些位置，再比較錯誤與完整成本。",
+    "panels": [
+      {
+        "title": "同一影格對與工作需求",
+        "graphic": "flow-work"
+      },
+      {
+        "title": "LK：只驗被選中的點",
+        "graphic": "flow-sparse"
+      },
+      {
+        "title": "RAFT：另驗整張位移場",
+        "graphic": "flow-dense"
+      }
+    ],
+    "detail": "同一L形工件、影格間隔和原圖；若工作只需少數穩定角點，LK可作基準。需要稠密場時加入RAFT；在共同可評位置比較位移錯誤，另報各自覆蓋率和端到端耗時，不能把不同輸出數量當成精度優勢。",
+    "terms": [
+      "Ix/Iy：影像水平方向／垂直方向的亮度梯度。",
+      "It：同位置跨影格的亮度變化。"
+    ],
+    "steps": [],
+    "source": "https://docs.opencv.org/4.13.0/d4/dee/tutorial_optical_flow.html",
+    "review": "pending",
+    "mobile_height": 2400
+  },
+  {
+    "id": "raft-engineering-1",
+    "owner": "raft",
+    "index": 1,
+    "version": "r02",
+    "title": "RAFT：先把兩張影格变成配對線索",
+    "kind": "C",
+    "takeaway": "兩張圖建立相關性，第一張圖另提供更新情境。",
+    "panels": [
+      {
+        "title": "固定影格對與模型版本",
+        "graphic": "flow-pair"
+      },
+      {
+        "title": "兩圖特徵建立全配對",
+        "graphic": "raft-correlation"
+      },
+      {
+        "title": "第一圖提供更新情境",
+        "graphic": "raft-context"
+      }
+    ],
+    "detail": "固定原始RAFT權重、解析度、padding和迭代數。共享特徵網路抽兩圖表示後，建立全位置配對相關性及多尺度池化；第一圖經context encoder提供隱狀態與情境。相關性是候選配對線索，不是最終光流或每個像素的可靠度。",
+    "terms": [
+      "相關性：兩張影格特徵位置間的配對相似線索。",
+      "更新量：更新單元對目前光流提出的位移修正。"
+    ],
+    "steps": [],
+    "source": "https://arxiv.org/abs/2003.12039 ; https://github.com/princeton-vl/RAFT/blob/master/core/raft.py",
+    "review": "pending",
+    "mobile_height": 2400
+  },
+  {
+    "id": "raft-engineering-2",
+    "owner": "raft",
+    "index": 2,
+    "version": "r03",
+    "title": "RAFT：依目前位置查詢，再修正光流",
+    "kind": "C",
+    "takeaway": "用目前光流查相關性，更新量加回後繼續修正。",
+    "panels": [
+      {
+        "title": "在目前估計周圍查線索",
+        "graphic": "raft-lookup"
+      },
+      {
+        "title": "更新單元融合四種資訊",
+        "graphic": "raft-update"
+      },
+      {
+        "title": "加上更新量，再查下一輪",
+        "graphic": "raft-refine"
+      }
+    ],
+    "detail": "原始RAFT以目前座標查詢多尺度相關性；更新單元接相關性、目前光流、context與隱狀態，輸出位移增量並更新隱狀態。新光流=舊光流+增量，固定解析度反覆更新，最後上採樣。圖中(1,0)+(1,1)=(2,1)只解釋更新算術，不是實際模型收斂或逐輪保證改善。",
+    "terms": [
+      "相關性：兩張影格特徵位置間的配對相似線索。",
+      "更新量：更新單元對目前光流提出的位移修正。"
+    ],
+    "steps": [],
+    "source": "https://arxiv.org/abs/2003.12039 ; https://github.com/princeton-vl/RAFT/blob/master/core/raft.py",
+    "review": "pending",
+    "mobile_height": 2400
+  },
+  {
+    "id": "raft-engineering-3",
+    "owner": "raft",
+    "index": 3,
+    "version": "r02",
+    "title": "RAFT：稠密數值要配合有效性核對",
+    "kind": "C",
+    "takeaway": "輸出向量不等於看見對應，遮擋區要另驗。",
+    "panels": [
+      {
+        "title": "同一工件輸出稠密場",
+        "graphic": "flow-dense"
+      },
+      {
+        "title": "反光與遮擋另查一致性",
+        "graphic": "raft-reject"
+      },
+      {
+        "title": "算進相關性與迭代成本",
+        "graphic": "raft-cost"
+      }
+    ],
+    "detail": "保存兩影格、原尺寸、前處理、權重、迭代設定與位移場；遮擋/反射可能沒有可見對應但仍輸出數值。可用往返一致性作應用檢查，仍不是遮擋真值或原始RAFT原生置信輸出。完整成本包含特徵、相關性、更新和上採樣，並量記憶體。",
+    "terms": [
+      "相關性：兩張影格特徵位置間的配對相似線索。",
+      "更新量：更新單元對目前光流提出的位移修正。"
+    ],
+    "steps": [],
+    "source": "https://arxiv.org/abs/2003.12039 ; https://github.com/princeton-vl/RAFT/blob/master/core/raft.py",
+    "review": "pending",
+    "mobile_height": 2400
+  },
+  {
+    "id": "raft-engineering-4",
+    "owner": "raft",
+    "index": 4,
+    "version": "r02",
+    "title": "RAFT：增加迭代是否值得，要同題量",
+    "kind": "D",
+    "takeaway": "迭代設定改變成本，效果仍用同一資料驗證。",
+    "panels": [
+      {
+        "title": "同資料與同一初始設定",
+        "graphic": "flow-work"
+      },
+      {
+        "title": "較少迭代的候選",
+        "graphic": "raft-fewer"
+      },
+      {
+        "title": "較多迭代的候選",
+        "graphic": "raft-more"
+      }
+    ],
+    "detail": "固定同一權重、影格對、解析度、precision和硬體，只改更新次數；在同一有效性標註上比较錯誤、覆蓋與耗時，不能保證更多迭代一定改善，也不能把彩色光流當精度證據。保留較少迭代也可能合理。",
+    "terms": [
+      "相關性：兩張影格特徵位置間的配對相似線索。",
+      "更新量：更新單元對目前光流提出的位移修正。"
+    ],
+    "steps": [],
+    "source": "https://arxiv.org/abs/2003.12039 ; https://github.com/princeton-vl/RAFT/blob/master/core/raft.py",
+    "review": "pending",
+    "mobile_height": 2400
+  },
+  {
+    "id": "flow-main-failure",
+    "owner": "lucas-kanade",
+    "index": 0,
+    "version": "r02",
+    "title": "沒有可靠對應，兩種光流都要核對",
+    "kind": "D",
+    "takeaway": "LK與RAFT都看相同輸入；數值不能補回不可見對應。",
+    "panels": [
+      {
+        "title": "共用兩組影格：清楚／反光",
+        "graphic": "flow-common-cases"
+      },
+      {
+        "title": "LK：兩條件都檢查點對",
+        "graphic": "flow-common-lk"
+      },
+      {
+        "title": "RAFT：兩條件都檢查向量",
+        "graphic": "flow-common-raft"
+      }
+    ],
+    "detail": "保留原L形刻痕案例。清楚組與反光組使用同一前影格、相同平移；反光組只遮住後影格刻痕。LK與RAFT各自接受完整兩組輸入，分別檢查點或稠密向量，不在圖中編造實測成敗。回原圖與往返一致性核對，物理量測另需校正。",
+    "terms": [
+      "Ix/Iy：影像水平方向／垂直方向的亮度梯度。",
+      "It：同位置跨影格的亮度變化。"
+    ],
+    "steps": [],
+    "source": "https://docs.opencv.org/4.13.0/d4/dee/tutorial_optical_flow.html",
+    "review": "pending",
+    "mobile_height": 2304
+  },
+  {
+    "id": "ad-anomalydino-engineering-1",
+    "owner": "ad-anomalydino",
+    "index": 1,
+    "version": "r01",
+    "title": "AnomalyDINO：固定模型，正常局部存庫",
+    "kind": "C",
+    "takeaway": "免額外訓練，仍要選乾淨正常參考並建立相容庫。",
+    "panels": [
+      {
+        "title": "少量乾淨正常影像",
+        "graphic": "adino-support"
+      },
+      {
+        "title": "整圖進固定DINOv2",
+        "graphic": "adino-encode"
+      },
+      {
+        "title": "局部表示連同來源存庫",
+        "graphic": "adino-memory"
+      }
+    ],
+    "detail": "本課少樣本路徑用固定預訓練DINOv2抽整張影像的局部tokens，保留選定正常樣本的特徵與來源。不是逐張裁片重新訓練，也不是零設定；取像、resize及選用mask/rotation需寫清，未見正常與真缺陷另外留出。",
+    "terms": [
+      "token：整張影像經DINOv2後，每個位置的局部表示。",
+      "餘弦距離：以特徵方向比較局部有多不同。"
+    ],
+    "steps": [],
+    "source": "https://arxiv.org/html/2405.14529v2",
+    "review": "pending",
+    "mobile_height": 2400
+  },
+  {
+    "id": "ad-anomalydino-engineering-2",
+    "owner": "ad-anomalydino",
+    "index": 2,
+    "version": "r02",
+    "title": "AnomalyDINO：每個局部找最近正常",
+    "kind": "C",
+    "takeaway": "最近距離保留位置，組成候選異常圖。",
+    "panels": [
+      {
+        "title": "同一待測影像抽局部表示",
+        "graphic": "adino-query"
+      },
+      {
+        "title": "全庫搜尋相近正常特徵",
+        "graphic": "adino-distance"
+      },
+      {
+        "title": "距離回映同一局部位置",
+        "graphic": "adino-location"
+      }
+    ],
+    "detail": "待測整圖與參考共用DINOv2權重及相容前處理。每個test token以餘弦距離在normal memory找最近者；圖中0.40、0.62、0.55為教學給定距離，最小0.40不代表已足夠正常。局部距離上採樣/平滑形成位置圖；整件分數另聚合最高1%patch距離，不能把熱圖當精密輪廓。",
+    "terms": [
+      "token：整張影像經DINOv2後，每個位置的局部表示。",
+      "餘弦距離：以特徵方向比較局部有多不同。"
+    ],
+    "steps": [],
+    "source": "https://arxiv.org/html/2405.14529v2",
+    "review": "pending",
+    "mobile_height": 2400
+  },
+  {
+    "id": "ad-anomalydino-engineering-3",
+    "owner": "ad-anomalydino",
+    "index": 3,
+    "version": "r01",
+    "title": "AnomalyDINO：換參考就要重驗正常定義",
+    "kind": "C",
+    "takeaway": "保存參考版本，誤報與漏檢要一起比較。",
+    "panels": [
+      {
+        "title": "固定待測件與原參考庫",
+        "graphic": "adino-clean"
+      },
+      {
+        "title": "只增加一個刮傷參考",
+        "graphic": "adino-contamination"
+      },
+      {
+        "title": "重跑相同留出案例",
+        "graphic": "adino-revalidate"
+      }
+    ],
+    "detail": "固定模型與前處理只增加候選時，最近距離不會增加；若新增參考含缺陷，原本异常可能變得相近。用同一刮痕、原候選距離0.40/0.55、新污染候選0.03說明算術，不宣稱真實模型結果。更新後同时測正常與真缺陷，保存庫來源並量建庫、查詢及記憶體。",
+    "terms": [
+      "token：整張影像經DINOv2後，每個位置的局部表示。",
+      "餘弦距離：以特徵方向比較局部有多不同。"
+    ],
+    "steps": [],
+    "source": "https://arxiv.org/html/2405.14529v2",
+    "review": "pending",
+    "mobile_height": 2400
+  },
+  {
+    "id": "ad-anomalydino-engineering-4",
+    "owner": "ad-anomalydino",
+    "index": 4,
+    "version": "r01",
+    "title": "AnomalyDINO：先判斷旋轉是否被允許",
+    "kind": "D",
+    "takeaway": "旋轉擴充改變正常涵蓋，朝向規格仍須另驗。",
+    "panels": [
+      {
+        "title": "共同工件：刻字有方向",
+        "graphic": "adino-upright"
+      },
+      {
+        "title": "自由擺放：可測旋轉參考",
+        "graphic": "adino-rotate-free"
+      },
+      {
+        "title": "標誌朝上：不可放寬方向",
+        "graphic": "adino-rotate-required"
+      }
+    ],
+    "detail": "同一帶A-01刻字的板連同所有孔位/字一起剛性旋轉180度。若規格允許自由方向，可測旋轉參考是否減少誤報；若標誌必須朝上，就不能以納入倒置參考來消除方向錯誤，另做方向檢查。兩路是不同工作規格，不是演算法串接。",
+    "terms": [
+      "token：整張影像經DINOv2後，每個位置的局部表示。",
+      "餘弦距離：以特徵方向比較局部有多不同。"
+    ],
+    "steps": [],
+    "source": "https://arxiv.org/html/2405.14529v2",
+    "review": "pending",
+    "mobile_height": 2400
+  },
+  {
+    "id": "adino-deep-rotation",
+    "owner": "ad-anomalydino",
+    "index": 0,
+    "version": "r02",
+    "title": "旋轉前，先問方向是否屬於規格",
+    "kind": "D",
+    "takeaway": "整件與刻字一起旋轉；正常參考不能改寫允收規格。",
+    "panels": [
+      {
+        "title": "原件：A-01刻字朝上",
+        "graphic": "adino-upright"
+      },
+      {
+        "title": "同件剛性旋轉180度",
+        "graphic": "adino-rotated"
+      },
+      {
+        "title": "自由擺放與朝上規格分開",
+        "graphic": "adino-rotation-rule"
+      }
+    ],
+    "detail": "修正原深讀6章旋轉圖：以同一個SVG工件群組做180度旋轉，孔、缺口與刻字全部一起變換，沒有重畫另一件或保留正向刻字。若允收自由方向，可驗旋轉參考；朝向本身是缺陷則另立規則。此圖不替換遮罩/接線視圖。",
+    "terms": [
+      "token：整張影像經DINOv2後，每個位置的局部表示。",
+      "餘弦距離：以特徵方向比較局部有多不同。"
+    ],
+    "steps": [],
+    "source": "https://arxiv.org/html/2405.14529v2",
+    "review": "pending",
+    "mobile_height": 2304
+  },
+  {
+    "id": "ad-efficientad-engineering-1",
+    "owner": "ad-efficientad",
+    "index": 1,
+    "version": "r02",
+    "title": "EfficientAD：正常品教三個角色合作",
+    "kind": "C",
+    "takeaway": "教師固定，學生兩組輸出與AE各有訓練目標。",
+    "panels": [
+      {
+        "title": "正常托盤與固定教師",
+        "graphic": "eff-teacher"
+      },
+      {
+        "title": "學生第一組學教師",
+        "graphic": "eff-student1"
+      },
+      {
+        "title": "AE與學生第二組一起學",
+        "graphic": "eff-train-global"
+      }
+    ],
+    "detail": "選定預訓練輕量教師並固定；學生第一組以正常影像學教師特徵，原方法另有hard-feature與外部預訓練圖penalty。AE由整圖重建教師特徵，學生第二組學AE重建；使用正常資料訓練，真缺陷留作獨立檢查。學生兩組共享前層，不是兩個互不相關模型。",
+    "terms": [
+      "T/S1：固定教師與學生第一組輸出。",
+      "AE/S2：自編碼器與學生第二組輸出；兩者差產生全局圖。"
+    ],
+    "steps": [],
+    "source": "https://arxiv.org/html/2303.14535v3",
+    "review": "pending",
+    "mobile_height": 2400
+  },
+  {
+    "id": "ad-efficientad-engineering-2",
+    "owner": "ad-efficientad",
+    "index": 2,
+    "version": "r02",
+    "title": "EfficientAD：局部與全局比較對象不同",
+    "kind": "C",
+    "takeaway": "局部比T/S1，全局比AE/S2；校正尺度後才融合。",
+    "panels": [
+      {
+        "title": "同一待測托盤送入三者",
+        "graphic": "eff-test"
+      },
+      {
+        "title": "兩路各比對應的表示",
+        "graphic": "eff-two-diffs"
+      },
+      {
+        "title": "正常驗證資料校正後融合",
+        "graphic": "eff-calibrate"
+      }
+    ],
+    "detail": "同一托盤有中間缺件及右側污點；T與學生第一組S1的通道均方差產生local，AE與學生第二組S2的差產生global，不能誤畫T減AE或直接原圖減重建照片。用未參與訓練的正常驗證分布各自做分位數線性尺度對齊，再平均兩圖；最大值作整圖分數。熱區僅示意，不保證兩路專抓某種缺陷。",
+    "terms": [
+      "T/S1：固定教師與學生第一組輸出。",
+      "AE/S2：自編碼器與學生第二組輸出；兩者差產生全局圖。"
+    ],
+    "steps": [],
+    "source": "https://arxiv.org/html/2303.14535v3",
+    "review": "pending",
+    "mobile_height": 2400
+  },
+  {
+    "id": "ad-efficientad-engineering-3",
+    "owner": "ad-efficientad",
+    "index": 3,
+    "version": "r02",
+    "title": "EfficientAD：保留兩路，才知道融合改了什麼",
+    "kind": "C",
+    "takeaway": "兩路與融合圖一起驗，完整流程一起計時。",
+    "panels": [
+      {
+        "title": "保存局部、全局與融合",
+        "graphic": "eff-ablation"
+      },
+      {
+        "title": "回同托盤核對兩種錯誤",
+        "graphic": "eff-review"
+      },
+      {
+        "title": "相機到覆核的完整時間",
+        "graphic": "eff-cost"
+      }
+    ],
+    "detail": "保存原圖、原始local/global圖、正常分位數校正及融合結果。用獨立正常與真缺陷對照各分支及融合錯誤；同時量取像、前處理、教師/學生/AE、映回與交付的完整耗時，不能從論文毫秒數推定產線節拍。",
+    "terms": [
+      "T/S1：固定教師與學生第一組輸出。",
+      "AE/S2：自編碼器與學生第二組輸出；兩者差產生全局圖。"
+    ],
+    "steps": [],
+    "source": "https://arxiv.org/html/2303.14535v3",
+    "review": "pending",
+    "mobile_height": 2400
+  },
+  {
+    "id": "ad-efficientad-engineering-4",
+    "owner": "ad-efficientad",
+    "index": 4,
+    "version": "r01",
+    "title": "EfficientAD：換產品要更新哪些部分",
+    "kind": "C",
+    "takeaway": "模型與正常校正一起重驗，不能只換產品名稱。",
+    "panels": [
+      {
+        "title": "新產品有不同正常外觀",
+        "graphic": "eff-new-product"
+      },
+      {
+        "title": "適配學生／AE與分數尺度",
+        "graphic": "eff-maintenance"
+      },
+      {
+        "title": "同留出集比較更新前後",
+        "graphic": "eff-update-check"
+      }
+    ],
+    "detail": "換產品先確認正常訓練涵蓋；按需要重新訓練學生與AE，重新建立正常驗證分位數，保留舊版作對照。固定教師版本不代表下游分數可直接沿用；比較正常誤報、真缺陷漏檢、訓練/校正成本與每件耗時，不能只記模型檔大小。",
+    "terms": [
+      "T/S1：固定教師與學生第一組輸出。",
+      "AE/S2：自編碼器與學生第二組輸出；兩者差產生全局圖。"
+    ],
+    "steps": [],
+    "source": "https://arxiv.org/html/2303.14535v3",
+    "review": "pending",
+    "mobile_height": 2400
+  },
+  {
+    "id": "eff-main-failure",
+    "owner": "ad-efficientad",
+    "index": 0,
+    "version": "r01",
+    "title": "同一托盤，換取像仍可能漏掉異常",
+    "kind": "D",
+    "takeaway": "先核對原圖線索，再驗兩路與融合結果。",
+    "panels": [
+      {
+        "title": "共同托盤：缺件與污點",
+        "graphic": "eff-test"
+      },
+      {
+        "title": "反光只遮住右側污點",
+        "graphic": "eff-glare"
+      },
+      {
+        "title": "同一資料檢查兩路與融合",
+        "graphic": "eff-review"
+      }
+    ],
+    "detail": "接續首讀托盤中間缺件、右側污點。反光條件只改取像並遮住右側污點，沒有換成金屬板刮痕。局部/全局仍可能有錯誤，缺件可見不保證一定檢出；以兩類正常/異常留出樣本核對，不編造模型成功圖。",
+    "terms": [
+      "T/S1：固定教師與學生第一組輸出。",
+      "AE/S2：自編碼器與學生第二組輸出；兩者差產生全局圖。"
+    ],
+    "steps": [],
+    "source": "https://arxiv.org/html/2303.14535v3",
+    "review": "pending",
+    "mobile_height": 2304
+  },
+  {
+    "id": "eff-deep-01-core",
+    "owner": "ad-efficientad",
+    "index": 0,
+    "version": "r02",
+    "title": "EfficientAD：局部特徵與整體重建合作",
+    "kind": "C",
+    "takeaway": "兩路分工不同，正常尺度對齊後一起驗。",
+    "panels": [
+      {
+        "title": "正常影像讓三個角色學習",
+        "graphic": "deep-eff-learn"
+      },
+      {
+        "title": "局部T/S1，全局AE/S2",
+        "graphic": "eff-two-diffs"
+      },
+      {
+        "title": "正常驗證尺度對齊再融合",
+        "graphic": "eff-calibrate"
+      }
+    ],
+    "detail": "保留深讀核心的T/S/AE分工；手機改直向三段，用同章四孔板。學生第一組學T、AE學T、第二組學AE；T固定。local/global各自正常分位數校正後平均，最大值作整件分數；實測節拍另量。",
+    "terms": [
+      "T/S1：固定教師與學生第一組輸出。",
+      "AE/S2：自編碼器與學生第二組輸出；兩者差產生全局圖。"
+    ],
+    "steps": [],
+    "source": "https://arxiv.org/html/2303.14535v3",
+    "review": "pending",
+    "mobile_height": 2304
+  },
+  {
+    "id": "eff-deep-01-work",
+    "owner": "ad-efficientad",
+    "index": 0,
+    "version": "r02",
+    "title": "先找可疑位置，也要能跟上工作",
+    "kind": "C",
+    "takeaway": "位置與耗時都要驗；熱圖只幫你開始覆核。",
+    "panels": [
+      {
+        "title": "同一A-01有可見線痕",
+        "graphic": "deep-board-input"
+      },
+      {
+        "title": "從正常資料學候選模型",
+        "graphic": "deep-eff-candidate"
+      },
+      {
+        "title": "位置回原圖，完整流程計時",
+        "graphic": "deep-board-review"
+      }
+    ],
+    "detail": "重排深讀1章第二工作視圖；同一A-01四孔板與下中線痕，正常訓練、待測位置、人工覆核與端到端時間。圖解示意，不能替代實際缺陷驗證或量測。",
+    "terms": [
+      "T/S1：固定教師與學生第一組輸出。",
+      "AE/S2：自編碼器與學生第二組輸出；兩者差產生全局圖。"
+    ],
+    "steps": [],
+    "source": "https://arxiv.org/html/2303.14535v3",
+    "review": "pending",
+    "mobile_height": 2304
+  },
+  {
+    "id": "eff-deep-02-data",
+    "owner": "ad-efficientad",
+    "index": 0,
+    "version": "r01",
+    "title": "正常資料要乾淨，也要涵蓋合理變化",
+    "kind": "C",
+    "takeaway": "訓練、校正與最終測試分開，先查資料來源。",
+    "panels": [
+      {
+        "title": "已確認正常：用來訓練",
+        "graphic": "deep-data-train"
+      },
+      {
+        "title": "獨立正常：用來校正",
+        "graphic": "deep-data-calibrate"
+      },
+      {
+        "title": "正常與真缺陷：留作測試",
+        "graphic": "deep-data-test"
+      }
+    ],
+    "detail": "重排手機2章資料分工。已確認正常影像訓練學生/AE；未參與訓練的正常驗證影像建立分位數尺度；另留正常/真缺陷作最終測試。同一工件近似照片不可跨拆，單批資料不能代表全部產品變化。",
+    "terms": [
+      "T/S1：固定教師與學生第一組輸出。",
+      "AE/S2：自編碼器與學生第二組輸出；兩者差產生全局圖。"
+    ],
+    "steps": [],
+    "source": "https://arxiv.org/html/2303.14535v3",
+    "review": "pending",
+    "mobile_height": 2304
+  },
+  {
+    "id": "eff-deep-03-meaning",
+    "owner": "ad-efficientad",
+    "index": 0,
+    "version": "r02",
+    "title": "三個角色，分清訓練目標與測試差異",
+    "kind": "C",
+    "takeaway": "T固定、S1學T、AE學T、S2學AE；兩路分別比較。",
+    "panels": [
+      {
+        "title": "正常訓練：T教S1",
+        "graphic": "deep-train-local"
+      },
+      {
+        "title": "正常訓練：AE與S2",
+        "graphic": "eff-train-global"
+      },
+      {
+        "title": "測試：兩路比較對象",
+        "graphic": "eff-two-diffs"
+      }
+    ],
+    "detail": "手機3章明示三種訓練目標；箭頭為學習目標關係，AE與Student都是從同影像計算，並非Teacher輸出作AE模型輸入。測試local比較T與S1，global比較AE與S2。學生兩組輸出共享前層。",
+    "terms": [
+      "T/S1：固定教師與學生第一組輸出。",
+      "AE/S2：自編碼器與學生第二組輸出；兩者差產生全局圖。"
+    ],
+    "steps": [],
+    "source": "https://arxiv.org/html/2303.14535v3",
+    "review": "pending",
+    "mobile_height": 2304
+  },
+  {
+    "id": "eff-deep-04-output",
+    "owner": "ad-efficientad",
+    "index": 0,
+    "version": "r01",
+    "title": "同一線痕，位置熱圖和輪廓回答不同問題",
+    "kind": "D",
+    "takeaway": "先選要位置還是輪廓，再準備資料與驗證。",
+    "panels": [
+      {
+        "title": "共同原圖：下中線痕",
+        "graphic": "deep-board-input"
+      },
+      {
+        "title": "異常檢測：可疑位置",
+        "graphic": "deep-output-location"
+      },
+      {
+        "title": "監督分割：已定義輪廓",
+        "graphic": "deep-output-contour"
+      }
+    ],
+    "detail": "深讀4章同題比較，移除替代輸出之間的因果箭頭。固定同一A-01線痕；EfficientAD正常訓練得位置線索，監督分割需已定義目標的輪廓標註。若要實體面積另需校正與誤差驗證；圖中框與輪廓皆教學設定。",
+    "terms": [
+      "T/S1：固定教師與學生第一組輸出。",
+      "AE/S2：自編碼器與學生第二組輸出；兩者差產生全局圖。"
+    ],
+    "steps": [],
+    "source": "https://arxiv.org/html/2303.14535v3",
+    "review": "pending",
+    "mobile_height": 2304
+  },
+  {
+    "id": "eff-deep-05-limits",
+    "owner": "ad-efficientad",
+    "index": 0,
+    "version": "r01",
+    "title": "看不清的細痕，不能只靠調門檻",
+    "kind": "D",
+    "takeaway": "先改善取像，再用正常與真缺陷驗證。",
+    "panels": [
+      {
+        "title": "共同原圖：可見線痕",
+        "graphic": "deep-board-input"
+      },
+      {
+        "title": "反光遮住相同位置",
+        "graphic": "deep-board-glare"
+      },
+      {
+        "title": "保留可見訊號再重验",
+        "graphic": "deep-board-reacquire"
+      }
+    ],
+    "detail": "重排深讀5手機：同一A-01與下中線痕，僅反光遮住線索。升門檻可能壓低正常誤報又漏掉細傷；先查取像、正常涵蓋及有效解析度，保留原圖重验。不可用新造熱圖冒充模型漏檢。",
+    "terms": [
+      "T/S1：固定教師與學生第一組輸出。",
+      "AE/S2：自編碼器與學生第二組輸出；兩者差產生全局圖。"
+    ],
+    "steps": [],
+    "source": "https://arxiv.org/html/2303.14535v3",
+    "review": "pending",
+    "mobile_height": 2304
+  },
+  {
+    "id": "eff-deep-07-comparison",
+    "owner": "ad-efficientad",
+    "index": 0,
+    "version": "r01",
+    "title": "換同一產品，三種方法各要準備什麼",
+    "kind": "D",
+    "takeaway": "比較同一用途與完整成本，更新時重做的事也要算。",
+    "panels": [
+      {
+        "title": "EfficientAD：重訓與校正",
+        "graphic": "deep-compare-efficient"
+      },
+      {
+        "title": "PatchCore：重建正常特徵庫",
+        "graphic": "deep-compare-patchcore"
+      },
+      {
+        "title": "監督分割：標註與適配",
+        "graphic": "deep-compare-seg"
+      }
+    ],
+    "detail": "深讀7桌機手機各三段，固定同一新四孔板產品，EfficientAD更新學生/AE及正常分位數，PatchCore重抽特徵/coreset建庫並驗門檻，監督分割補目標輪廓標註與適配。前兩者位置篩查可同題比；分割輸出需求另列。比較資料工時、訓練/建庫、查詢/推論、記憶體、錯誤與覆核量，沒有共同實測不排名。",
+    "terms": [
+      "T/S1：固定教師與學生第一組輸出。",
+      "AE/S2：自編碼器與學生第二組輸出；兩者差產生全局圖。"
+    ],
+    "steps": [],
+    "source": "https://arxiv.org/html/2303.14535v3",
+    "review": "pending",
+    "mobile_height": 2304
+  },
+  {
+    "id": "eff-deep-08-transfer",
+    "owner": "ad-efficientad",
+    "index": 0,
+    "version": "r01",
+    "title": "需求從可疑位置變成刮痕面積",
+    "kind": "D",
+    "takeaway": "需求改變時，資料、輸出與驗收也要改。",
+    "panels": [
+      {
+        "title": "目前：只有正常影像",
+        "graphic": "deep-data-train"
+      },
+      {
+        "title": "先篩查：找可疑位置",
+        "graphic": "deep-output-location"
+      },
+      {
+        "title": "改要面積：輪廓與校正",
+        "graphic": "deep-transfer-area"
+      }
+    ],
+    "detail": "重排深讀8手機；仍是同一四孔板與下中線痕。只有正常品可先比較EfficientAD/PatchCore作可疑位置篩查；若需求變為定義刮傷面積，補輪廓標註及分割验证，實體面積再需校正/誤差。條件不適合可換方法，不沿用熱圖當精密輪廓。",
+    "terms": [
+      "T/S1：固定教師與學生第一組輸出。",
+      "AE/S2：自編碼器與學生第二組輸出；兩者差產生全局圖。"
+    ],
+    "steps": [],
+    "source": "https://arxiv.org/html/2303.14535v3",
+    "review": "pending",
+    "mobile_height": 2304
+  },
+  {
+    "id": "resnet-engineering-1",
+    "owner": "resnet",
+    "index": 1,
+    "version": "r01",
+    "title": "ResNet：先把整張照片分到已知類別",
+    "takeaway": "整圖分類要類別標註，細傷位置不會自動交付。",
+    "kind": "C",
+    "mobile_height": 2304,
+    "panels": [
+      {
+        "title": "同件照片與類別標註",
+        "graphic": "b3-res-data"
+      },
+      {
+        "title": "殘差逐步更新影像表示",
+        "graphic": "b3-res-residual"
+      },
+      {
+        "title": "分類頭交出整件分數",
+        "graphic": "b3-res-score"
+      }
+    ],
+    "steps": [],
+    "detail": "沿用支架完整／刮傷兩類工作例。用有標註的整圖訓練分類器，殘差分支學相對輸入的修正；分類頭彙整特徵後交付類別分數，無法直接交付刮傷座標。圖中分數是給定示意。",
+    "source": "https://arxiv.org/abs/1512.03385",
+    "terms": [
+      "特徵：由影像學到的中間表示，並非標註真值。",
+      "本圖示意：解釋模型責任，不代表新模型實測。"
+    ],
+    "review": "pending"
+  },
+  {
+    "id": "resnet-engineering-2",
+    "owner": "resnet",
+    "index": 2,
+    "version": "r02",
+    "title": "ResNet：保留輸入，再加上學到的修正",
+    "takeaway": "同形狀才能逐位置相加；換形狀需先對齊。",
+    "kind": "C",
+    "mobile_height": 2304,
+    "panels": [
+      {
+        "title": "輸入x分成兩條路",
+        "graphic": "b3-res-split"
+      },
+      {
+        "title": "主路學修正F(x)",
+        "graphic": "b3-res-delta"
+      },
+      {
+        "title": "對齊後逐項相加",
+        "graphic": "b3-res-sum"
+      }
+    ],
+    "steps": [],
+    "detail": "用同位置2×2特徵教學例：x=[2,1;0,3]，F(x)=[1,0;2,-1]，相加得到[3,1;2,2]。直通路是輸入特徵而非原圖；形狀不同時需投影或其他對齊。展示殘差核心，啟用函數與其他層於正文說明，不把加法當缺陷消除。",
+    "source": "https://arxiv.org/abs/1512.03385",
+    "terms": [
+      "特徵：由影像學到的中間表示，並非標註真值。",
+      "本圖示意：解釋模型責任，不代表新模型實測。"
+    ],
+    "review": "pending"
+  },
+  {
+    "id": "resnet-engineering-3",
+    "owner": "resnet",
+    "index": 3,
+    "version": "r01",
+    "title": "ResNet：分類結果要連回原圖與標籤",
+    "takeaway": "保存類別映射與前處理，換批次後重驗誤判。",
+    "kind": "C",
+    "mobile_height": 2304,
+    "panels": [
+      {
+        "title": "鎖定裁切與類別映射",
+        "graphic": "b3-res-contract"
+      },
+      {
+        "title": "彙整表示再讀出分數",
+        "graphic": "b3-res-pool"
+      },
+      {
+        "title": "回原圖核对錯分樣本",
+        "graphic": "b3-res-review"
+      }
+    ],
+    "steps": [],
+    "detail": "推論固定裁切、resize、標準化、權重與類別順序。分類頭使用彙整特徵，不把可視化特徵圖當缺陷位置。保存分數與原圖，分批次驗漏判與誤判；全域平均會弱化某些細小線索，是否漏判仍需資料驗證。",
+    "source": "https://arxiv.org/abs/1512.03385",
+    "terms": [
+      "特徵：由影像學到的中間表示，並非標註真值。",
+      "本圖示意：解釋模型責任，不代表新模型實測。"
+    ],
+    "review": "pending"
+  },
+  {
+    "id": "resnet-engineering-4",
+    "owner": "resnet",
+    "index": 4,
+    "version": "r01",
+    "title": "ResNet：背景變了，分類依據仍要成立",
+    "takeaway": "同件換背景測捷徑，定位需求另選位置輸出。",
+    "kind": "D",
+    "mobile_height": 2304,
+    "panels": [
+      {
+        "title": "同件放在兩種背景",
+        "graphic": "b3-common-background"
+      },
+      {
+        "title": "分類器只給整件類別",
+        "graphic": "b3-res-scope"
+      },
+      {
+        "title": "需要位置時比較分割",
+        "graphic": "b3-res-alternative"
+      }
+    ],
+    "steps": [],
+    "detail": "相同支架與缺口只改背景，檢查模型是否依背景而非工件分類。若要缺陷位置，另評分割及其像素標註成本；ResNet可當骨幹，但本分類頭不因有熱圖可視化就變成分割器。",
+    "source": "https://arxiv.org/abs/1512.03385",
+    "terms": [
+      "特徵：由影像學到的中間表示，並非標註真值。",
+      "本圖示意：解釋模型責任，不代表新模型實測。"
+    ],
+    "review": "pending"
+  },
+  {
+    "id": "convnext-engineering-1",
+    "owner": "convnext",
+    "index": 1,
+    "version": "r01",
+    "title": "ConvNeXt：卷積也能逐步整理分類線索",
+    "takeaway": "先定義類別，再用分層卷積彙整影像。",
+    "kind": "C",
+    "mobile_height": 2304,
+    "panels": [
+      {
+        "title": "有標籤的支架照片",
+        "graphic": "b3-res-data"
+      },
+      {
+        "title": "空間與通道各做一次混合",
+        "graphic": "b3-cnx-block"
+      },
+      {
+        "title": "彙整後交出類別分數",
+        "graphic": "b3-cnx-score"
+      }
+    ],
+    "steps": [],
+    "detail": "原始ConvNeXt是純卷積骨幹，借鑑現代設計但不是自注意力Transformer。分層下採樣整理影像，區塊含depthwise空間卷積、通道混合與殘差；下游分類頭和標註定義類別。",
+    "source": "https://arxiv.org/abs/2201.03545",
+    "terms": [
+      "特徵：由影像學到的中間表示，並非標註真值。",
+      "本圖示意：解釋模型責任，不代表新模型實測。"
+    ],
+    "review": "pending"
+  },
+  {
+    "id": "convnext-engineering-2",
+    "owner": "convnext",
+    "index": 2,
+    "version": "r03",
+    "title": "ConvNeXt：先看鄰域，再組合不同線索",
+    "takeaway": "空間混合不跨通道，通道混合在同位置組合。",
+    "kind": "C",
+    "mobile_height": 2304,
+    "panels": [
+      {
+        "title": "每通道各看空間鄰域",
+        "graphic": "b3-cnx-spatial"
+      },
+      {
+        "title": "同位置混合各通道",
+        "graphic": "b3-cnx-channel"
+      },
+      {
+        "title": "殘差保留原本表示",
+        "graphic": "b3-cnx-residual"
+      }
+    ],
+    "steps": [],
+    "detail": "原始區塊用7×7 depthwise卷積，各通道獨立混合鄰域；之後LayerNorm、通道擴張、GELU、通道縮回及layer scale，再加直通路。圖用小鄰域和兩通道示意角色，不聲稱展示完整實際張量。",
+    "source": "https://arxiv.org/abs/2201.03545",
+    "terms": [
+      "特徵：由影像學到的中間表示，並非標註真值。",
+      "本圖示意：解釋模型責任，不代表新模型實測。"
+    ],
+    "review": "pending"
+  },
+  {
+    "id": "convnext-engineering-3",
+    "owner": "convnext",
+    "index": 3,
+    "version": "r01",
+    "title": "ConvNeXt：效率要連同解析度一起驗",
+    "takeaway": "保存模型配置，測完整分類流程與錯分代價。",
+    "kind": "C",
+    "mobile_height": 2304,
+    "panels": [
+      {
+        "title": "固定影像裁切與解析度",
+        "graphic": "b3-cnx-contract"
+      },
+      {
+        "title": "由多尺度特徵彙整分類",
+        "graphic": "b3-cnx-pool"
+      },
+      {
+        "title": "比較時間與細傷錯分",
+        "graphic": "b3-cnx-review"
+      }
+    ],
+    "steps": [],
+    "detail": "相同產品固定測試集與裁切，記錄ConvNeXt尺寸、精度格式、硬體與整條流程延遲。較小模型或輸入不保證可保留細傷線索；比較整件錯分及人工覆核，不用論文單一指標代替本地選型。",
+    "source": "https://arxiv.org/abs/2201.03545",
+    "terms": [
+      "特徵：由影像學到的中間表示，並非標註真值。",
+      "本圖示意：解釋模型責任，不代表新模型實測。"
+    ],
+    "review": "pending"
+  },
+  {
+    "id": "convnext-engineering-4",
+    "owner": "convnext",
+    "index": 4,
+    "version": "r01",
+    "title": "ConvNeXt與ResNet：先固定同一分類任務",
+    "takeaway": "兩者都需域內驗證，架構新舊不能替代結果。",
+    "kind": "D",
+    "mobile_height": 2304,
+    "panels": [
+      {
+        "title": "共同照片與類別定義",
+        "graphic": "b3-class-common"
+      },
+      {
+        "title": "ResNet殘差卷積路徑",
+        "graphic": "b3-res-residual"
+      },
+      {
+        "title": "ConvNeXt空間通道路徑",
+        "graphic": "b3-cnx-block"
+      }
+    ],
+    "steps": [],
+    "detail": "兩個候選各用相容前處理，固定產品、類別、訓練資料及留出樣本。比較錯分類型、訓練資源、完整延遲；保留ResNet作合理起點，不能把ConvNeXt現代化設計當所有資料上都較準的保證。",
+    "source": "https://arxiv.org/abs/2201.03545",
+    "terms": [
+      "特徵：由影像學到的中間表示，並非標註真值。",
+      "本圖示意：解釋模型責任，不代表新模型實測。"
+    ],
+    "review": "pending"
+  },
+  {
+    "id": "vit-classifier-engineering-1",
+    "owner": "vit-classifier",
+    "index": 1,
+    "version": "r01",
+    "title": "ViT：把影像區塊變成可交流的表示",
+    "takeaway": "切片保留位置，分類仍需資料與任務頭。",
+    "kind": "C",
+    "mobile_height": 2304,
+    "panels": [
+      {
+        "title": "同件影像切成區塊",
+        "graphic": "b3-vit-patches"
+      },
+      {
+        "title": "各片加入位置表示",
+        "graphic": "b3-vit-tokens"
+      },
+      {
+        "title": "分類token讀出整件分數",
+        "graphic": "b3-vit-cls"
+      }
+    ],
+    "steps": [],
+    "detail": "原始ViT把不重疊patch線性投影成token，加入位置嵌入及分類token；Transformer交換資訊，最後CLS表示經分類頭讀出類別。本課是分類器，不把patch熱圖當分割。",
+    "source": "https://arxiv.org/abs/2010.11929",
+    "terms": [
+      "特徵：由影像學到的中間表示，並非標註真值。",
+      "本圖示意：解釋模型責任，不代表新模型實測。"
+    ],
+    "review": "pending"
+  },
+  {
+    "id": "vit-classifier-engineering-2",
+    "owner": "vit-classifier",
+    "index": 2,
+    "version": "r03",
+    "title": "ViT：一個位置也會參考其他區塊",
+    "takeaway": "注意力加權其他表示，位置身份仍要保留。",
+    "kind": "C",
+    "mobile_height": 2304,
+    "panels": [
+      {
+        "title": "刮傷片與孔邊片各有表示",
+        "graphic": "b3-vit-query"
+      },
+      {
+        "title": "依內容形成參考權重",
+        "graphic": "b3-vit-attention"
+      },
+      {
+        "title": "加權更新，再由CLS分類",
+        "graphic": "b3-vit-update"
+      }
+    ],
+    "steps": [],
+    "detail": "示意某query对兩個value加權0.75和0.25；value [2,0]與[0,4]加權成[1.5,1]。這是單頭簡化算例，實際還含多頭投影、殘差、正規化和MLP。注意力不是物理缺陷機率，也不能用線寬宣稱模型實测解釋。",
+    "source": "https://arxiv.org/abs/2010.11929",
+    "terms": [
+      "特徵：由影像學到的中間表示，並非標註真值。",
+      "本圖示意：解釋模型責任，不代表新模型實測。"
+    ],
+    "review": "pending"
+  },
+  {
+    "id": "vit-classifier-engineering-3",
+    "owner": "vit-classifier",
+    "index": 3,
+    "version": "r02",
+    "title": "ViT：改切片設定，細節與成本都會變",
+    "takeaway": "先確認細傷還可見，再測分類與記憶體。",
+    "kind": "C",
+    "mobile_height": 2304,
+    "panels": [
+      {
+        "title": "同一細痕與輸入取樣",
+        "graphic": "b3-vit-resolution"
+      },
+      {
+        "title": "切片尺度改變token數",
+        "graphic": "b3-vit-cost"
+      },
+      {
+        "title": "保留同件測試與錯分類型",
+        "graphic": "b3-vit-review"
+      }
+    ],
+    "steps": [],
+    "detail": "改解析度會改token數及注意力成本；改patch尺寸涉及模型配置與權重相容性，不能隨意把現有權重改為另一尺寸。先查實際輸入可見線索，再比較分類、記憶體及延遲；圖中的格子是分片概念而非真實注意力圖。",
+    "source": "https://arxiv.org/abs/2010.11929",
+    "terms": [
+      "特徵：由影像學到的中間表示，並非標註真值。",
+      "本圖示意：解釋模型責任，不代表新模型實測。"
+    ],
+    "review": "pending"
+  },
+  {
+    "id": "vit-classifier-engineering-4",
+    "owner": "vit-classifier",
+    "index": 4,
+    "version": "r02",
+    "title": "ViT與ConvNeXt：同題比較代價",
+    "takeaway": "全局交流是能力來源，不保證小資料就更準。",
+    "kind": "D",
+    "mobile_height": 2304,
+    "panels": [
+      {
+        "title": "相同分類照片與標籤",
+        "graphic": "b3-class-common"
+      },
+      {
+        "title": "ConvNeXt先做逐通道空間卷積",
+        "graphic": "b3-cnx-spatial"
+      },
+      {
+        "title": "注意力跨片交換資訊",
+        "graphic": "b3-vit-attention"
+      }
+    ],
+    "steps": [],
+    "detail": "在相同產品和標籤下比較預訓練、可調整資料量、輸入解析度及硬體成本；卷積局部先驗可能適合部分小資料任務，ViT利用大規模預訓練仍需域內驗證。候選可並行，不畫成必須串接。",
+    "source": "https://arxiv.org/abs/2010.11929",
+    "terms": [
+      "特徵：由影像學到的中間表示，並非標註真值。",
+      "本圖示意：解釋模型責任，不代表新模型實測。"
+    ],
+    "review": "pending"
+  },
+  {
+    "id": "u-net-engineering-1",
+    "owner": "u-net",
+    "index": 1,
+    "version": "r02",
+    "title": "U-Net：標出每個像素屬於哪一類",
+    "takeaway": "像素標註教會區域，輸出仍需回原圖核對。",
+    "kind": "C",
+    "mobile_height": 2304,
+    "panels": [
+      {
+        "title": "原圖與細焊線標註",
+        "graphic": "b3-unet-data"
+      },
+      {
+        "title": "編碼與解碼接回細節",
+        "graphic": "b3-unet-bridge"
+      },
+      {
+        "title": "逐像素分類得到語意遮罩",
+        "graphic": "b3-unet-output"
+      }
+    ],
+    "steps": [],
+    "detail": "沿用板上細焊線工作例，以對齊的影像和像素類別標註訓練。收縮路徑取得上下文，擴張路徑結合對應高解析度特徵恢復定位；輸出是語意區域，不自帶校正後尺寸。",
+    "source": "https://arxiv.org/abs/1505.04597",
+    "terms": [
+      "特徵：由影像學到的中間表示，並非標註真值。",
+      "本圖示意：解釋模型責任，不代表新模型實測。"
+    ],
+    "review": "pending"
+  },
+  {
+    "id": "u-net-engineering-2",
+    "owner": "u-net",
+    "index": 2,
+    "version": "r03",
+    "title": "U-Net：粗尺度找上下文，細尺度補位置",
+    "takeaway": "跳接提供對應特徵，解碼器仍要學會融合。",
+    "kind": "C",
+    "mobile_height": 2304,
+    "panels": [
+      {
+        "title": "下採樣：位置變粗",
+        "graphic": "b3-unet-encode"
+      },
+      {
+        "title": "同尺度特徵沿跳接送達",
+        "graphic": "b3-unet-skip"
+      },
+      {
+        "title": "上採樣融合後逐像素分類",
+        "graphic": "b3-unet-decode"
+      }
+    ],
+    "steps": [],
+    "detail": "原始U-Net以crop and concatenate把編碼特徵送到匹配尺度的解碼器，並非每條skip都逐元素相加。示意省略卷積邊界尺寸，但保留同尺度配對與融合；遮罩由學習分類得到，不直接複製原圖邊緣。",
+    "source": "https://arxiv.org/abs/1505.04597",
+    "terms": [
+      "特徵：由影像學到的中間表示，並非標註真值。",
+      "本圖示意：解釋模型責任，不代表新模型實測。"
+    ],
+    "review": "pending"
+  },
+  {
+    "id": "u-net-engineering-3",
+    "owner": "u-net",
+    "index": 3,
+    "version": "r02",
+    "title": "U-Net：像素位置先映回，再談尺寸",
+    "takeaway": "記錄resize與裁切，像素遮罩不能直接當毫米。",
+    "kind": "C",
+    "mobile_height": 2304,
+    "panels": [
+      {
+        "title": "裁切與縮放都留下映射",
+        "graphic": "b3-unet-contract"
+      },
+      {
+        "title": "遮罩回到原圖同一位置",
+        "graphic": "b3-unet-map"
+      },
+      {
+        "title": "輪廓核對後才另接量測",
+        "graphic": "b3-unet-review"
+      }
+    ],
+    "steps": [],
+    "detail": "保存ROI、resize比例、padding及類別映射，將預測映回原图再核對細線斷裂、孔洞與邊界誤差。量測另需相機校正及誤差驗證；IoU高不保證細線連通或毫米誤差達標。",
+    "source": "https://arxiv.org/abs/1505.04597",
+    "terms": [
+      "特徵：由影像學到的中間表示，並非標註真值。",
+      "本圖示意：解釋模型責任，不代表新模型實測。"
+    ],
+    "review": "pending"
+  },
+  {
+    "id": "u-net-engineering-4",
+    "owner": "u-net",
+    "index": 4,
+    "version": "r01",
+    "title": "U-Net：看起來像一條線，仍可能斷一格",
+    "takeaway": "同件檢查細線連通，不能只看大區域重疊。",
+    "kind": "D",
+    "mobile_height": 2304,
+    "panels": [
+      {
+        "title": "同一焊線跨過細縫",
+        "graphic": "b3-unet-line"
+      },
+      {
+        "title": "候選遮罩在細處斷裂",
+        "graphic": "b3-unet-gap"
+      },
+      {
+        "title": "核對連通與邊界，再選型",
+        "graphic": "b3-unet-boundary"
+      }
+    ],
+    "steps": [],
+    "detail": "同一細線的真值和示意候選只在中央窄處不同；大區域重疊可能掩蓋斷線。固定標註規則與解析度，比較U-Net和多尺度Transformer候選的邊界、连通、錯分及延遲，不把單一IoU排名當唯一決策。",
+    "source": "https://arxiv.org/abs/1505.04597",
+    "terms": [
+      "特徵：由影像學到的中間表示，並非標註真值。",
+      "本圖示意：解釋模型責任，不代表新模型實測。"
+    ],
+    "review": "pending"
+  },
+  {
+    "id": "segformer-engineering-1",
+    "owner": "segformer",
+    "index": 1,
+    "version": "r01",
+    "title": "SegFormer：四個尺度一起判讀每個位置",
+    "takeaway": "多尺度補上下文，輸出仍是語意類別圖。",
+    "kind": "C",
+    "mobile_height": 2304,
+    "panels": [
+      {
+        "title": "板面影像與像素標註",
+        "graphic": "b3-unet-data"
+      },
+      {
+        "title": "分層編碼產生四尺度",
+        "graphic": "b3-seg-scales"
+      },
+      {
+        "title": "對齊融合成語意遮罩",
+        "graphic": "b3-seg-output"
+      }
+    ],
+    "steps": [],
+    "detail": "MiT分層Transformer產生四種尺度特徵；輕量MLP解碼器投影、對齊、串接和融合後輸出語意類別。它不自動給每個相同類別物件獨立身份，與實例分割區分。",
+    "source": "https://arxiv.org/abs/2105.15203",
+    "terms": [
+      "特徵：由影像學到的中間表示，並非標註真值。",
+      "本圖示意：解釋模型責任，不代表新模型實測。"
+    ],
+    "review": "pending"
+  },
+  {
+    "id": "segformer-engineering-2",
+    "owner": "segformer",
+    "index": 2,
+    "version": "r03",
+    "title": "SegFormer：先對齊尺度，再融合線索",
+    "takeaway": "四路特徵共同進解碼器，不是四張遮罩投票。",
+    "kind": "C",
+    "mobile_height": 2304,
+    "panels": [
+      {
+        "title": "四尺度的格位各不相同",
+        "graphic": "b3-seg-scales"
+      },
+      {
+        "title": "各自投影並上採樣對齊",
+        "graphic": "b3-seg-align"
+      },
+      {
+        "title": "串接融合後逐像素分類",
+        "graphic": "b3-seg-fuse"
+      }
+    ],
+    "steps": [],
+    "detail": "四尺度表示先用MLP統一通道維度，再對齊到同一空間尺度，串接後用MLP融合及分類。顯示同一焊線位置在各尺度的對應，不能把四幅彩格當四次獨立模型分割，也不以框取代輸出遮罩。",
+    "source": "https://arxiv.org/abs/2105.15203",
+    "terms": [
+      "特徵：由影像學到的中間表示，並非標註真值。",
+      "本圖示意：解釋模型責任，不代表新模型實測。"
+    ],
+    "review": "pending"
+  },
+  {
+    "id": "segformer-engineering-3",
+    "owner": "segformer",
+    "index": 3,
+    "version": "r02",
+    "title": "SegFormer：解析度與細邊界一起驗",
+    "takeaway": "多尺度不能補回取像已消失的細線。",
+    "kind": "C",
+    "mobile_height": 2304,
+    "panels": [
+      {
+        "title": "原圖細線與較粗取樣",
+        "graphic": "b3-seg-resolution"
+      },
+      {
+        "title": "融合輸出映回原圖",
+        "graphic": "b3-unet-map"
+      },
+      {
+        "title": "核對細線、邊界與時間",
+        "graphic": "b3-seg-review"
+      }
+    ],
+    "steps": [],
+    "detail": "雖不依赖固定位置編碼，仍需依模型和實作處理輸入尺寸與padding，不能說任意尺寸均等好。測同一細線在不同解析度的可見性、邊界誤差與整條流程成本；不把插值出更多像素當新增觀測。",
+    "source": "https://arxiv.org/abs/2105.15203",
+    "terms": [
+      "特徵：由影像學到的中間表示，並非標註真值。",
+      "本圖示意：解釋模型責任，不代表新模型實測。"
+    ],
+    "review": "pending"
+  },
+  {
+    "id": "segformer-engineering-4",
+    "owner": "segformer",
+    "index": 4,
+    "version": "r02",
+    "title": "SegFormer與U-Net：共同標註才可比較",
+    "takeaway": "語意相同、標註一致，再比細節與運算代價。",
+    "kind": "D",
+    "mobile_height": 2304,
+    "panels": [
+      {
+        "title": "共同細線影像與真值",
+        "graphic": "b3-unet-line"
+      },
+      {
+        "title": "U-Net用對應跳接融合",
+        "graphic": "b3-unet-bridge"
+      },
+      {
+        "title": "SegFormer用四尺度融合",
+        "graphic": "b3-seg-align"
+      }
+    ],
+    "steps": [],
+    "detail": "同一產品、同一像素標註規則及留出影像，兩候選各用相容前處理。比較細線連通、邊界、換產品適配及完整延遲；圖只展示機制差異，不編造候選熱圖勝負。",
+    "source": "https://arxiv.org/abs/2105.15203",
+    "terms": [
+      "特徵：由影像學到的中間表示，並非標註真值。",
+      "本圖示意：解釋模型責任，不代表新模型實測。"
+    ],
+    "review": "pending"
+  },
+  {
+    "id": "yolo-seg-engineering-1",
+    "owner": "yolo-seg",
+    "index": 1,
+    "version": "r03",
+    "title": "YOLO-Seg：同類零件也要各有一張遮罩",
+    "takeaway": "每件有框、類別與遮罩，身份只屬當前影像。",
+    "kind": "C",
+    "mobile_height": 2304,
+    "panels": [
+      {
+        "title": "两件同類支架各自標註",
+        "graphic": "b3-yseg-data"
+      },
+      {
+        "title": "共享影像特徵產生兩路",
+        "graphic": "b3-yseg-branches"
+      },
+      {
+        "title": "每件係數組合出自己的遮罩",
+        "graphic": "b3-yseg-output"
+      }
+    ],
+    "steps": [],
+    "detail": "以YOLOv8式prototype和mask coefficients路徑說明。訓練需各實例的類別與輪廓，推論保留各物件框、分數和實例遮罩；圖中甲乙只是這張影像的實例，不是跨影格追蹤ID。",
+    "source": "https://docs.ultralytics.com/reference/nn/modules/head/#ultralytics.nn.modules.head.Segment",
+    "terms": [
+      "特徵：由影像學到的中間表示，並非標註真值。",
+      "本圖示意：解釋模型責任，不代表新模型實測。"
+    ],
+    "review": "pending"
+  },
+  {
+    "id": "yolo-seg-engineering-2",
+    "owner": "yolo-seg",
+    "index": 2,
+    "version": "r02",
+    "title": "YOLO-Seg：共用原型，每件用不同係數",
+    "takeaway": "原型乘各件係數，再依物件框取回遮罩。",
+    "kind": "C",
+    "mobile_height": 2304,
+    "panels": [
+      {
+        "title": "共享特徵產生原型圖",
+        "graphic": "b3-yseg-proto"
+      },
+      {
+        "title": "每個候選各有係數",
+        "graphic": "b3-yseg-coef"
+      },
+      {
+        "title": "組合、裁框、映回影像",
+        "graphic": "b3-yseg-combine"
+      }
+    ],
+    "steps": [],
+    "detail": "檢測頭預測框/類別和每個候選的mask coefficients；Proto支路產生共享basis maps。保留候選的係數線性組合原型，经相應後處理與裁框映回。兩原型是簡化代數例，實際通道數與後處理依所用版本；不能把每張原型直接叫某件物體。",
+    "source": "https://docs.ultralytics.com/reference/nn/modules/head/#ultralytics.nn.modules.head.Segment",
+    "terms": [
+      "特徵：由影像學到的中間表示，並非標註真值。",
+      "本圖示意：解釋模型責任，不代表新模型實測。"
+    ],
+    "review": "pending"
+  },
+  {
+    "id": "yolo-seg-engineering-3",
+    "owner": "yolo-seg",
+    "index": 3,
+    "version": "r03",
+    "title": "YOLO-Seg：遮罩要和同一個框一起交付",
+    "takeaway": "把框、類別與遮罩綁定，映回原圖再核對。",
+    "kind": "C",
+    "mobile_height": 2304,
+    "panels": [
+      {
+        "title": "候選框與係數保持配對",
+        "graphic": "b3-yseg-pair"
+      },
+      {
+        "title": "去重保留後產生對應遮罩",
+        "graphic": "b3-yseg-filter"
+      },
+      {
+        "title": "原圖檢查孔洞與相鄰件",
+        "graphic": "b3-yseg-review"
+      }
+    ],
+    "steps": [],
+    "detail": "遵循實作的候選過濾與去重，索引必須同步框、類別、係數，不能將甲框配乙mask。映回需還原letterbox，輪廓不能填掉空孔；定位與量測仍須另外驗證，遮罩不是亞像素尺寸真值。",
+    "source": "https://docs.ultralytics.com/reference/nn/modules/head/#ultralytics.nn.modules.head.Segment",
+    "terms": [
+      "特徵：由影像學到的中間表示，並非標註真值。",
+      "本圖示意：解釋模型責任，不代表新模型實測。"
+    ],
+    "review": "pending"
+  },
+  {
+    "id": "yolo-seg-engineering-4",
+    "owner": "yolo-seg",
+    "index": 4,
+    "version": "r03",
+    "title": "語意與實例分割：同類是否需要分成兩件",
+    "takeaway": "需要逐件交付時，比較實例標註與分離品質。",
+    "kind": "D",
+    "mobile_height": 2304,
+    "panels": [
+      {
+        "title": "同一影像有兩件支架",
+        "graphic": "b3-yseg-scene"
+      },
+      {
+        "title": "語意：兩件都屬支架類",
+        "graphic": "b3-yseg-semantic"
+      },
+      {
+        "title": "實例：甲乙各有遮罩",
+        "graphic": "b3-yseg-output"
+      }
+    ],
+    "steps": [],
+    "detail": "共同输入与物件外观不变。语意遮罩同色表示同類，不一定提供逐件身份；實例分割分出甲乙，可支援後續逐件統計。重疊與遮擋仍可能分錯，需要標註與域內驗證；不聲稱必然比語意分割更適合所有工作。",
+    "source": "https://docs.ultralytics.com/reference/nn/modules/head/#ultralytics.nn.modules.head.Segment",
+    "terms": [
+      "特徵：由影像學到的中間表示，並非標註真值。",
+      "本圖示意：解釋模型責任，不代表新模型實測。"
+    ],
+    "review": "pending"
+  },
+  {
+    "id": "keypoint-rcnn-engineering-1",
+    "owner": "keypoint-r-cnn",
+    "index": 1,
+    "version": "r01",
+    "title": "Keypoint R-CNN：先找物件，再找具名點",
+    "takeaway": "點的身份要先定義，座標不能混成無名熱區。",
+    "kind": "C",
+    "mobile_height": 2304,
+    "panels": [
+      {
+        "title": "支架A缺口、B/C孔心",
+        "graphic": "b3-kpt-data"
+      },
+      {
+        "title": "每件ROI保留相對位置",
+        "graphic": "b3-kpt-roi"
+      },
+      {
+        "title": "A/B/C各有自己的位置分布",
+        "graphic": "b3-kpt-heatmaps"
+      }
+    ],
+    "steps": [],
+    "detail": "把Mask R-CNN的關鍵點支路用於自訂工件，需重新定義並標註關鍵點身份；人體預訓練權重不直接懂支架孔心。每個ROI的每個關鍵點有位置分布，經解碼映回原圖，不是任意紅色熱區。",
+    "source": "https://arxiv.org/abs/1703.06870",
+    "terms": [
+      "特徵：由影像學到的中間表示，並非標註真值。",
+      "本圖示意：解釋模型責任，不代表新模型實測。"
+    ],
+    "review": "pending"
+  },
+  {
+    "id": "keypoint-rcnn-engineering-2",
+    "owner": "keypoint-r-cnn",
+    "index": 2,
+    "version": "r02",
+    "title": "Keypoint R-CNN：ROI座標要映回原圖",
+    "takeaway": "同一個點沿ROI與原圖映射，A/B/C不能互換。",
+    "kind": "C",
+    "mobile_height": 2304,
+    "panels": [
+      {
+        "title": "原圖框出同一件支架",
+        "graphic": "b3-kpt-roi"
+      },
+      {
+        "title": "ROI內各點分開解碼",
+        "graphic": "b3-kpt-decode"
+      },
+      {
+        "title": "依框位與尺度映回原圖",
+        "graphic": "b3-kpt-map"
+      }
+    ],
+    "steps": [],
+    "detail": "ROIAlign取得對齊特徵，關鍵點頭分別產生K個位置heatmaps。圖用連續ROI座標示意x=x0+u*w、y=y0+v*h；實作還要遵循格心、resize與padding約定。A點[0.275,0.3125]在框原點[100,50]、寬高[200,160]時映到[155,100]。",
+    "source": "https://arxiv.org/abs/1703.06870",
+    "terms": [
+      "特徵：由影像學到的中間表示，並非標註真值。",
+      "本圖示意：解釋模型責任，不代表新模型實測。"
+    ],
+    "review": "pending"
+  },
+  {
+    "id": "keypoint-rcnn-engineering-3",
+    "owner": "keypoint-r-cnn",
+    "index": 3,
+    "version": "r02",
+    "title": "Keypoint R-CNN：遮住的點也可能被猜出",
+    "takeaway": "估計位置與可見證據分開，可信度不足要覆核。",
+    "kind": "C",
+    "mobile_height": 2304,
+    "panels": [
+      {
+        "title": "遮擋覆住同件的C孔",
+        "graphic": "b3-kpt-occluded"
+      },
+      {
+        "title": "模型仍可能給C的估計",
+        "graphic": "b3-kpt-estimate"
+      },
+      {
+        "title": "原圖核對後才接幾何求解",
+        "graphic": "b3-kpt-review"
+      }
+    ],
+    "steps": [],
+    "detail": "不可把每個輸出座標當已見到真實點。可見性標註與模型回傳的score/visibility欄位需按實作解讀；保留原圖、具名座標與分數，遮擋點單獨評估。接PnP另需K、畸變、3D對應與足够非退化點。",
+    "source": "https://arxiv.org/abs/1703.06870",
+    "terms": [
+      "特徵：由影像學到的中間表示，並非標註真值。",
+      "本圖示意：解釋模型責任，不代表新模型實測。"
+    ],
+    "review": "pending"
+  },
+  {
+    "id": "keypoint-rcnn-engineering-4",
+    "owner": "keypoint-r-cnn",
+    "index": 4,
+    "version": "r01",
+    "title": "關鍵點與分割：要具名位置還是整片區域",
+    "takeaway": "按交付選標註：具名點、輪廓與姿態各有責任。",
+    "kind": "D",
+    "mobile_height": 2304,
+    "panels": [
+      {
+        "title": "同一支架工作需求",
+        "graphic": "b3-kpt-data"
+      },
+      {
+        "title": "關鍵點：A/B/C具名座標",
+        "graphic": "b3-kpt-scope"
+      },
+      {
+        "title": "分割：逐像素物件區域",
+        "graphic": "b3-kpt-mask"
+      }
+    ],
+    "steps": [],
+    "detail": "固定同一支架影像，若要孔中心身份對應可評關鍵點；若要整片邊界可評分割。兩者都不單獨保證物理姿態或毫米尺寸；按可見性、標註成本、幾何誤差與後續用途比較。",
+    "source": "https://arxiv.org/abs/1703.06870",
+    "terms": [
+      "特徵：由影像學到的中間表示，並非標註真值。",
+      "本圖示意：解釋模型責任，不代表新模型實測。"
+    ],
+    "review": "pending"
+  },
+  {
+    "id": "det-yolo-dense-engineering-2",
+    "owner": "det-yolo-dense",
+    "index": 2,
+    "version": "r02",
+    "title": "YOLOv8式：候選重複，按分數去重",
+    "takeaway": "NMS整理重複框，最後仍要回原圖查漏件。",
+    "kind": "C",
+    "mobile_height": 2304,
+    "panels": [
+      {
+        "title": "同一影像產生四個候選",
+        "graphic": "b4-yolo-candidates"
+      },
+      {
+        "title": "分數排序，再比重疊",
+        "graphic": "b4-yolo-nms"
+      },
+      {
+        "title": "保留A與B的兩個框",
+        "graphic": "b4-yolo-output"
+      }
+    ],
+    "steps": [],
+    "detail": "同一PCB有103與272兩顆電阻；A有三個重複候選，分數0.93/0.87/0.76，B為0.91。教學例採同類別NMS，A的候選IoU超過0.5，因此依分數保留A0.93與B0.91。門檻和分數為給定算例，不是模型推論。這裡限定YOLOv8式密集偵測，不推廣到所有YOLO版本。",
+    "source": "https://docs.ultralytics.com/models/yolov8/",
+    "terms": [
+      "表示：模型由輸入得到的中間資料，並非標註真值。",
+      "本圖數值：作者給定的教學示意，不是本輪模型實測。"
+    ],
+    "review": "pending"
+  },
+  {
+    "id": "det-rtdetr-engineering-2",
+    "owner": "det-rtdetr",
+    "index": 2,
+    "version": "r02",
+    "title": "RT-DETR：訓練分工，推論逐步修框",
+    "takeaway": "一對一匹配是訓練責任，推論仍需篩選與核對。",
+    "kind": "C",
+    "mobile_height": 2304,
+    "panels": [
+      {
+        "title": "訓練：query對應真值",
+        "graphic": "b4-rt-match"
+      },
+      {
+        "title": "推論：從起點框逐步調整",
+        "graphic": "b4-rt-refine"
+      },
+      {
+        "title": "輸出框與分數，沒有NMS",
+        "graphic": "b4-rt-output"
+      }
+    ],
+    "steps": [],
+    "detail": "训练时一對一匹配讓不同query學不同物件，沒有匹配的query學背景。推論不讀真值：混合編碼與query選擇提供起點，decoder反覆取影像線索更新框。示意q1對A、q2對B、q3未過分數篩選。省去NMS不代表無門檻、零重複或固定更快。",
+    "source": "https://arxiv.org/abs/2304.08069",
+    "terms": [
+      "表示：模型由輸入得到的中間資料，並非標註真值。",
+      "本圖數值：作者給定的教學示意，不是本輪模型實測。"
+    ],
+    "review": "pending"
+  },
+  {
+    "id": "det-grounding-dino-interface-engineering-2",
+    "owner": "det-grounding-dino-interface",
+    "index": 2,
+    "version": "r02",
+    "title": "Grounding DINO：詞與區域共同定位",
+    "takeaway": "文字参与候選和解碼，交付詞語與框。",
+    "kind": "C",
+    "mobile_height": 2304,
+    "panels": [
+      {
+        "title": "影像與文字各自編碼",
+        "graphic": "b4-ground-input"
+      },
+      {
+        "title": "詞token與區域交換訊息",
+        "graphic": "b4-ground-align"
+      },
+      {
+        "title": "詞引導query，解碼成框",
+        "graphic": "b4-ground-output"
+      }
+    ],
+    "steps": [],
+    "detail": "以同PCB的resistor文字查詢；影像特徵與文字token在feature enhancer互動，language-guided query selection挑相關起點，cross-modality decoder再利用兩種表示修框。圖中詞區域數字是相容性教學例，不是置信度實測。輸出詞語相關分數及框，並非像素遮罩。",
+    "source": "https://arxiv.org/abs/2303.05499",
+    "terms": [
+      "表示：模型由輸入得到的中間資料，並非標註真值。",
+      "本圖數值：作者給定的教學示意，不是本輪模型實測。"
+    ],
+    "review": "pending"
+  },
+  {
+    "id": "yoloe-engineering-2",
+    "owner": "yoloe",
+    "index": 2,
+    "version": "r02",
+    "title": "YOLOE：圈選範例，聚合成提示表示",
+    "takeaway": "提示區域變成表示，再與待測區域比較。",
+    "kind": "C",
+    "mobile_height": 2304,
+    "panels": [
+      {
+        "title": "參考圖圈出電阻A",
+        "graphic": "b4-ye-roi"
+      },
+      {
+        "title": "SAVPE按啟動權重聚合",
+        "graphic": "b4-ye-pool"
+      },
+      {
+        "title": "待測圖交出框與遮罩",
+        "graphic": "b4-ye-output"
+      }
+    ],
+    "steps": [],
+    "detail": "本圖限定視覺提示模式SAVPE。語意特徵與ROI啟動分支產生加權聚合，例用兩位置[2,0]/[0,2]及0.75/0.25得到[1.5,0.5]解釋聚合，非真實模型維度或權重。提示表示與待測區域表示比對，A/B可同類相似，不等於相同料號。文字RepRTA和免提示LRPC是其他模式，不畫成必須順序執行。",
+    "source": "https://arxiv.org/abs/2503.07465",
+    "terms": [
+      "表示：模型由輸入得到的中間資料，並非標註真值。",
+      "本圖數值：作者給定的教學示意，不是本輪模型實測。"
+    ],
+    "review": "pending"
+  },
+  {
+    "id": "dinov2-engineering-2",
+    "owner": "dinov2",
+    "index": 2,
+    "version": "r03",
+    "title": "DINOv2：先學表示，部署再抽特徵",
+    "takeaway": "訓練的Teacher目標與部署的骨幹要分開。",
+    "kind": "C",
+    "mobile_height": 2304,
+    "panels": [
+      {
+        "title": "同一支架產生不同視圖",
+        "graphic": "b4-dino-views"
+      },
+      {
+        "title": "Teacher提供目標給Student",
+        "graphic": "b4-dino-learn"
+      },
+      {
+        "title": "部署只抽取整圖與局部特徵",
+        "graphic": "b4-dino-deploy"
+      }
+    ],
+    "steps": [],
+    "detail": "DINOv2組合整圖自蒸餾及局部遮蔽目標等訓練設計；Teacher用Student權重的EMA更新，目標停止梯度，Student學對齊表示而非重建原像素。部署使用選定的預訓練骨幹抽整圖和patch表示，下游分類、查庫或分割另接。圖中支架與數值皆教學示意，未重跑模型。 Teacher目標[.2,.8]與Student預測[.6,.4]只作對齊示意，並非真實表示维度。",
+    "source": "https://arxiv.org/abs/2304.07193",
+    "terms": [
+      "表示：模型由輸入得到的中間資料，並非標註真值。",
+      "本圖數值：作者給定的教學示意，不是本輪模型實測。"
+    ],
+    "review": "pending"
+  },
+  {
+    "id": "llava-engineering-2",
+    "owner": "llava",
+    "index": 2,
+    "version": "r02",
+    "title": "原版LLaVA：把影像表示接進語言模型",
+    "takeaway": "投影橋接影像與文字，回答仍要有可見證據。",
+    "kind": "C",
+    "mobile_height": 2304,
+    "panels": [
+      {
+        "title": "同一接頭影像經視覺編碼",
+        "graphic": "b4-llava-encode"
+      },
+      {
+        "title": "投影後與問題文字一起送入",
+        "graphic": "b4-llava-project"
+      },
+      {
+        "title": "語言模型逐token產生回答",
+        "graphic": "b4-llava-answer"
+      }
+    ],
+    "steps": [],
+    "detail": "以原版LLaVA為界：預訓練視覺編碼器輸出表示，學習線性投影接入語言模型的embedding空間，再與問題文字共同產生回答。圖內小向量僅說明不同維度的橋接，不是該模型實際維度。右側空螺絲座支持未見螺絲，不能推出漏裝或振動鬆脫等原因。",
+    "source": "https://arxiv.org/abs/2304.08485",
+    "terms": [
+      "表示：模型由輸入得到的中間資料，並非標註真值。",
+      "本圖數值：作者給定的教學示意，不是本輪模型實測。"
+    ],
+    "review": "pending"
+  },
+  {
+    "id": "qwen-vl-engineering-2",
+    "owner": "qwen-vl",
+    "index": 2,
+    "version": "r02",
+    "title": "Qwen2-VL：可變token也保留位置",
+    "takeaway": "動態解析度與位置編碼，仍受原像素限制。",
+    "kind": "C",
+    "mobile_height": 2304,
+    "panels": [
+      {
+        "title": "解析度不同，形成可變token數",
+        "graphic": "b4-qwen-dynamic"
+      },
+      {
+        "title": "M-RoPE保留時空位置",
+        "graphic": "b4-qwen-position"
+      },
+      {
+        "title": "與問題一起讀出可見文字",
+        "graphic": "b4-qwen-answer"
+      }
+    ],
+    "steps": [],
+    "detail": "限定Qwen2-VL：Naive Dynamic Resolution讓不同輸入形成可變視覺token數；M-RoPE將時間、高度、寬度位置納入旋轉位置表示，文字使用相應的一維位置處理。小格數為示意；像素預算/處理器限制仍會丟失小字。圖示同標籤批號B08，沒有從模糊B0?補造答案。",
+    "source": "https://arxiv.org/abs/2409.12191",
+    "terms": [
+      "表示：模型由輸入得到的中間資料，並非標註真值。",
+      "本圖數值：作者給定的教學示意，不是本輪模型實測。"
+    ],
+    "review": "pending"
+  },
+  {
+    "id": "gemini-vision-engineering-2",
+    "owner": "gemini-vision",
+    "index": 2,
+    "version": "r02",
+    "title": "Gemini影像介面：請求、回覆、查證",
+    "takeaway": "JSON能解析，只代表格式；內容仍要對原圖。",
+    "kind": "C",
+    "mobile_height": 2304,
+    "panels": [
+      {
+        "title": "固定影像、問題與欄位要求",
+        "graphic": "b4-gemini-request"
+      },
+      {
+        "title": "服務回傳可解析的JSON",
+        "graphic": "b4-gemini-json"
+      },
+      {
+        "title": "逐欄回原圖查可見證據",
+        "graphic": "b4-gemini-check"
+      }
+    ],
+    "steps": [],
+    "detail": "依公開Gemini API說明輸入/輸出，不臆測私有編碼器。以同一左右圓接頭，左有螺絲右空座，示意JSON先錯填兩側present；解析成功後逐欄對照原圖，右側應記not_visible且原因unknown。所有回覆為作者設計反例，未呼叫API；實際部署另固定可用模型、schema與輸入設定。",
+    "source": "https://ai.google.dev/gemini-api/docs/structured-output",
+    "terms": [
+      "表示：模型由輸入得到的中間資料，並非標註真值。",
+      "本圖數值：作者給定的教學示意，不是本輪模型實測。"
+    ],
+    "review": "pending"
+  },
+  {
+    "id": "det-yolo-dense-engineering-1",
+    "owner": "det-yolo-dense",
+    "index": 1,
+    "version": "r01",
+    "title": "YOLOv8式：從有標註的物件學出框",
+    "takeaway": "框與類別來自訓練，不能用熱點代替框。",
+    "kind": "C",
+    "mobile_height": 2304,
+    "panels": [
+      {
+        "title": "同PCB逐件標類別與框",
+        "graphic": "b4-det-labels"
+      },
+      {
+        "title": "多尺度特徵產生密集候選",
+        "graphic": "b4-yolo-dense"
+      },
+      {
+        "title": "去重後交出兩件的位置",
+        "graphic": "b4-yolo-output"
+      }
+    ],
+    "steps": [],
+    "detail": "同PCB電阻A103/B272皆標resistor框；YOLOv8式骨幹與neck融合多尺度特徵，head預測類別與框，候選經門檻及NMS整理。輸出是影像框與類別，不是輪廓或物理尺寸；格位只示意候選位置。",
+    "source": "https://docs.ultralytics.com/models/yolov8/",
+    "terms": [
+      "表示：模型由輸入得到的中間資料，並非標註真值。",
+      "本圖數值：作者給定的教學示意，不是本輪模型實測。"
+    ],
+    "review": "pending"
+  },
+  {
+    "id": "det-yolo-dense-engineering-3",
+    "owner": "det-yolo-dense",
+    "index": 3,
+    "version": "r02",
+    "title": "YOLO：去重設定也屬於交付條件",
+    "takeaway": "模型、前處理與門檻一起固定，再驗漏件。",
+    "kind": "C",
+    "mobile_height": 2304,
+    "panels": [
+      {
+        "title": "縮放補邊後仍須映回",
+        "graphic": "b4-det-map"
+      },
+      {
+        "title": "同類候選按門檻去重",
+        "graphic": "b4-yolo-nms"
+      },
+      {
+        "title": "另驗定位偏移與漏框",
+        "graphic": "b4-det-audit"
+      }
+    ],
+    "steps": [],
+    "detail": "保留resize/letterbox映射、類別順序、權重、分數與IoU門檻。還原原圖座標後逐件驗漏框、重複與定位誤差，時間包括前後處理。圖中框分數為教學例，不是當前推論。",
+    "source": "https://docs.ultralytics.com/models/yolov8/",
+    "terms": [
+      "表示：模型由輸入得到的中間資料，並非標註真值。",
+      "本圖數值：作者給定的教學示意，不是本輪模型實測。"
+    ],
+    "review": "pending"
+  },
+  {
+    "id": "det-yolo-dense-engineering-4",
+    "owner": "det-yolo-dense",
+    "index": 4,
+    "version": "r01",
+    "title": "YOLO與RT-DETR：同一PCB比較交付",
+    "takeaway": "比較逐件錯誤與完整延遲，不只看有無NMS。",
+    "kind": "D",
+    "mobile_height": 2304,
+    "panels": [
+      {
+        "title": "同影像、類別與留出件",
+        "graphic": "b4-det-labels"
+      },
+      {
+        "title": "YOLO：密集候選與NMS",
+        "graphic": "b4-yolo-candidates"
+      },
+      {
+        "title": "RT-DETR：query直接交框",
+        "graphic": "b4-rt-output"
+      }
+    ],
+    "steps": [],
+    "detail": "共同任務與硬體下，各用相容前處理與已驗證門檻，比較漏框、重複框、定位、記憶體及端到端時間。RT-DETR省NMS不保證本機更快；YOLOv8式作合理可部署基準。",
+    "source": "https://docs.ultralytics.com/models/yolov8/",
+    "terms": [
+      "表示：模型由輸入得到的中間資料，並非標註真值。",
+      "本圖數值：作者給定的教學示意，不是本輪模型實測。"
+    ],
+    "review": "pending"
+  },
+  {
+    "id": "det-rtdetr-engineering-1",
+    "owner": "det-rtdetr",
+    "index": 1,
+    "version": "r01",
+    "title": "RT-DETR：query逐步定位各個物件",
+    "takeaway": "輸出是物件框；一對一匹配只在訓練使用。",
+    "kind": "C",
+    "mobile_height": 2304,
+    "panels": [
+      {
+        "title": "同PCB有兩個標註框",
+        "graphic": "b4-det-labels"
+      },
+      {
+        "title": "混合編碼後選query起點",
+        "graphic": "b4-rt-encode"
+      },
+      {
+        "title": "decoder更新後輸出框",
+        "graphic": "b4-rt-output"
+      }
+    ],
+    "steps": [],
+    "detail": "多尺度骨幹特徵經高效混合編碼器，query選擇提供decoder的初始查詢；decoder利用影像特徵更新框與分數。一對一匹配用來訓練責任，不在推論讀標註真值。",
+    "source": "https://arxiv.org/abs/2304.08069",
+    "terms": [
+      "表示：模型由輸入得到的中間資料，並非標註真值。",
+      "本圖數值：作者給定的教學示意，不是本輪模型實測。"
+    ],
+    "review": "pending"
+  },
+  {
+    "id": "det-rtdetr-engineering-3",
+    "owner": "det-rtdetr",
+    "index": 3,
+    "version": "r02",
+    "title": "RT-DETR：修框次數也要連品質驗",
+    "takeaway": "減少decoder層可改成本，不能預設品質不變。",
+    "kind": "C",
+    "mobile_height": 2304,
+    "panels": [
+      {
+        "title": "固定影像與起點query",
+        "graphic": "b4-rt-encode"
+      },
+      {
+        "title": "較少或較多次更新",
+        "graphic": "b4-rt-depth"
+      },
+      {
+        "title": "另驗定位偏移與漏框",
+        "graphic": "b4-det-audit"
+      }
+    ],
+    "steps": [],
+    "detail": "若使用的實作支援選擇decoder輸出層，可評較少更新的速度/精度取捨；需固定checkpoint、輸入與門檻，並在部署硬體實測。模型輸出映回原圖，不拿query分數當物理定位誤差。",
+    "source": "https://arxiv.org/abs/2304.08069",
+    "terms": [
+      "表示：模型由輸入得到的中間資料，並非標註真值。",
+      "本圖數值：作者給定的教學示意，不是本輪模型實測。"
+    ],
+    "review": "pending"
+  },
+  {
+    "id": "det-rtdetr-engineering-4",
+    "owner": "det-rtdetr",
+    "index": 4,
+    "version": "r01",
+    "title": "RT-DETR與YOLO：比較工作代價",
+    "takeaway": "去掉NMS是一項設計，域內結果才決定取捨。",
+    "kind": "D",
+    "mobile_height": 2304,
+    "panels": [
+      {
+        "title": "共同PCB與逐件驗收",
+        "graphic": "b4-det-labels"
+      },
+      {
+        "title": "RT-DETR以query修框",
+        "graphic": "b4-rt-refine"
+      },
+      {
+        "title": "YOLO以分數整理候選",
+        "graphic": "b4-yolo-nms"
+      }
+    ],
+    "steps": [],
+    "detail": "固定影像、類別、硬體與成本範圍，分別調整候選門檻並比較逐件錯誤。不能把training matching放進推論，也不能以NMS是否存在代替完整延遲測試。",
+    "source": "https://arxiv.org/abs/2304.08069",
+    "terms": [
+      "表示：模型由輸入得到的中間資料，並非標註真值。",
+      "本圖數值：作者給定的教學示意，不是本輪模型實測。"
+    ],
+    "review": "pending"
+  },
+  {
+    "id": "det-grounding-dino-interface-engineering-1",
+    "owner": "det-grounding-dino-interface",
+    "index": 1,
+    "version": "r02",
+    "title": "Grounding DINO：用詞語指定想找什麼",
+    "takeaway": "文字可以引導定位，專業料號仍需另驗。",
+    "kind": "C",
+    "mobile_height": 2304,
+    "panels": [
+      {
+        "title": "影像與文字定義想找的類別",
+        "graphic": "b4-ground-task"
+      },
+      {
+        "title": "一個詞語對應兩件物件",
+        "graphic": "b4-ground-link"
+      },
+      {
+        "title": "交付詞語相關的框",
+        "graphic": "b4-ground-output"
+      }
+    ],
+    "steps": [],
+    "detail": "開放詞彙偵測接受影像與文字，透過兩模態互動和語言引導query定位相關區域；輸出框與詞語相關分數。輸入resistor可說明想找的類別，不能保證辨識103/272的電性或料號。",
+    "source": "https://arxiv.org/abs/2303.05499",
+    "terms": [
+      "表示：模型由輸入得到的中間資料，並非標註真值。",
+      "本圖數值：作者給定的教學示意，不是本輪模型實測。"
+    ],
+    "review": "pending"
+  },
+  {
+    "id": "det-grounding-dino-interface-engineering-3",
+    "owner": "det-grounding-dino-interface",
+    "index": 3,
+    "version": "r02",
+    "title": "Grounding DINO：提示詞也是設定",
+    "takeaway": "保存提示與門檻，框映回原圖後逐件核對。",
+    "kind": "C",
+    "mobile_height": 2304,
+    "panels": [
+      {
+        "title": "固定查詢與模型設定",
+        "graphic": "b4-ground-prompt"
+      },
+      {
+        "title": "詞與框門檻影響保留",
+        "graphic": "b4-ground-threshold"
+      },
+      {
+        "title": "另驗定位偏移與漏框",
+        "graphic": "b4-det-audit"
+      }
+    ],
+    "steps": [],
+    "detail": "保存模型版本、提示詞、詞語門檻/框門檻和影像映射。文字變更可能改變候選，因此不能只保存圖片與框而漏提示；領域名稱與相似零件須獨立驗證。",
+    "source": "https://arxiv.org/abs/2303.05499",
+    "terms": [
+      "表示：模型由輸入得到的中間資料，並非標註真值。",
+      "本圖數值：作者給定的教學示意，不是本輪模型實測。"
+    ],
+    "review": "pending"
+  },
+  {
+    "id": "det-grounding-dino-interface-engineering-4",
+    "owner": "det-grounding-dino-interface",
+    "index": 4,
+    "version": "r01",
+    "title": "文字偵測與專用偵測：同題試驗",
+    "takeaway": "類別常變可試文字提示，穩定任務可訓練專用頭。",
+    "kind": "D",
+    "mobile_height": 2304,
+    "panels": [
+      {
+        "title": "同一PCB與驗收類別",
+        "graphic": "b4-det-labels"
+      },
+      {
+        "title": "文字查詢resistor",
+        "graphic": "b4-ground-input"
+      },
+      {
+        "title": "固定類別監督訓練",
+        "graphic": "b4-yolo-dense"
+      }
+    ],
+    "steps": [],
+    "detail": "開放文字查詢適合探索類別，但工業域詞語與小零件仍需驗。固定類別可比較標註訓練的專用YOLO/RT-DETR；以資料成本、漏框與部署成本選，而不把兩種模型串成必經流程。",
+    "source": "https://arxiv.org/abs/2303.05499",
+    "terms": [
+      "表示：模型由輸入得到的中間資料，並非標註真值。",
+      "本圖數值：作者給定的教學示意，不是本輪模型實測。"
+    ],
+    "review": "pending"
+  },
+  {
+    "id": "yoloe-engineering-1",
+    "owner": "yoloe",
+    "index": 1,
+    "version": "r01",
+    "title": "YOLOE：選一種提示模式來找物件",
+    "takeaway": "提示是任務入口，交付仍是框與遮罩。",
+    "kind": "C",
+    "mobile_height": 2304,
+    "panels": [
+      {
+        "title": "文字或視覺ROI指定目標",
+        "graphic": "b4-ye-modes"
+      },
+      {
+        "title": "視覺提示聚合成表示",
+        "graphic": "b4-ye-pool"
+      },
+      {
+        "title": "與待測區域對應並輸出",
+        "graphic": "b4-ye-output"
+      }
+    ],
+    "steps": [],
+    "detail": "YOLOE支援文字、視覺與免提示等模式；此圖後兩步展示視覺SAVPE。不同提示機制是替代入口，不是每次先RepRTA再SAVPE再LRPC的固定順序。提示對應區域，不保證識別精確料號。",
+    "source": "https://arxiv.org/abs/2503.07465",
+    "terms": [
+      "表示：模型由輸入得到的中間資料，並非標註真值。",
+      "本圖數值：作者給定的教學示意，不是本輪模型實測。"
+    ],
+    "review": "pending"
+  },
+  {
+    "id": "yoloe-engineering-3",
+    "owner": "yoloe",
+    "index": 3,
+    "version": "r01",
+    "title": "YOLOE：把提示與結果一起留存",
+    "takeaway": "提示ROI、模式與權重都要可追溯。",
+    "kind": "C",
+    "mobile_height": 2304,
+    "panels": [
+      {
+        "title": "參考圖與ROI固定版本",
+        "graphic": "b4-ye-roi"
+      },
+      {
+        "title": "框與遮罩保持物件配對",
+        "graphic": "b4-ye-output"
+      },
+      {
+        "title": "同件逐件核對與回存",
+        "graphic": "b4-ye-audit"
+      }
+    ],
+    "steps": [],
+    "detail": "視覺模式保存參考影像、ROI及提示處理設定，文字模式保存文字，免提示模式另記詞庫設定。所有模式都保存權重、前處理、門檻與輸出座標映射；查相似件誤報、漏件及遮罩邊界。",
+    "source": "https://arxiv.org/abs/2503.07465",
+    "terms": [
+      "表示：模型由輸入得到的中間資料，並非標註真值。",
+      "本圖數值：作者給定的教學示意，不是本輪模型實測。"
+    ],
+    "review": "pending"
+  },
+  {
+    "id": "yoloe-engineering-4",
+    "owner": "yoloe",
+    "index": 4,
+    "version": "r01",
+    "title": "YOLOE：提示方便，料號仍要查證",
+    "takeaway": "外觀相似可以被找出，精確規格需要其他證據。",
+    "kind": "D",
+    "mobile_height": 2304,
+    "panels": [
+      {
+        "title": "兩顆電阻外觀相似",
+        "graphic": "b4-det-labels"
+      },
+      {
+        "title": "範例A可找出A與B",
+        "graphic": "b4-ye-output"
+      },
+      {
+        "title": "讀料號並核對工作規格",
+        "graphic": "b4-det-partnumber"
+      }
+    ],
+    "steps": [],
+    "detail": "以A103和B272為同類不同印字的反例：視覺提示可能同時匹配兩顆電阻，不代表它們可互換。精確料號可加OCR、標籤或專用分類且各自驗證；提示易用性不能替代工作驗收。",
+    "source": "https://arxiv.org/abs/2503.07465",
+    "terms": [
+      "表示：模型由輸入得到的中間資料，並非標註真值。",
+      "本圖數值：作者給定的教學示意，不是本輪模型實測。"
+    ],
+    "review": "pending"
+  },
+  {
+    "id": "dinov2-engineering-1",
+    "owner": "dinov2",
+    "index": 1,
+    "version": "r01",
+    "title": "DINOv2：先抽表示，再定義下游任務",
+    "takeaway": "骨幹交特徵，分類與異常判定還要另接。",
+    "kind": "C",
+    "mobile_height": 2304,
+    "panels": [
+      {
+        "title": "同一L支架作輸入",
+        "graphic": "b4-dino-input"
+      },
+      {
+        "title": "骨幹抽整圖與局部表示",
+        "graphic": "b4-dino-deploy"
+      },
+      {
+        "title": "下游可分類或查庫",
+        "graphic": "b4-dino-downstream"
+      }
+    ],
+    "steps": [],
+    "detail": "DINOv2預訓練表示可支援整圖與密集下游；本身不是工廠缺陷分類規格。部署選定骨幹和前處理，抽特徵後才用標註頭或參考庫決定任務；圖中向量為示意。",
+    "source": "https://arxiv.org/abs/2304.07193",
+    "terms": [
+      "表示：模型由輸入得到的中間資料，並非標註真值。",
+      "本圖數值：作者給定的教學示意，不是本輪模型實測。"
+    ],
+    "review": "pending"
+  },
+  {
+    "id": "dinov2-engineering-3",
+    "owner": "dinov2",
+    "index": 3,
+    "version": "r01",
+    "title": "DINOv2：查庫必須使用相容特徵",
+    "takeaway": "換骨幹或前處理，舊庫不能直接混用。",
+    "kind": "C",
+    "mobile_height": 2304,
+    "panels": [
+      {
+        "title": "正常支架建立參考庫",
+        "graphic": "b4-dino-bank"
+      },
+      {
+        "title": "待測表示查同一特徵空間",
+        "graphic": "b4-dino-distance"
+      },
+      {
+        "title": "把排名與原圖一起核對",
+        "graphic": "b4-dino-review"
+      }
+    ],
+    "steps": [],
+    "detail": "固定checkpoint、輸入縮放、正規化、所抽層與特徵彙整方式，參考庫與query必須相容。示意距離排名不等於缺陷概率；換設定需重建庫或驗證相容轉換，並用留出正常/異常評估。",
+    "source": "https://arxiv.org/abs/2304.07193",
+    "terms": [
+      "表示：模型由輸入得到的中間資料，並非標註真值。",
+      "本圖數值：作者給定的教學示意，不是本輪模型實測。"
+    ],
+    "review": "pending"
+  },
+  {
+    "id": "dinov2-engineering-4",
+    "owner": "dinov2",
+    "index": 4,
+    "version": "r01",
+    "title": "DINOv2：外观差異不等於不良",
+    "takeaway": "同件特徵受條件影響，判定要回到工作規格。",
+    "kind": "D",
+    "mobile_height": 2304,
+    "panels": [
+      {
+        "title": "同一支架只改背景",
+        "graphic": "b4-dino-background"
+      },
+      {
+        "title": "相似度分數仍可能改變",
+        "graphic": "b4-dino-shift"
+      },
+      {
+        "title": "比較查庫與有標註任務頭",
+        "graphic": "b4-dino-downstream"
+      }
+    ],
+    "steps": [],
+    "detail": "控制同支架幾何與孔位，只改背景檢查表示是否穩定。特徵可能對背景、照明或小細節敏感，也可能忽略特定缺陷；需要下游資料決定允收。此反例與主要首讀統一為同L支架，不換成墊圈。",
+    "source": "https://arxiv.org/abs/2304.07193",
+    "terms": [
+      "表示：模型由輸入得到的中間資料，並非標註真值。",
+      "本圖數值：作者給定的教學示意，不是本輪模型實測。"
+    ],
+    "review": "pending"
+  },
+  {
+    "id": "llava-engineering-1",
+    "owner": "llava",
+    "index": 1,
+    "version": "r02",
+    "title": "LLaVA：影像與問題共同形成回答",
+    "takeaway": "可見描述與原因推測要分開交付。",
+    "kind": "C",
+    "mobile_height": 2304,
+    "panels": [
+      {
+        "title": "同接頭加上檢查問題",
+        "graphic": "b4-vlm-task"
+      },
+      {
+        "title": "先核對左右可見內容",
+        "graphic": "b4-vlm-observation"
+      },
+      {
+        "title": "交付描述與未知原因",
+        "graphic": "b4-vlm-result"
+      }
+    ],
+    "steps": [],
+    "detail": "以原版LLaVA的投影橋接為界，不把所有家族版本當相同架構。固定接頭左有螺絲右空座，回答可描述右未見螺絲，但照片不能證明原因；所有回答為教學設計。",
+    "source": "https://arxiv.org/abs/2304.08485",
+    "terms": [
+      "表示：模型由輸入得到的中間資料，並非標註真值。",
+      "本圖數值：作者給定的教學示意，不是本輪模型實測。"
+    ],
+    "review": "pending"
+  },
+  {
+    "id": "llava-engineering-3",
+    "owner": "llava",
+    "index": 3,
+    "version": "r02",
+    "title": "LLaVA：原圖、問題與版本一起保存",
+    "takeaway": "回答要可追溯，錯誤與不確定都要留存。",
+    "kind": "C",
+    "mobile_height": 2304,
+    "panels": [
+      {
+        "title": "固定影像前處理與問題",
+        "graphic": "b4-vlm-contract"
+      },
+      {
+        "title": "要求左右分開描述",
+        "graphic": "b4-llava-answer"
+      },
+      {
+        "title": "核對證據後交人工覆核",
+        "graphic": "b4-vlm-audit"
+      }
+    ],
+    "steps": [],
+    "detail": "保存checkpoint、processor、完整問題及生成設定，記錄原圖與回答。對同一接頭逐側查證，不能因句子流暢就放行；需要定位輪廓或自動放行時另建驗證，不把語言回答當校正後尺寸。",
+    "source": "https://arxiv.org/abs/2304.08485",
+    "terms": [
+      "表示：模型由輸入得到的中間資料，並非標註真值。",
+      "本圖數值：作者給定的教學示意，不是本輪模型實測。"
+    ],
+    "review": "pending"
+  },
+  {
+    "id": "llava-engineering-4",
+    "owner": "llava",
+    "index": 4,
+    "version": "r01",
+    "title": "LLaVA與專用視覺：先定義交付",
+    "takeaway": "可追問的回答與固定座位判定，各驗各的成本。",
+    "kind": "D",
+    "mobile_height": 2304,
+    "panels": [
+      {
+        "title": "共同接頭與左右座位",
+        "graphic": "b4-vlm-scene"
+      },
+      {
+        "title": "VLM回答可見描述",
+        "graphic": "b4-llava-answer"
+      },
+      {
+        "title": "固定ROI可用專用分類",
+        "graphic": "b4-vlm-roi"
+      }
+    ],
+    "steps": [],
+    "detail": "同接頭若只問固定座位有無螺絲，可比較ROI分類或規則；若工作需要開放問題與說明，可評VLM。两者仍須影像證據、未知處理及漏判成本，不能只按模型大小決定。",
+    "source": "https://arxiv.org/abs/2304.08485",
+    "terms": [
+      "表示：模型由輸入得到的中間資料，並非標註真值。",
+      "本圖數值：作者給定的教學示意，不是本輪模型實測。"
+    ],
+    "review": "pending"
+  },
+  {
+    "id": "qwen-vl-engineering-1",
+    "owner": "qwen-vl",
+    "index": 1,
+    "version": "r01",
+    "title": "Qwen2-VL：讀文字也要保留位置",
+    "takeaway": "視覺token保留線索，回答仍須逐欄核對。",
+    "kind": "C",
+    "mobile_height": 2304,
+    "panels": [
+      {
+        "title": "同一銘牌的可見批號",
+        "graphic": "b4-qwen-input"
+      },
+      {
+        "title": "動態token加上位置表示",
+        "graphic": "b4-qwen-position"
+      },
+      {
+        "title": "與問題共同讀出B08",
+        "graphic": "b4-qwen-answer"
+      }
+    ],
+    "steps": [],
+    "detail": "限定Qwen2-VL，以批號B08說明視覺與文字輸入共同讀取內容；M-RoPE保留時空位置，模型輸出形式依所用版本與提示。局部圖是原銘牌工作例的簡化，不代表實測OCR結果。",
+    "source": "https://arxiv.org/abs/2409.12191",
+    "terms": [
+      "表示：模型由輸入得到的中間資料，並非標註真值。",
+      "本圖數值：作者給定的教學示意，不是本輪模型實測。"
+    ],
+    "review": "pending"
+  },
+  {
+    "id": "qwen-vl-engineering-3",
+    "owner": "qwen-vl",
+    "index": 3,
+    "version": "r01",
+    "title": "Qwen2-VL：像素預算要與小字一起驗",
+    "takeaway": "節省token前，先確認關鍵字仍能看清。",
+    "kind": "C",
+    "mobile_height": 2304,
+    "panels": [
+      {
+        "title": "固定銘牌與processor設定",
+        "graphic": "b4-qwen-budget"
+      },
+      {
+        "title": "保留可讀字與不確定欄位",
+        "graphic": "b4-qwen-uncertain"
+      },
+      {
+        "title": "逐欄驗文字與完整耗時",
+        "graphic": "b4-qwen-check"
+      }
+    ],
+    "steps": [],
+    "detail": "固定processor、像素上下限、長寬比、模型及生成設定。壓低像素預算可能失去小字；保存原圖並逐欄核對，輸入不清時可重拍或保留未知，不靠語言先驗補造批號。",
+    "source": "https://arxiv.org/abs/2409.12191",
+    "terms": [
+      "表示：模型由輸入得到的中間資料，並非標註真值。",
+      "本圖數值：作者給定的教學示意，不是本輪模型實測。"
+    ],
+    "review": "pending"
+  },
+  {
+    "id": "qwen-vl-engineering-4",
+    "owner": "qwen-vl",
+    "index": 4,
+    "version": "r01",
+    "title": "Qwen2-VL與OCR：按文字工作選型",
+    "takeaway": "固定欄位可試OCR，問答需求再比較VLM。",
+    "kind": "D",
+    "mobile_height": 2304,
+    "panels": [
+      {
+        "title": "共同銘牌與批號真值",
+        "graphic": "b4-qwen-input"
+      },
+      {
+        "title": "OCR讀固定欄位",
+        "graphic": "b4-qwen-ocr"
+      },
+      {
+        "title": "VLM用問題讀同一欄",
+        "graphic": "b4-qwen-answer"
+      }
+    ],
+    "steps": [],
+    "detail": "共同原圖和欄位真值下比較OCR與VLM的字元錯誤、不確定處理、版面變化與延遲。VLM的描述能力不保證精確字串更可靠；兩者都須依原圖驗證，不編造工具勝負。",
+    "source": "https://arxiv.org/abs/2409.12191",
+    "terms": [
+      "表示：模型由輸入得到的中間資料，並非標註真值。",
+      "本圖數值：作者給定的教學示意，不是本輪模型實測。"
+    ],
+    "review": "pending"
+  },
+  {
+    "id": "gemini-vision-engineering-1",
+    "owner": "gemini-vision",
+    "index": 1,
+    "version": "r02",
+    "title": "Gemini Vision：交付可以核對的欄位",
+    "takeaway": "要求欄位能幫助核對，但不保證內容正確。",
+    "kind": "C",
+    "mobile_height": 2304,
+    "panels": [
+      {
+        "title": "同接頭加上檢查問題",
+        "graphic": "b4-vlm-task"
+      },
+      {
+        "title": "先定義左右與原因欄位",
+        "graphic": "b4-gemini-fields"
+      },
+      {
+        "title": "回原圖核對可見內容",
+        "graphic": "b4-vlm-observation"
+      }
+    ],
+    "steps": [],
+    "detail": "依公開影像API的輸入與輸出介面設計工作欄位，未呼叫服務或猜測私有骨幹。先固定接頭與問題，定義left/right可見狀態及cause未知欄位，再回原圖核對；欄位設計不是API回覆，格式不能保證內容。工程2才深入請求與錯誤JSON處理。",
+    "source": "https://ai.google.dev/gemini-api/docs/structured-output",
+    "terms": [
+      "表示：模型由輸入得到的中間資料，並非標註真值。",
+      "本圖數值：作者給定的教學示意，不是本輪模型實測。"
+    ],
+    "review": "pending"
+  },
+  {
+    "id": "gemini-vision-engineering-3",
+    "owner": "gemini-vision",
+    "index": 3,
+    "version": "r02",
+    "title": "Gemini Vision：格式與內容分開驗",
+    "takeaway": "版本、請求與回覆都保存，異常欄位交覆核。",
+    "kind": "C",
+    "mobile_height": 2304,
+    "panels": [
+      {
+        "title": "保留請求版本與固定原圖",
+        "graphic": "b4-gemini-contract"
+      },
+      {
+        "title": "先驗格式，再查可見內容",
+        "graphic": "b4-gemini-check"
+      },
+      {
+        "title": "低可信與缺欄位交人工",
+        "graphic": "b4-vlm-audit"
+      }
+    ],
+    "steps": [],
+    "detail": "部署時固定可用模型標識、請求設定與schema，記錄服務版本變動和原始回覆。JSON/schema通過只證明格式，仍逐欄對照影像；低可信、拒答、缺欄位及服務失敗都需要可追溯處理。",
+    "source": "https://ai.google.dev/gemini-api/docs/structured-output",
+    "terms": [
+      "表示：模型由輸入得到的中間資料，並非標註真值。",
+      "本圖數值：作者給定的教學示意，不是本輪模型實測。"
+    ],
+    "review": "pending"
+  },
+  {
+    "id": "gemini-vision-engineering-4",
+    "owner": "gemini-vision",
+    "index": 4,
+    "version": "r01",
+    "title": "雲端VLM與專用模型：同件比較",
+    "takeaway": "按問題彈性、資料流與錯誤成本選擇。",
+    "kind": "D",
+    "mobile_height": 2304,
+    "panels": [
+      {
+        "title": "共同圓接頭與檢查目標",
+        "graphic": "b4-vlm-scene"
+      },
+      {
+        "title": "影像API產生可追問回覆",
+        "graphic": "b4-gemini-request"
+      },
+      {
+        "title": "固定座位另評本機分類",
+        "graphic": "b4-vlm-roi"
+      }
+    ],
+    "steps": [],
+    "detail": "以相同接頭和允收定義比較雲端API與本機專用視覺；包含網路耗時、資料流、服務可用性、維護與逐項錯誤。不能將API便利性或固定格式當自動放行證據，也不虛構內部架構。",
+    "source": "https://ai.google.dev/gemini-api/docs/structured-output",
+    "terms": [
+      "表示：模型由輸入得到的中間資料，並非標註真值。",
+      "本圖數值：作者給定的教學示意，不是本輪模型實測。"
+    ],
+    "review": "pending"
+  },
+  {
+    "id": "dinov2-main-failure",
+    "owner": "dinov2",
+    "index": 0,
+    "version": "r01",
+    "title": "同一支架的小缺口，特徵仍可能很相近",
+    "takeaway": "相近特徵不能證明完整，先回原圖查細節。",
+    "kind": "D",
+    "mobile_height": 2304,
+    "panels": [
+      {
+        "title": "同L支架，只改一小段邊緣",
+        "graphic": "b4-dino-failure-pair"
+      },
+      {
+        "title": "表示很近，不代表允收",
+        "graphic": "b4-dino-failure-vectors"
+      },
+      {
+        "title": "回同一缺口查可見線索",
+        "graphic": "b4-dino-failure-detail"
+      }
+    ],
+    "steps": [],
+    "detail": "改用首讀同L支架兩孔工件，完整/缺口只在右緣小段不同。兩維特徵[.20,.80]/[.21,.79]距離約.014是作者給定反例，不是模型實測；近距離不代表沒有缺口。先核對原圖，必要時比較局部取樣或下游方法，不期待門檻補回已丟失線索。",
+    "source": "https://arxiv.org/abs/2304.07193",
+    "review": "pending"
+  },
+  {
+    "id": "gemini-vision-main-failure",
+    "owner": "gemini-vision",
+    "index": 0,
+    "version": "r01",
+    "title": "同一圓接頭：JSON能解析仍可能填錯",
+    "takeaway": "格式通過不等於內容通過，欄位要對回原圖。",
+    "kind": "D",
+    "mobile_height": 2304,
+    "panels": [
+      {
+        "title": "左有螺絲，右是空座",
+        "graphic": "b4-gemini-failure-input"
+      },
+      {
+        "title": "反例JSON錯填右側present",
+        "graphic": "b4-gemini-json"
+      },
+      {
+        "title": "分開驗格式與可見內容",
+        "graphic": "b4-gemini-failure-gates"
+      }
+    ],
+    "steps": [],
+    "detail": "保留主線左右圓接頭，左有螺絲右空座。作者設計的JSON把兩側填present，格式可解析但右欄與影像矛盾；應核對not_visible，原因仍未知。未呼叫API、未猜測內部模型結構。",
+    "source": "https://ai.google.dev/gemini-api/docs/structured-output",
+    "review": "pending"
+  },
+  {
+    "id": "ad-patchcore-engineering-2",
+    "owner": "ad-patchcore",
+    "index": 2,
+    "version": "r02",
+    "title": "PatchCore：查最近正常特徵，再排回位置",
+    "takeaway": "局部距離來自特徵查庫，熱區要回原圖核對。",
+    "kind": "C",
+    "mobile_height": 2304,
+    "panels": [
+      {
+        "title": "正常特徵挑選代表子集",
+        "graphic": "b5-pc-coreset"
+      },
+      {
+        "title": "待測p查最近正常代表",
+        "graphic": "b5-pc-distance"
+      },
+      {
+        "title": "每個距離排回原位置",
+        "graphic": "b5-pc-map"
+      }
+    ],
+    "steps": [],
+    "detail": "固定CNN抽正常局部特徵，以coreset保留代表子集；待測局部在同特徵空間查最近鄰。二維例p=[3,2]，r1=[0,0]距離3.61，r2=[2,0]距離2.24；p位置排回2.24。圖中小網格僅局部距離示意，整圖分數還有原法的重加權，不能把局部距離說成缺陷機率。",
+    "source": "https://arxiv.org/abs/2106.08265",
+    "terms": [
+      "特徵：模型的中間表示，與影像像素分開。",
+      "圖中數值：作者給定算例，不是本輪模型實測。"
+    ],
+    "review": "pending"
+  },
+  {
+    "id": "ad-padim-engineering-2",
+    "owner": "ad-padim",
+    "index": 2,
+    "version": "r02",
+    "title": "PaDiM：同位置的方向，改變距離",
+    "takeaway": "距離要讀同位置的平均與相關方向。",
+    "kind": "C",
+    "mobile_height": 2304,
+    "panels": [
+      {
+        "title": "p與q分別累積正常分布",
+        "graphic": "b5-padim-fit"
+      },
+      {
+        "title": "同樣偏移，方向代價不同",
+        "graphic": "b5-padim-direction"
+      },
+      {
+        "title": "位置距離映回原圖",
+        "graphic": "b5-padim-map"
+      }
+    ],
+    "steps": [],
+    "detail": "每個空間位置建立多變量高斯模型，待測特徵對照同位置的平均與正則化協方差。示意在主軸座標u/v的變異數4/.25，兩個長度2偏移：沿u的馬氏距離1，沿v距離4；u/v為斜向相關軸，非工件座標。孔口q與平面p不可混合套用。",
+    "source": "https://arxiv.org/abs/2011.08785",
+    "terms": [
+      "特徵：模型的中間表示，與影像像素分開。",
+      "圖中數值：作者給定算例，不是本輪模型實測。"
+    ],
+    "review": "pending"
+  },
+  {
+    "id": "ad-subspacead-engineering-2",
+    "owner": "ad-subspacead",
+    "index": 2,
+    "version": "r02",
+    "title": "SubspaceAD：畫出投影與正交殘差",
+    "takeaway": "未被正常方向解釋的殘差，才是異常線索。",
+    "kind": "C",
+    "mobile_height": 2304,
+    "panels": [
+      {
+        "title": "正常特徵擬合PCA方向",
+        "graphic": "b5-sub-fit"
+      },
+      {
+        "title": "同一待測特徵正交投影",
+        "graphic": "b5-sub-project"
+      },
+      {
+        "title": "殘差長度排回局部p",
+        "graphic": "b5-sub-residual"
+      }
+    ],
+    "steps": [],
+    "detail": "固定DINOv2提取patch特徵並用正常資料擬合PCA。給定已中心化特徵x=[3,2]與保留方向U=[1,0]，投影[3,0]，殘差[0,2]長度2。二維幾何例不代表工件平面或實際特徵維度；完整公式需保留均值，圖中明示mu=0。",
+    "source": "https://github.com/CLendering/SubspaceAD",
+    "terms": [
+      "特徵：模型的中間表示，與影像像素分開。",
+      "圖中數值：作者給定算例，不是本輪模型實測。"
+    ],
+    "review": "pending"
+  },
+  {
+    "id": "ad-stfpm-engineering-2",
+    "owner": "ad-stfpm",
+    "index": 2,
+    "version": "r02",
+    "title": "STFPM：兩路同尺度、同位置比較",
+    "takeaway": "教師學生的逐層差異，經對齊後整合。",
+    "kind": "C",
+    "mobile_height": 2304,
+    "panels": [
+      {
+        "title": "同圖分到固定教師與學生",
+        "graphic": "b5-stf-branches"
+      },
+      {
+        "title": "單位置正規化特徵對照",
+        "graphic": "b5-stf-distance"
+      },
+      {
+        "title": "各層差異對齊再整合",
+        "graphic": "b5-stf-merge"
+      }
+    ],
+    "steps": [],
+    "detail": "教師與學生架構相同，正常訓練只更新學生；推論兩路都固定。以單位向量T=[1,0]、S=[.8,.6]為例，半平方L2距離=.2。原方法上採樣各層位置差異後逐點相乘，給定p三層.2/.4/.5得到.04；這是機制算例，不是異常機率或量測輪廓。",
+    "source": "https://arxiv.org/html/2103.04257v3",
+    "terms": [
+      "特徵：模型的中間表示，與影像像素分開。",
+      "圖中數值：作者給定算例，不是本輪模型實測。"
+    ],
+    "review": "pending"
+  },
+  {
+    "id": "ad-rd4ad-engineering-2",
+    "owner": "ad-rd4ad",
+    "index": 2,
+    "version": "r02",
+    "title": "RD4AD：从瓶頸反向重建教師特徵",
+    "takeaway": "學生從教師嵌入重建，逐尺度對照教師。",
+    "kind": "C",
+    "mobile_height": 2304,
+    "panels": [
+      {
+        "title": "教師多尺度特徵進瓶頸",
+        "graphic": "b5-rd-bottleneck"
+      },
+      {
+        "title": "學生由粗到細還原特徵",
+        "graphic": "b5-rd-decode"
+      },
+      {
+        "title": "同尺度兩份表示逐一比",
+        "graphic": "b5-rd-compare"
+      }
+    ],
+    "steps": [],
+    "detail": "固定教師編碼器抽多尺度特徵，可訓練one-class瓶頸和反向學生解碼器以正常資料學重建。學生輸入是教師嵌入，不是原圖；對應尺度的教師與重建特徵以餘弦差異比較並映回位置。教師高低尺度與學生逆向重建對應清楚，不把輸出說成修復照片。",
+    "source": "https://openaccess.thecvf.com/content/CVPR2022/html/Deng_Anomaly_Detection_via_Reverse_Distillation_From_One-Class_Embedding_CVPR_2022_paper.html",
+    "terms": [
+      "特徵：模型的中間表示，與影像像素分開。",
+      "圖中數值：作者給定算例，不是本輪模型實測。"
+    ],
+    "review": "pending"
+  },
+  {
+    "id": "ad-ae-engineering-2",
+    "owner": "ad-ae",
+    "index": 2,
+    "version": "r02",
+    "title": "AE：同位置40與150，差值110",
+    "takeaway": "比較原圖與重建估計，重建不是正常真值。",
+    "kind": "C",
+    "mobile_height": 2304,
+    "panels": [
+      {
+        "title": "同板刮傷p的原圖像素",
+        "graphic": "b5-ae-input"
+      },
+      {
+        "title": "壓縮還原成重建估計",
+        "graphic": "b5-ae-reconstruct"
+      },
+      {
+        "title": "同位置取絕對差值",
+        "graphic": "b5-ae-difference"
+      }
+    ],
+    "steps": [],
+    "detail": "本課為影像自編碼器基線：正常圖訓練壓縮與重建，推論原圖與重建同位置取差。沿用首讀原圖p灰階40、重建150、絕對差110的作者算例；AE若連刮傷一起重建可能漏檢，正常小孔模糊也會誤報。這裡的絕對像素差是明確選定基線，不概括所有AE評分。",
+    "source": "https://arxiv.org/html/2103.04257v3",
+    "terms": [
+      "特徵：模型的中間表示，與影像像素分開。",
+      "圖中數值：作者給定算例，不是本輪模型實測。"
+    ],
+    "review": "pending"
+  },
+  {
+    "id": "ad-draem-engineering-2",
+    "owner": "ad-draem",
+    "index": 2,
+    "version": "r02",
+    "title": "DRAEM：兩種監督，兩張圖判別",
+    "takeaway": "重建提供對照，判別器學習位置輸出。",
+    "kind": "C",
+    "mobile_height": 2304,
+    "panels": [
+      {
+        "title": "正常圖與合成mask各教一事",
+        "graphic": "b5-draem-train"
+      },
+      {
+        "title": "待測原圖與重建共同輸入",
+        "graphic": "b5-draem-pair"
+      },
+      {
+        "title": "判別網路學可疑位置",
+        "graphic": "b5-draem-seg"
+      }
+    ],
+    "steps": [],
+    "detail": "訓練以正常圖作重建目標、合成異常mask作判別定位目標；推論待測影像經重建，原影像與重建一起送判別網路。位置圖不是單純像素相減，推論不提供真值mask。保留同板A刮傷p；合成外觀只是訓練工具，仍需真缺陷驗證。",
+    "source": "https://arxiv.org/abs/2108.07610",
+    "terms": [
+      "特徵：模型的中間表示，與影像像素分開。",
+      "圖中數值：作者給定算例，不是本輪模型實測。"
+    ],
+    "review": "pending"
+  },
+  {
+    "id": "ad-uniad-engineering-2",
+    "owner": "ad-uniad",
+    "index": 2,
+    "version": "r02",
+    "title": "UniAD：限制注意力照抄，再重建",
+    "takeaway": "遮的是特徵取用連線，原影像仍完整。",
+    "kind": "C",
+    "mobile_height": 2304,
+    "panels": [
+      {
+        "title": "同圖抽特徵，原圖不擦除",
+        "graphic": "b5-uni-input"
+      },
+      {
+        "title": "p不能讀自己與近鄰",
+        "graphic": "b5-uni-mask"
+      },
+      {
+        "title": "query引導重建後比特徵",
+        "graphic": "b5-uni-rebuild"
+      }
+    ],
+    "steps": [],
+    "detail": "多類正常共同訓練重建模型，固定骨幹。neighbor-masked attention限制當前位置讀自己及近鄰的連線；layer-wise query與訓練特徵擾動降低相同捷徑。推論不做訓練擾動，將原特徵與重建同位置差異映回位置；本圖5x5只是注意力鄰域示意，不是固定輸入尺寸。",
+    "source": "https://arxiv.org/abs/2206.03687",
+    "terms": [
+      "特徵：模型的中間表示，與影像像素分開。",
+      "圖中數值：作者給定算例，不是本輪模型實測。"
+    ],
+    "review": "pending"
+  },
+  {
+    "id": "ad-patchcore-engineering-1",
+    "owner": "ad-patchcore",
+    "index": 1,
+    "version": "r01",
+    "kind": "C",
+    "mobile_height": 2304,
+    "title": "PatchCore：用確認正常的局部當參考",
+    "takeaway": "正常庫定義見過什麼，輸出仍需人工覆核。",
+    "panels": [
+      {
+        "title": "同金屬板：先分正常與驗證",
+        "graphic": "b5-split-0"
+      },
+      {
+        "title": "正常資料建立可查的庫",
+        "graphic": "b5-pc-coreset"
+      },
+      {
+        "title": "交付局部距離及回查位置",
+        "graphic": "b5-pc-delivery"
+      }
+    ],
+    "steps": [],
+    "detail": "建立正常參考只使用已確認正常影像；待測與留出資料不回灌。固定特徵擷取與庫版本，輸出局部距離圖及影像分數，交原圖覆核。這個任務不預先列完缺陷類別，也不直接交付尺寸。",
+    "source": "https://arxiv.org/abs/2106.08265",
+    "terms": [
+      "特徵：模型的中間表示，與影像像素分開。",
+      "圖中數值：作者給定算例，不是本輪模型實測。"
+    ],
+    "review": "pending"
+  },
+  {
+    "id": "ad-patchcore-engineering-3",
+    "owner": "ad-patchcore",
+    "index": 3,
+    "version": "r01",
+    "kind": "C",
+    "mobile_height": 2304,
+    "title": "PatchCore：縮庫，要連正常覆蓋一起驗",
+    "takeaway": "庫小可以省資源，漏掉正常變化會有代價。",
+    "panels": [
+      {
+        "title": "特徵版本必須與庫一致",
+        "graphic": "b5-pc-contract"
+      },
+      {
+        "title": "代表數量影響儲存成本",
+        "graphic": "b5-pc-cost"
+      },
+      {
+        "title": "漏掉正常代表可能升高距離",
+        "graphic": "b5-pc-coverage"
+      }
+    ],
+    "steps": [],
+    "detail": "保存骨幹、層、前處理、聚合、coreset及索引。給定10000×512 float32特徵約20.48MB，留1000代表約2.048MB，未含索引/其他模型成本；只是容量算例，不能宣稱查找快十倍。縮库後用獨立正常與真缺陷驗證。",
+    "source": "https://arxiv.org/abs/2106.08265",
+    "terms": [
+      "特徵：模型的中間表示，與影像像素分開。",
+      "圖中數值：作者給定算例，不是本輪模型實測。"
+    ],
+    "review": "pending"
+  },
+  {
+    "id": "ad-patchcore-engineering-4",
+    "owner": "ad-patchcore",
+    "index": 4,
+    "version": "r01",
+    "kind": "D",
+    "mobile_height": 2304,
+    "title": "PatchCore：庫裡混入刮傷，就可能漏報",
+    "takeaway": "低距離可能只是正常庫被污染。",
+    "panels": [
+      {
+        "title": "同板刮傷p保持不變",
+        "graphic": "b5-scratch-0"
+      },
+      {
+        "title": "正常代表與p仍有距離",
+        "graphic": "b5-pc-distance"
+      },
+      {
+        "title": "若把同刮傷加入正常庫",
+        "graphic": "b5-pc-contamination"
+      }
+    ],
+    "steps": [],
+    "detail": "同特徵p=[3,2]原本最近正常[2,0]距離√5，誤把[3,2]存為正常後最近距離0。原圖缺陷没有改變；本例只展示局部查庫污染，非實際模型結果。保留資料審核及追溯，不以距離0當品質保證。",
+    "source": "https://arxiv.org/abs/2106.08265",
+    "terms": [
+      "特徵：模型的中間表示，與影像像素分開。",
+      "圖中數值：作者給定算例，不是本輪模型實測。"
+    ],
+    "review": "pending"
+  },
+  {
+    "id": "ad-padim-engineering-1",
+    "owner": "ad-padim",
+    "index": 1,
+    "version": "r01",
+    "kind": "C",
+    "mobile_height": 2304,
+    "title": "PaDiM：固定位置，各自建立正常範圍",
+    "takeaway": "孔口與平面不同，各自和同位置正常比較。",
+    "panels": [
+      {
+        "title": "固定單孔板與取像位置",
+        "graphic": "b5-scratch-1"
+      },
+      {
+        "title": "每一位置都有自己的統計",
+        "graphic": "b5-padim-fit"
+      },
+      {
+        "title": "交出位置距離，回查工件",
+        "graphic": "b5-padim-map"
+      }
+    ],
+    "steps": [],
+    "detail": "適合相機/工件位置受控的局部異常檢查。正常樣本擷取同位置特徵來估計平均和相關性；孔口與平面本來不同。交出馬氏距離圖與影像分數，幾何偏移和正常光線也需驗證，不自動認定缺陷。",
+    "source": "https://arxiv.org/abs/2011.08785",
+    "terms": [
+      "特徵：模型的中間表示，與影像像素分開。",
+      "圖中數值：作者給定算例，不是本輪模型實測。"
+    ],
+    "review": "pending"
+  },
+  {
+    "id": "ad-padim-engineering-3",
+    "owner": "ad-padim",
+    "index": 3,
+    "version": "r01",
+    "kind": "C",
+    "mobile_height": 2304,
+    "title": "PaDiM：位置與統計必須一起保存",
+    "takeaway": "換取像或特徵，位置分布也要重新核對。",
+    "panels": [
+      {
+        "title": "固定網格與特徵處理",
+        "graphic": "b5-padim-contract"
+      },
+      {
+        "title": "樣本不足時統計不穩定",
+        "graphic": "b5-padim-regularize"
+      },
+      {
+        "title": "同好件位移也須另外驗",
+        "graphic": "b5-padim-shift"
+      }
+    ],
+    "steps": [],
+    "detail": "保存輸入對齊、特徵選維、平均/協方差、正則化及評分設定。協方差要能穩定求解，樣本少或高度相關可能近奇異；可依實作加入正則項，但不保證補足資料。工件位移要用獨立正常樣本驗。",
+    "source": "https://arxiv.org/abs/2011.08785",
+    "terms": [
+      "特徵：模型的中間表示，與影像像素分開。",
+      "圖中數值：作者給定算例，不是本輪模型實測。"
+    ],
+    "review": "pending"
+  },
+  {
+    "id": "ad-padim-engineering-4",
+    "owner": "ad-padim",
+    "index": 4,
+    "version": "r01",
+    "kind": "D",
+    "mobile_height": 2304,
+    "title": "PaDiM與PatchCore：正常的存法不同",
+    "takeaway": "同題驗證位置統計與代表庫，各自的假設。",
+    "panels": [
+      {
+        "title": "同單孔板與相同允收",
+        "graphic": "b5-scratch-1"
+      },
+      {
+        "title": "PaDiM保存同位置分布",
+        "graphic": "b5-padim-fit"
+      },
+      {
+        "title": "PatchCore保存局部正常代表",
+        "graphic": "b5-pc-coreset-onehole"
+      }
+    ],
+    "steps": [],
+    "detail": "比較同一工件/資料切分/允收成本：PaDiM保存各位置高斯統計；PatchCore查跨正常局部的代表庫。比較圖保持同一單孔板；不聲稱任一方案固定更準。",
+    "source": "https://arxiv.org/abs/2011.08785",
+    "terms": [
+      "特徵：模型的中間表示，與影像像素分開。",
+      "圖中數值：作者給定算例，不是本輪模型實測。"
+    ],
+    "review": "pending"
+  },
+  {
+    "id": "ad-subspacead-engineering-1",
+    "owner": "ad-subspacead",
+    "index": 1,
+    "version": "r01",
+    "kind": "C",
+    "mobile_height": 2304,
+    "title": "SubspaceAD：正常方向是資料擬合出來的",
+    "takeaway": "免骨幹訓練，仍要建立可比較的正常子空間。",
+    "panels": [
+      {
+        "title": "同板正常與獨立驗證分開",
+        "graphic": "b5-split-2"
+      },
+      {
+        "title": "固定骨幹與PCA建模",
+        "graphic": "b5-sub-fit"
+      },
+      {
+        "title": "交付未被解釋的局部殘差",
+        "graphic": "b5-sub-residual"
+      }
+    ],
+    "steps": [],
+    "detail": "固定DINOv2不更新梯度，正常資料估計均值與低維PCA方向；待測投影殘差形成異常線索。免訓練指骨幹不做梯度更新，不表示免正常資料/擬合/部署驗證；保留原同板主線。",
+    "source": "https://github.com/CLendering/SubspaceAD",
+    "terms": [
+      "特徵：模型的中間表示，與影像像素分開。",
+      "圖中數值：作者給定算例，不是本輪模型實測。"
+    ],
+    "review": "pending"
+  },
+  {
+    "id": "ad-subspacead-engineering-3",
+    "owner": "ad-subspacead",
+    "index": 3,
+    "version": "r01",
+    "kind": "C",
+    "mobile_height": 2304,
+    "title": "SubspaceAD：保留維度就是模型設定",
+    "takeaway": "均值、方向與保留維度都必須能重現。",
+    "panels": [
+      {
+        "title": "保存中心化與投影設定",
+        "graphic": "b5-sub-contract"
+      },
+      {
+        "title": "同一x投影到保留方向",
+        "graphic": "b5-sub-project"
+      },
+      {
+        "title": "用留出集驗殘差與覆核成本",
+        "graphic": "b5-sub-validation"
+      }
+    ],
+    "steps": [],
+    "detail": "保存骨幹/前處理、正常樣本、均值μ、正交基U和保留維度k；實際投影需先減μ再加回。圖中μ=0是算例簡化。更改k或特徵設定要重新評估正常誤報和真缺陷漏檢，不能只看擬合誤差下降。",
+    "source": "https://github.com/CLendering/SubspaceAD",
+    "terms": [
+      "特徵：模型的中間表示，與影像像素分開。",
+      "圖中數值：作者給定算例，不是本輪模型實測。"
+    ],
+    "review": "pending"
+  },
+  {
+    "id": "ad-subspacead-engineering-4",
+    "owner": "ad-subspacead",
+    "index": 4,
+    "version": "r01",
+    "kind": "D",
+    "mobile_height": 2304,
+    "title": "SubspaceAD：留全維，連異常也能投回去",
+    "takeaway": "殘差變小，可能是保留的方向太多。",
+    "panels": [
+      {
+        "title": "同一待測特徵x保持不變",
+        "graphic": "b5-sub-project"
+      },
+      {
+        "title": "只留一維：殘差長度2",
+        "graphic": "b5-sub-one"
+      },
+      {
+        "title": "兩維全留：殘差變成0",
+        "graphic": "b5-sub-full"
+      }
+    ],
+    "steps": [],
+    "detail": "延續中心化x=[3,2]；只留水平一維，投影[3,0]殘差2；二維全保留，投影等於x，殘差0。這是線性投影的確切算例，说明增加維度不保證異常檢測更好。",
+    "source": "https://github.com/CLendering/SubspaceAD",
+    "terms": [
+      "特徵：模型的中間表示，與影像像素分開。",
+      "圖中數值：作者給定算例，不是本輪模型實測。"
+    ],
+    "review": "pending"
+  },
+  {
+    "id": "ad-stfpm-engineering-1",
+    "owner": "ad-stfpm",
+    "index": 1,
+    "version": "r01",
+    "kind": "C",
+    "mobile_height": 2304,
+    "title": "STFPM：把正常反應教給學生",
+    "takeaway": "學生學正常教師反應，差異只是回查線索。",
+    "panels": [
+      {
+        "title": "同板正常資料教學生",
+        "graphic": "b5-split-2"
+      },
+      {
+        "title": "固定教師，正常資料更新學生",
+        "graphic": "b5-stf-train"
+      },
+      {
+        "title": "部署比較同圖兩路特徵",
+        "graphic": "b5-stf-branches"
+      }
+    ],
+    "steps": [],
+    "detail": "使用正常影像訓練學生匹配固定教師的多尺度特徵，推論同待測影像送兩路並整合差異。交付可疑位置及影像分數；教師和學生也可能對缺陷反應相似，需留出真缺陷驗證。",
+    "source": "https://arxiv.org/html/2103.04257v3",
+    "terms": [
+      "特徵：模型的中間表示，與影像像素分開。",
+      "圖中數值：作者給定算例，不是本輪模型實測。"
+    ],
+    "review": "pending"
+  },
+  {
+    "id": "ad-stfpm-engineering-3",
+    "owner": "ad-stfpm",
+    "index": 3,
+    "version": "r01",
+    "kind": "C",
+    "mobile_height": 2304,
+    "title": "STFPM：保存兩路權重與逐層配對",
+    "takeaway": "同尺度同位置的配對，比單看熱區更重要。",
+    "panels": [
+      {
+        "title": "教師與學生要成對版本化",
+        "graphic": "b5-stf-contract"
+      },
+      {
+        "title": "單位置距離先正規化",
+        "graphic": "b5-stf-distance"
+      },
+      {
+        "title": "映回原圖後驗誤報與漏檢",
+        "graphic": "b5-validation-2"
+      }
+    ],
+    "steps": [],
+    "detail": "保存教師權重、學生checkpoint、前處理、特徵層/正規化/插值及彙整方式。推論固定兩路，按同位置與同層計差，不能混不同層或拿熱區直接量尺寸。用未見正常和真缺陷評門檻與覆核量。",
+    "source": "https://arxiv.org/html/2103.04257v3",
+    "terms": [
+      "特徵：模型的中間表示，與影像像素分開。",
+      "圖中數值：作者給定算例，不是本輪模型實測。"
+    ],
+    "review": "pending"
+  },
+  {
+    "id": "ad-stfpm-engineering-4",
+    "owner": "ad-stfpm",
+    "index": 4,
+    "version": "r01",
+    "kind": "D",
+    "mobile_height": 2304,
+    "title": "STFPM與RD4AD：學生吃的輸入不同",
+    "takeaway": "同樣比較特徵，兩種學生路徑要分清。",
+    "panels": [
+      {
+        "title": "同板A與同一檢查任務",
+        "graphic": "b5-scratch-2"
+      },
+      {
+        "title": "STFPM學生直接讀同張圖",
+        "graphic": "b5-stf-branches"
+      },
+      {
+        "title": "RD4AD學生讀教師的嵌入",
+        "graphic": "b5-rd-decode"
+      }
+    ],
+    "steps": [],
+    "detail": "STFPM教師和同架構學生直接接收同影像；RD4AD由教師表示經瓶頸送反向學生重建。兩者皆在正常資料學習並比特徵，但學生輸入和重建路徑不同；同留出集比代價，不捏造優劣。",
+    "source": "https://arxiv.org/html/2103.04257v3",
+    "terms": [
+      "特徵：模型的中間表示，與影像像素分開。",
+      "圖中數值：作者給定算例，不是本輪模型實測。"
+    ],
+    "review": "pending"
+  },
+  {
+    "id": "ad-rd4ad-engineering-1",
+    "owner": "ad-rd4ad",
+    "index": 1,
+    "version": "r02",
+    "kind": "C",
+    "mobile_height": 2304,
+    "title": "RD4AD：正常資料教瓶頸與反向學生",
+    "takeaway": "先固定教師，正常資料再訓練重建表示。",
+    "panels": [
+      {
+        "title": "同板正常與驗證資料分開",
+        "graphic": "b5-split-2"
+      },
+      {
+        "title": "教師特徵教瓶頸與學生",
+        "graphic": "b5-rd-train-bottleneck"
+      },
+      {
+        "title": "輸出特徵差異供位置覆核",
+        "graphic": "b5-rd-delivery"
+      }
+    ],
+    "steps": [],
+    "detail": "教師固定，正常訓練更新單類瓶頸與反向學生。重建的是多尺度特徵，與同尺度教師表示比較形成位置線索；不是由模型修復物理工件，沒有尺寸或允收保證。",
+    "source": "https://openaccess.thecvf.com/content/CVPR2022/html/Deng_Anomaly_Detection_via_Reverse_Distillation_From_One-Class_Embedding_CVPR_2022_paper.html",
+    "terms": [
+      "特徵：模型的中間表示，與影像像素分開。",
+      "圖中數值：作者給定算例，不是本輪模型實測。"
+    ],
+    "review": "pending"
+  },
+  {
+    "id": "ad-rd4ad-engineering-3",
+    "owner": "ad-rd4ad",
+    "index": 3,
+    "version": "r01",
+    "kind": "C",
+    "mobile_height": 2304,
+    "title": "RD4AD：教師、瓶頸、學生是一組",
+    "takeaway": "三組權重與尺度配對固定，才能重現差異。",
+    "panels": [
+      {
+        "title": "三部分保存為同一版本",
+        "graphic": "b5-rd-contract"
+      },
+      {
+        "title": "教師與重建逐尺度配對",
+        "graphic": "b5-rd-compare"
+      },
+      {
+        "title": "原圖與位置結果一起驗",
+        "graphic": "b5-validation-2"
+      }
+    ],
+    "steps": [],
+    "detail": "保存教師、瓶頸和學生權重及各層的配對、前處理、插值、餘弦差與彙整。避免只部署學生而沒有教師嵌入來源；域內正常光澤和小刮傷都需獨立驗。",
+    "source": "https://openaccess.thecvf.com/content/CVPR2022/html/Deng_Anomaly_Detection_via_Reverse_Distillation_From_One-Class_Embedding_CVPR_2022_paper.html",
+    "terms": [
+      "特徵：模型的中間表示，與影像像素分開。",
+      "圖中數值：作者給定算例，不是本輪模型實測。"
+    ],
+    "review": "pending"
+  },
+  {
+    "id": "ad-rd4ad-engineering-4",
+    "owner": "ad-rd4ad",
+    "index": 4,
+    "version": "r01",
+    "kind": "D",
+    "mobile_height": 2304,
+    "title": "RD4AD與AE：重建的對象不同",
+    "takeaway": "特徵重建與像素重建，不能共用同一解讀。",
+    "panels": [
+      {
+        "title": "同一金屬板刮傷p",
+        "graphic": "b5-scratch-2"
+      },
+      {
+        "title": "RD4AD比較教師與重建表示",
+        "graphic": "b5-rd-compare"
+      },
+      {
+        "title": "AE比較原圖40與重建150",
+        "graphic": "b5-ae-difference"
+      }
+    ],
+    "steps": [],
+    "detail": "在同檢查工件上，RD4AD重建特徵並比餘弦差；AE基線重建像素並在相同位置相減。像素差110和特徵差不是同一尺度的數字，不能直接比較大小判方法好壞。",
+    "source": "https://openaccess.thecvf.com/content/CVPR2022/html/Deng_Anomaly_Detection_via_Reverse_Distillation_From_One-Class_Embedding_CVPR_2022_paper.html",
+    "terms": [
+      "特徵：模型的中間表示，與影像像素分開。",
+      "圖中數值：作者給定算例，不是本輪模型實測。"
+    ],
+    "review": "pending"
+  },
+  {
+    "id": "ad-ae-engineering-1",
+    "owner": "ad-ae",
+    "index": 1,
+    "version": "r01",
+    "kind": "C",
+    "mobile_height": 2304,
+    "title": "AE：用正常影像學壓縮與還原",
+    "takeaway": "重建提供對照，差異大小還須驗證。",
+    "panels": [
+      {
+        "title": "同板正常資料與測試分開",
+        "graphic": "b5-split-2"
+      },
+      {
+        "title": "正常影像教編碼與解碼",
+        "graphic": "b5-ae-train"
+      },
+      {
+        "title": "待測同位置相減形成線索",
+        "graphic": "b5-ae-difference"
+      }
+    ],
+    "steps": [],
+    "detail": "正常訓練影像作為AE重建目標；測試原圖與重建估計同位置比較。保留40/150/110原算例，位置差異供原圖覆核；原圖不能在推論時被重建結果取代作真值。",
+    "source": "https://arxiv.org/html/2103.04257v3",
+    "terms": [
+      "特徵：模型的中間表示，與影像像素分開。",
+      "圖中數值：作者給定算例，不是本輪模型實測。"
+    ],
+    "review": "pending"
+  },
+  {
+    "id": "ad-ae-engineering-3",
+    "owner": "ad-ae",
+    "index": 3,
+    "version": "r01",
+    "kind": "C",
+    "mobile_height": 2304,
+    "title": "AE：前處理與重建誤差一起固定",
+    "takeaway": "同座標、同尺度，差值才可比較。",
+    "panels": [
+      {
+        "title": "對齊原圖與重建的座標",
+        "graphic": "b5-ae-contract"
+      },
+      {
+        "title": "同位置取絕對差值110",
+        "graphic": "b5-ae-difference"
+      },
+      {
+        "title": "分開驗小孔誤報與刮傷漏檢",
+        "graphic": "b5-ae-errors"
+      }
+    ],
+    "steps": [],
+    "detail": "保存模型、輸入灰階/RGB範圍、resize/裁切、差異定義與門檻。原圖和重建需要相同座標與像素範圍；既要看刮傷是否留下差異，也要驗正常孔被模糊的誤報，不能只看平均重建損失。",
+    "source": "https://arxiv.org/html/2103.04257v3",
+    "terms": [
+      "特徵：模型的中間表示，與影像像素分開。",
+      "圖中數值：作者給定算例，不是本輪模型實測。"
+    ],
+    "review": "pending"
+  },
+  {
+    "id": "ad-ae-engineering-4",
+    "owner": "ad-ae",
+    "index": 4,
+    "version": "r01",
+    "kind": "D",
+    "mobile_height": 2304,
+    "title": "AE：重建得像，也可能漏掉刮傷",
+    "takeaway": "差值小不是合格證明，要看差異從何而來。",
+    "panels": [
+      {
+        "title": "同板刮傷p的原值40",
+        "graphic": "b5-ae-input"
+      },
+      {
+        "title": "若重建也複製成40",
+        "graphic": "b5-ae-copy"
+      },
+      {
+        "title": "正常小孔q卻可能被模糊",
+        "graphic": "b5-ae-hole"
+      }
+    ],
+    "steps": [],
+    "detail": "同刮傷p原40若被重建成40，絕對差0仍有刮傷；正常小孔q若由30模糊成100，差70可能誤報。後者是新增明示給定反例，非實測，與原主線保持同件大小孔身份。",
+    "source": "https://arxiv.org/html/2103.04257v3",
+    "terms": [
+      "特徵：模型的中間表示，與影像像素分開。",
+      "圖中數值：作者給定算例，不是本輪模型實測。"
+    ],
+    "review": "pending"
+  },
+  {
+    "id": "ad-draem-engineering-1",
+    "owner": "ad-draem",
+    "index": 1,
+    "version": "r01",
+    "kind": "C",
+    "mobile_height": 2304,
+    "title": "DRAEM：正常圖配合合成異常來教",
+    "takeaway": "合成提供訓練目標，驗證仍要用真缺陷。",
+    "panels": [
+      {
+        "title": "同板正常與獨立真缺陷驗證",
+        "graphic": "b5-split-2"
+      },
+      {
+        "title": "兩種監督各有明確來源",
+        "graphic": "b5-draem-train"
+      },
+      {
+        "title": "交付學習式位置圖與原圖",
+        "graphic": "b5-draem-seg"
+      }
+    ],
+    "steps": [],
+    "detail": "以正常圖和生成的局部異常建立重建/判別監督，測試使用原圖與重建共同分割。合成mask是訓練真值，不是部署必需輸入，也不保證代表真缺陷。",
+    "source": "https://arxiv.org/abs/2108.07610",
+    "terms": [
+      "特徵：模型的中間表示，與影像像素分開。",
+      "圖中數值：作者給定算例，不是本輪模型實測。"
+    ],
+    "review": "pending"
+  },
+  {
+    "id": "ad-draem-engineering-3",
+    "owner": "ad-draem",
+    "index": 3,
+    "version": "r01",
+    "kind": "C",
+    "mobile_height": 2304,
+    "title": "DRAEM：兩個網路與合成策略一起管",
+    "takeaway": "版本能重現流程，真缺陷才能檢驗轉移。",
+    "panels": [
+      {
+        "title": "保存重建與判別版本",
+        "graphic": "b5-draem-contract"
+      },
+      {
+        "title": "原圖與重建一起到判別器",
+        "graphic": "b5-draem-pair"
+      },
+      {
+        "title": "合成外觀與真刮傷分開驗",
+        "graphic": "b5-draem-transfer"
+      }
+    ],
+    "steps": [],
+    "detail": "保存兩網路權重、合成來源/區域策略、前處理及位置評分設定。部署不提供真值mask；合成訓練例與真刮傷存在差距，要用獨立真缺陷/正常驗證漏檢誤報和完整延遲。",
+    "source": "https://arxiv.org/abs/2108.07610",
+    "terms": [
+      "特徵：模型的中間表示，與影像像素分開。",
+      "圖中數值：作者給定算例，不是本輪模型實測。"
+    ],
+    "review": "pending"
+  },
+  {
+    "id": "ad-draem-engineering-4",
+    "owner": "ad-draem",
+    "index": 4,
+    "version": "r01",
+    "kind": "D",
+    "mobile_height": 2304,
+    "title": "DRAEM與AE：判別位置不是直接相減",
+    "takeaway": "兩張圖同樣作對照，後段判定不同。",
+    "panels": [
+      {
+        "title": "同一金屬板刮傷p",
+        "graphic": "b5-scratch-2"
+      },
+      {
+        "title": "AE以同位置像素差給線索",
+        "graphic": "b5-ae-difference"
+      },
+      {
+        "title": "DRAEM用兩張圖學位置",
+        "graphic": "b5-draem-pair"
+      }
+    ],
+    "steps": [],
+    "detail": "同工件比較AE差異基線與DRAEM判別分割：前者直接定義像素差，後者學原圖與重建的joint embedding和位置分類。需分開資料成本與真缺陷驗證，不把DRAEM簡化成AE相減。",
+    "source": "https://arxiv.org/abs/2108.07610",
+    "terms": [
+      "特徵：模型的中間表示，與影像像素分開。",
+      "圖中數值：作者給定算例，不是本輪模型實測。"
+    ],
+    "review": "pending"
+  },
+  {
+    "id": "ad-uniad-engineering-1",
+    "owner": "ad-uniad",
+    "index": 1,
+    "version": "r01",
+    "kind": "C",
+    "mobile_height": 2304,
+    "title": "UniAD：多類正常，共用重建模型",
+    "takeaway": "共用模型仍要涵蓋每類正常變化。",
+    "panels": [
+      {
+        "title": "金屬板與其他正常類共同準備",
+        "graphic": "b5-uni-multiclass"
+      },
+      {
+        "title": "固定骨幹後學重建表示",
+        "graphic": "b5-uni-training"
+      },
+      {
+        "title": "同位置原特徵與重建比較",
+        "graphic": "b5-uni-rebuild"
+      }
+    ],
+    "steps": [],
+    "detail": "多類正常資料共訓一個重建模型，固定預訓練骨幹，減少每類獨立模型的維護負擔。不能因共用模型就混淆類別允收；每個產品仍需獨立保留驗證與可追溯輸出。",
+    "source": "https://arxiv.org/abs/2206.03687",
+    "terms": [
+      "特徵：模型的中間表示，與影像像素分開。",
+      "圖中數值：作者給定算例，不是本輪模型實測。"
+    ],
+    "review": "pending"
+  },
+  {
+    "id": "ad-uniad-engineering-3",
+    "owner": "ad-uniad",
+    "index": 3,
+    "version": "r01",
+    "kind": "C",
+    "mobile_height": 2304,
+    "title": "UniAD：訓練擾動與推論設定分開",
+    "takeaway": "部署讀原特徵，保存遮蔽與query設定。",
+    "panels": [
+      {
+        "title": "訓練：擾動特徵再學還原",
+        "graphic": "b5-uni-training"
+      },
+      {
+        "title": "推論：關閉訓練擾動",
+        "graphic": "b5-uni-eval"
+      },
+      {
+        "title": "按每個產品核對錯誤",
+        "graphic": "b5-uni-validation"
+      }
+    ],
+    "steps": [],
+    "detail": "保存骨幹、重建模型、逐層query、注意力鄰域與訓練擾動設定。推論使用eval設定而非繼續訓練噪聲擾動；位置圖回原圖並按類別評正常誤報/缺陷漏檢，單一平均分數可能掩蓋弱類別。",
+    "source": "https://arxiv.org/abs/2206.03687",
+    "terms": [
+      "特徵：模型的中間表示，與影像像素分開。",
+      "圖中數值：作者給定算例，不是本輪模型實測。"
+    ],
+    "review": "pending"
+  },
+  {
+    "id": "ad-uniad-engineering-4",
+    "owner": "ad-uniad",
+    "index": 4,
+    "version": "r01",
+    "kind": "D",
+    "mobile_height": 2304,
+    "title": "UniAD：限制照抄，不等於必定抓到缺陷",
+    "takeaway": "注意力限制是設計手段，差異仍需真例驗證。",
+    "panels": [
+      {
+        "title": "若原特徵與重建完全一樣",
+        "graphic": "b5-uni-shortcut"
+      },
+      {
+        "title": "限制p讀取自己的近鄰",
+        "graphic": "b5-uni-mask"
+      },
+      {
+        "title": "仍用同件缺陷和正常驗證",
+        "graphic": "b5-validation-2"
+      }
+    ],
+    "steps": [],
+    "detail": "相同捷徑使任何輸入都能重建，位置差異可能消失；neighbor mask/learned query/特徵擾動針對此問題，但並不保證每個異常產生大差異。圖中注意力格不等於擦掉原圖，避免把方法動機當結果保證。",
+    "source": "https://arxiv.org/abs/2206.03687",
+    "terms": [
+      "特徵：模型的中間表示，與影像像素分開。",
+      "圖中數值：作者給定算例，不是本輪模型實測。"
+    ],
+    "review": "pending"
+  },
+  {
+    "id": "ad-dinomaly-engineering-2",
+    "owner": "ad-dinomaly",
+    "index": 2,
+    "version": "r02",
+    "kind": "C",
+    "title": "Dinomaly：限制照抄，再分組比較",
+    "takeaway": "訓練擾動與分組對照，要和推論設定分開。",
+    "panels": [
+      {
+        "title": "正常特徵，訓練才Dropout",
+        "graphic": "b6-dino-drop"
+      },
+      {
+        "title": "線性注意力分散聚合",
+        "graphic": "b6-dino-linear"
+      },
+      {
+        "title": "多層分組後比較差異",
+        "graphic": "b6-dino-groups"
+      }
+    ],
+    "detail": "固定DINOv2，用正常特徵訓練瓶頸及解碼器；訓練MLP Dropout阻止直接照抄，eval關閉。線性注意力降低聚焦相同位置的捷徑；多層按組相加後比較，放寬逐層對應。訓練另降低已重建良好位置的梯度影響。圖中兩組/小格為機制示意，不是固定層號或維度。",
+    "source": "https://arxiv.org/html/2405.14325v5",
+    "terms": [
+      "位置：對回同一輸入座標，不能任意混層或混影格。",
+      "圖中數值：作者給定機制算例，非模型實測或建議門檻。"
+    ]
+  },
+  {
+    "id": "ad-invad-engineering-2",
+    "owner": "ad-invad",
+    "index": 2,
+    "version": "r02",
+    "kind": "C",
+    "title": "InvAD：空間條件，逐位置調制",
+    "takeaway": "同一輸入形成空間條件，控制特徵重建。",
+    "panels": [
+      {
+        "title": "輸入特徵轉成空間條件",
+        "graphic": "b6-inv-condition"
+      },
+      {
+        "title": "同一標準化值，不同調制",
+        "graphic": "b6-inv-modulate"
+      },
+      {
+        "title": "重建特徵回比原表示",
+        "graphic": "b6-inv-compare"
+      }
+    ],
+    "detail": "本課為2024 Feature Inversion的InvAD。固定影像編碼器抽特徵，融合/重縮放/風格轉換產生空間條件；由常數特徵起步，SSM以每位置縮放和偏移調制標準化特徵。给定z=3，p縮放2偏移1得7，q縮放0.5偏移0得1.5；這只是SSM局部算例。正常訓練MSE重建，推論餘弦差。SSM是Spatial Style Modulation，不是狀態空間模型。",
+    "source": "https://arxiv.org/html/2404.10760v1",
+    "terms": [
+      "位置：對回同一輸入座標，不能任意混層或混影格。",
+      "圖中數值：作者給定機制算例，非模型實測或建議門檻。"
+    ]
+  },
+  {
+    "id": "ad-ddad-engineering-2",
+    "owner": "ad-ddad",
+    "index": 2,
+    "version": "r02",
+    "kind": "C",
+    "title": "DDAD：原圖引導，每步逐漸去噪",
+    "takeaway": "恢復估計與原圖的兩種差異，共同提供線索。",
+    "panels": [
+      {
+        "title": "待測原圖持續提供條件",
+        "graphic": "b6-dd-guide"
+      },
+      {
+        "title": "多步去噪形成恢復估計",
+        "graphic": "b6-dd-steps"
+      },
+      {
+        "title": "像素與適配特徵各自比較",
+        "graphic": "b6-dd-compare"
+      }
+    ],
+    "detail": "正常影像訓練去噪及適配特徵比較；測試以待測原圖引導每步去噪，得到恢復估計R。原A與R同位置的像素差和適配特徵差加權形成位置線索；恢復不是正常真值，圖中三狀態不是固定採樣步數，也不是本輪模型結果。",
+    "source": "https://arxiv.org/abs/2305.15956",
+    "terms": [
+      "位置：對回同一輸入座標，不能任意混層或混影格。",
+      "圖中數值：作者給定機制算例，非模型實測或建議門檻。"
+    ]
+  },
+  {
+    "id": "ad-winclip-engineering-2",
+    "owner": "ad-winclip",
+    "index": 2,
+    "version": "r02",
+    "kind": "C",
+    "title": "WinCLIP：視窗分數，依覆蓋位置聚合",
+    "takeaway": "文字定狀態，視窗分數依覆蓋回到位置。",
+    "panels": [
+      {
+        "title": "人工狀態詞與句型組合",
+        "graphic": "b6-win-prompts"
+      },
+      {
+        "title": "同圖的重疊視窗讀局部",
+        "graphic": "b6-win-windows"
+      },
+      {
+        "title": "同位置視窗分數調和平均",
+        "graphic": "b6-win-harmonic"
+      }
+    ],
+    "detail": "固定CLIP，人工正常/異常狀態詞與句型組合產生文字表示；每視窗整體表示與文字比相似。分數分給視窗所覆蓋位置，同位置重疊視窗使用調和平均，再融合多尺度。給定同尺度兩窗0.2/0.8，在共同覆蓋p的平均為2/(1/0.2+1/0.8)=0.32，不是算術平均0.5，也不是缺陷機率。",
+    "source": "https://arxiv.org/html/2303.14814v1",
+    "terms": [
+      "位置：對回同一輸入座標，不能任意混層或混影格。",
+      "圖中數值：作者給定機制算例，非模型實測或建議門檻。"
+    ]
+  },
+  {
+    "id": "ad-anomalyclip-engineering-2",
+    "owner": "ad-anomalyclip",
+    "index": 2,
+    "version": "r02",
+    "kind": "C",
+    "title": "AnomalyCLIP：先學提示，再定位新件",
+    "takeaway": "目標零樣本，仍有輔助資料學習的提示。",
+    "panels": [
+      {
+        "title": "輔助產品教正常與異常提示",
+        "graphic": "b6-ac-train"
+      },
+      {
+        "title": "同件特徵比學到的兩狀態",
+        "graphic": "b6-ac-match"
+      },
+      {
+        "title": "局部定位與整圖分數分工",
+        "graphic": "b6-ac-local"
+      }
+    ],
+    "detail": "輔助資料的正常/異常及局部標註學物件無關提示；CLIP骨幹權重固定。目標影像使用已學提示，DPAM調整注意力以保留局部語意；整圖與局部監督互補。目標零樣本指目標資料未參與提示訓練，不等於整套未訓練，也不等於不用獨立驗證。",
+    "source": "https://arxiv.org/html/2310.18961v3",
+    "terms": [
+      "位置：對回同一輸入座標，不能任意混層或混影格。",
+      "圖中數值：作者給定機制算例，非模型實測或建議門檻。"
+    ]
+  },
+  {
+    "id": "frame-difference-engineering-2",
+    "owner": "frame-difference",
+    "index": 2,
+    "version": "r02",
+    "kind": "C",
+    "title": "Frame Difference：同座標相減，留下雙帶",
+    "takeaway": "雙帶來自同物件前後位置，不能當兩個物件。",
+    "panels": [
+      {
+        "title": "同一方件，前後移動一格",
+        "graphic": "b6-fd-frames"
+      },
+      {
+        "title": "固定座標，逐格取絕對差",
+        "graphic": "b6-fd-values"
+      },
+      {
+        "title": "只有離開與進入兩帶亮",
+        "graphic": "b6-fd-bands"
+      }
+    ],
+    "detail": "給定一維橫切灰階：前幀[20,100,100,100,20]，後幀[20,20,100,100,100]，差[0,80,0,0,80]。方件向右移一格，中間重疊不變；兩條亮帶是同一物件的離開與進入，不是兩物件或完整輪廓。教學算例未跑影像演算法。",
+    "source": "https://docs.opencv.org/4.x/d2/de8/group__core__array.html",
+    "terms": [
+      "位置：對回同一輸入座標，不能任意混層或混影格。",
+      "圖中數值：作者給定機制算例，非模型實測或建議門檻。"
+    ]
+  },
+  {
+    "id": "background-subtraction-engineering-2",
+    "owner": "background-subtraction",
+    "index": 2,
+    "version": "r02",
+    "kind": "C",
+    "title": "背景相減：累積常態，再比較現在",
+    "takeaway": "前景依賴背景歷史，停留物件也可能被吸收。",
+    "panels": [
+      {
+        "title": "不同時間累積背景常態",
+        "graphic": "b6-bg-history"
+      },
+      {
+        "title": "目前影格比較同位置背景",
+        "graphic": "b6-bg-compare"
+      },
+      {
+        "title": "持續更新可能吸收停留物件",
+        "graphic": "b6-bg-update"
+      }
+    ],
+    "detail": "以MOG2為例，同位置累積常見外觀的混合高斯模型，當前影像相對背景分類前景。方件長期停留時可能成為背景，前景遮罩下降；不是只和上一幀相減。更新速率/歷史/陰影處理影響結果，圖中示意不是固定吸收時間。",
+    "source": "https://docs.opencv.org/4.x/d1/dc5/tutorial_background_subtraction.html",
+    "terms": [
+      "位置：對回同一輸入座標，不能任意混層或混影格。",
+      "圖中數值：作者給定機制算例，非模型實測或建議門檻。"
+    ]
+  },
+  {
+    "id": "bytetrack-engineering-2",
+    "owner": "bytetrack",
+    "index": 2,
+    "version": "r02",
+    "kind": "C",
+    "title": "ByteTrack：先高分，再接剩餘低分",
+    "takeaway": "低分框要有軌跡依據，才可能接回原ID。",
+    "panels": [
+      {
+        "title": "每幀框分高分與低分",
+        "graphic": "b6-byte-detections"
+      },
+      {
+        "title": "先高分，再補未配對軌跡",
+        "graphic": "b6-byte-match"
+      },
+      {
+        "title": "接回ID或標成暫時丟失",
+        "graphic": "b6-byte-life"
+      }
+    ],
+    "detail": "偵測框分高/低分，先以高分框匹配預測軌跡，再用低分框匹配剩餘未配對的活動軌跡。給定ID7短暫遮擋造成0.3低分但位置接近，可第二輪續接；孤立低分不直接建新ID。未接回則丟失，超過保留期移除；計數線與事件由下游另訂。分數只是算例，非建議門檻。",
+    "source": "https://github.com/FoundationVision/ByteTrack",
+    "terms": [
+      "位置：對回同一輸入座標，不能任意混層或混影格。",
+      "圖中數值：作者給定機制算例，非模型實測或建議門檻。"
+    ]
+  },
+  {
+    "id": "ad-dinomaly-engineering-1",
+    "owner": "ad-dinomaly",
+    "index": 1,
+    "version": "r01",
+    "kind": "C",
+    "mobile_height": 2304,
+    "title": "Dinomaly：多类正常，共用重建路徑",
+    "takeaway": "共同訓練仍需逐產品驗證。",
+    "panels": [
+      {
+        "title": "三種產品的正常資料",
+        "graphic": "b6-dino-data"
+      },
+      {
+        "title": "固定骨幹，更新重建路徑",
+        "graphic": "b6-dino-train"
+      },
+      {
+        "title": "位置差異交原圖覆核",
+        "graphic": "b6-ad-delivery"
+      }
+    ],
+    "detail": "固定DINOv2，多類正常共同訓練MLP及解碼器；位置差異是覆核線索。各類正常變化與真缺陷分開留出，不用整體平均掩蓋弱類。",
+    "source": "https://arxiv.org/html/2405.14325v5",
+    "terms": [
+      "位置：對回同一輸入座標，不能任意混層或混影格。",
+      "圖中數值：作者給定機制算例，非模型實測或建議門檻。"
+    ],
+    "review": "pending"
+  },
+  {
+    "id": "ad-dinomaly-engineering-3",
+    "owner": "ad-dinomaly",
+    "index": 3,
+    "version": "r01",
+    "kind": "C",
+    "mobile_height": 2304,
+    "title": "Dinomaly：訓練擾動，部署要關閉",
+    "takeaway": "保存層分組與eval設定，才可重現差異。",
+    "panels": [
+      {
+        "title": "訓練Dropout，推論關閉",
+        "graphic": "b6-dino-drop"
+      },
+      {
+        "title": "保存重建與分組版本",
+        "graphic": "b6-dino-contract"
+      },
+      {
+        "title": "按產品驗誤報和漏檢",
+        "graphic": "b6-class-validation"
+      }
+    ],
+    "detail": "保存骨幹、MLP、解碼器、使用層和分組、前處理及評分。Dropout只於訓練；放鬆逐層配對與難位置訓練策略不等於省略驗證。部署需eval，變更分組後重新驗。",
+    "source": "https://arxiv.org/html/2405.14325v5",
+    "terms": [
+      "位置：對回同一輸入座標，不能任意混層或混影格。",
+      "圖中數值：作者給定機制算例，非模型實測或建議門檻。"
+    ],
+    "review": "pending"
+  },
+  {
+    "id": "ad-dinomaly-engineering-4",
+    "owner": "ad-dinomaly",
+    "index": 4,
+    "version": "r01",
+    "kind": "D",
+    "mobile_height": 2304,
+    "title": "Dinomaly：低重建差，不保證無刮傷",
+    "takeaway": "限制照抄是手段，缺陷仍要用真例驗證。",
+    "panels": [
+      {
+        "title": "同板刮傷p仍然存在",
+        "graphic": "b6-ad-scratch"
+      },
+      {
+        "title": "若原與重建表示相同",
+        "graphic": "b6-dino-copy"
+      },
+      {
+        "title": "獨立正常與缺陷分開驗",
+        "graphic": "b6-ad-validate"
+      }
+    ],
+    "detail": "給定原與重建表示同為[.6,.8]，餘弦差0；原圖刮傷仍在。Dropout和線性注意力針對照抄捷徑，不保證每个缺陷有大差異。",
+    "source": "https://arxiv.org/html/2405.14325v5",
+    "terms": [
+      "位置：對回同一輸入座標，不能任意混層或混影格。",
+      "圖中數值：作者給定機制算例，非模型實測或建議門檻。"
+    ],
+    "review": "pending"
+  },
+  {
+    "id": "ad-invad-engineering-1",
+    "owner": "ad-invad",
+    "index": 1,
+    "version": "r01",
+    "kind": "C",
+    "mobile_height": 2304,
+    "title": "InvAD：正常特徵教空間重建",
+    "takeaway": "重建表示回比原表示，提供檢查位置。",
+    "panels": [
+      {
+        "title": "正常與驗證同件分開",
+        "graphic": "b6-ad-split"
+      },
+      {
+        "title": "空間條件教逐階重建",
+        "graphic": "b6-inv-train"
+      },
+      {
+        "title": "輸出位置分數及原圖",
+        "graphic": "b6-ad-delivery"
+      }
+    ],
+    "detail": "2024 InvAD用多類正常訓練特徵反演，固定編碼器，更新條件和重建模組。輸入影像形成每尺度空間條件，交付特徵差圖與影像分數，非照片修復。",
+    "source": "https://arxiv.org/html/2404.10760v1",
+    "terms": [
+      "位置：對回同一輸入座標，不能任意混層或混影格。",
+      "圖中數值：作者給定機制算例，非模型實測或建議門檻。"
+    ],
+    "review": "pending"
+  },
+  {
+    "id": "ad-invad-engineering-3",
+    "owner": "ad-invad",
+    "index": 3,
+    "version": "r01",
+    "kind": "C",
+    "mobile_height": 2304,
+    "title": "InvAD：SSM設定隨重建模型交付",
+    "takeaway": "特徵、空間條件和評分要配套。",
+    "panels": [
+      {
+        "title": "保存特徵與SSM版本",
+        "graphic": "b6-inv-contract"
+      },
+      {
+        "title": "逐位置縮放與偏移",
+        "graphic": "b6-inv-modulate"
+      },
+      {
+        "title": "推論餘弦差再回原圖",
+        "graphic": "b6-inv-compare"
+      }
+    ],
+    "detail": "保存編碼器、尺度融合與SSM、解碼器、標準化/前處理和評分。訓練MSE與推論餘弦差不能混為同一量；SSM指Spatial Style Modulation，不是Mamba。",
+    "source": "https://arxiv.org/html/2404.10760v1",
+    "terms": [
+      "位置：對回同一輸入座標，不能任意混層或混影格。",
+      "圖中數值：作者給定機制算例，非模型實測或建議門檻。"
+    ],
+    "review": "pending"
+  },
+  {
+    "id": "ad-invad-engineering-4",
+    "owner": "ad-invad",
+    "index": 4,
+    "version": "r01",
+    "kind": "D",
+    "mobile_height": 2304,
+    "title": "InvAD：位置條件不能平均成一數",
+    "takeaway": "保留空間差異，才保留不同位置的調制。",
+    "panels": [
+      {
+        "title": "同一z在p與q調制不同",
+        "graphic": "b6-inv-modulate"
+      },
+      {
+        "title": "若平均條件，兩點都4.25",
+        "graphic": "b6-inv-average"
+      },
+      {
+        "title": "仍需回原圖驗位置差異",
+        "graphic": "b6-ad-validate"
+      }
+    ],
+    "detail": "給定p縮放2偏移1、q縮放.5偏移0，z=3得到7/1.5。若把兩位置條件平均成縮放1.25偏移.5，兩者都4.25，失去空間區別。本例只揭示平均的資訊損失，不是模型效能實測。",
+    "source": "https://arxiv.org/html/2404.10760v1",
+    "terms": [
+      "位置：對回同一輸入座標，不能任意混層或混影格。",
+      "圖中數值：作者給定機制算例，非模型實測或建議門檻。"
+    ],
+    "review": "pending"
+  },
+  {
+    "id": "ad-ddad-engineering-1",
+    "owner": "ad-ddad",
+    "index": 1,
+    "version": "r01",
+    "kind": "C",
+    "mobile_height": 2304,
+    "title": "DDAD：恢復估計作為檢查對照",
+    "takeaway": "正常資料教恢復，原圖保留作比較。",
+    "panels": [
+      {
+        "title": "正常學習與真缺陷驗證分開",
+        "graphic": "b6-ad-split"
+      },
+      {
+        "title": "去噪與特徵適配各有角色",
+        "graphic": "b6-dd-train"
+      },
+      {
+        "title": "兩路差異供位置覆核",
+        "graphic": "b6-dd-compare"
+      }
+    ],
+    "detail": "正常資料訓練擴散去噪與特徵適配，推論由待測影像引導恢復並比像素與特徵差。交付原圖、恢復估計及分數，R不能取代原圖作正常真值。",
+    "source": "https://arxiv.org/abs/2305.15956",
+    "terms": [
+      "位置：對回同一輸入座標，不能任意混層或混影格。",
+      "圖中數值：作者給定機制算例，非模型實測或建議門檻。"
+    ],
+    "review": "pending"
+  },
+  {
+    "id": "ad-ddad-engineering-3",
+    "owner": "ad-ddad",
+    "index": 3,
+    "version": "r01",
+    "kind": "C",
+    "mobile_height": 2304,
+    "title": "DDAD：採樣成本要計完整流程",
+    "takeaway": "步數是設定，速度與檢查錯誤要一起驗。",
+    "panels": [
+      {
+        "title": "固定步數、引導與隨機設定",
+        "graphic": "b6-dd-contract"
+      },
+      {
+        "title": "成本隨去噪呼叫累積",
+        "graphic": "b6-dd-cost"
+      },
+      {
+        "title": "同件留出驗位置與延遲",
+        "graphic": "b6-ad-validate"
+      }
+    ],
+    "detail": "保存噪聲/採樣/引導強度、特徵適配和整合權重。給定每步4ms，20步80ms、50步200ms，只是去噪呼叫算例，未含前後處理；不保證增加步數提高檢測。",
+    "source": "https://arxiv.org/abs/2305.15956",
+    "terms": [
+      "位置：對回同一輸入座標，不能任意混層或混影格。",
+      "圖中數值：作者給定機制算例，非模型實測或建議門檻。"
+    ],
+    "review": "pending"
+  },
+  {
+    "id": "ad-ddad-engineering-4",
+    "owner": "ad-ddad",
+    "index": 4,
+    "version": "r02",
+    "kind": "D",
+    "mobile_height": 2304,
+    "title": "DDAD：恢復若保留刮傷，也可能漏檢",
+    "takeaway": "恢復得像，不代表原圖沒有缺陷。",
+    "panels": [
+      {
+        "title": "同板原刮傷位置p",
+        "graphic": "b6-ad-scratch"
+      },
+      {
+        "title": "若R複製p，像素差為0",
+        "graphic": "b6-dd-copy"
+      },
+      {
+        "title": "兩路評分仍用真缺陷獨立驗",
+        "graphic": "b6-ad-validate"
+      }
+    ],
+    "detail": "給定原p=40、恢復p=40，像素差0仍有刮傷；特徵差可能補充，也可能同樣小。原與恢復的相似並不是檢出證據，獨立驗漏檢。",
+    "source": "https://arxiv.org/abs/2305.15956",
+    "terms": [
+      "位置：對回同一輸入座標，不能任意混層或混影格。",
+      "圖中數值：作者給定機制算例，非模型實測或建議門檻。"
+    ],
+    "review": "pending"
+  },
+  {
+    "id": "ad-winclip-engineering-1",
+    "owner": "ad-winclip",
+    "index": 1,
+    "version": "r02",
+    "kind": "C",
+    "mobile_height": 2304,
+    "title": "WinCLIP：文字與局部視窗檢查新件",
+    "takeaway": "固定模型仍要固定提示、取像與驗證。",
+    "panels": [
+      {
+        "title": "同板待測p與正常留出",
+        "graphic": "b6-win-holdout"
+      },
+      {
+        "title": "人工文字狀態配局部視窗",
+        "graphic": "b6-win-task"
+      },
+      {
+        "title": "交出可疑位置並回看原件",
+        "graphic": "b6-ad-delivery"
+      }
+    ],
+    "detail": "目標零樣本WinCLIP以人工文字狀態和視窗表示評局部異常，無目標訓練仍須目標留出驗證。WinCLIP+可另加少量正常視覺參考，需明列實際使用模式。",
+    "source": "https://arxiv.org/html/2303.14814v1",
+    "terms": [
+      "位置：對回同一輸入座標，不能任意混層或混影格。",
+      "圖中數值：作者給定機制算例，非模型實測或建議門檻。"
+    ],
+    "review": "pending"
+  },
+  {
+    "id": "ad-winclip-engineering-3",
+    "owner": "ad-winclip",
+    "index": 3,
+    "version": "r02",
+    "kind": "C",
+    "mobile_height": 2304,
+    "title": "WinCLIP：零樣本與正常參考要分清",
+    "takeaway": "增加正常參考，資料與庫版本也成為設定。",
+    "panels": [
+      {
+        "title": "人工提示與視窗固定",
+        "graphic": "b6-win-contract"
+      },
+      {
+        "title": "加正常參考是WinCLIP+",
+        "graphic": "b6-win-reference"
+      },
+      {
+        "title": "反光誤報與細傷漏檢分開驗",
+        "graphic": "b6-clip-errors"
+      }
+    ],
+    "detail": "保存CLIP版本、人工提示、視窗尺度/聚合、前處理；WinCLIP+另外保存正常參考和視覺比對。不能用+的結果宣稱未用正常參考，也不把相似分數當概率。",
+    "source": "https://arxiv.org/html/2303.14814v1",
+    "terms": [
+      "位置：對回同一輸入座標，不能任意混層或混影格。",
+      "圖中數值：作者給定機制算例，非模型實測或建議門檻。"
+    ],
+    "review": "pending"
+  },
+  {
+    "id": "ad-winclip-engineering-4",
+    "owner": "ad-winclip",
+    "index": 4,
+    "version": "r02",
+    "kind": "D",
+    "mobile_height": 2304,
+    "title": "WinCLIP：與學習提示比較",
+    "takeaway": "同件比較人工提示與學習提示的成本。",
+    "panels": [
+      {
+        "title": "同板p與同一驗收題",
+        "graphic": "b6-ad-scratch"
+      },
+      {
+        "title": "WinCLIP由人工組提示",
+        "graphic": "b6-win-prompts"
+      },
+      {
+        "title": "AnomalyCLIP用輔助資料學提示",
+        "graphic": "b6-ac-train"
+      }
+    ],
+    "detail": "兩方法均以CLIP語意與局部特徵提供異常線索；前者人工設計文字，後者使用輔助標註學物件無關提示。同資料與錯誤成本比較，不預設固定排名。",
+    "source": "https://arxiv.org/html/2303.14814v1",
+    "terms": [
+      "位置：對回同一輸入座標，不能任意混層或混影格。",
+      "圖中數值：作者給定機制算例，非模型實測或建議門檻。"
+    ],
+    "review": "pending"
+  },
+  {
+    "id": "ad-anomalyclip-engineering-1",
+    "owner": "ad-anomalyclip",
+    "index": 1,
+    "version": "r01",
+    "kind": "C",
+    "mobile_height": 2304,
+    "title": "AnomalyCLIP：目標零樣本仍有學習來源",
+    "takeaway": "目標未訓練，提示曾由輔助資料學習。",
+    "panels": [
+      {
+        "title": "輔助資料與目標板分開",
+        "graphic": "b6-ac-provenance"
+      },
+      {
+        "title": "固定骨幹比已學兩狀態",
+        "graphic": "b6-ac-match"
+      },
+      {
+        "title": "位置與整圖分數分工",
+        "graphic": "b6-ac-local"
+      }
+    ],
+    "detail": "輔助正常/異常和局部標註學提示，目標類別未參與學習。保存提示來源，目標部署仍需驗漏檢/誤報；本輪沒有新訓練或推論。",
+    "source": "https://arxiv.org/html/2310.18961v3",
+    "terms": [
+      "位置：對回同一輸入座標，不能任意混層或混影格。",
+      "圖中數值：作者給定機制算例，非模型實測或建議門檻。"
+    ],
+    "review": "pending"
+  },
+  {
+    "id": "ad-anomalyclip-engineering-3",
+    "owner": "ad-anomalyclip",
+    "index": 3,
+    "version": "r02",
+    "kind": "C",
+    "mobile_height": 2304,
+    "title": "AnomalyCLIP：學到的提示需要版本",
+    "takeaway": "提示、骨幹與局部注意力一起固定。",
+    "panels": [
+      {
+        "title": "保存學習來源與提示",
+        "graphic": "b6-ac-contract"
+      },
+      {
+        "title": "局部p對正常異常兩狀態",
+        "graphic": "b6-ac-match"
+      },
+      {
+        "title": "正常反光與缺陷分開驗",
+        "graphic": "b6-clip-errors"
+      }
+    ],
+    "detail": "保存輔助資料/切分、prompt checkpoint、骨幹、DPAM、前處理/分數設定。目標零樣本不免獨立驗證；更換提示或影像解析度都可能改變局部結果。",
+    "source": "https://arxiv.org/html/2310.18961v3",
+    "terms": [
+      "位置：對回同一輸入座標，不能任意混層或混影格。",
+      "圖中數值：作者給定機制算例，非模型實測或建議門檻。"
+    ],
+    "review": "pending"
+  },
+  {
+    "id": "ad-anomalyclip-engineering-4",
+    "owner": "ad-anomalyclip",
+    "index": 4,
+    "version": "r02",
+    "kind": "D",
+    "mobile_height": 2304,
+    "title": "AnomalyCLIP：語意相似也可能看錯位置",
+    "takeaway": "可疑分數要能對回可見證據。",
+    "panels": [
+      {
+        "title": "同板正常q與刮傷p",
+        "graphic": "b6-clip-pair"
+      },
+      {
+        "title": "給定反例：q誤報，p漏檢",
+        "graphic": "b6-clip-errors"
+      },
+      {
+        "title": "固定留出集比較兩提示法",
+        "graphic": "b6-clip-compare"
+      }
+    ],
+    "detail": "正常孔反光q可能被判異常，細傷p可能未見；圖為作者反例，沒有模型分數。以同一取像、真值和允收成本比較人工與學習提示，不能只看文字描述流暢。",
+    "source": "https://arxiv.org/html/2310.18961v3",
+    "terms": [
+      "位置：對回同一輸入座標，不能任意混層或混影格。",
+      "圖中數值：作者給定機制算例，非模型實測或建議門檻。"
+    ],
+    "review": "pending"
+  },
+  {
+    "id": "frame-difference-engineering-1",
+    "owner": "frame-difference",
+    "index": 1,
+    "version": "r01",
+    "kind": "C",
+    "mobile_height": 2304,
+    "title": "Frame Difference：找前後變化的位置",
+    "takeaway": "差分回答哪裡變了，物件數需另推論。",
+    "panels": [
+      {
+        "title": "固定相機看同一方件",
+        "graphic": "b6-fd-frames"
+      },
+      {
+        "title": "逐座標差異再過門檻",
+        "graphic": "b6-fd-threshold"
+      },
+      {
+        "title": "兩條變化帶交後段處理",
+        "graphic": "b6-fd-bands"
+      }
+    ],
+    "detail": "相鄰灰階前後相減取絕對值，再二值門檻。給定差80大於示意門檻30為前景，但0不亮；門檻不是建議值。不能直接把帶數當件數。",
+    "source": "https://docs.opencv.org/4.x/d2/de8/group__core__array.html",
+    "terms": [
+      "位置：對回同一輸入座標，不能任意混層或混影格。",
+      "圖中數值：作者給定機制算例，非模型實測或建議門檻。"
+    ],
+    "review": "pending"
+  },
+  {
+    "id": "frame-difference-engineering-3",
+    "owner": "frame-difference",
+    "index": 3,
+    "version": "r02",
+    "kind": "C",
+    "mobile_height": 2304,
+    "title": "Frame Difference：相機與時間間隔要固定",
+    "takeaway": "不同取像條件，差異的原因也會改變。",
+    "panels": [
+      {
+        "title": "保存前後時間与相機設定",
+        "graphic": "b6-fd-contract"
+      },
+      {
+        "title": "全畫面變亮也會有差",
+        "graphic": "b6-fd-flash"
+      },
+      {
+        "title": "停住物件兩幀差為0",
+        "graphic": "b6-fd-still"
+      }
+    ],
+    "detail": "保存幀距、曝光、相機位置、ROI、灰階/門檻與後處理。曝光跳變或震動造成非物件運動差；靜止物件會消失於兩幀差。異常動作或缺陷判定須下游另作。",
+    "source": "https://docs.opencv.org/4.x/d2/de8/group__core__array.html",
+    "terms": [
+      "位置：對回同一輸入座標，不能任意混層或混影格。",
+      "圖中數值：作者給定機制算例，非模型實測或建議門檻。"
+    ],
+    "review": "pending"
+  },
+  {
+    "id": "frame-difference-engineering-4",
+    "owner": "frame-difference",
+    "index": 4,
+    "version": "r02",
+    "kind": "D",
+    "mobile_height": 2304,
+    "title": "相鄰差分與背景相減：參考不同",
+    "takeaway": "同件停住，兩方法的時間記憶不同。",
+    "panels": [
+      {
+        "title": "同一方件已停住",
+        "graphic": "b6-fd-still"
+      },
+      {
+        "title": "前後相同：相鄰差為0",
+        "graphic": "b6-fd-zero"
+      },
+      {
+        "title": "相對舊背景仍可能是前景",
+        "graphic": "b6-fd-bg-compare"
+      }
+    ],
+    "detail": "相鄰差分只比較選定兩幀；背景相減對歷史常態比較，初停物件可仍為前景，但背景更新後也可能被吸收。此差異不代表方法固定更準。",
+    "source": "https://docs.opencv.org/4.x/d2/de8/group__core__array.html",
+    "terms": [
+      "位置：對回同一輸入座標，不能任意混層或混影格。",
+      "圖中數值：作者給定機制算例，非模型實測或建議門檻。"
+    ],
+    "review": "pending"
+  },
+  {
+    "id": "background-subtraction-engineering-1",
+    "owner": "background-subtraction",
+    "index": 1,
+    "version": "r01",
+    "kind": "C",
+    "mobile_height": 2304,
+    "title": "背景相減：先建立场景常態",
+    "takeaway": "前景是相對背景的變化，不是物件類別。",
+    "panels": [
+      {
+        "title": "多時間建立背景模型",
+        "graphic": "b6-bg-history"
+      },
+      {
+        "title": "當前方件與背景比較",
+        "graphic": "b6-bg-compare"
+      },
+      {
+        "title": "遮罩交後段定位與追蹤",
+        "graphic": "b6-bg-delivery"
+      }
+    ],
+    "detail": "固定相機常用MOG2累積背景，交付前景mask。mask不自帶類別或永久ID；後段需處理陰影/雜訊、連通區或偵測與追蹤。",
+    "source": "https://docs.opencv.org/4.x/d1/dc5/tutorial_background_subtraction.html",
+    "terms": [
+      "位置：對回同一輸入座標，不能任意混層或混影格。",
+      "圖中數值：作者給定機制算例，非模型實測或建議門檻。"
+    ],
+    "review": "pending"
+  },
+  {
+    "id": "background-subtraction-engineering-3",
+    "owner": "background-subtraction",
+    "index": 3,
+    "version": "r02",
+    "kind": "C",
+    "mobile_height": 2304,
+    "title": "背景相減：啟動與更新速度都要驗",
+    "takeaway": "先穩定背景，再評停留和光照變化。",
+    "panels": [
+      {
+        "title": "起始背景尚不穩定",
+        "graphic": "b6-bg-warmup"
+      },
+      {
+        "title": "更新快慢有不同取捨",
+        "graphic": "b6-bg-rate"
+      },
+      {
+        "title": "部署保存狀態和陰影處理",
+        "graphic": "b6-bg-contract"
+      }
+    ],
+    "detail": "相機重置或場景切换須重建背景。較快更新能適應變化，也可能較快吸收停留物；較慢更新可能留下照明變化前景。保存history/learningRate、陰影標籤處理與重置規則，實際驗證，不給固定適用參數。",
+    "source": "https://docs.opencv.org/4.x/d1/dc5/tutorial_background_subtraction.html",
+    "terms": [
+      "位置：對回同一輸入座標，不能任意混層或混影格。",
+      "圖中數值：作者給定機制算例，非模型實測或建議門檻。"
+    ],
+    "review": "pending"
+  },
+  {
+    "id": "background-subtraction-engineering-4",
+    "owner": "background-subtraction",
+    "index": 4,
+    "version": "r02",
+    "kind": "D",
+    "mobile_height": 2304,
+    "title": "背景相減：物件沒動，不保證一直亮",
+    "takeaway": "背景模型會更新，遮罩不等於物件存在。",
+    "panels": [
+      {
+        "title": "方件到場，先有前景",
+        "graphic": "b6-bg-compare"
+      },
+      {
+        "title": "長期停留可能被吸收",
+        "graphic": "b6-bg-update"
+      },
+      {
+        "title": "要保留物件身份，另接追蹤",
+        "graphic": "b6-bg-track"
+      }
+    ],
+    "detail": "前景mask空不代表現場無物件。停留物件可能被模型吸收；需保存事件/狀態並視任務接偵測追蹤，而追蹤本身也有丟失限制。",
+    "source": "https://docs.opencv.org/4.x/d1/dc5/tutorial_background_subtraction.html",
+    "terms": [
+      "位置：對回同一輸入座標，不能任意混層或混影格。",
+      "圖中數值：作者給定機制算例，非模型實測或建議門檻。"
+    ],
+    "review": "pending"
+  },
+  {
+    "id": "bytetrack-engineering-1",
+    "owner": "bytetrack",
+    "index": 1,
+    "version": "r01",
+    "kind": "C",
+    "mobile_height": 2304,
+    "title": "ByteTrack：跨幀接身份，計數另定義",
+    "takeaway": "框先偵測，ID靠配對，過線再計數。",
+    "panels": [
+      {
+        "title": "偵測器交每幀框與分數",
+        "graphic": "b6-byte-detections"
+      },
+      {
+        "title": "高低兩輪續接身份",
+        "graphic": "b6-byte-match"
+      },
+      {
+        "title": "ID7越線由下游記一次",
+        "graphic": "b6-byte-count"
+      }
+    ],
+    "detail": "ByteTrack輸入逐幀偵測框、分數與時間順序；輸出追蹤ID和框。計數線、方向與重複事件政策在下游，單有追蹤不等於完成可靠計數。",
+    "source": "https://github.com/FoundationVision/ByteTrack",
+    "terms": [
+      "位置：對回同一輸入座標，不能任意混層或混影格。",
+      "圖中數值：作者給定機制算例，非模型實測或建議門檻。"
+    ],
+    "review": "pending"
+  },
+  {
+    "id": "bytetrack-engineering-3",
+    "owner": "bytetrack",
+    "index": 3,
+    "version": "r01",
+    "kind": "C",
+    "mobile_height": 2304,
+    "title": "ByteTrack：幀率與丟失緩衝要配套",
+    "takeaway": "驗完整影片的斷軌與重複計數。",
+    "panels": [
+      {
+        "title": "保存偵測與關聯設定",
+        "graphic": "b6-byte-contract"
+      },
+      {
+        "title": "同樣緩衝幀數，時間不同",
+        "graphic": "b6-byte-buffer"
+      },
+      {
+        "title": "遮擋回來可能換ID",
+        "graphic": "b6-byte-switch"
+      }
+    ],
+    "detail": "保存偵測器、分數/匹配門檻、幀率/時間順序、track_buffer與事件規則。給定30幀在30fps是1秒，在10fps是3秒；實作可能按fps縮放，須核對有效幀數。跨攝影機切換應重置，不能沿用不相關ID。",
+    "source": "https://github.com/FoundationVision/ByteTrack",
+    "terms": [
+      "位置：對回同一輸入座標，不能任意混層或混影格。",
+      "圖中數值：作者給定機制算例，非模型實測或建議門檻。"
+    ],
+    "review": "pending"
+  },
+  {
+    "id": "bytetrack-engineering-4",
+    "owner": "bytetrack",
+    "index": 4,
+    "version": "r01",
+    "kind": "D",
+    "mobile_height": 2304,
+    "title": "ByteTrack：低分框要有配對證據",
+    "takeaway": "孤立低分不能憑空建成可靠新物件。",
+    "panels": [
+      {
+        "title": "ID7的低分框可接現有軌跡",
+        "graphic": "b6-byte-match"
+      },
+      {
+        "title": "孤立低分框不新建ID",
+        "graphic": "b6-byte-isolated"
+      },
+      {
+        "title": "新高分候選仍需確認",
+        "graphic": "b6-byte-new"
+      }
+    ],
+    "detail": "低分再匹配使用剩餘未配對活動軌跡，孤立低分不直接建新ID。高分新候選也需依實作確認和後續續接；偵測誤框與長遮擋仍可能造成錯ID。",
+    "source": "https://github.com/FoundationVision/ByteTrack",
+    "terms": [
+      "位置：對回同一輸入座標，不能任意混層或混影格。",
+      "圖中數值：作者給定機制算例，非模型實測或建議門檻。"
+    ],
+    "review": "pending"
+  },
+  {
+    "id": "convlstm-engineering-2",
+    "owner": "convlstm",
+    "index": 2,
+    "version": "r02",
+    "kind": "C",
+    "title": "ConvLSTM：卷積門控更新空間記憶",
+    "takeaway": "新影格和舊狀態，逐位置決定記住什麼。",
+    "mobile_height": 2304,
+    "panels": [
+      {
+        "title": "新影格與前一步空間狀態",
+        "graphic": "b7-conv-input"
+      },
+      {
+        "title": "門控保留舊值、加入新值",
+        "graphic": "b7-conv-gate"
+      },
+      {
+        "title": "新狀態傳到下一時間點",
+        "graphic": "b7-conv-next"
+      }
+    ],
+    "detail": "同一夾爪與方塊依序張開、接近、夾住。X_t及H_(t-1)以卷積產生門控，C_t=f_t⊙C_(t-1)+i_t⊙候選；H_t=o_t⊙tanh(C_t)。原論文可有peephole。給定單位置Cprev=.4,f=.5,i=.8,candidate=.5得C=.6；其餘位置另有值。不是每張影格都重新歸零；任务頭另訓練。 r01實看修正：下一步明畫卷積門控與X(t+1)，避免誤讀直接預測圖像。",
+    "source": "https://arxiv.org/abs/1506.04214",
+    "terms": [
+      "示意數值：作者給定局部算例，非模型實測或建議參數。",
+      "同位置：比較保持相同影像座標與時間身份，不能任意換工件。"
+    ]
+  },
+  {
+    "id": "videomae-engineering-2",
+    "owner": "videomae",
+    "index": 2,
+    "version": "r02",
+    "kind": "C",
+    "title": "VideoMAE：遮時空塊，訓練補像素",
+    "takeaway": "補像素訓練表示，部署另接任務頭。",
+    "mobile_height": 2304,
+    "panels": [
+      {
+        "title": "同一格位置跨時間遮蔽",
+        "graphic": "b7-mae-tube"
+      },
+      {
+        "title": "可見token編碼再解碼",
+        "graphic": "b7-mae-decode"
+      },
+      {
+        "title": "只比被遮位置的像素",
+        "graphic": "b7-mae-loss"
+      }
+    ],
+    "detail": "原版VideoMAE預訓練使用跨時間一致tube mask，通常90–95%高比例；圖中小格只示意對位，不代表實際比例。編碼器處理可見tokens，輕量解碼器加入mask tokens重建像素，以原遮蔽位置像素監督；下游動作分類使用編碼器及另外訓練任務頭，不使用預訓練解碼器。 r01實看修正：解碼重建格上移，與caption保留間距。",
+    "source": "https://arxiv.org/abs/2203.12602",
+    "terms": [
+      "示意數值：作者給定局部算例，非模型實測或建議參數。",
+      "同位置：比較保持相同影像座標與時間身份，不能任意換工件。"
+    ]
+  },
+  {
+    "id": "v-jepa-engineering-2",
+    "owner": "v-jepa",
+    "index": 2,
+    "version": "r02",
+    "kind": "C",
+    "title": "V-JEPA：預測同位置的目標特徵",
+    "takeaway": "目標特徵提供訓練訊號，部署另學任務。",
+    "mobile_height": 2304,
+    "panels": [
+      {
+        "title": "可見區編碼並指定遮蔽位置",
+        "graphic": "b7-jepa-context"
+      },
+      {
+        "title": "完整影片產生停止梯度目標",
+        "graphic": "b7-jepa-target"
+      },
+      {
+        "title": "同遮蔽位置比較特徵差",
+        "graphic": "b7-jepa-loss"
+      }
+    ],
+    "detail": "2024原版V-JEPA；上下文編碼器讀可見tokens，預測器加遮蔽位置資訊預測目標tokens。完整影片只進目標編碼器，目標stop-gradient，其權重由上下文EMA更新。L1比較同位置特徵。作者兩維算例預測[.2,.8]目標[.4,.7]平均絕對差.15，不是異常分數。 r01實看修正：目標格與EMA文字分離。",
+    "source": "https://arxiv.org/html/2404.08471v1",
+    "terms": [
+      "示意數值：作者給定局部算例，非模型實測或建議參數。",
+      "同位置：比較保持相同影像座標與時間身份，不能任意換工件。"
+    ]
+  },
+  {
+    "id": "defectfill-engineering-2",
+    "owner": "defectfill",
+    "index": 2,
+    "version": "r02",
+    "kind": "C",
+    "title": "DefectFill：學缺陷，再填指定區域",
+    "takeaway": "先學缺陷外觀，再核對合成位置與真實性。",
+    "mobile_height": 2304,
+    "panels": [
+      {
+        "title": "少量缺陷與遮罩教LoRA",
+        "graphic": "b7-fill-learn"
+      },
+      {
+        "title": "正常板加指定遮罩生成",
+        "graphic": "b7-fill-generate"
+      },
+      {
+        "title": "遮罩內感知差異挑候選",
+        "graphic": "b7-fill-select"
+      }
+    ],
+    "detail": "同一上方雙孔板，下方中心刮傷。少量缺陷及mask微調文字編碼器及attention LoRA；缺陷/物件/attention三損失協同。正常影像+mask進inpainting，LFS挑遮罩內相對原正常图LPIPS更大的候選（較低保真）；給定.1/.3只是示例，不等於物理真實度，仍需逐件位置及真缺陷驗證。 r01實看修正：候選A改為淡刮傷，不把正常原圖配非零距離。",
+    "source": "https://arxiv.org/html/2503.13985v1",
+    "terms": [
+      "示意數值：作者給定局部算例，非模型實測或建議參數。",
+      "同位置：比較保持相同影像座標與時間身份，不能任意換工件。"
+    ]
+  },
+  {
+    "id": "anomalydiffusion-engineering-2",
+    "owner": "anomalydiffusion",
+    "index": 2,
+    "version": "r02",
+    "kind": "C",
+    "title": "AnomalyDiffusion：外觀與位置共同引導",
+    "takeaway": "逐區核對合成缺陷，不能只相信指定遮罩。",
+    "mobile_height": 2304,
+    "panels": [
+      {
+        "title": "外觀嵌入與遮罩空間嵌入",
+        "graphic": "b7-ano-condition"
+      },
+      {
+        "title": "較弱區域得到更多注意",
+        "graphic": "b7-ano-feedback"
+      },
+      {
+        "title": "背景融合與圖像遮罩核對",
+        "graphic": "b7-ano-result"
+      }
+    ],
+    "detail": "同上方双孔板，大左下/小右下兩區。學異常外觀embedding及mask編碼器，固定擴散主幹；空間及外觀條件引導。AAR用生成估計與正常圖遮罩內差找較弱區域調注意力，背景與正常圖融合。給两mask只生成一傷仍是需剔除的錯標反例，不聲稱自適應必成功。 r01實看修正：恢復原板上方兩孔，保留大左下小右下雙傷；條件pill與caption分離。",
+    "source": "https://arxiv.org/html/2312.05767v1",
+    "terms": [
+      "示意數值：作者給定局部算例，非模型實測或建議參數。",
+      "同位置：比較保持相同影像座標與時間身份，不能任意換工件。"
+    ]
+  },
+  {
+    "id": "tf-idg-engineering-2",
+    "owner": "tf-idg",
+    "index": 2,
+    "version": "r01",
+    "kind": "C",
+    "title": "TF-IDG：梯度引導生成，不改模型權重",
+    "takeaway": "更新生成中的潛變量，模型權重保持固定。",
+    "mobile_height": 2304,
+    "panels": [
+      {
+        "title": "正常板、缺陷參考與局部遮罩",
+        "graphic": "b7-tf-input"
+      },
+      {
+        "title": "特徵差的梯度引導潛變量",
+        "graphic": "b7-tf-gradient"
+      },
+      {
+        "title": "補弱區並保持背景紋理",
+        "graphic": "b7-tf-result"
+      }
+    ],
+    "detail": "同中部兩孔板，下方兩刮傷區。TF-IDG固定預訓練權重；生成局部特徵與參考對齊，梯度對latent求得並進入採樣更新，不是optimizer更新模型權重。自適應遮罩補弱區，AdaIN及背景融合保持紋理；跨材質參考仍可能錯。官方cldm/ddim_hacked.py autograd.grad(loss,latent)可核對；圖中z→z_next只示意引導不是完整採樣公式。",
+    "source": "https://github.com/rubymiaomiao/TF-IDG ; https://raw.githubusercontent.com/rubymiaomiao/TF-IDG/main/cldm/ddim_hacked.py",
+    "terms": [
+      "示意數值：作者給定局部算例，非模型實測或建議參數。",
+      "同位置：比較保持相同影像座標與時間身份，不能任意換工件。"
+    ]
+  },
+  {
+    "id": "controlnet-engineering-2",
+    "owner": "controlnet",
+    "index": 2,
+    "version": "r02",
+    "kind": "C",
+    "title": "ControlNet：控制殘差接入去噪主幹",
+    "takeaway": "條件控制布局，細節仍要回原條件核對。",
+    "mobile_height": 2304,
+    "panels": [
+      {
+        "title": "雙孔輪廓形成控制條件",
+        "graphic": "b7-control-input"
+      },
+      {
+        "title": "可訓練分支經零初始化連接",
+        "graphic": "b7-control-inject"
+      },
+      {
+        "title": "多步條件去噪再比輪廓",
+        "graphic": "b7-control-result"
+      }
+    ],
+    "detail": "同上方雙孔矩形板，輪廓圖含外框/兩孔，文字指定銀色金屬。預訓練主幹固定，可訓練編碼副本接條件，zero convolution初始化0以殘差連接主幹；訓練後連接通常不為0。每步讀時間/噪聲latent與條件；不把輪廓輸出當缺陷熱點。 r01實看修正：輪廓外框與孔框同用白線。",
+    "source": "https://arxiv.org/abs/2302.05543",
+    "terms": [
+      "示意數值：作者給定局部算例，非模型實測或建議參數。",
+      "同位置：比較保持相同影像座標與時間身份，不能任意換工件。"
+    ]
+  },
+  {
+    "id": "inpainting-engineering-2",
+    "owner": "inpainting",
+    "index": 2,
+    "version": "r02",
+    "kind": "C",
+    "title": "Inpainting：指定內區，保留外部上下文",
+    "takeaway": "編修影像可以補平，實物狀態並未改變。",
+    "mobile_height": 2304,
+    "panels": [
+      {
+        "title": "原圖與可編修遮罩分開保存",
+        "graphic": "b7-paint-input"
+      },
+      {
+        "title": "遮罩內去噪、外部提供上下文",
+        "graphic": "b7-paint-process"
+      },
+      {
+        "title": "檢查接縫與遮罩外變動",
+        "graphic": "b7-paint-check"
+      }
+    ],
+    "detail": "同上方雙孔板，下方污點為可編修區。以擴散修補為例，原圖與二值mask定義位置；mask 1為修改的本圖約定，API可能相反。生成內區與外部上下文融合，不保證所有pipeline遮罩外逐像素不變；比較原圖與編修版並另存。真孔被影像填平不代表實體補材。 r01實看修正：保持原下方黑污點，不任意換成刮傷。",
+    "source": "https://arxiv.org/abs/2201.09865",
+    "terms": [
+      "示意數值：作者給定局部算例，非模型實測或建議參數。",
+      "同位置：比較保持相同影像座標與時間身份，不能任意換工件。"
+    ]
+  },
+  {
+    "id": "diffusion-restoration-engineering-2",
+    "owner": "diffusion-restoration",
+    "index": 2,
+    "version": "r01",
+    "kind": "C",
+    "title": "擴散復原：估計後，套回觀測條件",
+    "takeaway": "退化後相符是必要核對，不能證明細節唯一。",
+    "mobile_height": 2304,
+    "panels": [
+      {
+        "title": "同板退化觀測與退化算子",
+        "graphic": "b7-restore-observe"
+      },
+      {
+        "title": "先驗與觀測共同約束候選",
+        "graphic": "b7-restore-candidate"
+      },
+      {
+        "title": "候選再退化，回比原觀測",
+        "graphic": "b7-restore-check"
+      }
+    ],
+    "detail": "同中部雙孔板。以線性退化y=Ax+n為例，預訓練擴散先驗與已知觀測/退化條件形成候選；不同方法條件接法不同，不概括為單一演算法。作者兩像素平均算子：[0,100]及[40,60]都得50，證明非唯一；不把某次採樣當真值。",
+    "source": "https://arxiv.org/abs/2201.11793",
+    "terms": [
+      "示意數值：作者給定局部算例，非模型實測或建議參數。",
+      "同位置：比較保持相同影像座標與時間身份，不能任意換工件。"
+    ]
+  },
+  {
+    "id": "deblur-engineering-2",
+    "owner": "deblur",
+    "index": 2,
+    "version": "r01",
+    "kind": "C",
+    "title": "Deblur：模糊邊緣反推清晰候選",
+    "takeaway": "清晰候選仍要用獨立觀測檢查假邊。",
+    "mobile_height": 2304,
+    "panels": [
+      {
+        "title": "移動曝光使邊緣展寬",
+        "graphic": "b7-blur-forward"
+      },
+      {
+        "title": "由觀測估計清晰邊緣",
+        "graphic": "b7-blur-inverse"
+      },
+      {
+        "title": "回看振鈴及獨立清晰影像",
+        "graphic": "b7-blur-check"
+      }
+    ],
+    "detail": "同金屬板直邊橫切，真邊階躍與曝光平均展寬。傳統反卷積/學習式復原均輸出估計，圖示非某一特定模型架構；空間變化運動模糊不能用單一核概括。回套退化及獨立短曝光影像檢查重影/振鈴。不用可能缺字的近似符號，直接寫約等於。",
+    "source": "https://arxiv.org/abs/1612.02177",
+    "terms": [
+      "示意數值：作者給定局部算例，非模型實測或建議參數。",
+      "同位置：比較保持相同影像座標與時間身份，不能任意換工件。"
+    ]
+  },
+  {
+    "id": "super-resolution-engineering-2",
+    "owner": "super-resolution",
+    "index": 2,
+    "version": "r01",
+    "kind": "C",
+    "title": "超解析：由低採樣估計高解析候選",
+    "takeaway": "更多輸出像素，不等於更多相機觀測。",
+    "mobile_height": 2304,
+    "panels": [
+      {
+        "title": "同一矩形雙孔板的粗採樣",
+        "graphic": "b7-sr-low"
+      },
+      {
+        "title": "插值與學習估計各自放大",
+        "graphic": "b7-sr-estimate"
+      },
+      {
+        "title": "縮回低解析核對一致性",
+        "graphic": "b7-sr-check"
+      }
+    ],
+    "detail": "維持大左孔/小右孔矩形板，固定左孔邊q。低解析格可經插值或學習先驗變高解析；輸出細節是估計。給定局部兩子像素[20,80]與[40,60]平均同50，只說明非唯一，不聲稱這兩例直接對應有缺口/無缺口。指定主反例也改矩形同板同q。",
+    "source": "https://arxiv.org/abs/2104.07636",
+    "terms": [
+      "示意數值：作者給定局部算例，非模型實測或建議參數。",
+      "同位置：比較保持相同影像座標與時間身份，不能任意換工件。"
+    ]
+  },
+  {
+    "id": "convlstm-engineering-1",
+    "owner": "convlstm",
+    "index": 1,
+    "version": "r01",
+    "kind": "C",
+    "mobile_height": 2304,
+    "title": "ConvLSTM：影片狀態接上明確任務",
+    "takeaway": "時序表示要接任務頭，才有可驗的輸出。",
+    "panels": [
+      {
+        "title": "連續夾取影片與任務標註",
+        "graphic": "b7-video-labels"
+      },
+      {
+        "title": "卷積記憶接任務頭",
+        "graphic": "b7-conv-head"
+      },
+      {
+        "title": "完整影片驗失敗與延遲",
+        "graphic": "b7-video-validation"
+      }
+    ],
+    "detail": "同夾爪方塊，夾取成功/失敗是另定義標籤；ConvLSTM產生H/C，分類頭需有監督。以整段影片或實體工件切分，不讓相鄰幀跨訓練驗證。",
+    "source": "https://arxiv.org/abs/1506.04214",
+    "terms": [
+      "示意數值：作者給定局部算例，非模型實測或建議參數。",
+      "同位置：比較保持相同影像座標與時間身份，不能任意換工件。"
+    ],
+    "review": "pending"
+  },
+  {
+    "id": "convlstm-engineering-3",
+    "owner": "convlstm",
+    "index": 3,
+    "version": "r02",
+    "kind": "C",
+    "mobile_height": 2304,
+    "title": "ConvLSTM：狀態生命週期要明定",
+    "takeaway": "換影片或相機時，依任務重設記憶。",
+    "panels": [
+      {
+        "title": "順序、幀距與縮放固定",
+        "graphic": "b7-video-timing"
+      },
+      {
+        "title": "同片續接，換片重設",
+        "graphic": "b7-conv-reset"
+      },
+      {
+        "title": "保存狀態與任務頭版本",
+        "graphic": "b7-conv-contract"
+      }
+    ],
+    "detail": "推論狀態初始化/持續/重設需符合訓練方式；不能讓相機A記憶污染B。保存幀距、解析度、網路及任務頭版本，量完整預處理/狀態更新/任務輸出延遲。 r01實看修正：时间刻度及標籤各自定位，避免SVG空白合併。",
+    "source": "https://arxiv.org/abs/1506.04214",
+    "terms": [
+      "示意數值：作者給定局部算例，非模型實測或建議參數。",
+      "同位置：比較保持相同影像座標與時間身份，不能任意換工件。"
+    ],
+    "review": "pending"
+  },
+  {
+    "id": "convlstm-engineering-4",
+    "owner": "convlstm",
+    "index": 4,
+    "version": "r01",
+    "kind": "D",
+    "mobile_height": 2304,
+    "title": "ConvLSTM：有記憶也可能忘記關鍵",
+    "takeaway": "記憶是一種可學狀態，不是完整影格存檔。",
+    "panels": [
+      {
+        "title": "短暫失敗發生在中間影格",
+        "graphic": "b7-video-missed"
+      },
+      {
+        "title": "忘記門連乘使舊訊號衰減",
+        "graphic": "b7-conv-decay"
+      },
+      {
+        "title": "不同片長與幀距各自驗",
+        "graphic": "b7-video-validation"
+      }
+    ],
+    "detail": "作者單格例：後續不加入新候選，C初值1、每步f=.5，經三步變.125；不代表真模型門固定。關鍵事件若未取到/遭遺忘仍可能漏檢。",
+    "source": "https://arxiv.org/abs/1506.04214",
+    "terms": [
+      "示意數值：作者給定局部算例，非模型實測或建議參數。",
+      "同位置：比較保持相同影像座標與時間身份，不能任意換工件。"
+    ],
+    "review": "pending"
+  },
+  {
+    "id": "videomae-engineering-1",
+    "owner": "videomae",
+    "index": 1,
+    "version": "r01",
+    "kind": "C",
+    "mobile_height": 2304,
+    "title": "VideoMAE：預訓練與分類分工",
+    "takeaway": "預訓練學表示，標註任務教答案。",
+    "panels": [
+      {
+        "title": "未標註影片遮蔽重建",
+        "graphic": "b7-mae-pretrain"
+      },
+      {
+        "title": "標註影片訓練分類頭",
+        "graphic": "b7-video-head"
+      },
+      {
+        "title": "新影片輸出任務類別",
+        "graphic": "b7-video-delivery"
+      }
+    ],
+    "detail": "重建預訓練不直接定義夾取失敗；下游以標註片段微調或固定編碼器學頭，必須明列模式。部署用新影片與分類路徑。",
+    "source": "https://arxiv.org/abs/2203.12602",
+    "terms": [
+      "示意數值：作者給定局部算例，非模型實測或建議參數。",
+      "同位置：比較保持相同影像座標與時間身份，不能任意換工件。"
+    ],
+    "review": "pending"
+  },
+  {
+    "id": "videomae-engineering-3",
+    "owner": "videomae",
+    "index": 3,
+    "version": "r02",
+    "kind": "C",
+    "mobile_height": 2304,
+    "title": "VideoMAE：token與取樣決定成本",
+    "takeaway": "減少取樣可省成本，也可能漏掉短事件。",
+    "panels": [
+      {
+        "title": "固定片長、幀距與裁切",
+        "graphic": "b7-video-timing"
+      },
+      {
+        "title": "時空token數影響注意力",
+        "graphic": "b7-video-token-cost"
+      },
+      {
+        "title": "同硬體驗事件召回與延遲",
+        "graphic": "b7-video-validation"
+      }
+    ],
+    "detail": "全注意力成對數約隨N平方；給定100與200 tokens，其N平方1萬/4萬只是計算量尺度示例，不是實測毫秒。取樣跨距大可能漏短失敗。 r01實看修正：时间刻度及標籤各自定位。",
+    "source": "https://arxiv.org/abs/2203.12602",
+    "terms": [
+      "示意數值：作者給定局部算例，非模型實測或建議參數。",
+      "同位置：比較保持相同影像座標與時間身份，不能任意換工件。"
+    ],
+    "review": "pending"
+  },
+  {
+    "id": "videomae-engineering-4",
+    "owner": "videomae",
+    "index": 4,
+    "version": "r02",
+    "kind": "D",
+    "mobile_height": 2304,
+    "title": "VideoMAE：補得像，不保證分類對",
+    "takeaway": "像素重建與任務判斷必須分開驗。",
+    "panels": [
+      {
+        "title": "背景很像，夾取卻失敗",
+        "graphic": "b7-video-failure"
+      },
+      {
+        "title": "平均像素差可能掩小事件",
+        "graphic": "b7-mae-error-average"
+      },
+      {
+        "title": "依事件留出驗任務頭",
+        "graphic": "b7-video-validation"
+      }
+    ],
+    "detail": "作者例：100格中99格平方差0、關鍵格100，平均1；平均重建差不能直接當事件成功率。少數關鍵動作需標註與下游驗證。 r01實看修正：99格/1格都明寫平方差，避免把差100誤讀成平方後1萬。",
+    "source": "https://arxiv.org/abs/2203.12602",
+    "terms": [
+      "示意數值：作者給定局部算例，非模型實測或建議參數。",
+      "同位置：比較保持相同影像座標與時間身份，不能任意換工件。"
+    ],
+    "review": "pending"
+  },
+  {
+    "id": "v-jepa-engineering-1",
+    "owner": "v-jepa",
+    "index": 1,
+    "version": "r01",
+    "kind": "C",
+    "mobile_height": 2304,
+    "title": "V-JEPA：特徵預測之後再學任務",
+    "takeaway": "自監督訊號不會自動變成事件標籤。",
+    "panels": [
+      {
+        "title": "未標註影片學特徵預測",
+        "graphic": "b7-jepa-pretrain"
+      },
+      {
+        "title": "標註夾取影片教任務頭",
+        "graphic": "b7-video-head"
+      },
+      {
+        "title": "新片特徵交任務判斷",
+        "graphic": "b7-video-delivery"
+      }
+    ],
+    "detail": "原版2024 V-JEPA預測表徵而非像素；下游可固定骨幹學注意力探針，或另選微調策略須記清。目標編碼器和預測器不是部署任務頭。",
+    "source": "https://arxiv.org/html/2404.08471v1",
+    "terms": [
+      "示意數值：作者給定局部算例，非模型實測或建議參數。",
+      "同位置：比較保持相同影像座標與時間身份，不能任意換工件。"
+    ],
+    "review": "pending"
+  },
+  {
+    "id": "v-jepa-engineering-3",
+    "owner": "v-jepa",
+    "index": 3,
+    "version": "r02",
+    "kind": "C",
+    "mobile_height": 2304,
+    "title": "V-JEPA：保存取樣與下游模式",
+    "takeaway": "骨幹、讀出頭與取樣設定是一組。",
+    "panels": [
+      {
+        "title": "固定時空取樣",
+        "graphic": "b7-video-timing"
+      },
+      {
+        "title": "固定骨幹或微調需寫明",
+        "graphic": "b7-jepa-contract"
+      },
+      {
+        "title": "片長、事件和延遲一起驗",
+        "graphic": "b7-video-validation"
+      }
+    ],
+    "detail": "保存2024骨幹checkpoint、影格取樣、裁切與下游讀出頭。EMA是預訓練目標權重更新，不是現場每片自動更新模型；原版不宣稱未來影像生成。 r01實看修正：时间刻度及標籤各自定位。",
+    "source": "https://arxiv.org/html/2404.08471v1",
+    "terms": [
+      "示意數值：作者給定局部算例，非模型實測或建議參數。",
+      "同位置：比較保持相同影像座標與時間身份，不能任意換工件。"
+    ],
+    "review": "pending"
+  },
+  {
+    "id": "v-jepa-engineering-4",
+    "owner": "v-jepa",
+    "index": 4,
+    "version": "r01",
+    "kind": "D",
+    "mobile_height": 2304,
+    "title": "V-JEPA與VideoMAE：監督目標不同",
+    "takeaway": "同影片比較任務成果，不能比兩種損失值。",
+    "panels": [
+      {
+        "title": "同一夾取影片與同一標籤",
+        "graphic": "b7-video-labels"
+      },
+      {
+        "title": "VideoMAE對像素平方差",
+        "graphic": "b7-compare-pixel"
+      },
+      {
+        "title": "V-JEPA對目標特徵L1差",
+        "graphic": "b7-compare-feature"
+      }
+    ],
+    "detail": "兩者預訓練目標及尺度不同，L1=.15不能對MSE=1排名。固定資料、讀出方式、硬體與事件指標比較；沒有本輪共同實測。",
+    "source": "https://arxiv.org/html/2404.08471v1",
+    "terms": [
+      "示意數值：作者給定局部算例，非模型實測或建議參數。",
+      "同位置：比較保持相同影像座標與時間身份，不能任意換工件。"
+    ],
+    "review": "pending"
+  },
+  {
+    "id": "defectfill-engineering-1",
+    "owner": "defectfill",
+    "index": 1,
+    "version": "r01",
+    "kind": "C",
+    "mobile_height": 2304,
+    "title": "DefectFill：合成資料先核對再加入",
+    "takeaway": "合成圖供訓練增補，真實留出集負責驗收。",
+    "panels": [
+      {
+        "title": "少量真缺陷及人工遮罩",
+        "graphic": "b7-fill-dataset"
+      },
+      {
+        "title": "同板指定位置產生刮傷",
+        "graphic": "b7-fill-generate"
+      },
+      {
+        "title": "檢查後納入訓練資料",
+        "graphic": "b7-fill-handoff"
+      }
+    ],
+    "detail": "正常底圖、參考缺陷、遮罩與來源保留；合成圖及mask一致才進訓練。真實缺陷留出不得被參考/候選挑選用過。",
+    "source": "https://arxiv.org/html/2503.13985v1",
+    "terms": [
+      "示意數值：作者給定局部算例，非模型實測或建議參數。",
+      "同位置：比較保持相同影像座標與時間身份，不能任意換工件。"
+    ],
+    "review": "pending"
+  },
+  {
+    "id": "defectfill-engineering-3",
+    "owner": "defectfill",
+    "index": 3,
+    "version": "r01",
+    "kind": "C",
+    "mobile_height": 2304,
+    "title": "DefectFill：適配與挑選成本分開算",
+    "takeaway": "候選越多，生成與挑選的成本都會累積。",
+    "panels": [
+      {
+        "title": "保存LoRA與遮罩版本",
+        "graphic": "b7-fill-contract"
+      },
+      {
+        "title": "多候選乘上多步採樣",
+        "graphic": "b7-generation-cost"
+      },
+      {
+        "title": "挑選仍需真缺陷驗證",
+        "graphic": "b7-fill-validation"
+      }
+    ],
+    "detail": "保存基模/LoRA、文字、mask、種子、採樣與LFS設定。作者例4候選×20步=80去噪呼叫，未含LPIPS與預處理；增加候選不保證增加資料效益。",
+    "source": "https://arxiv.org/html/2503.13985v1",
+    "terms": [
+      "示意數值：作者給定局部算例，非模型實測或建議參數。",
+      "同位置：比較保持相同影像座標與時間身份，不能任意換工件。"
+    ],
+    "review": "pending"
+  },
+  {
+    "id": "defectfill-engineering-4",
+    "owner": "defectfill",
+    "index": 4,
+    "version": "r01",
+    "kind": "D",
+    "mobile_height": 2304,
+    "title": "DefectFill：局部差大，也可能是假傷",
+    "takeaway": "LFS挑局部差異，物理合理性仍需另驗。",
+    "panels": [
+      {
+        "title": "同板同位置的刮傷候選",
+        "graphic": "b7-fill-select"
+      },
+      {
+        "title": "異常大黑塊也可能差很大",
+        "graphic": "b7-fill-artifact"
+      },
+      {
+        "title": "用真實缺陷留出驗效益",
+        "graphic": "b7-fill-validation"
+      }
+    ],
+    "detail": "感知距離較大也可能來自不合理塗塊，不等於真刮傷。以mask覆蓋、材質及真缺陷檢測效益核對。",
+    "source": "https://arxiv.org/html/2503.13985v1",
+    "terms": [
+      "示意數值：作者給定局部算例，非模型實測或建議參數。",
+      "同位置：比較保持相同影像座標與時間身份，不能任意換工件。"
+    ],
+    "review": "pending"
+  },
+  {
+    "id": "anomalydiffusion-engineering-1",
+    "owner": "anomalydiffusion",
+    "index": 1,
+    "version": "r01",
+    "kind": "C",
+    "mobile_height": 2304,
+    "title": "AnomalyDiffusion：兩區各有資料責任",
+    "takeaway": "圖與遮罩要逐區一致，才可當訓練樣本。",
+    "panels": [
+      {
+        "title": "真缺陷教外觀與位置",
+        "graphic": "b7-ano-dataset"
+      },
+      {
+        "title": "同板雙區條件生成",
+        "graphic": "b7-ano-condition"
+      },
+      {
+        "title": "逐區驗證圖與標註",
+        "graphic": "b7-ano-pair-check"
+      }
+    ],
+    "detail": "保持原上方雙孔板及大左下小右下兩傷。合成mask是生成條件，不自動成為真值；空mask區或越界都要剔除或修標。",
+    "source": "https://arxiv.org/html/2312.05767v1",
+    "terms": [
+      "示意數值：作者給定局部算例，非模型實測或建議參數。",
+      "同位置：比較保持相同影像座標與時間身份，不能任意換工件。"
+    ],
+    "review": "pending"
+  },
+  {
+    "id": "anomalydiffusion-engineering-3",
+    "owner": "anomalydiffusion",
+    "index": 3,
+    "version": "r01",
+    "kind": "C",
+    "mobile_height": 2304,
+    "title": "AnomalyDiffusion：外觀與位置都要版本",
+    "takeaway": "保存嵌入、遮罩編碼與採樣設定。",
+    "panels": [
+      {
+        "title": "外觀與遮罩編碼配套保存",
+        "graphic": "b7-ano-contract"
+      },
+      {
+        "title": "逐區看生成變化強弱",
+        "graphic": "b7-ano-feedback"
+      },
+      {
+        "title": "兩個區域分開量覆蓋",
+        "graphic": "b7-ano-pair-check"
+      }
+    ],
+    "detail": "保存基模、外觀embedding、mask編碼、AAR/背景融合與採樣設定。不同大小缺陷不能只看整圖平均；位置覆蓋與背景孔位分開驗。",
+    "source": "https://arxiv.org/html/2312.05767v1",
+    "terms": [
+      "示意數值：作者給定局部算例，非模型實測或建議參數。",
+      "同位置：比較保持相同影像座標與時間身份，不能任意換工件。"
+    ],
+    "review": "pending"
+  },
+  {
+    "id": "anomalydiffusion-engineering-4",
+    "owner": "anomalydiffusion",
+    "index": 4,
+    "version": "r01",
+    "kind": "D",
+    "mobile_height": 2304,
+    "title": "AnomalyDiffusion：兩個遮罩只長一傷",
+    "takeaway": "未生成的區域，不能沿用缺陷標籤。",
+    "panels": [
+      {
+        "title": "條件指定左大右小兩區",
+        "graphic": "b7-ano-two-masks"
+      },
+      {
+        "title": "反例只生成左側刮傷",
+        "graphic": "b7-ano-one-defect"
+      },
+      {
+        "title": "剔除或修標，再驗訓練效益",
+        "graphic": "b7-ano-reject"
+      }
+    ],
+    "detail": "同板同mask，一傷對兩標籤是錯標反例；AAR可能改善但不保證避免。不得用合成量取代真實留出集。",
+    "source": "https://arxiv.org/html/2312.05767v1",
+    "terms": [
+      "示意數值：作者給定局部算例，非模型實測或建議參數。",
+      "同位置：比較保持相同影像座標與時間身份，不能任意換工件。"
+    ],
+    "review": "pending"
+  },
+  {
+    "id": "tf-idg-engineering-1",
+    "owner": "tf-idg",
+    "index": 1,
+    "version": "r01",
+    "kind": "C",
+    "mobile_height": 2304,
+    "title": "TF-IDG：參考外觀引導局部合成",
+    "takeaway": "不微調權重，仍需要參考、遮罩與驗證。",
+    "panels": [
+      {
+        "title": "正常板、參考傷、局部遮罩",
+        "graphic": "b7-tf-input"
+      },
+      {
+        "title": "固定權重下引導latent",
+        "graphic": "b7-tf-gradient"
+      },
+      {
+        "title": "同板兩區逐一核對",
+        "graphic": "b7-tf-delivery"
+      }
+    ],
+    "detail": "免微調不是零資料。正常底圖與外觀參考及mask是每次生成條件；同中部雙孔板下方兩區，保存合成來源。",
+    "source": "https://github.com/rubymiaomiao/TF-IDG ; https://raw.githubusercontent.com/rubymiaomiao/TF-IDG/main/cldm/ddim_hacked.py",
+    "terms": [
+      "示意數值：作者給定局部算例，非模型實測或建議參數。",
+      "同位置：比較保持相同影像座標與時間身份，不能任意換工件。"
+    ],
+    "review": "pending"
+  },
+  {
+    "id": "tf-idg-engineering-3",
+    "owner": "tf-idg",
+    "index": 3,
+    "version": "r01",
+    "kind": "C",
+    "mobile_height": 2304,
+    "title": "TF-IDG：免訓練仍有反向計算",
+    "takeaway": "每步特徵梯度也要算進延遲與記憶體。",
+    "panels": [
+      {
+        "title": "模型權重固定且不更新",
+        "graphic": "b7-tf-fixed"
+      },
+      {
+        "title": "latent求導需中間激活",
+        "graphic": "b7-tf-autograd-cost"
+      },
+      {
+        "title": "保存參考與引導設定",
+        "graphic": "b7-tf-contract"
+      }
+    ],
+    "detail": "官方autograd.grad(loss,latent)是採樣引導；不要把免微調等同只有一次前向。計入特徵、梯度、採樣與背景融合時間；未實測不給速度排名。",
+    "source": "https://github.com/rubymiaomiao/TF-IDG ; https://raw.githubusercontent.com/rubymiaomiao/TF-IDG/main/cldm/ddim_hacked.py",
+    "terms": [
+      "示意數值：作者給定局部算例，非模型實測或建議參數。",
+      "同位置：比較保持相同影像座標與時間身份，不能任意換工件。"
+    ],
+    "review": "pending"
+  },
+  {
+    "id": "tf-idg-engineering-4",
+    "owner": "tf-idg",
+    "index": 4,
+    "version": "r01",
+    "kind": "D",
+    "mobile_height": 2304,
+    "title": "TF-IDG：参考換材質，可能帶錯紋理",
+    "takeaway": "梯度對齊外觀，不保證符合目標材質。",
+    "panels": [
+      {
+        "title": "金屬板與木紋缺陷參考",
+        "graphic": "b7-tf-material"
+      },
+      {
+        "title": "生成區帶入木紋反例",
+        "graphic": "b7-tf-contamination"
+      },
+      {
+        "title": "同材質真例檢查孔位與紋理",
+        "graphic": "b7-tf-delivery"
+      }
+    ],
+    "detail": "作者失敗示意：木紋參考可能使金屬局部出現木質纹理；背景保持不能保證mask內物理正確。",
+    "source": "https://github.com/rubymiaomiao/TF-IDG ; https://raw.githubusercontent.com/rubymiaomiao/TF-IDG/main/cldm/ddim_hacked.py",
+    "terms": [
+      "示意數值：作者給定局部算例，非模型實測或建議參數。",
+      "同位置：比較保持相同影像座標與時間身份，不能任意換工件。"
+    ],
+    "review": "pending"
+  },
+  {
+    "id": "controlnet-engineering-1",
+    "owner": "controlnet",
+    "index": 1,
+    "version": "r01",
+    "kind": "C",
+    "mobile_height": 2304,
+    "title": "ControlNet：條件圖與文字共同交付",
+    "takeaway": "先定義控制什麼，再檢查生成是否遵守。",
+    "panels": [
+      {
+        "title": "保存雙孔輪廓與文字",
+        "graphic": "b7-control-input"
+      },
+      {
+        "title": "條件版本接匹配模型",
+        "graphic": "b7-control-contract"
+      },
+      {
+        "title": "生成板回比孔位與外框",
+        "graphic": "b7-control-overlay"
+      }
+    ],
+    "detail": "輪廓抽取版本、解析度與對應ControlNet checkpoint需匹配。輸出是合成板，不是實拍檢測或尺寸量測。",
+    "source": "https://arxiv.org/abs/2302.05543",
+    "terms": [
+      "示意數值：作者給定局部算例，非模型實測或建議參數。",
+      "同位置：比較保持相同影像座標與時間身份，不能任意換工件。"
+    ],
+    "review": "pending"
+  },
+  {
+    "id": "controlnet-engineering-3",
+    "owner": "controlnet",
+    "index": 3,
+    "version": "r01",
+    "kind": "C",
+    "mobile_height": 2304,
+    "title": "ControlNet：控制強度要配採樣驗證",
+    "takeaway": "強度只是設定，遵守條件與品質要同時看。",
+    "panels": [
+      {
+        "title": "保存控制模型與前處理",
+        "graphic": "b7-control-contract"
+      },
+      {
+        "title": "控制強弱改變殘差注入",
+        "graphic": "b7-control-strength"
+      },
+      {
+        "title": "同條件比較位置偏差",
+        "graphic": "b7-control-overlay"
+      }
+    ],
+    "detail": "保存前處理器、控制強度/起止步、基模、文字與採樣。強度增大不保證所有細節更真；用同輪廓檢孔位/外框及材質。",
+    "source": "https://arxiv.org/abs/2302.05543",
+    "terms": [
+      "示意數值：作者給定局部算例，非模型實測或建議參數。",
+      "同位置：比較保持相同影像座標與時間身份，不能任意換工件。"
+    ],
+    "review": "pending"
+  },
+  {
+    "id": "controlnet-engineering-4",
+    "owner": "controlnet",
+    "index": 4,
+    "version": "r01",
+    "kind": "D",
+    "mobile_height": 2304,
+    "title": "ControlNet：相同輪廓，不限定有無刮傷",
+    "takeaway": "條件未描述的細節，不能當成觀測證據。",
+    "panels": [
+      {
+        "title": "同一張雙孔輪廓條件",
+        "graphic": "b7-control-input"
+      },
+      {
+        "title": "無傷與有傷都可符輪廓",
+        "graphic": "b7-control-two-surfaces"
+      },
+      {
+        "title": "若要真缺陷，回實拍核對",
+        "graphic": "b7-control-real-check"
+      }
+    ],
+    "detail": "同上方兩孔，外框與孔位不變，表面刮傷可不同；輪廓相符不能證明生成裂紋真實存在。",
+    "source": "https://arxiv.org/abs/2302.05543",
+    "terms": [
+      "示意數值：作者給定局部算例，非模型實測或建議參數。",
+      "同位置：比較保持相同影像座標與時間身份，不能任意換工件。"
+    ],
+    "review": "pending"
+  },
+  {
+    "id": "inpainting-engineering-1",
+    "owner": "inpainting",
+    "index": 1,
+    "version": "r01",
+    "kind": "C",
+    "mobile_height": 2304,
+    "title": "Inpainting：原圖、遮罩、候選三者留存",
+    "takeaway": "編修輸出另存，保留原觀測供追查。",
+    "panels": [
+      {
+        "title": "原污點影像與修改範圍",
+        "graphic": "b7-paint-input"
+      },
+      {
+        "title": "遮罩與模型約定核對",
+        "graphic": "b7-paint-contract"
+      },
+      {
+        "title": "候選與原圖並列驗接縫",
+        "graphic": "b7-paint-check"
+      }
+    ],
+    "detail": "同上方雙孔板下方黑污點，明列mask 1修改約定及預處理縮放，保存原圖與生成版本。",
+    "source": "https://arxiv.org/abs/2201.09865",
+    "terms": [
+      "示意數值：作者給定局部算例，非模型實測或建議參數。",
+      "同位置：比較保持相同影像座標與時間身份，不能任意換工件。"
+    ],
+    "review": "pending"
+  },
+  {
+    "id": "inpainting-engineering-3",
+    "owner": "inpainting",
+    "index": 3,
+    "version": "r01",
+    "kind": "C",
+    "mobile_height": 2304,
+    "title": "Inpainting：遮罩太緊或太大各有代價",
+    "takeaway": "按原位置驗接縫、孔位與遮罩外變化。",
+    "panels": [
+      {
+        "title": "緊遮罩保留邊缘污點",
+        "graphic": "b7-paint-tight"
+      },
+      {
+        "title": "大遮罩可能波及鄰近結構",
+        "graphic": "b7-paint-wide"
+      },
+      {
+        "title": "保留原圖與mask縮放記錄",
+        "graphic": "b7-paint-contract"
+      }
+    ],
+    "detail": "遮罩需包含預期修改區；羽化/膨脹可能改善接縫也擴大修改範圍，實作各異。不能推薦固定像素寬度。",
+    "source": "https://arxiv.org/abs/2201.09865",
+    "terms": [
+      "示意數值：作者給定局部算例，非模型實測或建議參數。",
+      "同位置：比較保持相同影像座標與時間身份，不能任意換工件。"
+    ],
+    "review": "pending"
+  },
+  {
+    "id": "inpainting-engineering-4",
+    "owner": "inpainting",
+    "index": 4,
+    "version": "r01",
+    "kind": "D",
+    "mobile_height": 2304,
+    "title": "Inpainting：照片填孔，實體仍有孔",
+    "takeaway": "影像編修只改像素，不能當實物修復。",
+    "panels": [
+      {
+        "title": "原板左上孔指定可編修",
+        "graphic": "b7-paint-real-hole"
+      },
+      {
+        "title": "生成版孔被紋理填平",
+        "graphic": "b7-paint-filled-hole"
+      },
+      {
+        "title": "重新拍攝仍看見真孔",
+        "graphic": "b7-paint-recapture"
+      }
+    ],
+    "detail": "同上方兩孔板，仅改左孔影像。原檢測與實物量測不能拿編修版本作真值。",
+    "source": "https://arxiv.org/abs/2201.09865",
+    "terms": [
+      "示意數值：作者給定局部算例，非模型實測或建議參數。",
+      "同位置：比較保持相同影像座標與時間身份，不能任意換工件。"
+    ],
+    "review": "pending"
+  },
+  {
+    "id": "diffusion-restoration-engineering-1",
+    "owner": "diffusion-restoration",
+    "index": 1,
+    "version": "r02",
+    "kind": "C",
+    "mobile_height": 2304,
+    "title": "擴散復原：先說清楚觀測退化",
+    "takeaway": "復原候選與原始觀測需一起交付。",
+    "panels": [
+      {
+        "title": "保存原板影像與退化條件",
+        "graphic": "b7-restore-observe"
+      },
+      {
+        "title": "觀測條件約束先驗候選",
+        "graphic": "b7-restore-candidate"
+      },
+      {
+        "title": "回套退化並另作外部驗證",
+        "graphic": "b7-restore-delivery"
+      }
+    ],
+    "detail": "線性逆問題示意，保存A/噪聲假設與原觀測；候選再退化對回y並檢未觀測細節，不把低殘差當真值。 r01實看修正：比較A估計與原觀測，依噪聲模型檢殘差；不宣稱知道真實n。",
+    "source": "https://arxiv.org/abs/2201.11793",
+    "terms": [
+      "示意數值：作者給定局部算例，非模型實測或建議參數。",
+      "同位置：比較保持相同影像座標與時間身份，不能任意換工件。"
+    ],
+    "review": "pending"
+  },
+  {
+    "id": "diffusion-restoration-engineering-3",
+    "owner": "diffusion-restoration",
+    "index": 3,
+    "version": "r02",
+    "kind": "C",
+    "mobile_height": 2304,
+    "title": "擴散復原：退化假設與採樣要配套",
+    "takeaway": "退化條件改變，模型與驗證也要重新核對。",
+    "panels": [
+      {
+        "title": "退化算子與噪聲設定版本",
+        "graphic": "b7-restore-contract"
+      },
+      {
+        "title": "同觀測保留多個候選",
+        "graphic": "b7-restore-multiple"
+      },
+      {
+        "title": "比較資料一致性與外部證據",
+        "graphic": "b7-restore-delivery"
+      }
+    ],
+    "detail": "保存模型、退化算子、噪聲與步數種子；不同候選一致不保證唯一真實。時間要含每步去噪及資料一致性。 r01實看修正：依噪聲模型驗殘差，並將結論寫成明確可做的條件核對。",
+    "source": "https://arxiv.org/abs/2201.11793",
+    "terms": [
+      "示意數值：作者給定局部算例，非模型實測或建議參數。",
+      "同位置：比較保持相同影像座標與時間身份，不能任意換工件。"
+    ],
+    "review": "pending"
+  },
+  {
+    "id": "diffusion-restoration-engineering-4",
+    "owner": "diffusion-restoration",
+    "index": 4,
+    "version": "r02",
+    "kind": "D",
+    "mobile_height": 2304,
+    "title": "擴散復原：錯退化也會給漂亮結果",
+    "takeaway": "先驗看起來合理，仍可能不符合取像原因。",
+    "panels": [
+      {
+        "title": "原板實際受雜訊污染",
+        "graphic": "b7-restore-observe"
+      },
+      {
+        "title": "錯把觀測當移動模糊",
+        "graphic": "b7-restore-wrong-a"
+      },
+      {
+        "title": "回原觀測和取像設定核對",
+        "graphic": "b7-restore-delivery"
+      }
+    ],
+    "detail": "作者反例把加性雜訊當卷積模糊，假設錯誤可引入不必要輪廓。需檢退化與獨立成像，不以漂亮結果證明模型合適。 r01實看修正：錯退化反例保留完整同板，在右外框畫多重邊；噪聲容許條件明寫。",
+    "source": "https://arxiv.org/abs/2201.11793",
+    "terms": [
+      "示意數值：作者給定局部算例，非模型實測或建議參數。",
+      "同位置：比較保持相同影像座標與時間身份，不能任意換工件。"
+    ],
+    "review": "pending"
+  },
+  {
+    "id": "deblur-engineering-1",
+    "owner": "deblur",
+    "index": 1,
+    "version": "r01",
+    "kind": "C",
+    "mobile_height": 2304,
+    "title": "Deblur：模糊觀測與清晰參考分开",
+    "takeaway": "去模糊是估計，量測需驗邊緣偏差。",
+    "panels": [
+      {
+        "title": "保存模糊直邊與曝光設定",
+        "graphic": "b7-blur-source"
+      },
+      {
+        "title": "以復原模型估計清晰候選",
+        "graphic": "b7-blur-inverse"
+      },
+      {
+        "title": "同位置與清晰取像比對",
+        "graphic": "b7-blur-check"
+      }
+    ],
+    "detail": "同板直邊，不只比較視覺清晰度；以同位置獨立短曝光/清晰圖驗邊緣偏移、假邊與下游量測。",
+    "source": "https://arxiv.org/abs/1612.02177",
+    "terms": [
+      "示意數值：作者給定局部算例，非模型實測或建議參數。",
+      "同位置：比較保持相同影像座標與時間身份，不能任意換工件。"
+    ],
+    "review": "pending"
+  },
+  {
+    "id": "deblur-engineering-3",
+    "owner": "deblur",
+    "index": 3,
+    "version": "r02",
+    "kind": "C",
+    "mobile_height": 2304,
+    "title": "Deblur：速度、細節和假邊一起驗",
+    "takeaway": "按實際曝光與運動條件驗完整流程。",
+    "panels": [
+      {
+        "title": "保存解析度、曝光與模型",
+        "graphic": "b7-blur-contract"
+      },
+      {
+        "title": "逐位置比較邊緣偏移",
+        "graphic": "b7-blur-position"
+      },
+      {
+        "title": "端到端延遲與錯誤一起看",
+        "graphic": "b7-blur-validation"
+      }
+    ],
+    "detail": "物理移動/失焦與空間變化不同，模型訓練退化需對應。作者像素邊界100/102差2只示例，不是毫米或模型實測。 r01實看修正：真邊/估計/差值移出影像並以同色標明，避免跨邊界。",
+    "source": "https://arxiv.org/abs/1612.02177",
+    "terms": [
+      "示意數值：作者給定局部算例，非模型實測或建議參數。",
+      "同位置：比較保持相同影像座標與時間身份，不能任意換工件。"
+    ],
+    "review": "pending"
+  },
+  {
+    "id": "deblur-engineering-4",
+    "owner": "deblur",
+    "index": 4,
+    "version": "r01",
+    "kind": "D",
+    "mobile_height": 2304,
+    "title": "Deblur：銳利的多重邊可能是振鈴",
+    "takeaway": "銳利度增加，不能取代真邊位置證據。",
+    "panels": [
+      {
+        "title": "原觀測只有一條模糊邊",
+        "graphic": "b7-blur-source"
+      },
+      {
+        "title": "候選多重邊造成錯定位",
+        "graphic": "b7-blur-ringing"
+      },
+      {
+        "title": "独立清晰取像驗單一真邊",
+        "graphic": "b7-blur-check"
+      }
+    ],
+    "detail": "同邊橫切振鈴比原平滑觀測更銳利但有額外輪廓，量測若選錯峰會偏移。獨立成像驗證。",
+    "source": "https://arxiv.org/abs/1612.02177",
+    "terms": [
+      "示意數值：作者給定局部算例，非模型實測或建議參數。",
+      "同位置：比較保持相同影像座標與時間身份，不能任意換工件。"
+    ],
+    "review": "pending"
+  },
+  {
+    "id": "super-resolution-engineering-1",
+    "owner": "super-resolution",
+    "index": 1,
+    "version": "r01",
+    "kind": "C",
+    "mobile_height": 2304,
+    "title": "超解析：輸入採樣與輸出像素分清",
+    "takeaway": "輸出更密，仍要保留原始低解析影像。",
+    "panels": [
+      {
+        "title": "矩形板左孔q的粗採樣",
+        "graphic": "b7-sr-low"
+      },
+      {
+        "title": "插值或學習先驗放大",
+        "graphic": "b7-sr-estimate"
+      },
+      {
+        "title": "另存候選與原採樣條件",
+        "graphic": "b7-sr-contract"
+      }
+    ],
+    "detail": "同矩形板大左小右孔，固定q；保存原解析度、縮放倍率、退化假設與模型版本，輸出不是新增相機資料。",
+    "source": "https://arxiv.org/abs/2104.07636",
+    "terms": [
+      "示意數值：作者給定局部算例，非模型實測或建議參數。",
+      "同位置：比較保持相同影像座標與時間身份，不能任意換工件。"
+    ],
+    "review": "pending"
+  },
+  {
+    "id": "super-resolution-engineering-3",
+    "owner": "super-resolution",
+    "index": 3,
+    "version": "r01",
+    "kind": "C",
+    "mobile_height": 2304,
+    "title": "超解析：倍率改變像素量與成本",
+    "takeaway": "放大倍率和真實細節改善要分開驗。",
+    "panels": [
+      {
+        "title": "寬高各兩倍，像素變四倍",
+        "graphic": "b7-sr-pixel-cost"
+      },
+      {
+        "title": "保存模型與低解析來源",
+        "graphic": "b7-sr-contract"
+      },
+      {
+        "title": "真實高解析取像驗q細節",
+        "graphic": "b7-sr-real-check"
+      }
+    ],
+    "detail": "作者100×100到200×200由1萬到4萬像素，只是存儲/輸出量，不保證速度固定四倍。需實测延遲與細節保真，沒有本輪實測。",
+    "source": "https://arxiv.org/abs/2104.07636",
+    "terms": [
+      "示意數值：作者給定局部算例，非模型實測或建議參數。",
+      "同位置：比較保持相同影像座標與時間身份，不能任意換工件。"
+    ],
+    "review": "pending"
+  },
+  {
+    "id": "super-resolution-engineering-4",
+    "owner": "super-resolution",
+    "index": 4,
+    "version": "r01",
+    "kind": "D",
+    "mobile_height": 2304,
+    "title": "超解析：插值與生成如何取捨",
+    "takeaway": "同原圖比較細節保真與成本，不只看銳利。",
+    "panels": [
+      {
+        "title": "同一左孔q與低解析觀測",
+        "graphic": "b7-sr-low"
+      },
+      {
+        "title": "插值不學先驗，模型估細節",
+        "graphic": "b7-sr-estimate"
+      },
+      {
+        "title": "用真實高解析留出驗證",
+        "graphic": "b7-sr-real-check"
+      }
+    ],
+    "detail": "插值成本通常較簡但不能恢復缺失細節；學習式使用先驗且可能幻覺。固定真實取像、退化、硬體與下游任務比較，不用跨論文排名。",
+    "source": "https://arxiv.org/abs/2104.07636",
+    "terms": [
+      "示意數值：作者給定局部算例，非模型實測或建議參數。",
+      "同位置：比較保持相同影像座標與時間身份，不能任意換工件。"
+    ],
+    "review": "pending"
+  }
+]

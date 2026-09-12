@@ -1,0 +1,857 @@
+[
+  {
+    "brief": "C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-033/clip-engineering-2-r03.md",
+    "objective": "讀者能從同一工件的影像與候選文字，追到兩個獨立編碼器、共同表示比較及候選排名。",
+    "page_type": "C — 解釋雙路匯合；不是影像編碼器接文字編碼器。",
+    "node_count": 3,
+    "reference": "teaching-images/vision-ai-model-selection/docs/course-delivery/section-pages/06-foundation-vision-vlm/images/final/FDNIN-01-foundation-input-contract_v03.png",
+    "takeaway": "圖文各走一條路，匯合後才比較候選。 #FFF4CC",
+    "required_files_present": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "brief": "C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-033/clip-engineering-1-r02.md",
+    "objective": "文字定義候選，影像與描述的相似度幫你找圖。",
+    "page_type": "C — 按本圖資料處理或同条件比較安排。",
+    "node_count": 3,
+    "reference": "teaching-images/vision-ai-model-selection/docs/course-delivery/section-pages/06-foundation-vision-vlm/images/final/FDNIN-01-foundation-input-contract_v03.png",
+    "takeaway": "文字定義候選，影像與描述的相似度幫你找圖。 #FFF4CC",
+    "required_files_present": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "brief": "C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-033/clip-engineering-3-r02.md",
+    "objective": "換文字或權重後，更新表示並重測候選排名。",
+    "page_type": "C — 按本圖資料處理或同条件比較安排。",
+    "node_count": 3,
+    "reference": "teaching-images/vision-ai-model-selection/docs/course-delivery/section-pages/06-foundation-vision-vlm/images/final/FDNIN-01-foundation-input-contract_v03.png",
+    "takeaway": "換文字或權重後，更新表示並重測候選排名。 #FFF4CC",
+    "required_files_present": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "brief": "C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-033/clip-engineering-4-r02.md",
+    "objective": "先確認候選涵蓋需求，再決定排序能否交付。",
+    "page_type": "C — 按本圖資料處理或同条件比較安排。",
+    "node_count": 3,
+    "reference": "teaching-images/vision-ai-model-selection/docs/course-delivery/section-pages/06-foundation-vision-vlm/images/final/FDNIN-01-foundation-input-contract_v03.png",
+    "takeaway": "先確認候選涵蓋需求，再決定排序能否交付。 #FFF4CC",
+    "required_files_present": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "brief": "C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-033/siglip-engineering-1-r02.md",
+    "objective": "正配對拉近、負配對分開，共同更新編碼器。",
+    "page_type": "C — 按本圖資料處理或同条件比較安排。",
+    "node_count": 3,
+    "reference": "teaching-images/vision-ai-model-selection/docs/course-delivery/section-pages/06-foundation-vision-vlm/images/final/FDNIN-01-foundation-input-contract_v03.png",
+    "takeaway": "正配對拉近、負配對分開，共同更新編碼器。 #FFF4CC",
+    "required_files_present": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "brief": "C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-033/siglip-engineering-2-r02.md",
+    "objective": "改變的是配對訓練目標，兩個編碼器仍並行。",
+    "page_type": "C — 按本圖資料處理或同条件比較安排。",
+    "node_count": 3,
+    "reference": "teaching-images/vision-ai-model-selection/docs/course-delivery/section-pages/06-foundation-vision-vlm/images/final/FDNIN-01-foundation-input-contract_v03.png",
+    "takeaway": "改變的是配對訓練目標，兩個編碼器仍並行。 #FFF4CC",
+    "required_files_present": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "brief": "C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-033/siglip-engineering-3-r02.md",
+    "objective": "以固定模型比較候選，再用域內資料設定覆核。",
+    "page_type": "C — 按本圖資料處理或同条件比較安排。",
+    "node_count": 3,
+    "reference": "teaching-images/vision-ai-model-selection/docs/course-delivery/section-pages/06-foundation-vision-vlm/images/final/FDNIN-01-foundation-input-contract_v03.png",
+    "takeaway": "以固定模型比較候選，再用域內資料設定覆核。 #FFF4CC",
+    "required_files_present": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "brief": "C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-033/siglip-engineering-4-r02.md",
+    "objective": "選型要看本地錯誤與成本，不能只看損失名稱。",
+    "page_type": "D — 按本圖資料處理或同条件比較安排。",
+    "node_count": 3,
+    "reference": "teaching-images/vision-ai-model-selection/docs/course-delivery/section-pages/06-foundation-vision-vlm/images/final/FDNIN-01-foundation-input-contract_v03.png",
+    "takeaway": "選型要看本地錯誤與成本，不能只看損失名稱。 #FFF4CC",
+    "required_files_present": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "brief": "C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-033/alignment-comparison-r01.md",
+    "objective": "以同一圖文批次看見 CLIP 的行列正規化與 SigLIP 的逐對目標，並知道選型仍需同條件測試。",
+    "page_type": "D — 並列不同學習目標，不將兩方法串接。",
+    "node_count": 3,
+    "reference": "teaching-images/vision-ai-model-selection/docs/course-delivery/section-pages/06-foundation-vision-vlm/images/final/FDNIN-01-foundation-input-contract_v03.png",
+    "takeaway": "訓練目標不同，工作選型仍要同題驗證。 #FFF4CC",
+    "required_files_present": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "brief": "C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-033/siglip-core-mobile-r02.md",
+    "objective": "每對各算損失，部署仍須驗證候選排名。",
+    "page_type": "C — 按本圖資料處理或同条件比較安排。",
+    "node_count": 3,
+    "reference": "teaching-images/vision-ai-model-selection/docs/course-delivery/section-pages/06-foundation-vision-vlm/images/final/FDNIN-01-foundation-input-contract_v03.png",
+    "takeaway": "每對各算損失，部署仍須驗證候選排名。 #FFF4CC",
+    "required_files_present": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "brief": "C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-033/pose-engineering-2-r02.md",
+    "objective": "兩條替代路徑都交出有身份的 2D 點。",
+    "page_type": "D — 按本圖資料處理或同条件比較安排。",
+    "node_count": 3,
+    "reference": "teaching-images/vision-ai-model-selection/docs/course-delivery/section-pages/06-foundation-vision-vlm/images/final/FDNIN-01-foundation-input-contract_v03.png",
+    "takeaway": "兩條替代路徑都交出有身份的 2D 點。 #FFF4CC",
+    "required_files_present": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "brief": "C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-033/pose-engineering-1-r02.md",
+    "objective": "先鎖定點名與相機設定，才能解讀姿態。",
+    "page_type": "C — 按本圖資料處理或同条件比較安排。",
+    "node_count": 3,
+    "reference": "teaching-images/vision-ai-model-selection/docs/course-delivery/section-pages/06-foundation-vision-vlm/images/final/FDNIN-01-foundation-input-contract_v03.png",
+    "takeaway": "先鎖定點名與相機設定，才能解讀姿態。 #FFF4CC",
+    "required_files_present": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "brief": "C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-033/pose-engineering-3-r02.md",
+    "objective": "交付 R／t、座標單位與逐點誤差，再核對實體。",
+    "page_type": "C — 按本圖資料處理或同条件比較安排。",
+    "node_count": 3,
+    "reference": "teaching-images/vision-ai-model-selection/docs/course-delivery/section-pages/06-foundation-vision-vlm/images/final/FDNIN-01-foundation-input-contract_v03.png",
+    "takeaway": "交付 R／t、座標單位與逐點誤差，再核對實體。 #FFF4CC",
+    "required_files_present": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "brief": "C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-033/pose-engineering-4-r01.md",
+    "objective": "遇到身份歧義，補可見證據並攔下不確定姿態。",
+    "page_type": "C — 按本圖資料處理或同条件比較安排。",
+    "node_count": 3,
+    "reference": "teaching-images/vision-ai-model-selection/docs/course-delivery/section-pages/06-foundation-vision-vlm/images/final/FDNIN-01-foundation-input-contract_v03.png",
+    "takeaway": "遇到身份歧義，補可見證據並攔下不確定姿態。 #FFF4CC",
+    "required_files_present": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "brief": "C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-033/dinov3-engineering-2-r02.md",
+    "objective": "Gram 只約束訓練，部署仍輸出特徵。",
+    "page_type": "C — 按本圖資料處理或同条件比較安排。",
+    "node_count": 3,
+    "reference": "teaching-images/vision-ai-model-selection/docs/course-delivery/section-pages/06-foundation-vision-vlm/images/final/FDNIN-01-foundation-input-contract_v03.png",
+    "takeaway": "Gram 只約束訓練，部署仍輸出特徵。 #FFF4CC",
+    "required_files_present": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "brief": "C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-033/dinov3-engineering-1-r02.md",
+    "objective": "骨幹交出特徵，局部位置與下游工作仍要對齊。",
+    "page_type": "C — 按本圖資料處理或同条件比較安排。",
+    "node_count": 3,
+    "reference": "teaching-images/vision-ai-model-selection/docs/course-delivery/section-pages/06-foundation-vision-vlm/images/final/FDNIN-01-foundation-input-contract_v03.png",
+    "takeaway": "骨幹交出特徵，局部位置與下游工作仍要對齊。 #FFF4CC",
+    "required_files_present": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "brief": "C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-033/dinov3-engineering-3-r01.md",
+    "objective": "保存權重與前處理，同條件重建庫並量完整成本。",
+    "page_type": "C — 按本圖資料處理或同条件比較安排。",
+    "node_count": 3,
+    "reference": "teaching-images/vision-ai-model-selection/docs/course-delivery/section-pages/06-foundation-vision-vlm/images/final/FDNIN-01-foundation-input-contract_v03.png",
+    "takeaway": "保存權重與前處理，同條件重建庫並量完整成本。 #FFF4CC",
+    "required_files_present": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "brief": "C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-033/dinov3-engineering-4-r02.md",
+    "objective": "同題比較效果與重建代價，保留基準也合理。",
+    "page_type": "D — 按本圖資料處理或同条件比較安排。",
+    "node_count": 3,
+    "reference": "teaching-images/vision-ai-model-selection/docs/course-delivery/section-pages/06-foundation-vision-vlm/images/final/FDNIN-01-foundation-input-contract_v03.png",
+    "takeaway": "同題比較效果與重建代價，保留基準也合理。 #FFF4CC",
+    "required_files_present": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "brief": "C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-033/dinov3-main-failure-r03.md",
+    "objective": "同一缺口先看輸入，再看特徵與下游漏檢。",
+    "page_type": "C — 按本圖資料處理或同条件比較安排。",
+    "node_count": 3,
+    "reference": "teaching-images/vision-ai-model-selection/docs/course-delivery/section-pages/06-foundation-vision-vlm/images/final/FDNIN-01-foundation-input-contract_v03.png",
+    "takeaway": "同一缺口先看輸入，再看特徵與下游漏檢。 #FFF4CC",
+    "required_files_present": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "brief": "C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-033/ad-diffad-engineering-2-r02.md",
+    "objective": "原圖與恢復圖一起進分割，最後才交出異常位置。",
+    "page_type": "C — 按本圖資料處理或同条件比較安排。",
+    "node_count": 3,
+    "reference": "teaching-images/vision-ai-model-selection/docs/course-delivery/section-pages/06-foundation-vision-vlm/images/final/FDNIN-01-foundation-input-contract_v03.png",
+    "takeaway": "原圖與恢復圖一起進分割，最後才交出異常位置。 #FFF4CC",
+    "required_files_present": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "brief": "C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-033/ad-anomalygpt-engineering-2-r02.md",
+    "objective": "內建位置圖先轉提示，再連同影像與問題產生回答。",
+    "page_type": "C — 按本圖資料處理或同条件比較安排。",
+    "node_count": 3,
+    "reference": "teaching-images/vision-ai-model-selection/docs/course-delivery/section-pages/06-foundation-vision-vlm/images/final/FDNIN-01-foundation-input-contract_v03.png",
+    "takeaway": "內建位置圖先轉提示，再連同影像與問題產生回答。 #FFF4CC",
+    "required_files_present": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "brief": "C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-033/ad-diffad-engineering-1-r02.md",
+    "objective": "正常資料教恢復，合成異常和遮罩教定位。",
+    "page_type": "C — 按本圖資料處理或同条件比較安排。",
+    "node_count": 3,
+    "reference": "teaching-images/vision-ai-model-selection/docs/course-delivery/section-pages/06-foundation-vision-vlm/images/final/FDNIN-01-foundation-input-contract_v03.png",
+    "takeaway": "正常資料教恢復，合成異常和遮罩教定位。 #FFF4CC",
+    "required_files_present": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "brief": "C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-033/ad-diffad-engineering-3-r01.md",
+    "objective": "保存 A／R／位置圖，連同完整耗時一起驗收。",
+    "page_type": "C — 按本圖資料處理或同条件比較安排。",
+    "node_count": 3,
+    "reference": "teaching-images/vision-ai-model-selection/docs/course-delivery/section-pages/06-foundation-vision-vlm/images/final/FDNIN-01-foundation-input-contract_v03.png",
+    "takeaway": "保存 A／R／位置圖，連同完整耗時一起驗收。 #FFF4CC",
+    "required_files_present": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "brief": "C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-033/ad-diffad-engineering-4-r02.md",
+    "objective": "檢查最後位置圖，分清恢復成功與定位失敗。",
+    "page_type": "D — 按本圖資料處理或同条件比較安排。",
+    "node_count": 3,
+    "reference": "teaching-images/vision-ai-model-selection/docs/course-delivery/section-pages/06-foundation-vision-vlm/images/final/FDNIN-01-foundation-input-contract_v03.png",
+    "takeaway": "檢查最後位置圖，分清恢復成功與定位失敗。 #FFF4CC",
+    "required_files_present": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "brief": "C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-033/ad-anomalygpt-engineering-1-r01.md",
+    "objective": "合成影像、遮罩與文字要描述同一處异常。",
+    "page_type": "C — 按本圖資料處理或同条件比較安排。",
+    "node_count": 3,
+    "reference": "teaching-images/vision-ai-model-selection/docs/course-delivery/section-pages/06-foundation-vision-vlm/images/final/FDNIN-01-foundation-input-contract_v03.png",
+    "takeaway": "合成影像、遮罩與文字要描述同一處异常。 #FFF4CC",
+    "required_files_present": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "brief": "C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-033/ad-anomalygpt-engineering-3-r01.md",
+    "objective": "回答、位置和原圖一起覆核，對不上就保留疑問。",
+    "page_type": "C — 按本圖資料處理或同条件比較安排。",
+    "node_count": 3,
+    "reference": "teaching-images/vision-ai-model-selection/docs/course-delivery/section-pages/06-foundation-vision-vlm/images/final/FDNIN-01-foundation-input-contract_v03.png",
+    "takeaway": "回答、位置和原圖一起覆核，對不上就保留疑問。 #FFF4CC",
+    "required_files_present": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "brief": "C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-033/ad-anomalygpt-engineering-4-r01.md",
+    "objective": "同圖比較定位與文字證據，再量覆核成本。",
+    "page_type": "D — 按本圖資料處理或同条件比較安排。",
+    "node_count": 3,
+    "reference": "teaching-images/vision-ai-model-selection/docs/course-delivery/section-pages/06-foundation-vision-vlm/images/final/FDNIN-01-foundation-input-contract_v03.png",
+    "takeaway": "同圖比較定位與文字證據，再量覆核成本。 #FFF4CC",
+    "required_files_present": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "brief": "C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-033/anomalygpt-mobile-core-r01.md",
+    "objective": "內建位置提供線索，回答仍回原圖核對。",
+    "page_type": "C — 按本圖資料處理或同条件比較安排。",
+    "node_count": 3,
+    "reference": "teaching-images/vision-ai-model-selection/docs/course-delivery/section-pages/06-foundation-vision-vlm/images/final/FDNIN-01-foundation-input-contract_v03.png",
+    "takeaway": "內建位置提供線索，回答仍回原圖核對。 #FFF4CC",
+    "required_files_present": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "brief": "C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-033/anomalygpt-mobile-failure-r01.md",
+    "objective": "位置、觀察和推測分開核對，不能由流暢度放行。",
+    "page_type": "C — 按本圖資料處理或同条件比較安排。",
+    "node_count": 3,
+    "reference": "teaching-images/vision-ai-model-selection/docs/course-delivery/section-pages/06-foundation-vision-vlm/images/final/FDNIN-01-foundation-input-contract_v03.png",
+    "takeaway": "位置、觀察和推測分開核對，不能由流暢度放行。 #FFF4CC",
+    "required_files_present": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "brief": "C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-033/anomalygpt-mobile-comparison-r01.md",
+    "objective": "先驗定位，再驗對話能否減少覆核成本。",
+    "page_type": "D — 按本圖資料處理或同条件比較安排。",
+    "node_count": 3,
+    "reference": "teaching-images/vision-ai-model-selection/docs/course-delivery/section-pages/06-foundation-vision-vlm/images/final/FDNIN-01-foundation-input-contract_v03.png",
+    "takeaway": "先驗定位，再驗對話能否減少覆核成本。 #FFF4CC",
+    "required_files_present": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "brief": "C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-033/lucas-kanade-engineering-1-r02.md",
+    "objective": "清楚角點、穩定影格與小位移，是局部解的起點。",
+    "page_type": "C — 按本圖資料處理或同条件比較安排。",
+    "node_count": 3,
+    "reference": "teaching-images/vision-ai-model-selection/docs/course-delivery/section-pages/06-foundation-vision-vlm/images/final/FDNIN-01-foundation-input-contract_v03.png",
+    "takeaway": "清楚角點、穩定影格與小位移，是局部解的起點。 #FFF4CC",
+    "required_files_present": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "brief": "C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-033/lucas-kanade-engineering-2-r02.md",
+    "objective": "局部梯度支持共同位移，解出數字後仍要檢查。",
+    "page_type": "C — 按本圖資料處理或同条件比較安排。",
+    "node_count": 3,
+    "reference": "teaching-images/vision-ai-model-selection/docs/course-delivery/section-pages/06-foundation-vision-vlm/images/final/FDNIN-01-foundation-input-contract_v03.png",
+    "takeaway": "局部梯度支持共同位移，解出數字後仍要檢查。 #FFF4CC",
+    "required_files_present": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "brief": "C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-033/lucas-kanade-engineering-3-r02.md",
+    "objective": "保存點對、時間與有效性，再決定能否接量測。",
+    "page_type": "C — 按本圖資料處理或同条件比較安排。",
+    "node_count": 3,
+    "reference": "teaching-images/vision-ai-model-selection/docs/course-delivery/section-pages/06-foundation-vision-vlm/images/final/FDNIN-01-foundation-input-contract_v03.png",
+    "takeaway": "保存點對、時間與有效性，再決定能否接量測。 #FFF4CC",
+    "required_files_present": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "brief": "C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-033/lucas-kanade-engineering-4-r02.md",
+    "objective": "先確定需要哪些位置，再比較錯誤與完整成本。",
+    "page_type": "D — 按本圖資料處理或同条件比較安排。",
+    "node_count": 3,
+    "reference": "teaching-images/vision-ai-model-selection/docs/course-delivery/section-pages/06-foundation-vision-vlm/images/final/FDNIN-01-foundation-input-contract_v03.png",
+    "takeaway": "先確定需要哪些位置，再比較錯誤與完整成本。 #FFF4CC",
+    "required_files_present": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "brief": "C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-033/raft-engineering-1-r02.md",
+    "objective": "兩張圖建立相關性，第一張圖另提供更新情境。",
+    "page_type": "C — 按本圖資料處理或同条件比較安排。",
+    "node_count": 3,
+    "reference": "teaching-images/vision-ai-model-selection/docs/course-delivery/section-pages/06-foundation-vision-vlm/images/final/FDNIN-01-foundation-input-contract_v03.png",
+    "takeaway": "兩張圖建立相關性，第一張圖另提供更新情境。 #FFF4CC",
+    "required_files_present": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "brief": "C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-033/raft-engineering-2-r03.md",
+    "objective": "用目前光流查相關性，更新量加回後繼續修正。",
+    "page_type": "C — 按本圖資料處理或同条件比較安排。",
+    "node_count": 3,
+    "reference": "teaching-images/vision-ai-model-selection/docs/course-delivery/section-pages/06-foundation-vision-vlm/images/final/FDNIN-01-foundation-input-contract_v03.png",
+    "takeaway": "用目前光流查相關性，更新量加回後繼續修正。 #FFF4CC",
+    "required_files_present": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "brief": "C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-033/raft-engineering-3-r02.md",
+    "objective": "輸出向量不等於看見對應，遮擋區要另驗。",
+    "page_type": "C — 按本圖資料處理或同条件比較安排。",
+    "node_count": 3,
+    "reference": "teaching-images/vision-ai-model-selection/docs/course-delivery/section-pages/06-foundation-vision-vlm/images/final/FDNIN-01-foundation-input-contract_v03.png",
+    "takeaway": "輸出向量不等於看見對應，遮擋區要另驗。 #FFF4CC",
+    "required_files_present": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "brief": "C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-033/raft-engineering-4-r02.md",
+    "objective": "迭代設定改變成本，效果仍用同一資料驗證。",
+    "page_type": "D — 按本圖資料處理或同条件比較安排。",
+    "node_count": 3,
+    "reference": "teaching-images/vision-ai-model-selection/docs/course-delivery/section-pages/06-foundation-vision-vlm/images/final/FDNIN-01-foundation-input-contract_v03.png",
+    "takeaway": "迭代設定改變成本，效果仍用同一資料驗證。 #FFF4CC",
+    "required_files_present": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "brief": "C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-033/flow-main-failure-r02.md",
+    "objective": "LK與RAFT都看相同輸入；數值不能補回不可見對應。",
+    "page_type": "D — 按本圖資料處理或同条件比較安排。",
+    "node_count": 3,
+    "reference": "teaching-images/vision-ai-model-selection/docs/course-delivery/section-pages/06-foundation-vision-vlm/images/final/FDNIN-01-foundation-input-contract_v03.png",
+    "takeaway": "LK與RAFT都看相同輸入；數值不能補回不可見對應。 #FFF4CC",
+    "required_files_present": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "brief": "C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-033/ad-anomalydino-engineering-1-r01.md",
+    "objective": "免額外訓練，仍要選乾淨正常參考並建立相容庫。",
+    "page_type": "C — 按本圖資料處理或同条件比較安排。",
+    "node_count": 3,
+    "reference": "teaching-images/vision-ai-model-selection/docs/course-delivery/section-pages/06-foundation-vision-vlm/images/final/FDNIN-01-foundation-input-contract_v03.png",
+    "takeaway": "免額外訓練，仍要選乾淨正常參考並建立相容庫。 #FFF4CC",
+    "required_files_present": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "brief": "C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-033/ad-anomalydino-engineering-2-r02.md",
+    "objective": "最近距離保留位置，組成候選異常圖。",
+    "page_type": "C — 按本圖資料處理或同条件比較安排。",
+    "node_count": 3,
+    "reference": "teaching-images/vision-ai-model-selection/docs/course-delivery/section-pages/06-foundation-vision-vlm/images/final/FDNIN-01-foundation-input-contract_v03.png",
+    "takeaway": "最近距離保留位置，組成候選異常圖。 #FFF4CC",
+    "required_files_present": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "brief": "C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-033/ad-anomalydino-engineering-3-r01.md",
+    "objective": "保存參考版本，誤報與漏檢要一起比較。",
+    "page_type": "C — 按本圖資料處理或同条件比較安排。",
+    "node_count": 3,
+    "reference": "teaching-images/vision-ai-model-selection/docs/course-delivery/section-pages/06-foundation-vision-vlm/images/final/FDNIN-01-foundation-input-contract_v03.png",
+    "takeaway": "保存參考版本，誤報與漏檢要一起比較。 #FFF4CC",
+    "required_files_present": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "brief": "C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-033/ad-anomalydino-engineering-4-r01.md",
+    "objective": "旋轉擴充改變正常涵蓋，朝向規格仍須另驗。",
+    "page_type": "D — 按本圖資料處理或同条件比較安排。",
+    "node_count": 3,
+    "reference": "teaching-images/vision-ai-model-selection/docs/course-delivery/section-pages/06-foundation-vision-vlm/images/final/FDNIN-01-foundation-input-contract_v03.png",
+    "takeaway": "旋轉擴充改變正常涵蓋，朝向規格仍須另驗。 #FFF4CC",
+    "required_files_present": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "brief": "C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-033/adino-deep-rotation-r02.md",
+    "objective": "整件與刻字一起旋轉；正常參考不能改寫允收規格。",
+    "page_type": "D — 按本圖資料處理或同条件比較安排。",
+    "node_count": 3,
+    "reference": "teaching-images/vision-ai-model-selection/docs/course-delivery/section-pages/06-foundation-vision-vlm/images/final/FDNIN-01-foundation-input-contract_v03.png",
+    "takeaway": "整件與刻字一起旋轉；正常參考不能改寫允收規格。 #FFF4CC",
+    "required_files_present": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "brief": "C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-033/ad-efficientad-engineering-1-r02.md",
+    "objective": "教師固定，學生兩組輸出與AE各有訓練目標。",
+    "page_type": "C — 按本圖資料處理或同条件比較安排。",
+    "node_count": 3,
+    "reference": "teaching-images/vision-ai-model-selection/docs/course-delivery/section-pages/06-foundation-vision-vlm/images/final/FDNIN-01-foundation-input-contract_v03.png",
+    "takeaway": "教師固定，學生兩組輸出與AE各有訓練目標。 #FFF4CC",
+    "required_files_present": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "brief": "C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-033/ad-efficientad-engineering-2-r02.md",
+    "objective": "局部比T/S1，全局比AE/S2；校正尺度後才融合。",
+    "page_type": "C — 按本圖資料處理或同条件比較安排。",
+    "node_count": 3,
+    "reference": "teaching-images/vision-ai-model-selection/docs/course-delivery/section-pages/06-foundation-vision-vlm/images/final/FDNIN-01-foundation-input-contract_v03.png",
+    "takeaway": "局部比T/S1，全局比AE/S2；校正尺度後才融合。 #FFF4CC",
+    "required_files_present": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "brief": "C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-033/ad-efficientad-engineering-3-r02.md",
+    "objective": "兩路與融合圖一起驗，完整流程一起計時。",
+    "page_type": "C — 按本圖資料處理或同条件比較安排。",
+    "node_count": 3,
+    "reference": "teaching-images/vision-ai-model-selection/docs/course-delivery/section-pages/06-foundation-vision-vlm/images/final/FDNIN-01-foundation-input-contract_v03.png",
+    "takeaway": "兩路與融合圖一起驗，完整流程一起計時。 #FFF4CC",
+    "required_files_present": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "brief": "C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-033/ad-efficientad-engineering-4-r01.md",
+    "objective": "模型與正常校正一起重驗，不能只換產品名稱。",
+    "page_type": "C — 按本圖資料處理或同条件比較安排。",
+    "node_count": 3,
+    "reference": "teaching-images/vision-ai-model-selection/docs/course-delivery/section-pages/06-foundation-vision-vlm/images/final/FDNIN-01-foundation-input-contract_v03.png",
+    "takeaway": "模型與正常校正一起重驗，不能只換產品名稱。 #FFF4CC",
+    "required_files_present": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "brief": "C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-033/eff-main-failure-r01.md",
+    "objective": "先核對原圖線索，再驗兩路與融合結果。",
+    "page_type": "D — 按本圖資料處理或同条件比較安排。",
+    "node_count": 3,
+    "reference": "teaching-images/vision-ai-model-selection/docs/course-delivery/section-pages/06-foundation-vision-vlm/images/final/FDNIN-01-foundation-input-contract_v03.png",
+    "takeaway": "先核對原圖線索，再驗兩路與融合結果。 #FFF4CC",
+    "required_files_present": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "brief": "C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-033/eff-deep-01-core-r02.md",
+    "objective": "兩路分工不同，正常尺度對齊後一起驗。",
+    "page_type": "C — 按本圖資料處理或同条件比較安排。",
+    "node_count": 3,
+    "reference": "teaching-images/vision-ai-model-selection/docs/course-delivery/section-pages/06-foundation-vision-vlm/images/final/FDNIN-01-foundation-input-contract_v03.png",
+    "takeaway": "兩路分工不同，正常尺度對齊後一起驗。 #FFF4CC",
+    "required_files_present": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "brief": "C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-033/eff-deep-01-work-r02.md",
+    "objective": "位置與耗時都要驗；熱圖只幫你開始覆核。",
+    "page_type": "C — 按本圖資料處理或同条件比較安排。",
+    "node_count": 3,
+    "reference": "teaching-images/vision-ai-model-selection/docs/course-delivery/section-pages/06-foundation-vision-vlm/images/final/FDNIN-01-foundation-input-contract_v03.png",
+    "takeaway": "位置與耗時都要驗；熱圖只幫你開始覆核。 #FFF4CC",
+    "required_files_present": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "brief": "C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-033/eff-deep-02-data-r01.md",
+    "objective": "訓練、校正與最終測試分開，先查資料來源。",
+    "page_type": "C — 按本圖資料處理或同条件比較安排。",
+    "node_count": 3,
+    "reference": "teaching-images/vision-ai-model-selection/docs/course-delivery/section-pages/06-foundation-vision-vlm/images/final/FDNIN-01-foundation-input-contract_v03.png",
+    "takeaway": "訓練、校正與最終測試分開，先查資料來源。 #FFF4CC",
+    "required_files_present": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "brief": "C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-033/eff-deep-03-meaning-r02.md",
+    "objective": "T固定、S1學T、AE學T、S2學AE；兩路分別比較。",
+    "page_type": "C — 按本圖資料處理或同条件比較安排。",
+    "node_count": 3,
+    "reference": "teaching-images/vision-ai-model-selection/docs/course-delivery/section-pages/06-foundation-vision-vlm/images/final/FDNIN-01-foundation-input-contract_v03.png",
+    "takeaway": "T固定、S1學T、AE學T、S2學AE；兩路分別比較。 #FFF4CC",
+    "required_files_present": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "brief": "C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-033/eff-deep-04-output-r01.md",
+    "objective": "先選要位置還是輪廓，再準備資料與驗證。",
+    "page_type": "D — 按本圖資料處理或同条件比較安排。",
+    "node_count": 3,
+    "reference": "teaching-images/vision-ai-model-selection/docs/course-delivery/section-pages/06-foundation-vision-vlm/images/final/FDNIN-01-foundation-input-contract_v03.png",
+    "takeaway": "先選要位置還是輪廓，再準備資料與驗證。 #FFF4CC",
+    "required_files_present": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "brief": "C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-033/eff-deep-05-limits-r01.md",
+    "objective": "先改善取像，再用正常與真缺陷驗證。",
+    "page_type": "D — 按本圖資料處理或同条件比較安排。",
+    "node_count": 3,
+    "reference": "teaching-images/vision-ai-model-selection/docs/course-delivery/section-pages/06-foundation-vision-vlm/images/final/FDNIN-01-foundation-input-contract_v03.png",
+    "takeaway": "先改善取像，再用正常與真缺陷驗證。 #FFF4CC",
+    "required_files_present": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "brief": "C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-033/eff-deep-07-comparison-r01.md",
+    "objective": "比較同一用途與完整成本，更新時重做的事也要算。",
+    "page_type": "D — 按本圖資料處理或同条件比較安排。",
+    "node_count": 3,
+    "reference": "teaching-images/vision-ai-model-selection/docs/course-delivery/section-pages/06-foundation-vision-vlm/images/final/FDNIN-01-foundation-input-contract_v03.png",
+    "takeaway": "比較同一用途與完整成本，更新時重做的事也要算。 #FFF4CC",
+    "required_files_present": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "brief": "C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-033/eff-deep-08-transfer-r01.md",
+    "objective": "需求改變時，資料、輸出與驗收也要改。",
+    "page_type": "D — 按本圖資料處理或同条件比較安排。",
+    "node_count": 3,
+    "reference": "teaching-images/vision-ai-model-selection/docs/course-delivery/section-pages/06-foundation-vision-vlm/images/final/FDNIN-01-foundation-input-contract_v03.png",
+    "takeaway": "需求改變時，資料、輸出與驗收也要改。 #FFF4CC",
+    "required_files_present": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  }
+]

@@ -1,0 +1,489 @@
+{
+  "model": "Pose Pipeline",
+  "badge": "2D–3D幾何姿態流程",
+  "title": "Pose Pipeline：點、幾何與相機一起求姿態",
+  "scenario": {
+    "title": "已找出四孔U形件的影像點，現在要知道工件相對相機的位置和方向，並可追查姿態可信度。",
+    "body": "已找出四孔U形件的影像點，現在要知道工件相對相機的位置和方向，並可追查姿態可信度。"
+  },
+  "promise": {
+    "title": "交付結果與接手工作",
+    "body": "物體到相機的旋轉／平移與驗證紀錄；如需工站座標需另接外參，不直接等於可執行的機器動作。"
+  },
+  "mental_model": {
+    "title": "2D–3D幾何姿態流程",
+    "body": "Pose Pipeline先把同名2D影像點和已知3D工件點配對，連同相機內參及畸變設定交給PnP求解。結果表示物體座標到相機座標的旋轉與平移；再將3D點重投影回影像核對。點數、平面性和求解方法會影響可解性與多解，四點示意不保證唯一正確解。",
+    "limit": "四孔板接近對稱，辨識方向的缺口又被遮住時，兩套點位對應可能都看似合理。錯誤身分可能得到看似小的重投影誤差；低誤差不能單獨證明姿態正確。"
+  },
+  "micro_example": {
+    "title": "加標記，還是多一個視角？",
+    "setup": "接近對稱的四孔板缺口被遮住，兩個候選姿態都可能有小重投影誤差。工件表面可能不允許永久標記。",
+    "prediction": "選可移除標記、調整視角，或保留人工覆核？你要先核對哪個限制？",
+    "reveal": "先核對表面處理規範、可見性、節拍和校正條件。可移除且穩定可見的標記可提供點身分；若不能標記，可測額外視角，但須維護校正與遮擋條件。短期人工覆核也可能合理，需明確攔下不確定解。任何路線都要驗證物理姿態，不能只選重投影分數略低者。"
+  },
+  "mechanism_steps": [
+    {
+      "title": "同名2D與3D點",
+      "body": "A點在影像與CAD必須是同一物理點，單位、座標方向與校正版本一致；點可來自模型或其他經驗證方法。",
+      "why": "由本課核心機制連接工作用途",
+      "anchor": "WI030-1",
+      "diagram": {
+        "title": "同名2D與3D點",
+        "body": "A點在影像與CAD必須是同一物理點，單位、座標方向與校正版本一致；點可來自模型或其他經驗證方法。",
+        "why": "詳見本課版本與來源",
+        "anchor": "WI030-1"
+      }
+    },
+    {
+      "title": "相機模型求解",
+      "body": "核對重投影、外點、可見性、正深度和多解，必要時用額外視角或限制。接工站座標還需相機到工站的外參。",
+      "why": "由本課核心機制連接工作用途",
+      "anchor": "WI030-2",
+      "diagram": {
+        "title": "相機模型求解",
+        "body": "核對重投影、外點、可見性、正深度和多解，必要時用額外視角或限制。接工站座標還需相機到工站的外參。",
+        "why": "詳見本課版本與來源",
+        "anchor": "WI030-2"
+      }
+    },
+    {
+      "title": "重投影與座標接手",
+      "body": "物體到相機的旋轉／平移與驗證紀錄；如需工站座標需另接外參，不直接等於可執行的機器動作。",
+      "why": "由本課核心機制連接工作用途",
+      "anchor": "WI030-3",
+      "diagram": {
+        "title": "重投影與座標接手",
+        "body": "物體到相機的旋轉／平移與驗證紀錄；如需工站座標需另接外參，不直接等於可執行的機器動作。",
+        "why": "詳見本課版本與來源",
+        "anchor": "WI030-3"
+      }
+    },
+    {
+      "title": "工作核對與接手",
+      "body": "以獨立姿態參考量旋轉和平移誤差，另記重投影誤差、外點、多解、單位和座標轉換；只有重投影小不代表物理姿態必定正確。",
+      "why": "由本課核心機制連接工作用途",
+      "anchor": "WI030-4",
+      "diagram": {
+        "title": "工作核對與接手",
+        "body": "以獨立姿態參考量旋轉和平移誤差，另記重投影誤差、外點、多解、單位和座標轉換；只有重投影小不代表物理姿態必定正確。",
+        "why": "詳見本課版本與來源",
+        "anchor": "WI030-4"
+      }
+    }
+  ],
+  "visual_intro": "Pose Pipeline先把同名2D影像點和已知3D工件點配對，連同相機內參及畸變設定交給PnP求解。結果表示物體座標到相機座標的旋轉與平移；再將3D點重投影回影像核對。點數、平面性和求解方法會影響可解性與多解，四點示意不保證唯一正確解。",
+  "beginner_path": {
+    "title": "從必要原理、具體反例到工作取捨",
+    "intro": "已找出四孔U形件的影像點，現在要知道工件相對相機的位置和方向，並可追查姿態可信度。 下列圖像、特徵及回答為教學示意，不是模型實測。",
+    "visuals": [
+      {
+        "id": "wi030-pose-c1",
+        "title": "Pose Pipeline：點、幾何與相機一起求姿態",
+        "prompt": "已找出四孔U形件的影像點，現在要知道工件相對相機的位置和方向，並可追查姿態可信度。",
+        "caption": "Pose Pipeline先把同名2D影像點和已知3D工件點配對，連同相機內參及畸變設定交給PnP求解。結果表示物體座標到相機座標的旋轉與平移；再將3D點重投影回影像核對。點數、平面性和求解方法會影響可解性與多解，四點示意不保證唯一正確解。",
+        "image": "_course_content/generated-concepts/pose/wi030-pose-c1-r03-desktop.png",
+        "alt": "Pose Pipeline：點、幾何與相機一起求姿態。Pose Pipeline先把同名2D影像點和已知3D工件點配對，連同相機內參及畸變設定交給PnP求解。結果表示物體座標到相機座標的旋轉與平移；再將3D點重投影回影像核對。點數、平面性和求解方法會影響可解性與多解，四點示意不保證唯一正確解。 AI生成教學示意，非模型實測。",
+        "callouts": [
+          {
+            "title": "資料要能對得上",
+            "body": "A點在影像與CAD必須是同一物理點，單位、座標方向與校正版本一致；點可來自模型或其他經驗證方法。"
+          },
+          {
+            "title": "解要回到影像檢查",
+            "body": "核對重投影、外點、可見性、正深度和多解，必要時用額外視角或限制。接工站座標還需相機到工站的外參。"
+          },
+          {
+            "title": "交付與接手",
+            "body": "物體到相機的旋轉／平移與驗證紀錄；如需工站座標需另接外參，不直接等於可執行的機器動作。"
+          }
+        ],
+        "reading_views": [
+          {
+            "title": "Pose Pipeline：點、幾何與相機一起求姿態",
+            "image": "_course_content/generated-concepts/pose/wi030-pose-c1-r03-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/pose/wi030-pose-c1-r04-mobile.png",
+            "alt": "Pose Pipeline：點、幾何與相機一起求姿態。Pose Pipeline先把同名2D影像點和已知3D工件點配對，連同相機內參及畸變設定交給PnP求解。結果表示物體座標到相機座標的旋轉與平移；再將3D點重投影回影像核對。點數、平面性和求解方法會影響可解性與多解，四點示意不保證唯一正確解。 AI生成教學示意，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              836,
+              1882
+            ],
+            "mobile_display_mode": "full-mobile",
+            "desktop_intrinsic_width": 1670,
+            "desktop_intrinsic_height": 942,
+            "mobile_intrinsic_width": 836,
+            "mobile_intrinsic_height": 1882
+          }
+        ],
+        "core_ideas": true
+      },
+      {
+        "id": "wi030-pose-d2",
+        "title": "對稱或遮住時，完整的點也可能配錯",
+        "prompt": "觀察哪個條件改變，讓原本的結果不夠可靠？",
+        "caption": "四孔板接近對稱，辨識方向的缺口又被遮住時，兩套點位對應可能都看似合理。錯誤身分可能得到看似小的重投影誤差；低誤差不能單獨證明姿態正確。",
+        "image": "_course_content/generated-concepts/pose/wi030-pose-d2-r02-desktop.png",
+        "alt": "對稱或遮住時，完整的點也可能配錯。四孔板接近對稱，辨識方向的缺口又被遮住時，兩套點位對應可能都看似合理。錯誤身分可能得到看似小的重投影誤差；低誤差不能單獨證明姿態正確。 AI生成教學示意，非模型實測。",
+        "callouts": [
+          {
+            "title": "看哪裡",
+            "body": "四孔板接近對稱，辨識方向的缺口又被遮住時，兩套點位對應可能都看似合理。錯誤身分可能得到看似小的重投影誤差；低誤差不能單獨證明姿態正確。"
+          },
+          {
+            "title": "接著怎麼做",
+            "body": "先確認點的身分、可見性和工件幾何；必要時換視角或加入可驗證的不對稱標記，重查多解與座標鏈，不用猜測的解接動作。"
+          }
+        ],
+        "reading_views": [
+          {
+            "title": "對稱或遮住時，完整的點也可能配錯",
+            "image": "_course_content/generated-concepts/pose/wi030-pose-d2-r02-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/pose/wi030-pose-d2-r02-mobile.png",
+            "alt": "對稱或遮住時，完整的點也可能配錯。四孔板接近對稱，辨識方向的缺口又被遮住時，兩套點位對應可能都看似合理。錯誤身分可能得到看似小的重投影誤差；低誤差不能單獨證明姿態正確。 AI生成教學示意，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              836,
+              1881
+            ],
+            "mobile_display_mode": "full-mobile",
+            "desktop_intrinsic_width": 1672,
+            "desktop_intrinsic_height": 941,
+            "mobile_intrinsic_width": 836,
+            "mobile_intrinsic_height": 1881
+          }
+        ],
+        "core_ideas": false
+      },
+      {
+        "id": "wi030-pose-d3",
+        "title": "找點與求姿態，是不同的工作責任",
+        "prompt": "相同工作需求下，資料、輸出與成本如何取捨？",
+        "caption": "Keypoint R-CNN負責影像中的2D點及所屬物件；Pose Pipeline把這些同名點和已知3D幾何、相機校正接起來求姿態。它們可以串接，不是互相取代的模型排名。只需2D位置時不一定要增加3D求解。",
+        "image": "_course_content/generated-concepts/pose/wi030-pose-d3-r03-desktop.png",
+        "alt": "找點與求姿態，是不同的工作責任。Keypoint R-CNN負責影像中的2D點及所屬物件；Pose Pipeline把這些同名點和已知3D幾何、相機校正接起來求姿態。它們可以串接，不是互相取代的模型排名。只需2D位置時不一定要增加3D求解。 AI生成教學示意，非模型實測。",
+        "callouts": [
+          {
+            "title": "怎麼選",
+            "body": "Keypoint R-CNN負責影像中的2D點及所屬物件；Pose Pipeline把這些同名點和已知3D幾何、相機校正接起來求姿態。它們可以串接，不是互相取代的模型排名。只需2D位置時不一定要增加3D求解。"
+          },
+          {
+            "title": "資料與完整成本",
+            "body": "不一定需要訓練PnP，但需要可靠2D點、已知3D幾何、內外參和單位。換鏡頭、焦距、相機位置或工件幾何要重核對相應校正與座標鏈。"
+          }
+        ],
+        "reading_views": [
+          {
+            "title": "找點與求姿態，是不同的工作責任",
+            "image": "_course_content/generated-concepts/pose/wi030-pose-d3-r03-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/pose/wi030-pose-d3-r03-mobile.png",
+            "alt": "找點與求姿態，是不同的工作責任。Keypoint R-CNN負責影像中的2D點及所屬物件；Pose Pipeline把這些同名點和已知3D幾何、相機校正接起來求姿態。它們可以串接，不是互相取代的模型排名。只需2D位置時不一定要增加3D求解。 AI生成教學示意，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              724,
+              2172
+            ],
+            "mobile_display_mode": "full-mobile",
+            "desktop_intrinsic_width": 1670,
+            "desktop_intrinsic_height": 941,
+            "mobile_intrinsic_width": 724,
+            "mobile_intrinsic_height": 2172
+          }
+        ],
+        "core_ideas": false
+      }
+    ]
+  },
+  "concept_visuals": [
+    {
+      "id": "causal-chain",
+      "placement": "after_causal_chain",
+      "title": "從 image 到 pose，中間不能少掉哪三個交接？",
+      "prompt": "先預測：keypoint peaks 要成為可動作的 pose，除了點的位置外還需要哪些關係與幾何資訊？",
+      "caption": "由左到右：top-down 或 bottom-up 先交 per-instance keypoints+association，再以 inverse mapping 接回相機座標，最後由 camera/fixture 與 geometric solver 解 pose，並輸出 uncertainty/fallback。點、關聯、座標與 solver 都不可省略。",
+      "image": "_course_content/generated-concepts/pose/pose-causal-chain_v01.svg",
+      "alt": "四段概念圖：多個工件圖像走 top-down boxes 或 bottom-up peaks/grouping，產生有編號關聯的 keypoints，回映到相機座標，經幾何 solver 輸出方向箭頭和不確定性 fallback。",
+      "callouts": [
+        {
+          "title": "① topology 先決定漏失來源",
+          "body": "top-down 受 detector/proposal 限制；bottom-up 受 grouping/association 限制。"
+        },
+        {
+          "title": "② 點必須有 instance 和順序",
+          "body": "未關聯的 peaks 不能直接描述某個零件的姿態。"
+        },
+        {
+          "title": "③ pose 由點加幾何解出",
+          "body": "camera/fixture/solver 和 uncertainty policy 將點轉成可審計的動作資訊。"
+        }
+      ]
+    },
+    {
+      "id": "worked-example",
+      "placement": "after_micro_example",
+      "title": "對稱與重疊時，正確 peak 仍可能導向錯 pose",
+      "prompt": "兩個對稱零件的 keypoint peaks 都看似合理；哪一個缺口會造成左右交換或 instance association 錯誤？",
+      "caption": "左側只看 peaks，對稱/重疊讓同一點可被多個 instance 解釋；右側明確保存 association、visibility、point order、camera/solver residual 和 fallback。當多解未排除時，正確行為是停下來。",
+      "image": "_course_content/generated-concepts/pose/pose-worked-example_v01.svg",
+      "alt": "左右對照概念圖：左邊兩個重疊對稱零件有多個相似 keypoint peaks 和可能錯誤連線，右邊顯示有順序的 instance association、相機幾何 solver 和不確定時 fallback。",
+      "callouts": [
+        {
+          "title": "左：peak 不會自己分組",
+          "body": "相似或重疊物件使 point identity/instance association 可能交換。"
+        },
+        {
+          "title": "右：把關聯當正式輸出",
+          "body": "keypoint order、visibility、association 和 inverse map 都要保存並驗證。"
+        },
+        {
+          "title": "多解時走 fallback",
+          "body": "不能因某一組點可餵進 solver，就直接發出 robot/grasp 動作。"
+        }
+      ]
+    },
+    {
+      "id": "comparison",
+      "placement": "after_comparison",
+      "title": "Keypoint R-CNN、Pose、ChArUco 都談座標，卻在回答不同問題",
+      "prompt": "一個是在物件內找 landmarks、一個把 landmarks 變姿態、一個用已知板建立相機基準；不要把它們的分數混成同一個 accuracy。",
+      "caption": "Keypoint R-CNN 交 per-instance K landmarks；Pose Pipeline 將 points/association/camera/solver 組成 2D/3D pose+uncertainty；ChArUco 用已知標靶建立相機 calibration/pose 基準。三者都要回映與 residual，但事實來源、輸出單位與 failure gate 不同。",
+      "image": "_course_content/generated-concepts/pose/pose-comparison_v01.svg",
+      "alt": "三欄比較圖：Keypoint R-CNN 在每個 box 找編號點，Pose Pipeline 將點與相機 solver 解方向，ChArUco 標定板建立相機姿態和回投影殘差。",
+      "callouts": [
+        {
+          "title": "Keypoint R-CNN：找 instance landmarks",
+          "body": "輸出是 K 點、visibility/confidence，不是已校準 pose。"
+        },
+        {
+          "title": "Pose Pipeline：把點變方向/位置",
+          "body": "需要 association、camera、solver、tail error 和 fallback。"
+        },
+        {
+          "title": "ChArUco：建立幾何基準",
+          "body": "依賴可放置、尺寸已知的標靶，不能取代產品物件 pose pipeline。"
+        }
+      ]
+    },
+    {
+      "id": "boundary-cases-explainer",
+      "placement": "before_boundary_cases",
+      "title": "同一條因果鏈，在哪裡會被破壞？",
+      "prompt": "不要只記住風險名詞；先預測條件一變，畫面或候選結果會怎麼變，再決定何時應 HOLD。",
+      "caption": "Pose Pipeline 的三個模型專屬反事實：每欄把條件、可觀察後果與正確下一步放在一起。它們不是自動修正規則；遇到條件超出驗證範圍時，先保存原始證據並進入 HOLD／REVIEW。",
+      "image": "_course_content/generated-concepts/pose/pose-boundary-cases_v01.svg",
+      "alt": "Pose Pipeline 的三欄反事實說明圖：每欄依序說明一個失效條件、可能看到的候選或量測後果，以及應進入 HOLD、重驗或改選方法的安全下一步。",
+      "callouts": [
+        {
+          "title": "先看條件，而不是先改門檻",
+          "body": "候選改變可能是資料、取像、設定或模型假設被破壞，不能立刻解讀成產品真相。"
+        },
+        {
+          "title": "把可觀察後果說出來",
+          "body": "誤報、漏檢、整片異常或時間失序都需要回到原始資料與版本追查。"
+        },
+        {
+          "title": "HOLD 是設計的一部分",
+          "body": "先停止自動往下走、保存 evidence，確認條件後才重新 qualification 或交給適合的方法。"
+        }
+      ]
+    }
+  ],
+  "boundary_cases": [
+    {
+      "condition": "本課具體反例",
+      "effect": "四孔板接近對稱，辨識方向的缺口又被遮住時，兩套點位對應可能都看似合理。錯誤身分可能得到看似小的重投影誤差；低誤差不能單獨證明姿態正確。",
+      "action": "先確認點的身分、可見性和工件幾何；必要時換視角或加入可驗證的不對稱標記，重查多解與座標鏈，不用猜測的解接動作。"
+    },
+    {
+      "condition": "更換產品、模型或輸入設定",
+      "effect": "不一定需要訓練PnP，但需要可靠2D點、已知3D幾何、內外參和單位。換鏡頭、焦距、相機位置或工件幾何要重核對相應校正與座標鏈。",
+      "action": "先用可追溯幾何與校正資料建立2D–3D對應，保存原始影像和點名，再選適用的PnP方法及多解檢查。"
+    },
+    {
+      "condition": "把示意當成實際推論",
+      "effect": "本課特徵、排序、回答及圖像僅用於解釋，不支持現場準確率或耗時結論。",
+      "action": "以獨立姿態參考量旋轉和平移誤差，另記重投影誤差、外點、多解、單位和座標轉換；只有重投影小不代表物理姿態必定正確。"
+    }
+  ],
+  "comparison": [
+    {
+      "model": "Keypoint R-CNN",
+      "normality": "每件框與點名標註；工業任務訓練",
+      "candidate": "2D點及物件歸屬"
+    },
+    {
+      "model": "幾何與相機資料",
+      "normality": "同名3D點、內參畸變與一致單位",
+      "candidate": "把2D點接到幾何問題"
+    },
+    {
+      "model": "PnP姿態流程",
+      "normality": "足夠正確對應；適用求解與多解驗證",
+      "candidate": "物體→相機姿態；接工站需外參"
+    }
+  ],
+  "selection": "Keypoint R-CNN負責影像中的2D點及所屬物件；Pose Pipeline把這些同名點和已知3D幾何、相機校正接起來求姿態。它們可以串接，不是互相取代的模型排名。只需2D位置時不一定要增加3D求解。 不一定需要訓練PnP，但需要可靠2D點、已知3D幾何、內外參和單位。換鏡頭、焦距、相機位置或工件幾何要重核對相應校正與座標鏈。",
+  "poc": {
+    "title": "以真實工作資料做小規模比較",
+    "steps": [
+      "先用可追溯幾何與校正資料建立2D–3D對應，保存原始影像和點名，再選適用的PnP方法及多解檢查。",
+      "不一定需要訓練PnP，但需要可靠2D點、已知3D幾何、內外參和單位。換鏡頭、焦距、相機位置或工件幾何要重核對相應校正與座標鏈。",
+      "以獨立姿態參考量旋轉和平移誤差，另記重投影誤差、外點、多解、單位和座標轉換；只有重投影小不代表物理姿態必定正確。"
+    ],
+    "hold": "先確認點的身分、可見性和工件幾何；必要時換視角或加入可驗證的不對稱標記，重查多解與座標鏈，不用猜測的解接動作。",
+    "acceptance": {
+      "baseline": "既有流程或最簡單可行方法",
+      "measure": "以獨立姿態參考量旋轉和平移誤差，另記重投影誤差、外點、多解、單位和座標轉換；只有重投影小不代表物理姿態必定正確。",
+      "negative_control": "四孔板接近對稱，辨識方向的缺口又被遮住時，兩套點位對應可能都看似合理。錯誤身分可能得到看似小的重投影誤差；低誤差不能單獨證明姿態正確。",
+      "owner": "實作與影像核對負責人"
+    }
+  },
+  "teach_back": {
+    "question": "它改變什麼？何時選另一種做法？",
+    "answer": "Pose Pipeline先把同名2D影像點和已知3D工件點配對，連同相機內參及畸變設定交給PnP求解。結果表示物體座標到相機座標的旋轉與平移；再將3D點重投影回影像核對。點數、平面性和求解方法會影響可解性與多解，四點示意不保證唯一正確解。 Keypoint R-CNN負責影像中的2D點及所屬物件；Pose Pipeline把這些同名點和已知3D幾何、相機校正接起來求姿態。它們可以串接，不是互相取代的模型排名。只需2D位置時不一定要增加3D求解。"
+  },
+  "slide_reading": [
+    {
+      "title": "先找：Pose 開始前要選哪一條路？",
+      "question": "top-down 和 bottom-up 分別先解哪個問題，又各自受什麼限制？",
+      "look": "找 top-down detector→box/NMS→crop，及 bottom-up full-image heatmaps→association/grouping。",
+      "relation": "top-down 先取得 instance 再估點，受 proposal recall 限制；bottom-up 先找全圖點再分組，受 association 限制。",
+      "takeaway": "Pose topology 會改變錯誤來源、成本和驗收項目，不能不選就開始比較。",
+      "terms": [
+        "top-down：先偵測每個 instance，再在其 ROI 估 keypoints 的流程",
+        "bottom-up：先在全圖估 keypoints，再把 peaks 分組成 instances 的流程"
+      ]
+    },
+    {
+      "title": "這張圖要核對：為什麼 keypoint 一定要有 association？",
+      "question": "全圖上多個 peaks 為何不能直接餵給 pose solver？",
+      "look": "找 keypoint heatmaps、peaks、association fields/tags、grouping、per-instance ordered keypoints 和 visibility。",
+      "relation": "solver 需要知道哪幾個點屬同一工件、各自的編號與可見狀態；association 將散點變成 instance set。",
+      "takeaway": "Pose 不是一張 heatmap，而是帶 instance identity 和順序的 keypoints。",
+      "terms": [
+        "association：將多個 keypoint 配到同一個 instance 的規則或表示",
+        "pose flip：因對稱、交換或多解而得到相反/錯誤姿態的失敗"
+      ]
+    },
+    {
+      "title": "先看：從網路座標到工站座標，少了哪一段都不行？",
+      "question": "inverse mapping、camera/fixture 和 geometric solver 如何串起來？",
+      "look": "找 crop/scale/flip inverse transforms、camera intrinsics/extrinsics、fixture rule、PnP/geometric fit 和 2D/3D pose。",
+      "relation": "keypoints 先回到 image coordinates，再依相機和幾何假設解出工站可用的 transform。",
+      "takeaway": "座標映射和 camera contract 是 pose 的一部分，不是模型外可省略的細節。",
+      "terms": [
+        "camera intrinsics/extrinsics：相機內部成像參數與相對世界/工站姿態",
+        "geometric solver：用有順序點與相機/fixture 假設求 pose/transform 的模組"
+      ]
+    },
+    {
+      "title": "最後看：哪種分數不足以讓系統動作？",
+      "question": "keypoint confidence、solver residual、tail pose error 和 uncertainty/fallback 各要怎麼一起讀？",
+      "look": "找 confidence/visibility、association、solver residual、event success、tail error、repeatability、uncertainty 和 fallback。",
+      "relation": "每個訊號只描述一段鏈路；整個 pose 是否可靠要看從觀測、分組、座標到 solver 的尾端行為。",
+      "takeaway": "姿態系統的安全輸出包含不確定與 fallback，不是只輸出一個角度。",
+      "terms": [
+        "tail error：少數困難案例中較差的 keypoint/pose 誤差",
+        "fallback：不確定或失敗時轉交安全流程/人工/其他定位方式的規則"
+      ]
+    }
+  ],
+  "comparison_headers": {
+    "title": "找點與求姿態，是不同的工作責任",
+    "basis": "所需資料與方法差異",
+    "output": "輸出與維護責任"
+  },
+  "transfer_check": {
+    "title": "加標記，還是多一個視角？",
+    "scenario": "接近對稱的四孔板缺口被遮住，兩個候選姿態都可能有小重投影誤差。工件表面可能不允許永久標記。",
+    "question": "選可移除標記、調整視角，或保留人工覆核？你要先核對哪個限制？",
+    "answer": "先核對表面處理規範、可見性、節拍和校正條件。可移除且穩定可見的標記可提供點身分；若不能標記，可測額外視角，但須維護校正與遮擋條件。短期人工覆核也可能合理，需明確攔下不確定解。任何路線都要驗證物理姿態，不能只選重投影分數略低者。"
+  },
+  "review_trace": {
+    "authority": "roadmap-model-selection/known-target-classification/pose/model.md",
+    "scope": "WI-030 十二課首讀圖文與手機PNG、反例、比較及自測；原工程slide保留，未以首讀評分代替工程圖審查。",
+    "claims": [
+      {
+        "id": "visual-1",
+        "field": "beginner_path.visuals[topology-ordered-keypoints]",
+        "source": "???? / architecture_path / representation_or_score"
+      },
+      {
+        "id": "visual-2",
+        "field": "beginner_path.visuals[calibrated-aoi]",
+        "source": "???? / architecture_path"
+      },
+      {
+        "id": "visual-3",
+        "field": "beginner_path.visuals[intrinsics-correspondence]",
+        "source": "architecture_path"
+      },
+      {
+        "id": "visual-4",
+        "field": "beginner_path.visuals[pnp-reprojection-residual]",
+        "source": "representation_or_score"
+      },
+      {
+        "id": "visual-5",
+        "field": "beginner_path.visuals[coverage-conditioning-gate]",
+        "source": "failure_boundary"
+      },
+      {
+        "id": "visual-6",
+        "field": "beginner_path.visuals[candidate-review-hold]",
+        "source": "selection_gate / evidence_bundle"
+      },
+      {
+        "id": "promise",
+        "field": "promise",
+        "source": "模型定位 / representation_or_score"
+      },
+      {
+        "id": "mechanism",
+        "field": "mechanism_steps",
+        "source": "architecture_path / representation_or_score"
+      },
+      {
+        "id": "boundaries",
+        "field": "boundary_cases",
+        "source": "failure_boundary / selection_gate"
+      },
+      {
+        "id": "comparison",
+        "field": "comparison + selection",
+        "source": "selection_gate"
+      },
+      {
+        "id": "poc",
+        "field": "poc + acceptance",
+        "source": "cost_and_operating_point / evidence_bundle"
+      },
+      {
+        "id": "transfer",
+        "field": "transfer_check",
+        "source": "failure_boundary / selection_gate"
+      },
+      {
+        "id": "wi030-first-read",
+        "field": "beginner_path + core + selection + transfer",
+        "source": "https://docs.opencv.org/4.13.0/d5/d1f/calib3d_solvePnP.html"
+      }
+    ]
+  },
+  "quality_status": {
+    "label": "首讀圖文已核對",
+    "state": "self-reviewed",
+    "round": "WI-030",
+    "reason": "新版逐圖與整頁自評、桌機手機驗證完成；使用者成品核准pending。原工程圖未納入本輪分數。"
+  },
+  "teaching_preflight": {
+    "brief": "teaching-images/vision-ai-model-selection/workitems/wi-030/pose-c1-r03-desktop.md",
+    "mobile_brief": "teaching-images/vision-ai-model-selection/workitems/wi-030/pose-c1-r04-mobile.md",
+    "story": "C",
+    "major_visual_nodes": 3,
+    "visual_status": "self-reviewed",
+    "user_review": "pending"
+  }
+}

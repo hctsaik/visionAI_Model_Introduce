@@ -1,0 +1,571 @@
+{
+  "model": "Qwen-VL",
+  "badge": "生成式視覺語言模型家族",
+  "title": "Qwen-VL：看清不同形狀影像再回答",
+  "scenario": {
+    "title": "你要從細長設備銘牌讀出型號與批次；把所有圖片硬壓成同樣大小，可能先失去小字，而保留更多像素又會增加處理負擔。",
+    "body": "你要從細長設備銘牌讀出型號與批次；把所有圖片硬壓成同樣大小，可能先失去小字，而保留更多像素又會增加處理負擔。"
+  },
+  "promise": {
+    "title": "交付結果與接手工作",
+    "body": "生成銘牌內容的文字回答，本例為型號 A17、批次 B08；需和原圖核對。不同家族版本的能力及輸入策略各自確認。"
+  },
+  "mental_model": {
+    "title": "生成式視覺語言模型家族",
+    "body": "Qwen-VL 是家族名稱，本課沿用 Qwen2-VL 作具體範例：動態解析度處理讓不同尺寸／長寬比的影像形成可變數量的視覺 tokens，再把空間位置資訊與問題一起交給語言模型。這讓模型能處理多樣影像，但實際保留的細節仍受處理器和像素預算限制。",
+    "limit": "當像素上限太低，批次 B08 可能模糊到只剩 B0?。回答流暢不代表小字真的被保留；重新放大縮圖也不能恢復原始資料。"
+  },
+  "micro_example": {
+    "title": "只讀固定銘牌欄位",
+    "setup": "每張銘牌位置固定，只需讀型號與批次；Qwen-VL 能答長段說明，但延遲偏高。",
+    "prediction": "你會優先調整什麼，又會加入哪個基準？",
+    "reveal": "先用原始局部保留必要小字，調整像素預算並量欄位錯誤及延遲；把固定欄位 OCR 納入比較。如果還需要跨欄理解或開放式問題，VLM 仍有價值，但不必為了流暢說明支付不需要的成本。"
+  },
+  "beginner_path": {
+    "title": "從必要原理、具體反例到工作取捨",
+    "intro": "你要從細長設備銘牌讀出型號與批次；把所有圖片硬壓成同樣大小，可能先失去小字，而保留更多像素又會增加處理負擔。 下列圖像、特徵及回答為教學示意，不是模型實測。",
+    "visuals": [
+      {
+        "id": "wi027-qwen-vl-c1",
+        "title": "Qwen-VL：依影像形狀保留閱讀線索",
+        "prompt": "你要從細長設備銘牌讀出型號與批次；把所有圖片硬壓成同樣大小，可能先失去小字，而保留更多像素又會增加處理負擔。",
+        "caption": "Qwen-VL 是家族名稱，本課沿用 Qwen2-VL 作具體範例：動態解析度處理讓不同尺寸／長寬比的影像形成可變數量的視覺 tokens，再把空間位置資訊與問題一起交給語言模型。這讓模型能處理多樣影像，但實際保留的細節仍受處理器和像素預算限制。",
+        "image": "_course_content/generated-concepts/qwen-vl/wi027-qwen-vl-c1-r03-desktop.png",
+        "alt": "Qwen-VL：依影像形狀保留閱讀線索。Qwen-VL 是家族名稱，本課沿用 Qwen2-VL 作具體範例：動態解析度處理讓不同尺寸／長寬比的影像形成可變數量的視覺 tokens，再把空間位置資訊與問題一起交給語言模型。這讓模型能處理多樣影像，但實際保留的細節仍受處理器和像素預算限制。 AI生成教學示意，非模型實測。",
+        "callouts": [
+          {
+            "title": "影像形狀與預算一起決定輸入",
+            "body": "原始長銘牌保留左右布局，並依前處理規則轉成視覺序列；圖中格子只示意，不是實測 token 數。最終數量要從所選處理器讀取。"
+          },
+          {
+            "title": "有位置的線索支援看圖回答",
+            "body": "Qwen2-VL 的位置表示處理文字、影像及影片的相應位置資訊；本課只畫靜態銘牌，讓型號和批次能對回左／右欄。此設計不能自動保證 OCR 正確。"
+          },
+          {
+            "title": "交付與接手",
+            "body": "生成銘牌內容的文字回答，本例為型號 A17、批次 B08；需和原圖核對。不同家族版本的能力及輸入策略各自確認。"
+          }
+        ],
+        "reading_views": [
+          {
+            "title": "Qwen-VL：依影像形狀保留閱讀線索",
+            "image": "_course_content/generated-concepts/qwen-vl/wi027-qwen-vl-c1-r03-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/qwen-vl/wi027-qwen-vl-c1-r03-mobile.png",
+            "alt": "Qwen-VL：依影像形狀保留閱讀線索。Qwen-VL 是家族名稱，本課沿用 Qwen2-VL 作具體範例：動態解析度處理讓不同尺寸／長寬比的影像形成可變數量的視覺 tokens，再把空間位置資訊與問題一起交給語言模型。這讓模型能處理多樣影像，但實際保留的細節仍受處理器和像素預算限制。 AI生成教學示意，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              725,
+              2170
+            ],
+            "mobile_display_mode": "full-mobile",
+            "desktop_intrinsic_width": 1672,
+            "desktop_intrinsic_height": 940,
+            "mobile_intrinsic_width": 725,
+            "mobile_intrinsic_height": 2170
+          }
+        ],
+        "core_ideas": true
+      },
+      {
+        "id": "wi027-qwen-vl-d2",
+        "title": "壓低像素預算，小字可能先消失",
+        "prompt": "觀察哪個條件改變，讓原本的結果不夠可靠？",
+        "caption": "當像素上限太低，批次 B08 可能模糊到只剩 B0?。回答流暢不代表小字真的被保留；重新放大縮圖也不能恢復原始資料。",
+        "image": "_course_content/generated-concepts/qwen-vl/wi027-qwen-vl-d2-r03-desktop.png",
+        "alt": "壓低像素預算，小字可能先消失。當像素上限太低，批次 B08 可能模糊到只剩 B0?。回答流暢不代表小字真的被保留；重新放大縮圖也不能恢復原始資料。 AI生成教學示意，非模型實測。",
+        "callouts": [
+          {
+            "title": "看哪裡",
+            "body": "當像素上限太低，批次 B08 可能模糊到只剩 B0?。回答流暢不代表小字真的被保留；重新放大縮圖也不能恢復原始資料。"
+          },
+          {
+            "title": "接著怎麼做",
+            "body": "回到原始銘牌裁出必要局部，或調整像素預算再測；同時檢查漏字、欄位混淆、token、記憶體與完整耗時。"
+          }
+        ],
+        "reading_views": [
+          {
+            "title": "壓低像素預算，小字可能先消失",
+            "image": "_course_content/generated-concepts/qwen-vl/wi027-qwen-vl-d2-r03-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/qwen-vl/wi027-qwen-vl-d2-r03-mobile.png",
+            "alt": "壓低像素預算，小字可能先消失。當像素上限太低，批次 B08 可能模糊到只剩 B0?。回答流暢不代表小字真的被保留；重新放大縮圖也不能恢復原始資料。 AI生成教學示意，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              724,
+              2172
+            ],
+            "mobile_display_mode": "full-mobile",
+            "desktop_intrinsic_width": 1672,
+            "desktop_intrinsic_height": 941,
+            "mobile_intrinsic_width": 724,
+            "mobile_intrinsic_height": 2172
+          }
+        ],
+        "core_ideas": false
+      },
+      {
+        "id": "wi027-vlm-d3",
+        "title": "看圖回答：先選部署方式，再比實際工作",
+        "prompt": "相同工作需求下，資料、輸出與成本如何取捨？",
+        "caption": "要處理長銘牌或文件問答，可把具體 Qwen-VL 版本納入候選；LLaVA 可作另一自建問答基準，Gemini API 可作託管基準。各自用適配的處理器，以同一原始資料和問題比較，而非假定家族名稱代表固定品質。",
+        "image": "_course_content/generated-concepts/llava/wi027-vlm-d3-r03-desktop.png",
+        "alt": "看圖回答：先選部署方式，再比實際工作。要處理長銘牌或文件問答，可把具體 Qwen-VL 版本納入候選；LLaVA 可作另一自建問答基準，Gemini API 可作託管基準。各自用適配的處理器，以同一原始資料和問題比較，而非假定家族名稱代表固定品質。 AI生成教學示意，非模型實測。",
+        "callouts": [
+          {
+            "title": "怎麼選",
+            "body": "要處理長銘牌或文件問答，可把具體 Qwen-VL 版本納入候選；LLaVA 可作另一自建問答基準，Gemini API 可作託管基準。各自用適配的處理器，以同一原始資料和問題比較，而非假定家族名稱代表固定品質。"
+          },
+          {
+            "title": "資料與完整成本",
+            "body": "準備不同字級、長寬比、反光與遮擋的原圖及人工抄錄答案；換產品先查新欄位與格式。增加細節可能提高 token、記憶體或時間；若只讀固定字欄，傳統 OCR 也應作基準，連同覆核與重試評估。"
+          }
+        ],
+        "reading_views": [
+          {
+            "title": "看圖回答：先選部署方式，再比實際工作",
+            "image": "_course_content/generated-concepts/llava/wi027-vlm-d3-r03-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/llava/wi027-vlm-d3-r03-mobile.png",
+            "alt": "看圖回答：先選部署方式，再比實際工作。要處理長銘牌或文件問答，可把具體 Qwen-VL 版本納入候選；LLaVA 可作另一自建問答基準，Gemini API 可作託管基準。各自用適配的處理器，以同一原始資料和問題比較，而非假定家族名稱代表固定品質。 AI生成教學示意，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              724,
+              2172
+            ],
+            "mobile_display_mode": "full-mobile",
+            "desktop_intrinsic_width": 1672,
+            "desktop_intrinsic_height": 941,
+            "mobile_intrinsic_width": 724,
+            "mobile_intrinsic_height": 2172
+          }
+        ],
+        "core_ideas": false
+      }
+    ]
+  },
+  "mechanism_steps": [
+    {
+      "title": "長銘牌與讀取問題",
+      "body": "你要從細長設備銘牌讀出型號與批次；把所有圖片硬壓成同樣大小，可能先失去小字，而保留更多像素又會增加處理負擔。",
+      "why": "由本課核心機制連接工作用途",
+      "anchor": "WI027-1",
+      "diagram": {
+        "title": "長銘牌與讀取問題",
+        "body": "你要從細長設備銘牌讀出型號與批次；把所有圖片硬壓成同樣大小，可能先失去小字，而保留更多像素又會增加處理負擔。",
+        "why": "詳見本課版本與來源",
+        "anchor": "WI027-1"
+      }
+    },
+    {
+      "title": "依解析度處理",
+      "body": "原始長銘牌保留左右布局，並依前處理規則轉成視覺序列；圖中格子只示意，不是實測 token 數。最終數量要從所選處理器讀取。",
+      "why": "由本課核心機制連接工作用途",
+      "anchor": "WI027-2",
+      "diagram": {
+        "title": "依解析度處理",
+        "body": "原始長銘牌保留左右布局，並依前處理規則轉成視覺序列；圖中格子只示意，不是實測 token 數。最終數量要從所選處理器讀取。",
+        "why": "詳見本課版本與來源",
+        "anchor": "WI027-2"
+      }
+    },
+    {
+      "title": "帶位置的視覺序列",
+      "body": "Qwen2-VL 的位置表示處理文字、影像及影片的相應位置資訊；本課只畫靜態銘牌，讓型號和批次能對回左／右欄。此設計不能自動保證 OCR 正確。",
+      "why": "由本課核心機制連接工作用途",
+      "anchor": "WI027-3",
+      "diagram": {
+        "title": "帶位置的視覺序列",
+        "body": "Qwen2-VL 的位置表示處理文字、影像及影片的相應位置資訊；本課只畫靜態銘牌，讓型號和批次能對回左／右欄。此設計不能自動保證 OCR 正確。",
+        "why": "詳見本課版本與來源",
+        "anchor": "WI027-3"
+      }
+    },
+    {
+      "title": "結合問題生成回答",
+      "body": "生成銘牌內容的文字回答，本例為型號 A17、批次 B08；需和原圖核對。不同家族版本的能力及輸入策略各自確認。",
+      "why": "由本課核心機制連接工作用途",
+      "anchor": "WI027-4",
+      "diagram": {
+        "title": "結合問題生成回答",
+        "body": "生成銘牌內容的文字回答，本例為型號 A17、批次 B08；需和原圖核對。不同家族版本的能力及輸入策略各自確認。",
+        "why": "詳見本課版本與來源",
+        "anchor": "WI027-4"
+      }
+    }
+  ],
+  "visual_intro": "Qwen-VL 是家族名稱，本課沿用 Qwen2-VL 作具體範例：動態解析度處理讓不同尺寸／長寬比的影像形成可變數量的視覺 tokens，再把空間位置資訊與問題一起交給語言模型。這讓模型能處理多樣影像，但實際保留的細節仍受處理器和像素預算限制。",
+  "concept_visuals": [],
+  "boundary_cases": [
+    {
+      "condition": "本課具體反例",
+      "effect": "當像素上限太低，批次 B08 可能模糊到只剩 B0?。回答流暢不代表小字真的被保留；重新放大縮圖也不能恢復原始資料。",
+      "action": "回到原始銘牌裁出必要局部，或調整像素預算再測；同時檢查漏字、欄位混淆、token、記憶體與完整耗時。"
+    },
+    {
+      "condition": "更換產品、模型或輸入設定",
+      "effect": "準備不同字級、長寬比、反光與遮擋的原圖及人工抄錄答案；換產品先查新欄位與格式。增加細節可能提高 token、記憶體或時間；若只讀固定字欄，傳統 OCR 也應作基準，連同覆核與重試評估。",
+      "action": "選定 Qwen2-VL 權重及處理器作本課實作範例，保留原始銘牌與正確抄錄；先比較兩個像素預算或原圖局部，不同模型版本不可混用設定。"
+    },
+    {
+      "condition": "把示意當成實際推論",
+      "effect": "本課特徵、排序、回答及圖像僅用於解釋，不支持現場準確率或耗時結論。",
+      "action": "逐欄比型號／批次的正確與漏讀，並量實際 token、GPU 記憶體及端到端耗時；只有細節與成本一起改善到需求範圍才採用。"
+    }
+  ],
+  "comparison": [
+    {
+      "model": "LLaVA 自建範例",
+      "normality": "選權重／處理器、GPU、影像問答驗證資料",
+      "candidate": "生成回答；自行維護模型與服務"
+    },
+    {
+      "model": "Qwen-VL 自建範例",
+      "normality": "選具體版本、輸入預算、GPU與驗證資料",
+      "candidate": "生成回答；細節、token和完整成本一起比較"
+    },
+    {
+      "model": "Gemini API 範例",
+      "normality": "選服務模型／輸入設定、可送出資料及問答驗證",
+      "candidate": "生成回覆；計入網路、重試、用量和覆核"
+    }
+  ],
+  "selection": "要處理長銘牌或文件問答，可把具體 Qwen-VL 版本納入候選；LLaVA 可作另一自建問答基準，Gemini API 可作託管基準。各自用適配的處理器，以同一原始資料和問題比較，而非假定家族名稱代表固定品質。 準備不同字級、長寬比、反光與遮擋的原圖及人工抄錄答案；換產品先查新欄位與格式。增加細節可能提高 token、記憶體或時間；若只讀固定字欄，傳統 OCR 也應作基準，連同覆核與重試評估。",
+  "poc": {
+    "title": "以真實工作資料做小規模比較",
+    "steps": [
+      "選定 Qwen2-VL 權重及處理器作本課實作範例，保留原始銘牌與正確抄錄；先比較兩個像素預算或原圖局部，不同模型版本不可混用設定。",
+      "準備不同字級、長寬比、反光與遮擋的原圖及人工抄錄答案；換產品先查新欄位與格式。增加細節可能提高 token、記憶體或時間；若只讀固定字欄，傳統 OCR 也應作基準，連同覆核與重試評估。",
+      "逐欄比型號／批次的正確與漏讀，並量實際 token、GPU 記憶體及端到端耗時；只有細節與成本一起改善到需求範圍才採用。"
+    ],
+    "hold": "回到原始銘牌裁出必要局部，或調整像素預算再測；同時檢查漏字、欄位混淆、token、記憶體與完整耗時。",
+    "acceptance": {
+      "baseline": "既有流程或最簡單可行方法",
+      "measure": "逐欄比型號／批次的正確與漏讀，並量實際 token、GPU 記憶體及端到端耗時；只有細節與成本一起改善到需求範圍才採用。",
+      "negative_control": "當像素上限太低，批次 B08 可能模糊到只剩 B0?。回答流暢不代表小字真的被保留；重新放大縮圖也不能恢復原始資料。",
+      "owner": "實作與影像核對負責人"
+    }
+  },
+  "teach_back": {
+    "question": "它改變什麼？何時選另一種做法？",
+    "answer": "Qwen-VL 是家族名稱，本課沿用 Qwen2-VL 作具體範例：動態解析度處理讓不同尺寸／長寬比的影像形成可變數量的視覺 tokens，再把空間位置資訊與問題一起交給語言模型。這讓模型能處理多樣影像，但實際保留的細節仍受處理器和像素預算限制。 要處理長銘牌或文件問答，可把具體 Qwen-VL 版本納入候選；LLaVA 可作另一自建問答基準，Gemini API 可作託管基準。各自用適配的處理器，以同一原始資料和問題比較，而非假定家族名稱代表固定品質。"
+  },
+  "slide_reading": [
+    {
+      "title": "Qwen2-VL：讀文字也要保留位置",
+      "question": "視覺token保留線索，回答仍須逐欄核對。",
+      "look": "先看同一銘牌的可見批號，再核對動態token加上位置表示，最後看與問題共同讀出B08。",
+      "relation": "限定Qwen2-VL，以批號B08說明視覺與文字輸入共同讀取內容；M-RoPE保留時空位置，模型輸出形式依所用版本與提示。局部圖是原銘牌工作例的簡化，不代表實測OCR結果。",
+      "takeaway": "視覺token保留線索，回答仍須逐欄核對。",
+      "terms": [
+        "表示：模型由輸入得到的中間資料，並非標註真值。",
+        "本圖數值：作者給定的教學示意，不是本輪模型實測。"
+      ]
+    },
+    {
+      "title": "Qwen2-VL：可變token也保留位置",
+      "question": "動態解析度與位置編碼，仍受原像素限制。",
+      "look": "先看解析度不同，形成可變token數，再核對M-RoPE保留時空位置，最後看與問題一起讀出可見文字。",
+      "relation": "限定Qwen2-VL：Naive Dynamic Resolution讓不同輸入形成可變視覺token數；M-RoPE將時間、高度、寬度位置納入旋轉位置表示，文字使用相應的一維位置處理。小格數為示意；像素預算/處理器限制仍會丟失小字。圖示同標籤批號B08，沒有從模糊B0?補造答案。",
+      "takeaway": "動態解析度與位置編碼，仍受原像素限制。",
+      "terms": [
+        "表示：模型由輸入得到的中間資料，並非標註真值。",
+        "本圖數值：作者給定的教學示意，不是本輪模型實測。"
+      ]
+    },
+    {
+      "title": "Qwen2-VL：像素預算要與小字一起驗",
+      "question": "節省token前，先確認關鍵字仍能看清。",
+      "look": "先看固定銘牌與processor設定，再核對保留可讀字與不確定欄位，最後看逐欄驗文字與完整耗時。",
+      "relation": "固定processor、像素上下限、長寬比、模型及生成設定。壓低像素預算可能失去小字；保存原圖並逐欄核對，輸入不清時可重拍或保留未知，不靠語言先驗補造批號。",
+      "takeaway": "節省token前，先確認關鍵字仍能看清。",
+      "terms": [
+        "表示：模型由輸入得到的中間資料，並非標註真值。",
+        "本圖數值：作者給定的教學示意，不是本輪模型實測。"
+      ]
+    },
+    {
+      "title": "Qwen2-VL與OCR：按文字工作選型",
+      "question": "固定欄位可試OCR，問答需求再比較VLM。",
+      "look": "先看共同銘牌與批號真值，再核對OCR讀固定欄位，最後看VLM用問題讀同一欄。",
+      "relation": "共同原圖和欄位真值下比較OCR與VLM的字元錯誤、不確定處理、版面變化與延遲。VLM的描述能力不保證精確字串更可靠；兩者都須依原圖驗證，不編造工具勝負。",
+      "takeaway": "固定欄位可試OCR，問答需求再比較VLM。",
+      "terms": [
+        "表示：模型由輸入得到的中間資料，並非標註真值。",
+        "本圖數值：作者給定的教學示意，不是本輪模型實測。"
+      ]
+    }
+  ],
+  "comparison_headers": {
+    "title": "看圖回答：先選部署方式，再比實際工作",
+    "basis": "所需資料與方法差異",
+    "output": "輸出與維護責任"
+  },
+  "transfer_check": {
+    "title": "只讀固定銘牌欄位",
+    "scenario": "每張銘牌位置固定，只需讀型號與批次；Qwen-VL 能答長段說明，但延遲偏高。",
+    "question": "你會優先調整什麼，又會加入哪個基準？",
+    "answer": "先用原始局部保留必要小字，調整像素預算並量欄位錯誤及延遲；把固定欄位 OCR 納入比較。如果還需要跨欄理解或開放式問題，VLM 仍有價值，但不必為了流暢說明支付不需要的成本。"
+  },
+  "review_trace": {
+    "authority": "roadmap-model-selection/foundation-vlm-open-world/qwen-vl/model.md",
+    "scope": "WI-033：工程層四圖與手機比較修正；首讀有效內容保留。原生圖已審，整頁與使用者審閱另記。",
+    "claims": [
+      {
+        "id": "visual-1",
+        "field": "beginner_path.visuals[variable-inputs]",
+        "source": "模型定位 / architecture_path"
+      },
+      {
+        "id": "visual-2",
+        "field": "beginner_path.visuals[variable-token-processor]",
+        "source": "architecture_path"
+      },
+      {
+        "id": "visual-3",
+        "field": "beginner_path.visuals[positional-llm-claim]",
+        "source": "representation_or_score"
+      },
+      {
+        "id": "visual-4",
+        "field": "beginner_path.visuals[token-cost-counterfactual]",
+        "source": "failure_boundary"
+      },
+      {
+        "id": "visual-5",
+        "field": "beginner_path.visuals[named-deployment-gate]",
+        "source": "selection_gate / evidence_bundle"
+      },
+      {
+        "id": "promise",
+        "field": "promise",
+        "source": "模型定位 / representation_or_score"
+      },
+      {
+        "id": "mechanism",
+        "field": "mechanism_steps",
+        "source": "architecture_path / representation_or_score"
+      },
+      {
+        "id": "boundaries",
+        "field": "boundary_cases",
+        "source": "failure_boundary / selection_gate"
+      },
+      {
+        "id": "comparison",
+        "field": "comparison + selection",
+        "source": "selection_gate"
+      },
+      {
+        "id": "poc",
+        "field": "poc + acceptance",
+        "source": "cost_and_operating_point / evidence_bundle"
+      },
+      {
+        "id": "transfer",
+        "field": "transfer_check",
+        "source": "failure_boundary / selection_gate"
+      },
+      {
+        "id": "f02-core",
+        "field": "beginner_path.visuals[0] + scenario + mental_model",
+        "source": "https://arxiv.org/abs/2409.12191"
+      },
+      {
+        "id": "f02-transfer",
+        "field": "micro_example + transfer_check + selection",
+        "source": "https://arxiv.org/abs/2409.12191"
+      },
+      {
+        "id": "wi027-first-read",
+        "field": "beginner_path + core + selection + transfer",
+        "source": "https://qwenlm.github.io/blog/qwen2-vl/"
+      }
+    ]
+  },
+  "quality_status": {
+    "label": "首讀圖文已重製並自評；使用者核准待確認",
+    "state": "self-reviewed",
+    "round": "WI-027",
+    "reason": "30張不同PNG逐圖審查，七頁與互動證據見workitems/wi-027；原工程圖未重新評分。"
+  },
+  "teaching_preflight": {
+    "brief": "teaching-images/vision-ai-model-selection/workitems/wi-027/qwen-vl-c1-r03.md",
+    "mobile_brief": "teaching-images/vision-ai-model-selection/workitems/wi-027/qwen-vl-c1-r03.md",
+    "story": "C",
+    "major_visual_nodes": 4,
+    "visual_status": "self-reviewed",
+    "user_review": "pending"
+  },
+  "engineering_slides": [
+    {
+      "title": "Qwen2-VL：讀文字也要保留位置",
+      "question": "視覺token保留線索，回答仍須逐欄核對。",
+      "plain": {
+        "look": "先看同一銘牌的可見批號，再核對動態token加上位置表示，最後看與問題共同讀出B08。",
+        "relation": "限定Qwen2-VL，以批號B08說明視覺與文字輸入共同讀取內容；M-RoPE保留時空位置，模型輸出形式依所用版本與提示。局部圖是原銘牌工作例的簡化，不代表實測OCR結果。",
+        "takeaway": "視覺token保留線索，回答仍須逐欄核對。"
+      },
+      "terms": [
+        "表示：模型由輸入得到的中間資料，並非標註真值。",
+        "本圖數值：作者給定的教學示意，不是本輪模型實測。"
+      ],
+      "guide": [
+        "限定Qwen2-VL，以批號B08說明視覺與文字輸入共同讀取內容；M-RoPE保留時空位置，模型輸出形式依所用版本與提示。局部圖是原銘牌工作例的簡化，不代表實測OCR結果。",
+        "先看同一銘牌的可見批號，再核對動態token加上位置表示，最後看與問題共同讀出B08。"
+      ],
+      "stages": [
+        {
+          "title": "同一銘牌的可見批號",
+          "body": "同一銘牌的可見批號；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "動態token加上位置表示",
+          "body": "動態token加上位置表示；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "與問題共同讀出B08",
+          "body": "與問題共同讀出B08；請對照圖內輸入、變化與結果。"
+        }
+      ],
+      "misconception": "當像素上限太低，批次 B08 可能模糊到只剩 B0?。回答流暢不代表小字真的被保留；重新放大縮圖也不能恢復原始資料。",
+      "alt": "Qwen2-VL：讀文字也要保留位置。視覺token保留線索，回答仍須逐欄核對。 教學示意，非模型實測。",
+      "mobile_image": "roadmap-model-selection/foundation-vlm-open-world/qwen-vl/images/final/WI033-QWEN-01-r01-mobile.png",
+      "mobile_width": 768,
+      "mobile_height": 2304,
+      "engineering": {
+        "takeaway": "視覺token保留線索，回答仍須逐欄核對。",
+        "nextAction": "選定 Qwen2-VL 權重及處理器作本課實作範例，保留原始銘牌與正確抄錄；先比較兩個像素預算或原圖局部，不同模型版本不可混用設定。",
+        "redLine": "回到原始銘牌裁出必要局部，或調整像素預算再測；同時檢查漏字、欄位混淆、token、記憶體與完整耗時。"
+      },
+      "source": "https://arxiv.org/abs/2409.12191"
+    },
+    {
+      "title": "Qwen2-VL：可變token也保留位置",
+      "question": "動態解析度與位置編碼，仍受原像素限制。",
+      "plain": {
+        "look": "先看解析度不同，形成可變token數，再核對M-RoPE保留時空位置，最後看與問題一起讀出可見文字。",
+        "relation": "限定Qwen2-VL：Naive Dynamic Resolution讓不同輸入形成可變視覺token數；M-RoPE將時間、高度、寬度位置納入旋轉位置表示，文字使用相應的一維位置處理。小格數為示意；像素預算/處理器限制仍會丟失小字。圖示同標籤批號B08，沒有從模糊B0?補造答案。",
+        "takeaway": "動態解析度與位置編碼，仍受原像素限制。"
+      },
+      "terms": [
+        "表示：模型由輸入得到的中間資料，並非標註真值。",
+        "本圖數值：作者給定的教學示意，不是本輪模型實測。"
+      ],
+      "guide": [
+        "限定Qwen2-VL：Naive Dynamic Resolution讓不同輸入形成可變視覺token數；M-RoPE將時間、高度、寬度位置納入旋轉位置表示，文字使用相應的一維位置處理。小格數為示意；像素預算/處理器限制仍會丟失小字。圖示同標籤批號B08，沒有從模糊B0?補造答案。",
+        "先看解析度不同，形成可變token數，再核對M-RoPE保留時空位置，最後看與問題一起讀出可見文字。"
+      ],
+      "stages": [
+        {
+          "title": "解析度不同，形成可變token數",
+          "body": "解析度不同，形成可變token數；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "M-RoPE保留時空位置",
+          "body": "M-RoPE保留時空位置；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "與問題一起讀出可見文字",
+          "body": "與問題一起讀出可見文字；請對照圖內輸入、變化與結果。"
+        }
+      ],
+      "misconception": "當像素上限太低，批次 B08 可能模糊到只剩 B0?。回答流暢不代表小字真的被保留；重新放大縮圖也不能恢復原始資料。",
+      "alt": "Qwen2-VL：可變token也保留位置。動態解析度與位置編碼，仍受原像素限制。 教學示意，非模型實測。",
+      "mobile_image": "roadmap-model-selection/foundation-vlm-open-world/qwen-vl/images/final/WI033-QWEN-02-r02-mobile.png",
+      "mobile_width": 768,
+      "mobile_height": 2304,
+      "engineering": {
+        "takeaway": "動態解析度與位置編碼，仍受原像素限制。",
+        "nextAction": "選定 Qwen2-VL 權重及處理器作本課實作範例，保留原始銘牌與正確抄錄；先比較兩個像素預算或原圖局部，不同模型版本不可混用設定。",
+        "redLine": "回到原始銘牌裁出必要局部，或調整像素預算再測；同時檢查漏字、欄位混淆、token、記憶體與完整耗時。"
+      },
+      "source": "https://arxiv.org/abs/2409.12191"
+    },
+    {
+      "title": "Qwen2-VL：像素預算要與小字一起驗",
+      "question": "節省token前，先確認關鍵字仍能看清。",
+      "plain": {
+        "look": "先看固定銘牌與processor設定，再核對保留可讀字與不確定欄位，最後看逐欄驗文字與完整耗時。",
+        "relation": "固定processor、像素上下限、長寬比、模型及生成設定。壓低像素預算可能失去小字；保存原圖並逐欄核對，輸入不清時可重拍或保留未知，不靠語言先驗補造批號。",
+        "takeaway": "節省token前，先確認關鍵字仍能看清。"
+      },
+      "terms": [
+        "表示：模型由輸入得到的中間資料，並非標註真值。",
+        "本圖數值：作者給定的教學示意，不是本輪模型實測。"
+      ],
+      "guide": [
+        "固定processor、像素上下限、長寬比、模型及生成設定。壓低像素預算可能失去小字；保存原圖並逐欄核對，輸入不清時可重拍或保留未知，不靠語言先驗補造批號。",
+        "先看固定銘牌與processor設定，再核對保留可讀字與不確定欄位，最後看逐欄驗文字與完整耗時。"
+      ],
+      "stages": [
+        {
+          "title": "固定銘牌與processor設定",
+          "body": "固定銘牌與processor設定；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "保留可讀字與不確定欄位",
+          "body": "保留可讀字與不確定欄位；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "逐欄驗文字與完整耗時",
+          "body": "逐欄驗文字與完整耗時；請對照圖內輸入、變化與結果。"
+        }
+      ],
+      "misconception": "當像素上限太低，批次 B08 可能模糊到只剩 B0?。回答流暢不代表小字真的被保留；重新放大縮圖也不能恢復原始資料。",
+      "alt": "Qwen2-VL：像素預算要與小字一起驗。節省token前，先確認關鍵字仍能看清。 教學示意，非模型實測。",
+      "mobile_image": "roadmap-model-selection/foundation-vlm-open-world/qwen-vl/images/final/WI033-QWEN-03-r01-mobile.png",
+      "mobile_width": 768,
+      "mobile_height": 2304,
+      "engineering": {
+        "takeaway": "節省token前，先確認關鍵字仍能看清。",
+        "nextAction": "選定 Qwen2-VL 權重及處理器作本課實作範例，保留原始銘牌與正確抄錄；先比較兩個像素預算或原圖局部，不同模型版本不可混用設定。",
+        "redLine": "回到原始銘牌裁出必要局部，或調整像素預算再測；同時檢查漏字、欄位混淆、token、記憶體與完整耗時。"
+      },
+      "source": "https://arxiv.org/abs/2409.12191"
+    },
+    {
+      "title": "Qwen2-VL與OCR：按文字工作選型",
+      "question": "固定欄位可試OCR，問答需求再比較VLM。",
+      "plain": {
+        "look": "先看共同銘牌與批號真值，再核對OCR讀固定欄位，最後看VLM用問題讀同一欄。",
+        "relation": "共同原圖和欄位真值下比較OCR與VLM的字元錯誤、不確定處理、版面變化與延遲。VLM的描述能力不保證精確字串更可靠；兩者都須依原圖驗證，不編造工具勝負。",
+        "takeaway": "固定欄位可試OCR，問答需求再比較VLM。"
+      },
+      "terms": [
+        "表示：模型由輸入得到的中間資料，並非標註真值。",
+        "本圖數值：作者給定的教學示意，不是本輪模型實測。"
+      ],
+      "guide": [
+        "共同原圖和欄位真值下比較OCR與VLM的字元錯誤、不確定處理、版面變化與延遲。VLM的描述能力不保證精確字串更可靠；兩者都須依原圖驗證，不編造工具勝負。",
+        "先看共同銘牌與批號真值，再核對OCR讀固定欄位，最後看VLM用問題讀同一欄。"
+      ],
+      "stages": [
+        {
+          "title": "共同銘牌與批號真值",
+          "body": "共同銘牌與批號真值；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "OCR讀固定欄位",
+          "body": "OCR讀固定欄位；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "VLM用問題讀同一欄",
+          "body": "VLM用問題讀同一欄；請對照圖內輸入、變化與結果。"
+        }
+      ],
+      "misconception": "當像素上限太低，批次 B08 可能模糊到只剩 B0?。回答流暢不代表小字真的被保留；重新放大縮圖也不能恢復原始資料。",
+      "alt": "Qwen2-VL與OCR：按文字工作選型。固定欄位可試OCR，問答需求再比較VLM。 教學示意，非模型實測。",
+      "mobile_image": "roadmap-model-selection/foundation-vlm-open-world/qwen-vl/images/final/WI033-QWEN-04-r01-mobile.png",
+      "mobile_width": 768,
+      "mobile_height": 2304,
+      "engineering": {
+        "takeaway": "固定欄位可試OCR，問答需求再比較VLM。",
+        "nextAction": "選定 Qwen2-VL 權重及處理器作本課實作範例，保留原始銘牌與正確抄錄；先比較兩個像素預算或原圖局部，不同模型版本不可混用設定。",
+        "redLine": "回到原始銘牌裁出必要局部，或調整像素預算再測；同時檢查漏字、欄位混淆、token、記憶體與完整耗時。"
+      },
+      "source": "https://arxiv.org/abs/2409.12191"
+    }
+  ]
+}

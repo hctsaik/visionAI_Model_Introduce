@@ -1,12 +1,14 @@
 # DiffusionAD slide manifest
 
-| slide_id | course page | teaching purpose | style | active asset | status |
-| --- | --- | --- | --- | --- | --- |
-| `DIFFAD-01` | 04-47 | Position the norm-guided one-step normal-restoration path and discriminative segmentation decision; rule out a generic multi-step diffusion framing. | C | `images/final/DIFFAD-01-positioning_v02-ppt-master-style.png` | approved |
-| `DIFFAD-02` | 04-48 | Make the forward noise, norm-guided one-step denoiser, normal-like restoration, joint segmentation, and versioned aggregation contract explicit. | C | `images/final/DIFFAD-02-architecture_v02-ppt-master-style.png` | approved |
-| `DIFFAD-03` | 04-49 | Govern the noise / guidance state and verify input-restoration-map triplets, restoration failure, real holdout, and complete one-step latency. | C | `images/final/DIFFAD-03-build-inference_v02-ppt-master-style.png` | approved |
-| `DIFFAD-04` | 04-50 | Gate restoration bias, support drift, synthetic-to-real behavior, effective pixels, and global logic before fair DiffusionAD/DDAD/InvAD comparison. | D | `images/final/DIFFAD-04-selection-boundary_v02-ppt-comparison-style.png` | approved |
+| slide_id | 教學目標 | 版型 | active asset | 狀態 |
+| --- | --- | --- | --- | --- |
+| `DIFFAD-01` | DiffusionAD：去噪與定位要分別學 | C | `images/final/WI033-DIFFAD-01-r02-desktop.png` | native_and_page_reviewed_user_pending |
+| `DIFFAD-02` | DiffusionAD：恢復與定位分兩個工作 | C | `images/final/WI033-DIFFAD-02-r02-desktop.png` | native_and_page_reviewed_user_pending |
+| `DIFFAD-03` | DiffusionAD：要交付最後的位置結果 | C | `images/final/WI033-DIFFAD-03-r01-desktop.png` | native_and_page_reviewed_user_pending |
+| `DIFFAD-04` | DiffusionAD：恢復變乾淨不等於漏檢 | D | `images/final/WI033-DIFFAD-04-r02-desktop.png` | native_and_page_reviewed_user_pending |
 
-## Version history
-
-- v01 is the active deterministic rendering line, produced by `tools/render_diffad_cardgrid.py` with the reviewed white technical-card system. No ImageGen background or existing final asset was overwritten.
+## 保留的歷史來源（非目前啟用）
+- [DIFFAD-01](images/final/DIFFAD-01-positioning_v02-ppt-master-style.png)
+- [DIFFAD-02](images/final/DIFFAD-02-architecture_v02-ppt-master-style.png)
+- [DIFFAD-03](images/final/DIFFAD-03-build-inference_v02-ppt-master-style.png)
+- [DIFFAD-04](images/final/DIFFAD-04-selection-boundary_v02-ppt-comparison-style.png)

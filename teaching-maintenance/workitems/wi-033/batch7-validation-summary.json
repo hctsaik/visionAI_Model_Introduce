@@ -1,0 +1,45 @@
+{
+  "ui_states": 44,
+  "zoom_checks": 308,
+  "http_checks": 320,
+  "bundle_assets": 1370,
+  "html_sha256": "17a716a585d9c10b490a46ba86757e4ac216f15c39261c22e11a75dbf282e89a",
+  "answers": 44,
+  "navigation": 44,
+  "tests": {
+    "command": [
+      "C:\\Users\\hctsa\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+      "-m",
+      "pytest",
+      "tests/test_engineering_mobile_pages.py",
+      "tests/test_github_pages_bundle.py",
+      "tests/test_interactive_navigation.py",
+      "-q"
+    ],
+    "exit_code": 0,
+    "stdout": "........                 [100%]\n8 passed, 120 subtests passed in 114.91s (0:01:54)\n",
+    "stderr": ""
+  },
+  "extra_tests": {
+    "command": [
+      "C:\\Users\\hctsa\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+      "-m",
+      "pytest",
+      "tests/test_tall_mobile_artwork.py",
+      "tests/test_deep_dive_mobile_steps.py",
+      "tests/test_resnet_deep_dive.py",
+      "tests/test_segformer_deep_dive.py",
+      "tests/test_collapsed_deep_dive.py",
+      "tests/test_concept_zoom_edges.py",
+      "-q"
+    ],
+    "exit_code": 0,
+    "stdout": "................                                               [100%]\n16 passed, 10 subtests passed in 136.75s (0:02:16)\n",
+    "stderr": ""
+  },
+  "new_engineering_pngs": 88,
+  "new_main_pngs": 2,
+  "native_and_page_review": "passed",
+  "user_approval": "pending",
+  "published": false
+}

@@ -1,0 +1,665 @@
+首頁
+/
+異常檢測：正常性建模
+/
+AnomalyCLIP
+◌ 異常檢測：正常性建模
+先理解，再看工程圖
+AnomalyCLIP
+
+缺少新產品訓練資料：用輔助資料學好的狀態提示，檢查新材質。
+
+你會拿到：候選分數與位置，不是缺陷機率或尺寸。
+先停下來：看不清細節先改善取像；位置或文字矛盾就回原圖覆核。
+完成本主題
+☆ 收藏
+從案例理解 AnomalyCLIP
+核心機制、反例覆核與條件選型
+
+三張首讀圖；工件、位置圖與問答均為教學示意，非模型實測。
+
+第 01 張 · 看案例，再做判斷
+
+AnomalyCLIP：先學狀態提示，再看新產品
+
+沿著同一塊金屬板 A，追提示、影像與位置的來源。
+
+AnomalyCLIP：先學狀態提示，再看新產品
+放大完整圖
+為什麼需要這個設計？
+
+以輔助正常／異常資料和區域標註，聯合整圖與局部監督學習物件無關的狀態提示。CLIP 骨幹權重固定，文字提示可學，DPAM 調整注意力以保留局部語意；目標影像與兩種文字表示比較，再整合多層局部線索。目標零樣本不代表模型從未訓練。
+
+讀完要能說清楚的三個要點
+學到的是什麼
+
+V、W 代表可學參數，搭配 object／damaged object；不是人工列出每一種產品名稱或缺陷清單。文字編碼中的附加提示也參與學習。
+
+局部位置怎麼來
+
+整張 A 經影像編碼取得局部表示，p 放大圖只是指出取自哪裡；p 的影像特徵與正常／異常文字向量分開輸入相似度比較。DPAM 方格是注意力示意，不是空間熱圖。
+
+怎麼驗證零樣本
+
+核對輔助訓練資料與模型版本，目標測試不能混入訓練。把新產品正常與真缺陷獨立驗證，不因提示通用就省略現場檢查。
+
+想深入，再看這張圖的完整工程說明
+AnomalyCLIP：先學狀態提示，再看新產品
+
+原始問題：沿著同一塊金屬板 A，追提示、影像與位置的來源。
+
+以輔助正常／異常資料和區域標註，聯合整圖與局部監督學習物件無關的狀態提示。CLIP 骨幹權重固定，文字提示可學，DPAM 調整注意力以保留局部語意；目標影像與兩種文字表示比較，再整合多層局部線索。目標零樣本不代表模型從未訓練。
+
+學到的是什麼
+
+V、W 代表可學參數，搭配 object／damaged object；不是人工列出每一種產品名稱或缺陷清單。文字編碼中的附加提示也參與學習。
+
+局部位置怎麼來
+
+整張 A 經影像編碼取得局部表示，p 放大圖只是指出取自哪裡；p 的影像特徵與正常／異常文字向量分開輸入相似度比較。DPAM 方格是注意力示意，不是空間熱圖。
+
+怎麼驗證零樣本
+
+核對輔助訓練資料與模型版本，目標測試不能混入訓練。把新產品正常與真缺陷獨立驗證，不因提示通用就省略現場檢查。
+
+第 02 張 · 看案例，再做判斷
+
+文字懂異常，仍可能看錯細節
+
+用允收孔邊 q 與細刮傷 p，分開看誤報、漏檢。
+
+文字懂異常，仍可能看錯細節
+放大完整圖
+提示來源不同
+
+正常孔邊 q 可能得到高分而誤報，細傷 p 也可能得低分而漏檢；圖中輸出是教學假設。先確認影像可見度，再用獨立正常與真缺陷比較設定，不能把語意相似當成缺陷機率。
+
+先改善什麼
+
+核對光照、對焦與有效解析度，確認 p 能看見、q 屬於允收變化；文字換得更強烈，不能找回影像沒有的細節。
+
+想深入，再看這張圖的完整工程說明
+文字懂異常，仍可能看錯細節
+
+原始問題：用允收孔邊 q 與細刮傷 p，分開看誤報、漏檢。
+
+正常孔邊 q 可能得到高分而誤報，細傷 p 也可能得低分而漏檢；圖中輸出是教學假設。先確認影像可見度，再用獨立正常與真缺陷比較設定，不能把語意相似當成缺陷機率。
+
+提示來源不同
+
+WinCLIP 的文字由人工組合，AnomalyCLIP 的提示參數先在輔助資料學到；不是把兩個名字換在同一套手寫提示上。
+
+先改善什麼
+
+核對光照、對焦與有效解析度，確認 p 能看見、q 屬於允收變化；文字換得更強烈，不能找回影像沒有的細節。
+
+如何查兩種錯誤
+
+固定未見正常與真缺陷，按材質和缺陷尺寸記錄誤報、漏檢。WinCLIP+ 另查正常參考涵蓋，在同漏檢要求下比較完整延遲及覆核量。
+
+第 03 張 · 看案例，再做判斷
+
+三種圖文方法，先選工作結果
+
+同一金屬板 A，比資料準備、位置輸出與對話成本。
+
+三種圖文方法，先選工作結果
+放大完整圖
+圖中比較範圍
+
+WinCLIP 用人工狀態文字與視窗，WinCLIP+ 可加正常參考；AnomalyCLIP 使用輔助資料學到的提示；AnomalyGPT 加入內建定位與對話。只有正常品可先評估參考路線，訓練型方法要先備妥已訓練模型。固定硬體、解析度與漏檢要求，比誤報、延遲和覆核量；位置圖不等於精密輪廓或尺寸。
+
+新產品需要什麼
+
+重查人工提示、正常參考或已訓練提示的適用範圍；需要適配時另留驗證資料。輔助訓練資料與目標評測資料不能混用。
+
+想深入，再看這張圖的完整工程說明
+三種圖文方法，先選工作結果
+
+原始問題：同一金屬板 A，比資料準備、位置輸出與對話成本。
+
+WinCLIP 用人工狀態文字與視窗，WinCLIP+ 可加正常參考；AnomalyCLIP 使用輔助資料學到的提示；AnomalyGPT 加入內建定位與對話。只有正常品可先評估參考路線，訓練型方法要先備妥已訓練模型。固定硬體、解析度與漏檢要求，比誤報、延遲和覆核量；位置圖不等於精密輪廓或尺寸。
+
+圖中比較範圍
+
+位置圖 p? 僅代表輸出形式，不表示三者檢測結果相同。手機以整個 AnomalyGPT 方塊比較輸出，完整的影像、位置提示與問題路徑見核心圖。
+
+新產品需要什麼
+
+重查人工提示、正常參考或已訓練提示的適用範圍；需要適配時另留驗證資料。輔助訓練資料與目標評測資料不能混用。
+
+何時值得用對話
+
+需要互動解讀才加入文字驗證；同時量回答有無證據、定位錯誤和人工覆核時間。只需要位置線索時，可先比較較簡單的輸出流程。
+
+換情境試著判斷
+
+換一個工作條件，再做選擇
+
+已有 AnomalyCLIP 提示模型，從霧面零件換成透明接頭；正常反光被標紅，細裂卻有漏檢。
+
+改幾句人工提示、沿用現成模型，還是補資料適配／建立正常參考？
+
+看解釋與可接受的取捨
+
+任意手寫句子不能直接等同已學提示。先查取像與輔助資料適用範圍，保留新材質正常及真細裂，比較既有提示模型與正常參考方法；若適配，訓練與驗證分開。提高門檻可能少誤報卻多漏檢；以同風險要求比較成本，並記錄目標設定是否仍屬零樣本。
+
+需要時查看基本名詞與模型背景
+zero-shot：本次不使用目標資料訓練
+calibration：依現場資料重新設定門檻
+AnomalyCLIP：先學狀態提示，再看新產品
+
+以輔助正常／異常資料和區域標註，聯合整圖與局部監督學習物件無關的狀態提示。CLIP 骨幹權重固定，文字提示可學，DPAM 調整注意力以保留局部語意；目標影像與兩種文字表示比較，再整合多層局部線索。目標零樣本不代表模型從未訓練。
+
+語意與位置仍可能錯；必須用未見正常與真缺陷檢查適用範圍。
+
+工程參考：展開文字因果鏈與設定核對點不重複主圖；只核對每步要鎖定的設定。
+
+模型專屬因果鏈
+
+實作時逐步核對
+
+主圖已在上方第一遍。這裡只核對每一步要鎖定的設定與為什麼，不再重貼同一張圖。
+
+1
+先稽核 auxiliary prompt-learning 與 target exclusion
+
+保存 auxiliary data IDs、taxonomy、license、split、target exclusion、source anomaly policy 與 prompt-learning checkpoint。
+
+因為：zero-shot 指沒有用 target training，不代表沒有學過的 prompt state；target leakage 會讓 transfer 結論不成立。
+
+設定核對：工程圖核對：auxiliary split → learned prompt tokens
+
+2
+鎖定 learned normal/anomaly text embeddings
+
+在鎖定的 CLIP/text encoder、tokenizer、template、context length 與已宣告 adaptation state 下得到 normal 與 anomaly prompt embeddings。
+
+因為：文字側的微小改動可翻轉 similarity margin；沒有 revision 就無法重播同一個候選。
+
+設定核對：工程圖核對：normal/abnormal prompt embeddings
+
+3
+讓 ROI 的 global/patch feature 和 prompts 比較
+
+固定 ROI/image preprocessing 後，由 frozen 或已宣告 adapted 的 CLIP image encoder 產生 global 與 selected patch features，計算各自對 normal/anomaly prompt 的 normalized similarity margin。
+
+因為：局部 evidence 來自特定 feature 層和 patch resolution；不是 VLM 的自由文字能力，也可能漏掉 tiny defect。
+
+設定核對：工程圖核對：CLIP patch features → normal/anomaly margins
+
+4
+margin map 先本地校正，再交給 review
+
+patch margins 經固定 interpolation、smoothing、aggregation、calibration、threshold/abstain policy 形成 candidate map 和 action trace。
+
+因為：margin 的大小本身不等於 defect probability；prompt transfer、domain gap 與 map rule 都可能改低 FPR。
+
+設定核對：工程圖核對：margin map → local calibration → gate
+
+想深入：展開失效案例、模型比較與小規模試做（POC）
+初學者可先跳過；準備實作或驗收時再逐項核對。
+
+失效案例、選型與小規模試做
+
+什麼情況不能相信它？
+
+這一區保留完整工程條件，供準備實作或驗收的人逐項核對。
+
+auxiliary data 對 target 有 leakage、license 或 taxonomy 不清
+
+可能看到：所謂zero-shot transfer可能已見過目標語義，結論與部署資料治理都失效。
+
+正確下一步：HOLD；保存source IDs/splits/licenses與target exclusion audit，必要時改用可追溯方法。
+
+prompt/tokenizer/template/CLIP revision 改變，或 prompt transfer 不穩
+
+可能看到：normal/anomaly margin 可能反轉，同一熱圖無法與舊 threshold 比較。
+
+正確下一步：重新校正，執行prompt variance、target holdout、unseen product與低FPR regression。
+
+patch有效尺度不足、image/text domain gap 或 global logic
+
+可能看到：tiny defect可能被插值掩蓋；產品命名、材料、照明或缺件關係未必被prompt margin表達。
+
+正確下一步：驗effective pixels與domain coverage；對低FPR/結構問題使用specialist evidence或HOLD。
+
+相鄰方法比較
+
+先比 learned prompt state，不比「語言能力」
+AnomalyCLIP
+learned normal prompt與CLIP patch/global alignment
+normal/anomaly prompt similarity margin 高
+WinCLIP
+frozen prompt ensemble，可選few-normal references
+image/window/patch similarity margin 高
+AnomalyGPT
+非 normality representation：visual-language assist state 加 evidence-region path
+grounded response/region candidate，非自動決策
+
+WinCLIP 用人工狀態文字與視窗，WinCLIP+ 可加正常參考；AnomalyCLIP 使用輔助資料學到的提示；AnomalyGPT 加入內建定位與對話。只有正常品可先評估參考路線，訓練型方法要先備妥已訓練模型。固定硬體、解析度與漏檢要求，比誤報、延遲和覆核量；位置圖不等於精密輪廓或尺寸。
+
+工程第一步
+
+POC 第一件事：先證明 margin 沒有借到目標答案
+固定 auxiliary IDs/license/taxonomy/splits/target exclusion、CLIP/tokenizer、learned prompt tokens/template/context/adaptation state、ROI/image recipe和feature layers。
+鎖 similarity normalization、patch interpolation/smoothing、aggregation、calibration、threshold/abstain和candidate evidence trace。
+在 target holdout、unseen product、prompt variance、challenge/future/drift split 比較low-FPR escape、false reject/review load、effective pixels、P95和transfer failures。
+目前做法
+
+固定 target-excluded auxiliary split、CLIP/tokenizer、learned prompt state、ROI、patch rule 與 local calibration。
+
+要量什麼
+
+量 target holdout 的 prompt variance、margin distribution、low-FPR escape、false reject、review load、patch evidence 與完整 P95。
+
+反例測試
+
+以受控 prompt paraphrase、class-name 改寫或 tokenizer revision 重跑，證明 margin 改變會觸發重新 calibration，而非沿用舊 threshold。
+
+誰確認
+
+資料治理 owner、Vision ML owner、目標 AOI 品質 owner
+
+先停下來的訊號：source audit或target exclusion缺失、prompt不穩、domain gap、tiny defect/global logic或P95無證據時，先 HOLD。
+
+讀完請自己講回來
+
+為什麼語意相似、熱區或肯定回答，都不足以直接放行？
+看本頁練習的核對說明
+
+它們只是模型線索，可能誤報、漏檢或超出影像證據。要回原圖，按允收規格及獨立資料驗證，再決定現場處置。
+
+換一個現場再推理
+
+換產品要重做什麼
+
+情境：新產品外觀、允收反光與缺陷型態都不同。
+
+請先回答：哪些準備與驗證不能直接沿用？
+
+核對這個遷移題
+
+重新核對提示來源、正常參考或既有模型的適用範圍；有適配時另留驗證資料。分開檢查正常誤報、真缺陷漏檢與成本；需要對話時再驗文字是否有據。
+
+內容依據：展開這頁主張的 model.md 可追溯範圍
+
+roadmap-model-selection/anomaly-detection/ad-anomalyclip/model.md ↗
+
+WI-033：工程層四圖與手機比較修正；首讀有效內容保留。原生圖已審，整頁與使用者審閱另記。
+
+beginner_path.visuals[prompt-workpiece]：模型定位 / architecture_path
+beginner_path.visuals[auxiliary-prompt-contract]：architecture_path
+beginner_path.visuals[patch-text-margin]：representation_or_score
+beginner_path.visuals[prompt-version-transfer]：failure_boundary
+beginner_path.visuals[review-hold]：selection_gate / evidence_bundle
+promise：模型定位 / representation_or_score
+mechanism_steps：architecture_path / representation_or_score
+boundary_cases：failure_boundary / selection_gate
+comparison + selection：selection_gate
+poc + acceptance：cost_and_operating_point / evidence_bundle
+transfer_check：failure_boundary / selection_gate
+beginner_path.visuals[0] + scenario + mental_model：https://arxiv.org/abs/2310.18961
+micro_example + transfer_check：由原論文機制推論移除後果；https://arxiv.org/abs/2310.18961
+beginner_path + micro_example + selection：https://arxiv.org/html/2310.18961v4
+工程參考：展開四張工程圖與完整節點
+從輸入、機制、交付到限制，核對實作與驗證方式。
+
+先記住：zero-shot 不是 zero-state；再核對 auxiliary audit、learned prompts、patch margin 與本地校正。
+
+01
+先看它交出什麼
+02
+再看它怎麼做
+03
+上線前先固定條件
+04
+選它前先看風險
+01
+
+先看它交出什麼
+
+AnomalyCLIP：目標零樣本仍有學習來源
+
+目標未訓練，提示曾由輔助資料學習。
+
+正式教學插圖 1/4 · 已可直接閱讀；點圖僅用於放大細節開啟原圖 ↗
+
+30 秒讀懂這張圖
+
+目標未訓練，提示曾由輔助資料學習。
+先看哪裡
+
+先看輔助資料與目標板分開，再核對固定骨幹比已學兩狀態，最後看位置與整圖分數分工。
+
+框與框的關係
+
+輔助正常/異常和局部標註學提示，目標類別未參與學習。保存提示來源，目標部署仍需驗漏檢/誤報；本輪沒有新訓練或推論。
+
+本圖只要帶走
+
+目標未訓練，提示曾由輔助資料學習。
+
+位置：對回同一輸入座標，不能任意混層或混影格。
+圖中數值：作者給定機制算例，非模型實測或建議門檻。
+想深入，再看工程細節與完整名詞
+
+技術版讀圖
+
+沿著資料流確認
+輔助正常/異常和局部標註學提示，目標類別未參與學習。保存提示來源，目標部署仍需驗漏檢/誤報；本輪沒有新訓練或推論。
+先看輔助資料與目標板分開，再核對固定骨幹比已學兩狀態，最後看位置與整圖分數分工。
+技術上不可誤讀
+語意與位置仍可能錯；必須用未見正常與真缺陷檢查適用範圍。
+
+完整節點
+
+原始工程節點
+1
+輔助資料與目標板分開
+
+輔助資料與目標板分開；請對照圖內輸入、變化與結果。
+
+2
+固定骨幹比已學兩狀態
+
+固定骨幹比已學兩狀態；請對照圖內輸入、變化與結果。
+
+3
+位置與整圖分數分工
+
+位置與整圖分數分工；請對照圖內輸入、變化與結果。
+
+工程師先帶走：不用作答，先把這三句話記住。
+
+先看哪裡
+
+先看輔助資料與目標板分開，再核對固定骨幹比已學兩狀態，最後看位置與整圖分數分工。
+
+怎麼理解
+
+輔助正常/異常和局部標註學提示，目標類別未參與學習。保存提示來源，目標部署仍需驗漏檢/誤報；本輪沒有新訓練或推論。
+
+不要誤用
+
+看不清細節先改善取像；位置或文字矛盾就回原圖覆核。
+
+繼續看第 2 張：再看它怎麼做 ↓
+
+02
+
+再看它怎麼做
+
+AnomalyCLIP：先學提示，再定位新件
+
+目標零樣本，仍有輔助資料學習的提示。
+
+正式教學插圖 2/4 · 已可直接閱讀；點圖僅用於放大細節開啟原圖 ↗
+
+30 秒讀懂這張圖
+
+目標零樣本，仍有輔助資料學習的提示。
+先看哪裡
+
+先看輔助產品教正常與異常提示，再核對同件特徵比學到的兩狀態，最後看局部定位與整圖分數分工。
+
+框與框的關係
+
+輔助資料的正常/異常及局部標註學物件無關提示；CLIP骨幹權重固定。目標影像使用已學提示，DPAM調整注意力以保留局部語意；整圖與局部監督互補。目標零樣本指目標資料未參與提示訓練，不等於整套未訓練，也不等於不用獨立驗證。
+
+本圖只要帶走
+
+目標零樣本，仍有輔助資料學習的提示。
+
+位置：對回同一輸入座標，不能任意混層或混影格。
+圖中數值：作者給定機制算例，非模型實測或建議門檻。
+想深入，再看工程細節與完整名詞
+
+技術版讀圖
+
+沿著資料流確認
+輔助資料的正常/異常及局部標註學物件無關提示；CLIP骨幹權重固定。目標影像使用已學提示，DPAM調整注意力以保留局部語意；整圖與局部監督互補。目標零樣本指目標資料未參與提示訓練，不等於整套未訓練，也不等於不用獨立驗證。
+先看輔助產品教正常與異常提示，再核對同件特徵比學到的兩狀態，最後看局部定位與整圖分數分工。
+技術上不可誤讀
+語意與位置仍可能錯；必須用未見正常與真缺陷檢查適用範圍。
+
+完整節點
+
+原始工程節點
+1
+輔助產品教正常與異常提示
+
+輔助產品教正常與異常提示；請對照圖內輸入、變化與結果。
+
+2
+同件特徵比學到的兩狀態
+
+同件特徵比學到的兩狀態；請對照圖內輸入、變化與結果。
+
+3
+局部定位與整圖分數分工
+
+局部定位與整圖分數分工；請對照圖內輸入、變化與結果。
+
+工程師先帶走：不用作答，先把這三句話記住。
+
+先看哪裡
+
+先看輔助產品教正常與異常提示，再核對同件特徵比學到的兩狀態，最後看局部定位與整圖分數分工。
+
+怎麼理解
+
+輔助資料的正常/異常及局部標註學物件無關提示；CLIP骨幹權重固定。目標影像使用已學提示，DPAM調整注意力以保留局部語意；整圖與局部監督互補。目標零樣本指目標資料未參與提示訓練，不等於整套未訓練，也不等於不用獨立驗證。
+
+不要誤用
+
+看不清細節先改善取像；位置或文字矛盾就回原圖覆核。
+
+繼續看第 3 張：上線前先固定條件 ↓
+
+03
+
+上線前先固定條件
+
+AnomalyCLIP：學到的提示需要版本
+
+提示、骨幹與局部注意力一起固定。
+
+正式教學插圖 3/4 · 已可直接閱讀；點圖僅用於放大細節開啟原圖 ↗
+
+30 秒讀懂這張圖
+
+提示、骨幹與局部注意力一起固定。
+先看哪裡
+
+先看保存學習來源與提示，再核對局部p對正常異常兩狀態，最後看正常反光與缺陷分開驗。
+
+框與框的關係
+
+保存輔助資料/切分、prompt checkpoint、骨幹、DPAM、前處理/分數設定。目標零樣本不免獨立驗證；更換提示或影像解析度都可能改變局部結果。
+
+本圖只要帶走
+
+提示、骨幹與局部注意力一起固定。
+
+位置：對回同一輸入座標，不能任意混層或混影格。
+圖中數值：作者給定機制算例，非模型實測或建議門檻。
+想深入，再看工程細節與完整名詞
+
+技術版讀圖
+
+沿著資料流確認
+保存輔助資料/切分、prompt checkpoint、骨幹、DPAM、前處理/分數設定。目標零樣本不免獨立驗證；更換提示或影像解析度都可能改變局部結果。
+先看保存學習來源與提示，再核對局部p對正常異常兩狀態，最後看正常反光與缺陷分開驗。
+技術上不可誤讀
+語意與位置仍可能錯；必須用未見正常與真缺陷檢查適用範圍。
+
+完整節點
+
+原始工程節點
+1
+保存學習來源與提示
+
+保存學習來源與提示；請對照圖內輸入、變化與結果。
+
+2
+局部p對正常異常兩狀態
+
+局部p對正常異常兩狀態；請對照圖內輸入、變化與結果。
+
+3
+正常反光與缺陷分開驗
+
+正常反光與缺陷分開驗；請對照圖內輸入、變化與結果。
+
+工程師先帶走：不用作答，先把這三句話記住。
+
+先看哪裡
+
+先看保存學習來源與提示，再核對局部p對正常異常兩狀態，最後看正常反光與缺陷分開驗。
+
+怎麼理解
+
+保存輔助資料/切分、prompt checkpoint、骨幹、DPAM、前處理/分數設定。目標零樣本不免獨立驗證；更換提示或影像解析度都可能改變局部結果。
+
+不要誤用
+
+看不清細節先改善取像；位置或文字矛盾就回原圖覆核。
+
+繼續看第 4 張：選它前先看風險 ↓
+
+04
+
+選它前先看風險
+
+AnomalyCLIP：語意相似也可能看錯位置
+
+可疑分數要能對回可見證據。
+
+正式教學插圖 4/4 · 已可直接閱讀；點圖僅用於放大細節開啟原圖 ↗
+
+30 秒讀懂這張圖
+
+可疑分數要能對回可見證據。
+先看哪裡
+
+先看同板正常q與刮傷p，再核對給定反例：q誤報，p漏檢，最後看固定留出集比較兩提示法。
+
+框與框的關係
+
+正常孔反光q可能被判異常，細傷p可能未見；圖為作者反例，沒有模型分數。以同一取像、真值和允收成本比較人工與學習提示，不能只看文字描述流暢。
+
+本圖只要帶走
+
+可疑分數要能對回可見證據。
+
+位置：對回同一輸入座標，不能任意混層或混影格。
+圖中數值：作者給定機制算例，非模型實測或建議門檻。
+想深入，再看工程細節與完整名詞
+
+技術版讀圖
+
+沿著資料流確認
+正常孔反光q可能被判異常，細傷p可能未見；圖為作者反例，沒有模型分數。以同一取像、真值和允收成本比較人工與學習提示，不能只看文字描述流暢。
+先看同板正常q與刮傷p，再核對給定反例：q誤報，p漏檢，最後看固定留出集比較兩提示法。
+技術上不可誤讀
+語意與位置仍可能錯；必須用未見正常與真缺陷檢查適用範圍。
+
+完整節點
+
+原始工程節點
+1
+同板正常q與刮傷p
+
+同板正常q與刮傷p；請對照圖內輸入、變化與結果。
+
+2
+給定反例：q誤報，p漏檢
+
+給定反例：q誤報，p漏檢；請對照圖內輸入、變化與結果。
+
+3
+固定留出集比較兩提示法
+
+固定留出集比較兩提示法；請對照圖內輸入、變化與結果。
+
+工程師先帶走：不用作答，先把這三句話記住。
+
+先看哪裡
+
+先看同板正常q與刮傷p，再核對給定反例：q誤報，p漏檢，最後看固定留出集比較兩提示法。
+
+怎麼理解
+
+正常孔反光q可能被判異常，細傷p可能未見；圖為作者反例，沒有模型分數。以同一取像、真值和允收成本比較人工與學習提示，不能只看文字描述流暢。
+
+不要誤用
+
+看不清細節先改善取像；位置或文字矛盾就回原圖覆核。
+
+工程師操作卡
+
+把 AnomalyCLIP 放進小規模試做（POC）前，先回答這五個問題。
+
+先讀白話版就能開始溝通；需要實作、驗證或交接時，再展開下方技術契約。
+
+1
+它會交出什麼？
+
+候選分數與位置，不是缺陷機率或尺寸。
+
+2
+開始先做什麼？
+
+先分清輔助訓練與目標驗證，再追 p 的圖文比較。
+
+3
+開始前要寫下來的四件事
+
+固定畫面範圍、資料來源、模型版本和驗收方式；詳細項目可在下方展開。
+
+4
+怎樣才算真的有用？
+
+保留原圖、乾淨正常品來源、畫面範圍、模型設定、可疑圖、誤報／漏失案例與人工覆核結果。
+
+5
+碰到什麼先停下來？
+
+看不清細節先改善取像；位置或文字矛盾就回原圖覆核。
+
+工程師需要時，再展開原始技術契約
+
+原始建置項目
+
+這些設定要一併保存
+
+輸入與版本：先分清輔助訓練與目標驗證，再追 p 的圖文比較。；關鍵機制：以輔助正常／異常資料和區域標註，聯合整圖與局部監督學習物件無關的狀態提示。CLIP 骨幹權重固定，文字提示可學，DPAM 調整注意力以保留局部語意；目標影像與兩種文字表示比較，再整合多層局部線索。目標零樣本不代表模型從未訓練。；獨立驗證：量 target holdout 的 prompt variance、margin distribution、low-FPR escape、false reject、review load、patch evidence 與完整 P95。；失敗處理：看不清細節先改善取像；位置或文字矛盾就回原圖覆核。
+
+原始選型條件：WinCLIP 用人工狀態文字與視窗，WinCLIP+ 可加正常參考；AnomalyCLIP 使用輔助資料學到的提示；AnomalyGPT 加入內建定位與對話。只有正常品可先評估參考路線，訓練型方法要先備妥已訓練模型。固定硬體、解析度與漏檢要求，比誤報、延遲和覆核量；位置圖不等於精密輪廓或尺寸。
+
+原始失效邊界
+
+下列情況不可忽略
+
+語意與位置仍可能錯；必須用未見正常與真缺陷檢查適用範圍。
+
+工程結論
+交付可疑位置線索；文字或熱圖都不能直接代表精密輪廓、尺寸、根因或自動放行。
+把這張操作卡帶入 POC 畫布 →
+查看 model.md ↗
+查看圖檔 manifest ↗
+
+相鄰比較
+
+下一個可比較的模型
+
+比較前，先把「看哪段畫面、用哪些資料、交出什麼、多久完成、誰覆核」固定；再到家族頁看共同條件與差異。
+
+PatchCore →
+PaDiM →
+AnomalyDINO →
+SubspaceAD →
+查看家族比較 →
+← WinCLIP
+AnomalyGPT →

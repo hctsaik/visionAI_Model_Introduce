@@ -1,0 +1,666 @@
+{
+  "head": "ead79619081ea32e3722cc40f965f1534774ed01",
+  "files": [
+    {
+      "path": "_course_content/topics/ad-ae.json",
+      "sha256": "af2d414d3580555607ecf83352e28c07e22ffe84453e5ac4c5cbbc67c1ff8f44"
+    },
+    {
+      "path": "_course_content/topics/ad-anomalyclip.json",
+      "sha256": "e1a08b093073c5a7015bdb25b2c3e213dfdf6dd8fe70cfc329085ab8b9d8b1a1"
+    },
+    {
+      "path": "_course_content/topics/ad-anomalydino.json",
+      "sha256": "af7cd1c4667edb8741036ebf4d0283a3cf9284ed44100d91c7a9b18941db4e18"
+    },
+    {
+      "path": "_course_content/topics/ad-anomalygpt.json",
+      "sha256": "37ee19d7b8666bd92ee4f321eafd840745be8583faf85e56662754e02df95d95"
+    },
+    {
+      "path": "_course_content/topics/ad-ddad.json",
+      "sha256": "9099766d6f738e2fd65f78044af1c9429bbe6efeb2b4415e321bec92da78b33b"
+    },
+    {
+      "path": "_course_content/topics/ad-diffad.json",
+      "sha256": "476e1b67c769138d3e8e310bb575790153ad265b42496c523b75a9380787b979"
+    },
+    {
+      "path": "_course_content/topics/ad-dinomaly.json",
+      "sha256": "dc7702c227b7207d211f54ae53823bae602cf104616e2f6e77c39ea923050d8b"
+    },
+    {
+      "path": "_course_content/topics/ad-draem.json",
+      "sha256": "025ce1b097f9d714b330f96bb1790cb079eeebaf9199ea2bd3005ef5e225ee2f"
+    },
+    {
+      "path": "_course_content/topics/ad-efficientad.json",
+      "sha256": "ce86f1dc6b513f96d442da656d887125fd784b28216c54ea0ec0ccd7097a1fe6"
+    },
+    {
+      "path": "_course_content/topics/ad-invad.json",
+      "sha256": "3bc5a982da17609d7d863e6e169f4e3edf4f6bb6ddb150dc13148746b9c48208"
+    },
+    {
+      "path": "_course_content/topics/ad-padim.json",
+      "sha256": "43c058febef2058467b366261a27d124eb484b15c17272db6eab00c97cf7cd1b"
+    },
+    {
+      "path": "_course_content/topics/ad-patchcore.json",
+      "sha256": "6f510142dee2f795d44f6a9dab2976ed451f424cd4773b16515a834112c0567d"
+    },
+    {
+      "path": "_course_content/topics/ad-rd4ad.json",
+      "sha256": "82d54981e47eb8820f2be5cbdf37f20ef1c70c2c4605af2ea4d5d064c3bc8d8e"
+    },
+    {
+      "path": "_course_content/topics/ad-stfpm.json",
+      "sha256": "4961528fb152bdd574560e07b1a69629a419d5b033b8bc0ebec1b27470d7ffc3"
+    },
+    {
+      "path": "_course_content/topics/ad-subspacead.json",
+      "sha256": "05d825b712a020803bea34eb1999f9f5b7323b0b2858877f3fc83102e4d8a1ba"
+    },
+    {
+      "path": "_course_content/topics/ad-uniad.json",
+      "sha256": "6134158818cf9c2e16c876a8c6d5f6a9ee316aa3de91aa5faa6278ab3bd4581c"
+    },
+    {
+      "path": "_course_content/topics/ad-winclip.json",
+      "sha256": "69f66edf476676e6599b078838184362ca66704220890f95fad2150675319538"
+    },
+    {
+      "path": "_course_content/topics/anomalydiffusion.json",
+      "sha256": "7d43e9f7f6edf2f7e8025c61547f7e898c3d519601c06758e7906dcf4662348c"
+    },
+    {
+      "path": "_course_content/topics/background-subtraction.json",
+      "sha256": "c8d7e21e461d5b900ee7413714fa35e28a9fe10147f67f25dc7f3e1749e9c054"
+    },
+    {
+      "path": "_course_content/topics/bytetrack.json",
+      "sha256": "b1be99a2b2f22086758c3dcf9eddfbcb875492a8de09678d2a4668ba8193ca74"
+    },
+    {
+      "path": "_course_content/topics/charuco.json",
+      "sha256": "19f5f0965f788026e42e12600eac183ad15860c4ecc2647dc3cee6b0a91ab81b"
+    },
+    {
+      "path": "_course_content/topics/clip.json",
+      "sha256": "336ff36c402152971aba842352bd75f51f9c6254b201f902ee54f707288397c2"
+    },
+    {
+      "path": "_course_content/topics/controlnet.json",
+      "sha256": "23ff777e4c491f3bc37fc979f6b0016fb67be04369ee3e48e44a1d5705f9d7b3"
+    },
+    {
+      "path": "_course_content/topics/convlstm.json",
+      "sha256": "6670ee17b0bbdd1863fd3d8d47dba9d16d4c9c4f8e8daf1c1599fb55a40f516f"
+    },
+    {
+      "path": "_course_content/topics/convnext.json",
+      "sha256": "3ee46157675672259741ee948a78847ed909872efc6f79d446e54438e2e969fb"
+    },
+    {
+      "path": "_course_content/topics/deblur.json",
+      "sha256": "494557c9c9b33443a69289008a580f351de2fd643f48b8c8e807183367e97bbf"
+    },
+    {
+      "path": "_course_content/topics/defectfill.json",
+      "sha256": "7889cc9a47f07ddd4e935d78b38255cbfc1b0e3a94483fcd7004623598b79417"
+    },
+    {
+      "path": "_course_content/topics/det-dino-detector.json",
+      "sha256": "d1ac861daad83f4176f023da91596232a0eab2bc1860318f0bb1137fb9e0d371"
+    },
+    {
+      "path": "_course_content/topics/det-grounding-dino-interface.json",
+      "sha256": "1bb9caffc87d9460f7279ab0f469185f7e72509955460530fd13448c0963eb54"
+    },
+    {
+      "path": "_course_content/topics/det-rtdetr.json",
+      "sha256": "0e2d67d41b0854ab4a189c9dd92dcee8aa006d98f9e3df3ed6016345362ecb10"
+    },
+    {
+      "path": "_course_content/topics/det-yolo-dense.json",
+      "sha256": "ddcef71a3b4e377ba2befbbdd0adada60c229f8a6b2f23d1eb7c0adbd5945755"
+    },
+    {
+      "path": "_course_content/topics/diffusion-restoration.json",
+      "sha256": "81c93a93016df6f8ecb5269587ff9394374071603109bbf12a2897365d9c18a2"
+    },
+    {
+      "path": "_course_content/topics/dinov2.json",
+      "sha256": "ad8f2af1485b8f9082425ef0cb158eb8ed30c49906526810f6303b1197b6bb83"
+    },
+    {
+      "path": "_course_content/topics/dinov3.json",
+      "sha256": "9ab72a2ae029d1f448e911beaff2cfc606914119e2c9cf5623c64b42a3d3d44e"
+    },
+    {
+      "path": "_course_content/topics/ecc.json",
+      "sha256": "c11bfcc45947dc37b257b6bcadff148c3ebd6f10100e83c689f9d690a95916e7"
+    },
+    {
+      "path": "_course_content/topics/frame-difference.json",
+      "sha256": "2d2f52c624bc22db50b074c9ce67966ba254ff4406da09e6ebc925145dfafa26"
+    },
+    {
+      "path": "_course_content/topics/gemini-vision.json",
+      "sha256": "450affd217c814bdb45a72782e17f146434f939814b7ff250a8de498d8cb6cc7"
+    },
+    {
+      "path": "_course_content/topics/inpainting.json",
+      "sha256": "fc076f52373639435a56a6d8e58af8aab7a7adca46d115760cc7a8dd622877e3"
+    },
+    {
+      "path": "_course_content/topics/keypoint-r-cnn.json",
+      "sha256": "235f1ff639b23911e666252f35245b2b1ed2c1794759b7d7874eca0d36b51b30"
+    },
+    {
+      "path": "_course_content/topics/lightglue.json",
+      "sha256": "c2d20513abdad6c62954a7b47c76ed058925b48e31ace62812824c8f295e27db"
+    },
+    {
+      "path": "_course_content/topics/llava.json",
+      "sha256": "562fda924150039412e779847ac179b32b8a7f332fffb09010c1cb44e87753ba"
+    },
+    {
+      "path": "_course_content/topics/lucas-kanade.json",
+      "sha256": "9b2b5bce71744dd97f56809d26560139b84379b8089c435e1e2e591dbe751bd2"
+    },
+    {
+      "path": "_course_content/topics/pose.json",
+      "sha256": "61618c56f2d8503f1d4b523e61adc3bea235c72e529dc29f0aabc4e1105abd58"
+    },
+    {
+      "path": "_course_content/topics/qwen-vl.json",
+      "sha256": "96e91b718ef8b17c0ffea03dbb03ea3d277e74eeec030aae49c6a41060f4fc49"
+    },
+    {
+      "path": "_course_content/topics/raft.json",
+      "sha256": "2db111df6779ce935c1759307b5cec9e216961c4314130b673afd3eb9eed9e81"
+    },
+    {
+      "path": "_course_content/topics/resnet.json",
+      "sha256": "162c2cf02be7322890f04593d4f1e106ea34cd0718008b34a41611ebaefad18f"
+    },
+    {
+      "path": "_course_content/topics/segformer.json",
+      "sha256": "071516220ea021f8601244bfc111979c6dd85754375d93f3f86861bdca6ec1c4"
+    },
+    {
+      "path": "_course_content/topics/sift.json",
+      "sha256": "1468f884012fdbd9d855f94dd932d55fa775f10dff0da3cee46b103dfceda8c8"
+    },
+    {
+      "path": "_course_content/topics/siglip.json",
+      "sha256": "4ae5d4b2c61f0013234b31bc4c1a68c11f6f664bc356218a2fbf6d5d52e05189"
+    },
+    {
+      "path": "_course_content/topics/super-resolution.json",
+      "sha256": "20cf0f09d14c3fd5b29ac8cbb3b3ba8679255c23ffe273dba9298dc81d031a41"
+    },
+    {
+      "path": "_course_content/topics/tf-idg.json",
+      "sha256": "4302f0e1e967d2d9c4555746cb85fb73d9d0a7b915f61ae9a8e9439380b8f47c"
+    },
+    {
+      "path": "_course_content/topics/u-net.json",
+      "sha256": "2108c7463efadbb9e11384ff3292471630d7571eeff1680301124942be9e1d07"
+    },
+    {
+      "path": "_course_content/topics/v-jepa.json",
+      "sha256": "969f339478d385487f5d01ab25428a914d70aa30176bbfd1957ed3fa14d459bb"
+    },
+    {
+      "path": "_course_content/topics/videomae.json",
+      "sha256": "538f9495af887e0e9e6d91ecb4fc498aad931c4737d85d3622a56b3efcd4b774"
+    },
+    {
+      "path": "_course_content/topics/vit-classifier.json",
+      "sha256": "23b372c88a15ed82c6e3a132dc45d9da12b65998a2b443566ef248d931dbb278"
+    },
+    {
+      "path": "_course_content/topics/yolo-seg.json",
+      "sha256": "97351317cc40c6e375cf421b9833ca478b883b5be136479cfe8a7f98f4e3aba3"
+    },
+    {
+      "path": "_course_content/topics/yolo-world.json",
+      "sha256": "bfce0599b7b5ca0b5c8bd8bb41c28915cce0c9a96a9deeb9b64f524566d55f6f"
+    },
+    {
+      "path": "_course_content/topics/yoloe.json",
+      "sha256": "8d26c11ac23942ba20ce4ca80fd459a8b39824de77635e9d57cf577bf40ae334"
+    },
+    {
+      "path": "interactive-learning.html",
+      "sha256": "e4f657377bf9eeac2b7b0b857df46915acf72a699adf91147ccfaa786aac2ac2"
+    },
+    {
+      "path": "docs/index.html",
+      "sha256": "e4f657377bf9eeac2b7b0b857df46915acf72a699adf91147ccfaa786aac2ac2"
+    },
+    {
+      "path": "_course_content/learner-briefs.json",
+      "sha256": "41d6fbabb9e3472ae2d1944cbc392b5d2192b29ea266c838b1c11b33e0aac440"
+    },
+    {
+      "path": "roadmap-model-selection/known-target-classification/resnet/model.md",
+      "sha256": "bc575a18fe792d9a987a1b8eb56ffe95ca9d58406486e6fb86233daa448ff274"
+    },
+    {
+      "path": "roadmap-model-selection/known-target-classification/resnet/slide-manifest.md",
+      "sha256": "d211cd3a29f49500b4e05edaf7c5a935eba653a6c13ff647ab003d9fc4d9ef30"
+    },
+    {
+      "path": "roadmap-model-selection/known-target-classification/convnext/model.md",
+      "sha256": "3d093012bde295de46cf407f208ed3c2f8581d8489ac2f97ce5388054e9ed088"
+    },
+    {
+      "path": "roadmap-model-selection/known-target-classification/convnext/slide-manifest.md",
+      "sha256": "ddaa374e4e7de6a9b74cc819fb2e5dea8e867646e96a1cb2f74d7fb4cceb01d8"
+    },
+    {
+      "path": "roadmap-model-selection/known-target-classification/vit-classifier/model.md",
+      "sha256": "758fa9eb408c23296621106958e1a440cd82a70bdb67f84efde57341e49df2dd"
+    },
+    {
+      "path": "roadmap-model-selection/known-target-classification/vit-classifier/slide-manifest.md",
+      "sha256": "a731d5161321b7481e0915f42c5f3f781be715397ed0e9e05893d2993e585caa"
+    },
+    {
+      "path": "roadmap-model-selection/known-target-classification/u-net/model.md",
+      "sha256": "618b3fec3b48eee6c6d3d4d9ea2e3f88ea87ecd25a82929a03ae59f5792c38db"
+    },
+    {
+      "path": "roadmap-model-selection/known-target-classification/u-net/slide-manifest.md",
+      "sha256": "b6b5d6f16ba943a65f07d654084a0426be66f6aafed68e91695b682382863f84"
+    },
+    {
+      "path": "roadmap-model-selection/known-target-classification/segformer/model.md",
+      "sha256": "3f53a937753d3599d3b3e1db371c0b61cd17691215b5756741cd0aa727af90e2"
+    },
+    {
+      "path": "roadmap-model-selection/known-target-classification/segformer/slide-manifest.md",
+      "sha256": "0828cf377f0ceeb095be8c7bda8a3a1ffa3a88f05c2bb4b280172d04f6eb758a"
+    },
+    {
+      "path": "roadmap-model-selection/known-target-classification/yolo-seg/model.md",
+      "sha256": "31f0a4892edeacc176baa83a3a2b2c728b5036165bd2ce923e4a232bcd1a9525"
+    },
+    {
+      "path": "roadmap-model-selection/known-target-classification/yolo-seg/slide-manifest.md",
+      "sha256": "7a955a24f662f92c353337b759fde09cab62c019392f90cc1684a4f3753c6ae6"
+    },
+    {
+      "path": "roadmap-model-selection/known-target-classification/keypoint-r-cnn/model.md",
+      "sha256": "7498d03bf359d9a5092bc22e8d7970a9637c4b32e2bde71aada7a14d3830ca24"
+    },
+    {
+      "path": "roadmap-model-selection/known-target-classification/keypoint-r-cnn/slide-manifest.md",
+      "sha256": "518e97981a432dc712e7be970ad9aa472f48374a7ef72fe6162fb98db9160a7c"
+    },
+    {
+      "path": "roadmap-model-selection/known-target-classification/pose/model.md",
+      "sha256": "aa1d4b1a1d1a26187a3daf74caade71fae850efa7b83d0ee06bcdd9135638068"
+    },
+    {
+      "path": "roadmap-model-selection/known-target-classification/pose/slide-manifest.md",
+      "sha256": "9e9d2da64ea59d29e87f3c4e30bf6cae6356e00e8efdd98b4947d6bb8e090135"
+    },
+    {
+      "path": "roadmap-model-selection/detector/det-yolo-dense/model.md",
+      "sha256": "84e6e4234087200fce616c62cbf9bbdbfa448407568ae366cbb58144e909e82b"
+    },
+    {
+      "path": "roadmap-model-selection/detector/det-yolo-dense/slide-manifest.md",
+      "sha256": "ddeb9c002cb3fb83bffa0972369264dbf0796d3685d4a7e35819ec162dd3befa"
+    },
+    {
+      "path": "roadmap-model-selection/detector/det-rtdetr/model.md",
+      "sha256": "9c2e8c0935ca426736246c43788d0d157c05f6f9a52f6c202b9a630a009b9787"
+    },
+    {
+      "path": "roadmap-model-selection/detector/det-rtdetr/slide-manifest.md",
+      "sha256": "7aa235ba135e0c5645c592e17aec4ee8feb24feacf6630283b012fb7c6fcc6b2"
+    },
+    {
+      "path": "roadmap-model-selection/detector/det-grounding-dino-interface/model.md",
+      "sha256": "f991c0a1d1180e2e96f4e2644d4b05590c8e730de88c7a863950da340c3d4f96"
+    },
+    {
+      "path": "roadmap-model-selection/detector/det-grounding-dino-interface/slide-manifest.md",
+      "sha256": "14347a8b1b6aa2b92f6fc7cbf9acf8880cbb8a492c68daa6dcbf318dd5a197e1"
+    },
+    {
+      "path": "roadmap-model-selection/detector/yoloe/model.md",
+      "sha256": "b9b56b0202d235236b78e4953092f0001d6adcc4d5d8d472a63155d1e20f9136"
+    },
+    {
+      "path": "roadmap-model-selection/detector/yoloe/slide-manifest.md",
+      "sha256": "e9e7b9255931497e5b74b94ec9c50d2b5897b2655a1d5690ec6cb4054aa33670"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-patchcore/model.md",
+      "sha256": "4185db6f02206e6f587ad2f3089bed4edd5039d26e87e8de94b99e6b33606276"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-patchcore/slide-manifest.md",
+      "sha256": "c55592a1308f7a48cf0560724087e4d5d904adf795b870201fdf46c9a5f172e5"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-padim/model.md",
+      "sha256": "c40250ed05eeb66a8c25aff33a99a0bb2bf04b43fc1ec48887de0252ed1de434"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-padim/slide-manifest.md",
+      "sha256": "564bad41b603b041aed3a1a08c0230754d0123b56da10b91e44a0d8385dc7d5f"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-anomalydino/model.md",
+      "sha256": "fb13507637740e315a9c1cebaeff834112af1f36855b2f6bc13cbe2e9587dd78"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-anomalydino/slide-manifest.md",
+      "sha256": "07824fbe6cc61f57b6e8fe2cfa4f66ba9e74de8f8fba73226de12243a0ec7d14"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-subspacead/model.md",
+      "sha256": "cc1cdc5d9cb275cb1d93c5392ef91f33a3dbf23278f58b1e8d61fbe1ca10e71b"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-subspacead/slide-manifest.md",
+      "sha256": "08530b2df15b7752d762017908b8976b623b63bfd4c6dc53d277c27ec2e410ed"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-stfpm/model.md",
+      "sha256": "d97862e294ba2b06cbf60e058fed39c38c31953a6eddde9336a6eeee72556fb9"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-stfpm/slide-manifest.md",
+      "sha256": "e195d76f24208bea9c0816fae9eb5d5243764243b2d0297a66f074b5da3ae416"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-rd4ad/model.md",
+      "sha256": "e9e9ace57683eb91b332a25329ce61cdc00b30e4efbf455586001c85e10f61fe"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-rd4ad/slide-manifest.md",
+      "sha256": "49c01b8b0a82720bd4e38f92c709a67d59665be00980e3bbad5da2fc27a9dc45"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-efficientad/model.md",
+      "sha256": "75f57320c2a2a4293291c2a7cba3406152b2cf2b94c02ece8b26b54ff2de76f1"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-efficientad/slide-manifest.md",
+      "sha256": "17d2949153621f219295ea8171296fe410f6736c8c924ef8493c5691c3b6916f"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-ae/model.md",
+      "sha256": "b2a8bd82dbba46017875d10d177870ad0e036c8c46d31c442c8cf3b915c55d36"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-ae/slide-manifest.md",
+      "sha256": "68abbc77764f5d9a1907f1d78e7ee9a5c20eff438f8706adceb0e0c0e8072a02"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-draem/model.md",
+      "sha256": "8b3f06807795ff5d2be071211a7f48acf471bc8918d16ed77aa5b28159631dc5"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-draem/slide-manifest.md",
+      "sha256": "8c2b7847285e07228e8f835edfdbd02793da9d6dd8dbee1cf5f9afc1efe68e4a"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-uniad/model.md",
+      "sha256": "ed2dd2348119532a8a4690856e51334aea7610fa8983c8d217e86036dbe7c4a7"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-uniad/slide-manifest.md",
+      "sha256": "0f41bd014201e71586f3c70a19bbc3510d5bf321e24bc71b49488df0bf5dfd6c"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-dinomaly/model.md",
+      "sha256": "0138c84eb3fe7114471dc69a36144204d16ab658a84d0090808daec78d14a1b9"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-dinomaly/slide-manifest.md",
+      "sha256": "f93387e05603ecda3f53506fa32b21b56cf4992533d64c3fc3c8724736e18f7a"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-invad/model.md",
+      "sha256": "ccf7373f047095afb98b21ef588e91773a4d2248844734070879350256d6ebbe"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-invad/slide-manifest.md",
+      "sha256": "5e56c9a3c235b5e7f8c7ee239005b7bcc027d81a2b7ca55682e42062a02a1e3e"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-diffad/model.md",
+      "sha256": "1096c1763fa8ad42e35d644674f915f55b7e6d239cd5b37bc5b03e5000b2da88"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-diffad/slide-manifest.md",
+      "sha256": "3a4dced507b730c24f29c6fc77d41db29e3dd5df6a5fdcbb45313f039252fccf"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-ddad/model.md",
+      "sha256": "fb429a6275ec96159b75da0d3b9467bc12b38c06caef44e355bd6d1116b83b96"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-ddad/slide-manifest.md",
+      "sha256": "76ea946983479d510777c4b3b3b2d5807f81e6e9e654bc4c2d2db8a7d942a700"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-winclip/model.md",
+      "sha256": "43af9a82d89a41eecdc6637ae16f552870d99faa0405ede551a07d1abda07009"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-winclip/slide-manifest.md",
+      "sha256": "1bd2e93809679a594d4d01ee6ce3797d69737821c379ef674ac15c68de86b076"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-anomalyclip/model.md",
+      "sha256": "e6cbf1f715a7020888a4b8d39153b88a8d28d9c4ff305b1f1d802f3a4d7742d4"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-anomalyclip/slide-manifest.md",
+      "sha256": "211c92f0f3aaff7a8a00e67bdbbf9b3c8e7f3be597c274e78fb6d43c1e72807e"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-anomalygpt/model.md",
+      "sha256": "999c5a9da47ac69ba39b50dcd269e0a3a5d3f946e74e3765a50b67095b45e72c"
+    },
+    {
+      "path": "roadmap-model-selection/anomaly-detection/ad-anomalygpt/slide-manifest.md",
+      "sha256": "a5bc5c0e92bb30d9a77f9be42ce2157151cd5d7d198ae0a5174a613fad627cbe"
+    },
+    {
+      "path": "roadmap-model-selection/video-temporal/frame-difference/model.md",
+      "sha256": "0b5eeede54d72e451ef0637d31505659b6e4e6c096c41840bbcab0cae440d97d"
+    },
+    {
+      "path": "roadmap-model-selection/video-temporal/frame-difference/slide-manifest.md",
+      "sha256": "7f5f53882f9d8e6fdf97aabfa1106a4631937b20747323645819e97b41547360"
+    },
+    {
+      "path": "roadmap-model-selection/video-temporal/background-subtraction/model.md",
+      "sha256": "fcf21f2f949f32c33984738693839b07a4f55fbc685f580fd0ea6f3d78e5050f"
+    },
+    {
+      "path": "roadmap-model-selection/video-temporal/background-subtraction/slide-manifest.md",
+      "sha256": "5d8eec1867534891d0f6b983b9a13a2278a10100865918dbbf6c0a72bcdefc40"
+    },
+    {
+      "path": "roadmap-model-selection/video-temporal/lucas-kanade/model.md",
+      "sha256": "6dcd78b06ed1da385afb772e79f282376f5d21188298175dd27389c07d326690"
+    },
+    {
+      "path": "roadmap-model-selection/video-temporal/lucas-kanade/slide-manifest.md",
+      "sha256": "245c2ef633dcc94c6c924e7e4e4832a658a482f40f29dbf0cd6d6282c2cfee27"
+    },
+    {
+      "path": "roadmap-model-selection/video-temporal/raft/model.md",
+      "sha256": "66120f9d2c5aa87fe1b959ce3a496c4dce7efbd11681a240cab9131a9a4c9d9e"
+    },
+    {
+      "path": "roadmap-model-selection/video-temporal/raft/slide-manifest.md",
+      "sha256": "2c1a73b3385fcc9dcb5e343b230741e95061492f3ce66122490c41afd06a11c7"
+    },
+    {
+      "path": "roadmap-model-selection/video-temporal/bytetrack/model.md",
+      "sha256": "0d0d93a80f36b3e63ba4cd685302935f5d10976d75e1cc141fcbd568ddfd5b41"
+    },
+    {
+      "path": "roadmap-model-selection/video-temporal/bytetrack/slide-manifest.md",
+      "sha256": "4bd5f6dc14aa2a273c49ba03df1327e17e6f004d154fce626bd903968ad49acd"
+    },
+    {
+      "path": "roadmap-model-selection/video-temporal/convlstm/model.md",
+      "sha256": "f9545bc50aac4c25f29a7dfa52e446ef9936163c95bc66a8b3dfe78cea8386e2"
+    },
+    {
+      "path": "roadmap-model-selection/video-temporal/convlstm/slide-manifest.md",
+      "sha256": "8c1407335ef10556b548c7d5710592ee6c3abc23902b0ecf38b21278478f8a9a"
+    },
+    {
+      "path": "roadmap-model-selection/video-temporal/videomae/model.md",
+      "sha256": "2882cd97c2f3f8253cc1ca7598f5759145e013267d40874edb16f10565c347d1"
+    },
+    {
+      "path": "roadmap-model-selection/video-temporal/videomae/slide-manifest.md",
+      "sha256": "257710867181b06f2da4f9fc76c7fe23e6c73adf4b4a1e0bb73ce0265c6d7659"
+    },
+    {
+      "path": "roadmap-model-selection/video-temporal/v-jepa/model.md",
+      "sha256": "a43b91a7345a1e86aded577223f8cd005ec84a4edac988bbeca8f42b9a144ba6"
+    },
+    {
+      "path": "roadmap-model-selection/video-temporal/v-jepa/slide-manifest.md",
+      "sha256": "f1daf683c34c9fc464d9e18e49c14b6e39e83e12b861eaef9e0d16de9b5659a7"
+    },
+    {
+      "path": "roadmap-model-selection/foundation-vlm-open-world/dinov2/model.md",
+      "sha256": "fbc9606954a3267a8b118262f36975f325e405c88f54ed4047a83399b5edc013"
+    },
+    {
+      "path": "roadmap-model-selection/foundation-vlm-open-world/dinov2/slide-manifest.md",
+      "sha256": "f622fbcc5d1dce096883de51762adc2ea4c61fbad6ba32a822a08dc5bddb9cad"
+    },
+    {
+      "path": "roadmap-model-selection/foundation-vlm-open-world/dinov3/model.md",
+      "sha256": "ce2b2adb1ccc9d8d5609a7c1de02da5be11840a0ebc7b44cc26bc4015bc5fdd1"
+    },
+    {
+      "path": "roadmap-model-selection/foundation-vlm-open-world/dinov3/slide-manifest.md",
+      "sha256": "adc10c49ef1a8ea00ebd2d415162361c28b0cf3296853bda2884024e53638c98"
+    },
+    {
+      "path": "roadmap-model-selection/foundation-vlm-open-world/clip/model.md",
+      "sha256": "85575a5fdf82d89daf65aaed0728591fa639a92fd88f43e449aed814537fc5f6"
+    },
+    {
+      "path": "roadmap-model-selection/foundation-vlm-open-world/clip/slide-manifest.md",
+      "sha256": "3be244b49ddc690ec0bfb335f5449c8e8496ff8753194abc2463cd585a420af3"
+    },
+    {
+      "path": "roadmap-model-selection/foundation-vlm-open-world/siglip/model.md",
+      "sha256": "812902c10020231374d098a0df5b4248c5d7bf843e69978c71b3e8ac9cc4cc7a"
+    },
+    {
+      "path": "roadmap-model-selection/foundation-vlm-open-world/siglip/slide-manifest.md",
+      "sha256": "236792d92198eec87c4b7931965eafdb9af0fac14616ebdb7d581be17ef9f412"
+    },
+    {
+      "path": "roadmap-model-selection/foundation-vlm-open-world/llava/model.md",
+      "sha256": "6a43bcfc518fa343dab56ea51eaf42075bc346d0ff23e7e1f2486c1ab54aedf9"
+    },
+    {
+      "path": "roadmap-model-selection/foundation-vlm-open-world/llava/slide-manifest.md",
+      "sha256": "972f1ba27e47c13f771ed38310e78ad7103514607c1a696574567a4bb008a6e9"
+    },
+    {
+      "path": "roadmap-model-selection/foundation-vlm-open-world/qwen-vl/model.md",
+      "sha256": "368447e2ff63646bd7bcad90e64036fe6c0f4155a131c2b6948a7c84dc1edca8"
+    },
+    {
+      "path": "roadmap-model-selection/foundation-vlm-open-world/qwen-vl/slide-manifest.md",
+      "sha256": "b10c56a9968654bff7b0a10e8b76330ad6ae206b60fe94194ce74d96d8e37a11"
+    },
+    {
+      "path": "roadmap-model-selection/foundation-vlm-open-world/gemini-vision/model.md",
+      "sha256": "15658a1f810d1d32676bf4fc68e3549e60edbb3ff9e0472deac786a3876d6005"
+    },
+    {
+      "path": "roadmap-model-selection/foundation-vlm-open-world/gemini-vision/slide-manifest.md",
+      "sha256": "0c51bd14dc319db9688e54ebbef9dd434180583ec6a88043274dba2757195af3"
+    },
+    {
+      "path": "roadmap-model-selection/diffusion-restoration/defectfill/model.md",
+      "sha256": "dc88f470d0e939f356fed1580732c9a257381003513a62d20126d9f4b3f3ca37"
+    },
+    {
+      "path": "roadmap-model-selection/diffusion-restoration/defectfill/slide-manifest.md",
+      "sha256": "b95f2c693a46f0aca53183ace3b996c384778c120bb7c0264894896bdde42442"
+    },
+    {
+      "path": "roadmap-model-selection/diffusion-restoration/anomalydiffusion/model.md",
+      "sha256": "b1232571cd6f229eb96c5903edfee7b6cf3e90b5b8b055a70fceaa8c2ae2447e"
+    },
+    {
+      "path": "roadmap-model-selection/diffusion-restoration/anomalydiffusion/slide-manifest.md",
+      "sha256": "a22d473ab415d26d57a5f72041da1bb315bb63f1281fc2a9fad237b29c5a79f2"
+    },
+    {
+      "path": "roadmap-model-selection/diffusion-restoration/tf-idg/model.md",
+      "sha256": "55a1b0fc935d13517f29f9b8337da9bb8335c92f3a41363d7637e42d34213934"
+    },
+    {
+      "path": "roadmap-model-selection/diffusion-restoration/tf-idg/slide-manifest.md",
+      "sha256": "6e90ea72492eca0f5f6f04496dc7fd2ab21bc7dfe307dbcafbf631bd4c0ced8a"
+    },
+    {
+      "path": "roadmap-model-selection/diffusion-restoration/controlnet/model.md",
+      "sha256": "59997d1089938fc98c8c5f88a5e95fd0a820e9d286298027820c8d6f18d467b0"
+    },
+    {
+      "path": "roadmap-model-selection/diffusion-restoration/controlnet/slide-manifest.md",
+      "sha256": "228f44b45d8d53d86340a42c47e0ebfce525d5922e0ef7d35eb18ddf3c11e6c3"
+    },
+    {
+      "path": "roadmap-model-selection/diffusion-restoration/inpainting/model.md",
+      "sha256": "98d4fbb55debc2f40b797f412a73bb72e270a7d310c176cc603726aa1ad4366d"
+    },
+    {
+      "path": "roadmap-model-selection/diffusion-restoration/inpainting/slide-manifest.md",
+      "sha256": "0576a84cbd32848d6dee19a138bd849f61acd9fa87c6232e785c940ffe2850c8"
+    },
+    {
+      "path": "roadmap-model-selection/diffusion-restoration/diffusion-restoration/model.md",
+      "sha256": "355201e1fc8bb9dd15ffd920b4a4f6dad56ea9fdbb318d82f7e39c9220557798"
+    },
+    {
+      "path": "roadmap-model-selection/diffusion-restoration/diffusion-restoration/slide-manifest.md",
+      "sha256": "10888d726462ac2d257f265e5a80ec22d2dc63ca4a9f1b7a127d28b0e9565735"
+    },
+    {
+      "path": "roadmap-model-selection/diffusion-restoration/deblur/model.md",
+      "sha256": "b106a748126c54a12142da3e1292884b5d53096455f69216b4f646cdf3e62675"
+    },
+    {
+      "path": "roadmap-model-selection/diffusion-restoration/deblur/slide-manifest.md",
+      "sha256": "d1012fa30bafd8dc8738efb5b381746982e444a72ea4884d7653e6463f3c6119"
+    },
+    {
+      "path": "roadmap-model-selection/diffusion-restoration/super-resolution/model.md",
+      "sha256": "5d58c28642b641d85cd17497d83008f578e2f3531e6fabcddea40e1ea552a780"
+    },
+    {
+      "path": "roadmap-model-selection/diffusion-restoration/super-resolution/slide-manifest.md",
+      "sha256": "2a4dccb49ca9ead18d6f433f2943baf60418d38c5acaf0ef13ef6605a4f2c131"
+    }
+  ],
+  "active_generation_processes": false
+}

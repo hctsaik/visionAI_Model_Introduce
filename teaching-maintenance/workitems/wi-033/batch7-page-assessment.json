@@ -1,0 +1,849 @@
+[
+  {
+    "id": "convlstm",
+    "total": 92,
+    "scores": [
+      19,
+      19,
+      19,
+      18,
+      8,
+      9
+    ],
+    "evidence": [
+      "H/C門控与下一步輸入、任務頭及狀態重設分開",
+      "四工程桌機與手機共8張頁內截圖逐張實看；正文/自測/導覽已核對",
+      "幾何示意簡化，手機需縱向捲動，部分術語依正文理解；無真人學習試驗"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "幾何簡化"
+      ],
+      "completeness": [
+        9,
+        "四工程與指定首讀修正完成"
+      ],
+      "professionalism": [
+        9,
+        "H/C門控与下一步輸入、任務頭及狀態重設分開"
+      ],
+      "density": [
+        8,
+        "手機長捲動，部分術語較密"
+      ],
+      "hierarchy": [
+        9,
+        "三節點單黃結論"
+      ]
+    },
+    "veto": [],
+    "status": "local_complete",
+    "page_evidence": [
+      {
+        "path": "pages/convlstm/docs-1440-engineering-1.png",
+        "sha256": "a153e239a556237300f04680d348c2d4f9e2fc382ac9f47be6d96940a2bfaf38"
+      },
+      {
+        "path": "pages/convlstm/docs-1440-engineering-2.png",
+        "sha256": "d3a68ddfaa5f7badd9f4fe0142d34e27695e1cbfacb15181e26aa162f3716ffc"
+      },
+      {
+        "path": "pages/convlstm/docs-1440-engineering-3.png",
+        "sha256": "762ca3b27e13a911d835fbe723df30a1fe476516fbd1c934ab1b6d1078da2779"
+      },
+      {
+        "path": "pages/convlstm/docs-1440-engineering-4.png",
+        "sha256": "8d2352622b16936588c370f772a5fd8905c9b407ce7fd351d2024db29c9b1edb"
+      },
+      {
+        "path": "pages/convlstm/docs-360-engineering-1.png",
+        "sha256": "639b05ae630d027e03c2fe5f8504f2fdcbd1e01c8f56a1e1f92fb65670737cb9"
+      },
+      {
+        "path": "pages/convlstm/docs-360-engineering-2.png",
+        "sha256": "9763a08bc9a044fe1e3b0fc6ae3812dfbd2c7f2fb2dbd60a73e11be43735fc96"
+      },
+      {
+        "path": "pages/convlstm/docs-360-engineering-3.png",
+        "sha256": "4d545dcacb3baedeafdfc2d321272978ddc1190636b8ee94f3b3441c43cbbf49"
+      },
+      {
+        "path": "pages/convlstm/docs-360-engineering-4.png",
+        "sha256": "13f10d961dbb5a7892ca8a5626019fdf5d70df9f482a952d87e6100fe2d713d6"
+      }
+    ],
+    "user_approval": "pending",
+    "model_inference": false
+  },
+  {
+    "id": "videomae",
+    "total": 92,
+    "scores": [
+      19,
+      19,
+      19,
+      18,
+      8,
+      9
+    ],
+    "evidence": [
+      "同位置tube遮蔽，像素平方差與下游分類分開",
+      "四工程桌機與手機共8張頁內截圖逐張實看；正文/自測/導覽已核對",
+      "幾何示意簡化，手機需縱向捲動，部分術語依正文理解；無真人學習試驗"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "幾何簡化"
+      ],
+      "completeness": [
+        9,
+        "四工程與指定首讀修正完成"
+      ],
+      "professionalism": [
+        9,
+        "同位置tube遮蔽，像素平方差與下游分類分開"
+      ],
+      "density": [
+        8,
+        "手機長捲動，部分術語較密"
+      ],
+      "hierarchy": [
+        9,
+        "三節點單黃結論"
+      ]
+    },
+    "veto": [],
+    "status": "local_complete",
+    "page_evidence": [
+      {
+        "path": "pages/videomae/docs-1440-engineering-1.png",
+        "sha256": "c2c2a0abd859a7421f7bdcf4e9e9c8fab8afb01e1ff2dd3f2900325c5b6bf8db"
+      },
+      {
+        "path": "pages/videomae/docs-1440-engineering-2.png",
+        "sha256": "219cd3a14a152943b472d63c0fd3bd88c15a5e3edd5a9c8ee00c17fafbbd5f6a"
+      },
+      {
+        "path": "pages/videomae/docs-1440-engineering-3.png",
+        "sha256": "fc60b268081fa47e83cdfff3e29262cb81823ffe5443315d8061367300f227a8"
+      },
+      {
+        "path": "pages/videomae/docs-1440-engineering-4.png",
+        "sha256": "60ed4bd1e3d04a8300e90a8fe13eb55139ac5d9f295d01316a7f12166cd933b6"
+      },
+      {
+        "path": "pages/videomae/docs-360-engineering-1.png",
+        "sha256": "5d027254646271ccdd3a16bc831f567cf6b8e38a8ee6aae64b75b16abf8515a2"
+      },
+      {
+        "path": "pages/videomae/docs-360-engineering-2.png",
+        "sha256": "8a876a4a3c611eef93c2e754fafdbfea0927dca8ceee0bb4e2d8787bc0cedef8"
+      },
+      {
+        "path": "pages/videomae/docs-360-engineering-3.png",
+        "sha256": "bb8a6d72e43cc7f7e279c06f5351360cb86f3b976f2549e7e3468e1b5a73bb9d"
+      },
+      {
+        "path": "pages/videomae/docs-360-engineering-4.png",
+        "sha256": "9aae04ce0ea2dc9e8a31ca42df97cf4d70948608293ac5e7b6c02b00656659d2"
+      }
+    ],
+    "user_approval": "pending",
+    "model_inference": false
+  },
+  {
+    "id": "v-jepa",
+    "total": 92,
+    "scores": [
+      19,
+      19,
+      19,
+      18,
+      8,
+      9
+    ],
+    "evidence": [
+      "2024特徵預測，stop-grad/EMA及L1例，手機圖說間距完整",
+      "四工程桌機與手機共8張頁內截圖逐張實看；正文/自測/導覽已核對",
+      "幾何示意簡化，手機需縱向捲動，部分術語依正文理解；無真人學習試驗"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "幾何簡化"
+      ],
+      "completeness": [
+        9,
+        "四工程與指定首讀修正完成"
+      ],
+      "professionalism": [
+        9,
+        "2024特徵預測，stop-grad/EMA及L1例，手機圖說間距完整"
+      ],
+      "density": [
+        8,
+        "手機長捲動，部分術語較密"
+      ],
+      "hierarchy": [
+        9,
+        "三節點單黃結論"
+      ]
+    },
+    "veto": [],
+    "status": "local_complete",
+    "page_evidence": [
+      {
+        "path": "pages/v-jepa/docs-1440-engineering-1.png",
+        "sha256": "d937b1ec3c3b0927ee14e1fdba22f5c76503239d607f04a9399ab0d320c00d88"
+      },
+      {
+        "path": "pages/v-jepa/docs-1440-engineering-2.png",
+        "sha256": "9421f61827220593837d2f64d87058fca00137ff06bdc7276abff77ce8ce8097"
+      },
+      {
+        "path": "pages/v-jepa/docs-1440-engineering-3.png",
+        "sha256": "8ee3bda73f6c6775f7dff343edd3a08e7dfd431eb3faf6b23653faefb6a90645"
+      },
+      {
+        "path": "pages/v-jepa/docs-1440-engineering-4.png",
+        "sha256": "5bc35591b30d73733c2b5af17a8601c78f8db52c8d1fde50186585a8d70d1f53"
+      },
+      {
+        "path": "pages/v-jepa/docs-360-engineering-1.png",
+        "sha256": "409734447b1a85e5f31cf4cd3ad1e9862ea8e46ed46788ec0f9e11408d63ad37"
+      },
+      {
+        "path": "pages/v-jepa/docs-360-engineering-2.png",
+        "sha256": "646a837fc7881fad54f4baa2ae13f6eca4269e845f2c2180795ca30036f65021"
+      },
+      {
+        "path": "pages/v-jepa/docs-360-engineering-3.png",
+        "sha256": "96a27fc1943cdea8d470f3a86a38577e5d3c8fffa1b67d541df8210598df1b8e"
+      },
+      {
+        "path": "pages/v-jepa/docs-360-engineering-4.png",
+        "sha256": "2fa4369d8155ba4bddea39472ba7fe041325931edd6f479ec803ecb10cf09a26"
+      }
+    ],
+    "user_approval": "pending",
+    "model_inference": false
+  },
+  {
+    "id": "defectfill",
+    "total": 92,
+    "scores": [
+      19,
+      19,
+      19,
+      18,
+      8,
+      9
+    ],
+    "evidence": [
+      "LoRA、指定mask與LFS感知距離；大黑塊不等於好刮傷",
+      "四工程桌機與手機共8張頁內截圖逐張實看；正文/自測/導覽已核對",
+      "幾何示意簡化，手機需縱向捲動，部分術語依正文理解；無真人學習試驗"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "幾何簡化"
+      ],
+      "completeness": [
+        9,
+        "四工程與指定首讀修正完成"
+      ],
+      "professionalism": [
+        9,
+        "LoRA、指定mask與LFS感知距離；大黑塊不等於好刮傷"
+      ],
+      "density": [
+        8,
+        "手機長捲動，部分術語較密"
+      ],
+      "hierarchy": [
+        9,
+        "三節點單黃結論"
+      ]
+    },
+    "veto": [],
+    "status": "local_complete",
+    "page_evidence": [
+      {
+        "path": "pages/defectfill/docs-1440-engineering-1.png",
+        "sha256": "7c8f3c412be1b4533d621f33da128c8dba0577dfc2d43b2d66a7ca3b5a2dd99b"
+      },
+      {
+        "path": "pages/defectfill/docs-1440-engineering-2.png",
+        "sha256": "75bd8eab92a014b984c44da04d9bb8bda6a9ee8682813b284595b1ad1ece5703"
+      },
+      {
+        "path": "pages/defectfill/docs-1440-engineering-3.png",
+        "sha256": "3fc9170fd00abe2c4a75a93527e15b885b0e399fa1f650f15f633f595144ed8d"
+      },
+      {
+        "path": "pages/defectfill/docs-1440-engineering-4.png",
+        "sha256": "c1844c591847440339f05c771cd9b330bb87a115d49f359129edf75d4edc43bc"
+      },
+      {
+        "path": "pages/defectfill/docs-360-engineering-1.png",
+        "sha256": "200faa8125ae687a23cd462c5a6fdbab1446bde1bb51a2739ab051c0a315e309"
+      },
+      {
+        "path": "pages/defectfill/docs-360-engineering-2.png",
+        "sha256": "8cb9caa3feb2b63ac43e9d1be5f9645aa1c73c45355cb2bfb4a7112264693ab1"
+      },
+      {
+        "path": "pages/defectfill/docs-360-engineering-3.png",
+        "sha256": "bcaf3d7a2f4a1097dfcc07a5cec13c9daa706fd114e89442f71c3b15032eddaf"
+      },
+      {
+        "path": "pages/defectfill/docs-360-engineering-4.png",
+        "sha256": "13347b2d485e362d4c0f2a29f0a5777c390c2754913f044f16ebeffdab9e1e10"
+      }
+    ],
+    "user_approval": "pending",
+    "model_inference": false
+  },
+  {
+    "id": "anomalydiffusion",
+    "total": 92,
+    "scores": [
+      19,
+      19,
+      19,
+      18,
+      8,
+      9
+    ],
+    "evidence": [
+      "外觀與位置嵌入，弱區補強，兩mask只生一傷反例",
+      "四工程桌機與手機共8張頁內截圖逐張實看；正文/自測/導覽已核對",
+      "幾何示意簡化，手機需縱向捲動，部分術語依正文理解；無真人學習試驗"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "幾何簡化"
+      ],
+      "completeness": [
+        9,
+        "四工程與指定首讀修正完成"
+      ],
+      "professionalism": [
+        9,
+        "外觀與位置嵌入，弱區補強，兩mask只生一傷反例"
+      ],
+      "density": [
+        8,
+        "手機長捲動，部分術語較密"
+      ],
+      "hierarchy": [
+        9,
+        "三節點單黃結論"
+      ]
+    },
+    "veto": [],
+    "status": "local_complete",
+    "page_evidence": [
+      {
+        "path": "pages/anomalydiffusion/docs-1440-engineering-1.png",
+        "sha256": "f3012203130c5a82d396b93552fa64946fb278f930fc14a74ad24126c66fef3b"
+      },
+      {
+        "path": "pages/anomalydiffusion/docs-1440-engineering-2.png",
+        "sha256": "3168d19421a5a2e4552b32d6e487deb8c65c66a1c5adbaf0abc2c8ce014fdedb"
+      },
+      {
+        "path": "pages/anomalydiffusion/docs-1440-engineering-3.png",
+        "sha256": "85ab212a0b8ecad67725f5705c0146adb334a7b9c79478083e971c557d66c09e"
+      },
+      {
+        "path": "pages/anomalydiffusion/docs-1440-engineering-4.png",
+        "sha256": "9f8e814ebe62978dc085e6cbd30f1e3f1a8aab7b8062b956fdfd3cd44188ae90"
+      },
+      {
+        "path": "pages/anomalydiffusion/docs-360-engineering-1.png",
+        "sha256": "bcdfe26d90d1cc8fb2c926fe05df84b33bfe30d4a35789d647018f9aead788a2"
+      },
+      {
+        "path": "pages/anomalydiffusion/docs-360-engineering-2.png",
+        "sha256": "9cc89fc64922327de254280f843ad52f5ff7a738d5f26dbd3dfad6af0081fded"
+      },
+      {
+        "path": "pages/anomalydiffusion/docs-360-engineering-3.png",
+        "sha256": "35d941571251d7ee3200b39762b5796dfc573ffa7ecec10020527266dc15bd4a"
+      },
+      {
+        "path": "pages/anomalydiffusion/docs-360-engineering-4.png",
+        "sha256": "1c081860bb9fca096fe03581fd4e6f4e9e98e7d4dae2b475a2a57f09e5d4e75f"
+      }
+    ],
+    "user_approval": "pending",
+    "model_inference": false
+  },
+  {
+    "id": "tf-idg",
+    "total": 92,
+    "scores": [
+      19,
+      19,
+      19,
+      18,
+      8,
+      9
+    ],
+    "evidence": [
+      "固定權重與latent梯度更新分開；跨材質帶錯木紋",
+      "四工程桌機與手機共8張頁內截圖逐張實看；正文/自測/導覽已核對",
+      "幾何示意簡化，手機需縱向捲動，部分術語依正文理解；無真人學習試驗"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "幾何簡化"
+      ],
+      "completeness": [
+        9,
+        "四工程與指定首讀修正完成"
+      ],
+      "professionalism": [
+        9,
+        "固定權重與latent梯度更新分開；跨材質帶錯木紋"
+      ],
+      "density": [
+        8,
+        "手機長捲動，部分術語較密"
+      ],
+      "hierarchy": [
+        9,
+        "三節點單黃結論"
+      ]
+    },
+    "veto": [],
+    "status": "local_complete",
+    "page_evidence": [
+      {
+        "path": "pages/tf-idg/docs-1440-engineering-1.png",
+        "sha256": "706be05315a83e0427ac26599689dfb1805367b0fa3c87c6a5afaf18b9f62cb3"
+      },
+      {
+        "path": "pages/tf-idg/docs-1440-engineering-2.png",
+        "sha256": "6d9dfcdaa77a3111fe52a670f83601877c5c71e8b76322a45ec7758d6b5ef990"
+      },
+      {
+        "path": "pages/tf-idg/docs-1440-engineering-3.png",
+        "sha256": "44c82d03d74cf618c9ede37474f6703211ad16eaaab374358a1f4a47f1ebfb3c"
+      },
+      {
+        "path": "pages/tf-idg/docs-1440-engineering-4.png",
+        "sha256": "0de2d42422819bacd1b33dd7d09f63bb3bf7a9cf9eceab3d81100d32baf8be80"
+      },
+      {
+        "path": "pages/tf-idg/docs-360-engineering-1.png",
+        "sha256": "d3d63ea09be8d2acb6e82fbce3e663419dfcb1ceadec30726b0dbf830d3df38c"
+      },
+      {
+        "path": "pages/tf-idg/docs-360-engineering-2.png",
+        "sha256": "e4db2537999709286986915bf19110b38c7208a5d1e231ddaa6a9bac3a5cebf3"
+      },
+      {
+        "path": "pages/tf-idg/docs-360-engineering-3.png",
+        "sha256": "77afe689d99305ac07db114e211f567c00554d219dc6c2c11d03ab57c1e9428b"
+      },
+      {
+        "path": "pages/tf-idg/docs-360-engineering-4.png",
+        "sha256": "04e2504ae2ed489ad11b6eaf15568b6d91756b8a979e6948b96fec422b2bc785"
+      }
+    ],
+    "user_approval": "pending",
+    "model_inference": false
+  },
+  {
+    "id": "controlnet",
+    "total": 92,
+    "scores": [
+      19,
+      19,
+      19,
+      18,
+      8,
+      9
+    ],
+    "evidence": [
+      "固定主幹與可訓練分支零卷積，輪廓不能證實刮傷",
+      "四工程桌機與手機共8張頁內截圖逐張實看；正文/自測/導覽已核對",
+      "幾何示意簡化，手機需縱向捲動，部分術語依正文理解；無真人學習試驗"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "幾何簡化"
+      ],
+      "completeness": [
+        9,
+        "四工程與指定首讀修正完成"
+      ],
+      "professionalism": [
+        9,
+        "固定主幹與可訓練分支零卷積，輪廓不能證實刮傷"
+      ],
+      "density": [
+        8,
+        "手機長捲動，部分術語較密"
+      ],
+      "hierarchy": [
+        9,
+        "三節點單黃結論"
+      ]
+    },
+    "veto": [],
+    "status": "local_complete",
+    "page_evidence": [
+      {
+        "path": "pages/controlnet/docs-1440-engineering-1.png",
+        "sha256": "284cd1ee2a8c2359c017cbdf7a3f36e5fee38a06815a04da7f3d13da77538de1"
+      },
+      {
+        "path": "pages/controlnet/docs-1440-engineering-2.png",
+        "sha256": "3e0be2d50307f16257979143a34433d564b955a0b4fe2029190d4bc8872b892f"
+      },
+      {
+        "path": "pages/controlnet/docs-1440-engineering-3.png",
+        "sha256": "0679955db6a35b0bb3cfbdffe8d6480540a85979f75d15251dbdfd1b402a897a"
+      },
+      {
+        "path": "pages/controlnet/docs-1440-engineering-4.png",
+        "sha256": "55b0315c14ce07046f6fcc34d08acbaf77317f59d55da06e7197df025d90ffac"
+      },
+      {
+        "path": "pages/controlnet/docs-360-engineering-1.png",
+        "sha256": "d0140416fadc9178cad8b98159cf76fb15cc6d6c9fbf9645971542fef89573c5"
+      },
+      {
+        "path": "pages/controlnet/docs-360-engineering-2.png",
+        "sha256": "168754fcfa36a2ae23719598dbf55fe127064276b19bd70a847ddf81f59c9c0e"
+      },
+      {
+        "path": "pages/controlnet/docs-360-engineering-3.png",
+        "sha256": "2b53f54e8fdb156553ee4bd1c8044988b9f8d25b8375eb48a63b5e2220320c30"
+      },
+      {
+        "path": "pages/controlnet/docs-360-engineering-4.png",
+        "sha256": "a40081ea630bdbe186fef665db78d8f2f7c19f0b901114cedeea593576830bec"
+      }
+    ],
+    "user_approval": "pending",
+    "model_inference": false
+  },
+  {
+    "id": "inpainting",
+    "total": 92,
+    "scores": [
+      19,
+      19,
+      19,
+      18,
+      8,
+      9
+    ],
+    "evidence": [
+      "同板下污點，mask內外核對；照片填孔不等於實物修復",
+      "四工程桌機與手機共8張頁內截圖逐張實看；正文/自測/導覽已核對",
+      "幾何示意簡化，手機需縱向捲動，部分術語依正文理解；無真人學習試驗"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "幾何簡化"
+      ],
+      "completeness": [
+        9,
+        "四工程與指定首讀修正完成"
+      ],
+      "professionalism": [
+        9,
+        "同板下污點，mask內外核對；照片填孔不等於實物修復"
+      ],
+      "density": [
+        8,
+        "手機長捲動，部分術語較密"
+      ],
+      "hierarchy": [
+        9,
+        "三節點單黃結論"
+      ]
+    },
+    "veto": [],
+    "status": "local_complete",
+    "page_evidence": [
+      {
+        "path": "pages/inpainting/docs-1440-engineering-1.png",
+        "sha256": "e55866a65f58345d7e0523df62186b72ce810dcb48184b75105b2c55f03a3721"
+      },
+      {
+        "path": "pages/inpainting/docs-1440-engineering-2.png",
+        "sha256": "4b402aacc072e8dba9c3558c7519b6e7c0d9bf4c8f28cc03ac79df270fd9ec55"
+      },
+      {
+        "path": "pages/inpainting/docs-1440-engineering-3.png",
+        "sha256": "0ab3ec694c791ce58280f62ae2f8dfa449816966633c9c41c6b5200fa15b4b8b"
+      },
+      {
+        "path": "pages/inpainting/docs-1440-engineering-4.png",
+        "sha256": "5ef69f9827605609d6a235e633b406f0c5cd83ccb1b5f7640655a94e58786ac3"
+      },
+      {
+        "path": "pages/inpainting/docs-360-engineering-1.png",
+        "sha256": "37c19657fbce4a004e2128c4a1704e7c4758b1f73daee113b04dec04cec948b5"
+      },
+      {
+        "path": "pages/inpainting/docs-360-engineering-2.png",
+        "sha256": "7eb5e9f073e360c577442dc23bdeb62ae12743a63deeca86b7d96925635e3e82"
+      },
+      {
+        "path": "pages/inpainting/docs-360-engineering-3.png",
+        "sha256": "883e07e4cdac9e8fe7bf5fbba04f054d4ba1aba30ee01f3f283e1cc95d916be6"
+      },
+      {
+        "path": "pages/inpainting/docs-360-engineering-4.png",
+        "sha256": "ee470d975c1bfa08c9066d585f8daf0bdc992c6832fb01c01be55256848fdd19"
+      }
+    ],
+    "user_approval": "pending",
+    "model_inference": false
+  },
+  {
+    "id": "diffusion-restoration",
+    "total": 92,
+    "scores": [
+      19,
+      19,
+      19,
+      18,
+      8,
+      9
+    ],
+    "evidence": [
+      "退化A與噪聲條件、先驗候選及獨立取像；非唯一算例",
+      "四工程桌機與手機共8張頁內截圖逐張實看；正文/自測/導覽已核對",
+      "幾何示意簡化，手機需縱向捲動，部分術語依正文理解；無真人學習試驗"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "幾何簡化"
+      ],
+      "completeness": [
+        9,
+        "四工程與指定首讀修正完成"
+      ],
+      "professionalism": [
+        9,
+        "退化A與噪聲條件、先驗候選及獨立取像；非唯一算例"
+      ],
+      "density": [
+        8,
+        "手機長捲動，部分術語較密"
+      ],
+      "hierarchy": [
+        9,
+        "三節點單黃結論"
+      ]
+    },
+    "veto": [],
+    "status": "local_complete",
+    "page_evidence": [
+      {
+        "path": "pages/diffusion-restoration/docs-1440-engineering-1.png",
+        "sha256": "4d4fd5c4c6d850dc65ceedbabde594471614bd770a4e03c6eb266caafb16e16a"
+      },
+      {
+        "path": "pages/diffusion-restoration/docs-1440-engineering-2.png",
+        "sha256": "f941001b3483073c32d9dd5005b1c0c0b582ccda07d4955a6207e54b28db83c2"
+      },
+      {
+        "path": "pages/diffusion-restoration/docs-1440-engineering-3.png",
+        "sha256": "f455371abd6373e0e6e458448d6de0dcd95df5345b96376d26fa8e04d50ff136"
+      },
+      {
+        "path": "pages/diffusion-restoration/docs-1440-engineering-4.png",
+        "sha256": "173538e55d28d76767241c48a93c2a55b9d4200b513b3b59bf7a584098781c2c"
+      },
+      {
+        "path": "pages/diffusion-restoration/docs-360-engineering-1.png",
+        "sha256": "6a3acb8d2d213fa1b474737b0829f3c6b8561a90eb41f9c4084ef7150cb6c109"
+      },
+      {
+        "path": "pages/diffusion-restoration/docs-360-engineering-2.png",
+        "sha256": "c2f1130ac1707df8b25954d2500acf4d6b5b000f00264fb4b89a776b24d00fa5"
+      },
+      {
+        "path": "pages/diffusion-restoration/docs-360-engineering-3.png",
+        "sha256": "18fa5458af618f7a66b555a6529ba5c909959d433111129561a0bea1af7ff39a"
+      },
+      {
+        "path": "pages/diffusion-restoration/docs-360-engineering-4.png",
+        "sha256": "e808f9d9d83d29231a6d0c7a82bd3c2bd4307a7d96c1ec6e80a01e30802aca5e"
+      }
+    ],
+    "user_approval": "pending",
+    "model_inference": false
+  },
+  {
+    "id": "deblur",
+    "total": 92,
+    "scores": [
+      19,
+      19,
+      19,
+      18,
+      8,
+      9
+    ],
+    "evidence": [
+      "展寬邊緣、振鈴與真邊偏移，2像素不是毫米",
+      "四工程桌機與手機共8張頁內截圖逐張實看；正文/自測/導覽已核對",
+      "幾何示意簡化，手機需縱向捲動，部分術語依正文理解；無真人學習試驗"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "幾何簡化"
+      ],
+      "completeness": [
+        9,
+        "四工程與指定首讀修正完成"
+      ],
+      "professionalism": [
+        9,
+        "展寬邊緣、振鈴與真邊偏移，2像素不是毫米"
+      ],
+      "density": [
+        8,
+        "手機長捲動，部分術語較密"
+      ],
+      "hierarchy": [
+        9,
+        "三節點單黃結論"
+      ]
+    },
+    "veto": [],
+    "status": "local_complete",
+    "page_evidence": [
+      {
+        "path": "pages/deblur/docs-1440-engineering-1.png",
+        "sha256": "d9213c1c791e2919a9f9cb70ecfc72fb9a97db8cfa842172b73064d142595cf5"
+      },
+      {
+        "path": "pages/deblur/docs-1440-engineering-2.png",
+        "sha256": "9fa0135185c5b6d7f97524227206ddf36d99d3cc8295e1f1fc714ee391da1223"
+      },
+      {
+        "path": "pages/deblur/docs-1440-engineering-3.png",
+        "sha256": "c6ccb3d804c6abd95aa2560a16388319a8022cebbe8a450ea2757dd26fd5bbff"
+      },
+      {
+        "path": "pages/deblur/docs-1440-engineering-4.png",
+        "sha256": "4d465a76af8bee6f337b7233ee909e5e6034a512ebd59cc3611ab3260de6fade"
+      },
+      {
+        "path": "pages/deblur/docs-360-engineering-1.png",
+        "sha256": "90321b7427d4fdc8c0a236bdb937d8cc555e5a422f81f04cedb7d447e030410e"
+      },
+      {
+        "path": "pages/deblur/docs-360-engineering-2.png",
+        "sha256": "8577960397bfc180e3c5614c538d3dab6bf57391e1caccfe77a6596b39ac02ab"
+      },
+      {
+        "path": "pages/deblur/docs-360-engineering-3.png",
+        "sha256": "4216d33003e409cb9892423a019bf1a02eafea2bcfc4c1b2c31ae36a4544448b"
+      },
+      {
+        "path": "pages/deblur/docs-360-engineering-4.png",
+        "sha256": "904a490c26ce1675c911f1fdae5b71ddd9f92023198d2106868d2ac5612aa937"
+      }
+    ],
+    "user_approval": "pending",
+    "model_inference": false
+  },
+  {
+    "id": "super-resolution",
+    "total": 92,
+    "scores": [
+      19,
+      19,
+      19,
+      18,
+      8,
+      9
+    ],
+    "evidence": [
+      "同矩形板左孔q，插值與學習、兩候選及真實取像分清",
+      "四工程桌機與手機共8張頁內截圖逐張實看；正文/自測/導覽已核對",
+      "幾何示意簡化，手機需縱向捲動，部分術語依正文理解；無真人學習試驗"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "幾何簡化"
+      ],
+      "completeness": [
+        9,
+        "四工程與指定首讀修正完成"
+      ],
+      "professionalism": [
+        9,
+        "同矩形板左孔q，插值與學習、兩候選及真實取像分清"
+      ],
+      "density": [
+        8,
+        "手機長捲動，部分術語較密"
+      ],
+      "hierarchy": [
+        9,
+        "三節點單黃結論"
+      ]
+    },
+    "veto": [],
+    "status": "local_complete",
+    "page_evidence": [
+      {
+        "path": "pages/super-resolution/docs-1440-engineering-1.png",
+        "sha256": "cdfaf95306bc71208b61ebef6d44f8f926f9bd837f87841d4c77fb41ec5f6694"
+      },
+      {
+        "path": "pages/super-resolution/docs-1440-engineering-2.png",
+        "sha256": "617ea4db5d26a40d386b604a6f4571e33a31aab0d4993cfa3b176171b1c5a653"
+      },
+      {
+        "path": "pages/super-resolution/docs-1440-engineering-3.png",
+        "sha256": "0fdc73f12d40a0cefa729f280f03275b17d9adff9439e7a951c2d396af2888b9"
+      },
+      {
+        "path": "pages/super-resolution/docs-1440-engineering-4.png",
+        "sha256": "273400d059ad12a4de18bc631eabde4e5748eb26caed4c14f8db8251b528152f"
+      },
+      {
+        "path": "pages/super-resolution/docs-360-engineering-1.png",
+        "sha256": "05ee27b7c263a353a733ffe3c8a3de01c2db2f20873fdd9931bc9430f76e8184"
+      },
+      {
+        "path": "pages/super-resolution/docs-360-engineering-2.png",
+        "sha256": "2f74fd921aa3b62be32e43b075ff6b5233317ddaaf35b415b53630d0cdd1d737"
+      },
+      {
+        "path": "pages/super-resolution/docs-360-engineering-3.png",
+        "sha256": "9320c5e43527c8d8062ce402b026dffa87c0d9bc511319f019f398cc5b5f4cfc"
+      },
+      {
+        "path": "pages/super-resolution/docs-360-engineering-4.png",
+        "sha256": "74a1c2258872fca6035775088b3c0d3c189f6178d4f81531b5ca53a6c0d4abce"
+      }
+    ],
+    "user_approval": "pending",
+    "model_inference": false
+  }
+]

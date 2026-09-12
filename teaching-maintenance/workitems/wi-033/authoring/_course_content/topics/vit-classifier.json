@@ -1,0 +1,561 @@
+{
+  "model": "ViT",
+  "badge": "區塊注意力影像分類",
+  "title": "ViT：把影像變成可互相參照的區塊",
+  "scenario": {
+    "title": "固定相機拍螺絲頭，要把十字、一字與內六角分流到不同料盒。",
+    "body": "固定相機拍螺絲頭，要把十字、一字與內六角分流到不同料盒。"
+  },
+  "promise": {
+    "title": "交付結果與接手工作",
+    "body": "已知類別與模型分數，交分流規則或人工覆核；未知產品、輪廓與3D姿態另行處理。"
+  },
+  "mental_model": {
+    "title": "區塊注意力影像分類",
+    "body": "ViT把影像分成區塊，編碼成帶位置資訊的tokens。自注意力讓每個區塊依其他區塊的線索更新表示，再匯整成分類結果。圖上粗細連線示意資訊關係；注意力權重不是經驗證的缺陷位置或因果解釋。",
+    "limit": "訓練照片中十字螺絲總在藍墊、內六角總在橘墊，模型可能學到背景捷徑。把同一十字螺絲換到橘墊後，可能誤判內六角；工件本身沒有改變。"
+  },
+  "micro_example": {
+    "title": "分流還是輪廓？",
+    "setup": "ViT分類可以把可疑工件送人覆核。另一部門希望直接取得缺陷輪廓，但像素標註成本高。",
+    "prediction": "先交付分類覆核流程，或增加分割任務？哪些需求會改變你的決定？",
+    "reveal": "若工作目的是先分流且人工覆核量可接受，可先交付經驗證的分類流程；若後段確實需要輪廓或定位，則要定義相應輸出與標註並驗證。注意力圖不能替代輪廓真值。比較時一起計入標註、覆核、漏分和後段量測校正成本。"
+  },
+  "mechanism_steps": [
+    {
+      "title": "影像切塊",
+      "body": "區塊編碼與位置資訊共同進模型；示意九格不代表所有ViT固定用九個token。",
+      "why": "由本課核心機制連接工作用途",
+      "anchor": "WI030-1",
+      "diagram": {
+        "title": "影像切塊",
+        "body": "區塊編碼與位置資訊共同進模型；示意九格不代表所有ViT固定用九個token。",
+        "why": "詳見本課版本與來源",
+        "anchor": "WI030-1"
+      }
+    },
+    {
+      "title": "帶位置的特徵互看",
+      "body": "注意力聚合其他tokens的訊息，分類表示再送任務頭。全圖關係不等於免去工作標註或對小細節一定有利。",
+      "why": "由本課核心機制連接工作用途",
+      "anchor": "WI030-2",
+      "diagram": {
+        "title": "帶位置的特徵互看",
+        "body": "注意力聚合其他tokens的訊息，分類表示再送任務頭。全圖關係不等於免去工作標註或對小細節一定有利。",
+        "why": "詳見本課版本與來源",
+        "anchor": "WI030-2"
+      }
+    },
+    {
+      "title": "匯整成類別",
+      "body": "已知類別與模型分數，交分流規則或人工覆核；未知產品、輪廓與3D姿態另行處理。",
+      "why": "由本課核心機制連接工作用途",
+      "anchor": "WI030-3",
+      "diagram": {
+        "title": "匯整成類別",
+        "body": "已知類別與模型分數，交分流規則或人工覆核；未知產品、輪廓與3D姿態另行處理。",
+        "why": "詳見本課版本與來源",
+        "anchor": "WI030-3"
+      }
+    },
+    {
+      "title": "工作核對與接手",
+      "body": "用未見批次逐類核對真實輸入、標籤、預測及信心，列混淆矩陣與背景／反光失敗例；記錄整段耗時、記憶體與人工覆核量。教學圖的分類結果不是實測。",
+      "why": "由本課核心機制連接工作用途",
+      "anchor": "WI030-4",
+      "diagram": {
+        "title": "工作核對與接手",
+        "body": "用未見批次逐類核對真實輸入、標籤、預測及信心，列混淆矩陣與背景／反光失敗例；記錄整段耗時、記憶體與人工覆核量。教學圖的分類結果不是實測。",
+        "why": "詳見本課版本與來源",
+        "anchor": "WI030-4"
+      }
+    }
+  ],
+  "visual_intro": "ViT把影像分成區塊，編碼成帶位置資訊的tokens。自注意力讓每個區塊依其他區塊的線索更新表示，再匯整成分類結果。圖上粗細連線示意資訊關係；注意力權重不是經驗證的缺陷位置或因果解釋。",
+  "beginner_path": {
+    "title": "從必要原理、具體反例到工作取捨",
+    "intro": "固定相機拍螺絲頭，要把十字、一字與內六角分流到不同料盒。 下列圖像、特徵及回答為教學示意，不是模型實測。",
+    "visuals": [
+      {
+        "id": "wi030-vit-c1",
+        "title": "ViT：把影像變成可互相參照的區塊",
+        "prompt": "固定相機拍螺絲頭，要把十字、一字與內六角分流到不同料盒。",
+        "caption": "ViT把影像分成區塊，編碼成帶位置資訊的tokens。自注意力讓每個區塊依其他區塊的線索更新表示，再匯整成分類結果。圖上粗細連線示意資訊關係；注意力權重不是經驗證的缺陷位置或因果解釋。",
+        "image": "_course_content/generated-concepts/vit-classifier/wi030-vit-c1-r02-desktop.png",
+        "alt": "ViT：把影像變成可互相參照的區塊。ViT把影像分成區塊，編碼成帶位置資訊的tokens。自注意力讓每個區塊依其他區塊的線索更新表示，再匯整成分類結果。圖上粗細連線示意資訊關係；注意力權重不是經驗證的缺陷位置或因果解釋。 AI生成教學示意，非模型實測。",
+        "callouts": [
+          {
+            "title": "區塊需保留位置",
+            "body": "區塊編碼與位置資訊共同進模型；示意九格不代表所有ViT固定用九個token。"
+          },
+          {
+            "title": "互看後再分類",
+            "body": "注意力聚合其他tokens的訊息，分類表示再送任務頭。全圖關係不等於免去工作標註或對小細節一定有利。"
+          },
+          {
+            "title": "交付與接手",
+            "body": "已知類別與模型分數，交分流規則或人工覆核；未知產品、輪廓與3D姿態另行處理。"
+          }
+        ],
+        "reading_views": [
+          {
+            "title": "ViT：把影像變成可互相參照的區塊",
+            "image": "_course_content/generated-concepts/vit-classifier/wi030-vit-c1-r02-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/vit-classifier/wi030-vit-c1-r02-mobile.png",
+            "alt": "ViT：把影像變成可互相參照的區塊。ViT把影像分成區塊，編碼成帶位置資訊的tokens。自注意力讓每個區塊依其他區塊的線索更新表示，再匯整成分類結果。圖上粗細連線示意資訊關係；注意力權重不是經驗證的缺陷位置或因果解釋。 AI生成教學示意，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              916,
+              1717
+            ],
+            "mobile_display_mode": "full-mobile",
+            "desktop_intrinsic_width": 1672,
+            "desktop_intrinsic_height": 941,
+            "mobile_intrinsic_width": 916,
+            "mobile_intrinsic_height": 1717
+          }
+        ],
+        "core_ideas": true
+      },
+      {
+        "id": "wi030-class-d2",
+        "title": "模型認的是工件，還是拍攝背景？",
+        "prompt": "觀察哪個條件改變，讓原本的結果不夠可靠？",
+        "caption": "訓練照片中十字螺絲總在藍墊、內六角總在橘墊，模型可能學到背景捷徑。把同一十字螺絲換到橘墊後，可能誤判內六角；工件本身沒有改變。",
+        "image": "_course_content/generated-concepts/resnet/wi030-class-d2-r01-desktop.png",
+        "alt": "模型認的是工件，還是拍攝背景？。訓練照片中十字螺絲總在藍墊、內六角總在橘墊，模型可能學到背景捷徑。把同一十字螺絲換到橘墊後，可能誤判內六角；工件本身沒有改變。 AI生成教學示意，非模型實測。",
+        "callouts": [
+          {
+            "title": "看哪裡",
+            "body": "訓練照片中十字螺絲總在藍墊、內六角總在橘墊，模型可能學到背景捷徑。把同一十字螺絲換到橘墊後，可能誤判內六角；工件本身沒有改變。"
+          },
+          {
+            "title": "接著怎麼做",
+            "body": "讓各類工件都跨背景、批次與允收光照取樣；以未參與訓練的批次驗證，分析各類混淆與低信心案例，再決定是否重新訓練。"
+          }
+        ],
+        "reading_views": [
+          {
+            "title": "模型認的是工件，還是拍攝背景？",
+            "image": "_course_content/generated-concepts/resnet/wi030-class-d2-r01-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/resnet/wi030-class-d2-r03-mobile.png",
+            "alt": "模型認的是工件，還是拍攝背景？。訓練照片中十字螺絲總在藍墊、內六角總在橘墊，模型可能學到背景捷徑。把同一十字螺絲換到橘墊後，可能誤判內六角；工件本身沒有改變。 AI生成教學示意，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              887,
+              1774
+            ],
+            "mobile_display_mode": "full-mobile",
+            "desktop_intrinsic_width": 1672,
+            "desktop_intrinsic_height": 941,
+            "mobile_intrinsic_width": 887,
+            "mobile_intrinsic_height": 1774
+          }
+        ],
+        "core_ideas": false
+      },
+      {
+        "id": "wi030-class-d3",
+        "title": "同一分類工作，三種特徵整理方式",
+        "prompt": "相同工作需求下，資料、輸出與成本如何取捨？",
+        "caption": "ResNet用殘差相加傳遞特徵；ConvNeXt仍以卷積作空間與通道處理；ViT讓區塊特徵互相參照。三者都可接分類頭；用相同標註、資料切分、前處理與硬體比較錯誤、耗時和記憶體，不能只看模型新舊。",
+        "image": "_course_content/generated-concepts/resnet/wi030-class-d3-r05-desktop.png",
+        "alt": "同一分類工作，三種特徵整理方式。ResNet用殘差相加傳遞特徵；ConvNeXt仍以卷積作空間與通道處理；ViT讓區塊特徵互相參照。三者都可接分類頭；用相同標註、資料切分、前處理與硬體比較錯誤、耗時和記憶體，不能只看模型新舊。 AI生成教學示意，非模型實測。",
+        "callouts": [
+          {
+            "title": "怎麼選",
+            "body": "ResNet用殘差相加傳遞特徵；ConvNeXt仍以卷積作空間與通道處理；ViT讓區塊特徵互相參照。三者都可接分類頭；用相同標註、資料切分、前處理與硬體比較錯誤、耗時和記憶體，不能只看模型新舊。"
+          },
+          {
+            "title": "資料與完整成本",
+            "body": "需各類工作標註和未見批次測試；選預訓練權重後調整任務頭。換類別、背景或拍攝條件重新核對，不能只沿用原測試準確率。"
+          }
+        ],
+        "reading_views": [
+          {
+            "title": "同一分類工作，三種特徵整理方式",
+            "image": "_course_content/generated-concepts/resnet/wi030-class-d3-r05-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/resnet/wi030-class-d3-r06-mobile.png",
+            "alt": "同一分類工作，三種特徵整理方式。ResNet用殘差相加傳遞特徵；ConvNeXt仍以卷積作空間與通道處理；ViT讓區塊特徵互相參照。三者都可接分類頭；用相同標註、資料切分、前處理與硬體比較錯誤、耗時和記憶體，不能只看模型新舊。 AI生成教學示意，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              724,
+              2172
+            ],
+            "mobile_display_mode": "full-mobile",
+            "desktop_intrinsic_width": 1672,
+            "desktop_intrinsic_height": 941,
+            "mobile_intrinsic_width": 724,
+            "mobile_intrinsic_height": 2172
+          }
+        ],
+        "core_ideas": false
+      }
+    ]
+  },
+  "concept_visuals": [],
+  "boundary_cases": [
+    {
+      "condition": "本課具體反例",
+      "effect": "訓練照片中十字螺絲總在藍墊、內六角總在橘墊，模型可能學到背景捷徑。把同一十字螺絲換到橘墊後，可能誤判內六角；工件本身沒有改變。",
+      "action": "讓各類工件都跨背景、批次與允收光照取樣；以未參與訓練的批次驗證，分析各類混淆與低信心案例，再決定是否重新訓練。"
+    },
+    {
+      "condition": "更換產品、模型或輸入設定",
+      "effect": "需各類工作標註和未見批次測試；選預訓練權重後調整任務頭。換類別、背景或拍攝條件重新核對，不能只沿用原測試準確率。",
+      "action": "先定義各類與未知品接手規則，讓每類跨背景拍攝，按批次切開訓練和測試。"
+    },
+    {
+      "condition": "把示意當成實際推論",
+      "effect": "本課特徵、排序、回答及圖像僅用於解釋，不支持現場準確率或耗時結論。",
+      "action": "用未見批次逐類核對真實輸入、標籤、預測及信心，列混淆矩陣與背景／反光失敗例；記錄整段耗時、記憶體與人工覆核量。教學圖的分類結果不是實測。"
+    }
+  ],
+  "comparison": [
+    {
+      "model": "ResNet",
+      "normality": "類別標註；殘差特徵相加",
+      "candidate": "已知類別；同資料測錯誤與成本"
+    },
+    {
+      "model": "ConvNeXt",
+      "normality": "類別標註；現代空間／通道卷積",
+      "candidate": "已知類別；不能以模型新舊排名"
+    },
+    {
+      "model": "ViT",
+      "normality": "類別標註；區塊表示與注意力",
+      "candidate": "已知類別；注意力不是輪廓真值"
+    }
+  ],
+  "selection": "ResNet用殘差相加傳遞特徵；ConvNeXt仍以卷積作空間與通道處理；ViT讓區塊特徵互相參照。三者都可接分類頭；用相同標註、資料切分、前處理與硬體比較錯誤、耗時和記憶體，不能只看模型新舊。 需各類工作標註和未見批次測試；選預訓練權重後調整任務頭。換類別、背景或拍攝條件重新核對，不能只沿用原測試準確率。",
+  "poc": {
+    "title": "以真實工作資料做小規模比較",
+    "steps": [
+      "先定義各類與未知品接手規則，讓每類跨背景拍攝，按批次切開訓練和測試。",
+      "需各類工作標註和未見批次測試；選預訓練權重後調整任務頭。換類別、背景或拍攝條件重新核對，不能只沿用原測試準確率。",
+      "用未見批次逐類核對真實輸入、標籤、預測及信心，列混淆矩陣與背景／反光失敗例；記錄整段耗時、記憶體與人工覆核量。教學圖的分類結果不是實測。"
+    ],
+    "hold": "讓各類工件都跨背景、批次與允收光照取樣；以未參與訓練的批次驗證，分析各類混淆與低信心案例，再決定是否重新訓練。",
+    "acceptance": {
+      "baseline": "既有流程或最簡單可行方法",
+      "measure": "用未見批次逐類核對真實輸入、標籤、預測及信心，列混淆矩陣與背景／反光失敗例；記錄整段耗時、記憶體與人工覆核量。教學圖的分類結果不是實測。",
+      "negative_control": "訓練照片中十字螺絲總在藍墊、內六角總在橘墊，模型可能學到背景捷徑。把同一十字螺絲換到橘墊後，可能誤判內六角；工件本身沒有改變。",
+      "owner": "實作與影像核對負責人"
+    }
+  },
+  "teach_back": {
+    "question": "它改變什麼？何時選另一種做法？",
+    "answer": "ViT把影像分成區塊，編碼成帶位置資訊的tokens。自注意力讓每個區塊依其他區塊的線索更新表示，再匯整成分類結果。圖上粗細連線示意資訊關係；注意力權重不是經驗證的缺陷位置或因果解釋。 ResNet用殘差相加傳遞特徵；ConvNeXt仍以卷積作空間與通道處理；ViT讓區塊特徵互相參照。三者都可接分類頭；用相同標註、資料切分、前處理與硬體比較錯誤、耗時和記憶體，不能只看模型新舊。"
+  },
+  "slide_reading": [
+    {
+      "title": "ViT：把影像區塊變成可交流的表示",
+      "question": "切片保留位置，分類仍需資料與任務頭。",
+      "look": "先看同件影像切成區塊，再核對各片加入位置表示，最後看分類token讀出整件分數。",
+      "relation": "原始ViT把不重疊patch線性投影成token，加入位置嵌入及分類token；Transformer交換資訊，最後CLS表示經分類頭讀出類別。本課是分類器，不把patch熱圖當分割。",
+      "takeaway": "切片保留位置，分類仍需資料與任務頭。",
+      "terms": [
+        "特徵：由影像學到的中間表示，並非標註真值。",
+        "本圖示意：解釋模型責任，不代表新模型實測。"
+      ]
+    },
+    {
+      "title": "ViT：一個位置也會參考其他區塊",
+      "question": "注意力加權其他表示，位置身份仍要保留。",
+      "look": "先看刮傷片與孔邊片各有表示，再核對依內容形成參考權重，最後看加權更新，再由CLS分類。",
+      "relation": "示意某query对兩個value加權0.75和0.25；value [2,0]與[0,4]加權成[1.5,1]。這是單頭簡化算例，實際還含多頭投影、殘差、正規化和MLP。注意力不是物理缺陷機率，也不能用線寬宣稱模型實测解釋。",
+      "takeaway": "注意力加權其他表示，位置身份仍要保留。",
+      "terms": [
+        "特徵：由影像學到的中間表示，並非標註真值。",
+        "本圖示意：解釋模型責任，不代表新模型實測。"
+      ]
+    },
+    {
+      "title": "ViT：改切片設定，細節與成本都會變",
+      "question": "先確認細傷還可見，再測分類與記憶體。",
+      "look": "先看同一細痕與輸入取樣，再核對切片尺度改變token數，最後看保留同件測試與錯分類型。",
+      "relation": "改解析度會改token數及注意力成本；改patch尺寸涉及模型配置與權重相容性，不能隨意把現有權重改為另一尺寸。先查實際輸入可見線索，再比較分類、記憶體及延遲；圖中的格子是分片概念而非真實注意力圖。",
+      "takeaway": "先確認細傷還可見，再測分類與記憶體。",
+      "terms": [
+        "特徵：由影像學到的中間表示，並非標註真值。",
+        "本圖示意：解釋模型責任，不代表新模型實測。"
+      ]
+    },
+    {
+      "title": "ViT與ConvNeXt：同題比較代價",
+      "question": "全局交流是能力來源，不保證小資料就更準。",
+      "look": "先看相同分類照片與標籤，再核對ConvNeXt先做逐通道空間卷積，最後看注意力跨片交換資訊。",
+      "relation": "在相同產品和標籤下比較預訓練、可調整資料量、輸入解析度及硬體成本；卷積局部先驗可能適合部分小資料任務，ViT利用大規模預訓練仍需域內驗證。候選可並行，不畫成必須串接。",
+      "takeaway": "全局交流是能力來源，不保證小資料就更準。",
+      "terms": [
+        "特徵：由影像學到的中間表示，並非標註真值。",
+        "本圖示意：解釋模型責任，不代表新模型實測。"
+      ]
+    }
+  ],
+  "comparison_headers": {
+    "title": "同一分類工作，三種特徵整理方式",
+    "basis": "所需資料與方法差異",
+    "output": "輸出與維護責任"
+  },
+  "transfer_check": {
+    "title": "分流還是輪廓？",
+    "scenario": "ViT分類可以把可疑工件送人覆核。另一部門希望直接取得缺陷輪廓，但像素標註成本高。",
+    "question": "先交付分類覆核流程，或增加分割任務？哪些需求會改變你的決定？",
+    "answer": "若工作目的是先分流且人工覆核量可接受，可先交付經驗證的分類流程；若後段確實需要輪廓或定位，則要定義相應輸出與標註並驗證。注意力圖不能替代輪廓真值。比較時一起計入標註、覆核、漏分和後段量測校正成本。"
+  },
+  "review_trace": {
+    "authority": "roadmap-model-selection/known-target-classification/vit-classifier/model.md",
+    "scope": "WI-033：工程層四圖與手機比較修正；首讀有效內容保留。原生圖已審，整頁與使用者審閱另記。",
+    "claims": [
+      {
+        "id": "visual-1",
+        "field": "beginner_path.visuals[same-workpiece]",
+        "source": "模型定位 / architecture_path"
+      },
+      {
+        "id": "visual-2",
+        "field": "beginner_path.visuals[patch-contract]",
+        "source": "architecture_path"
+      },
+      {
+        "id": "visual-3",
+        "field": "beginner_path.visuals[token-position-attention]",
+        "source": "representation_or_score"
+      },
+      {
+        "id": "visual-4",
+        "field": "beginner_path.visuals[closed-set-output]",
+        "source": "failure_boundary"
+      },
+      {
+        "id": "visual-5",
+        "field": "beginner_path.visuals[observability-boundary]",
+        "source": "selection_gate / evidence_bundle"
+      },
+      {
+        "id": "promise",
+        "field": "promise",
+        "source": "模型定位 / representation_or_score"
+      },
+      {
+        "id": "mechanism",
+        "field": "mechanism_steps",
+        "source": "architecture_path / representation_or_score"
+      },
+      {
+        "id": "boundaries",
+        "field": "boundary_cases",
+        "source": "failure_boundary / selection_gate"
+      },
+      {
+        "id": "comparison",
+        "field": "comparison + selection",
+        "source": "selection_gate"
+      },
+      {
+        "id": "poc",
+        "field": "poc + acceptance",
+        "source": "cost_and_operating_point / evidence_bundle"
+      },
+      {
+        "id": "transfer",
+        "field": "transfer_check",
+        "source": "failure_boundary / selection_gate"
+      },
+      {
+        "id": "wi030-first-read",
+        "field": "beginner_path + core + selection + transfer",
+        "source": "https://arxiv.org/abs/2010.11929"
+      }
+    ]
+  },
+  "quality_status": {
+    "label": "首讀圖文已核對",
+    "state": "self-reviewed",
+    "round": "WI-030",
+    "reason": "新版逐圖與整頁自評、桌機手機驗證完成；使用者成品核准pending。原工程圖未納入本輪分數。"
+  },
+  "teaching_preflight": {
+    "brief": "teaching-images/vision-ai-model-selection/workitems/wi-030/vit-c1-r02-desktop.md",
+    "mobile_brief": "teaching-images/vision-ai-model-selection/workitems/wi-030/vit-c1-r02-mobile.md",
+    "story": "C",
+    "major_visual_nodes": 3,
+    "visual_status": "self-reviewed",
+    "user_review": "pending"
+  },
+  "engineering_slides": [
+    {
+      "title": "ViT：把影像區塊變成可交流的表示",
+      "question": "切片保留位置，分類仍需資料與任務頭。",
+      "plain": {
+        "look": "先看同件影像切成區塊，再核對各片加入位置表示，最後看分類token讀出整件分數。",
+        "relation": "原始ViT把不重疊patch線性投影成token，加入位置嵌入及分類token；Transformer交換資訊，最後CLS表示經分類頭讀出類別。本課是分類器，不把patch熱圖當分割。",
+        "takeaway": "切片保留位置，分類仍需資料與任務頭。"
+      },
+      "terms": [
+        "特徵：由影像學到的中間表示，並非標註真值。",
+        "本圖示意：解釋模型責任，不代表新模型實測。"
+      ],
+      "guide": [
+        "原始ViT把不重疊patch線性投影成token，加入位置嵌入及分類token；Transformer交換資訊，最後CLS表示經分類頭讀出類別。本課是分類器，不把patch熱圖當分割。",
+        "先看同件影像切成區塊，再核對各片加入位置表示，最後看分類token讀出整件分數。"
+      ],
+      "stages": [
+        {
+          "title": "同件影像切成區塊",
+          "body": "同件影像切成區塊；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "各片加入位置表示",
+          "body": "各片加入位置表示；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "分類token讀出整件分數",
+          "body": "分類token讀出整件分數；請對照圖內輸入、變化與結果。"
+        }
+      ],
+      "misconception": "訓練照片中十字螺絲總在藍墊、內六角總在橘墊，模型可能學到背景捷徑。把同一十字螺絲換到橘墊後，可能誤判內六角；工件本身沒有改變。",
+      "alt": "ViT：把影像區塊變成可交流的表示。切片保留位置，分類仍需資料與任務頭。 教學示意，非模型實測。",
+      "mobile_image": "roadmap-model-selection/known-target-classification/vit-classifier/images/final/WI033-VIT-01-r01-mobile.png",
+      "mobile_width": 768,
+      "mobile_height": 2304,
+      "engineering": {
+        "takeaway": "切片保留位置，分類仍需資料與任務頭。",
+        "nextAction": "先定義各類與未知品接手規則，讓每類跨背景拍攝，按批次切開訓練和測試。",
+        "redLine": "讓各類工件都跨背景、批次與允收光照取樣；以未參與訓練的批次驗證，分析各類混淆與低信心案例，再決定是否重新訓練。"
+      },
+      "source": "https://arxiv.org/abs/2010.11929"
+    },
+    {
+      "title": "ViT：一個位置也會參考其他區塊",
+      "question": "注意力加權其他表示，位置身份仍要保留。",
+      "plain": {
+        "look": "先看刮傷片與孔邊片各有表示，再核對依內容形成參考權重，最後看加權更新，再由CLS分類。",
+        "relation": "示意某query对兩個value加權0.75和0.25；value [2,0]與[0,4]加權成[1.5,1]。這是單頭簡化算例，實際還含多頭投影、殘差、正規化和MLP。注意力不是物理缺陷機率，也不能用線寬宣稱模型實测解釋。",
+        "takeaway": "注意力加權其他表示，位置身份仍要保留。"
+      },
+      "terms": [
+        "特徵：由影像學到的中間表示，並非標註真值。",
+        "本圖示意：解釋模型責任，不代表新模型實測。"
+      ],
+      "guide": [
+        "示意某query对兩個value加權0.75和0.25；value [2,0]與[0,4]加權成[1.5,1]。這是單頭簡化算例，實際還含多頭投影、殘差、正規化和MLP。注意力不是物理缺陷機率，也不能用線寬宣稱模型實测解釋。",
+        "先看刮傷片與孔邊片各有表示，再核對依內容形成參考權重，最後看加權更新，再由CLS分類。"
+      ],
+      "stages": [
+        {
+          "title": "刮傷片與孔邊片各有表示",
+          "body": "刮傷片與孔邊片各有表示；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "依內容形成參考權重",
+          "body": "依內容形成參考權重；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "加權更新，再由CLS分類",
+          "body": "加權更新，再由CLS分類；請對照圖內輸入、變化與結果。"
+        }
+      ],
+      "misconception": "訓練照片中十字螺絲總在藍墊、內六角總在橘墊，模型可能學到背景捷徑。把同一十字螺絲換到橘墊後，可能誤判內六角；工件本身沒有改變。",
+      "alt": "ViT：一個位置也會參考其他區塊。注意力加權其他表示，位置身份仍要保留。 教學示意，非模型實測。",
+      "mobile_image": "roadmap-model-selection/known-target-classification/vit-classifier/images/final/WI033-VIT-02-r03-mobile.png",
+      "mobile_width": 768,
+      "mobile_height": 2304,
+      "engineering": {
+        "takeaway": "注意力加權其他表示，位置身份仍要保留。",
+        "nextAction": "先定義各類與未知品接手規則，讓每類跨背景拍攝，按批次切開訓練和測試。",
+        "redLine": "讓各類工件都跨背景、批次與允收光照取樣；以未參與訓練的批次驗證，分析各類混淆與低信心案例，再決定是否重新訓練。"
+      },
+      "source": "https://arxiv.org/abs/2010.11929"
+    },
+    {
+      "title": "ViT：改切片設定，細節與成本都會變",
+      "question": "先確認細傷還可見，再測分類與記憶體。",
+      "plain": {
+        "look": "先看同一細痕與輸入取樣，再核對切片尺度改變token數，最後看保留同件測試與錯分類型。",
+        "relation": "改解析度會改token數及注意力成本；改patch尺寸涉及模型配置與權重相容性，不能隨意把現有權重改為另一尺寸。先查實際輸入可見線索，再比較分類、記憶體及延遲；圖中的格子是分片概念而非真實注意力圖。",
+        "takeaway": "先確認細傷還可見，再測分類與記憶體。"
+      },
+      "terms": [
+        "特徵：由影像學到的中間表示，並非標註真值。",
+        "本圖示意：解釋模型責任，不代表新模型實測。"
+      ],
+      "guide": [
+        "改解析度會改token數及注意力成本；改patch尺寸涉及模型配置與權重相容性，不能隨意把現有權重改為另一尺寸。先查實際輸入可見線索，再比較分類、記憶體及延遲；圖中的格子是分片概念而非真實注意力圖。",
+        "先看同一細痕與輸入取樣，再核對切片尺度改變token數，最後看保留同件測試與錯分類型。"
+      ],
+      "stages": [
+        {
+          "title": "同一細痕與輸入取樣",
+          "body": "同一細痕與輸入取樣；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "切片尺度改變token數",
+          "body": "切片尺度改變token數；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "保留同件測試與錯分類型",
+          "body": "保留同件測試與錯分類型；請對照圖內輸入、變化與結果。"
+        }
+      ],
+      "misconception": "訓練照片中十字螺絲總在藍墊、內六角總在橘墊，模型可能學到背景捷徑。把同一十字螺絲換到橘墊後，可能誤判內六角；工件本身沒有改變。",
+      "alt": "ViT：改切片設定，細節與成本都會變。先確認細傷還可見，再測分類與記憶體。 教學示意，非模型實測。",
+      "mobile_image": "roadmap-model-selection/known-target-classification/vit-classifier/images/final/WI033-VIT-03-r02-mobile.png",
+      "mobile_width": 768,
+      "mobile_height": 2304,
+      "engineering": {
+        "takeaway": "先確認細傷還可見，再測分類與記憶體。",
+        "nextAction": "先定義各類與未知品接手規則，讓每類跨背景拍攝，按批次切開訓練和測試。",
+        "redLine": "讓各類工件都跨背景、批次與允收光照取樣；以未參與訓練的批次驗證，分析各類混淆與低信心案例，再決定是否重新訓練。"
+      },
+      "source": "https://arxiv.org/abs/2010.11929"
+    },
+    {
+      "title": "ViT與ConvNeXt：同題比較代價",
+      "question": "全局交流是能力來源，不保證小資料就更準。",
+      "plain": {
+        "look": "先看相同分類照片與標籤，再核對ConvNeXt先做逐通道空間卷積，最後看注意力跨片交換資訊。",
+        "relation": "在相同產品和標籤下比較預訓練、可調整資料量、輸入解析度及硬體成本；卷積局部先驗可能適合部分小資料任務，ViT利用大規模預訓練仍需域內驗證。候選可並行，不畫成必須串接。",
+        "takeaway": "全局交流是能力來源，不保證小資料就更準。"
+      },
+      "terms": [
+        "特徵：由影像學到的中間表示，並非標註真值。",
+        "本圖示意：解釋模型責任，不代表新模型實測。"
+      ],
+      "guide": [
+        "在相同產品和標籤下比較預訓練、可調整資料量、輸入解析度及硬體成本；卷積局部先驗可能適合部分小資料任務，ViT利用大規模預訓練仍需域內驗證。候選可並行，不畫成必須串接。",
+        "先看相同分類照片與標籤，再核對ConvNeXt先做逐通道空間卷積，最後看注意力跨片交換資訊。"
+      ],
+      "stages": [
+        {
+          "title": "相同分類照片與標籤",
+          "body": "相同分類照片與標籤；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "ConvNeXt先做逐通道空間卷積",
+          "body": "ConvNeXt先做逐通道空間卷積；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "注意力跨片交換資訊",
+          "body": "注意力跨片交換資訊；請對照圖內輸入、變化與結果。"
+        }
+      ],
+      "misconception": "訓練照片中十字螺絲總在藍墊、內六角總在橘墊，模型可能學到背景捷徑。把同一十字螺絲換到橘墊後，可能誤判內六角；工件本身沒有改變。",
+      "alt": "ViT與ConvNeXt：同題比較代價。全局交流是能力來源，不保證小資料就更準。 教學示意，非模型實測。",
+      "mobile_image": "roadmap-model-selection/known-target-classification/vit-classifier/images/final/WI033-VIT-04-r02-mobile.png",
+      "mobile_width": 768,
+      "mobile_height": 2304,
+      "engineering": {
+        "takeaway": "全局交流是能力來源，不保證小資料就更準。",
+        "nextAction": "先定義各類與未知品接手規則，讓每類跨背景拍攝，按批次切開訓練和測試。",
+        "redLine": "讓各類工件都跨背景、批次與允收光照取樣；以未參與訓練的批次驗證，分析各類混淆與低信心案例，再決定是否重新訓練。"
+      },
+      "source": "https://arxiv.org/abs/2010.11929"
+    }
+  ]
+}

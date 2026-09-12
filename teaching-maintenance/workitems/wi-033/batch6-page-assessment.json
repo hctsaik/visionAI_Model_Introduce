@@ -1,0 +1,354 @@
+[
+  {
+    "id": "ad-dinomaly",
+    "total": 92,
+    "scores": [
+      19,
+      19,
+      19,
+      18,
+      8,
+      9
+    ],
+    "evidence": [
+      "正常多類、訓練擾動與分組比較分開",
+      "四工程的桌機/手機頁內共8張逐張實看；首讀載入與放大通過",
+      "幾何簡化，長手機需捲動，部分術語仍密，背景ID7對比偏低但文字另明示"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "幾何簡化與局部低對比"
+      ],
+      "completeness": [
+        9,
+        "四工程與指定首讀修正完成"
+      ],
+      "professionalism": [
+        9,
+        "正常多類、訓練擾動與分組比較分開"
+      ],
+      "density": [
+        8,
+        "手機長捲動與術語密度保留"
+      ],
+      "hierarchy": [
+        9,
+        "三節點單黃結論"
+      ]
+    },
+    "veto": [],
+    "status": "local_complete",
+    "page_evidence": "pages/ad-dinomaly/docs-{1440,360}-engineering-{1,2,3,4}.png",
+    "user_approval": "pending",
+    "model_inference": false
+  },
+  {
+    "id": "ad-invad",
+    "total": 92,
+    "scores": [
+      19,
+      19,
+      19,
+      18,
+      8,
+      9
+    ],
+    "evidence": [
+      "正常特徵教空間調制；縮放偏移逐位置可追",
+      "四工程的桌機/手機頁內共8張逐張實看；首讀載入與放大通過",
+      "幾何簡化，長手機需捲動，部分術語仍密，背景ID7對比偏低但文字另明示"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "幾何簡化與局部低對比"
+      ],
+      "completeness": [
+        9,
+        "四工程與指定首讀修正完成"
+      ],
+      "professionalism": [
+        9,
+        "正常特徵教空間調制；縮放偏移逐位置可追"
+      ],
+      "density": [
+        8,
+        "手機長捲動與術語密度保留"
+      ],
+      "hierarchy": [
+        9,
+        "三節點單黃結論"
+      ]
+    },
+    "veto": [],
+    "status": "local_complete",
+    "page_evidence": "pages/ad-invad/docs-{1440,360}-engineering-{1,2,3,4}.png",
+    "user_approval": "pending",
+    "model_inference": false
+  },
+  {
+    "id": "ad-ddad",
+    "total": 92,
+    "scores": [
+      19,
+      19,
+      19,
+      18,
+      8,
+      9
+    ],
+    "evidence": [
+      "原圖每步引導恢復，雙路差異及複製刮傷反例",
+      "四工程的桌機/手機頁內共8張逐張實看；首讀載入與放大通過",
+      "幾何簡化，長手機需捲動，部分術語仍密，背景ID7對比偏低但文字另明示"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "幾何簡化與局部低對比"
+      ],
+      "completeness": [
+        9,
+        "四工程與指定首讀修正完成"
+      ],
+      "professionalism": [
+        9,
+        "原圖每步引導恢復，雙路差異及複製刮傷反例"
+      ],
+      "density": [
+        8,
+        "手機長捲動與術語密度保留"
+      ],
+      "hierarchy": [
+        9,
+        "三節點單黃結論"
+      ]
+    },
+    "veto": [],
+    "status": "local_complete",
+    "page_evidence": "pages/ad-ddad/docs-{1440,360}-engineering-{1,2,3,4}.png",
+    "user_approval": "pending",
+    "model_inference": false
+  },
+  {
+    "id": "ad-winclip",
+    "total": 92,
+    "scores": [
+      19,
+      19,
+      19,
+      18,
+      8,
+      9
+    ],
+    "evidence": [
+      "人工提示與重疊視窗調和聚合；零樣本不標訓練",
+      "四工程的桌機/手機頁內共8張逐張實看；首讀載入與放大通過",
+      "幾何簡化，長手機需捲動，部分術語仍密，背景ID7對比偏低但文字另明示"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "幾何簡化與局部低對比"
+      ],
+      "completeness": [
+        9,
+        "四工程與指定首讀修正完成"
+      ],
+      "professionalism": [
+        9,
+        "人工提示與重疊視窗調和聚合；零樣本不標訓練"
+      ],
+      "density": [
+        8,
+        "手機長捲動與術語密度保留"
+      ],
+      "hierarchy": [
+        9,
+        "三節點單黃結論"
+      ]
+    },
+    "veto": [],
+    "status": "local_complete",
+    "page_evidence": "pages/ad-winclip/docs-{1440,360}-engineering-{1,2,3,4}.png",
+    "user_approval": "pending",
+    "model_inference": false
+  },
+  {
+    "id": "ad-anomalyclip",
+    "total": 92,
+    "scores": [
+      19,
+      19,
+      19,
+      18,
+      8,
+      9
+    ],
+    "evidence": [
+      "輔助提示與目標零樣本分開；q誤報和p漏檢",
+      "四工程的桌機/手機頁內共8張逐張實看；首讀載入與放大通過",
+      "幾何簡化，長手機需捲動，部分術語仍密，背景ID7對比偏低但文字另明示"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "幾何簡化與局部低對比"
+      ],
+      "completeness": [
+        9,
+        "四工程與指定首讀修正完成"
+      ],
+      "professionalism": [
+        9,
+        "輔助提示與目標零樣本分開；q誤報和p漏檢"
+      ],
+      "density": [
+        8,
+        "手機長捲動與術語密度保留"
+      ],
+      "hierarchy": [
+        9,
+        "三節點單黃結論"
+      ]
+    },
+    "veto": [],
+    "status": "local_complete",
+    "page_evidence": "pages/ad-anomalyclip/docs-{1440,360}-engineering-{1,2,3,4}.png",
+    "user_approval": "pending",
+    "model_inference": false
+  },
+  {
+    "id": "frame-difference",
+    "total": 92,
+    "scores": [
+      19,
+      19,
+      19,
+      18,
+      8,
+      9
+    ],
+    "evidence": [
+      "同方件位置移動，差分雙帶與曝光/靜止反例",
+      "四工程的桌機/手機頁內共8張逐張實看；首讀載入與放大通過",
+      "幾何簡化，長手機需捲動，部分術語仍密，背景ID7對比偏低但文字另明示"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "幾何簡化與局部低對比"
+      ],
+      "completeness": [
+        9,
+        "四工程與指定首讀修正完成"
+      ],
+      "professionalism": [
+        9,
+        "同方件位置移動，差分雙帶與曝光/靜止反例"
+      ],
+      "density": [
+        8,
+        "手機長捲動與術語密度保留"
+      ],
+      "hierarchy": [
+        9,
+        "三節點單黃結論"
+      ]
+    },
+    "veto": [],
+    "status": "local_complete",
+    "page_evidence": "pages/frame-difference/docs-{1440,360}-engineering-{1,2,3,4}.png",
+    "user_approval": "pending",
+    "model_inference": false
+  },
+  {
+    "id": "background-subtraction",
+    "total": 92,
+    "scores": [
+      19,
+      19,
+      19,
+      18,
+      8,
+      9
+    ],
+    "evidence": [
+      "多時間背景常態與停留吸收，mask不是身份",
+      "四工程的桌機/手機頁內共8張逐張實看；首讀載入與放大通過",
+      "幾何簡化，長手機需捲動，部分術語仍密，背景ID7對比偏低但文字另明示"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "幾何簡化與局部低對比"
+      ],
+      "completeness": [
+        9,
+        "四工程與指定首讀修正完成"
+      ],
+      "professionalism": [
+        9,
+        "多時間背景常態與停留吸收，mask不是身份"
+      ],
+      "density": [
+        8,
+        "手機長捲動與術語密度保留"
+      ],
+      "hierarchy": [
+        9,
+        "三節點單黃結論"
+      ]
+    },
+    "veto": [],
+    "status": "local_complete",
+    "page_evidence": "pages/background-subtraction/docs-{1440,360}-engineering-{1,2,3,4}.png",
+    "user_approval": "pending",
+    "model_inference": false
+  },
+  {
+    "id": "bytetrack",
+    "total": 92,
+    "scores": [
+      19,
+      19,
+      19,
+      18,
+      8,
+      9
+    ],
+    "evidence": [
+      "先高分再低分匹配，丟失緩衝及計數另訂",
+      "四工程的桌機/手機頁內共8張逐張實看；首讀載入與放大通過",
+      "幾何簡化，長手機需捲動，部分術語仍密，背景ID7對比偏低但文字另明示"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "幾何簡化與局部低對比"
+      ],
+      "completeness": [
+        9,
+        "四工程與指定首讀修正完成"
+      ],
+      "professionalism": [
+        9,
+        "先高分再低分匹配，丟失緩衝及計數另訂"
+      ],
+      "density": [
+        8,
+        "手機長捲動與術語密度保留"
+      ],
+      "hierarchy": [
+        9,
+        "三節點單黃結論"
+      ]
+    },
+    "veto": [],
+    "status": "local_complete",
+    "page_evidence": "pages/bytetrack/docs-{1440,360}-engineering-{1,2,3,4}.png",
+    "user_approval": "pending",
+    "model_inference": false
+  }
+]

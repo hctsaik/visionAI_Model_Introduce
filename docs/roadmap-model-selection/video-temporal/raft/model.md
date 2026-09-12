@@ -117,3 +117,40 @@ Keep camera / lens / exposure / timestamp / frame-drop records; frame-pair / ROI
 ## Production gate
 
 The six model-specific fields, comparison contract and required visual primitives are complete. Pages 05-14 through 05-17 may proceed to versioned white high-density C / D visual production. Final assets must pass Chinese readability, engineering-causality, no-fabricated-performance, manifest, QA and style validation before approval.
+
+<!-- wi033-engineering:start -->
+## WI-033 工程圖修正
+
+### RAFT：先把兩張影格变成配對線索
+
+固定原始RAFT權重、解析度、padding和迭代數。共享特徵網路抽兩圖表示後，建立全位置配對相關性及多尺度池化；第一圖經context encoder提供隱狀態與情境。相關性是候選配對線索，不是最終光流或每個像素的可靠度。
+
+兩張圖建立相關性，第一張圖另提供更新情境。
+
+來源：https://arxiv.org/abs/2003.12039 ; https://github.com/princeton-vl/RAFT/blob/master/core/raft.py
+
+### RAFT：依目前位置查詢，再修正光流
+
+原始RAFT以目前座標查詢多尺度相關性；更新單元接相關性、目前光流、context與隱狀態，輸出位移增量並更新隱狀態。新光流=舊光流+增量，固定解析度反覆更新，最後上採樣。圖中(1,0)+(1,1)=(2,1)只解釋更新算術，不是實際模型收斂或逐輪保證改善。
+
+用目前光流查相關性，更新量加回後繼續修正。
+
+來源：https://arxiv.org/abs/2003.12039 ; https://github.com/princeton-vl/RAFT/blob/master/core/raft.py
+
+### RAFT：稠密數值要配合有效性核對
+
+保存兩影格、原尺寸、前處理、權重、迭代設定與位移場；遮擋/反射可能沒有可見對應但仍輸出數值。可用往返一致性作應用檢查，仍不是遮擋真值或原始RAFT原生置信輸出。完整成本包含特徵、相關性、更新和上採樣，並量記憶體。
+
+輸出向量不等於看見對應，遮擋區要另驗。
+
+來源：https://arxiv.org/abs/2003.12039 ; https://github.com/princeton-vl/RAFT/blob/master/core/raft.py
+
+### RAFT：增加迭代是否值得，要同題量
+
+固定同一權重、影格對、解析度、precision和硬體，只改更新次數；在同一有效性標註上比较錯誤、覆蓋與耗時，不能保證更多迭代一定改善，也不能把彩色光流當精度證據。保留較少迭代也可能合理。
+
+迭代設定改變成本，效果仍用同一資料驗證。
+
+來源：https://arxiv.org/abs/2003.12039 ; https://github.com/princeton-vl/RAFT/blob/master/core/raft.py
+
+<!-- wi033-engineering:end -->

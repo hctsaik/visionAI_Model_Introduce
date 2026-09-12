@@ -123,3 +123,40 @@ Research contract and visual primitives are complete. Pages 04-23 through 04-26 
 **選型**：和 STFPM 比較正常訓練、模型容量及小缺陷反應；換產品需重新驗證正常訓練覆蓋，不能因重建逼真就判合格。
 
 [原論文／官方來源](https://arxiv.org/abs/2201.10703)。本輪原生 SVG 結合既有生成金屬件；特徵與差異為教學設定，沒有新增推論。先前章節如描述應用擴充，不應解讀為原模型必需步驟。
+
+<!-- wi033-engineering:start -->
+## WI-033 工程圖修正
+
+### RD4AD：正常資料教瓶頸與反向學生
+
+教師固定，正常訓練更新單類瓶頸與反向學生。重建的是多尺度特徵，與同尺度教師表示比較形成位置線索；不是由模型修復物理工件，沒有尺寸或允收保證。
+
+先固定教師，正常資料再訓練重建表示。
+
+來源：https://openaccess.thecvf.com/content/CVPR2022/html/Deng_Anomaly_Detection_via_Reverse_Distillation_From_One-Class_Embedding_CVPR_2022_paper.html
+
+### RD4AD：从瓶頸反向重建教師特徵
+
+固定教師編碼器抽多尺度特徵，可訓練one-class瓶頸和反向學生解碼器以正常資料學重建。學生輸入是教師嵌入，不是原圖；對應尺度的教師與重建特徵以餘弦差異比較並映回位置。教師高低尺度與學生逆向重建對應清楚，不把輸出說成修復照片。
+
+學生從教師嵌入重建，逐尺度對照教師。
+
+來源：https://openaccess.thecvf.com/content/CVPR2022/html/Deng_Anomaly_Detection_via_Reverse_Distillation_From_One-Class_Embedding_CVPR_2022_paper.html
+
+### RD4AD：教師、瓶頸、學生是一組
+
+保存教師、瓶頸和學生權重及各層的配對、前處理、插值、餘弦差與彙整。避免只部署學生而沒有教師嵌入來源；域內正常光澤和小刮傷都需獨立驗。
+
+三組權重與尺度配對固定，才能重現差異。
+
+來源：https://openaccess.thecvf.com/content/CVPR2022/html/Deng_Anomaly_Detection_via_Reverse_Distillation_From_One-Class_Embedding_CVPR_2022_paper.html
+
+### RD4AD與AE：重建的對象不同
+
+在同檢查工件上，RD4AD重建特徵並比餘弦差；AE基線重建像素並在相同位置相減。像素差110和特徵差不是同一尺度的數字，不能直接比較大小判方法好壞。
+
+特徵重建與像素重建，不能共用同一解讀。
+
+來源：https://openaccess.thecvf.com/content/CVPR2022/html/Deng_Anomaly_Detection_via_Reverse_Distillation_From_One-Class_Embedding_CVPR_2022_paper.html
+
+<!-- wi033-engineering:end -->

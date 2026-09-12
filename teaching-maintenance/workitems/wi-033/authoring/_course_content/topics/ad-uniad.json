@@ -1,0 +1,572 @@
+{
+  "model": "UniAD",
+  "badge": "多類正常共訓，特徵重建",
+  "title": "UniAD：多類正常，共用一個重建模型",
+  "scenario": {
+    "title": "三種產品，共用模型如何驗證",
+    "body": "多種產品想共用模型：用正常資料學特徵重建，避免缺陷被原樣照抄。"
+  },
+  "promise": {
+    "title": "可覆核的特徵差異位置圖",
+    "body": "提供可疑位置與候選分數；不直接交付尺寸、根因或放行判定。"
+  },
+  "mental_model": {
+    "title": "UniAD：多類正常，共用一個重建模型",
+    "body": "多類正常影像共訓重建模型，骨幹固定。UniAD 在注意力中遮住自己與近鄰，配合逐層查詢與訓練時特徵擾動，減少從輸入直接複製；推論比較原始與重建特徵，將差異排回位置圖。",
+    "limit": "正常外觀可能誤報，缺陷也可能被重建；按產品保留未見資料驗證。"
+  },
+  "micro_example": {
+    "title": "加入新接頭後，要整批重訓還是先試？",
+    "setup": "既有金屬板與陶瓷板共用 UniAD；新增透明接頭，正常反光常被標紅，原有陶瓷細裂也偶有漏檢。",
+    "prediction": "只提高共同門檻、補新產品正常資料適配，或保留分產品模型，怎麼選？",
+    "reveal": "先按產品留出獨立正常與真缺陷，確認透明接頭的允收反光和裂紋可見度。提高共同門檻可能減少新產品誤報卻增加舊產品漏檢；適配後也需重驗舊產品。可比較共用模型與分產品模型的各類錯誤、訓練維護量、延遲及覆核成本。"
+  },
+  "mechanism_steps": [
+    {
+      "title": "把各類 ROI 轉成共享的多層 feature",
+      "body": "多類別 clean normal ROI 經固定 backbone、selected maps、ROI/transform，形成 layer features；保留 category IDs與coverage。",
+      "why": "共享特徵空間若被大宗類別主導，稀有類別可能沒有可重建的正常表示。",
+      "anchor": "工程圖核對：class ROI → multi-layer backbone features",
+      "diagram": {
+        "title": "各類 ROI 進共享特徵",
+        "body": "固定 backbone 產生多層 feature 並保留 category。",
+        "why": "大宗類別可能壓過稀有類別。",
+        "anchor": "class ROI → multi-layer features"
+      }
+    },
+    {
+      "title": "用 jitter 與 neighbor mask 限制 copy",
+      "body": "訓練時在 feature 加 jitter，layer-wise queries 經 masked decoder 重建 feature，遮住不應直接讀取的鄰近資訊。",
+      "why": "純重建容易把異常 feature 原樣傳遞；控制使模型必須依更廣的正常規律預測局部。",
+      "anchor": "工程圖核對：feature jitter + queries + neighbor mask",
+      "diagram": {
+        "title": "jitter 與 mask 阻斷 copy",
+        "body": "queries 在遮住近鄰捷徑下重建 feature。",
+        "why": "避免異常 feature 被直接傳遞。",
+        "anchor": "jitter + queries + neighbor mask"
+      }
+    },
+    {
+      "title": "每層量原 feature 與重建 feature 的差距",
+      "body": "測試 feature 經同一 query/mask path，依固定 distance 得到每層 local residual map。",
+      "why": "高 residual 表示這條受控共享路徑無法復原局部，不等於缺陷類別或產品放行結論。",
+      "anchor": "工程圖核對：layer-wise reconstruction residual",
+      "diagram": {
+        "title": "逐層量重建 residual",
+        "body": "原 feature 對重建 feature 形成 local map。",
+        "why": "高 residual 只是候選，不是放行結論。",
+        "anchor": "feature ↔ reconstruction residual"
+      }
+    },
+    {
+      "title": "融合後仍以每個 category 做 review",
+      "body": "各層 map 經 resize、fusion、aggregation、threshold 形成候選，並按每類保存 low-FPR、review load 和 future/drift evidence。",
+      "why": "共享模型的平均表現可掩蓋罕見產品的分數尾端；每類的 operating point 不能由 pooled result 代替。",
+      "anchor": "工程圖核對：layer fusion → per-category gate",
+      "diagram": {
+        "title": "融合後按類別 review",
+        "body": "各層 residual 聚合為每類 candidate score。",
+        "why": "pooled 結果不能取代每類 operating point。",
+        "anchor": "layer fusion → per-category gate"
+      }
+    }
+  ],
+  "visual_intro": "先理解『遮住鄰居不是裝飾，而是防抄寫』，再核對 shared features、jitter/mask、residual 和每類 evidence。",
+  "beginner_path": {
+    "title": "多類正常共訓：核心做法、逐類反例與條件選型",
+    "intro": "三張首讀圖以金屬板、連接器與陶瓷板說明；全部為教學示意，非模型實測。",
+    "visuals": [
+      {
+        "id": "wi021-ad-uniad-1",
+        "title": "UniAD：多類正常，共用一個重建模型",
+        "prompt": "從正常資料建立重建能力，再追待測金屬板 A 的刮傷 p。",
+        "caption": "多類正常影像共訓重建模型，骨幹固定。UniAD 在注意力中遮住自己與近鄰，配合逐層查詢與訓練時特徵擾動，減少從輸入直接複製；推論比較原始與重建特徵，將差異排回位置圖。",
+        "image": "_course_content/generated-concepts/ad-uniad/wi021-uniad-c1-r02-desktop.png",
+        "alt": "UniAD：多類正常，共用一個重建模型。多類正常影像共訓重建模型，骨幹固定。UniAD 在注意力中遮住自己與近鄰，配合逐層查詢與訓練時特徵擾動，減少從輸入直接複製；推論比較原始與重建特徵，將差異排回位置圖。 本圖為 AI 生成教學示意，非模型實測。",
+        "callouts": [
+          {
+            "title": "為什麼不讓它照抄",
+            "body": "如果正常與缺陷都被原樣複製，差異就失去線索。注意力遮蔽限制可取用的特徵連線，不是把待測影像塗掉，也不是缺陷真值 mask。"
+          },
+          {
+            "title": "正常知識如何學到",
+            "body": "固定骨幹提取多類正常特徵，訓練編碼與逐層查詢解碼的重建部分；擾動讓模型練習由受干擾表示還原正常表示。"
+          },
+          {
+            "title": "p 代表什麼",
+            "body": "原始與重建同位置 p 的表示不同，才有可回看的差異；限制照抄也不保證每一種異常都留下差異。"
+          }
+        ],
+        "reading_views": [
+          {
+            "title": "UniAD：多類正常，共用一個重建模型",
+            "image": "_course_content/generated-concepts/ad-uniad/wi021-uniad-c1-r02-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/ad-uniad/wi021-uniad-c1-r02-mobile.png",
+            "alt": "UniAD：多類正常，共用一個重建模型。多類正常影像共訓重建模型，骨幹固定。UniAD 在注意力中遮住自己與近鄰，配合逐層查詢與訓練時特徵擾動，減少從輸入直接複製；推論比較原始與重建特徵，將差異排回位置圖。 本圖為 AI 生成教學示意，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              724,
+              2172
+            ],
+            "mobile_display_mode": "full-mobile",
+            "mobile_intrinsic_width": 724,
+            "mobile_intrinsic_height": 2172,
+            "desktop_intrinsic_width": 1672,
+            "desktop_intrinsic_height": 941
+          }
+        ],
+        "core_ideas": true
+      },
+      {
+        "id": "wi021-ad-uniad-2",
+        "title": "共用模型，不能只看平均結果",
+        "prompt": "以正常孔邊 q 與細刮傷 p 對照誤報、漏檢，再分開檢查三種產品。",
+        "caption": "正常外觀未被資料涵蓋，原始與重建特徵在 q 不同，可能誤報；刮傷 p 若也被重建得相近，反而可能漏檢。多類共訓可減少模型管理，但每類都要另留未見正常與真缺陷驗證。",
+        "image": "_course_content/generated-concepts/ad-dinomaly/wi021-multi-reconstruction-d2-r02-desktop.png",
+        "alt": "共用模型，不能只看平均結果。正常外觀未被資料涵蓋，原始與重建特徵在 q 不同，可能誤報；刮傷 p 若也被重建得相近，反而可能漏檢。多類共訓可減少模型管理，但每類都要另留未見正常與真缺陷驗證。 本圖為 AI 生成教學示意，非模型實測。",
+        "callouts": [
+          {
+            "title": "正常資料要涵蓋什麼",
+            "body": "分開不同實體件與批次，涵蓋允收的反光、紋理與姿態；不要把近似照片分到訓練和驗證兩邊。"
+          },
+          {
+            "title": "兩種錯誤一起看",
+            "body": "先回看 p、q 原圖確認可見度與允收範圍。按產品記錄誤報、漏檢和覆核量，不能讓大類別掩蓋小類別失敗。"
+          },
+          {
+            "title": "成本怎麼量",
+            "body": "在相同硬體、解析度、前處理及風險要求下量端到端延遲與覆核量；提高門檻可能少誤報而多漏檢。"
+          }
+        ],
+        "reading_views": [
+          {
+            "title": "共用模型，不能只看平均結果",
+            "image": "_course_content/generated-concepts/ad-dinomaly/wi021-multi-reconstruction-d2-r02-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/ad-dinomaly/wi021-multi-reconstruction-d2-r03-mobile.png",
+            "alt": "共用模型，不能只看平均結果。正常外觀未被資料涵蓋，原始與重建特徵在 q 不同，可能誤報；刮傷 p 若也被重建得相近，反而可能漏檢。多類共訓可減少模型管理，但每類都要另留未見正常與真缺陷驗證。 本圖為 AI 生成教學示意，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              724,
+              2172
+            ],
+            "mobile_display_mode": "full-mobile",
+            "mobile_intrinsic_width": 724,
+            "mobile_intrinsic_height": 2172,
+            "desktop_intrinsic_width": 1672,
+            "desktop_intrinsic_height": 941
+          }
+        ],
+        "core_ideas": false
+      },
+      {
+        "id": "wi021-ad-uniad-3",
+        "title": "三種多類重建，差異在哪裡？",
+        "prompt": "固定多類正常資料與未見驗證，看限制複製、分散分組及輸入條件調制三條路。",
+        "caption": "UniAD 用注意力遮蔽、逐層查詢及特徵擾動限制照抄；原版 Dinomaly 結合基礎特徵、Dropout 瓶頸、線性注意力及寬鬆重建；InvAD 由輸入產生空間條件調制生成特徵。三者都需正常訓練，位置線索不能直接當精密輪廓。",
+        "image": "_course_content/generated-concepts/ad-dinomaly/wi021-multi-reconstruction-d3-r02-desktop.png",
+        "alt": "三種多類重建，差異在哪裡？。UniAD 用注意力遮蔽、逐層查詢及特徵擾動限制照抄；原版 Dinomaly 結合基礎特徵、Dropout 瓶頸、線性注意力及寬鬆重建；InvAD 由輸入產生空間條件調制生成特徵。三者都需正常訓練，位置線索不能直接當精密輪廓。 本圖為 AI 生成教學示意，非模型實測。",
+        "callouts": [
+          {
+            "title": "只有正常品時怎麼起步",
+            "body": "三者均可列入正常訓練候選；選定既有骨幹與實作後，固定未見資料比較各類錯誤。缺正常資料時，不能把多類模型當免適配捷徑。"
+          },
+          {
+            "title": "換產品與速度的取捨",
+            "body": "補新產品正常資料並核對適配或重訓需求。按同一漏檢風險要求，比誤報、端到端時間與人工覆核量；沒有共同實測就不排名。"
+          },
+          {
+            "title": "怎麼選下一個實驗",
+            "body": "照抄是主要問題可先試 UniAD 的限制；想評估強特徵與分組策略可試 Dinomaly；想核對輸入條件式細節重建可試 InvAD。這是實驗起點，不是性能保證。"
+          }
+        ],
+        "reading_views": [
+          {
+            "title": "三種多類重建，差異在哪裡？",
+            "image": "_course_content/generated-concepts/ad-dinomaly/wi021-multi-reconstruction-d3-r02-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/ad-dinomaly/wi021-multi-reconstruction-d3-r02-mobile.png",
+            "alt": "三種多類重建，差異在哪裡？。UniAD 用注意力遮蔽、逐層查詢及特徵擾動限制照抄；原版 Dinomaly 結合基礎特徵、Dropout 瓶頸、線性注意力及寬鬆重建；InvAD 由輸入產生空間條件調制生成特徵。三者都需正常訓練，位置線索不能直接當精密輪廓。 本圖為 AI 生成教學示意，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              724,
+              2172
+            ],
+            "mobile_display_mode": "full-mobile",
+            "mobile_intrinsic_width": 724,
+            "mobile_intrinsic_height": 2172,
+            "desktop_intrinsic_width": 1672,
+            "desktop_intrinsic_height": 941
+          }
+        ],
+        "core_ideas": false
+      }
+    ]
+  },
+  "concept_visuals": [],
+  "boundary_cases": [
+    {
+      "condition": "neighbor mask/jitter 太弱，模型走 identity shortcut",
+      "effect": "異常 feature 可被近鄰或輸入捷徑重建，residual 變小，造成 escape。",
+      "action": "HOLD；做 mask/jitter ablation，檢查真實 escaped defects，不用訓練 loss 取代。"
+    },
+    {
+      "condition": "mask/jitter 太強、normal modes 不足或稀有類別被壓縮",
+      "effect": "合法正常 feature 也無法復原，特定類別 false reject 高。",
+      "action": "按 category、lot、view 分層驗每類 support、threshold、review load 和 future split。"
+    },
+    {
+      "condition": "tiny defect、ROI/drift 或 global logical anomaly",
+      "effect": "feature stride 或後處理可能抹掉小訊號；共享重建也未必表達缺件與關係。",
+      "action": "驗 effective pixels/acquisition state；改用合適的結構或規則 path，條件不成立先 HOLD。"
+    }
+  ],
+  "comparison": [
+    {
+      "model": "UniAD",
+      "normality": "jitter/masked layer-query decoder 對 shared normal features 的可重建性",
+      "candidate": "layer residual 大"
+    },
+    {
+      "model": "Dinomaly",
+      "normality": "anti-copy decoder 對 foundation normal tokens 的可重建性",
+      "candidate": "token residual 大"
+    },
+    {
+      "model": "STFPM",
+      "normality": "student 對 frozen teacher feature pyramid 的模仿",
+      "candidate": "teacher/student discrepancy 大"
+    }
+  ],
+  "selection": "UniAD 用注意力遮蔽、逐層查詢及特徵擾動限制照抄；原版 Dinomaly 結合基礎特徵、Dropout 瓶頸、線性注意力及寬鬆重建；InvAD 由輸入產生空間條件調制生成特徵。三者都需正常訓練，位置線索不能直接當精密輪廓。 補新產品正常資料並核對適配或重訓需求。按同一漏檢風險要求，比誤報、端到端時間與人工覆核量；沒有共同實測就不排名。",
+  "poc": {
+    "title": "POC 第一件事：先證明共享模型沒有拿稀有類別當噪音",
+    "steps": [
+      "固定 category IDs/coverage、backbone/layers、ROI/transform、feature jitter、query decoder、neighbor mask、loss、seed和checkpoint。",
+      "鎖 layer residual、resize/fusion、aggregation、calibration、per-category threshold和candidate evidence trace。",
+      "以mask/jitter ablation及每類challenge/future/drift split 比較escape、false reject/review load、tiny defect、P95和shared-vs-per-class cost。"
+    ],
+    "hold": "類別coverage不明、anti-copy設定不可重播、support受污染、per-category evidence缺失、tiny defect/global logic或完整P95未驗時，先 HOLD。",
+    "acceptance": {
+      "baseline": "固定 NeurIPS-2022 UniAD config、category roster、backbone/layers、jitter、layer queries、neighbor mask、residual fusion 與每類 calibration。",
+      "measure": "逐類量 low-FPR escape、false reject、review load、mask/jitter ablation、tiny-defect evidence、shared-vs-per-class cost 與完整 P95。",
+      "negative_control": "弱化 neighbor mask／feature jitter，或留出 rare category，確認 identity shortcut 和 pooled score 如何掩蓋 per-category failure。",
+      "owner": "各類別 AOI owner、shared-model ML owner、品質 governance owner"
+    }
+  },
+  "teach_back": {
+    "question": "為什麼重建誤差變小，不一定檢測變好？",
+    "answer": "正常與異常都重建得像，差異可能一起縮小；要分開看正常誤報與缺陷漏檢，才能判斷檢測能力。"
+  },
+  "slide_reading": [
+    {
+      "title": "UniAD：多類正常，共用重建模型",
+      "question": "共用模型仍要涵蓋每類正常變化。",
+      "look": "先看金屬板與其他正常類共同準備，再核對固定骨幹後學重建表示，最後看同位置原特徵與重建比較。",
+      "relation": "多類正常資料共訓一個重建模型，固定預訓練骨幹，減少每類獨立模型的維護負擔。不能因共用模型就混淆類別允收；每個產品仍需獨立保留驗證與可追溯輸出。",
+      "takeaway": "共用模型仍要涵蓋每類正常變化。",
+      "terms": [
+        "特徵：模型的中間表示，與影像像素分開。",
+        "圖中數值：作者給定算例，不是本輪模型實測。"
+      ]
+    },
+    {
+      "title": "UniAD：限制注意力照抄，再重建",
+      "question": "遮的是特徵取用連線，原影像仍完整。",
+      "look": "先看同圖抽特徵，原圖不擦除，再核對p不能讀自己與近鄰，最後看query引導重建後比特徵。",
+      "relation": "多類正常共同訓練重建模型，固定骨幹。neighbor-masked attention限制當前位置讀自己及近鄰的連線；layer-wise query與訓練特徵擾動降低相同捷徑。推論不做訓練擾動，將原特徵與重建同位置差異映回位置；本圖5x5只是注意力鄰域示意，不是固定輸入尺寸。",
+      "takeaway": "遮的是特徵取用連線，原影像仍完整。",
+      "terms": [
+        "特徵：模型的中間表示，與影像像素分開。",
+        "圖中數值：作者給定算例，不是本輪模型實測。"
+      ]
+    },
+    {
+      "title": "UniAD：訓練擾動與推論設定分開",
+      "question": "部署讀原特徵，保存遮蔽與query設定。",
+      "look": "先看訓練：擾動特徵再學還原，再核對推論：關閉訓練擾動，最後看按每個產品核對錯誤。",
+      "relation": "保存骨幹、重建模型、逐層query、注意力鄰域與訓練擾動設定。推論使用eval設定而非繼續訓練噪聲擾動；位置圖回原圖並按類別評正常誤報/缺陷漏檢，單一平均分數可能掩蓋弱類別。",
+      "takeaway": "部署讀原特徵，保存遮蔽與query設定。",
+      "terms": [
+        "特徵：模型的中間表示，與影像像素分開。",
+        "圖中數值：作者給定算例，不是本輪模型實測。"
+      ]
+    },
+    {
+      "title": "UniAD：限制照抄，不等於必定抓到缺陷",
+      "question": "注意力限制是設計手段，差異仍需真例驗證。",
+      "look": "先看若原特徵與重建完全一樣，再核對限制p讀取自己的近鄰，最後看仍用同件缺陷和正常驗證。",
+      "relation": "相同捷徑使任何輸入都能重建，位置差異可能消失；neighbor mask/learned query/特徵擾動針對此問題，但並不保證每個異常產生大差異。圖中注意力格不等於擦掉原圖，避免把方法動機當結果保證。",
+      "takeaway": "注意力限制是設計手段，差異仍需真例驗證。",
+      "terms": [
+        "特徵：模型的中間表示，與影像像素分開。",
+        "圖中數值：作者給定算例，不是本輪模型實測。"
+      ]
+    }
+  ],
+  "comparison_headers": {
+    "title": "先比 shared anti-copy controls，不比 pooled metric",
+    "basis": "shared decoder 如何避免抄輸入？",
+    "output": "每類 residual 如何才可進 review？"
+  },
+  "transfer_check": {
+    "title": "新產品能直接沿用嗎",
+    "scenario": "加入外觀不同的新產品，想沿用既有模型和門檻。",
+    "question": "共用模型是否代表不需新資料？",
+    "answer": "仍需新產品正常涵蓋、獨立驗證與適配評估；更新後同時重驗既有產品，避免平均分掩蓋退步。"
+  },
+  "review_trace": {
+    "authority": "roadmap-model-selection/anomaly-detection/ad-uniad/model.md",
+    "scope": "WI-033：工程層四圖與手機比較修正；首讀有效內容保留。原生圖已審，整頁與使用者審閱另記。",
+    "claims": [
+      {
+        "id": "visual-1",
+        "field": "beginner_path.visuals[shared-workpiece]",
+        "source": "模型定位 / architecture_path"
+      },
+      {
+        "id": "visual-2",
+        "field": "beginner_path.visuals[roster-coverage]",
+        "source": "architecture_path"
+      },
+      {
+        "id": "visual-3",
+        "field": "beginner_path.visuals[neighbor-mask-query]",
+        "source": "representation_or_score"
+      },
+      {
+        "id": "visual-4",
+        "field": "beginner_path.visuals[layer-feature-residual]",
+        "source": "failure_boundary"
+      },
+      {
+        "id": "visual-5",
+        "field": "beginner_path.visuals[per-category-evidence]",
+        "source": "selection_gate / evidence_bundle"
+      },
+      {
+        "id": "promise",
+        "field": "promise",
+        "source": "模型定位 / representation_or_score"
+      },
+      {
+        "id": "mechanism",
+        "field": "mechanism_steps",
+        "source": "architecture_path / representation_or_score"
+      },
+      {
+        "id": "boundaries",
+        "field": "boundary_cases",
+        "source": "failure_boundary / selection_gate"
+      },
+      {
+        "id": "comparison",
+        "field": "comparison + selection",
+        "source": "selection_gate"
+      },
+      {
+        "id": "poc",
+        "field": "poc + acceptance",
+        "source": "cost_and_operating_point / evidence_bundle"
+      },
+      {
+        "id": "transfer",
+        "field": "transfer_check",
+        "source": "failure_boundary / selection_gate"
+      },
+      {
+        "id": "f01-core",
+        "field": "beginner_path.visuals[0] + scenario + mental_model",
+        "source": "https://arxiv.org/abs/2206.03687"
+      },
+      {
+        "id": "f01-transfer",
+        "field": "micro_example + transfer_check",
+        "source": "由原論文機制推論移除後果；https://arxiv.org/abs/2206.03687"
+      },
+      {
+        "id": "wi021-first-read",
+        "field": "beginner_path + micro_example + selection",
+        "source": "https://arxiv.org/html/2206.03687v3"
+      }
+    ]
+  },
+  "teaching_preflight": {
+    "brief": "teaching-images/vision-ai-model-selection/workitems/wi-021/uniad-c1-r01.md",
+    "story": "C",
+    "major_visual_nodes": 4,
+    "visual_status": "self-reviewed",
+    "user_review": "pending"
+  },
+  "engineering_slides": [
+    {
+      "title": "UniAD：多類正常，共用重建模型",
+      "question": "共用模型仍要涵蓋每類正常變化。",
+      "plain": {
+        "look": "先看金屬板與其他正常類共同準備，再核對固定骨幹後學重建表示，最後看同位置原特徵與重建比較。",
+        "relation": "多類正常資料共訓一個重建模型，固定預訓練骨幹，減少每類獨立模型的維護負擔。不能因共用模型就混淆類別允收；每個產品仍需獨立保留驗證與可追溯輸出。",
+        "takeaway": "共用模型仍要涵蓋每類正常變化。"
+      },
+      "terms": [
+        "特徵：模型的中間表示，與影像像素分開。",
+        "圖中數值：作者給定算例，不是本輪模型實測。"
+      ],
+      "guide": [
+        "多類正常資料共訓一個重建模型，固定預訓練骨幹，減少每類獨立模型的維護負擔。不能因共用模型就混淆類別允收；每個產品仍需獨立保留驗證與可追溯輸出。",
+        "先看金屬板與其他正常類共同準備，再核對固定骨幹後學重建表示，最後看同位置原特徵與重建比較。"
+      ],
+      "stages": [
+        {
+          "title": "金屬板與其他正常類共同準備",
+          "body": "金屬板與其他正常類共同準備；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "固定骨幹後學重建表示",
+          "body": "固定骨幹後學重建表示；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "同位置原特徵與重建比較",
+          "body": "同位置原特徵與重建比較；請對照圖內輸入、變化與結果。"
+        }
+      ],
+      "misconception": "正常外觀可能誤報，缺陷也可能被重建；按產品保留未見資料驗證。",
+      "alt": "UniAD：多類正常，共用重建模型。共用模型仍要涵蓋每類正常變化。 教學示意，非模型實測。",
+      "mobile_image": "roadmap-model-selection/anomaly-detection/ad-uniad/images/final/WI033-UNIAD-01-r01-mobile.png",
+      "mobile_width": 768,
+      "mobile_height": 2304,
+      "engineering": {
+        "takeaway": "共用模型仍要涵蓋每類正常變化。",
+        "nextAction": "固定 category IDs/coverage、backbone/layers、ROI/transform、feature jitter、query decoder、neighbor mask、loss、seed和checkpoint。",
+        "redLine": "類別coverage不明、anti-copy設定不可重播、support受污染、per-category evidence缺失、tiny defect/global logic或完整P95未驗時，先 HOLD。"
+      },
+      "source": "https://arxiv.org/abs/2206.03687"
+    },
+    {
+      "title": "UniAD：限制注意力照抄，再重建",
+      "question": "遮的是特徵取用連線，原影像仍完整。",
+      "plain": {
+        "look": "先看同圖抽特徵，原圖不擦除，再核對p不能讀自己與近鄰，最後看query引導重建後比特徵。",
+        "relation": "多類正常共同訓練重建模型，固定骨幹。neighbor-masked attention限制當前位置讀自己及近鄰的連線；layer-wise query與訓練特徵擾動降低相同捷徑。推論不做訓練擾動，將原特徵與重建同位置差異映回位置；本圖5x5只是注意力鄰域示意，不是固定輸入尺寸。",
+        "takeaway": "遮的是特徵取用連線，原影像仍完整。"
+      },
+      "terms": [
+        "特徵：模型的中間表示，與影像像素分開。",
+        "圖中數值：作者給定算例，不是本輪模型實測。"
+      ],
+      "guide": [
+        "多類正常共同訓練重建模型，固定骨幹。neighbor-masked attention限制當前位置讀自己及近鄰的連線；layer-wise query與訓練特徵擾動降低相同捷徑。推論不做訓練擾動，將原特徵與重建同位置差異映回位置；本圖5x5只是注意力鄰域示意，不是固定輸入尺寸。",
+        "先看同圖抽特徵，原圖不擦除，再核對p不能讀自己與近鄰，最後看query引導重建後比特徵。"
+      ],
+      "stages": [
+        {
+          "title": "同圖抽特徵，原圖不擦除",
+          "body": "同圖抽特徵，原圖不擦除；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "p不能讀自己與近鄰",
+          "body": "p不能讀自己與近鄰；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "query引導重建後比特徵",
+          "body": "query引導重建後比特徵；請對照圖內輸入、變化與結果。"
+        }
+      ],
+      "misconception": "正常外觀可能誤報，缺陷也可能被重建；按產品保留未見資料驗證。",
+      "alt": "UniAD：限制注意力照抄，再重建。遮的是特徵取用連線，原影像仍完整。 教學示意，非模型實測。",
+      "mobile_image": "roadmap-model-selection/anomaly-detection/ad-uniad/images/final/WI033-UNIAD-02-r02-mobile.png",
+      "mobile_width": 768,
+      "mobile_height": 2304,
+      "engineering": {
+        "takeaway": "遮的是特徵取用連線，原影像仍完整。",
+        "nextAction": "固定 category IDs/coverage、backbone/layers、ROI/transform、feature jitter、query decoder、neighbor mask、loss、seed和checkpoint。",
+        "redLine": "類別coverage不明、anti-copy設定不可重播、support受污染、per-category evidence缺失、tiny defect/global logic或完整P95未驗時，先 HOLD。"
+      },
+      "source": "https://arxiv.org/abs/2206.03687"
+    },
+    {
+      "title": "UniAD：訓練擾動與推論設定分開",
+      "question": "部署讀原特徵，保存遮蔽與query設定。",
+      "plain": {
+        "look": "先看訓練：擾動特徵再學還原，再核對推論：關閉訓練擾動，最後看按每個產品核對錯誤。",
+        "relation": "保存骨幹、重建模型、逐層query、注意力鄰域與訓練擾動設定。推論使用eval設定而非繼續訓練噪聲擾動；位置圖回原圖並按類別評正常誤報/缺陷漏檢，單一平均分數可能掩蓋弱類別。",
+        "takeaway": "部署讀原特徵，保存遮蔽與query設定。"
+      },
+      "terms": [
+        "特徵：模型的中間表示，與影像像素分開。",
+        "圖中數值：作者給定算例，不是本輪模型實測。"
+      ],
+      "guide": [
+        "保存骨幹、重建模型、逐層query、注意力鄰域與訓練擾動設定。推論使用eval設定而非繼續訓練噪聲擾動；位置圖回原圖並按類別評正常誤報/缺陷漏檢，單一平均分數可能掩蓋弱類別。",
+        "先看訓練：擾動特徵再學還原，再核對推論：關閉訓練擾動，最後看按每個產品核對錯誤。"
+      ],
+      "stages": [
+        {
+          "title": "訓練：擾動特徵再學還原",
+          "body": "訓練：擾動特徵再學還原；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "推論：關閉訓練擾動",
+          "body": "推論：關閉訓練擾動；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "按每個產品核對錯誤",
+          "body": "按每個產品核對錯誤；請對照圖內輸入、變化與結果。"
+        }
+      ],
+      "misconception": "正常外觀可能誤報，缺陷也可能被重建；按產品保留未見資料驗證。",
+      "alt": "UniAD：訓練擾動與推論設定分開。部署讀原特徵，保存遮蔽與query設定。 教學示意，非模型實測。",
+      "mobile_image": "roadmap-model-selection/anomaly-detection/ad-uniad/images/final/WI033-UNIAD-03-r01-mobile.png",
+      "mobile_width": 768,
+      "mobile_height": 2304,
+      "engineering": {
+        "takeaway": "部署讀原特徵，保存遮蔽與query設定。",
+        "nextAction": "固定 category IDs/coverage、backbone/layers、ROI/transform、feature jitter、query decoder、neighbor mask、loss、seed和checkpoint。",
+        "redLine": "類別coverage不明、anti-copy設定不可重播、support受污染、per-category evidence缺失、tiny defect/global logic或完整P95未驗時，先 HOLD。"
+      },
+      "source": "https://arxiv.org/abs/2206.03687"
+    },
+    {
+      "title": "UniAD：限制照抄，不等於必定抓到缺陷",
+      "question": "注意力限制是設計手段，差異仍需真例驗證。",
+      "plain": {
+        "look": "先看若原特徵與重建完全一樣，再核對限制p讀取自己的近鄰，最後看仍用同件缺陷和正常驗證。",
+        "relation": "相同捷徑使任何輸入都能重建，位置差異可能消失；neighbor mask/learned query/特徵擾動針對此問題，但並不保證每個異常產生大差異。圖中注意力格不等於擦掉原圖，避免把方法動機當結果保證。",
+        "takeaway": "注意力限制是設計手段，差異仍需真例驗證。"
+      },
+      "terms": [
+        "特徵：模型的中間表示，與影像像素分開。",
+        "圖中數值：作者給定算例，不是本輪模型實測。"
+      ],
+      "guide": [
+        "相同捷徑使任何輸入都能重建，位置差異可能消失；neighbor mask/learned query/特徵擾動針對此問題，但並不保證每個異常產生大差異。圖中注意力格不等於擦掉原圖，避免把方法動機當結果保證。",
+        "先看若原特徵與重建完全一樣，再核對限制p讀取自己的近鄰，最後看仍用同件缺陷和正常驗證。"
+      ],
+      "stages": [
+        {
+          "title": "若原特徵與重建完全一樣",
+          "body": "若原特徵與重建完全一樣；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "限制p讀取自己的近鄰",
+          "body": "限制p讀取自己的近鄰；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "仍用同件缺陷和正常驗證",
+          "body": "仍用同件缺陷和正常驗證；請對照圖內輸入、變化與結果。"
+        }
+      ],
+      "misconception": "正常外觀可能誤報，缺陷也可能被重建；按產品保留未見資料驗證。",
+      "alt": "UniAD：限制照抄，不等於必定抓到缺陷。注意力限制是設計手段，差異仍需真例驗證。 教學示意，非模型實測。",
+      "mobile_image": "roadmap-model-selection/anomaly-detection/ad-uniad/images/final/WI033-UNIAD-04-r01-mobile.png",
+      "mobile_width": 768,
+      "mobile_height": 2304,
+      "engineering": {
+        "takeaway": "注意力限制是設計手段，差異仍需真例驗證。",
+        "nextAction": "固定 category IDs/coverage、backbone/layers、ROI/transform、feature jitter、query decoder、neighbor mask、loss、seed和checkpoint。",
+        "redLine": "類別coverage不明、anti-copy設定不可重播、support受污染、per-category evidence缺失、tiny defect/global logic或完整P95未驗時，先 HOLD。"
+      },
+      "source": "https://arxiv.org/abs/2206.03687"
+    }
+  ]
+}

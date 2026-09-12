@@ -1,0 +1,1982 @@
+[
+  {
+    "id": "resnet-engineering-1",
+    "image": "resnet-engineering-1-r01-desktop.png",
+    "sha256": "630dadb4b9f0867a9b6fca4b24f4e3f74d05521c29cc41e4c626c2b009a41f3d",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "完整/刮傷標註與整件分數一致；中間殘差例連到更新後表示",
+      "矩陣及分數為給定教學例，照片是幾何示意；不替代域內結果。",
+      "逐張實看選定版本桌機與手機原生PNG，未用測試替代視覺審查"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "淺底三段圖解，精確但較簡化"
+      ],
+      "completeness": [
+        9,
+        "整圖分類要類別標註，細傷位置不會自動交付。"
+      ],
+      "professionalism": [
+        9,
+        "完整/刮傷標註與整件分數一致；中間殘差例連到更新後表示"
+      ],
+      "density": [
+        8,
+        "矩陣及分數為給定教學例，照片是幾何示意；不替代域內結果。"
+      ],
+      "hierarchy": [
+        9,
+        "三節點單讀序及單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch3-page-assessment.json; batch3-deep-page-review.json"
+  },
+  {
+    "id": "resnet-engineering-1",
+    "image": "resnet-engineering-1-r01-mobile.png",
+    "sha256": "3dd0da5dd3c02cfcdd6e543be673f14fade6fdd6d452e08a1be7cedb5bc18a9e",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "完整/刮傷標註與整件分數一致；中間殘差例連到更新後表示",
+      "矩陣及分數為給定教學例，照片是幾何示意；不替代域內結果。",
+      "逐張實看選定版本桌機與手機原生PNG，未用測試替代視覺審查"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "淺底三段圖解，精確但較簡化"
+      ],
+      "completeness": [
+        9,
+        "整圖分類要類別標註，細傷位置不會自動交付。"
+      ],
+      "professionalism": [
+        9,
+        "完整/刮傷標註與整件分數一致；中間殘差例連到更新後表示"
+      ],
+      "density": [
+        8,
+        "矩陣及分數為給定教學例，照片是幾何示意；不替代域內結果。"
+      ],
+      "hierarchy": [
+        9,
+        "三節點單讀序及單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch3-page-assessment.json; batch3-deep-page-review.json"
+  },
+  {
+    "id": "resnet-engineering-3",
+    "image": "resnet-engineering-3-r01-desktop.png",
+    "sha256": "3c22c329e965ae24a69def7ff53449596f7da6a9ed5a73c59510f538cc89fe3b",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "兩張不同特徵圖平均均1，可見分類彙整丟失空間；類別映射留存",
+      "矩陣及分數為給定教學例，照片是幾何示意；不替代域內結果。",
+      "逐張實看選定版本桌機與手機原生PNG，未用測試替代視覺審查"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "淺底三段圖解，精確但較簡化"
+      ],
+      "completeness": [
+        9,
+        "保存類別映射與前處理，換批次後重驗誤判。"
+      ],
+      "professionalism": [
+        9,
+        "兩張不同特徵圖平均均1，可見分類彙整丟失空間；類別映射留存"
+      ],
+      "density": [
+        8,
+        "矩陣及分數為給定教學例，照片是幾何示意；不替代域內結果。"
+      ],
+      "hierarchy": [
+        9,
+        "三節點單讀序及單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch3-page-assessment.json; batch3-deep-page-review.json"
+  },
+  {
+    "id": "resnet-engineering-3",
+    "image": "resnet-engineering-3-r01-mobile.png",
+    "sha256": "78f0a1ab03ab3a3bfe70570efbc5d0ee59f8f071ba5ecd692b7ce961aeb81eca",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "兩張不同特徵圖平均均1，可見分類彙整丟失空間；類別映射留存",
+      "矩陣及分數為給定教學例，照片是幾何示意；不替代域內結果。",
+      "逐張實看選定版本桌機與手機原生PNG，未用測試替代視覺審查"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "淺底三段圖解，精確但較簡化"
+      ],
+      "completeness": [
+        9,
+        "保存類別映射與前處理，換批次後重驗誤判。"
+      ],
+      "professionalism": [
+        9,
+        "兩張不同特徵圖平均均1，可見分類彙整丟失空間；類別映射留存"
+      ],
+      "density": [
+        8,
+        "矩陣及分數為給定教學例，照片是幾何示意；不替代域內結果。"
+      ],
+      "hierarchy": [
+        9,
+        "三節點單讀序及單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch3-page-assessment.json; batch3-deep-page-review.json"
+  },
+  {
+    "id": "resnet-engineering-4",
+    "image": "resnet-engineering-4-r01-desktop.png",
+    "sha256": "1c6e4a6d61777aa439bc733d2d7dfbdd84aee3290828c4e949e767159c26e8f4",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "同件同刮傷只换背景，分類分數與需另標像素的定位責任分開",
+      "矩陣及分數為給定教學例，照片是幾何示意；不替代域內結果。",
+      "逐張實看選定版本桌機與手機原生PNG，未用測試替代視覺審查"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "淺底三段圖解，精確但較簡化"
+      ],
+      "completeness": [
+        9,
+        "同件換背景測捷徑，定位需求另選位置輸出。"
+      ],
+      "professionalism": [
+        9,
+        "同件同刮傷只换背景，分類分數與需另標像素的定位責任分開"
+      ],
+      "density": [
+        8,
+        "矩陣及分數為給定教學例，照片是幾何示意；不替代域內結果。"
+      ],
+      "hierarchy": [
+        9,
+        "三節點單讀序及單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch3-page-assessment.json; batch3-deep-page-review.json"
+  },
+  {
+    "id": "resnet-engineering-4",
+    "image": "resnet-engineering-4-r01-mobile.png",
+    "sha256": "85078e87e856166dbd9ea92acea0cb065b504f18a2b8279e1467015760911c55",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "同件同刮傷只换背景，分類分數與需另標像素的定位責任分開",
+      "矩陣及分數為給定教學例，照片是幾何示意；不替代域內結果。",
+      "逐張實看選定版本桌機與手機原生PNG，未用測試替代視覺審查"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "淺底三段圖解，精確但較簡化"
+      ],
+      "completeness": [
+        9,
+        "同件換背景測捷徑，定位需求另選位置輸出。"
+      ],
+      "professionalism": [
+        9,
+        "同件同刮傷只换背景，分類分數與需另標像素的定位責任分開"
+      ],
+      "density": [
+        8,
+        "矩陣及分數為給定教學例，照片是幾何示意；不替代域內結果。"
+      ],
+      "hierarchy": [
+        9,
+        "三節點單讀序及單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch3-page-assessment.json; batch3-deep-page-review.json"
+  },
+  {
+    "id": "convnext-engineering-1",
+    "image": "convnext-engineering-1-r01-desktop.png",
+    "sha256": "c657c020bba221bcf545c63b83a57b21767180a1c940f4c2fe8b8f09450137b8",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "空間鄰域/通道組合分工接整件分類，不把分數作位置圖",
+      "比較重用共同輸入以控制條件，質感較簡單；時間需實測。",
+      "逐張實看選定版本桌機與手機原生PNG，未用測試替代視覺審查"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "淺底三段圖解，精確但較簡化"
+      ],
+      "completeness": [
+        9,
+        "先定義類別，再用分層卷積彙整影像。"
+      ],
+      "professionalism": [
+        9,
+        "空間鄰域/通道組合分工接整件分類，不把分數作位置圖"
+      ],
+      "density": [
+        8,
+        "比較重用共同輸入以控制條件，質感較簡單；時間需實測。"
+      ],
+      "hierarchy": [
+        9,
+        "三節點單讀序及單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch3-page-assessment.json; batch3-deep-page-review.json"
+  },
+  {
+    "id": "convnext-engineering-1",
+    "image": "convnext-engineering-1-r01-mobile.png",
+    "sha256": "faa66a2036791a3aa55eb97ed3af8a96016407ec3b333969832e6a3c2eacafd3",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "空間鄰域/通道組合分工接整件分類，不把分數作位置圖",
+      "比較重用共同輸入以控制條件，質感較簡單；時間需實測。",
+      "逐張實看選定版本桌機與手機原生PNG，未用測試替代視覺審查"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "淺底三段圖解，精確但較簡化"
+      ],
+      "completeness": [
+        9,
+        "先定義類別，再用分層卷積彙整影像。"
+      ],
+      "professionalism": [
+        9,
+        "空間鄰域/通道組合分工接整件分類，不把分數作位置圖"
+      ],
+      "density": [
+        8,
+        "比較重用共同輸入以控制條件，質感較簡單；時間需實測。"
+      ],
+      "hierarchy": [
+        9,
+        "三節點單讀序及單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch3-page-assessment.json; batch3-deep-page-review.json"
+  },
+  {
+    "id": "convnext-engineering-3",
+    "image": "convnext-engineering-3-r01-desktop.png",
+    "sha256": "1bc25cbc2be510c97fd03058745d3107faf15afd8b7996f85cdecd96590c5205",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "前處理、彙整與逐類錯分在同一交付鏈；平均例可追",
+      "比較重用共同輸入以控制條件，質感較簡單；時間需實測。",
+      "逐張實看選定版本桌機與手機原生PNG，未用測試替代視覺審查"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "淺底三段圖解，精確但較簡化"
+      ],
+      "completeness": [
+        9,
+        "保存模型配置，測完整分類流程與錯分代價。"
+      ],
+      "professionalism": [
+        9,
+        "前處理、彙整與逐類錯分在同一交付鏈；平均例可追"
+      ],
+      "density": [
+        8,
+        "比較重用共同輸入以控制條件，質感較簡單；時間需實測。"
+      ],
+      "hierarchy": [
+        9,
+        "三節點單讀序及單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch3-page-assessment.json; batch3-deep-page-review.json"
+  },
+  {
+    "id": "convnext-engineering-3",
+    "image": "convnext-engineering-3-r01-mobile.png",
+    "sha256": "fed5f18f5267b9126e0f625fdbbeaa187c896e536e9603e967c53477c89f1c56",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "前處理、彙整與逐類錯分在同一交付鏈；平均例可追",
+      "比較重用共同輸入以控制條件，質感較簡單；時間需實測。",
+      "逐張實看選定版本桌機與手機原生PNG，未用測試替代視覺審查"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "淺底三段圖解，精確但較簡化"
+      ],
+      "completeness": [
+        9,
+        "保存模型配置，測完整分類流程與錯分代價。"
+      ],
+      "professionalism": [
+        9,
+        "前處理、彙整與逐類錯分在同一交付鏈；平均例可追"
+      ],
+      "density": [
+        8,
+        "比較重用共同輸入以控制條件，質感較簡單；時間需實測。"
+      ],
+      "hierarchy": [
+        9,
+        "三節點單讀序及單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch3-page-assessment.json; batch3-deep-page-review.json"
+  },
+  {
+    "id": "convnext-engineering-4",
+    "image": "convnext-engineering-4-r01-desktop.png",
+    "sha256": "743007b5736f2db4aed424144f1a38bed30d8b2194a0a6d70e5847083b481e63",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "同訓練條件下比較殘差與空間通道路徑，沒有串成兩模型",
+      "比較重用共同輸入以控制條件，質感較簡單；時間需實測。",
+      "逐張實看選定版本桌機與手機原生PNG，未用測試替代視覺審查"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "淺底三段圖解，精確但較簡化"
+      ],
+      "completeness": [
+        9,
+        "兩者都需域內驗證，架構新舊不能替代結果。"
+      ],
+      "professionalism": [
+        9,
+        "同訓練條件下比較殘差與空間通道路徑，沒有串成兩模型"
+      ],
+      "density": [
+        8,
+        "比較重用共同輸入以控制條件，質感較簡單；時間需實測。"
+      ],
+      "hierarchy": [
+        9,
+        "三節點單讀序及單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch3-page-assessment.json; batch3-deep-page-review.json"
+  },
+  {
+    "id": "convnext-engineering-4",
+    "image": "convnext-engineering-4-r01-mobile.png",
+    "sha256": "7f91edfd91c077295a436233e5a990fd76887711142497fabb11bc7c30db26d8",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "同訓練條件下比較殘差與空間通道路徑，沒有串成兩模型",
+      "比較重用共同輸入以控制條件，質感較簡單；時間需實測。",
+      "逐張實看選定版本桌機與手機原生PNG，未用測試替代視覺審查"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "淺底三段圖解，精確但較簡化"
+      ],
+      "completeness": [
+        9,
+        "兩者都需域內驗證，架構新舊不能替代結果。"
+      ],
+      "professionalism": [
+        9,
+        "同訓練條件下比較殘差與空間通道路徑，沒有串成兩模型"
+      ],
+      "density": [
+        8,
+        "比較重用共同輸入以控制條件，質感較簡單；時間需實測。"
+      ],
+      "hierarchy": [
+        9,
+        "三節點單讀序及單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch3-page-assessment.json; batch3-deep-page-review.json"
+  },
+  {
+    "id": "vit-classifier-engineering-1",
+    "image": "vit-classifier-engineering-1-r01-desktop.png",
+    "sha256": "0051e787d612da14ea0ac5d5a2dad7a36c02d337521f4e185536c50bedd07f8c",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "原圖分片加位置，再由分類token讀出；同件刮傷保留",
+      "單頭與小格為縮小算例；粗格只示意取樣位置，沒有宣稱新推論。",
+      "逐張實看選定版本桌機與手機原生PNG，未用測試替代視覺審查"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "淺底三段圖解，精確但較簡化"
+      ],
+      "completeness": [
+        9,
+        "切片保留位置，分類仍需資料與任務頭。"
+      ],
+      "professionalism": [
+        9,
+        "原圖分片加位置，再由分類token讀出；同件刮傷保留"
+      ],
+      "density": [
+        8,
+        "單頭與小格為縮小算例；粗格只示意取樣位置，沒有宣稱新推論。"
+      ],
+      "hierarchy": [
+        9,
+        "三節點單讀序及單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch3-page-assessment.json; batch3-deep-page-review.json"
+  },
+  {
+    "id": "vit-classifier-engineering-1",
+    "image": "vit-classifier-engineering-1-r01-mobile.png",
+    "sha256": "5abda09d7b5680a4047bb4f3542083e15157e6800d13fee90d5f6d91261d3fb0",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "原圖分片加位置，再由分類token讀出；同件刮傷保留",
+      "單頭與小格為縮小算例；粗格只示意取樣位置，沒有宣稱新推論。",
+      "逐張實看選定版本桌機與手機原生PNG，未用測試替代視覺審查"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "淺底三段圖解，精確但較簡化"
+      ],
+      "completeness": [
+        9,
+        "切片保留位置，分類仍需資料與任務頭。"
+      ],
+      "professionalism": [
+        9,
+        "原圖分片加位置，再由分類token讀出；同件刮傷保留"
+      ],
+      "density": [
+        8,
+        "單頭與小格為縮小算例；粗格只示意取樣位置，沒有宣稱新推論。"
+      ],
+      "hierarchy": [
+        9,
+        "三節點單讀序及單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch3-page-assessment.json; batch3-deep-page-review.json"
+  },
+  {
+    "id": "vit-classifier-engineering-2",
+    "image": "vit-classifier-engineering-2-r03-desktop.png",
+    "sha256": "68359ac31e366852f7495bf932be6bcf589a86219b8aeb6677a6f62574679200",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "刮傷片名稱已與圖一致，0.75/0.25加權得[1.5,1]且非缺陷機率",
+      "單頭與小格為縮小算例；粗格只示意取樣位置，沒有宣稱新推論。",
+      "逐張實看選定版本桌機與手機原生PNG，未用測試替代視覺審查"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "淺底三段圖解，精確但較簡化"
+      ],
+      "completeness": [
+        9,
+        "注意力加權其他表示，位置身份仍要保留。"
+      ],
+      "professionalism": [
+        9,
+        "刮傷片名稱已與圖一致，0.75/0.25加權得[1.5,1]且非缺陷機率"
+      ],
+      "density": [
+        8,
+        "單頭與小格為縮小算例；粗格只示意取樣位置，沒有宣稱新推論。"
+      ],
+      "hierarchy": [
+        9,
+        "三節點單讀序及單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch3-page-assessment.json; batch3-deep-page-review.json"
+  },
+  {
+    "id": "vit-classifier-engineering-2",
+    "image": "vit-classifier-engineering-2-r03-mobile.png",
+    "sha256": "ceacbab75988c146842e95e792e58fd20463a459f301a7abdb6613384f96815a",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "刮傷片名稱已與圖一致，0.75/0.25加權得[1.5,1]且非缺陷機率",
+      "單頭與小格為縮小算例；粗格只示意取樣位置，沒有宣稱新推論。",
+      "逐張實看選定版本桌機與手機原生PNG，未用測試替代視覺審查"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "淺底三段圖解，精確但較簡化"
+      ],
+      "completeness": [
+        9,
+        "注意力加權其他表示，位置身份仍要保留。"
+      ],
+      "professionalism": [
+        9,
+        "刮傷片名稱已與圖一致，0.75/0.25加權得[1.5,1]且非缺陷機率"
+      ],
+      "density": [
+        8,
+        "單頭與小格為縮小算例；粗格只示意取樣位置，沒有宣稱新推論。"
+      ],
+      "hierarchy": [
+        9,
+        "三節點單讀序及單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch3-page-assessment.json; batch3-deep-page-review.json"
+  },
+  {
+    "id": "vit-classifier-engineering-3",
+    "image": "vit-classifier-engineering-3-r02-desktop.png",
+    "sha256": "94f200f8df0b7aad08989e3c1183ef6494b615634938e86f8b9f5427b4a46368",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "粗格只標取樣位置，不再人工挖断冒充結果；4/16 token對應16/256配對",
+      "單頭與小格為縮小算例；粗格只示意取樣位置，沒有宣稱新推論。",
+      "逐張實看選定版本桌機與手機原生PNG，未用測試替代視覺審查"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "淺底三段圖解，精確但較簡化"
+      ],
+      "completeness": [
+        9,
+        "先確認細傷還可見，再測分類與記憶體。"
+      ],
+      "professionalism": [
+        9,
+        "粗格只標取樣位置，不再人工挖断冒充結果；4/16 token對應16/256配對"
+      ],
+      "density": [
+        8,
+        "單頭與小格為縮小算例；粗格只示意取樣位置，沒有宣稱新推論。"
+      ],
+      "hierarchy": [
+        9,
+        "三節點單讀序及單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch3-page-assessment.json; batch3-deep-page-review.json"
+  },
+  {
+    "id": "vit-classifier-engineering-3",
+    "image": "vit-classifier-engineering-3-r02-mobile.png",
+    "sha256": "1ab95ecfb5c16278c4657f2db1b855508c6b418aaa92ecee1dd6d6ab3d19de01",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "粗格只標取樣位置，不再人工挖断冒充結果；4/16 token對應16/256配對",
+      "單頭與小格為縮小算例；粗格只示意取樣位置，沒有宣稱新推論。",
+      "逐張實看選定版本桌機與手機原生PNG，未用測試替代視覺審查"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "淺底三段圖解，精確但較簡化"
+      ],
+      "completeness": [
+        9,
+        "先確認細傷還可見，再測分類與記憶體。"
+      ],
+      "professionalism": [
+        9,
+        "粗格只標取樣位置，不再人工挖断冒充結果；4/16 token對應16/256配對"
+      ],
+      "density": [
+        8,
+        "單頭與小格為縮小算例；粗格只示意取樣位置，沒有宣稱新推論。"
+      ],
+      "hierarchy": [
+        9,
+        "三節點單讀序及單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch3-page-assessment.json; batch3-deep-page-review.json"
+  },
+  {
+    "id": "vit-classifier-engineering-4",
+    "image": "vit-classifier-engineering-4-r02-desktop.png",
+    "sha256": "9886c0bd7deb6e70da64f690d44d2a871ca042256344722b4be5400da2dc8bef",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "明確限定ConvNeXt逐通道空間卷積，避免誤稱所有卷積不混通道",
+      "單頭與小格為縮小算例；粗格只示意取樣位置，沒有宣稱新推論。",
+      "逐張實看選定版本桌機與手機原生PNG，未用測試替代視覺審查"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "淺底三段圖解，精確但較簡化"
+      ],
+      "completeness": [
+        9,
+        "全局交流是能力來源，不保證小資料就更準。"
+      ],
+      "professionalism": [
+        9,
+        "明確限定ConvNeXt逐通道空間卷積，避免誤稱所有卷積不混通道"
+      ],
+      "density": [
+        8,
+        "單頭與小格為縮小算例；粗格只示意取樣位置，沒有宣稱新推論。"
+      ],
+      "hierarchy": [
+        9,
+        "三節點單讀序及單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch3-page-assessment.json; batch3-deep-page-review.json"
+  },
+  {
+    "id": "vit-classifier-engineering-4",
+    "image": "vit-classifier-engineering-4-r02-mobile.png",
+    "sha256": "665f42644572693732ec197aea118fe18619102b79b7a13b5a574fcd246e37a0",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "明確限定ConvNeXt逐通道空間卷積，避免誤稱所有卷積不混通道",
+      "單頭與小格為縮小算例；粗格只示意取樣位置，沒有宣稱新推論。",
+      "逐張實看選定版本桌機與手機原生PNG，未用測試替代視覺審查"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "淺底三段圖解，精確但較簡化"
+      ],
+      "completeness": [
+        9,
+        "全局交流是能力來源，不保證小資料就更準。"
+      ],
+      "professionalism": [
+        9,
+        "明確限定ConvNeXt逐通道空間卷積，避免誤稱所有卷積不混通道"
+      ],
+      "density": [
+        8,
+        "單頭與小格為縮小算例；粗格只示意取樣位置，沒有宣稱新推論。"
+      ],
+      "hierarchy": [
+        9,
+        "三節點單讀序及單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch3-page-assessment.json; batch3-deep-page-review.json"
+  },
+  {
+    "id": "u-net-engineering-1",
+    "image": "u-net-engineering-1-r02-desktop.png",
+    "sha256": "9af33e01ccf7baf1678bfee5b1e0e3c53cc9394940ba1bdf58c2c8b3a04acf4c",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "同位像素標註、跳接及分類遮罩一致；縮小中間輸出避免壓字",
+      "流程只顯示代表尺度，藍色是示意遮罩；尺寸必須另校正。",
+      "逐張實看選定版本桌機與手機原生PNG，未用測試替代視覺審查"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "淺底三段圖解，精確但較簡化"
+      ],
+      "completeness": [
+        9,
+        "像素標註教會區域，輸出仍需回原圖核對。"
+      ],
+      "professionalism": [
+        9,
+        "同位像素標註、跳接及分類遮罩一致；縮小中間輸出避免壓字"
+      ],
+      "density": [
+        8,
+        "流程只顯示代表尺度，藍色是示意遮罩；尺寸必須另校正。"
+      ],
+      "hierarchy": [
+        9,
+        "三節點單讀序及單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch3-page-assessment.json; batch3-deep-page-review.json"
+  },
+  {
+    "id": "u-net-engineering-1",
+    "image": "u-net-engineering-1-r02-mobile.png",
+    "sha256": "2c1e3ba8c0ebfc401dd89f5437ac08a03a80700caf27df98ed3307e1e36bcdf3",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "同位像素標註、跳接及分類遮罩一致；縮小中間輸出避免壓字",
+      "流程只顯示代表尺度，藍色是示意遮罩；尺寸必須另校正。",
+      "逐張實看選定版本桌機與手機原生PNG，未用測試替代視覺審查"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "淺底三段圖解，精確但較簡化"
+      ],
+      "completeness": [
+        9,
+        "像素標註教會區域，輸出仍需回原圖核對。"
+      ],
+      "professionalism": [
+        9,
+        "同位像素標註、跳接及分類遮罩一致；縮小中間輸出避免壓字"
+      ],
+      "density": [
+        8,
+        "流程只顯示代表尺度，藍色是示意遮罩；尺寸必須另校正。"
+      ],
+      "hierarchy": [
+        9,
+        "三節點單讀序及單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch3-page-assessment.json; batch3-deep-page-review.json"
+  },
+  {
+    "id": "u-net-engineering-3",
+    "image": "u-net-engineering-3-r02-desktop.png",
+    "sha256": "33207e66da1da573f9029ceb294e19eccb4dfaa4a64c15b6865dbefc2dc04c34",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "ROI/resize/padding標籤框已加寬，輸出回原圖後再談量測",
+      "流程只顯示代表尺度，藍色是示意遮罩；尺寸必須另校正。",
+      "逐張實看選定版本桌機與手機原生PNG，未用測試替代視覺審查"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "淺底三段圖解，精確但較簡化"
+      ],
+      "completeness": [
+        9,
+        "記錄resize與裁切，像素遮罩不能直接當毫米。"
+      ],
+      "professionalism": [
+        9,
+        "ROI/resize/padding標籤框已加寬，輸出回原圖後再談量測"
+      ],
+      "density": [
+        8,
+        "流程只顯示代表尺度，藍色是示意遮罩；尺寸必須另校正。"
+      ],
+      "hierarchy": [
+        9,
+        "三節點單讀序及單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch3-page-assessment.json; batch3-deep-page-review.json"
+  },
+  {
+    "id": "u-net-engineering-3",
+    "image": "u-net-engineering-3-r02-mobile.png",
+    "sha256": "5ad0bf424fff7f1dda2bfec283dab92232ae3beddb26d210300addb94dac716a",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "ROI/resize/padding標籤框已加寬，輸出回原圖後再談量測",
+      "流程只顯示代表尺度，藍色是示意遮罩；尺寸必須另校正。",
+      "逐張實看選定版本桌機與手機原生PNG，未用測試替代視覺審查"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "淺底三段圖解，精確但較簡化"
+      ],
+      "completeness": [
+        9,
+        "記錄resize與裁切，像素遮罩不能直接當毫米。"
+      ],
+      "professionalism": [
+        9,
+        "ROI/resize/padding標籤框已加寬，輸出回原圖後再談量測"
+      ],
+      "density": [
+        8,
+        "流程只顯示代表尺度，藍色是示意遮罩；尺寸必須另校正。"
+      ],
+      "hierarchy": [
+        9,
+        "三節點單讀序及單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch3-page-assessment.json; batch3-deep-page-review.json"
+  },
+  {
+    "id": "u-net-engineering-4",
+    "image": "u-net-engineering-4-r01-desktop.png",
+    "sha256": "14c9da09bcf7b784d3a777426abe139812b757953dd8822c25b564f62f1442c2",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "同位置細線對比連續/候選斷裂，孔洞與基板身份未更換",
+      "流程只顯示代表尺度，藍色是示意遮罩；尺寸必須另校正。",
+      "逐張實看選定版本桌機與手機原生PNG，未用測試替代視覺審查"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "淺底三段圖解，精確但較簡化"
+      ],
+      "completeness": [
+        9,
+        "同件檢查細線連通，不能只看大區域重疊。"
+      ],
+      "professionalism": [
+        9,
+        "同位置細線對比連續/候選斷裂，孔洞與基板身份未更換"
+      ],
+      "density": [
+        8,
+        "流程只顯示代表尺度，藍色是示意遮罩；尺寸必須另校正。"
+      ],
+      "hierarchy": [
+        9,
+        "三節點單讀序及單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch3-page-assessment.json; batch3-deep-page-review.json"
+  },
+  {
+    "id": "u-net-engineering-4",
+    "image": "u-net-engineering-4-r01-mobile.png",
+    "sha256": "873522bd50f68cb777665c98143459022871ee89d5da8319f3d286777d10e99f",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "同位置細線對比連續/候選斷裂，孔洞與基板身份未更換",
+      "流程只顯示代表尺度，藍色是示意遮罩；尺寸必須另校正。",
+      "逐張實看選定版本桌機與手機原生PNG，未用測試替代視覺審查"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "淺底三段圖解，精確但較簡化"
+      ],
+      "completeness": [
+        9,
+        "同件檢查細線連通，不能只看大區域重疊。"
+      ],
+      "professionalism": [
+        9,
+        "同位置細線對比連續/候選斷裂，孔洞與基板身份未更換"
+      ],
+      "density": [
+        8,
+        "流程只顯示代表尺度，藍色是示意遮罩；尺寸必須另校正。"
+      ],
+      "hierarchy": [
+        9,
+        "三節點單讀序及單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch3-page-assessment.json; batch3-deep-page-review.json"
+  },
+  {
+    "id": "segformer-engineering-1",
+    "image": "segformer-engineering-1-r01-desktop.png",
+    "sha256": "df904a875d9830bf76c270108eb9fc2fb3eb1db4daed97ebbcba4853af9dcbf7",
+    "scores": [
+      22,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 91,
+    "evidence": [
+      "同件焊線輸入逐級四尺度後輸出語意遮罩；不是實例ID",
+      "細格代表解析度，不能逐格讀成實測特徵；比較文字仍較密。",
+      "逐張實看選定版本桌機與手機原生PNG，未用測試替代視覺審查"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "淺底三段圖解，精確但較簡化"
+      ],
+      "completeness": [
+        9,
+        "多尺度補上下文，輸出仍是語意類別圖。"
+      ],
+      "professionalism": [
+        9,
+        "同件焊線輸入逐級四尺度後輸出語意遮罩；不是實例ID"
+      ],
+      "density": [
+        8,
+        "細格代表解析度，不能逐格讀成實測特徵；比較文字仍較密。"
+      ],
+      "hierarchy": [
+        9,
+        "三節點單讀序及單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch3-page-assessment.json; batch3-deep-page-review.json"
+  },
+  {
+    "id": "segformer-engineering-1",
+    "image": "segformer-engineering-1-r01-mobile.png",
+    "sha256": "7b3bde76c3bdf5fb2f96f56ba5c82b8c2f5f1399a3c435ed3446017523a5555f",
+    "scores": [
+      22,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 91,
+    "evidence": [
+      "同件焊線輸入逐級四尺度後輸出語意遮罩；不是實例ID",
+      "細格代表解析度，不能逐格讀成實測特徵；比較文字仍較密。",
+      "逐張實看選定版本桌機與手機原生PNG，未用測試替代視覺審查"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "淺底三段圖解，精確但較簡化"
+      ],
+      "completeness": [
+        9,
+        "多尺度補上下文，輸出仍是語意類別圖。"
+      ],
+      "professionalism": [
+        9,
+        "同件焊線輸入逐級四尺度後輸出語意遮罩；不是實例ID"
+      ],
+      "density": [
+        8,
+        "細格代表解析度，不能逐格讀成實測特徵；比較文字仍較密。"
+      ],
+      "hierarchy": [
+        9,
+        "三節點單讀序及單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch3-page-assessment.json; batch3-deep-page-review.json"
+  },
+  {
+    "id": "segformer-engineering-3",
+    "image": "segformer-engineering-3-r02-desktop.png",
+    "sha256": "2e2ac3361de626be2bd0fbc8a7378613d109bd0ddda9b8d639a83be518a04f6e",
+    "scores": [
+      22,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 91,
+    "evidence": [
+      "同件粗格取樣及映回原圖，不能用多尺度補造細線",
+      "細格代表解析度，不能逐格讀成實測特徵；比較文字仍較密。",
+      "逐張實看選定版本桌機與手機原生PNG，未用測試替代視覺審查"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "淺底三段圖解，精確但較簡化"
+      ],
+      "completeness": [
+        9,
+        "多尺度不能補回取像已消失的細線。"
+      ],
+      "professionalism": [
+        9,
+        "同件粗格取樣及映回原圖，不能用多尺度補造細線"
+      ],
+      "density": [
+        8,
+        "細格代表解析度，不能逐格讀成實測特徵；比較文字仍較密。"
+      ],
+      "hierarchy": [
+        9,
+        "三節點單讀序及單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch3-page-assessment.json; batch3-deep-page-review.json"
+  },
+  {
+    "id": "segformer-engineering-3",
+    "image": "segformer-engineering-3-r02-mobile.png",
+    "sha256": "52942ecb8d3e7de11b9a232bc1d0fc82a9296a769104e51df8e52b0ccf55da7f",
+    "scores": [
+      22,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 91,
+    "evidence": [
+      "同件粗格取樣及映回原圖，不能用多尺度補造細線",
+      "細格代表解析度，不能逐格讀成實測特徵；比較文字仍較密。",
+      "逐張實看選定版本桌機與手機原生PNG，未用測試替代視覺審查"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "淺底三段圖解，精確但較簡化"
+      ],
+      "completeness": [
+        9,
+        "多尺度不能補回取像已消失的細線。"
+      ],
+      "professionalism": [
+        9,
+        "同件粗格取樣及映回原圖，不能用多尺度補造細線"
+      ],
+      "density": [
+        8,
+        "細格代表解析度，不能逐格讀成實測特徵；比較文字仍較密。"
+      ],
+      "hierarchy": [
+        9,
+        "三節點單讀序及單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch3-page-assessment.json; batch3-deep-page-review.json"
+  },
+  {
+    "id": "segformer-engineering-4",
+    "image": "segformer-engineering-4-r02-desktop.png",
+    "sha256": "3192b6b3d34f865219eb0d7961485df6bda443e57cb4ecff82ba325e46ad2c42",
+    "scores": [
+      22,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 91,
+    "evidence": [
+      "共同標註下對比跳接與四尺度對齊，U-Net圖不再壓字",
+      "細格代表解析度，不能逐格讀成實測特徵；比較文字仍較密。",
+      "逐張實看選定版本桌機與手機原生PNG，未用測試替代視覺審查"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "淺底三段圖解，精確但較簡化"
+      ],
+      "completeness": [
+        9,
+        "語意相同、標註一致，再比細節與運算代價。"
+      ],
+      "professionalism": [
+        9,
+        "共同標註下對比跳接與四尺度對齊，U-Net圖不再壓字"
+      ],
+      "density": [
+        8,
+        "細格代表解析度，不能逐格讀成實測特徵；比較文字仍較密。"
+      ],
+      "hierarchy": [
+        9,
+        "三節點單讀序及單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch3-page-assessment.json; batch3-deep-page-review.json"
+  },
+  {
+    "id": "segformer-engineering-4",
+    "image": "segformer-engineering-4-r02-mobile.png",
+    "sha256": "3ccd0595d385beb101e9bdda53993130465cb1b81261622ff62f4c2af85bbf80",
+    "scores": [
+      22,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 91,
+    "evidence": [
+      "共同標註下對比跳接與四尺度對齊，U-Net圖不再壓字",
+      "細格代表解析度，不能逐格讀成實測特徵；比較文字仍較密。",
+      "逐張實看選定版本桌機與手機原生PNG，未用測試替代視覺審查"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "淺底三段圖解，精確但較簡化"
+      ],
+      "completeness": [
+        9,
+        "語意相同、標註一致，再比細節與運算代價。"
+      ],
+      "professionalism": [
+        9,
+        "共同標註下對比跳接與四尺度對齊，U-Net圖不再壓字"
+      ],
+      "density": [
+        8,
+        "細格代表解析度，不能逐格讀成實測特徵；比較文字仍較密。"
+      ],
+      "hierarchy": [
+        9,
+        "三節點單讀序及單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch3-page-assessment.json; batch3-deep-page-review.json"
+  },
+  {
+    "id": "yolo-seg-engineering-1",
+    "image": "yolo-seg-engineering-1-r03-desktop.png",
+    "sha256": "acbd7dee50806da79f9c164e98204fba64b3b85df5819ade2e457af3a55f91f2",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "兩件同類支架各有框與遮罩，甲乙標籤不蓋孔洞或邊框",
+      "代數原型與輪廓是示意；需要實例分離及邊界誤差實測。",
+      "逐張實看選定版本桌機與手機原生PNG，未用測試替代視覺審查"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "淺底三段圖解，精確但較簡化"
+      ],
+      "completeness": [
+        9,
+        "每件有框、類別與遮罩，身份只屬當前影像。"
+      ],
+      "professionalism": [
+        9,
+        "兩件同類支架各有框與遮罩，甲乙標籤不蓋孔洞或邊框"
+      ],
+      "density": [
+        8,
+        "代數原型與輪廓是示意；需要實例分離及邊界誤差實測。"
+      ],
+      "hierarchy": [
+        9,
+        "三節點單讀序及單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch3-page-assessment.json; batch3-deep-page-review.json"
+  },
+  {
+    "id": "yolo-seg-engineering-1",
+    "image": "yolo-seg-engineering-1-r03-mobile.png",
+    "sha256": "3c7aec3d179cf21d17a9c801febf1cff41440513dc2691ee95ea6b060652487a",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "兩件同類支架各有框與遮罩，甲乙標籤不蓋孔洞或邊框",
+      "代數原型與輪廓是示意；需要實例分離及邊界誤差實測。",
+      "逐張實看選定版本桌機與手機原生PNG，未用測試替代視覺審查"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "淺底三段圖解，精確但較簡化"
+      ],
+      "completeness": [
+        9,
+        "每件有框、類別與遮罩，身份只屬當前影像。"
+      ],
+      "professionalism": [
+        9,
+        "兩件同類支架各有框與遮罩，甲乙標籤不蓋孔洞或邊框"
+      ],
+      "density": [
+        8,
+        "代數原型與輪廓是示意；需要實例分離及邊界誤差實測。"
+      ],
+      "hierarchy": [
+        9,
+        "三節點單讀序及單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch3-page-assessment.json; batch3-deep-page-review.json"
+  },
+  {
+    "id": "yolo-seg-engineering-3",
+    "image": "yolo-seg-engineering-3-r03-desktop.png",
+    "sha256": "a279c38ac1cedb9368a4d8c2d4beaa849a3cdff5da73cb28c354938ba9dbd882",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "去重前後同顯示尺度，保留框/係數配對；孔洞結果與文字分離",
+      "代數原型與輪廓是示意；需要實例分離及邊界誤差實測。",
+      "逐張實看選定版本桌機與手機原生PNG，未用測試替代視覺審查"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "淺底三段圖解，精確但較簡化"
+      ],
+      "completeness": [
+        9,
+        "把框、類別與遮罩綁定，映回原圖再核對。"
+      ],
+      "professionalism": [
+        9,
+        "去重前後同顯示尺度，保留框/係數配對；孔洞結果與文字分離"
+      ],
+      "density": [
+        8,
+        "代數原型與輪廓是示意；需要實例分離及邊界誤差實測。"
+      ],
+      "hierarchy": [
+        9,
+        "三節點單讀序及單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch3-page-assessment.json; batch3-deep-page-review.json"
+  },
+  {
+    "id": "yolo-seg-engineering-3",
+    "image": "yolo-seg-engineering-3-r03-mobile.png",
+    "sha256": "544e53951ee9b6aced92df1d0f63d1c245340787fd5fe0036b07d09f9daa429e",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "去重前後同顯示尺度，保留框/係數配對；孔洞結果與文字分離",
+      "代數原型與輪廓是示意；需要實例分離及邊界誤差實測。",
+      "逐張實看選定版本桌機與手機原生PNG，未用測試替代視覺審查"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "淺底三段圖解，精確但較簡化"
+      ],
+      "completeness": [
+        9,
+        "把框、類別與遮罩綁定，映回原圖再核對。"
+      ],
+      "professionalism": [
+        9,
+        "去重前後同顯示尺度，保留框/係數配對；孔洞結果與文字分離"
+      ],
+      "density": [
+        8,
+        "代數原型與輪廓是示意；需要實例分離及邊界誤差實測。"
+      ],
+      "hierarchy": [
+        9,
+        "三節點單讀序及單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch3-page-assessment.json; batch3-deep-page-review.json"
+  },
+  {
+    "id": "yolo-seg-engineering-4",
+    "image": "yolo-seg-engineering-4-r03-desktop.png",
+    "sha256": "a9ec871c28ee4a02ce000e762adc1053203e91eed34a08f444b5413a70f8e2c2",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "同類兩件在語意輸出同類別，實例輸出保留甲乙；孔洞未填滿",
+      "代數原型與輪廓是示意；需要實例分離及邊界誤差實測。",
+      "逐張實看選定版本桌機與手機原生PNG，未用測試替代視覺審查"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "淺底三段圖解，精確但較簡化"
+      ],
+      "completeness": [
+        9,
+        "需要逐件交付時，比較實例標註與分離品質。"
+      ],
+      "professionalism": [
+        9,
+        "同類兩件在語意輸出同類別，實例輸出保留甲乙；孔洞未填滿"
+      ],
+      "density": [
+        8,
+        "代數原型與輪廓是示意；需要實例分離及邊界誤差實測。"
+      ],
+      "hierarchy": [
+        9,
+        "三節點單讀序及單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch3-page-assessment.json; batch3-deep-page-review.json"
+  },
+  {
+    "id": "yolo-seg-engineering-4",
+    "image": "yolo-seg-engineering-4-r03-mobile.png",
+    "sha256": "a2c11a84957f526b34dd034aa75a5560028a49a1e6f74ef37dbc7e3b4c493e7c",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "同類兩件在語意輸出同類別，實例輸出保留甲乙；孔洞未填滿",
+      "代數原型與輪廓是示意；需要實例分離及邊界誤差實測。",
+      "逐張實看選定版本桌機與手機原生PNG，未用測試替代視覺審查"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "淺底三段圖解，精確但較簡化"
+      ],
+      "completeness": [
+        9,
+        "需要逐件交付時，比較實例標註與分離品質。"
+      ],
+      "professionalism": [
+        9,
+        "同類兩件在語意輸出同類別，實例輸出保留甲乙；孔洞未填滿"
+      ],
+      "density": [
+        8,
+        "代數原型與輪廓是示意；需要實例分離及邊界誤差實測。"
+      ],
+      "hierarchy": [
+        9,
+        "三節點單讀序及單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch3-page-assessment.json; batch3-deep-page-review.json"
+  },
+  {
+    "id": "keypoint-rcnn-engineering-1",
+    "image": "keypoint-rcnn-engineering-1-r01-desktop.png",
+    "sha256": "5f22a9b38711f068434928648ae36b426e5ba2b0c16fc9f6bfce519a98007053",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "A缺口角與B/C孔心具名，ROI與三張位置分布身份一致",
+      "分布格位為概念，三點是點名示意，PnP仍須檢查點數和退化。",
+      "逐張實看選定版本桌機與手機原生PNG，未用測試替代視覺審查"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "淺底三段圖解，精確但較簡化"
+      ],
+      "completeness": [
+        9,
+        "點的身份要先定義，座標不能混成無名熱區。"
+      ],
+      "professionalism": [
+        9,
+        "A缺口角與B/C孔心具名，ROI與三張位置分布身份一致"
+      ],
+      "density": [
+        8,
+        "分布格位為概念，三點是點名示意，PnP仍須檢查點數和退化。"
+      ],
+      "hierarchy": [
+        9,
+        "三節點單讀序及單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch3-page-assessment.json; batch3-deep-page-review.json"
+  },
+  {
+    "id": "keypoint-rcnn-engineering-1",
+    "image": "keypoint-rcnn-engineering-1-r01-mobile.png",
+    "sha256": "79d7597fc65473587ef114ba76fbe5316ee66eb017fb572fb7f3588b8a6d7d49",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "A缺口角與B/C孔心具名，ROI與三張位置分布身份一致",
+      "分布格位為概念，三點是點名示意，PnP仍須檢查點數和退化。",
+      "逐張實看選定版本桌機與手機原生PNG，未用測試替代視覺審查"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "淺底三段圖解，精確但較簡化"
+      ],
+      "completeness": [
+        9,
+        "點的身份要先定義，座標不能混成無名熱區。"
+      ],
+      "professionalism": [
+        9,
+        "A缺口角與B/C孔心具名，ROI與三張位置分布身份一致"
+      ],
+      "density": [
+        8,
+        "分布格位為概念，三點是點名示意，PnP仍須檢查點數和退化。"
+      ],
+      "hierarchy": [
+        9,
+        "三節點單讀序及單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch3-page-assessment.json; batch3-deep-page-review.json"
+  },
+  {
+    "id": "keypoint-rcnn-engineering-3",
+    "image": "keypoint-rcnn-engineering-3-r02-desktop.png",
+    "sha256": "a8854180503aba1b6fa463c8f07e9bf2dfbfa8446fe7dc0b13272965e69307cd",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "同件C遮擋仍有估計，說明估計不等於可見；已移除無目標箭頭",
+      "分布格位為概念，三點是點名示意，PnP仍須檢查點數和退化。",
+      "逐張實看選定版本桌機與手機原生PNG，未用測試替代視覺審查"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "淺底三段圖解，精確但較簡化"
+      ],
+      "completeness": [
+        9,
+        "估計位置與可見證據分開，可信度不足要覆核。"
+      ],
+      "professionalism": [
+        9,
+        "同件C遮擋仍有估計，說明估計不等於可見；已移除無目標箭頭"
+      ],
+      "density": [
+        8,
+        "分布格位為概念，三點是點名示意，PnP仍須檢查點數和退化。"
+      ],
+      "hierarchy": [
+        9,
+        "三節點單讀序及單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch3-page-assessment.json; batch3-deep-page-review.json"
+  },
+  {
+    "id": "keypoint-rcnn-engineering-3",
+    "image": "keypoint-rcnn-engineering-3-r02-mobile.png",
+    "sha256": "2215f2cf83208eed7cc3cc6d43b130b2c941885cb081fcddd80c7e8e20819194",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "同件C遮擋仍有估計，說明估計不等於可見；已移除無目標箭頭",
+      "分布格位為概念，三點是點名示意，PnP仍須檢查點數和退化。",
+      "逐張實看選定版本桌機與手機原生PNG，未用測試替代視覺審查"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "淺底三段圖解，精確但較簡化"
+      ],
+      "completeness": [
+        9,
+        "估計位置與可見證據分開，可信度不足要覆核。"
+      ],
+      "professionalism": [
+        9,
+        "同件C遮擋仍有估計，說明估計不等於可見；已移除無目標箭頭"
+      ],
+      "density": [
+        8,
+        "分布格位為概念，三點是點名示意，PnP仍須檢查點數和退化。"
+      ],
+      "hierarchy": [
+        9,
+        "三節點單讀序及單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch3-page-assessment.json; batch3-deep-page-review.json"
+  },
+  {
+    "id": "keypoint-rcnn-engineering-4",
+    "image": "keypoint-rcnn-engineering-4-r01-desktop.png",
+    "sha256": "da2373229c2f244d9638ee019c3e6f43bff8273bcf8c60a0653a87e3ad0ce71a",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "同支架比較具名點與區域輸出，沒有把遮罩當孔心座標",
+      "分布格位為概念，三點是點名示意，PnP仍須檢查點數和退化。",
+      "逐張實看選定版本桌機與手機原生PNG，未用測試替代視覺審查"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "淺底三段圖解，精確但較簡化"
+      ],
+      "completeness": [
+        9,
+        "按交付選標註：具名點、輪廓與姿態各有責任。"
+      ],
+      "professionalism": [
+        9,
+        "同支架比較具名點與區域輸出，沒有把遮罩當孔心座標"
+      ],
+      "density": [
+        8,
+        "分布格位為概念，三點是點名示意，PnP仍須檢查點數和退化。"
+      ],
+      "hierarchy": [
+        9,
+        "三節點單讀序及單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch3-page-assessment.json; batch3-deep-page-review.json"
+  },
+  {
+    "id": "keypoint-rcnn-engineering-4",
+    "image": "keypoint-rcnn-engineering-4-r01-mobile.png",
+    "sha256": "d6b3890923c0184fe1ca19bf73fccf5df6d386bf5a7b2c9a7dd5871562289d7c",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "同支架比較具名點與區域輸出，沒有把遮罩當孔心座標",
+      "分布格位為概念，三點是點名示意，PnP仍須檢查點數和退化。",
+      "逐張實看選定版本桌機與手機原生PNG，未用測試替代視覺審查"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "淺底三段圖解，精確但較簡化"
+      ],
+      "completeness": [
+        9,
+        "按交付選標註：具名點、輪廓與姿態各有責任。"
+      ],
+      "professionalism": [
+        9,
+        "同支架比較具名點與區域輸出，沒有把遮罩當孔心座標"
+      ],
+      "density": [
+        8,
+        "分布格位為概念，三點是點名示意，PnP仍須檢查點數和退化。"
+      ],
+      "hierarchy": [
+        9,
+        "三節點單讀序及單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch3-page-assessment.json; batch3-deep-page-review.json"
+  }
+]

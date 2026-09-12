@@ -1,0 +1,1224 @@
+[
+  {
+    "id": "dinov3-engineering-2",
+    "image": "dinov3-engineering-2-r02-desktop.png",
+    "sha256": "4003610f235115079f0fbd17ec3c4ea2c16f35db98498c3ed5d7a4a86f144d26",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "同圖patch與兩模型對應",
+      "對稱Gram由向量角度算出，訓練約束与部署分開",
+      "只更新學生，部署另頁",
+      "算例一位小數；手機需跨區讀",
+      "教師關係為目標，並非固定特徵數值"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "藍頭黃結論與簡化工件"
+      ],
+      "completeness": [
+        9,
+        "Gram 只約束訓練，部署仍輸出特徵。"
+      ],
+      "professionalism": [
+        9,
+        "對稱Gram由向量角度算出，訓練約束与部署分開"
+      ],
+      "density": [
+        8,
+        "只保留本圖責任，仍有留白"
+      ],
+      "hierarchy": [
+        9,
+        "算例一位小數；手機需跨區讀"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "pages/dinov3, pages/ad-diffad, pages/ad-anomalygpt; native and actual desktop/mobile figures inspected"
+  },
+  {
+    "id": "dinov3-engineering-2",
+    "image": "dinov3-engineering-2-r02-mobile.png",
+    "sha256": "a6577f95edcc75d363cf4d7feacedf6b8021944d0b7e97b77cf1643395a51bc9",
+    "scores": [
+      23,
+      24,
+      18,
+      17,
+      9
+    ],
+    "total": 91,
+    "evidence": [
+      "同圖patch與兩模型對應",
+      "對稱Gram由向量角度算出，訓練約束与部署分開",
+      "只更新學生，部署另頁",
+      "算例一位小數；手機需跨區讀",
+      "教師關係為目標，並非固定特徵數值"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "藍頭黃結論與簡化工件"
+      ],
+      "completeness": [
+        9,
+        "Gram 只約束訓練，部署仍輸出特徵。"
+      ],
+      "professionalism": [
+        9,
+        "對稱Gram由向量角度算出，訓練約束与部署分開"
+      ],
+      "density": [
+        8,
+        "只保留本圖責任，仍有留白"
+      ],
+      "hierarchy": [
+        9,
+        "算例一位小數；手機需跨區讀"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "pages/dinov3, pages/ad-diffad, pages/ad-anomalygpt; native and actual desktop/mobile figures inspected"
+  },
+  {
+    "id": "dinov3-engineering-1",
+    "image": "dinov3-engineering-1-r02-desktop.png",
+    "sha256": "5aafdd0ed376c47f2440b3f566de59c45a56747030e03c78218d6fa729af3e84",
+    "scores": [
+      23,
+      23,
+      19,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "同墊圈ABC局部位置與不同表示",
+      "區塊表示与下游比較分工，非像素熱點",
+      "回原圖核對查詢位置，固定前處理",
+      "B標籤箭頭已分開；雙墊圈較小",
+      "位置身份保持，示意特徵不當推論"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "藍頭黃結論與簡化工件"
+      ],
+      "completeness": [
+        9,
+        "骨幹交出特徵，局部位置與下游工作仍要對齊。"
+      ],
+      "professionalism": [
+        9,
+        "區塊表示与下游比較分工，非像素熱點"
+      ],
+      "density": [
+        8,
+        "只保留本圖責任，仍有留白"
+      ],
+      "hierarchy": [
+        9,
+        "B標籤箭頭已分開；雙墊圈較小"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "pages/dinov3, pages/ad-diffad, pages/ad-anomalygpt; native and actual desktop/mobile figures inspected"
+  },
+  {
+    "id": "dinov3-engineering-1",
+    "image": "dinov3-engineering-1-r02-mobile.png",
+    "sha256": "c9f7ae34940e301fb500261bd9793923a4d4d24ff7553710b224583d28132175",
+    "scores": [
+      23,
+      23,
+      19,
+      17,
+      9
+    ],
+    "total": 91,
+    "evidence": [
+      "同墊圈ABC局部位置與不同表示",
+      "區塊表示与下游比較分工，非像素熱點",
+      "回原圖核對查詢位置，固定前處理",
+      "B標籤箭頭已分開；雙墊圈較小",
+      "位置身份保持，示意特徵不當推論"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "藍頭黃結論與簡化工件"
+      ],
+      "completeness": [
+        9,
+        "骨幹交出特徵，局部位置與下游工作仍要對齊。"
+      ],
+      "professionalism": [
+        9,
+        "區塊表示与下游比較分工，非像素熱點"
+      ],
+      "density": [
+        8,
+        "只保留本圖責任，仍有留白"
+      ],
+      "hierarchy": [
+        9,
+        "B標籤箭頭已分開；雙墊圈較小"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "pages/dinov3, pages/ad-diffad, pages/ad-anomalygpt; native and actual desktop/mobile figures inspected"
+  },
+  {
+    "id": "dinov3-engineering-3",
+    "image": "dinov3-engineering-3-r01-desktop.png",
+    "sha256": "5e4ed3519bb59be9f883c8f242981a517deb1f1482f5ec1c8a0ad9a745b11ef6",
+    "scores": [
+      23,
+      23,
+      19,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "同墊圈与正常缺口留出集",
+      "不同權重需重建相容表示，無Gram推論分支",
+      "工作/運算/維護三成本明示",
+      "長句已限制，手機仍捲動",
+      "不捏造命中或時間數字"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "藍頭黃結論與簡化工件"
+      ],
+      "completeness": [
+        9,
+        "保存權重與前處理，同條件重建庫並量完整成本。"
+      ],
+      "professionalism": [
+        9,
+        "不同權重需重建相容表示，無Gram推論分支"
+      ],
+      "density": [
+        8,
+        "只保留本圖責任，仍有留白"
+      ],
+      "hierarchy": [
+        9,
+        "長句已限制，手機仍捲動"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "pages/dinov3, pages/ad-diffad, pages/ad-anomalygpt; native and actual desktop/mobile figures inspected"
+  },
+  {
+    "id": "dinov3-engineering-3",
+    "image": "dinov3-engineering-3-r01-mobile.png",
+    "sha256": "66531144bbc91a56b8c5362664a7702da6b74a493dfad09765f118bc69fc49a4",
+    "scores": [
+      23,
+      23,
+      19,
+      17,
+      9
+    ],
+    "total": 91,
+    "evidence": [
+      "同墊圈与正常缺口留出集",
+      "不同權重需重建相容表示，無Gram推論分支",
+      "工作/運算/維護三成本明示",
+      "長句已限制，手機仍捲動",
+      "不捏造命中或時間數字"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "藍頭黃結論與簡化工件"
+      ],
+      "completeness": [
+        9,
+        "保存權重與前處理，同條件重建庫並量完整成本。"
+      ],
+      "professionalism": [
+        9,
+        "不同權重需重建相容表示，無Gram推論分支"
+      ],
+      "density": [
+        8,
+        "只保留本圖責任，仍有留白"
+      ],
+      "hierarchy": [
+        9,
+        "長句已限制，手機仍捲動"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "pages/dinov3, pages/ad-diffad, pages/ad-anomalygpt; native and actual desktop/mobile figures inspected"
+  },
+  {
+    "id": "dinov3-engineering-4",
+    "image": "dinov3-engineering-4-r02-desktop.png",
+    "sha256": "a54f9fa3bb2cfcf475d1cc90755f1a54c206b4e79b809b922dd281e8ee912aea",
+    "scores": [
+      24,
+      23,
+      19,
+      18,
+      9
+    ],
+    "total": 93,
+    "evidence": [
+      "兩路用同正常缺口資料",
+      "相容庫和不同骨幹表示分開",
+      "保留基準或重建，以工作結果取捨",
+      "替代路徑不串接，內容簡短",
+      "無新骨幹必勝宣稱"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "藍頭黃結論與簡化工件"
+      ],
+      "completeness": [
+        9,
+        "同題比較效果與重建代價，保留基準也合理。"
+      ],
+      "professionalism": [
+        9,
+        "相容庫和不同骨幹表示分開"
+      ],
+      "density": [
+        8,
+        "只保留本圖責任，仍有留白"
+      ],
+      "hierarchy": [
+        9,
+        "替代路徑不串接，內容簡短"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "pages/dinov3, pages/ad-diffad, pages/ad-anomalygpt; native and actual desktop/mobile figures inspected"
+  },
+  {
+    "id": "dinov3-engineering-4",
+    "image": "dinov3-engineering-4-r02-mobile.png",
+    "sha256": "fa236e96dddb3ca3679d4ce16d9d8e972454b0b963a6a667b95178d82195643d",
+    "scores": [
+      24,
+      23,
+      19,
+      17,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "兩路用同正常缺口資料",
+      "相容庫和不同骨幹表示分開",
+      "保留基準或重建，以工作結果取捨",
+      "替代路徑不串接，內容簡短",
+      "無新骨幹必勝宣稱"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "藍頭黃結論與簡化工件"
+      ],
+      "completeness": [
+        9,
+        "同題比較效果與重建代價，保留基準也合理。"
+      ],
+      "professionalism": [
+        9,
+        "相容庫和不同骨幹表示分開"
+      ],
+      "density": [
+        8,
+        "只保留本圖責任，仍有留白"
+      ],
+      "hierarchy": [
+        9,
+        "替代路徑不串接，內容簡短"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "pages/dinov3, pages/ad-diffad, pages/ad-anomalygpt; native and actual desktop/mobile figures inspected"
+  },
+  {
+    "id": "dinov3-main-failure",
+    "image": "dinov3-main-failure-r03-desktop.png",
+    "sha256": "209985e5f6a1011a5394fec0a2ce42bfe77674af1307cf6207840c2d0acf66b9",
+    "scores": [
+      24,
+      23,
+      19,
+      18,
+      9
+    ],
+    "total": 93,
+    "evidence": [
+      "同件右側缺口贯穿三段",
+      "粗格由同幾何每格100樣本平均",
+      "取像條件与下游再驗證",
+      "手機三段短句，格值不塞主圖",
+      "解析式取樣，非模型實測；形狀未換件"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "藍頭黃結論與簡化工件"
+      ],
+      "completeness": [
+        9,
+        "同一缺口先看輸入，再看特徵與下游漏檢。"
+      ],
+      "professionalism": [
+        9,
+        "粗格由同幾何每格100樣本平均"
+      ],
+      "density": [
+        8,
+        "只保留本圖責任，仍有留白"
+      ],
+      "hierarchy": [
+        9,
+        "手機三段短句，格值不塞主圖"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "pages/dinov3, pages/ad-diffad, pages/ad-anomalygpt; native and actual desktop/mobile figures inspected"
+  },
+  {
+    "id": "dinov3-main-failure",
+    "image": "dinov3-main-failure-r03-mobile.png",
+    "sha256": "35e8120b7421d1f11220f54a79c9d04dda83a619f226877cf37c5bb4314a0859",
+    "scores": [
+      24,
+      23,
+      19,
+      17,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "同件右側缺口贯穿三段",
+      "粗格由同幾何每格100樣本平均",
+      "取像條件与下游再驗證",
+      "手機三段短句，格值不塞主圖",
+      "解析式取樣，非模型實測；形狀未換件"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "藍頭黃結論與簡化工件"
+      ],
+      "completeness": [
+        9,
+        "同一缺口先看輸入，再看特徵與下游漏檢。"
+      ],
+      "professionalism": [
+        9,
+        "粗格由同幾何每格100樣本平均"
+      ],
+      "density": [
+        8,
+        "只保留本圖責任，仍有留白"
+      ],
+      "hierarchy": [
+        9,
+        "手機三段短句，格值不塞主圖"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "pages/dinov3, pages/ad-diffad, pages/ad-anomalygpt; native and actual desktop/mobile figures inspected"
+  },
+  {
+    "id": "ad-diffad-engineering-2",
+    "image": "ad-diffad-engineering-2-r02-desktop.png",
+    "sha256": "e6d45ef3b23329fa11057955877f6e3560e1d1442ea0c0f1a9db1ee4a600fc05",
+    "scores": [
+      24,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 93,
+    "evidence": [
+      "同支架A、高低噪聲与恢復R",
+      "N引導實際接恢復，A/R共同進分割",
+      "交出位置圖，單步不等於單次",
+      "末句和位置圖不再重疊",
+      "示意區域位置不變，噪聲為圖解"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "藍頭黃結論與簡化工件"
+      ],
+      "completeness": [
+        9,
+        "原圖與恢復圖一起進分割，最後才交出異常位置。"
+      ],
+      "professionalism": [
+        9,
+        "N引導實際接恢復，A/R共同進分割"
+      ],
+      "density": [
+        8,
+        "只保留本圖責任，仍有留白"
+      ],
+      "hierarchy": [
+        9,
+        "末句和位置圖不再重疊"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "pages/dinov3, pages/ad-diffad, pages/ad-anomalygpt; native and actual desktop/mobile figures inspected"
+  },
+  {
+    "id": "ad-diffad-engineering-2",
+    "image": "ad-diffad-engineering-2-r02-mobile.png",
+    "sha256": "f59850eec4b1ed4130bec7233c2fbbbd502e6c74207c11afc77ea27d1f7c9011",
+    "scores": [
+      24,
+      24,
+      18,
+      17,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "同支架A、高低噪聲与恢復R",
+      "N引導實際接恢復，A/R共同進分割",
+      "交出位置圖，單步不等於單次",
+      "末句和位置圖不再重疊",
+      "示意區域位置不變，噪聲為圖解"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "藍頭黃結論與簡化工件"
+      ],
+      "completeness": [
+        9,
+        "原圖與恢復圖一起進分割，最後才交出異常位置。"
+      ],
+      "professionalism": [
+        9,
+        "N引導實際接恢復，A/R共同進分割"
+      ],
+      "density": [
+        8,
+        "只保留本圖責任，仍有留白"
+      ],
+      "hierarchy": [
+        9,
+        "末句和位置圖不再重疊"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "pages/dinov3, pages/ad-diffad, pages/ad-anomalygpt; native and actual desktop/mobile figures inspected"
+  },
+  {
+    "id": "ad-anomalygpt-engineering-2",
+    "image": "ad-anomalygpt-engineering-2-r02-desktop.png",
+    "sha256": "e1c00e16d779b6f750edc5cdbda4e8beecb2863e8d5576771ad4a070ca4cc77a",
+    "scores": [
+      24,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 93,
+    "evidence": [
+      "同支架局部表示指中部異常",
+      "內建匹配得位置再轉提示，影像/問題另接LLM",
+      "回答和位置可交付；工程3另教覆核",
+      "完整三分工，手機較長",
+      "無任意外部specialist map輸入"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "藍頭黃結論與簡化工件"
+      ],
+      "completeness": [
+        9,
+        "內建位置圖先轉提示，再連同影像與問題產生回答。"
+      ],
+      "professionalism": [
+        9,
+        "內建匹配得位置再轉提示，影像/問題另接LLM"
+      ],
+      "density": [
+        8,
+        "只保留本圖責任，仍有留白"
+      ],
+      "hierarchy": [
+        9,
+        "完整三分工，手機較長"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "pages/dinov3, pages/ad-diffad, pages/ad-anomalygpt; native and actual desktop/mobile figures inspected"
+  },
+  {
+    "id": "ad-anomalygpt-engineering-2",
+    "image": "ad-anomalygpt-engineering-2-r02-mobile.png",
+    "sha256": "c3a9f6014c08e725d0bf15eae112b46b2e43c30ff477533f9fdc689dc7db09b8",
+    "scores": [
+      24,
+      24,
+      18,
+      17,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "同支架局部表示指中部異常",
+      "內建匹配得位置再轉提示，影像/問題另接LLM",
+      "回答和位置可交付；工程3另教覆核",
+      "完整三分工，手機較長",
+      "無任意外部specialist map輸入"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "藍頭黃結論與簡化工件"
+      ],
+      "completeness": [
+        9,
+        "內建位置圖先轉提示，再連同影像與問題產生回答。"
+      ],
+      "professionalism": [
+        9,
+        "內建匹配得位置再轉提示，影像/問題另接LLM"
+      ],
+      "density": [
+        8,
+        "只保留本圖責任，仍有留白"
+      ],
+      "hierarchy": [
+        9,
+        "完整三分工，手機較長"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "pages/dinov3, pages/ad-diffad, pages/ad-anomalygpt; native and actual desktop/mobile figures inspected"
+  },
+  {
+    "id": "ad-diffad-engineering-1",
+    "image": "ad-diffad-engineering-1-r02-desktop.png",
+    "sha256": "17d167872268453f2c1fffb69d19c9cba5b8bc18682344e7d8ba4607c552fc42",
+    "scores": [
+      23,
+      24,
+      19,
+      18,
+      9
+    ],
+    "total": 93,
+    "evidence": [
+      "正常加噪已去除誤加刮痕，合成異常另列",
+      "恢復与定位各有監督目標",
+      "正常和真缺陷獨立驗證",
+      "分支目標對齊，手機名稱仍長",
+      "不把合成當真缺陷結果"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "藍頭黃結論與簡化工件"
+      ],
+      "completeness": [
+        9,
+        "正常資料教恢復，合成異常和遮罩教定位。"
+      ],
+      "professionalism": [
+        9,
+        "恢復与定位各有監督目標"
+      ],
+      "density": [
+        8,
+        "只保留本圖責任，仍有留白"
+      ],
+      "hierarchy": [
+        9,
+        "分支目標對齊，手機名稱仍長"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "pages/dinov3, pages/ad-diffad, pages/ad-anomalygpt; native and actual desktop/mobile figures inspected"
+  },
+  {
+    "id": "ad-diffad-engineering-1",
+    "image": "ad-diffad-engineering-1-r02-mobile.png",
+    "sha256": "62d085c66a86b9ee090993a0dd22d3a76e5fdffd79a7c23d510419659be6b031",
+    "scores": [
+      23,
+      24,
+      19,
+      17,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "正常加噪已去除誤加刮痕，合成異常另列",
+      "恢復与定位各有監督目標",
+      "正常和真缺陷獨立驗證",
+      "分支目標對齊，手機名稱仍長",
+      "不把合成當真缺陷結果"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "藍頭黃結論與簡化工件"
+      ],
+      "completeness": [
+        9,
+        "正常資料教恢復，合成異常和遮罩教定位。"
+      ],
+      "professionalism": [
+        9,
+        "恢復与定位各有監督目標"
+      ],
+      "density": [
+        8,
+        "只保留本圖責任，仍有留白"
+      ],
+      "hierarchy": [
+        9,
+        "分支目標對齊，手機名稱仍長"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "pages/dinov3, pages/ad-diffad, pages/ad-anomalygpt; native and actual desktop/mobile figures inspected"
+  },
+  {
+    "id": "ad-diffad-engineering-3",
+    "image": "ad-diffad-engineering-3-r01-desktop.png",
+    "sha256": "9857d99f68ff48694cba1cd4b970999659e19e17626e0cc2c4160869230e8845",
+    "scores": [
+      23,
+      23,
+      19,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "A/R及映回位置可追",
+      "恢復、分割、前後處理均計成本",
+      "原圖与位置交給覆核，門檻另驗",
+      "工件大，時間長條只解釋構成",
+      "時間條明示非實測"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "藍頭黃結論與簡化工件"
+      ],
+      "completeness": [
+        9,
+        "保存 A／R／位置圖，連同完整耗時一起驗收。"
+      ],
+      "professionalism": [
+        9,
+        "恢復、分割、前後處理均計成本"
+      ],
+      "density": [
+        8,
+        "只保留本圖責任，仍有留白"
+      ],
+      "hierarchy": [
+        9,
+        "工件大，時間長條只解釋構成"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "pages/dinov3, pages/ad-diffad, pages/ad-anomalygpt; native and actual desktop/mobile figures inspected"
+  },
+  {
+    "id": "ad-diffad-engineering-3",
+    "image": "ad-diffad-engineering-3-r01-mobile.png",
+    "sha256": "fe42f73e18f4ffbc4536f262c7112fe130f1cb57de4e463761a6d7835fee2dd1",
+    "scores": [
+      23,
+      23,
+      19,
+      17,
+      9
+    ],
+    "total": 91,
+    "evidence": [
+      "A/R及映回位置可追",
+      "恢復、分割、前後處理均計成本",
+      "原圖与位置交給覆核，門檻另驗",
+      "工件大，時間長條只解釋構成",
+      "時間條明示非實測"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "藍頭黃結論與簡化工件"
+      ],
+      "completeness": [
+        9,
+        "保存 A／R／位置圖，連同完整耗時一起驗收。"
+      ],
+      "professionalism": [
+        9,
+        "恢復、分割、前後處理均計成本"
+      ],
+      "density": [
+        8,
+        "只保留本圖責任，仍有留白"
+      ],
+      "hierarchy": [
+        9,
+        "工件大，時間長條只解釋構成"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "pages/dinov3, pages/ad-diffad, pages/ad-anomalygpt; native and actual desktop/mobile figures inspected"
+  },
+  {
+    "id": "ad-diffad-engineering-4",
+    "image": "ad-diffad-engineering-4-r02-desktop.png",
+    "sha256": "bcc60257193a89bc1a5e6c36fe0b8d6dd0c208a20f2973e0364ee0fe42b7c63b",
+    "scores": [
+      24,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 93,
+    "evidence": [
+      "共同刮痕，恢復兩結果保持件形",
+      "兩支皆A/R進分割，恢復乾淨不等於漏檢",
+      "最終圖另驗真缺陷；非必然關係",
+      "两路比較不串接，手機需上下比",
+      "假設結果標明，未捏造模型效能"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "藍頭黃結論與簡化工件"
+      ],
+      "completeness": [
+        9,
+        "檢查最後位置圖，分清恢復成功與定位失敗。"
+      ],
+      "professionalism": [
+        9,
+        "兩支皆A/R進分割，恢復乾淨不等於漏檢"
+      ],
+      "density": [
+        8,
+        "只保留本圖責任，仍有留白"
+      ],
+      "hierarchy": [
+        9,
+        "两路比較不串接，手機需上下比"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "pages/dinov3, pages/ad-diffad, pages/ad-anomalygpt; native and actual desktop/mobile figures inspected"
+  },
+  {
+    "id": "ad-diffad-engineering-4",
+    "image": "ad-diffad-engineering-4-r02-mobile.png",
+    "sha256": "be3289264fd683166e5696d3721f934b58bfd35a4398c94c1bacb2613fdc3c81",
+    "scores": [
+      24,
+      24,
+      18,
+      17,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "共同刮痕，恢復兩結果保持件形",
+      "兩支皆A/R進分割，恢復乾淨不等於漏檢",
+      "最終圖另驗真缺陷；非必然關係",
+      "两路比較不串接，手機需上下比",
+      "假設結果標明，未捏造模型效能"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "藍頭黃結論與簡化工件"
+      ],
+      "completeness": [
+        9,
+        "檢查最後位置圖，分清恢復成功與定位失敗。"
+      ],
+      "professionalism": [
+        9,
+        "兩支皆A/R進分割，恢復乾淨不等於漏檢"
+      ],
+      "density": [
+        8,
+        "只保留本圖責任，仍有留白"
+      ],
+      "hierarchy": [
+        9,
+        "两路比較不串接，手機需上下比"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "pages/dinov3, pages/ad-diffad, pages/ad-anomalygpt; native and actual desktop/mobile figures inspected"
+  },
+  {
+    "id": "ad-anomalygpt-engineering-1",
+    "image": "ad-anomalygpt-engineering-1-r01-desktop.png",
+    "sha256": "2502c66b296acb91dec1c00dad5675be49586768afc2fd806951431dd2efcf26",
+    "scores": [
+      23,
+      23,
+      19,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "異常、遮罩与文字指同處",
+      "固定骨幹/LLM，更新解碼与提示器",
+      "配對資料要對齊，真缺陷獨立驗證",
+      "三段避免微小拓樸",
+      "合成監督不當已測結果"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "藍頭黃結論與簡化工件"
+      ],
+      "completeness": [
+        9,
+        "合成影像、遮罩與文字要描述同一處异常。"
+      ],
+      "professionalism": [
+        9,
+        "固定骨幹/LLM，更新解碼与提示器"
+      ],
+      "density": [
+        8,
+        "只保留本圖責任，仍有留白"
+      ],
+      "hierarchy": [
+        9,
+        "三段避免微小拓樸"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "pages/dinov3, pages/ad-diffad, pages/ad-anomalygpt; native and actual desktop/mobile figures inspected"
+  },
+  {
+    "id": "ad-anomalygpt-engineering-1",
+    "image": "ad-anomalygpt-engineering-1-r01-mobile.png",
+    "sha256": "22aa0da9d836d062478f8cf25015440da2acfc909f6d18d1c8e2c352adf122b8",
+    "scores": [
+      23,
+      23,
+      19,
+      17,
+      9
+    ],
+    "total": 91,
+    "evidence": [
+      "異常、遮罩与文字指同處",
+      "固定骨幹/LLM，更新解碼与提示器",
+      "配對資料要對齊，真缺陷獨立驗證",
+      "三段避免微小拓樸",
+      "合成監督不當已測結果"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "藍頭黃結論與簡化工件"
+      ],
+      "completeness": [
+        9,
+        "合成影像、遮罩與文字要描述同一處异常。"
+      ],
+      "professionalism": [
+        9,
+        "固定骨幹/LLM，更新解碼与提示器"
+      ],
+      "density": [
+        8,
+        "只保留本圖責任，仍有留白"
+      ],
+      "hierarchy": [
+        9,
+        "三段避免微小拓樸"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "pages/dinov3, pages/ad-diffad, pages/ad-anomalygpt; native and actual desktop/mobile figures inspected"
+  },
+  {
+    "id": "ad-anomalygpt-engineering-3",
+    "image": "ad-anomalygpt-engineering-3-r01-desktop.png",
+    "sha256": "cf0051fe28d269e3bd4401a2992bd609617c8d80a956b00ff92210d205aa47a3",
+    "scores": [
+      23,
+      23,
+      19,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "同圖位置/文字回查原痕跡",
+      "位置轉提示与模型輸出可追",
+      "文字与原圖三者核對",
+      "前兩段重申關鍵支路，第三段補工作",
+      "示意回答不當實際推論"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "藍頭黃結論與簡化工件"
+      ],
+      "completeness": [
+        9,
+        "回答、位置和原圖一起覆核，對不上就保留疑問。"
+      ],
+      "professionalism": [
+        9,
+        "位置轉提示与模型輸出可追"
+      ],
+      "density": [
+        8,
+        "只保留本圖責任，仍有留白"
+      ],
+      "hierarchy": [
+        9,
+        "前兩段重申關鍵支路，第三段補工作"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "pages/dinov3, pages/ad-diffad, pages/ad-anomalygpt; native and actual desktop/mobile figures inspected"
+  },
+  {
+    "id": "ad-anomalygpt-engineering-3",
+    "image": "ad-anomalygpt-engineering-3-r01-mobile.png",
+    "sha256": "1475cff3f13052540ef8621bf859e55c243c11207b632ef58554e54297918f48",
+    "scores": [
+      23,
+      23,
+      19,
+      17,
+      9
+    ],
+    "total": 91,
+    "evidence": [
+      "同圖位置/文字回查原痕跡",
+      "位置轉提示与模型輸出可追",
+      "文字与原圖三者核對",
+      "前兩段重申關鍵支路，第三段補工作",
+      "示意回答不當實際推論"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "藍頭黃結論與簡化工件"
+      ],
+      "completeness": [
+        9,
+        "回答、位置和原圖一起覆核，對不上就保留疑問。"
+      ],
+      "professionalism": [
+        9,
+        "位置轉提示与模型輸出可追"
+      ],
+      "density": [
+        8,
+        "只保留本圖責任，仍有留白"
+      ],
+      "hierarchy": [
+        9,
+        "前兩段重申關鍵支路，第三段補工作"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "pages/dinov3, pages/ad-diffad, pages/ad-anomalygpt; native and actual desktop/mobile figures inspected"
+  },
+  {
+    "id": "ad-anomalygpt-engineering-4",
+    "image": "ad-anomalygpt-engineering-4-r01-desktop.png",
+    "sha256": "74e657110106b0b6778f5907cebf6873308014eef552c84737039a78b22cbee7",
+    "scores": [
+      24,
+      23,
+      19,
+      18,
+      9
+    ],
+    "total": 93,
+    "evidence": [
+      "相同支架中部圖与孔邊錯答",
+      "定位正確也可能文字無據",
+      "同題比定位/對話的錯誤、延遲和工時",
+      "錯答橘框明确，不把假設當真",
+      "沒有替兩種流程捏造結果"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "藍頭黃結論與簡化工件"
+      ],
+      "completeness": [
+        9,
+        "同圖比較定位與文字證據，再量覆核成本。"
+      ],
+      "professionalism": [
+        9,
+        "定位正確也可能文字無據"
+      ],
+      "density": [
+        8,
+        "只保留本圖責任，仍有留白"
+      ],
+      "hierarchy": [
+        9,
+        "錯答橘框明确，不把假設當真"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "pages/dinov3, pages/ad-diffad, pages/ad-anomalygpt; native and actual desktop/mobile figures inspected"
+  },
+  {
+    "id": "ad-anomalygpt-engineering-4",
+    "image": "ad-anomalygpt-engineering-4-r01-mobile.png",
+    "sha256": "f529f3db0c2d1957cab4a528e1677b809376ec97fc0fbff722e92363a4fffdcc",
+    "scores": [
+      24,
+      23,
+      19,
+      17,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "相同支架中部圖与孔邊錯答",
+      "定位正確也可能文字無據",
+      "同題比定位/對話的錯誤、延遲和工時",
+      "錯答橘框明确，不把假設當真",
+      "沒有替兩種流程捏造結果"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "藍頭黃結論與簡化工件"
+      ],
+      "completeness": [
+        9,
+        "同圖比較定位與文字證據，再量覆核成本。"
+      ],
+      "professionalism": [
+        9,
+        "定位正確也可能文字無據"
+      ],
+      "density": [
+        8,
+        "只保留本圖責任，仍有留白"
+      ],
+      "hierarchy": [
+        9,
+        "錯答橘框明确，不把假設當真"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "pages/dinov3, pages/ad-diffad, pages/ad-anomalygpt; native and actual desktop/mobile figures inspected"
+  }
+]

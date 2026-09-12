@@ -1,0 +1,22 @@
+[
+  {
+    "id": "sr-same-board-counterexample",
+    "mode": "desktop",
+    "path": "_course_content/generated-concepts/super-resolution/wi033-sr-same-board-counterexample-r02-desktop.png",
+    "sha256": "b1b48809833a2daab018f99a3950cc5668b59f4ae53ba4bb8bbda5cf5cdca157",
+    "old_path": "_course_content/generated-concepts/super-resolution/wi026-sr-d2-r02-desktop.png",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "sr-same-board-counterexample",
+    "mode": "mobile",
+    "path": "_course_content/generated-concepts/super-resolution/wi033-sr-same-board-counterexample-r02-mobile.png",
+    "sha256": "786b0aec250297c2b9050a3a778e9bf4e63ae3e47eda367a4f96a5ee52de7e88",
+    "old_path": "_course_content/generated-concepts/super-resolution/wi026-sr-d2-r01-mobile.png",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  }
+]

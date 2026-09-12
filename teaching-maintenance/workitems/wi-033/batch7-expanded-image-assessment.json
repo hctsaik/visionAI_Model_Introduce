@@ -1,0 +1,2972 @@
+[
+  {
+    "id": "convlstm-engineering-1",
+    "image": "convlstm-engineering-1-r01-desktop.png",
+    "sha256": "bbc0df0001d0dc9257598428fef5aaca57dda6db9a23dbb9974c92bbca337450",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "同夾爪方塊，夾取成功/失敗是另定義標籤；ConvLSTM產生H/C，分類頭需有監督。以整段影片或實體工件切分，不讓相鄰幀跨訓練驗證。",
+      "選定桌機與手機逐張原生實看；8組r02亦重新逐張實看，刻度/平方差/殘差與圖文界線已修正。",
+      "幾何簡化與部分術語密度保留；未做真人理解試驗。"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "簡化幾何與圖文分區"
+      ],
+      "completeness": [
+        9,
+        "時序表示要接任務頭，才有可驗的輸出。"
+      ],
+      "professionalism": [
+        9,
+        "作者示例與實測分開，訓練及部署條件明列"
+      ],
+      "density": [
+        8,
+        "三節點但術語仍需正文支援"
+      ],
+      "hierarchy": [
+        9,
+        "一讀序，單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch7-page-assessment.json; batch7-main-page-review.json"
+  },
+  {
+    "id": "convlstm-engineering-1",
+    "image": "convlstm-engineering-1-r01-mobile.png",
+    "sha256": "18acf209865eea8ac4aa230eaf298233b5527740522078488b509a876a5b9443",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "同夾爪方塊，夾取成功/失敗是另定義標籤；ConvLSTM產生H/C，分類頭需有監督。以整段影片或實體工件切分，不讓相鄰幀跨訓練驗證。",
+      "選定桌機與手機逐張原生實看；8組r02亦重新逐張實看，刻度/平方差/殘差與圖文界線已修正。",
+      "幾何簡化與部分術語密度保留；未做真人理解試驗。"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "簡化幾何與圖文分區"
+      ],
+      "completeness": [
+        9,
+        "時序表示要接任務頭，才有可驗的輸出。"
+      ],
+      "professionalism": [
+        9,
+        "作者示例與實測分開，訓練及部署條件明列"
+      ],
+      "density": [
+        8,
+        "三節點但術語仍需正文支援"
+      ],
+      "hierarchy": [
+        9,
+        "一讀序，單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch7-page-assessment.json; batch7-main-page-review.json"
+  },
+  {
+    "id": "convlstm-engineering-3",
+    "image": "convlstm-engineering-3-r02-desktop.png",
+    "sha256": "5de7ac71fa3c6d169ee9284521e03b0d1c590e7c5a55f0f0745e8d7b918282e6",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "推論狀態初始化/持續/重設需符合訓練方式；不能讓相機A記憶污染B。保存幀距、解析度、網路及任務頭版本，量完整預處理/狀態更新/任務輸出延遲。 r01實看修正：时间刻度及標籤各自定位，避免SVG空白合併。",
+      "選定桌機與手機逐張原生實看；8組r02亦重新逐張實看，刻度/平方差/殘差與圖文界線已修正。",
+      "幾何簡化與部分術語密度保留；未做真人理解試驗。"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "簡化幾何與圖文分區"
+      ],
+      "completeness": [
+        9,
+        "換影片或相機時，依任務重設記憶。"
+      ],
+      "professionalism": [
+        9,
+        "作者示例與實測分開，訓練及部署條件明列"
+      ],
+      "density": [
+        8,
+        "三節點但術語仍需正文支援"
+      ],
+      "hierarchy": [
+        9,
+        "一讀序，單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch7-page-assessment.json; batch7-main-page-review.json"
+  },
+  {
+    "id": "convlstm-engineering-3",
+    "image": "convlstm-engineering-3-r02-mobile.png",
+    "sha256": "82c71801a84cfd77ad7d4e60b40e822c349998fb6f13aed103f7380d1d600680",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "推論狀態初始化/持續/重設需符合訓練方式；不能讓相機A記憶污染B。保存幀距、解析度、網路及任務頭版本，量完整預處理/狀態更新/任務輸出延遲。 r01實看修正：时间刻度及標籤各自定位，避免SVG空白合併。",
+      "選定桌機與手機逐張原生實看；8組r02亦重新逐張實看，刻度/平方差/殘差與圖文界線已修正。",
+      "幾何簡化與部分術語密度保留；未做真人理解試驗。"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "簡化幾何與圖文分區"
+      ],
+      "completeness": [
+        9,
+        "換影片或相機時，依任務重設記憶。"
+      ],
+      "professionalism": [
+        9,
+        "作者示例與實測分開，訓練及部署條件明列"
+      ],
+      "density": [
+        8,
+        "三節點但術語仍需正文支援"
+      ],
+      "hierarchy": [
+        9,
+        "一讀序，單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch7-page-assessment.json; batch7-main-page-review.json"
+  },
+  {
+    "id": "convlstm-engineering-4",
+    "image": "convlstm-engineering-4-r01-desktop.png",
+    "sha256": "c69a56a51b7cadaee7151d46100e9bc65e2a28af7be1b42e16a7c3c8fecf71b3",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "作者單格例：後續不加入新候選，C初值1、每步f=.5，經三步變.125；不代表真模型門固定。關鍵事件若未取到/遭遺忘仍可能漏檢。",
+      "選定桌機與手機逐張原生實看；8組r02亦重新逐張實看，刻度/平方差/殘差與圖文界線已修正。",
+      "幾何簡化與部分術語密度保留；未做真人理解試驗。"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "簡化幾何與圖文分區"
+      ],
+      "completeness": [
+        9,
+        "記憶是一種可學狀態，不是完整影格存檔。"
+      ],
+      "professionalism": [
+        9,
+        "作者示例與實測分開，訓練及部署條件明列"
+      ],
+      "density": [
+        8,
+        "三節點但術語仍需正文支援"
+      ],
+      "hierarchy": [
+        9,
+        "一讀序，單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch7-page-assessment.json; batch7-main-page-review.json"
+  },
+  {
+    "id": "convlstm-engineering-4",
+    "image": "convlstm-engineering-4-r01-mobile.png",
+    "sha256": "696f9ee926ca4c15db34ddf5a40d3df19bc213400f33f4a5cc9d3872f995efb2",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "作者單格例：後續不加入新候選，C初值1、每步f=.5，經三步變.125；不代表真模型門固定。關鍵事件若未取到/遭遺忘仍可能漏檢。",
+      "選定桌機與手機逐張原生實看；8組r02亦重新逐張實看，刻度/平方差/殘差與圖文界線已修正。",
+      "幾何簡化與部分術語密度保留；未做真人理解試驗。"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "簡化幾何與圖文分區"
+      ],
+      "completeness": [
+        9,
+        "記憶是一種可學狀態，不是完整影格存檔。"
+      ],
+      "professionalism": [
+        9,
+        "作者示例與實測分開，訓練及部署條件明列"
+      ],
+      "density": [
+        8,
+        "三節點但術語仍需正文支援"
+      ],
+      "hierarchy": [
+        9,
+        "一讀序，單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch7-page-assessment.json; batch7-main-page-review.json"
+  },
+  {
+    "id": "videomae-engineering-1",
+    "image": "videomae-engineering-1-r01-desktop.png",
+    "sha256": "015639ad3a7ac1fa15327bd6977844519f1479b625dfd3d1e7ee2b46b4cbbc54",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "重建預訓練不直接定義夾取失敗；下游以標註片段微調或固定編碼器學頭，必須明列模式。部署用新影片與分類路徑。",
+      "選定桌機與手機逐張原生實看；8組r02亦重新逐張實看，刻度/平方差/殘差與圖文界線已修正。",
+      "幾何簡化與部分術語密度保留；未做真人理解試驗。"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "簡化幾何與圖文分區"
+      ],
+      "completeness": [
+        9,
+        "預訓練學表示，標註任務教答案。"
+      ],
+      "professionalism": [
+        9,
+        "作者示例與實測分開，訓練及部署條件明列"
+      ],
+      "density": [
+        8,
+        "三節點但術語仍需正文支援"
+      ],
+      "hierarchy": [
+        9,
+        "一讀序，單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch7-page-assessment.json; batch7-main-page-review.json"
+  },
+  {
+    "id": "videomae-engineering-1",
+    "image": "videomae-engineering-1-r01-mobile.png",
+    "sha256": "0369f1322f02428206f2d3a37d511ee513958449bab99ccf254e6f0744a0221c",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "重建預訓練不直接定義夾取失敗；下游以標註片段微調或固定編碼器學頭，必須明列模式。部署用新影片與分類路徑。",
+      "選定桌機與手機逐張原生實看；8組r02亦重新逐張實看，刻度/平方差/殘差與圖文界線已修正。",
+      "幾何簡化與部分術語密度保留；未做真人理解試驗。"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "簡化幾何與圖文分區"
+      ],
+      "completeness": [
+        9,
+        "預訓練學表示，標註任務教答案。"
+      ],
+      "professionalism": [
+        9,
+        "作者示例與實測分開，訓練及部署條件明列"
+      ],
+      "density": [
+        8,
+        "三節點但術語仍需正文支援"
+      ],
+      "hierarchy": [
+        9,
+        "一讀序，單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch7-page-assessment.json; batch7-main-page-review.json"
+  },
+  {
+    "id": "videomae-engineering-3",
+    "image": "videomae-engineering-3-r02-desktop.png",
+    "sha256": "0af8b2a94847a59f012bb1cce4d1ed12d2ece8dc9af7729e02dbfe2ff96f7cf1",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "全注意力成對數約隨N平方；給定100與200 tokens，其N平方1萬/4萬只是計算量尺度示例，不是實測毫秒。取樣跨距大可能漏短失敗。 r01實看修正：时间刻度及標籤各自定位。",
+      "選定桌機與手機逐張原生實看；8組r02亦重新逐張實看，刻度/平方差/殘差與圖文界線已修正。",
+      "幾何簡化與部分術語密度保留；未做真人理解試驗。"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "簡化幾何與圖文分區"
+      ],
+      "completeness": [
+        9,
+        "減少取樣可省成本，也可能漏掉短事件。"
+      ],
+      "professionalism": [
+        9,
+        "作者示例與實測分開，訓練及部署條件明列"
+      ],
+      "density": [
+        8,
+        "三節點但術語仍需正文支援"
+      ],
+      "hierarchy": [
+        9,
+        "一讀序，單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch7-page-assessment.json; batch7-main-page-review.json"
+  },
+  {
+    "id": "videomae-engineering-3",
+    "image": "videomae-engineering-3-r02-mobile.png",
+    "sha256": "f792e29cf2d155d2001dd9377fc72660f9d76819d13571ec7c0b28e817b19e44",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "全注意力成對數約隨N平方；給定100與200 tokens，其N平方1萬/4萬只是計算量尺度示例，不是實測毫秒。取樣跨距大可能漏短失敗。 r01實看修正：时间刻度及標籤各自定位。",
+      "選定桌機與手機逐張原生實看；8組r02亦重新逐張實看，刻度/平方差/殘差與圖文界線已修正。",
+      "幾何簡化與部分術語密度保留；未做真人理解試驗。"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "簡化幾何與圖文分區"
+      ],
+      "completeness": [
+        9,
+        "減少取樣可省成本，也可能漏掉短事件。"
+      ],
+      "professionalism": [
+        9,
+        "作者示例與實測分開，訓練及部署條件明列"
+      ],
+      "density": [
+        8,
+        "三節點但術語仍需正文支援"
+      ],
+      "hierarchy": [
+        9,
+        "一讀序，單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch7-page-assessment.json; batch7-main-page-review.json"
+  },
+  {
+    "id": "videomae-engineering-4",
+    "image": "videomae-engineering-4-r02-desktop.png",
+    "sha256": "7c316490eb9d044f48eccafc8874c9e1d33a89f506152a014a3ddd81591baf66",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "作者例：100格中99格平方差0、關鍵格100，平均1；平均重建差不能直接當事件成功率。少數關鍵動作需標註與下游驗證。 r01實看修正：99格/1格都明寫平方差，避免把差100誤讀成平方後1萬。",
+      "選定桌機與手機逐張原生實看；8組r02亦重新逐張實看，刻度/平方差/殘差與圖文界線已修正。",
+      "幾何簡化與部分術語密度保留；未做真人理解試驗。"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "簡化幾何與圖文分區"
+      ],
+      "completeness": [
+        9,
+        "像素重建與任務判斷必須分開驗。"
+      ],
+      "professionalism": [
+        9,
+        "作者示例與實測分開，訓練及部署條件明列"
+      ],
+      "density": [
+        8,
+        "三節點但術語仍需正文支援"
+      ],
+      "hierarchy": [
+        9,
+        "一讀序，單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch7-page-assessment.json; batch7-main-page-review.json"
+  },
+  {
+    "id": "videomae-engineering-4",
+    "image": "videomae-engineering-4-r02-mobile.png",
+    "sha256": "1f17c33044017a13c60d0bf005ef14d62e57878de8d0e5a3d4e276018a2a707d",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "作者例：100格中99格平方差0、關鍵格100，平均1；平均重建差不能直接當事件成功率。少數關鍵動作需標註與下游驗證。 r01實看修正：99格/1格都明寫平方差，避免把差100誤讀成平方後1萬。",
+      "選定桌機與手機逐張原生實看；8組r02亦重新逐張實看，刻度/平方差/殘差與圖文界線已修正。",
+      "幾何簡化與部分術語密度保留；未做真人理解試驗。"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "簡化幾何與圖文分區"
+      ],
+      "completeness": [
+        9,
+        "像素重建與任務判斷必須分開驗。"
+      ],
+      "professionalism": [
+        9,
+        "作者示例與實測分開，訓練及部署條件明列"
+      ],
+      "density": [
+        8,
+        "三節點但術語仍需正文支援"
+      ],
+      "hierarchy": [
+        9,
+        "一讀序，單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch7-page-assessment.json; batch7-main-page-review.json"
+  },
+  {
+    "id": "v-jepa-engineering-1",
+    "image": "v-jepa-engineering-1-r01-desktop.png",
+    "sha256": "5ac15e381b73a1e8b2b3dc1d148b92042a05ba7ef06df2b894597a3af8f1f3d8",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "原版2024 V-JEPA預測表徵而非像素；下游可固定骨幹學注意力探針，或另選微調策略須記清。目標編碼器和預測器不是部署任務頭。",
+      "選定桌機與手機逐張原生實看；8組r02亦重新逐張實看，刻度/平方差/殘差與圖文界線已修正。",
+      "幾何簡化與部分術語密度保留；未做真人理解試驗。"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "簡化幾何與圖文分區"
+      ],
+      "completeness": [
+        9,
+        "自監督訊號不會自動變成事件標籤。"
+      ],
+      "professionalism": [
+        9,
+        "作者示例與實測分開，訓練及部署條件明列"
+      ],
+      "density": [
+        8,
+        "三節點但術語仍需正文支援"
+      ],
+      "hierarchy": [
+        9,
+        "一讀序，單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch7-page-assessment.json; batch7-main-page-review.json"
+  },
+  {
+    "id": "v-jepa-engineering-1",
+    "image": "v-jepa-engineering-1-r01-mobile.png",
+    "sha256": "fc11299263f9e688a8048af9cf820ece2be9bc23d5c8374681f236b6cf55cb25",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "原版2024 V-JEPA預測表徵而非像素；下游可固定骨幹學注意力探針，或另選微調策略須記清。目標編碼器和預測器不是部署任務頭。",
+      "選定桌機與手機逐張原生實看；8組r02亦重新逐張實看，刻度/平方差/殘差與圖文界線已修正。",
+      "幾何簡化與部分術語密度保留；未做真人理解試驗。"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "簡化幾何與圖文分區"
+      ],
+      "completeness": [
+        9,
+        "自監督訊號不會自動變成事件標籤。"
+      ],
+      "professionalism": [
+        9,
+        "作者示例與實測分開，訓練及部署條件明列"
+      ],
+      "density": [
+        8,
+        "三節點但術語仍需正文支援"
+      ],
+      "hierarchy": [
+        9,
+        "一讀序，單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch7-page-assessment.json; batch7-main-page-review.json"
+  },
+  {
+    "id": "v-jepa-engineering-3",
+    "image": "v-jepa-engineering-3-r02-desktop.png",
+    "sha256": "41d210a47b05f1193d590c83dffa575677f25f4465db649b1ff8d48c5ba88cfe",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "保存2024骨幹checkpoint、影格取樣、裁切與下游讀出頭。EMA是預訓練目標權重更新，不是現場每片自動更新模型；原版不宣稱未來影像生成。 r01實看修正：时间刻度及標籤各自定位。",
+      "選定桌機與手機逐張原生實看；8組r02亦重新逐張實看，刻度/平方差/殘差與圖文界線已修正。",
+      "幾何簡化與部分術語密度保留；未做真人理解試驗。"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "簡化幾何與圖文分區"
+      ],
+      "completeness": [
+        9,
+        "骨幹、讀出頭與取樣設定是一組。"
+      ],
+      "professionalism": [
+        9,
+        "作者示例與實測分開，訓練及部署條件明列"
+      ],
+      "density": [
+        8,
+        "三節點但術語仍需正文支援"
+      ],
+      "hierarchy": [
+        9,
+        "一讀序，單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch7-page-assessment.json; batch7-main-page-review.json"
+  },
+  {
+    "id": "v-jepa-engineering-3",
+    "image": "v-jepa-engineering-3-r02-mobile.png",
+    "sha256": "b3b68fb7a3b684dfc84bfacafa52e4e931a398fe9e00d0f19fac07c4db6c2dc7",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "保存2024骨幹checkpoint、影格取樣、裁切與下游讀出頭。EMA是預訓練目標權重更新，不是現場每片自動更新模型；原版不宣稱未來影像生成。 r01實看修正：时间刻度及標籤各自定位。",
+      "選定桌機與手機逐張原生實看；8組r02亦重新逐張實看，刻度/平方差/殘差與圖文界線已修正。",
+      "幾何簡化與部分術語密度保留；未做真人理解試驗。"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "簡化幾何與圖文分區"
+      ],
+      "completeness": [
+        9,
+        "骨幹、讀出頭與取樣設定是一組。"
+      ],
+      "professionalism": [
+        9,
+        "作者示例與實測分開，訓練及部署條件明列"
+      ],
+      "density": [
+        8,
+        "三節點但術語仍需正文支援"
+      ],
+      "hierarchy": [
+        9,
+        "一讀序，單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch7-page-assessment.json; batch7-main-page-review.json"
+  },
+  {
+    "id": "v-jepa-engineering-4",
+    "image": "v-jepa-engineering-4-r01-desktop.png",
+    "sha256": "5c9a9fabb45c8453ca46a4f8abdd11366076dd118a4c8adfe186f945b70894d1",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "兩者預訓練目標及尺度不同，L1=.15不能對MSE=1排名。固定資料、讀出方式、硬體與事件指標比較；沒有本輪共同實測。",
+      "選定桌機與手機逐張原生實看；8組r02亦重新逐張實看，刻度/平方差/殘差與圖文界線已修正。",
+      "幾何簡化與部分術語密度保留；未做真人理解試驗。"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "簡化幾何與圖文分區"
+      ],
+      "completeness": [
+        9,
+        "同影片比較任務成果，不能比兩種損失值。"
+      ],
+      "professionalism": [
+        9,
+        "作者示例與實測分開，訓練及部署條件明列"
+      ],
+      "density": [
+        8,
+        "三節點但術語仍需正文支援"
+      ],
+      "hierarchy": [
+        9,
+        "一讀序，單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch7-page-assessment.json; batch7-main-page-review.json"
+  },
+  {
+    "id": "v-jepa-engineering-4",
+    "image": "v-jepa-engineering-4-r01-mobile.png",
+    "sha256": "337ff8a79fefdae06b7b607b36c7ac19b6b7dcfa8a09a86f0520f11e84dd915e",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "兩者預訓練目標及尺度不同，L1=.15不能對MSE=1排名。固定資料、讀出方式、硬體與事件指標比較；沒有本輪共同實測。",
+      "選定桌機與手機逐張原生實看；8組r02亦重新逐張實看，刻度/平方差/殘差與圖文界線已修正。",
+      "幾何簡化與部分術語密度保留；未做真人理解試驗。"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "簡化幾何與圖文分區"
+      ],
+      "completeness": [
+        9,
+        "同影片比較任務成果，不能比兩種損失值。"
+      ],
+      "professionalism": [
+        9,
+        "作者示例與實測分開，訓練及部署條件明列"
+      ],
+      "density": [
+        8,
+        "三節點但術語仍需正文支援"
+      ],
+      "hierarchy": [
+        9,
+        "一讀序，單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch7-page-assessment.json; batch7-main-page-review.json"
+  },
+  {
+    "id": "defectfill-engineering-1",
+    "image": "defectfill-engineering-1-r01-desktop.png",
+    "sha256": "3e466c7ae315e3aa38ec6101d73e8054c5d171cc8241f0c3025c4b4d80b21c2b",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "正常底圖、參考缺陷、遮罩與來源保留；合成圖及mask一致才進訓練。真實缺陷留出不得被參考/候選挑選用過。",
+      "選定桌機與手機逐張原生實看；8組r02亦重新逐張實看，刻度/平方差/殘差與圖文界線已修正。",
+      "幾何簡化與部分術語密度保留；未做真人理解試驗。"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "簡化幾何與圖文分區"
+      ],
+      "completeness": [
+        9,
+        "合成圖供訓練增補，真實留出集負責驗收。"
+      ],
+      "professionalism": [
+        9,
+        "作者示例與實測分開，訓練及部署條件明列"
+      ],
+      "density": [
+        8,
+        "三節點但術語仍需正文支援"
+      ],
+      "hierarchy": [
+        9,
+        "一讀序，單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch7-page-assessment.json; batch7-main-page-review.json"
+  },
+  {
+    "id": "defectfill-engineering-1",
+    "image": "defectfill-engineering-1-r01-mobile.png",
+    "sha256": "c3657f69d7b96ea3c778c5d697b85c05482d3f428172ce1ceabeef05165b1ad2",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "正常底圖、參考缺陷、遮罩與來源保留；合成圖及mask一致才進訓練。真實缺陷留出不得被參考/候選挑選用過。",
+      "選定桌機與手機逐張原生實看；8組r02亦重新逐張實看，刻度/平方差/殘差與圖文界線已修正。",
+      "幾何簡化與部分術語密度保留；未做真人理解試驗。"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "簡化幾何與圖文分區"
+      ],
+      "completeness": [
+        9,
+        "合成圖供訓練增補，真實留出集負責驗收。"
+      ],
+      "professionalism": [
+        9,
+        "作者示例與實測分開，訓練及部署條件明列"
+      ],
+      "density": [
+        8,
+        "三節點但術語仍需正文支援"
+      ],
+      "hierarchy": [
+        9,
+        "一讀序，單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch7-page-assessment.json; batch7-main-page-review.json"
+  },
+  {
+    "id": "defectfill-engineering-3",
+    "image": "defectfill-engineering-3-r01-desktop.png",
+    "sha256": "5bdd31e4975ce9662ff0ddbe0c36b6835d17619a06ad45f860b9a7067e0eb155",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "保存基模/LoRA、文字、mask、種子、採樣與LFS設定。作者例4候選×20步=80去噪呼叫，未含LPIPS與預處理；增加候選不保證增加資料效益。",
+      "選定桌機與手機逐張原生實看；8組r02亦重新逐張實看，刻度/平方差/殘差與圖文界線已修正。",
+      "幾何簡化與部分術語密度保留；未做真人理解試驗。"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "簡化幾何與圖文分區"
+      ],
+      "completeness": [
+        9,
+        "候選越多，生成與挑選的成本都會累積。"
+      ],
+      "professionalism": [
+        9,
+        "作者示例與實測分開，訓練及部署條件明列"
+      ],
+      "density": [
+        8,
+        "三節點但術語仍需正文支援"
+      ],
+      "hierarchy": [
+        9,
+        "一讀序，單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch7-page-assessment.json; batch7-main-page-review.json"
+  },
+  {
+    "id": "defectfill-engineering-3",
+    "image": "defectfill-engineering-3-r01-mobile.png",
+    "sha256": "b61cd96375fef8476d83db6acdce83d1377cb6bd976c05709253476fa9cd5b70",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "保存基模/LoRA、文字、mask、種子、採樣與LFS設定。作者例4候選×20步=80去噪呼叫，未含LPIPS與預處理；增加候選不保證增加資料效益。",
+      "選定桌機與手機逐張原生實看；8組r02亦重新逐張實看，刻度/平方差/殘差與圖文界線已修正。",
+      "幾何簡化與部分術語密度保留；未做真人理解試驗。"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "簡化幾何與圖文分區"
+      ],
+      "completeness": [
+        9,
+        "候選越多，生成與挑選的成本都會累積。"
+      ],
+      "professionalism": [
+        9,
+        "作者示例與實測分開，訓練及部署條件明列"
+      ],
+      "density": [
+        8,
+        "三節點但術語仍需正文支援"
+      ],
+      "hierarchy": [
+        9,
+        "一讀序，單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch7-page-assessment.json; batch7-main-page-review.json"
+  },
+  {
+    "id": "defectfill-engineering-4",
+    "image": "defectfill-engineering-4-r01-desktop.png",
+    "sha256": "5d3398f0c0a6efade206bcf0b015459e4f853c334a4a7f2dd3f4eb17457a79c6",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "感知距離較大也可能來自不合理塗塊，不等於真刮傷。以mask覆蓋、材質及真缺陷檢測效益核對。",
+      "選定桌機與手機逐張原生實看；8組r02亦重新逐張實看，刻度/平方差/殘差與圖文界線已修正。",
+      "幾何簡化與部分術語密度保留；未做真人理解試驗。"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "簡化幾何與圖文分區"
+      ],
+      "completeness": [
+        9,
+        "LFS挑局部差異，物理合理性仍需另驗。"
+      ],
+      "professionalism": [
+        9,
+        "作者示例與實測分開，訓練及部署條件明列"
+      ],
+      "density": [
+        8,
+        "三節點但術語仍需正文支援"
+      ],
+      "hierarchy": [
+        9,
+        "一讀序，單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch7-page-assessment.json; batch7-main-page-review.json"
+  },
+  {
+    "id": "defectfill-engineering-4",
+    "image": "defectfill-engineering-4-r01-mobile.png",
+    "sha256": "c284c44f19234ab9d37add49c6729915447c15c2180e7fa4ffaae8aeeb8176a2",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "感知距離較大也可能來自不合理塗塊，不等於真刮傷。以mask覆蓋、材質及真缺陷檢測效益核對。",
+      "選定桌機與手機逐張原生實看；8組r02亦重新逐張實看，刻度/平方差/殘差與圖文界線已修正。",
+      "幾何簡化與部分術語密度保留；未做真人理解試驗。"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "簡化幾何與圖文分區"
+      ],
+      "completeness": [
+        9,
+        "LFS挑局部差異，物理合理性仍需另驗。"
+      ],
+      "professionalism": [
+        9,
+        "作者示例與實測分開，訓練及部署條件明列"
+      ],
+      "density": [
+        8,
+        "三節點但術語仍需正文支援"
+      ],
+      "hierarchy": [
+        9,
+        "一讀序，單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch7-page-assessment.json; batch7-main-page-review.json"
+  },
+  {
+    "id": "anomalydiffusion-engineering-1",
+    "image": "anomalydiffusion-engineering-1-r01-desktop.png",
+    "sha256": "8fb5db2268aff62034d19ab380a528ec7a9e2c28ae950f6fece6b39487bdf318",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "保持原上方雙孔板及大左下小右下兩傷。合成mask是生成條件，不自動成為真值；空mask區或越界都要剔除或修標。",
+      "選定桌機與手機逐張原生實看；8組r02亦重新逐張實看，刻度/平方差/殘差與圖文界線已修正。",
+      "幾何簡化與部分術語密度保留；未做真人理解試驗。"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "簡化幾何與圖文分區"
+      ],
+      "completeness": [
+        9,
+        "圖與遮罩要逐區一致，才可當訓練樣本。"
+      ],
+      "professionalism": [
+        9,
+        "作者示例與實測分開，訓練及部署條件明列"
+      ],
+      "density": [
+        8,
+        "三節點但術語仍需正文支援"
+      ],
+      "hierarchy": [
+        9,
+        "一讀序，單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch7-page-assessment.json; batch7-main-page-review.json"
+  },
+  {
+    "id": "anomalydiffusion-engineering-1",
+    "image": "anomalydiffusion-engineering-1-r01-mobile.png",
+    "sha256": "97329df8996a533df0689f1023d6072fa536f4535ccc3c7acf5428a18165c488",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "保持原上方雙孔板及大左下小右下兩傷。合成mask是生成條件，不自動成為真值；空mask區或越界都要剔除或修標。",
+      "選定桌機與手機逐張原生實看；8組r02亦重新逐張實看，刻度/平方差/殘差與圖文界線已修正。",
+      "幾何簡化與部分術語密度保留；未做真人理解試驗。"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "簡化幾何與圖文分區"
+      ],
+      "completeness": [
+        9,
+        "圖與遮罩要逐區一致，才可當訓練樣本。"
+      ],
+      "professionalism": [
+        9,
+        "作者示例與實測分開，訓練及部署條件明列"
+      ],
+      "density": [
+        8,
+        "三節點但術語仍需正文支援"
+      ],
+      "hierarchy": [
+        9,
+        "一讀序，單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch7-page-assessment.json; batch7-main-page-review.json"
+  },
+  {
+    "id": "anomalydiffusion-engineering-3",
+    "image": "anomalydiffusion-engineering-3-r01-desktop.png",
+    "sha256": "593413c24d0c013c8f3ee3e86a5cb04f262bbcdfdf6b18ffd8760a11855cd9df",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "保存基模、外觀embedding、mask編碼、AAR/背景融合與採樣設定。不同大小缺陷不能只看整圖平均；位置覆蓋與背景孔位分開驗。",
+      "選定桌機與手機逐張原生實看；8組r02亦重新逐張實看，刻度/平方差/殘差與圖文界線已修正。",
+      "幾何簡化與部分術語密度保留；未做真人理解試驗。"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "簡化幾何與圖文分區"
+      ],
+      "completeness": [
+        9,
+        "保存嵌入、遮罩編碼與採樣設定。"
+      ],
+      "professionalism": [
+        9,
+        "作者示例與實測分開，訓練及部署條件明列"
+      ],
+      "density": [
+        8,
+        "三節點但術語仍需正文支援"
+      ],
+      "hierarchy": [
+        9,
+        "一讀序，單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch7-page-assessment.json; batch7-main-page-review.json"
+  },
+  {
+    "id": "anomalydiffusion-engineering-3",
+    "image": "anomalydiffusion-engineering-3-r01-mobile.png",
+    "sha256": "1f5817ed2c9c2e3fa8fc45825cd9045be40606461a379136eb35a1742abd2c1c",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "保存基模、外觀embedding、mask編碼、AAR/背景融合與採樣設定。不同大小缺陷不能只看整圖平均；位置覆蓋與背景孔位分開驗。",
+      "選定桌機與手機逐張原生實看；8組r02亦重新逐張實看，刻度/平方差/殘差與圖文界線已修正。",
+      "幾何簡化與部分術語密度保留；未做真人理解試驗。"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "簡化幾何與圖文分區"
+      ],
+      "completeness": [
+        9,
+        "保存嵌入、遮罩編碼與採樣設定。"
+      ],
+      "professionalism": [
+        9,
+        "作者示例與實測分開，訓練及部署條件明列"
+      ],
+      "density": [
+        8,
+        "三節點但術語仍需正文支援"
+      ],
+      "hierarchy": [
+        9,
+        "一讀序，單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch7-page-assessment.json; batch7-main-page-review.json"
+  },
+  {
+    "id": "anomalydiffusion-engineering-4",
+    "image": "anomalydiffusion-engineering-4-r01-desktop.png",
+    "sha256": "7115dadf2e262f46566213810f0f3b75a264037d9a8997d6479b6a8197042d88",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "同板同mask，一傷對兩標籤是錯標反例；AAR可能改善但不保證避免。不得用合成量取代真實留出集。",
+      "選定桌機與手機逐張原生實看；8組r02亦重新逐張實看，刻度/平方差/殘差與圖文界線已修正。",
+      "幾何簡化與部分術語密度保留；未做真人理解試驗。"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "簡化幾何與圖文分區"
+      ],
+      "completeness": [
+        9,
+        "未生成的區域，不能沿用缺陷標籤。"
+      ],
+      "professionalism": [
+        9,
+        "作者示例與實測分開，訓練及部署條件明列"
+      ],
+      "density": [
+        8,
+        "三節點但術語仍需正文支援"
+      ],
+      "hierarchy": [
+        9,
+        "一讀序，單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch7-page-assessment.json; batch7-main-page-review.json"
+  },
+  {
+    "id": "anomalydiffusion-engineering-4",
+    "image": "anomalydiffusion-engineering-4-r01-mobile.png",
+    "sha256": "df16b27c40720252b9248140e2d39056b92c4a5ab8a5588c63d1318743bd5b52",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "同板同mask，一傷對兩標籤是錯標反例；AAR可能改善但不保證避免。不得用合成量取代真實留出集。",
+      "選定桌機與手機逐張原生實看；8組r02亦重新逐張實看，刻度/平方差/殘差與圖文界線已修正。",
+      "幾何簡化與部分術語密度保留；未做真人理解試驗。"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "簡化幾何與圖文分區"
+      ],
+      "completeness": [
+        9,
+        "未生成的區域，不能沿用缺陷標籤。"
+      ],
+      "professionalism": [
+        9,
+        "作者示例與實測分開，訓練及部署條件明列"
+      ],
+      "density": [
+        8,
+        "三節點但術語仍需正文支援"
+      ],
+      "hierarchy": [
+        9,
+        "一讀序，單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch7-page-assessment.json; batch7-main-page-review.json"
+  },
+  {
+    "id": "tf-idg-engineering-1",
+    "image": "tf-idg-engineering-1-r01-desktop.png",
+    "sha256": "60ad31f9d56541573d0e1616b596d54ae8aba128be5c46e16be394e152619dce",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "免微調不是零資料。正常底圖與外觀參考及mask是每次生成條件；同中部雙孔板下方兩區，保存合成來源。",
+      "選定桌機與手機逐張原生實看；8組r02亦重新逐張實看，刻度/平方差/殘差與圖文界線已修正。",
+      "幾何簡化與部分術語密度保留；未做真人理解試驗。"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "簡化幾何與圖文分區"
+      ],
+      "completeness": [
+        9,
+        "不微調權重，仍需要參考、遮罩與驗證。"
+      ],
+      "professionalism": [
+        9,
+        "作者示例與實測分開，訓練及部署條件明列"
+      ],
+      "density": [
+        8,
+        "三節點但術語仍需正文支援"
+      ],
+      "hierarchy": [
+        9,
+        "一讀序，單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch7-page-assessment.json; batch7-main-page-review.json"
+  },
+  {
+    "id": "tf-idg-engineering-1",
+    "image": "tf-idg-engineering-1-r01-mobile.png",
+    "sha256": "1056d4d9f3bb3fdff41332799fd778c6c12b943200e666f19348191467fb8023",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "免微調不是零資料。正常底圖與外觀參考及mask是每次生成條件；同中部雙孔板下方兩區，保存合成來源。",
+      "選定桌機與手機逐張原生實看；8組r02亦重新逐張實看，刻度/平方差/殘差與圖文界線已修正。",
+      "幾何簡化與部分術語密度保留；未做真人理解試驗。"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "簡化幾何與圖文分區"
+      ],
+      "completeness": [
+        9,
+        "不微調權重，仍需要參考、遮罩與驗證。"
+      ],
+      "professionalism": [
+        9,
+        "作者示例與實測分開，訓練及部署條件明列"
+      ],
+      "density": [
+        8,
+        "三節點但術語仍需正文支援"
+      ],
+      "hierarchy": [
+        9,
+        "一讀序，單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch7-page-assessment.json; batch7-main-page-review.json"
+  },
+  {
+    "id": "tf-idg-engineering-3",
+    "image": "tf-idg-engineering-3-r01-desktop.png",
+    "sha256": "049f913a6cb3afddaf6886e859fe4c4a24dfe6f6ed14f3ab907f3aa6ba26a299",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "官方autograd.grad(loss,latent)是採樣引導；不要把免微調等同只有一次前向。計入特徵、梯度、採樣與背景融合時間；未實測不給速度排名。",
+      "選定桌機與手機逐張原生實看；8組r02亦重新逐張實看，刻度/平方差/殘差與圖文界線已修正。",
+      "幾何簡化與部分術語密度保留；未做真人理解試驗。"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "簡化幾何與圖文分區"
+      ],
+      "completeness": [
+        9,
+        "每步特徵梯度也要算進延遲與記憶體。"
+      ],
+      "professionalism": [
+        9,
+        "作者示例與實測分開，訓練及部署條件明列"
+      ],
+      "density": [
+        8,
+        "三節點但術語仍需正文支援"
+      ],
+      "hierarchy": [
+        9,
+        "一讀序，單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch7-page-assessment.json; batch7-main-page-review.json"
+  },
+  {
+    "id": "tf-idg-engineering-3",
+    "image": "tf-idg-engineering-3-r01-mobile.png",
+    "sha256": "348bf9436ca7838674d991b0b5259b82d9766614196081c83ad02522a5485eba",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "官方autograd.grad(loss,latent)是採樣引導；不要把免微調等同只有一次前向。計入特徵、梯度、採樣與背景融合時間；未實測不給速度排名。",
+      "選定桌機與手機逐張原生實看；8組r02亦重新逐張實看，刻度/平方差/殘差與圖文界線已修正。",
+      "幾何簡化與部分術語密度保留；未做真人理解試驗。"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "簡化幾何與圖文分區"
+      ],
+      "completeness": [
+        9,
+        "每步特徵梯度也要算進延遲與記憶體。"
+      ],
+      "professionalism": [
+        9,
+        "作者示例與實測分開，訓練及部署條件明列"
+      ],
+      "density": [
+        8,
+        "三節點但術語仍需正文支援"
+      ],
+      "hierarchy": [
+        9,
+        "一讀序，單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch7-page-assessment.json; batch7-main-page-review.json"
+  },
+  {
+    "id": "tf-idg-engineering-4",
+    "image": "tf-idg-engineering-4-r01-desktop.png",
+    "sha256": "8112d211e7e55072203381e8fea23015586fe174a551ef209fab9b8b706beb76",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "作者失敗示意：木紋參考可能使金屬局部出現木質纹理；背景保持不能保證mask內物理正確。",
+      "選定桌機與手機逐張原生實看；8組r02亦重新逐張實看，刻度/平方差/殘差與圖文界線已修正。",
+      "幾何簡化與部分術語密度保留；未做真人理解試驗。"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "簡化幾何與圖文分區"
+      ],
+      "completeness": [
+        9,
+        "梯度對齊外觀，不保證符合目標材質。"
+      ],
+      "professionalism": [
+        9,
+        "作者示例與實測分開，訓練及部署條件明列"
+      ],
+      "density": [
+        8,
+        "三節點但術語仍需正文支援"
+      ],
+      "hierarchy": [
+        9,
+        "一讀序，單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch7-page-assessment.json; batch7-main-page-review.json"
+  },
+  {
+    "id": "tf-idg-engineering-4",
+    "image": "tf-idg-engineering-4-r01-mobile.png",
+    "sha256": "0cf0c736527c3ade92abdf358065f6798c7304ef38cbb94dc01a4595b309e852",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "作者失敗示意：木紋參考可能使金屬局部出現木質纹理；背景保持不能保證mask內物理正確。",
+      "選定桌機與手機逐張原生實看；8組r02亦重新逐張實看，刻度/平方差/殘差與圖文界線已修正。",
+      "幾何簡化與部分術語密度保留；未做真人理解試驗。"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "簡化幾何與圖文分區"
+      ],
+      "completeness": [
+        9,
+        "梯度對齊外觀，不保證符合目標材質。"
+      ],
+      "professionalism": [
+        9,
+        "作者示例與實測分開，訓練及部署條件明列"
+      ],
+      "density": [
+        8,
+        "三節點但術語仍需正文支援"
+      ],
+      "hierarchy": [
+        9,
+        "一讀序，單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch7-page-assessment.json; batch7-main-page-review.json"
+  },
+  {
+    "id": "controlnet-engineering-1",
+    "image": "controlnet-engineering-1-r01-desktop.png",
+    "sha256": "1559180a2f03f7c9e375c837ba28a6a09232cd488ae9cd4c3a433c9f068ec9c5",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "輪廓抽取版本、解析度與對應ControlNet checkpoint需匹配。輸出是合成板，不是實拍檢測或尺寸量測。",
+      "選定桌機與手機逐張原生實看；8組r02亦重新逐張實看，刻度/平方差/殘差與圖文界線已修正。",
+      "幾何簡化與部分術語密度保留；未做真人理解試驗。"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "簡化幾何與圖文分區"
+      ],
+      "completeness": [
+        9,
+        "先定義控制什麼，再檢查生成是否遵守。"
+      ],
+      "professionalism": [
+        9,
+        "作者示例與實測分開，訓練及部署條件明列"
+      ],
+      "density": [
+        8,
+        "三節點但術語仍需正文支援"
+      ],
+      "hierarchy": [
+        9,
+        "一讀序，單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch7-page-assessment.json; batch7-main-page-review.json"
+  },
+  {
+    "id": "controlnet-engineering-1",
+    "image": "controlnet-engineering-1-r01-mobile.png",
+    "sha256": "49d4874bcd2c71a7e46dbda92012f33188fe28e7e5d72b0957d153223bbcbeb2",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "輪廓抽取版本、解析度與對應ControlNet checkpoint需匹配。輸出是合成板，不是實拍檢測或尺寸量測。",
+      "選定桌機與手機逐張原生實看；8組r02亦重新逐張實看，刻度/平方差/殘差與圖文界線已修正。",
+      "幾何簡化與部分術語密度保留；未做真人理解試驗。"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "簡化幾何與圖文分區"
+      ],
+      "completeness": [
+        9,
+        "先定義控制什麼，再檢查生成是否遵守。"
+      ],
+      "professionalism": [
+        9,
+        "作者示例與實測分開，訓練及部署條件明列"
+      ],
+      "density": [
+        8,
+        "三節點但術語仍需正文支援"
+      ],
+      "hierarchy": [
+        9,
+        "一讀序，單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch7-page-assessment.json; batch7-main-page-review.json"
+  },
+  {
+    "id": "controlnet-engineering-3",
+    "image": "controlnet-engineering-3-r01-desktop.png",
+    "sha256": "78c624b9036872694fdc00bfd54d603b5f58a421566467152edc705f0a7cbdf1",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "保存前處理器、控制強度/起止步、基模、文字與採樣。強度增大不保證所有細節更真；用同輪廓檢孔位/外框及材質。",
+      "選定桌機與手機逐張原生實看；8組r02亦重新逐張實看，刻度/平方差/殘差與圖文界線已修正。",
+      "幾何簡化與部分術語密度保留；未做真人理解試驗。"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "簡化幾何與圖文分區"
+      ],
+      "completeness": [
+        9,
+        "強度只是設定，遵守條件與品質要同時看。"
+      ],
+      "professionalism": [
+        9,
+        "作者示例與實測分開，訓練及部署條件明列"
+      ],
+      "density": [
+        8,
+        "三節點但術語仍需正文支援"
+      ],
+      "hierarchy": [
+        9,
+        "一讀序，單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch7-page-assessment.json; batch7-main-page-review.json"
+  },
+  {
+    "id": "controlnet-engineering-3",
+    "image": "controlnet-engineering-3-r01-mobile.png",
+    "sha256": "63391f78a329f93402ffef91d065da8fec73595a884b7668ae3fcaf730b60b2c",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "保存前處理器、控制強度/起止步、基模、文字與採樣。強度增大不保證所有細節更真；用同輪廓檢孔位/外框及材質。",
+      "選定桌機與手機逐張原生實看；8組r02亦重新逐張實看，刻度/平方差/殘差與圖文界線已修正。",
+      "幾何簡化與部分術語密度保留；未做真人理解試驗。"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "簡化幾何與圖文分區"
+      ],
+      "completeness": [
+        9,
+        "強度只是設定，遵守條件與品質要同時看。"
+      ],
+      "professionalism": [
+        9,
+        "作者示例與實測分開，訓練及部署條件明列"
+      ],
+      "density": [
+        8,
+        "三節點但術語仍需正文支援"
+      ],
+      "hierarchy": [
+        9,
+        "一讀序，單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch7-page-assessment.json; batch7-main-page-review.json"
+  },
+  {
+    "id": "controlnet-engineering-4",
+    "image": "controlnet-engineering-4-r01-desktop.png",
+    "sha256": "4d7b17fc1fdff3532d858133ebefb8ea83b34fff5fd4c0cc13a38372efb1edf9",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "同上方兩孔，外框與孔位不變，表面刮傷可不同；輪廓相符不能證明生成裂紋真實存在。",
+      "選定桌機與手機逐張原生實看；8組r02亦重新逐張實看，刻度/平方差/殘差與圖文界線已修正。",
+      "幾何簡化與部分術語密度保留；未做真人理解試驗。"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "簡化幾何與圖文分區"
+      ],
+      "completeness": [
+        9,
+        "條件未描述的細節，不能當成觀測證據。"
+      ],
+      "professionalism": [
+        9,
+        "作者示例與實測分開，訓練及部署條件明列"
+      ],
+      "density": [
+        8,
+        "三節點但術語仍需正文支援"
+      ],
+      "hierarchy": [
+        9,
+        "一讀序，單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch7-page-assessment.json; batch7-main-page-review.json"
+  },
+  {
+    "id": "controlnet-engineering-4",
+    "image": "controlnet-engineering-4-r01-mobile.png",
+    "sha256": "9c62570f3caaaee5819498400b436a19cb38a1fa18f7da85d64f467914d0034f",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "同上方兩孔，外框與孔位不變，表面刮傷可不同；輪廓相符不能證明生成裂紋真實存在。",
+      "選定桌機與手機逐張原生實看；8組r02亦重新逐張實看，刻度/平方差/殘差與圖文界線已修正。",
+      "幾何簡化與部分術語密度保留；未做真人理解試驗。"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "簡化幾何與圖文分區"
+      ],
+      "completeness": [
+        9,
+        "條件未描述的細節，不能當成觀測證據。"
+      ],
+      "professionalism": [
+        9,
+        "作者示例與實測分開，訓練及部署條件明列"
+      ],
+      "density": [
+        8,
+        "三節點但術語仍需正文支援"
+      ],
+      "hierarchy": [
+        9,
+        "一讀序，單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch7-page-assessment.json; batch7-main-page-review.json"
+  },
+  {
+    "id": "inpainting-engineering-1",
+    "image": "inpainting-engineering-1-r01-desktop.png",
+    "sha256": "ad48cb7358c7a4aaca0035b5b2ee8f89f20de508f8301ab7b93053f4efe765f1",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "同上方雙孔板下方黑污點，明列mask 1修改約定及預處理縮放，保存原圖與生成版本。",
+      "選定桌機與手機逐張原生實看；8組r02亦重新逐張實看，刻度/平方差/殘差與圖文界線已修正。",
+      "幾何簡化與部分術語密度保留；未做真人理解試驗。"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "簡化幾何與圖文分區"
+      ],
+      "completeness": [
+        9,
+        "編修輸出另存，保留原觀測供追查。"
+      ],
+      "professionalism": [
+        9,
+        "作者示例與實測分開，訓練及部署條件明列"
+      ],
+      "density": [
+        8,
+        "三節點但術語仍需正文支援"
+      ],
+      "hierarchy": [
+        9,
+        "一讀序，單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch7-page-assessment.json; batch7-main-page-review.json"
+  },
+  {
+    "id": "inpainting-engineering-1",
+    "image": "inpainting-engineering-1-r01-mobile.png",
+    "sha256": "ab3bc4f71d5c0b6642a178af5551eb5fb50f22cd4d9e627c0b446d8beb7975ff",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "同上方雙孔板下方黑污點，明列mask 1修改約定及預處理縮放，保存原圖與生成版本。",
+      "選定桌機與手機逐張原生實看；8組r02亦重新逐張實看，刻度/平方差/殘差與圖文界線已修正。",
+      "幾何簡化與部分術語密度保留；未做真人理解試驗。"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "簡化幾何與圖文分區"
+      ],
+      "completeness": [
+        9,
+        "編修輸出另存，保留原觀測供追查。"
+      ],
+      "professionalism": [
+        9,
+        "作者示例與實測分開，訓練及部署條件明列"
+      ],
+      "density": [
+        8,
+        "三節點但術語仍需正文支援"
+      ],
+      "hierarchy": [
+        9,
+        "一讀序，單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch7-page-assessment.json; batch7-main-page-review.json"
+  },
+  {
+    "id": "inpainting-engineering-3",
+    "image": "inpainting-engineering-3-r01-desktop.png",
+    "sha256": "14c5443221b6e1e89b0f42802ac9a203608a964b155d86f2114420ea9e3e0a62",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "遮罩需包含預期修改區；羽化/膨脹可能改善接縫也擴大修改範圍，實作各異。不能推薦固定像素寬度。",
+      "選定桌機與手機逐張原生實看；8組r02亦重新逐張實看，刻度/平方差/殘差與圖文界線已修正。",
+      "幾何簡化與部分術語密度保留；未做真人理解試驗。"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "簡化幾何與圖文分區"
+      ],
+      "completeness": [
+        9,
+        "按原位置驗接縫、孔位與遮罩外變化。"
+      ],
+      "professionalism": [
+        9,
+        "作者示例與實測分開，訓練及部署條件明列"
+      ],
+      "density": [
+        8,
+        "三節點但術語仍需正文支援"
+      ],
+      "hierarchy": [
+        9,
+        "一讀序，單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch7-page-assessment.json; batch7-main-page-review.json"
+  },
+  {
+    "id": "inpainting-engineering-3",
+    "image": "inpainting-engineering-3-r01-mobile.png",
+    "sha256": "c41e94bda9619a54097fbf1af242d7749f0829ddd3bd8919c7e27d52fda8e45c",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "遮罩需包含預期修改區；羽化/膨脹可能改善接縫也擴大修改範圍，實作各異。不能推薦固定像素寬度。",
+      "選定桌機與手機逐張原生實看；8組r02亦重新逐張實看，刻度/平方差/殘差與圖文界線已修正。",
+      "幾何簡化與部分術語密度保留；未做真人理解試驗。"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "簡化幾何與圖文分區"
+      ],
+      "completeness": [
+        9,
+        "按原位置驗接縫、孔位與遮罩外變化。"
+      ],
+      "professionalism": [
+        9,
+        "作者示例與實測分開，訓練及部署條件明列"
+      ],
+      "density": [
+        8,
+        "三節點但術語仍需正文支援"
+      ],
+      "hierarchy": [
+        9,
+        "一讀序，單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch7-page-assessment.json; batch7-main-page-review.json"
+  },
+  {
+    "id": "inpainting-engineering-4",
+    "image": "inpainting-engineering-4-r01-desktop.png",
+    "sha256": "23b02964fafdf74931ed18341416d343c0c4149b4aed9c6fe7993110e5b7ad6e",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "同上方兩孔板，仅改左孔影像。原檢測與實物量測不能拿編修版本作真值。",
+      "選定桌機與手機逐張原生實看；8組r02亦重新逐張實看，刻度/平方差/殘差與圖文界線已修正。",
+      "幾何簡化與部分術語密度保留；未做真人理解試驗。"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "簡化幾何與圖文分區"
+      ],
+      "completeness": [
+        9,
+        "影像編修只改像素，不能當實物修復。"
+      ],
+      "professionalism": [
+        9,
+        "作者示例與實測分開，訓練及部署條件明列"
+      ],
+      "density": [
+        8,
+        "三節點但術語仍需正文支援"
+      ],
+      "hierarchy": [
+        9,
+        "一讀序，單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch7-page-assessment.json; batch7-main-page-review.json"
+  },
+  {
+    "id": "inpainting-engineering-4",
+    "image": "inpainting-engineering-4-r01-mobile.png",
+    "sha256": "36c9bff067147488c558c6313de91eca7f698e90ff2f0349227a4dfeb0d1d7e7",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "同上方兩孔板，仅改左孔影像。原檢測與實物量測不能拿編修版本作真值。",
+      "選定桌機與手機逐張原生實看；8組r02亦重新逐張實看，刻度/平方差/殘差與圖文界線已修正。",
+      "幾何簡化與部分術語密度保留；未做真人理解試驗。"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "簡化幾何與圖文分區"
+      ],
+      "completeness": [
+        9,
+        "影像編修只改像素，不能當實物修復。"
+      ],
+      "professionalism": [
+        9,
+        "作者示例與實測分開，訓練及部署條件明列"
+      ],
+      "density": [
+        8,
+        "三節點但術語仍需正文支援"
+      ],
+      "hierarchy": [
+        9,
+        "一讀序，單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch7-page-assessment.json; batch7-main-page-review.json"
+  },
+  {
+    "id": "diffusion-restoration-engineering-1",
+    "image": "diffusion-restoration-engineering-1-r02-desktop.png",
+    "sha256": "fad8928a5dd7c885452a4251a0dd285fe46035dbbf158c8b5f04ca3db7cedc88",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "線性逆問題示意，保存A/噪聲假設與原觀測；候選再退化對回y並檢未觀測細節，不把低殘差當真值。 r01實看修正：比較A估計與原觀測，依噪聲模型檢殘差；不宣稱知道真實n。",
+      "選定桌機與手機逐張原生實看；8組r02亦重新逐張實看，刻度/平方差/殘差與圖文界線已修正。",
+      "幾何簡化與部分術語密度保留；未做真人理解試驗。"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "簡化幾何與圖文分區"
+      ],
+      "completeness": [
+        9,
+        "復原候選與原始觀測需一起交付。"
+      ],
+      "professionalism": [
+        9,
+        "作者示例與實測分開，訓練及部署條件明列"
+      ],
+      "density": [
+        8,
+        "三節點但術語仍需正文支援"
+      ],
+      "hierarchy": [
+        9,
+        "一讀序，單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch7-page-assessment.json; batch7-main-page-review.json"
+  },
+  {
+    "id": "diffusion-restoration-engineering-1",
+    "image": "diffusion-restoration-engineering-1-r02-mobile.png",
+    "sha256": "bfea800031a36912d958e4f795ce3112153d17c73880a56ef7bf36f57a98214b",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "線性逆問題示意，保存A/噪聲假設與原觀測；候選再退化對回y並檢未觀測細節，不把低殘差當真值。 r01實看修正：比較A估計與原觀測，依噪聲模型檢殘差；不宣稱知道真實n。",
+      "選定桌機與手機逐張原生實看；8組r02亦重新逐張實看，刻度/平方差/殘差與圖文界線已修正。",
+      "幾何簡化與部分術語密度保留；未做真人理解試驗。"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "簡化幾何與圖文分區"
+      ],
+      "completeness": [
+        9,
+        "復原候選與原始觀測需一起交付。"
+      ],
+      "professionalism": [
+        9,
+        "作者示例與實測分開，訓練及部署條件明列"
+      ],
+      "density": [
+        8,
+        "三節點但術語仍需正文支援"
+      ],
+      "hierarchy": [
+        9,
+        "一讀序，單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch7-page-assessment.json; batch7-main-page-review.json"
+  },
+  {
+    "id": "diffusion-restoration-engineering-3",
+    "image": "diffusion-restoration-engineering-3-r02-desktop.png",
+    "sha256": "0ba32d75e3613e92a8f5079583ba29620a6b1e5595b53f2f18cf2a69df7d5e63",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "保存模型、退化算子、噪聲與步數種子；不同候選一致不保證唯一真實。時間要含每步去噪及資料一致性。 r01實看修正：依噪聲模型驗殘差，並將結論寫成明確可做的條件核對。",
+      "選定桌機與手機逐張原生實看；8組r02亦重新逐張實看，刻度/平方差/殘差與圖文界線已修正。",
+      "幾何簡化與部分術語密度保留；未做真人理解試驗。"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "簡化幾何與圖文分區"
+      ],
+      "completeness": [
+        9,
+        "退化條件改變，模型與驗證也要重新核對。"
+      ],
+      "professionalism": [
+        9,
+        "作者示例與實測分開，訓練及部署條件明列"
+      ],
+      "density": [
+        8,
+        "三節點但術語仍需正文支援"
+      ],
+      "hierarchy": [
+        9,
+        "一讀序，單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch7-page-assessment.json; batch7-main-page-review.json"
+  },
+  {
+    "id": "diffusion-restoration-engineering-3",
+    "image": "diffusion-restoration-engineering-3-r02-mobile.png",
+    "sha256": "bd1a3c41b134a4a6af6252d66785bd4498b85fa959173bc07b0ed72088d05618",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "保存模型、退化算子、噪聲與步數種子；不同候選一致不保證唯一真實。時間要含每步去噪及資料一致性。 r01實看修正：依噪聲模型驗殘差，並將結論寫成明確可做的條件核對。",
+      "選定桌機與手機逐張原生實看；8組r02亦重新逐張實看，刻度/平方差/殘差與圖文界線已修正。",
+      "幾何簡化與部分術語密度保留；未做真人理解試驗。"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "簡化幾何與圖文分區"
+      ],
+      "completeness": [
+        9,
+        "退化條件改變，模型與驗證也要重新核對。"
+      ],
+      "professionalism": [
+        9,
+        "作者示例與實測分開，訓練及部署條件明列"
+      ],
+      "density": [
+        8,
+        "三節點但術語仍需正文支援"
+      ],
+      "hierarchy": [
+        9,
+        "一讀序，單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch7-page-assessment.json; batch7-main-page-review.json"
+  },
+  {
+    "id": "diffusion-restoration-engineering-4",
+    "image": "diffusion-restoration-engineering-4-r02-desktop.png",
+    "sha256": "33215d6c675db785490ee908588a3464f2cb48decad2c707ba899e13ea362396",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "作者反例把加性雜訊當卷積模糊，假設錯誤可引入不必要輪廓。需檢退化與獨立成像，不以漂亮結果證明模型合適。 r01實看修正：錯退化反例保留完整同板，在右外框畫多重邊；噪聲容許條件明寫。",
+      "選定桌機與手機逐張原生實看；8組r02亦重新逐張實看，刻度/平方差/殘差與圖文界線已修正。",
+      "幾何簡化與部分術語密度保留；未做真人理解試驗。"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "簡化幾何與圖文分區"
+      ],
+      "completeness": [
+        9,
+        "先驗看起來合理，仍可能不符合取像原因。"
+      ],
+      "professionalism": [
+        9,
+        "作者示例與實測分開，訓練及部署條件明列"
+      ],
+      "density": [
+        8,
+        "三節點但術語仍需正文支援"
+      ],
+      "hierarchy": [
+        9,
+        "一讀序，單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch7-page-assessment.json; batch7-main-page-review.json"
+  },
+  {
+    "id": "diffusion-restoration-engineering-4",
+    "image": "diffusion-restoration-engineering-4-r02-mobile.png",
+    "sha256": "d0e5dce864c4e8e92dd725c930c8696cfb4581fec719ababfbaf623f6fa68a05",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "作者反例把加性雜訊當卷積模糊，假設錯誤可引入不必要輪廓。需檢退化與獨立成像，不以漂亮結果證明模型合適。 r01實看修正：錯退化反例保留完整同板，在右外框畫多重邊；噪聲容許條件明寫。",
+      "選定桌機與手機逐張原生實看；8組r02亦重新逐張實看，刻度/平方差/殘差與圖文界線已修正。",
+      "幾何簡化與部分術語密度保留；未做真人理解試驗。"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "簡化幾何與圖文分區"
+      ],
+      "completeness": [
+        9,
+        "先驗看起來合理，仍可能不符合取像原因。"
+      ],
+      "professionalism": [
+        9,
+        "作者示例與實測分開，訓練及部署條件明列"
+      ],
+      "density": [
+        8,
+        "三節點但術語仍需正文支援"
+      ],
+      "hierarchy": [
+        9,
+        "一讀序，單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch7-page-assessment.json; batch7-main-page-review.json"
+  },
+  {
+    "id": "deblur-engineering-1",
+    "image": "deblur-engineering-1-r01-desktop.png",
+    "sha256": "f836dc25e8141a329231cbe315a9850975dc892044855f8a3e2ccf79f0f2ebcf",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "同板直邊，不只比較視覺清晰度；以同位置獨立短曝光/清晰圖驗邊緣偏移、假邊與下游量測。",
+      "選定桌機與手機逐張原生實看；8組r02亦重新逐張實看，刻度/平方差/殘差與圖文界線已修正。",
+      "幾何簡化與部分術語密度保留；未做真人理解試驗。"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "簡化幾何與圖文分區"
+      ],
+      "completeness": [
+        9,
+        "去模糊是估計，量測需驗邊緣偏差。"
+      ],
+      "professionalism": [
+        9,
+        "作者示例與實測分開，訓練及部署條件明列"
+      ],
+      "density": [
+        8,
+        "三節點但術語仍需正文支援"
+      ],
+      "hierarchy": [
+        9,
+        "一讀序，單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch7-page-assessment.json; batch7-main-page-review.json"
+  },
+  {
+    "id": "deblur-engineering-1",
+    "image": "deblur-engineering-1-r01-mobile.png",
+    "sha256": "a6af0ba2ee021da6357e9c7f4dd492d42da130f660325cb272e0f606faa94b32",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "同板直邊，不只比較視覺清晰度；以同位置獨立短曝光/清晰圖驗邊緣偏移、假邊與下游量測。",
+      "選定桌機與手機逐張原生實看；8組r02亦重新逐張實看，刻度/平方差/殘差與圖文界線已修正。",
+      "幾何簡化與部分術語密度保留；未做真人理解試驗。"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "簡化幾何與圖文分區"
+      ],
+      "completeness": [
+        9,
+        "去模糊是估計，量測需驗邊緣偏差。"
+      ],
+      "professionalism": [
+        9,
+        "作者示例與實測分開，訓練及部署條件明列"
+      ],
+      "density": [
+        8,
+        "三節點但術語仍需正文支援"
+      ],
+      "hierarchy": [
+        9,
+        "一讀序，單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch7-page-assessment.json; batch7-main-page-review.json"
+  },
+  {
+    "id": "deblur-engineering-3",
+    "image": "deblur-engineering-3-r02-desktop.png",
+    "sha256": "0faa83f7b30996b4b878a52dc3fc62849de4a8d5a91ba95f11bca579ed93d88d",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "物理移動/失焦與空間變化不同，模型訓練退化需對應。作者像素邊界100/102差2只示例，不是毫米或模型實測。 r01實看修正：真邊/估計/差值移出影像並以同色標明，避免跨邊界。",
+      "選定桌機與手機逐張原生實看；8組r02亦重新逐張實看，刻度/平方差/殘差與圖文界線已修正。",
+      "幾何簡化與部分術語密度保留；未做真人理解試驗。"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "簡化幾何與圖文分區"
+      ],
+      "completeness": [
+        9,
+        "按實際曝光與運動條件驗完整流程。"
+      ],
+      "professionalism": [
+        9,
+        "作者示例與實測分開，訓練及部署條件明列"
+      ],
+      "density": [
+        8,
+        "三節點但術語仍需正文支援"
+      ],
+      "hierarchy": [
+        9,
+        "一讀序，單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch7-page-assessment.json; batch7-main-page-review.json"
+  },
+  {
+    "id": "deblur-engineering-3",
+    "image": "deblur-engineering-3-r02-mobile.png",
+    "sha256": "db06e232ef5be1f0343887611fe86163d312c171e94e5540998dfffe3d2df7c5",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "物理移動/失焦與空間變化不同，模型訓練退化需對應。作者像素邊界100/102差2只示例，不是毫米或模型實測。 r01實看修正：真邊/估計/差值移出影像並以同色標明，避免跨邊界。",
+      "選定桌機與手機逐張原生實看；8組r02亦重新逐張實看，刻度/平方差/殘差與圖文界線已修正。",
+      "幾何簡化與部分術語密度保留；未做真人理解試驗。"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "簡化幾何與圖文分區"
+      ],
+      "completeness": [
+        9,
+        "按實際曝光與運動條件驗完整流程。"
+      ],
+      "professionalism": [
+        9,
+        "作者示例與實測分開，訓練及部署條件明列"
+      ],
+      "density": [
+        8,
+        "三節點但術語仍需正文支援"
+      ],
+      "hierarchy": [
+        9,
+        "一讀序，單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch7-page-assessment.json; batch7-main-page-review.json"
+  },
+  {
+    "id": "deblur-engineering-4",
+    "image": "deblur-engineering-4-r01-desktop.png",
+    "sha256": "e5581693f9f97e4b9167dfe5797faac597de8204b3e8621764ae31e54448428e",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "同邊橫切振鈴比原平滑觀測更銳利但有額外輪廓，量測若選錯峰會偏移。獨立成像驗證。",
+      "選定桌機與手機逐張原生實看；8組r02亦重新逐張實看，刻度/平方差/殘差與圖文界線已修正。",
+      "幾何簡化與部分術語密度保留；未做真人理解試驗。"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "簡化幾何與圖文分區"
+      ],
+      "completeness": [
+        9,
+        "銳利度增加，不能取代真邊位置證據。"
+      ],
+      "professionalism": [
+        9,
+        "作者示例與實測分開，訓練及部署條件明列"
+      ],
+      "density": [
+        8,
+        "三節點但術語仍需正文支援"
+      ],
+      "hierarchy": [
+        9,
+        "一讀序，單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch7-page-assessment.json; batch7-main-page-review.json"
+  },
+  {
+    "id": "deblur-engineering-4",
+    "image": "deblur-engineering-4-r01-mobile.png",
+    "sha256": "d53ba471ad9d5e8fb55e3ae1673295787a10ff79e7004695ff55c32b41e37caf",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "同邊橫切振鈴比原平滑觀測更銳利但有額外輪廓，量測若選錯峰會偏移。獨立成像驗證。",
+      "選定桌機與手機逐張原生實看；8組r02亦重新逐張實看，刻度/平方差/殘差與圖文界線已修正。",
+      "幾何簡化與部分術語密度保留；未做真人理解試驗。"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "簡化幾何與圖文分區"
+      ],
+      "completeness": [
+        9,
+        "銳利度增加，不能取代真邊位置證據。"
+      ],
+      "professionalism": [
+        9,
+        "作者示例與實測分開，訓練及部署條件明列"
+      ],
+      "density": [
+        8,
+        "三節點但術語仍需正文支援"
+      ],
+      "hierarchy": [
+        9,
+        "一讀序，單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch7-page-assessment.json; batch7-main-page-review.json"
+  },
+  {
+    "id": "super-resolution-engineering-1",
+    "image": "super-resolution-engineering-1-r01-desktop.png",
+    "sha256": "f0fb40f8a3ebb08cab656e5b2d19608fe38a9759bed487baedbf77d2789e1d23",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "同矩形板大左小右孔，固定q；保存原解析度、縮放倍率、退化假設與模型版本，輸出不是新增相機資料。",
+      "選定桌機與手機逐張原生實看；8組r02亦重新逐張實看，刻度/平方差/殘差與圖文界線已修正。",
+      "幾何簡化與部分術語密度保留；未做真人理解試驗。"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "簡化幾何與圖文分區"
+      ],
+      "completeness": [
+        9,
+        "輸出更密，仍要保留原始低解析影像。"
+      ],
+      "professionalism": [
+        9,
+        "作者示例與實測分開，訓練及部署條件明列"
+      ],
+      "density": [
+        8,
+        "三節點但術語仍需正文支援"
+      ],
+      "hierarchy": [
+        9,
+        "一讀序，單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch7-page-assessment.json; batch7-main-page-review.json"
+  },
+  {
+    "id": "super-resolution-engineering-1",
+    "image": "super-resolution-engineering-1-r01-mobile.png",
+    "sha256": "35476ee4084b4059faed3d2873238dcd336a2ea783ef5703d884ca44beffec2d",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "同矩形板大左小右孔，固定q；保存原解析度、縮放倍率、退化假設與模型版本，輸出不是新增相機資料。",
+      "選定桌機與手機逐張原生實看；8組r02亦重新逐張實看，刻度/平方差/殘差與圖文界線已修正。",
+      "幾何簡化與部分術語密度保留；未做真人理解試驗。"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "簡化幾何與圖文分區"
+      ],
+      "completeness": [
+        9,
+        "輸出更密，仍要保留原始低解析影像。"
+      ],
+      "professionalism": [
+        9,
+        "作者示例與實測分開，訓練及部署條件明列"
+      ],
+      "density": [
+        8,
+        "三節點但術語仍需正文支援"
+      ],
+      "hierarchy": [
+        9,
+        "一讀序，單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch7-page-assessment.json; batch7-main-page-review.json"
+  },
+  {
+    "id": "super-resolution-engineering-3",
+    "image": "super-resolution-engineering-3-r01-desktop.png",
+    "sha256": "e7380b6b9aae50280339e1e57455a68494090ccc98fd3854a36bbf9fbb8a8a35",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "作者100×100到200×200由1萬到4萬像素，只是存儲/輸出量，不保證速度固定四倍。需實测延遲與細節保真，沒有本輪實測。",
+      "選定桌機與手機逐張原生實看；8組r02亦重新逐張實看，刻度/平方差/殘差與圖文界線已修正。",
+      "幾何簡化與部分術語密度保留；未做真人理解試驗。"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "簡化幾何與圖文分區"
+      ],
+      "completeness": [
+        9,
+        "放大倍率和真實細節改善要分開驗。"
+      ],
+      "professionalism": [
+        9,
+        "作者示例與實測分開，訓練及部署條件明列"
+      ],
+      "density": [
+        8,
+        "三節點但術語仍需正文支援"
+      ],
+      "hierarchy": [
+        9,
+        "一讀序，單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch7-page-assessment.json; batch7-main-page-review.json"
+  },
+  {
+    "id": "super-resolution-engineering-3",
+    "image": "super-resolution-engineering-3-r01-mobile.png",
+    "sha256": "c049f421da9a61d88aae1198c50ff266841e64aad0f722d52340ba43d7ec7d85",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "作者100×100到200×200由1萬到4萬像素，只是存儲/輸出量，不保證速度固定四倍。需實测延遲與細節保真，沒有本輪實測。",
+      "選定桌機與手機逐張原生實看；8組r02亦重新逐張實看，刻度/平方差/殘差與圖文界線已修正。",
+      "幾何簡化與部分術語密度保留；未做真人理解試驗。"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "簡化幾何與圖文分區"
+      ],
+      "completeness": [
+        9,
+        "放大倍率和真實細節改善要分開驗。"
+      ],
+      "professionalism": [
+        9,
+        "作者示例與實測分開，訓練及部署條件明列"
+      ],
+      "density": [
+        8,
+        "三節點但術語仍需正文支援"
+      ],
+      "hierarchy": [
+        9,
+        "一讀序，單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch7-page-assessment.json; batch7-main-page-review.json"
+  },
+  {
+    "id": "super-resolution-engineering-4",
+    "image": "super-resolution-engineering-4-r01-desktop.png",
+    "sha256": "6e0720e53658125d423710cdd74b6577fa5f0c129368dd4549d9298b8881b5ba",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "插值成本通常較簡但不能恢復缺失細節；學習式使用先驗且可能幻覺。固定真實取像、退化、硬體與下游任務比較，不用跨論文排名。",
+      "選定桌機與手機逐張原生實看；8組r02亦重新逐張實看，刻度/平方差/殘差與圖文界線已修正。",
+      "幾何簡化與部分術語密度保留；未做真人理解試驗。"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "簡化幾何與圖文分區"
+      ],
+      "completeness": [
+        9,
+        "同原圖比較細節保真與成本，不只看銳利。"
+      ],
+      "professionalism": [
+        9,
+        "作者示例與實測分開，訓練及部署條件明列"
+      ],
+      "density": [
+        8,
+        "三節點但術語仍需正文支援"
+      ],
+      "hierarchy": [
+        9,
+        "一讀序，單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch7-page-assessment.json; batch7-main-page-review.json"
+  },
+  {
+    "id": "super-resolution-engineering-4",
+    "image": "super-resolution-engineering-4-r01-mobile.png",
+    "sha256": "a0832eed8f512fc79292c2e08eea38a5839f01fa987d7d986b92180b3cb24fa9",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "插值成本通常較簡但不能恢復缺失細節；學習式使用先驗且可能幻覺。固定真實取像、退化、硬體與下游任務比較，不用跨論文排名。",
+      "選定桌機與手機逐張原生實看；8組r02亦重新逐張實看，刻度/平方差/殘差與圖文界線已修正。",
+      "幾何簡化與部分術語密度保留；未做真人理解試驗。"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "簡化幾何與圖文分區"
+      ],
+      "completeness": [
+        9,
+        "同原圖比較細節保真與成本，不只看銳利。"
+      ],
+      "professionalism": [
+        9,
+        "作者示例與實測分開，訓練及部署條件明列"
+      ],
+      "density": [
+        8,
+        "三節點但術語仍需正文支援"
+      ],
+      "hierarchy": [
+        9,
+        "一讀序，單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch7-page-assessment.json; batch7-main-page-review.json"
+  }
+]

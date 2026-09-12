@@ -105,3 +105,40 @@ Preserve image/document/video provenance; ROI, resize and pixel/token settings; 
 - Wang et al., *Qwen2-VL: Enhancing Vision-Language Model's Perception of the World at Any Resolution* (2024), [arXiv:2409.12191](https://arxiv.org/abs/2409.12191).
 - [Official Qwen-VL repository](https://github.com/QwenLM/Qwen-VL) for the Qwen-VL family and deployment lineage.
 - `full-model-course/06-foundation-vision-and-vlm.md` for course-scoped claims and page order.
+
+<!-- wi033-engineering:start -->
+## WI-033 工程圖修正
+
+### Qwen2-VL：讀文字也要保留位置
+
+限定Qwen2-VL，以批號B08說明視覺與文字輸入共同讀取內容；M-RoPE保留時空位置，模型輸出形式依所用版本與提示。局部圖是原銘牌工作例的簡化，不代表實測OCR結果。
+
+視覺token保留線索，回答仍須逐欄核對。
+
+來源：https://arxiv.org/abs/2409.12191
+
+### Qwen2-VL：可變token也保留位置
+
+限定Qwen2-VL：Naive Dynamic Resolution讓不同輸入形成可變視覺token數；M-RoPE將時間、高度、寬度位置納入旋轉位置表示，文字使用相應的一維位置處理。小格數為示意；像素預算/處理器限制仍會丟失小字。圖示同標籤批號B08，沒有從模糊B0?補造答案。
+
+動態解析度與位置編碼，仍受原像素限制。
+
+來源：https://arxiv.org/abs/2409.12191
+
+### Qwen2-VL：像素預算要與小字一起驗
+
+固定processor、像素上下限、長寬比、模型及生成設定。壓低像素預算可能失去小字；保存原圖並逐欄核對，輸入不清時可重拍或保留未知，不靠語言先驗補造批號。
+
+節省token前，先確認關鍵字仍能看清。
+
+來源：https://arxiv.org/abs/2409.12191
+
+### Qwen2-VL與OCR：按文字工作選型
+
+共同原圖和欄位真值下比較OCR與VLM的字元錯誤、不確定處理、版面變化與延遲。VLM的描述能力不保證精確字串更可靠；兩者都須依原圖驗證，不編造工具勝負。
+
+固定欄位可試OCR，問答需求再比較VLM。
+
+來源：https://arxiv.org/abs/2409.12191
+
+<!-- wi033-engineering:end -->

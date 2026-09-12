@@ -1,0 +1,502 @@
+[
+  {
+    "topic": "diffusion-restoration",
+    "route": "interactive-learning.html",
+    "width": 1440,
+    "errors": [],
+    "images": [
+      {
+        "src": "http://127.0.0.1:8000/_course_content/generated-concepts/diffusion-restoration/wi026-diffusion-restoration-c1-r01-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 404.1875,
+          "y": 401.515625,
+          "width": 935.625,
+          "height": 526.5625,
+          "top": 401.515625,
+          "right": 1339.8125,
+          "bottom": 928.078125,
+          "left": 404.1875
+        },
+        "kind": "main-1"
+      },
+      {
+        "src": "http://127.0.0.1:8000/_course_content/generated-concepts/diffusion-restoration/wi026-restoration-d2-r02-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 404.1875,
+          "y": 201.21875,
+          "width": 935.625,
+          "height": 526.5625,
+          "top": 201.21875,
+          "right": 1339.8125,
+          "bottom": 727.78125,
+          "left": 404.1875
+        },
+        "kind": "main-2"
+      },
+      {
+        "src": "http://127.0.0.1:8000/_course_content/generated-concepts/diffusion-restoration/wi026-restoration-d3-r01-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 404.1875,
+          "y": 200.53125,
+          "width": 935.625,
+          "height": 526.5625,
+          "top": 200.53125,
+          "right": 1339.8125,
+          "bottom": 727.09375,
+          "left": 404.1875
+        },
+        "kind": "main-3"
+      },
+      {
+        "src": "http://127.0.0.1:8000/roadmap-model-selection/diffusion-restoration/diffusion-restoration/images/final/WI033-DIFFUSION-RESTORATION-01-r02-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 367.1875,
+          "y": 196.0625,
+          "width": 1009.625,
+          "height": 568.203125,
+          "top": 196.0625,
+          "right": 1376.8125,
+          "bottom": 764.265625,
+          "left": 367.1875
+        },
+        "kind": "engineering-1"
+      },
+      {
+        "src": "http://127.0.0.1:8000/roadmap-model-selection/diffusion-restoration/diffusion-restoration/images/final/WI033-DIFFUSION-RESTORATION-02-r01-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 367.1875,
+          "y": 196.3125,
+          "width": 1009.625,
+          "height": 568.203125,
+          "top": 196.3125,
+          "right": 1376.8125,
+          "bottom": 764.515625,
+          "left": 367.1875
+        },
+        "kind": "engineering-2"
+      },
+      {
+        "src": "http://127.0.0.1:8000/roadmap-model-selection/diffusion-restoration/diffusion-restoration/images/final/WI033-DIFFUSION-RESTORATION-03-r02-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 367.1875,
+          "y": 196.328125,
+          "width": 1009.625,
+          "height": 568.203125,
+          "top": 196.328125,
+          "right": 1376.8125,
+          "bottom": 764.53125,
+          "left": 367.1875
+        },
+        "kind": "engineering-3"
+      },
+      {
+        "src": "http://127.0.0.1:8000/roadmap-model-selection/diffusion-restoration/diffusion-restoration/images/final/WI033-DIFFUSION-RESTORATION-04-r02-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 367.1875,
+          "y": 195.578125,
+          "width": 1009.625,
+          "height": 568.203125,
+          "top": 195.578125,
+          "right": 1376.8125,
+          "bottom": 763.78125,
+          "left": 367.1875
+        },
+        "kind": "engineering-4"
+      }
+    ],
+    "zoom_checks": 7,
+    "answer": true,
+    "overflow": false,
+    "navigation": true,
+    "complete": true
+  },
+  {
+    "topic": "diffusion-restoration",
+    "route": "interactive-learning.html",
+    "width": 360,
+    "errors": [],
+    "images": [
+      {
+        "src": "http://127.0.0.1:8000/_course_content/generated-concepts/diffusion-restoration/wi026-diffusion-restoration-c1-r02-mobile.png",
+        "nw": 724,
+        "nh": 2172,
+        "box": {
+          "x": 17,
+          "y": -134.234375,
+          "width": 326,
+          "height": 978,
+          "top": -134.234375,
+          "right": 343,
+          "bottom": 843.765625,
+          "left": 17
+        },
+        "kind": "main-1"
+      },
+      {
+        "src": "http://127.0.0.1:8000/_course_content/generated-concepts/diffusion-restoration/wi026-restoration-d2-r02-mobile.png",
+        "nw": 724,
+        "nh": 2172,
+        "box": {
+          "x": 17,
+          "y": -134.828125,
+          "width": 326,
+          "height": 978,
+          "top": -134.828125,
+          "right": 343,
+          "bottom": 843.171875,
+          "left": 17
+        },
+        "kind": "main-2"
+      },
+      {
+        "src": "http://127.0.0.1:8000/_course_content/generated-concepts/diffusion-restoration/wi026-restoration-d3-r01-mobile.png",
+        "nw": 724,
+        "nh": 2172,
+        "box": {
+          "x": 17,
+          "y": -134.234375,
+          "width": 326,
+          "height": 978,
+          "top": -134.234375,
+          "right": 343,
+          "bottom": 843.765625,
+          "left": 17
+        },
+        "kind": "main-3"
+      },
+      {
+        "src": "http://127.0.0.1:8000/roadmap-model-selection/diffusion-restoration/diffusion-restoration/images/final/WI033-DIFFUSION-RESTORATION-01-r02-mobile.png",
+        "nw": 768,
+        "nh": 2304,
+        "box": {
+          "x": 34,
+          "y": -69.140625,
+          "width": 292,
+          "height": 876,
+          "top": -69.140625,
+          "right": 326,
+          "bottom": 806.859375,
+          "left": 34
+        },
+        "kind": "engineering-1"
+      },
+      {
+        "src": "http://127.0.0.1:8000/roadmap-model-selection/diffusion-restoration/diffusion-restoration/images/final/WI033-DIFFUSION-RESTORATION-02-r01-mobile.png",
+        "nw": 768,
+        "nh": 2304,
+        "box": {
+          "x": 34,
+          "y": -69.640625,
+          "width": 292,
+          "height": 876,
+          "top": -69.640625,
+          "right": 326,
+          "bottom": 806.359375,
+          "left": 34
+        },
+        "kind": "engineering-2"
+      },
+      {
+        "src": "http://127.0.0.1:8000/roadmap-model-selection/diffusion-restoration/diffusion-restoration/images/final/WI033-DIFFUSION-RESTORATION-03-r02-mobile.png",
+        "nw": 768,
+        "nh": 2304,
+        "box": {
+          "x": 34,
+          "y": -69.296875,
+          "width": 292,
+          "height": 876,
+          "top": -69.296875,
+          "right": 326,
+          "bottom": 806.703125,
+          "left": 34
+        },
+        "kind": "engineering-3"
+      },
+      {
+        "src": "http://127.0.0.1:8000/roadmap-model-selection/diffusion-restoration/diffusion-restoration/images/final/WI033-DIFFUSION-RESTORATION-04-r02-mobile.png",
+        "nw": 768,
+        "nh": 2304,
+        "box": {
+          "x": 34,
+          "y": -69.21875,
+          "width": 292,
+          "height": 876,
+          "top": -69.21875,
+          "right": 326,
+          "bottom": 806.78125,
+          "left": 34
+        },
+        "kind": "engineering-4"
+      }
+    ],
+    "zoom_checks": 7,
+    "answer": true,
+    "overflow": false,
+    "navigation": true,
+    "complete": true
+  },
+  {
+    "topic": "diffusion-restoration",
+    "route": "docs/index.html",
+    "width": 1440,
+    "errors": [],
+    "images": [
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/diffusion-restoration/wi026-diffusion-restoration-c1-r01-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 404.1875,
+          "y": 401.515625,
+          "width": 935.625,
+          "height": 526.5625,
+          "top": 401.515625,
+          "right": 1339.8125,
+          "bottom": 928.078125,
+          "left": 404.1875
+        },
+        "kind": "main-1"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/diffusion-restoration/wi026-restoration-d2-r02-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 404.1875,
+          "y": 201.21875,
+          "width": 935.625,
+          "height": 526.5625,
+          "top": 201.21875,
+          "right": 1339.8125,
+          "bottom": 727.78125,
+          "left": 404.1875
+        },
+        "kind": "main-2"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/diffusion-restoration/wi026-restoration-d3-r01-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 404.1875,
+          "y": 200.53125,
+          "width": 935.625,
+          "height": 526.5625,
+          "top": 200.53125,
+          "right": 1339.8125,
+          "bottom": 727.09375,
+          "left": 404.1875
+        },
+        "kind": "main-3"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/diffusion-restoration/diffusion-restoration/images/final/WI033-DIFFUSION-RESTORATION-01-r02-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 367.1875,
+          "y": 196.0625,
+          "width": 1009.625,
+          "height": 568.203125,
+          "top": 196.0625,
+          "right": 1376.8125,
+          "bottom": 764.265625,
+          "left": 367.1875
+        },
+        "kind": "engineering-1"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/diffusion-restoration/diffusion-restoration/images/final/WI033-DIFFUSION-RESTORATION-02-r01-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 367.1875,
+          "y": 196.3125,
+          "width": 1009.625,
+          "height": 568.203125,
+          "top": 196.3125,
+          "right": 1376.8125,
+          "bottom": 764.515625,
+          "left": 367.1875
+        },
+        "kind": "engineering-2"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/diffusion-restoration/diffusion-restoration/images/final/WI033-DIFFUSION-RESTORATION-03-r02-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 367.1875,
+          "y": 196.328125,
+          "width": 1009.625,
+          "height": 568.203125,
+          "top": 196.328125,
+          "right": 1376.8125,
+          "bottom": 764.53125,
+          "left": 367.1875
+        },
+        "kind": "engineering-3"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/diffusion-restoration/diffusion-restoration/images/final/WI033-DIFFUSION-RESTORATION-04-r02-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 367.1875,
+          "y": 195.578125,
+          "width": 1009.625,
+          "height": 568.203125,
+          "top": 195.578125,
+          "right": 1376.8125,
+          "bottom": 763.78125,
+          "left": 367.1875
+        },
+        "kind": "engineering-4"
+      }
+    ],
+    "zoom_checks": 7,
+    "answer": true,
+    "overflow": false,
+    "navigation": true,
+    "complete": true
+  },
+  {
+    "topic": "diffusion-restoration",
+    "route": "docs/index.html",
+    "width": 360,
+    "errors": [],
+    "images": [
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/diffusion-restoration/wi026-diffusion-restoration-c1-r02-mobile.png",
+        "nw": 724,
+        "nh": 2172,
+        "box": {
+          "x": 17,
+          "y": -134.234375,
+          "width": 326,
+          "height": 978,
+          "top": -134.234375,
+          "right": 343,
+          "bottom": 843.765625,
+          "left": 17
+        },
+        "kind": "main-1"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/diffusion-restoration/wi026-restoration-d2-r02-mobile.png",
+        "nw": 724,
+        "nh": 2172,
+        "box": {
+          "x": 17,
+          "y": -134.828125,
+          "width": 326,
+          "height": 978,
+          "top": -134.828125,
+          "right": 343,
+          "bottom": 843.171875,
+          "left": 17
+        },
+        "kind": "main-2"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/diffusion-restoration/wi026-restoration-d3-r01-mobile.png",
+        "nw": 724,
+        "nh": 2172,
+        "box": {
+          "x": 17,
+          "y": -134.234375,
+          "width": 326,
+          "height": 978,
+          "top": -134.234375,
+          "right": 343,
+          "bottom": 843.765625,
+          "left": 17
+        },
+        "kind": "main-3"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/diffusion-restoration/diffusion-restoration/images/final/WI033-DIFFUSION-RESTORATION-01-r02-mobile.png",
+        "nw": 768,
+        "nh": 2304,
+        "box": {
+          "x": 34,
+          "y": -69.140625,
+          "width": 292,
+          "height": 876,
+          "top": -69.140625,
+          "right": 326,
+          "bottom": 806.859375,
+          "left": 34
+        },
+        "kind": "engineering-1"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/diffusion-restoration/diffusion-restoration/images/final/WI033-DIFFUSION-RESTORATION-02-r01-mobile.png",
+        "nw": 768,
+        "nh": 2304,
+        "box": {
+          "x": 34,
+          "y": -69.640625,
+          "width": 292,
+          "height": 876,
+          "top": -69.640625,
+          "right": 326,
+          "bottom": 806.359375,
+          "left": 34
+        },
+        "kind": "engineering-2"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/diffusion-restoration/diffusion-restoration/images/final/WI033-DIFFUSION-RESTORATION-03-r02-mobile.png",
+        "nw": 768,
+        "nh": 2304,
+        "box": {
+          "x": 34,
+          "y": -69.296875,
+          "width": 292,
+          "height": 876,
+          "top": -69.296875,
+          "right": 326,
+          "bottom": 806.703125,
+          "left": 34
+        },
+        "kind": "engineering-3"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/diffusion-restoration/diffusion-restoration/images/final/WI033-DIFFUSION-RESTORATION-04-r02-mobile.png",
+        "nw": 768,
+        "nh": 2304,
+        "box": {
+          "x": 34,
+          "y": -69.21875,
+          "width": 292,
+          "height": 876,
+          "top": -69.21875,
+          "right": 326,
+          "bottom": 806.78125,
+          "left": 34
+        },
+        "kind": "engineering-4"
+      }
+    ],
+    "zoom_checks": 7,
+    "answer": true,
+    "overflow": false,
+    "navigation": true,
+    "complete": true
+  }
+]

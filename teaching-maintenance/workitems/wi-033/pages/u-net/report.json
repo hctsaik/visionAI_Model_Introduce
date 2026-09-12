@@ -1,0 +1,502 @@
+[
+  {
+    "topic": "u-net",
+    "route": "interactive-learning.html",
+    "width": 1440,
+    "errors": [],
+    "images": [
+      {
+        "src": "http://127.0.0.1:8000/_course_content/generated-concepts/u-net/wi030-unet-c1-r04-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 404.1875,
+          "y": 401.640625,
+          "width": 935.625,
+          "height": 526.5625,
+          "top": 401.640625,
+          "right": 1339.8125,
+          "bottom": 928.203125,
+          "left": 404.1875
+        },
+        "kind": "main-1"
+      },
+      {
+        "src": "http://127.0.0.1:8000/_course_content/generated-concepts/u-net/wi030-seg-d2-r03-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 404.1875,
+          "y": 201.15625,
+          "width": 935.625,
+          "height": 526.5625,
+          "top": 201.15625,
+          "right": 1339.8125,
+          "bottom": 727.71875,
+          "left": 404.1875
+        },
+        "kind": "main-2"
+      },
+      {
+        "src": "http://127.0.0.1:8000/_course_content/generated-concepts/u-net/wi030-seg-d3-r01-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 404.1875,
+          "y": 200.734375,
+          "width": 935.625,
+          "height": 526.5625,
+          "top": 200.734375,
+          "right": 1339.8125,
+          "bottom": 727.296875,
+          "left": 404.1875
+        },
+        "kind": "main-3"
+      },
+      {
+        "src": "http://127.0.0.1:8000/roadmap-model-selection/known-target-classification/u-net/images/final/WI033-UNET-01-r02-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 367.1875,
+          "y": 195.59375,
+          "width": 1009.625,
+          "height": 568.203125,
+          "top": 195.59375,
+          "right": 1376.8125,
+          "bottom": 763.796875,
+          "left": 367.1875
+        },
+        "kind": "engineering-1"
+      },
+      {
+        "src": "http://127.0.0.1:8000/roadmap-model-selection/known-target-classification/u-net/images/final/WI033-UNET-02-r03-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 367.1875,
+          "y": 195.734375,
+          "width": 1009.625,
+          "height": 568.203125,
+          "top": 195.734375,
+          "right": 1376.8125,
+          "bottom": 763.9375,
+          "left": 367.1875
+        },
+        "kind": "engineering-2"
+      },
+      {
+        "src": "http://127.0.0.1:8000/roadmap-model-selection/known-target-classification/u-net/images/final/WI033-UNET-03-r02-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 367.1875,
+          "y": 195.640625,
+          "width": 1009.625,
+          "height": 568.203125,
+          "top": 195.640625,
+          "right": 1376.8125,
+          "bottom": 763.84375,
+          "left": 367.1875
+        },
+        "kind": "engineering-3"
+      },
+      {
+        "src": "http://127.0.0.1:8000/roadmap-model-selection/known-target-classification/u-net/images/final/WI033-UNET-04-r01-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 367.1875,
+          "y": 195.78125,
+          "width": 1009.625,
+          "height": 568.203125,
+          "top": 195.78125,
+          "right": 1376.8125,
+          "bottom": 763.984375,
+          "left": 367.1875
+        },
+        "kind": "engineering-4"
+      }
+    ],
+    "zoom_checks": 7,
+    "answer": true,
+    "overflow": false,
+    "navigation": true,
+    "complete": true
+  },
+  {
+    "topic": "u-net",
+    "route": "interactive-learning.html",
+    "width": 360,
+    "errors": [],
+    "images": [
+      {
+        "src": "http://127.0.0.1:8000/_course_content/generated-concepts/u-net/wi030-unet-c1-r04-mobile.png",
+        "nw": 887,
+        "nh": 1774,
+        "box": {
+          "x": 17,
+          "y": 28.484375,
+          "width": 326,
+          "height": 652,
+          "top": 28.484375,
+          "right": 343,
+          "bottom": 680.484375,
+          "left": 17
+        },
+        "kind": "main-1"
+      },
+      {
+        "src": "http://127.0.0.1:8000/_course_content/generated-concepts/u-net/wi030-seg-d2-r03-mobile.png",
+        "nw": 724,
+        "nh": 2172,
+        "box": {
+          "x": 17,
+          "y": -134.265625,
+          "width": 326,
+          "height": 978,
+          "top": -134.265625,
+          "right": 343,
+          "bottom": 843.734375,
+          "left": 17
+        },
+        "kind": "main-2"
+      },
+      {
+        "src": "http://127.0.0.1:8000/_course_content/generated-concepts/u-net/wi030-seg-d3-r01-mobile.png",
+        "nw": 887,
+        "nh": 1774,
+        "box": {
+          "x": 17,
+          "y": 28.578125,
+          "width": 326,
+          "height": 652,
+          "top": 28.578125,
+          "right": 343,
+          "bottom": 680.578125,
+          "left": 17
+        },
+        "kind": "main-3"
+      },
+      {
+        "src": "http://127.0.0.1:8000/roadmap-model-selection/known-target-classification/u-net/images/final/WI033-UNET-01-r02-mobile.png",
+        "nw": 768,
+        "nh": 2304,
+        "box": {
+          "x": 34,
+          "y": -69.953125,
+          "width": 292,
+          "height": 876,
+          "top": -69.953125,
+          "right": 326,
+          "bottom": 806.046875,
+          "left": 34
+        },
+        "kind": "engineering-1"
+      },
+      {
+        "src": "http://127.0.0.1:8000/roadmap-model-selection/known-target-classification/u-net/images/final/WI033-UNET-02-r03-mobile.png",
+        "nw": 768,
+        "nh": 2304,
+        "box": {
+          "x": 34,
+          "y": -69.25,
+          "width": 292,
+          "height": 876,
+          "top": -69.25,
+          "right": 326,
+          "bottom": 806.75,
+          "left": 34
+        },
+        "kind": "engineering-2"
+      },
+      {
+        "src": "http://127.0.0.1:8000/roadmap-model-selection/known-target-classification/u-net/images/final/WI033-UNET-03-r02-mobile.png",
+        "nw": 768,
+        "nh": 2304,
+        "box": {
+          "x": 34,
+          "y": -69.78125,
+          "width": 292,
+          "height": 876,
+          "top": -69.78125,
+          "right": 326,
+          "bottom": 806.21875,
+          "left": 34
+        },
+        "kind": "engineering-3"
+      },
+      {
+        "src": "http://127.0.0.1:8000/roadmap-model-selection/known-target-classification/u-net/images/final/WI033-UNET-04-r01-mobile.png",
+        "nw": 768,
+        "nh": 2304,
+        "box": {
+          "x": 34,
+          "y": -69.078125,
+          "width": 292,
+          "height": 876,
+          "top": -69.078125,
+          "right": 326,
+          "bottom": 806.921875,
+          "left": 34
+        },
+        "kind": "engineering-4"
+      }
+    ],
+    "zoom_checks": 7,
+    "answer": true,
+    "overflow": false,
+    "navigation": true,
+    "complete": true
+  },
+  {
+    "topic": "u-net",
+    "route": "docs/index.html",
+    "width": 1440,
+    "errors": [],
+    "images": [
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/u-net/wi030-unet-c1-r04-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 404.1875,
+          "y": 401.640625,
+          "width": 935.625,
+          "height": 526.5625,
+          "top": 401.640625,
+          "right": 1339.8125,
+          "bottom": 928.203125,
+          "left": 404.1875
+        },
+        "kind": "main-1"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/u-net/wi030-seg-d2-r03-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 404.1875,
+          "y": 201.15625,
+          "width": 935.625,
+          "height": 526.5625,
+          "top": 201.15625,
+          "right": 1339.8125,
+          "bottom": 727.71875,
+          "left": 404.1875
+        },
+        "kind": "main-2"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/u-net/wi030-seg-d3-r01-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 404.1875,
+          "y": 200.734375,
+          "width": 935.625,
+          "height": 526.5625,
+          "top": 200.734375,
+          "right": 1339.8125,
+          "bottom": 727.296875,
+          "left": 404.1875
+        },
+        "kind": "main-3"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/known-target-classification/u-net/images/final/WI033-UNET-01-r02-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 367.1875,
+          "y": 195.59375,
+          "width": 1009.625,
+          "height": 568.203125,
+          "top": 195.59375,
+          "right": 1376.8125,
+          "bottom": 763.796875,
+          "left": 367.1875
+        },
+        "kind": "engineering-1"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/known-target-classification/u-net/images/final/WI033-UNET-02-r03-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 367.1875,
+          "y": 195.734375,
+          "width": 1009.625,
+          "height": 568.203125,
+          "top": 195.734375,
+          "right": 1376.8125,
+          "bottom": 763.9375,
+          "left": 367.1875
+        },
+        "kind": "engineering-2"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/known-target-classification/u-net/images/final/WI033-UNET-03-r02-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 367.1875,
+          "y": 195.640625,
+          "width": 1009.625,
+          "height": 568.203125,
+          "top": 195.640625,
+          "right": 1376.8125,
+          "bottom": 763.84375,
+          "left": 367.1875
+        },
+        "kind": "engineering-3"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/known-target-classification/u-net/images/final/WI033-UNET-04-r01-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 367.1875,
+          "y": 195.78125,
+          "width": 1009.625,
+          "height": 568.203125,
+          "top": 195.78125,
+          "right": 1376.8125,
+          "bottom": 763.984375,
+          "left": 367.1875
+        },
+        "kind": "engineering-4"
+      }
+    ],
+    "zoom_checks": 7,
+    "answer": true,
+    "overflow": false,
+    "navigation": true,
+    "complete": true
+  },
+  {
+    "topic": "u-net",
+    "route": "docs/index.html",
+    "width": 360,
+    "errors": [],
+    "images": [
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/u-net/wi030-unet-c1-r04-mobile.png",
+        "nw": 887,
+        "nh": 1774,
+        "box": {
+          "x": 17,
+          "y": 28.484375,
+          "width": 326,
+          "height": 652,
+          "top": 28.484375,
+          "right": 343,
+          "bottom": 680.484375,
+          "left": 17
+        },
+        "kind": "main-1"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/u-net/wi030-seg-d2-r03-mobile.png",
+        "nw": 724,
+        "nh": 2172,
+        "box": {
+          "x": 17,
+          "y": -134.265625,
+          "width": 326,
+          "height": 978,
+          "top": -134.265625,
+          "right": 343,
+          "bottom": 843.734375,
+          "left": 17
+        },
+        "kind": "main-2"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/u-net/wi030-seg-d3-r01-mobile.png",
+        "nw": 887,
+        "nh": 1774,
+        "box": {
+          "x": 17,
+          "y": 28.578125,
+          "width": 326,
+          "height": 652,
+          "top": 28.578125,
+          "right": 343,
+          "bottom": 680.578125,
+          "left": 17
+        },
+        "kind": "main-3"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/known-target-classification/u-net/images/final/WI033-UNET-01-r02-mobile.png",
+        "nw": 768,
+        "nh": 2304,
+        "box": {
+          "x": 34,
+          "y": -69.953125,
+          "width": 292,
+          "height": 876,
+          "top": -69.953125,
+          "right": 326,
+          "bottom": 806.046875,
+          "left": 34
+        },
+        "kind": "engineering-1"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/known-target-classification/u-net/images/final/WI033-UNET-02-r03-mobile.png",
+        "nw": 768,
+        "nh": 2304,
+        "box": {
+          "x": 34,
+          "y": -69.25,
+          "width": 292,
+          "height": 876,
+          "top": -69.25,
+          "right": 326,
+          "bottom": 806.75,
+          "left": 34
+        },
+        "kind": "engineering-2"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/known-target-classification/u-net/images/final/WI033-UNET-03-r02-mobile.png",
+        "nw": 768,
+        "nh": 2304,
+        "box": {
+          "x": 34,
+          "y": -69.78125,
+          "width": 292,
+          "height": 876,
+          "top": -69.78125,
+          "right": 326,
+          "bottom": 806.21875,
+          "left": 34
+        },
+        "kind": "engineering-3"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/known-target-classification/u-net/images/final/WI033-UNET-04-r01-mobile.png",
+        "nw": 768,
+        "nh": 2304,
+        "box": {
+          "x": 34,
+          "y": -69.078125,
+          "width": 292,
+          "height": 876,
+          "top": -69.078125,
+          "right": 326,
+          "bottom": 806.921875,
+          "left": 34
+        },
+        "kind": "engineering-4"
+      }
+    ],
+    "zoom_checks": 7,
+    "answer": true,
+    "overflow": false,
+    "navigation": true,
+    "complete": true
+  }
+]

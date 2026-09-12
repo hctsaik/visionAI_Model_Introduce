@@ -1,0 +1,502 @@
+[
+  {
+    "topic": "keypoint-r-cnn",
+    "route": "interactive-learning.html",
+    "width": 1440,
+    "errors": [],
+    "images": [
+      {
+        "src": "http://127.0.0.1:8000/_course_content/generated-concepts/keypoint-r-cnn/wi030-key-c1-r04-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 404.1875,
+          "y": 401.640625,
+          "width": 935.625,
+          "height": 526.5625,
+          "top": 401.640625,
+          "right": 1339.8125,
+          "bottom": 928.203125,
+          "left": 404.1875
+        },
+        "kind": "main-1"
+      },
+      {
+        "src": "http://127.0.0.1:8000/_course_content/generated-concepts/pose/wi030-pose-d2-r02-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 404.1875,
+          "y": 201.15625,
+          "width": 935.625,
+          "height": 526.5625,
+          "top": 201.15625,
+          "right": 1339.8125,
+          "bottom": 727.71875,
+          "left": 404.1875
+        },
+        "kind": "main-2"
+      },
+      {
+        "src": "http://127.0.0.1:8000/_course_content/generated-concepts/pose/wi030-pose-d3-r03-desktop.png",
+        "nw": 1670,
+        "nh": 941,
+        "box": {
+          "x": 404.1875,
+          "y": 200.46875,
+          "width": 935.625,
+          "height": 526.5625,
+          "top": 200.46875,
+          "right": 1339.8125,
+          "bottom": 727.03125,
+          "left": 404.1875
+        },
+        "kind": "main-3"
+      },
+      {
+        "src": "http://127.0.0.1:8000/roadmap-model-selection/known-target-classification/keypoint-r-cnn/images/final/WI033-KPRCNN-01-r01-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 367.1875,
+          "y": 196.078125,
+          "width": 1009.625,
+          "height": 568.203125,
+          "top": 196.078125,
+          "right": 1376.8125,
+          "bottom": 764.28125,
+          "left": 367.1875
+        },
+        "kind": "engineering-1"
+      },
+      {
+        "src": "http://127.0.0.1:8000/roadmap-model-selection/known-target-classification/keypoint-r-cnn/images/final/WI033-KPRCNN-02-r02-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 367.1875,
+          "y": 195.828125,
+          "width": 1009.625,
+          "height": 568.203125,
+          "top": 195.828125,
+          "right": 1376.8125,
+          "bottom": 764.03125,
+          "left": 367.1875
+        },
+        "kind": "engineering-2"
+      },
+      {
+        "src": "http://127.0.0.1:8000/roadmap-model-selection/known-target-classification/keypoint-r-cnn/images/final/WI033-KPRCNN-03-r02-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 367.1875,
+          "y": 196.34375,
+          "width": 1009.625,
+          "height": 568.203125,
+          "top": 196.34375,
+          "right": 1376.8125,
+          "bottom": 764.546875,
+          "left": 367.1875
+        },
+        "kind": "engineering-3"
+      },
+      {
+        "src": "http://127.0.0.1:8000/roadmap-model-selection/known-target-classification/keypoint-r-cnn/images/final/WI033-KPRCNN-04-r01-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 367.1875,
+          "y": 196.359375,
+          "width": 1009.625,
+          "height": 568.203125,
+          "top": 196.359375,
+          "right": 1376.8125,
+          "bottom": 764.5625,
+          "left": 367.1875
+        },
+        "kind": "engineering-4"
+      }
+    ],
+    "zoom_checks": 7,
+    "answer": true,
+    "overflow": false,
+    "navigation": true,
+    "complete": true
+  },
+  {
+    "topic": "keypoint-r-cnn",
+    "route": "interactive-learning.html",
+    "width": 360,
+    "errors": [],
+    "images": [
+      {
+        "src": "http://127.0.0.1:8000/_course_content/generated-concepts/keypoint-r-cnn/wi030-key-c1-r05-mobile.png",
+        "nw": 887,
+        "nh": 1774,
+        "box": {
+          "x": 17,
+          "y": 28.96875,
+          "width": 326,
+          "height": 652,
+          "top": 28.96875,
+          "right": 343,
+          "bottom": 680.96875,
+          "left": 17
+        },
+        "kind": "main-1"
+      },
+      {
+        "src": "http://127.0.0.1:8000/_course_content/generated-concepts/pose/wi030-pose-d2-r02-mobile.png",
+        "nw": 836,
+        "nh": 1881,
+        "box": {
+          "x": 17,
+          "y": -11.78125,
+          "width": 326,
+          "height": 733.5,
+          "top": -11.78125,
+          "right": 343,
+          "bottom": 721.71875,
+          "left": 17
+        },
+        "kind": "main-2"
+      },
+      {
+        "src": "http://127.0.0.1:8000/_course_content/generated-concepts/pose/wi030-pose-d3-r03-mobile.png",
+        "nw": 724,
+        "nh": 2172,
+        "box": {
+          "x": 17,
+          "y": -134.6875,
+          "width": 326,
+          "height": 978,
+          "top": -134.6875,
+          "right": 343,
+          "bottom": 843.3125,
+          "left": 17
+        },
+        "kind": "main-3"
+      },
+      {
+        "src": "http://127.0.0.1:8000/roadmap-model-selection/known-target-classification/keypoint-r-cnn/images/final/WI033-KPRCNN-01-r01-mobile.png",
+        "nw": 768,
+        "nh": 2304,
+        "box": {
+          "x": 34,
+          "y": -69.15625,
+          "width": 292,
+          "height": 876,
+          "top": -69.15625,
+          "right": 326,
+          "bottom": 806.84375,
+          "left": 34
+        },
+        "kind": "engineering-1"
+      },
+      {
+        "src": "http://127.0.0.1:8000/roadmap-model-selection/known-target-classification/keypoint-r-cnn/images/final/WI033-KPRCNN-02-r02-mobile.png",
+        "nw": 768,
+        "nh": 2304,
+        "box": {
+          "x": 34,
+          "y": -69.578125,
+          "width": 292,
+          "height": 876,
+          "top": -69.578125,
+          "right": 326,
+          "bottom": 806.421875,
+          "left": 34
+        },
+        "kind": "engineering-2"
+      },
+      {
+        "src": "http://127.0.0.1:8000/roadmap-model-selection/known-target-classification/keypoint-r-cnn/images/final/WI033-KPRCNN-03-r02-mobile.png",
+        "nw": 768,
+        "nh": 2304,
+        "box": {
+          "x": 34,
+          "y": -69.234375,
+          "width": 292,
+          "height": 876,
+          "top": -69.234375,
+          "right": 326,
+          "bottom": 806.765625,
+          "left": 34
+        },
+        "kind": "engineering-3"
+      },
+      {
+        "src": "http://127.0.0.1:8000/roadmap-model-selection/known-target-classification/keypoint-r-cnn/images/final/WI033-KPRCNN-04-r01-mobile.png",
+        "nw": 768,
+        "nh": 2304,
+        "box": {
+          "x": 34,
+          "y": -69.65625,
+          "width": 292,
+          "height": 876,
+          "top": -69.65625,
+          "right": 326,
+          "bottom": 806.34375,
+          "left": 34
+        },
+        "kind": "engineering-4"
+      }
+    ],
+    "zoom_checks": 7,
+    "answer": true,
+    "overflow": false,
+    "navigation": true,
+    "complete": true
+  },
+  {
+    "topic": "keypoint-r-cnn",
+    "route": "docs/index.html",
+    "width": 1440,
+    "errors": [],
+    "images": [
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/keypoint-r-cnn/wi030-key-c1-r04-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 404.1875,
+          "y": 401.640625,
+          "width": 935.625,
+          "height": 526.5625,
+          "top": 401.640625,
+          "right": 1339.8125,
+          "bottom": 928.203125,
+          "left": 404.1875
+        },
+        "kind": "main-1"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/pose/wi030-pose-d2-r02-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 404.1875,
+          "y": 201.15625,
+          "width": 935.625,
+          "height": 526.5625,
+          "top": 201.15625,
+          "right": 1339.8125,
+          "bottom": 727.71875,
+          "left": 404.1875
+        },
+        "kind": "main-2"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/pose/wi030-pose-d3-r03-desktop.png",
+        "nw": 1670,
+        "nh": 941,
+        "box": {
+          "x": 404.1875,
+          "y": 200.46875,
+          "width": 935.625,
+          "height": 526.5625,
+          "top": 200.46875,
+          "right": 1339.8125,
+          "bottom": 727.03125,
+          "left": 404.1875
+        },
+        "kind": "main-3"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/known-target-classification/keypoint-r-cnn/images/final/WI033-KPRCNN-01-r01-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 367.1875,
+          "y": 196.078125,
+          "width": 1009.625,
+          "height": 568.203125,
+          "top": 196.078125,
+          "right": 1376.8125,
+          "bottom": 764.28125,
+          "left": 367.1875
+        },
+        "kind": "engineering-1"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/known-target-classification/keypoint-r-cnn/images/final/WI033-KPRCNN-02-r02-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 367.1875,
+          "y": 195.828125,
+          "width": 1009.625,
+          "height": 568.203125,
+          "top": 195.828125,
+          "right": 1376.8125,
+          "bottom": 764.03125,
+          "left": 367.1875
+        },
+        "kind": "engineering-2"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/known-target-classification/keypoint-r-cnn/images/final/WI033-KPRCNN-03-r02-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 367.1875,
+          "y": 196.34375,
+          "width": 1009.625,
+          "height": 568.203125,
+          "top": 196.34375,
+          "right": 1376.8125,
+          "bottom": 764.546875,
+          "left": 367.1875
+        },
+        "kind": "engineering-3"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/known-target-classification/keypoint-r-cnn/images/final/WI033-KPRCNN-04-r01-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 367.1875,
+          "y": 196.359375,
+          "width": 1009.625,
+          "height": 568.203125,
+          "top": 196.359375,
+          "right": 1376.8125,
+          "bottom": 764.5625,
+          "left": 367.1875
+        },
+        "kind": "engineering-4"
+      }
+    ],
+    "zoom_checks": 7,
+    "answer": true,
+    "overflow": false,
+    "navigation": true,
+    "complete": true
+  },
+  {
+    "topic": "keypoint-r-cnn",
+    "route": "docs/index.html",
+    "width": 360,
+    "errors": [],
+    "images": [
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/keypoint-r-cnn/wi030-key-c1-r05-mobile.png",
+        "nw": 887,
+        "nh": 1774,
+        "box": {
+          "x": 17,
+          "y": 28.96875,
+          "width": 326,
+          "height": 652,
+          "top": 28.96875,
+          "right": 343,
+          "bottom": 680.96875,
+          "left": 17
+        },
+        "kind": "main-1"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/pose/wi030-pose-d2-r02-mobile.png",
+        "nw": 836,
+        "nh": 1881,
+        "box": {
+          "x": 17,
+          "y": -11.78125,
+          "width": 326,
+          "height": 733.5,
+          "top": -11.78125,
+          "right": 343,
+          "bottom": 721.71875,
+          "left": 17
+        },
+        "kind": "main-2"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/pose/wi030-pose-d3-r03-mobile.png",
+        "nw": 724,
+        "nh": 2172,
+        "box": {
+          "x": 17,
+          "y": -134.6875,
+          "width": 326,
+          "height": 978,
+          "top": -134.6875,
+          "right": 343,
+          "bottom": 843.3125,
+          "left": 17
+        },
+        "kind": "main-3"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/known-target-classification/keypoint-r-cnn/images/final/WI033-KPRCNN-01-r01-mobile.png",
+        "nw": 768,
+        "nh": 2304,
+        "box": {
+          "x": 34,
+          "y": -69.15625,
+          "width": 292,
+          "height": 876,
+          "top": -69.15625,
+          "right": 326,
+          "bottom": 806.84375,
+          "left": 34
+        },
+        "kind": "engineering-1"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/known-target-classification/keypoint-r-cnn/images/final/WI033-KPRCNN-02-r02-mobile.png",
+        "nw": 768,
+        "nh": 2304,
+        "box": {
+          "x": 34,
+          "y": -69.578125,
+          "width": 292,
+          "height": 876,
+          "top": -69.578125,
+          "right": 326,
+          "bottom": 806.421875,
+          "left": 34
+        },
+        "kind": "engineering-2"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/known-target-classification/keypoint-r-cnn/images/final/WI033-KPRCNN-03-r02-mobile.png",
+        "nw": 768,
+        "nh": 2304,
+        "box": {
+          "x": 34,
+          "y": -69.234375,
+          "width": 292,
+          "height": 876,
+          "top": -69.234375,
+          "right": 326,
+          "bottom": 806.765625,
+          "left": 34
+        },
+        "kind": "engineering-3"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/known-target-classification/keypoint-r-cnn/images/final/WI033-KPRCNN-04-r01-mobile.png",
+        "nw": 768,
+        "nh": 2304,
+        "box": {
+          "x": 34,
+          "y": -69.65625,
+          "width": 292,
+          "height": 876,
+          "top": -69.65625,
+          "right": 326,
+          "bottom": 806.34375,
+          "left": 34
+        },
+        "kind": "engineering-4"
+      }
+    ],
+    "zoom_checks": 7,
+    "answer": true,
+    "overflow": false,
+    "navigation": true,
+    "complete": true
+  }
+]

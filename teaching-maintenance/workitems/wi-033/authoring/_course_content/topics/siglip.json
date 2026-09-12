@@ -1,0 +1,571 @@
+{
+  "model": "SigLIP",
+  "badge": "圖文雙編碼器",
+  "title": "SigLIP：用逐對目標學圖文配合",
+  "scenario": {
+    "title": "你也需要用文字搜尋工件，但想了解 SigLIP 和 CLIP 的差異究竟發生在哪一步，而不是只比較模型名稱。",
+    "body": "你也需要用文字搜尋工件，但想了解 SigLIP 和 CLIP 的差異究竟發生在哪一步，而不是只比較模型名稱。"
+  },
+  "promise": {
+    "title": "交付結果與接手工作",
+    "body": "交出圖文表示及配合分數／排序，供語意檢索或分類；本課不把 sigmoid 分數當作缺陷機率或位置。"
+  },
+  "mental_model": {
+    "title": "圖文雙編碼器",
+    "body": "原始 SigLIP 同樣學影像和文字的共同表示，但在預訓練時，對每一個配對或不配對的圖文組合分別計算 sigmoid 損失，無需用全批次相似度做 softmax 正規化。這些學習訊號仍共同更新編碼器；部署時再比較新影像與候選文字的配合程度。",
+    "limit": "SigLIP 也會受到候選內容限制：齒輪影像面對只有支架、軸承的集合，仍可能選錯。逐對訓練目標不會替你補齊遺漏詞彙，也不保證知道何時拒答。"
+  },
+  "micro_example": {
+    "title": "分數較高能否直接勝出",
+    "setup": "同一批圖上 SigLIP 的分數普遍高於 CLIP，但兩者最高候選大致相同。",
+    "prediction": "可以沿用 CLIP 門檻並宣稱 SigLIP 更準嗎？",
+    "reveal": "不行。兩者的分數尺度與轉換不同；應在固定留出集各自驗證拒答／門檻，再比實際排序錯誤及成本。如果結果相當，維護和延遲也可以決定選擇。"
+  },
+  "beginner_path": {
+    "title": "從必要原理、具體反例到工作取捨",
+    "intro": "你也需要用文字搜尋工件，但想了解 SigLIP 和 CLIP 的差異究竟發生在哪一步，而不是只比較模型名稱。 下列圖像、特徵及回答為教學示意，不是模型實測。",
+    "visuals": [
+      {
+        "id": "wi027-siglip-c1",
+        "title": "SigLIP：逐對學會圖文是否配合",
+        "prompt": "你也需要用文字搜尋工件，但想了解 SigLIP 和 CLIP 的差異究竟發生在哪一步，而不是只比較模型名稱。",
+        "caption": "原始 SigLIP 同樣學影像和文字的共同表示，但在預訓練時，對每一個配對或不配對的圖文組合分別計算 sigmoid 損失，無需用全批次相似度做 softmax 正規化。這些學習訊號仍共同更新編碼器；部署時再比較新影像與候選文字的配合程度。",
+        "image": "_course_content/generated-concepts/siglip/wi027-siglip-c1-r03-desktop.png",
+        "alt": "SigLIP：逐對學會圖文是否配合。原始 SigLIP 同樣學影像和文字的共同表示，但在預訓練時，對每一個配對或不配對的圖文組合分別計算 sigmoid 損失，無需用全批次相似度做 softmax 正規化。這些學習訊號仍共同更新編碼器；部署時再比較新影像與候選文字的配合程度。 AI生成教學示意，非模型實測。",
+        "callouts": [
+          {
+            "title": "逐對計算，不是逐對一個模型",
+            "body": "同一張支架影像和「金屬支架」是配對樣本，和「齒輪」是不配對樣本；兩者的訓練訊號一起更新共享編碼器。原始方法仍使用負配對，並非只學正例。"
+          },
+          {
+            "title": "分數不能直接借用別人的門檻",
+            "body": "不必讓每組候選分數加總為一，不代表分數就是經校準的現場正確率。權重、文字與前處理改變，分數尺度和錯誤也可能改變。"
+          },
+          {
+            "title": "交付與接手",
+            "body": "交出圖文表示及配合分數／排序，供語意檢索或分類；本課不把 sigmoid 分數當作缺陷機率或位置。"
+          }
+        ],
+        "reading_views": [
+          {
+            "title": "SigLIP：逐對學會圖文是否配合",
+            "image": "_course_content/generated-concepts/siglip/wi027-siglip-c1-r03-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/siglip/wi033-core-r02-mobile.png",
+            "alt": "SigLIP逐對學習与部署比較。桌機為既有生成示意，手機為新SVG示意；均非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              768,
+              2304
+            ],
+            "mobile_display_mode": "full-mobile",
+            "desktop_intrinsic_width": 1672,
+            "desktop_intrinsic_height": 941,
+            "mobile_intrinsic_width": 768,
+            "mobile_intrinsic_height": 2304
+          }
+        ],
+        "core_ideas": true
+      },
+      {
+        "id": "wi027-alignment-d2",
+        "title": "候選沒有正確答案，第一名也可能錯",
+        "prompt": "觀察哪個條件改變，讓原本的結果不夠可靠？",
+        "caption": "SigLIP 也會受到候選內容限制：齒輪影像面對只有支架、軸承的集合，仍可能選錯。逐對訓練目標不會替你補齊遺漏詞彙，也不保證知道何時拒答。",
+        "image": "_course_content/generated-concepts/clip/wi027-alignment-d2-r01-desktop.png",
+        "alt": "候選沒有正確答案，第一名也可能錯。SigLIP 也會受到候選內容限制：齒輪影像面對只有支架、軸承的集合，仍可能選錯。逐對訓練目標不會替你補齊遺漏詞彙，也不保證知道何時拒答。 AI生成教學示意，非模型實測。",
+        "callouts": [
+          {
+            "title": "看哪裡",
+            "body": "SigLIP 也會受到候選內容限制：齒輪影像面對只有支架、軸承的集合，仍可能選錯。逐對訓練目標不會替你補齊遺漏詞彙，也不保證知道何時拒答。"
+          },
+          {
+            "title": "接著怎麼做",
+            "body": "先補齊需求相關的候選與未知測試樣本，再用這組權重重新驗證分數與拒答方式；不要直接搬用 CLIP 的門檻。"
+          }
+        ],
+        "reading_views": [
+          {
+            "title": "候選沒有正確答案，第一名也可能錯",
+            "image": "_course_content/generated-concepts/clip/wi027-alignment-d2-r01-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/clip/wi027-alignment-d2-r01-mobile.png",
+            "alt": "候選沒有正確答案，第一名也可能錯。SigLIP 也會受到候選內容限制：齒輪影像面對只有支架、軸承的集合，仍可能選錯。逐對訓練目標不會替你補齊遺漏詞彙，也不保證知道何時拒答。 AI生成教學示意，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              724,
+              2172
+            ],
+            "mobile_display_mode": "full-mobile",
+            "desktop_intrinsic_width": 1672,
+            "desktop_intrinsic_height": 941,
+            "mobile_intrinsic_width": 724,
+            "mobile_intrinsic_height": 2172
+          }
+        ],
+        "core_ideas": false
+      },
+      {
+        "id": "wi027-alignment-d3",
+        "title": "CLIP 與 SigLIP：訓練不同，選型要同題",
+        "prompt": "相同工作需求下，資料、輸出與成本如何取捨？",
+        "caption": "與 CLIP 比較時，先認清批次 softmax 和逐對 sigmoid 是訓練差異；再固定相同工件、候選文字與測試條件，比實際排序品質與成本。本課介紹原始 SigLIP，不把 SigLIP 2 的新增能力混在一起。",
+        "image": "_course_content/generated-concepts/clip/wi027-alignment-d3-r03-desktop.png",
+        "alt": "CLIP 與 SigLIP：訓練不同，選型要同題。與 CLIP 比較時，先認清批次 softmax 和逐對 sigmoid 是訓練差異；再固定相同工件、候選文字與測試條件，比實際排序品質與成本。本課介紹原始 SigLIP，不把 SigLIP 2 的新增能力混在一起。 AI生成教學示意，非模型實測。",
+        "callouts": [
+          {
+            "title": "怎麼選",
+            "body": "與 CLIP 比較時，先認清批次 softmax 和逐對 sigmoid 是訓練差異；再固定相同工件、候選文字與測試條件，比實際排序品質與成本。本課介紹原始 SigLIP，不把 SigLIP 2 的新增能力混在一起。"
+          },
+          {
+            "title": "資料與完整成本",
+            "body": "可先用預訓練權重和文字探索，仍要準備相關性／類別驗證資料；換產品需補詞彙、難例及未知圖。各模型使用正確的 tokenizer／前處理，記錄快取、輸入解析度、完整耗時及人工覆核量，不能只比一個絕對分數。"
+          }
+        ],
+        "reading_views": [
+          {
+            "title": "CLIP 與 SigLIP：訓練不同，選型要同題",
+            "image": "_course_content/generated-concepts/clip/wi027-alignment-d3-r03-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/clip/wi033-alignment-comparison-r01-mobile.png",
+            "alt": "CLIP 與 SigLIP：訓練不同，選型要同題。桌機為原有生成示意；手機為 WI-033 原生SVG比較示意，均非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              768,
+              2304
+            ],
+            "mobile_display_mode": "full-mobile",
+            "desktop_intrinsic_width": 1672,
+            "desktop_intrinsic_height": 941,
+            "mobile_intrinsic_width": 768,
+            "mobile_intrinsic_height": 2304
+          }
+        ],
+        "core_ideas": false
+      }
+    ]
+  },
+  "mechanism_steps": [
+    {
+      "title": "準備圖文配對",
+      "body": "你也需要用文字搜尋工件，但想了解 SigLIP 和 CLIP 的差異究竟發生在哪一步，而不是只比較模型名稱。",
+      "why": "由本課核心機制連接工作用途",
+      "anchor": "WI027-1",
+      "diagram": {
+        "title": "準備圖文配對",
+        "body": "你也需要用文字搜尋工件，但想了解 SigLIP 和 CLIP 的差異究竟發生在哪一步，而不是只比較模型名稱。",
+        "why": "詳見本課版本與來源",
+        "anchor": "WI027-1"
+      }
+    },
+    {
+      "title": "每對分別計算目標",
+      "body": "同一張支架影像和「金屬支架」是配對樣本，和「齒輪」是不配對樣本；兩者的訓練訊號一起更新共享編碼器。原始方法仍使用負配對，並非只學正例。",
+      "why": "由本課核心機制連接工作用途",
+      "anchor": "WI027-2",
+      "diagram": {
+        "title": "每對分別計算目標",
+        "body": "同一張支架影像和「金屬支架」是配對樣本，和「齒輪」是不配對樣本；兩者的訓練訊號一起更新共享編碼器。原始方法仍使用負配對，並非只學正例。",
+        "why": "詳見本課版本與來源",
+        "anchor": "WI027-2"
+      }
+    },
+    {
+      "title": "共同更新兩個編碼器",
+      "body": "不必讓每組候選分數加總為一，不代表分數就是經校準的現場正確率。權重、文字與前處理改變，分數尺度和錯誤也可能改變。",
+      "why": "由本課核心機制連接工作用途",
+      "anchor": "WI027-3",
+      "diagram": {
+        "title": "共同更新兩個編碼器",
+        "body": "不必讓每組候選分數加總為一，不代表分數就是經校準的現場正確率。權重、文字與前處理改變，分數尺度和錯誤也可能改變。",
+        "why": "詳見本課版本與來源",
+        "anchor": "WI027-3"
+      }
+    },
+    {
+      "title": "部署時再比圖文",
+      "body": "交出圖文表示及配合分數／排序，供語意檢索或分類；本課不把 sigmoid 分數當作缺陷機率或位置。",
+      "why": "由本課核心機制連接工作用途",
+      "anchor": "WI027-4",
+      "diagram": {
+        "title": "部署時再比圖文",
+        "body": "交出圖文表示及配合分數／排序，供語意檢索或分類；本課不把 sigmoid 分數當作缺陷機率或位置。",
+        "why": "詳見本課版本與來源",
+        "anchor": "WI027-4"
+      }
+    }
+  ],
+  "visual_intro": "原始 SigLIP 同樣學影像和文字的共同表示，但在預訓練時，對每一個配對或不配對的圖文組合分別計算 sigmoid 損失，無需用全批次相似度做 softmax 正規化。這些學習訊號仍共同更新編碼器；部署時再比較新影像與候選文字的配合程度。",
+  "concept_visuals": [],
+  "boundary_cases": [
+    {
+      "condition": "本課具體反例",
+      "effect": "SigLIP 也會受到候選內容限制：齒輪影像面對只有支架、軸承的集合，仍可能選錯。逐對訓練目標不會替你補齊遺漏詞彙，也不保證知道何時拒答。",
+      "action": "先補齊需求相關的候選與未知測試樣本，再用這組權重重新驗證分數與拒答方式；不要直接搬用 CLIP 的門檻。"
+    },
+    {
+      "condition": "更換產品、模型或輸入設定",
+      "effect": "可先用預訓練權重和文字探索，仍要準備相關性／類別驗證資料；換產品需補詞彙、難例及未知圖。各模型使用正確的 tokenizer／前處理，記錄快取、輸入解析度、完整耗時及人工覆核量，不能只比一個絕對分數。",
+      "action": "選定原始 SigLIP 權重及配套前處理，沿用一組固定的工件影像與候選文字，同時保留 CLIP 基準和未知樣本。"
+    },
+    {
+      "condition": "把示意當成實際推論",
+      "effect": "本課特徵、排序、回答及圖像僅用於解釋，不支持現場準確率或耗時結論。",
+      "action": "同條件看候選命中、錯誤拒答與未知誤選，另量影像處理和文字快取後的完整時間；分數高低本身不是選型結果。"
+    }
+  ],
+  "comparison": [
+    {
+      "model": "CLIP",
+      "normality": "批次對比預訓練；需候選文字及域內測試",
+      "candidate": "圖文相似度與候選排序"
+    },
+    {
+      "model": "原始 SigLIP",
+      "normality": "逐對 sigmoid 預訓練；含負配對，需獨立驗證門檻",
+      "candidate": "圖文配合分數與候選排序"
+    },
+    {
+      "model": "專用分類器基準",
+      "normality": "需要目標類別標註與獨立測試；換類別通常需重建或調整",
+      "candidate": "固定類別輸出；若工作不需開放詞彙，可比較錯誤及成本"
+    }
+  ],
+  "selection": "與 CLIP 比較時，先認清批次 softmax 和逐對 sigmoid 是訓練差異；再固定相同工件、候選文字與測試條件，比實際排序品質與成本。本課介紹原始 SigLIP，不把 SigLIP 2 的新增能力混在一起。 可先用預訓練權重和文字探索，仍要準備相關性／類別驗證資料；換產品需補詞彙、難例及未知圖。各模型使用正確的 tokenizer／前處理，記錄快取、輸入解析度、完整耗時及人工覆核量，不能只比一個絕對分數。",
+  "poc": {
+    "title": "以真實工作資料做小規模比較",
+    "steps": [
+      "選定原始 SigLIP 權重及配套前處理，沿用一組固定的工件影像與候選文字，同時保留 CLIP 基準和未知樣本。",
+      "可先用預訓練權重和文字探索，仍要準備相關性／類別驗證資料；換產品需補詞彙、難例及未知圖。各模型使用正確的 tokenizer／前處理，記錄快取、輸入解析度、完整耗時及人工覆核量，不能只比一個絕對分數。",
+      "同條件看候選命中、錯誤拒答與未知誤選，另量影像處理和文字快取後的完整時間；分數高低本身不是選型結果。"
+    ],
+    "hold": "先補齊需求相關的候選與未知測試樣本，再用這組權重重新驗證分數與拒答方式；不要直接搬用 CLIP 的門檻。",
+    "acceptance": {
+      "baseline": "既有流程或最簡單可行方法",
+      "measure": "同條件看候選命中、錯誤拒答與未知誤選，另量影像處理和文字快取後的完整時間；分數高低本身不是選型結果。",
+      "negative_control": "SigLIP 也會受到候選內容限制：齒輪影像面對只有支架、軸承的集合，仍可能選錯。逐對訓練目標不會替你補齊遺漏詞彙，也不保證知道何時拒答。",
+      "owner": "實作與影像核對負責人"
+    }
+  },
+  "teach_back": {
+    "question": "它改變什麼？何時選另一種做法？",
+    "answer": "原始 SigLIP 同樣學影像和文字的共同表示，但在預訓練時，對每一個配對或不配對的圖文組合分別計算 sigmoid 損失，無需用全批次相似度做 softmax 正規化。這些學習訊號仍共同更新編碼器；部署時再比較新影像與候選文字的配合程度。 與 CLIP 比較時，先認清批次 softmax 和逐對 sigmoid 是訓練差異；再固定相同工件、候選文字與測試條件，比實際排序品質與成本。本課介紹原始 SigLIP，不把 SigLIP 2 的新增能力混在一起。"
+  },
+  "slide_reading": [
+    {
+      "title": "SigLIP：每個圖文配對都給學習訊號",
+      "question": "正配對拉近、負配對分開，共同更新編碼器。",
+      "look": "先看先知道哪個描述配哪張圖，再核對逐對比較配對與不配對，最後看損失共同更新兩編碼器。",
+      "relation": "原始 SigLIP 的圖文編碼器分別產生表示，對正負圖文對計算 sigmoid 損失，梯度共同更新參數。每對有自己的二元目標，不需要 CLIP 式的整批 softmax 正規化；逐對計算不代表每對訓練一個獨立模型。",
+      "takeaway": "正配對拉近、負配對分開，共同更新編碼器。",
+      "terms": [
+        "表示：影像／文字經編碼後的資料，不是原始照片。",
+        "示意結果：用來解釋流程，不代表本輪模型實測。"
+      ]
+    },
+    {
+      "title": "SigLIP：雙路編碼，逐對計算損失",
+      "question": "改變的是配對訓練目標，兩個編碼器仍並行。",
+      "look": "先看影像與文字分別進模型，再核對每一對依正負標籤學習，最後看全部配對訊號一起更新。",
+      "relation": "圖文表示的內積經可學習尺度與偏移後，以正／負標籤計算 sigmoid 損失。圖中高低分僅解釋學習方向，不是模型機率校正結果；部署時不需提供正負訓練標籤。",
+      "takeaway": "改變的是配對訓練目標，兩個編碼器仍並行。",
+      "terms": [
+        "表示：影像／文字經編碼後的資料，不是原始照片。",
+        "示意結果：用來解釋流程，不代表本輪模型實測。"
+      ]
+    },
+    {
+      "title": "SigLIP：部署交出分數，不是回答",
+      "question": "以固定模型比較候選，再用域內資料設定覆核。",
+      "look": "先看保存候選文字表示，再核對新影像與候選逐一比，最後看依工作風險核對結果。",
+      "relation": "部署用預訓練好的圖文表示比較相似性；可依实现轉換配對分數，但不把 sigmoid 值直接當作域內正確率。結果是候選分數或排名，不是逐字生成回答，也不自帶可靠未知類別拒答。",
+      "takeaway": "以固定模型比較候選，再用域內資料設定覆核。",
+      "terms": [
+        "表示：影像／文字經編碼後的資料，不是原始照片。",
+        "示意結果：用來解釋流程，不代表本輪模型實測。"
+      ]
+    },
+    {
+      "title": "SigLIP：逐對學習不會補出缺少的類別",
+      "question": "選型要看本地錯誤與成本，不能只看損失名稱。",
+      "look": "先看兩種模型看同一齒輪，再核對兩者候選都缺齒輪，最後看固定條件後比較取捨。",
+      "relation": "CLIP 與 SigLIP 使用相同工件照片、相同缺少正確答案的候選時，都不能因有最高分就判定正確。比較需固定資料及候選，測誤配、拒答和完整成本；原論文的訓練優點不保證每個域內任務較好。",
+      "takeaway": "選型要看本地錯誤與成本，不能只看損失名稱。",
+      "terms": [
+        "表示：影像／文字經編碼後的資料，不是原始照片。",
+        "示意結果：用來解釋流程，不代表本輪模型實測。"
+      ]
+    }
+  ],
+  "comparison_headers": {
+    "title": "CLIP 與 SigLIP：訓練不同，選型要同題",
+    "basis": "所需資料與方法差異",
+    "output": "輸出與維護責任"
+  },
+  "transfer_check": {
+    "title": "分數較高能否直接勝出",
+    "scenario": "同一批圖上 SigLIP 的分數普遍高於 CLIP，但兩者最高候選大致相同。",
+    "question": "可以沿用 CLIP 門檻並宣稱 SigLIP 更準嗎？",
+    "answer": "不行。兩者的分數尺度與轉換不同；應在固定留出集各自驗證拒答／門檻，再比實際排序錯誤及成本。如果結果相當，維護和延遲也可以決定選擇。"
+  },
+  "review_trace": {
+    "authority": "roadmap-model-selection/foundation-vlm-open-world/siglip/model.md",
+    "scope": "WI-033：工程層四圖與手機比較修正；首讀有效內容保留。原生圖已審，整頁與使用者審閱另記。",
+    "claims": [
+      {
+        "id": "visual-1",
+        "field": "beginner_path.visuals[same-ceramic-workpiece]",
+        "source": "模型定位 / architecture_path"
+      },
+      {
+        "id": "visual-2",
+        "field": "beginner_path.visuals[pairwise-sigmoid-training]",
+        "source": "architecture_path"
+      },
+      {
+        "id": "visual-3",
+        "field": "beginner_path.visuals[deployment-ranking]",
+        "source": "representation_or_score"
+      },
+      {
+        "id": "visual-4",
+        "field": "beginner_path.visuals[local-calibration-counterfactual]",
+        "source": "failure_boundary"
+      },
+      {
+        "id": "visual-5",
+        "field": "beginner_path.visuals[fair-clip-comparison]",
+        "source": "selection_gate / evidence_bundle"
+      },
+      {
+        "id": "promise",
+        "field": "promise",
+        "source": "模型定位 / representation_or_score"
+      },
+      {
+        "id": "mechanism",
+        "field": "mechanism_steps",
+        "source": "architecture_path / representation_or_score"
+      },
+      {
+        "id": "boundaries",
+        "field": "boundary_cases",
+        "source": "failure_boundary / selection_gate"
+      },
+      {
+        "id": "comparison",
+        "field": "comparison + selection",
+        "source": "selection_gate"
+      },
+      {
+        "id": "poc",
+        "field": "poc + acceptance",
+        "source": "cost_and_operating_point / evidence_bundle"
+      },
+      {
+        "id": "transfer",
+        "field": "transfer_check",
+        "source": "failure_boundary / selection_gate"
+      },
+      {
+        "id": "f02-core",
+        "field": "beginner_path.visuals[0] + scenario + mental_model",
+        "source": "https://arxiv.org/abs/2303.15343"
+      },
+      {
+        "id": "f02-transfer",
+        "field": "micro_example + transfer_check + selection",
+        "source": "https://arxiv.org/abs/2303.15343"
+      },
+      {
+        "id": "wi027-first-read",
+        "field": "beginner_path + core + selection + transfer",
+        "source": "https://arxiv.org/abs/2303.15343"
+      }
+    ]
+  },
+  "quality_status": {
+    "label": "首讀圖文已重製並自評；使用者核准待確認",
+    "state": "self-reviewed",
+    "round": "WI-027",
+    "reason": "30張不同PNG逐圖審查，七頁與互動證據見workitems/wi-027；原工程圖未重新評分。"
+  },
+  "teaching_preflight": {
+    "brief": "teaching-images/vision-ai-model-selection/workitems/wi-027/siglip-c1-r03.md",
+    "mobile_brief": "teaching-images/vision-ai-model-selection/workitems/wi-027/siglip-c1-r05.md",
+    "story": "C",
+    "major_visual_nodes": 4,
+    "visual_status": "self-reviewed",
+    "user_review": "pending"
+  },
+  "engineering_slides": [
+    {
+      "title": "SigLIP：每個圖文配對都給學習訊號",
+      "question": "正配對拉近、負配對分開，共同更新編碼器。",
+      "plain": {
+        "look": "先看先知道哪個描述配哪張圖，再核對逐對比較配對與不配對，最後看損失共同更新兩編碼器。",
+        "relation": "原始 SigLIP 的圖文編碼器分別產生表示，對正負圖文對計算 sigmoid 損失，梯度共同更新參數。每對有自己的二元目標，不需要 CLIP 式的整批 softmax 正規化；逐對計算不代表每對訓練一個獨立模型。",
+        "takeaway": "正配對拉近、負配對分開，共同更新編碼器。"
+      },
+      "terms": [
+        "表示：影像／文字經編碼後的資料，不是原始照片。",
+        "示意結果：用來解釋流程，不代表本輪模型實測。"
+      ],
+      "guide": [
+        "原始 SigLIP 的圖文編碼器分別產生表示，對正負圖文對計算 sigmoid 損失，梯度共同更新參數。每對有自己的二元目標，不需要 CLIP 式的整批 softmax 正規化；逐對計算不代表每對訓練一個獨立模型。",
+        "先看先知道哪個描述配哪張圖，再核對逐對比較配對與不配對，最後看損失共同更新兩編碼器。"
+      ],
+      "stages": [
+        {
+          "title": "先知道哪個描述配哪張圖",
+          "body": "先知道哪個描述配哪張圖；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "逐對比較配對與不配對",
+          "body": "逐對比較配對與不配對；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "損失共同更新兩編碼器",
+          "body": "損失共同更新兩編碼器；請對照圖內輸入、變化與結果。"
+        }
+      ],
+      "misconception": "SigLIP 也會受到候選內容限制：齒輪影像面對只有支架、軸承的集合，仍可能選錯。逐對訓練目標不會替你補齊遺漏詞彙，也不保證知道何時拒答。",
+      "alt": "SigLIP：每個圖文配對都給學習訊號。正配對拉近、負配對分開，共同更新編碼器。 教學示意，非模型實測。",
+      "mobile_image": "roadmap-model-selection/foundation-vlm-open-world/siglip/images/final/WI033-SIGLIP-01-r02-mobile.png",
+      "mobile_width": 768,
+      "mobile_height": 2400,
+      "engineering": {
+        "takeaway": "正配對拉近、負配對分開，共同更新編碼器。",
+        "nextAction": "不行。兩者的分數尺度與轉換不同；應在固定留出集各自驗證拒答／門檻，再比實際排序錯誤及成本。如果結果相當，維護和延遲也可以決定選擇。",
+        "redLine": "SigLIP 也會受到候選內容限制：齒輪影像面對只有支架、軸承的集合，仍可能選錯。逐對訓練目標不會替你補齊遺漏詞彙，也不保證知道何時拒答。"
+      },
+      "source": "https://arxiv.org/abs/2303.15343"
+    },
+    {
+      "title": "SigLIP：雙路編碼，逐對計算損失",
+      "question": "改變的是配對訓練目標，兩個編碼器仍並行。",
+      "plain": {
+        "look": "先看影像與文字分別進模型，再核對每一對依正負標籤學習，最後看全部配對訊號一起更新。",
+        "relation": "圖文表示的內積經可學習尺度與偏移後，以正／負標籤計算 sigmoid 損失。圖中高低分僅解釋學習方向，不是模型機率校正結果；部署時不需提供正負訓練標籤。",
+        "takeaway": "改變的是配對訓練目標，兩個編碼器仍並行。"
+      },
+      "terms": [
+        "表示：影像／文字經編碼後的資料，不是原始照片。",
+        "示意結果：用來解釋流程，不代表本輪模型實測。"
+      ],
+      "guide": [
+        "圖文表示的內積經可學習尺度與偏移後，以正／負標籤計算 sigmoid 損失。圖中高低分僅解釋學習方向，不是模型機率校正結果；部署時不需提供正負訓練標籤。",
+        "先看影像與文字分別進模型，再核對每一對依正負標籤學習，最後看全部配對訊號一起更新。"
+      ],
+      "stages": [
+        {
+          "title": "影像與文字分別進模型",
+          "body": "影像與文字分別進模型；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "每一對依正負標籤學習",
+          "body": "每一對依正負標籤學習；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "全部配對訊號一起更新",
+          "body": "全部配對訊號一起更新；請對照圖內輸入、變化與結果。"
+        }
+      ],
+      "misconception": "SigLIP 也會受到候選內容限制：齒輪影像面對只有支架、軸承的集合，仍可能選錯。逐對訓練目標不會替你補齊遺漏詞彙，也不保證知道何時拒答。",
+      "alt": "SigLIP：雙路編碼，逐對計算損失。改變的是配對訓練目標，兩個編碼器仍並行。 教學示意，非模型實測。",
+      "mobile_image": "roadmap-model-selection/foundation-vlm-open-world/siglip/images/final/WI033-SIGLIP-02-r02-mobile.png",
+      "mobile_width": 768,
+      "mobile_height": 2400,
+      "engineering": {
+        "takeaway": "改變的是配對訓練目標，兩個編碼器仍並行。",
+        "nextAction": "不行。兩者的分數尺度與轉換不同；應在固定留出集各自驗證拒答／門檻，再比實際排序錯誤及成本。如果結果相當，維護和延遲也可以決定選擇。",
+        "redLine": "SigLIP 也會受到候選內容限制：齒輪影像面對只有支架、軸承的集合，仍可能選錯。逐對訓練目標不會替你補齊遺漏詞彙，也不保證知道何時拒答。"
+      },
+      "source": "https://arxiv.org/abs/2303.15343"
+    },
+    {
+      "title": "SigLIP：部署交出分數，不是回答",
+      "question": "以固定模型比較候選，再用域內資料設定覆核。",
+      "plain": {
+        "look": "先看保存候選文字表示，再核對新影像與候選逐一比，最後看依工作風險核對結果。",
+        "relation": "部署用預訓練好的圖文表示比較相似性；可依实现轉換配對分數，但不把 sigmoid 值直接當作域內正確率。結果是候選分數或排名，不是逐字生成回答，也不自帶可靠未知類別拒答。",
+        "takeaway": "以固定模型比較候選，再用域內資料設定覆核。"
+      },
+      "terms": [
+        "表示：影像／文字經編碼後的資料，不是原始照片。",
+        "示意結果：用來解釋流程，不代表本輪模型實測。"
+      ],
+      "guide": [
+        "部署用預訓練好的圖文表示比較相似性；可依实现轉換配對分數，但不把 sigmoid 值直接當作域內正確率。結果是候選分數或排名，不是逐字生成回答，也不自帶可靠未知類別拒答。",
+        "先看保存候選文字表示，再核對新影像與候選逐一比，最後看依工作風險核對結果。"
+      ],
+      "stages": [
+        {
+          "title": "保存候選文字表示",
+          "body": "保存候選文字表示；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "新影像與候選逐一比",
+          "body": "新影像與候選逐一比；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "依工作風險核對結果",
+          "body": "依工作風險核對結果；請對照圖內輸入、變化與結果。"
+        }
+      ],
+      "misconception": "SigLIP 也會受到候選內容限制：齒輪影像面對只有支架、軸承的集合，仍可能選錯。逐對訓練目標不會替你補齊遺漏詞彙，也不保證知道何時拒答。",
+      "alt": "SigLIP：部署交出分數，不是回答。以固定模型比較候選，再用域內資料設定覆核。 教學示意，非模型實測。",
+      "mobile_image": "roadmap-model-selection/foundation-vlm-open-world/siglip/images/final/WI033-SIGLIP-03-r02-mobile.png",
+      "mobile_width": 768,
+      "mobile_height": 2400,
+      "engineering": {
+        "takeaway": "以固定模型比較候選，再用域內資料設定覆核。",
+        "nextAction": "不行。兩者的分數尺度與轉換不同；應在固定留出集各自驗證拒答／門檻，再比實際排序錯誤及成本。如果結果相當，維護和延遲也可以決定選擇。",
+        "redLine": "SigLIP 也會受到候選內容限制：齒輪影像面對只有支架、軸承的集合，仍可能選錯。逐對訓練目標不會替你補齊遺漏詞彙，也不保證知道何時拒答。"
+      },
+      "source": "https://arxiv.org/abs/2303.15343"
+    },
+    {
+      "title": "SigLIP：逐對學習不會補出缺少的類別",
+      "question": "選型要看本地錯誤與成本，不能只看損失名稱。",
+      "plain": {
+        "look": "先看兩種模型看同一齒輪，再核對兩者候選都缺齒輪，最後看固定條件後比較取捨。",
+        "relation": "CLIP 與 SigLIP 使用相同工件照片、相同缺少正確答案的候選時，都不能因有最高分就判定正確。比較需固定資料及候選，測誤配、拒答和完整成本；原論文的訓練優點不保證每個域內任務較好。",
+        "takeaway": "選型要看本地錯誤與成本，不能只看損失名稱。"
+      },
+      "terms": [
+        "表示：影像／文字經編碼後的資料，不是原始照片。",
+        "示意結果：用來解釋流程，不代表本輪模型實測。"
+      ],
+      "guide": [
+        "CLIP 與 SigLIP 使用相同工件照片、相同缺少正確答案的候選時，都不能因有最高分就判定正確。比較需固定資料及候選，測誤配、拒答和完整成本；原論文的訓練優點不保證每個域內任務較好。",
+        "先看兩種模型看同一齒輪，再核對兩者候選都缺齒輪，最後看固定條件後比較取捨。"
+      ],
+      "stages": [
+        {
+          "title": "兩種模型看同一齒輪",
+          "body": "兩種模型看同一齒輪；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "兩者候選都缺齒輪",
+          "body": "兩者候選都缺齒輪；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "固定條件後比較取捨",
+          "body": "固定條件後比較取捨；請對照圖內輸入、變化與結果。"
+        }
+      ],
+      "misconception": "SigLIP 也會受到候選內容限制：齒輪影像面對只有支架、軸承的集合，仍可能選錯。逐對訓練目標不會替你補齊遺漏詞彙，也不保證知道何時拒答。",
+      "alt": "SigLIP：逐對學習不會補出缺少的類別。選型要看本地錯誤與成本，不能只看損失名稱。 教學示意，非模型實測。",
+      "mobile_image": "roadmap-model-selection/foundation-vlm-open-world/siglip/images/final/WI033-SIGLIP-04-r02-mobile.png",
+      "mobile_width": 768,
+      "mobile_height": 2400,
+      "engineering": {
+        "takeaway": "選型要看本地錯誤與成本，不能只看損失名稱。",
+        "nextAction": "不行。兩者的分數尺度與轉換不同；應在固定留出集各自驗證拒答／門檻，再比實際排序錯誤及成本。如果結果相當，維護和延遲也可以決定選擇。",
+        "redLine": "SigLIP 也會受到候選內容限制：齒輪影像面對只有支架、軸承的集合，仍可能選錯。逐對訓練目標不會替你補齊遺漏詞彙，也不保證知道何時拒答。"
+      },
+      "source": "https://arxiv.org/abs/2303.15343"
+    }
+  ]
+}

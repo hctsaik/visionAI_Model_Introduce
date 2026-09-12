@@ -1,0 +1,502 @@
+[
+  {
+    "topic": "ad-invad",
+    "route": "interactive-learning.html",
+    "width": 1440,
+    "errors": [],
+    "images": [
+      {
+        "src": "http://127.0.0.1:8000/_course_content/generated-concepts/ad-invad/wi021-invad-c1-r01-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 404.1875,
+          "y": 401.640625,
+          "width": 935.625,
+          "height": 526.5625,
+          "top": 401.640625,
+          "right": 1339.8125,
+          "bottom": 928.203125,
+          "left": 404.1875
+        },
+        "kind": "main-1"
+      },
+      {
+        "src": "http://127.0.0.1:8000/_course_content/generated-concepts/ad-dinomaly/wi021-multi-reconstruction-d2-r02-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 404.1875,
+          "y": 200.75,
+          "width": 935.625,
+          "height": 526.5625,
+          "top": 200.75,
+          "right": 1339.8125,
+          "bottom": 727.3125,
+          "left": 404.1875
+        },
+        "kind": "main-2"
+      },
+      {
+        "src": "http://127.0.0.1:8000/_course_content/generated-concepts/ad-dinomaly/wi021-multi-reconstruction-d3-r02-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 404.1875,
+          "y": 201.0625,
+          "width": 935.625,
+          "height": 526.5625,
+          "top": 201.0625,
+          "right": 1339.8125,
+          "bottom": 727.625,
+          "left": 404.1875
+        },
+        "kind": "main-3"
+      },
+      {
+        "src": "http://127.0.0.1:8000/roadmap-model-selection/anomaly-detection/ad-invad/images/final/WI033-INVAD-01-r01-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 367.1875,
+          "y": 195.453125,
+          "width": 1009.625,
+          "height": 568.203125,
+          "top": 195.453125,
+          "right": 1376.8125,
+          "bottom": 763.65625,
+          "left": 367.1875
+        },
+        "kind": "engineering-1"
+      },
+      {
+        "src": "http://127.0.0.1:8000/roadmap-model-selection/anomaly-detection/ad-invad/images/final/WI033-INVAD-02-r02-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 367.1875,
+          "y": 195.484375,
+          "width": 1009.625,
+          "height": 568.203125,
+          "top": 195.484375,
+          "right": 1376.8125,
+          "bottom": 763.6875,
+          "left": 367.1875
+        },
+        "kind": "engineering-2"
+      },
+      {
+        "src": "http://127.0.0.1:8000/roadmap-model-selection/anomaly-detection/ad-invad/images/final/WI033-INVAD-03-r01-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 367.1875,
+          "y": 196.3125,
+          "width": 1009.625,
+          "height": 568.203125,
+          "top": 196.3125,
+          "right": 1376.8125,
+          "bottom": 764.515625,
+          "left": 367.1875
+        },
+        "kind": "engineering-3"
+      },
+      {
+        "src": "http://127.0.0.1:8000/roadmap-model-selection/anomaly-detection/ad-invad/images/final/WI033-INVAD-04-r01-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 367.1875,
+          "y": 196.34375,
+          "width": 1009.625,
+          "height": 568.203125,
+          "top": 196.34375,
+          "right": 1376.8125,
+          "bottom": 764.546875,
+          "left": 367.1875
+        },
+        "kind": "engineering-4"
+      }
+    ],
+    "zoom_checks": 7,
+    "answer": true,
+    "overflow": false,
+    "navigation": true,
+    "complete": true
+  },
+  {
+    "topic": "ad-invad",
+    "route": "interactive-learning.html",
+    "width": 360,
+    "errors": [],
+    "images": [
+      {
+        "src": "http://127.0.0.1:8000/_course_content/generated-concepts/ad-invad/wi021-invad-c1-r03-mobile.png",
+        "nw": 724,
+        "nh": 2171,
+        "box": {
+          "x": 17,
+          "y": -133.890625,
+          "width": 326,
+          "height": 977.546875,
+          "top": -133.890625,
+          "right": 343,
+          "bottom": 843.65625,
+          "left": 17
+        },
+        "kind": "main-1"
+      },
+      {
+        "src": "http://127.0.0.1:8000/_course_content/generated-concepts/ad-dinomaly/wi021-multi-reconstruction-d2-r03-mobile.png",
+        "nw": 724,
+        "nh": 2172,
+        "box": {
+          "x": 17,
+          "y": -134.484375,
+          "width": 326,
+          "height": 978,
+          "top": -134.484375,
+          "right": 343,
+          "bottom": 843.515625,
+          "left": 17
+        },
+        "kind": "main-2"
+      },
+      {
+        "src": "http://127.0.0.1:8000/_course_content/generated-concepts/ad-dinomaly/wi021-multi-reconstruction-d3-r02-mobile.png",
+        "nw": 724,
+        "nh": 2172,
+        "box": {
+          "x": 17,
+          "y": -134.0625,
+          "width": 326,
+          "height": 978,
+          "top": -134.0625,
+          "right": 343,
+          "bottom": 843.9375,
+          "left": 17
+        },
+        "kind": "main-3"
+      },
+      {
+        "src": "http://127.0.0.1:8000/roadmap-model-selection/anomaly-detection/ad-invad/images/final/WI033-INVAD-01-r01-mobile.png",
+        "nw": 768,
+        "nh": 2304,
+        "box": {
+          "x": 34,
+          "y": -69,
+          "width": 292,
+          "height": 876,
+          "top": -69,
+          "right": 326,
+          "bottom": 807,
+          "left": 34
+        },
+        "kind": "engineering-1"
+      },
+      {
+        "src": "http://127.0.0.1:8000/roadmap-model-selection/anomaly-detection/ad-invad/images/final/WI033-INVAD-02-r02-mobile.png",
+        "nw": 768,
+        "nh": 2400,
+        "box": {
+          "x": 34,
+          "y": -87.640625,
+          "width": 292,
+          "height": 912.5,
+          "top": -87.640625,
+          "right": 326,
+          "bottom": 824.859375,
+          "left": 34
+        },
+        "kind": "engineering-2"
+      },
+      {
+        "src": "http://127.0.0.1:8000/roadmap-model-selection/anomaly-detection/ad-invad/images/final/WI033-INVAD-03-r01-mobile.png",
+        "nw": 768,
+        "nh": 2304,
+        "box": {
+          "x": 34,
+          "y": -69.6875,
+          "width": 292,
+          "height": 876,
+          "top": -69.6875,
+          "right": 326,
+          "bottom": 806.3125,
+          "left": 34
+        },
+        "kind": "engineering-3"
+      },
+      {
+        "src": "http://127.0.0.1:8000/roadmap-model-selection/anomaly-detection/ad-invad/images/final/WI033-INVAD-04-r01-mobile.png",
+        "nw": 768,
+        "nh": 2304,
+        "box": {
+          "x": 34,
+          "y": -69.640625,
+          "width": 292,
+          "height": 876,
+          "top": -69.640625,
+          "right": 326,
+          "bottom": 806.359375,
+          "left": 34
+        },
+        "kind": "engineering-4"
+      }
+    ],
+    "zoom_checks": 7,
+    "answer": true,
+    "overflow": false,
+    "navigation": true,
+    "complete": true
+  },
+  {
+    "topic": "ad-invad",
+    "route": "docs/index.html",
+    "width": 1440,
+    "errors": [],
+    "images": [
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/ad-invad/wi021-invad-c1-r01-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 404.1875,
+          "y": 401.640625,
+          "width": 935.625,
+          "height": 526.5625,
+          "top": 401.640625,
+          "right": 1339.8125,
+          "bottom": 928.203125,
+          "left": 404.1875
+        },
+        "kind": "main-1"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/ad-dinomaly/wi021-multi-reconstruction-d2-r02-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 404.1875,
+          "y": 200.75,
+          "width": 935.625,
+          "height": 526.5625,
+          "top": 200.75,
+          "right": 1339.8125,
+          "bottom": 727.3125,
+          "left": 404.1875
+        },
+        "kind": "main-2"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/ad-dinomaly/wi021-multi-reconstruction-d3-r02-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 404.1875,
+          "y": 201.0625,
+          "width": 935.625,
+          "height": 526.5625,
+          "top": 201.0625,
+          "right": 1339.8125,
+          "bottom": 727.625,
+          "left": 404.1875
+        },
+        "kind": "main-3"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/anomaly-detection/ad-invad/images/final/WI033-INVAD-01-r01-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 367.1875,
+          "y": 195.453125,
+          "width": 1009.625,
+          "height": 568.203125,
+          "top": 195.453125,
+          "right": 1376.8125,
+          "bottom": 763.65625,
+          "left": 367.1875
+        },
+        "kind": "engineering-1"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/anomaly-detection/ad-invad/images/final/WI033-INVAD-02-r02-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 367.1875,
+          "y": 195.484375,
+          "width": 1009.625,
+          "height": 568.203125,
+          "top": 195.484375,
+          "right": 1376.8125,
+          "bottom": 763.6875,
+          "left": 367.1875
+        },
+        "kind": "engineering-2"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/anomaly-detection/ad-invad/images/final/WI033-INVAD-03-r01-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 367.1875,
+          "y": 196.3125,
+          "width": 1009.625,
+          "height": 568.203125,
+          "top": 196.3125,
+          "right": 1376.8125,
+          "bottom": 764.515625,
+          "left": 367.1875
+        },
+        "kind": "engineering-3"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/anomaly-detection/ad-invad/images/final/WI033-INVAD-04-r01-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 367.1875,
+          "y": 196.34375,
+          "width": 1009.625,
+          "height": 568.203125,
+          "top": 196.34375,
+          "right": 1376.8125,
+          "bottom": 764.546875,
+          "left": 367.1875
+        },
+        "kind": "engineering-4"
+      }
+    ],
+    "zoom_checks": 7,
+    "answer": true,
+    "overflow": false,
+    "navigation": true,
+    "complete": true
+  },
+  {
+    "topic": "ad-invad",
+    "route": "docs/index.html",
+    "width": 360,
+    "errors": [],
+    "images": [
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/ad-invad/wi021-invad-c1-r03-mobile.png",
+        "nw": 724,
+        "nh": 2171,
+        "box": {
+          "x": 17,
+          "y": -133.890625,
+          "width": 326,
+          "height": 977.546875,
+          "top": -133.890625,
+          "right": 343,
+          "bottom": 843.65625,
+          "left": 17
+        },
+        "kind": "main-1"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/ad-dinomaly/wi021-multi-reconstruction-d2-r03-mobile.png",
+        "nw": 724,
+        "nh": 2172,
+        "box": {
+          "x": 17,
+          "y": -134.484375,
+          "width": 326,
+          "height": 978,
+          "top": -134.484375,
+          "right": 343,
+          "bottom": 843.515625,
+          "left": 17
+        },
+        "kind": "main-2"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/ad-dinomaly/wi021-multi-reconstruction-d3-r02-mobile.png",
+        "nw": 724,
+        "nh": 2172,
+        "box": {
+          "x": 17,
+          "y": -134.0625,
+          "width": 326,
+          "height": 978,
+          "top": -134.0625,
+          "right": 343,
+          "bottom": 843.9375,
+          "left": 17
+        },
+        "kind": "main-3"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/anomaly-detection/ad-invad/images/final/WI033-INVAD-01-r01-mobile.png",
+        "nw": 768,
+        "nh": 2304,
+        "box": {
+          "x": 34,
+          "y": -69,
+          "width": 292,
+          "height": 876,
+          "top": -69,
+          "right": 326,
+          "bottom": 807,
+          "left": 34
+        },
+        "kind": "engineering-1"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/anomaly-detection/ad-invad/images/final/WI033-INVAD-02-r02-mobile.png",
+        "nw": 768,
+        "nh": 2400,
+        "box": {
+          "x": 34,
+          "y": -87.640625,
+          "width": 292,
+          "height": 912.5,
+          "top": -87.640625,
+          "right": 326,
+          "bottom": 824.859375,
+          "left": 34
+        },
+        "kind": "engineering-2"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/anomaly-detection/ad-invad/images/final/WI033-INVAD-03-r01-mobile.png",
+        "nw": 768,
+        "nh": 2304,
+        "box": {
+          "x": 34,
+          "y": -69.6875,
+          "width": 292,
+          "height": 876,
+          "top": -69.6875,
+          "right": 326,
+          "bottom": 806.3125,
+          "left": 34
+        },
+        "kind": "engineering-3"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/anomaly-detection/ad-invad/images/final/WI033-INVAD-04-r01-mobile.png",
+        "nw": 768,
+        "nh": 2304,
+        "box": {
+          "x": 34,
+          "y": -69.640625,
+          "width": 292,
+          "height": 876,
+          "top": -69.640625,
+          "right": 326,
+          "bottom": 806.359375,
+          "left": 34
+        },
+        "kind": "engineering-4"
+      }
+    ],
+    "zoom_checks": 7,
+    "answer": true,
+    "overflow": false,
+    "navigation": true,
+    "complete": true
+  }
+]

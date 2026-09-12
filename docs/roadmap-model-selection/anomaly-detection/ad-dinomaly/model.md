@@ -121,3 +121,40 @@ Research contract and visual primitives are complete. Pages 04-43 through 04-46 
 **選型**：有多類正常資料且願意訓練共享 decoder 時可試；與 UniAD 比較防照抄設計，也與 AnomalyDINO 比建庫和訓練成本。此題限原版 Dinomaly。
 
 [原論文／官方來源](https://github.com/guojiajeremy/Dinomaly)。本輪原生 SVG 結合既有生成金屬件；特徵與差異為教學設定，沒有新增推論。先前章節如描述應用擴充，不應解讀為原模型必需步驟。
+
+<!-- wi033-engineering:start -->
+## WI-033 工程圖修正
+
+### Dinomaly：多类正常，共用重建路徑
+
+固定DINOv2，多類正常共同訓練MLP及解碼器；位置差異是覆核線索。各類正常變化與真缺陷分開留出，不用整體平均掩蓋弱類。
+
+共同訓練仍需逐產品驗證。
+
+來源：https://arxiv.org/html/2405.14325v5
+
+### Dinomaly：限制照抄，再分組比較
+
+固定DINOv2，用正常特徵訓練瓶頸及解碼器；訓練MLP Dropout阻止直接照抄，eval關閉。線性注意力降低聚焦相同位置的捷徑；多層按組相加後比較，放寬逐層對應。訓練另降低已重建良好位置的梯度影響。圖中兩組/小格為機制示意，不是固定層號或維度。
+
+訓練擾動與分組對照，要和推論設定分開。
+
+來源：https://arxiv.org/html/2405.14325v5
+
+### Dinomaly：訓練擾動，部署要關閉
+
+保存骨幹、MLP、解碼器、使用層和分組、前處理及評分。Dropout只於訓練；放鬆逐層配對與難位置訓練策略不等於省略驗證。部署需eval，變更分組後重新驗。
+
+保存層分組與eval設定，才可重現差異。
+
+來源：https://arxiv.org/html/2405.14325v5
+
+### Dinomaly：低重建差，不保證無刮傷
+
+給定原與重建表示同為[.6,.8]，餘弦差0；原圖刮傷仍在。Dropout和線性注意力針對照抄捷徑，不保證每个缺陷有大差異。
+
+限制照抄是手段，缺陷仍要用真例驗證。
+
+來源：https://arxiv.org/html/2405.14325v5
+
+<!-- wi033-engineering:end -->

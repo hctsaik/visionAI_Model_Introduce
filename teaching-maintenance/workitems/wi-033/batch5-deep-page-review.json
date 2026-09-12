@@ -1,0 +1,25 @@
+{
+  "status": "passed",
+  "actual_viewed": [
+    "deep/ad-patchcore/docs-1440-c02-v01.png",
+    "deep/ad-patchcore/docs-1440-c02-v02.png",
+    "deep/ad-patchcore/docs-360-c02-v01.png",
+    "deep/ad-patchcore/docs-360-c02-v02.png"
+  ],
+  "notes": [
+    "原工件A-01及来源框保留",
+    "layer2/3同位置線索；4.70/4.07/3.91沿用既有實測",
+    "顯示格四捨五入與全精度平均分開說明"
+  ],
+  "http": [
+    "http://127.0.0.1:8000/_course_content/generated-concepts/ad-patchcore/wi033-patchcore-deep-features-r02-mobile.png",
+    "http://127.0.0.1:8000/docs/_course_content/generated-concepts/ad-patchcore/wi033-patchcore-deep-features-r02-mobile.png",
+    "http://127.0.0.1:8000/_course_content/generated-concepts/ad-patchcore/patchcore-work-02-features_p03.svg",
+    "http://127.0.0.1:8000/docs/_course_content/generated-concepts/ad-patchcore/patchcore-work-02-features_p03.svg",
+    "http://127.0.0.1:8000/_course_content/generated-concepts/ad-patchcore/wi033-patchcore-deep-context-r01-mobile.png",
+    "http://127.0.0.1:8000/docs/_course_content/generated-concepts/ad-patchcore/wi033-patchcore-deep-context-r01-mobile.png",
+    "http://127.0.0.1:8000/_course_content/generated-concepts/ad-patchcore/patchcore-work-02-context_p03.svg",
+    "http://127.0.0.1:8000/docs/_course_content/generated-concepts/ad-patchcore/patchcore-work-02-context_p03.svg"
+  ],
+  "user_approval": "pending"
+}

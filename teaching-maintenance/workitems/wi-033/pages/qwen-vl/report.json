@@ -1,0 +1,502 @@
+[
+  {
+    "topic": "qwen-vl",
+    "route": "interactive-learning.html",
+    "width": 1440,
+    "errors": [],
+    "images": [
+      {
+        "src": "http://127.0.0.1:8000/_course_content/generated-concepts/qwen-vl/wi027-qwen-vl-c1-r03-desktop.png",
+        "nw": 1672,
+        "nh": 940,
+        "box": {
+          "x": 404.1875,
+          "y": 401.953125,
+          "width": 935.625,
+          "height": 526.5625,
+          "top": 401.953125,
+          "right": 1339.8125,
+          "bottom": 928.515625,
+          "left": 404.1875
+        },
+        "kind": "main-1"
+      },
+      {
+        "src": "http://127.0.0.1:8000/_course_content/generated-concepts/qwen-vl/wi027-qwen-vl-d2-r03-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 404.1875,
+          "y": 200.65625,
+          "width": 935.625,
+          "height": 526.5625,
+          "top": 200.65625,
+          "right": 1339.8125,
+          "bottom": 727.21875,
+          "left": 404.1875
+        },
+        "kind": "main-2"
+      },
+      {
+        "src": "http://127.0.0.1:8000/_course_content/generated-concepts/llava/wi027-vlm-d3-r03-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 404.1875,
+          "y": 201.234375,
+          "width": 935.625,
+          "height": 526.5625,
+          "top": 201.234375,
+          "right": 1339.8125,
+          "bottom": 727.796875,
+          "left": 404.1875
+        },
+        "kind": "main-3"
+      },
+      {
+        "src": "http://127.0.0.1:8000/roadmap-model-selection/foundation-vlm-open-world/qwen-vl/images/final/WI033-QWEN-01-r01-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 367.1875,
+          "y": 195.796875,
+          "width": 1009.625,
+          "height": 568.203125,
+          "top": 195.796875,
+          "right": 1376.8125,
+          "bottom": 764,
+          "left": 367.1875
+        },
+        "kind": "engineering-1"
+      },
+      {
+        "src": "http://127.0.0.1:8000/roadmap-model-selection/foundation-vlm-open-world/qwen-vl/images/final/WI033-QWEN-02-r02-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 367.1875,
+          "y": 195.9375,
+          "width": 1009.625,
+          "height": 568.203125,
+          "top": 195.9375,
+          "right": 1376.8125,
+          "bottom": 764.140625,
+          "left": 367.1875
+        },
+        "kind": "engineering-2"
+      },
+      {
+        "src": "http://127.0.0.1:8000/roadmap-model-selection/foundation-vlm-open-world/qwen-vl/images/final/WI033-QWEN-03-r01-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 367.1875,
+          "y": 195.609375,
+          "width": 1009.625,
+          "height": 568.203125,
+          "top": 195.609375,
+          "right": 1376.8125,
+          "bottom": 763.8125,
+          "left": 367.1875
+        },
+        "kind": "engineering-3"
+      },
+      {
+        "src": "http://127.0.0.1:8000/roadmap-model-selection/foundation-vlm-open-world/qwen-vl/images/final/WI033-QWEN-04-r01-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 367.1875,
+          "y": 195.75,
+          "width": 1009.625,
+          "height": 568.203125,
+          "top": 195.75,
+          "right": 1376.8125,
+          "bottom": 763.953125,
+          "left": 367.1875
+        },
+        "kind": "engineering-4"
+      }
+    ],
+    "zoom_checks": 7,
+    "answer": true,
+    "overflow": false,
+    "navigation": true,
+    "complete": true
+  },
+  {
+    "topic": "qwen-vl",
+    "route": "interactive-learning.html",
+    "width": 360,
+    "errors": [],
+    "images": [
+      {
+        "src": "http://127.0.0.1:8000/_course_content/generated-concepts/qwen-vl/wi027-qwen-vl-c1-r03-mobile.png",
+        "nw": 725,
+        "nh": 2170,
+        "box": {
+          "x": 17,
+          "y": -133.859375,
+          "width": 326,
+          "height": 975.75,
+          "top": -133.859375,
+          "right": 343,
+          "bottom": 841.890625,
+          "left": 17
+        },
+        "kind": "main-1"
+      },
+      {
+        "src": "http://127.0.0.1:8000/_course_content/generated-concepts/qwen-vl/wi027-qwen-vl-d2-r03-mobile.png",
+        "nw": 724,
+        "nh": 2172,
+        "box": {
+          "x": 17,
+          "y": -134.890625,
+          "width": 326,
+          "height": 978,
+          "top": -134.890625,
+          "right": 343,
+          "bottom": 843.109375,
+          "left": 17
+        },
+        "kind": "main-2"
+      },
+      {
+        "src": "http://127.0.0.1:8000/_course_content/generated-concepts/llava/wi027-vlm-d3-r03-mobile.png",
+        "nw": 724,
+        "nh": 2172,
+        "box": {
+          "x": 17,
+          "y": -134.046875,
+          "width": 326,
+          "height": 978,
+          "top": -134.046875,
+          "right": 343,
+          "bottom": 843.953125,
+          "left": 17
+        },
+        "kind": "main-3"
+      },
+      {
+        "src": "http://127.0.0.1:8000/roadmap-model-selection/foundation-vlm-open-world/qwen-vl/images/final/WI033-QWEN-01-r01-mobile.png",
+        "nw": 768,
+        "nh": 2304,
+        "box": {
+          "x": 34,
+          "y": -69.6875,
+          "width": 292,
+          "height": 876,
+          "top": -69.6875,
+          "right": 326,
+          "bottom": 806.3125,
+          "left": 34
+        },
+        "kind": "engineering-1"
+      },
+      {
+        "src": "http://127.0.0.1:8000/roadmap-model-selection/foundation-vlm-open-world/qwen-vl/images/final/WI033-QWEN-02-r02-mobile.png",
+        "nw": 768,
+        "nh": 2304,
+        "box": {
+          "x": 34,
+          "y": -69.09375,
+          "width": 292,
+          "height": 876,
+          "top": -69.09375,
+          "right": 326,
+          "bottom": 806.90625,
+          "left": 34
+        },
+        "kind": "engineering-2"
+      },
+      {
+        "src": "http://127.0.0.1:8000/roadmap-model-selection/foundation-vlm-open-world/qwen-vl/images/final/WI033-QWEN-03-r01-mobile.png",
+        "nw": 768,
+        "nh": 2304,
+        "box": {
+          "x": 34,
+          "y": -69.40625,
+          "width": 292,
+          "height": 876,
+          "top": -69.40625,
+          "right": 326,
+          "bottom": 806.59375,
+          "left": 34
+        },
+        "kind": "engineering-3"
+      },
+      {
+        "src": "http://127.0.0.1:8000/roadmap-model-selection/foundation-vlm-open-world/qwen-vl/images/final/WI033-QWEN-04-r01-mobile.png",
+        "nw": 768,
+        "nh": 2304,
+        "box": {
+          "x": 34,
+          "y": -69.546875,
+          "width": 292,
+          "height": 876,
+          "top": -69.546875,
+          "right": 326,
+          "bottom": 806.453125,
+          "left": 34
+        },
+        "kind": "engineering-4"
+      }
+    ],
+    "zoom_checks": 7,
+    "answer": true,
+    "overflow": false,
+    "navigation": true,
+    "complete": true
+  },
+  {
+    "topic": "qwen-vl",
+    "route": "docs/index.html",
+    "width": 1440,
+    "errors": [],
+    "images": [
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/qwen-vl/wi027-qwen-vl-c1-r03-desktop.png",
+        "nw": 1672,
+        "nh": 940,
+        "box": {
+          "x": 404.1875,
+          "y": 401.953125,
+          "width": 935.625,
+          "height": 526.5625,
+          "top": 401.953125,
+          "right": 1339.8125,
+          "bottom": 928.515625,
+          "left": 404.1875
+        },
+        "kind": "main-1"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/qwen-vl/wi027-qwen-vl-d2-r03-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 404.1875,
+          "y": 200.65625,
+          "width": 935.625,
+          "height": 526.5625,
+          "top": 200.65625,
+          "right": 1339.8125,
+          "bottom": 727.21875,
+          "left": 404.1875
+        },
+        "kind": "main-2"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/llava/wi027-vlm-d3-r03-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 404.1875,
+          "y": 201.234375,
+          "width": 935.625,
+          "height": 526.5625,
+          "top": 201.234375,
+          "right": 1339.8125,
+          "bottom": 727.796875,
+          "left": 404.1875
+        },
+        "kind": "main-3"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/foundation-vlm-open-world/qwen-vl/images/final/WI033-QWEN-01-r01-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 367.1875,
+          "y": 195.796875,
+          "width": 1009.625,
+          "height": 568.203125,
+          "top": 195.796875,
+          "right": 1376.8125,
+          "bottom": 764,
+          "left": 367.1875
+        },
+        "kind": "engineering-1"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/foundation-vlm-open-world/qwen-vl/images/final/WI033-QWEN-02-r02-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 367.1875,
+          "y": 195.9375,
+          "width": 1009.625,
+          "height": 568.203125,
+          "top": 195.9375,
+          "right": 1376.8125,
+          "bottom": 764.140625,
+          "left": 367.1875
+        },
+        "kind": "engineering-2"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/foundation-vlm-open-world/qwen-vl/images/final/WI033-QWEN-03-r01-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 367.1875,
+          "y": 195.609375,
+          "width": 1009.625,
+          "height": 568.203125,
+          "top": 195.609375,
+          "right": 1376.8125,
+          "bottom": 763.8125,
+          "left": 367.1875
+        },
+        "kind": "engineering-3"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/foundation-vlm-open-world/qwen-vl/images/final/WI033-QWEN-04-r01-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 367.1875,
+          "y": 195.75,
+          "width": 1009.625,
+          "height": 568.203125,
+          "top": 195.75,
+          "right": 1376.8125,
+          "bottom": 763.953125,
+          "left": 367.1875
+        },
+        "kind": "engineering-4"
+      }
+    ],
+    "zoom_checks": 7,
+    "answer": true,
+    "overflow": false,
+    "navigation": true,
+    "complete": true
+  },
+  {
+    "topic": "qwen-vl",
+    "route": "docs/index.html",
+    "width": 360,
+    "errors": [],
+    "images": [
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/qwen-vl/wi027-qwen-vl-c1-r03-mobile.png",
+        "nw": 725,
+        "nh": 2170,
+        "box": {
+          "x": 17,
+          "y": -133.859375,
+          "width": 326,
+          "height": 975.75,
+          "top": -133.859375,
+          "right": 343,
+          "bottom": 841.890625,
+          "left": 17
+        },
+        "kind": "main-1"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/qwen-vl/wi027-qwen-vl-d2-r03-mobile.png",
+        "nw": 724,
+        "nh": 2172,
+        "box": {
+          "x": 17,
+          "y": -134.890625,
+          "width": 326,
+          "height": 978,
+          "top": -134.890625,
+          "right": 343,
+          "bottom": 843.109375,
+          "left": 17
+        },
+        "kind": "main-2"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/llava/wi027-vlm-d3-r03-mobile.png",
+        "nw": 724,
+        "nh": 2172,
+        "box": {
+          "x": 17,
+          "y": -134.046875,
+          "width": 326,
+          "height": 978,
+          "top": -134.046875,
+          "right": 343,
+          "bottom": 843.953125,
+          "left": 17
+        },
+        "kind": "main-3"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/foundation-vlm-open-world/qwen-vl/images/final/WI033-QWEN-01-r01-mobile.png",
+        "nw": 768,
+        "nh": 2304,
+        "box": {
+          "x": 34,
+          "y": -69.6875,
+          "width": 292,
+          "height": 876,
+          "top": -69.6875,
+          "right": 326,
+          "bottom": 806.3125,
+          "left": 34
+        },
+        "kind": "engineering-1"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/foundation-vlm-open-world/qwen-vl/images/final/WI033-QWEN-02-r02-mobile.png",
+        "nw": 768,
+        "nh": 2304,
+        "box": {
+          "x": 34,
+          "y": -69.09375,
+          "width": 292,
+          "height": 876,
+          "top": -69.09375,
+          "right": 326,
+          "bottom": 806.90625,
+          "left": 34
+        },
+        "kind": "engineering-2"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/foundation-vlm-open-world/qwen-vl/images/final/WI033-QWEN-03-r01-mobile.png",
+        "nw": 768,
+        "nh": 2304,
+        "box": {
+          "x": 34,
+          "y": -69.40625,
+          "width": 292,
+          "height": 876,
+          "top": -69.40625,
+          "right": 326,
+          "bottom": 806.59375,
+          "left": 34
+        },
+        "kind": "engineering-3"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/foundation-vlm-open-world/qwen-vl/images/final/WI033-QWEN-04-r01-mobile.png",
+        "nw": 768,
+        "nh": 2304,
+        "box": {
+          "x": 34,
+          "y": -69.546875,
+          "width": 292,
+          "height": 876,
+          "top": -69.546875,
+          "right": 326,
+          "bottom": 806.453125,
+          "left": 34
+        },
+        "kind": "engineering-4"
+      }
+    ],
+    "zoom_checks": 7,
+    "answer": true,
+    "overflow": false,
+    "navigation": true,
+    "complete": true
+  }
+]

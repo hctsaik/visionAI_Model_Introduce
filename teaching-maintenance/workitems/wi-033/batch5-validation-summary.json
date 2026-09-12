@@ -1,0 +1,21 @@
+{
+  "ui_states": 32,
+  "zoom_checks": 240,
+  "http_checks": 252,
+  "bundle_assets": 1370,
+  "html_sha256": "4121999759a579bd772e85b8f5a98b716c5aaadf8da2bf7cdf1de4eb92a4f60f",
+  "answers": 32,
+  "navigation": 32,
+  "tests": {
+    "exit_code": 0,
+    "stdout": "........                 [100%]\n8 passed, 120 subtests passed in 123.73s (0:02:03)\n",
+    "stderr": ""
+  },
+  "deep_states": 32,
+  "deep_source_http_checks": 8,
+  "new_engineering_pngs": 64,
+  "new_deep_mobile_pngs": 2,
+  "native_and_page_review": "passed",
+  "user_approval": "pending",
+  "published": false
+}

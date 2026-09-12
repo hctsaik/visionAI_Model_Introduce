@@ -1,0 +1,498 @@
+{
+  "model": "RAFT",
+  "badge": "學習式稠密光流",
+  "title": "RAFT：反覆更新整張像素位移",
+  "scenario": {
+    "title": "你想知道移動金屬板上不同區域如何移動，而不只追三個角點；需要一張可以往下游取樣的稠密位移圖。",
+    "body": "你想知道移動金屬板上不同區域如何移動，而不只追三個角點；需要一張可以往下游取樣的稠密位移圖。"
+  },
+  "promise": {
+    "title": "交付結果與接手工作",
+    "body": "每個像素的水平／垂直影像位移估計。本課箭頭只是示意；物件身分、速度、形變量測與事件判定要另有分群、校正與驗證。"
+  },
+  "mental_model": {
+    "title": "學習式稠密光流",
+    "body": "原始 RAFT 先對兩張影格各自抽特徵，建立所有位置配對的相似線索；再反覆查詢多尺度相關性，用更新單元修正目前的光流估計。全配對提供廣泛的候選位置，反覆更新把這些線索逐步轉成每個像素的二維位移。",
+    "limit": "金屬反光或遮擋讓某些像素在下一影格沒有可靠可見對應；RAFT仍可能輸出數值，但這是估計，不是觀測真值。"
+  },
+  "micro_example": {
+    "title": "換成只需幾個固定角點",
+    "setup": "現場CPU即可，工作只需三個角點是否偏移，位移很小、紋理清楚。",
+    "prediction": "為了稠密輸出一定要選RAFT嗎？",
+    "reveal": "不必；先以LK或既有對位法作基準，測角點誤差與漂移。只有下游確實需要更廣位移覆蓋，且效果改善值得運算代價時，再採用RAFT。"
+  },
+  "mechanism_steps": [
+    {
+      "title": "兩張影格抽特徵",
+      "body": "相關性描述哪些特徵可能相似，不代表每個位置都找到唯一真實對應；重複紋理仍可能混淆。",
+      "why": "由本課核心機制連接工作用途",
+      "anchor": "WI028-1",
+      "diagram": {
+        "title": "兩張影格抽特徵",
+        "body": "相關性描述哪些特徵可能相似，不代表每個位置都找到唯一真實對應；重複紋理仍可能混淆。",
+        "why": "詳見本課版本與來源",
+        "anchor": "WI028-1"
+      }
+    },
+    {
+      "title": "查詢全配對線索並更新",
+      "body": "多次更新不是多拍幾張影格；推論反覆使用這一對影格的特徵。迭代與解析度會影響運算及記憶體。",
+      "why": "由本課核心機制連接工作用途",
+      "anchor": "WI028-2",
+      "diagram": {
+        "title": "查詢全配對線索並更新",
+        "body": "多次更新不是多拍幾張影格；推論反覆使用這一對影格的特徵。迭代與解析度會影響運算及記憶體。",
+        "why": "詳見本課版本與來源",
+        "anchor": "WI028-2"
+      }
+    },
+    {
+      "title": "交出稠密光流",
+      "body": "每個像素的水平／垂直影像位移估計。本課箭頭只是示意；物件身分、速度、形變量測與事件判定要另有分群、校正與驗證。",
+      "why": "由本課核心機制連接工作用途",
+      "anchor": "WI028-3",
+      "diagram": {
+        "title": "交出稠密光流",
+        "body": "每個像素的水平／垂直影像位移估計。本課箭頭只是示意；物件身分、速度、形變量測與事件判定要另有分群、校正與驗證。",
+        "why": "詳見本課版本與來源",
+        "anchor": "WI028-3"
+      }
+    },
+    {
+      "title": "工作核對與接手",
+      "body": "在相同影片和校對位置比較位移誤差、有效覆蓋、遮擋表現、完整耗時和記憶體；圖中無現場模型成績。",
+      "why": "由本課核心機制連接工作用途",
+      "anchor": "WI028-4",
+      "diagram": {
+        "title": "工作核對與接手",
+        "body": "在相同影片和校對位置比較位移誤差、有效覆蓋、遮擋表現、完整耗時和記憶體；圖中無現場模型成績。",
+        "why": "詳見本課版本與來源",
+        "anchor": "WI028-4"
+      }
+    }
+  ],
+  "visual_intro": "原始 RAFT 先對兩張影格各自抽特徵，建立所有位置配對的相似線索；再反覆查詢多尺度相關性，用更新單元修正目前的光流估計。全配對提供廣泛的候選位置，反覆更新把這些線索逐步轉成每個像素的二維位移。",
+  "beginner_path": {
+    "title": "從必要原理、具體反例到工作取捨",
+    "intro": "你想知道移動金屬板上不同區域如何移動，而不只追三個角點；需要一張可以往下游取樣的稠密位移圖。 下列圖像、特徵及回答為教學示意，不是模型實測。",
+    "visuals": [
+      {
+        "id": "wi028-raft-c1",
+        "title": "RAFT：反覆查找對應，估計整張位移",
+        "prompt": "你想知道移動金屬板上不同區域如何移動，而不只追三個角點；需要一張可以往下游取樣的稠密位移圖。",
+        "caption": "原始 RAFT 先對兩張影格各自抽特徵，建立所有位置配對的相似線索；再反覆查詢多尺度相關性，用更新單元修正目前的光流估計。全配對提供廣泛的候選位置，反覆更新把這些線索逐步轉成每個像素的二維位移。",
+        "image": "_course_content/generated-concepts/raft/wi028-raft-c1-r01-desktop.png",
+        "alt": "RAFT：反覆查找對應，估計整張位移。原始 RAFT 先對兩張影格各自抽特徵，建立所有位置配對的相似線索；再反覆查詢多尺度相關性，用更新單元修正目前的光流估計。全配對提供廣泛的候選位置，反覆更新把這些線索逐步轉成每個像素的二維位移。 AI生成教學示意，非模型實測。",
+        "callouts": [
+          {
+            "title": "兩影格，許多候選",
+            "body": "相關性描述哪些特徵可能相似，不代表每個位置都找到唯一真實對應；重複紋理仍可能混淆。"
+          },
+          {
+            "title": "反覆修正估計",
+            "body": "多次更新不是多拍幾張影格；推論反覆使用這一對影格的特徵。迭代與解析度會影響運算及記憶體。"
+          },
+          {
+            "title": "交付與接手",
+            "body": "每個像素的水平／垂直影像位移估計。本課箭頭只是示意；物件身分、速度、形變量測與事件判定要另有分群、校正與驗證。"
+          }
+        ],
+        "reading_views": [
+          {
+            "title": "RAFT：反覆查找對應，估計整張位移",
+            "image": "_course_content/generated-concepts/raft/wi028-raft-c1-r01-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/raft/wi028-raft-c1-r01-mobile.png",
+            "alt": "RAFT：反覆查找對應，估計整張位移。原始 RAFT 先對兩張影格各自抽特徵，建立所有位置配對的相似線索；再反覆查詢多尺度相關性，用更新單元修正目前的光流估計。全配對提供廣泛的候選位置，反覆更新把這些線索逐步轉成每個像素的二維位移。 AI生成教學示意，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              768,
+              2048
+            ],
+            "mobile_display_mode": "full-mobile",
+            "desktop_intrinsic_width": 1672,
+            "desktop_intrinsic_height": 941,
+            "mobile_intrinsic_width": 768,
+            "mobile_intrinsic_height": 2048
+          }
+        ],
+        "core_ideas": true
+      },
+      {
+        "id": "wi028-flow-d2",
+        "title": "沒有可靠對應，位移圖也可能猜錯",
+        "prompt": "觀察哪個條件改變，讓原本的結果不夠可靠？",
+        "caption": "金屬反光或遮擋讓某些像素在下一影格沒有可靠可見對應；RAFT仍可能輸出數值，但這是估計，不是觀測真值。",
+        "image": "_course_content/generated-concepts/lucas-kanade/wi028-flow-d2-r03-desktop.png",
+        "alt": "沒有可靠對應，位移圖也可能猜錯。金屬反光或遮擋讓某些像素在下一影格沒有可靠可見對應；RAFT仍可能輸出數值，但這是估計，不是觀測真值。 AI生成教學示意，非模型實測。",
+        "callouts": [
+          {
+            "title": "看哪裡",
+            "body": "金屬反光或遮擋讓某些像素在下一影格沒有可靠可見對應；RAFT仍可能輸出數值，但這是估計，不是觀測真值。"
+          },
+          {
+            "title": "接著怎麼做",
+            "body": "回原片查遮擋與反光，搭配前後向或任務檢查標出不可靠區；不要把平滑光流直接當毫米級量測。"
+          }
+        ],
+        "reading_views": [
+          {
+            "title": "沒有可靠對應，位移圖也可能猜錯",
+            "image": "_course_content/generated-concepts/lucas-kanade/wi028-flow-d2-r03-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/lucas-kanade/wi028-flow-d2-r03-mobile.png",
+            "alt": "沒有可靠對應，位移圖也可能猜錯。金屬反光或遮擋讓某些像素在下一影格沒有可靠可見對應；RAFT仍可能輸出數值，但這是估計，不是觀測真值。 AI生成教學示意，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              768,
+              2048
+            ],
+            "mobile_display_mode": "full-mobile",
+            "desktop_intrinsic_width": 1672,
+            "desktop_intrinsic_height": 941,
+            "mobile_intrinsic_width": 768,
+            "mobile_intrinsic_height": 2048
+          }
+        ],
+        "core_ideas": false
+      },
+      {
+        "id": "wi028-flow-d3",
+        "title": "少量追點，還是整張位移？",
+        "prompt": "相同工作需求下，資料、輸出與成本如何取捨？",
+        "caption": "需要全圖位移時比較RAFT與傳統稠密光流；只需少量角點可先試LK。RAFT要權重與較多運算預算，是否值得取決於域內位移品質和下游任務。",
+        "image": "_course_content/generated-concepts/lucas-kanade/wi028-flow-d3-r01-desktop.png",
+        "alt": "少量追點，還是整張位移？。需要全圖位移時比較RAFT與傳統稠密光流；只需少量角點可先試LK。RAFT要權重與較多運算預算，是否值得取決於域內位移品質和下游任務。 AI生成教學示意，非模型實測。",
+        "callouts": [
+          {
+            "title": "怎麼選",
+            "body": "需要全圖位移時比較RAFT與傳統稠密光流；只需少量角點可先試LK。RAFT要權重與較多運算預算，是否值得取決於域內位移品質和下游任務。"
+          },
+          {
+            "title": "資料與完整成本",
+            "body": "先固定具體權重、前處理、影像解析度與更新次數。換相機／材質需測域落差，必要時另準備配對監督資料微調；同看誤差、遮擋錯誤、記憶體與端到端耗時。"
+          }
+        ],
+        "reading_views": [
+          {
+            "title": "少量追點，還是整張位移？",
+            "image": "_course_content/generated-concepts/lucas-kanade/wi028-flow-d3-r01-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/lucas-kanade/wi028-flow-d3-r01-mobile.png",
+            "alt": "少量追點，還是整張位移？。需要全圖位移時比較RAFT與傳統稠密光流；只需少量角點可先試LK。RAFT要權重與較多運算預算，是否值得取決於域內位移品質和下游任務。 AI生成教學示意，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              1024,
+              1536
+            ],
+            "mobile_display_mode": "full-mobile",
+            "desktop_intrinsic_width": 1672,
+            "desktop_intrinsic_height": 941,
+            "mobile_intrinsic_width": 1024,
+            "mobile_intrinsic_height": 1536
+          }
+        ],
+        "core_ideas": false
+      }
+    ]
+  },
+  "concept_visuals": [
+    {
+      "id": "causal-chain",
+      "placement": "after_causal_chain",
+      "title": "RAFT：先懂中心，再看細節",
+      "prompt": "視覺上平滑連續，是否就能做局部物理結論？",
+      "caption": "你需要一張稠密 (u,v) flow field 交給明確事件或量測後段，並可承受 all-pairs correlation 的 VRAM 與 iteration 成本。",
+      "image": "_course_content/generated-concepts/raft/raft-f02-core.png",
+      "alt": "RAFT 的 F02 核心機制圖：案例輸入、模型專屬轉換、可交付線索與人的接手動作；非模型推論。",
+      "callouts": [
+        {
+          "title": "固定影格與影像幾何契約",
+          "body": "保存 timestamped frame pair、ROI、registration、preprocessing、resize/padding 與 checkpoint。"
+        },
+        {
+          "title": "形成 all-pairs correlation 與 context",
+          "body": "同一個共享權重的 feature encoder 分別將兩張 frame 編成 F0、F1，再建立指定 correlation volume；另由 context encoder 提供更新條件。"
+        },
+        {
+          "title": "迭代更新稠密 flow",
+          "body": "以宣告 iterations 的 recurrent update block 由 local correlation lookup 逐步 refined flow，最後 upsample/postprocess。"
+        }
+      ]
+    },
+    {
+      "id": "worked-example",
+      "placement": "after_micro_example",
+      "title": "RAFT：同一案例的反事實",
+      "prompt": "並排正常紋理與反射/遮擋：兩者皆有 flow field，但後者以橘色 consistency failure/occlusion region 出現，導向 REVIEW/HOLD。",
+      "caption": "用同一案例看清楚參數或假設如何改變輸出，才知道何時該 HOLD。",
+      "image": "_course_content/generated-concepts/raft/raft-worked-example_v01.svg",
+      "alt": "RAFT 的教學因果圖：輸入、轉換、輸出及其不可推論的界線。",
+      "callouts": [
+        {
+          "title": "情境",
+          "body": "透明反射表面有遮擋與重複紋理；RAFT 仍輸出連續彩色 flow field。"
+        },
+        {
+          "title": "直覺陷阱",
+          "body": "視覺上平滑連續，是否就能做局部物理結論？"
+        },
+        {
+          "title": "揭示",
+          "body": "不可以。遮擋、反射、重複紋理與 motion boundary 仍可能產生 confident-but-wrong vectors；保存 consistency／uncertainty proxy、rejected pixels 與 target-domain truth。"
+        },
+        {
+          "title": "POC 檢查",
+          "body": "讓每張 flow 都有 consistency 與 reject 記錄；沒有它們，色圖只是一種視覺化。"
+        }
+      ]
+    },
+    {
+      "id": "comparison",
+      "placement": "after_comparison",
+      "title": "RAFT：和鄰近路徑的責任差異",
+      "prompt": "同一 frame pair/ROI/preprocessing：RAFT learned dense all-pairs/recurrent；LK local texture solve。比較 valid coverage、reject、VRAM/P95、downstream event，不比 benchmark/彩圖。",
+      "caption": "比較時固定輸入、真值、硬體與 action contract；不要從單張視覺化決定排名。",
+      "image": "_course_content/generated-concepts/raft/raft-comparison_v01.svg",
+      "alt": "RAFT 的教學因果圖：輸入、轉換、輸出及其不可推論的界線。",
+      "callouts": [
+        {
+          "title": "本模型",
+          "body": "checkpoint-dependent all-pairs correlation + context；輸出 拒絕策略後的 dense (u,v) field。"
+        },
+        {
+          "title": "對照：Lucas–Kanade",
+          "body": "局部梯度矩陣與小位移假設；輸出 局部有效 vectors。"
+        },
+        {
+          "title": "選型結論",
+          "body": "當複雜／較大 motion 確實需要稠密 field、downstream owner 明確、目標域 truth/proxy 與 VRAM/P95 都可量測時考慮。若沒有稠密 flow owner、相機運動未治理、目標 optics 無驗證、或需要語意／identity，先 HOLD。"
+        }
+      ]
+    },
+    {
+      "id": "boundary-cases-explainer",
+      "placement": "before_boundary_cases",
+      "title": "同一條因果鏈，在哪裡會被破壞？",
+      "prompt": "不要只記住風險名詞；先預測條件一變，畫面或候選結果會怎麼變，再決定何時應 HOLD。",
+      "caption": "RAFT 的三個模型專屬反事實：每欄把條件、可觀察後果與正確下一步放在一起。它們不是自動修正規則；遇到條件超出驗證範圍時，先保存原始證據並進入 HOLD／REVIEW。",
+      "image": "_course_content/generated-concepts/raft/raft-boundary-cases_v01.svg",
+      "alt": "RAFT 的三欄反事實說明圖：每欄依序說明一個失效條件、可能看到的候選或量測後果，以及應進入 HOLD、重驗或改選方法的安全下一步。",
+      "callouts": [
+        {
+          "title": "先看條件，而不是先改門檻",
+          "body": "候選改變可能是資料、取像、設定或模型假設被破壞，不能立刻解讀成產品真相。"
+        },
+        {
+          "title": "把可觀察後果說出來",
+          "body": "誤報、漏檢、整片異常或時間失序都需要回到原始資料與版本追查。"
+        },
+        {
+          "title": "HOLD 是設計的一部分",
+          "body": "先停止自動往下走、保存 evidence，確認條件後才重新 qualification 或交給適合的方法。"
+        }
+      ]
+    }
+  ],
+  "boundary_cases": [
+    {
+      "condition": "本課具體反例",
+      "effect": "金屬反光或遮擋讓某些像素在下一影格沒有可靠可見對應；RAFT仍可能輸出數值，但這是估計，不是觀測真值。",
+      "action": "回原片查遮擋與反光，搭配前後向或任務檢查標出不可靠區；不要把平滑光流直接當毫米級量測。"
+    },
+    {
+      "condition": "更換產品、模型或輸入設定",
+      "effect": "先固定具體權重、前處理、影像解析度與更新次數。換相機／材質需測域落差，必要時另準備配對監督資料微調；同看誤差、遮擋錯誤、記憶體與端到端耗時。",
+      "action": "先收集成對且有時間戳的影片，選定原始RAFT權重與解析度，準備可信點對／已知移動作驗證。"
+    },
+    {
+      "condition": "把示意當成實際推論",
+      "effect": "本課特徵、排序、回答及圖像僅用於解釋，不支持現場準確率或耗時結論。",
+      "action": "在相同影片和校對位置比較位移誤差、有效覆蓋、遮擋表現、完整耗時和記憶體；圖中無現場模型成績。"
+    }
+  ],
+  "comparison": [
+    {
+      "model": "Lucas–Kanade稀疏追點",
+      "normality": "不需權重；選角點、窗口、金字塔與幀間隔",
+      "candidate": "選定點位移；需檢查追丟與錯配"
+    },
+    {
+      "model": "原始RAFT",
+      "normality": "預訓練權重、相容前處理、迭代與運算預算",
+      "candidate": "稠密像素位移；遮擋仍可能不可靠"
+    },
+    {
+      "model": "傳統稠密光流基準",
+      "normality": "如Farnebäck；設定尺度和局部估計參數",
+      "candidate": "稠密位移；同影片比較誤差、覆蓋及成本"
+    }
+  ],
+  "selection": "需要全圖位移時比較RAFT與傳統稠密光流；只需少量角點可先試LK。RAFT要權重與較多運算預算，是否值得取決於域內位移品質和下游任務。 先固定具體權重、前處理、影像解析度與更新次數。換相機／材質需測域落差，必要時另準備配對監督資料微調；同看誤差、遮擋錯誤、記憶體與端到端耗時。",
+  "poc": {
+    "title": "以真實工作資料做小規模比較",
+    "steps": [
+      "先收集成對且有時間戳的影片，選定原始RAFT權重與解析度，準備可信點對／已知移動作驗證。",
+      "先固定具體權重、前處理、影像解析度與更新次數。換相機／材質需測域落差，必要時另準備配對監督資料微調；同看誤差、遮擋錯誤、記憶體與端到端耗時。",
+      "在相同影片和校對位置比較位移誤差、有效覆蓋、遮擋表現、完整耗時和記憶體；圖中無現場模型成績。"
+    ],
+    "hold": "回原片查遮擋與反光，搭配前後向或任務檢查標出不可靠區；不要把平滑光流直接當毫米級量測。",
+    "acceptance": {
+      "baseline": "既有流程或最簡單可行方法",
+      "measure": "在相同影片和校對位置比較位移誤差、有效覆蓋、遮擋表現、完整耗時和記憶體；圖中無現場模型成績。",
+      "negative_control": "金屬反光或遮擋讓某些像素在下一影格沒有可靠可見對應；RAFT仍可能輸出數值，但這是估計，不是觀測真值。",
+      "owner": "實作與影像核對負責人"
+    }
+  },
+  "teach_back": {
+    "question": "它改變什麼？何時選另一種做法？",
+    "answer": "原始 RAFT 先對兩張影格各自抽特徵，建立所有位置配對的相似線索；再反覆查詢多尺度相關性，用更新單元修正目前的光流估計。全配對提供廣泛的候選位置，反覆更新把這些線索逐步轉成每個像素的二維位移。 需要全圖位移時比較RAFT與傳統稠密光流；只需少量角點可先試LK。RAFT要權重與較多運算預算，是否值得取決於域內位移品質和下游任務。"
+  },
+  "slide_reading": [
+    {
+      "title": "RAFT 先輸出什麼？",
+      "question": "它真正回答的問題",
+      "look": "看 Pair contract 到 Dense (u,v)。",
+      "relation": "在已鎖 checkpoint、frame pair、resize/padding、correlation、iterations 與 reject policy 下，每個輸出位置的位移估計是什麼？它不是 object class、track identity、未校正物理速度、根因或 release 證據。",
+      "takeaway": "把它想成「先列出配對可能，再反覆修正一張 flow」",
+      "terms": [
+        "all-pairs correlation",
+        "context encoder"
+      ]
+    },
+    {
+      "title": "核心機制：Dense (u,v)",
+      "question": "為何「迭代更新稠密 flow」不是最後決策？",
+      "look": "Pair contract → Correlation evidence → Dense (u,v) → Reject and gate",
+      "relation": "少一次 iteration 或更改 precision 並非同一 operating point。",
+      "takeaway": "候選須回到 Reject and gate。",
+      "terms": [
+        "recurrent update",
+        "iteration count"
+      ]
+    },
+    {
+      "title": "邊界：什麼情況該停下來？",
+      "question": "哪個輸入或假設一變，輸出不再可解讀？",
+      "look": "target optics／texture／illumination 與 checkpoint 不符；遮擋、反射、透明、重複紋理或 motion boundary；resolution、correlation、iterations、padding 或 frame gap 改變",
+      "relation": "learned correlation 可能 shift，對應不再可觀察。；可能有 confident 但錯誤的稠密 vectors。；VRAM、P95 與輸出行為全部改變。",
+      "takeaway": "先保留證據並進 REVIEW/HOLD。",
+      "terms": [
+        "dense flow (u,v)",
+        "consistency / reject"
+      ]
+    },
+    {
+      "title": "選型：何時值得用 RAFT？",
+      "question": "要鎖定哪些條件才能公平比較？",
+      "look": "RAFT / Lucas–Kanade / ByteTrack",
+      "relation": "當複雜／較大 motion 確實需要稠密 field、downstream owner 明確、目標域 truth/proxy 與 VRAM/P95 都可量測時考慮。若沒有稠密 flow owner、相機運動未治理、目標 optics 無驗證、或需要語意／identity，先 HOLD。",
+      "takeaway": "POC：把色圖拆成可驗證的量",
+      "terms": [
+        "evidence bundle",
+        "complete P95/P99"
+      ]
+    }
+  ],
+  "comparison_headers": {
+    "title": "少量追點，還是整張位移？",
+    "basis": "所需資料與方法差異",
+    "output": "輸出與維護責任"
+  },
+  "transfer_check": {
+    "title": "換成只需幾個固定角點",
+    "scenario": "現場CPU即可，工作只需三個角點是否偏移，位移很小、紋理清楚。",
+    "question": "為了稠密輸出一定要選RAFT嗎？",
+    "answer": "不必；先以LK或既有對位法作基準，測角點誤差與漂移。只有下游確實需要更廣位移覆蓋，且效果改善值得運算代價時，再採用RAFT。"
+  },
+  "review_trace": {
+    "authority": "roadmap-model-selection/video-temporal/raft/model.md",
+    "scope": "WI-028 八個時序主題首讀圖文與手機PNG、反例、比較及自測；原工程slide保留，未以首讀評分代替工程圖審查。",
+    "claims": [
+      {
+        "id": "visual-1",
+        "field": "beginner_path.visuals[same-conveyor-frame-pair]",
+        "source": "模型定位 / architecture_path"
+      },
+      {
+        "id": "visual-2",
+        "field": "beginner_path.visuals[pair-and-encoders]",
+        "source": "architecture_path"
+      },
+      {
+        "id": "visual-3",
+        "field": "beginner_path.visuals[all-pairs-correlation]",
+        "source": "representation_or_score"
+      },
+      {
+        "id": "visual-4",
+        "field": "beginner_path.visuals[recurrent-dense-flow]",
+        "source": "failure_boundary"
+      },
+      {
+        "id": "visual-5",
+        "field": "beginner_path.visuals[declared-reject-and-choice]",
+        "source": "selection_gate / evidence_bundle"
+      },
+      {
+        "id": "promise",
+        "field": "promise",
+        "source": "模型定位 / representation_or_score"
+      },
+      {
+        "id": "mechanism",
+        "field": "mechanism_steps",
+        "source": "architecture_path / representation_or_score"
+      },
+      {
+        "id": "boundaries",
+        "field": "boundary_cases",
+        "source": "failure_boundary / selection_gate"
+      },
+      {
+        "id": "comparison",
+        "field": "comparison + selection",
+        "source": "selection_gate"
+      },
+      {
+        "id": "poc",
+        "field": "poc + acceptance",
+        "source": "cost_and_operating_point / evidence_bundle"
+      },
+      {
+        "id": "transfer",
+        "field": "transfer_check",
+        "source": "failure_boundary / selection_gate"
+      },
+      {
+        "id": "f02-core",
+        "field": "beginner_path.visuals[0] + scenario + mental_model",
+        "source": "roadmap-model-selection/video-temporal/raft/model.md"
+      },
+      {
+        "id": "f02-transfer",
+        "field": "micro_example + transfer_check + selection",
+        "source": "roadmap-model-selection/video-temporal/raft/model.md"
+      },
+      {
+        "id": "wi028-first-read",
+        "field": "beginner_path + core + selection + transfer",
+        "source": "https://www.ecva.net/papers/eccv_2020/papers_ECCV/papers/123470392.pdf"
+      }
+    ]
+  },
+  "quality_status": {
+    "label": "首讀圖文已核對",
+    "state": "self-reviewed",
+    "round": "WI-028",
+    "reason": "新版首讀逐圖與整頁自評、桌機手機互動驗證完成；使用者核准pending。原工程圖未納入本輪分數。"
+  },
+  "teaching_preflight": {
+    "brief": "teaching-images/vision-ai-model-selection/workitems/wi-028/raft-c1-r01.md",
+    "mobile_brief": "teaching-images/vision-ai-model-selection/workitems/wi-028/raft-c1-r01.md",
+    "story": "C",
+    "major_visual_nodes": 3,
+    "visual_status": "self-reviewed",
+    "user_review": "pending"
+  }
+}

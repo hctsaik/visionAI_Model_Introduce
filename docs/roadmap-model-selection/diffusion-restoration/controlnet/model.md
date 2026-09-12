@@ -96,3 +96,40 @@ Preserve raw source/ROI and condition-map hashes, extractor/version/preprocessin
 
 - Zhang, Rao, and Agrawala, *Adding Conditional Control to Text-to-Image Diffusion Models*, [arXiv:2302.05543](https://arxiv.org/abs/2302.05543).
 - `full-model-course/07-diffusion-generation-and-restoration.md` for course-scoped claims and page order.
+
+<!-- wi033-engineering:start -->
+## WI-033 工程圖修正
+
+### ControlNet：條件圖與文字共同交付
+
+輪廓抽取版本、解析度與對應ControlNet checkpoint需匹配。輸出是合成板，不是實拍檢測或尺寸量測。
+
+先定義控制什麼，再檢查生成是否遵守。
+
+來源：https://arxiv.org/abs/2302.05543
+
+### ControlNet：控制殘差接入去噪主幹
+
+同上方雙孔矩形板，輪廓圖含外框/兩孔，文字指定銀色金屬。預訓練主幹固定，可訓練編碼副本接條件，zero convolution初始化0以殘差連接主幹；訓練後連接通常不為0。每步讀時間/噪聲latent與條件；不把輪廓輸出當缺陷熱點。 r01實看修正：輪廓外框與孔框同用白線。
+
+條件控制布局，細節仍要回原條件核對。
+
+來源：https://arxiv.org/abs/2302.05543
+
+### ControlNet：控制強度要配採樣驗證
+
+保存前處理器、控制強度/起止步、基模、文字與採樣。強度增大不保證所有細節更真；用同輪廓檢孔位/外框及材質。
+
+強度只是設定，遵守條件與品質要同時看。
+
+來源：https://arxiv.org/abs/2302.05543
+
+### ControlNet：相同輪廓，不限定有無刮傷
+
+同上方兩孔，外框與孔位不變，表面刮傷可不同；輪廓相符不能證明生成裂紋真實存在。
+
+條件未描述的細節，不能當成觀測證據。
+
+來源：https://arxiv.org/abs/2302.05543
+
+<!-- wi033-engineering:end -->

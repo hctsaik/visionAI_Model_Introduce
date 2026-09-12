@@ -1,0 +1,642 @@
+[
+  {
+    "id": "ad-dinomaly-engineering-1",
+    "mode": "desktop",
+    "path": "roadmap-model-selection/anomaly-detection/ad-dinomaly/images/final/WI033-DINOMALY-01-r01-desktop.png",
+    "sha256": "63d7b4e833033e2a11c1ee566f33d9f1abb7a0c796de7a823ecff27e2cb0ba54",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "ad-dinomaly-engineering-1",
+    "mode": "mobile",
+    "path": "roadmap-model-selection/anomaly-detection/ad-dinomaly/images/final/WI033-DINOMALY-01-r01-mobile.png",
+    "sha256": "680ea9e6facf73b5f2946c41d2d77ad9c25384ce8b815ed9a536b8ac28636f46",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "ad-dinomaly-engineering-2",
+    "mode": "desktop",
+    "path": "roadmap-model-selection/anomaly-detection/ad-dinomaly/images/final/WI033-DINOMALY-02-r02-desktop.png",
+    "sha256": "6d8449ee5624450934e18026e2880ff3c5fdfda3d6c8fad270b5dc1d8e340f66",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "ad-dinomaly-engineering-2",
+    "mode": "mobile",
+    "path": "roadmap-model-selection/anomaly-detection/ad-dinomaly/images/final/WI033-DINOMALY-02-r02-mobile.png",
+    "sha256": "9236ca1256e8b76c7b45f7780c90a956b8c276d916fdb6d7ee5212ebdb23319a",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "ad-dinomaly-engineering-3",
+    "mode": "desktop",
+    "path": "roadmap-model-selection/anomaly-detection/ad-dinomaly/images/final/WI033-DINOMALY-03-r01-desktop.png",
+    "sha256": "713c12e6c3b80cdecb77c6450d3c34993767c56730adffac761a184106f93d39",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "ad-dinomaly-engineering-3",
+    "mode": "mobile",
+    "path": "roadmap-model-selection/anomaly-detection/ad-dinomaly/images/final/WI033-DINOMALY-03-r01-mobile.png",
+    "sha256": "a5d42edbda688fe1891e2667ab3f236ea236c8d17b1b5c3e859425f8c801f1d7",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "ad-dinomaly-engineering-4",
+    "mode": "desktop",
+    "path": "roadmap-model-selection/anomaly-detection/ad-dinomaly/images/final/WI033-DINOMALY-04-r01-desktop.png",
+    "sha256": "814accc8ccb9e99da2c8a75fa4f3a6eb46853a11366473d2a2b2c07e23e691ea",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "ad-dinomaly-engineering-4",
+    "mode": "mobile",
+    "path": "roadmap-model-selection/anomaly-detection/ad-dinomaly/images/final/WI033-DINOMALY-04-r01-mobile.png",
+    "sha256": "4d7831a28b6ddc2a4ce60bec5a9c03fbbb7a9a11a7ae56969d558acc447956e8",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "ad-invad-engineering-1",
+    "mode": "desktop",
+    "path": "roadmap-model-selection/anomaly-detection/ad-invad/images/final/WI033-INVAD-01-r01-desktop.png",
+    "sha256": "45879409fa4cdf5bd0b04cd998cd3f5baf4ab4c7b408f7737c67eb8c6956bf0b",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "ad-invad-engineering-1",
+    "mode": "mobile",
+    "path": "roadmap-model-selection/anomaly-detection/ad-invad/images/final/WI033-INVAD-01-r01-mobile.png",
+    "sha256": "e9e2a384623cddc2bf0dae7e4812307b0577fa7fd2be13cd9c956df645573709",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "ad-invad-engineering-2",
+    "mode": "desktop",
+    "path": "roadmap-model-selection/anomaly-detection/ad-invad/images/final/WI033-INVAD-02-r02-desktop.png",
+    "sha256": "fb2b8b8a79b3dd6954ff33a25a5049a721ce2ea7c3d51c1ea2488397a86e8f25",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "ad-invad-engineering-2",
+    "mode": "mobile",
+    "path": "roadmap-model-selection/anomaly-detection/ad-invad/images/final/WI033-INVAD-02-r02-mobile.png",
+    "sha256": "a0cdf1253e252613755e9065c5f0dc913205fba14c527189f91ba7115e232be2",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "ad-invad-engineering-3",
+    "mode": "desktop",
+    "path": "roadmap-model-selection/anomaly-detection/ad-invad/images/final/WI033-INVAD-03-r01-desktop.png",
+    "sha256": "fd7909c32c99ed60aadb1053a888a869bebddf7007c610d1ddb0f660524f76a4",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "ad-invad-engineering-3",
+    "mode": "mobile",
+    "path": "roadmap-model-selection/anomaly-detection/ad-invad/images/final/WI033-INVAD-03-r01-mobile.png",
+    "sha256": "397e48b1779f6780076640113fe8d1e2de4db6b259feeb6419b2158a5dbf00eb",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "ad-invad-engineering-4",
+    "mode": "desktop",
+    "path": "roadmap-model-selection/anomaly-detection/ad-invad/images/final/WI033-INVAD-04-r01-desktop.png",
+    "sha256": "8d7118c5604e746134099032a7768c0fdec593c7eecd333516b497c01cf815ab",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "ad-invad-engineering-4",
+    "mode": "mobile",
+    "path": "roadmap-model-selection/anomaly-detection/ad-invad/images/final/WI033-INVAD-04-r01-mobile.png",
+    "sha256": "d167cd041101b6552cab6908a313c70eeab37f4c0073708b25aad8f98ea15775",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "ad-ddad-engineering-1",
+    "mode": "desktop",
+    "path": "roadmap-model-selection/anomaly-detection/ad-ddad/images/final/WI033-DDAD-01-r01-desktop.png",
+    "sha256": "5fd56047248e1a909114ac44a57f682f1f756009682cda8722c368c986abfc97",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "ad-ddad-engineering-1",
+    "mode": "mobile",
+    "path": "roadmap-model-selection/anomaly-detection/ad-ddad/images/final/WI033-DDAD-01-r01-mobile.png",
+    "sha256": "bb8c2cc78a4dda9d0a16b7ae67590619f1bcb8741a3d8d82e230098d4d7363cf",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "ad-ddad-engineering-2",
+    "mode": "desktop",
+    "path": "roadmap-model-selection/anomaly-detection/ad-ddad/images/final/WI033-DDAD-02-r02-desktop.png",
+    "sha256": "72f620058223d530af7aaf8475ec0d3c68fe4faa394d9f72c86244e3e1e93b94",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "ad-ddad-engineering-2",
+    "mode": "mobile",
+    "path": "roadmap-model-selection/anomaly-detection/ad-ddad/images/final/WI033-DDAD-02-r02-mobile.png",
+    "sha256": "ef68c107bd25dfd901082341d1c542d9c944ffabde89c2f5035aa50fd041877c",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "ad-ddad-engineering-3",
+    "mode": "desktop",
+    "path": "roadmap-model-selection/anomaly-detection/ad-ddad/images/final/WI033-DDAD-03-r01-desktop.png",
+    "sha256": "89149667e69b0263a9c8ab4835465d4999d1fae10c26d31638fe2e3a9d093287",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "ad-ddad-engineering-3",
+    "mode": "mobile",
+    "path": "roadmap-model-selection/anomaly-detection/ad-ddad/images/final/WI033-DDAD-03-r01-mobile.png",
+    "sha256": "3f358ae43be5bdfe5c52f50ba2ba92f550d4a846ae1266f7355bc8d10a306213",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "ad-ddad-engineering-4",
+    "mode": "desktop",
+    "path": "roadmap-model-selection/anomaly-detection/ad-ddad/images/final/WI033-DDAD-04-r02-desktop.png",
+    "sha256": "622ebf7472835c76aec885b0802c2db72b2bb673b6ac46fc616b51306db98721",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "ad-ddad-engineering-4",
+    "mode": "mobile",
+    "path": "roadmap-model-selection/anomaly-detection/ad-ddad/images/final/WI033-DDAD-04-r02-mobile.png",
+    "sha256": "5c899012415828aef6d43f4516413a2a4ac05cf7c343dd175dcb8daf0488c535",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "ad-winclip-engineering-1",
+    "mode": "desktop",
+    "path": "roadmap-model-selection/anomaly-detection/ad-winclip/images/final/WI033-WINCLIP-01-r02-desktop.png",
+    "sha256": "a8c6d8a4f5ee6b46d48b7c7622ebb0c97907867f8aa55521d77e0d447e9cbf76",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "ad-winclip-engineering-1",
+    "mode": "mobile",
+    "path": "roadmap-model-selection/anomaly-detection/ad-winclip/images/final/WI033-WINCLIP-01-r02-mobile.png",
+    "sha256": "2c9a6b7ae2fab77a8c4f006a9cb9b4fc0feabc17c2fd15276d19de956d9563da",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "ad-winclip-engineering-2",
+    "mode": "desktop",
+    "path": "roadmap-model-selection/anomaly-detection/ad-winclip/images/final/WI033-WINCLIP-02-r02-desktop.png",
+    "sha256": "9928459ce8250fafd268e609b73926e931061259b95eb62dc6c55e4b7b87469d",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "ad-winclip-engineering-2",
+    "mode": "mobile",
+    "path": "roadmap-model-selection/anomaly-detection/ad-winclip/images/final/WI033-WINCLIP-02-r02-mobile.png",
+    "sha256": "acbefdb9c50157d3cc3794bb5b0d401a4ce816a4877ae793de9237c51317b509",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "ad-winclip-engineering-3",
+    "mode": "desktop",
+    "path": "roadmap-model-selection/anomaly-detection/ad-winclip/images/final/WI033-WINCLIP-03-r02-desktop.png",
+    "sha256": "be5b0eb45117c91470a77cd36bf3bcd0905edff43029a4b234746128381ce5e1",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "ad-winclip-engineering-3",
+    "mode": "mobile",
+    "path": "roadmap-model-selection/anomaly-detection/ad-winclip/images/final/WI033-WINCLIP-03-r02-mobile.png",
+    "sha256": "cb07bbc544f87088281c737b3963368eff788dd12f3f13273307e2a66ea0fbd7",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "ad-winclip-engineering-4",
+    "mode": "desktop",
+    "path": "roadmap-model-selection/anomaly-detection/ad-winclip/images/final/WI033-WINCLIP-04-r02-desktop.png",
+    "sha256": "4b40571acf308805a7c5f18621e71c98fe9e75a7719fe873c79d567ee35c861d",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "ad-winclip-engineering-4",
+    "mode": "mobile",
+    "path": "roadmap-model-selection/anomaly-detection/ad-winclip/images/final/WI033-WINCLIP-04-r02-mobile.png",
+    "sha256": "eab43f3c4477457b5aa79485740586555b5b21f6290187432a88d1cef9c01151",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "ad-anomalyclip-engineering-1",
+    "mode": "desktop",
+    "path": "roadmap-model-selection/anomaly-detection/ad-anomalyclip/images/final/WI033-ANOCLIP-01-r01-desktop.png",
+    "sha256": "effbaf9dae5f0f92bd4c6be3e0e5bd32213f7c0c514878ab8fac9265d5b8ee29",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "ad-anomalyclip-engineering-1",
+    "mode": "mobile",
+    "path": "roadmap-model-selection/anomaly-detection/ad-anomalyclip/images/final/WI033-ANOCLIP-01-r01-mobile.png",
+    "sha256": "f3b19c9c120405e0984a858f11b7126a5f03163b6a0aa04c2a097dc17add1593",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "ad-anomalyclip-engineering-2",
+    "mode": "desktop",
+    "path": "roadmap-model-selection/anomaly-detection/ad-anomalyclip/images/final/WI033-ANOCLIP-02-r02-desktop.png",
+    "sha256": "4865bea5b53670c305b922ffef3c03412a85754a3dbc1d68e615517f0fa7543f",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "ad-anomalyclip-engineering-2",
+    "mode": "mobile",
+    "path": "roadmap-model-selection/anomaly-detection/ad-anomalyclip/images/final/WI033-ANOCLIP-02-r02-mobile.png",
+    "sha256": "37986a83b64e81033107a986ca1fbdfaf9f5fe714d9d22c648eb7bdf9d3045d7",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "ad-anomalyclip-engineering-3",
+    "mode": "desktop",
+    "path": "roadmap-model-selection/anomaly-detection/ad-anomalyclip/images/final/WI033-ANOCLIP-03-r02-desktop.png",
+    "sha256": "6d468e0552737cab30b179e4f4a90aa3f7fdbbaaf00f980b6a5c44714cb697ee",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "ad-anomalyclip-engineering-3",
+    "mode": "mobile",
+    "path": "roadmap-model-selection/anomaly-detection/ad-anomalyclip/images/final/WI033-ANOCLIP-03-r02-mobile.png",
+    "sha256": "6ed95915ba04d7fc4dfc79fcc15824f2d1be6473ca94401d6bbfe19870565646",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "ad-anomalyclip-engineering-4",
+    "mode": "desktop",
+    "path": "roadmap-model-selection/anomaly-detection/ad-anomalyclip/images/final/WI033-ANOCLIP-04-r02-desktop.png",
+    "sha256": "d3e6e581563b4a6c992599e7f27f89649f5a4971beea108b4f18af47b29b1d85",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "ad-anomalyclip-engineering-4",
+    "mode": "mobile",
+    "path": "roadmap-model-selection/anomaly-detection/ad-anomalyclip/images/final/WI033-ANOCLIP-04-r02-mobile.png",
+    "sha256": "cd223de83a1f3bd1bff1f14ab33e66e11a040d96d1a10374cd6d4ab9cf202b52",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "frame-difference-engineering-1",
+    "mode": "desktop",
+    "path": "roadmap-model-selection/video-temporal/frame-difference/images/final/WI033-FRAMEDIFF-01-r01-desktop.png",
+    "sha256": "8a2f68cb9c811f192aeb6738fdcdd3259282ced8d80134a6ecaaa990bfbcd62a",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "frame-difference-engineering-1",
+    "mode": "mobile",
+    "path": "roadmap-model-selection/video-temporal/frame-difference/images/final/WI033-FRAMEDIFF-01-r01-mobile.png",
+    "sha256": "e952011c778081fd6124ce490a840c04cc447b375324951d5e6e2eb77de1421c",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "frame-difference-engineering-2",
+    "mode": "desktop",
+    "path": "roadmap-model-selection/video-temporal/frame-difference/images/final/WI033-FRAMEDIFF-02-r02-desktop.png",
+    "sha256": "2aef2fae1c37a709470cd19849c8e844a7fe5998e9ec333bcfbc76824186af9a",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "frame-difference-engineering-2",
+    "mode": "mobile",
+    "path": "roadmap-model-selection/video-temporal/frame-difference/images/final/WI033-FRAMEDIFF-02-r02-mobile.png",
+    "sha256": "b62ec57a84d2583d74b906cd7915a9e0639ca29541381f5c8406eead9c527d9e",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "frame-difference-engineering-3",
+    "mode": "desktop",
+    "path": "roadmap-model-selection/video-temporal/frame-difference/images/final/WI033-FRAMEDIFF-03-r02-desktop.png",
+    "sha256": "032c1699d153647736a1fbcc4ff41386dd4afc4f78e875c7dd7dc3a1017e8ab5",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "frame-difference-engineering-3",
+    "mode": "mobile",
+    "path": "roadmap-model-selection/video-temporal/frame-difference/images/final/WI033-FRAMEDIFF-03-r02-mobile.png",
+    "sha256": "8ecc81fbfd01874c34c3c98c3aa4fc308be7fdf2c218c58d4343d80027bb60c7",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "frame-difference-engineering-4",
+    "mode": "desktop",
+    "path": "roadmap-model-selection/video-temporal/frame-difference/images/final/WI033-FRAMEDIFF-04-r02-desktop.png",
+    "sha256": "a9bef17a3bbe77126011e8a59556e7ecb5c7f39ec6cf8ba2629f8129312ce08d",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "frame-difference-engineering-4",
+    "mode": "mobile",
+    "path": "roadmap-model-selection/video-temporal/frame-difference/images/final/WI033-FRAMEDIFF-04-r02-mobile.png",
+    "sha256": "cca88901639094cbb2b0221bd8a72b939efc41ac9fef4374bea9649bdd8c7452",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "background-subtraction-engineering-1",
+    "mode": "desktop",
+    "path": "roadmap-model-selection/video-temporal/background-subtraction/images/final/WI033-BGSUB-01-r01-desktop.png",
+    "sha256": "22ff9c88efd698d515927585cd8f395c7916ccf4b03165686e3c1a99cebcc7fe",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "background-subtraction-engineering-1",
+    "mode": "mobile",
+    "path": "roadmap-model-selection/video-temporal/background-subtraction/images/final/WI033-BGSUB-01-r01-mobile.png",
+    "sha256": "1cca69c2cde54ca32da17baf3c7aabcaa21350c87754a2d2939f9906aaaaceb0",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "background-subtraction-engineering-2",
+    "mode": "desktop",
+    "path": "roadmap-model-selection/video-temporal/background-subtraction/images/final/WI033-BGSUB-02-r02-desktop.png",
+    "sha256": "1f369ffae22c72de5dc176885b7100f96b774c164813fbd7fbf5c45405756f7a",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "background-subtraction-engineering-2",
+    "mode": "mobile",
+    "path": "roadmap-model-selection/video-temporal/background-subtraction/images/final/WI033-BGSUB-02-r02-mobile.png",
+    "sha256": "182dccf7ce8b651cd67ff3859654be6298b82ab11afd9a0da9ce68826cb5b698",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "background-subtraction-engineering-3",
+    "mode": "desktop",
+    "path": "roadmap-model-selection/video-temporal/background-subtraction/images/final/WI033-BGSUB-03-r02-desktop.png",
+    "sha256": "399997078a509b0f124bdeab01ff5140745964d16b2cc4dc7d63ae0e61add887",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "background-subtraction-engineering-3",
+    "mode": "mobile",
+    "path": "roadmap-model-selection/video-temporal/background-subtraction/images/final/WI033-BGSUB-03-r02-mobile.png",
+    "sha256": "41c6a3c506c4e5458d73c1550de87b410dd9156756bef7830709044f7372ec68",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "background-subtraction-engineering-4",
+    "mode": "desktop",
+    "path": "roadmap-model-selection/video-temporal/background-subtraction/images/final/WI033-BGSUB-04-r02-desktop.png",
+    "sha256": "44355b5027d9493447490b692ea72593bae1f8b4cf8b97fb8ddc0b5506314948",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "background-subtraction-engineering-4",
+    "mode": "mobile",
+    "path": "roadmap-model-selection/video-temporal/background-subtraction/images/final/WI033-BGSUB-04-r02-mobile.png",
+    "sha256": "89f62b28f9ffe749b4397c0f9afd197d2b9e2ee3e62c9627fd91a28a0b7b6d3c",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "bytetrack-engineering-1",
+    "mode": "desktop",
+    "path": "roadmap-model-selection/video-temporal/bytetrack/images/final/WI033-BYTETRACK-01-r01-desktop.png",
+    "sha256": "dd69b3e6c76a8e3eb9e421704d3d87250ec15654553154b75e7a28864bb062dc",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "bytetrack-engineering-1",
+    "mode": "mobile",
+    "path": "roadmap-model-selection/video-temporal/bytetrack/images/final/WI033-BYTETRACK-01-r01-mobile.png",
+    "sha256": "1efcfa1ac57c47ade4f31cbd58af2ef2d0f2dae6924329ec7a1d7dfaa420cf72",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "bytetrack-engineering-2",
+    "mode": "desktop",
+    "path": "roadmap-model-selection/video-temporal/bytetrack/images/final/WI033-BYTETRACK-02-r02-desktop.png",
+    "sha256": "cd6bd11d78705ef266b1dba603025ad93430149adb01951e66624112594881a2",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "bytetrack-engineering-2",
+    "mode": "mobile",
+    "path": "roadmap-model-selection/video-temporal/bytetrack/images/final/WI033-BYTETRACK-02-r02-mobile.png",
+    "sha256": "a0f09eee57c47d5274809da23c80983bb61a9deec04a7ba9856f3ff2e6a2adb9",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "bytetrack-engineering-3",
+    "mode": "desktop",
+    "path": "roadmap-model-selection/video-temporal/bytetrack/images/final/WI033-BYTETRACK-03-r01-desktop.png",
+    "sha256": "c9171d0b2b698c5b090062fe6ed94798228c01ff8300bb88d3c5fbfa328deefe",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "bytetrack-engineering-3",
+    "mode": "mobile",
+    "path": "roadmap-model-selection/video-temporal/bytetrack/images/final/WI033-BYTETRACK-03-r01-mobile.png",
+    "sha256": "27a4c6766de42d3e3c1ca02c82a8feaf4ba6f1aec88934a547b5b9add5e8fe12",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "bytetrack-engineering-4",
+    "mode": "desktop",
+    "path": "roadmap-model-selection/video-temporal/bytetrack/images/final/WI033-BYTETRACK-04-r01-desktop.png",
+    "sha256": "9a5c0c1186a4a1881b65ffb16c8bc8455feea7e1b22419b33d33a1bd3c53a317",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "bytetrack-engineering-4",
+    "mode": "mobile",
+    "path": "roadmap-model-selection/video-temporal/bytetrack/images/final/WI033-BYTETRACK-04-r01-mobile.png",
+    "sha256": "798fad23f5ea1a2ee7386386ec2cd81fd8ec201625e2a9737a3ac74f23b74212",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  }
+]

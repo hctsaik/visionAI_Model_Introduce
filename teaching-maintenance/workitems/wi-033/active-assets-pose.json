@@ -1,0 +1,90 @@
+[
+  {
+    "id": "pose-engineering-1",
+    "mode": "desktop",
+    "path": "roadmap-model-selection/known-target-classification/pose/images/final/WI033-POSE-01-r02-desktop.png",
+    "sha256": "5d24729269dddf66074b416f943aa628e502e383b61a7790b57970747ea971eb",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "pages/pose; native and desktop/mobile rendered figures inspected",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "pose-engineering-1",
+    "mode": "mobile",
+    "path": "roadmap-model-selection/known-target-classification/pose/images/final/WI033-POSE-01-r02-mobile.png",
+    "sha256": "f72fc3bc7ef3209935b99f4aa08d6ea7fbf5dab563d32771a09d28659dff631b",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "pages/pose; native and desktop/mobile rendered figures inspected",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "pose-engineering-2",
+    "mode": "desktop",
+    "path": "roadmap-model-selection/known-target-classification/pose/images/final/WI033-POSE-02-r02-desktop.png",
+    "sha256": "6bdcf0f303e521efae4543f61d4ebb734882fdf7884ccc65cc5486c2964fd1c5",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "pages/pose; native and desktop/mobile rendered figures inspected",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "pose-engineering-2",
+    "mode": "mobile",
+    "path": "roadmap-model-selection/known-target-classification/pose/images/final/WI033-POSE-02-r02-mobile.png",
+    "sha256": "f799d73ef2741611c8db5999f75d64489427c45b707fdac0956148db90e2544c",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "pages/pose; native and desktop/mobile rendered figures inspected",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "pose-engineering-3",
+    "mode": "desktop",
+    "path": "roadmap-model-selection/known-target-classification/pose/images/final/WI033-POSE-03-r02-desktop.png",
+    "sha256": "e14c460cb12bee87fa5e572e382d8e5ccc0a54bd749a9e19ebb457b19c75a42d",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "pages/pose; native and desktop/mobile rendered figures inspected",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "pose-engineering-3",
+    "mode": "mobile",
+    "path": "roadmap-model-selection/known-target-classification/pose/images/final/WI033-POSE-03-r02-mobile.png",
+    "sha256": "08c08106760ab4318e7cccb2f2e8543197d5fb3b8b2af88493664d16b11437e3",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "pages/pose; native and desktop/mobile rendered figures inspected",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "pose-engineering-4",
+    "mode": "desktop",
+    "path": "roadmap-model-selection/known-target-classification/pose/images/final/WI033-POSE-04-r01-desktop.png",
+    "sha256": "841738c6886529c5d3e177f4f7c04d11807a3f38713e91dcc375c53ff9ed7dd5",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "pages/pose; native and desktop/mobile rendered figures inspected",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "pose-engineering-4",
+    "mode": "mobile",
+    "path": "roadmap-model-selection/known-target-classification/pose/images/final/WI033-POSE-04-r01-mobile.png",
+    "sha256": "678b50f469669647b4553f6b4e5f0bac768982c15e7b502a9424a41437ca4075",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "pages/pose; native and desktop/mobile rendered figures inspected",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  }
+]

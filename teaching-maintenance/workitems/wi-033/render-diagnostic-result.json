@@ -1,0 +1,12 @@
+{
+  "independent_capture": "ground-render-diagnostic-fresh.png",
+  "candidate": "det-grounding-dino-interface-engineering-2-r02-desktop.png",
+  "decoded_pixels_identical": true,
+  "rt_r01_pcb_pixel": [
+    217,
+    236,
+    230
+  ],
+  "finding": "Apparent missing graphic in review display was not a defect in PNG. Earlier causal claim retracted; no evidence GPU setting fixed a broken asset. Keep explicit font readiness and content revisions.",
+  "user_approval": "pending"
+}

@@ -1,0 +1,407 @@
+[
+  {
+    "id": "resnet-deep-skip",
+    "image": "resnet-deep-skip-r01-mobile.png",
+    "sha256": "0ab5dde01ed3eeff7ecebfde33450a1734ff6effd023463c6c8d5967a1f0538a",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "普通/殘差分開看，保留x與F的數值及零修正例；同形狀條件明示",
+      "保留來源圖格與算例，直式仍有留白；細格代表特徵或明示概念場，不以本輪重排當新推論。",
+      "九張選定手機PNG已逐張實看，原桌機保留"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "淺底直式三主節點"
+      ],
+      "completeness": [
+        9,
+        "普通/殘差分開看，保留x與F的數值及零修正例；同形狀條件明示"
+      ],
+      "professionalism": [
+        9,
+        "保留原實測/示意身份"
+      ],
+      "density": [
+        8,
+        "保留來源圖格與算例，直式仍有留白；細格代表特徵或明示概念場，不以本輪重排當新推論。"
+      ],
+      "hierarchy": [
+        9,
+        "單讀序及單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch3-page-assessment.json; batch3-deep-page-review.json"
+  },
+  {
+    "id": "resnet-deep-bn",
+    "image": "resnet-deep-bn-r02-mobile.png",
+    "sha256": "f3365ecf479c552587cfa43f8bdd39dbb1c53fac3d587cedd2d754dec6485fbf",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "同件x=5與訓練批0/−3、eval保存μ4兩次1可追算；原細行已放大",
+      "保留來源圖格與算例，直式仍有留白；細格代表特徵或明示概念場，不以本輪重排當新推論。",
+      "九張選定手機PNG已逐張實看，原桌機保留"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "淺底直式三主節點"
+      ],
+      "completeness": [
+        9,
+        "同件x=5與訓練批0/−3、eval保存μ4兩次1可追算；原細行已放大"
+      ],
+      "professionalism": [
+        9,
+        "保留原實測/示意身份"
+      ],
+      "density": [
+        8,
+        "保留來源圖格與算例，直式仍有留白；細格代表特徵或明示概念場，不以本輪重排當新推論。"
+      ],
+      "hierarchy": [
+        9,
+        "單讀序及單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch3-page-assessment.json; batch3-deep-page-review.json"
+  },
+  {
+    "id": "resnet-deep-cnx-spatial",
+    "image": "resnet-deep-cnx-spatial-r02-mobile.png",
+    "sha256": "54aaf84a80d7dcb1320755e3ae5e2302cff23c7151eb085109fb57ad353027e8",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "原通道69、位置39/15、49格與權重及0.23保留；跨欄残箭頭移除",
+      "保留來源圖格與算例，直式仍有留白；細格代表特徵或明示概念場，不以本輪重排當新推論。",
+      "九張選定手機PNG已逐張實看，原桌機保留"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "淺底直式三主節點"
+      ],
+      "completeness": [
+        9,
+        "原通道69、位置39/15、49格與權重及0.23保留；跨欄残箭頭移除"
+      ],
+      "professionalism": [
+        9,
+        "保留原實測/示意身份"
+      ],
+      "density": [
+        8,
+        "保留來源圖格與算例，直式仍有留白；細格代表特徵或明示概念場，不以本輪重排當新推論。"
+      ],
+      "hierarchy": [
+        9,
+        "單讀序及單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch3-page-assessment.json; batch3-deep-page-review.json"
+  },
+  {
+    "id": "resnet-deep-cnx-channel",
+    "image": "resnet-deep-cnx-channel-r02-mobile.png",
+    "sha256": "6a019f8f7da8cf63af0643ec806f659d4eecb3b4aa25643ae7157154d4c3ad4d",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "前三大通道貢獻1.92/0.80/0.73及其餘2.10總5.55保留；各通道仍同位置",
+      "保留來源圖格與算例，直式仍有留白；細格代表特徵或明示概念場，不以本輪重排當新推論。",
+      "九張選定手機PNG已逐張實看，原桌機保留"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "淺底直式三主節點"
+      ],
+      "completeness": [
+        9,
+        "前三大通道貢獻1.92/0.80/0.73及其餘2.10總5.55保留；各通道仍同位置"
+      ],
+      "professionalism": [
+        9,
+        "保留原實測/示意身份"
+      ],
+      "density": [
+        8,
+        "保留來源圖格與算例，直式仍有留白；細格代表特徵或明示概念場，不以本輪重排當新推論。"
+      ],
+      "hierarchy": [
+        9,
+        "單讀序及單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch3-page-assessment.json; batch3-deep-page-review.json"
+  },
+  {
+    "id": "resnet-deep-vit-attention",
+    "image": "resnet-deep-vit-attention-r01-mobile.png",
+    "sha256": "187cc2cd35b19535ebbd12fc71875b7237c582f792e60ef1c38f3e98363b544f",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "原R-01查詢與四patch位置/權重/value分量保留，裁片不冒充全部貢獻",
+      "保留來源圖格與算例，直式仍有留白；細格代表特徵或明示概念場，不以本輪重排當新推論。",
+      "九張選定手機PNG已逐張實看，原桌機保留"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "淺底直式三主節點"
+      ],
+      "completeness": [
+        9,
+        "原R-01查詢與四patch位置/權重/value分量保留，裁片不冒充全部貢獻"
+      ],
+      "professionalism": [
+        9,
+        "保留原實測/示意身份"
+      ],
+      "density": [
+        8,
+        "保留來源圖格與算例，直式仍有留白；細格代表特徵或明示概念場，不以本輪重排當新推論。"
+      ],
+      "hierarchy": [
+        9,
+        "單讀序及單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch3-page-assessment.json; batch3-deep-page-review.json"
+  },
+  {
+    "id": "segformer-deep-task",
+    "image": "segformer-deep-task-r01-mobile.png",
+    "sha256": "b27e8d8eac637c10cece334433aa0cb93fa7ced510095aae6ba3f893babc6a84",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "W-01原晶圓到同局部再到概念標註，物理原因與像素位置分開",
+      "保留來源圖格與算例，直式仍有留白；細格代表特徵或明示概念場，不以本輪重排當新推論。",
+      "九張選定手機PNG已逐張實看，原桌機保留"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "淺底直式三主節點"
+      ],
+      "completeness": [
+        9,
+        "W-01原晶圓到同局部再到概念標註，物理原因與像素位置分開"
+      ],
+      "professionalism": [
+        9,
+        "保留原實測/示意身份"
+      ],
+      "density": [
+        8,
+        "保留來源圖格與算例，直式仍有留白；細格代表特徵或明示概念場，不以本輪重排當新推論。"
+      ],
+      "hierarchy": [
+        9,
+        "單讀序及單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch3-page-assessment.json; batch3-deep-page-review.json"
+  },
+  {
+    "id": "segformer-deep-scales",
+    "image": "segformer-deep-scales-r01-mobile.png",
+    "sha256": "ecaf0dba33d2fb7e7b923bd73057b01fb5534b6d55be955b0ba24d4b4f9e31a0",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "同亮線1/4至1/32四尺度放大，明說平均縮小概念場而非MiT回應",
+      "保留來源圖格與算例，直式仍有留白；細格代表特徵或明示概念場，不以本輪重排當新推論。",
+      "九張選定手機PNG已逐張實看，原桌機保留"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "淺底直式三主節點"
+      ],
+      "completeness": [
+        9,
+        "同亮線1/4至1/32四尺度放大，明說平均縮小概念場而非MiT回應"
+      ],
+      "professionalism": [
+        9,
+        "保留原實測/示意身份"
+      ],
+      "density": [
+        8,
+        "保留來源圖格與算例，直式仍有留白；細格代表特徵或明示概念場，不以本輪重排當新推論。"
+      ],
+      "hierarchy": [
+        9,
+        "單讀序及單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch3-page-assessment.json; batch3-deep-page-review.json"
+  },
+  {
+    "id": "segformer-deep-sr",
+    "image": "segformer-deep-sr-r02-mobile.png",
+    "sha256": "d0d2f0d596901b4b7b69462bd00ec1e2eec83b5730fb85cf01586d0335b07fdb",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "64個Q仍保留，K/V4位置與4096→256關係數完整，無半截箭頭",
+      "保留來源圖格與算例，直式仍有留白；細格代表特徵或明示概念場，不以本輪重排當新推論。",
+      "九張選定手機PNG已逐張實看，原桌機保留"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "淺底直式三主節點"
+      ],
+      "completeness": [
+        9,
+        "64個Q仍保留，K/V4位置與4096→256關係數完整，無半截箭頭"
+      ],
+      "professionalism": [
+        9,
+        "保留原實測/示意身份"
+      ],
+      "density": [
+        8,
+        "保留來源圖格與算例，直式仍有留白；細格代表特徵或明示概念場，不以本輪重排當新推論。"
+      ],
+      "hierarchy": [
+        9,
+        "單讀序及單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch3-page-assessment.json; batch3-deep-page-review.json"
+  },
+  {
+    "id": "segformer-deep-decoder",
+    "image": "segformer-deep-decoder-r03-mobile.png",
+    "sha256": "fdb6b9b27e43ff1545741f5685c4a710a6320b8a03a2c5f7c410bb4b6eddf559",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "四圖2×2排列均完整，同網格通道拼接及像素候選分段；已排除鄰行字頂碎點",
+      "保留來源圖格與算例，直式仍有留白；細格代表特徵或明示概念場，不以本輪重排當新推論。",
+      "九張選定手機PNG已逐張實看，原桌機保留"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "淺底直式三主節點"
+      ],
+      "completeness": [
+        9,
+        "四圖2×2排列均完整，同網格通道拼接及像素候選分段；已排除鄰行字頂碎點"
+      ],
+      "professionalism": [
+        9,
+        "保留原實測/示意身份"
+      ],
+      "density": [
+        8,
+        "保留來源圖格與算例，直式仍有留白；細格代表特徵或明示概念場，不以本輪重排當新推論。"
+      ],
+      "hierarchy": [
+        9,
+        "單讀序及單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch3-page-assessment.json; batch3-deep-page-review.json"
+  }
+]

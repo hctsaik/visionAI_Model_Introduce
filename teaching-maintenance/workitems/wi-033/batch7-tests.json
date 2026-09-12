@@ -1,0 +1,14 @@
+{
+  "command": [
+    "C:\\Users\\hctsa\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+    "-m",
+    "pytest",
+    "tests/test_engineering_mobile_pages.py",
+    "tests/test_github_pages_bundle.py",
+    "tests/test_interactive_navigation.py",
+    "-q"
+  ],
+  "exit_code": 0,
+  "stdout": "........                 [100%]\n8 passed, 120 subtests passed in 114.91s (0:01:54)\n",
+  "stderr": ""
+}

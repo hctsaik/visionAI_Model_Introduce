@@ -1,0 +1,29 @@
+{
+  "status": "local_complete",
+  "complete_lessons": 52,
+  "pending_implementation": 0,
+  "active_pngs": 460,
+  "engineering_pngs": 416,
+  "html_sha256": "17a716a585d9c10b490a46ba86757e4ac216f15c39261c22e11a75dbf282e89a",
+  "bundle_assets": 1370,
+  "latest_http_checks": 1506,
+  "accumulated_main_states": 208,
+  "accumulated_zoom_checks": 1472,
+  "accumulated_deep_states": 160,
+  "latest_main_states": 44,
+  "latest_tests": 24,
+  "latest_subtests": 130,
+  "mobile_caption_topics": 58,
+  "mobile_captions": 178,
+  "report_local_links_checked": 111,
+  "git_diff_check": {
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": "warning: in the working copy of 'docs/index.html', LF will be replaced by CRLF the next time Git touches it\n"
+  },
+  "maintenance": "maintenance-verification.json",
+  "user_approval": "pending",
+  "published": false,
+  "model_inference": false,
+  "evidence_policy": "208 page states accumulated across seven batches; final 44 captured on current HTML. Prior image versions reused only after matching recorded HTTP SHA. All 52 current HTTP links and bundle hashes rechecked now."
+}

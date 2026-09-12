@@ -1,0 +1,502 @@
+[
+  {
+    "topic": "ad-padim",
+    "route": "interactive-learning.html",
+    "width": 1440,
+    "errors": [],
+    "images": [
+      {
+        "src": "http://127.0.0.1:8000/_course_content/generated-concepts/ad-padim/wi030-padim-c1-r02-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 404.1875,
+          "y": 401.515625,
+          "width": 935.625,
+          "height": 526.5625,
+          "top": 401.515625,
+          "right": 1339.8125,
+          "bottom": 928.078125,
+          "left": 404.1875
+        },
+        "kind": "main-1"
+      },
+      {
+        "src": "http://127.0.0.1:8000/_course_content/generated-concepts/ad-patchcore/wi030-ad-d2-r02-desktop.png",
+        "nw": 1670,
+        "nh": 941,
+        "box": {
+          "x": 404.1875,
+          "y": 201.03125,
+          "width": 935.625,
+          "height": 526.5625,
+          "top": 201.03125,
+          "right": 1339.8125,
+          "bottom": 727.59375,
+          "left": 404.1875
+        },
+        "kind": "main-2"
+      },
+      {
+        "src": "http://127.0.0.1:8000/_course_content/generated-concepts/ad-patchcore/wi030-ad-d3-r04-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 404.1875,
+          "y": 201.34375,
+          "width": 935.625,
+          "height": 526.5625,
+          "top": 201.34375,
+          "right": 1339.8125,
+          "bottom": 727.90625,
+          "left": 404.1875
+        },
+        "kind": "main-3"
+      },
+      {
+        "src": "http://127.0.0.1:8000/roadmap-model-selection/anomaly-detection/ad-padim/images/final/WI033-PADIM-01-r01-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 367.1875,
+          "y": 195.65625,
+          "width": 1009.625,
+          "height": 568.203125,
+          "top": 195.65625,
+          "right": 1376.8125,
+          "bottom": 763.859375,
+          "left": 367.1875
+        },
+        "kind": "engineering-1"
+      },
+      {
+        "src": "http://127.0.0.1:8000/roadmap-model-selection/anomaly-detection/ad-padim/images/final/WI033-PADIM-02-r02-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 367.1875,
+          "y": 196.40625,
+          "width": 1009.625,
+          "height": 568.203125,
+          "top": 196.40625,
+          "right": 1376.8125,
+          "bottom": 764.609375,
+          "left": 367.1875
+        },
+        "kind": "engineering-2"
+      },
+      {
+        "src": "http://127.0.0.1:8000/roadmap-model-selection/anomaly-detection/ad-padim/images/final/WI033-PADIM-03-r01-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 367.1875,
+          "y": 195.921875,
+          "width": 1009.625,
+          "height": 568.203125,
+          "top": 195.921875,
+          "right": 1376.8125,
+          "bottom": 764.125,
+          "left": 367.1875
+        },
+        "kind": "engineering-3"
+      },
+      {
+        "src": "http://127.0.0.1:8000/roadmap-model-selection/anomaly-detection/ad-padim/images/final/WI033-PADIM-04-r01-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 367.1875,
+          "y": 195.671875,
+          "width": 1009.625,
+          "height": 568.203125,
+          "top": 195.671875,
+          "right": 1376.8125,
+          "bottom": 763.875,
+          "left": 367.1875
+        },
+        "kind": "engineering-4"
+      }
+    ],
+    "zoom_checks": 7,
+    "answer": true,
+    "overflow": false,
+    "navigation": true,
+    "complete": true
+  },
+  {
+    "topic": "ad-padim",
+    "route": "interactive-learning.html",
+    "width": 360,
+    "errors": [],
+    "images": [
+      {
+        "src": "http://127.0.0.1:8000/_course_content/generated-concepts/ad-padim/wi030-padim-c1-r03-mobile.png",
+        "nw": 887,
+        "nh": 1774,
+        "box": {
+          "x": 17,
+          "y": 28.703125,
+          "width": 326,
+          "height": 652,
+          "top": 28.703125,
+          "right": 343,
+          "bottom": 680.703125,
+          "left": 17
+        },
+        "kind": "main-1"
+      },
+      {
+        "src": "http://127.0.0.1:8000/_course_content/generated-concepts/ad-patchcore/wi030-ad-d2-r02-mobile.png",
+        "nw": 768,
+        "nh": 2048,
+        "box": {
+          "x": 17,
+          "y": -80.453125,
+          "width": 326,
+          "height": 869.328125,
+          "top": -80.453125,
+          "right": 343,
+          "bottom": 788.875,
+          "left": 17
+        },
+        "kind": "main-2"
+      },
+      {
+        "src": "http://127.0.0.1:8000/_course_content/generated-concepts/ad-patchcore/wi030-ad-d3-r03-mobile.png",
+        "nw": 768,
+        "nh": 2048,
+        "box": {
+          "x": 17,
+          "y": -80.65625,
+          "width": 326,
+          "height": 869.328125,
+          "top": -80.65625,
+          "right": 343,
+          "bottom": 788.671875,
+          "left": 17
+        },
+        "kind": "main-3"
+      },
+      {
+        "src": "http://127.0.0.1:8000/roadmap-model-selection/anomaly-detection/ad-padim/images/final/WI033-PADIM-01-r01-mobile.png",
+        "nw": 768,
+        "nh": 2304,
+        "box": {
+          "x": 34,
+          "y": -69.5625,
+          "width": 292,
+          "height": 876,
+          "top": -69.5625,
+          "right": 326,
+          "bottom": 806.4375,
+          "left": 34
+        },
+        "kind": "engineering-1"
+      },
+      {
+        "src": "http://127.0.0.1:8000/roadmap-model-selection/anomaly-detection/ad-padim/images/final/WI033-PADIM-02-r02-mobile.png",
+        "nw": 768,
+        "nh": 2304,
+        "box": {
+          "x": 34,
+          "y": -69.828125,
+          "width": 292,
+          "height": 876,
+          "top": -69.828125,
+          "right": 326,
+          "bottom": 806.171875,
+          "left": 34
+        },
+        "kind": "engineering-2"
+      },
+      {
+        "src": "http://127.0.0.1:8000/roadmap-model-selection/anomaly-detection/ad-padim/images/final/WI033-PADIM-03-r01-mobile.png",
+        "nw": 768,
+        "nh": 2304,
+        "box": {
+          "x": 34,
+          "y": -69.640625,
+          "width": 292,
+          "height": 876,
+          "top": -69.640625,
+          "right": 326,
+          "bottom": 806.359375,
+          "left": 34
+        },
+        "kind": "engineering-3"
+      },
+      {
+        "src": "http://127.0.0.1:8000/roadmap-model-selection/anomaly-detection/ad-padim/images/final/WI033-PADIM-04-r01-mobile.png",
+        "nw": 768,
+        "nh": 2304,
+        "box": {
+          "x": 34,
+          "y": -69.90625,
+          "width": 292,
+          "height": 876,
+          "top": -69.90625,
+          "right": 326,
+          "bottom": 806.09375,
+          "left": 34
+        },
+        "kind": "engineering-4"
+      }
+    ],
+    "zoom_checks": 7,
+    "answer": true,
+    "overflow": false,
+    "navigation": true,
+    "complete": true
+  },
+  {
+    "topic": "ad-padim",
+    "route": "docs/index.html",
+    "width": 1440,
+    "errors": [],
+    "images": [
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/ad-padim/wi030-padim-c1-r02-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 404.1875,
+          "y": 401.515625,
+          "width": 935.625,
+          "height": 526.5625,
+          "top": 401.515625,
+          "right": 1339.8125,
+          "bottom": 928.078125,
+          "left": 404.1875
+        },
+        "kind": "main-1"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/ad-patchcore/wi030-ad-d2-r02-desktop.png",
+        "nw": 1670,
+        "nh": 941,
+        "box": {
+          "x": 404.1875,
+          "y": 201.03125,
+          "width": 935.625,
+          "height": 526.5625,
+          "top": 201.03125,
+          "right": 1339.8125,
+          "bottom": 727.59375,
+          "left": 404.1875
+        },
+        "kind": "main-2"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/ad-patchcore/wi030-ad-d3-r04-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 404.1875,
+          "y": 201.34375,
+          "width": 935.625,
+          "height": 526.5625,
+          "top": 201.34375,
+          "right": 1339.8125,
+          "bottom": 727.90625,
+          "left": 404.1875
+        },
+        "kind": "main-3"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/anomaly-detection/ad-padim/images/final/WI033-PADIM-01-r01-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 367.1875,
+          "y": 195.65625,
+          "width": 1009.625,
+          "height": 568.203125,
+          "top": 195.65625,
+          "right": 1376.8125,
+          "bottom": 763.859375,
+          "left": 367.1875
+        },
+        "kind": "engineering-1"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/anomaly-detection/ad-padim/images/final/WI033-PADIM-02-r02-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 367.1875,
+          "y": 196.40625,
+          "width": 1009.625,
+          "height": 568.203125,
+          "top": 196.40625,
+          "right": 1376.8125,
+          "bottom": 764.609375,
+          "left": 367.1875
+        },
+        "kind": "engineering-2"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/anomaly-detection/ad-padim/images/final/WI033-PADIM-03-r01-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 367.1875,
+          "y": 195.921875,
+          "width": 1009.625,
+          "height": 568.203125,
+          "top": 195.921875,
+          "right": 1376.8125,
+          "bottom": 764.125,
+          "left": 367.1875
+        },
+        "kind": "engineering-3"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/anomaly-detection/ad-padim/images/final/WI033-PADIM-04-r01-desktop.png",
+        "nw": 1672,
+        "nh": 941,
+        "box": {
+          "x": 367.1875,
+          "y": 195.671875,
+          "width": 1009.625,
+          "height": 568.203125,
+          "top": 195.671875,
+          "right": 1376.8125,
+          "bottom": 763.875,
+          "left": 367.1875
+        },
+        "kind": "engineering-4"
+      }
+    ],
+    "zoom_checks": 7,
+    "answer": true,
+    "overflow": false,
+    "navigation": true,
+    "complete": true
+  },
+  {
+    "topic": "ad-padim",
+    "route": "docs/index.html",
+    "width": 360,
+    "errors": [],
+    "images": [
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/ad-padim/wi030-padim-c1-r03-mobile.png",
+        "nw": 887,
+        "nh": 1774,
+        "box": {
+          "x": 17,
+          "y": 28.703125,
+          "width": 326,
+          "height": 652,
+          "top": 28.703125,
+          "right": 343,
+          "bottom": 680.703125,
+          "left": 17
+        },
+        "kind": "main-1"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/ad-patchcore/wi030-ad-d2-r02-mobile.png",
+        "nw": 768,
+        "nh": 2048,
+        "box": {
+          "x": 17,
+          "y": -80.453125,
+          "width": 326,
+          "height": 869.328125,
+          "top": -80.453125,
+          "right": 343,
+          "bottom": 788.875,
+          "left": 17
+        },
+        "kind": "main-2"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/ad-patchcore/wi030-ad-d3-r03-mobile.png",
+        "nw": 768,
+        "nh": 2048,
+        "box": {
+          "x": 17,
+          "y": -80.65625,
+          "width": 326,
+          "height": 869.328125,
+          "top": -80.65625,
+          "right": 343,
+          "bottom": 788.671875,
+          "left": 17
+        },
+        "kind": "main-3"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/anomaly-detection/ad-padim/images/final/WI033-PADIM-01-r01-mobile.png",
+        "nw": 768,
+        "nh": 2304,
+        "box": {
+          "x": 34,
+          "y": -69.5625,
+          "width": 292,
+          "height": 876,
+          "top": -69.5625,
+          "right": 326,
+          "bottom": 806.4375,
+          "left": 34
+        },
+        "kind": "engineering-1"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/anomaly-detection/ad-padim/images/final/WI033-PADIM-02-r02-mobile.png",
+        "nw": 768,
+        "nh": 2304,
+        "box": {
+          "x": 34,
+          "y": -69.828125,
+          "width": 292,
+          "height": 876,
+          "top": -69.828125,
+          "right": 326,
+          "bottom": 806.171875,
+          "left": 34
+        },
+        "kind": "engineering-2"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/anomaly-detection/ad-padim/images/final/WI033-PADIM-03-r01-mobile.png",
+        "nw": 768,
+        "nh": 2304,
+        "box": {
+          "x": 34,
+          "y": -69.640625,
+          "width": 292,
+          "height": 876,
+          "top": -69.640625,
+          "right": 326,
+          "bottom": 806.359375,
+          "left": 34
+        },
+        "kind": "engineering-3"
+      },
+      {
+        "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/anomaly-detection/ad-padim/images/final/WI033-PADIM-04-r01-mobile.png",
+        "nw": 768,
+        "nh": 2304,
+        "box": {
+          "x": 34,
+          "y": -69.90625,
+          "width": 292,
+          "height": 876,
+          "top": -69.90625,
+          "right": 326,
+          "bottom": 806.09375,
+          "left": 34
+        },
+        "kind": "engineering-4"
+      }
+    ],
+    "zoom_checks": 7,
+    "answer": true,
+    "overflow": false,
+    "navigation": true,
+    "complete": true
+  }
+]

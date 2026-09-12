@@ -1,0 +1,722 @@
+[
+  {
+    "id": "det-yolo-dense-engineering-2",
+    "image": "det-yolo-dense-engineering-2-r02-desktop.png",
+    "sha256": "08bead40bc763f98d4bdfdecedf8bdf8eb981c392dbb2e789a3342a412eeeb68",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "同PCB四候選按分數及同類IoU去重為兩框；r02前後同尺度，不能補漏候選。",
+      "逐張實看選定桌機與手機PNG；框、文字、三節點及黃色結論可追",
+      "幾何簡化與部分術語較密；未模型實測或真人理解測試"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "統一精確幾何，質感簡化"
+      ],
+      "completeness": [
+        9,
+        "NMS整理重複框，最後仍要回原圖查漏件。"
+      ],
+      "professionalism": [
+        9,
+        "同PCB四候選按分數及同類IoU去重為兩框；r02前後同尺度，不能補漏候選。"
+      ],
+      "density": [
+        8,
+        "三段直讀，部分專有術語較密"
+      ],
+      "hierarchy": [
+        9,
+        "單一讀序/單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch4-page-assessment.json; batch4-failure-page-review.json"
+  },
+  {
+    "id": "det-yolo-dense-engineering-2",
+    "image": "det-yolo-dense-engineering-2-r02-mobile.png",
+    "sha256": "8da0d099942d1b7d19077246050a4ec0103309b6074771bbeb618eff877c99cb",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "同PCB四候選按分數及同類IoU去重為兩框；r02前後同尺度，不能補漏候選。",
+      "逐張實看選定桌機與手機PNG；框、文字、三節點及黃色結論可追",
+      "幾何簡化與部分術語較密；未模型實測或真人理解測試"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "統一精確幾何，質感簡化"
+      ],
+      "completeness": [
+        9,
+        "NMS整理重複框，最後仍要回原圖查漏件。"
+      ],
+      "professionalism": [
+        9,
+        "同PCB四候選按分數及同類IoU去重為兩框；r02前後同尺度，不能補漏候選。"
+      ],
+      "density": [
+        8,
+        "三段直讀，部分專有術語較密"
+      ],
+      "hierarchy": [
+        9,
+        "單一讀序/單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch4-page-assessment.json; batch4-failure-page-review.json"
+  },
+  {
+    "id": "det-rtdetr-engineering-2",
+    "image": "det-rtdetr-engineering-2-r02-desktop.png",
+    "sha256": "819a561fed50fd5e50738da58f29e49c9c0421c00ee513b48f803b3da9d214c0",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "訓練query匹配真值/背景與推論修框分段；輸出框實際存在，無NMS仍篩分數。",
+      "逐張實看選定桌機與手機PNG；框、文字、三節點及黃色結論可追",
+      "幾何簡化與部分術語較密；未模型實測或真人理解測試"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "統一精確幾何，質感簡化"
+      ],
+      "completeness": [
+        9,
+        "一對一匹配是訓練責任，推論仍需篩選與核對。"
+      ],
+      "professionalism": [
+        9,
+        "訓練query匹配真值/背景與推論修框分段；輸出框實際存在，無NMS仍篩分數。"
+      ],
+      "density": [
+        8,
+        "三段直讀，部分專有術語較密"
+      ],
+      "hierarchy": [
+        9,
+        "單一讀序/單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch4-page-assessment.json; batch4-failure-page-review.json"
+  },
+  {
+    "id": "det-rtdetr-engineering-2",
+    "image": "det-rtdetr-engineering-2-r02-mobile.png",
+    "sha256": "6e2c161d6fb3c3b0978ba32f2b2ecb21e1810d327d64dd2c5c7a7dfaabec7daf",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "訓練query匹配真值/背景與推論修框分段；輸出框實際存在，無NMS仍篩分數。",
+      "逐張實看選定桌機與手機PNG；框、文字、三節點及黃色結論可追",
+      "幾何簡化與部分術語較密；未模型實測或真人理解測試"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "統一精確幾何，質感簡化"
+      ],
+      "completeness": [
+        9,
+        "一對一匹配是訓練責任，推論仍需篩選與核對。"
+      ],
+      "professionalism": [
+        9,
+        "訓練query匹配真值/背景與推論修框分段；輸出框實際存在，無NMS仍篩分數。"
+      ],
+      "density": [
+        8,
+        "三段直讀，部分專有術語較密"
+      ],
+      "hierarchy": [
+        9,
+        "單一讀序/單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch4-page-assessment.json; batch4-failure-page-review.json"
+  },
+  {
+    "id": "det-grounding-dino-interface-engineering-2",
+    "image": "det-grounding-dino-interface-engineering-2-r02-desktop.png",
+    "sha256": "6f3fcf01696d21835411fc713cc62fe369b760891429e61e7b8ef616037c23aa",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "詞與區域相容性小格及雙向互動接query框；獨立重拍與選定PNG逐像素相同且完整實看。",
+      "逐張實看選定桌機與手機PNG；框、文字、三節點及黃色結論可追",
+      "幾何簡化與部分術語較密；未模型實測或真人理解測試"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "統一精確幾何，質感簡化"
+      ],
+      "completeness": [
+        9,
+        "文字参与候選和解碼，交付詞語與框。"
+      ],
+      "professionalism": [
+        9,
+        "詞與區域相容性小格及雙向互動接query框；獨立重拍與選定PNG逐像素相同且完整實看。"
+      ],
+      "density": [
+        8,
+        "三段直讀，部分專有術語較密"
+      ],
+      "hierarchy": [
+        9,
+        "單一讀序/單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch4-page-assessment.json; batch4-failure-page-review.json"
+  },
+  {
+    "id": "det-grounding-dino-interface-engineering-2",
+    "image": "det-grounding-dino-interface-engineering-2-r02-mobile.png",
+    "sha256": "9428c183138a78e2d67bc7f9882c54ab9c62ddffcb645062b3b1a3ead02ff5a2",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "詞與區域相容性小格及雙向互動接query框；獨立重拍與選定PNG逐像素相同且完整實看。",
+      "逐張實看選定桌機與手機PNG；框、文字、三節點及黃色結論可追",
+      "幾何簡化與部分術語較密；未模型實測或真人理解測試"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "統一精確幾何，質感簡化"
+      ],
+      "completeness": [
+        9,
+        "文字参与候選和解碼，交付詞語與框。"
+      ],
+      "professionalism": [
+        9,
+        "詞與區域相容性小格及雙向互動接query框；獨立重拍與選定PNG逐像素相同且完整實看。"
+      ],
+      "density": [
+        8,
+        "三段直讀，部分專有術語較密"
+      ],
+      "hierarchy": [
+        9,
+        "單一讀序/單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch4-page-assessment.json; batch4-failure-page-review.json"
+  },
+  {
+    "id": "yoloe-engineering-2",
+    "image": "yoloe-engineering-2-r02-desktop.png",
+    "sha256": "88d24e3c8485c4c83b2c4319a04ea232bae50e069d81222898d0cf04668dfd1e",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "ROI語意特徵按權重聚合得到[1.5,.5]；全電阻半透明遮罩保留料號，視覺提示與其他模式分開。",
+      "逐張實看選定桌機與手機PNG；框、文字、三節點及黃色結論可追",
+      "幾何簡化與部分術語較密；未模型實測或真人理解測試"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "統一精確幾何，質感簡化"
+      ],
+      "completeness": [
+        9,
+        "提示區域變成表示，再與待測區域比較。"
+      ],
+      "professionalism": [
+        9,
+        "ROI語意特徵按權重聚合得到[1.5,.5]；全電阻半透明遮罩保留料號，視覺提示與其他模式分開。"
+      ],
+      "density": [
+        8,
+        "三段直讀，部分專有術語較密"
+      ],
+      "hierarchy": [
+        9,
+        "單一讀序/單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch4-page-assessment.json; batch4-failure-page-review.json"
+  },
+  {
+    "id": "yoloe-engineering-2",
+    "image": "yoloe-engineering-2-r02-mobile.png",
+    "sha256": "70652c92709d5d67a00b735a6a5b1a43198fbd32def423d8c2b937d37a3bf45f",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "ROI語意特徵按權重聚合得到[1.5,.5]；全電阻半透明遮罩保留料號，視覺提示與其他模式分開。",
+      "逐張實看選定桌機與手機PNG；框、文字、三節點及黃色結論可追",
+      "幾何簡化與部分術語較密；未模型實測或真人理解測試"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "統一精確幾何，質感簡化"
+      ],
+      "completeness": [
+        9,
+        "提示區域變成表示，再與待測區域比較。"
+      ],
+      "professionalism": [
+        9,
+        "ROI語意特徵按權重聚合得到[1.5,.5]；全電阻半透明遮罩保留料號，視覺提示與其他模式分開。"
+      ],
+      "density": [
+        8,
+        "三段直讀，部分專有術語較密"
+      ],
+      "hierarchy": [
+        9,
+        "單一讀序/單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch4-page-assessment.json; batch4-failure-page-review.json"
+  },
+  {
+    "id": "dinov2-engineering-2",
+    "image": "dinov2-engineering-2-r03-desktop.png",
+    "sha256": "89090cadd09a1969bbb351f0ecc0239b6639d957ac0a990dab9c9a409f417c67",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "r03目標[.2,.8]/預測[.6,.4]讓對齊有兩端對象；Teacher EMA、stopgrad和部署分開。",
+      "逐張實看選定桌機與手機PNG；框、文字、三節點及黃色結論可追",
+      "幾何簡化與部分術語較密；未模型實測或真人理解測試"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "統一精確幾何，質感簡化"
+      ],
+      "completeness": [
+        9,
+        "訓練的Teacher目標與部署的骨幹要分開。"
+      ],
+      "professionalism": [
+        9,
+        "r03目標[.2,.8]/預測[.6,.4]讓對齊有兩端對象；Teacher EMA、stopgrad和部署分開。"
+      ],
+      "density": [
+        8,
+        "三段直讀，部分專有術語較密"
+      ],
+      "hierarchy": [
+        9,
+        "單一讀序/單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch4-page-assessment.json; batch4-failure-page-review.json"
+  },
+  {
+    "id": "dinov2-engineering-2",
+    "image": "dinov2-engineering-2-r03-mobile.png",
+    "sha256": "6eb0cc431e5e824607c31bfed5148b129f53df0d1b860942b3731a56887e4427",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "r03目標[.2,.8]/預測[.6,.4]讓對齊有兩端對象；Teacher EMA、stopgrad和部署分開。",
+      "逐張實看選定桌機與手機PNG；框、文字、三節點及黃色結論可追",
+      "幾何簡化與部分術語較密；未模型實測或真人理解測試"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "統一精確幾何，質感簡化"
+      ],
+      "completeness": [
+        9,
+        "訓練的Teacher目標與部署的骨幹要分開。"
+      ],
+      "professionalism": [
+        9,
+        "r03目標[.2,.8]/預測[.6,.4]讓對齊有兩端對象；Teacher EMA、stopgrad和部署分開。"
+      ],
+      "density": [
+        8,
+        "三段直讀，部分專有術語較密"
+      ],
+      "hierarchy": [
+        9,
+        "單一讀序/單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch4-page-assessment.json; batch4-failure-page-review.json"
+  },
+  {
+    "id": "llava-engineering-2",
+    "image": "llava-engineering-2-r02-desktop.png",
+    "sha256": "d1a26ed26b60c41e5c9b5502e0991fbd86de5d706c2ac2db191102d1a8aa18af",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "同接頭左有右未見，影像經投影與問題接LLM；未知原因不猜測。",
+      "逐張實看選定桌機與手機PNG；框、文字、三節點及黃色結論可追",
+      "幾何簡化與部分術語較密；未模型實測或真人理解測試"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "統一精確幾何，質感簡化"
+      ],
+      "completeness": [
+        9,
+        "投影橋接影像與文字，回答仍要有可見證據。"
+      ],
+      "professionalism": [
+        9,
+        "同接頭左有右未見，影像經投影與問題接LLM；未知原因不猜測。"
+      ],
+      "density": [
+        8,
+        "三段直讀，部分專有術語較密"
+      ],
+      "hierarchy": [
+        9,
+        "單一讀序/單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch4-page-assessment.json; batch4-failure-page-review.json"
+  },
+  {
+    "id": "llava-engineering-2",
+    "image": "llava-engineering-2-r02-mobile.png",
+    "sha256": "1ae0f771a2f7c8923cc1573aaf5eb8148c7190a80074a4172df743017e19eb2e",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "同接頭左有右未見，影像經投影與問題接LLM；未知原因不猜測。",
+      "逐張實看選定桌機與手機PNG；框、文字、三節點及黃色結論可追",
+      "幾何簡化與部分術語較密；未模型實測或真人理解測試"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "統一精確幾何，質感簡化"
+      ],
+      "completeness": [
+        9,
+        "投影橋接影像與文字，回答仍要有可見證據。"
+      ],
+      "professionalism": [
+        9,
+        "同接頭左有右未見，影像經投影與問題接LLM；未知原因不猜測。"
+      ],
+      "density": [
+        8,
+        "三段直讀，部分專有術語較密"
+      ],
+      "hierarchy": [
+        9,
+        "單一讀序/單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch4-page-assessment.json; batch4-failure-page-review.json"
+  },
+  {
+    "id": "qwen-vl-engineering-2",
+    "image": "qwen-vl-engineering-2-r02-desktop.png",
+    "sha256": "5c3ae3523ea0170b83ffdd2673e3454db5b85641f6ec979f936e03c3ef9708d3",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "解析度形成可變token，t/h/w位置與B08答案可核對；示意格數與原像素限制明示。",
+      "逐張實看選定桌機與手機PNG；框、文字、三節點及黃色結論可追",
+      "幾何簡化與部分術語較密；未模型實測或真人理解測試"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "統一精確幾何，質感簡化"
+      ],
+      "completeness": [
+        9,
+        "動態解析度與位置編碼，仍受原像素限制。"
+      ],
+      "professionalism": [
+        9,
+        "解析度形成可變token，t/h/w位置與B08答案可核對；示意格數與原像素限制明示。"
+      ],
+      "density": [
+        8,
+        "三段直讀，部分專有術語較密"
+      ],
+      "hierarchy": [
+        9,
+        "單一讀序/單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch4-page-assessment.json; batch4-failure-page-review.json"
+  },
+  {
+    "id": "qwen-vl-engineering-2",
+    "image": "qwen-vl-engineering-2-r02-mobile.png",
+    "sha256": "370f2ece756461b3ce17044d7983d99a9eb7ef04bbbd4ffbfa3e7e58caca6fa0",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "解析度形成可變token，t/h/w位置與B08答案可核對；示意格數與原像素限制明示。",
+      "逐張實看選定桌機與手機PNG；框、文字、三節點及黃色結論可追",
+      "幾何簡化與部分術語較密；未模型實測或真人理解測試"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "統一精確幾何，質感簡化"
+      ],
+      "completeness": [
+        9,
+        "動態解析度與位置編碼，仍受原像素限制。"
+      ],
+      "professionalism": [
+        9,
+        "解析度形成可變token，t/h/w位置與B08答案可核對；示意格數與原像素限制明示。"
+      ],
+      "density": [
+        8,
+        "三段直讀，部分專有術語較密"
+      ],
+      "hierarchy": [
+        9,
+        "單一讀序/單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch4-page-assessment.json; batch4-failure-page-review.json"
+  },
+  {
+    "id": "gemini-vision-engineering-2",
+    "image": "gemini-vision-engineering-2-r02-desktop.png",
+    "sha256": "803c8b3111064df8a20bcdee80d94a93cf908989ff76d5088fc70adf3f1abaea",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "同接頭與左右JSON欄位逐一查證，右present反例改not_visible，原因unknown；不是API實測。",
+      "逐張實看選定桌機與手機PNG；框、文字、三節點及黃色結論可追",
+      "幾何簡化與部分術語較密；未模型實測或真人理解測試"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "統一精確幾何，質感簡化"
+      ],
+      "completeness": [
+        9,
+        "JSON能解析，只代表格式；內容仍要對原圖。"
+      ],
+      "professionalism": [
+        9,
+        "同接頭與左右JSON欄位逐一查證，右present反例改not_visible，原因unknown；不是API實測。"
+      ],
+      "density": [
+        8,
+        "三段直讀，部分專有術語較密"
+      ],
+      "hierarchy": [
+        9,
+        "單一讀序/單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch4-page-assessment.json; batch4-failure-page-review.json"
+  },
+  {
+    "id": "gemini-vision-engineering-2",
+    "image": "gemini-vision-engineering-2-r02-mobile.png",
+    "sha256": "49f3a87704a85bfaac47a87d034ea52b29405969b443fde20e8d5282bd54e0c0",
+    "scores": [
+      23,
+      24,
+      18,
+      18,
+      9
+    ],
+    "total": 92,
+    "evidence": [
+      "同接頭與左右JSON欄位逐一查證，右present反例改not_visible，原因unknown；不是API實測。",
+      "逐張實看選定桌機與手機PNG；框、文字、三節點及黃色結論可追",
+      "幾何簡化與部分術語較密；未模型實測或真人理解測試"
+    ],
+    "completion": {
+      "aesthetics": [
+        8,
+        "統一精確幾何，質感簡化"
+      ],
+      "completeness": [
+        9,
+        "JSON能解析，只代表格式；內容仍要對原圖。"
+      ],
+      "professionalism": [
+        9,
+        "同接頭與左右JSON欄位逐一查證，右present反例改not_visible，原因unknown；不是API實測。"
+      ],
+      "density": [
+        8,
+        "三段直讀，部分專有術語較密"
+      ],
+      "hierarchy": [
+        9,
+        "單一讀序/單黃結論"
+      ]
+    },
+    "veto": [],
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "page_evidence": "batch4-page-assessment.json; batch4-failure-page-review.json"
+  }
+]

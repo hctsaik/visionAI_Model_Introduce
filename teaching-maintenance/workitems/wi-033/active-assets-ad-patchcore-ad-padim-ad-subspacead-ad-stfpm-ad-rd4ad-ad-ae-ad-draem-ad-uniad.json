@@ -1,0 +1,642 @@
+[
+  {
+    "id": "ad-patchcore-engineering-1",
+    "mode": "desktop",
+    "path": "roadmap-model-selection/anomaly-detection/ad-patchcore/images/final/WI033-PATCHCORE-01-r01-desktop.png",
+    "sha256": "50f5b7f93371bd8df9c1e80129b0a1b93f650d89efef4befc4476a9c9aeeeb7b",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "ad-patchcore-engineering-1",
+    "mode": "mobile",
+    "path": "roadmap-model-selection/anomaly-detection/ad-patchcore/images/final/WI033-PATCHCORE-01-r01-mobile.png",
+    "sha256": "7e52f550398290df647fca61cc3e6192d90e0b3869efacb339be40cea8b59378",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "ad-patchcore-engineering-2",
+    "mode": "desktop",
+    "path": "roadmap-model-selection/anomaly-detection/ad-patchcore/images/final/WI033-PATCHCORE-02-r02-desktop.png",
+    "sha256": "220af8e6367ec2693f682dc248efded0a5c4a5203adc32e12a27dd01e9fa3eab",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "ad-patchcore-engineering-2",
+    "mode": "mobile",
+    "path": "roadmap-model-selection/anomaly-detection/ad-patchcore/images/final/WI033-PATCHCORE-02-r02-mobile.png",
+    "sha256": "ef60ca9baade0c7a6b7ff6fe3e2363274af465898d33b9a84cfc3c3ba4717e7d",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "ad-patchcore-engineering-3",
+    "mode": "desktop",
+    "path": "roadmap-model-selection/anomaly-detection/ad-patchcore/images/final/WI033-PATCHCORE-03-r01-desktop.png",
+    "sha256": "0a0ba4d0e23b74efb5d13697101a2d01d3aaa8075c1842588e51215430d9cda0",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "ad-patchcore-engineering-3",
+    "mode": "mobile",
+    "path": "roadmap-model-selection/anomaly-detection/ad-patchcore/images/final/WI033-PATCHCORE-03-r01-mobile.png",
+    "sha256": "febb66dfc795822425344e9e1b5acd53805a3f915183bd15a7c49295e66465bf",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "ad-patchcore-engineering-4",
+    "mode": "desktop",
+    "path": "roadmap-model-selection/anomaly-detection/ad-patchcore/images/final/WI033-PATCHCORE-04-r01-desktop.png",
+    "sha256": "9d13f2bf6691d37a00d519ae34aaefb17e0e668c29a75f9a9458698620fb0fe2",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "ad-patchcore-engineering-4",
+    "mode": "mobile",
+    "path": "roadmap-model-selection/anomaly-detection/ad-patchcore/images/final/WI033-PATCHCORE-04-r01-mobile.png",
+    "sha256": "38dbed2560f42c885729aa2165a1fcc873e2d863fcc3893b5cbc1f35c09ac8fe",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "ad-padim-engineering-1",
+    "mode": "desktop",
+    "path": "roadmap-model-selection/anomaly-detection/ad-padim/images/final/WI033-PADIM-01-r01-desktop.png",
+    "sha256": "8d7f9deea2dddacb3301e86e99ba37293f906e84b3e5c14612d741f6c7730b3c",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "ad-padim-engineering-1",
+    "mode": "mobile",
+    "path": "roadmap-model-selection/anomaly-detection/ad-padim/images/final/WI033-PADIM-01-r01-mobile.png",
+    "sha256": "f7a4695f7627593e8676efde90ae063a0df269ce9b5c2feab408f28ab7000dc5",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "ad-padim-engineering-2",
+    "mode": "desktop",
+    "path": "roadmap-model-selection/anomaly-detection/ad-padim/images/final/WI033-PADIM-02-r02-desktop.png",
+    "sha256": "473bd6484c0bffe94ccec717807736bbc7df1f94a932880c8997b86b01eb7a0c",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "ad-padim-engineering-2",
+    "mode": "mobile",
+    "path": "roadmap-model-selection/anomaly-detection/ad-padim/images/final/WI033-PADIM-02-r02-mobile.png",
+    "sha256": "e647dd0a7da6431d595f17c2b6a609f21329a86c224b16c66933da50eaf46e7c",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "ad-padim-engineering-3",
+    "mode": "desktop",
+    "path": "roadmap-model-selection/anomaly-detection/ad-padim/images/final/WI033-PADIM-03-r01-desktop.png",
+    "sha256": "685edd836c13422dee9c84fdd9b336e332d21777ee4744c131c9601f59d52478",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "ad-padim-engineering-3",
+    "mode": "mobile",
+    "path": "roadmap-model-selection/anomaly-detection/ad-padim/images/final/WI033-PADIM-03-r01-mobile.png",
+    "sha256": "65d7828905d275d2e9e20e59f7af41687f97b443ce9a6efc5cf4b01af39e667b",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "ad-padim-engineering-4",
+    "mode": "desktop",
+    "path": "roadmap-model-selection/anomaly-detection/ad-padim/images/final/WI033-PADIM-04-r01-desktop.png",
+    "sha256": "27f1a112ea6a6ad0822e45ef1be4c0c2a735f864bf0c5f9ec15e0c4616df5927",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "ad-padim-engineering-4",
+    "mode": "mobile",
+    "path": "roadmap-model-selection/anomaly-detection/ad-padim/images/final/WI033-PADIM-04-r01-mobile.png",
+    "sha256": "5178d79e852409121a9cc120cd911094bfa58b61af68c19c5bd20f8a3cb4c8d5",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "ad-subspacead-engineering-1",
+    "mode": "desktop",
+    "path": "roadmap-model-selection/anomaly-detection/ad-subspacead/images/final/WI033-SUBSPACEAD-01-r01-desktop.png",
+    "sha256": "4316e9f4bf6ef36da7224db16d42674b565c336ffba40745f284fccd8b35a3f3",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "ad-subspacead-engineering-1",
+    "mode": "mobile",
+    "path": "roadmap-model-selection/anomaly-detection/ad-subspacead/images/final/WI033-SUBSPACEAD-01-r01-mobile.png",
+    "sha256": "589999164bf32376d71534081f17e4561ec23aab65d29cd277cb56129c0db95a",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "ad-subspacead-engineering-2",
+    "mode": "desktop",
+    "path": "roadmap-model-selection/anomaly-detection/ad-subspacead/images/final/WI033-SUBSPACEAD-02-r02-desktop.png",
+    "sha256": "e717d2c159901d7455935e8c504d48769e80a745e483e9157f1ff1f705007473",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "ad-subspacead-engineering-2",
+    "mode": "mobile",
+    "path": "roadmap-model-selection/anomaly-detection/ad-subspacead/images/final/WI033-SUBSPACEAD-02-r02-mobile.png",
+    "sha256": "6454fd52bf500ab977a67bdbb63e4f898e01aa7eda196c02577f844464dbd25d",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "ad-subspacead-engineering-3",
+    "mode": "desktop",
+    "path": "roadmap-model-selection/anomaly-detection/ad-subspacead/images/final/WI033-SUBSPACEAD-03-r01-desktop.png",
+    "sha256": "51686b49521a03df4ab44b1c9933f28a36b18fe73070f8366102a8b5a07927b6",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "ad-subspacead-engineering-3",
+    "mode": "mobile",
+    "path": "roadmap-model-selection/anomaly-detection/ad-subspacead/images/final/WI033-SUBSPACEAD-03-r01-mobile.png",
+    "sha256": "32e78471f2b67014707fffd74a704b1e3e490691117834a655e2936e6f5e9f50",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "ad-subspacead-engineering-4",
+    "mode": "desktop",
+    "path": "roadmap-model-selection/anomaly-detection/ad-subspacead/images/final/WI033-SUBSPACEAD-04-r01-desktop.png",
+    "sha256": "e44c632edf58b3d677de8e1cc7a8b6599866ff7e662e768e805f775873d59600",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "ad-subspacead-engineering-4",
+    "mode": "mobile",
+    "path": "roadmap-model-selection/anomaly-detection/ad-subspacead/images/final/WI033-SUBSPACEAD-04-r01-mobile.png",
+    "sha256": "0b7bb0badb092814613b8a5038732f18df39106e76b5b50331f7b820dd16ff69",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "ad-stfpm-engineering-1",
+    "mode": "desktop",
+    "path": "roadmap-model-selection/anomaly-detection/ad-stfpm/images/final/WI033-STFPM-01-r01-desktop.png",
+    "sha256": "e8b160a0c089dce8d87df6acc3c246a3fd0fff235d75044c651a6edd1f5ee004",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "ad-stfpm-engineering-1",
+    "mode": "mobile",
+    "path": "roadmap-model-selection/anomaly-detection/ad-stfpm/images/final/WI033-STFPM-01-r01-mobile.png",
+    "sha256": "a19a688ff0cad4c6851a63dd07746d1c41f276be8976bb60c126a282a27304ac",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "ad-stfpm-engineering-2",
+    "mode": "desktop",
+    "path": "roadmap-model-selection/anomaly-detection/ad-stfpm/images/final/WI033-STFPM-02-r02-desktop.png",
+    "sha256": "5cb5618e2b12e5d6c61e7db7ae763bcecfbb1f7393e65076b986d7e53c172e7c",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "ad-stfpm-engineering-2",
+    "mode": "mobile",
+    "path": "roadmap-model-selection/anomaly-detection/ad-stfpm/images/final/WI033-STFPM-02-r02-mobile.png",
+    "sha256": "72831e8a723caf14bfbd5556051bc43423432999ccadd49fc4f0b9e47b98570b",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "ad-stfpm-engineering-3",
+    "mode": "desktop",
+    "path": "roadmap-model-selection/anomaly-detection/ad-stfpm/images/final/WI033-STFPM-03-r01-desktop.png",
+    "sha256": "587efa79bbf6059e3215b98c8fa2486a75e537bfff9ab5a5d4225c944c7d4a58",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "ad-stfpm-engineering-3",
+    "mode": "mobile",
+    "path": "roadmap-model-selection/anomaly-detection/ad-stfpm/images/final/WI033-STFPM-03-r01-mobile.png",
+    "sha256": "5b1e1d1611be1b9235c18abac448fdd960989c7c759380d821ec5ffdfb0acb70",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "ad-stfpm-engineering-4",
+    "mode": "desktop",
+    "path": "roadmap-model-selection/anomaly-detection/ad-stfpm/images/final/WI033-STFPM-04-r01-desktop.png",
+    "sha256": "265872ef00d81491ef8dcfc79478ff38384051b9e118f519891a5badc9c32aee",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "ad-stfpm-engineering-4",
+    "mode": "mobile",
+    "path": "roadmap-model-selection/anomaly-detection/ad-stfpm/images/final/WI033-STFPM-04-r01-mobile.png",
+    "sha256": "277ed68217eaeaebbaa0132cadec437c3dce76616b78fb0ef47664ece920d3d1",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "ad-rd4ad-engineering-1",
+    "mode": "desktop",
+    "path": "roadmap-model-selection/anomaly-detection/ad-rd4ad/images/final/WI033-RD4AD-01-r02-desktop.png",
+    "sha256": "b6965ac37b157e12ab6b864cfb2594f21db579137364aa748789991a499e1de0",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "ad-rd4ad-engineering-1",
+    "mode": "mobile",
+    "path": "roadmap-model-selection/anomaly-detection/ad-rd4ad/images/final/WI033-RD4AD-01-r02-mobile.png",
+    "sha256": "cd4c2027005449d6795bf7190f504255fcd90a6d41bfd8bb7ea7c7686ec742b5",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "ad-rd4ad-engineering-2",
+    "mode": "desktop",
+    "path": "roadmap-model-selection/anomaly-detection/ad-rd4ad/images/final/WI033-RD4AD-02-r02-desktop.png",
+    "sha256": "b8cc7d3b1f8c8caea675757588913b9c877610a66ca4df31d8061b7ac0093b73",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "ad-rd4ad-engineering-2",
+    "mode": "mobile",
+    "path": "roadmap-model-selection/anomaly-detection/ad-rd4ad/images/final/WI033-RD4AD-02-r02-mobile.png",
+    "sha256": "cebf1cfe39a923d68bbc2891647acf9fc78e807293849df7906f200bae2734d2",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "ad-rd4ad-engineering-3",
+    "mode": "desktop",
+    "path": "roadmap-model-selection/anomaly-detection/ad-rd4ad/images/final/WI033-RD4AD-03-r01-desktop.png",
+    "sha256": "63364ef7d78262ad7dabc79884ad86f58971b1ae6bc446da42ba2c86794f66f5",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "ad-rd4ad-engineering-3",
+    "mode": "mobile",
+    "path": "roadmap-model-selection/anomaly-detection/ad-rd4ad/images/final/WI033-RD4AD-03-r01-mobile.png",
+    "sha256": "42f69ec3f4ab4134c54701ff7a709368a44b0780de06f62d53c90efaa5bfd9b6",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "ad-rd4ad-engineering-4",
+    "mode": "desktop",
+    "path": "roadmap-model-selection/anomaly-detection/ad-rd4ad/images/final/WI033-RD4AD-04-r01-desktop.png",
+    "sha256": "d58364a8f6ee7df7108582aa1744b3408a35047147b51d6dc5a7ccf1a94fbce1",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "ad-rd4ad-engineering-4",
+    "mode": "mobile",
+    "path": "roadmap-model-selection/anomaly-detection/ad-rd4ad/images/final/WI033-RD4AD-04-r01-mobile.png",
+    "sha256": "4deb8862179e14d370a419a362d517fbfab29e3ca9b2b5d16fd1e8834861411a",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "ad-ae-engineering-1",
+    "mode": "desktop",
+    "path": "roadmap-model-selection/anomaly-detection/ad-ae/images/final/WI033-AE-01-r01-desktop.png",
+    "sha256": "77de19e8ab2a2a93d998d811e3f3049de39c7f6f4965c8d05a58695dbd6c4dc7",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "ad-ae-engineering-1",
+    "mode": "mobile",
+    "path": "roadmap-model-selection/anomaly-detection/ad-ae/images/final/WI033-AE-01-r01-mobile.png",
+    "sha256": "d74acfe0aac46536245540262f87b50e28d4ef8e757da7758a37e97366546809",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "ad-ae-engineering-2",
+    "mode": "desktop",
+    "path": "roadmap-model-selection/anomaly-detection/ad-ae/images/final/WI033-AE-02-r02-desktop.png",
+    "sha256": "800954af40f5299b8c6cb5f249cd18707c954bcc916d2ed7b56a9e7748d82dd0",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "ad-ae-engineering-2",
+    "mode": "mobile",
+    "path": "roadmap-model-selection/anomaly-detection/ad-ae/images/final/WI033-AE-02-r02-mobile.png",
+    "sha256": "e4b222b526a61928a7cd5eb21024e9fbdce3772020d1b7ef0c172f6f8592b9dc",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "ad-ae-engineering-3",
+    "mode": "desktop",
+    "path": "roadmap-model-selection/anomaly-detection/ad-ae/images/final/WI033-AE-03-r01-desktop.png",
+    "sha256": "943f89dbe6436697de5565d715082925037410fb771954fa1b87cec9f2adda66",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "ad-ae-engineering-3",
+    "mode": "mobile",
+    "path": "roadmap-model-selection/anomaly-detection/ad-ae/images/final/WI033-AE-03-r01-mobile.png",
+    "sha256": "baeb7d91577b0e0c0da19a638e204a5bd78bf087c22caf6ca10f696c54e777e7",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "ad-ae-engineering-4",
+    "mode": "desktop",
+    "path": "roadmap-model-selection/anomaly-detection/ad-ae/images/final/WI033-AE-04-r01-desktop.png",
+    "sha256": "5f64b9a09d9b1b5ce1dcb27672902d7870975fc24375b1e676dc5a07809617af",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "ad-ae-engineering-4",
+    "mode": "mobile",
+    "path": "roadmap-model-selection/anomaly-detection/ad-ae/images/final/WI033-AE-04-r01-mobile.png",
+    "sha256": "d8c106ddf802c11fa3da1f42c7031d79521d4572b5a057e535c2891dc235a81e",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "ad-draem-engineering-1",
+    "mode": "desktop",
+    "path": "roadmap-model-selection/anomaly-detection/ad-draem/images/final/WI033-DRAEM-01-r01-desktop.png",
+    "sha256": "d2c59375c5ab99081959f4d4e0b0d23a65c9cbb949a2522ff5b69987a45fc5eb",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "ad-draem-engineering-1",
+    "mode": "mobile",
+    "path": "roadmap-model-selection/anomaly-detection/ad-draem/images/final/WI033-DRAEM-01-r01-mobile.png",
+    "sha256": "2cea3691e9f0cff696fcdeeee6705ed414799d2f9d923041a38a6cdc7c9b90f2",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "ad-draem-engineering-2",
+    "mode": "desktop",
+    "path": "roadmap-model-selection/anomaly-detection/ad-draem/images/final/WI033-DRAEM-02-r02-desktop.png",
+    "sha256": "3a8e2f2a45193044cc3e069cd4f0c9a24eeceac5527fac518b32af8b24814764",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "ad-draem-engineering-2",
+    "mode": "mobile",
+    "path": "roadmap-model-selection/anomaly-detection/ad-draem/images/final/WI033-DRAEM-02-r02-mobile.png",
+    "sha256": "c61ec8c0a72a976d79ce89cb239153458f22fff0f585204b47eb7ec62d142a13",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "ad-draem-engineering-3",
+    "mode": "desktop",
+    "path": "roadmap-model-selection/anomaly-detection/ad-draem/images/final/WI033-DRAEM-03-r01-desktop.png",
+    "sha256": "d05f4e1506b2aad280d5963c1665983937d8b44018bded0e6833630223242848",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "ad-draem-engineering-3",
+    "mode": "mobile",
+    "path": "roadmap-model-selection/anomaly-detection/ad-draem/images/final/WI033-DRAEM-03-r01-mobile.png",
+    "sha256": "24604d16835f693fb493c80d16a98fe12ebdc80e239a0f6fc6c3badce6edcde2",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "ad-draem-engineering-4",
+    "mode": "desktop",
+    "path": "roadmap-model-selection/anomaly-detection/ad-draem/images/final/WI033-DRAEM-04-r01-desktop.png",
+    "sha256": "ea8892538c69a0e2db09e80ea4a2ca6188d81736860766c61346c975734a6c58",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "ad-draem-engineering-4",
+    "mode": "mobile",
+    "path": "roadmap-model-selection/anomaly-detection/ad-draem/images/final/WI033-DRAEM-04-r01-mobile.png",
+    "sha256": "b5e2cafb2250b55ac6654036dad44db5d06bf7f6fd938f89ca7f23057f192692",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "ad-uniad-engineering-1",
+    "mode": "desktop",
+    "path": "roadmap-model-selection/anomaly-detection/ad-uniad/images/final/WI033-UNIAD-01-r01-desktop.png",
+    "sha256": "ccb59029f90be84628137331f1bf4b63dc72e4a131fdbbadd74b9a443a94734d",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "ad-uniad-engineering-1",
+    "mode": "mobile",
+    "path": "roadmap-model-selection/anomaly-detection/ad-uniad/images/final/WI033-UNIAD-01-r01-mobile.png",
+    "sha256": "3a006f1b19d11811d7f372098bca77e7f028bf6f1466fd373de3d3c86eebc409",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "ad-uniad-engineering-2",
+    "mode": "desktop",
+    "path": "roadmap-model-selection/anomaly-detection/ad-uniad/images/final/WI033-UNIAD-02-r02-desktop.png",
+    "sha256": "19cd171e9484409a57c45ec4ad09a24cbc04079feeffb249cd3ab15c1367453c",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "ad-uniad-engineering-2",
+    "mode": "mobile",
+    "path": "roadmap-model-selection/anomaly-detection/ad-uniad/images/final/WI033-UNIAD-02-r02-mobile.png",
+    "sha256": "f60d751e22c6dd0adcfba130c249ca1c43bdc5c0ee78da51c8ce4aa31ccbb803",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "ad-uniad-engineering-3",
+    "mode": "desktop",
+    "path": "roadmap-model-selection/anomaly-detection/ad-uniad/images/final/WI033-UNIAD-03-r01-desktop.png",
+    "sha256": "39079d963d42b08e7267a903e4e4d1ab7f8abbe14e113aa0944947860514ecf3",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "ad-uniad-engineering-3",
+    "mode": "mobile",
+    "path": "roadmap-model-selection/anomaly-detection/ad-uniad/images/final/WI033-UNIAD-03-r01-mobile.png",
+    "sha256": "78bdba7a6266c50cae134321ae29c038ef4f66c1e98f57080c0438a11781573a",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "ad-uniad-engineering-4",
+    "mode": "desktop",
+    "path": "roadmap-model-selection/anomaly-detection/ad-uniad/images/final/WI033-UNIAD-04-r01-desktop.png",
+    "sha256": "b16015c3c4e189aef4b51711ba68c67c362c83f7b17b14df68f9bd5a1d0310a4",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  },
+  {
+    "id": "ad-uniad-engineering-4",
+    "mode": "mobile",
+    "path": "roadmap-model-selection/anomaly-detection/ad-uniad/images/final/WI033-UNIAD-04-r01-mobile.png",
+    "sha256": "f60404624818ba4f9d1073627f0451e0359e89d0e9149ea0b15dfd27e626728a",
+    "native_review": "passed",
+    "page_review": "passed",
+    "user_approval": "pending",
+    "final_evidence": "REPORT.md; verification-all52.json; per-batch page assessments"
+  }
+]

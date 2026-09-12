@@ -1,0 +1,500 @@
+{
+  "model": "STFPM",
+  "badge": "同原圖，教師學生多尺度對照",
+  "title": "STFPM：正常模仿後，比兩路特徵差異",
+  "scenario": {
+    "title": "缺陷種類不齊，先用正常品教學生",
+    "body": "固定相機看兩孔金屬板，想找刮傷 p，但也怕正常孔邊 q 的光澤造成誤報。用同一影像走教師與學生，檢查多尺度反應差異。"
+  },
+  "promise": {
+    "title": "交付可覆核的特徵差異圖",
+    "body": "多尺度特徵差異整合成可疑位置圖與候選分數，不直接提供缺陷名稱、精密輪廓、尺寸或自動放行。"
+  },
+  "mental_model": {
+    "title": "教師固定，學生只學正常反應",
+    "body": "兩路採同架構並讀同一影像。學生模仿正常影像的教師特徵；陌生局部可能產生兩路差異，整合後指向可疑位置。",
+    "limit": "缺陷也可能被兩路表示得相近，正常變化也可能有差異；需以未見正常與真缺陷驗證。"
+  },
+  "micro_example": {
+    "title": "相機換光源後，正常品突然很紅",
+    "setup": "新光源讓正常外殼的反光變強，STFPM 誤報增加；但細刮傷還有漏檢。",
+    "prediction": "提高門檻、重新蒐集正常資料、恢復取像條件，或換成 RD4AD／SubspaceAD，你會怎麼比較？",
+    "reveal": "先查原圖的刮傷可見度與光澤允收範圍；提高門檻可能減少誤報但增加漏檢。固定獨立正常和真缺陷，比取像恢復、正常資料適配和候選方法的錯誤與時間。正常樣本少可測固定特徵子空間，能訓練可比較反向重建；都不能省略真實驗證。"
+  },
+  "mechanism_steps": [
+    {
+      "title": "固定 teacher，選出要比較的 feature pyramid",
+      "body": "normal ROI 依固定 transform 同時送進 frozen pretrained teacher 和同架構、可訓練的 student，取出指定層級 feature maps。",
+      "why": "teacher checkpoint、layer 與 input recipe 決定什麼外觀被當成比較基準；改其中一項就不是同一個 score。",
+      "anchor": "工程圖核對：frozen teacher + trainable student",
+      "diagram": {
+        "title": "同一 ROI 走雙路特徵",
+        "body": "frozen teacher 與 trainable student 取同層 map。",
+        "why": "checkpoint、layer 與 recipe 定義比較基準。",
+        "anchor": "ROI → teacher + student"
+      }
+    },
+    {
+      "title": "只用正常資料訓練學生模仿老師",
+      "body": "在每個選定層與位置先做 L2 normalization，再最小化 teacher/student 的 layer-wise squared L2 matching loss，保存 student checkpoint。",
+      "why": "學生學的是正常 feature 的可預測性，不是缺陷標籤；support 污染會把不該模仿的模式寫進 student。",
+      "anchor": "工程圖核對：normal-only feature matching loss",
+      "diagram": {
+        "title": "學生只學 normal matching",
+        "body": "正規化後最小化各層 teacher/student 差異。",
+        "why": "污染 support 會寫入錯誤模仿模式。",
+        "anchor": "normal data → matching loss"
+      }
+    },
+    {
+      "title": "測試時量兩路 feature 的局部落差",
+      "body": "同一測試 ROI 經 teacher/student dual forward，在各層位置計算 normalized feature discrepancy map。",
+      "why": "高差異表示 student 無法用已學正常模式模仿該 teacher response，不代表已證明材料或根因。",
+      "anchor": "工程圖核對：per-layer discrepancy maps",
+      "diagram": {
+        "title": "逐層量雙路落差",
+        "body": "每個位置比較 teacher 與 student feature。",
+        "why": "高差異是候選 evidence，不是根因。",
+        "anchor": "teacher ↔ student discrepancy"
+      }
+    },
+    {
+      "title": "多層差異依鎖定規則融合為候選",
+      "body": "將各層 map resize 到共同 grid，依 layer product 等固定 fusion、image max 等 aggregation 形成候選圖和 evidence gate。",
+      "why": "一層、product、resize 或 max 的改動都能改低 FPR 和微缺陷可見性；不能只靠好看的色圖下結論。",
+      "anchor": "工程圖核對：resize → layer fusion → max gate",
+      "diagram": {
+        "title": "多層 map 融合為候選",
+        "body": "共同 grid 上依固定 rule 形成 image score。",
+        "why": "fusion 與 max 會改低 FPR 行為。",
+        "anchor": "resize → layer fusion → gate"
+      }
+    }
+  ],
+  "visual_intro": "先把它想成『老師與只學正常的學生答同一題』，再核對雙路 forward、matching loss、差異圖與融合門檻。",
+  "beginner_path": {
+    "title": "同一影像，兩路特徵：先看做法，再看反例與選型",
+    "intro": "三張圖看雙路模仿、正常與缺陷的可能誤判，以及鄰近方法。所有圖均為教學示意，非模型實測。",
+    "visuals": [
+      {
+        "id": "wi021-ad-stfpm-1",
+        "title": "STFPM：同一張圖，教師和學生怎麼看？",
+        "prompt": "同板 A 分流到固定教師與正常訓練學生，再比同位置的多尺度特徵。",
+        "caption": "STFPM 的教師與學生採相同架構、同一張影像輸入。教師預訓練且固定；學生只用正常影像學模仿教師多層特徵，兩路的不一致經整合形成位置線索。",
+        "image": "_course_content/generated-concepts/ad-stfpm/wi021-stfpm-c1-r02-desktop.png",
+        "alt": "STFPM：同一張圖，教師和學生怎麼看？。STFPM 的教師與學生採相同架構、同一張影像輸入。教師預訓練且固定；學生只用正常影像學模仿教師多層特徵，兩路的不一致經整合形成位置線索。 本圖為 AI 生成教學示意，非模型實測。",
+        "callouts": [
+          {
+            "title": "正常知識如何建立",
+            "body": "以正常影像的教師特徵作目標，只更新學生。兩路推論時固定權重，不需提供缺陷標籤。"
+          },
+          {
+            "title": "為什麼有多個尺度",
+            "body": "高解析度特徵保留較細局部，低解析度包含較大範圍；多層對照兼顧不同大小的線索，仍非保證偵測所有大小缺陷。"
+          },
+          {
+            "title": "如何讀熱圖",
+            "body": "回看原圖 p，確認是否真的有缺陷。特徵格與熱圖均為示意，不直接代表精密輪廓或尺寸。"
+          }
+        ],
+        "reading_views": [
+          {
+            "title": "STFPM：同一張圖，教師和學生怎麼看？",
+            "image": "_course_content/generated-concepts/ad-stfpm/wi021-stfpm-c1-r02-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/ad-stfpm/wi021-stfpm-c1-r01-mobile.png",
+            "alt": "STFPM：同一張圖，教師和學生怎麼看？。STFPM 的教師與學生採相同架構、同一張影像輸入。教師預訓練且固定；學生只用正常影像學模仿教師多層特徵，兩路的不一致經整合形成位置線索。 本圖為 AI 生成教學示意，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              724,
+              2171
+            ],
+            "mobile_display_mode": "full-mobile",
+            "mobile_intrinsic_width": 724,
+            "mobile_intrinsic_height": 2171,
+            "desktop_intrinsic_width": 1672,
+            "desktop_intrinsic_height": 941
+          }
+        ],
+        "core_ideas": true
+      },
+      {
+        "id": "wi021-ad-stfpm-2",
+        "title": "STFPM 正常學得像，缺陷就一定不同嗎？",
+        "prompt": "對照正常品、刮傷 p 與正常孔邊 q，追蹤兩份特徵和差異圖。",
+        "caption": "已涵蓋的正常外觀應讓兩路特徵接近；但細刮傷也可能得到相近特徵而漏檢。允收的正常光澤若未被涵蓋，孔邊 q 反而可能有高差異。",
+        "image": "_course_content/generated-concepts/ad-stfpm/wi021-stfpm-d2-r02-desktop.png",
+        "alt": "STFPM 正常學得像，缺陷就一定不同嗎？。已涵蓋的正常外觀應讓兩路特徵接近；但細刮傷也可能得到相近特徵而漏檢。允收的正常光澤若未被涵蓋，孔邊 q 反而可能有高差異。 本圖為 AI 生成教學示意，非模型實測。",
+        "callouts": [
+          {
+            "title": "資料分開保留",
+            "body": "正常訓練資料涵蓋不同實體件與允收光澤；另留未參與訓練的正常和真缺陷，避免近似影像跨集合。"
+          },
+          {
+            "title": "兩種錯誤一起查",
+            "body": "確認細刮傷是否在原圖清楚、正常光澤是否允收；不要用低訓練誤差推論現場不會漏檢。"
+          },
+          {
+            "title": "門檻的取捨",
+            "body": "提高門檻可能少誤報而多漏檢。固定驗證條件，比取像、資料或模型更換後的兩側錯誤及覆核量。"
+          }
+        ],
+        "reading_views": [
+          {
+            "title": "STFPM 正常學得像，缺陷就一定不同嗎？",
+            "image": "_course_content/generated-concepts/ad-stfpm/wi021-stfpm-d2-r02-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/ad-stfpm/wi021-stfpm-d2-r01-mobile.png",
+            "alt": "STFPM 正常學得像，缺陷就一定不同嗎？。已涵蓋的正常外觀應讓兩路特徵接近；但細刮傷也可能得到相近特徵而漏檢。允收的正常光澤若未被涵蓋，孔邊 q 反而可能有高差異。 本圖為 AI 生成教學示意，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              724,
+              2172
+            ],
+            "mobile_display_mode": "full-mobile",
+            "mobile_intrinsic_width": 724,
+            "mobile_intrinsic_height": 2172,
+            "desktop_intrinsic_width": 1672,
+            "desktop_intrinsic_height": 941
+          }
+        ],
+        "core_ideas": false
+      },
+      {
+        "id": "wi021-ad-stfpm-3",
+        "title": "STFPM、RD4AD、SubspaceAD：差異從哪裡來？",
+        "prompt": "固定同一工件與需求，看正常知識如何建立及哪兩個對象在比較。",
+        "caption": "STFPM 讓同原圖走教師與學生；RD4AD 由教師的嵌入經反向學生重建特徵；SubspaceAD 以正常特徵擬合 PCA 子空間，比待測特徵投影後的殘差。這是機制比較，不是性能排名。 固定硬體、解析度與前處理，按相同漏檢風險比較誤報、端到端時間及覆核量；較少模型部件不等於現場一定較快。",
+        "image": "_course_content/generated-concepts/ad-stfpm/wi021-feature-methods-d3-r02-desktop.png",
+        "alt": "STFPM、RD4AD、SubspaceAD：差異從哪裡來？。STFPM 讓同原圖走教師與學生；RD4AD 由教師的嵌入經反向學生重建特徵；SubspaceAD 以正常特徵擬合 PCA 子空間，比待測特徵投影後的殘差。這是機制比較，不是性能排名。 本圖為 AI 生成教學示意，非模型實測。",
+        "callouts": [
+          {
+            "title": "只有正常資料起步",
+            "body": "STFPM 需訓練學生，RD4AD 需訓練瓶頸與反向學生；SubspaceAD 固定 DINOv2 骨幹，但仍要正常樣本擬合 PCA。"
+          },
+          {
+            "title": "換產品仍要適配",
+            "body": "訓練方法需核對正常資料與重訓需求；子空間方法需核對重估正常表示。三者都要重新驗證門檻與錯誤。"
+          },
+          {
+            "title": "工作條件一起比",
+            "body": "同硬體、解析度及前處理下比較誤報、漏檢、端到端時間與覆核量；STFPM 有雙路編碼開銷，不能憑網路數量直接猜速度排名。"
+          }
+        ],
+        "reading_views": [
+          {
+            "title": "STFPM、RD4AD、SubspaceAD：差異從哪裡來？",
+            "image": "_course_content/generated-concepts/ad-stfpm/wi021-feature-methods-d3-r02-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/ad-stfpm/wi021-feature-methods-d3-r03-mobile.png",
+            "alt": "STFPM、RD4AD、SubspaceAD：差異從哪裡來？。STFPM 讓同原圖走教師與學生；RD4AD 由教師的嵌入經反向學生重建特徵；SubspaceAD 以正常特徵擬合 PCA 子空間，比待測特徵投影後的殘差。這是機制比較，不是性能排名。 本圖為 AI 生成教學示意，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              724,
+              2172
+            ],
+            "mobile_display_mode": "full-mobile",
+            "mobile_intrinsic_width": 724,
+            "mobile_intrinsic_height": 2172,
+            "desktop_intrinsic_width": 1672,
+            "desktop_intrinsic_height": 941
+          }
+        ],
+        "core_ideas": false
+      }
+    ]
+  },
+  "concept_visuals": [
+    {
+      "id": "causal-chain",
+      "placement": "after_causal_chain",
+      "title": "STFPM：先懂核心再看細節",
+      "prompt": "讓學生直接共享教師的全部權重與輸出，差異還有用嗎？",
+      "caption": "只有正常影像，仍想找各種尺寸的陌生局部。STFPM讓學生只練習模仿固定教師對正常影像的多尺度反應，用兩者不一致的位置提示異常。",
+      "image": "_course_content/generated-concepts/ad-stfpm/ad-stfpm-f01-core.png",
+      "alt": "只有正常影像，仍想找各種尺寸的陌生局部。STFPM讓學生只練習模仿固定教師對正常影像的多尺度反應，用兩者不一致的位置提示異常。 圖為既有生成工件與機制設定，不是模型推論。",
+      "callouts": [
+        {
+          "title": "教師固定、學生學習",
+          "body": "教師採預訓練網路；同架構學生只以正常資料學習，兩路都接收同一影像。"
+        },
+        {
+          "title": "多尺度模仿",
+          "body": "學生對齊教師的多層特徵，兼顧局部紋理與較大結構，不是只比整圖分類結果。"
+        },
+        {
+          "title": "測試看兩路落差",
+          "body": "正常處應接近，陌生處可能不同；各尺度差異對齊融合為位置線索，教師本身不需知道缺陷名稱。"
+        }
+      ]
+    },
+    {
+      "id": "worked-example",
+      "placement": "after_micro_example",
+      "title": "為何單一層看似平靜，融合後仍要小心？",
+      "prompt": "同一個局部在高解析與低解析層有不同差異；比較不同 fusion 會怎麼改候選。",
+      "caption": "小缺陷可能只在某一層可見，正常照明紋理也可能在另一層產生差異。layer product、resize 與 map max 會共同決定最終亮點，因此必須在真實 holdout 鎖定。",
+      "image": "_course_content/generated-concepts/ad-stfpm/ad-stfpm-worked-example_v01.svg",
+      "alt": "多層對照圖：兩張不同尺度的差異格圖分別呈現小橘色熱點與廣泛淡差異，經融合後形成單一候選圖和放大鏡。",
+      "callouts": [
+        {
+          "title": "多尺度訊號",
+          "body": "不同層看見的有效局部尺度不同。"
+        },
+        {
+          "title": "fusion 是模型狀態",
+          "body": "element-wise product 或其他規則不是可隨意替換的畫面處理。"
+        },
+        {
+          "title": "以低 FPR 驗證",
+          "body": "保留未參與訓練的正常與真實 challenge 才能檢查代價。"
+        }
+      ]
+    },
+    {
+      "id": "comparison",
+      "placement": "after_comparison",
+      "title": "STFPM 的平行模仿不是 RD4AD 的反向重建",
+      "prompt": "兩者都有 frozen teacher 和 feature discrepancy，但中間的正常路徑不同。",
+      "caption": "STFPM 是同架構 student 平行模仿 teacher；RD4AD 則用 one-class bottleneck 與 reverse decoder 重建 teacher feature。差異圖都不能直接被稱為 defect probability。",
+      "image": "_course_content/generated-concepts/ad-stfpm/ad-stfpm-comparison_v01.svg",
+      "alt": "左右比較圖：左邊 teacher與student並行金字塔，右邊 teacher金字塔進入瓶頸和反向decoder，兩側皆有橘色差異候選格。",
+      "callouts": [
+        {
+          "title": "STFPM",
+          "body": "逐層 teacher/student normal matching。"
+        },
+        {
+          "title": "RD4AD",
+          "body": "feature 經 one-class bottleneck 的反向重建。"
+        },
+        {
+          "title": "選擇不是靠名稱",
+          "body": "應在相同 ROI、support、層級、硬體與低 FPR 條件下比較。"
+        }
+      ]
+    },
+    {
+      "id": "boundary-cases-explainer",
+      "placement": "before_boundary_cases",
+      "title": "support、teacher domain 與 layer/fusion 各會怎麼改 discrepancy？",
+      "prompt": "STFPM 的 student 只學 normal teacher response；support、teacher 或 layer aggregation 被改動時，map 為何不能直接沿用？",
+      "caption": "STFPM 的三個模型專屬反事實：每欄把條件、可觀察後果與正確下一步放在一起。它們不是自動修正規則；遇到條件超出驗證範圍時，先保存原始證據並進入 HOLD／REVIEW。",
+      "image": "_course_content/generated-concepts/ad-stfpm/ad-stfpm-boundary-cases_v01.svg",
+      "alt": "STFPM 的三欄反事實說明圖：每欄依序說明一個失效條件、可能看到的候選或量測後果，以及應進入 HOLD、重驗或改選方法的安全下一步。",
+      "callouts": [
+        {
+          "title": "normal support 受污染或不足",
+          "body": "student 可能模仿異常或排斥合法 variation；先審計 support IDs、coverage、contamination 與 future split。"
+        },
+        {
+          "title": "teacher／illumination domain mismatch",
+          "body": "正常品多層 discrepancy 同時升高；先查 input recipe、ROI、teacher fit，而不是挑一張好看單層圖。"
+        },
+        {
+          "title": "layer、resize 或 fusion state 漂移",
+          "body": "aggregation 改了就不是原 operating point；HOLD，保留 per-layer trace，重驗 calibration、low-FPR 與 P95。"
+        }
+      ]
+    }
+  ],
+  "boundary_cases": [
+    {
+      "condition": "normal support 受污染或正常模式不足",
+      "effect": "student 可能學會不該模仿的異常，或對合法 normal variation 產生高 discrepancy。",
+      "action": "HOLD；審計 support IDs、coverage 與 contamination，重訓後在隔離 future split 驗證。"
+    },
+    {
+      "condition": "teacher pretraining/domain mismatch",
+      "effect": "teacher 的 feature 對目標微結構不穩，student 差異可能反映 domain gap 而非產品異常。",
+      "action": "用正常 lot/view/illumination 分層檢查 teacher/student maps；必要時改 feature backbone 或改選方法。"
+    },
+    {
+      "condition": "layer、fusion、ROI 或照明漂移；defect 小於有效尺度",
+      "effect": "差異可能被放大、稀釋或移位，map max 對雜訊也敏感。",
+      "action": "保存每層 map、resize/fusion/aggregation 版本，先查 acquisition state 與 effective pixels，再重新 qualification。"
+    }
+  ],
+  "comparison": [
+    {
+      "model": "STFPM",
+      "normality": "student 對 frozen teacher normal feature pyramid 的可預測性",
+      "candidate": "teacher/student normalized discrepancy 大"
+    },
+    {
+      "model": "RD4AD",
+      "normality": "one-class bottleneck＋reverse decoder 能重建 teacher feature",
+      "candidate": "teacher/reconstructed feature cosine discrepancy 大"
+    },
+    {
+      "model": "EfficientAD",
+      "normality": "PDN student 與 global AE 的已校正 local/global path",
+      "candidate": "fused local/global discrepancy 大"
+    }
+  ],
+  "selection": "有正常資料並能訓練學生時可試 STFPM；與 RD4AD 比較同圖雙路和反向重建路徑。正常樣本少或想免骨幹梯度更新可評估 SubspaceAD，但仍需擬合 PCA。換產品需重查資料與適配；固定硬體、影像和未見樣本一起量漏檢、誤報、時間及覆核成本。",
+  "poc": {
+    "title": "POC 第一件事：先證明學生是在模仿正常，而不是模仿資料偏差",
+    "steps": [
+      "固定 teacher checkpoint/frozen audit、student architecture/init/seed、selected layers、ROI/transform 與 clean normal IDs。",
+      "鎖 normalized matching loss、per-layer discrepancy、resize、layer fusion、aggregation、threshold 和候選 evidence trace。",
+      "在 challenge／future／drift split 報告 low-FPR escape、false reject/review load、layer ablation、teacher mismatch、P95/VRAM 與 seed spread。"
+    ],
+    "hold": "support 受污染、teacher/domain fit 不足、tiny defect 小於有效尺度、ROI／照明不穩或完整 P95 不符合流程時，先 HOLD。",
+    "acceptance": {
+      "baseline": "固定 frozen teacher、same-architecture student、selected layers、normal IDs、matching loss、fusion/aggregation 與 calibration。",
+      "measure": "量 low-FPR escape、false reject、review load、per-layer evidence、teacher mismatch、seed spread、P95/VRAM 與 drift。",
+      "negative_control": "在隔離實驗中改變 illumination／teacher layer 或混入可疑 normal support，確認流程能定位為 input/domain/support 破壞，而非用單層好看地圖掩蓋。",
+      "owner": "AOI 製程 owner、teacher/student ML owner、品質 owner"
+    }
+  },
+  "teach_back": {
+    "question": "如果兩路直接共用完全相同的權重和輸出，還有什麼差異可用？",
+    "answer": "相同輸入與相同權重會產生相同輸出，失去這條比較線索。STFPM 使用固定預訓練教師與正常訓練學生，但也不保證每種缺陷都讓兩路不同。"
+  },
+  "slide_reading": [
+    {
+      "title": "先找：誰固定、誰只學正常？",
+      "question": "teacher 和 student 的角色為何不能互換？",
+      "look": "找 frozen teacher、trainable student、normal ROI 與 selected layers。",
+      "relation": "teacher 提供固定 feature reference；student 用正常資料學對齊它。",
+      "takeaway": "STFPM 的 normality 是可模仿的教師反應，不是記憶庫。",
+      "terms": [
+        "frozen teacher：權重固定的預訓練參考網路",
+        "student：只用正常資料訓練的模仿網路"
+      ]
+    },
+    {
+      "title": "這張圖要核對 discrepancy 怎麼來",
+      "question": "為何先 normalize feature 再做 L2 差異？",
+      "look": "找 per-position normalization、layer-wise discrepancy 與 feature pyramid。",
+      "relation": "normalization 讓比較聚焦 feature 方向；選定層級各自形成局部差異圖。",
+      "takeaway": "高 discrepancy 是 feature 不一致，不是 defect probability。",
+      "terms": [
+        "feature normalization：把 feature 比較縮放到一致尺度",
+        "discrepancy map：每個位置的雙路 feature 差異圖"
+      ]
+    },
+    {
+      "title": "先鎖 layer fusion，才討論熱點",
+      "question": "為何同一局部在不同層和 fusion 下會變亮或變淡？",
+      "look": "找 resize、common grid、layer product 與 image max。",
+      "relation": "不同層的有效解析度不同，fusion 與 aggregation 將它們變成最終候選。",
+      "takeaway": "layer、fusion、smoothing 與 max 都是 score contract。",
+      "terms": [
+        "layer fusion：合併多層差異圖的規則",
+        "max aggregation：以熱圖最大值形成整圖分數"
+      ]
+    },
+    {
+      "title": "選它前，先看 teacher fit 與 support",
+      "question": "大差異何時可能只是量測或資料問題？",
+      "look": "看 contamination、domain mismatch、ROI/drift 與 effective pixels。",
+      "relation": "student 與 teacher 不合也會產生差異；normal support 與取像條件決定差異能否被正確解讀。",
+      "takeaway": "不確定原因時先 HOLD，並回看雙路輸入與證據 bundle。",
+      "terms": [
+        "domain mismatch：teacher 特徵與目標產品外觀不匹配",
+        "false reject：正常品被送入 review 或拒絕"
+      ]
+    }
+  ],
+  "comparison_headers": {
+    "title": "先比 teacher/student 正常模仿，不比單層亮圖",
+    "basis": "student 如何模仿 normal teacher response？",
+    "output": "哪個 multi-layer discrepancy 是 candidate？"
+  },
+  "transfer_check": {
+    "title": "熱圖要變成裂縫寬度，還缺什麼？",
+    "scenario": "下游希望得到裂縫的實際寬度與允收判定。",
+    "question": "教師學生差異圖是否足夠？",
+    "answer": "不足。熱區只提供可疑位置，需要穩定取像、足夠解析度、幾何與像素尺度校正、可驗證的邊界或分割及量測真值；不能把特徵差異範圍直接當毫米寬度。"
+  },
+  "review_trace": {
+    "authority": "roadmap-model-selection/anomaly-detection/ad-stfpm/model.md",
+    "scope": "WI-021：三張新首讀圖及手機版；正常訓練、同圖雙路多尺度、失敗對照及方法選型。",
+    "claims": [
+      {
+        "id": "visual-1",
+        "field": "beginner_path.visuals[same-aoi-workpiece]",
+        "source": "模型定位 / architecture_path"
+      },
+      {
+        "id": "visual-2",
+        "field": "beginner_path.visuals[dual-pyramid]",
+        "source": "architecture_path"
+      },
+      {
+        "id": "visual-3",
+        "field": "beginner_path.visuals[normal-matching]",
+        "source": "representation_or_score"
+      },
+      {
+        "id": "visual-4",
+        "field": "beginner_path.visuals[test-discrepancy]",
+        "source": "failure_boundary"
+      },
+      {
+        "id": "visual-5",
+        "field": "beginner_path.visuals[fusion-review]",
+        "source": "selection_gate / evidence_bundle"
+      },
+      {
+        "id": "visual-6",
+        "field": "beginner_path.visuals[boundary-rd4ad-choice]",
+        "source": "selection_gate / evidence_bundle"
+      },
+      {
+        "id": "promise",
+        "field": "promise",
+        "source": "模型定位 / representation_or_score"
+      },
+      {
+        "id": "mechanism",
+        "field": "mechanism_steps",
+        "source": "architecture_path / representation_or_score"
+      },
+      {
+        "id": "boundaries",
+        "field": "boundary_cases",
+        "source": "failure_boundary / selection_gate"
+      },
+      {
+        "id": "comparison",
+        "field": "comparison + selection",
+        "source": "selection_gate"
+      },
+      {
+        "id": "poc",
+        "field": "poc + acceptance",
+        "source": "cost_and_operating_point / evidence_bundle"
+      },
+      {
+        "id": "transfer",
+        "field": "transfer_check",
+        "source": "failure_boundary / selection_gate"
+      },
+      {
+        "id": "f01-core",
+        "field": "beginner_path.visuals[0] + scenario + mental_model",
+        "source": "https://arxiv.org/abs/2103.04257"
+      },
+      {
+        "id": "f01-transfer",
+        "field": "micro_example + transfer_check",
+        "source": "由原論文機制推論移除後果；https://arxiv.org/abs/2103.04257"
+      },
+      {
+        "id": "wi021-first-read",
+        "field": "beginner_path + micro_example + selection",
+        "source": "https://arxiv.org/abs/2103.04257；RD4AD https://arxiv.org/abs/2201.10703；SubspaceAD https://arxiv.org/abs/2602.23013"
+      }
+    ]
+  },
+  "teaching_preflight": {
+    "brief": "teaching-images/vision-ai-model-selection/workitems/wi-021/stfpm-c1-r01.md",
+    "story": "C",
+    "major_visual_nodes": 4,
+    "visual_status": "self-reviewed",
+    "user_review": "pending"
+  }
+}

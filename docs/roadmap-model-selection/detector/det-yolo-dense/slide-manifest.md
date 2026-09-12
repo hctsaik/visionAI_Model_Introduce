@@ -1,8 +1,14 @@
 # YOLO dense detector slide manifest
 
-| slide_id | 講義對照 | 教學目標 | 版型 | active asset | 狀態 |
-| --- | --- | --- | --- | --- | --- |
-| `YOLO-01` | 03-02 | 定位 YOLO 為版本專屬的 dense one-stage known-object detector，區分 Box/ROI 與未知、tiny、mask/量測邊界。 | C | `images/final/YOLO-01-positioning_v02-ppt-master-style.png` | approved |
-| `YOLO-02` | 03-03 | 顯示 backbone、multi-scale neck/heads、feature-location candidates、decode、NMS 與 stride/assignment 風險。 | C | `images/final/YOLO-02-architecture_v02-ppt-master-style.png` | approved |
-| `YOLO-03` | 03-04 | 說明 labels/ignore/assignment/loss 與 letterbox、decode、NMS、inverse mapping、ROI crop 的端到端流程。 | C | `images/final/YOLO-03-build-inference_v02-ppt-master-style.png` | approved |
-| `YOLO-04` | 03-05 | 對照適用條件與 tiny/overlap/tile/taxonomy 失效，並以共同 contract 比較 RT-DETR/DINO detector。 | D | `images/final/YOLO-04-selection-boundary_v02-ppt-comparison-style.png` | approved |
+| slide_id | 教學目標 | 版型 | active asset | 狀態 |
+| --- | --- | --- | --- | --- |
+| `YOLO-01` | YOLOv8式：從有標註的物件學出框 | C | `images/final/WI033-YOLO-01-r01-desktop.png` | native_and_page_reviewed_user_pending |
+| `YOLO-02` | YOLOv8式：候選重複，按分數去重 | C | `images/final/WI033-YOLO-02-r02-desktop.png` | native_and_page_reviewed_user_pending |
+| `YOLO-03` | YOLO：去重設定也屬於交付條件 | C | `images/final/WI033-YOLO-03-r02-desktop.png` | native_and_page_reviewed_user_pending |
+| `YOLO-04` | YOLO與RT-DETR：同一PCB比較交付 | D | `images/final/WI033-YOLO-04-r01-desktop.png` | native_and_page_reviewed_user_pending |
+
+## 保留的歷史來源（非目前啟用）
+- [YOLO-01](images/final/YOLO-01-positioning_v02-ppt-master-style.png)
+- [YOLO-02](images/final/YOLO-02-architecture_v02-ppt-master-style.png)
+- [YOLO-03](images/final/YOLO-03-build-inference_v02-ppt-master-style.png)
+- [YOLO-04](images/final/YOLO-04-selection-boundary_v02-ppt-comparison-style.png)
