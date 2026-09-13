@@ -1,5 +1,17 @@
 ## WI-038 需求導向 PoC 實作與發布
 
+公開網站已更新；HTTP SHA-256 與 docs 一致，公開桌面／手機逐題、結果及計畫操作通過。功能提交 e6b415f 已推送。所有實作項目完成；使用者成品審閱 pending。
+
+唯一 checklist：teaching-images/vision-ai-model-selection/workitems/wi-038/PLAN.md。
+
+## WI-038 需求導向 PoC 實作與發布
+
+e6b415f 已提交並 push origin/main。33 檔含新流程、WI037設計、Markdown學習與來源快照。公開部署待驗證；下一步執行 verify-public.py，需公開 HTML SHA-256=561617fd 與桌面／手機流程通過才算發布完成。
+
+唯一 checklist：teaching-images/vision-ai-model-selection/workitems/wi-038/PLAN.md。
+
+## WI-038 需求導向 PoC 實作與發布
+
 功能、28 項瀏覽器檢查（26 全套＋2 舊稿補驗）、15 項規則測試及9項回歸測試完成。12 張實際頁面截圖已檢查，source/docs一致且課程資料未改。即將 Git 提交推送，公開驗證尚未完成；使用者成品審閱 pending。
 
 唯一 checklist：teaching-images/vision-ai-model-selection/workitems/wi-038/PLAN.md。

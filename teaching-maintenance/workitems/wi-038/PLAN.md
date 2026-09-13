@@ -11,8 +11,10 @@
 - [x] 整合結果、返回重算、草稿保護、Markdown／JSON 與課程入口。
 - [x] 六項案例及關鍵答案反證測試；桌面／手機、鍵盤、保存與匯出實測。
 - [x] 實看實際頁面截圖，核對規則／結果語義及課程資料未意外變更。
-- [ ] 更新報告、學習與來源快照，完成 Git 提交推送與公開頁驗證。
+- [x] 更新報告、學習與來源快照，完成 Git 提交推送與公開頁驗證。
 
 Checkpoint：文件與授權已落盤，規則和介面由其他 Agent 實作中。預期產物：_course_content/poc-decision.js、更新的 poc-workbench.js／CSS、tests/test_poc_decision.cjs、test_poc_workbench.py 及本目錄證據。下一步核對整合與案例測試。新功能測試、頁面實看、公開部署尚未完成；使用者成品審閱 pending。無已知阻礙。
 
 最新 checkpoint：功能、28 項瀏覽器檢查（26 全套＋2 舊稿補驗）、15 項規則測試及9項回歸測試完成。12 張實際頁面截圖已檢查，source/docs一致且課程資料未改。即將 Git 提交推送，公開驗證尚未完成；使用者成品審閱 pending。
+
+最新 checkpoint：公開網站已更新；HTTP SHA-256 與 docs 一致，公開桌面／手機逐題、結果及計畫操作通過。功能提交 e6b415f 已推送。所有實作項目完成；使用者成品審閱 pending。
