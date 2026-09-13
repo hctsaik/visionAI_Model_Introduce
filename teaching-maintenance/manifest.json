@@ -15969,17 +15969,17 @@
     {
       "snapshot": "project/WORKITEMS.md",
       "source": "C:\\code\\claude\\visionAI\\WORKITEMS.md",
-      "sha256": "f58572a17479056dd47dc701aef735fd3139f9a423af8fc8ecbf0cf68ea05c0a"
+      "sha256": "c255527d0bdec8f0b96baaf64d36a6cebddda56cbd89c93e32b9b2643094dc6b"
     },
     {
       "snapshot": "course/BEGINNER_VISUAL_TODO.md",
       "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\BEGINNER_VISUAL_TODO.md",
-      "sha256": "54c8a970803ec9017ebcdf2325cf2b87db6bc03c29dc3df60a010a4c7b1774c6"
+      "sha256": "ecb19e5b0acbbb928122b695b90e9da9373e1d0caacbbaf7500e6dfe2cf6dc12"
     },
     {
       "snapshot": "course/BEGINNER_VISUAL_STATUS.md",
       "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\BEGINNER_VISUAL_STATUS.md",
-      "sha256": "a64eff1ffdcf657fd8731ed7c0bf80bb2bf65882dc6b352bf58380808b41c289"
+      "sha256": "1275be2c67bee4323360692aa5125a4b9862d9b843ede033fc3a6791a38aa812"
     },
     {
       "snapshot": "workitems/wi-035/baseline.py",
@@ -16804,7 +16804,7 @@
     {
       "snapshot": "workitems/wi-040/PLAN.md",
       "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-040\\PLAN.md",
-      "sha256": "d7f9ea3b135496b9cf9870a5aeab115a23f653a1ac01a30d534b71c7831763b0"
+      "sha256": "91e46271e9f1b641a7a7dc31b21342952872b03cac3f204afe563019ce9b1029"
     },
     {
       "snapshot": "workitems/wi-040/preflight.md",
@@ -16814,7 +16814,7 @@
     {
       "snapshot": "workitems/wi-040/REPORT.md",
       "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-040\\REPORT.md",
-      "sha256": "7686dfd2b2082d8903fe61fd932334fe23cde3766fc23871526d05700c9f3579"
+      "sha256": "7f22bd3d6238a3d0b0a4aa84f358ddb138dbe3a1d8aeebd664d3e380cbbc989c"
     },
     {
       "snapshot": "workitems/wi-040/setup_records.py",
@@ -17105,6 +17105,11 @@
       "snapshot": "workitems/wi-040/regression-results.json",
       "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-040\\regression-results.json",
       "sha256": "613509fb232468d0767f01f761b03a7e1433729d503d29f484550a5c6fe42922"
+    },
+    {
+      "snapshot": "workitems/wi-040/release-verification.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-040\\release-verification.json",
+      "sha256": "caebaa9f6691ba0f3e47cb0e8e2331b2fd7a72b00f92d919a330bea4acaa0ce7"
     }
   ],
   "latest_local_audit": "WI-031; audit evidence remains at workitems/wi-031 in authoring workspace; not published"

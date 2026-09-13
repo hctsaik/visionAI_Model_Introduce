@@ -1,5 +1,17 @@
 ## WI-040 定版收尾
 
+公開網站驗證通過：HTML與docs相同，桌面／手機從首頁進需求助手、產生計畫、拒絕錯檔並保留原稿均通過。功能提交 542f57d 已推送。三項收尾完成；使用者成品審閱 pending。
+
+唯一 checklist：teaching-images/vision-ai-model-selection/workitems/wi-040/PLAN.md。
+
+## WI-040 定版收尾
+
+542f57d 已提交 push origin/main，包含三項修正、前輪審查及本輪Markdown學習。公開部署等待中；下一步 verify-public.py 核對43c3557a hash、首頁到需求流程與錯檔拒絕。不可把push當部署完成。
+
+唯一 checklist：teaching-images/vision-ai-model-selection/workitems/wi-040/PLAN.md。
+
+## WI-040 定版收尾
+
 三項修正與本機驗證完成：12項新行為測試、13項既有PoC、3項導覽斷言通過；10張截圖實看，僅三課mechanism_steps變更。即將提交推送與驗證公開站，公開發布未完成。
 
 唯一 checklist：teaching-images/vision-ai-model-selection/workitems/wi-040/PLAN.md。
