@@ -1,0 +1,15 @@
+﻿{
+  "brief": "C:/code/claude/visionAI/teaching-images/vision-ai-model-selection/workitems/wi-038/preflight.md",
+  "objective": "不懂模型的使用者能依現場需求取得有理由的方法方向與下一個比較實驗。",
+  "page_type": "C — Engineer + AI Story；從現場工作與可用條件逐步推導試做方式。",
+  "node_count": 4,
+  "reference": "teaching-images/vision-ai-model-selection/interactive-learning.html",
+  "takeaway": "先依現場條件決定怎麼試，再用實拍資料確認是否值得採用。（#FFF4CC）",
+  "required_files_present": [
+    true,
+    true,
+    true,
+    true,
+    true
+  ]
+}

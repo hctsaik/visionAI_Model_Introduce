@@ -1,3 +1,35 @@
+## WI-038 需求導向 PoC 實作與發布
+
+功能、28 項瀏覽器檢查（26 全套＋2 舊稿補驗）、15 項規則測試及9項回歸測試完成。12 張實際頁面截圖已檢查，source/docs一致且課程資料未改。即將 Git 提交推送，公開驗證尚未完成；使用者成品審閱 pending。
+
+唯一 checklist：teaching-images/vision-ai-model-selection/workitems/wi-038/PLAN.md。
+
+## WI-038 需求導向 PoC 實作與發布
+
+兩入口各 13 項瀏覽器測試通過（含六案例子測試），另有 15 規則、3 導覽、4 mobile 及 2 bundle 測試通過。獨立審查找出課程帶入會改寫舊輸出，已改成獨立 _courseNotes，正在重新建置並補跑舊稿保護測試。截圖與正式發布未完成。
+
+唯一 checklist：teaching-images/vision-ai-model-selection/workitems/wi-038/PLAN.md。
+
+## WI-038 需求導向 PoC 實作與發布
+
+決策規則與單題介面已落盤。15 項規則測試、3 項導覽測試通過；瀏覽器測試進行中。正在重新產生最終引擎版本 HTML，之後依序建置 docs、實看截圖與公開部署。舊草稿保留於歷史區和 JSON，新計畫不混入舊模型答案。使用者成品審閱 pending。
+
+唯一 checklist：teaching-images/vision-ai-model-selection/workitems/wi-038/PLAN.md。
+
+## WI-038 需求導向 PoC 實作與發布
+
+使用者已授權依 WI-037 Multi Agent 設計實作並發布。四節點預檢、六案例及來源同步腳本已落盤；規則与介面分工實作中。下一步整合需求導向推導並跑案例／桌面／手機驗證。新功能測試未跑、實際頁面未審、尚未發布 WI-038；使用者成品審閱 pending。
+
+唯一 checklist：teaching-images/vision-ai-model-selection/workitems/wi-038/PLAN.md。
+
+## WI-037 Multi Agent 設計完成
+
+三位獨立 Agent 加主 Agent 已整合需求導向流程、兩項交叉反證與六個驗收案例；詳 teaching-images/vision-ai-model-selection/workitems/wi-037/DESIGN.md。學習已寫入共用指南與 review log。現行程式未修改，未跑新功能測試、未重新發布；網站仍為 WI-036。下一個具體動作是依此設計實作決策規則与結果頁，不能再只替換表單元件；設計使用者審閱 pending。
+
+## WI-037 Multi Agent 選型流程設計
+
+使用者要求重新思考功能目的：由現場需求導出方法，不要求先選模型。三位獨立 Agent 已啟動；主 Agent 整合具體分支、结果與案例。唯一 checklist：teaching-images/vision-ai-model-selection/workitems/wi-037/PLAN.md。本輪設計進行中，程式未修改、未重新發布。
+
 ## WI-036 下拉選擇題
 
 WI-036 已完成並發布：九項下拉選擇题、相依輸出選項、選填補充及舊草稿保留均完成。24 項行為測試通過，公开桌面／手機下拉與預覽實測通過，公開 HTML hash 09eb11b8 與本機相同。功能提交 ae7b513 已推送；學習已寫入 Markdown，沒有待實作項目。使用者成品審閱 pending。

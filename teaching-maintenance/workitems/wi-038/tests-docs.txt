@@ -1,0 +1,39 @@
+Docs URL: http://127.0.0.1:8000/docs/index.html
+Unittest result: 13 tests, OK (76.715 seconds).
+PowerShell wrapper exit: 1 because unittest's stderr output was wrapped as NativeCommandError by redirection. Original log follows; Python exit code was not separately captured.
+
+python : test_backtracking_invalidates_confirmation_and_recomputes_result (test_poc_workbench.PocWorkbenchTests.test_ba
+cktracking_invalidates_confirmation_and_recomputes_result) ... ok
+At line:2 char:1
++ python -X utf8 -m unittest discover -s tests -p test_poc_workbench.py ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (test_backtracki..._result) ... ok:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+test_example_cancel_and_undo (test_poc_workbench.PocWorkbenchTests.test_example_cancel_and_undo) ... ok
+test_generation_does_not_require_existing_image (test_poc_workbench.PocWorkbenchTests.test_generation_does_not_require_
+existing_image) ... ok
+test_json_roundtrip_preserves_branch_answers (test_poc_workbench.PocWorkbenchTests.test_json_roundtrip_preserves_branch
+_answers) ... ok
+test_legacy_draft_preserved_during_new_journey (test_poc_workbench.PocWorkbenchTests.test_legacy_draft_preserved_during
+_new_journey) ... ok
+test_lesson_handoff_keeps_candidate_as_context (test_poc_workbench.PocWorkbenchTests.test_lesson_handoff_keeps_candidat
+e_as_context) ... ok
+test_markdown_contains_result_and_print_preview (test_poc_workbench.PocWorkbenchTests.test_markdown_contains_result_and
+_print_preview) ... ok
+test_mobile_keyboard_and_no_horizontal_overflow (test_poc_workbench.PocWorkbenchTests.test_mobile_keyboard_and_no_horiz
+ontal_overflow) ... ok
+test_reload_restores_confirmed_answers_and_current_question (test_poc_workbench.PocWorkbenchTests.test_reload_restores_
+confirmed_answers_and_current_question) ... ok
+test_reset_and_undo_preserve_learning (test_poc_workbench.PocWorkbenchTests.test_reset_and_undo_preserve_learning) ... 
+ok
+test_six_demand_scenarios_without_model_or_free_text (test_poc_workbench.PocWorkbenchTests.test_six_demand_scenarios_wi
+thout_model_or_free_text) ... ok
+test_storage_failure_is_visible (test_poc_workbench.PocWorkbenchTests.test_storage_failure_is_visible) ... ok
+test_unknown_answer_provides_next_step (test_poc_workbench.PocWorkbenchTests.test_unknown_answer_provides_next_step) ..
+. ok
+
+----------------------------------------------------------------------
+Ran 13 tests in 76.715s
+
+OK

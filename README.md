@@ -18,14 +18,18 @@ visual assets and lesson documents it references. It intentionally excludes loca
 caches, prompt intermediates, raw image-generation material, and presentation
 source files.
 
-The latest revision (WI-036) makes all nine PoC answers dropdown choices, with
-task-dependent outputs and optional notes. Existing free-text drafts are preserved.
+The latest revision (WI-038) guides users from everyday tasks and site conditions
+to a method, reasons, missing prerequisites, and a small validation experiment.
+Each dropdown answer changes the relevant follow-up questions. Model selection
+is no longer an input requirement; related lessons appear only after the result.
+Old drafts remain available for comparison and JSON backup. See the
+[implementation report](teaching-maintenance/workitems/wi-038/REPORT.md).
 The previous revision (WI-035) adds a three-step PoC workbench with model-specific
 guidance, draft progress, editable previews, Markdown export, and protected
 example imports. It also corrects mechanism text in 19 lessons and detector
 selection summaries. See [the change report](teaching-maintenance/workitems/wi-035/REPORT.md)
 and [reusable teaching lessons](teaching-maintenance/project/TEACHING_WEBPAGE_GUIDE.md).
-Draft completeness indicates filled fields, not validated model performance.
+Suggested methods remain subject to validation on independent site data.
 
 An earlier teaching revision (WI-030) rebuilds four anomaly-detection lessons
 and eight classification, segmentation and pose lessons with 42 distinct

@@ -1,0 +1,22 @@
+Source URL: http://127.0.0.1:8000/interactive-learning.html
+Command: python -X utf8 -m unittest discover -s tests -p test_poc_workbench.py -v
+Terminal output transcribed from exec session 62759; exit code 0.
+
+test_backtracking_invalidates_confirmation_and_recomputes_result ... ok
+test_example_cancel_and_undo ... ok
+test_generation_does_not_require_existing_image ... ok
+test_json_roundtrip_preserves_branch_answers ... ok
+test_legacy_draft_preserved_during_new_journey ... ok
+test_lesson_handoff_keeps_candidate_as_context ... ok
+test_markdown_contains_result_and_print_preview ... ok
+test_mobile_keyboard_and_no_horizontal_overflow ... ok
+test_reload_restores_confirmed_answers_and_current_question ... ok
+test_reset_and_undo_preserve_learning ... ok
+test_six_demand_scenarios_without_model_or_free_text ... ok
+test_storage_failure_is_visible ... ok
+test_unknown_answer_provides_next_step ... ok
+
+----------------------------------------------------------------------
+Ran 13 tests in 123.819s
+
+OK

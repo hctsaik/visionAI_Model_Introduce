@@ -1,0 +1,6 @@
+test_lesson_handoff_keeps_candidate_as_context (__main__.PocWorkbenchTests.test_lesson_handoff_keeps_candidate_as_context) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 9.889s
+
+OK
