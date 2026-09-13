@@ -1,0 +1,14 @@
+{
+  "changed_topics": [
+    "convnext",
+    "ad-anomalygpt",
+    "v-jepa"
+  ],
+  "only_mechanism_steps_changed": true,
+  "source_docs_equal": true,
+  "sha256": "43c3557afba4300ad67425bdaba432e0a3582a14e227af0144711db1c0e75e28",
+  "desktop_mobile_screenshots": 10,
+  "capture_note": "Fixed navigation hidden only in isolated causal-chain screenshots to avoid screenshot overlays. Home captures unchanged.",
+  "browser_errors": [],
+  "user_review": "pending"
+}

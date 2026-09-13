@@ -1,0 +1,44 @@
+[
+  {
+    "text": "試看：料盤漏裝",
+    "action": "fill-poc-example",
+    "topic": null,
+    "y": 260
+  },
+  {
+    "text": "撤銷上次帶入／清除",
+    "action": "poc-undo",
+    "topic": null,
+    "y": 0
+  },
+  {
+    "text": "繼續 →",
+    "action": "poc-next",
+    "topic": null,
+    "y": 745
+  },
+  {
+    "text": "",
+    "action": "export-poc-markdown",
+    "topic": null,
+    "y": 1057
+  },
+  {
+    "text": "",
+    "action": "export-progress",
+    "topic": null,
+    "y": 1057
+  },
+  {
+    "text": "",
+    "action": "poc-reset",
+    "topic": null,
+    "y": 1057
+  },
+  {
+    "text": "",
+    "action": "clear-progress",
+    "topic": null,
+    "y": 1057
+  }
+]

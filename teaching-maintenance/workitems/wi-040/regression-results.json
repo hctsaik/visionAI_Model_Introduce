@@ -1,0 +1,5 @@
+{
+  "poc_workbench": {"tests":13,"seconds":50.831,"exit_code":0,"result":"OK","route":"docs/index.html"},
+  "interactive_navigation": {"tests":3,"exit_code":0,"result":"OK","scope":"template assertions"},
+  "note":"Recorded from actual tool completion. Later homepage headline-only adjustment is covered by final visual and public journey checks."
+}

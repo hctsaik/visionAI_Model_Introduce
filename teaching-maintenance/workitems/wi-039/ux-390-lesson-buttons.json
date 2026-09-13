@@ -1,0 +1,158 @@
+[
+  {
+    "text": "首頁",
+    "action": "go",
+    "topic": null,
+    "y": 92
+  },
+  {
+    "text": "物件偵測與開放詞彙候選",
+    "action": "filter-family",
+    "topic": null,
+    "y": 92
+  },
+  {
+    "text": "完成本主題",
+    "action": "toggle-complete",
+    "topic": "det-dino-detector",
+    "y": 407
+  },
+  {
+    "text": "☆ 收藏",
+    "action": "bookmark",
+    "topic": "det-dino-detector",
+    "y": 407
+  },
+  {
+    "text": "放大完整圖",
+    "action": "open-concept",
+    "topic": null,
+    "y": 1618
+  },
+  {
+    "text": "放大完整圖",
+    "action": "open-concept",
+    "topic": null,
+    "y": 3368
+  },
+  {
+    "text": "放大完整圖",
+    "action": "open-concept",
+    "topic": null,
+    "y": 4627
+  },
+  {
+    "text": "",
+    "action": "jump-step",
+    "topic": "det-dino-detector",
+    "y": 6303
+  },
+  {
+    "text": "",
+    "action": "jump-step",
+    "topic": "det-dino-detector",
+    "y": 6303
+  },
+  {
+    "text": "",
+    "action": "jump-step",
+    "topic": "det-dino-detector",
+    "y": 6349
+  },
+  {
+    "text": "",
+    "action": "jump-step",
+    "topic": "det-dino-detector",
+    "y": 6349
+  },
+  {
+    "text": "",
+    "action": "open-lightbox",
+    "topic": "det-dino-detector",
+    "y": 6575
+  },
+  {
+    "text": "",
+    "action": "jump-step",
+    "topic": "det-dino-detector",
+    "y": 9006
+  },
+  {
+    "text": "",
+    "action": "open-lightbox",
+    "topic": "det-dino-detector",
+    "y": 9291
+  },
+  {
+    "text": "",
+    "action": "jump-step",
+    "topic": "det-dino-detector",
+    "y": 10603
+  },
+  {
+    "text": "",
+    "action": "open-lightbox",
+    "topic": "det-dino-detector",
+    "y": 10888
+  },
+  {
+    "text": "",
+    "action": "jump-step",
+    "topic": "det-dino-detector",
+    "y": 12202
+  },
+  {
+    "text": "",
+    "action": "open-lightbox",
+    "topic": "det-dino-detector",
+    "y": 12487
+  },
+  {
+    "text": "把這張操作卡帶入 POC 畫布 →",
+    "action": "send-to-poc",
+    "topic": "det-dino-detector",
+    "y": 7364
+  },
+  {
+    "text": "YOLO dense detector →",
+    "action": "lesson",
+    "topic": "det-yolo-dense",
+    "y": 7750
+  },
+  {
+    "text": "RT-DETR →",
+    "action": "lesson",
+    "topic": "det-rtdetr",
+    "y": 7750
+  },
+  {
+    "text": "Grounding DINO →",
+    "action": "lesson",
+    "topic": "det-grounding-dino-interface",
+    "y": 7799
+  },
+  {
+    "text": "YOLO-World →",
+    "action": "lesson",
+    "topic": "yolo-world",
+    "y": 7799
+  },
+  {
+    "text": "查看家族比較 →",
+    "action": "filter-family",
+    "topic": null,
+    "y": 7847
+  },
+  {
+    "text": "← RT-DETR",
+    "action": "lesson",
+    "topic": "det-rtdetr",
+    "y": 7929
+  },
+  {
+    "text": "Grounding DINO →",
+    "action": "lesson",
+    "topic": "det-grounding-dino-interface",
+    "y": 7929
+  }
+]

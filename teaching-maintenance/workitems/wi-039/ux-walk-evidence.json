@@ -1,0 +1,18 @@
+[
+  {
+    "width": 1440,
+    "home_cta_lesson": "http://127.0.0.1:8000/docs/index.html#view=lesson&lesson=charuco&slide=1",
+    "complete_without_check": true,
+    "learning_check_y": 4234,
+    "result_title": "先試對齊固定位置，再逐格檢查有無",
+    "overflow": false
+  },
+  {
+    "width": 390,
+    "home_cta_lesson": "http://127.0.0.1:8000/docs/index.html#view=lesson&lesson=charuco&slide=1",
+    "complete_without_check": true,
+    "learning_check_y": 7696,
+    "result_title": "先試對齊固定位置，再逐格檢查有無",
+    "overflow": false
+  }
+]

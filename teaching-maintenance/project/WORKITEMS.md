@@ -1,3 +1,29 @@
+## WI-040 定版收尾
+
+三項修正與本機驗證完成：12項新行為測試、13項既有PoC、3項導覽斷言通過；10張截圖實看，僅三課mechanism_steps變更。即將提交推送與驗證公開站，公開發布未完成。
+
+唯一 checklist：teaching-images/vision-ai-model-selection/workitems/wi-040/PLAN.md。
+
+## WI-040 定版收尾
+
+三項修正已實作、source/docs 建置完成。課程版 6 項備份與首頁測試通過（含9錯檔子案例、合法v1/v2、取消與儲存失敗），部署版與既有PoC回歸正在驗證；預檢通過。下一步實看8張桌面手機截圖、核對僅三課mechanism_steps改變，再提交發布。
+
+唯一 checklist：teaching-images/vision-ai-model-selection/workitems/wi-040/PLAN.md。
+
+## WI-040 定版收尾
+
+已授權更新網站三項收尾。三課文字與測試分工進行中，主 Agent 處理備份驗證及首頁入口。新測試未跑、公开版本未改，使用者成品審閱 pending。
+
+唯一 checklist：teaching-images/vision-ai-model-selection/workitems/wi-040/PLAN.md。
+
+## WI-039 全站定版審查完成
+
+三位 Agent 加主 Agent 已完成本輪審查。結論：可公開使用，定版前先收尾備份錯檔保護、首頁需求入口、三課文字一致性。詳 teaching-images/vision-ai-model-selection/workitems/wi-039/REVIEW.md；唯一 checklist 為同目錄 PLAN.md。公開版本hash561617fd與本機相同；18課／7家族抽查，不宣稱319圖全驗。產品未修改，待修項未實作，沒有Git或發布。
+
+## WI-039 Multi Agent 全站定版審查
+
+使用者要求重新檢查是否可定版。三位 Agent 分別審查內容、操作、一致性；主 Agent 驗證成品與裁決。只審查與記錄，未修改網站。下一步整合可重現發現。Checklist：teaching-images/vision-ai-model-selection/workitems/wi-039/PLAN.md。
+
 ## WI-038 需求導向 PoC 實作與發布
 
 公開網站已更新；HTTP SHA-256 與 docs 一致，公開桌面／手機逐題、結果及計畫操作通過。功能提交 e6b415f 已推送。所有實作項目完成；使用者成品審閱 pending。

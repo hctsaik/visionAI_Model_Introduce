@@ -1,0 +1,104 @@
+[
+  {
+    "text": "從第一張教學圖開始：ChArUco",
+    "action": "lesson",
+    "topic": "charuco",
+    "y": 424
+  },
+  {
+    "text": "先看共同工程前提",
+    "action": "go",
+    "topic": null,
+    "y": 480
+  },
+  {
+    "text": "探索模型家族",
+    "action": "go",
+    "topic": null,
+    "y": 480
+  },
+  {
+    "text": "",
+    "action": "lesson",
+    "topic": "charuco",
+    "y": 833
+  },
+  {
+    "text": "1\n相機位置或尺寸可信嗎？\n\n先讓同一個真實位置在每張畫面中對得上。\n\n直接閱讀第一張圖 →",
+    "action": "start-family",
+    "topic": null,
+    "y": 1333
+  },
+  {
+    "text": "2\n你已知道要找什麼嗎？\n\n用類別、位置、輪廓或關鍵點交付結果。\n\n直接閱讀第一張圖 →",
+    "action": "start-family",
+    "topic": null,
+    "y": 1538
+  },
+  {
+    "text": "3\n你只知道什麼是正常嗎？\n\n先找出不像正常品的位置，再交給人確認。\n\n直接閱讀第一張圖 →",
+    "action": "start-family",
+    "topic": null,
+    "y": 1743
+  },
+  {
+    "text": "4\n你要看移動或影片事件嗎？\n\n先分清是看變化、移動、軌跡還是事件。\n\n直接閱讀第一張圖 →",
+    "action": "start-family",
+    "topic": null,
+    "y": 1948
+  },
+  {
+    "text": "5\n你想用文字或圖片輔助嗎？\n\n先拿候選排序或文字建議，不直接做決策。\n\n直接閱讀第一張圖 →",
+    "action": "start-family",
+    "topic": null,
+    "y": 2153
+  },
+  {
+    "text": "6\n你想生成或讓畫面更清楚嗎？\n\n只做訓練或閱讀輔助，原圖仍是證據。\n\n直接閱讀第一張圖 →",
+    "action": "start-family",
+    "topic": null,
+    "y": 2358
+  },
+  {
+    "text": "→\n先讓畫面位置可信\n\n先讓相機和產品位置對得上，再做後續檢查或量測。\n\n20–35 分鐘 · 4 個核心錨點",
+    "action": "start-track",
+    "topic": null,
+    "y": 2745
+  },
+  {
+    "text": "→\n你已知道要找什麼\n\n已知類別或標註時，選整張判斷、位置、輪廓或位置點。\n\n35–55 分鐘 · 4 個核心錨點",
+    "action": "start-track",
+    "topic": null,
+    "y": 2950
+  },
+  {
+    "text": "→\n你只知道什麼是正常\n\n先收集乾淨正常品，再找出新影像不像正常的地方。\n\n45–70 分鐘 · 3 個核心錨點",
+    "action": "start-track",
+    "topic": null,
+    "y": 3157
+  },
+  {
+    "text": "→\n你要看影片中的變化\n\n先分清是看變化、移動、同一物件，還是完整事件。\n\n30–50 分鐘 · 3 個核心錨點",
+    "action": "start-track",
+    "topic": null,
+    "y": 3362
+  },
+  {
+    "text": "→\n你要用文字或圖片輔助\n\n把影像特徵、文字搜尋和看圖問答當成候選與協助，不是決策。\n\n30–50 分鐘 · 4 個核心錨點",
+    "action": "start-track",
+    "topic": null,
+    "y": 3567
+  },
+  {
+    "text": "→\n你要生成或看清畫面\n\n生成、編修和復原只做訓練或閱讀輔助，原圖仍是證據。\n\n25–45 分鐘 · 3 個核心錨點",
+    "action": "start-track",
+    "topic": null,
+    "y": 3774
+  },
+  {
+    "text": "打開共同前提教學圖 →",
+    "action": "go",
+    "topic": null,
+    "y": 4037
+  }
+]

@@ -1,0 +1,50 @@
+test_cancel_valid_import_keeps_exact_original_state (__main__.ReleaseHardeningTests.test_cancel_valid_import_keeps_exact_original_state) ... ok
+test_home_primary_action_opens_task_without_model_knowledge (__main__.ReleaseHardeningTests.test_home_primary_action_opens_task_without_model_knowledge) ... ok
+test_invalid_backups_are_rejected_before_confirmation_without_mutating_state (__main__.ReleaseHardeningTests.test_invalid_backups_are_rejected_before_confirmation_without_mutating_state) ... ok
+test_new_export_has_application_identity_and_roundtrips (__main__.ReleaseHardeningTests.test_new_export_has_application_identity_and_roundtrips) ... ok
+test_storage_failure_preserves_saved_and_visible_original (__main__.ReleaseHardeningTests.test_storage_failure_preserves_saved_and_visible_original) ... ERROR
+test_supported_legacy_v1_and_v2_backups_are_accepted (__main__.ReleaseHardeningTests.test_supported_legacy_v1_and_v2_backups_are_accepted) ... ok
+
+======================================================================
+ERROR: test_storage_failure_preserves_saved_and_visible_original (__main__.ReleaseHardeningTests.test_storage_failure_preserves_saved_and_visible_original)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\code\claude\visionAI\teaching-images\vision-ai-model-selection\tests\test_release_hardening.py", line 105, in test_storage_failure_preserves_saved_and_visible_original
+    self.page.evaluate("Storage.prototype.setItem=function(){throw new Error('test storage unavailable');}")
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hctsa\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\playwright\sync_api\_generated.py", line 8566, in evaluate
+    self._sync(
+    ~~~~~~~~~~^
+        self._impl_obj.evaluate(expression=expression, arg=mapping.to_impl(arg))
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\hctsa\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\playwright\_impl\_sync_base.py", line 115, in _sync
+    return task.result()
+           ~~~~~~~~~~~^^
+  File "C:\Users\hctsa\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\playwright\_impl\_page.py", line 464, in evaluate
+    return await self._main_frame.evaluate(expression, arg)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hctsa\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\playwright\_impl\_frame.py", line 320, in evaluate
+    await self._channel.send(
+    ...<6 lines>...
+    )
+  File "C:\Users\hctsa\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\playwright\_impl\_connection.py", line 69, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\Users\hctsa\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\playwright\_impl\_connection.py", line 559, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.Error: Page.evaluate: Error: test storage unavailable
+    at Storage.setItem (eval at evaluate (:290:30), <anonymous>:1:44)
+    at UtilityScript.evaluate (<anonymous>:297:18)
+    at UtilityScript.<anonymous> (<anonymous>:1:44)
+
+----------------------------------------------------------------------
+Ran 6 tests in 21.235s
+
+FAILED (errors=1)
+
+EXIT CODE: 1

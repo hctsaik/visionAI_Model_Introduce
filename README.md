@@ -18,7 +18,13 @@ visual assets and lesson documents it references. It intentionally excludes loca
 caches, prompt intermediates, raw image-generation material, and presentation
 source files.
 
-The latest revision (WI-038) guides users from everyday tasks and site conditions
+The latest revision (WI-040) adds a direct demand-assistant entry on the homepage,
+validates progress backups before replacement, and aligns the expanded mechanism
+text in ConvNeXt, V-JEPA, and AnomalyGPT. Valid older backups remain compatible;
+invalid files and failed storage leave existing progress intact.
+See [the release report](teaching-maintenance/workitems/wi-040/REPORT.md).
+
+The demand-led flow (WI-038) guides users from everyday tasks and site conditions
 to a method, reasons, missing prerequisites, and a small validation experiment.
 Each dropdown answer changes the relevant follow-up questions. Model selection
 is no longer an input requirement; related lessons appear only after the result.

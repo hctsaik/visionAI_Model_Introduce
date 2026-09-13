@@ -1,0 +1,162 @@
+[
+  {
+    "width": 1440,
+    "after": "count",
+    "boxes": [
+      {
+        "id": "",
+        "cls": "topbar",
+        "text": "◈\nVISION AI LEARNING MAP\n模型選型教學\n⌕\n/\n◐ 主題",
+        "top": 0,
+        "bottom": 76
+      },
+      {
+        "id": "poc-question-title",
+        "cls": "",
+        "text": "要檢查的零件放在哪裡？",
+        "top": 439.328125,
+        "bottom": 493.046875
+      }
+    ]
+  },
+  {
+    "width": 1440,
+    "after": "fixed",
+    "boxes": [
+      {
+        "id": "",
+        "cls": "topbar",
+        "text": "◈\nVISION AI LEARNING MAP\n模型選型教學\n⌕\n/\n◐ 主題",
+        "top": 0,
+        "bottom": 76
+      },
+      {
+        "id": "poc-question-title",
+        "cls": "",
+        "text": "原始照片上的目標或細節，看得清楚嗎？",
+        "top": 267.328125,
+        "bottom": 321.046875
+      }
+    ]
+  },
+  {
+    "width": 1440,
+    "after": "clear",
+    "boxes": [
+      {
+        "id": "",
+        "cls": "topbar",
+        "text": "◈\nVISION AI LEARNING MAP\n模型選型教學\n⌕\n/\n◐ 主題",
+        "top": 0,
+        "bottom": 76
+      },
+      {
+        "id": "poc-question-title",
+        "cls": "",
+        "text": "目前準備了哪些現場資料？",
+        "top": 249.328125,
+        "bottom": 303.046875
+      }
+    ]
+  },
+  {
+    "width": 1440,
+    "after": "normal",
+    "boxes": [
+      {
+        "id": "",
+        "cls": "topbar",
+        "text": "◈\nVISION AI LEARNING MAP\n模型選型教學\n⌕\n/\n◐ 主題",
+        "top": 0,
+        "bottom": 76
+      },
+      {
+        "id": "poc-result-title",
+        "cls": "",
+        "text": "先試對齊固定位置，再逐格檢查有無",
+        "top": 144.328125,
+        "bottom": 183.828125
+      }
+    ]
+  },
+  {
+    "width": 390,
+    "after": "count",
+    "boxes": [
+      {
+        "id": "",
+        "cls": "topbar",
+        "text": "◈\n⌕\n☰\n◐",
+        "top": 0,
+        "bottom": 72.265625
+      },
+      {
+        "id": "poc-question-title",
+        "cls": "",
+        "text": "要檢查的零件放在哪裡？",
+        "top": 427.859375,
+        "bottom": 464.1875
+      }
+    ]
+  },
+  {
+    "width": 390,
+    "after": "fixed",
+    "boxes": [
+      {
+        "id": "",
+        "cls": "topbar",
+        "text": "◈\n⌕\n☰\n◐",
+        "top": 0,
+        "bottom": 72.265625
+      },
+      {
+        "id": "poc-question-title",
+        "cls": "",
+        "text": "原始照片上的目標或細節，看得清楚嗎？",
+        "top": 99.859375,
+        "bottom": 172.515625
+      }
+    ]
+  },
+  {
+    "width": 390,
+    "after": "clear",
+    "boxes": [
+      {
+        "id": "",
+        "cls": "topbar",
+        "text": "◈\n⌕\n☰\n◐",
+        "top": 0,
+        "bottom": 72.265625
+      },
+      {
+        "id": "poc-question-title",
+        "cls": "",
+        "text": "目前準備了哪些現場資料？",
+        "top": 99.859375,
+        "bottom": 136.1875
+      }
+    ]
+  },
+  {
+    "width": 390,
+    "after": "normal",
+    "boxes": [
+      {
+        "id": "",
+        "cls": "topbar",
+        "text": "◈\n⌕\n☰\n◐",
+        "top": 0,
+        "bottom": 72.265625
+      },
+      {
+        "id": "poc-result-title",
+        "cls": "",
+        "text": "先試對齊固定位置，再逐格檢查有無",
+        "top": 101.859375,
+        "bottom": 180.859375
+      }
+    ]
+  }
+]
