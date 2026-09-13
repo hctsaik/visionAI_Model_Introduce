@@ -1,0 +1,74 @@
+[
+  {
+    "topic": "u-net",
+    "width": 1440,
+    "public_png_sha256": "1ae80b5f72e246c2d0a4577263449b66f401323892f5e62bcf630f9171293a14",
+    "matches_reviewed_local_png": true
+  },
+  {
+    "topic": "yolo-seg",
+    "width": 1440,
+    "public_png_sha256": "b3acd4adc91ddda132912e4cb90023624857fb80d03df866ec67d4d66f571eb0",
+    "matches_reviewed_local_png": true
+  },
+  {
+    "topic": "ad-efficientad",
+    "width": 1440,
+    "public_png_sha256": "5f7b122d8d60a63bb7ac2814f642c3d8424cb578cd8ee9d460ec73a37bb3e333",
+    "matches_reviewed_local_png": true
+  },
+  {
+    "topic": "ad-diffad",
+    "width": 1440,
+    "public_png_sha256": "90994fc3a2ceef22ec50b95b82f5d5adb7de15221b2d0b7a152a10d919bb4684",
+    "matches_reviewed_local_png": true
+  },
+  {
+    "topic": "convlstm",
+    "width": 1440,
+    "public_png_sha256": "26108d33ad1ba6e0388b224926f515fd5b76939eaf2bb2984c3fa87dd2daa5f8",
+    "matches_reviewed_local_png": true
+  },
+  {
+    "topic": "videomae",
+    "width": 1440,
+    "public_png_sha256": "815fbcf6eba05590a4a653b835379c93c0fd2fcd922eb7b8ab54773247c83d47",
+    "matches_reviewed_local_png": true
+  },
+  {
+    "topic": "u-net",
+    "width": 390,
+    "public_png_sha256": "9ddb94a6bda14acb7ade91e7c1035cd6902c392be30a4e547b770cf7b1de2902",
+    "matches_reviewed_local_png": true
+  },
+  {
+    "topic": "yolo-seg",
+    "width": 390,
+    "public_png_sha256": "f0c504e2bdb2d04e347c99b70864301ac6af8542db85fa647ebee16cafb72473",
+    "matches_reviewed_local_png": true
+  },
+  {
+    "topic": "ad-efficientad",
+    "width": 390,
+    "public_png_sha256": "1b2100b66b6ac06bfae61ae46e7b3c5f4d14fd935b29fa843914bd6d066bac69",
+    "matches_reviewed_local_png": true
+  },
+  {
+    "topic": "ad-diffad",
+    "width": 390,
+    "public_png_sha256": "57e92b9e557c422e657f72feb4ae7a98835fdaddfb0adba18c97f26ab55cbd75",
+    "matches_reviewed_local_png": true
+  },
+  {
+    "topic": "convlstm",
+    "width": 390,
+    "public_png_sha256": "819bcb266d513020ee4786eaf8a88c598adaa5de7f09cbfdbbee03b2efa077df",
+    "matches_reviewed_local_png": true
+  },
+  {
+    "topic": "videomae",
+    "width": 390,
+    "public_png_sha256": "7ad4e0544de4e616f9f49c70585a72512286f50dea765170504db052aaddcde7",
+    "matches_reviewed_local_png": true
+  }
+]

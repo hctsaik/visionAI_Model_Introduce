@@ -1,0 +1,95 @@
+{
+  "html_sha256": "139d466de1e9c5a3c2728d9c42fdde3bb44a6f5aefb4ac8bb5547ba1fd78a35a",
+  "changed_topics": [
+    "u-net",
+    "yolo-seg",
+    "ad-efficientad",
+    "ad-diffad",
+    "convlstm",
+    "videomae"
+  ],
+  "only_mechanism_steps_changed": true,
+  "shared_template_unchanged": true,
+  "mode": "public",
+  "tests": {},
+  "pages": [
+    {
+      "topic": "u-net",
+      "width": 1440,
+      "text_matches_source": true,
+      "screenshot": "public-u-net-1440.png"
+    },
+    {
+      "topic": "yolo-seg",
+      "width": 1440,
+      "text_matches_source": true,
+      "screenshot": "public-yolo-seg-1440.png"
+    },
+    {
+      "topic": "ad-efficientad",
+      "width": 1440,
+      "text_matches_source": true,
+      "screenshot": "public-ad-efficientad-1440.png"
+    },
+    {
+      "topic": "ad-diffad",
+      "width": 1440,
+      "text_matches_source": true,
+      "screenshot": "public-ad-diffad-1440.png"
+    },
+    {
+      "topic": "convlstm",
+      "width": 1440,
+      "text_matches_source": true,
+      "screenshot": "public-convlstm-1440.png"
+    },
+    {
+      "topic": "videomae",
+      "width": 1440,
+      "text_matches_source": true,
+      "screenshot": "public-videomae-1440.png"
+    },
+    {
+      "topic": "u-net",
+      "width": 390,
+      "text_matches_source": true,
+      "screenshot": "public-u-net-390.png"
+    },
+    {
+      "topic": "yolo-seg",
+      "width": 390,
+      "text_matches_source": true,
+      "screenshot": "public-yolo-seg-390.png"
+    },
+    {
+      "topic": "ad-efficientad",
+      "width": 390,
+      "text_matches_source": true,
+      "screenshot": "public-ad-efficientad-390.png"
+    },
+    {
+      "topic": "ad-diffad",
+      "width": 390,
+      "text_matches_source": true,
+      "screenshot": "public-ad-diffad-390.png"
+    },
+    {
+      "topic": "convlstm",
+      "width": 390,
+      "text_matches_source": true,
+      "screenshot": "public-convlstm-390.png"
+    },
+    {
+      "topic": "videomae",
+      "width": 390,
+      "text_matches_source": true,
+      "screenshot": "public-videomae-390.png"
+    }
+  ],
+  "user_approval": "pending",
+  "poc_1440": "passed",
+  "poc_390": "passed",
+  "commit": "592d5c503275d44624528ee4430055206cd41382",
+  "remote_main": "592d5c503275d44624528ee4430055206cd41382",
+  "complete": true
+}

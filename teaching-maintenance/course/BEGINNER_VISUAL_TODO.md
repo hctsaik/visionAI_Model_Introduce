@@ -1,5 +1,29 @@
 ## WI-042 定版修正與發布
 
+WI042修改與公開發布完成：592d5c5已push且Pages成功，公開HTML139d466d與docs一致，六課12公開桌面手機實頁與需求流程通過，公開截圖逐檔等於已審本機。30tests+146subtests、15規則、追加verifier10tests+11subtests、source/docs總驗證通過。WI041必修已關閉，建議定版；沒有剩餘產品修正或測試。即將追加提交發布紀錄，網站不再改；使用者成品核准pending。
+
+唯一 checklist：teaching-images/vision-ai-model-selection/workitems/wi-042/PLAN.md。
+
+## WI-042 定版修正與發布
+
+GitHub Pages run34735161758已success，公開HTML139d466d與本機相同。592d5c5已推送；六課公開桌面手機與需求流程最後實測進行中，發布紀錄尚未收尾。部署等待舊hash已保留deployment-wait.json，下一步完成公開測試及最後紀錄commit。
+
+唯一 checklist：teaching-images/vision-ai-model-selection/workitems/wi-042/PLAN.md。
+
+## WI-042 定版修正與發布
+
+內容592d5c5已push成功；GitHub Pages run34735161758目前queued，公開仍43c3557a，首次公開檢查正確拒絕舊版本。這是部署等待，非本機驗證失敗。等待腳本持續核對139d466d；新版公開及最終紀錄commit尚未完成。
+
+唯一 checklist：teaching-images/vision-ai-model-selection/workitems/wi-042/PLAN.md。
+
+## WI-042 定版修正與發布
+
+592d5c5 已commit並push origin/main，包含六課修正、verifier、WI041審查及本輪快照。暫存diff --check通過。公開部署待核對，不能把push當發布完成；下一步確認公開HTML139d466d及六課桌面手機、需求流程。使用者成品核准pending。
+
+唯一 checklist：teaching-images/vision-ai-model-selection/workitems/wi-042/PLAN.md。
+
+## WI-042 定版修正與發布
+
 六課修正與維護驗證器完成；30tests+146subtests、15規則、追加verifier/共享比較10tests+11subtests及最終source/docs總驗證皆通過。12張桌面手機實頁已實看，僅六課mechanism_steps變更，HTML139d466d。即將保存快照、commit＋push並核對公開頁；公開新版未完成，使用者核准pending。
 
 唯一 checklist：teaching-images/vision-ai-model-selection/workitems/wi-042/PLAN.md。
