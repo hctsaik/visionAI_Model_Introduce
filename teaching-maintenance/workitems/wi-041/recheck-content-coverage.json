@@ -1,0 +1,466 @@
+[
+  {
+    "id": "charuco",
+    "source": "_course_content/topics/charuco.json",
+    "manual_fields_reviewed": true,
+    "default_question_present": true,
+    "expanded_mechanism_present": true,
+    "finding": "已知角點、多視角內參與單張姿態分工清楚"
+  },
+  {
+    "id": "ecc",
+    "source": "_course_content/topics/ecc.json",
+    "manual_fields_reviewed": true,
+    "default_question_present": true,
+    "expanded_mechanism_present": true,
+    "finding": "局部起點、相關值與獨立殘差界線清楚"
+  },
+  {
+    "id": "sift",
+    "source": "_course_content/topics/sift.json",
+    "manual_fields_reviewed": true,
+    "default_question_present": true,
+    "expanded_mechanism_present": true,
+    "finding": "尺度方向描述、matcher與幾何求解分工清楚"
+  },
+  {
+    "id": "lightglue",
+    "source": "_course_content/topics/lightglue.json",
+    "manual_fields_reviewed": true,
+    "default_question_present": true,
+    "expanded_mechanism_present": true,
+    "finding": "extractor相容、上下文及遮擋限制清楚"
+  },
+  {
+    "id": "resnet",
+    "source": "_course_content/topics/resnet.json",
+    "manual_fields_reviewed": true,
+    "default_question_present": true,
+    "expanded_mechanism_present": true,
+    "finding": "殘差相加與背景捷徑、自測資料/容量取捨成立"
+  },
+  {
+    "id": "convnext",
+    "source": "_course_content/topics/convnext.json",
+    "manual_fields_reviewed": true,
+    "default_question_present": true,
+    "expanded_mechanism_present": true,
+    "finding": "空間與通道分工、部署成本有條件"
+  },
+  {
+    "id": "vit-classifier",
+    "source": "_course_content/topics/vit-classifier.json",
+    "manual_fields_reviewed": true,
+    "default_question_present": true,
+    "expanded_mechanism_present": true,
+    "finding": "位置token與注意力非輪廓、分類/分割取捨成立"
+  },
+  {
+    "id": "u-net",
+    "source": "_course_content/topics/u-net.json",
+    "manual_fields_reviewed": true,
+    "default_question_present": true,
+    "expanded_mechanism_present": true,
+    "finding": "C2：首步標題像素標註，正文卻是下採樣"
+  },
+  {
+    "id": "segformer",
+    "source": "_course_content/topics/segformer.json",
+    "manual_fields_reviewed": true,
+    "default_question_present": true,
+    "expanded_mechanism_present": true,
+    "finding": "階層多尺度與語意/實例責任清楚"
+  },
+  {
+    "id": "yolo-seg",
+    "source": "_course_content/topics/yolo-seg.json",
+    "manual_fields_reviewed": true,
+    "default_question_present": true,
+    "expanded_mechanism_present": true,
+    "finding": "C2：第1、2步標題與正文錯位；主線原型/係數成立"
+  },
+  {
+    "id": "keypoint-r-cnn",
+    "source": "_course_content/topics/keypoint-r-cnn.json",
+    "manual_fields_reviewed": true,
+    "default_question_present": true,
+    "expanded_mechanism_present": true,
+    "finding": "逐件點名、ROI還原及非原生3D責任清楚"
+  },
+  {
+    "id": "pose",
+    "source": "_course_content/topics/pose.json",
+    "manual_fields_reviewed": true,
+    "default_question_present": true,
+    "expanded_mechanism_present": true,
+    "finding": "2D–3D、相機、多解與物理姿態驗證清楚"
+  },
+  {
+    "id": "det-yolo-dense",
+    "source": "_course_content/topics/det-yolo-dense.json",
+    "manual_fields_reviewed": true,
+    "default_question_present": true,
+    "expanded_mechanism_present": true,
+    "finding": "指定YOLOv8例，NMS不修框及密集漏件成立"
+  },
+  {
+    "id": "det-rtdetr",
+    "source": "_course_content/topics/det-rtdetr.json",
+    "manual_fields_reviewed": true,
+    "default_question_present": true,
+    "expanded_mechanism_present": true,
+    "finding": "高效編碼、query及訓練一對一分工有交代"
+  },
+  {
+    "id": "det-dino-detector",
+    "source": "_course_content/topics/det-dino-detector.json",
+    "manual_fields_reviewed": true,
+    "default_question_present": true,
+    "expanded_mechanism_present": true,
+    "finding": "去噪只訓練、mixed query正式推論已分開"
+  },
+  {
+    "id": "det-grounding-dino-interface",
+    "source": "_course_content/topics/det-grounding-dino-interface.json",
+    "manual_fields_reviewed": true,
+    "default_question_present": true,
+    "expanded_mechanism_present": true,
+    "finding": "文字參與定位，框與外接mask分清"
+  },
+  {
+    "id": "yolo-world",
+    "source": "_course_content/topics/yolo-world.json",
+    "manual_fields_reviewed": true,
+    "default_question_present": true,
+    "expanded_mechanism_present": true,
+    "finding": "詞彙編碼/快取、細裂可見性限制清楚"
+  },
+  {
+    "id": "yoloe",
+    "source": "_course_content/topics/yoloe.json",
+    "manual_fields_reviewed": true,
+    "default_question_present": true,
+    "expanded_mechanism_present": true,
+    "finding": "三提示模式與mask責任、分割偏差有交代"
+  },
+  {
+    "id": "ad-patchcore",
+    "source": "_course_content/topics/ad-patchcore.json",
+    "manual_fields_reviewed": true,
+    "default_question_present": true,
+    "expanded_mechanism_present": true,
+    "finding": "固定CNN代表正常庫、子集成本取捨清楚"
+  },
+  {
+    "id": "ad-padim",
+    "source": "_course_content/topics/ad-padim.json",
+    "manual_fields_reviewed": true,
+    "default_question_present": true,
+    "expanded_mechanism_present": true,
+    "finding": "同位置分布、馬氏尺度與對位限制清楚"
+  },
+  {
+    "id": "ad-anomalydino",
+    "source": "_course_content/topics/ad-anomalydino.json",
+    "manual_fields_reviewed": true,
+    "default_question_present": true,
+    "expanded_mechanism_present": true,
+    "finding": "DINOv2局部參考、免微調非免資料清楚"
+  },
+  {
+    "id": "ad-subspacead",
+    "source": "_course_content/topics/ad-subspacead.json",
+    "manual_fields_reviewed": true,
+    "default_question_present": true,
+    "expanded_mechanism_present": true,
+    "finding": "PCA正常投影與全維零殘差極端例清楚"
+  },
+  {
+    "id": "ad-stfpm",
+    "source": "_course_content/topics/ad-stfpm.json",
+    "manual_fields_reviewed": true,
+    "default_question_present": true,
+    "expanded_mechanism_present": true,
+    "finding": "固定教師/正常學生、多層差异和錯誤兩側清楚"
+  },
+  {
+    "id": "ad-rd4ad",
+    "source": "_course_content/topics/ad-rd4ad.json",
+    "manual_fields_reviewed": true,
+    "default_question_present": true,
+    "expanded_mechanism_present": true,
+    "finding": "反向特徵重建及可訓練瓶頸責任清楚"
+  },
+  {
+    "id": "ad-efficientad",
+    "source": "_course_content/topics/ad-efficientad.json",
+    "manual_fields_reviewed": true,
+    "default_question_present": true,
+    "expanded_mechanism_present": true,
+    "finding": "C2：首步標題正常訓練，正文卻跳待測推論"
+  },
+  {
+    "id": "ad-ae",
+    "source": "_course_content/topics/ad-ae.json",
+    "manual_fields_reviewed": true,
+    "default_question_present": true,
+    "expanded_mechanism_present": true,
+    "finding": "像素重建非真值；110差值可追算；漏檢誤報成立"
+  },
+  {
+    "id": "ad-draem",
+    "source": "_course_content/topics/ad-draem.json",
+    "manual_fields_reviewed": true,
+    "default_question_present": true,
+    "expanded_mechanism_present": true,
+    "finding": "合成mask只監督；原圖/重建共同判別清楚"
+  },
+  {
+    "id": "ad-uniad",
+    "source": "_course_content/topics/ad-uniad.json",
+    "manual_fields_reviewed": true,
+    "default_question_present": true,
+    "expanded_mechanism_present": true,
+    "finding": "限制照抄與逐產品驗證清楚"
+  },
+  {
+    "id": "ad-dinomaly",
+    "source": "_course_content/topics/ad-dinomaly.json",
+    "manual_fields_reviewed": true,
+    "default_question_present": true,
+    "expanded_mechanism_present": true,
+    "finding": "原版Dropout訓練/推論分清，無無條件速度排名"
+  },
+  {
+    "id": "ad-invad",
+    "source": "_course_content/topics/ad-invad.json",
+    "manual_fields_reviewed": true,
+    "default_question_present": true,
+    "expanded_mechanism_present": true,
+    "finding": "空間風格調制非狀態空間，特徵重建非逐張重訓"
+  },
+  {
+    "id": "ad-diffad",
+    "source": "_course_content/topics/ad-diffad.json",
+    "manual_fields_reviewed": true,
+    "default_question_present": true,
+    "expanded_mechanism_present": true,
+    "finding": "C1：主線兩尺度正確，展開一次forward矛盾"
+  },
+  {
+    "id": "ad-ddad",
+    "source": "_course_content/topics/ad-ddad.json",
+    "manual_fields_reviewed": true,
+    "default_question_present": true,
+    "expanded_mechanism_present": true,
+    "finding": "多步原圖條件、像素及適配特徵差異分清"
+  },
+  {
+    "id": "ad-winclip",
+    "source": "_course_content/topics/ad-winclip.json",
+    "manual_fields_reviewed": true,
+    "default_question_present": true,
+    "expanded_mechanism_present": true,
+    "finding": "人工提示、視窗聚合與WinCLIP+參考有區分"
+  },
+  {
+    "id": "ad-anomalyclip",
+    "source": "_course_content/topics/ad-anomalyclip.json",
+    "manual_fields_reviewed": true,
+    "default_question_present": true,
+    "expanded_mechanism_present": true,
+    "finding": "輔助提示學習與目標零樣本有區分"
+  },
+  {
+    "id": "ad-anomalygpt",
+    "source": "_course_content/topics/ad-anomalygpt.json",
+    "manual_fields_reviewed": true,
+    "default_question_present": true,
+    "expanded_mechanism_present": true,
+    "finding": "原生定位與對話、外部應用覆核已分清"
+  },
+  {
+    "id": "frame-difference",
+    "source": "_course_content/topics/frame-difference.json",
+    "manual_fields_reviewed": true,
+    "default_question_present": true,
+    "expanded_mechanism_present": true,
+    "finding": "變化雙邊非兩物件；停住/閃光反例成立"
+  },
+  {
+    "id": "background-subtraction",
+    "source": "_course_content/topics/background-subtraction.json",
+    "manual_fields_reviewed": true,
+    "default_question_present": true,
+    "expanded_mechanism_present": true,
+    "finding": "更新背景、停留吸收與占位分工清楚"
+  },
+  {
+    "id": "lucas-kanade",
+    "source": "_course_content/topics/lucas-kanade.json",
+    "manual_fields_reviewed": true,
+    "default_question_present": true,
+    "expanded_mechanism_present": true,
+    "finding": "稀疏追點假設與稠密光流同條件比較清楚"
+  },
+  {
+    "id": "raft",
+    "source": "_course_content/topics/raft.json",
+    "manual_fields_reviewed": true,
+    "default_question_present": true,
+    "expanded_mechanism_present": true,
+    "finding": "全配對/迭代與像素位移非物理量分清；題較容易"
+  },
+  {
+    "id": "bytetrack",
+    "source": "_course_content/topics/bytetrack.json",
+    "manual_fields_reviewed": true,
+    "default_question_present": true,
+    "expanded_mechanism_present": true,
+    "finding": "兩階段關聯、完全遮擋與計數分工清楚；題較容易"
+  },
+  {
+    "id": "convlstm",
+    "source": "_course_content/topics/convlstm.json",
+    "manual_fields_reviewed": true,
+    "default_question_present": true,
+    "expanded_mechanism_present": true,
+    "finding": "C2：卷積更新標題對不上原論文用途正文"
+  },
+  {
+    "id": "videomae",
+    "source": "_course_content/topics/videomae.json",
+    "manual_fields_reviewed": true,
+    "default_question_present": true,
+    "expanded_mechanism_present": true,
+    "finding": "C2：編碼重建標題對不上部署移除解碼器正文"
+  },
+  {
+    "id": "v-jepa",
+    "source": "_course_content/topics/v-jepa.json",
+    "manual_fields_reviewed": true,
+    "default_question_present": true,
+    "expanded_mechanism_present": true,
+    "finding": "2024特徵預測、目標EMA與下游任務分清"
+  },
+  {
+    "id": "dinov2",
+    "source": "_course_content/topics/dinov2.json",
+    "manual_fields_reviewed": true,
+    "default_question_present": true,
+    "expanded_mechanism_present": true,
+    "finding": "預訓練表徵、檢索與異常下游分清"
+  },
+  {
+    "id": "dinov3",
+    "source": "_course_content/topics/dinov3.json",
+    "manual_fields_reviewed": true,
+    "default_question_present": true,
+    "expanded_mechanism_present": true,
+    "finding": "Gram訓練關係與推論下游分清，不因新版本排名"
+  },
+  {
+    "id": "clip",
+    "source": "_course_content/topics/clip.json",
+    "manual_fields_reviewed": true,
+    "default_question_present": true,
+    "expanded_mechanism_present": true,
+    "finding": "圖文排序、候選缺類及專用分類器基準清楚"
+  },
+  {
+    "id": "siglip",
+    "source": "_course_content/topics/siglip.json",
+    "manual_fields_reviewed": true,
+    "default_question_present": true,
+    "expanded_mechanism_present": true,
+    "finding": "逐對含負配對、分數非校準正確率清楚"
+  },
+  {
+    "id": "llava",
+    "source": "_course_content/topics/llava.json",
+    "manual_fields_reviewed": true,
+    "default_question_present": true,
+    "expanded_mechanism_present": true,
+    "finding": "視覺投影、問答與影像不能推出根因分清"
+  },
+  {
+    "id": "qwen-vl",
+    "source": "_course_content/topics/qwen-vl.json",
+    "manual_fields_reviewed": true,
+    "default_question_present": true,
+    "expanded_mechanism_present": true,
+    "finding": "固定Qwen2-VL例，像素預算與OCR基準清楚"
+  },
+  {
+    "id": "gemini-vision",
+    "source": "_course_content/topics/gemini-vision.json",
+    "manual_fields_reviewed": true,
+    "default_question_present": true,
+    "expanded_mechanism_present": true,
+    "finding": "API能力不推定私有架構，格式/內容驗證分清"
+  },
+  {
+    "id": "defectfill",
+    "source": "_course_content/topics/defectfill.json",
+    "manual_fields_reviewed": true,
+    "default_question_present": true,
+    "expanded_mechanism_present": true,
+    "finding": "少量缺陷微調、LFS不驗物理、下游真實留出清楚"
+  },
+  {
+    "id": "anomalydiffusion",
+    "source": "_course_content/topics/anomalydiffusion.json",
+    "manual_fields_reviewed": true,
+    "default_question_present": true,
+    "expanded_mechanism_present": true,
+    "finding": "外觀/位置、缺漏遮罩與合成監督一致性清楚"
+  },
+  {
+    "id": "tf-idg",
+    "source": "_course_content/topics/tf-idg.json",
+    "manual_fields_reviewed": true,
+    "default_question_present": true,
+    "expanded_mechanism_present": true,
+    "finding": "固定權重非免最佳化；跨材質及總生成成本清楚"
+  },
+  {
+    "id": "controlnet",
+    "source": "_course_content/topics/controlnet.json",
+    "manual_fields_reviewed": true,
+    "default_question_present": true,
+    "expanded_mechanism_present": true,
+    "finding": "條件控制分支、基礎權重固定及inpainting可組合"
+  },
+  {
+    "id": "inpainting",
+    "source": "_course_content/topics/inpainting.json",
+    "manual_fields_reviewed": true,
+    "default_question_present": true,
+    "expanded_mechanism_present": true,
+    "finding": "任務非單一模型，填圖非實體修復清楚"
+  },
+  {
+    "id": "diffusion-restoration",
+    "source": "_course_content/topics/diffusion-restoration.json",
+    "manual_fields_reviewed": true,
+    "default_question_present": true,
+    "expanded_mechanism_present": true,
+    "finding": "先驗/觀測、多解與非一律相同外迴圈有交代"
+  },
+  {
+    "id": "deblur",
+    "source": "_course_content/topics/deblur.json",
+    "manual_fields_reviewed": true,
+    "default_question_present": true,
+    "expanded_mechanism_present": true,
+    "finding": "模糊退化與振鈴假影、取像基準清楚"
+  },
+  {
+    "id": "super-resolution",
+    "source": "_course_content/topics/super-resolution.json",
+    "manual_fields_reviewed": true,
+    "default_question_present": true,
+    "expanded_mechanism_present": true,
+    "finding": "估計非新增相機觀測，同孔q多解及取像驗證清楚"
+  }
+]

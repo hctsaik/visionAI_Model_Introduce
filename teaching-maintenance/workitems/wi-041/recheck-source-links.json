@@ -1,0 +1,738 @@
+{
+  "count": 134,
+  "method": "GET first 1024 bytes; extract individual URLs from source prose",
+  "failures": [
+    {
+      "url": "https://docs.opencv.org/4.13.0/d1/dc5/tutorial_background_subtraction.html",
+      "status": 403,
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "url": "https://docs.opencv.org/4.13.0/d4/dee/tutorial_optical_flow.html",
+      "status": 403,
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "url": "https://docs.opencv.org/4.13.0/d5/d1f/calib3d_solvePnP.html",
+      "status": 403,
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "url": "https://docs.opencv.org/4.13.0/da/d13/tutorial_aruco_calibration.html",
+      "status": 403,
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "url": "https://docs.opencv.org/4.13.0/da/df5/tutorial_py_sift_intro.html",
+      "status": 403,
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "url": "https://docs.opencv.org/4.13.0/dc/d6b/group__video__track.html",
+      "status": 403,
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "url": "https://docs.opencv.org/4.x/d1/dc5/tutorial_background_subtraction.html",
+      "status": 403,
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "url": "https://docs.opencv.org/4.x/d2/de8/group__core__array.html",
+      "status": 403,
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "url": "https://docs.opencv.org/4.x/d4/dee/tutorial_optical_flow.html",
+      "status": 403,
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "url": "https://docs.opencv.org/4.x/d5/d1f/calib3d_solvePnP.html",
+      "status": 403,
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "url": "https://docs.opencv.org/4.x/dc/dbb/tutorial_py_calibration.html",
+      "status": 403,
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "url": "https://www.ecva.net/papers/eccv_2020/papers_ECCV/papers/123470392.pdf",
+      "status": null,
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1081)>"
+    }
+  ],
+  "results": [
+    {
+      "url": "https://ai.google.dev/gemini-api/docs/image-understanding",
+      "status": 200,
+      "final_url": "https://ai.google.dev/gemini-api/docs/image-understanding"
+    },
+    {
+      "url": "https://ai.google.dev/gemini-api/docs/models",
+      "status": 200,
+      "final_url": "https://ai.google.dev/gemini-api/docs/models"
+    },
+    {
+      "url": "https://ai.google.dev/gemini-api/docs/structured-output",
+      "status": 200,
+      "final_url": "https://ai.google.dev/gemini-api/docs/structured-output"
+    },
+    {
+      "url": "https://arxiv.org/abs/1505.04597",
+      "status": 200,
+      "final_url": "https://arxiv.org/abs/1505.04597"
+    },
+    {
+      "url": "https://arxiv.org/abs/1506.04214",
+      "status": 200,
+      "final_url": "https://arxiv.org/abs/1506.04214"
+    },
+    {
+      "url": "https://arxiv.org/abs/1512.03385",
+      "status": 200,
+      "final_url": "https://arxiv.org/abs/1512.03385"
+    },
+    {
+      "url": "https://arxiv.org/abs/1603.05027",
+      "status": 200,
+      "final_url": "https://arxiv.org/abs/1603.05027"
+    },
+    {
+      "url": "https://arxiv.org/abs/1610.02136",
+      "status": 200,
+      "final_url": "https://arxiv.org/abs/1610.02136"
+    },
+    {
+      "url": "https://arxiv.org/abs/1610.02391",
+      "status": 200,
+      "final_url": "https://arxiv.org/abs/1610.02391"
+    },
+    {
+      "url": "https://arxiv.org/abs/1612.02177",
+      "status": 200,
+      "final_url": "https://arxiv.org/abs/1612.02177"
+    },
+    {
+      "url": "https://arxiv.org/abs/1703.06870",
+      "status": 200,
+      "final_url": "https://arxiv.org/abs/1703.06870"
+    },
+    {
+      "url": "https://arxiv.org/abs/1706.04599",
+      "status": 200,
+      "final_url": "https://arxiv.org/abs/1706.04599"
+    },
+    {
+      "url": "https://arxiv.org/abs/1711.07064",
+      "status": 200,
+      "final_url": "https://arxiv.org/abs/1711.07064"
+    },
+    {
+      "url": "https://arxiv.org/abs/1807.02011",
+      "status": 200,
+      "final_url": "https://arxiv.org/abs/1807.02011"
+    },
+    {
+      "url": "https://arxiv.org/abs/2003.12039",
+      "status": 200,
+      "final_url": "https://arxiv.org/abs/2003.12039"
+    },
+    {
+      "url": "https://arxiv.org/abs/2010.11929",
+      "status": 200,
+      "final_url": "https://arxiv.org/abs/2010.11929"
+    },
+    {
+      "url": "https://arxiv.org/abs/2011.08785",
+      "status": 200,
+      "final_url": "https://arxiv.org/abs/2011.08785"
+    },
+    {
+      "url": "https://arxiv.org/abs/2103.00020",
+      "status": 200,
+      "final_url": "https://arxiv.org/abs/2103.00020"
+    },
+    {
+      "url": "https://arxiv.org/abs/2103.04257",
+      "status": 200,
+      "final_url": "https://arxiv.org/abs/2103.04257"
+    },
+    {
+      "url": "https://arxiv.org/abs/2104.07636",
+      "status": 200,
+      "final_url": "https://arxiv.org/abs/2104.07636"
+    },
+    {
+      "url": "https://arxiv.org/abs/2105.15203",
+      "status": 200,
+      "final_url": "https://arxiv.org/abs/2105.15203"
+    },
+    {
+      "url": "https://arxiv.org/abs/2106.08265",
+      "status": 200,
+      "final_url": "https://arxiv.org/abs/2106.08265"
+    },
+    {
+      "url": "https://arxiv.org/abs/2108.07610",
+      "status": 200,
+      "final_url": "https://arxiv.org/abs/2108.07610"
+    },
+    {
+      "url": "https://arxiv.org/abs/2110.06864",
+      "status": 200,
+      "final_url": "https://arxiv.org/abs/2110.06864"
+    },
+    {
+      "url": "https://arxiv.org/abs/2201.03545",
+      "status": 200,
+      "final_url": "https://arxiv.org/abs/2201.03545"
+    },
+    {
+      "url": "https://arxiv.org/abs/2201.09865",
+      "status": 200,
+      "final_url": "https://arxiv.org/abs/2201.09865"
+    },
+    {
+      "url": "https://arxiv.org/abs/2201.10703",
+      "status": 200,
+      "final_url": "https://arxiv.org/abs/2201.10703"
+    },
+    {
+      "url": "https://arxiv.org/abs/2201.11793",
+      "status": 200,
+      "final_url": "https://arxiv.org/abs/2201.11793"
+    },
+    {
+      "url": "https://arxiv.org/abs/2203.03605",
+      "status": 200,
+      "final_url": "https://arxiv.org/abs/2203.03605"
+    },
+    {
+      "url": "https://arxiv.org/abs/2203.12602",
+      "status": 200,
+      "final_url": "https://arxiv.org/abs/2203.12602"
+    },
+    {
+      "url": "https://arxiv.org/abs/2206.03687",
+      "status": 200,
+      "final_url": "https://arxiv.org/abs/2206.03687"
+    },
+    {
+      "url": "https://arxiv.org/abs/2302.05543",
+      "status": 200,
+      "final_url": "https://arxiv.org/abs/2302.05543"
+    },
+    {
+      "url": "https://arxiv.org/abs/2303.05499",
+      "status": 200,
+      "final_url": "https://arxiv.org/abs/2303.05499"
+    },
+    {
+      "url": "https://arxiv.org/abs/2303.08730",
+      "status": 200,
+      "final_url": "https://arxiv.org/abs/2303.08730"
+    },
+    {
+      "url": "https://arxiv.org/abs/2303.14535",
+      "status": 200,
+      "final_url": "https://arxiv.org/abs/2303.14535"
+    },
+    {
+      "url": "https://arxiv.org/abs/2303.14814",
+      "status": 200,
+      "final_url": "https://arxiv.org/abs/2303.14814"
+    },
+    {
+      "url": "https://arxiv.org/abs/2303.15343",
+      "status": 200,
+      "final_url": "https://arxiv.org/abs/2303.15343"
+    },
+    {
+      "url": "https://arxiv.org/abs/2304.07193",
+      "status": 200,
+      "final_url": "https://arxiv.org/abs/2304.07193"
+    },
+    {
+      "url": "https://arxiv.org/abs/2304.08069",
+      "status": 200,
+      "final_url": "https://arxiv.org/abs/2304.08069"
+    },
+    {
+      "url": "https://arxiv.org/abs/2304.08485",
+      "status": 200,
+      "final_url": "https://arxiv.org/abs/2304.08485"
+    },
+    {
+      "url": "https://arxiv.org/abs/2305.15956",
+      "status": 200,
+      "final_url": "https://arxiv.org/abs/2305.15956"
+    },
+    {
+      "url": "https://arxiv.org/abs/2308.15366",
+      "status": 200,
+      "final_url": "https://arxiv.org/abs/2308.15366"
+    },
+    {
+      "url": "https://arxiv.org/abs/2310.18961",
+      "status": 200,
+      "final_url": "https://arxiv.org/abs/2310.18961"
+    },
+    {
+      "url": "https://arxiv.org/abs/2312.05767",
+      "status": 200,
+      "final_url": "https://arxiv.org/abs/2312.05767"
+    },
+    {
+      "url": "https://arxiv.org/abs/2401.17270",
+      "status": 200,
+      "final_url": "https://arxiv.org/abs/2401.17270"
+    },
+    {
+      "url": "https://arxiv.org/abs/2404.08471",
+      "status": 200,
+      "final_url": "https://arxiv.org/abs/2404.08471"
+    },
+    {
+      "url": "https://arxiv.org/abs/2404.10760",
+      "status": 200,
+      "final_url": "https://arxiv.org/abs/2404.10760"
+    },
+    {
+      "url": "https://arxiv.org/abs/2405.14529",
+      "status": 200,
+      "final_url": "https://arxiv.org/abs/2405.14529"
+    },
+    {
+      "url": "https://arxiv.org/abs/2409.12191",
+      "status": 200,
+      "final_url": "https://arxiv.org/abs/2409.12191"
+    },
+    {
+      "url": "https://arxiv.org/abs/2503.07465",
+      "status": 200,
+      "final_url": "https://arxiv.org/abs/2503.07465"
+    },
+    {
+      "url": "https://arxiv.org/abs/2503.13985",
+      "status": 200,
+      "final_url": "https://arxiv.org/abs/2503.13985"
+    },
+    {
+      "url": "https://arxiv.org/abs/2508.10104",
+      "status": 200,
+      "final_url": "https://arxiv.org/abs/2508.10104"
+    },
+    {
+      "url": "https://arxiv.org/abs/2602.23013",
+      "status": 200,
+      "final_url": "https://arxiv.org/abs/2602.23013"
+    },
+    {
+      "url": "https://arxiv.org/html/2103.04257v3",
+      "status": 200,
+      "final_url": "https://arxiv.org/html/2103.04257v3"
+    },
+    {
+      "url": "https://arxiv.org/html/2106.08265v2",
+      "status": 200,
+      "final_url": "https://arxiv.org/html/2106.08265v2"
+    },
+    {
+      "url": "https://arxiv.org/html/2106.08265v2/images/false_negatives.png",
+      "status": 200,
+      "final_url": "https://arxiv.org/html/2106.08265v2/images/false_negatives.png"
+    },
+    {
+      "url": "https://arxiv.org/html/2106.08265v2/images/false_positives.png",
+      "status": 200,
+      "final_url": "https://arxiv.org/html/2106.08265v2/images/false_positives.png"
+    },
+    {
+      "url": "https://arxiv.org/html/2106.08265v2/images/sample_segmentations.png",
+      "status": 200,
+      "final_url": "https://arxiv.org/html/2106.08265v2/images/sample_segmentations.png"
+    },
+    {
+      "url": "https://arxiv.org/html/2206.03687v3",
+      "status": 200,
+      "final_url": "https://arxiv.org/html/2206.03687v3"
+    },
+    {
+      "url": "https://arxiv.org/html/2303.05499v4",
+      "status": 200,
+      "final_url": "https://arxiv.org/html/2303.05499v4"
+    },
+    {
+      "url": "https://arxiv.org/html/2303.08730v4",
+      "status": 200,
+      "final_url": "https://arxiv.org/html/2303.08730v4"
+    },
+    {
+      "url": "https://arxiv.org/html/2303.14535v3",
+      "status": 200,
+      "final_url": "https://arxiv.org/html/2303.14535v3"
+    },
+    {
+      "url": "https://arxiv.org/html/2303.14814v1",
+      "status": 200,
+      "final_url": "https://arxiv.org/html/2303.14814v1"
+    },
+    {
+      "url": "https://arxiv.org/html/2304.08069v3",
+      "status": 200,
+      "final_url": "https://arxiv.org/html/2304.08069v3"
+    },
+    {
+      "url": "https://arxiv.org/html/2305.15956v2",
+      "status": 200,
+      "final_url": "https://arxiv.org/html/2305.15956v2"
+    },
+    {
+      "url": "https://arxiv.org/html/2308.15366v3",
+      "status": 200,
+      "final_url": "https://arxiv.org/html/2308.15366v3"
+    },
+    {
+      "url": "https://arxiv.org/html/2310.18961v3",
+      "status": 200,
+      "final_url": "https://arxiv.org/html/2310.18961v3"
+    },
+    {
+      "url": "https://arxiv.org/html/2310.18961v4",
+      "status": 200,
+      "final_url": "https://arxiv.org/html/2310.18961v4"
+    },
+    {
+      "url": "https://arxiv.org/html/2312.05767v1",
+      "status": 200,
+      "final_url": "https://arxiv.org/html/2312.05767v1"
+    },
+    {
+      "url": "https://arxiv.org/html/2401.17270v3",
+      "status": 200,
+      "final_url": "https://arxiv.org/html/2401.17270v3"
+    },
+    {
+      "url": "https://arxiv.org/html/2404.08471v1",
+      "status": 200,
+      "final_url": "https://arxiv.org/html/2404.08471v1"
+    },
+    {
+      "url": "https://arxiv.org/html/2404.10760v1",
+      "status": 200,
+      "final_url": "https://arxiv.org/html/2404.10760v1"
+    },
+    {
+      "url": "https://arxiv.org/html/2405.14325v5",
+      "status": 200,
+      "final_url": "https://arxiv.org/html/2405.14325v5"
+    },
+    {
+      "url": "https://arxiv.org/html/2405.14529v2",
+      "status": 200,
+      "final_url": "https://arxiv.org/html/2405.14529v2"
+    },
+    {
+      "url": "https://arxiv.org/html/2405.14529v2/plots/MVTec/MVTec_examples_left.png",
+      "status": 200,
+      "final_url": "https://arxiv.org/html/2405.14529v2/plots/MVTec/MVTec_examples_left.png"
+    },
+    {
+      "url": "https://arxiv.org/html/2405.14529v2/plots/MVTec/MVTec_examples_right.png",
+      "status": 200,
+      "final_url": "https://arxiv.org/html/2405.14529v2/plots/MVTec/MVTec_examples_right.png"
+    },
+    {
+      "url": "https://arxiv.org/html/2503.07465v2",
+      "status": 200,
+      "final_url": "https://arxiv.org/html/2503.07465v2"
+    },
+    {
+      "url": "https://arxiv.org/html/2503.13985v1",
+      "status": 200,
+      "final_url": "https://arxiv.org/html/2503.13985v1"
+    },
+    {
+      "url": "https://arxiv.org/html/2508.10104v1",
+      "status": 200,
+      "final_url": "https://arxiv.org/html/2508.10104v1"
+    },
+    {
+      "url": "https://developers.google.com/machine-learning/guides/rules-of-ml",
+      "status": 200,
+      "final_url": "https://developers.google.com/machine-learning/guides/rules-of-ml"
+    },
+    {
+      "url": "https://docs.opencv.org/4.13.0/d1/dc5/tutorial_background_subtraction.html",
+      "status": 403,
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "url": "https://docs.opencv.org/4.13.0/d4/dee/tutorial_optical_flow.html",
+      "status": 403,
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "url": "https://docs.opencv.org/4.13.0/d5/d1f/calib3d_solvePnP.html",
+      "status": 403,
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "url": "https://docs.opencv.org/4.13.0/da/d13/tutorial_aruco_calibration.html",
+      "status": 403,
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "url": "https://docs.opencv.org/4.13.0/da/df5/tutorial_py_sift_intro.html",
+      "status": 403,
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "url": "https://docs.opencv.org/4.13.0/dc/d6b/group__video__track.html",
+      "status": 403,
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "url": "https://docs.opencv.org/4.x/d1/dc5/tutorial_background_subtraction.html",
+      "status": 403,
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "url": "https://docs.opencv.org/4.x/d2/de8/group__core__array.html",
+      "status": 403,
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "url": "https://docs.opencv.org/4.x/d4/dee/tutorial_optical_flow.html",
+      "status": 403,
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "url": "https://docs.opencv.org/4.x/d5/d1f/calib3d_solvePnP.html",
+      "status": 403,
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "url": "https://docs.opencv.org/4.x/dc/dbb/tutorial_py_calibration.html",
+      "status": 403,
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "url": "https://docs.pytorch.org/vision/main/_modules/torchvision/models/detection/keypoint_rcnn.html",
+      "status": 200,
+      "final_url": "https://docs.pytorch.org/vision/main/_modules/torchvision/models/detection/keypoint_rcnn.html"
+    },
+    {
+      "url": "https://docs.ultralytics.com/models/yolov8/",
+      "status": 200,
+      "final_url": "https://docs.ultralytics.com/models/yolov8"
+    },
+    {
+      "url": "https://docs.ultralytics.com/reference/nn/modules/head/#ultralytics.nn.modules.head.Segment",
+      "status": 200,
+      "final_url": "https://docs.ultralytics.com/reference/nn/modules/head"
+    },
+    {
+      "url": "https://docs.ultralytics.com/reference/utils/nms/",
+      "status": 200,
+      "final_url": "https://docs.ultralytics.com/reference/utils/nms"
+    },
+    {
+      "url": "https://github.com/CASIA-LMC-Lab/AnomalyGPT",
+      "status": 200,
+      "final_url": "https://github.com/CASIA-LMC-Lab/AnomalyGPT"
+    },
+    {
+      "url": "https://github.com/CLendering/SubspaceAD",
+      "status": 200,
+      "final_url": "https://github.com/CLendering/SubspaceAD"
+    },
+    {
+      "url": "https://github.com/FoundationVision/ByteTrack",
+      "status": 200,
+      "final_url": "https://github.com/FoundationVision/ByteTrack"
+    },
+    {
+      "url": "https://github.com/HuiZhang0812/DiffusionAD",
+      "status": 200,
+      "final_url": "https://github.com/HuiZhang0812/DiffusionAD"
+    },
+    {
+      "url": "https://github.com/IDEA-Research/GroundingDINO",
+      "status": 200,
+      "final_url": "https://github.com/IDEA-Research/GroundingDINO"
+    },
+    {
+      "url": "https://github.com/NVlabs/SegFormer",
+      "status": 200,
+      "final_url": "https://github.com/NVlabs/SegFormer"
+    },
+    {
+      "url": "https://github.com/NVlabs/SegFormer/blob/master/mmseg/models/backbones/mix_transformer.py",
+      "status": 200,
+      "final_url": "https://github.com/NVlabs/SegFormer/blob/master/mmseg/models/backbones/mix_transformer.py"
+    },
+    {
+      "url": "https://github.com/NVlabs/SegFormer/blob/master/mmseg/models/decode_heads/segformer_head.py",
+      "status": 200,
+      "final_url": "https://github.com/NVlabs/SegFormer/blob/master/mmseg/models/decode_heads/segformer_head.py"
+    },
+    {
+      "url": "https://github.com/THU-MIG/yoloe",
+      "status": 200,
+      "final_url": "https://github.com/THU-MIG/yoloe"
+    },
+    {
+      "url": "https://github.com/amazon-science/patchcore-inspection/blob/fcaa92f124fb1ad74a7acf56726decd4b27cbcad/src/patchcore/common.py",
+      "status": 200,
+      "final_url": "https://github.com/amazon-science/patchcore-inspection/blob/fcaa92f124fb1ad74a7acf56726decd4b27cbcad/src/patchcore/common.py"
+    },
+    {
+      "url": "https://github.com/amazon-science/patchcore-inspection/blob/fcaa92f124fb1ad74a7acf56726decd4b27cbcad/src/patchcore/patchcore.py",
+      "status": 200,
+      "final_url": "https://github.com/amazon-science/patchcore-inspection/blob/fcaa92f124fb1ad74a7acf56726decd4b27cbcad/src/patchcore/patchcore.py"
+    },
+    {
+      "url": "https://github.com/amazon-science/patchcore-inspection/blob/fcaa92f124fb1ad74a7acf56726decd4b27cbcad/src/patchcore/sampler.py",
+      "status": 200,
+      "final_url": "https://github.com/amazon-science/patchcore-inspection/blob/fcaa92f124fb1ad74a7acf56726decd4b27cbcad/src/patchcore/sampler.py"
+    },
+    {
+      "url": "https://github.com/cvg/LightGlue",
+      "status": 200,
+      "final_url": "https://github.com/cvg/LightGlue"
+    },
+    {
+      "url": "https://github.com/dammsi/AnomalyDINO",
+      "status": 200,
+      "final_url": "https://github.com/dammsi/AnomalyDINO"
+    },
+    {
+      "url": "https://github.com/facebookresearch/ConvNeXt/blob/main/models/convnext.py",
+      "status": 200,
+      "final_url": "https://github.com/facebookresearch/ConvNeXt/blob/main/models/convnext.py"
+    },
+    {
+      "url": "https://github.com/facebookresearch/dinov2",
+      "status": 200,
+      "final_url": "https://github.com/facebookresearch/dinov2"
+    },
+    {
+      "url": "https://github.com/facebookresearch/faiss/wiki/MetricType-and-distances",
+      "status": 200,
+      "final_url": "https://github.com/facebookresearch/faiss/wiki/MetricType-and-distances"
+    },
+    {
+      "url": "https://github.com/guojiajeremy/Dinomaly",
+      "status": 200,
+      "final_url": "https://github.com/guojiajeremy/Dinomaly"
+    },
+    {
+      "url": "https://github.com/lyuwenyu/RT-DETR",
+      "status": 200,
+      "final_url": "https://github.com/lyuwenyu/RT-DETR"
+    },
+    {
+      "url": "https://github.com/mtaha-ai/industrial-anomaly-detection/blob/f19d2c6263d34c5755ab5ce7b0dbb9eb089eac88/results/figures/capsule_patchcore.png",
+      "status": 200,
+      "final_url": "https://github.com/mtaha-ai/industrial-anomaly-detection/blob/f19d2c6263d34c5755ab5ce7b0dbb9eb089eac88/results/figures/capsule_patchcore.png"
+    },
+    {
+      "url": "https://github.com/mtaha-ai/industrial-anomaly-detection/blob/f19d2c6263d34c5755ab5ce7b0dbb9eb089eac88/scripts/generate_figures.py",
+      "status": 200,
+      "final_url": "https://github.com/mtaha-ai/industrial-anomaly-detection/blob/f19d2c6263d34c5755ab5ce7b0dbb9eb089eac88/scripts/generate_figures.py"
+    },
+    {
+      "url": "https://github.com/princeton-vl/RAFT/blob/master/core/raft.py",
+      "status": 200,
+      "final_url": "https://github.com/princeton-vl/RAFT/blob/master/core/raft.py"
+    },
+    {
+      "url": "https://github.com/pytorch/pytorch/blob/v2.12.0/torch/nn/modules/batchnorm.py",
+      "status": 200,
+      "final_url": "https://github.com/pytorch/pytorch/blob/v2.12.0/torch/nn/modules/batchnorm.py"
+    },
+    {
+      "url": "https://github.com/pytorch/vision/blob/v0.27.0/torchvision/models/resnet.py",
+      "status": 200,
+      "final_url": "https://github.com/pytorch/vision/blob/v0.27.0/torchvision/models/resnet.py"
+    },
+    {
+      "url": "https://github.com/rubymiaomiao/TF-IDG",
+      "status": 200,
+      "final_url": "https://github.com/rubymiaomiao/TF-IDG"
+    },
+    {
+      "url": "https://github.com/ultralytics/ultralytics/blob/main/docs/en/tasks/segment.md",
+      "status": 200,
+      "final_url": "https://github.com/ultralytics/ultralytics/blob/main/docs/en/tasks/segment.md"
+    },
+    {
+      "url": "https://github.com/ultralytics/ultralytics/blob/v8.3.0/ultralytics/nn/modules/head.py",
+      "status": 200,
+      "final_url": "https://github.com/ultralytics/ultralytics/blob/v8.3.0/ultralytics/nn/modules/head.py"
+    },
+    {
+      "url": "https://huggingface.co/docs/transformers/model_doc/resnet",
+      "status": 200,
+      "final_url": "https://huggingface.co/docs/transformers/model_doc/resnet"
+    },
+    {
+      "url": "https://huggingface.co/docs/transformers/model_doc/segformer",
+      "status": 200,
+      "final_url": "https://huggingface.co/docs/transformers/model_doc/segformer"
+    },
+    {
+      "url": "https://llava-vl.github.io/",
+      "status": 200,
+      "final_url": "https://llava-vl.github.io/"
+    },
+    {
+      "url": "https://mmpose.readthedocs.io/en/latest/guide_to_framework.html",
+      "status": 200,
+      "final_url": "https://mmpose.readthedocs.io/en/latest/guide_to_framework.html"
+    },
+    {
+      "url": "https://openaccess.thecvf.com/content/CVPR2022/html/Deng_Anomaly_Detection_via_Reverse_Distillation_From_One-Class_Embedding_CVPR_2022_paper.html",
+      "status": 200,
+      "final_url": "https://openaccess.thecvf.com/content/CVPR2022/html/Deng_Anomaly_Detection_via_Reverse_Distillation_From_One-Class_Embedding_CVPR_2022_paper.html"
+    },
+    {
+      "url": "https://openaccess.thecvf.com/content/ICCV2025/html/Xu_Training-Free_Industrial_Defect_Generation_with_Diffusion_Models_ICCV_2025_paper.html",
+      "status": 200,
+      "final_url": "https://openaccess.thecvf.com/content/ICCV2025/html/Xu_Training-Free_Industrial_Defect_Generation_with_Diffusion_Models_ICCV_2025_paper.html"
+    },
+    {
+      "url": "https://qwenlm.github.io/blog/qwen2-vl/",
+      "status": 200,
+      "final_url": "https://qwenlm.github.io/blog/qwen2-vl/"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/guojiajeremy/Dinomaly/master/dinomaly_mvtec_uni.py",
+      "status": 200,
+      "final_url": "https://raw.githubusercontent.com/guojiajeremy/Dinomaly/master/dinomaly_mvtec_uni.py"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/rubymiaomiao/TF-IDG/main/cldm/ddim_hacked.py",
+      "status": 200,
+      "final_url": "https://raw.githubusercontent.com/rubymiaomiao/TF-IDG/main/cldm/ddim_hacked.py"
+    },
+    {
+      "url": "https://scikit-learn.org/stable/common_pitfalls.html",
+      "status": 200,
+      "final_url": "https://scikit-learn.org/stable/common_pitfalls.html"
+    },
+    {
+      "url": "https://scikit-learn.org/stable/modules/cross_validation.html",
+      "status": 200,
+      "final_url": "https://scikit-learn.org/stable/modules/cross_validation.html"
+    },
+    {
+      "url": "https://www.ecva.net/papers/eccv_2020/papers_ECCV/papers/123470392.pdf",
+      "status": null,
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1081)>"
+    }
+  ]
+}

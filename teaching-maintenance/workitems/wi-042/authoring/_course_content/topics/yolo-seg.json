@@ -1,0 +1,561 @@
+{
+  "model": "YOLO-Seg",
+  "badge": "每件獨立的實例分割",
+  "title": "YOLO-Seg：每個物件，都有自己的遮罩",
+  "scenario": {
+    "title": "輸送帶有兩個同類墊圈，需要分開每一件再計數，不能只知道哪些像素是墊圈。",
+    "body": "輸送帶有兩個同類墊圈，需要分開每一件再計數，不能只知道哪些像素是墊圈。"
+  },
+  "promise": {
+    "title": "交付結果與接手工作",
+    "body": "每件框、類別與獨立遮罩，供逐件核對和計數；A/B是實例ID，不代表不同產品類別或跨影格身分。"
+  },
+  "mental_model": {
+    "title": "每件獨立的實例分割",
+    "body": "以YOLOv8-seg機制為例，共享特徵產生一組原型遮罩，偵測分支為每件預測框、類別及遮罩係數。每件係數組合共享原型，再依框處理成該件遮罩。共享原型不是一張完整墊圈答案；兩件同類也要有分開的實例輸出。",
+    "limit": "兩個墊圈稍微重疊，模型可能只交出一件遮罩。原圖仍有兩件；人工圈出的漏件區不是模型的第二個偵測。"
+  },
+  "micro_example": {
+    "title": "補模型資料，還是改分料？",
+    "setup": "兩個相接墊圈常只被算成一件。可增加重疊標註訓練，也可用分料或調整視角讓兩件更容易看清。",
+    "prediction": "你會先做哪一項小試驗？何時保留兩者一起做？",
+    "reveal": "先檢查人是否能從原圖穩定分辨兩件。可見線索足夠而資料不足時先補重疊樣本；遮擋讓身份難辨時改善分料／視角更直接。兩者都有問題可合用，但各自量成本與效益。驗證逐件召回、錯誤合併／切分、計數誤差和節拍，面積估數只能作另行驗證的受限方案。"
+  },
+  "mechanism_steps": [
+    {
+      "title": "先有實例標註",
+      "body": "訓練影像需分開標出每一件物件的類別與遮罩，讓模型學會逐件偵測及分割；遮擋與重疊處須先訂清楚可見範圍的標註規則。推論不會取得人工答案。",
+      "why": "若把兩件標成一片，模型就缺少逐件分開的監督；原型遮罩不是人工標註本身。",
+      "anchor": "逐件類別／遮罩 → 偵測與分割訓練",
+      "diagram": {
+        "title": "先有實例標註",
+        "body": "訓練影像需分開標出每一件物件的類別與遮罩，讓模型學會逐件偵測及分割；遮擋與重疊處須先訂清楚可見範圍的標註規則。推論不會取得人工答案。",
+        "why": "若把兩件標成一片，模型就缺少逐件分開的監督；原型遮罩不是人工標註本身。",
+        "anchor": "逐件類別／遮罩 → 偵測與分割訓練"
+      }
+    },
+    {
+      "title": "共享底圖，各自組合",
+      "body": "以YOLOv8-seg為例，共享特徵產生一組原型遮罩，偵測分支為每件物件預測框、類別與遮罩係數；各件係數組合共享原型，再依框處理成各件遮罩。",
+      "why": "A、B各自形成遮罩，不是先算A再把剩下區域當B；重疊漏檢仍須用獨立資料驗證。",
+      "anchor": "共享原型＋每件係數 → 各件遮罩",
+      "diagram": {
+        "title": "共享底圖，各自組合",
+        "body": "以YOLOv8-seg為例，共享特徵產生一組原型遮罩，偵測分支為每件物件預測框、類別與遮罩係數；各件係數組合共享原型，再依框處理成各件遮罩。",
+        "why": "A、B各自形成遮罩，不是先算A再把剩下區域當B；重疊漏檢仍須用獨立資料驗證。",
+        "anchor": "共享原型＋每件係數 → 各件遮罩"
+      }
+    },
+    {
+      "title": "分開每一件",
+      "body": "每件框、類別與獨立遮罩，供逐件核對和計數；A/B是實例ID，不代表不同產品類別或跨影格身分。",
+      "why": "由本課核心機制連接工作用途",
+      "anchor": "WI030-3",
+      "diagram": {
+        "title": "分開每一件",
+        "body": "每件框、類別與獨立遮罩，供逐件核對和計數；A/B是實例ID，不代表不同產品類別或跨影格身分。",
+        "why": "詳見本課版本與來源",
+        "anchor": "WI030-3"
+      }
+    },
+    {
+      "title": "工作核對與接手",
+      "body": "保存真實原圖與逐件標註，量物件召回、錯誤合併／切分、遮罩品質和計數誤差；孔洞保留需求另驗，示意圖不是模型結果。",
+      "why": "由本課核心機制連接工作用途",
+      "anchor": "WI030-4",
+      "diagram": {
+        "title": "工作核對與接手",
+        "body": "保存真實原圖與逐件標註，量物件召回、錯誤合併／切分、遮罩品質和計數誤差；孔洞保留需求另驗，示意圖不是模型結果。",
+        "why": "詳見本課版本與來源",
+        "anchor": "WI030-4"
+      }
+    }
+  ],
+  "visual_intro": "以YOLOv8-seg機制為例，共享特徵產生一組原型遮罩，偵測分支為每件預測框、類別及遮罩係數。每件係數組合共享原型，再依框處理成該件遮罩。共享原型不是一張完整墊圈答案；兩件同類也要有分開的實例輸出。",
+  "beginner_path": {
+    "title": "從必要原理、具體反例到工作取捨",
+    "intro": "輸送帶有兩個同類墊圈，需要分開每一件再計數，不能只知道哪些像素是墊圈。 下列圖像、特徵及回答為教學示意，不是模型實測。",
+    "visuals": [
+      {
+        "id": "wi030-yoloseg-c1",
+        "title": "YOLO-Seg：每個物件，都有自己的遮罩",
+        "prompt": "輸送帶有兩個同類墊圈，需要分開每一件再計數，不能只知道哪些像素是墊圈。",
+        "caption": "以YOLOv8-seg機制為例，共享特徵產生一組原型遮罩，偵測分支為每件預測框、類別及遮罩係數。每件係數組合共享原型，再依框處理成該件遮罩。共享原型不是一張完整墊圈答案；兩件同類也要有分開的實例輸出。",
+        "image": "_course_content/generated-concepts/yolo-seg/wi030-yoloseg-c1-r07-desktop.png",
+        "alt": "YOLO-Seg：每個物件，都有自己的遮罩。以YOLOv8-seg機制為例，共享特徵產生一組原型遮罩，偵測分支為每件預測框、類別及遮罩係數。每件係數組合共享原型，再依框處理成該件遮罩。共享原型不是一張完整墊圈答案；兩件同類也要有分開的實例輸出。 AI生成教學示意，非模型實測。",
+        "callouts": [
+          {
+            "title": "共享原型、各件係數",
+            "body": "原型提供共同基底，A和B各自一組係數形成各自遮罩；兩路不是先算A再把剩下區域當B。"
+          },
+          {
+            "title": "先偵測到才能分件",
+            "body": "輸出依賴偵測與遮罩品質，重疊、遮擋及小物件可造成漏檢；計數另需定義可見與允收規則。"
+          },
+          {
+            "title": "交付與接手",
+            "body": "每件框、類別與獨立遮罩，供逐件核對和計數；A/B是實例ID，不代表不同產品類別或跨影格身分。"
+          }
+        ],
+        "reading_views": [
+          {
+            "title": "YOLO-Seg：每個物件，都有自己的遮罩",
+            "image": "_course_content/generated-concepts/yolo-seg/wi030-yoloseg-c1-r07-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/yolo-seg/wi030-yoloseg-c1-r06-mobile.png",
+            "alt": "YOLO-Seg：每個物件，都有自己的遮罩。以YOLOv8-seg機制為例，共享特徵產生一組原型遮罩，偵測分支為每件預測框、類別及遮罩係數。每件係數組合共享原型，再依框處理成該件遮罩。共享原型不是一張完整墊圈答案；兩件同類也要有分開的實例輸出。 AI生成教學示意，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              724,
+              2172
+            ],
+            "mobile_display_mode": "full-mobile",
+            "desktop_intrinsic_width": 1672,
+            "desktop_intrinsic_height": 941,
+            "mobile_intrinsic_width": 724,
+            "mobile_intrinsic_height": 2172
+          }
+        ],
+        "core_ideas": true
+      },
+      {
+        "id": "wi030-instance-d2",
+        "title": "兩件靠在一起，遮罩可能合錯或漏掉",
+        "prompt": "觀察哪個條件改變，讓原本的結果不夠可靠？",
+        "caption": "兩個墊圈稍微重疊，模型可能只交出一件遮罩。原圖仍有兩件；人工圈出的漏件區不是模型的第二個偵測。",
+        "image": "_course_content/generated-concepts/yolo-seg/wi030-instance-d2-r02-desktop.png",
+        "alt": "兩件靠在一起，遮罩可能合錯或漏掉。兩個墊圈稍微重疊，模型可能只交出一件遮罩。原圖仍有兩件；人工圈出的漏件區不是模型的第二個偵測。 AI生成教學示意，非模型實測。",
+        "callouts": [
+          {
+            "title": "看哪裡",
+            "body": "兩個墊圈稍微重疊，模型可能只交出一件遮罩。原圖仍有兩件；人工圈出的漏件區不是模型的第二個偵測。"
+          },
+          {
+            "title": "接著怎麼做",
+            "body": "逐件核對原圖和標註，補足重疊樣本，必要時調整取像視角或分料，再用未見資料重測漏件和錯誤分件。"
+          }
+        ],
+        "reading_views": [
+          {
+            "title": "兩件靠在一起，遮罩可能合錯或漏掉",
+            "image": "_course_content/generated-concepts/yolo-seg/wi030-instance-d2-r02-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/yolo-seg/wi030-instance-d2-r04-mobile.png",
+            "alt": "兩件靠在一起，遮罩可能合錯或漏掉。兩個墊圈稍微重疊，模型可能只交出一件遮罩。原圖仍有兩件；人工圈出的漏件區不是模型的第二個偵測。 AI生成教學示意，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              724,
+              2172
+            ],
+            "mobile_display_mode": "full-mobile",
+            "desktop_intrinsic_width": 1672,
+            "desktop_intrinsic_height": 941,
+            "mobile_intrinsic_width": 724,
+            "mobile_intrinsic_height": 2172
+          }
+        ],
+        "core_ideas": false
+      },
+      {
+        "id": "wi030-seg-d3",
+        "title": "要同類區域，還是每件各一張遮罩？",
+        "prompt": "相同工作需求下，資料、輸出與成本如何取捨？",
+        "caption": "U-Net和SegFormer提供語意分割：同類像素用同類標籤，未必區分每一件。YOLO-Seg提供實例分割：每件有自己的遮罩。先決定要量區域還是逐件計數，再比較模型與標註成本。",
+        "image": "_course_content/generated-concepts/u-net/wi030-seg-d3-r01-desktop.png",
+        "alt": "要同類區域，還是每件各一張遮罩？。U-Net和SegFormer提供語意分割：同類像素用同類標籤，未必區分每一件。YOLO-Seg提供實例分割：每件有自己的遮罩。先決定要量區域還是逐件計數，再比較模型與標註成本。 AI生成教學示意，非模型實測。",
+        "callouts": [
+          {
+            "title": "怎麼選",
+            "body": "U-Net和SegFormer提供語意分割：同類像素用同類標籤，未必區分每一件。YOLO-Seg提供實例分割：每件有自己的遮罩。先決定要量區域還是逐件計數，再比較模型與標註成本。"
+          },
+          {
+            "title": "資料與完整成本",
+            "body": "需每件實例標註和相應版本權重；本課以YOLOv8-seg為例，不泛化聲稱所有YOLO版本都相同。固定解析度、門檻及後處理，測每件漏檢、重疊和推論成本。"
+          }
+        ],
+        "reading_views": [
+          {
+            "title": "要同類區域，還是每件各一張遮罩？",
+            "image": "_course_content/generated-concepts/u-net/wi030-seg-d3-r01-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/u-net/wi030-seg-d3-r01-mobile.png",
+            "alt": "要同類區域，還是每件各一張遮罩？。U-Net和SegFormer提供語意分割：同類像素用同類標籤，未必區分每一件。YOLO-Seg提供實例分割：每件有自己的遮罩。先決定要量區域還是逐件計數，再比較模型與標註成本。 AI生成教學示意，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              887,
+              1774
+            ],
+            "mobile_display_mode": "full-mobile",
+            "desktop_intrinsic_width": 1672,
+            "desktop_intrinsic_height": 941,
+            "mobile_intrinsic_width": 887,
+            "mobile_intrinsic_height": 1774
+          }
+        ],
+        "core_ideas": false
+      }
+    ]
+  },
+  "concept_visuals": [],
+  "boundary_cases": [
+    {
+      "condition": "本課具體反例",
+      "effect": "兩個墊圈稍微重疊，模型可能只交出一件遮罩。原圖仍有兩件；人工圈出的漏件區不是模型的第二個偵測。",
+      "action": "逐件核對原圖和標註，補足重疊樣本，必要時調整取像視角或分料，再用未見資料重測漏件和錯誤分件。"
+    },
+    {
+      "condition": "更換產品、模型或輸入設定",
+      "effect": "需每件實例標註和相應版本權重；本課以YOLOv8-seg為例，不泛化聲稱所有YOLO版本都相同。固定解析度、門檻及後處理，測每件漏檢、重疊和推論成本。",
+      "action": "先決定遮擋物件如何標註與計數，收單件、相鄰、重疊和空畫面，分開批次驗證。"
+    },
+    {
+      "condition": "把示意當成實際推論",
+      "effect": "本課特徵、排序、回答及圖像僅用於解釋，不支持現場準確率或耗時結論。",
+      "action": "保存真實原圖與逐件標註，量物件召回、錯誤合併／切分、遮罩品質和計數誤差；孔洞保留需求另驗，示意圖不是模型結果。"
+    }
+  ],
+  "comparison": [
+    {
+      "model": "U-Net",
+      "normality": "像素標註；編碼解碼同尺度跳接",
+      "candidate": "語意區域；邊界與尺度需另驗"
+    },
+    {
+      "model": "SegFormer",
+      "normality": "像素標註；階層特徵多尺度融合",
+      "candidate": "語意區域；不自動提供每件ID"
+    },
+    {
+      "model": "YOLOv8-seg例",
+      "normality": "每件標註；原型＋每件係數",
+      "candidate": "每件框與遮罩；漏檢重疊逐件驗"
+    }
+  ],
+  "selection": "U-Net和SegFormer提供語意分割：同類像素用同類標籤，未必區分每一件。YOLO-Seg提供實例分割：每件有自己的遮罩。先決定要量區域還是逐件計數，再比較模型與標註成本。 需每件實例標註和相應版本權重；本課以YOLOv8-seg為例，不泛化聲稱所有YOLO版本都相同。固定解析度、門檻及後處理，測每件漏檢、重疊和推論成本。",
+  "poc": {
+    "title": "以真實工作資料做小規模比較",
+    "steps": [
+      "先決定遮擋物件如何標註與計數，收單件、相鄰、重疊和空畫面，分開批次驗證。",
+      "需每件實例標註和相應版本權重；本課以YOLOv8-seg為例，不泛化聲稱所有YOLO版本都相同。固定解析度、門檻及後處理，測每件漏檢、重疊和推論成本。",
+      "保存真實原圖與逐件標註，量物件召回、錯誤合併／切分、遮罩品質和計數誤差；孔洞保留需求另驗，示意圖不是模型結果。"
+    ],
+    "hold": "逐件核對原圖和標註，補足重疊樣本，必要時調整取像視角或分料，再用未見資料重測漏件和錯誤分件。",
+    "acceptance": {
+      "baseline": "既有流程或最簡單可行方法",
+      "measure": "保存真實原圖與逐件標註，量物件召回、錯誤合併／切分、遮罩品質和計數誤差；孔洞保留需求另驗，示意圖不是模型結果。",
+      "negative_control": "兩個墊圈稍微重疊，模型可能只交出一件遮罩。原圖仍有兩件；人工圈出的漏件區不是模型的第二個偵測。",
+      "owner": "實作與影像核對負責人"
+    }
+  },
+  "teach_back": {
+    "question": "它改變什麼？何時選另一種做法？",
+    "answer": "以YOLOv8-seg機制為例，共享特徵產生一組原型遮罩，偵測分支為每件預測框、類別及遮罩係數。每件係數組合共享原型，再依框處理成該件遮罩。共享原型不是一張完整墊圈答案；兩件同類也要有分開的實例輸出。 U-Net和SegFormer提供語意分割：同類像素用同類標籤，未必區分每一件。YOLO-Seg提供實例分割：每件有自己的遮罩。先決定要量區域還是逐件計數，再比較模型與標註成本。"
+  },
+  "slide_reading": [
+    {
+      "title": "YOLO-Seg：同類零件也要各有一張遮罩",
+      "question": "每件有框、類別與遮罩，身份只屬當前影像。",
+      "look": "先看两件同類支架各自標註，再核對共享影像特徵產生兩路，最後看每件係數組合出自己的遮罩。",
+      "relation": "以YOLOv8式prototype和mask coefficients路徑說明。訓練需各實例的類別與輪廓，推論保留各物件框、分數和實例遮罩；圖中甲乙只是這張影像的實例，不是跨影格追蹤ID。",
+      "takeaway": "每件有框、類別與遮罩，身份只屬當前影像。",
+      "terms": [
+        "特徵：由影像學到的中間表示，並非標註真值。",
+        "本圖示意：解釋模型責任，不代表新模型實測。"
+      ]
+    },
+    {
+      "title": "YOLO-Seg：共用原型，每件用不同係數",
+      "question": "原型乘各件係數，再依物件框取回遮罩。",
+      "look": "先看共享特徵產生原型圖，再核對每個候選各有係數，最後看組合、裁框、映回影像。",
+      "relation": "檢測頭預測框/類別和每個候選的mask coefficients；Proto支路產生共享basis maps。保留候選的係數線性組合原型，经相應後處理與裁框映回。兩原型是簡化代數例，實際通道數與後處理依所用版本；不能把每張原型直接叫某件物體。",
+      "takeaway": "原型乘各件係數，再依物件框取回遮罩。",
+      "terms": [
+        "特徵：由影像學到的中間表示，並非標註真值。",
+        "本圖示意：解釋模型責任，不代表新模型實測。"
+      ]
+    },
+    {
+      "title": "YOLO-Seg：遮罩要和同一個框一起交付",
+      "question": "把框、類別與遮罩綁定，映回原圖再核對。",
+      "look": "先看候選框與係數保持配對，再核對去重保留後產生對應遮罩，最後看原圖檢查孔洞與相鄰件。",
+      "relation": "遵循實作的候選過濾與去重，索引必須同步框、類別、係數，不能將甲框配乙mask。映回需還原letterbox，輪廓不能填掉空孔；定位與量測仍須另外驗證，遮罩不是亞像素尺寸真值。",
+      "takeaway": "把框、類別與遮罩綁定，映回原圖再核對。",
+      "terms": [
+        "特徵：由影像學到的中間表示，並非標註真值。",
+        "本圖示意：解釋模型責任，不代表新模型實測。"
+      ]
+    },
+    {
+      "title": "語意與實例分割：同類是否需要分成兩件",
+      "question": "需要逐件交付時，比較實例標註與分離品質。",
+      "look": "先看同一影像有兩件支架，再核對語意：兩件都屬支架類，最後看實例：甲乙各有遮罩。",
+      "relation": "共同輸入與物件外觀不變。語意遮罩同色表示同類，不一定提供逐件身份；實例分割分出甲乙，可支援後續逐件統計。重疊與遮擋仍可能分錯，需要標註與域內驗證；不聲稱必然比語意分割更適合所有工作。",
+      "takeaway": "需要逐件交付時，比較實例標註與分離品質。",
+      "terms": [
+        "特徵：由影像學到的中間表示，並非標註真值。",
+        "本圖示意：解釋模型責任，不代表新模型實測。"
+      ]
+    }
+  ],
+  "comparison_headers": {
+    "title": "要同類區域，還是每件各一張遮罩？",
+    "basis": "所需資料與方法差異",
+    "output": "輸出與維護責任"
+  },
+  "transfer_check": {
+    "title": "補模型資料，還是改分料？",
+    "scenario": "兩個相接墊圈常只被算成一件。可增加重疊標註訓練，也可用分料或調整視角讓兩件更容易看清。",
+    "question": "你會先做哪一項小試驗？何時保留兩者一起做？",
+    "answer": "先檢查人是否能從原圖穩定分辨兩件。可見線索足夠而資料不足時先補重疊樣本；遮擋讓身份難辨時改善分料／視角更直接。兩者都有問題可合用，但各自量成本與效益。驗證逐件召回、錯誤合併／切分、計數誤差和節拍，面積估數只能作另行驗證的受限方案。"
+  },
+  "review_trace": {
+    "authority": "roadmap-model-selection/known-target-classification/yolo-seg/model.md",
+    "scope": "WI-033：工程層四圖與手機比較修正；首讀有效內容保留。原生圖已審，整頁與使用者審閱另記。",
+    "claims": [
+      {
+        "id": "visual-1",
+        "field": "beginner_path.visuals[pcb-instance-anchor]",
+        "source": "模型定位 / architecture_path"
+      },
+      {
+        "id": "visual-2",
+        "field": "beginner_path.visuals[instance-label-contract]",
+        "source": "architecture_path"
+      },
+      {
+        "id": "visual-3",
+        "field": "beginner_path.visuals[dense-fpn-prototypes]",
+        "source": "representation_or_score"
+      },
+      {
+        "id": "visual-4",
+        "field": "beginner_path.visuals[decode-nms-compose-review]",
+        "source": "failure_boundary"
+      },
+      {
+        "id": "visual-5",
+        "field": "beginner_path.visuals[operating-boundary-selection]",
+        "source": "selection_gate / evidence_bundle"
+      },
+      {
+        "id": "promise",
+        "field": "promise",
+        "source": "模型定位 / representation_or_score"
+      },
+      {
+        "id": "mechanism",
+        "field": "mechanism_steps",
+        "source": "architecture_path / representation_or_score"
+      },
+      {
+        "id": "boundaries",
+        "field": "boundary_cases",
+        "source": "failure_boundary / selection_gate"
+      },
+      {
+        "id": "comparison",
+        "field": "comparison + selection",
+        "source": "selection_gate"
+      },
+      {
+        "id": "poc",
+        "field": "poc + acceptance",
+        "source": "cost_and_operating_point / evidence_bundle"
+      },
+      {
+        "id": "transfer",
+        "field": "transfer_check",
+        "source": "failure_boundary / selection_gate"
+      },
+      {
+        "id": "wi030-first-read",
+        "field": "beginner_path + core + selection + transfer",
+        "source": "https://github.com/ultralytics/ultralytics/blob/v8.3.0/ultralytics/nn/modules/head.py"
+      }
+    ]
+  },
+  "quality_status": {
+    "label": "首讀圖文已核對",
+    "state": "self-reviewed",
+    "round": "WI-030",
+    "reason": "新版逐圖與整頁自評、桌機手機驗證完成；使用者成品核准pending。原工程圖未納入本輪分數。"
+  },
+  "teaching_preflight": {
+    "brief": "teaching-images/vision-ai-model-selection/workitems/wi-030/yoloseg-c1-r07-desktop.md",
+    "mobile_brief": "teaching-images/vision-ai-model-selection/workitems/wi-030/yoloseg-c1-r06-mobile.md",
+    "story": "C",
+    "major_visual_nodes": 3,
+    "visual_status": "self-reviewed",
+    "user_review": "pending"
+  },
+  "engineering_slides": [
+    {
+      "title": "YOLO-Seg：同類零件也要各有一張遮罩",
+      "question": "每件有框、類別與遮罩，身份只屬當前影像。",
+      "plain": {
+        "look": "先看两件同類支架各自標註，再核對共享影像特徵產生兩路，最後看每件係數組合出自己的遮罩。",
+        "relation": "以YOLOv8式prototype和mask coefficients路徑說明。訓練需各實例的類別與輪廓，推論保留各物件框、分數和實例遮罩；圖中甲乙只是這張影像的實例，不是跨影格追蹤ID。",
+        "takeaway": "每件有框、類別與遮罩，身份只屬當前影像。"
+      },
+      "terms": [
+        "特徵：由影像學到的中間表示，並非標註真值。",
+        "本圖示意：解釋模型責任，不代表新模型實測。"
+      ],
+      "guide": [
+        "以YOLOv8式prototype和mask coefficients路徑說明。訓練需各實例的類別與輪廓，推論保留各物件框、分數和實例遮罩；圖中甲乙只是這張影像的實例，不是跨影格追蹤ID。",
+        "先看两件同類支架各自標註，再核對共享影像特徵產生兩路，最後看每件係數組合出自己的遮罩。"
+      ],
+      "stages": [
+        {
+          "title": "两件同類支架各自標註",
+          "body": "两件同類支架各自標註；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "共享影像特徵產生兩路",
+          "body": "共享影像特徵產生兩路；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "每件係數組合出自己的遮罩",
+          "body": "每件係數組合出自己的遮罩；請對照圖內輸入、變化與結果。"
+        }
+      ],
+      "misconception": "兩個墊圈稍微重疊，模型可能只交出一件遮罩。原圖仍有兩件；人工圈出的漏件區不是模型的第二個偵測。",
+      "alt": "YOLO-Seg：同類零件也要各有一張遮罩。每件有框、類別與遮罩，身份只屬當前影像。 教學示意，非模型實測。",
+      "mobile_image": "roadmap-model-selection/known-target-classification/yolo-seg/images/final/WI033-YOLOSEG-01-r03-mobile.png",
+      "mobile_width": 768,
+      "mobile_height": 2304,
+      "engineering": {
+        "takeaway": "每件有框、類別與遮罩，身份只屬當前影像。",
+        "nextAction": "先決定遮擋物件如何標註與計數，收單件、相鄰、重疊和空畫面，分開批次驗證。",
+        "redLine": "逐件核對原圖和標註，補足重疊樣本，必要時調整取像視角或分料，再用未見資料重測漏件和錯誤分件。"
+      },
+      "source": "https://docs.ultralytics.com/reference/nn/modules/head/#ultralytics.nn.modules.head.Segment"
+    },
+    {
+      "title": "YOLO-Seg：共用原型，每件用不同係數",
+      "question": "原型乘各件係數，再依物件框取回遮罩。",
+      "plain": {
+        "look": "先看共享特徵產生原型圖，再核對每個候選各有係數，最後看組合、裁框、映回影像。",
+        "relation": "檢測頭預測框/類別和每個候選的mask coefficients；Proto支路產生共享basis maps。保留候選的係數線性組合原型，经相應後處理與裁框映回。兩原型是簡化代數例，實際通道數與後處理依所用版本；不能把每張原型直接叫某件物體。",
+        "takeaway": "原型乘各件係數，再依物件框取回遮罩。"
+      },
+      "terms": [
+        "特徵：由影像學到的中間表示，並非標註真值。",
+        "本圖示意：解釋模型責任，不代表新模型實測。"
+      ],
+      "guide": [
+        "檢測頭預測框/類別和每個候選的mask coefficients；Proto支路產生共享basis maps。保留候選的係數線性組合原型，经相應後處理與裁框映回。兩原型是簡化代數例，實際通道數與後處理依所用版本；不能把每張原型直接叫某件物體。",
+        "先看共享特徵產生原型圖，再核對每個候選各有係數，最後看組合、裁框、映回影像。"
+      ],
+      "stages": [
+        {
+          "title": "共享特徵產生原型圖",
+          "body": "共享特徵產生原型圖；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "每個候選各有係數",
+          "body": "每個候選各有係數；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "組合、裁框、映回影像",
+          "body": "組合、裁框、映回影像；請對照圖內輸入、變化與結果。"
+        }
+      ],
+      "misconception": "兩個墊圈稍微重疊，模型可能只交出一件遮罩。原圖仍有兩件；人工圈出的漏件區不是模型的第二個偵測。",
+      "alt": "YOLO-Seg：共用原型，每件用不同係數。原型乘各件係數，再依物件框取回遮罩。 教學示意，非模型實測。",
+      "mobile_image": "roadmap-model-selection/known-target-classification/yolo-seg/images/final/WI033-YOLOSEG-02-r02-mobile.png",
+      "mobile_width": 768,
+      "mobile_height": 2304,
+      "engineering": {
+        "takeaway": "原型乘各件係數，再依物件框取回遮罩。",
+        "nextAction": "先決定遮擋物件如何標註與計數，收單件、相鄰、重疊和空畫面，分開批次驗證。",
+        "redLine": "逐件核對原圖和標註，補足重疊樣本，必要時調整取像視角或分料，再用未見資料重測漏件和錯誤分件。"
+      },
+      "source": "https://docs.ultralytics.com/reference/nn/modules/head/#ultralytics.nn.modules.head.Segment"
+    },
+    {
+      "title": "YOLO-Seg：遮罩要和同一個框一起交付",
+      "question": "把框、類別與遮罩綁定，映回原圖再核對。",
+      "plain": {
+        "look": "先看候選框與係數保持配對，再核對去重保留後產生對應遮罩，最後看原圖檢查孔洞與相鄰件。",
+        "relation": "遵循實作的候選過濾與去重，索引必須同步框、類別、係數，不能將甲框配乙mask。映回需還原letterbox，輪廓不能填掉空孔；定位與量測仍須另外驗證，遮罩不是亞像素尺寸真值。",
+        "takeaway": "把框、類別與遮罩綁定，映回原圖再核對。"
+      },
+      "terms": [
+        "特徵：由影像學到的中間表示，並非標註真值。",
+        "本圖示意：解釋模型責任，不代表新模型實測。"
+      ],
+      "guide": [
+        "遵循實作的候選過濾與去重，索引必須同步框、類別、係數，不能將甲框配乙mask。映回需還原letterbox，輪廓不能填掉空孔；定位與量測仍須另外驗證，遮罩不是亞像素尺寸真值。",
+        "先看候選框與係數保持配對，再核對去重保留後產生對應遮罩，最後看原圖檢查孔洞與相鄰件。"
+      ],
+      "stages": [
+        {
+          "title": "候選框與係數保持配對",
+          "body": "候選框與係數保持配對；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "去重保留後產生對應遮罩",
+          "body": "去重保留後產生對應遮罩；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "原圖檢查孔洞與相鄰件",
+          "body": "原圖檢查孔洞與相鄰件；請對照圖內輸入、變化與結果。"
+        }
+      ],
+      "misconception": "兩個墊圈稍微重疊，模型可能只交出一件遮罩。原圖仍有兩件；人工圈出的漏件區不是模型的第二個偵測。",
+      "alt": "YOLO-Seg：遮罩要和同一個框一起交付。把框、類別與遮罩綁定，映回原圖再核對。 教學示意，非模型實測。",
+      "mobile_image": "roadmap-model-selection/known-target-classification/yolo-seg/images/final/WI033-YOLOSEG-03-r03-mobile.png",
+      "mobile_width": 768,
+      "mobile_height": 2304,
+      "engineering": {
+        "takeaway": "把框、類別與遮罩綁定，映回原圖再核對。",
+        "nextAction": "先決定遮擋物件如何標註與計數，收單件、相鄰、重疊和空畫面，分開批次驗證。",
+        "redLine": "逐件核對原圖和標註，補足重疊樣本，必要時調整取像視角或分料，再用未見資料重測漏件和錯誤分件。"
+      },
+      "source": "https://docs.ultralytics.com/reference/nn/modules/head/#ultralytics.nn.modules.head.Segment"
+    },
+    {
+      "title": "語意與實例分割：同類是否需要分成兩件",
+      "question": "需要逐件交付時，比較實例標註與分離品質。",
+      "plain": {
+        "look": "先看同一影像有兩件支架，再核對語意：兩件都屬支架類，最後看實例：甲乙各有遮罩。",
+        "relation": "共同輸入與物件外觀不變。語意遮罩同色表示同類，不一定提供逐件身份；實例分割分出甲乙，可支援後續逐件統計。重疊與遮擋仍可能分錯，需要標註與域內驗證；不聲稱必然比語意分割更適合所有工作。",
+        "takeaway": "需要逐件交付時，比較實例標註與分離品質。"
+      },
+      "terms": [
+        "特徵：由影像學到的中間表示，並非標註真值。",
+        "本圖示意：解釋模型責任，不代表新模型實測。"
+      ],
+      "guide": [
+        "共同輸入與物件外觀不變。語意遮罩同色表示同類，不一定提供逐件身份；實例分割分出甲乙，可支援後續逐件統計。重疊與遮擋仍可能分錯，需要標註與域內驗證；不聲稱必然比語意分割更適合所有工作。",
+        "先看同一影像有兩件支架，再核對語意：兩件都屬支架類，最後看實例：甲乙各有遮罩。"
+      ],
+      "stages": [
+        {
+          "title": "同一影像有兩件支架",
+          "body": "同一影像有兩件支架；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "語意：兩件都屬支架類",
+          "body": "語意：兩件都屬支架類；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "實例：甲乙各有遮罩",
+          "body": "實例：甲乙各有遮罩；請對照圖內輸入、變化與結果。"
+        }
+      ],
+      "misconception": "兩個墊圈稍微重疊，模型可能只交出一件遮罩。原圖仍有兩件；人工圈出的漏件區不是模型的第二個偵測。",
+      "alt": "語意與實例分割：同類是否需要分成兩件。需要逐件交付時，比較實例標註與分離品質。 教學示意，非模型實測。",
+      "mobile_image": "roadmap-model-selection/known-target-classification/yolo-seg/images/final/WI033-YOLOSEG-04-r03-mobile.png",
+      "mobile_width": 768,
+      "mobile_height": 2304,
+      "engineering": {
+        "takeaway": "需要逐件交付時，比較實例標註與分離品質。",
+        "nextAction": "先決定遮擋物件如何標註與計數，收單件、相鄰、重疊和空畫面，分開批次驗證。",
+        "redLine": "逐件核對原圖和標註，補足重疊樣本，必要時調整取像視角或分料，再用未見資料重測漏件和錯誤分件。"
+      },
+      "source": "https://docs.ultralytics.com/reference/nn/modules/head/#ultralytics.nn.modules.head.Segment"
+    }
+  ]
+}

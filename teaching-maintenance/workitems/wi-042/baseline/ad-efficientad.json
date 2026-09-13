@@ -1,0 +1,966 @@
+{
+  "model": "EfficientAD",
+  "badge": "教師學生與全域特徵差異",
+  "title": "EfficientAD：學正常回應，再查兩種落差",
+  "scenario": {
+    "title": "托盤應有三顆零件，你既要找表面污點，也要找中間漏裝，並控制檢查耗時。",
+    "body": "托盤應有三顆零件，你既要找表面污點，也要找中間漏裝，並控制檢查耗時。"
+  },
+  "promise": {
+    "title": "交付結果與接手工作",
+    "body": "合併的異常熱圖與影像分數，交人確認污點或漏裝；不保證所有邏輯錯誤都能找到。"
+  },
+  "mental_model": {
+    "title": "教師學生與全域特徵差異",
+    "body": "EfficientAD用正常資料讓小型學生學固定教師的特徵回應；待測局部的師生差異提供一種異常線索。完整方法另用autoencoder重建教師特徵，與學生另一輸出比較，補上整體關係。兩路尺度經校準後合併；autoencoder重建的是特徵，不是把缺件照片修成正常照片。",
+    "limit": "同一托盤的右側污點被反光遮住，兩路都可能缺少可用線索；中間缺件仍可見，也必須另外驗證。異常熱圖不能補回看不見的資訊，污點與漏裝的驗證不可互相代替。"
+  },
+  "micro_example": {
+    "title": "保留兩路，還是拆開檢查？",
+    "setup": "產線同時要查表面污點與漏裝。完整EfficientAD候選的兩類驗證尚未齊全；另一方案是局部檢查加獨立的裝配規則。",
+    "prediction": "先補完整方法的兩類測試，或把表面與裝配分開？如何比較兩方案？",
+    "reveal": "若希望共用一套異常流程，先補正常變化、污點、漏裝與錯位資料，檢查兩路校準。若裝配幾何固定且規則可清楚驗證，分開檢查也合理，但要計入兩套流程的誤報、漏檢、延遲和維護。不能拿污點通過的證據代替漏裝驗證。"
+  },
+  "mechanism_steps": [
+    {
+      "title": "正常資料教學生",
+      "body": "教師和學生看同一待測圖，對照局部特徵差。小型PDN和精簡學生降低運算需求，但實際耗時仍取決於解析度、硬體與整段流程。",
+      "why": "由本課核心機制連接工作用途",
+      "anchor": "WI030-1",
+      "diagram": {
+        "title": "正常資料教學生",
+        "body": "教師和學生看同一待測圖，對照局部特徵差。小型PDN和精簡學生降低運算需求，但實際耗時仍取決於解析度、硬體與整段流程。",
+        "why": "詳見本課版本與來源",
+        "anchor": "WI030-1"
+      }
+    },
+    {
+      "title": "局部與全域兩路",
+      "body": "autoencoder以較整體的表示重建教師特徵，再與學生另一輸出比較；以正常驗證資料校準兩路分數，避免某一路只因數值尺度大而主導。",
+      "why": "由本課核心機制連接工作用途",
+      "anchor": "WI030-2",
+      "diagram": {
+        "title": "局部與全域兩路",
+        "body": "autoencoder以較整體的表示重建教師特徵，再與學生另一輸出比較；以正常驗證資料校準兩路分數，避免某一路只因數值尺度大而主導。",
+        "why": "詳見本課版本與來源",
+        "anchor": "WI030-2"
+      }
+    },
+    {
+      "title": "校準後回查",
+      "body": "合併的異常熱圖與影像分數，交人確認污點或漏裝；不保證所有邏輯錯誤都能找到。",
+      "why": "由本課核心機制連接工作用途",
+      "anchor": "WI030-3",
+      "diagram": {
+        "title": "校準後回查",
+        "body": "合併的異常熱圖與影像分數，交人確認污點或漏裝；不保證所有邏輯錯誤都能找到。",
+        "why": "詳見本課版本與來源",
+        "anchor": "WI030-3"
+      }
+    },
+    {
+      "title": "工作核對與接手",
+      "body": "保存真實原圖、版本、正常資料切分、熱圖與覆核結果；同批獨立正常／缺陷樣本分開計誤報、漏檢，並量包含取像、前處理、模型與交接的耗時及記憶體。圖中熱區不是模型推論。",
+      "why": "由本課核心機制連接工作用途",
+      "anchor": "WI030-4",
+      "diagram": {
+        "title": "工作核對與接手",
+        "body": "保存真實原圖、版本、正常資料切分、熱圖與覆核結果；同批獨立正常／缺陷樣本分開計誤報、漏檢，並量包含取像、前處理、模型與交接的耗時及記憶體。圖中熱區不是模型推論。",
+        "why": "詳見本課版本與來源",
+        "anchor": "WI030-4"
+      }
+    }
+  ],
+  "visual_intro": "EfficientAD用正常資料讓小型學生學固定教師的特徵回應；待測局部的師生差異提供一種異常線索。完整方法另用autoencoder重建教師特徵，與學生另一輸出比較，補上整體關係。兩路尺度經校準後合併；autoencoder重建的是特徵，不是把缺件照片修成正常照片。",
+  "beginner_path": {
+    "title": "從必要原理、具體反例到工作取捨",
+    "intro": "托盤應有三顆零件，你既要找表面污點，也要找中間漏裝，並控制檢查耗時。 下列圖像、特徵及回答為教學示意，不是模型實測。",
+    "visuals": [
+      {
+        "id": "wi030-efficient-c1",
+        "title": "EfficientAD：學正常回應，再查兩種落差",
+        "prompt": "托盤應有三顆零件，你既要找表面污點，也要找中間漏裝，並控制檢查耗時。",
+        "caption": "EfficientAD用正常資料讓小型學生學固定教師的特徵回應；待測局部的師生差異提供一種異常線索。完整方法另用autoencoder重建教師特徵，與學生另一輸出比較，補上整體關係。兩路尺度經校準後合併；autoencoder重建的是特徵，不是把缺件照片修成正常照片。",
+        "image": "_course_content/generated-concepts/ad-efficientad/wi030-efficient-c1-r06-desktop.png",
+        "alt": "EfficientAD：學正常回應，再查兩種落差。EfficientAD用正常資料讓小型學生學固定教師的特徵回應；待測局部的師生差異提供一種異常線索。完整方法另用autoencoder重建教師特徵，與學生另一輸出比較，補上整體關係。兩路尺度經校準後合併；autoencoder重建的是特徵，不是把缺件照片修成正常照片。 AI生成教學示意，非模型實測。",
+        "callouts": [
+          {
+            "title": "局部路徑",
+            "body": "教師和學生看同一待測圖，對照局部特徵差。小型PDN和精簡學生降低運算需求，但實際耗時仍取決於解析度、硬體與整段流程。"
+          },
+          {
+            "title": "全域路徑",
+            "body": "autoencoder以較整體的表示重建教師特徵，再與學生另一輸出比較；以正常驗證資料校準兩路分數，避免某一路只因數值尺度大而主導。"
+          },
+          {
+            "title": "交付與接手",
+            "body": "合併的異常熱圖與影像分數，交人確認污點或漏裝；不保證所有邏輯錯誤都能找到。"
+          }
+        ],
+        "reading_views": [
+          {
+            "title": "EfficientAD：學正常回應，再查兩種落差",
+            "image": "_course_content/generated-concepts/ad-efficientad/wi030-efficient-c1-r06-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/ad-efficientad/wi030-efficient-c1-r05-mobile.png",
+            "alt": "EfficientAD：學正常回應，再查兩種落差。EfficientAD用正常資料讓小型學生學固定教師的特徵回應；待測局部的師生差異提供一種異常線索。完整方法另用autoencoder重建教師特徵，與學生另一輸出比較，補上整體關係。兩路尺度經校準後合併；autoencoder重建的是特徵，不是把缺件照片修成正常照片。 AI生成教學示意，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              724,
+              2172
+            ],
+            "mobile_display_mode": "full-mobile",
+            "desktop_intrinsic_width": 1672,
+            "desktop_intrinsic_height": 941,
+            "mobile_intrinsic_width": 724,
+            "mobile_intrinsic_height": 2172
+          }
+        ],
+        "core_ideas": true
+      },
+      {
+        "id": "wi033-eff-main-failure",
+        "title": "同一托盤，換取像仍可能漏掉異常",
+        "prompt": "觀察哪個條件改變，讓原本的結果不夠可靠？",
+        "caption": "沿用三槽托盤：中間缺件，右側有污點。反光只遮住同位置污點，缺件仍可見；局部與全局兩路都不能保證找回不可見線索。缺件與污點分別驗證漏檢，允收的正常變化另記誤報。",
+        "image": "_course_content/generated-concepts/ad-efficientad/wi033-eff-main-failure-r01-desktop.png",
+        "alt": "同一托盤，換取像仍可能漏掉異常。沿用三槽托盤：中間缺件，右側有污點。反光只遮住同位置污點，缺件仍可見；局部與全局兩路都不能保證找回不可見線索。缺件與污點分別驗證漏檢，允收的正常變化另記誤報。 教學示意，非模型實測。",
+        "callouts": [
+          {
+            "title": "看哪裡",
+            "body": "沿用三槽托盤：中間缺件，右側有污點。反光只遮住同位置污點，缺件仍可見；局部與全局兩路都不能保證找回不可見線索。缺件與污點分別驗證漏檢，允收的正常變化另記誤報。"
+          },
+          {
+            "title": "接著怎麼做",
+            "body": "先查同一污點在原圖是否仍可见，改善光源與曝光；保存local、global及融合圖，在独立正常与真缺陷上驗證誤報、漏檢及完整節拍。"
+          }
+        ],
+        "reading_views": [
+          {
+            "title": "同一托盤，換取像仍可能漏掉異常",
+            "image": "_course_content/generated-concepts/ad-efficientad/wi033-eff-main-failure-r01-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/ad-efficientad/wi033-eff-main-failure-r01-mobile.png",
+            "alt": "同一托盤，換取像仍可能漏掉異常。先核對原圖線索，再驗兩路與融合結果。 教學圖解，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              768,
+              2304
+            ],
+            "mobile_display_mode": "full-mobile",
+            "desktop_intrinsic_width": 1672,
+            "desktop_intrinsic_height": 941,
+            "mobile_intrinsic_width": 768,
+            "mobile_intrinsic_height": 2304
+          }
+        ],
+        "core_ideas": false
+      },
+      {
+        "id": "wi030-ad-d3",
+        "title": "正常資料相同，四種方法怎麼留下知識？",
+        "prompt": "相同工作需求下，資料、輸出與成本如何取捨？",
+        "caption": "PatchCore保存CNN代表局部供查找；PaDiM估計每個位置的正常分布；AnomalyDINO用DINOv2特徵建立參考；EfficientAD用正常資料學教師／學生與全域特徵關係。先固定取像與缺陷需求，再比錯誤與完整成本。",
+        "image": "_course_content/generated-concepts/ad-patchcore/wi030-ad-d3-r04-desktop.png",
+        "alt": "正常資料相同，四種方法怎麼留下知識？。PatchCore保存CNN代表局部供查找；PaDiM估計每個位置的正常分布；AnomalyDINO用DINOv2特徵建立參考；EfficientAD用正常資料學教師／學生與全域特徵關係。先固定取像與缺陷需求，再比錯誤與完整成本。 AI生成教學示意，非模型實測。",
+        "callouts": [
+          {
+            "title": "怎麼選",
+            "body": "PatchCore保存CNN代表局部供查找；PaDiM估計每個位置的正常分布；AnomalyDINO用DINOv2特徵建立參考；EfficientAD用正常資料學教師／學生與全域特徵關係。先固定取像與缺陷需求，再比錯誤與完整成本。"
+          },
+          {
+            "title": "資料與完整成本",
+            "body": "需要正常訓練與驗證資料，保存教師、學生、autoencoder、前處理和校準版本。換產品評估重新訓練與校準；不要用論文的毫秒數替代現場量測。"
+          }
+        ],
+        "reading_views": [
+          {
+            "title": "正常資料相同，四種方法怎麼留下知識？",
+            "image": "_course_content/generated-concepts/ad-patchcore/wi030-ad-d3-r04-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/ad-patchcore/wi030-ad-d3-r03-mobile.png",
+            "alt": "正常資料相同，四種方法怎麼留下知識？。PatchCore保存CNN代表局部供查找；PaDiM估計每個位置的正常分布；AnomalyDINO用DINOv2特徵建立參考；EfficientAD用正常資料學教師／學生與全域特徵關係。先固定取像與缺陷需求，再比錯誤與完整成本。 AI生成教學示意，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              768,
+              2048
+            ],
+            "mobile_display_mode": "full-mobile",
+            "desktop_intrinsic_width": 1672,
+            "desktop_intrinsic_height": 941,
+            "mobile_intrinsic_width": 768,
+            "mobile_intrinsic_height": 2048
+          }
+        ],
+        "core_ideas": false
+      }
+    ]
+  },
+  "concept_visuals": [],
+  "boundary_cases": [
+    {
+      "condition": "本課具體反例",
+      "effect": "同一托盤的右側污點被反光遮住，兩路都可能缺少可用線索；中間缺件仍可見，也必須另外驗證。異常熱圖不能補回看不見的資訊，污點與漏裝的驗證不可互相代替。",
+      "action": "先回看原圖、曝光與照明，穩定取像；新正常外觀須經允收確認，再以獨立正常與缺陷資料驗證，不能把高分樣本一律加進正常資料。"
+    },
+    {
+      "condition": "更換產品、模型或輸入設定",
+      "effect": "需要正常訓練與驗證資料，保存教師、學生、autoencoder、前處理和校準版本。換產品評估重新訓練與校準；不要用論文的毫秒數替代現場量測。",
+      "action": "先收齊正常托盤的允收變化，獨立保留污點、漏裝與正常樣本；與簡單占位／外觀基準比較。"
+    },
+    {
+      "condition": "把示意當成實際推論",
+      "effect": "本課特徵、排序、回答及圖像僅用於解釋，不支持現場準確率或耗時結論。",
+      "action": "保存真實原圖、版本、正常資料切分、熱圖與覆核結果；同批獨立正常／缺陷樣本分開計誤報、漏檢，並量包含取像、前處理、模型與交接的耗時及記憶體。圖中熱區不是模型推論。"
+    }
+  ],
+  "comparison": [
+    {
+      "model": "PatchCore",
+      "normality": "正常CNN局部特徵＋代表子集庫",
+      "candidate": "局部最近鄰差異；維護庫大小與覆蓋"
+    },
+    {
+      "model": "PaDiM",
+      "normality": "每位置平均與共變異",
+      "candidate": "位置條件距離；維護對位與分布"
+    },
+    {
+      "model": "AnomalyDINO",
+      "normality": "DINOv2區塊特徵正常參考",
+      "candidate": "特徵相似度；維護表示與參考"
+    },
+    {
+      "model": "EfficientAD",
+      "normality": "正常訓練教師／學生與AE關係",
+      "candidate": "局部＋全域差；維護權重及校準"
+    }
+  ],
+  "selection": "PatchCore保存CNN代表局部供查找；PaDiM估計每個位置的正常分布；AnomalyDINO用DINOv2特徵建立參考；EfficientAD用正常資料學教師／學生與全域特徵關係。先固定取像與缺陷需求，再比錯誤與完整成本。 需要正常訓練與驗證資料，保存教師、學生、autoencoder、前處理和校準版本。換產品評估重新訓練與校準；不要用論文的毫秒數替代現場量測。",
+  "poc": {
+    "title": "以真實工作資料做小規模比較",
+    "steps": [
+      "先收齊正常托盤的允收變化，獨立保留污點、漏裝與正常樣本；與簡單占位／外觀基準比較。",
+      "需要正常訓練與驗證資料，保存教師、學生、autoencoder、前處理和校準版本。換產品評估重新訓練與校準；不要用論文的毫秒數替代現場量測。",
+      "保存真實原圖、版本、正常資料切分、熱圖與覆核結果；同批獨立正常／缺陷樣本分開計誤報、漏檢，並量包含取像、前處理、模型與交接的耗時及記憶體。圖中熱區不是模型推論。"
+    ],
+    "hold": "先回看原圖、曝光與照明，穩定取像；新正常外觀須經允收確認，再以獨立正常與缺陷資料驗證，不能把高分樣本一律加進正常資料。",
+    "acceptance": {
+      "baseline": "既有流程或最簡單可行方法",
+      "measure": "保存真實原圖、版本、正常資料切分、熱圖與覆核結果；同批獨立正常／缺陷樣本分開計誤報、漏檢，並量包含取像、前處理、模型與交接的耗時及記憶體。圖中熱區不是模型推論。",
+      "negative_control": "同一托盤的右側污點被反光遮住，兩路都可能缺少可用線索；中間缺件仍可見，也必須另外驗證。異常熱圖不能補回看不見的資訊，污點與漏裝的驗證不可互相代替。",
+      "owner": "實作與影像核對負責人"
+    }
+  },
+  "teach_back": {
+    "question": "它改變什麼？何時選另一種做法？",
+    "answer": "EfficientAD用正常資料讓小型學生學固定教師的特徵回應；待測局部的師生差異提供一種異常線索。完整方法另用autoencoder重建教師特徵，與學生另一輸出比較，補上整體關係。兩路尺度經校準後合併；autoencoder重建的是特徵，不是把缺件照片修成正常照片。 PatchCore保存CNN代表局部供查找；PaDiM估計每個位置的正常分布；AnomalyDINO用DINOv2特徵建立參考；EfficientAD用正常資料學教師／學生與全域特徵關係。先固定取像與缺陷需求，再比錯誤與完整成本。"
+  },
+  "slide_reading": [
+    {
+      "title": "EfficientAD：正常品教三個角色合作",
+      "question": "教師固定，學生兩組輸出與AE各有訓練目標。",
+      "look": "先看正常托盤與固定教師，再核對學生第一組學教師，最後看AE與學生第二組一起學。",
+      "relation": "選定預訓練輕量教師並固定；學生第一組以正常影像學教師特徵，原方法另有hard-feature與外部預訓練圖penalty。AE由整圖重建教師特徵，學生第二組學AE重建；使用正常資料訓練，真缺陷留作獨立檢查。學生兩組共享前層，不是兩個互不相關模型。",
+      "takeaway": "教師固定，學生兩組輸出與AE各有訓練目標。",
+      "terms": [
+        "T/S1：固定教師與學生第一組輸出。",
+        "AE/S2：自編碼器與學生第二組輸出；兩者差產生全局圖。"
+      ]
+    },
+    {
+      "title": "EfficientAD：局部與全局比較對象不同",
+      "question": "局部比T/S1，全局比AE/S2；校正尺度後才融合。",
+      "look": "先看同一待測托盤送入三者，再核對兩路各比對應的表示，最後看正常驗證資料校正後融合。",
+      "relation": "同一托盤有中間缺件及右側污點；T與學生第一組S1的通道均方差產生local，AE與學生第二組S2的差產生global，不能誤畫T減AE或直接原圖減重建照片。用未參與訓練的正常驗證分布各自做分位數線性尺度對齊，再平均兩圖；最大值作整圖分數。熱區僅示意，不保證兩路專抓某種缺陷。",
+      "takeaway": "局部比T/S1，全局比AE/S2；校正尺度後才融合。",
+      "terms": [
+        "T/S1：固定教師與學生第一組輸出。",
+        "AE/S2：自編碼器與學生第二組輸出；兩者差產生全局圖。"
+      ]
+    },
+    {
+      "title": "EfficientAD：保留兩路，才知道融合改了什麼",
+      "question": "兩路與融合圖一起驗，完整流程一起計時。",
+      "look": "先看保存局部、全局與融合，再核對回同托盤核對兩種錯誤，最後看相機到覆核的完整時間。",
+      "relation": "保存原圖、原始local/global圖、正常分位數校正及融合結果。用獨立正常與真缺陷對照各分支及融合錯誤；同時量取像、前處理、教師/學生/AE、映回與交付的完整耗時，不能從論文毫秒數推定產線節拍。",
+      "takeaway": "兩路與融合圖一起驗，完整流程一起計時。",
+      "terms": [
+        "T/S1：固定教師與學生第一組輸出。",
+        "AE/S2：自編碼器與學生第二組輸出；兩者差產生全局圖。"
+      ]
+    },
+    {
+      "title": "EfficientAD：換產品要更新哪些部分",
+      "question": "模型與正常校正一起重驗，不能只換產品名稱。",
+      "look": "先看新產品有不同正常外觀，再核對適配學生／AE與分數尺度，最後看同留出集比較更新前後。",
+      "relation": "換產品先確認正常訓練涵蓋；按需要重新訓練學生與AE，重新建立正常驗證分位數，保留舊版作對照。固定教師版本不代表下游分數可直接沿用；比較正常誤報、真缺陷漏檢、訓練/校正成本與每件耗時，不能只記模型檔大小。",
+      "takeaway": "模型與正常校正一起重驗，不能只換產品名稱。",
+      "terms": [
+        "T/S1：固定教師與學生第一組輸出。",
+        "AE/S2：自編碼器與學生第二組輸出；兩者差產生全局圖。"
+      ]
+    }
+  ],
+  "comparison_headers": {
+    "title": "正常資料相同，四種方法怎麼留下知識？",
+    "basis": "所需資料與方法差異",
+    "output": "輸出與維護責任"
+  },
+  "transfer_check": {
+    "title": "保留兩路，還是拆開檢查？",
+    "scenario": "產線同時要查表面污點與漏裝。完整EfficientAD候選的兩類驗證尚未齊全；另一方案是局部檢查加獨立的裝配規則。",
+    "question": "先補完整方法的兩類測試，或把表面與裝配分開？如何比較兩方案？",
+    "answer": "若希望共用一套異常流程，先補正常變化、污點、漏裝與錯位資料，檢查兩路校準。若裝配幾何固定且規則可清楚驗證，分開檢查也合理，但要計入兩套流程的誤報、漏檢、延遲和維護。不能拿污點通過的證據代替漏裝驗證。"
+  },
+  "review_trace": {
+    "authority": "roadmap-model-selection/anomaly-detection/ad-efficientad/model.md",
+    "scope": "WI-033第二批：四工程圖重排，光流共用條件反例、AnomalyDINO旋轉深讀及EfficientAD同件反例／指定深讀修正；頁內與使用者審閱另記。",
+    "claims": [
+      {
+        "id": "visual-1",
+        "field": "beginner_path.visuals[same-workpiece-anchor]",
+        "source": "模型定位 / architecture_path"
+      },
+      {
+        "id": "visual-2",
+        "field": "beginner_path.visuals[frozen-pdn-two-paths]",
+        "source": "architecture_path"
+      },
+      {
+        "id": "visual-3",
+        "field": "beginner_path.visuals[calibration-fusion-candidate]",
+        "source": "representation_or_score"
+      },
+      {
+        "id": "visual-4",
+        "field": "beginner_path.visuals[local-global-counterfactual]",
+        "source": "failure_boundary"
+      },
+      {
+        "id": "visual-5",
+        "field": "beginner_path.visuals[contract-hold-boundary]",
+        "source": "selection_gate / evidence_bundle"
+      },
+      {
+        "id": "promise",
+        "field": "promise",
+        "source": "模型定位 / representation_or_score"
+      },
+      {
+        "id": "mechanism",
+        "field": "mechanism_steps",
+        "source": "architecture_path / representation_or_score"
+      },
+      {
+        "id": "boundaries",
+        "field": "boundary_cases",
+        "source": "failure_boundary / selection_gate"
+      },
+      {
+        "id": "comparison",
+        "field": "comparison + selection",
+        "source": "selection_gate"
+      },
+      {
+        "id": "poc",
+        "field": "poc + acceptance",
+        "source": "cost_and_operating_point / evidence_bundle"
+      },
+      {
+        "id": "transfer",
+        "field": "transfer_check",
+        "source": "failure_boundary / selection_gate"
+      },
+      {
+        "id": "f01-core",
+        "field": "beginner_path.visuals[0] + scenario + mental_model",
+        "source": "https://arxiv.org/abs/2303.14535"
+      },
+      {
+        "id": "f01-transfer",
+        "field": "micro_example + transfer_check",
+        "source": "由原論文機制推論移除後果；https://arxiv.org/abs/2303.14535"
+      },
+      {
+        "id": "wi030-first-read",
+        "field": "beginner_path + core + selection + transfer",
+        "source": "https://arxiv.org/abs/2303.14535"
+      }
+    ]
+  },
+  "deep_dive": {
+    "title": "從工件案例，學會使用與選擇 EfficientAD",
+    "intro": "看懂它幫你找什麼、要準備哪些資料、結果如何接進工作，再與 PatchCore 和已知類別分割比較。每段用同一類工件說明，最後練習換情境做選擇。",
+    "concept_path": "roadmap-model-selection/anomaly-detection/ad-efficientad/EFFICIENTAD_WORKPLACE_GUIDE.md",
+    "chapters": [
+      {
+        "id": "work",
+        "nav": "工作問題",
+        "title": "EfficientAD：先懂核心，再準備資料",
+        "summary": "現場既要找到小瑕疵，也要跟上節拍。EfficientAD用輕量局部描述器與學生比較，再加上觀察整體關係的重建路徑，減少特徵計算負擔。",
+        "image": "_course_content/generated-concepts/ad-efficientad/ad-efficientad-f01-core.svg",
+        "alt": "現場既要找到小瑕疵，也要跟上節拍。EfficientAD用輕量局部描述器與學生比較，再加上觀察整體關係的重建路徑，減少特徵計算負擔。 圖為既有生成工件與機制設定，不是模型推論。",
+        "points": [
+          "輕量局部路徑：小型 patch descriptor 教師與學生處理局部特徵；正常訓練和限制泛化的損失使陌生處可能留下落差。",
+          "補整體關係：Autoencoder 用較全局的資訊重建教師特徵；學生另一組輸出與它比較，補局部方法較弱的結構異常線索。",
+          "校正後融合：局部教師學生差與全局重建差先按正常驗證資料校正再結合；快來自特徵及模型設計，實際節拍仍需含前後處理測量。"
+        ],
+        "check": {
+          "question": "只留下局部教師學生路徑，完整而放錯位置的部件為何可能漏掉？",
+          "answer": "局部外觀可能仍像正常零件，單看局部缺少關係證據。全局重建路徑用來補這個盲點，但並不保證識別所有組裝邏輯。 已有正常訓練資料且節拍緊可列候選；和建庫方法一起測輸入到覆核的時間、誤報及漏檢，不直接搬用論文毫秒數。"
+        },
+        "source_ids": [
+          "efficientad",
+          "f01-paper"
+        ],
+        "reading_views": [
+          {
+            "title": "EfficientAD：先懂核心再看細節",
+            "image": "_course_content/generated-concepts/ad-efficientad/ad-efficientad-f01-core.svg",
+            "mobile_image": "_course_content/generated-concepts/ad-efficientad/wi033-eff-deep-01-core-r02-mobile.png",
+            "mobile_crop": [
+              0,
+              0,
+              768,
+              2304
+            ],
+            "alt": "EfficientAD：局部特徵與整體重建合作。兩路分工不同，正常尺度對齊後一起驗。 教學圖解，非模型實測。",
+            "mobile_display_mode": "full-mobile",
+            "mobile_intrinsic_width": 768,
+            "mobile_intrinsic_height": 2304
+          },
+          {
+            "title": "原章：資料準備與工作流程",
+            "image": "_course_content/generated-concepts/ad-efficientad/efficientad-work-01-work_v11.svg",
+            "mobile_image": "_course_content/generated-concepts/ad-efficientad/wi033-eff-deep-01-work-r02-mobile.png",
+            "mobile_crop": [
+              0,
+              0,
+              768,
+              2304
+            ],
+            "alt": "先找可疑位置，也要能跟上工作。位置與耗時都要驗；熱圖只幫你開始覆核。 教學圖解，非模型實測。",
+            "mobile_display_mode": "full-mobile",
+            "mobile_intrinsic_width": 768,
+            "mobile_intrinsic_height": 2304
+          }
+        ]
+      },
+      {
+        "id": "data",
+        "nav": "準備資料",
+        "title": "不用先標齊缺陷，但正常資料要挑對",
+        "summary": "開始前先收正常工件的代表影像，涵蓋合理變動。最重要的人工工作是確認哪些真的正常，並保留沒有拿來學習的驗證與測試資料。",
+        "image": "_course_content/generated-concepts/ad-efficientad/efficientad-work-02-data_v11.svg",
+        "alt": "不用先標齊缺陷，但正常資料要挑對。開始前先收正常工件的代表影像，涵蓋合理變動。最重要的人工工作是確認哪些真的正常，並保留沒有拿來學習的驗證與測試資料。",
+        "points": [
+          "只有正常圖可以先建立候選模型；仍需收集實際異常來檢查是否漏掉工作上在意的問題。",
+          "把可接受的批次差異與光照變動納入正常資料；不小心混入的缺陷可能讓模型誤學正常。",
+          "不同用途資料分開，同一工件的近似照片不要散到學習與最終測試兩邊，否則效果容易看得過度樂觀。"
+        ],
+        "check": {
+          "question": "手上有 200 張已確認正常、但只來自同批次的照片，以及 2,000 張涵蓋多批次、但尚未確認正常的照片。明天要試跑，你會如何安排？",
+          "answer": "可用已確認資料先建立限於該條件的基準，同時優先清理多批次代表樣本；不要把初次試跑說成已能適用所有批次。兩份資料各有品質與涵蓋面的取捨，最終驗證／測試另留獨立資料。"
+        },
+        "source_ids": [
+          "efficientad"
+        ],
+        "reading_views": [
+          {
+            "title": "不用先標齊缺陷，但正常資料要挑對",
+            "image": "_course_content/generated-concepts/ad-efficientad/efficientad-work-02-data_v11.svg",
+            "alt": "正常資料要乾淨，也要涵蓋合理變化。訓練、校正與最終測試分開，先查資料來源。 教學圖解，非模型實測。",
+            "mobile_image": "_course_content/generated-concepts/ad-efficientad/wi033-eff-deep-02-data-r01-mobile.png",
+            "mobile_crop": [
+              0,
+              0,
+              768,
+              2304
+            ],
+            "mobile_display_mode": "full-mobile",
+            "mobile_intrinsic_width": 768,
+            "mobile_intrinsic_height": 2304
+          }
+        ]
+      },
+      {
+        "id": "meaning",
+        "nav": "核心合作",
+        "title": "Teacher、Student、AE：三者分工，兩種差異",
+        "summary": "Teacher 是固定的外觀描述參考。Student 用正常品學兩件事：一組輸出學 Teacher，另一組學 AE。AE 看整張影像後重建特徵，補看整體配置。",
+        "image": "_course_content/generated-concepts/ad-efficientad/efficientad-work-03-meaning_v11.svg",
+        "alt": "Teacher、Student、AE：三者分工，兩種差異。Teacher 是固定的外觀描述參考。Student 用正常品學兩件事：一組輸出學 Teacher，另一組學 AE。AE 看整張影像後重建特徵，補看整體配置。",
+        "points": [
+          "訓練時 Teacher 固定；Student 第一組學 Teacher 的描述。異常外觀可能讓兩者對不上，形成 local 差異。訓練也會抑制 Student 在正常資料外任意模仿，不是保證所有未見影像都能抓到。",
+          "AE 從整張影像重建 Teacher 特徵；Student 第二組學 AE 在正常品上的重建習慣。檢查時 global 比的是 AE 與 Student 第二組，讓正常重建誤差不必都變成警報。",
+          "local 與 global 都把同位置各描述分量的平方差取平均。正常常能對上、異常可能對不上，是它工作的線索；小缺陷、未知變動仍可能漏掉，必須用測試確認。"
+        ],
+        "check": {
+          "question": "正常品細紋讓 AE 重建得較模糊。直接比較 Teacher 與 AE，還是比較 AE 與 Student 第二組？為什麼？",
+          "answer": "選後者。Student 第二組學過正常的重建習慣，可減少把正常重建誤差當異常；如果出現訓練未見的整體變化，兩者可能分歧。這不保證完全沒有誤報。"
+        },
+        "source_ids": [
+          "efficientad"
+        ],
+        "reading_views": [
+          {
+            "title": "Teacher、Student、AE：三者分工，兩種差異",
+            "image": "_course_content/generated-concepts/ad-efficientad/efficientad-work-03-meaning_v11.svg",
+            "alt": "三個角色，分清訓練目標與測試差異。T固定、S1學T、AE學T、S2學AE；兩路分別比較。 教學圖解，非模型實測。",
+            "mobile_image": "_course_content/generated-concepts/ad-efficientad/wi033-eff-deep-03-meaning-r02-mobile.png",
+            "mobile_crop": [
+              0,
+              0,
+              768,
+              2304
+            ],
+            "mobile_display_mode": "full-mobile",
+            "mobile_intrinsic_width": 768,
+            "mobile_intrinsic_height": 2304
+          }
+        ]
+      },
+      {
+        "id": "output",
+        "nav": "結果怎麼用",
+        "title": "熱區告訴你看哪裡，輪廓回答另一個問題",
+        "summary": "先分清工作需要：要快速找值得看的區域，還是要已定義目標的輪廓？這會改變模型、資料標註和驗證方式。",
+        "image": "_course_content/generated-concepts/ad-efficientad/wi033-eff-deep-04-output-r01-desktop.png",
+        "alt": "熱區告訴你看哪裡，輪廓回答另一個問題。先分清工作需要：要快速找值得看的區域，還是要已定義目標的輪廓？這會改變模型、資料標註和驗證方式。",
+        "points": [
+          "EfficientAD 的熱圖用來指出可疑區域，適合支援篩查與人工找位置；顏色不代表某個缺陷類別。",
+          "常見監督式分割方法學已定義目標並預測輪廓，需要相應標註與驗證；不自動保證能找未知缺陷。",
+          "像素輪廓可支援面積分析，但實體尺寸還需要取像尺度、校正和量測誤差驗證。"
+        ],
+        "check": {
+          "question": "主管要刮痕面積。A：直接算紅色熱區；B：先定義輪廓、準備標註並驗證邊界。你選哪個？",
+          "answer": "選 B。熱區提供可疑位置，並非可靠缺陷邊界；實體面積還需要校正與量測誤差驗證。"
+        },
+        "source_ids": [
+          "efficientad",
+          "segmentation"
+        ],
+        "reading_views": [
+          {
+            "title": "熱區告訴你看哪裡，輪廓回答另一個問題",
+            "image": "_course_content/generated-concepts/ad-efficientad/wi033-eff-deep-04-output-r01-desktop.png",
+            "alt": "同一線痕，位置熱圖和輪廓回答不同問題。先選要位置還是輪廓，再準備資料與驗證。 教學圖解，非模型實測。",
+            "desktop_intrinsic_width": 1672,
+            "desktop_intrinsic_height": 941,
+            "mobile_image": "_course_content/generated-concepts/ad-efficientad/wi033-eff-deep-04-output-r01-mobile.png",
+            "mobile_crop": [
+              0,
+              0,
+              768,
+              2304
+            ],
+            "mobile_display_mode": "full-mobile",
+            "mobile_intrinsic_width": 768,
+            "mobile_intrinsic_height": 2304
+          }
+        ]
+      },
+      {
+        "id": "limits",
+        "nav": "好用與吃力",
+        "title": "模型也得先看得見問題",
+        "summary": "同一種缺陷，在穩定取像下可能有清楚訊號；強反光或縮圖卻可能把訊號蓋掉。先處理看不見的問題，再談換模型。",
+        "image": "_course_content/generated-concepts/ad-efficientad/efficientad-work-05-limits_v11.svg",
+        "alt": "模型也得先看得見問題。同一種缺陷，在穩定取像下可能有清楚訊號；強反光或縮圖卻可能把訊號蓋掉。先處理看不見的問題，再談換模型。",
+        "points": [
+          "固定產品和取像條件時，正常外觀較容易形成可比較的參考。要用代表性異常檢查是否真的有幫助。",
+          "正常品因光照變動普遍升分時，先查相機、曝光與正常資料覆蓋；單純提高門檻可能壓掉真正的小缺陷。",
+          "細微尺寸差異或輸入已丟失的細節，需要改善光學、解析度或加入量測；模型不能替代不存在的影像證據。"
+        ],
+        "check": {
+          "question": "換了燈後誤報增加，第一步就是提高判定門檻嗎？",
+          "answer": "先對照新舊取像與正常參考，找出誤報原因。調門檻後也要重查關鍵缺陷，避免用漏檢換掉誤報。"
+        },
+        "source_ids": [
+          "efficientad"
+        ],
+        "reading_views": [
+          {
+            "title": "模型也得先看得見問題",
+            "image": "_course_content/generated-concepts/ad-efficientad/efficientad-work-05-limits_v11.svg",
+            "alt": "看不清的細痕，不能只靠調門檻。先改善取像，再用正常與真缺陷驗證。 教學圖解，非模型實測。",
+            "mobile_image": "_course_content/generated-concepts/ad-efficientad/wi033-eff-deep-05-limits-r01-mobile.png",
+            "mobile_crop": [
+              0,
+              0,
+              768,
+              2304
+            ],
+            "mobile_display_mode": "full-mobile",
+            "mobile_intrinsic_width": 768,
+            "mobile_intrinsic_height": 2304
+          }
+        ]
+      },
+      {
+        "id": "workflow",
+        "nav": "完整案例",
+        "title": "同一工件：從差異圖走到人工判定",
+        "summary": "沿著 A-01 下方中央的刮痕，看原始差異、尺度對齊與融合結果。以下全部是可追算的簡化數值，不是模型實測；九格代表位置，實際輸出有更多位置。",
+        "image": "_course_content/generated-concepts/ad-efficientad/efficientad-work-06-workflow_v11.svg",
+        "alt": "同一工件：從差異圖走到人工判定。沿著 A-01 下方中央的刮痕，看原始差異、尺度對齊與融合結果。以下全部是可追算的簡化數值，不是模型實測；九格代表位置，實際輸出有更多位置。",
+        "points": [
+          "同一位置的簡化描述：Teacher=[2,4]、Student 第一組=[1,2]，平方差平均為 2.50；AE=[2,2]、Student 第二組=[0,2]，平方差平均為 2.00。圖中其他八格也都是假設差異值。",
+          "示範正常驗證參考：local 的 90%／99.5% 分位為 0.5／1.5；global 為 1／6，分別映到 0／0.1。刮痕位置對齊後為 0.20 與 0.02，再平均為 0.11。其他位置也照同一規則處理，最大融合值就是 image score=0.11；分數不是機率。",
+          "示範規則為 image score > 0.08 送覆核，因此 A-01 被挑出。覆核者回看原圖，依假想案例確認刮痕並按產品規格處置。門檻需另用驗證資料和漏檢／誤報成本決定；最終測試不能拿來反覆調門檻。POC 同時記錄完整時間與覆核量，換產品後重查資料、模型及門檻。"
+        ],
+        "check": {
+          "question": "假想獨立測試有 1,000 張正常品、20 張關鍵缺陷。門檻 A 抓到 20 張缺陷、誤報 60 張；B 抓到 18 張、誤報 10 張。要求不漏關鍵缺陷，覆核容量卻只有 30 張，你怎麼處理？",
+          "answer": "A 需覆核 80 張，超過容量；B 需 28 張，但漏 2 張關鍵缺陷。兩者都未滿足全部條件，不能只因 B 比較省人工就選它。可先維持安全的人工流程，改善取像／模型或安排覆核資源，再用未參與調整的資料驗證。這是教學假設，不是本機實測，也不能把測試零漏檢當未來零風險。"
+        },
+        "source_ids": [
+          "efficientad"
+        ],
+        "mobile_steps": [
+          {
+            "title": "先認出同一工件",
+            "body": "A-01 的刮痕在下方中央。接下來各張圖都對回這個位置；圖片與數值均為教學示範。",
+            "crop": [
+              70,
+              376,
+              227,
+              230
+            ]
+          },
+          {
+            "title": "局部差異：Teacher 對 Student 第一組",
+            "body": "此位置原始差異 2.50，依正常參考對齊後為 0.20。",
+            "crop": [
+              444,
+              304,
+              175,
+              175
+            ]
+          },
+          {
+            "title": "整體差異：AE 對 Student 第二組",
+            "body": "同位置原始差異 2.00，依另一路正常參考對齊後為 0.02；兩路不是用原始大小直接比。",
+            "crop": [
+              444,
+              545,
+              175,
+              175
+            ]
+          },
+          {
+            "title": "融合後，再取全圖最大值",
+            "body": "同位置平均：(0.20 + 0.02) ÷ 2 = 0.11。本例其他位置都更低，因此 image score 也是 0.11。",
+            "crop": [
+              978,
+              376,
+              205,
+              205
+            ]
+          },
+          {
+            "title": "超過門檻，交給人判讀",
+            "body": "0.11 高於示範門檻 0.08，所以送人工覆核。回看原圖確認刮痕，再依產品規格處置；分數本身不等於報廢決定。",
+            "crop": [
+              1258,
+              280,
+              360,
+              465
+            ]
+          }
+        ]
+      },
+      {
+        "id": "comparison",
+        "nav": "模型怎麼選",
+        "title": "用同一個工作需求，對照三種起步方式",
+        "summary": "只有正常資料、想找可疑位置，可先比較 EfficientAD 與 PatchCore；若要已知目標的輪廓，則要評估相應的分割資料與模型。",
+        "image": "_course_content/generated-concepts/ad-efficientad/wi033-eff-deep-07-comparison-r01-desktop.png",
+        "alt": "用同一個工作需求，對照三種起步方式。只有正常資料、想找可疑位置，可先比較 EfficientAD 與 PatchCore；若要已知目標的輪廓，則要評估相應的分割資料與模型。",
+        "points": [
+          "只有正常品、先找位置，EfficientAD 與 PatchCore 都可當候選；需要已定義輪廓則評估監督式分割。此處沒有現場共同實測，因此不提供快慢或準確率排名。",
+          "比較先記正常訓練張數、獨立正常／異常測試張數及缺陷種類；固定硬體、取像範圍、解析度、批次大小與軟體版本。PatchCore 記特徵庫保留比例、特徵網路及查詢方式；EfficientAD 記 S／M、訓練步數與模型版本。",
+          "成本分開量：準備／訓練時間、模型與參考庫大小、峰值記憶體／顯存，以及取像到結果的延遲分布。準確表現用固定驗證門檻下的漏檢／誤報及人工覆核量解讀；論文 AUROC 是排序指標，不能直接當現場合格率。"
+        ],
+        "check": {
+          "question": "只有正常圖，且想先試可疑位置，現在能直接斷言 EfficientAD 比 PatchCore 適合嗎？",
+          "answer": "不能。兩者都是候選；比較正常資料流程、參考庫或訓練成本，以及同批圖上的漏檢、覆核量和完整處理時間。"
+        },
+        "source_ids": [
+          "efficientad",
+          "patchcore",
+          "segmentation"
+        ],
+        "reading_views": [
+          {
+            "title": "用同一個工作需求，對照三種起步方式",
+            "image": "_course_content/generated-concepts/ad-efficientad/wi033-eff-deep-07-comparison-r01-desktop.png",
+            "alt": "換同一產品，三種方法各要準備什麼。比較同一用途與完整成本，更新時重做的事也要算。 教學圖解，非模型實測。",
+            "desktop_intrinsic_width": 1672,
+            "desktop_intrinsic_height": 941,
+            "mobile_image": "_course_content/generated-concepts/ad-efficientad/wi033-eff-deep-07-comparison-r01-mobile.png",
+            "mobile_crop": [
+              0,
+              0,
+              768,
+              2304
+            ],
+            "mobile_display_mode": "full-mobile",
+            "mobile_intrinsic_width": 768,
+            "mobile_intrinsic_height": 2304
+          }
+        ]
+      },
+      {
+        "id": "transfer",
+        "nav": "換情境練習",
+        "title": "需求一變，選擇和準備也要跟著變",
+        "summary": "新產品目前只有正常照片，先想找可疑位置；一週後需求改成刮痕面積。請分別提出候選方法、資料準備和選擇理由。",
+        "image": "_course_content/generated-concepts/ad-efficientad/efficientad-work-08-transfer_v11.svg",
+        "alt": "需求一變，選擇和準備也要跟著變。新產品目前只有正常照片，先想找可疑位置；一週後需求改成刮痕面積。請分別提出候選方法、資料準備和選擇理由。",
+        "points": [
+          "情境一：先比較 EfficientAD 與 PatchCore。清理正常品、留驗證資料、收代表異常測試，輸出用於可疑位置覆核。",
+          "情境二：若目標是已定義刮痕的輪廓，準備相應標註並評估分割；如果要實體面積，還要校正與誤差驗證。",
+          "提出選擇時，同時說出何時會換方法，例如覆核量過大、處理時間不符需求、需要不同輸出或輸入訊號不足。"
+        ],
+        "check": {
+          "question": "你會先選哪個候選、準備什麼，以及什麼結果會讓你改選？",
+          "answer": "合理答案不只有一個。只要能連結資料可得性、所需輸出、維護工作與驗證結果，並說出替代條件，就比背模型名稱更接近工作決策。"
+        },
+        "source_ids": [
+          "efficientad",
+          "patchcore",
+          "segmentation"
+        ],
+        "reading_views": [
+          {
+            "title": "需求一變，選擇和準備也要跟著變",
+            "image": "_course_content/generated-concepts/ad-efficientad/efficientad-work-08-transfer_v11.svg",
+            "alt": "需求從可疑位置變成刮痕面積。需求改變時，資料、輸出與驗收也要改。 教學圖解，非模型實測。",
+            "mobile_image": "_course_content/generated-concepts/ad-efficientad/wi033-eff-deep-08-transfer-r01-mobile.png",
+            "mobile_crop": [
+              0,
+              0,
+              768,
+              2304
+            ],
+            "mobile_display_mode": "full-mobile",
+            "mobile_intrinsic_width": 768,
+            "mobile_intrinsic_height": 2304
+          }
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "id": "efficientad",
+        "label": "EfficientAD 原論文",
+        "url": "https://arxiv.org/abs/2303.14535",
+        "scope": "正常學習、局部與整體線索、成本與限制"
+      },
+      {
+        "id": "patchcore",
+        "label": "PatchCore 原論文",
+        "url": "https://arxiv.org/abs/2106.08265",
+        "scope": "正常特徵參考庫與異常定位"
+      },
+      {
+        "id": "segmentation",
+        "label": "Ultralytics 分割說明原始文件",
+        "url": "https://github.com/ultralytics/ultralytics/blob/main/docs/en/tasks/segment.md",
+        "scope": "已知目標輪廓、輸出與訓練資料"
+      },
+      {
+        "id": "f01-paper",
+        "label": "F01 核心原論文",
+        "url": "https://arxiv.org/abs/2303.14535",
+        "scope": "首章存在理由、核心及移除設計的概念推論；非實測消融"
+      }
+    ],
+    "default_collapsed": true
+  },
+  "quality_status": {
+    "label": "首讀圖文已核對",
+    "state": "self-reviewed",
+    "round": "WI-030",
+    "reason": "新版逐圖與整頁自評、桌機手機驗證完成；使用者成品核准pending。原工程圖未納入本輪分數。"
+  },
+  "teaching_preflight": {
+    "brief": "teaching-images/vision-ai-model-selection/workitems/wi-030/efficient-c1-r06-desktop.md",
+    "mobile_brief": "teaching-images/vision-ai-model-selection/workitems/wi-030/efficient-c1-r05-mobile.md",
+    "story": "C",
+    "major_visual_nodes": 3,
+    "visual_status": "self-reviewed",
+    "user_review": "pending"
+  },
+  "engineering_slides": [
+    {
+      "title": "EfficientAD：正常品教三個角色合作",
+      "question": "教師固定，學生兩組輸出與AE各有訓練目標。",
+      "plain": {
+        "look": "先看正常托盤與固定教師，再核對學生第一組學教師，最後看AE與學生第二組一起學。",
+        "relation": "選定預訓練輕量教師並固定；學生第一組以正常影像學教師特徵，原方法另有hard-feature與外部預訓練圖penalty。AE由整圖重建教師特徵，學生第二組學AE重建；使用正常資料訓練，真缺陷留作獨立檢查。學生兩組共享前層，不是兩個互不相關模型。",
+        "takeaway": "教師固定，學生兩組輸出與AE各有訓練目標。"
+      },
+      "terms": [
+        "T/S1：固定教師與學生第一組輸出。",
+        "AE/S2：自編碼器與學生第二組輸出；兩者差產生全局圖。"
+      ],
+      "guide": [
+        "選定預訓練輕量教師並固定；學生第一組以正常影像學教師特徵，原方法另有hard-feature與外部預訓練圖penalty。AE由整圖重建教師特徵，學生第二組學AE重建；使用正常資料訓練，真缺陷留作獨立檢查。學生兩組共享前層，不是兩個互不相關模型。",
+        "先看正常托盤與固定教師，再核對學生第一組學教師，最後看AE與學生第二組一起學。"
+      ],
+      "stages": [
+        {
+          "title": "正常托盤與固定教師",
+          "body": "正常托盤與固定教師；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "學生第一組學教師",
+          "body": "學生第一組學教師；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "AE與學生第二組一起學",
+          "body": "AE與學生第二組一起學；請對照圖內輸入、變化與結果。"
+        }
+      ],
+      "misconception": "同一托盤的右側污點被反光遮住，兩路都可能缺少可用線索；中間缺件仍可見，也必須另外驗證。異常熱圖不能補回看不見的資訊，污點與漏裝的驗證不可互相代替。",
+      "alt": "EfficientAD：正常品教三個角色合作。教師固定，學生兩組輸出與AE各有訓練目標。 教學示意，非模型實測。",
+      "mobile_image": "roadmap-model-selection/anomaly-detection/ad-efficientad/images/final/WI033-EFFICIENTAD-01-r02-mobile.png",
+      "mobile_width": 768,
+      "mobile_height": 2400,
+      "engineering": {
+        "takeaway": "教師固定，學生兩組輸出與AE各有訓練目標。",
+        "nextAction": "先收齊正常托盤的允收變化，獨立保留污點、漏裝與正常樣本；與簡單占位／外觀基準比較。",
+        "redLine": "先回看原圖、曝光與照明，穩定取像；新正常外觀須經允收確認，再以獨立正常與缺陷資料驗證，不能把高分樣本一律加進正常資料。"
+      },
+      "source": "https://arxiv.org/html/2303.14535v3"
+    },
+    {
+      "title": "EfficientAD：局部與全局比較對象不同",
+      "question": "局部比T/S1，全局比AE/S2；校正尺度後才融合。",
+      "plain": {
+        "look": "先看同一待測托盤送入三者，再核對兩路各比對應的表示，最後看正常驗證資料校正後融合。",
+        "relation": "同一托盤有中間缺件及右側污點；T與學生第一組S1的通道均方差產生local，AE與學生第二組S2的差產生global，不能誤畫T減AE或直接原圖減重建照片。用未參與訓練的正常驗證分布各自做分位數線性尺度對齊，再平均兩圖；最大值作整圖分數。熱區僅示意，不保證兩路專抓某種缺陷。",
+        "takeaway": "局部比T/S1，全局比AE/S2；校正尺度後才融合。"
+      },
+      "terms": [
+        "T/S1：固定教師與學生第一組輸出。",
+        "AE/S2：自編碼器與學生第二組輸出；兩者差產生全局圖。"
+      ],
+      "guide": [
+        "同一托盤有中間缺件及右側污點；T與學生第一組S1的通道均方差產生local，AE與學生第二組S2的差產生global，不能誤畫T減AE或直接原圖減重建照片。用未參與訓練的正常驗證分布各自做分位數線性尺度對齊，再平均兩圖；最大值作整圖分數。熱區僅示意，不保證兩路專抓某種缺陷。",
+        "先看同一待測托盤送入三者，再核對兩路各比對應的表示，最後看正常驗證資料校正後融合。"
+      ],
+      "stages": [
+        {
+          "title": "同一待測托盤送入三者",
+          "body": "同一待測托盤送入三者；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "兩路各比對應的表示",
+          "body": "兩路各比對應的表示；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "正常驗證資料校正後融合",
+          "body": "正常驗證資料校正後融合；請對照圖內輸入、變化與結果。"
+        }
+      ],
+      "misconception": "同一托盤的右側污點被反光遮住，兩路都可能缺少可用線索；中間缺件仍可見，也必須另外驗證。異常熱圖不能補回看不見的資訊，污點與漏裝的驗證不可互相代替。",
+      "alt": "EfficientAD：局部與全局比較對象不同。局部比T/S1，全局比AE/S2；校正尺度後才融合。 教學示意，非模型實測。",
+      "mobile_image": "roadmap-model-selection/anomaly-detection/ad-efficientad/images/final/WI033-EFFICIENTAD-02-r02-mobile.png",
+      "mobile_width": 768,
+      "mobile_height": 2400,
+      "engineering": {
+        "takeaway": "局部比T/S1，全局比AE/S2；校正尺度後才融合。",
+        "nextAction": "先收齊正常托盤的允收變化，獨立保留污點、漏裝與正常樣本；與簡單占位／外觀基準比較。",
+        "redLine": "先回看原圖、曝光與照明，穩定取像；新正常外觀須經允收確認，再以獨立正常與缺陷資料驗證，不能把高分樣本一律加進正常資料。"
+      },
+      "source": "https://arxiv.org/html/2303.14535v3"
+    },
+    {
+      "title": "EfficientAD：保留兩路，才知道融合改了什麼",
+      "question": "兩路與融合圖一起驗，完整流程一起計時。",
+      "plain": {
+        "look": "先看保存局部、全局與融合，再核對回同托盤核對兩種錯誤，最後看相機到覆核的完整時間。",
+        "relation": "保存原圖、原始local/global圖、正常分位數校正及融合結果。用獨立正常與真缺陷對照各分支及融合錯誤；同時量取像、前處理、教師/學生/AE、映回與交付的完整耗時，不能從論文毫秒數推定產線節拍。",
+        "takeaway": "兩路與融合圖一起驗，完整流程一起計時。"
+      },
+      "terms": [
+        "T/S1：固定教師與學生第一組輸出。",
+        "AE/S2：自編碼器與學生第二組輸出；兩者差產生全局圖。"
+      ],
+      "guide": [
+        "保存原圖、原始local/global圖、正常分位數校正及融合結果。用獨立正常與真缺陷對照各分支及融合錯誤；同時量取像、前處理、教師/學生/AE、映回與交付的完整耗時，不能從論文毫秒數推定產線節拍。",
+        "先看保存局部、全局與融合，再核對回同托盤核對兩種錯誤，最後看相機到覆核的完整時間。"
+      ],
+      "stages": [
+        {
+          "title": "保存局部、全局與融合",
+          "body": "保存局部、全局與融合；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "回同托盤核對兩種錯誤",
+          "body": "回同托盤核對兩種錯誤；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "相機到覆核的完整時間",
+          "body": "相機到覆核的完整時間；請對照圖內輸入、變化與結果。"
+        }
+      ],
+      "misconception": "同一托盤的右側污點被反光遮住，兩路都可能缺少可用線索；中間缺件仍可見，也必須另外驗證。異常熱圖不能補回看不見的資訊，污點與漏裝的驗證不可互相代替。",
+      "alt": "EfficientAD：保留兩路，才知道融合改了什麼。兩路與融合圖一起驗，完整流程一起計時。 教學示意，非模型實測。",
+      "mobile_image": "roadmap-model-selection/anomaly-detection/ad-efficientad/images/final/WI033-EFFICIENTAD-03-r02-mobile.png",
+      "mobile_width": 768,
+      "mobile_height": 2400,
+      "engineering": {
+        "takeaway": "兩路與融合圖一起驗，完整流程一起計時。",
+        "nextAction": "先收齊正常托盤的允收變化，獨立保留污點、漏裝與正常樣本；與簡單占位／外觀基準比較。",
+        "redLine": "先回看原圖、曝光與照明，穩定取像；新正常外觀須經允收確認，再以獨立正常與缺陷資料驗證，不能把高分樣本一律加進正常資料。"
+      },
+      "source": "https://arxiv.org/html/2303.14535v3"
+    },
+    {
+      "title": "EfficientAD：換產品要更新哪些部分",
+      "question": "模型與正常校正一起重驗，不能只換產品名稱。",
+      "plain": {
+        "look": "先看新產品有不同正常外觀，再核對適配學生／AE與分數尺度，最後看同留出集比較更新前後。",
+        "relation": "換產品先確認正常訓練涵蓋；按需要重新訓練學生與AE，重新建立正常驗證分位數，保留舊版作對照。固定教師版本不代表下游分數可直接沿用；比較正常誤報、真缺陷漏檢、訓練/校正成本與每件耗時，不能只記模型檔大小。",
+        "takeaway": "模型與正常校正一起重驗，不能只換產品名稱。"
+      },
+      "terms": [
+        "T/S1：固定教師與學生第一組輸出。",
+        "AE/S2：自編碼器與學生第二組輸出；兩者差產生全局圖。"
+      ],
+      "guide": [
+        "換產品先確認正常訓練涵蓋；按需要重新訓練學生與AE，重新建立正常驗證分位數，保留舊版作對照。固定教師版本不代表下游分數可直接沿用；比較正常誤報、真缺陷漏檢、訓練/校正成本與每件耗時，不能只記模型檔大小。",
+        "先看新產品有不同正常外觀，再核對適配學生／AE與分數尺度，最後看同留出集比較更新前後。"
+      ],
+      "stages": [
+        {
+          "title": "新產品有不同正常外觀",
+          "body": "新產品有不同正常外觀；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "適配學生／AE與分數尺度",
+          "body": "適配學生／AE與分數尺度；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "同留出集比較更新前後",
+          "body": "同留出集比較更新前後；請對照圖內輸入、變化與結果。"
+        }
+      ],
+      "misconception": "同一托盤的右側污點被反光遮住，兩路都可能缺少可用線索；中間缺件仍可見，也必須另外驗證。異常熱圖不能補回看不見的資訊，污點與漏裝的驗證不可互相代替。",
+      "alt": "EfficientAD：換產品要更新哪些部分。模型與正常校正一起重驗，不能只換產品名稱。 教學示意，非模型實測。",
+      "mobile_image": "roadmap-model-selection/anomaly-detection/ad-efficientad/images/final/WI033-EFFICIENTAD-04-r01-mobile.png",
+      "mobile_width": 768,
+      "mobile_height": 2400,
+      "engineering": {
+        "takeaway": "模型與正常校正一起重驗，不能只換產品名稱。",
+        "nextAction": "先收齊正常托盤的允收變化，獨立保留污點、漏裝與正常樣本；與簡單占位／外觀基準比較。",
+        "redLine": "先回看原圖、曝光與照明，穩定取像；新正常外觀須經允收確認，再以獨立正常與缺陷資料驗證，不能把高分樣本一律加進正常資料。"
+      },
+      "source": "https://arxiv.org/html/2303.14535v3"
+    }
+  ]
+}

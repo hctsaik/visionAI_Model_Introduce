@@ -1,0 +1,3 @@
+﻿from pathlib import Path
+import urllib.request,hashlib,json,sys
+sys.stdout.reconfigure(encoding='utf8');o=Path('teaching-images/vision-ai-model-selection/workitems/wi-041');u='https://raw.githubusercontent.com/HuiZhang0812/DiffusionAD/main/models/DDPM.py';b=urllib.request.urlopen(u).read();s=b.decode();(o/'recheck-diffusionad-official-DDPM.py').write_bytes(b);start=s.index('    def norm_guided_one_step_denoising_eval');end=s.index('    def noise_t',start);print(s[start:end]);(o/'recheck-diffusionad-source.json').write_text(json.dumps({'url':u,'sha256':hashlib.sha256(b).hexdigest(),'function':'norm_guided_one_step_denoising_eval','evidence':'two calls calc_loss; calc_loss calls model(x_t,t)'},indent=2),'utf8')

@@ -18,7 +18,14 @@ visual assets and lesson documents it references. It intentionally excludes loca
 caches, prompt intermediates, raw image-generation material, and presentation
 source files.
 
-The latest revision (WI-040) adds a direct demand-assistant entry on the homepage,
+The latest revision (WI-042) aligns the expanded mechanism text in DiffusionAD,
+U-Net, YOLO-Seg, EfficientAD, ConvLSTM, and VideoMAE. The release verifier now
+checks the current demand-assistant hooks, native mobile image dimensions,
+reading views and deployment references, with negative regression tests.
+See [the release report](teaching-maintenance/workitems/wi-042/REPORT.md)
+and [the full-site review](teaching-maintenance/workitems/wi-041/REVIEW.md).
+
+WI-040 adds a direct demand-assistant entry on the homepage,
 validates progress backups before replacement, and aligns the expanded mechanism
 text in ConvNeXt, V-JEPA, and AnomalyGPT. Valid older backups remain compatible;
 invalid files and failed storage leave existing progress intact.

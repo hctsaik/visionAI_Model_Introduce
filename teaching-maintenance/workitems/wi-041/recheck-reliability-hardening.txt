@@ -1,0 +1,103 @@
+test_cancel_valid_import_keeps_exact_original_state (__main__.ReleaseHardeningTests.test_cancel_valid_import_keeps_exact_original_state) ... ok
+test_home_primary_action_opens_task_without_model_knowledge (__main__.ReleaseHardeningTests.test_home_primary_action_opens_task_without_model_knowledge) ... ok
+test_invalid_backups_are_rejected_before_confirmation_without_mutating_state (__main__.ReleaseHardeningTests.test_invalid_backups_are_rejected_before_confirmation_without_mutating_state) ... ok
+test_new_export_has_application_identity_and_roundtrips (__main__.ReleaseHardeningTests.test_new_export_has_application_identity_and_roundtrips) ... ok
+test_storage_failure_preserves_saved_and_visible_original (__main__.ReleaseHardeningTests.test_storage_failure_preserves_saved_and_visible_original) ... ok
+test_supported_legacy_v1_and_v2_backups_are_accepted (__main__.ReleaseHardeningTests.test_supported_legacy_v1_and_v2_backups_are_accepted) ... 
+  test_supported_legacy_v1_and_v2_backups_are_accepted (__main__.ReleaseHardeningTests.test_supported_legacy_v1_and_v2_backups_are_accepted) (version=1) ... ERROR
+  test_supported_legacy_v1_and_v2_backups_are_accepted (__main__.ReleaseHardeningTests.test_supported_legacy_v1_and_v2_backups_are_accepted) (version=2) ... ERROR
+
+======================================================================
+ERROR: test_supported_legacy_v1_and_v2_backups_are_accepted (__main__.ReleaseHardeningTests.test_supported_legacy_v1_and_v2_backups_are_accepted) (version=1)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\code\claude\visionAI\teaching-images\vision-ai-model-selection\tests\test_release_hardening.py", line 91, in test_supported_legacy_v1_and_v2_backups_are_accepted
+    self.open_seeded()
+    ~~~~~~~~~~~~~~~~^^
+  File "C:\code\claude\visionAI\teaching-images\vision-ai-model-selection\tests\test_release_hardening.py", line 33, in open_seeded
+    self.page.goto(BASE + '#view=poc')
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hctsa\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\playwright\sync_api\_generated.py", line 9054, in goto
+    self._sync(
+    ~~~~~~~~~~^
+        self._impl_obj.goto(
+        ^^^^^^^^^^^^^^^^^^^^
+            url=url, timeout=timeout, waitUntil=wait_until, referer=referer
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        )
+        ^
+    )
+    ^
+  File "C:\Users\hctsa\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\playwright\_impl\_sync_base.py", line 115, in _sync
+    return task.result()
+           ~~~~~~~~~~~^^
+  File "C:\Users\hctsa\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\playwright\_impl\_page.py", line 552, in goto
+    return await self._main_frame.goto(**locals_to_params(locals()))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hctsa\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\playwright\_impl\_frame.py", line 153, in goto
+    await self._channel.send(
+        "goto", self._navigation_timeout, locals_to_params(locals())
+    )
+  File "C:\Users\hctsa\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\playwright\_impl\_connection.py", line 69, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\Users\hctsa\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\playwright\_impl\_connection.py", line 559, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.Error: Page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:8000/docs/index.html#view=poc
+Call log:
+  - navigating to "http://127.0.0.1:8000/docs/index.html#view=poc", waiting until "load"
+
+
+======================================================================
+ERROR: test_supported_legacy_v1_and_v2_backups_are_accepted (__main__.ReleaseHardeningTests.test_supported_legacy_v1_and_v2_backups_are_accepted) (version=2)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\code\claude\visionAI\teaching-images\vision-ai-model-selection\tests\test_release_hardening.py", line 91, in test_supported_legacy_v1_and_v2_backups_are_accepted
+    self.open_seeded()
+    ~~~~~~~~~~~~~~~~^^
+  File "C:\code\claude\visionAI\teaching-images\vision-ai-model-selection\tests\test_release_hardening.py", line 33, in open_seeded
+    self.page.goto(BASE + '#view=poc')
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hctsa\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\playwright\sync_api\_generated.py", line 9054, in goto
+    self._sync(
+    ~~~~~~~~~~^
+        self._impl_obj.goto(
+        ^^^^^^^^^^^^^^^^^^^^
+            url=url, timeout=timeout, waitUntil=wait_until, referer=referer
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        )
+        ^
+    )
+    ^
+  File "C:\Users\hctsa\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\playwright\_impl\_sync_base.py", line 115, in _sync
+    return task.result()
+           ~~~~~~~~~~~^^
+  File "C:\Users\hctsa\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\playwright\_impl\_page.py", line 552, in goto
+    return await self._main_frame.goto(**locals_to_params(locals()))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hctsa\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\playwright\_impl\_frame.py", line 153, in goto
+    await self._channel.send(
+        "goto", self._navigation_timeout, locals_to_params(locals())
+    )
+  File "C:\Users\hctsa\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\playwright\_impl\_connection.py", line 69, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\Users\hctsa\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\playwright\_impl\_connection.py", line 559, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.Error: Page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:8000/docs/index.html#view=poc
+Call log:
+  - navigating to "http://127.0.0.1:8000/docs/index.html#view=poc", waiting until "load"
+
+
+----------------------------------------------------------------------
+Ran 6 tests in 64.479s
+
+FAILED (errors=2)
+
+EXIT: 1

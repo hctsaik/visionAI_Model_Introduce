@@ -1,0 +1,33 @@
+[
+  {
+    "width": 1440,
+    "search_url": "http://127.0.0.1:8014/docs/index.html#view=library&family=all",
+    "search_matches": 1,
+    "search_open": "PatchCore",
+    "theme": "dark",
+    "theme_reload": "dark",
+    "figure_top": 84.515625,
+    "figure_images": [
+      {
+        "src": "http://127.0.0.1:8014/docs/_course_content/generated-concepts/ad-patchcore/wi030-patch-c1-r04-desktop.png",
+        "width": 1671,
+        "complete": true
+      },
+      {
+        "src": "http://127.0.0.1:8014/docs/_course_content/generated-concepts/ad-patchcore/wi030-patch-c1-r02-mobile.png",
+        "width": 768,
+        "complete": true
+      }
+    ],
+    "zoom_start": {
+      "left": 32,
+      "boxLeft": 20
+    },
+    "zoom_end": {
+      "right": 1408,
+      "boxRight": 1420,
+      "bottom": 923.265625,
+      "boxBottom": 935.734375
+    }
+  }
+]

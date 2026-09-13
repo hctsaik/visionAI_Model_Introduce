@@ -1,0 +1,19 @@
+[
+  {
+    "suite": "rules",
+    "exit": 0
+  },
+  {
+    "suite": "hardening",
+    "exit": 1
+  },
+  {
+    "suite": "poc",
+    "exit": 0
+  },
+  {
+    "audit": "dirty selection/reload, dirty note/immediate export/reload, dark theme/export/import, stale branch import",
+    "passed": true,
+    "page_errors": []
+  }
+]

@@ -1,3 +1,63 @@
+## WI-042 定版修正與發布
+
+六課修正與維護驗證器完成；30tests+146subtests、15規則、追加verifier/共享比較10tests+11subtests及最終source/docs總驗證皆通過。12張桌面手機實頁已實看，僅六課mechanism_steps變更，HTML139d466d。即將保存快照、commit＋push並核對公開頁；公開新版未完成，使用者核准pending。
+
+唯一 checklist：teaching-images/vision-ai-model-selection/workitems/wi-042/PLAN.md。
+
+## WI-042 定版修正與發布
+
+六課文字、verifier修正與course/docs建置完成，scope確認僅mechanism_steps變更，共用JS/版面與其他52課相同，未重畫。verifier反例含裁切共10tests+11subtests通過；完整30項回歸正在收尾，再跑source/docs總驗證與12張實頁。Git已fetch、與origin/main相同。尚未commit/push或公開新版；下一步實頁審查與快照。
+
+唯一 checklist：teaching-images/vision-ai-model-selection/workitems/wi-042/PLAN.md。
+
+## WI-042 定版修正與發布
+
+六課mechanism來源已修，DiffusionAD操作文件原本正確已核對；verifier已對齊display、原生手機尺寸及閱讀schema，反例5tests+6subtests先通過，新增裁切反例待跑。完整verifier及course建置進行中，尚未驗新版docs或發布。下一步完成建置與六課實頁；使用者核准pending。
+
+唯一 checklist：teaching-images/vision-ai-model-selection/workitems/wi-042/PLAN.md。
+
+## WI-042 定版修正與發布
+
+使用者已授權完成WI041六課與驗證器修正、commit＋push。即將保存基準、修正來源及驗證契約；新測試未跑、新版未發布。計畫見WI042/PLAN.md，網站仍WI040；成品核准pending。
+
+唯一 checklist：teaching-images/vision-ai-model-selection/workitems/wi-042/PLAN.md。
+
+## WI-041 完整 freeze 前審查
+
+WI-041 Multi Agent全站審查完成，最終報告workitems/wi-041/REVIEW.md。建議定版前有限修正六課：DiffusionAD單步語意，U-Net/YOLO-Seg/EfficientAD/ConvLSTM/VideoMAE六處標題正文錯位；另同步舊驗證器UI契約。58課文字、116課頁／464投影片／24共用路由、1228圖片解碼、1370公開資產、PoC15+6+13及公開桌面手機交互均有證據；舊verifier本輪失敗明列。三路報告及主Agent公開六課截圖反證完成，學習已寫回TEACHING_REVIEW_LOG。審查無未完成項目；修正尚未實作、無新Git或發布，網站仍WI-040，使用者核准pending。下一步依REVIEW有限文字收尾，不重做全站。
+
+唯一 checklist：teaching-images/vision-ai-model-selection/workitems/wi-041/PLAN.md。
+
+## WI-041 完整 freeze 前審查
+
+58課文字與實際default/expanded DOM清冊完成；六課需有限文字收尾：DiffusionAD一次forward技術矛盾，另外五課六處標題正文錯位。PoC15+6+13及追加交互全通過。134個個別外部來源122GET通過、12本機限制均web fallback讀取成功。主Agent反證記錄recheck-root-adjudication.md；全課桌面手機路由尚在收尾，未形成最終REVIEW。產品未改、核准pending。
+
+唯一 checklist：teaching-images/vision-ai-model-selection/workitems/wi-041/PLAN.md。
+
+## WI-041 完整 freeze 前審查
+
+全部1370引用資產source/docs hash一致且公開HTTP可達；公開版本smoke通過。5項navigation/bundle測試＋116subtests通過。已在公開實頁重現DiffusionAD一次forward舊文字及U-Net標題內文錯位，截圖recheck-finding-*.png。來源掃描26失敗包含整段source prose誤當URL，正在修正抽取後GET重查，不算26死鏈。三路全站審查尚未完成；產品未改、使用者核准pending。
+
+唯一 checklist：teaching-images/vision-ai-model-selection/workitems/wi-041/PLAN.md。
+
+## WI-041 完整 freeze 前審查
+
+新公開驗證通過：HTML hash43c3557a與docs一致、遠端HEAD等於2c4cb73、1440/390需求到計畫與拒絕錯檔保留原稿通過。內容Agent發現U-Net展開機制標題內文錯位，待主Agent反證；全58課掃描及來源資產仍進行中，最終裁決未完成。證據recheck-public-verification.json及recheck-public-*.png；未修改產品、未發布。下一步完成三路審查並整合。
+
+唯一 checklist：teaching-images/vision-ai-model-selection/workitems/wi-041/PLAN.md。
+
+## WI-041 完整 freeze 前審查
+
+2026-09-13 使用者再次明確要求 Multi Agent 全站定版審查。已讀既有產物，未發現舊 wi-041 審查程序仍在執行；即將重新核對58課內容、桌面手機交互、PoC與公開資產。舊產物保留，新證據使用 recheck 前綴。產品不修改、不發布；本輪測試未跑，最終裁決未完成，使用者核准 pending。下一步三路獨立審查加主 Agent 反證。
+
+唯一 checklist：teaching-images/vision-ai-model-selection/workitems/wi-041/PLAN.md。
+
+## WI-041 完整 freeze 前審查
+
+完整審查開始。三位Agent分工全58課內容、全課桌面手機路由、PoC與資料保護；主Agent核對公開版本、資產和來源。產品未改、未發布，新結論尚未形成。
+
+唯一 checklist：teaching-images/vision-ai-model-selection/workitems/wi-041/PLAN.md。
+
 ## WI-040 定版收尾
 
 公開網站驗證通過：HTML與docs相同，桌面／手機從首頁進需求助手、產生計畫、拒絕錯檔並保留原稿均通過。功能提交 542f57d 已推送。三項收尾完成；使用者成品審閱 pending。

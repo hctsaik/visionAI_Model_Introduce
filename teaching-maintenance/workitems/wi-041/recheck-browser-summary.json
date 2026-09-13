@@ -1,0 +1,14 @@
+{
+  "lesson_visits": 116,
+  "common_route_visits": 24,
+  "slides": 464,
+  "answer_reveals": 116,
+  "expanded_chapter_visits": 80,
+  "file_decode_nodes": 1228,
+  "file_decode_broken": 0,
+  "overflow": 0,
+  "fatal": [
+    null,
+    null
+  ]
+}

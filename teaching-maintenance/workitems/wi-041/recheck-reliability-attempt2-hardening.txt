@@ -1,0 +1,13 @@
+test_cancel_valid_import_keeps_exact_original_state (__main__.ReleaseHardeningTests.test_cancel_valid_import_keeps_exact_original_state) ... ok
+test_home_primary_action_opens_task_without_model_knowledge (__main__.ReleaseHardeningTests.test_home_primary_action_opens_task_without_model_knowledge) ... ok
+test_invalid_backups_are_rejected_before_confirmation_without_mutating_state (__main__.ReleaseHardeningTests.test_invalid_backups_are_rejected_before_confirmation_without_mutating_state) ... ok
+test_new_export_has_application_identity_and_roundtrips (__main__.ReleaseHardeningTests.test_new_export_has_application_identity_and_roundtrips) ... ok
+test_storage_failure_preserves_saved_and_visible_original (__main__.ReleaseHardeningTests.test_storage_failure_preserves_saved_and_visible_original) ... ok
+test_supported_legacy_v1_and_v2_backups_are_accepted (__main__.ReleaseHardeningTests.test_supported_legacy_v1_and_v2_backups_are_accepted) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 62.018s
+
+OK
+
+EXIT: 0

@@ -1,0 +1,851 @@
+{
+  "started": "2026-09-13 10:18:54",
+  "width": 390,
+  "lessons": [
+    {
+      "topic": "charuco",
+      "width": 390,
+      "slides": [
+        {
+          "slide": "1",
+          "title": "ChArUco · 01 先看它交出什麼",
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/geometry-alignment-measurement/charuco/images/final/WI032-CHARUCO-01-r04-mobile.png",
+              "ok": true
+            }
+          ],
+          "prev_disabled": true,
+          "next_disabled": false
+        },
+        {
+          "slide": "2",
+          "title": "ChArUco · 02 再看它怎麼做",
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/geometry-alignment-measurement/charuco/images/final/WI032-CHARUCO-02-r04-mobile.png",
+              "ok": true
+            }
+          ],
+          "prev_disabled": false,
+          "next_disabled": false
+        },
+        {
+          "slide": "3",
+          "title": "ChArUco · 03 上線前先固定條件",
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/geometry-alignment-measurement/charuco/images/final/WI032-CHARUCO-03-r04-mobile.png",
+              "ok": true
+            }
+          ],
+          "prev_disabled": false,
+          "next_disabled": false
+        },
+        {
+          "slide": "4",
+          "title": "ChArUco · 04 選它前先看風險",
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/geometry-alignment-measurement/charuco/images/final/WI032-CHARUCO-04-r04-mobile.png",
+              "ok": true
+            }
+          ],
+          "prev_disabled": false,
+          "next_disabled": true
+        }
+      ],
+      "concepts": [
+        {
+          "index": 0,
+          "title": "ChArUco：用已知角點，建立相機幾何",
+          "broken": 0
+        },
+        {
+          "index": 1,
+          "title": "只拍中心，邊角誤差可能沒有被看見",
+          "broken": 0
+        },
+        {
+          "index": 2,
+          "title": "幾何四種工具，負責的工作不同",
+          "broken": 0
+        }
+      ],
+      "chapters": [],
+      "errors": [],
+      "default": {
+        "overflow": false,
+        "images": {
+          "total": 10,
+          "broken": []
+        },
+        "h1": [
+          "ChArUco"
+        ]
+      },
+      "learning_checks": 0,
+      "expanded": {
+        "overflow": false,
+        "images": {
+          "total": 10,
+          "broken": []
+        },
+        "h1": [
+          "ChArUco"
+        ]
+      },
+      "step_links": 7
+    },
+    {
+      "topic": "ecc",
+      "width": 390,
+      "slides": [
+        {
+          "slide": "1",
+          "title": "ECC · 01 先看它交出什麼",
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/geometry-alignment-measurement/ecc/images/final/WI032-ECC-01-r04-mobile.png",
+              "ok": true
+            }
+          ],
+          "prev_disabled": true,
+          "next_disabled": false
+        },
+        {
+          "slide": "2",
+          "title": "ECC · 02 再看它怎麼做",
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/geometry-alignment-measurement/ecc/images/final/WI032-ECC-02-r04-mobile.png",
+              "ok": true
+            }
+          ],
+          "prev_disabled": false,
+          "next_disabled": false
+        },
+        {
+          "slide": "3",
+          "title": "ECC · 03 上線前先固定條件",
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/geometry-alignment-measurement/ecc/images/final/WI032-ECC-03-r04-mobile.png",
+              "ok": true
+            }
+          ],
+          "prev_disabled": false,
+          "next_disabled": false
+        },
+        {
+          "slide": "4",
+          "title": "ECC · 04 選它前先看風險",
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/geometry-alignment-measurement/ecc/images/final/WI032-ECC-04-r04-mobile.png",
+              "ok": true
+            }
+          ],
+          "prev_disabled": false,
+          "next_disabled": true
+        }
+      ],
+      "concepts": [
+        {
+          "index": 0,
+          "title": "ECC：依外觀微調幾何對齊",
+          "broken": 0
+        },
+        {
+          "index": 1,
+          "title": "起點太遠，ECC可能對錯位置",
+          "broken": 0
+        },
+        {
+          "index": 2,
+          "title": "幾何四種工具，負責的工作不同",
+          "broken": 0
+        }
+      ],
+      "chapters": [],
+      "errors": [],
+      "default": {
+        "overflow": false,
+        "images": {
+          "total": 10,
+          "broken": []
+        },
+        "h1": [
+          "ECC"
+        ]
+      },
+      "learning_checks": 0,
+      "expanded": {
+        "overflow": false,
+        "images": {
+          "total": 10,
+          "broken": []
+        },
+        "h1": [
+          "ECC"
+        ]
+      },
+      "step_links": 7
+    },
+    {
+      "topic": "sift",
+      "width": 390,
+      "slides": [
+        {
+          "slide": "1",
+          "title": "SIFT · 01 先看它交出什麼",
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/geometry-alignment-measurement/sift/images/final/WI032-SIFT-01-r06-mobile.png",
+              "ok": true
+            }
+          ],
+          "prev_disabled": true,
+          "next_disabled": false
+        },
+        {
+          "slide": "2",
+          "title": "SIFT · 02 再看它怎麼做",
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/geometry-alignment-measurement/sift/images/final/WI032-SIFT-02-r04-mobile.png",
+              "ok": true
+            }
+          ],
+          "prev_disabled": false,
+          "next_disabled": false
+        },
+        {
+          "slide": "3",
+          "title": "SIFT · 03 上線前先固定條件",
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/geometry-alignment-measurement/sift/images/final/WI032-SIFT-03-r04-mobile.png",
+              "ok": true
+            }
+          ],
+          "prev_disabled": false,
+          "next_disabled": false
+        },
+        {
+          "slide": "4",
+          "title": "SIFT · 04 選它前先看風險",
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/geometry-alignment-measurement/sift/images/final/WI032-SIFT-04-r04-mobile.png",
+              "ok": true
+            }
+          ],
+          "prev_disabled": false,
+          "next_disabled": true
+        }
+      ],
+      "concepts": [
+        {
+          "index": 0,
+          "title": "SIFT：用局部方向線索，找兩張圖的對應",
+          "broken": 0
+        },
+        {
+          "index": 1,
+          "title": "模糊會抹掉SIFT需要的局部線索",
+          "broken": 0
+        },
+        {
+          "index": 2,
+          "title": "幾何四種工具，負責的工作不同",
+          "broken": 0
+        }
+      ],
+      "chapters": [],
+      "errors": [],
+      "default": {
+        "overflow": false,
+        "images": {
+          "total": 10,
+          "broken": []
+        },
+        "h1": [
+          "SIFT"
+        ]
+      },
+      "learning_checks": 0,
+      "expanded": {
+        "overflow": false,
+        "images": {
+          "total": 10,
+          "broken": []
+        },
+        "h1": [
+          "SIFT"
+        ]
+      },
+      "step_links": 7
+    },
+    {
+      "topic": "lightglue",
+      "width": 390,
+      "slides": [
+        {
+          "id": "step-lightglue-1",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/geometry-alignment-measurement/lightglue/images/final/WI032-LIGHTGLUE-01-r04-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        },
+        {
+          "id": "step-lightglue-2",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/geometry-alignment-measurement/lightglue/images/final/WI032-LIGHTGLUE-02-r04-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        },
+        {
+          "id": "step-lightglue-3",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/geometry-alignment-measurement/lightglue/images/final/WI032-LIGHTGLUE-03-r04-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        },
+        {
+          "id": "step-lightglue-4",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/geometry-alignment-measurement/lightglue/images/final/WI032-LIGHTGLUE-04-r04-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        }
+      ],
+      "chapters": [],
+      "concepts": [],
+      "errors": [],
+      "interaction_scope": "rendered breadth",
+      "default": {
+        "overflow": false,
+        "images": {
+          "total": 10,
+          "broken": []
+        },
+        "h1": [
+          "LightGlue"
+        ]
+      },
+      "learning_checks": 1,
+      "expanded": {
+        "overflow": false,
+        "images": {
+          "total": 10,
+          "broken": []
+        },
+        "h1": [
+          "LightGlue"
+        ]
+      },
+      "main_visuals": [
+        {
+          "id": "beginner-lightglue-wi032-lightglue-core",
+          "visible": true,
+          "images": 2
+        },
+        {
+          "id": "beginner-lightglue-wi032-lightglue-failure",
+          "visible": true,
+          "images": 2
+        },
+        {
+          "id": "beginner-lightglue-wi032-geometry-compare",
+          "visible": true,
+          "images": 2
+        }
+      ]
+    },
+    {
+      "topic": "resnet",
+      "width": 390,
+      "slides": [
+        {
+          "id": "step-resnet-1",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/known-target-classification/resnet/images/final/WI033-RESNET-01-r01-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        },
+        {
+          "id": "step-resnet-2",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/known-target-classification/resnet/images/final/WI033-RESNET-02-r02-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        },
+        {
+          "id": "step-resnet-3",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/known-target-classification/resnet/images/final/WI033-RESNET-03-r01-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        },
+        {
+          "id": "step-resnet-4",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/known-target-classification/resnet/images/final/WI033-RESNET-04-r01-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        }
+      ],
+      "chapters": [
+        {
+          "id": "deep-dive-resnet-1",
+          "visible": true,
+          "images": []
+        },
+        {
+          "id": "deep-dive-resnet-2",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/resnet/wi033-resnet-deep-skip-r01-mobile.png",
+              "ok": true,
+              "width": 322
+            },
+            {
+              "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/resnet/wi033-resnet-deep-residual-r02-mobile.png",
+              "ok": true,
+              "width": 0
+            }
+          ]
+        },
+        {
+          "id": "deep-dive-resnet-3",
+          "visible": true,
+          "images": []
+        },
+        {
+          "id": "deep-dive-resnet-4",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/resnet/wi033-resnet-deep-bn-r02-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        },
+        {
+          "id": "deep-dive-resnet-5",
+          "visible": true,
+          "images": []
+        },
+        {
+          "id": "deep-dive-resnet-6",
+          "visible": true,
+          "images": []
+        },
+        {
+          "id": "deep-dive-resnet-7",
+          "visible": true,
+          "images": []
+        },
+        {
+          "id": "deep-dive-resnet-8",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/resnet/wi033-resnet-deep-residual-r02-mobile.png",
+              "ok": true,
+              "width": 322
+            },
+            {
+              "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/resnet/wi033-resnet-deep-cnx-spatial-r02-mobile.png",
+              "ok": true,
+              "width": 0
+            },
+            {
+              "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/resnet/wi033-resnet-deep-cnx-channel-r02-mobile.png",
+              "ok": true,
+              "width": 0
+            },
+            {
+              "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/resnet/wi033-resnet-deep-vit-attention-r01-mobile.png",
+              "ok": true,
+              "width": 0
+            }
+          ]
+        }
+      ],
+      "concepts": [
+        "ResNet：保留原有線索，再學需要的修正"
+      ],
+      "errors": [],
+      "interaction_scope": "family first",
+      "default": {
+        "overflow": false,
+        "images": {
+          "total": 17,
+          "broken": []
+        },
+        "h1": [
+          "ResNet"
+        ]
+      },
+      "learning_checks": 1,
+      "expanded": {
+        "overflow": false,
+        "images": {
+          "total": 17,
+          "broken": []
+        },
+        "h1": [
+          "ResNet"
+        ]
+      },
+      "main_visuals": [
+        {
+          "id": "beginner-resnet-wi030-resnet-c1",
+          "visible": true,
+          "images": 2
+        },
+        {
+          "id": "beginner-resnet-wi030-class-d2",
+          "visible": true,
+          "images": 2
+        },
+        {
+          "id": "beginner-resnet-wi030-class-d3",
+          "visible": true,
+          "images": 2
+        }
+      ],
+      "concept_count": 16,
+      "zoom_titles": [
+        "ResNet · 01 先看它交出什麼",
+        "ResNet · 02 再看它怎麼做",
+        "ResNet · 03 上線前先固定條件",
+        "ResNet · 04 選它前先看風險"
+      ],
+      "step_links": 7
+    },
+    {
+      "topic": "convnext",
+      "width": 390,
+      "slides": [
+        {
+          "id": "step-convnext-1",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/known-target-classification/convnext/images/final/WI033-CONVNEXT-01-r01-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        },
+        {
+          "id": "step-convnext-2",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/known-target-classification/convnext/images/final/WI033-CONVNEXT-02-r03-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        },
+        {
+          "id": "step-convnext-3",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/known-target-classification/convnext/images/final/WI033-CONVNEXT-03-r01-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        },
+        {
+          "id": "step-convnext-4",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/known-target-classification/convnext/images/final/WI033-CONVNEXT-04-r01-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        }
+      ],
+      "chapters": [],
+      "concepts": [],
+      "errors": [],
+      "interaction_scope": "rendered breadth",
+      "default": {
+        "overflow": false,
+        "images": {
+          "total": 10,
+          "broken": []
+        },
+        "h1": [
+          "ConvNeXt"
+        ]
+      },
+      "learning_checks": 1,
+      "expanded": {
+        "overflow": false,
+        "images": {
+          "total": 10,
+          "broken": []
+        },
+        "h1": [
+          "ConvNeXt"
+        ]
+      },
+      "main_visuals": [
+        {
+          "id": "beginner-convnext-wi030-convnext-c1",
+          "visible": true,
+          "images": 2
+        },
+        {
+          "id": "beginner-convnext-wi030-class-d2",
+          "visible": true,
+          "images": 2
+        },
+        {
+          "id": "beginner-convnext-wi030-class-d3",
+          "visible": true,
+          "images": 2
+        }
+      ]
+    },
+    {
+      "topic": "vit-classifier",
+      "width": 390,
+      "slides": [
+        {
+          "id": "step-vit-classifier-1",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/known-target-classification/vit-classifier/images/final/WI033-VIT-01-r01-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        },
+        {
+          "id": "step-vit-classifier-2",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/known-target-classification/vit-classifier/images/final/WI033-VIT-02-r03-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        },
+        {
+          "id": "step-vit-classifier-3",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/known-target-classification/vit-classifier/images/final/WI033-VIT-03-r02-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        },
+        {
+          "id": "step-vit-classifier-4",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/known-target-classification/vit-classifier/images/final/WI033-VIT-04-r02-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        }
+      ],
+      "chapters": [],
+      "concepts": [],
+      "errors": [],
+      "interaction_scope": "rendered breadth",
+      "default": {
+        "overflow": false,
+        "images": {
+          "total": 10,
+          "broken": []
+        },
+        "h1": [
+          "ViT"
+        ]
+      },
+      "learning_checks": 1,
+      "expanded": {
+        "overflow": false,
+        "images": {
+          "total": 10,
+          "broken": []
+        },
+        "h1": [
+          "ViT"
+        ]
+      },
+      "main_visuals": [
+        {
+          "id": "beginner-vit-classifier-wi030-vit-c1",
+          "visible": true,
+          "images": 2
+        },
+        {
+          "id": "beginner-vit-classifier-wi030-class-d2",
+          "visible": true,
+          "images": 2
+        },
+        {
+          "id": "beginner-vit-classifier-wi030-class-d3",
+          "visible": true,
+          "images": 2
+        }
+      ]
+    },
+    {
+      "topic": "u-net",
+      "width": 390,
+      "slides": [
+        {
+          "id": "step-u-net-1",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/known-target-classification/u-net/images/final/WI033-UNET-01-r02-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        },
+        {
+          "id": "step-u-net-2",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/known-target-classification/u-net/images/final/WI033-UNET-02-r03-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        },
+        {
+          "id": "step-u-net-3",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/known-target-classification/u-net/images/final/WI033-UNET-03-r02-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        },
+        {
+          "id": "step-u-net-4",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/known-target-classification/u-net/images/final/WI033-UNET-04-r01-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        }
+      ],
+      "chapters": [],
+      "concepts": [],
+      "errors": [],
+      "interaction_scope": "rendered breadth",
+      "default": {
+        "overflow": false,
+        "images": {
+          "total": 10,
+          "broken": []
+        },
+        "h1": [
+          "U-Net"
+        ]
+      },
+      "learning_checks": 1,
+      "expanded": {
+        "overflow": false,
+        "images": {
+          "total": 10,
+          "broken": []
+        },
+        "h1": [
+          "U-Net"
+        ]
+      },
+      "main_visuals": [
+        {
+          "id": "beginner-u-net-wi030-unet-c1",
+          "visible": true,
+          "images": 2
+        },
+        {
+          "id": "beginner-u-net-wi030-seg-d2",
+          "visible": true,
+          "images": 2
+        },
+        {
+          "id": "beginner-u-net-wi030-seg-d3",
+          "visible": true,
+          "images": 2
+        }
+      ]
+    }
+  ],
+  "routes": [],
+  "screenshots": [
+    "lesson-1440-charuco.png",
+    "lesson-1440-resnet.png",
+    "flag-1440-resnet.png",
+    "lesson-390-charuco.png",
+    "lesson-390-resnet.png"
+  ],
+  "prior_attempts": [],
+  "fatal": "Traceback (most recent call last):\n  File \"C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-041\\audit-breadth.py\", line 57, in <module>\n    ledger['lessons'].append(row);save();print(WIDTH,tid,'FAIL' if row.get('failure') else 'ok',flush=True)\n                                         ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nOSError: [Errno 22] Invalid argument\n",
+  "finished": "2026-09-13 10:19:23"
+}

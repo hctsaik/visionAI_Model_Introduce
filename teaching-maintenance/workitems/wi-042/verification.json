@@ -1,0 +1,98 @@
+{
+  "html_sha256": "139d466de1e9c5a3c2728d9c42fdde3bb44a6f5aefb4ac8bb5547ba1fd78a35a",
+  "changed_topics": [
+    "u-net",
+    "yolo-seg",
+    "ad-efficientad",
+    "ad-diffad",
+    "convlstm",
+    "videomae"
+  ],
+  "only_mechanism_steps_changed": true,
+  "shared_template_unchanged": true,
+  "mode": "local",
+  "tests": {
+    "pytest": 0,
+    "rules": 0,
+    "verifier-source": 0,
+    "verifier-docs": 0
+  },
+  "pages": [
+    {
+      "topic": "u-net",
+      "width": 1440,
+      "text_matches_source": true,
+      "screenshot": "local-u-net-1440.png"
+    },
+    {
+      "topic": "yolo-seg",
+      "width": 1440,
+      "text_matches_source": true,
+      "screenshot": "local-yolo-seg-1440.png"
+    },
+    {
+      "topic": "ad-efficientad",
+      "width": 1440,
+      "text_matches_source": true,
+      "screenshot": "local-ad-efficientad-1440.png"
+    },
+    {
+      "topic": "ad-diffad",
+      "width": 1440,
+      "text_matches_source": true,
+      "screenshot": "local-ad-diffad-1440.png"
+    },
+    {
+      "topic": "convlstm",
+      "width": 1440,
+      "text_matches_source": true,
+      "screenshot": "local-convlstm-1440.png"
+    },
+    {
+      "topic": "videomae",
+      "width": 1440,
+      "text_matches_source": true,
+      "screenshot": "local-videomae-1440.png"
+    },
+    {
+      "topic": "u-net",
+      "width": 390,
+      "text_matches_source": true,
+      "screenshot": "local-u-net-390.png"
+    },
+    {
+      "topic": "yolo-seg",
+      "width": 390,
+      "text_matches_source": true,
+      "screenshot": "local-yolo-seg-390.png"
+    },
+    {
+      "topic": "ad-efficientad",
+      "width": 390,
+      "text_matches_source": true,
+      "screenshot": "local-ad-efficientad-390.png"
+    },
+    {
+      "topic": "ad-diffad",
+      "width": 390,
+      "text_matches_source": true,
+      "screenshot": "local-ad-diffad-390.png"
+    },
+    {
+      "topic": "convlstm",
+      "width": 390,
+      "text_matches_source": true,
+      "screenshot": "local-convlstm-390.png"
+    },
+    {
+      "topic": "videomae",
+      "width": 390,
+      "text_matches_source": true,
+      "screenshot": "local-videomae-390.png"
+    }
+  ],
+  "user_approval": "pending",
+  "poc_1440": "passed",
+  "poc_390": "passed",
+  "complete": true
+}

@@ -1,0 +1,6 @@
+{
+  "url": "https://raw.githubusercontent.com/HuiZhang0812/DiffusionAD/main/models/DDPM.py",
+  "sha256": "c9db73f538342c393d93fd1b10ab2438e22d5e95db0f6e83f4f51d9c6c823758",
+  "function": "norm_guided_one_step_denoising_eval",
+  "evidence": "two calls calc_loss; calc_loss calls model(x_t,t)"
+}

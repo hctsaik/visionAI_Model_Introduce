@@ -1,0 +1,729 @@
+{
+  "started": "2026-09-13 10:16:40",
+  "lessons": [
+    {
+      "topic": "charuco",
+      "width": 1440,
+      "slides": [
+        {
+          "slide": "1",
+          "title": "ChArUco · 01 先看它交出什麼",
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/geometry-alignment-measurement/charuco/images/final/WI032-CHARUCO-01-r04-desktop.png",
+              "ok": true
+            }
+          ],
+          "prev_disabled": true,
+          "next_disabled": false
+        },
+        {
+          "slide": "2",
+          "title": "ChArUco · 02 再看它怎麼做",
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/geometry-alignment-measurement/charuco/images/final/WI032-CHARUCO-02-r04-desktop.png",
+              "ok": true
+            }
+          ],
+          "prev_disabled": false,
+          "next_disabled": false
+        },
+        {
+          "slide": "3",
+          "title": "ChArUco · 03 上線前先固定條件",
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/geometry-alignment-measurement/charuco/images/final/WI032-CHARUCO-03-r04-desktop.png",
+              "ok": true
+            }
+          ],
+          "prev_disabled": false,
+          "next_disabled": false
+        },
+        {
+          "slide": "4",
+          "title": "ChArUco · 04 選它前先看風險",
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/geometry-alignment-measurement/charuco/images/final/WI032-CHARUCO-04-r04-desktop.png",
+              "ok": true
+            }
+          ],
+          "prev_disabled": false,
+          "next_disabled": true
+        }
+      ],
+      "concepts": [
+        {
+          "index": 0,
+          "title": "ChArUco：用已知角點，建立相機幾何",
+          "broken": 0
+        },
+        {
+          "index": 1,
+          "title": "只拍中心，邊角誤差可能沒有被看見",
+          "broken": 0
+        },
+        {
+          "index": 2,
+          "title": "幾何四種工具，負責的工作不同",
+          "broken": 0
+        }
+      ],
+      "chapters": [],
+      "errors": [],
+      "default": {
+        "overflow": false,
+        "images": {
+          "total": 10,
+          "broken": []
+        },
+        "h1": [
+          "ChArUco"
+        ]
+      },
+      "learning_checks": 1,
+      "expanded": {
+        "overflow": false,
+        "images": {
+          "total": 10,
+          "broken": []
+        },
+        "h1": [
+          "ChArUco"
+        ]
+      },
+      "step_links": 7
+    },
+    {
+      "topic": "ecc",
+      "width": 1440,
+      "slides": [
+        {
+          "slide": "1",
+          "title": "ECC · 01 先看它交出什麼",
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/geometry-alignment-measurement/ecc/images/final/WI032-ECC-01-r04-desktop.png",
+              "ok": true
+            }
+          ],
+          "prev_disabled": true,
+          "next_disabled": false
+        },
+        {
+          "slide": "2",
+          "title": "ECC · 02 再看它怎麼做",
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/geometry-alignment-measurement/ecc/images/final/WI032-ECC-02-r04-desktop.png",
+              "ok": true
+            }
+          ],
+          "prev_disabled": false,
+          "next_disabled": false
+        },
+        {
+          "slide": "3",
+          "title": "ECC · 03 上線前先固定條件",
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/geometry-alignment-measurement/ecc/images/final/WI032-ECC-03-r04-desktop.png",
+              "ok": true
+            }
+          ],
+          "prev_disabled": false,
+          "next_disabled": false
+        },
+        {
+          "slide": "4",
+          "title": "ECC · 04 選它前先看風險",
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/geometry-alignment-measurement/ecc/images/final/WI032-ECC-04-r04-desktop.png",
+              "ok": true
+            }
+          ],
+          "prev_disabled": false,
+          "next_disabled": true
+        }
+      ],
+      "concepts": [
+        {
+          "index": 0,
+          "title": "ECC：依外觀微調幾何對齊",
+          "broken": 0
+        },
+        {
+          "index": 1,
+          "title": "起點太遠，ECC可能對錯位置",
+          "broken": 0
+        },
+        {
+          "index": 2,
+          "title": "幾何四種工具，負責的工作不同",
+          "broken": 0
+        }
+      ],
+      "chapters": [],
+      "errors": [],
+      "default": {
+        "overflow": false,
+        "images": {
+          "total": 10,
+          "broken": []
+        },
+        "h1": [
+          "ECC"
+        ]
+      },
+      "learning_checks": 1,
+      "expanded": {
+        "overflow": false,
+        "images": {
+          "total": 10,
+          "broken": []
+        },
+        "h1": [
+          "ECC"
+        ]
+      },
+      "step_links": 7
+    },
+    {
+      "topic": "sift",
+      "width": 1440,
+      "slides": [
+        {
+          "slide": "1",
+          "title": "SIFT · 01 先看它交出什麼",
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/geometry-alignment-measurement/sift/images/final/WI032-SIFT-01-r06-desktop.png",
+              "ok": true
+            }
+          ],
+          "prev_disabled": true,
+          "next_disabled": false
+        },
+        {
+          "slide": "2",
+          "title": "SIFT · 02 再看它怎麼做",
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/geometry-alignment-measurement/sift/images/final/WI032-SIFT-02-r04-desktop.png",
+              "ok": true
+            }
+          ],
+          "prev_disabled": false,
+          "next_disabled": false
+        },
+        {
+          "slide": "3",
+          "title": "SIFT · 03 上線前先固定條件",
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/geometry-alignment-measurement/sift/images/final/WI032-SIFT-03-r04-desktop.png",
+              "ok": true
+            }
+          ],
+          "prev_disabled": false,
+          "next_disabled": false
+        },
+        {
+          "slide": "4",
+          "title": "SIFT · 04 選它前先看風險",
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/geometry-alignment-measurement/sift/images/final/WI032-SIFT-04-r04-desktop.png",
+              "ok": true
+            }
+          ],
+          "prev_disabled": false,
+          "next_disabled": true
+        }
+      ],
+      "concepts": [
+        {
+          "index": 0,
+          "title": "SIFT：用局部方向線索，找兩張圖的對應",
+          "broken": 0
+        },
+        {
+          "index": 1,
+          "title": "模糊會抹掉SIFT需要的局部線索",
+          "broken": 0
+        },
+        {
+          "index": 2,
+          "title": "幾何四種工具，負責的工作不同",
+          "broken": 0
+        }
+      ],
+      "chapters": [],
+      "errors": [],
+      "default": {
+        "overflow": false,
+        "images": {
+          "total": 10,
+          "broken": []
+        },
+        "h1": [
+          "SIFT"
+        ]
+      },
+      "learning_checks": 1,
+      "expanded": {
+        "overflow": false,
+        "images": {
+          "total": 10,
+          "broken": []
+        },
+        "h1": [
+          "SIFT"
+        ]
+      },
+      "step_links": 7
+    },
+    {
+      "topic": "lightglue",
+      "width": 1440,
+      "slides": [
+        {
+          "slide": "1",
+          "title": "LightGlue · 01 先看它交出什麼",
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/geometry-alignment-measurement/lightglue/images/final/WI032-LIGHTGLUE-01-r04-desktop.png",
+              "ok": true
+            }
+          ],
+          "prev_disabled": true,
+          "next_disabled": false
+        },
+        {
+          "slide": "2",
+          "title": "LightGlue · 02 再看它怎麼做",
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/geometry-alignment-measurement/lightglue/images/final/WI032-LIGHTGLUE-02-r04-desktop.png",
+              "ok": true
+            }
+          ],
+          "prev_disabled": false,
+          "next_disabled": false
+        },
+        {
+          "slide": "3",
+          "title": "LightGlue · 03 上線前先固定條件",
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/geometry-alignment-measurement/lightglue/images/final/WI032-LIGHTGLUE-03-r04-desktop.png",
+              "ok": true
+            }
+          ],
+          "prev_disabled": false,
+          "next_disabled": false
+        },
+        {
+          "slide": "4",
+          "title": "LightGlue · 04 選它前先看風險",
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/geometry-alignment-measurement/lightglue/images/final/WI032-LIGHTGLUE-04-r04-desktop.png",
+              "ok": true
+            }
+          ],
+          "prev_disabled": false,
+          "next_disabled": true
+        }
+      ],
+      "concepts": [
+        {
+          "index": 0,
+          "title": "LightGlue：借周圍關係，把含糊配對分清",
+          "broken": 0
+        },
+        {
+          "index": 1,
+          "title": "沒有可區分線索，學習配對也會含糊",
+          "broken": 0
+        },
+        {
+          "index": 2,
+          "title": "幾何四種工具，負責的工作不同",
+          "broken": 0
+        }
+      ],
+      "chapters": [],
+      "errors": [],
+      "default": {
+        "overflow": false,
+        "images": {
+          "total": 10,
+          "broken": []
+        },
+        "h1": [
+          "LightGlue"
+        ]
+      },
+      "learning_checks": 1,
+      "expanded": {
+        "overflow": false,
+        "images": {
+          "total": 10,
+          "broken": []
+        },
+        "h1": [
+          "LightGlue"
+        ]
+      },
+      "step_links": 7
+    },
+    {
+      "topic": "resnet",
+      "width": 1440,
+      "slides": [],
+      "concepts": [
+        {
+          "index": 0,
+          "title": "ResNet：保留原有線索，再學需要的修正",
+          "broken": 0
+        },
+        {
+          "index": 1,
+          "title": "模型認的是工件，還是拍攝背景？",
+          "broken": 0
+        },
+        {
+          "index": 2,
+          "title": "同一分類工作，三種特徵整理方式",
+          "broken": 0
+        },
+        {
+          "index": 3,
+          "title": "為何需要ResNet：加深後的訓練困難",
+          "broken": 0
+        }
+      ],
+      "chapters": [],
+      "errors": [],
+      "default": {
+        "overflow": false,
+        "images": {
+          "total": 17,
+          "broken": []
+        },
+        "h1": [
+          "ResNet"
+        ]
+      },
+      "learning_checks": 1,
+      "expanded": {
+        "overflow": false,
+        "images": {
+          "total": 17,
+          "broken": []
+        },
+        "h1": [
+          "ResNet"
+        ]
+      },
+      "failure": "Locator.click: Timeout 10000ms exceeded.\nCall log:\n  - waiting for locator(\"main [data-action=\\\"open-concept\\\"]\").nth(4)\n    - locator resolved to <button type=\"button\" data-title=\"已知外觀與人的處置\" data-action=\"open-concept\" class=\"button concept-enlarge\" data-alt=\"已知外觀與人的處置；同一案例的來源、處理、輸出與人的下一步。圖內列出證據範圍。\" data-image=\"_course_content/generated-concepts/resnet/resnet-e01-01-task.svg\">放大完整圖</button>\n  - attempting click action\n    2 × waiting for element to be visible, enabled and stable\n      - element is not visible\n    - retrying click action\n    - waiting 20ms\n    2 × waiting for element to be visible, enabled and stable\n      - element is not visible\n    - retrying click action\n      - waiting 100ms\n    19 × waiting for element to be visible, enabled and stable\n       - element is not visible\n     - retrying click action\n       - waiting 500ms\n"
+    },
+    {
+      "topic": "convnext",
+      "width": 1440,
+      "slides": [
+        {
+          "slide": "1",
+          "title": "ConvNeXt · 01 先看它交出什麼",
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/known-target-classification/convnext/images/final/WI033-CONVNEXT-01-r01-desktop.png",
+              "ok": true
+            }
+          ],
+          "prev_disabled": true,
+          "next_disabled": false
+        },
+        {
+          "slide": "2",
+          "title": "ConvNeXt · 02 再看它怎麼做",
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/known-target-classification/convnext/images/final/WI033-CONVNEXT-02-r03-desktop.png",
+              "ok": true
+            }
+          ],
+          "prev_disabled": false,
+          "next_disabled": false
+        },
+        {
+          "slide": "3",
+          "title": "ConvNeXt · 03 上線前先固定條件",
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/known-target-classification/convnext/images/final/WI033-CONVNEXT-03-r01-desktop.png",
+              "ok": true
+            }
+          ],
+          "prev_disabled": false,
+          "next_disabled": false
+        },
+        {
+          "slide": "4",
+          "title": "ConvNeXt · 04 選它前先看風險",
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/known-target-classification/convnext/images/final/WI033-CONVNEXT-04-r01-desktop.png",
+              "ok": true
+            }
+          ],
+          "prev_disabled": false,
+          "next_disabled": true
+        }
+      ],
+      "concepts": [
+        {
+          "index": 0,
+          "title": "ConvNeXt：用現代卷積整理局部與通道線索",
+          "broken": 0
+        },
+        {
+          "index": 1,
+          "title": "模型認的是工件，還是拍攝背景？",
+          "broken": 0
+        },
+        {
+          "index": 2,
+          "title": "同一分類工作，三種特徵整理方式",
+          "broken": 0
+        }
+      ],
+      "chapters": [],
+      "errors": [],
+      "default": {
+        "overflow": false,
+        "images": {
+          "total": 10,
+          "broken": []
+        },
+        "h1": [
+          "ConvNeXt"
+        ]
+      },
+      "learning_checks": 1,
+      "expanded": {
+        "overflow": false,
+        "images": {
+          "total": 10,
+          "broken": []
+        },
+        "h1": [
+          "ConvNeXt"
+        ]
+      },
+      "step_links": 7
+    },
+    {
+      "topic": "vit-classifier",
+      "width": 1440,
+      "slides": [
+        {
+          "slide": "1",
+          "title": "ViT · 01 先看它交出什麼",
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/known-target-classification/vit-classifier/images/final/WI033-VIT-01-r01-desktop.png",
+              "ok": true
+            }
+          ],
+          "prev_disabled": true,
+          "next_disabled": false
+        },
+        {
+          "slide": "2",
+          "title": "ViT · 02 再看它怎麼做",
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/known-target-classification/vit-classifier/images/final/WI033-VIT-02-r03-desktop.png",
+              "ok": true
+            }
+          ],
+          "prev_disabled": false,
+          "next_disabled": false
+        },
+        {
+          "slide": "3",
+          "title": "ViT · 03 上線前先固定條件",
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/known-target-classification/vit-classifier/images/final/WI033-VIT-03-r02-desktop.png",
+              "ok": true
+            }
+          ],
+          "prev_disabled": false,
+          "next_disabled": false
+        },
+        {
+          "slide": "4",
+          "title": "ViT · 04 選它前先看風險",
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/known-target-classification/vit-classifier/images/final/WI033-VIT-04-r02-desktop.png",
+              "ok": true
+            }
+          ],
+          "prev_disabled": false,
+          "next_disabled": true
+        }
+      ],
+      "concepts": [
+        {
+          "index": 0,
+          "title": "ViT：把影像變成可互相參照的區塊",
+          "broken": 0
+        },
+        {
+          "index": 1,
+          "title": "模型認的是工件，還是拍攝背景？",
+          "broken": 0
+        },
+        {
+          "index": 2,
+          "title": "同一分類工作，三種特徵整理方式",
+          "broken": 0
+        }
+      ],
+      "chapters": [],
+      "errors": [],
+      "default": {
+        "overflow": false,
+        "images": {
+          "total": 10,
+          "broken": []
+        },
+        "h1": [
+          "ViT"
+        ]
+      },
+      "learning_checks": 1,
+      "expanded": {
+        "overflow": false,
+        "images": {
+          "total": 10,
+          "broken": []
+        },
+        "h1": [
+          "ViT"
+        ]
+      },
+      "step_links": 7
+    },
+    {
+      "topic": "u-net",
+      "width": 1440,
+      "slides": [
+        {
+          "slide": "1",
+          "title": "U-Net · 01 先看它交出什麼",
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/known-target-classification/u-net/images/final/WI033-UNET-01-r02-desktop.png",
+              "ok": true
+            }
+          ],
+          "prev_disabled": true,
+          "next_disabled": false
+        },
+        {
+          "slide": "2",
+          "title": "U-Net · 02 再看它怎麼做",
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/known-target-classification/u-net/images/final/WI033-UNET-02-r03-desktop.png",
+              "ok": true
+            }
+          ],
+          "prev_disabled": false,
+          "next_disabled": false
+        },
+        {
+          "slide": "3",
+          "title": "U-Net · 03 上線前先固定條件",
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/known-target-classification/u-net/images/final/WI033-UNET-03-r02-desktop.png",
+              "ok": true
+            }
+          ],
+          "prev_disabled": false,
+          "next_disabled": false
+        },
+        {
+          "slide": "4",
+          "title": "U-Net · 04 選它前先看風險",
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/known-target-classification/u-net/images/final/WI033-UNET-04-r01-desktop.png",
+              "ok": true
+            }
+          ],
+          "prev_disabled": false,
+          "next_disabled": true
+        }
+      ],
+      "concepts": [
+        {
+          "index": 0,
+          "title": "U-Net：把整體線索和細節接回像素",
+          "broken": 0
+        },
+        {
+          "index": 1,
+          "title": "輸入看不見細線，分割也可能漏掉",
+          "broken": 0
+        },
+        {
+          "index": 2,
+          "title": "要同類區域，還是每件各一張遮罩？",
+          "broken": 0
+        }
+      ],
+      "chapters": [],
+      "errors": [],
+      "default": {
+        "overflow": false,
+        "images": {
+          "total": 10,
+          "broken": []
+        },
+        "h1": [
+          "U-Net"
+        ]
+      },
+      "learning_checks": 1,
+      "expanded": {
+        "overflow": false,
+        "images": {
+          "total": 10,
+          "broken": []
+        },
+        "h1": [
+          "U-Net"
+        ]
+      },
+      "step_links": 7
+    }
+  ],
+  "routes": [],
+  "screenshots": [
+    "lesson-1440-charuco.png",
+    "lesson-1440-resnet.png",
+    "flag-1440-resnet.png"
+  ],
+  "fatal": "Traceback (most recent call last):\n  File \"C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-041\\audit-browser.py\", line 62, in <module>\n    ledger['lessons'].append(row);save();print(width,tid,'FAIL' if row.get('failure') else 'ok',flush=True)\n                                         ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nOSError: [Errno 22] Invalid argument\n",
+  "finished": "2026-09-13 10:18:32"
+}

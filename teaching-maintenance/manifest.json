@@ -1,5 +1,5 @@
 {
-  "workitem": "WI-040",
+  "workitem": "WI-042",
   "files": [
     {
       "snapshot": "project/IMAGE_STYLE_GUIDE.md",
@@ -9,7 +9,7 @@
     {
       "snapshot": "project/TEACHING_REVIEW_LOG.md",
       "source": "C:\\code\\claude\\visionAI\\TEACHING_REVIEW_LOG.md",
-      "sha256": "682e15fa9484af1e70d65ff050b187475eb16a7b3ceb9536b505312cc2cd617d"
+      "sha256": "e0a01091f518b18ee5a84818aa64a99c47b00725878afaecbaa442e2dff29adb"
     },
     {
       "snapshot": "project/TEACHING_SCORING_RUBRIC.md",
@@ -15969,17 +15969,17 @@
     {
       "snapshot": "project/WORKITEMS.md",
       "source": "C:\\code\\claude\\visionAI\\WORKITEMS.md",
-      "sha256": "c255527d0bdec8f0b96baaf64d36a6cebddda56cbd89c93e32b9b2643094dc6b"
+      "sha256": "9f54c3884f95faa2d4813121edcaa18eaa5a49d38da03f4a2c64d61a6563b307"
     },
     {
       "snapshot": "course/BEGINNER_VISUAL_TODO.md",
       "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\BEGINNER_VISUAL_TODO.md",
-      "sha256": "ecb19e5b0acbbb928122b695b90e9da9373e1d0caacbbaf7500e6dfe2cf6dc12"
+      "sha256": "1d07bed5c60efbbf3b1aadbf31ea586d35dab4266700020cc1d2fcd0303bf067"
     },
     {
       "snapshot": "course/BEGINNER_VISUAL_STATUS.md",
       "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\BEGINNER_VISUAL_STATUS.md",
-      "sha256": "1275be2c67bee4323360692aa5125a4b9862d9b843ede033fc3a6791a38aa812"
+      "sha256": "3510d8f14dbc25f679f1f03c0af779bb2df12936d528f92b027d51bb283442df"
     },
     {
       "snapshot": "workitems/wi-035/baseline.py",
@@ -17110,6 +17110,726 @@
       "snapshot": "workitems/wi-040/release-verification.json",
       "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-040\\release-verification.json",
       "sha256": "caebaa9f6691ba0f3e47cb0e8e2331b2fd7a72b00f92d919a330bea4acaa0ce7"
+    },
+    {
+      "snapshot": "workitems/wi-042/changed-topics.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-042\\changed-topics.json",
+      "sha256": "641b10977e6588ff3a4d60bf5a6fb182b313198e13cf7fc8be82d15fcb4c4226"
+    },
+    {
+      "snapshot": "workitems/wi-042/checkpoint.py",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-042\\checkpoint.py",
+      "sha256": "c4f29c4e70a41c4fcc97af4d888fa042b1f3cf519c445f73df98b2b21cc693f4"
+    },
+    {
+      "snapshot": "workitems/wi-042/edit-content.py",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-042\\edit-content.py",
+      "sha256": "caea15567723e013410a8d2d515cc0413286cc37d34ea9fb45e7471ff35f7bb6"
+    },
+    {
+      "snapshot": "workitems/wi-042/local-ad-diffad-1440.png",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-042\\local-ad-diffad-1440.png",
+      "sha256": "90994fc3a2ceef22ec50b95b82f5d5adb7de15221b2d0b7a152a10d919bb4684"
+    },
+    {
+      "snapshot": "workitems/wi-042/local-ad-diffad-390.png",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-042\\local-ad-diffad-390.png",
+      "sha256": "57e92b9e557c422e657f72feb4ae7a98835fdaddfb0adba18c97f26ab55cbd75"
+    },
+    {
+      "snapshot": "workitems/wi-042/local-ad-efficientad-1440.png",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-042\\local-ad-efficientad-1440.png",
+      "sha256": "5f7b122d8d60a63bb7ac2814f642c3d8424cb578cd8ee9d460ec73a37bb3e333"
+    },
+    {
+      "snapshot": "workitems/wi-042/local-ad-efficientad-390.png",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-042\\local-ad-efficientad-390.png",
+      "sha256": "1b2100b66b6ac06bfae61ae46e7b3c5f4d14fd935b29fa843914bd6d066bac69"
+    },
+    {
+      "snapshot": "workitems/wi-042/local-convlstm-1440.png",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-042\\local-convlstm-1440.png",
+      "sha256": "26108d33ad1ba6e0388b224926f515fd5b76939eaf2bb2984c3fa87dd2daa5f8"
+    },
+    {
+      "snapshot": "workitems/wi-042/local-convlstm-390.png",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-042\\local-convlstm-390.png",
+      "sha256": "819bcb266d513020ee4786eaf8a88c598adaa5de7f09cbfdbbee03b2efa077df"
+    },
+    {
+      "snapshot": "workitems/wi-042/local-u-net-1440.png",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-042\\local-u-net-1440.png",
+      "sha256": "1ae80b5f72e246c2d0a4577263449b66f401323892f5e62bcf630f9171293a14"
+    },
+    {
+      "snapshot": "workitems/wi-042/local-u-net-390.png",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-042\\local-u-net-390.png",
+      "sha256": "9ddb94a6bda14acb7ade91e7c1035cd6902c392be30a4e547b770cf7b1de2902"
+    },
+    {
+      "snapshot": "workitems/wi-042/local-videomae-1440.png",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-042\\local-videomae-1440.png",
+      "sha256": "815fbcf6eba05590a4a653b835379c93c0fd2fcd922eb7b8ab54773247c83d47"
+    },
+    {
+      "snapshot": "workitems/wi-042/local-videomae-390.png",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-042\\local-videomae-390.png",
+      "sha256": "7ad4e0544de4e616f9f49c70585a72512286f50dea765170504db052aaddcde7"
+    },
+    {
+      "snapshot": "workitems/wi-042/local-yolo-seg-1440.png",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-042\\local-yolo-seg-1440.png",
+      "sha256": "b3acd4adc91ddda132912e4cb90023624857fb80d03df866ec67d4d66f571eb0"
+    },
+    {
+      "snapshot": "workitems/wi-042/local-yolo-seg-390.png",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-042\\local-yolo-seg-390.png",
+      "sha256": "f0c504e2bdb2d04e347c99b70864301ac6af8542db85fa647ebee16cafb72473"
+    },
+    {
+      "snapshot": "workitems/wi-042/PLAN.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-042\\PLAN.md",
+      "sha256": "817fd5f10560bf1e8c385153f6e7f27eeeaf860fe6a59057d99c58ee769dffa2"
+    },
+    {
+      "snapshot": "workitems/wi-042/preflight.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-042\\preflight.md",
+      "sha256": "ac1205081c037192d90c3fce81f97ba6dc9a3b8c0fe6a2b396e4525ee981e138"
+    },
+    {
+      "snapshot": "workitems/wi-042/pytest.txt",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-042\\pytest.txt",
+      "sha256": "201be74e898ba534aa3cbf5e530f3c30c382d73e9054e0a2a941a8de23c9ef5a"
+    },
+    {
+      "snapshot": "workitems/wi-042/REPORT.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-042\\REPORT.md",
+      "sha256": "c61f7c30d0d59228909df4d43c24a54b7aa7cc560d5830bbf37b9855f4358730"
+    },
+    {
+      "snapshot": "workitems/wi-042/rules.txt",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-042\\rules.txt",
+      "sha256": "ddb4b23c541ad430734c1192759c61330c8c61372d3248083f401ec0381f163e"
+    },
+    {
+      "snapshot": "workitems/wi-042/sync.py",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-042\\sync.py",
+      "sha256": "4b34d896bd8041d0c01e0a040833e0d7e2d6b54a3c4718cb8abd73cc88d0c4d1"
+    },
+    {
+      "snapshot": "workitems/wi-042/update-verifier.py",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-042\\update-verifier.py",
+      "sha256": "5d3ab9941d05ccf32713cdccc87e6948c9f27e7b83f42714493ebb2cd9944086"
+    },
+    {
+      "snapshot": "workitems/wi-042/verification.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-042\\verification.json",
+      "sha256": "bfa829fdca44e21353e8dd5e3192d36871e6d4f72db8ffde6d2bed10258c8241"
+    },
+    {
+      "snapshot": "workitems/wi-042/verifier-attempt1.txt",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-042\\verifier-attempt1.txt",
+      "sha256": "1ae9bc7627fec9b12fda11ab6e443d429eaf0285bccf0c94290b2e3b95e1ba37"
+    },
+    {
+      "snapshot": "workitems/wi-042/verifier-attempt2.txt",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-042\\verifier-attempt2.txt",
+      "sha256": "8ae6f0767aa09ecbd6d8e59f8393f5cd16a7e883af15feb66f2f8b49b9694ae0"
+    },
+    {
+      "snapshot": "workitems/wi-042/verifier-attempt3.txt",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-042\\verifier-attempt3.txt",
+      "sha256": "058443369f11188bab34540ff35b2590a3b279a267b43d6ad84929515ab06a3b"
+    },
+    {
+      "snapshot": "workitems/wi-042/verifier-attempt4.txt",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-042\\verifier-attempt4.txt",
+      "sha256": "8c60e50091ad5c9ee918d859ea3a074ec5d52f860cf4497d3e5f7ccc496041a1"
+    },
+    {
+      "snapshot": "workitems/wi-042/verifier-docs.txt",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-042\\verifier-docs.txt",
+      "sha256": "ce032576ded620b0ee69edcec7970e33f89d9c6efb19a9e4a00caf9807c4a60d"
+    },
+    {
+      "snapshot": "workitems/wi-042/verifier-regression.txt",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-042\\verifier-regression.txt",
+      "sha256": "4ed45ff6386c61cae8c355af2e176b6209a8e393926cc830eaaebbb2487ade5b"
+    },
+    {
+      "snapshot": "workitems/wi-042/verifier-source.txt",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-042\\verifier-source.txt",
+      "sha256": "507ef44e654d0eba4507add8b765d58fe73a7cc0a13e2c3b26479caedc40324b"
+    },
+    {
+      "snapshot": "workitems/wi-042/verify.py",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-042\\verify.py",
+      "sha256": "0efcaa0d4d3c8f8a3a711a7772bde9915b1084c4fe5b6fdefe6947d1578fad48"
+    },
+    {
+      "snapshot": "workitems/wi-042/baseline/ad-diffad.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-042\\baseline\\ad-diffad.json",
+      "sha256": "e9551cfca95451b8ddf0254a69019d79b1d319bd75cc47b089e1db13c160ea29"
+    },
+    {
+      "snapshot": "workitems/wi-042/baseline/ad-efficientad.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-042\\baseline\\ad-efficientad.json",
+      "sha256": "c2c2a93e8147986a588feb3cd57ff24bb1d389baf45f785b07302e09e325f553"
+    },
+    {
+      "snapshot": "workitems/wi-042/baseline/convlstm.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-042\\baseline\\convlstm.json",
+      "sha256": "36173c82f45a204b2bf12f717fe1028d29bfbb835bf16b0067eda6f75e5b682b"
+    },
+    {
+      "snapshot": "workitems/wi-042/baseline/index.html",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-042\\baseline\\index.html",
+      "sha256": "43c3557afba4300ad67425bdaba432e0a3582a14e227af0144711db1c0e75e28"
+    },
+    {
+      "snapshot": "workitems/wi-042/baseline/u-net.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-042\\baseline\\u-net.json",
+      "sha256": "bc3110b609f9893c109dbe16e39cd6f32a64d6d16981a092846f65ac71f33f9c"
+    },
+    {
+      "snapshot": "workitems/wi-042/baseline/verify_interactive_learning_html.py",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-042\\baseline\\verify_interactive_learning_html.py",
+      "sha256": "3211110cca037bbb7bfe3fa36219aef0870cbb86bbc03fdb1529d2ab186a21ef"
+    },
+    {
+      "snapshot": "workitems/wi-042/baseline/videomae.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-042\\baseline\\videomae.json",
+      "sha256": "42f1e097246061dad8641e8fbff1bd187df520634b642a24c0c78879529e204b"
+    },
+    {
+      "snapshot": "workitems/wi-042/baseline/yolo-seg.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-042\\baseline\\yolo-seg.json",
+      "sha256": "07324bc59456bff5d45b12738cdcb78e2c65d106e228376e0e7cad972aa3e3fc"
+    },
+    {
+      "snapshot": "workitems/wi-041/anomaly-expanded.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-041\\anomaly-expanded.json",
+      "sha256": "f6aca20b541c7fe90d7eb0c85ba2b255b3c0ff6bfcdcf637dcb0689a047bec68"
+    },
+    {
+      "snapshot": "workitems/wi-041/audit-breadth.py",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-041\\audit-breadth.py",
+      "sha256": "d90c6c61e8f99255d60169a06c193d78f460c65aaacaa75b2bb2e3348094cf90"
+    },
+    {
+      "snapshot": "workitems/wi-041/audit-browser.py",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-041\\audit-browser.py",
+      "sha256": "b1a645cd29a4893cd427174c3104154502bac908cce174be8716c5bbc597fbbf"
+    },
+    {
+      "snapshot": "workitems/wi-041/audit-mobile.py",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-041\\audit-mobile.py",
+      "sha256": "f2f6e6b8b9e449d592a87b3fd7423b8faa9424953fef0586789651a83b221370"
+    },
+    {
+      "snapshot": "workitems/wi-041/audit-reliability.py",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-041\\audit-reliability.py",
+      "sha256": "e683103c5a81f96c3e8c4c51a4b097ee3e28773837ddf5ad4da686ea523d80d6"
+    },
+    {
+      "snapshot": "workitems/wi-041/audit_assets.py",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-041\\audit_assets.py",
+      "sha256": "ec0e01408cde5968c5c7a169e13f8bc518b4492d3eb46afa86a43110d6b90886"
+    },
+    {
+      "snapshot": "workitems/wi-041/breadth-1440.txt",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-041\\breadth-1440.txt",
+      "sha256": "a69f53394ecf36c93155e93d3a9d1accd5714c81de24212b6e4a17dfab6433e2"
+    },
+    {
+      "snapshot": "workitems/wi-041/breadth-390.txt",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-041\\breadth-390.txt",
+      "sha256": "cd449a1dcf9d9d2d01e1924c5d4946874415fe423d58b785562fccfe34d764c7"
+    },
+    {
+      "snapshot": "workitems/wi-041/browser-coverage.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-041\\browser-coverage.json",
+      "sha256": "81f8066a9bfaf7dc7b66fee4cf6770935837c65fa87ee3bfe5e70ca9b3eac949"
+    },
+    {
+      "snapshot": "workitems/wi-041/browser-mobile-coverage.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-041\\browser-mobile-coverage.json",
+      "sha256": "3731c01f3ce5bb33dd4a0e0fb74dd89d94ecd0a06b58af17459e68a4365c0b90"
+    },
+    {
+      "snapshot": "workitems/wi-041/browser-mobile-run.txt",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-041\\browser-mobile-run.txt",
+      "sha256": "8e0f7cd3e16a570a3fce4c69c534d59817e0bc2c3cfe1e68d715ef473b2228c1"
+    },
+    {
+      "snapshot": "workitems/wi-041/browser-run.txt",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-041\\browser-run.txt",
+      "sha256": "91660dff026cf1a1135651aba106213622a7ae3b490fdbb5d1ad6ba47c959ae1"
+    },
+    {
+      "snapshot": "workitems/wi-041/checkpoint.py",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-041\\checkpoint.py",
+      "sha256": "867a9b2359c837b4f2eb613afa0d0bde3d2449aa54cb8f490bff0e85fbdbeeb8"
+    },
+    {
+      "snapshot": "workitems/wi-041/content-coverage.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-041\\content-coverage.json",
+      "sha256": "a63327b85d22f014e9ccaa9af292849aabd982ecce7e315a51a5ddfcbe5af1d4"
+    },
+    {
+      "snapshot": "workitems/wi-041/coverage-1440.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-041\\coverage-1440.json",
+      "sha256": "7ef26b5c6acd053b0b023f412d8214a6a2bc38ceb12e43f8bedb7f496de54e46"
+    },
+    {
+      "snapshot": "workitems/wi-041/coverage-390.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-041\\coverage-390.json",
+      "sha256": "01cd8c71c5d30b3766edef15f61e8cc62542a4fe73225aac96ca7b46cea33d89"
+    },
+    {
+      "snapshot": "workitems/wi-041/decision-path-coverage.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-041\\decision-path-coverage.json",
+      "sha256": "d90f39e657057ea476efbb8e0238304c765ed420fae97e3b33b678e1a7d2c561"
+    },
+    {
+      "snapshot": "workitems/wi-041/PLAN.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-041\\PLAN.md",
+      "sha256": "615ce2925dd04a2877b9f79590ac4224714902b45b1e7e4ab7fc985c4bce8354"
+    },
+    {
+      "snapshot": "workitems/wi-041/read_anomaly.py",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-041\\read_anomaly.py",
+      "sha256": "8491dca4ba6f548c0bfb70b451702139b5149eabd934fe0569f32e219dac986b"
+    },
+    {
+      "snapshot": "workitems/wi-041/recheck-asset-audit.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-041\\recheck-asset-audit.json",
+      "sha256": "fdf0c3767aa291f99ec760c67ad16fa1e6d382dbd36b00c3bde59656d937f408"
+    },
+    {
+      "snapshot": "workitems/wi-041/recheck-assets.py",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-041\\recheck-assets.py",
+      "sha256": "cb34519595ddd825358ec3465c7b2298f6118a3fbe0a828f5c3c08e8248a3fd3"
+    },
+    {
+      "snapshot": "workitems/wi-041/recheck-audit-breadth.py",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-041\\recheck-audit-breadth.py",
+      "sha256": "152daf57b1f7bb7fdf855c4445ffabe9213d5f2a716e961dafdd05cf19c73329"
+    },
+    {
+      "snapshot": "workitems/wi-041/recheck-audit-browser.py",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-041\\recheck-audit-browser.py",
+      "sha256": "0fbfe87be161376ed110239e44a903567e778f78bcc6803b7330c6a9700d39b4"
+    },
+    {
+      "snapshot": "workitems/wi-041/recheck-browser-checkpoint.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-041\\recheck-browser-checkpoint.md",
+      "sha256": "64f1e82414d5484e9cf275868b794f47d9a95fe0dcae3a379a96e511f28fcd31"
+    },
+    {
+      "snapshot": "workitems/wi-041/recheck-browser-coverage.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-041\\recheck-browser-coverage.json",
+      "sha256": "26b8bb1ff711fe33f62aa5e7022ae4c55a5dcbb95b7f540e449a1705c024691b"
+    },
+    {
+      "snapshot": "workitems/wi-041/recheck-browser-review.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-041\\recheck-browser-review.md",
+      "sha256": "7e417c9efb696ad57f5bff19b0d72ec3ba0363851b80f465afa15ce76ead3795"
+    },
+    {
+      "snapshot": "workitems/wi-041/recheck-browser-summary.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-041\\recheck-browser-summary.json",
+      "sha256": "5496d74e4914b42947fb764783b0e11853ee27fde3e2afc67a86e63cd3a011b8"
+    },
+    {
+      "snapshot": "workitems/wi-041/recheck-capture-figures.py",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-041\\recheck-capture-figures.py",
+      "sha256": "0225bfdbc466b32e6a70f6962d34e030d4548464c8480ccae750d8da0fd6c040"
+    },
+    {
+      "snapshot": "workitems/wi-041/recheck-capture-visuals.py",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-041\\recheck-capture-visuals.py",
+      "sha256": "c944b5c82a9662c2c5469e5c86e30c1dfcf86cf3f222bf010a28ad795922b79c"
+    },
+    {
+      "snapshot": "workitems/wi-041/recheck-check-anchors.py",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-041\\recheck-check-anchors.py",
+      "sha256": "1dd344294d8a7cfd9addda502c7db6241ad032c181053b35a64720e428652a4e"
+    },
+    {
+      "snapshot": "workitems/wi-041/recheck-confirm-text.py",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-041\\recheck-confirm-text.py",
+      "sha256": "de8a11b447cc9392cd0abc21203b6f1ec4b8e6a9818f7f5a8e2296c772ae65e3"
+    },
+    {
+      "snapshot": "workitems/wi-041/recheck-content-coverage.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-041\\recheck-content-coverage.json",
+      "sha256": "69a992d6fd9d315adea43be8cd4f4928b99e6572c851514dc4571da360974e61"
+    },
+    {
+      "snapshot": "workitems/wi-041/recheck-content-coverage.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-041\\recheck-content-coverage.md",
+      "sha256": "9f72598658508d8bea548c23dc78563f1532746434f110f0619c16cc5902b9e7"
+    },
+    {
+      "snapshot": "workitems/wi-041/recheck-content-review.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-041\\recheck-content-review.md",
+      "sha256": "4b9fd4c031d3187a15fb1b8f9402209e9ef6bf64bcb8f8f5431012306981cde6"
+    },
+    {
+      "snapshot": "workitems/wi-041/recheck-coverage-1440.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-041\\recheck-coverage-1440.json",
+      "sha256": "c58956dbcd225daf0e25044e66e4ef4b972e58c8dfcfc7809133423622efc2c9"
+    },
+    {
+      "snapshot": "workitems/wi-041/recheck-coverage-390.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-041\\recheck-coverage-390.json",
+      "sha256": "175c8e845dbb67b1cecc06e52c9f7ca60935eef9cd4853d5e801b661b97b1af9"
+    },
+    {
+      "snapshot": "workitems/wi-041/recheck-diffusionad-official-DDPM.py",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-041\\recheck-diffusionad-official-DDPM.py",
+      "sha256": "c9db73f538342c393d93fd1b10ab2438e22d5e95db0f6e83f4f51d9c6c823758"
+    },
+    {
+      "snapshot": "workitems/wi-041/recheck-diffusionad-source.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-041\\recheck-diffusionad-source.json",
+      "sha256": "77a4e63c163fb30189791543b982e5cdb033ec24a929c1a82c6ccdc891047a67"
+    },
+    {
+      "snapshot": "workitems/wi-041/recheck-external-anchors.py",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-041\\recheck-external-anchors.py",
+      "sha256": "4293d984d07f52b1bea4409e9629c730a9ab62309c8aa4a30b26da2c52f03366"
+    },
+    {
+      "snapshot": "workitems/wi-041/recheck-external-rendered-anchors.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-041\\recheck-external-rendered-anchors.json",
+      "sha256": "49741cf880876ad3a3591cc6d5fefc5da102e02a1fccfa298231748ebca82984"
+    },
+    {
+      "snapshot": "workitems/wi-041/recheck-external_sources.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-041\\recheck-external_sources.json",
+      "sha256": "e75150a05834ba41ed11a7a73c8a3d2b98f09b756e590fe6f74fe17ea7d401bf"
+    },
+    {
+      "snapshot": "workitems/wi-041/recheck-extra-interactions.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-041\\recheck-extra-interactions.json",
+      "sha256": "55322614ab5eac1cae97f860d40357f89f7114ed39c476efd1d7fbf9dac011b6"
+    },
+    {
+      "snapshot": "workitems/wi-041/recheck-extra-interactions.py",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-041\\recheck-extra-interactions.py",
+      "sha256": "037d7a88b2ee9ffd79f7ebe2bd22554085b86d3df1939dae174fb0bcdbf72dbf"
+    },
+    {
+      "snapshot": "workitems/wi-041/recheck-fetch-diffusionad.py",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-041\\recheck-fetch-diffusionad.py",
+      "sha256": "8c7284af72fb6fc49a17597fa3b5dcb1910c1d4c734824f3b6b04cdf1bc15306"
+    },
+    {
+      "snapshot": "workitems/wi-041/recheck-file-image-decode.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-041\\recheck-file-image-decode.json",
+      "sha256": "84c01562470bdf890572f76822e3498eac8d6f03ed4f9a503bc73e7042d5e7dd"
+    },
+    {
+      "snapshot": "workitems/wi-041/recheck-file-image-decode.py",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-041\\recheck-file-image-decode.py",
+      "sha256": "fd7348824105020de09c2325af592f897c5564fdec7c384efa33212c1eee7b9e"
+    },
+    {
+      "snapshot": "workitems/wi-041/recheck-finding-ad-diffad.png",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-041\\recheck-finding-ad-diffad.png",
+      "sha256": "b8b4c6097aa822ed1aa2791e845c9998f1e4ad862d546ee05bd0afec61129486"
+    },
+    {
+      "snapshot": "workitems/wi-041/recheck-finding-ad-efficientad.png",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-041\\recheck-finding-ad-efficientad.png",
+      "sha256": "ae242d160c038a02f0aa67d8d8260a3234cd0414420a9a7c7e06263b97fbe40c"
+    },
+    {
+      "snapshot": "workitems/wi-041/recheck-finding-convlstm.png",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-041\\recheck-finding-convlstm.png",
+      "sha256": "706731d4bcaad99cda67a1bae5fd0f29fe932b8b0a46709ff37eb6df16b07aa2"
+    },
+    {
+      "snapshot": "workitems/wi-041/recheck-finding-u-net.png",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-041\\recheck-finding-u-net.png",
+      "sha256": "e65fe2c7d64e696c61dd3c46bebcfc5c346c3dd753e94d09464ab847b427750d"
+    },
+    {
+      "snapshot": "workitems/wi-041/recheck-finding-videomae.png",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-041\\recheck-finding-videomae.png",
+      "sha256": "3278831c85049e98fac15a27f324d5521ad4beb1b143528fa32e5b6804f7340b"
+    },
+    {
+      "snapshot": "workitems/wi-041/recheck-finding-yolo-seg.png",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-041\\recheck-finding-yolo-seg.png",
+      "sha256": "b6886f6519d17a207672cd92abb42fb4045df016d1d711dc579db859ce451ab5"
+    },
+    {
+      "snapshot": "workitems/wi-041/recheck-findings.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-041\\recheck-findings.json",
+      "sha256": "2bd4d10c84d5812b9bc805761e8de9222f8f8e88aa69d9623402c6aa53302ec7"
+    },
+    {
+      "snapshot": "workitems/wi-041/recheck-findings.py",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-041\\recheck-findings.py",
+      "sha256": "6e4dea6fa81cf95afcb084e74ecc70b6a120c9a9894277348609a0d432d957a8"
+    },
+    {
+      "snapshot": "workitems/wi-041/recheck-legacy-verifier.txt",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-041\\recheck-legacy-verifier.txt",
+      "sha256": "7e460509710e54f87a34d3cdac6b79d93db75f3e4a087b8f7489582dde482be4"
+    },
+    {
+      "snapshot": "workitems/wi-041/recheck-make-content-coverage.py",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-041\\recheck-make-content-coverage.py",
+      "sha256": "e2c61ee347fd1c28d2ff9f623bd85b496a6dcdd3cf12230eb514b6c24ffa7412"
+    },
+    {
+      "snapshot": "workitems/wi-041/recheck-navigation-bundle.txt",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-041\\recheck-navigation-bundle.txt",
+      "sha256": "b6e89b5794b393b4eed250146bfdc0b3bcdcfcb4205b2b4aa0e836fd8c6f8118"
+    },
+    {
+      "snapshot": "workitems/wi-041/recheck-poc-review.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-041\\recheck-poc-review.md",
+      "sha256": "14f27807232ced5cffb5829a53aba95bfe2e13bef1dbdda6a55b79d86ed3c28d"
+    },
+    {
+      "snapshot": "workitems/wi-041/recheck-public-mobile-ui.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-041\\recheck-public-mobile-ui.json",
+      "sha256": "fbbaa1e0563cec339b0f44a742cde0971f2e42d28591246622a5d769fafeb5d0"
+    },
+    {
+      "snapshot": "workitems/wi-041/recheck-public-mobile-ui.py",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-041\\recheck-public-mobile-ui.py",
+      "sha256": "8889101f3a98ebfcf5a849580ee781a3bc57656a70d4e87b8c7d358f6baf168d"
+    },
+    {
+      "snapshot": "workitems/wi-041/recheck-public-verification.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-041\\recheck-public-verification.json",
+      "sha256": "d28e9496bbd5eb4361b7857f2d78f2abdce30d9a1b21aa9b1632bed47b9c0bc6"
+    },
+    {
+      "snapshot": "workitems/wi-041/recheck-public.py",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-041\\recheck-public.py",
+      "sha256": "fbffa5a9caaaf80a150713afec5af458c14272bdcdb810ac3d6b425f35da8d8d"
+    },
+    {
+      "snapshot": "workitems/wi-041/recheck-public_assets.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-041\\recheck-public_assets.json",
+      "sha256": "1741ec4d2ef9c205300049f38b48cf3a6dc41cea1224edc793a4667a2c7bb006"
+    },
+    {
+      "snapshot": "workitems/wi-041/recheck-read-content.py",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-041\\recheck-read-content.py",
+      "sha256": "1f504bd8c85b9ba98b0eb92c6cadd98ce51d08139311bc42ad60c1e3437e52d8"
+    },
+    {
+      "snapshot": "workitems/wi-041/recheck-reliability-attempt2-evidence.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-041\\recheck-reliability-attempt2-evidence.json",
+      "sha256": "304089594b711c6fbff964ad65d20a676497b9e53fcd7454824fcfc137dc067b"
+    },
+    {
+      "snapshot": "workitems/wi-041/recheck-reliability-attempt2-hardening.txt",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-041\\recheck-reliability-attempt2-hardening.txt",
+      "sha256": "2f5443437f5a656a501b544409cb6c2ba0a951d4b45195d11654e239b061e379"
+    },
+    {
+      "snapshot": "workitems/wi-041/recheck-reliability-attempt2-poc.txt",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-041\\recheck-reliability-attempt2-poc.txt",
+      "sha256": "bb76a1f9fb8d6e89e095f940bdd30fda88865549e7e98f2e839dc1cb5bb443ce"
+    },
+    {
+      "snapshot": "workitems/wi-041/recheck-reliability-attempt2-rules.txt",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-041\\recheck-reliability-attempt2-rules.txt",
+      "sha256": "e4c77e65ab1b4a0105a45c8cd78e6b35f1afacc5ece406b5b929eed5289b562f"
+    },
+    {
+      "snapshot": "workitems/wi-041/recheck-reliability-attempt2.py",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-041\\recheck-reliability-attempt2.py",
+      "sha256": "ac01b5f70df7c5d4ddec002ea2f269b4e80bb3643d23bc70acee569bc05bf205"
+    },
+    {
+      "snapshot": "workitems/wi-041/recheck-reliability-evidence.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-041\\recheck-reliability-evidence.json",
+      "sha256": "78a9e1b2d0a67665012b548302324f1ba544898586471d8ef4a010012f5dd431"
+    },
+    {
+      "snapshot": "workitems/wi-041/recheck-reliability-hardening.txt",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-041\\recheck-reliability-hardening.txt",
+      "sha256": "bcb39caee61f612feb7bf1b1a97c4b29b9d91852287c9331e07518bc28a1912f"
+    },
+    {
+      "snapshot": "workitems/wi-041/recheck-reliability-poc.txt",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-041\\recheck-reliability-poc.txt",
+      "sha256": "da3927233360566841c383e2dbad27a621e69ac693cc1b8bab2e29f7192fa1c4"
+    },
+    {
+      "snapshot": "workitems/wi-041/recheck-reliability-rules.txt",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-041\\recheck-reliability-rules.txt",
+      "sha256": "882d3361f03b096ab7843e4e2a1e551c079273589b66c0eb9b90d69efb3a79e2"
+    },
+    {
+      "snapshot": "workitems/wi-041/recheck-reliability.py",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-041\\recheck-reliability.py",
+      "sha256": "13507e8bf3f9bc45df062cb55f50dfda20749e2175a64fc36d17f61fe95b68d8"
+    },
+    {
+      "snapshot": "workitems/wi-041/recheck-render-content.py",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-041\\recheck-render-content.py",
+      "sha256": "078d361b3487aaa6db9f81df1d64baefb96f6c2d38597802cd598a1699b32d3c"
+    },
+    {
+      "snapshot": "workitems/wi-041/recheck-rendered-content.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-041\\recheck-rendered-content.json",
+      "sha256": "833f763ac32ec931b2dc1698da9ceaa20df298e0d0917a4d21c30d5d0f2b53b3"
+    },
+    {
+      "snapshot": "workitems/wi-041/recheck-root-adjudication.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-041\\recheck-root-adjudication.md",
+      "sha256": "14f5e470119369cf316e52326a3ef0ef259ac54ab1fb76918ea7ad4364ff0122"
+    },
+    {
+      "snapshot": "workitems/wi-041/recheck-root-summary.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-041\\recheck-root-summary.json",
+      "sha256": "5a8659015411fd735b98cb07513d3ffcf653a4687ddd31065105db1e0f7d8ffa"
+    },
+    {
+      "snapshot": "workitems/wi-041/recheck-root-summary.py",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-041\\recheck-root-summary.py",
+      "sha256": "f7a48104b1737e6e2b6f695cd58b8c8bd21552fd17365074041492016f1d41a9"
+    },
+    {
+      "snapshot": "workitems/wi-041/recheck-source-fallback.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-041\\recheck-source-fallback.md",
+      "sha256": "60d36d8c87de43415810dfb98ea2725b9e2ae14066abf87f1b216b38f8f2c304"
+    },
+    {
+      "snapshot": "workitems/wi-041/recheck-source-links.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-041\\recheck-source-links.json",
+      "sha256": "4beeecb892668d2aa68e345c9ae14d98cb4a96552038cdd0d67470bc0b4b0d0c"
+    },
+    {
+      "snapshot": "workitems/wi-041/recheck-source-links.py",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-041\\recheck-source-links.py",
+      "sha256": "d9a36aff3aa805334893a4a88605d96e5ea54762cbceebe73584ad1618382c11"
+    },
+    {
+      "snapshot": "workitems/wi-041/recheck-visible-ad-diffad.txt",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-041\\recheck-visible-ad-diffad.txt",
+      "sha256": "dd84b8cd9fc403b485a1d5904f5bfcd4777aa3e13065572698717031b64649c0"
+    },
+    {
+      "snapshot": "workitems/wi-041/recheck-visible-ad-efficientad.txt",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-041\\recheck-visible-ad-efficientad.txt",
+      "sha256": "b9a8906d86e712eb161e166305c76f7b1d0791a912c19c13a1e0a98e084761e8"
+    },
+    {
+      "snapshot": "workitems/wi-041/recheck-visible-convlstm.txt",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-041\\recheck-visible-convlstm.txt",
+      "sha256": "d4faf294f81fa86f5cadaf0220f2d3d5febc3b672a7dd86a7f40bc6a7dd58db9"
+    },
+    {
+      "snapshot": "workitems/wi-041/recheck-visible-u-net.txt",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-041\\recheck-visible-u-net.txt",
+      "sha256": "96cdbd77bcfbc516d6712ebc7f4e62748331bb26cb46365e7f7e7a97ba60c70d"
+    },
+    {
+      "snapshot": "workitems/wi-041/recheck-visible-videomae.txt",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-041\\recheck-visible-videomae.txt",
+      "sha256": "377f1fa973476de61a930d3bcc41367405319f163f641c0e14013585dc2e49a7"
+    },
+    {
+      "snapshot": "workitems/wi-041/recheck-visible-yolo-seg.txt",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-041\\recheck-visible-yolo-seg.txt",
+      "sha256": "003147837bdc3c8f48205a688b2a169a702ab692195fb0550ad6af1172de6d6f"
+    },
+    {
+      "snapshot": "workitems/wi-041/reliability-evidence.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-041\\reliability-evidence.json",
+      "sha256": "304089594b711c6fbff964ad65d20a676497b9e53fcd7454824fcfc137dc067b"
+    },
+    {
+      "snapshot": "workitems/wi-041/reliability-hardening.txt",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-041\\reliability-hardening.txt",
+      "sha256": "9fad56110321f9e01b6940cb6dbda9f9f1ab3ae414b4d276540734bc919fd83f"
+    },
+    {
+      "snapshot": "workitems/wi-041/reliability-poc.txt",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-041\\reliability-poc.txt",
+      "sha256": "9605842fce65c463100177e449d3ab4a2f5cf71af90ec5f62c00b0707ba66314"
+    },
+    {
+      "snapshot": "workitems/wi-041/reliability-review.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-041\\reliability-review.md",
+      "sha256": "7b35152dcea7c74d26e776c66faef660b825c1be69da4b93736ee48064105d94"
+    },
+    {
+      "snapshot": "workitems/wi-041/reliability-rules.txt",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-041\\reliability-rules.txt",
+      "sha256": "a07ac3226ca0f85a474f3b1927ddd2c484caf1eb80da6dec54533a4ec81bcc08"
+    },
+    {
+      "snapshot": "workitems/wi-041/REVIEW.md",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-041\\REVIEW.md",
+      "sha256": "050e4d6d27a028d67971ad20497fdd642b95e9db262af8f44eef579bd73f6ebc"
+    },
+    {
+      "snapshot": "workitems/wi-042/authoring/tools/verify_interactive_learning_html.py",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\tools\\verify_interactive_learning_html.py",
+      "sha256": "30d8b5259a0b9882eac70fb0f99ca30da4a470b759a5df14d1269db5aff76eaa"
+    },
+    {
+      "snapshot": "workitems/wi-042/authoring/tools/build_interactive_learning_html.py",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\tools\\build_interactive_learning_html.py",
+      "sha256": "ffc9f44cd9d0c707316588ca37f65bc69015eddceca635ac8d7152cd081e4b65"
+    },
+    {
+      "snapshot": "workitems/wi-042/authoring/tools/build_github_pages_site.py",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\tools\\build_github_pages_site.py",
+      "sha256": "9d3bfe2178113f150e16ba6d2f1096fb98a426ff7d715ab27f3efea19824c56c"
+    },
+    {
+      "snapshot": "workitems/wi-042/authoring/tests/test_release_verifier.py",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\tests\\test_release_verifier.py",
+      "sha256": "3459f3d1617e18c54201e513fa97f8b3559606471e4472384be2a220d2bfdb62"
+    },
+    {
+      "snapshot": "workitems/wi-042/authoring/tests/test_detector_comparison_sharing.py",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\tests\\test_detector_comparison_sharing.py",
+      "sha256": "8eeceea704db18b594e49c76abd5926227c4c2897ed34f929f88852b0c52ab8d"
+    },
+    {
+      "snapshot": "workitems/wi-042/authoring/_course_content/topics/u-net.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\_course_content\\topics\\u-net.json",
+      "sha256": "6ae7ec96433bee1e188da755ed34d6ddafc0e394b432f2eee1c9ffc57c33bf97"
+    },
+    {
+      "snapshot": "workitems/wi-042/authoring/_course_content/topics/yolo-seg.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\_course_content\\topics\\yolo-seg.json",
+      "sha256": "bc2f883980cf97a1c2a4b0c4dad5c85b88ca96d974d04918a3104806cdbf9510"
+    },
+    {
+      "snapshot": "workitems/wi-042/authoring/_course_content/topics/ad-efficientad.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\_course_content\\topics\\ad-efficientad.json",
+      "sha256": "30c0ebdcd48b4b959cc282daacf98250b8b0eb2da844a7c093e757521e1acc4f"
+    },
+    {
+      "snapshot": "workitems/wi-042/authoring/_course_content/topics/convlstm.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\_course_content\\topics\\convlstm.json",
+      "sha256": "5255b56098fe26643fbdf8a494286b03ddd02a995674ab0cd23b725b5c351929"
+    },
+    {
+      "snapshot": "workitems/wi-042/authoring/_course_content/topics/videomae.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\_course_content\\topics\\videomae.json",
+      "sha256": "c55efd7d756dcc645cc9a39cf1ca98b158c2a6d4a1e4495016dc7b97a6a943df"
+    },
+    {
+      "snapshot": "workitems/wi-042/authoring/_course_content/topics/ad-diffad.json",
+      "source": "C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\_course_content\\topics\\ad-diffad.json",
+      "sha256": "f6372273a04d50729ccc2dd694bb51850b81260c452c907721e1064adfe6cf4e"
     }
   ],
   "latest_local_audit": "WI-031; audit evidence remains at workitems/wi-031 in authoring workspace; not published"

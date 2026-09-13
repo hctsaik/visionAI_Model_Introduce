@@ -1,0 +1,561 @@
+{
+  "model": "U-Net",
+  "badge": "跳接式語意分割",
+  "title": "U-Net：把整體線索和細節接回像素",
+  "scenario": {
+    "title": "要把金屬板上的彎曲焊縫從背景分出來，交給區域覆核或後續量測。",
+    "body": "要把金屬板上的彎曲焊縫從背景分出來，交給區域覆核或後續量測。"
+  },
+  "promise": {
+    "title": "交付結果與接手工作",
+    "body": "逐像素類別與預測區域遮罩，交邊界核對或後續量測；實體尺寸需另外校正與驗證。"
+  },
+  "mental_model": {
+    "title": "跳接式語意分割",
+    "body": "U-Net先縮小特徵以整合較大範圍，再逐步上採樣恢復輸出解析度。同尺度跳接把編碼側的細節送到解碼側，與較深層線索合併，協助預測每個像素的類別。跳接傳遞特徵，並非直接把原圖當答案貼回。",
+    "limit": "同一條細焊縫在縮小輸入後只剩極少像素，預測遮罩可能斷裂；原始工件並沒有真的斷裂。背景細紋也可能造成誤分。"
+  },
+  "micro_example": {
+    "title": "保細縫，還是保節拍？",
+    "setup": "完整高解析度影像能保留細焊縫，但耗時較長；切圖可聚焦局部，卻會失去部分上下文並增加拼接邊界。",
+    "prediction": "你先測高解析度整圖，還是重疊切圖？驗收不能只看哪個指標？",
+    "reveal": "兩者都值得用相同保留影像比較。整體形狀很重要時先保留上下文；局部細線主導且可處理拼接時可試重疊切圖。除區域重疊外，另看細線召回、斷裂、邊界偏移與完整耗時。要交毫米尺寸仍需尺度與透視校正。"
+  },
+  "mechanism_steps": [
+    {
+      "title": "像素標註教任務",
+      "body": "下採樣讓表示整合更大範圍，但細節會變粗；圖中同一彎焊縫在不同尺度追蹤。",
+      "why": "由本課核心機制連接工作用途",
+      "anchor": "WI030-1",
+      "diagram": {
+        "title": "像素標註教任務",
+        "body": "下採樣讓表示整合更大範圍，但細節會變粗；圖中同一彎焊縫在不同尺度追蹤。",
+        "why": "詳見本課版本與來源",
+        "anchor": "WI030-1"
+      }
+    },
+    {
+      "title": "縮小理解，再接回細節",
+      "body": "對應尺度特徵在解碼側合併，再產生語意遮罩。能保留線索不代表邊界自動精準。",
+      "why": "由本課核心機制連接工作用途",
+      "anchor": "WI030-2",
+      "diagram": {
+        "title": "縮小理解，再接回細節",
+        "body": "對應尺度特徵在解碼側合併，再產生語意遮罩。能保留線索不代表邊界自動精準。",
+        "why": "詳見本課版本與來源",
+        "anchor": "WI030-2"
+      }
+    },
+    {
+      "title": "交出區域遮罩",
+      "body": "逐像素類別與預測區域遮罩，交邊界核對或後續量測；實體尺寸需另外校正與驗證。",
+      "why": "由本課核心機制連接工作用途",
+      "anchor": "WI030-3",
+      "diagram": {
+        "title": "交出區域遮罩",
+        "body": "逐像素類別與預測區域遮罩，交邊界核對或後續量測；實體尺寸需另外校正與驗證。",
+        "why": "詳見本課版本與來源",
+        "anchor": "WI030-3"
+      }
+    },
+    {
+      "title": "工作核對與接手",
+      "body": "用獨立影像和人工核對遮罩，分開量區域重疊、細焊縫漏失及邊界偏差；需尺寸時另做相機與尺度校正。記錄解析度、裁切、拼接與整段耗時。示意遮罩不是推論。",
+      "why": "由本課核心機制連接工作用途",
+      "anchor": "WI030-4",
+      "diagram": {
+        "title": "工作核對與接手",
+        "body": "用獨立影像和人工核對遮罩，分開量區域重疊、細焊縫漏失及邊界偏差；需尺寸時另做相機與尺度校正。記錄解析度、裁切、拼接與整段耗時。示意遮罩不是推論。",
+        "why": "詳見本課版本與來源",
+        "anchor": "WI030-4"
+      }
+    }
+  ],
+  "visual_intro": "U-Net先縮小特徵以整合較大範圍，再逐步上採樣恢復輸出解析度。同尺度跳接把編碼側的細節送到解碼側，與較深層線索合併，協助預測每個像素的類別。跳接傳遞特徵，並非直接把原圖當答案貼回。",
+  "beginner_path": {
+    "title": "從必要原理、具體反例到工作取捨",
+    "intro": "要把金屬板上的彎曲焊縫從背景分出來，交給區域覆核或後續量測。 下列圖像、特徵及回答為教學示意，不是模型實測。",
+    "visuals": [
+      {
+        "id": "wi030-unet-c1",
+        "title": "U-Net：把整體線索和細節接回像素",
+        "prompt": "要把金屬板上的彎曲焊縫從背景分出來，交給區域覆核或後續量測。",
+        "caption": "U-Net先縮小特徵以整合較大範圍，再逐步上採樣恢復輸出解析度。同尺度跳接把編碼側的細節送到解碼側，與較深層線索合併，協助預測每個像素的類別。跳接傳遞特徵，並非直接把原圖當答案貼回。",
+        "image": "_course_content/generated-concepts/u-net/wi030-unet-c1-r04-desktop.png",
+        "alt": "U-Net：把整體線索和細節接回像素。U-Net先縮小特徵以整合較大範圍，再逐步上採樣恢復輸出解析度。同尺度跳接把編碼側的細節送到解碼側，與較深層線索合併，協助預測每個像素的類別。跳接傳遞特徵，並非直接把原圖當答案貼回。 AI生成教學示意，非模型實測。",
+        "callouts": [
+          {
+            "title": "先看整體",
+            "body": "下採樣讓表示整合更大範圍，但細節會變粗；圖中同一彎焊縫在不同尺度追蹤。"
+          },
+          {
+            "title": "細節接回來",
+            "body": "對應尺度特徵在解碼側合併，再產生語意遮罩。能保留線索不代表邊界自動精準。"
+          },
+          {
+            "title": "交付與接手",
+            "body": "逐像素類別與預測區域遮罩，交邊界核對或後續量測；實體尺寸需另外校正與驗證。"
+          }
+        ],
+        "reading_views": [
+          {
+            "title": "U-Net：把整體線索和細節接回像素",
+            "image": "_course_content/generated-concepts/u-net/wi030-unet-c1-r04-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/u-net/wi030-unet-c1-r04-mobile.png",
+            "alt": "U-Net：把整體線索和細節接回像素。U-Net先縮小特徵以整合較大範圍，再逐步上採樣恢復輸出解析度。同尺度跳接把編碼側的細節送到解碼側，與較深層線索合併，協助預測每個像素的類別。跳接傳遞特徵，並非直接把原圖當答案貼回。 AI生成教學示意，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              887,
+              1774
+            ],
+            "mobile_display_mode": "full-mobile",
+            "desktop_intrinsic_width": 1672,
+            "desktop_intrinsic_height": 941,
+            "mobile_intrinsic_width": 887,
+            "mobile_intrinsic_height": 1774
+          }
+        ],
+        "core_ideas": true
+      },
+      {
+        "id": "wi030-seg-d2",
+        "title": "輸入看不見細線，分割也可能漏掉",
+        "prompt": "觀察哪個條件改變，讓原本的結果不夠可靠？",
+        "caption": "同一條細焊縫在縮小輸入後只剩極少像素，預測遮罩可能斷裂；原始工件並沒有真的斷裂。背景細紋也可能造成誤分。",
+        "image": "_course_content/generated-concepts/u-net/wi030-seg-d2-r03-desktop.png",
+        "alt": "輸入看不見細線，分割也可能漏掉。同一條細焊縫在縮小輸入後只剩極少像素，預測遮罩可能斷裂；原始工件並沒有真的斷裂。背景細紋也可能造成誤分。 AI生成教學示意，非模型實測。",
+        "callouts": [
+          {
+            "title": "看哪裡",
+            "body": "同一條細焊縫在縮小輸入後只剩極少像素，預測遮罩可能斷裂；原始工件並沒有真的斷裂。背景細紋也可能造成誤分。"
+          },
+          {
+            "title": "接著怎麼做",
+            "body": "回看原解析度和標註邊界，檢查輸入縮放、局部裁切與拼接；以實際邊界誤差驗證，不把放大顯示當成恢復原本資訊。"
+          }
+        ],
+        "reading_views": [
+          {
+            "title": "輸入看不見細線，分割也可能漏掉",
+            "image": "_course_content/generated-concepts/u-net/wi030-seg-d2-r03-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/u-net/wi030-seg-d2-r03-mobile.png",
+            "alt": "輸入看不見細線，分割也可能漏掉。同一條細焊縫在縮小輸入後只剩極少像素，預測遮罩可能斷裂；原始工件並沒有真的斷裂。背景細紋也可能造成誤分。 AI生成教學示意，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              724,
+              2172
+            ],
+            "mobile_display_mode": "full-mobile",
+            "desktop_intrinsic_width": 1672,
+            "desktop_intrinsic_height": 941,
+            "mobile_intrinsic_width": 724,
+            "mobile_intrinsic_height": 2172
+          }
+        ],
+        "core_ideas": false
+      },
+      {
+        "id": "wi030-seg-d3",
+        "title": "要同類區域，還是每件各一張遮罩？",
+        "prompt": "相同工作需求下，資料、輸出與成本如何取捨？",
+        "caption": "U-Net和SegFormer提供語意分割：同類像素用同類標籤，未必區分每一件。YOLO-Seg提供實例分割：每件有自己的遮罩。先決定要量區域還是逐件計數，再比較模型與標註成本。",
+        "image": "_course_content/generated-concepts/u-net/wi030-seg-d3-r01-desktop.png",
+        "alt": "要同類區域，還是每件各一張遮罩？。U-Net和SegFormer提供語意分割：同類像素用同類標籤，未必區分每一件。YOLO-Seg提供實例分割：每件有自己的遮罩。先決定要量區域還是逐件計數，再比較模型與標註成本。 AI生成教學示意，非模型實測。",
+        "callouts": [
+          {
+            "title": "怎麼選",
+            "body": "U-Net和SegFormer提供語意分割：同類像素用同類標籤，未必區分每一件。YOLO-Seg提供實例分割：每件有自己的遮罩。先決定要量區域還是逐件計數，再比較模型與標註成本。"
+          },
+          {
+            "title": "資料與完整成本",
+            "body": "需像素標註；固定輸入解析度、增強和切分。更改縮放或裁切要重測細線及拼接邊界；同資料比較U-Net基準與SegFormer完整成本。"
+          }
+        ],
+        "reading_views": [
+          {
+            "title": "要同類區域，還是每件各一張遮罩？",
+            "image": "_course_content/generated-concepts/u-net/wi030-seg-d3-r01-desktop.png",
+            "mobile_image": "_course_content/generated-concepts/u-net/wi030-seg-d3-r01-mobile.png",
+            "alt": "要同類區域，還是每件各一張遮罩？。U-Net和SegFormer提供語意分割：同類像素用同類標籤，未必區分每一件。YOLO-Seg提供實例分割：每件有自己的遮罩。先決定要量區域還是逐件計數，再比較模型與標註成本。 AI生成教學示意，非模型實測。",
+            "mobile_crop": [
+              0,
+              0,
+              887,
+              1774
+            ],
+            "mobile_display_mode": "full-mobile",
+            "desktop_intrinsic_width": 1672,
+            "desktop_intrinsic_height": 941,
+            "mobile_intrinsic_width": 887,
+            "mobile_intrinsic_height": 1774
+          }
+        ],
+        "core_ideas": false
+      }
+    ]
+  },
+  "concept_visuals": [],
+  "boundary_cases": [
+    {
+      "condition": "本課具體反例",
+      "effect": "同一條細焊縫在縮小輸入後只剩極少像素，預測遮罩可能斷裂；原始工件並沒有真的斷裂。背景細紋也可能造成誤分。",
+      "action": "回看原解析度和標註邊界，檢查輸入縮放、局部裁切與拼接；以實際邊界誤差驗證，不把放大顯示當成恢復原本資訊。"
+    },
+    {
+      "condition": "更換產品、模型或輸入設定",
+      "effect": "需像素標註；固定輸入解析度、增強和切分。更改縮放或裁切要重測細線及拼接邊界；同資料比較U-Net基準與SegFormer完整成本。",
+      "action": "先定義焊縫標註邊界和最小可見寬度，保存原圖，分開完整批次作驗證。"
+    },
+    {
+      "condition": "把示意當成實際推論",
+      "effect": "本課特徵、排序、回答及圖像僅用於解釋，不支持現場準確率或耗時結論。",
+      "action": "用獨立影像和人工核對遮罩，分開量區域重疊、細焊縫漏失及邊界偏差；需尺寸時另做相機與尺度校正。記錄解析度、裁切、拼接與整段耗時。示意遮罩不是推論。"
+    }
+  ],
+  "comparison": [
+    {
+      "model": "U-Net",
+      "normality": "像素標註；編碼解碼同尺度跳接",
+      "candidate": "語意區域；邊界與尺度需另驗"
+    },
+    {
+      "model": "SegFormer",
+      "normality": "像素標註；階層特徵多尺度融合",
+      "candidate": "語意區域；不自動提供每件ID"
+    },
+    {
+      "model": "YOLOv8-seg例",
+      "normality": "每件標註；原型＋每件係數",
+      "candidate": "每件框與遮罩；漏檢重疊逐件驗"
+    }
+  ],
+  "selection": "U-Net和SegFormer提供語意分割：同類像素用同類標籤，未必區分每一件。YOLO-Seg提供實例分割：每件有自己的遮罩。先決定要量區域還是逐件計數，再比較模型與標註成本。 需像素標註；固定輸入解析度、增強和切分。更改縮放或裁切要重測細線及拼接邊界；同資料比較U-Net基準與SegFormer完整成本。",
+  "poc": {
+    "title": "以真實工作資料做小規模比較",
+    "steps": [
+      "先定義焊縫標註邊界和最小可見寬度，保存原圖，分開完整批次作驗證。",
+      "需像素標註；固定輸入解析度、增強和切分。更改縮放或裁切要重測細線及拼接邊界；同資料比較U-Net基準與SegFormer完整成本。",
+      "用獨立影像和人工核對遮罩，分開量區域重疊、細焊縫漏失及邊界偏差；需尺寸時另做相機與尺度校正。記錄解析度、裁切、拼接與整段耗時。示意遮罩不是推論。"
+    ],
+    "hold": "回看原解析度和標註邊界，檢查輸入縮放、局部裁切與拼接；以實際邊界誤差驗證，不把放大顯示當成恢復原本資訊。",
+    "acceptance": {
+      "baseline": "既有流程或最簡單可行方法",
+      "measure": "用獨立影像和人工核對遮罩，分開量區域重疊、細焊縫漏失及邊界偏差；需尺寸時另做相機與尺度校正。記錄解析度、裁切、拼接與整段耗時。示意遮罩不是推論。",
+      "negative_control": "同一條細焊縫在縮小輸入後只剩極少像素，預測遮罩可能斷裂；原始工件並沒有真的斷裂。背景細紋也可能造成誤分。",
+      "owner": "實作與影像核對負責人"
+    }
+  },
+  "teach_back": {
+    "question": "它改變什麼？何時選另一種做法？",
+    "answer": "U-Net先縮小特徵以整合較大範圍，再逐步上採樣恢復輸出解析度。同尺度跳接把編碼側的細節送到解碼側，與較深層線索合併，協助預測每個像素的類別。跳接傳遞特徵，並非直接把原圖當答案貼回。 U-Net和SegFormer提供語意分割：同類像素用同類標籤，未必區分每一件。YOLO-Seg提供實例分割：每件有自己的遮罩。先決定要量區域還是逐件計數，再比較模型與標註成本。"
+  },
+  "slide_reading": [
+    {
+      "title": "U-Net：標出每個像素屬於哪一類",
+      "question": "像素標註教會區域，輸出仍需回原圖核對。",
+      "look": "先看原圖與細焊線標註，再核對編碼與解碼接回細節，最後看逐像素分類得到語意遮罩。",
+      "relation": "沿用板上細焊線工作例，以對齊的影像和像素類別標註訓練。收縮路徑取得上下文，擴張路徑結合對應高解析度特徵恢復定位；輸出是語意區域，不自帶校正後尺寸。",
+      "takeaway": "像素標註教會區域，輸出仍需回原圖核對。",
+      "terms": [
+        "特徵：由影像學到的中間表示，並非標註真值。",
+        "本圖示意：解釋模型責任，不代表新模型實測。"
+      ]
+    },
+    {
+      "title": "U-Net：粗尺度找上下文，細尺度補位置",
+      "question": "跳接提供對應特徵，解碼器仍要學會融合。",
+      "look": "先看下採樣：位置變粗，再核對同尺度特徵沿跳接送達，最後看上採樣融合後逐像素分類。",
+      "relation": "原始U-Net以crop and concatenate把編碼特徵送到匹配尺度的解碼器，並非每條skip都逐元素相加。示意省略卷積邊界尺寸，但保留同尺度配對與融合；遮罩由學習分類得到，不直接複製原圖邊緣。",
+      "takeaway": "跳接提供對應特徵，解碼器仍要學會融合。",
+      "terms": [
+        "特徵：由影像學到的中間表示，並非標註真值。",
+        "本圖示意：解釋模型責任，不代表新模型實測。"
+      ]
+    },
+    {
+      "title": "U-Net：像素位置先映回，再談尺寸",
+      "question": "記錄resize與裁切，像素遮罩不能直接當毫米。",
+      "look": "先看裁切與縮放都留下映射，再核對遮罩回到原圖同一位置，最後看輪廓核對後才另接量測。",
+      "relation": "保存ROI、resize比例、padding及類別映射，將預測映回原图再核對細線斷裂、孔洞與邊界誤差。量測另需相機校正及誤差驗證；IoU高不保證細線連通或毫米誤差達標。",
+      "takeaway": "記錄resize與裁切，像素遮罩不能直接當毫米。",
+      "terms": [
+        "特徵：由影像學到的中間表示，並非標註真值。",
+        "本圖示意：解釋模型責任，不代表新模型實測。"
+      ]
+    },
+    {
+      "title": "U-Net：看起來像一條線，仍可能斷一格",
+      "question": "同件檢查細線連通，不能只看大區域重疊。",
+      "look": "先看同一焊線跨過細縫，再核對候選遮罩在細處斷裂，最後看核對連通與邊界，再選型。",
+      "relation": "同一細線的真值和示意候選只在中央窄處不同；大區域重疊可能掩蓋斷線。固定標註規則與解析度，比較U-Net和多尺度Transformer候選的邊界、连通、錯分及延遲，不把單一IoU排名當唯一決策。",
+      "takeaway": "同件檢查細線連通，不能只看大區域重疊。",
+      "terms": [
+        "特徵：由影像學到的中間表示，並非標註真值。",
+        "本圖示意：解釋模型責任，不代表新模型實測。"
+      ]
+    }
+  ],
+  "comparison_headers": {
+    "title": "要同類區域，還是每件各一張遮罩？",
+    "basis": "所需資料與方法差異",
+    "output": "輸出與維護責任"
+  },
+  "transfer_check": {
+    "title": "保細縫，還是保節拍？",
+    "scenario": "完整高解析度影像能保留細焊縫，但耗時較長；切圖可聚焦局部，卻會失去部分上下文並增加拼接邊界。",
+    "question": "你先測高解析度整圖，還是重疊切圖？驗收不能只看哪個指標？",
+    "answer": "兩者都值得用相同保留影像比較。整體形狀很重要時先保留上下文；局部細線主導且可處理拼接時可試重疊切圖。除區域重疊外，另看細線召回、斷裂、邊界偏移與完整耗時。要交毫米尺寸仍需尺度與透視校正。"
+  },
+  "review_trace": {
+    "authority": "roadmap-model-selection/known-target-classification/u-net/model.md",
+    "scope": "WI-033：工程層四圖與手機比較修正；首讀有效內容保留。原生圖已審，整頁與使用者審閱另記。",
+    "claims": [
+      {
+        "id": "visual-1",
+        "field": "beginner_path.visuals[same-pcb-anchor]",
+        "source": "模型定位 / architecture_path"
+      },
+      {
+        "id": "visual-2",
+        "field": "beginner_path.visuals[pixel-label-contract]",
+        "source": "architecture_path"
+      },
+      {
+        "id": "visual-3",
+        "field": "beginner_path.visuals[u-path-skip-merge]",
+        "source": "representation_or_score"
+      },
+      {
+        "id": "visual-4",
+        "field": "beginner_path.visuals[mask-candidate-review]",
+        "source": "failure_boundary"
+      },
+      {
+        "id": "visual-5",
+        "field": "beginner_path.visuals[tiny-label-instance-hold]",
+        "source": "selection_gate / evidence_bundle"
+      },
+      {
+        "id": "promise",
+        "field": "promise",
+        "source": "模型定位 / representation_or_score"
+      },
+      {
+        "id": "mechanism",
+        "field": "mechanism_steps",
+        "source": "architecture_path / representation_or_score"
+      },
+      {
+        "id": "boundaries",
+        "field": "boundary_cases",
+        "source": "failure_boundary / selection_gate"
+      },
+      {
+        "id": "comparison",
+        "field": "comparison + selection",
+        "source": "selection_gate"
+      },
+      {
+        "id": "poc",
+        "field": "poc + acceptance",
+        "source": "cost_and_operating_point / evidence_bundle"
+      },
+      {
+        "id": "transfer",
+        "field": "transfer_check",
+        "source": "failure_boundary / selection_gate"
+      },
+      {
+        "id": "wi030-first-read",
+        "field": "beginner_path + core + selection + transfer",
+        "source": "https://arxiv.org/abs/1505.04597"
+      }
+    ]
+  },
+  "quality_status": {
+    "label": "首讀圖文已核對",
+    "state": "self-reviewed",
+    "round": "WI-030",
+    "reason": "新版逐圖與整頁自評、桌機手機驗證完成；使用者成品核准pending。原工程圖未納入本輪分數。"
+  },
+  "teaching_preflight": {
+    "brief": "teaching-images/vision-ai-model-selection/workitems/wi-030/unet-c1-r04-desktop.md",
+    "mobile_brief": "teaching-images/vision-ai-model-selection/workitems/wi-030/unet-c1-r04-mobile.md",
+    "story": "C",
+    "major_visual_nodes": 3,
+    "visual_status": "self-reviewed",
+    "user_review": "pending"
+  },
+  "engineering_slides": [
+    {
+      "title": "U-Net：標出每個像素屬於哪一類",
+      "question": "像素標註教會區域，輸出仍需回原圖核對。",
+      "plain": {
+        "look": "先看原圖與細焊線標註，再核對編碼與解碼接回細節，最後看逐像素分類得到語意遮罩。",
+        "relation": "沿用板上細焊線工作例，以對齊的影像和像素類別標註訓練。收縮路徑取得上下文，擴張路徑結合對應高解析度特徵恢復定位；輸出是語意區域，不自帶校正後尺寸。",
+        "takeaway": "像素標註教會區域，輸出仍需回原圖核對。"
+      },
+      "terms": [
+        "特徵：由影像學到的中間表示，並非標註真值。",
+        "本圖示意：解釋模型責任，不代表新模型實測。"
+      ],
+      "guide": [
+        "沿用板上細焊線工作例，以對齊的影像和像素類別標註訓練。收縮路徑取得上下文，擴張路徑結合對應高解析度特徵恢復定位；輸出是語意區域，不自帶校正後尺寸。",
+        "先看原圖與細焊線標註，再核對編碼與解碼接回細節，最後看逐像素分類得到語意遮罩。"
+      ],
+      "stages": [
+        {
+          "title": "原圖與細焊線標註",
+          "body": "原圖與細焊線標註；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "編碼與解碼接回細節",
+          "body": "編碼與解碼接回細節；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "逐像素分類得到語意遮罩",
+          "body": "逐像素分類得到語意遮罩；請對照圖內輸入、變化與結果。"
+        }
+      ],
+      "misconception": "同一條細焊縫在縮小輸入後只剩極少像素，預測遮罩可能斷裂；原始工件並沒有真的斷裂。背景細紋也可能造成誤分。",
+      "alt": "U-Net：標出每個像素屬於哪一類。像素標註教會區域，輸出仍需回原圖核對。 教學示意，非模型實測。",
+      "mobile_image": "roadmap-model-selection/known-target-classification/u-net/images/final/WI033-UNET-01-r02-mobile.png",
+      "mobile_width": 768,
+      "mobile_height": 2304,
+      "engineering": {
+        "takeaway": "像素標註教會區域，輸出仍需回原圖核對。",
+        "nextAction": "先定義焊縫標註邊界和最小可見寬度，保存原圖，分開完整批次作驗證。",
+        "redLine": "回看原解析度和標註邊界，檢查輸入縮放、局部裁切與拼接；以實際邊界誤差驗證，不把放大顯示當成恢復原本資訊。"
+      },
+      "source": "https://arxiv.org/abs/1505.04597"
+    },
+    {
+      "title": "U-Net：粗尺度找上下文，細尺度補位置",
+      "question": "跳接提供對應特徵，解碼器仍要學會融合。",
+      "plain": {
+        "look": "先看下採樣：位置變粗，再核對同尺度特徵沿跳接送達，最後看上採樣融合後逐像素分類。",
+        "relation": "原始U-Net以crop and concatenate把編碼特徵送到匹配尺度的解碼器，並非每條skip都逐元素相加。示意省略卷積邊界尺寸，但保留同尺度配對與融合；遮罩由學習分類得到，不直接複製原圖邊緣。",
+        "takeaway": "跳接提供對應特徵，解碼器仍要學會融合。"
+      },
+      "terms": [
+        "特徵：由影像學到的中間表示，並非標註真值。",
+        "本圖示意：解釋模型責任，不代表新模型實測。"
+      ],
+      "guide": [
+        "原始U-Net以crop and concatenate把編碼特徵送到匹配尺度的解碼器，並非每條skip都逐元素相加。示意省略卷積邊界尺寸，但保留同尺度配對與融合；遮罩由學習分類得到，不直接複製原圖邊緣。",
+        "先看下採樣：位置變粗，再核對同尺度特徵沿跳接送達，最後看上採樣融合後逐像素分類。"
+      ],
+      "stages": [
+        {
+          "title": "下採樣：位置變粗",
+          "body": "下採樣：位置變粗；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "同尺度特徵沿跳接送達",
+          "body": "同尺度特徵沿跳接送達；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "上採樣融合後逐像素分類",
+          "body": "上採樣融合後逐像素分類；請對照圖內輸入、變化與結果。"
+        }
+      ],
+      "misconception": "同一條細焊縫在縮小輸入後只剩極少像素，預測遮罩可能斷裂；原始工件並沒有真的斷裂。背景細紋也可能造成誤分。",
+      "alt": "U-Net：粗尺度找上下文，細尺度補位置。跳接提供對應特徵，解碼器仍要學會融合。 教學示意，非模型實測。",
+      "mobile_image": "roadmap-model-selection/known-target-classification/u-net/images/final/WI033-UNET-02-r03-mobile.png",
+      "mobile_width": 768,
+      "mobile_height": 2304,
+      "engineering": {
+        "takeaway": "跳接提供對應特徵，解碼器仍要學會融合。",
+        "nextAction": "先定義焊縫標註邊界和最小可見寬度，保存原圖，分開完整批次作驗證。",
+        "redLine": "回看原解析度和標註邊界，檢查輸入縮放、局部裁切與拼接；以實際邊界誤差驗證，不把放大顯示當成恢復原本資訊。"
+      },
+      "source": "https://arxiv.org/abs/1505.04597"
+    },
+    {
+      "title": "U-Net：像素位置先映回，再談尺寸",
+      "question": "記錄resize與裁切，像素遮罩不能直接當毫米。",
+      "plain": {
+        "look": "先看裁切與縮放都留下映射，再核對遮罩回到原圖同一位置，最後看輪廓核對後才另接量測。",
+        "relation": "保存ROI、resize比例、padding及類別映射，將預測映回原图再核對細線斷裂、孔洞與邊界誤差。量測另需相機校正及誤差驗證；IoU高不保證細線連通或毫米誤差達標。",
+        "takeaway": "記錄resize與裁切，像素遮罩不能直接當毫米。"
+      },
+      "terms": [
+        "特徵：由影像學到的中間表示，並非標註真值。",
+        "本圖示意：解釋模型責任，不代表新模型實測。"
+      ],
+      "guide": [
+        "保存ROI、resize比例、padding及類別映射，將預測映回原图再核對細線斷裂、孔洞與邊界誤差。量測另需相機校正及誤差驗證；IoU高不保證細線連通或毫米誤差達標。",
+        "先看裁切與縮放都留下映射，再核對遮罩回到原圖同一位置，最後看輪廓核對後才另接量測。"
+      ],
+      "stages": [
+        {
+          "title": "裁切與縮放都留下映射",
+          "body": "裁切與縮放都留下映射；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "遮罩回到原圖同一位置",
+          "body": "遮罩回到原圖同一位置；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "輪廓核對後才另接量測",
+          "body": "輪廓核對後才另接量測；請對照圖內輸入、變化與結果。"
+        }
+      ],
+      "misconception": "同一條細焊縫在縮小輸入後只剩極少像素，預測遮罩可能斷裂；原始工件並沒有真的斷裂。背景細紋也可能造成誤分。",
+      "alt": "U-Net：像素位置先映回，再談尺寸。記錄resize與裁切，像素遮罩不能直接當毫米。 教學示意，非模型實測。",
+      "mobile_image": "roadmap-model-selection/known-target-classification/u-net/images/final/WI033-UNET-03-r02-mobile.png",
+      "mobile_width": 768,
+      "mobile_height": 2304,
+      "engineering": {
+        "takeaway": "記錄resize與裁切，像素遮罩不能直接當毫米。",
+        "nextAction": "先定義焊縫標註邊界和最小可見寬度，保存原圖，分開完整批次作驗證。",
+        "redLine": "回看原解析度和標註邊界，檢查輸入縮放、局部裁切與拼接；以實際邊界誤差驗證，不把放大顯示當成恢復原本資訊。"
+      },
+      "source": "https://arxiv.org/abs/1505.04597"
+    },
+    {
+      "title": "U-Net：看起來像一條線，仍可能斷一格",
+      "question": "同件檢查細線連通，不能只看大區域重疊。",
+      "plain": {
+        "look": "先看同一焊線跨過細縫，再核對候選遮罩在細處斷裂，最後看核對連通與邊界，再選型。",
+        "relation": "同一細線的真值和示意候選只在中央窄處不同；大區域重疊可能掩蓋斷線。固定標註規則與解析度，比較U-Net和多尺度Transformer候選的邊界、连通、錯分及延遲，不把單一IoU排名當唯一決策。",
+        "takeaway": "同件檢查細線連通，不能只看大區域重疊。"
+      },
+      "terms": [
+        "特徵：由影像學到的中間表示，並非標註真值。",
+        "本圖示意：解釋模型責任，不代表新模型實測。"
+      ],
+      "guide": [
+        "同一細線的真值和示意候選只在中央窄處不同；大區域重疊可能掩蓋斷線。固定標註規則與解析度，比較U-Net和多尺度Transformer候選的邊界、连通、錯分及延遲，不把單一IoU排名當唯一決策。",
+        "先看同一焊線跨過細縫，再核對候選遮罩在細處斷裂，最後看核對連通與邊界，再選型。"
+      ],
+      "stages": [
+        {
+          "title": "同一焊線跨過細縫",
+          "body": "同一焊線跨過細縫；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "候選遮罩在細處斷裂",
+          "body": "候選遮罩在細處斷裂；請對照圖內輸入、變化與結果。"
+        },
+        {
+          "title": "核對連通與邊界，再選型",
+          "body": "核對連通與邊界，再選型；請對照圖內輸入、變化與結果。"
+        }
+      ],
+      "misconception": "同一條細焊縫在縮小輸入後只剩極少像素，預測遮罩可能斷裂；原始工件並沒有真的斷裂。背景細紋也可能造成誤分。",
+      "alt": "U-Net：看起來像一條線，仍可能斷一格。同件檢查細線連通，不能只看大區域重疊。 教學示意，非模型實測。",
+      "mobile_image": "roadmap-model-selection/known-target-classification/u-net/images/final/WI033-UNET-04-r01-mobile.png",
+      "mobile_width": 768,
+      "mobile_height": 2304,
+      "engineering": {
+        "takeaway": "同件檢查細線連通，不能只看大區域重疊。",
+        "nextAction": "先定義焊縫標註邊界和最小可見寬度，保存原圖，分開完整批次作驗證。",
+        "redLine": "回看原解析度和標註邊界，檢查輸入縮放、局部裁切與拼接；以實際邊界誤差驗證，不把放大顯示當成恢復原本資訊。"
+      },
+      "source": "https://arxiv.org/abs/1505.04597"
+    }
+  ]
+}

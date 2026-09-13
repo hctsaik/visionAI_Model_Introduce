@@ -1,0 +1,20 @@
+{
+  "search": "PatchCore",
+  "drawer_closed": true,
+  "theme_persists": true,
+  "figure_top": 85.265625,
+  "zoom_start": {
+    "left": 26,
+    "top": 101.53125,
+    "boxLeft": 14,
+    "boxTop": 89.53125
+  },
+  "zoom_end": {
+    "right": 364,
+    "bottom": 742.53125,
+    "boxRight": 376,
+    "boxBottom": 754.46875
+  },
+  "escape_closed": true,
+  "page_errors": []
+}

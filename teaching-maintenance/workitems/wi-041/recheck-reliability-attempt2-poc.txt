@@ -1,0 +1,20 @@
+test_backtracking_invalidates_confirmation_and_recomputes_result (__main__.PocWorkbenchTests.test_backtracking_invalidates_confirmation_and_recomputes_result) ... ok
+test_example_cancel_and_undo (__main__.PocWorkbenchTests.test_example_cancel_and_undo) ... ok
+test_generation_does_not_require_existing_image (__main__.PocWorkbenchTests.test_generation_does_not_require_existing_image) ... ok
+test_json_roundtrip_preserves_branch_answers (__main__.PocWorkbenchTests.test_json_roundtrip_preserves_branch_answers) ... ok
+test_legacy_draft_preserved_during_new_journey (__main__.PocWorkbenchTests.test_legacy_draft_preserved_during_new_journey) ... ok
+test_lesson_handoff_keeps_candidate_as_context (__main__.PocWorkbenchTests.test_lesson_handoff_keeps_candidate_as_context) ... ok
+test_markdown_contains_result_and_print_preview (__main__.PocWorkbenchTests.test_markdown_contains_result_and_print_preview) ... ok
+test_mobile_keyboard_and_no_horizontal_overflow (__main__.PocWorkbenchTests.test_mobile_keyboard_and_no_horizontal_overflow) ... ok
+test_reload_restores_confirmed_answers_and_current_question (__main__.PocWorkbenchTests.test_reload_restores_confirmed_answers_and_current_question) ... ok
+test_reset_and_undo_preserve_learning (__main__.PocWorkbenchTests.test_reset_and_undo_preserve_learning) ... ok
+test_six_demand_scenarios_without_model_or_free_text (__main__.PocWorkbenchTests.test_six_demand_scenarios_without_model_or_free_text) ... ok
+test_storage_failure_is_visible (__main__.PocWorkbenchTests.test_storage_failure_is_visible) ... ok
+test_unknown_answer_provides_next_step (__main__.PocWorkbenchTests.test_unknown_answer_provides_next_step) ... ok
+
+----------------------------------------------------------------------
+Ran 13 tests in 151.872s
+
+OK
+
+EXIT: 0

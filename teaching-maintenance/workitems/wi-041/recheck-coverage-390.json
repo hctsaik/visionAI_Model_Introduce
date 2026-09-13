@@ -1,0 +1,6369 @@
+{
+  "started": "2026-09-13 10:31:54",
+  "width": 390,
+  "lessons": [
+    {
+      "topic": "charuco",
+      "width": 390,
+      "slides": [
+        {
+          "id": "step-charuco-1",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/geometry-alignment-measurement/charuco/images/final/WI032-CHARUCO-01-r04-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        },
+        {
+          "id": "step-charuco-2",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/geometry-alignment-measurement/charuco/images/final/WI032-CHARUCO-02-r04-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        },
+        {
+          "id": "step-charuco-3",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/geometry-alignment-measurement/charuco/images/final/WI032-CHARUCO-03-r04-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        },
+        {
+          "id": "step-charuco-4",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/geometry-alignment-measurement/charuco/images/final/WI032-CHARUCO-04-r04-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        }
+      ],
+      "chapters": [],
+      "concepts": [
+        "ChArUco：用已知角點，建立相機幾何"
+      ],
+      "errors": [],
+      "interaction_scope": "family first",
+      "default": {
+        "overflow": false,
+        "images": {
+          "total": 10,
+          "broken": []
+        },
+        "h1": [
+          "ChArUco"
+        ]
+      },
+      "learning_checks": 1,
+      "expanded": {
+        "overflow": false,
+        "images": {
+          "total": 10,
+          "broken": []
+        },
+        "h1": [
+          "ChArUco"
+        ]
+      },
+      "main_visuals": [
+        {
+          "id": "beginner-charuco-wi032-charuco-core",
+          "visible": true,
+          "images": 2
+        },
+        {
+          "id": "beginner-charuco-wi032-charuco-failure",
+          "visible": true,
+          "images": 2
+        },
+        {
+          "id": "beginner-charuco-wi032-geometry-compare",
+          "visible": true,
+          "images": 2
+        }
+      ],
+      "concept_count": 3,
+      "zoom_titles": [
+        "ChArUco · 01 先看它交出什麼",
+        "ChArUco · 02 再看它怎麼做",
+        "ChArUco · 03 上線前先固定條件",
+        "ChArUco · 04 選它前先看風險"
+      ],
+      "step_links": 7
+    },
+    {
+      "topic": "ecc",
+      "width": 390,
+      "slides": [
+        {
+          "id": "step-ecc-1",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/geometry-alignment-measurement/ecc/images/final/WI032-ECC-01-r04-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        },
+        {
+          "id": "step-ecc-2",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/geometry-alignment-measurement/ecc/images/final/WI032-ECC-02-r04-mobile.png",
+              "ok": false,
+              "width": 322
+            }
+          ]
+        },
+        {
+          "id": "step-ecc-3",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/geometry-alignment-measurement/ecc/images/final/WI032-ECC-03-r04-mobile.png",
+              "ok": false,
+              "width": 322
+            }
+          ]
+        },
+        {
+          "id": "step-ecc-4",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/geometry-alignment-measurement/ecc/images/final/WI032-ECC-04-r04-mobile.png",
+              "ok": false,
+              "width": 322
+            }
+          ]
+        }
+      ],
+      "chapters": [],
+      "concepts": [],
+      "errors": [],
+      "interaction_scope": "rendered breadth",
+      "default": {
+        "overflow": false,
+        "images": {
+          "total": 10,
+          "broken": [
+            "roadmap-model-selection/geometry-alignment-measurement/ecc/images/final/WI032-ECC-02-r04-desktop.png",
+            "roadmap-model-selection/geometry-alignment-measurement/ecc/images/final/WI032-ECC-03-r04-desktop.png",
+            "roadmap-model-selection/geometry-alignment-measurement/ecc/images/final/WI032-ECC-04-r04-desktop.png"
+          ]
+        },
+        "h1": [
+          "ECC"
+        ]
+      },
+      "learning_checks": 1,
+      "expanded": {
+        "overflow": false,
+        "images": {
+          "total": 10,
+          "broken": [
+            "roadmap-model-selection/geometry-alignment-measurement/ecc/images/final/WI032-ECC-02-r04-desktop.png",
+            "roadmap-model-selection/geometry-alignment-measurement/ecc/images/final/WI032-ECC-03-r04-desktop.png",
+            "roadmap-model-selection/geometry-alignment-measurement/ecc/images/final/WI032-ECC-04-r04-desktop.png"
+          ]
+        },
+        "h1": [
+          "ECC"
+        ]
+      },
+      "main_visuals": [
+        {
+          "id": "beginner-ecc-wi032-ecc-core",
+          "visible": true,
+          "images": 2
+        },
+        {
+          "id": "beginner-ecc-wi032-ecc-failure",
+          "visible": true,
+          "images": 2
+        },
+        {
+          "id": "beginner-ecc-wi032-geometry-compare",
+          "visible": true,
+          "images": 2
+        }
+      ]
+    },
+    {
+      "topic": "sift",
+      "width": 390,
+      "slides": [
+        {
+          "id": "step-sift-1",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/geometry-alignment-measurement/sift/images/final/WI032-SIFT-01-r06-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        },
+        {
+          "id": "step-sift-2",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/geometry-alignment-measurement/sift/images/final/WI032-SIFT-02-r04-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        },
+        {
+          "id": "step-sift-3",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/geometry-alignment-measurement/sift/images/final/WI032-SIFT-03-r04-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        },
+        {
+          "id": "step-sift-4",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/geometry-alignment-measurement/sift/images/final/WI032-SIFT-04-r04-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        }
+      ],
+      "chapters": [],
+      "concepts": [],
+      "errors": [],
+      "interaction_scope": "rendered breadth",
+      "default": {
+        "overflow": false,
+        "images": {
+          "total": 10,
+          "broken": []
+        },
+        "h1": [
+          "SIFT"
+        ]
+      },
+      "learning_checks": 1,
+      "expanded": {
+        "overflow": false,
+        "images": {
+          "total": 10,
+          "broken": []
+        },
+        "h1": [
+          "SIFT"
+        ]
+      },
+      "main_visuals": [
+        {
+          "id": "beginner-sift-wi032-sift-core",
+          "visible": true,
+          "images": 2
+        },
+        {
+          "id": "beginner-sift-wi032-sift-failure",
+          "visible": true,
+          "images": 2
+        },
+        {
+          "id": "beginner-sift-wi032-geometry-compare",
+          "visible": true,
+          "images": 2
+        }
+      ]
+    },
+    {
+      "topic": "lightglue",
+      "width": 390,
+      "slides": [
+        {
+          "id": "step-lightglue-1",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/geometry-alignment-measurement/lightglue/images/final/WI032-LIGHTGLUE-01-r04-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        },
+        {
+          "id": "step-lightglue-2",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/geometry-alignment-measurement/lightglue/images/final/WI032-LIGHTGLUE-02-r04-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        },
+        {
+          "id": "step-lightglue-3",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/geometry-alignment-measurement/lightglue/images/final/WI032-LIGHTGLUE-03-r04-mobile.png",
+              "ok": false,
+              "width": 322
+            }
+          ]
+        },
+        {
+          "id": "step-lightglue-4",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/geometry-alignment-measurement/lightglue/images/final/WI032-LIGHTGLUE-04-r04-mobile.png",
+              "ok": false,
+              "width": 322
+            }
+          ]
+        }
+      ],
+      "chapters": [],
+      "concepts": [],
+      "errors": [],
+      "interaction_scope": "rendered breadth",
+      "default": {
+        "overflow": false,
+        "images": {
+          "total": 10,
+          "broken": [
+            "roadmap-model-selection/geometry-alignment-measurement/lightglue/images/final/WI032-LIGHTGLUE-03-r04-desktop.png",
+            "roadmap-model-selection/geometry-alignment-measurement/lightglue/images/final/WI032-LIGHTGLUE-04-r04-desktop.png"
+          ]
+        },
+        "h1": [
+          "LightGlue"
+        ]
+      },
+      "learning_checks": 1,
+      "expanded": {
+        "overflow": false,
+        "images": {
+          "total": 10,
+          "broken": [
+            "roadmap-model-selection/geometry-alignment-measurement/lightglue/images/final/WI032-LIGHTGLUE-03-r04-desktop.png",
+            "roadmap-model-selection/geometry-alignment-measurement/lightglue/images/final/WI032-LIGHTGLUE-04-r04-desktop.png"
+          ]
+        },
+        "h1": [
+          "LightGlue"
+        ]
+      },
+      "main_visuals": [
+        {
+          "id": "beginner-lightglue-wi032-lightglue-core",
+          "visible": true,
+          "images": 2
+        },
+        {
+          "id": "beginner-lightglue-wi032-lightglue-failure",
+          "visible": true,
+          "images": 2
+        },
+        {
+          "id": "beginner-lightglue-wi032-geometry-compare",
+          "visible": true,
+          "images": 2
+        }
+      ]
+    },
+    {
+      "topic": "resnet",
+      "width": 390,
+      "slides": [
+        {
+          "id": "step-resnet-1",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/known-target-classification/resnet/images/final/WI033-RESNET-01-r01-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        },
+        {
+          "id": "step-resnet-2",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/known-target-classification/resnet/images/final/WI033-RESNET-02-r02-mobile.png",
+              "ok": false,
+              "width": 322
+            }
+          ]
+        },
+        {
+          "id": "step-resnet-3",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/known-target-classification/resnet/images/final/WI033-RESNET-03-r01-mobile.png",
+              "ok": false,
+              "width": 322
+            }
+          ]
+        },
+        {
+          "id": "step-resnet-4",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/known-target-classification/resnet/images/final/WI033-RESNET-04-r01-mobile.png",
+              "ok": false,
+              "width": 322
+            }
+          ]
+        }
+      ],
+      "chapters": [
+        {
+          "id": "deep-dive-resnet-1",
+          "visible": true,
+          "images": []
+        },
+        {
+          "id": "deep-dive-resnet-2",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/resnet/wi033-resnet-deep-skip-r01-mobile.png",
+              "ok": true,
+              "width": 322
+            },
+            {
+              "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/resnet/wi033-resnet-deep-residual-r02-mobile.png",
+              "ok": true,
+              "width": 0
+            }
+          ]
+        },
+        {
+          "id": "deep-dive-resnet-3",
+          "visible": true,
+          "images": []
+        },
+        {
+          "id": "deep-dive-resnet-4",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/resnet/wi033-resnet-deep-bn-r02-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        },
+        {
+          "id": "deep-dive-resnet-5",
+          "visible": true,
+          "images": []
+        },
+        {
+          "id": "deep-dive-resnet-6",
+          "visible": true,
+          "images": []
+        },
+        {
+          "id": "deep-dive-resnet-7",
+          "visible": true,
+          "images": []
+        },
+        {
+          "id": "deep-dive-resnet-8",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/resnet/wi033-resnet-deep-residual-r02-mobile.png",
+              "ok": true,
+              "width": 322
+            },
+            {
+              "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/resnet/wi033-resnet-deep-cnx-spatial-r02-mobile.png",
+              "ok": true,
+              "width": 0
+            },
+            {
+              "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/resnet/wi033-resnet-deep-cnx-channel-r02-mobile.png",
+              "ok": true,
+              "width": 0
+            },
+            {
+              "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/resnet/wi033-resnet-deep-vit-attention-r01-mobile.png",
+              "ok": true,
+              "width": 0
+            }
+          ]
+        }
+      ],
+      "concepts": [
+        "ResNet：保留原有線索，再學需要的修正"
+      ],
+      "errors": [],
+      "interaction_scope": "family first",
+      "default": {
+        "overflow": false,
+        "images": {
+          "total": 17,
+          "broken": [
+            "_course_content/generated-concepts/resnet/wi030-resnet-c1-r02-desktop.png",
+            "_course_content/generated-concepts/resnet/wi030-class-d2-r01-desktop.png",
+            "_course_content/generated-concepts/resnet/wi030-class-d3-r05-desktop.png",
+            "_course_content/generated-concepts/resnet/wi033-resnet-deep-cnx-channel-r02-mobile.png",
+            "_course_content/generated-concepts/resnet/wi033-resnet-deep-vit-attention-r01-mobile.png",
+            "roadmap-model-selection/known-target-classification/resnet/images/final/WI033-RESNET-02-r02-desktop.png",
+            "roadmap-model-selection/known-target-classification/resnet/images/final/WI033-RESNET-03-r01-desktop.png",
+            "roadmap-model-selection/known-target-classification/resnet/images/final/WI033-RESNET-04-r01-desktop.png"
+          ]
+        },
+        "h1": [
+          "ResNet"
+        ]
+      },
+      "learning_checks": 1,
+      "expanded": {
+        "overflow": false,
+        "images": {
+          "total": 17,
+          "broken": [
+            "_course_content/generated-concepts/resnet/wi030-resnet-c1-r02-desktop.png",
+            "_course_content/generated-concepts/resnet/wi030-class-d2-r01-desktop.png",
+            "_course_content/generated-concepts/resnet/wi030-class-d3-r05-desktop.png",
+            "roadmap-model-selection/known-target-classification/resnet/images/final/WI033-RESNET-02-r02-desktop.png",
+            "roadmap-model-selection/known-target-classification/resnet/images/final/WI033-RESNET-03-r01-desktop.png",
+            "roadmap-model-selection/known-target-classification/resnet/images/final/WI033-RESNET-04-r01-desktop.png"
+          ]
+        },
+        "h1": [
+          "ResNet"
+        ]
+      },
+      "main_visuals": [
+        {
+          "id": "beginner-resnet-wi030-resnet-c1",
+          "visible": true,
+          "images": 2
+        },
+        {
+          "id": "beginner-resnet-wi030-class-d2",
+          "visible": true,
+          "images": 2
+        },
+        {
+          "id": "beginner-resnet-wi030-class-d3",
+          "visible": true,
+          "images": 2
+        }
+      ],
+      "concept_count": 16,
+      "zoom_titles": [
+        "ResNet · 01 先看它交出什麼",
+        "ResNet · 02 再看它怎麼做",
+        "ResNet · 03 上線前先固定條件",
+        "ResNet · 04 選它前先看風險"
+      ],
+      "step_links": 7
+    },
+    {
+      "topic": "convnext",
+      "width": 390,
+      "slides": [
+        {
+          "id": "step-convnext-1",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/known-target-classification/convnext/images/final/WI033-CONVNEXT-01-r01-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        },
+        {
+          "id": "step-convnext-2",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/known-target-classification/convnext/images/final/WI033-CONVNEXT-02-r03-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        },
+        {
+          "id": "step-convnext-3",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/known-target-classification/convnext/images/final/WI033-CONVNEXT-03-r01-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        },
+        {
+          "id": "step-convnext-4",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/known-target-classification/convnext/images/final/WI033-CONVNEXT-04-r01-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        }
+      ],
+      "chapters": [],
+      "concepts": [],
+      "errors": [],
+      "interaction_scope": "rendered breadth",
+      "default": {
+        "overflow": false,
+        "images": {
+          "total": 10,
+          "broken": []
+        },
+        "h1": [
+          "ConvNeXt"
+        ]
+      },
+      "learning_checks": 1,
+      "expanded": {
+        "overflow": false,
+        "images": {
+          "total": 10,
+          "broken": []
+        },
+        "h1": [
+          "ConvNeXt"
+        ]
+      },
+      "main_visuals": [
+        {
+          "id": "beginner-convnext-wi030-convnext-c1",
+          "visible": true,
+          "images": 2
+        },
+        {
+          "id": "beginner-convnext-wi030-class-d2",
+          "visible": true,
+          "images": 2
+        },
+        {
+          "id": "beginner-convnext-wi030-class-d3",
+          "visible": true,
+          "images": 2
+        }
+      ]
+    },
+    {
+      "topic": "vit-classifier",
+      "width": 390,
+      "slides": [
+        {
+          "id": "step-vit-classifier-1",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/known-target-classification/vit-classifier/images/final/WI033-VIT-01-r01-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        },
+        {
+          "id": "step-vit-classifier-2",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/known-target-classification/vit-classifier/images/final/WI033-VIT-02-r03-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        },
+        {
+          "id": "step-vit-classifier-3",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/known-target-classification/vit-classifier/images/final/WI033-VIT-03-r02-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        },
+        {
+          "id": "step-vit-classifier-4",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/known-target-classification/vit-classifier/images/final/WI033-VIT-04-r02-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        }
+      ],
+      "chapters": [],
+      "concepts": [],
+      "errors": [],
+      "interaction_scope": "rendered breadth",
+      "default": {
+        "overflow": false,
+        "images": {
+          "total": 10,
+          "broken": []
+        },
+        "h1": [
+          "ViT"
+        ]
+      },
+      "learning_checks": 1,
+      "expanded": {
+        "overflow": false,
+        "images": {
+          "total": 10,
+          "broken": []
+        },
+        "h1": [
+          "ViT"
+        ]
+      },
+      "main_visuals": [
+        {
+          "id": "beginner-vit-classifier-wi030-vit-c1",
+          "visible": true,
+          "images": 2
+        },
+        {
+          "id": "beginner-vit-classifier-wi030-class-d2",
+          "visible": true,
+          "images": 2
+        },
+        {
+          "id": "beginner-vit-classifier-wi030-class-d3",
+          "visible": true,
+          "images": 2
+        }
+      ]
+    },
+    {
+      "topic": "u-net",
+      "width": 390,
+      "slides": [
+        {
+          "id": "step-u-net-1",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/known-target-classification/u-net/images/final/WI033-UNET-01-r02-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        },
+        {
+          "id": "step-u-net-2",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/known-target-classification/u-net/images/final/WI033-UNET-02-r03-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        },
+        {
+          "id": "step-u-net-3",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/known-target-classification/u-net/images/final/WI033-UNET-03-r02-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        },
+        {
+          "id": "step-u-net-4",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/known-target-classification/u-net/images/final/WI033-UNET-04-r01-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        }
+      ],
+      "chapters": [],
+      "concepts": [],
+      "errors": [],
+      "interaction_scope": "rendered breadth",
+      "default": {
+        "overflow": false,
+        "images": {
+          "total": 10,
+          "broken": []
+        },
+        "h1": [
+          "U-Net"
+        ]
+      },
+      "learning_checks": 1,
+      "expanded": {
+        "overflow": false,
+        "images": {
+          "total": 10,
+          "broken": []
+        },
+        "h1": [
+          "U-Net"
+        ]
+      },
+      "main_visuals": [
+        {
+          "id": "beginner-u-net-wi030-unet-c1",
+          "visible": true,
+          "images": 2
+        },
+        {
+          "id": "beginner-u-net-wi030-seg-d2",
+          "visible": true,
+          "images": 2
+        },
+        {
+          "id": "beginner-u-net-wi030-seg-d3",
+          "visible": true,
+          "images": 2
+        }
+      ]
+    },
+    {
+      "topic": "segformer",
+      "width": 390,
+      "slides": [
+        {
+          "id": "step-segformer-1",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/known-target-classification/segformer/images/final/WI033-SEGFORMER-01-r01-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        },
+        {
+          "id": "step-segformer-2",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/known-target-classification/segformer/images/final/WI033-SEGFORMER-02-r03-mobile.png",
+              "ok": false,
+              "width": 322
+            }
+          ]
+        },
+        {
+          "id": "step-segformer-3",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/known-target-classification/segformer/images/final/WI033-SEGFORMER-03-r02-mobile.png",
+              "ok": false,
+              "width": 322
+            }
+          ]
+        },
+        {
+          "id": "step-segformer-4",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/known-target-classification/segformer/images/final/WI033-SEGFORMER-04-r02-mobile.png",
+              "ok": false,
+              "width": 322
+            }
+          ]
+        }
+      ],
+      "chapters": [
+        {
+          "id": "deep-dive-segformer-1",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/segformer/wi033-segformer-deep-core-r04-mobile.png",
+              "ok": true,
+              "width": 322
+            },
+            {
+              "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/segformer/wi033-segformer-deep-task-r01-mobile.png",
+              "ok": true,
+              "width": 0
+            }
+          ]
+        },
+        {
+          "id": "deep-dive-segformer-2",
+          "visible": true,
+          "images": []
+        },
+        {
+          "id": "deep-dive-segformer-3",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/segformer/wi033-segformer-deep-scales-r01-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        },
+        {
+          "id": "deep-dive-segformer-4",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/segformer/wi033-segformer-deep-sr-r02-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        },
+        {
+          "id": "deep-dive-segformer-5",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/segformer/wi033-segformer-deep-decoder-r03-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        },
+        {
+          "id": "deep-dive-segformer-6",
+          "visible": true,
+          "images": []
+        },
+        {
+          "id": "deep-dive-segformer-7",
+          "visible": true,
+          "images": []
+        },
+        {
+          "id": "deep-dive-segformer-8",
+          "visible": true,
+          "images": []
+        }
+      ],
+      "concepts": [],
+      "errors": [],
+      "interaction_scope": "rendered breadth",
+      "default": {
+        "overflow": false,
+        "images": {
+          "total": 15,
+          "broken": [
+            "_course_content/generated-concepts/segformer/wi030-segformer-c1-r02-desktop.png",
+            "roadmap-model-selection/known-target-classification/segformer/images/final/WI033-SEGFORMER-02-r03-desktop.png",
+            "roadmap-model-selection/known-target-classification/segformer/images/final/WI033-SEGFORMER-03-r02-desktop.png",
+            "roadmap-model-selection/known-target-classification/segformer/images/final/WI033-SEGFORMER-04-r02-desktop.png"
+          ]
+        },
+        "h1": [
+          "SegFormer"
+        ]
+      },
+      "learning_checks": 1,
+      "expanded": {
+        "overflow": false,
+        "images": {
+          "total": 15,
+          "broken": [
+            "_course_content/generated-concepts/segformer/wi030-segformer-c1-r02-desktop.png",
+            "roadmap-model-selection/known-target-classification/segformer/images/final/WI033-SEGFORMER-02-r03-desktop.png",
+            "roadmap-model-selection/known-target-classification/segformer/images/final/WI033-SEGFORMER-03-r02-desktop.png",
+            "roadmap-model-selection/known-target-classification/segformer/images/final/WI033-SEGFORMER-04-r02-desktop.png"
+          ]
+        },
+        "h1": [
+          "SegFormer"
+        ]
+      },
+      "main_visuals": [
+        {
+          "id": "beginner-segformer-wi030-segformer-c1",
+          "visible": true,
+          "images": 2
+        },
+        {
+          "id": "beginner-segformer-wi030-seg-d2",
+          "visible": true,
+          "images": 2
+        },
+        {
+          "id": "beginner-segformer-wi030-seg-d3",
+          "visible": true,
+          "images": 2
+        }
+      ]
+    },
+    {
+      "topic": "yolo-seg",
+      "width": 390,
+      "slides": [
+        {
+          "id": "step-yolo-seg-1",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/known-target-classification/yolo-seg/images/final/WI033-YOLOSEG-01-r03-mobile.png",
+              "ok": false,
+              "width": 322
+            }
+          ]
+        },
+        {
+          "id": "step-yolo-seg-2",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/known-target-classification/yolo-seg/images/final/WI033-YOLOSEG-02-r02-mobile.png",
+              "ok": false,
+              "width": 322
+            }
+          ]
+        },
+        {
+          "id": "step-yolo-seg-3",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/known-target-classification/yolo-seg/images/final/WI033-YOLOSEG-03-r03-mobile.png",
+              "ok": false,
+              "width": 322
+            }
+          ]
+        },
+        {
+          "id": "step-yolo-seg-4",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/known-target-classification/yolo-seg/images/final/WI033-YOLOSEG-04-r03-mobile.png",
+              "ok": false,
+              "width": 322
+            }
+          ]
+        }
+      ],
+      "chapters": [],
+      "concepts": [],
+      "errors": [],
+      "interaction_scope": "rendered breadth",
+      "default": {
+        "overflow": false,
+        "images": {
+          "total": 10,
+          "broken": [
+            "_course_content/generated-concepts/yolo-seg/wi030-yoloseg-c1-r07-desktop.png",
+            "_course_content/generated-concepts/yolo-seg/wi030-instance-d2-r02-desktop.png",
+            "roadmap-model-selection/known-target-classification/yolo-seg/images/final/WI033-YOLOSEG-01-r03-desktop.png",
+            "roadmap-model-selection/known-target-classification/yolo-seg/images/final/WI033-YOLOSEG-02-r02-desktop.png",
+            "roadmap-model-selection/known-target-classification/yolo-seg/images/final/WI033-YOLOSEG-03-r03-desktop.png",
+            "roadmap-model-selection/known-target-classification/yolo-seg/images/final/WI033-YOLOSEG-04-r03-desktop.png"
+          ]
+        },
+        "h1": [
+          "YOLO-Seg"
+        ]
+      },
+      "learning_checks": 1,
+      "expanded": {
+        "overflow": false,
+        "images": {
+          "total": 10,
+          "broken": [
+            "_course_content/generated-concepts/yolo-seg/wi030-yoloseg-c1-r07-desktop.png",
+            "_course_content/generated-concepts/yolo-seg/wi030-instance-d2-r02-desktop.png",
+            "roadmap-model-selection/known-target-classification/yolo-seg/images/final/WI033-YOLOSEG-01-r03-desktop.png",
+            "roadmap-model-selection/known-target-classification/yolo-seg/images/final/WI033-YOLOSEG-02-r02-desktop.png",
+            "roadmap-model-selection/known-target-classification/yolo-seg/images/final/WI033-YOLOSEG-03-r03-desktop.png",
+            "roadmap-model-selection/known-target-classification/yolo-seg/images/final/WI033-YOLOSEG-04-r03-desktop.png"
+          ]
+        },
+        "h1": [
+          "YOLO-Seg"
+        ]
+      },
+      "main_visuals": [
+        {
+          "id": "beginner-yolo-seg-wi030-yoloseg-c1",
+          "visible": true,
+          "images": 2
+        },
+        {
+          "id": "beginner-yolo-seg-wi030-instance-d2",
+          "visible": true,
+          "images": 2
+        },
+        {
+          "id": "beginner-yolo-seg-wi030-seg-d3",
+          "visible": true,
+          "images": 2
+        }
+      ]
+    },
+    {
+      "topic": "keypoint-r-cnn",
+      "width": 390,
+      "slides": [
+        {
+          "id": "step-keypoint-r-cnn-1",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/known-target-classification/keypoint-r-cnn/images/final/WI033-KPRCNN-01-r01-mobile.png",
+              "ok": false,
+              "width": 322
+            }
+          ]
+        },
+        {
+          "id": "step-keypoint-r-cnn-2",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/known-target-classification/keypoint-r-cnn/images/final/WI033-KPRCNN-02-r02-mobile.png",
+              "ok": false,
+              "width": 322
+            }
+          ]
+        },
+        {
+          "id": "step-keypoint-r-cnn-3",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/known-target-classification/keypoint-r-cnn/images/final/WI033-KPRCNN-03-r02-mobile.png",
+              "ok": false,
+              "width": 322
+            }
+          ]
+        },
+        {
+          "id": "step-keypoint-r-cnn-4",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/known-target-classification/keypoint-r-cnn/images/final/WI033-KPRCNN-04-r01-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        }
+      ],
+      "chapters": [],
+      "concepts": [],
+      "errors": [],
+      "interaction_scope": "rendered breadth",
+      "default": {
+        "overflow": false,
+        "images": {
+          "total": 10,
+          "broken": [
+            "_course_content/generated-concepts/keypoint-r-cnn/wi030-key-c1-r04-desktop.png",
+            "_course_content/generated-concepts/keypoint-r-cnn/wi030-key-c1-r05-mobile.png",
+            "_course_content/generated-concepts/pose/wi030-pose-d2-r02-desktop.png",
+            "_course_content/generated-concepts/pose/wi030-pose-d2-r02-mobile.png",
+            "_course_content/generated-concepts/pose/wi030-pose-d3-r03-desktop.png",
+            "_course_content/generated-concepts/pose/wi030-pose-d3-r03-mobile.png",
+            "roadmap-model-selection/known-target-classification/keypoint-r-cnn/images/final/WI033-KPRCNN-01-r01-desktop.png",
+            "roadmap-model-selection/known-target-classification/keypoint-r-cnn/images/final/WI033-KPRCNN-02-r02-desktop.png",
+            "roadmap-model-selection/known-target-classification/keypoint-r-cnn/images/final/WI033-KPRCNN-03-r02-desktop.png"
+          ]
+        },
+        "h1": [
+          "Keypoint R-CNN"
+        ]
+      },
+      "learning_checks": 1,
+      "expanded": {
+        "overflow": false,
+        "images": {
+          "total": 10,
+          "broken": [
+            "_course_content/generated-concepts/keypoint-r-cnn/wi030-key-c1-r04-desktop.png",
+            "_course_content/generated-concepts/keypoint-r-cnn/wi030-key-c1-r05-mobile.png",
+            "_course_content/generated-concepts/pose/wi030-pose-d2-r02-desktop.png",
+            "_course_content/generated-concepts/pose/wi030-pose-d2-r02-mobile.png",
+            "_course_content/generated-concepts/pose/wi030-pose-d3-r03-desktop.png",
+            "_course_content/generated-concepts/pose/wi030-pose-d3-r03-mobile.png",
+            "roadmap-model-selection/known-target-classification/keypoint-r-cnn/images/final/WI033-KPRCNN-01-r01-desktop.png",
+            "roadmap-model-selection/known-target-classification/keypoint-r-cnn/images/final/WI033-KPRCNN-02-r02-desktop.png",
+            "roadmap-model-selection/known-target-classification/keypoint-r-cnn/images/final/WI033-KPRCNN-03-r02-desktop.png"
+          ]
+        },
+        "h1": [
+          "Keypoint R-CNN"
+        ]
+      },
+      "main_visuals": [
+        {
+          "id": "beginner-keypoint-r-cnn-wi030-key-c1",
+          "visible": true,
+          "images": 2
+        },
+        {
+          "id": "beginner-keypoint-r-cnn-wi030-pose-d2",
+          "visible": true,
+          "images": 2
+        },
+        {
+          "id": "beginner-keypoint-r-cnn-wi030-pose-d3",
+          "visible": true,
+          "images": 2
+        }
+      ]
+    },
+    {
+      "topic": "pose",
+      "width": 390,
+      "slides": [
+        {
+          "id": "step-pose-1",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/known-target-classification/pose/images/final/WI033-POSE-01-r02-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        },
+        {
+          "id": "step-pose-2",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/known-target-classification/pose/images/final/WI033-POSE-02-r02-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        },
+        {
+          "id": "step-pose-3",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/known-target-classification/pose/images/final/WI033-POSE-03-r02-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        },
+        {
+          "id": "step-pose-4",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/known-target-classification/pose/images/final/WI033-POSE-04-r01-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        }
+      ],
+      "chapters": [],
+      "concepts": [],
+      "errors": [],
+      "interaction_scope": "rendered breadth",
+      "default": {
+        "overflow": false,
+        "images": {
+          "total": 10,
+          "broken": []
+        },
+        "h1": [
+          "Pose Pipeline"
+        ]
+      },
+      "learning_checks": 1,
+      "expanded": {
+        "overflow": false,
+        "images": {
+          "total": 10,
+          "broken": []
+        },
+        "h1": [
+          "Pose Pipeline"
+        ]
+      },
+      "main_visuals": [
+        {
+          "id": "beginner-pose-wi030-pose-c1",
+          "visible": true,
+          "images": 2
+        },
+        {
+          "id": "beginner-pose-wi030-pose-d2",
+          "visible": true,
+          "images": 2
+        },
+        {
+          "id": "beginner-pose-wi030-pose-d3",
+          "visible": true,
+          "images": 2
+        }
+      ]
+    },
+    {
+      "topic": "det-yolo-dense",
+      "width": 390,
+      "slides": [
+        {
+          "id": "step-det-yolo-dense-1",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/detector/det-yolo-dense/images/final/WI033-YOLO-01-r01-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        },
+        {
+          "id": "step-det-yolo-dense-2",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/detector/det-yolo-dense/images/final/WI033-YOLO-02-r02-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        },
+        {
+          "id": "step-det-yolo-dense-3",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/detector/det-yolo-dense/images/final/WI033-YOLO-03-r02-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        },
+        {
+          "id": "step-det-yolo-dense-4",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/detector/det-yolo-dense/images/final/WI033-YOLO-04-r01-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        }
+      ],
+      "chapters": [],
+      "concepts": [
+        "許多位置一起找框，再整理重複"
+      ],
+      "errors": [],
+      "interaction_scope": "family first",
+      "default": {
+        "overflow": false,
+        "images": {
+          "total": 10,
+          "broken": [
+            "_course_content/generated-concepts/det-yolo-dense/wi024-yolo-c1-r01-desktop.png",
+            "_course_content/generated-concepts/det-yolo-dense/wi024-yolo-d2-r02-desktop.png",
+            "roadmap-model-selection/detector/det-yolo-dense/images/final/WI033-YOLO-01-r01-desktop.png",
+            "roadmap-model-selection/detector/det-yolo-dense/images/final/WI033-YOLO-02-r02-desktop.png"
+          ]
+        },
+        "h1": [
+          "YOLO dense detector"
+        ]
+      },
+      "learning_checks": 1,
+      "expanded": {
+        "overflow": false,
+        "images": {
+          "total": 10,
+          "broken": []
+        },
+        "h1": [
+          "YOLO dense detector"
+        ]
+      },
+      "main_visuals": [
+        {
+          "id": "beginner-det-yolo-dense-wi024-det-yolo-dense-1",
+          "visible": true,
+          "images": 2
+        },
+        {
+          "id": "beginner-det-yolo-dense-wi024-det-yolo-dense-2",
+          "visible": true,
+          "images": 2
+        },
+        {
+          "id": "beginner-det-yolo-dense-wi024-det-yolo-dense-3",
+          "visible": true,
+          "images": 2
+        }
+      ],
+      "concept_count": 3,
+      "zoom_titles": [
+        "YOLO dense detector · 01 先看它交出什麼",
+        "YOLO dense detector · 02 再看它怎麼做",
+        "YOLO dense detector · 03 上線前先固定條件",
+        "YOLO dense detector · 04 選它前先看風險"
+      ],
+      "step_links": 7
+    },
+    {
+      "topic": "det-rtdetr",
+      "width": 390,
+      "slides": [
+        {
+          "id": "step-det-rtdetr-1",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/detector/det-rtdetr/images/final/WI033-RTDETR-01-r01-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        },
+        {
+          "id": "step-det-rtdetr-2",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/detector/det-rtdetr/images/final/WI033-RTDETR-02-r02-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        },
+        {
+          "id": "step-det-rtdetr-3",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/detector/det-rtdetr/images/final/WI033-RTDETR-03-r02-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        },
+        {
+          "id": "step-det-rtdetr-4",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/detector/det-rtdetr/images/final/WI033-RTDETR-04-r01-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        }
+      ],
+      "chapters": [],
+      "concepts": [],
+      "errors": [],
+      "interaction_scope": "rendered breadth",
+      "default": {
+        "overflow": false,
+        "images": {
+          "total": 10,
+          "broken": []
+        },
+        "h1": [
+          "RT-DETR"
+        ]
+      },
+      "learning_checks": 1,
+      "expanded": {
+        "overflow": false,
+        "images": {
+          "total": 10,
+          "broken": []
+        },
+        "h1": [
+          "RT-DETR"
+        ]
+      },
+      "main_visuals": [
+        {
+          "id": "beginner-det-rtdetr-wi024-det-rtdetr-1",
+          "visible": true,
+          "images": 2
+        },
+        {
+          "id": "beginner-det-rtdetr-wi024-det-rtdetr-2",
+          "visible": true,
+          "images": 2
+        },
+        {
+          "id": "beginner-det-rtdetr-wi024-det-rtdetr-3",
+          "visible": true,
+          "images": 2
+        }
+      ]
+    },
+    {
+      "topic": "det-dino-detector",
+      "width": 390,
+      "slides": [
+        {
+          "id": "step-det-dino-detector-1",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/detector/det-dino-detector/images/final/WI032-DINO-DET-01-r04-mobile.png",
+              "ok": false,
+              "width": 322
+            }
+          ]
+        },
+        {
+          "id": "step-det-dino-detector-2",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/detector/det-dino-detector/images/final/WI032-DINO-DET-02-r04-mobile.png",
+              "ok": false,
+              "width": 322
+            }
+          ]
+        },
+        {
+          "id": "step-det-dino-detector-3",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/detector/det-dino-detector/images/final/WI032-DINO-DET-03-r04-mobile.png",
+              "ok": false,
+              "width": 322
+            }
+          ]
+        },
+        {
+          "id": "step-det-dino-detector-4",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/detector/det-dino-detector/images/final/WI032-DINO-DET-04-r04-mobile.png",
+              "ok": false,
+              "width": 322
+            }
+          ]
+        }
+      ],
+      "chapters": [],
+      "concepts": [],
+      "errors": [],
+      "interaction_scope": "rendered breadth",
+      "default": {
+        "overflow": false,
+        "images": {
+          "total": 10,
+          "broken": [
+            "_course_content/generated-concepts/det-dino-detector/wi032-dino-core-r01-desktop.png",
+            "_course_content/generated-concepts/det-dino-detector/wi032-dino-core-r02-mobile.png",
+            "_course_content/generated-concepts/det-dino-detector/wi032-dino-failure-r02-desktop.png",
+            "_course_content/generated-concepts/det-dino-detector/wi032-dino-failure-r04-mobile.png",
+            "_course_content/generated-concepts/det-dino-detector/wi032-detector-compare-r01-desktop.png",
+            "_course_content/generated-concepts/det-dino-detector/wi032-detector-compare-r02-mobile.png",
+            "roadmap-model-selection/detector/det-dino-detector/images/final/WI032-DINO-DET-01-r04-desktop.png",
+            "roadmap-model-selection/detector/det-dino-detector/images/final/WI032-DINO-DET-02-r04-desktop.png",
+            "roadmap-model-selection/detector/det-dino-detector/images/final/WI032-DINO-DET-03-r04-desktop.png",
+            "roadmap-model-selection/detector/det-dino-detector/images/final/WI032-DINO-DET-04-r04-desktop.png"
+          ]
+        },
+        "h1": [
+          "DINO detector"
+        ]
+      },
+      "learning_checks": 1,
+      "expanded": {
+        "overflow": false,
+        "images": {
+          "total": 10,
+          "broken": [
+            "_course_content/generated-concepts/det-dino-detector/wi032-dino-core-r01-desktop.png",
+            "_course_content/generated-concepts/det-dino-detector/wi032-dino-core-r02-mobile.png",
+            "_course_content/generated-concepts/det-dino-detector/wi032-dino-failure-r02-desktop.png",
+            "_course_content/generated-concepts/det-dino-detector/wi032-dino-failure-r04-mobile.png",
+            "_course_content/generated-concepts/det-dino-detector/wi032-detector-compare-r01-desktop.png",
+            "_course_content/generated-concepts/det-dino-detector/wi032-detector-compare-r02-mobile.png",
+            "roadmap-model-selection/detector/det-dino-detector/images/final/WI032-DINO-DET-01-r04-desktop.png",
+            "roadmap-model-selection/detector/det-dino-detector/images/final/WI032-DINO-DET-02-r04-desktop.png",
+            "roadmap-model-selection/detector/det-dino-detector/images/final/WI032-DINO-DET-03-r04-desktop.png",
+            "roadmap-model-selection/detector/det-dino-detector/images/final/WI032-DINO-DET-04-r04-desktop.png"
+          ]
+        },
+        "h1": [
+          "DINO detector"
+        ]
+      },
+      "main_visuals": [
+        {
+          "id": "beginner-det-dino-detector-wi032-dino-core",
+          "visible": true,
+          "images": 2
+        },
+        {
+          "id": "beginner-det-dino-detector-wi032-dino-failure",
+          "visible": true,
+          "images": 2
+        },
+        {
+          "id": "beginner-det-dino-detector-wi032-detector-compare",
+          "visible": true,
+          "images": 2
+        }
+      ]
+    },
+    {
+      "topic": "det-grounding-dino-interface",
+      "width": 390,
+      "slides": [
+        {
+          "id": "step-det-grounding-dino-interface-1",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/detector/det-grounding-dino-interface/images/final/WI033-GROUNDING-DINO-01-r02-mobile.png",
+              "ok": false,
+              "width": 322
+            }
+          ]
+        },
+        {
+          "id": "step-det-grounding-dino-interface-2",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/detector/det-grounding-dino-interface/images/final/WI033-GROUNDING-DINO-02-r02-mobile.png",
+              "ok": false,
+              "width": 322
+            }
+          ]
+        },
+        {
+          "id": "step-det-grounding-dino-interface-3",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/detector/det-grounding-dino-interface/images/final/WI033-GROUNDING-DINO-03-r02-mobile.png",
+              "ok": false,
+              "width": 322
+            }
+          ]
+        },
+        {
+          "id": "step-det-grounding-dino-interface-4",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/detector/det-grounding-dino-interface/images/final/WI033-GROUNDING-DINO-04-r01-mobile.png",
+              "ok": false,
+              "width": 322
+            }
+          ]
+        }
+      ],
+      "chapters": [],
+      "concepts": [],
+      "errors": [],
+      "interaction_scope": "rendered breadth",
+      "default": {
+        "overflow": false,
+        "images": {
+          "total": 10,
+          "broken": [
+            "_course_content/generated-concepts/det-grounding-dino-interface/wi024-grounding-c1-r01-mobile.png",
+            "_course_content/generated-concepts/det-grounding-dino-interface/wi024-grounding-d2-r01-mobile.png",
+            "_course_content/generated-concepts/det-grounding-dino-interface/wi024-prompt-d3-r01-desktop.png",
+            "_course_content/generated-concepts/det-grounding-dino-interface/wi024-prompt-d3-r01-mobile.png",
+            "roadmap-model-selection/detector/det-grounding-dino-interface/images/final/WI033-GROUNDING-DINO-01-r02-desktop.png",
+            "roadmap-model-selection/detector/det-grounding-dino-interface/images/final/WI033-GROUNDING-DINO-02-r02-desktop.png",
+            "roadmap-model-selection/detector/det-grounding-dino-interface/images/final/WI033-GROUNDING-DINO-03-r02-desktop.png",
+            "roadmap-model-selection/detector/det-grounding-dino-interface/images/final/WI033-GROUNDING-DINO-04-r01-desktop.png"
+          ]
+        },
+        "h1": [
+          "Grounding DINO"
+        ]
+      },
+      "learning_checks": 1,
+      "expanded": {
+        "overflow": false,
+        "images": {
+          "total": 10,
+          "broken": [
+            "_course_content/generated-concepts/det-grounding-dino-interface/wi024-grounding-c1-r01-mobile.png",
+            "_course_content/generated-concepts/det-grounding-dino-interface/wi024-grounding-d2-r01-mobile.png",
+            "_course_content/generated-concepts/det-grounding-dino-interface/wi024-prompt-d3-r01-desktop.png",
+            "_course_content/generated-concepts/det-grounding-dino-interface/wi024-prompt-d3-r01-mobile.png",
+            "roadmap-model-selection/detector/det-grounding-dino-interface/images/final/WI033-GROUNDING-DINO-01-r02-desktop.png",
+            "roadmap-model-selection/detector/det-grounding-dino-interface/images/final/WI033-GROUNDING-DINO-02-r02-desktop.png",
+            "roadmap-model-selection/detector/det-grounding-dino-interface/images/final/WI033-GROUNDING-DINO-03-r02-desktop.png",
+            "roadmap-model-selection/detector/det-grounding-dino-interface/images/final/WI033-GROUNDING-DINO-04-r01-desktop.png"
+          ]
+        },
+        "h1": [
+          "Grounding DINO"
+        ]
+      },
+      "main_visuals": [
+        {
+          "id": "beginner-det-grounding-dino-interface-wi024-det-grounding-dino-interface-1",
+          "visible": true,
+          "images": 2
+        },
+        {
+          "id": "beginner-det-grounding-dino-interface-wi024-det-grounding-dino-interface-2",
+          "visible": true,
+          "images": 2
+        },
+        {
+          "id": "beginner-det-grounding-dino-interface-wi024-det-grounding-dino-interface-3",
+          "visible": true,
+          "images": 2
+        }
+      ]
+    },
+    {
+      "topic": "yolo-world",
+      "width": 390,
+      "slides": [
+        {
+          "id": "step-yolo-world-1",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/detector/yolo-world/images/final/WI032-YOLOWORLD-01-r04-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        },
+        {
+          "id": "step-yolo-world-2",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/detector/yolo-world/images/final/WI032-YOLOWORLD-02-r05-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        },
+        {
+          "id": "step-yolo-world-3",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/detector/yolo-world/images/final/WI032-YOLOWORLD-03-r07-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        },
+        {
+          "id": "step-yolo-world-4",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/detector/yolo-world/images/final/WI032-YOLOWORLD-04-r04-mobile.png",
+              "ok": false,
+              "width": 322
+            }
+          ]
+        }
+      ],
+      "chapters": [],
+      "concepts": [],
+      "errors": [],
+      "interaction_scope": "rendered breadth",
+      "default": {
+        "overflow": false,
+        "images": {
+          "total": 10,
+          "broken": [
+            "roadmap-model-selection/detector/yolo-world/images/final/WI032-YOLOWORLD-04-r04-desktop.png"
+          ]
+        },
+        "h1": [
+          "YOLO-World"
+        ]
+      },
+      "learning_checks": 1,
+      "expanded": {
+        "overflow": false,
+        "images": {
+          "total": 10,
+          "broken": [
+            "roadmap-model-selection/detector/yolo-world/images/final/WI032-YOLOWORLD-04-r04-desktop.png"
+          ]
+        },
+        "h1": [
+          "YOLO-World"
+        ]
+      },
+      "main_visuals": [
+        {
+          "id": "beginner-yolo-world-wi032-world-core",
+          "visible": true,
+          "images": 2
+        },
+        {
+          "id": "beginner-yolo-world-wi032-world-failure",
+          "visible": true,
+          "images": 2
+        },
+        {
+          "id": "beginner-yolo-world-wi032-detector-compare",
+          "visible": true,
+          "images": 2
+        }
+      ]
+    },
+    {
+      "topic": "yoloe",
+      "width": 390,
+      "slides": [
+        {
+          "id": "step-yoloe-1",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/detector/yoloe/images/final/WI033-YOLOE-01-r01-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        },
+        {
+          "id": "step-yoloe-2",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/detector/yoloe/images/final/WI033-YOLOE-02-r02-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        },
+        {
+          "id": "step-yoloe-3",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/detector/yoloe/images/final/WI033-YOLOE-03-r01-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        },
+        {
+          "id": "step-yoloe-4",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/detector/yoloe/images/final/WI033-YOLOE-04-r01-mobile.png",
+              "ok": false,
+              "width": 322
+            }
+          ]
+        }
+      ],
+      "chapters": [],
+      "concepts": [],
+      "errors": [],
+      "interaction_scope": "rendered breadth",
+      "default": {
+        "overflow": false,
+        "images": {
+          "total": 10,
+          "broken": [
+            "roadmap-model-selection/detector/yoloe/images/final/WI033-YOLOE-04-r01-desktop.png"
+          ]
+        },
+        "h1": [
+          "YOLOE"
+        ]
+      },
+      "learning_checks": 1,
+      "expanded": {
+        "overflow": false,
+        "images": {
+          "total": 10,
+          "broken": [
+            "roadmap-model-selection/detector/yoloe/images/final/WI033-YOLOE-04-r01-desktop.png"
+          ]
+        },
+        "h1": [
+          "YOLOE"
+        ]
+      },
+      "main_visuals": [
+        {
+          "id": "beginner-yoloe-wi024-yoloe-1",
+          "visible": true,
+          "images": 2
+        },
+        {
+          "id": "beginner-yoloe-wi024-yoloe-2",
+          "visible": true,
+          "images": 2
+        },
+        {
+          "id": "beginner-yoloe-wi024-yoloe-3",
+          "visible": true,
+          "images": 2
+        }
+      ]
+    },
+    {
+      "topic": "ad-patchcore",
+      "width": 390,
+      "slides": [
+        {
+          "id": "step-ad-patchcore-1",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/anomaly-detection/ad-patchcore/images/final/WI033-PATCHCORE-01-r01-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        },
+        {
+          "id": "step-ad-patchcore-2",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/anomaly-detection/ad-patchcore/images/final/WI033-PATCHCORE-02-r02-mobile.png",
+              "ok": false,
+              "width": 322
+            }
+          ]
+        },
+        {
+          "id": "step-ad-patchcore-3",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/anomaly-detection/ad-patchcore/images/final/WI033-PATCHCORE-03-r01-mobile.png",
+              "ok": false,
+              "width": 322
+            }
+          ]
+        },
+        {
+          "id": "step-ad-patchcore-4",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/anomaly-detection/ad-patchcore/images/final/WI033-PATCHCORE-04-r01-mobile.png",
+              "ok": false,
+              "width": 322
+            }
+          ]
+        }
+      ],
+      "chapters": [
+        {
+          "id": "deep-dive-ad-patchcore-1",
+          "visible": true,
+          "images": []
+        },
+        {
+          "id": "deep-dive-ad-patchcore-2",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/ad-patchcore/wi033-patchcore-deep-features-r02-mobile.png",
+              "ok": false,
+              "width": 322
+            },
+            {
+              "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/ad-patchcore/wi033-patchcore-deep-context-r01-mobile.png",
+              "ok": false,
+              "width": 0
+            }
+          ]
+        },
+        {
+          "id": "deep-dive-ad-patchcore-3",
+          "visible": true,
+          "images": []
+        },
+        {
+          "id": "deep-dive-ad-patchcore-4",
+          "visible": true,
+          "images": []
+        },
+        {
+          "id": "deep-dive-ad-patchcore-5",
+          "visible": true,
+          "images": []
+        },
+        {
+          "id": "deep-dive-ad-patchcore-6",
+          "visible": true,
+          "images": []
+        },
+        {
+          "id": "deep-dive-ad-patchcore-7",
+          "visible": true,
+          "images": []
+        },
+        {
+          "id": "deep-dive-ad-patchcore-8",
+          "visible": true,
+          "images": []
+        }
+      ],
+      "concepts": [
+        "PatchCore：找不到相似正常局部，才值得回查"
+      ],
+      "errors": [],
+      "interaction_scope": "family first",
+      "default": {
+        "overflow": false,
+        "images": {
+          "total": 12,
+          "broken": [
+            "_course_content/generated-concepts/ad-patchcore/wi030-patch-c1-r04-desktop.png",
+            "_course_content/generated-concepts/ad-patchcore/wi030-patch-c1-r02-mobile.png",
+            "_course_content/generated-concepts/ad-patchcore/wi030-ad-d2-r02-desktop.png",
+            "_course_content/generated-concepts/ad-patchcore/wi030-ad-d2-r02-mobile.png",
+            "_course_content/generated-concepts/ad-patchcore/wi030-ad-d3-r04-desktop.png",
+            "_course_content/generated-concepts/ad-patchcore/wi030-ad-d3-r03-mobile.png",
+            "_course_content/generated-concepts/ad-patchcore/wi033-patchcore-deep-features-r02-mobile.png",
+            "_course_content/generated-concepts/ad-patchcore/wi033-patchcore-deep-context-r01-mobile.png",
+            "roadmap-model-selection/anomaly-detection/ad-patchcore/images/final/WI033-PATCHCORE-01-r01-desktop.png",
+            "roadmap-model-selection/anomaly-detection/ad-patchcore/images/final/WI033-PATCHCORE-02-r02-desktop.png",
+            "roadmap-model-selection/anomaly-detection/ad-patchcore/images/final/WI033-PATCHCORE-03-r01-desktop.png",
+            "roadmap-model-selection/anomaly-detection/ad-patchcore/images/final/WI033-PATCHCORE-04-r01-desktop.png"
+          ]
+        },
+        "h1": [
+          "PatchCore"
+        ]
+      },
+      "learning_checks": 1,
+      "expanded": {
+        "overflow": false,
+        "images": {
+          "total": 12,
+          "broken": [
+            "_course_content/generated-concepts/ad-patchcore/wi030-patch-c1-r04-desktop.png",
+            "_course_content/generated-concepts/ad-patchcore/wi030-ad-d2-r02-desktop.png",
+            "_course_content/generated-concepts/ad-patchcore/wi030-ad-d3-r04-desktop.png",
+            "_course_content/generated-concepts/ad-patchcore/wi030-ad-d3-r03-mobile.png",
+            "_course_content/generated-concepts/ad-patchcore/wi033-patchcore-deep-features-r02-mobile.png",
+            "_course_content/generated-concepts/ad-patchcore/wi033-patchcore-deep-context-r01-mobile.png",
+            "roadmap-model-selection/anomaly-detection/ad-patchcore/images/final/WI033-PATCHCORE-02-r02-desktop.png",
+            "roadmap-model-selection/anomaly-detection/ad-patchcore/images/final/WI033-PATCHCORE-03-r01-desktop.png",
+            "roadmap-model-selection/anomaly-detection/ad-patchcore/images/final/WI033-PATCHCORE-04-r01-desktop.png"
+          ]
+        },
+        "h1": [
+          "PatchCore"
+        ]
+      },
+      "main_visuals": [
+        {
+          "id": "beginner-ad-patchcore-wi030-patch-c1",
+          "visible": true,
+          "images": 2
+        },
+        {
+          "id": "beginner-ad-patchcore-wi030-ad-d2",
+          "visible": true,
+          "images": 2
+        },
+        {
+          "id": "beginner-ad-patchcore-wi030-ad-d3",
+          "visible": true,
+          "images": 2
+        }
+      ],
+      "concept_count": 21,
+      "zoom_titles": [
+        "PatchCore · 01 先看它交出什麼",
+        "PatchCore · 02 再看它怎麼做",
+        "PatchCore · 03 上線前先固定條件",
+        "PatchCore · 04 選它前先看風險"
+      ],
+      "step_links": 7
+    },
+    {
+      "topic": "ad-padim",
+      "width": 390,
+      "slides": [
+        {
+          "id": "step-ad-padim-1",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/anomaly-detection/ad-padim/images/final/WI033-PADIM-01-r01-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        },
+        {
+          "id": "step-ad-padim-2",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/anomaly-detection/ad-padim/images/final/WI033-PADIM-02-r02-mobile.png",
+              "ok": false,
+              "width": 322
+            }
+          ]
+        },
+        {
+          "id": "step-ad-padim-3",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/anomaly-detection/ad-padim/images/final/WI033-PADIM-03-r01-mobile.png",
+              "ok": false,
+              "width": 322
+            }
+          ]
+        },
+        {
+          "id": "step-ad-padim-4",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/anomaly-detection/ad-padim/images/final/WI033-PADIM-04-r01-mobile.png",
+              "ok": false,
+              "width": 322
+            }
+          ]
+        }
+      ],
+      "chapters": [],
+      "concepts": [],
+      "errors": [],
+      "interaction_scope": "rendered breadth",
+      "default": {
+        "overflow": false,
+        "images": {
+          "total": 10,
+          "broken": [
+            "_course_content/generated-concepts/ad-padim/wi030-padim-c1-r02-desktop.png",
+            "_course_content/generated-concepts/ad-patchcore/wi030-ad-d2-r02-desktop.png",
+            "_course_content/generated-concepts/ad-patchcore/wi030-ad-d3-r04-desktop.png",
+            "roadmap-model-selection/anomaly-detection/ad-padim/images/final/WI033-PADIM-02-r02-desktop.png",
+            "roadmap-model-selection/anomaly-detection/ad-padim/images/final/WI033-PADIM-03-r01-desktop.png",
+            "roadmap-model-selection/anomaly-detection/ad-padim/images/final/WI033-PADIM-04-r01-desktop.png"
+          ]
+        },
+        "h1": [
+          "PaDiM"
+        ]
+      },
+      "learning_checks": 1,
+      "expanded": {
+        "overflow": false,
+        "images": {
+          "total": 10,
+          "broken": [
+            "_course_content/generated-concepts/ad-padim/wi030-padim-c1-r02-desktop.png",
+            "_course_content/generated-concepts/ad-patchcore/wi030-ad-d2-r02-desktop.png",
+            "_course_content/generated-concepts/ad-patchcore/wi030-ad-d3-r04-desktop.png",
+            "roadmap-model-selection/anomaly-detection/ad-padim/images/final/WI033-PADIM-02-r02-desktop.png",
+            "roadmap-model-selection/anomaly-detection/ad-padim/images/final/WI033-PADIM-03-r01-desktop.png",
+            "roadmap-model-selection/anomaly-detection/ad-padim/images/final/WI033-PADIM-04-r01-desktop.png"
+          ]
+        },
+        "h1": [
+          "PaDiM"
+        ]
+      },
+      "main_visuals": [
+        {
+          "id": "beginner-ad-padim-wi030-padim-c1",
+          "visible": true,
+          "images": 2
+        },
+        {
+          "id": "beginner-ad-padim-wi030-ad-d2",
+          "visible": true,
+          "images": 2
+        },
+        {
+          "id": "beginner-ad-padim-wi030-ad-d3",
+          "visible": true,
+          "images": 2
+        }
+      ]
+    },
+    {
+      "topic": "ad-anomalydino",
+      "width": 390,
+      "slides": [
+        {
+          "id": "step-ad-anomalydino-1",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/anomaly-detection/ad-anomalydino/images/final/WI033-ANOMALYDINO-01-r01-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        },
+        {
+          "id": "step-ad-anomalydino-2",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/anomaly-detection/ad-anomalydino/images/final/WI033-ANOMALYDINO-02-r02-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        },
+        {
+          "id": "step-ad-anomalydino-3",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/anomaly-detection/ad-anomalydino/images/final/WI033-ANOMALYDINO-03-r01-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        },
+        {
+          "id": "step-ad-anomalydino-4",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/anomaly-detection/ad-anomalydino/images/final/WI033-ANOMALYDINO-04-r01-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        }
+      ],
+      "chapters": [
+        {
+          "id": "deep-dive-ad-anomalydino-1",
+          "visible": true,
+          "images": []
+        },
+        {
+          "id": "deep-dive-ad-anomalydino-2",
+          "visible": true,
+          "images": []
+        },
+        {
+          "id": "deep-dive-ad-anomalydino-3",
+          "visible": true,
+          "images": []
+        },
+        {
+          "id": "deep-dive-ad-anomalydino-4",
+          "visible": true,
+          "images": []
+        },
+        {
+          "id": "deep-dive-ad-anomalydino-5",
+          "visible": true,
+          "images": []
+        },
+        {
+          "id": "deep-dive-ad-anomalydino-6",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/ad-anomalydino/wi033-adino-deep-rotation-r02-desktop.png",
+              "ok": true,
+              "width": 0
+            },
+            {
+              "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/ad-anomalydino/wi033-adino-deep-rotation-r02-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        },
+        {
+          "id": "deep-dive-ad-anomalydino-7",
+          "visible": true,
+          "images": []
+        },
+        {
+          "id": "deep-dive-ad-anomalydino-8",
+          "visible": true,
+          "images": []
+        }
+      ],
+      "concepts": [],
+      "errors": [],
+      "interaction_scope": "rendered breadth",
+      "default": {
+        "overflow": false,
+        "images": {
+          "total": 12,
+          "broken": []
+        },
+        "h1": [
+          "AnomalyDINO"
+        ]
+      },
+      "learning_checks": 1,
+      "expanded": {
+        "overflow": false,
+        "images": {
+          "total": 12,
+          "broken": []
+        },
+        "h1": [
+          "AnomalyDINO"
+        ]
+      },
+      "main_visuals": [
+        {
+          "id": "beginner-ad-anomalydino-wi030-dino-c1",
+          "visible": true,
+          "images": 2
+        },
+        {
+          "id": "beginner-ad-anomalydino-wi030-ad-d2",
+          "visible": true,
+          "images": 2
+        },
+        {
+          "id": "beginner-ad-anomalydino-wi030-ad-d3",
+          "visible": true,
+          "images": 2
+        }
+      ]
+    },
+    {
+      "topic": "ad-subspacead",
+      "width": 390,
+      "slides": [
+        {
+          "id": "step-ad-subspacead-1",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/anomaly-detection/ad-subspacead/images/final/WI033-SUBSPACEAD-01-r01-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        },
+        {
+          "id": "step-ad-subspacead-2",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/anomaly-detection/ad-subspacead/images/final/WI033-SUBSPACEAD-02-r02-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        },
+        {
+          "id": "step-ad-subspacead-3",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/anomaly-detection/ad-subspacead/images/final/WI033-SUBSPACEAD-03-r01-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        },
+        {
+          "id": "step-ad-subspacead-4",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/anomaly-detection/ad-subspacead/images/final/WI033-SUBSPACEAD-04-r01-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        }
+      ],
+      "chapters": [],
+      "concepts": [],
+      "errors": [],
+      "interaction_scope": "rendered breadth",
+      "default": {
+        "overflow": false,
+        "images": {
+          "total": 10,
+          "broken": []
+        },
+        "h1": [
+          "SubspaceAD"
+        ]
+      },
+      "learning_checks": 1,
+      "expanded": {
+        "overflow": false,
+        "images": {
+          "total": 10,
+          "broken": []
+        },
+        "h1": [
+          "SubspaceAD"
+        ]
+      },
+      "main_visuals": [
+        {
+          "id": "beginner-ad-subspacead-wi021-ad-subspacead-1",
+          "visible": true,
+          "images": 2
+        },
+        {
+          "id": "beginner-ad-subspacead-wi021-ad-subspacead-2",
+          "visible": true,
+          "images": 2
+        },
+        {
+          "id": "beginner-ad-subspacead-wi021-ad-subspacead-3",
+          "visible": true,
+          "images": 2
+        }
+      ]
+    },
+    {
+      "topic": "ad-stfpm",
+      "width": 390,
+      "slides": [
+        {
+          "id": "step-ad-stfpm-1",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/anomaly-detection/ad-stfpm/images/final/WI033-STFPM-01-r01-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        },
+        {
+          "id": "step-ad-stfpm-2",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/anomaly-detection/ad-stfpm/images/final/WI033-STFPM-02-r02-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        },
+        {
+          "id": "step-ad-stfpm-3",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/anomaly-detection/ad-stfpm/images/final/WI033-STFPM-03-r01-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        },
+        {
+          "id": "step-ad-stfpm-4",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/anomaly-detection/ad-stfpm/images/final/WI033-STFPM-04-r01-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        }
+      ],
+      "chapters": [],
+      "concepts": [],
+      "errors": [],
+      "interaction_scope": "rendered breadth",
+      "default": {
+        "overflow": false,
+        "images": {
+          "total": 10,
+          "broken": []
+        },
+        "h1": [
+          "STFPM"
+        ]
+      },
+      "learning_checks": 1,
+      "expanded": {
+        "overflow": false,
+        "images": {
+          "total": 10,
+          "broken": []
+        },
+        "h1": [
+          "STFPM"
+        ]
+      },
+      "main_visuals": [
+        {
+          "id": "beginner-ad-stfpm-wi021-ad-stfpm-1",
+          "visible": true,
+          "images": 2
+        },
+        {
+          "id": "beginner-ad-stfpm-wi021-ad-stfpm-2",
+          "visible": true,
+          "images": 2
+        },
+        {
+          "id": "beginner-ad-stfpm-wi021-ad-stfpm-3",
+          "visible": true,
+          "images": 2
+        }
+      ]
+    },
+    {
+      "topic": "ad-rd4ad",
+      "width": 390,
+      "slides": [
+        {
+          "id": "step-ad-rd4ad-1",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/anomaly-detection/ad-rd4ad/images/final/WI033-RD4AD-01-r02-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        },
+        {
+          "id": "step-ad-rd4ad-2",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/anomaly-detection/ad-rd4ad/images/final/WI033-RD4AD-02-r02-mobile.png",
+              "ok": false,
+              "width": 322
+            }
+          ]
+        },
+        {
+          "id": "step-ad-rd4ad-3",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/anomaly-detection/ad-rd4ad/images/final/WI033-RD4AD-03-r01-mobile.png",
+              "ok": false,
+              "width": 322
+            }
+          ]
+        },
+        {
+          "id": "step-ad-rd4ad-4",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/anomaly-detection/ad-rd4ad/images/final/WI033-RD4AD-04-r01-mobile.png",
+              "ok": false,
+              "width": 322
+            }
+          ]
+        }
+      ],
+      "chapters": [],
+      "concepts": [],
+      "errors": [],
+      "interaction_scope": "rendered breadth",
+      "default": {
+        "overflow": false,
+        "images": {
+          "total": 12,
+          "broken": [
+            "_course_content/generated-concepts/ad-ae/wi021-ae-d5-r02-desktop.png",
+            "roadmap-model-selection/anomaly-detection/ad-rd4ad/images/final/WI033-RD4AD-02-r02-desktop.png",
+            "roadmap-model-selection/anomaly-detection/ad-rd4ad/images/final/WI033-RD4AD-03-r01-desktop.png",
+            "roadmap-model-selection/anomaly-detection/ad-rd4ad/images/final/WI033-RD4AD-04-r01-desktop.png"
+          ]
+        },
+        "h1": [
+          "RD4AD"
+        ]
+      },
+      "learning_checks": 1,
+      "expanded": {
+        "overflow": false,
+        "images": {
+          "total": 12,
+          "broken": [
+            "_course_content/generated-concepts/ad-ae/wi021-ae-d5-r02-desktop.png",
+            "roadmap-model-selection/anomaly-detection/ad-rd4ad/images/final/WI033-RD4AD-02-r02-desktop.png",
+            "roadmap-model-selection/anomaly-detection/ad-rd4ad/images/final/WI033-RD4AD-03-r01-desktop.png",
+            "roadmap-model-selection/anomaly-detection/ad-rd4ad/images/final/WI033-RD4AD-04-r01-desktop.png"
+          ]
+        },
+        "h1": [
+          "RD4AD"
+        ]
+      },
+      "main_visuals": [
+        {
+          "id": "beginner-ad-rd4ad-wi021-ad-rd4ad-1",
+          "visible": true,
+          "images": 2
+        },
+        {
+          "id": "beginner-ad-rd4ad-wi021-ad-rd4ad-2",
+          "visible": true,
+          "images": 2
+        },
+        {
+          "id": "beginner-ad-rd4ad-wi021-ad-rd4ad-3",
+          "visible": true,
+          "images": 2
+        },
+        {
+          "id": "beginner-ad-rd4ad-wi021-ad-rd4ad-4",
+          "visible": true,
+          "images": 2
+        }
+      ]
+    },
+    {
+      "topic": "ad-efficientad",
+      "width": 390,
+      "slides": [
+        {
+          "id": "step-ad-efficientad-1",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/anomaly-detection/ad-efficientad/images/final/WI033-EFFICIENTAD-01-r02-mobile.png",
+              "ok": false,
+              "width": 322
+            }
+          ]
+        },
+        {
+          "id": "step-ad-efficientad-2",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/anomaly-detection/ad-efficientad/images/final/WI033-EFFICIENTAD-02-r02-mobile.png",
+              "ok": false,
+              "width": 322
+            }
+          ]
+        },
+        {
+          "id": "step-ad-efficientad-3",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/anomaly-detection/ad-efficientad/images/final/WI033-EFFICIENTAD-03-r02-mobile.png",
+              "ok": false,
+              "width": 322
+            }
+          ]
+        },
+        {
+          "id": "step-ad-efficientad-4",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/anomaly-detection/ad-efficientad/images/final/WI033-EFFICIENTAD-04-r01-mobile.png",
+              "ok": false,
+              "width": 322
+            }
+          ]
+        }
+      ],
+      "chapters": [
+        {
+          "id": "deep-dive-ad-efficientad-1",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/ad-efficientad/wi033-eff-deep-01-core-r02-mobile.png",
+              "ok": true,
+              "width": 322
+            },
+            {
+              "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/ad-efficientad/wi033-eff-deep-01-work-r02-mobile.png",
+              "ok": false,
+              "width": 0
+            }
+          ]
+        },
+        {
+          "id": "deep-dive-ad-efficientad-2",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/ad-efficientad/wi033-eff-deep-02-data-r01-mobile.png",
+              "ok": false,
+              "width": 322
+            }
+          ]
+        },
+        {
+          "id": "deep-dive-ad-efficientad-3",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/ad-efficientad/wi033-eff-deep-03-meaning-r02-mobile.png",
+              "ok": false,
+              "width": 322
+            }
+          ]
+        },
+        {
+          "id": "deep-dive-ad-efficientad-4",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/ad-efficientad/wi033-eff-deep-04-output-r01-desktop.png",
+              "ok": false,
+              "width": 0
+            },
+            {
+              "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/ad-efficientad/wi033-eff-deep-04-output-r01-mobile.png",
+              "ok": false,
+              "width": 322
+            }
+          ]
+        },
+        {
+          "id": "deep-dive-ad-efficientad-5",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/ad-efficientad/wi033-eff-deep-05-limits-r01-mobile.png",
+              "ok": false,
+              "width": 322
+            }
+          ]
+        },
+        {
+          "id": "deep-dive-ad-efficientad-6",
+          "visible": true,
+          "images": []
+        },
+        {
+          "id": "deep-dive-ad-efficientad-7",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/ad-efficientad/wi033-eff-deep-07-comparison-r01-desktop.png",
+              "ok": false,
+              "width": 0
+            },
+            {
+              "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/ad-efficientad/wi033-eff-deep-07-comparison-r01-mobile.png",
+              "ok": false,
+              "width": 322
+            }
+          ]
+        },
+        {
+          "id": "deep-dive-ad-efficientad-8",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/_course_content/generated-concepts/ad-efficientad/wi033-eff-deep-08-transfer-r01-mobile.png",
+              "ok": false,
+              "width": 322
+            }
+          ]
+        }
+      ],
+      "concepts": [],
+      "errors": [],
+      "interaction_scope": "rendered breadth",
+      "default": {
+        "overflow": false,
+        "images": {
+          "total": 20,
+          "broken": [
+            "_course_content/generated-concepts/ad-efficientad/wi030-efficient-c1-r06-desktop.png",
+            "_course_content/generated-concepts/ad-efficientad/wi033-eff-main-failure-r01-desktop.png",
+            "_course_content/generated-concepts/ad-efficientad/wi033-eff-deep-01-work-r02-mobile.png",
+            "_course_content/generated-concepts/ad-efficientad/wi033-eff-deep-02-data-r01-mobile.png",
+            "_course_content/generated-concepts/ad-efficientad/wi033-eff-deep-03-meaning-r02-mobile.png",
+            "_course_content/generated-concepts/ad-efficientad/wi033-eff-deep-04-output-r01-desktop.png",
+            "_course_content/generated-concepts/ad-efficientad/wi033-eff-deep-04-output-r01-mobile.png",
+            "_course_content/generated-concepts/ad-efficientad/wi033-eff-deep-05-limits-r01-mobile.png",
+            "_course_content/generated-concepts/ad-efficientad/wi033-eff-deep-07-comparison-r01-desktop.png",
+            "_course_content/generated-concepts/ad-efficientad/wi033-eff-deep-07-comparison-r01-mobile.png",
+            "_course_content/generated-concepts/ad-efficientad/wi033-eff-deep-08-transfer-r01-mobile.png",
+            "roadmap-model-selection/anomaly-detection/ad-efficientad/images/final/WI033-EFFICIENTAD-01-r02-desktop.png",
+            "roadmap-model-selection/anomaly-detection/ad-efficientad/images/final/WI033-EFFICIENTAD-02-r02-desktop.png",
+            "roadmap-model-selection/anomaly-detection/ad-efficientad/images/final/WI033-EFFICIENTAD-03-r02-desktop.png",
+            "roadmap-model-selection/anomaly-detection/ad-efficientad/images/final/WI033-EFFICIENTAD-04-r01-desktop.png"
+          ]
+        },
+        "h1": [
+          "EfficientAD"
+        ]
+      },
+      "learning_checks": 1,
+      "expanded": {
+        "overflow": false,
+        "images": {
+          "total": 20,
+          "broken": [
+            "_course_content/generated-concepts/ad-efficientad/wi030-efficient-c1-r06-desktop.png",
+            "_course_content/generated-concepts/ad-efficientad/wi033-eff-main-failure-r01-desktop.png",
+            "_course_content/generated-concepts/ad-efficientad/wi033-eff-deep-01-work-r02-mobile.png",
+            "_course_content/generated-concepts/ad-efficientad/wi033-eff-deep-02-data-r01-mobile.png",
+            "_course_content/generated-concepts/ad-efficientad/wi033-eff-deep-03-meaning-r02-mobile.png",
+            "_course_content/generated-concepts/ad-efficientad/wi033-eff-deep-04-output-r01-desktop.png",
+            "_course_content/generated-concepts/ad-efficientad/wi033-eff-deep-04-output-r01-mobile.png",
+            "_course_content/generated-concepts/ad-efficientad/wi033-eff-deep-05-limits-r01-mobile.png",
+            "_course_content/generated-concepts/ad-efficientad/wi033-eff-deep-07-comparison-r01-desktop.png",
+            "_course_content/generated-concepts/ad-efficientad/wi033-eff-deep-07-comparison-r01-mobile.png",
+            "_course_content/generated-concepts/ad-efficientad/wi033-eff-deep-08-transfer-r01-mobile.png",
+            "roadmap-model-selection/anomaly-detection/ad-efficientad/images/final/WI033-EFFICIENTAD-01-r02-desktop.png",
+            "roadmap-model-selection/anomaly-detection/ad-efficientad/images/final/WI033-EFFICIENTAD-02-r02-desktop.png",
+            "roadmap-model-selection/anomaly-detection/ad-efficientad/images/final/WI033-EFFICIENTAD-03-r02-desktop.png",
+            "roadmap-model-selection/anomaly-detection/ad-efficientad/images/final/WI033-EFFICIENTAD-04-r01-desktop.png"
+          ]
+        },
+        "h1": [
+          "EfficientAD"
+        ]
+      },
+      "main_visuals": [
+        {
+          "id": "beginner-ad-efficientad-wi030-efficient-c1",
+          "visible": true,
+          "images": 2
+        },
+        {
+          "id": "beginner-ad-efficientad-wi033-eff-main-failure",
+          "visible": true,
+          "images": 2
+        },
+        {
+          "id": "beginner-ad-efficientad-wi030-ad-d3",
+          "visible": true,
+          "images": 2
+        }
+      ]
+    },
+    {
+      "topic": "ad-ae",
+      "width": 390,
+      "slides": [
+        {
+          "id": "step-ad-ae-1",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/anomaly-detection/ad-ae/images/final/WI033-AE-01-r01-mobile.png",
+              "ok": false,
+              "width": 322
+            }
+          ]
+        },
+        {
+          "id": "step-ad-ae-2",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/anomaly-detection/ad-ae/images/final/WI033-AE-02-r02-mobile.png",
+              "ok": false,
+              "width": 322
+            }
+          ]
+        },
+        {
+          "id": "step-ad-ae-3",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/anomaly-detection/ad-ae/images/final/WI033-AE-03-r01-mobile.png",
+              "ok": false,
+              "width": 322
+            }
+          ]
+        },
+        {
+          "id": "step-ad-ae-4",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/anomaly-detection/ad-ae/images/final/WI033-AE-04-r01-mobile.png",
+              "ok": false,
+              "width": 322
+            }
+          ]
+        }
+      ],
+      "chapters": [],
+      "concepts": [],
+      "errors": [],
+      "interaction_scope": "rendered breadth",
+      "default": {
+        "overflow": false,
+        "images": {
+          "total": 14,
+          "broken": [
+            "_course_content/generated-concepts/ad-ae/wi021-ae-c1-r02.png",
+            "_course_content/generated-concepts/ad-ae/wi021-ae-c2-r02-desktop.png",
+            "_course_content/generated-concepts/ad-ae/wi021-ae-c2-r02-mobile.png",
+            "_course_content/generated-concepts/ad-ae/wi021-ae-c3-r02-desktop.png",
+            "_course_content/generated-concepts/ad-ae/wi021-ae-c3-r01-mobile.png",
+            "_course_content/generated-concepts/ad-ae/wi021-ae-d4-r02-desktop.png",
+            "_course_content/generated-concepts/ad-ae/wi021-ae-d4-r01-mobile.png",
+            "_course_content/generated-concepts/ad-ae/wi021-ae-d5-r02-desktop.png",
+            "roadmap-model-selection/anomaly-detection/ad-ae/images/final/WI033-AE-01-r01-desktop.png",
+            "roadmap-model-selection/anomaly-detection/ad-ae/images/final/WI033-AE-02-r02-desktop.png",
+            "roadmap-model-selection/anomaly-detection/ad-ae/images/final/WI033-AE-03-r01-desktop.png",
+            "roadmap-model-selection/anomaly-detection/ad-ae/images/final/WI033-AE-04-r01-desktop.png"
+          ]
+        },
+        "h1": [
+          "Autoencoder (AE)"
+        ]
+      },
+      "learning_checks": 1,
+      "expanded": {
+        "overflow": false,
+        "images": {
+          "total": 14,
+          "broken": [
+            "_course_content/generated-concepts/ad-ae/wi021-ae-c1-r02.png",
+            "_course_content/generated-concepts/ad-ae/wi021-ae-c2-r02-desktop.png",
+            "_course_content/generated-concepts/ad-ae/wi021-ae-c2-r02-mobile.png",
+            "_course_content/generated-concepts/ad-ae/wi021-ae-c3-r02-desktop.png",
+            "_course_content/generated-concepts/ad-ae/wi021-ae-c3-r01-mobile.png",
+            "_course_content/generated-concepts/ad-ae/wi021-ae-d4-r02-desktop.png",
+            "_course_content/generated-concepts/ad-ae/wi021-ae-d4-r01-mobile.png",
+            "_course_content/generated-concepts/ad-ae/wi021-ae-d5-r02-desktop.png",
+            "roadmap-model-selection/anomaly-detection/ad-ae/images/final/WI033-AE-01-r01-desktop.png",
+            "roadmap-model-selection/anomaly-detection/ad-ae/images/final/WI033-AE-02-r02-desktop.png",
+            "roadmap-model-selection/anomaly-detection/ad-ae/images/final/WI033-AE-03-r01-desktop.png",
+            "roadmap-model-selection/anomaly-detection/ad-ae/images/final/WI033-AE-04-r01-desktop.png"
+          ]
+        },
+        "h1": [
+          "Autoencoder (AE)"
+        ]
+      },
+      "main_visuals": [
+        {
+          "id": "beginner-ad-ae-wi021-ae-1",
+          "visible": true,
+          "images": 2
+        },
+        {
+          "id": "beginner-ad-ae-wi021-ae-2",
+          "visible": true,
+          "images": 2
+        },
+        {
+          "id": "beginner-ad-ae-wi021-ae-3",
+          "visible": true,
+          "images": 2
+        },
+        {
+          "id": "beginner-ad-ae-wi021-ae-4",
+          "visible": true,
+          "images": 2
+        },
+        {
+          "id": "beginner-ad-ae-wi021-ae-5",
+          "visible": true,
+          "images": 2
+        }
+      ]
+    },
+    {
+      "topic": "ad-draem",
+      "width": 390,
+      "slides": [
+        {
+          "id": "step-ad-draem-1",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/anomaly-detection/ad-draem/images/final/WI033-DRAEM-01-r01-mobile.png",
+              "ok": false,
+              "width": 322
+            }
+          ]
+        },
+        {
+          "id": "step-ad-draem-2",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/anomaly-detection/ad-draem/images/final/WI033-DRAEM-02-r02-mobile.png",
+              "ok": false,
+              "width": 322
+            }
+          ]
+        },
+        {
+          "id": "step-ad-draem-3",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/anomaly-detection/ad-draem/images/final/WI033-DRAEM-03-r01-mobile.png",
+              "ok": false,
+              "width": 322
+            }
+          ]
+        },
+        {
+          "id": "step-ad-draem-4",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/anomaly-detection/ad-draem/images/final/WI033-DRAEM-04-r01-mobile.png",
+              "ok": false,
+              "width": 322
+            }
+          ]
+        }
+      ],
+      "chapters": [],
+      "concepts": [],
+      "errors": [],
+      "interaction_scope": "rendered breadth",
+      "default": {
+        "overflow": false,
+        "images": {
+          "total": 12,
+          "broken": [
+            "_course_content/generated-concepts/ad-draem/wi021-draem-c1-r01-mobile.png",
+            "_course_content/generated-concepts/ad-draem/wi021-draem-c2-r03-mobile.png",
+            "_course_content/generated-concepts/ad-draem/wi021-draem-d3-r02-desktop.png",
+            "_course_content/generated-concepts/ad-draem/wi021-draem-d3-r01-mobile.png",
+            "_course_content/generated-concepts/ad-ae/wi021-ae-d5-r02-desktop.png",
+            "roadmap-model-selection/anomaly-detection/ad-draem/images/final/WI033-DRAEM-01-r01-desktop.png",
+            "roadmap-model-selection/anomaly-detection/ad-draem/images/final/WI033-DRAEM-02-r02-desktop.png",
+            "roadmap-model-selection/anomaly-detection/ad-draem/images/final/WI033-DRAEM-03-r01-desktop.png",
+            "roadmap-model-selection/anomaly-detection/ad-draem/images/final/WI033-DRAEM-04-r01-desktop.png"
+          ]
+        },
+        "h1": [
+          "DRAEM"
+        ]
+      },
+      "learning_checks": 1,
+      "expanded": {
+        "overflow": false,
+        "images": {
+          "total": 12,
+          "broken": [
+            "_course_content/generated-concepts/ad-draem/wi021-draem-c1-r01-mobile.png",
+            "_course_content/generated-concepts/ad-draem/wi021-draem-c2-r03-mobile.png",
+            "_course_content/generated-concepts/ad-draem/wi021-draem-d3-r02-desktop.png",
+            "_course_content/generated-concepts/ad-draem/wi021-draem-d3-r01-mobile.png",
+            "_course_content/generated-concepts/ad-ae/wi021-ae-d5-r02-desktop.png",
+            "roadmap-model-selection/anomaly-detection/ad-draem/images/final/WI033-DRAEM-01-r01-desktop.png",
+            "roadmap-model-selection/anomaly-detection/ad-draem/images/final/WI033-DRAEM-02-r02-desktop.png",
+            "roadmap-model-selection/anomaly-detection/ad-draem/images/final/WI033-DRAEM-03-r01-desktop.png",
+            "roadmap-model-selection/anomaly-detection/ad-draem/images/final/WI033-DRAEM-04-r01-desktop.png"
+          ]
+        },
+        "h1": [
+          "DRAEM"
+        ]
+      },
+      "main_visuals": [
+        {
+          "id": "beginner-ad-draem-wi021-ad-draem-1",
+          "visible": true,
+          "images": 2
+        },
+        {
+          "id": "beginner-ad-draem-wi021-ad-draem-2",
+          "visible": true,
+          "images": 2
+        },
+        {
+          "id": "beginner-ad-draem-wi021-ad-draem-3",
+          "visible": true,
+          "images": 2
+        },
+        {
+          "id": "beginner-ad-draem-wi021-ad-draem-4",
+          "visible": true,
+          "images": 2
+        }
+      ]
+    },
+    {
+      "topic": "ad-uniad",
+      "width": 390,
+      "slides": [
+        {
+          "id": "step-ad-uniad-1",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/anomaly-detection/ad-uniad/images/final/WI033-UNIAD-01-r01-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        },
+        {
+          "id": "step-ad-uniad-2",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/anomaly-detection/ad-uniad/images/final/WI033-UNIAD-02-r02-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        },
+        {
+          "id": "step-ad-uniad-3",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/anomaly-detection/ad-uniad/images/final/WI033-UNIAD-03-r01-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        },
+        {
+          "id": "step-ad-uniad-4",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/anomaly-detection/ad-uniad/images/final/WI033-UNIAD-04-r01-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        }
+      ],
+      "chapters": [],
+      "concepts": [],
+      "errors": [],
+      "interaction_scope": "rendered breadth",
+      "default": {
+        "overflow": false,
+        "images": {
+          "total": 10,
+          "broken": []
+        },
+        "h1": [
+          "UniAD"
+        ]
+      },
+      "learning_checks": 1,
+      "expanded": {
+        "overflow": false,
+        "images": {
+          "total": 10,
+          "broken": []
+        },
+        "h1": [
+          "UniAD"
+        ]
+      },
+      "main_visuals": [
+        {
+          "id": "beginner-ad-uniad-wi021-ad-uniad-1",
+          "visible": true,
+          "images": 2
+        },
+        {
+          "id": "beginner-ad-uniad-wi021-ad-uniad-2",
+          "visible": true,
+          "images": 2
+        },
+        {
+          "id": "beginner-ad-uniad-wi021-ad-uniad-3",
+          "visible": true,
+          "images": 2
+        }
+      ]
+    },
+    {
+      "topic": "ad-dinomaly",
+      "width": 390,
+      "slides": [
+        {
+          "id": "step-ad-dinomaly-1",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/anomaly-detection/ad-dinomaly/images/final/WI033-DINOMALY-01-r01-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        },
+        {
+          "id": "step-ad-dinomaly-2",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/anomaly-detection/ad-dinomaly/images/final/WI033-DINOMALY-02-r02-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        },
+        {
+          "id": "step-ad-dinomaly-3",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/anomaly-detection/ad-dinomaly/images/final/WI033-DINOMALY-03-r01-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        },
+        {
+          "id": "step-ad-dinomaly-4",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/anomaly-detection/ad-dinomaly/images/final/WI033-DINOMALY-04-r01-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        }
+      ],
+      "chapters": [],
+      "concepts": [],
+      "errors": [],
+      "interaction_scope": "rendered breadth",
+      "default": {
+        "overflow": false,
+        "images": {
+          "total": 10,
+          "broken": []
+        },
+        "h1": [
+          "Dinomaly"
+        ]
+      },
+      "learning_checks": 1,
+      "expanded": {
+        "overflow": false,
+        "images": {
+          "total": 10,
+          "broken": []
+        },
+        "h1": [
+          "Dinomaly"
+        ]
+      },
+      "main_visuals": [
+        {
+          "id": "beginner-ad-dinomaly-wi021-ad-dinomaly-1",
+          "visible": true,
+          "images": 2
+        },
+        {
+          "id": "beginner-ad-dinomaly-wi021-ad-dinomaly-2",
+          "visible": true,
+          "images": 2
+        },
+        {
+          "id": "beginner-ad-dinomaly-wi021-ad-dinomaly-3",
+          "visible": true,
+          "images": 2
+        }
+      ]
+    },
+    {
+      "topic": "ad-invad",
+      "width": 390,
+      "slides": [
+        {
+          "id": "step-ad-invad-1",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/anomaly-detection/ad-invad/images/final/WI033-INVAD-01-r01-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        },
+        {
+          "id": "step-ad-invad-2",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/anomaly-detection/ad-invad/images/final/WI033-INVAD-02-r02-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        },
+        {
+          "id": "step-ad-invad-3",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/anomaly-detection/ad-invad/images/final/WI033-INVAD-03-r01-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        },
+        {
+          "id": "step-ad-invad-4",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/anomaly-detection/ad-invad/images/final/WI033-INVAD-04-r01-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        }
+      ],
+      "chapters": [],
+      "concepts": [],
+      "errors": [],
+      "interaction_scope": "rendered breadth",
+      "default": {
+        "overflow": false,
+        "images": {
+          "total": 10,
+          "broken": []
+        },
+        "h1": [
+          "InvAD"
+        ]
+      },
+      "learning_checks": 1,
+      "expanded": {
+        "overflow": false,
+        "images": {
+          "total": 10,
+          "broken": []
+        },
+        "h1": [
+          "InvAD"
+        ]
+      },
+      "main_visuals": [
+        {
+          "id": "beginner-ad-invad-wi021-ad-invad-1",
+          "visible": true,
+          "images": 2
+        },
+        {
+          "id": "beginner-ad-invad-wi021-ad-invad-2",
+          "visible": true,
+          "images": 2
+        },
+        {
+          "id": "beginner-ad-invad-wi021-ad-invad-3",
+          "visible": true,
+          "images": 2
+        }
+      ]
+    },
+    {
+      "topic": "ad-diffad",
+      "width": 390,
+      "slides": [
+        {
+          "id": "step-ad-diffad-1",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/anomaly-detection/ad-diffad/images/final/WI033-DIFFAD-01-r02-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        },
+        {
+          "id": "step-ad-diffad-2",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/anomaly-detection/ad-diffad/images/final/WI033-DIFFAD-02-r02-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        },
+        {
+          "id": "step-ad-diffad-3",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/anomaly-detection/ad-diffad/images/final/WI033-DIFFAD-03-r01-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        },
+        {
+          "id": "step-ad-diffad-4",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/anomaly-detection/ad-diffad/images/final/WI033-DIFFAD-04-r02-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        }
+      ],
+      "chapters": [],
+      "concepts": [],
+      "errors": [],
+      "interaction_scope": "rendered breadth",
+      "default": {
+        "overflow": false,
+        "images": {
+          "total": 10,
+          "broken": []
+        },
+        "h1": [
+          "DiffusionAD"
+        ]
+      },
+      "learning_checks": 1,
+      "expanded": {
+        "overflow": false,
+        "images": {
+          "total": 10,
+          "broken": []
+        },
+        "h1": [
+          "DiffusionAD"
+        ]
+      },
+      "main_visuals": [
+        {
+          "id": "beginner-ad-diffad-wi021-ad-diffad-1",
+          "visible": true,
+          "images": 2
+        },
+        {
+          "id": "beginner-ad-diffad-wi021-ad-diffad-2",
+          "visible": true,
+          "images": 2
+        },
+        {
+          "id": "beginner-ad-diffad-wi021-ad-diffad-3",
+          "visible": true,
+          "images": 2
+        }
+      ]
+    },
+    {
+      "topic": "ad-ddad",
+      "width": 390,
+      "slides": [
+        {
+          "id": "step-ad-ddad-1",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/anomaly-detection/ad-ddad/images/final/WI033-DDAD-01-r01-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        },
+        {
+          "id": "step-ad-ddad-2",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/anomaly-detection/ad-ddad/images/final/WI033-DDAD-02-r02-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        },
+        {
+          "id": "step-ad-ddad-3",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/anomaly-detection/ad-ddad/images/final/WI033-DDAD-03-r01-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        },
+        {
+          "id": "step-ad-ddad-4",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/anomaly-detection/ad-ddad/images/final/WI033-DDAD-04-r02-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        }
+      ],
+      "chapters": [],
+      "concepts": [],
+      "errors": [],
+      "interaction_scope": "rendered breadth",
+      "default": {
+        "overflow": false,
+        "images": {
+          "total": 10,
+          "broken": []
+        },
+        "h1": [
+          "DDAD"
+        ]
+      },
+      "learning_checks": 1,
+      "expanded": {
+        "overflow": false,
+        "images": {
+          "total": 10,
+          "broken": []
+        },
+        "h1": [
+          "DDAD"
+        ]
+      },
+      "main_visuals": [
+        {
+          "id": "beginner-ad-ddad-wi021-ad-ddad-1",
+          "visible": true,
+          "images": 2
+        },
+        {
+          "id": "beginner-ad-ddad-wi021-ad-ddad-2",
+          "visible": true,
+          "images": 2
+        },
+        {
+          "id": "beginner-ad-ddad-wi021-ad-ddad-3",
+          "visible": true,
+          "images": 2
+        }
+      ]
+    },
+    {
+      "topic": "ad-winclip",
+      "width": 390,
+      "slides": [
+        {
+          "id": "step-ad-winclip-1",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/anomaly-detection/ad-winclip/images/final/WI033-WINCLIP-01-r02-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        },
+        {
+          "id": "step-ad-winclip-2",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/anomaly-detection/ad-winclip/images/final/WI033-WINCLIP-02-r02-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        },
+        {
+          "id": "step-ad-winclip-3",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/anomaly-detection/ad-winclip/images/final/WI033-WINCLIP-03-r02-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        },
+        {
+          "id": "step-ad-winclip-4",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/anomaly-detection/ad-winclip/images/final/WI033-WINCLIP-04-r02-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        }
+      ],
+      "chapters": [],
+      "concepts": [],
+      "errors": [],
+      "interaction_scope": "rendered breadth",
+      "default": {
+        "overflow": false,
+        "images": {
+          "total": 10,
+          "broken": []
+        },
+        "h1": [
+          "WinCLIP"
+        ]
+      },
+      "learning_checks": 1,
+      "expanded": {
+        "overflow": false,
+        "images": {
+          "total": 10,
+          "broken": []
+        },
+        "h1": [
+          "WinCLIP"
+        ]
+      },
+      "main_visuals": [
+        {
+          "id": "beginner-ad-winclip-wi021-ad-winclip-1",
+          "visible": true,
+          "images": 2
+        },
+        {
+          "id": "beginner-ad-winclip-wi021-ad-winclip-2",
+          "visible": true,
+          "images": 2
+        },
+        {
+          "id": "beginner-ad-winclip-wi021-ad-winclip-3",
+          "visible": true,
+          "images": 2
+        }
+      ]
+    },
+    {
+      "topic": "ad-anomalyclip",
+      "width": 390,
+      "slides": [
+        {
+          "id": "step-ad-anomalyclip-1",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/anomaly-detection/ad-anomalyclip/images/final/WI033-ANOCLIP-01-r01-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        },
+        {
+          "id": "step-ad-anomalyclip-2",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/anomaly-detection/ad-anomalyclip/images/final/WI033-ANOCLIP-02-r02-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        },
+        {
+          "id": "step-ad-anomalyclip-3",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/anomaly-detection/ad-anomalyclip/images/final/WI033-ANOCLIP-03-r02-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        },
+        {
+          "id": "step-ad-anomalyclip-4",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/anomaly-detection/ad-anomalyclip/images/final/WI033-ANOCLIP-04-r02-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        }
+      ],
+      "chapters": [],
+      "concepts": [],
+      "errors": [],
+      "interaction_scope": "rendered breadth",
+      "default": {
+        "overflow": false,
+        "images": {
+          "total": 10,
+          "broken": []
+        },
+        "h1": [
+          "AnomalyCLIP"
+        ]
+      },
+      "learning_checks": 1,
+      "expanded": {
+        "overflow": false,
+        "images": {
+          "total": 10,
+          "broken": []
+        },
+        "h1": [
+          "AnomalyCLIP"
+        ]
+      },
+      "main_visuals": [
+        {
+          "id": "beginner-ad-anomalyclip-wi021-ad-anomalyclip-1",
+          "visible": true,
+          "images": 2
+        },
+        {
+          "id": "beginner-ad-anomalyclip-wi021-ad-anomalyclip-2",
+          "visible": true,
+          "images": 2
+        },
+        {
+          "id": "beginner-ad-anomalyclip-wi021-ad-anomalyclip-3",
+          "visible": true,
+          "images": 2
+        }
+      ]
+    },
+    {
+      "topic": "ad-anomalygpt",
+      "width": 390,
+      "slides": [
+        {
+          "id": "step-ad-anomalygpt-1",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/anomaly-detection/ad-anomalygpt/images/final/WI033-ANOGPT-01-r01-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        },
+        {
+          "id": "step-ad-anomalygpt-2",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/anomaly-detection/ad-anomalygpt/images/final/WI033-ANOGPT-02-r02-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        },
+        {
+          "id": "step-ad-anomalygpt-3",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/anomaly-detection/ad-anomalygpt/images/final/WI033-ANOGPT-03-r01-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        },
+        {
+          "id": "step-ad-anomalygpt-4",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/anomaly-detection/ad-anomalygpt/images/final/WI033-ANOGPT-04-r01-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        }
+      ],
+      "chapters": [],
+      "concepts": [],
+      "errors": [],
+      "interaction_scope": "rendered breadth",
+      "default": {
+        "overflow": false,
+        "images": {
+          "total": 10,
+          "broken": []
+        },
+        "h1": [
+          "AnomalyGPT"
+        ]
+      },
+      "learning_checks": 1,
+      "expanded": {
+        "overflow": false,
+        "images": {
+          "total": 10,
+          "broken": []
+        },
+        "h1": [
+          "AnomalyGPT"
+        ]
+      },
+      "main_visuals": [
+        {
+          "id": "beginner-ad-anomalygpt-wi021-ad-anomalygpt-1",
+          "visible": true,
+          "images": 2
+        },
+        {
+          "id": "beginner-ad-anomalygpt-wi021-ad-anomalygpt-2",
+          "visible": true,
+          "images": 2
+        },
+        {
+          "id": "beginner-ad-anomalygpt-wi021-ad-anomalygpt-3",
+          "visible": true,
+          "images": 2
+        }
+      ]
+    },
+    {
+      "topic": "frame-difference",
+      "width": 390,
+      "slides": [
+        {
+          "id": "step-frame-difference-1",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/video-temporal/frame-difference/images/final/WI033-FRAMEDIFF-01-r01-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        },
+        {
+          "id": "step-frame-difference-2",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/video-temporal/frame-difference/images/final/WI033-FRAMEDIFF-02-r02-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        },
+        {
+          "id": "step-frame-difference-3",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/video-temporal/frame-difference/images/final/WI033-FRAMEDIFF-03-r02-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        },
+        {
+          "id": "step-frame-difference-4",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/video-temporal/frame-difference/images/final/WI033-FRAMEDIFF-04-r02-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        }
+      ],
+      "chapters": [],
+      "concepts": [
+        "Frame Difference：找出兩張畫面的變化"
+      ],
+      "errors": [],
+      "interaction_scope": "family first",
+      "default": {
+        "overflow": false,
+        "images": {
+          "total": 10,
+          "broken": []
+        },
+        "h1": [
+          "Frame Difference"
+        ]
+      },
+      "learning_checks": 1,
+      "expanded": {
+        "overflow": false,
+        "images": {
+          "total": 10,
+          "broken": []
+        },
+        "h1": [
+          "Frame Difference"
+        ]
+      },
+      "main_visuals": [
+        {
+          "id": "beginner-frame-difference-wi028-frame-c1",
+          "visible": true,
+          "images": 2
+        },
+        {
+          "id": "beginner-frame-difference-wi028-frame-d2",
+          "visible": true,
+          "images": 2
+        },
+        {
+          "id": "beginner-frame-difference-wi028-change-d3",
+          "visible": true,
+          "images": 2
+        }
+      ],
+      "concept_count": 3,
+      "zoom_titles": [
+        "Frame Difference · 01 先看它交出什麼",
+        "Frame Difference · 02 再看它怎麼做",
+        "Frame Difference · 03 上線前先固定條件",
+        "Frame Difference · 04 選它前先看風險"
+      ],
+      "step_links": 7
+    },
+    {
+      "topic": "background-subtraction",
+      "width": 390,
+      "slides": [
+        {
+          "id": "step-background-subtraction-1",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/video-temporal/background-subtraction/images/final/WI033-BGSUB-01-r01-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        },
+        {
+          "id": "step-background-subtraction-2",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/video-temporal/background-subtraction/images/final/WI033-BGSUB-02-r02-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        },
+        {
+          "id": "step-background-subtraction-3",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/video-temporal/background-subtraction/images/final/WI033-BGSUB-03-r02-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        },
+        {
+          "id": "step-background-subtraction-4",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/video-temporal/background-subtraction/images/final/WI033-BGSUB-04-r02-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        }
+      ],
+      "chapters": [],
+      "concepts": [],
+      "errors": [],
+      "interaction_scope": "rendered breadth",
+      "default": {
+        "overflow": false,
+        "images": {
+          "total": 10,
+          "broken": []
+        },
+        "h1": [
+          "Background Subtraction"
+        ]
+      },
+      "learning_checks": 1,
+      "expanded": {
+        "overflow": false,
+        "images": {
+          "total": 10,
+          "broken": []
+        },
+        "h1": [
+          "Background Subtraction"
+        ]
+      },
+      "main_visuals": [
+        {
+          "id": "beginner-background-subtraction-wi028-bg-c1",
+          "visible": true,
+          "images": 2
+        },
+        {
+          "id": "beginner-background-subtraction-wi028-bg-d2",
+          "visible": true,
+          "images": 2
+        },
+        {
+          "id": "beginner-background-subtraction-wi028-change-d3",
+          "visible": true,
+          "images": 2
+        }
+      ]
+    },
+    {
+      "topic": "lucas-kanade",
+      "width": 390,
+      "slides": [
+        {
+          "id": "step-lucas-kanade-1",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/video-temporal/lucas-kanade/images/final/WI033-LK-01-r02-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        },
+        {
+          "id": "step-lucas-kanade-2",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/video-temporal/lucas-kanade/images/final/WI033-LK-02-r02-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        },
+        {
+          "id": "step-lucas-kanade-3",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/video-temporal/lucas-kanade/images/final/WI033-LK-03-r02-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        },
+        {
+          "id": "step-lucas-kanade-4",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/video-temporal/lucas-kanade/images/final/WI033-LK-04-r02-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        }
+      ],
+      "chapters": [],
+      "concepts": [],
+      "errors": [],
+      "interaction_scope": "rendered breadth",
+      "default": {
+        "overflow": false,
+        "images": {
+          "total": 10,
+          "broken": []
+        },
+        "h1": [
+          "Lucas–Kanade"
+        ]
+      },
+      "learning_checks": 1,
+      "expanded": {
+        "overflow": false,
+        "images": {
+          "total": 10,
+          "broken": []
+        },
+        "h1": [
+          "Lucas–Kanade"
+        ]
+      },
+      "main_visuals": [
+        {
+          "id": "beginner-lucas-kanade-wi028-lk-c1",
+          "visible": true,
+          "images": 2
+        },
+        {
+          "id": "beginner-lucas-kanade-wi033-flow-main-failure",
+          "visible": true,
+          "images": 2
+        },
+        {
+          "id": "beginner-lucas-kanade-wi028-flow-d3",
+          "visible": true,
+          "images": 2
+        }
+      ]
+    },
+    {
+      "topic": "raft",
+      "width": 390,
+      "slides": [
+        {
+          "id": "step-raft-1",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/video-temporal/raft/images/final/WI033-RAFT-01-r02-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        },
+        {
+          "id": "step-raft-2",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/video-temporal/raft/images/final/WI033-RAFT-02-r03-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        },
+        {
+          "id": "step-raft-3",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/video-temporal/raft/images/final/WI033-RAFT-03-r02-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        },
+        {
+          "id": "step-raft-4",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/video-temporal/raft/images/final/WI033-RAFT-04-r02-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        }
+      ],
+      "chapters": [],
+      "concepts": [],
+      "errors": [],
+      "interaction_scope": "rendered breadth",
+      "default": {
+        "overflow": false,
+        "images": {
+          "total": 10,
+          "broken": []
+        },
+        "h1": [
+          "RAFT"
+        ]
+      },
+      "learning_checks": 1,
+      "expanded": {
+        "overflow": false,
+        "images": {
+          "total": 10,
+          "broken": []
+        },
+        "h1": [
+          "RAFT"
+        ]
+      },
+      "main_visuals": [
+        {
+          "id": "beginner-raft-wi028-raft-c1",
+          "visible": true,
+          "images": 2
+        },
+        {
+          "id": "beginner-raft-wi033-flow-main-failure",
+          "visible": true,
+          "images": 2
+        },
+        {
+          "id": "beginner-raft-wi028-flow-d3",
+          "visible": true,
+          "images": 2
+        }
+      ]
+    },
+    {
+      "topic": "bytetrack",
+      "width": 390,
+      "slides": [
+        {
+          "id": "step-bytetrack-1",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/video-temporal/bytetrack/images/final/WI033-BYTETRACK-01-r01-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        },
+        {
+          "id": "step-bytetrack-2",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/video-temporal/bytetrack/images/final/WI033-BYTETRACK-02-r02-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        },
+        {
+          "id": "step-bytetrack-3",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/video-temporal/bytetrack/images/final/WI033-BYTETRACK-03-r01-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        },
+        {
+          "id": "step-bytetrack-4",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/video-temporal/bytetrack/images/final/WI033-BYTETRACK-04-r01-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        }
+      ],
+      "chapters": [],
+      "concepts": [],
+      "errors": [],
+      "interaction_scope": "rendered breadth",
+      "default": {
+        "overflow": false,
+        "images": {
+          "total": 10,
+          "broken": []
+        },
+        "h1": [
+          "ByteTrack"
+        ]
+      },
+      "learning_checks": 1,
+      "expanded": {
+        "overflow": false,
+        "images": {
+          "total": 10,
+          "broken": []
+        },
+        "h1": [
+          "ByteTrack"
+        ]
+      },
+      "main_visuals": [
+        {
+          "id": "beginner-bytetrack-wi028-byte-c1",
+          "visible": true,
+          "images": 2
+        },
+        {
+          "id": "beginner-bytetrack-wi028-byte-d2",
+          "visible": true,
+          "images": 2
+        },
+        {
+          "id": "beginner-bytetrack-wi028-track-d3",
+          "visible": true,
+          "images": 2
+        }
+      ]
+    },
+    {
+      "topic": "convlstm",
+      "width": 390,
+      "slides": [
+        {
+          "id": "step-convlstm-1",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/video-temporal/convlstm/images/final/WI033-CONVLSTM-01-r01-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        },
+        {
+          "id": "step-convlstm-2",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/video-temporal/convlstm/images/final/WI033-CONVLSTM-02-r02-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        },
+        {
+          "id": "step-convlstm-3",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/video-temporal/convlstm/images/final/WI033-CONVLSTM-03-r02-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        },
+        {
+          "id": "step-convlstm-4",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/video-temporal/convlstm/images/final/WI033-CONVLSTM-04-r01-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        }
+      ],
+      "chapters": [],
+      "concepts": [],
+      "errors": [],
+      "interaction_scope": "rendered breadth",
+      "default": {
+        "overflow": false,
+        "images": {
+          "total": 10,
+          "broken": []
+        },
+        "h1": [
+          "ConvLSTM"
+        ]
+      },
+      "learning_checks": 1,
+      "expanded": {
+        "overflow": false,
+        "images": {
+          "total": 10,
+          "broken": []
+        },
+        "h1": [
+          "ConvLSTM"
+        ]
+      },
+      "main_visuals": [
+        {
+          "id": "beginner-convlstm-wi028-conv-c1",
+          "visible": true,
+          "images": 2
+        },
+        {
+          "id": "beginner-convlstm-wi028-conv-d2",
+          "visible": true,
+          "images": 2
+        },
+        {
+          "id": "beginner-convlstm-wi028-video-d3",
+          "visible": true,
+          "images": 2
+        }
+      ]
+    },
+    {
+      "topic": "videomae",
+      "width": 390,
+      "slides": [
+        {
+          "id": "step-videomae-1",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/video-temporal/videomae/images/final/WI033-VIDEOMAE-01-r01-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        },
+        {
+          "id": "step-videomae-2",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/video-temporal/videomae/images/final/WI033-VIDEOMAE-02-r02-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        },
+        {
+          "id": "step-videomae-3",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/video-temporal/videomae/images/final/WI033-VIDEOMAE-03-r02-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        },
+        {
+          "id": "step-videomae-4",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/video-temporal/videomae/images/final/WI033-VIDEOMAE-04-r02-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        }
+      ],
+      "chapters": [],
+      "concepts": [],
+      "errors": [],
+      "interaction_scope": "rendered breadth",
+      "default": {
+        "overflow": false,
+        "images": {
+          "total": 10,
+          "broken": []
+        },
+        "h1": [
+          "VideoMAE"
+        ]
+      },
+      "learning_checks": 1,
+      "expanded": {
+        "overflow": false,
+        "images": {
+          "total": 10,
+          "broken": []
+        },
+        "h1": [
+          "VideoMAE"
+        ]
+      },
+      "main_visuals": [
+        {
+          "id": "beginner-videomae-wi028-mae-c1",
+          "visible": true,
+          "images": 2
+        },
+        {
+          "id": "beginner-videomae-wi028-video-d2",
+          "visible": true,
+          "images": 2
+        },
+        {
+          "id": "beginner-videomae-wi028-video-d3",
+          "visible": true,
+          "images": 2
+        }
+      ]
+    },
+    {
+      "topic": "v-jepa",
+      "width": 390,
+      "slides": [
+        {
+          "id": "step-v-jepa-1",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/video-temporal/v-jepa/images/final/WI033-VJEPA-01-r01-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        },
+        {
+          "id": "step-v-jepa-2",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/video-temporal/v-jepa/images/final/WI033-VJEPA-02-r02-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        },
+        {
+          "id": "step-v-jepa-3",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/video-temporal/v-jepa/images/final/WI033-VJEPA-03-r02-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        },
+        {
+          "id": "step-v-jepa-4",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/video-temporal/v-jepa/images/final/WI033-VJEPA-04-r01-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        }
+      ],
+      "chapters": [],
+      "concepts": [],
+      "errors": [],
+      "interaction_scope": "rendered breadth",
+      "default": {
+        "overflow": false,
+        "images": {
+          "total": 10,
+          "broken": []
+        },
+        "h1": [
+          "V-JEPA"
+        ]
+      },
+      "learning_checks": 1,
+      "expanded": {
+        "overflow": false,
+        "images": {
+          "total": 10,
+          "broken": []
+        },
+        "h1": [
+          "V-JEPA"
+        ]
+      },
+      "main_visuals": [
+        {
+          "id": "beginner-v-jepa-wi028-jepa-c1",
+          "visible": true,
+          "images": 2
+        },
+        {
+          "id": "beginner-v-jepa-wi028-video-d2",
+          "visible": true,
+          "images": 2
+        },
+        {
+          "id": "beginner-v-jepa-wi028-video-d3",
+          "visible": true,
+          "images": 2
+        }
+      ]
+    },
+    {
+      "topic": "dinov2",
+      "width": 390,
+      "slides": [
+        {
+          "id": "step-dinov2-1",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/foundation-vlm-open-world/dinov2/images/final/WI033-DINOV2-01-r01-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        },
+        {
+          "id": "step-dinov2-2",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/foundation-vlm-open-world/dinov2/images/final/WI033-DINOV2-02-r03-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        },
+        {
+          "id": "step-dinov2-3",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/foundation-vlm-open-world/dinov2/images/final/WI033-DINOV2-03-r01-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        },
+        {
+          "id": "step-dinov2-4",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/foundation-vlm-open-world/dinov2/images/final/WI033-DINOV2-04-r01-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        }
+      ],
+      "chapters": [],
+      "concepts": [
+        "DINOv2：先學影像特徵，再找相似工件"
+      ],
+      "errors": [],
+      "interaction_scope": "family first",
+      "default": {
+        "overflow": false,
+        "images": {
+          "total": 10,
+          "broken": []
+        },
+        "h1": [
+          "DINOv2"
+        ]
+      },
+      "learning_checks": 1,
+      "expanded": {
+        "overflow": false,
+        "images": {
+          "total": 10,
+          "broken": []
+        },
+        "h1": [
+          "DINOv2"
+        ]
+      },
+      "main_visuals": [
+        {
+          "id": "beginner-dinov2-wi027-dinov2-c1",
+          "visible": true,
+          "images": 2
+        },
+        {
+          "id": "beginner-dinov2-wi027-dino-d2",
+          "visible": true,
+          "images": 2
+        },
+        {
+          "id": "beginner-dinov2-wi027-features-d3",
+          "visible": true,
+          "images": 2
+        }
+      ],
+      "concept_count": 3,
+      "zoom_titles": [
+        "DINOv2 · 01 先看它交出什麼",
+        "DINOv2 · 02 再看它怎麼做",
+        "DINOv2 · 03 上線前先固定條件",
+        "DINOv2 · 04 選它前先看風險"
+      ],
+      "step_links": 7
+    },
+    {
+      "topic": "dinov3",
+      "width": 390,
+      "slides": [
+        {
+          "id": "step-dinov3-1",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/foundation-vlm-open-world/dinov3/images/final/WI033-DINOV3-01-r02-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        },
+        {
+          "id": "step-dinov3-2",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/foundation-vlm-open-world/dinov3/images/final/WI033-DINOV3-02-r02-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        },
+        {
+          "id": "step-dinov3-3",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/foundation-vlm-open-world/dinov3/images/final/WI033-DINOV3-03-r01-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        },
+        {
+          "id": "step-dinov3-4",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/foundation-vlm-open-world/dinov3/images/final/WI033-DINOV3-04-r02-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        }
+      ],
+      "chapters": [],
+      "concepts": [],
+      "errors": [],
+      "interaction_scope": "rendered breadth",
+      "default": {
+        "overflow": false,
+        "images": {
+          "total": 10,
+          "broken": []
+        },
+        "h1": [
+          "DINOv3"
+        ]
+      },
+      "learning_checks": 1,
+      "expanded": {
+        "overflow": false,
+        "images": {
+          "total": 10,
+          "broken": []
+        },
+        "h1": [
+          "DINOv3"
+        ]
+      },
+      "main_visuals": [
+        {
+          "id": "beginner-dinov3-wi027-dinov3-c1",
+          "visible": true,
+          "images": 2
+        },
+        {
+          "id": "beginner-dinov3-wi027-dino-d2",
+          "visible": true,
+          "images": 2
+        },
+        {
+          "id": "beginner-dinov3-wi027-features-d3",
+          "visible": true,
+          "images": 2
+        }
+      ]
+    },
+    {
+      "topic": "clip",
+      "width": 390,
+      "slides": [
+        {
+          "id": "step-clip-1",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/foundation-vlm-open-world/clip/images/final/WI033-CLIP-01-r02-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        },
+        {
+          "id": "step-clip-2",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/foundation-vlm-open-world/clip/images/final/WI033-CLIP-02-r03-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        },
+        {
+          "id": "step-clip-3",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/foundation-vlm-open-world/clip/images/final/WI033-CLIP-03-r02-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        },
+        {
+          "id": "step-clip-4",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/foundation-vlm-open-world/clip/images/final/WI033-CLIP-04-r02-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        }
+      ],
+      "chapters": [],
+      "concepts": [],
+      "errors": [],
+      "interaction_scope": "rendered breadth",
+      "default": {
+        "overflow": false,
+        "images": {
+          "total": 10,
+          "broken": []
+        },
+        "h1": [
+          "CLIP"
+        ]
+      },
+      "learning_checks": 1,
+      "expanded": {
+        "overflow": false,
+        "images": {
+          "total": 10,
+          "broken": []
+        },
+        "h1": [
+          "CLIP"
+        ]
+      },
+      "main_visuals": [
+        {
+          "id": "beginner-clip-wi027-clip-c1",
+          "visible": true,
+          "images": 2
+        },
+        {
+          "id": "beginner-clip-wi027-alignment-d2",
+          "visible": true,
+          "images": 2
+        },
+        {
+          "id": "beginner-clip-wi027-alignment-d3",
+          "visible": true,
+          "images": 2
+        }
+      ]
+    },
+    {
+      "topic": "siglip",
+      "width": 390,
+      "slides": [
+        {
+          "id": "step-siglip-1",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/foundation-vlm-open-world/siglip/images/final/WI033-SIGLIP-01-r02-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        },
+        {
+          "id": "step-siglip-2",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/foundation-vlm-open-world/siglip/images/final/WI033-SIGLIP-02-r02-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        },
+        {
+          "id": "step-siglip-3",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/foundation-vlm-open-world/siglip/images/final/WI033-SIGLIP-03-r02-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        },
+        {
+          "id": "step-siglip-4",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/foundation-vlm-open-world/siglip/images/final/WI033-SIGLIP-04-r02-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        }
+      ],
+      "chapters": [],
+      "concepts": [],
+      "errors": [],
+      "interaction_scope": "rendered breadth",
+      "default": {
+        "overflow": false,
+        "images": {
+          "total": 10,
+          "broken": []
+        },
+        "h1": [
+          "SigLIP"
+        ]
+      },
+      "learning_checks": 1,
+      "expanded": {
+        "overflow": false,
+        "images": {
+          "total": 10,
+          "broken": []
+        },
+        "h1": [
+          "SigLIP"
+        ]
+      },
+      "main_visuals": [
+        {
+          "id": "beginner-siglip-wi027-siglip-c1",
+          "visible": true,
+          "images": 2
+        },
+        {
+          "id": "beginner-siglip-wi027-alignment-d2",
+          "visible": true,
+          "images": 2
+        },
+        {
+          "id": "beginner-siglip-wi027-alignment-d3",
+          "visible": true,
+          "images": 2
+        }
+      ]
+    },
+    {
+      "topic": "llava",
+      "width": 390,
+      "slides": [
+        {
+          "id": "step-llava-1",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/foundation-vlm-open-world/llava/images/final/WI033-LLAVA-01-r02-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        },
+        {
+          "id": "step-llava-2",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/foundation-vlm-open-world/llava/images/final/WI033-LLAVA-02-r02-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        },
+        {
+          "id": "step-llava-3",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/foundation-vlm-open-world/llava/images/final/WI033-LLAVA-03-r02-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        },
+        {
+          "id": "step-llava-4",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/foundation-vlm-open-world/llava/images/final/WI033-LLAVA-04-r01-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        }
+      ],
+      "chapters": [],
+      "concepts": [],
+      "errors": [],
+      "interaction_scope": "rendered breadth",
+      "default": {
+        "overflow": false,
+        "images": {
+          "total": 10,
+          "broken": []
+        },
+        "h1": [
+          "LLaVA"
+        ]
+      },
+      "learning_checks": 1,
+      "expanded": {
+        "overflow": false,
+        "images": {
+          "total": 10,
+          "broken": []
+        },
+        "h1": [
+          "LLaVA"
+        ]
+      },
+      "main_visuals": [
+        {
+          "id": "beginner-llava-wi027-llava-c1",
+          "visible": true,
+          "images": 2
+        },
+        {
+          "id": "beginner-llava-wi027-llava-d2",
+          "visible": true,
+          "images": 2
+        },
+        {
+          "id": "beginner-llava-wi027-vlm-d3",
+          "visible": true,
+          "images": 2
+        }
+      ]
+    },
+    {
+      "topic": "qwen-vl",
+      "width": 390,
+      "slides": [
+        {
+          "id": "step-qwen-vl-1",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/foundation-vlm-open-world/qwen-vl/images/final/WI033-QWEN-01-r01-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        },
+        {
+          "id": "step-qwen-vl-2",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/foundation-vlm-open-world/qwen-vl/images/final/WI033-QWEN-02-r02-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        },
+        {
+          "id": "step-qwen-vl-3",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/foundation-vlm-open-world/qwen-vl/images/final/WI033-QWEN-03-r01-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        },
+        {
+          "id": "step-qwen-vl-4",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/foundation-vlm-open-world/qwen-vl/images/final/WI033-QWEN-04-r01-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        }
+      ],
+      "chapters": [],
+      "concepts": [],
+      "errors": [],
+      "interaction_scope": "rendered breadth",
+      "default": {
+        "overflow": false,
+        "images": {
+          "total": 10,
+          "broken": []
+        },
+        "h1": [
+          "Qwen-VL"
+        ]
+      },
+      "learning_checks": 1,
+      "expanded": {
+        "overflow": false,
+        "images": {
+          "total": 10,
+          "broken": []
+        },
+        "h1": [
+          "Qwen-VL"
+        ]
+      },
+      "main_visuals": [
+        {
+          "id": "beginner-qwen-vl-wi027-qwen-vl-c1",
+          "visible": true,
+          "images": 2
+        },
+        {
+          "id": "beginner-qwen-vl-wi027-qwen-vl-d2",
+          "visible": true,
+          "images": 2
+        },
+        {
+          "id": "beginner-qwen-vl-wi027-vlm-d3",
+          "visible": true,
+          "images": 2
+        }
+      ]
+    },
+    {
+      "topic": "gemini-vision",
+      "width": 390,
+      "slides": [
+        {
+          "id": "step-gemini-vision-1",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/foundation-vlm-open-world/gemini-vision/images/final/WI033-GEMINI-01-r02-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        },
+        {
+          "id": "step-gemini-vision-2",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/foundation-vlm-open-world/gemini-vision/images/final/WI033-GEMINI-02-r02-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        },
+        {
+          "id": "step-gemini-vision-3",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/foundation-vlm-open-world/gemini-vision/images/final/WI033-GEMINI-03-r02-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        },
+        {
+          "id": "step-gemini-vision-4",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/foundation-vlm-open-world/gemini-vision/images/final/WI033-GEMINI-04-r01-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        }
+      ],
+      "chapters": [],
+      "concepts": [],
+      "errors": [],
+      "interaction_scope": "rendered breadth",
+      "default": {
+        "overflow": false,
+        "images": {
+          "total": 10,
+          "broken": []
+        },
+        "h1": [
+          "Gemini Vision"
+        ]
+      },
+      "learning_checks": 1,
+      "expanded": {
+        "overflow": false,
+        "images": {
+          "total": 10,
+          "broken": []
+        },
+        "h1": [
+          "Gemini Vision"
+        ]
+      },
+      "main_visuals": [
+        {
+          "id": "beginner-gemini-vision-wi027-gemini-vision-c1",
+          "visible": true,
+          "images": 2
+        },
+        {
+          "id": "beginner-gemini-vision-wi027-gemini-d2",
+          "visible": true,
+          "images": 2
+        },
+        {
+          "id": "beginner-gemini-vision-wi027-vlm-d3",
+          "visible": true,
+          "images": 2
+        }
+      ]
+    },
+    {
+      "topic": "defectfill",
+      "width": 390,
+      "slides": [
+        {
+          "id": "step-defectfill-1",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/diffusion-restoration/defectfill/images/final/WI033-DEFECTFILL-01-r01-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        },
+        {
+          "id": "step-defectfill-2",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/diffusion-restoration/defectfill/images/final/WI033-DEFECTFILL-02-r02-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        },
+        {
+          "id": "step-defectfill-3",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/diffusion-restoration/defectfill/images/final/WI033-DEFECTFILL-03-r01-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        },
+        {
+          "id": "step-defectfill-4",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/diffusion-restoration/defectfill/images/final/WI033-DEFECTFILL-04-r01-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        }
+      ],
+      "chapters": [],
+      "concepts": [
+        "DefectFill：把少量缺陷，學成可填入的外觀"
+      ],
+      "errors": [],
+      "interaction_scope": "family first",
+      "default": {
+        "overflow": false,
+        "images": {
+          "total": 10,
+          "broken": []
+        },
+        "h1": [
+          "DefectFill"
+        ]
+      },
+      "learning_checks": 1,
+      "expanded": {
+        "overflow": false,
+        "images": {
+          "total": 10,
+          "broken": []
+        },
+        "h1": [
+          "DefectFill"
+        ]
+      },
+      "main_visuals": [
+        {
+          "id": "beginner-defectfill-wi026-defectfill-c1",
+          "visible": true,
+          "images": 2
+        },
+        {
+          "id": "beginner-defectfill-wi026-defectfill-d2",
+          "visible": true,
+          "images": 2
+        },
+        {
+          "id": "beginner-defectfill-wi026-generation-d3",
+          "visible": true,
+          "images": 2
+        }
+      ],
+      "concept_count": 3,
+      "zoom_titles": [
+        "DefectFill · 01 先看它交出什麼",
+        "DefectFill · 02 再看它怎麼做",
+        "DefectFill · 03 上線前先固定條件",
+        "DefectFill · 04 選它前先看風險"
+      ],
+      "step_links": 7
+    },
+    {
+      "topic": "anomalydiffusion",
+      "width": 390,
+      "slides": [
+        {
+          "id": "step-anomalydiffusion-1",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/diffusion-restoration/anomalydiffusion/images/final/WI033-ANOMALYDIFFUSION-01-r01-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        },
+        {
+          "id": "step-anomalydiffusion-2",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/diffusion-restoration/anomalydiffusion/images/final/WI033-ANOMALYDIFFUSION-02-r02-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        },
+        {
+          "id": "step-anomalydiffusion-3",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/diffusion-restoration/anomalydiffusion/images/final/WI033-ANOMALYDIFFUSION-03-r01-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        },
+        {
+          "id": "step-anomalydiffusion-4",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/diffusion-restoration/anomalydiffusion/images/final/WI033-ANOMALYDIFFUSION-04-r01-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        }
+      ],
+      "chapters": [],
+      "concepts": [],
+      "errors": [],
+      "interaction_scope": "rendered breadth",
+      "default": {
+        "overflow": false,
+        "images": {
+          "total": 10,
+          "broken": []
+        },
+        "h1": [
+          "AnomalyDiffusion"
+        ]
+      },
+      "learning_checks": 1,
+      "expanded": {
+        "overflow": false,
+        "images": {
+          "total": 10,
+          "broken": []
+        },
+        "h1": [
+          "AnomalyDiffusion"
+        ]
+      },
+      "main_visuals": [
+        {
+          "id": "beginner-anomalydiffusion-wi026-anomalydiffusion-c1",
+          "visible": true,
+          "images": 2
+        },
+        {
+          "id": "beginner-anomalydiffusion-wi026-anomalydiffusion-d2",
+          "visible": true,
+          "images": 2
+        },
+        {
+          "id": "beginner-anomalydiffusion-wi026-generation-d3",
+          "visible": true,
+          "images": 2
+        }
+      ]
+    },
+    {
+      "topic": "tf-idg",
+      "width": 390,
+      "slides": [
+        {
+          "id": "step-tf-idg-1",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/diffusion-restoration/tf-idg/images/final/WI033-TFIDG-01-r01-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        },
+        {
+          "id": "step-tf-idg-2",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/diffusion-restoration/tf-idg/images/final/WI033-TFIDG-02-r01-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        },
+        {
+          "id": "step-tf-idg-3",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/diffusion-restoration/tf-idg/images/final/WI033-TFIDG-03-r01-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        },
+        {
+          "id": "step-tf-idg-4",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/diffusion-restoration/tf-idg/images/final/WI033-TFIDG-04-r01-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        }
+      ],
+      "chapters": [],
+      "concepts": [],
+      "errors": [],
+      "interaction_scope": "rendered breadth",
+      "default": {
+        "overflow": false,
+        "images": {
+          "total": 10,
+          "broken": []
+        },
+        "h1": [
+          "TF-IDG"
+        ]
+      },
+      "learning_checks": 1,
+      "expanded": {
+        "overflow": false,
+        "images": {
+          "total": 10,
+          "broken": []
+        },
+        "h1": [
+          "TF-IDG"
+        ]
+      },
+      "main_visuals": [
+        {
+          "id": "beginner-tf-idg-wi026-tf-idg-c1",
+          "visible": true,
+          "images": 2
+        },
+        {
+          "id": "beginner-tf-idg-wi026-tf-idg-d2",
+          "visible": true,
+          "images": 2
+        },
+        {
+          "id": "beginner-tf-idg-wi026-generation-d3",
+          "visible": true,
+          "images": 2
+        }
+      ]
+    },
+    {
+      "topic": "controlnet",
+      "width": 390,
+      "slides": [
+        {
+          "id": "step-controlnet-1",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/diffusion-restoration/controlnet/images/final/WI033-CONTROLNET-01-r01-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        },
+        {
+          "id": "step-controlnet-2",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/diffusion-restoration/controlnet/images/final/WI033-CONTROLNET-02-r02-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        },
+        {
+          "id": "step-controlnet-3",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/diffusion-restoration/controlnet/images/final/WI033-CONTROLNET-03-r01-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        },
+        {
+          "id": "step-controlnet-4",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/diffusion-restoration/controlnet/images/final/WI033-CONTROLNET-04-r01-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        }
+      ],
+      "chapters": [],
+      "concepts": [],
+      "errors": [],
+      "interaction_scope": "rendered breadth",
+      "default": {
+        "overflow": false,
+        "images": {
+          "total": 10,
+          "broken": []
+        },
+        "h1": [
+          "ControlNet"
+        ]
+      },
+      "learning_checks": 1,
+      "expanded": {
+        "overflow": false,
+        "images": {
+          "total": 10,
+          "broken": []
+        },
+        "h1": [
+          "ControlNet"
+        ]
+      },
+      "main_visuals": [
+        {
+          "id": "beginner-controlnet-wi026-controlnet-c1",
+          "visible": true,
+          "images": 2
+        },
+        {
+          "id": "beginner-controlnet-wi026-controlnet-d2",
+          "visible": true,
+          "images": 2
+        },
+        {
+          "id": "beginner-controlnet-wi026-editing-d3",
+          "visible": true,
+          "images": 2
+        }
+      ]
+    },
+    {
+      "topic": "inpainting",
+      "width": 390,
+      "slides": [
+        {
+          "id": "step-inpainting-1",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/diffusion-restoration/inpainting/images/final/WI033-INPAINTING-01-r01-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        },
+        {
+          "id": "step-inpainting-2",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/diffusion-restoration/inpainting/images/final/WI033-INPAINTING-02-r02-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        },
+        {
+          "id": "step-inpainting-3",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/diffusion-restoration/inpainting/images/final/WI033-INPAINTING-03-r01-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        },
+        {
+          "id": "step-inpainting-4",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/diffusion-restoration/inpainting/images/final/WI033-INPAINTING-04-r01-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        }
+      ],
+      "chapters": [],
+      "concepts": [],
+      "errors": [],
+      "interaction_scope": "rendered breadth",
+      "default": {
+        "overflow": false,
+        "images": {
+          "total": 10,
+          "broken": []
+        },
+        "h1": [
+          "Inpainting"
+        ]
+      },
+      "learning_checks": 1,
+      "expanded": {
+        "overflow": false,
+        "images": {
+          "total": 10,
+          "broken": []
+        },
+        "h1": [
+          "Inpainting"
+        ]
+      },
+      "main_visuals": [
+        {
+          "id": "beginner-inpainting-wi026-inpainting-c1",
+          "visible": true,
+          "images": 2
+        },
+        {
+          "id": "beginner-inpainting-wi026-inpainting-d2",
+          "visible": true,
+          "images": 2
+        },
+        {
+          "id": "beginner-inpainting-wi026-editing-d3",
+          "visible": true,
+          "images": 2
+        }
+      ]
+    },
+    {
+      "topic": "diffusion-restoration",
+      "width": 390,
+      "slides": [
+        {
+          "id": "step-diffusion-restoration-1",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/diffusion-restoration/diffusion-restoration/images/final/WI033-DIFFUSION-RESTORATION-01-r02-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        },
+        {
+          "id": "step-diffusion-restoration-2",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/diffusion-restoration/diffusion-restoration/images/final/WI033-DIFFUSION-RESTORATION-02-r01-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        },
+        {
+          "id": "step-diffusion-restoration-3",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/diffusion-restoration/diffusion-restoration/images/final/WI033-DIFFUSION-RESTORATION-03-r02-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        },
+        {
+          "id": "step-diffusion-restoration-4",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/diffusion-restoration/diffusion-restoration/images/final/WI033-DIFFUSION-RESTORATION-04-r02-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        }
+      ],
+      "chapters": [],
+      "concepts": [],
+      "errors": [],
+      "interaction_scope": "rendered breadth",
+      "default": {
+        "overflow": false,
+        "images": {
+          "total": 10,
+          "broken": []
+        },
+        "h1": [
+          "Diffusion Restoration"
+        ]
+      },
+      "learning_checks": 1,
+      "expanded": {
+        "overflow": false,
+        "images": {
+          "total": 10,
+          "broken": []
+        },
+        "h1": [
+          "Diffusion Restoration"
+        ]
+      },
+      "main_visuals": [
+        {
+          "id": "beginner-diffusion-restoration-wi026-diffusion-restoration-c1",
+          "visible": true,
+          "images": 2
+        },
+        {
+          "id": "beginner-diffusion-restoration-wi026-restoration-d2",
+          "visible": true,
+          "images": 2
+        },
+        {
+          "id": "beginner-diffusion-restoration-wi026-restoration-d3",
+          "visible": true,
+          "images": 2
+        }
+      ]
+    },
+    {
+      "topic": "deblur",
+      "width": 390,
+      "slides": [
+        {
+          "id": "step-deblur-1",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/diffusion-restoration/deblur/images/final/WI033-DEBLUR-01-r01-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        },
+        {
+          "id": "step-deblur-2",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/diffusion-restoration/deblur/images/final/WI033-DEBLUR-02-r01-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        },
+        {
+          "id": "step-deblur-3",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/diffusion-restoration/deblur/images/final/WI033-DEBLUR-03-r02-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        },
+        {
+          "id": "step-deblur-4",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/diffusion-restoration/deblur/images/final/WI033-DEBLUR-04-r01-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        }
+      ],
+      "chapters": [],
+      "concepts": [],
+      "errors": [],
+      "interaction_scope": "rendered breadth",
+      "default": {
+        "overflow": false,
+        "images": {
+          "total": 10,
+          "broken": []
+        },
+        "h1": [
+          "Deblur"
+        ]
+      },
+      "learning_checks": 1,
+      "expanded": {
+        "overflow": false,
+        "images": {
+          "total": 10,
+          "broken": []
+        },
+        "h1": [
+          "Deblur"
+        ]
+      },
+      "main_visuals": [
+        {
+          "id": "beginner-deblur-wi026-deblur-c1",
+          "visible": true,
+          "images": 2
+        },
+        {
+          "id": "beginner-deblur-wi026-deblur-d2",
+          "visible": true,
+          "images": 2
+        },
+        {
+          "id": "beginner-deblur-wi026-restoration-d3",
+          "visible": true,
+          "images": 2
+        }
+      ]
+    },
+    {
+      "topic": "super-resolution",
+      "width": 390,
+      "slides": [
+        {
+          "id": "step-super-resolution-1",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/diffusion-restoration/super-resolution/images/final/WI033-SUPERRES-01-r01-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        },
+        {
+          "id": "step-super-resolution-2",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/diffusion-restoration/super-resolution/images/final/WI033-SUPERRES-02-r01-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        },
+        {
+          "id": "step-super-resolution-3",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/diffusion-restoration/super-resolution/images/final/WI033-SUPERRES-03-r01-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        },
+        {
+          "id": "step-super-resolution-4",
+          "visible": true,
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/diffusion-restoration/super-resolution/images/final/WI033-SUPERRES-04-r01-mobile.png",
+              "ok": true,
+              "width": 322
+            }
+          ]
+        }
+      ],
+      "chapters": [],
+      "concepts": [],
+      "errors": [],
+      "interaction_scope": "rendered breadth",
+      "default": {
+        "overflow": false,
+        "images": {
+          "total": 10,
+          "broken": []
+        },
+        "h1": [
+          "Super-resolution"
+        ]
+      },
+      "learning_checks": 1,
+      "expanded": {
+        "overflow": false,
+        "images": {
+          "total": 10,
+          "broken": []
+        },
+        "h1": [
+          "Super-resolution"
+        ]
+      },
+      "main_visuals": [
+        {
+          "id": "beginner-super-resolution-wi026-super-resolution-c1",
+          "visible": true,
+          "images": 2
+        },
+        {
+          "id": "beginner-super-resolution-wi026-sr-d2",
+          "visible": true,
+          "images": 2
+        },
+        {
+          "id": "beginner-super-resolution-wi026-restoration-d3",
+          "visible": true,
+          "images": 2
+        }
+      ]
+    }
+  ],
+  "routes": [
+    {
+      "name": "home",
+      "width": 390,
+      "overflow": false,
+      "images": {
+        "total": 1,
+        "broken": []
+      },
+      "h1": [
+        "從現場問題出發，找到試做方法。"
+      ],
+      "expanded": {
+        "overflow": false,
+        "images": {
+          "total": 1,
+          "broken": []
+        },
+        "h1": [
+          "從現場問題出發，找到試做方法。"
+        ]
+      },
+      "reading_views": 0,
+      "errors": []
+    },
+    {
+      "name": "library",
+      "width": 390,
+      "overflow": false,
+      "images": {
+        "total": 0,
+        "broken": []
+      },
+      "h1": [
+        "先說你要什麼，不用先背模型名字。"
+      ],
+      "expanded": {
+        "overflow": false,
+        "images": {
+          "total": 0,
+          "broken": []
+        },
+        "h1": [
+          "先說你要什麼，不用先背模型名字。"
+        ]
+      },
+      "reading_views": 0,
+      "errors": []
+    },
+    {
+      "name": "foundations",
+      "width": 390,
+      "overflow": false,
+      "images": {
+        "total": 39,
+        "broken": []
+      },
+      "h1": [
+        "選模型之前，先把工作問題說清楚"
+      ],
+      "expanded": {
+        "overflow": false,
+        "images": {
+          "total": 39,
+          "broken": []
+        },
+        "h1": [
+          "選模型之前，先把工作問題說清楚"
+        ]
+      },
+      "reading_views": 0,
+      "errors": []
+    },
+    {
+      "name": "production",
+      "width": 390,
+      "overflow": false,
+      "images": {
+        "total": 27,
+        "broken": []
+      },
+      "h1": [
+        "模型選好後，怎麼走到現場可用？"
+      ],
+      "expanded": {
+        "overflow": false,
+        "images": {
+          "total": 27,
+          "broken": []
+        },
+        "h1": [
+          "模型選好後，怎麼走到現場可用？"
+        ]
+      },
+      "reading_views": 0,
+      "errors": []
+    },
+    {
+      "name": "glossary",
+      "width": 390,
+      "overflow": false,
+      "images": {
+        "total": 0,
+        "broken": []
+      },
+      "h1": [
+        "不用背英文，先說得出它在現場代表什麼。"
+      ],
+      "expanded": {
+        "overflow": false,
+        "images": {
+          "total": 0,
+          "broken": []
+        },
+        "h1": [
+          "不用背英文，先說得出它在現場代表什麼。"
+        ]
+      },
+      "reading_views": 0,
+      "errors": []
+    },
+    {
+      "name": "family-geometry",
+      "width": 390,
+      "overflow": false,
+      "images": {
+        "total": 7,
+        "broken": []
+      },
+      "h1": [
+        "先說你要什麼，不用先背模型名字。"
+      ],
+      "expanded": {
+        "overflow": false,
+        "images": {
+          "total": 7,
+          "broken": []
+        },
+        "h1": [
+          "先說你要什麼，不用先背模型名字。"
+        ]
+      },
+      "reading_views": 0,
+      "errors": []
+    },
+    {
+      "name": "family-classification",
+      "width": 390,
+      "overflow": false,
+      "images": {
+        "total": 6,
+        "broken": []
+      },
+      "h1": [
+        "先說你要什麼，不用先背模型名字。"
+      ],
+      "expanded": {
+        "overflow": false,
+        "images": {
+          "total": 6,
+          "broken": []
+        },
+        "h1": [
+          "先說你要什麼，不用先背模型名字。"
+        ]
+      },
+      "reading_views": 0,
+      "errors": []
+    },
+    {
+      "name": "family-detector",
+      "width": 390,
+      "overflow": false,
+      "images": {
+        "total": 6,
+        "broken": []
+      },
+      "h1": [
+        "先說你要什麼，不用先背模型名字。"
+      ],
+      "expanded": {
+        "overflow": false,
+        "images": {
+          "total": 6,
+          "broken": []
+        },
+        "h1": [
+          "先說你要什麼，不用先背模型名字。"
+        ]
+      },
+      "reading_views": 0,
+      "errors": []
+    },
+    {
+      "name": "family-anomaly",
+      "width": 390,
+      "overflow": false,
+      "images": {
+        "total": 20,
+        "broken": [
+          "course-delivery/section-pages/04-anomaly-detection/images/final/ADCMP-76-drift-rebuild_v01.png",
+          "course-delivery/section-pages/04-anomaly-detection/images/final/ADLED-04-77-evidence-bundle_v01.png",
+          "course-delivery/section-pages/04-anomaly-detection/images/final/ADCMP-77-evidence-bundle_v01.png"
+        ]
+      },
+      "h1": [
+        "先說你要什麼，不用先背模型名字。"
+      ],
+      "expanded": {
+        "overflow": false,
+        "images": {
+          "total": 20,
+          "broken": [
+            "course-delivery/section-pages/04-anomaly-detection/images/final/ADCMP-76-drift-rebuild_v01.png",
+            "course-delivery/section-pages/04-anomaly-detection/images/final/ADLED-04-77-evidence-bundle_v01.png",
+            "course-delivery/section-pages/04-anomaly-detection/images/final/ADCMP-77-evidence-bundle_v01.png"
+          ]
+        },
+        "h1": [
+          "先說你要什麼，不用先背模型名字。"
+        ]
+      },
+      "reading_views": 0,
+      "errors": []
+    },
+    {
+      "name": "family-video",
+      "width": 390,
+      "overflow": false,
+      "images": {
+        "total": 10,
+        "broken": []
+      },
+      "h1": [
+        "先說你要什麼，不用先背模型名字。"
+      ],
+      "expanded": {
+        "overflow": false,
+        "images": {
+          "total": 10,
+          "broken": []
+        },
+        "h1": [
+          "先說你要什麼，不用先背模型名字。"
+        ]
+      },
+      "reading_views": 0,
+      "errors": []
+    },
+    {
+      "name": "family-foundation",
+      "width": 390,
+      "overflow": false,
+      "images": {
+        "total": 12,
+        "broken": []
+      },
+      "h1": [
+        "先說你要什麼，不用先背模型名字。"
+      ],
+      "expanded": {
+        "overflow": false,
+        "images": {
+          "total": 12,
+          "broken": []
+        },
+        "h1": [
+          "先說你要什麼，不用先背模型名字。"
+        ]
+      },
+      "reading_views": 0,
+      "errors": []
+    },
+    {
+      "name": "family-diffusion",
+      "width": 390,
+      "overflow": false,
+      "images": {
+        "total": 5,
+        "broken": []
+      },
+      "h1": [
+        "先說你要什麼，不用先背模型名字。"
+      ],
+      "expanded": {
+        "overflow": false,
+        "images": {
+          "total": 5,
+          "broken": []
+        },
+        "h1": [
+          "先說你要什麼，不用先背模型名字。"
+        ]
+      },
+      "reading_views": 0,
+      "errors": []
+    }
+  ],
+  "screenshots": [
+    "recheck-lesson-1440-charuco.png",
+    "recheck-lesson-1440-resnet.png",
+    "recheck-flag-1440-resnet.png",
+    "recheck-flag-1440-segformer.png",
+    "recheck-lesson-1440-det-yolo-dense.png",
+    "recheck-lesson-1440-ad-patchcore.png",
+    "recheck-flag-1440-ad-patchcore.png",
+    "recheck-flag-1440-ad-anomalydino.png",
+    "recheck-flag-1440-ad-efficientad.png",
+    "recheck-lesson-1440-frame-difference.png",
+    "recheck-lesson-1440-dinov2.png",
+    "recheck-lesson-1440-defectfill.png",
+    "recheck-lesson-390-charuco.png",
+    "recheck-lesson-390-resnet.png",
+    "recheck-lesson-390-det-yolo-dense.png",
+    "recheck-lesson-390-ad-patchcore.png",
+    "recheck-lesson-390-frame-difference.png",
+    "recheck-lesson-390-dinov2.png",
+    "recheck-lesson-390-defectfill.png",
+    "recheck-route-390-home.png",
+    "recheck-route-390-library.png",
+    "recheck-route-390-foundations.png",
+    "recheck-route-390-production.png",
+    "recheck-route-390-glossary.png",
+    "recheck-route-390-family-geometry.png",
+    "recheck-route-390-family-classification.png",
+    "recheck-route-390-family-detector.png",
+    "recheck-route-390-family-anomaly.png",
+    "recheck-route-390-family-video.png",
+    "recheck-route-390-family-foundation.png",
+    "recheck-route-390-family-diffusion.png"
+  ],
+  "prior_attempts": [],
+  "fatal": null,
+  "finished": "2026-09-13 10:34:55"
+}

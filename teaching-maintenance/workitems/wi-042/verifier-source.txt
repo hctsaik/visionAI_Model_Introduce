@@ -1,0 +1,12 @@
+PASS: interactive-learning.html
+  deployed references including mobile/SVG dependencies/documents: 1370
+  topics: 58
+  topic images: 232 (accepted native dimensions)
+  concept bridge images: 0 unique / 0 lesson references (accepted native dimensions)
+  image-led first-read visuals: 178 across 58 migrated topics
+  model deep-dive visuals: 40 across 5 deep-dive topics
+  shared foundations / production / comparison images: 87 (accepted native dimensions)
+  unique desktop teaching assets across the above layers: 489
+  lesson flow: 58 model-specific lessons; optional eight-chapter deep dives; current demand-led PoC hooks present
+  offline data: embedded; no fetch()
+  HTML parser: passed

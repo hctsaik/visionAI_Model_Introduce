@@ -1,0 +1,836 @@
+{
+  "rows": [
+    {
+      "id": "charuco",
+      "links": []
+    },
+    {
+      "id": "ecc",
+      "links": []
+    },
+    {
+      "id": "sift",
+      "links": []
+    },
+    {
+      "id": "lightglue",
+      "links": []
+    },
+    {
+      "id": "resnet",
+      "links": [
+        {
+          "href": "https://arxiv.org/abs/1512.03385",
+          "text": "依據：Deep Residual Learning 論文（arXiv） ↗"
+        },
+        {
+          "href": "https://github.com/pytorch/vision/blob/v0.27.0/torchvision/models/resnet.py",
+          "text": "依據：Torchvision ResNet 原始碼 ↗"
+        },
+        {
+          "href": "https://huggingface.co/docs/transformers/model_doc/resnet",
+          "text": "依據：Hugging Face ResNet 文件 ↗"
+        },
+        {
+          "href": "https://arxiv.org/abs/1512.03385",
+          "text": "依據：Deep Residual Learning 論文（arXiv） ↗"
+        },
+        {
+          "href": "https://github.com/pytorch/vision/blob/v0.27.0/torchvision/models/resnet.py",
+          "text": "依據：Torchvision ResNet 原始碼 ↗"
+        },
+        {
+          "href": "https://arxiv.org/abs/1603.05027",
+          "text": "依據：Identity Mappings in Deep Residual Networks ↗"
+        },
+        {
+          "href": "https://arxiv.org/abs/1512.03385",
+          "text": "依據：Deep Residual Learning 論文（arXiv） ↗"
+        },
+        {
+          "href": "https://github.com/pytorch/vision/blob/v0.27.0/torchvision/models/resnet.py",
+          "text": "依據：Torchvision ResNet 原始碼 ↗"
+        },
+        {
+          "href": "https://huggingface.co/docs/transformers/model_doc/resnet",
+          "text": "依據：Hugging Face ResNet 文件 ↗"
+        },
+        {
+          "href": "https://github.com/pytorch/vision/blob/v0.27.0/torchvision/models/resnet.py",
+          "text": "依據：Torchvision ResNet 原始碼 ↗"
+        },
+        {
+          "href": "https://github.com/pytorch/pytorch/blob/v2.12.0/torch/nn/modules/batchnorm.py",
+          "text": "依據：PyTorch BatchNorm 原始碼 ↗"
+        },
+        {
+          "href": "https://arxiv.org/abs/1512.03385",
+          "text": "依據：Deep Residual Learning 論文（arXiv） ↗"
+        },
+        {
+          "href": "https://arxiv.org/abs/1610.02391",
+          "text": "依據：Grad-CAM 論文（arXiv） ↗"
+        },
+        {
+          "href": "https://arxiv.org/abs/1706.04599",
+          "text": "依據：Modern Neural Network Calibration（arXiv） ↗"
+        },
+        {
+          "href": "https://arxiv.org/abs/1610.02136",
+          "text": "依據：Baseline for OOD Detection（arXiv） ↗"
+        },
+        {
+          "href": "https://arxiv.org/abs/1512.03385",
+          "text": "依據：Deep Residual Learning 論文（arXiv） ↗"
+        },
+        {
+          "href": "https://github.com/pytorch/vision/blob/v0.27.0/torchvision/models/resnet.py",
+          "text": "依據：Torchvision ResNet 原始碼 ↗"
+        },
+        {
+          "href": "https://arxiv.org/abs/1512.03385",
+          "text": "依據：Deep Residual Learning 論文（arXiv） ↗"
+        },
+        {
+          "href": "https://github.com/facebookresearch/ConvNeXt/blob/main/models/convnext.py",
+          "text": "依據：ConvNeXt 作者原始碼 ↗"
+        },
+        {
+          "href": "https://arxiv.org/abs/2010.11929",
+          "text": "依據：ViT 原論文 ↗"
+        },
+        {
+          "href": "https://arxiv.org/abs/1512.03385",
+          "text": "Deep Residual Learning 論文（arXiv） ↗"
+        },
+        {
+          "href": "https://github.com/pytorch/vision/blob/v0.27.0/torchvision/models/resnet.py",
+          "text": "Torchvision ResNet 原始碼 ↗"
+        },
+        {
+          "href": "https://huggingface.co/docs/transformers/model_doc/resnet",
+          "text": "Hugging Face ResNet 文件 ↗"
+        },
+        {
+          "href": "https://arxiv.org/abs/1706.04599",
+          "text": "Modern Neural Network Calibration（arXiv） ↗"
+        },
+        {
+          "href": "https://arxiv.org/abs/1610.02136",
+          "text": "Baseline for OOD Detection（arXiv） ↗"
+        },
+        {
+          "href": "https://arxiv.org/abs/1610.02391",
+          "text": "Grad-CAM 論文（arXiv） ↗"
+        },
+        {
+          "href": "https://github.com/pytorch/pytorch/blob/v2.12.0/torch/nn/modules/batchnorm.py",
+          "text": "PyTorch BatchNorm 原始碼 ↗"
+        },
+        {
+          "href": "https://github.com/facebookresearch/ConvNeXt/blob/main/models/convnext.py",
+          "text": "ConvNeXt 作者原始碼 ↗"
+        },
+        {
+          "href": "https://arxiv.org/abs/2010.11929",
+          "text": "ViT 原論文 ↗"
+        },
+        {
+          "href": "https://arxiv.org/abs/1603.05027",
+          "text": "Identity Mappings in Deep Residual Networks ↗"
+        }
+      ]
+    },
+    {
+      "id": "convnext",
+      "links": []
+    },
+    {
+      "id": "vit-classifier",
+      "links": []
+    },
+    {
+      "id": "u-net",
+      "links": []
+    },
+    {
+      "id": "segformer",
+      "links": [
+        {
+          "href": "https://arxiv.org/abs/2105.15203",
+          "text": "依據：SegFormer 論文（arXiv） ↗"
+        },
+        {
+          "href": "https://huggingface.co/docs/transformers/model_doc/segformer",
+          "text": "依據：Hugging Face SegFormer 文件 ↗"
+        },
+        {
+          "href": "https://github.com/NVlabs/SegFormer",
+          "text": "依據：NVlabs 官方程式庫 ↗"
+        },
+        {
+          "href": "https://huggingface.co/docs/transformers/model_doc/segformer",
+          "text": "依據：Hugging Face SegFormer 文件 ↗"
+        },
+        {
+          "href": "https://arxiv.org/abs/2105.15203",
+          "text": "依據：SegFormer 論文（arXiv） ↗"
+        },
+        {
+          "href": "https://github.com/NVlabs/SegFormer/blob/master/mmseg/models/backbones/mix_transformer.py",
+          "text": "依據：官方 MiT backbone 原始碼 ↗"
+        },
+        {
+          "href": "https://github.com/NVlabs/SegFormer/blob/master/mmseg/models/decode_heads/segformer_head.py",
+          "text": "依據：官方 SegFormer head 原始碼 ↗"
+        },
+        {
+          "href": "https://arxiv.org/abs/2105.15203",
+          "text": "依據：SegFormer 論文（arXiv） ↗"
+        },
+        {
+          "href": "https://github.com/NVlabs/SegFormer/blob/master/mmseg/models/backbones/mix_transformer.py",
+          "text": "依據：官方 MiT backbone 原始碼 ↗"
+        },
+        {
+          "href": "https://arxiv.org/abs/2105.15203",
+          "text": "依據：SegFormer 論文（arXiv） ↗"
+        },
+        {
+          "href": "https://github.com/NVlabs/SegFormer/blob/master/mmseg/models/decode_heads/segformer_head.py",
+          "text": "依據：官方 SegFormer head 原始碼 ↗"
+        },
+        {
+          "href": "https://huggingface.co/docs/transformers/model_doc/segformer",
+          "text": "依據：Hugging Face SegFormer 文件 ↗"
+        },
+        {
+          "href": "https://github.com/NVlabs/SegFormer",
+          "text": "依據：NVlabs 官方程式庫 ↗"
+        },
+        {
+          "href": "https://huggingface.co/docs/transformers/model_doc/segformer",
+          "text": "依據：Hugging Face SegFormer 文件 ↗"
+        },
+        {
+          "href": "https://arxiv.org/abs/2105.15203",
+          "text": "依據：SegFormer 論文（arXiv） ↗"
+        },
+        {
+          "href": "https://github.com/NVlabs/SegFormer",
+          "text": "依據：NVlabs 官方程式庫 ↗"
+        },
+        {
+          "href": "https://github.com/NVlabs/SegFormer/blob/master/mmseg/models/backbones/mix_transformer.py",
+          "text": "依據：官方 MiT backbone 原始碼 ↗"
+        },
+        {
+          "href": "https://arxiv.org/abs/2105.15203",
+          "text": "依據：SegFormer 論文（arXiv） ↗"
+        },
+        {
+          "href": "https://github.com/NVlabs/SegFormer",
+          "text": "依據：NVlabs 官方程式庫 ↗"
+        },
+        {
+          "href": "https://arxiv.org/abs/2105.15203",
+          "text": "SegFormer 論文（arXiv） ↗"
+        },
+        {
+          "href": "https://github.com/NVlabs/SegFormer",
+          "text": "NVlabs 官方程式庫 ↗"
+        },
+        {
+          "href": "https://github.com/NVlabs/SegFormer/blob/master/mmseg/models/backbones/mix_transformer.py",
+          "text": "官方 MiT backbone 原始碼 ↗"
+        },
+        {
+          "href": "https://github.com/NVlabs/SegFormer/blob/master/mmseg/models/decode_heads/segformer_head.py",
+          "text": "官方 SegFormer head 原始碼 ↗"
+        },
+        {
+          "href": "https://huggingface.co/docs/transformers/model_doc/segformer",
+          "text": "Hugging Face SegFormer 文件 ↗"
+        }
+      ]
+    },
+    {
+      "id": "yolo-seg",
+      "links": []
+    },
+    {
+      "id": "keypoint-r-cnn",
+      "links": []
+    },
+    {
+      "id": "pose",
+      "links": []
+    },
+    {
+      "id": "det-yolo-dense",
+      "links": []
+    },
+    {
+      "id": "det-rtdetr",
+      "links": []
+    },
+    {
+      "id": "det-dino-detector",
+      "links": []
+    },
+    {
+      "id": "det-grounding-dino-interface",
+      "links": []
+    },
+    {
+      "id": "yolo-world",
+      "links": []
+    },
+    {
+      "id": "yoloe",
+      "links": []
+    },
+    {
+      "id": "ad-patchcore",
+      "links": [
+        {
+          "href": "https://arxiv.org/html/2106.08265v2",
+          "text": "依據：PatchCore 原論文 ↗"
+        },
+        {
+          "href": "https://github.com/amazon-science/patchcore-inspection/blob/fcaa92f124fb1ad74a7acf56726decd4b27cbcad/src/patchcore/patchcore.py",
+          "text": "依據：作者程式：PatchCore ↗"
+        },
+        {
+          "href": "https://arxiv.org/abs/2106.08265",
+          "text": "依據：F01 核心原論文 ↗"
+        },
+        {
+          "href": "https://arxiv.org/html/2106.08265v2",
+          "text": "依據：PatchCore 原論文 ↗"
+        },
+        {
+          "href": "https://github.com/amazon-science/patchcore-inspection/blob/fcaa92f124fb1ad74a7acf56726decd4b27cbcad/src/patchcore/patchcore.py",
+          "text": "依據：作者程式：PatchCore ↗"
+        },
+        {
+          "href": "https://github.com/pytorch/vision/blob/v0.27.0/torchvision/models/resnet.py",
+          "text": "依據：Torchvision ResNet50 權重說明 ↗"
+        },
+        {
+          "href": "https://arxiv.org/html/2106.08265v2",
+          "text": "依據：PatchCore 原論文 ↗"
+        },
+        {
+          "href": "https://github.com/amazon-science/patchcore-inspection/blob/fcaa92f124fb1ad74a7acf56726decd4b27cbcad/src/patchcore/sampler.py",
+          "text": "依據：作者程式：代表子集 ↗"
+        },
+        {
+          "href": "https://arxiv.org/html/2106.08265v2",
+          "text": "依據：PatchCore 原論文 ↗"
+        },
+        {
+          "href": "https://github.com/facebookresearch/faiss/wiki/MetricType-and-distances",
+          "text": "依據：FAISS 距離規則 ↗"
+        },
+        {
+          "href": "https://arxiv.org/html/2106.08265v2",
+          "text": "依據：PatchCore 原論文 ↗"
+        },
+        {
+          "href": "https://github.com/amazon-science/patchcore-inspection/blob/fcaa92f124fb1ad74a7acf56726decd4b27cbcad/src/patchcore/patchcore.py",
+          "text": "依據：作者程式：PatchCore ↗"
+        },
+        {
+          "href": "https://github.com/amazon-science/patchcore-inspection/blob/fcaa92f124fb1ad74a7acf56726decd4b27cbcad/src/patchcore/common.py",
+          "text": "依據：作者程式：距離搜尋 ↗"
+        },
+        {
+          "href": "https://github.com/facebookresearch/faiss/wiki/MetricType-and-distances",
+          "text": "依據：FAISS 距離規則 ↗"
+        },
+        {
+          "href": "https://arxiv.org/html/2106.08265v2",
+          "text": "依據：PatchCore 原論文 ↗"
+        },
+        {
+          "href": "https://github.com/amazon-science/patchcore-inspection/blob/fcaa92f124fb1ad74a7acf56726decd4b27cbcad/src/patchcore/patchcore.py",
+          "text": "依據：作者程式：PatchCore ↗"
+        },
+        {
+          "href": "https://arxiv.org/html/2106.08265v2",
+          "text": "依據：PatchCore 原論文 ↗"
+        },
+        {
+          "href": "https://arxiv.org/abs/2011.08785",
+          "text": "依據：PaDiM 原論文 ↗"
+        },
+        {
+          "href": "https://arxiv.org/abs/2303.14535",
+          "text": "依據：EfficientAD 原論文 ↗"
+        },
+        {
+          "href": "https://arxiv.org/html/2106.08265v2",
+          "text": "依據：PatchCore 原論文 ↗"
+        },
+        {
+          "href": "https://arxiv.org/html/2106.08265v2/images/false_negatives.png",
+          "text": "依據：作者原圖 FigureS2 ↗"
+        },
+        {
+          "href": "https://arxiv.org/html/2106.08265v2/images/false_positives.png",
+          "text": "依據：作者原圖 FigureS1 ↗"
+        },
+        {
+          "href": "https://github.com/mtaha-ai/industrial-anomaly-detection/blob/f19d2c6263d34c5755ab5ce7b0dbb9eb089eac88/results/figures/capsule_patchcore.png",
+          "text": "依據：第三方重現：原圖／GT／熱圖／疊圖 ↗"
+        },
+        {
+          "href": "https://github.com/mtaha-ai/industrial-anomaly-detection/blob/f19d2c6263d34c5755ab5ce7b0dbb9eb089eac88/scripts/generate_figures.py",
+          "text": "依據：第三方重現：輸出圖程式 ↗"
+        },
+        {
+          "href": "https://arxiv.org/html/2106.08265v2",
+          "text": "PatchCore 原論文 ↗"
+        },
+        {
+          "href": "https://github.com/amazon-science/patchcore-inspection/blob/fcaa92f124fb1ad74a7acf56726decd4b27cbcad/src/patchcore/patchcore.py",
+          "text": "作者程式：PatchCore ↗"
+        },
+        {
+          "href": "https://github.com/amazon-science/patchcore-inspection/blob/fcaa92f124fb1ad74a7acf56726decd4b27cbcad/src/patchcore/common.py",
+          "text": "作者程式：距離搜尋 ↗"
+        },
+        {
+          "href": "https://github.com/amazon-science/patchcore-inspection/blob/fcaa92f124fb1ad74a7acf56726decd4b27cbcad/src/patchcore/sampler.py",
+          "text": "作者程式：代表子集 ↗"
+        },
+        {
+          "href": "https://github.com/facebookresearch/faiss/wiki/MetricType-and-distances",
+          "text": "FAISS 距離規則 ↗"
+        },
+        {
+          "href": "https://arxiv.org/abs/2011.08785",
+          "text": "PaDiM 原論文 ↗"
+        },
+        {
+          "href": "https://arxiv.org/abs/2303.14535",
+          "text": "EfficientAD 原論文 ↗"
+        },
+        {
+          "href": "https://arxiv.org/html/2106.08265v2/images/sample_segmentations.png",
+          "text": "作者原圖 Figure1 ↗"
+        },
+        {
+          "href": "https://arxiv.org/html/2106.08265v2/images/false_negatives.png",
+          "text": "作者原圖 FigureS2 ↗"
+        },
+        {
+          "href": "https://arxiv.org/html/2106.08265v2/images/false_positives.png",
+          "text": "作者原圖 FigureS1 ↗"
+        },
+        {
+          "href": "https://github.com/mtaha-ai/industrial-anomaly-detection/blob/f19d2c6263d34c5755ab5ce7b0dbb9eb089eac88/results/figures/capsule_patchcore.png",
+          "text": "第三方重現：原圖／GT／熱圖／疊圖 ↗"
+        },
+        {
+          "href": "https://github.com/mtaha-ai/industrial-anomaly-detection/blob/f19d2c6263d34c5755ab5ce7b0dbb9eb089eac88/scripts/generate_figures.py",
+          "text": "第三方重現：輸出圖程式 ↗"
+        },
+        {
+          "href": "https://github.com/pytorch/vision/blob/v0.27.0/torchvision/models/resnet.py",
+          "text": "Torchvision ResNet50 權重說明 ↗"
+        },
+        {
+          "href": "https://arxiv.org/abs/2106.08265",
+          "text": "F01 核心原論文 ↗"
+        }
+      ]
+    },
+    {
+      "id": "ad-padim",
+      "links": []
+    },
+    {
+      "id": "ad-anomalydino",
+      "links": [
+        {
+          "href": "https://arxiv.org/html/2405.14529v2",
+          "text": "依據：AnomalyDINO 原論文／Figures 4、6、7 ↗"
+        },
+        {
+          "href": "https://github.com/dammsi/AnomalyDINO",
+          "text": "依據：AnomalyDINO 作者實作 ↗"
+        },
+        {
+          "href": "https://arxiv.org/abs/2405.14529",
+          "text": "依據：F01 核心原論文 ↗"
+        },
+        {
+          "href": "https://arxiv.org/html/2405.14529v2",
+          "text": "依據：AnomalyDINO 原論文／Figures 4、6、7 ↗"
+        },
+        {
+          "href": "https://github.com/dammsi/AnomalyDINO",
+          "text": "依據：AnomalyDINO 作者實作 ↗"
+        },
+        {
+          "href": "https://github.com/facebookresearch/dinov2",
+          "text": "依據：DINOv2 官方實作 ↗"
+        },
+        {
+          "href": "https://arxiv.org/html/2405.14529v2",
+          "text": "依據：AnomalyDINO 原論文／Figures 4、6、7 ↗"
+        },
+        {
+          "href": "https://github.com/dammsi/AnomalyDINO",
+          "text": "依據：AnomalyDINO 作者實作 ↗"
+        },
+        {
+          "href": "https://arxiv.org/html/2405.14529v2",
+          "text": "依據：AnomalyDINO 原論文／Figures 4、6、7 ↗"
+        },
+        {
+          "href": "https://github.com/dammsi/AnomalyDINO",
+          "text": "依據：AnomalyDINO 作者實作 ↗"
+        },
+        {
+          "href": "https://arxiv.org/html/2405.14529v2",
+          "text": "依據：AnomalyDINO 原論文／Figures 4、6、7 ↗"
+        },
+        {
+          "href": "https://github.com/dammsi/AnomalyDINO",
+          "text": "依據：AnomalyDINO 作者實作 ↗"
+        },
+        {
+          "href": "https://arxiv.org/html/2405.14529v2",
+          "text": "依據：AnomalyDINO 原論文／Figures 4、6、7 ↗"
+        },
+        {
+          "href": "https://github.com/dammsi/AnomalyDINO",
+          "text": "依據：AnomalyDINO 作者實作 ↗"
+        },
+        {
+          "href": "https://arxiv.org/html/2405.14529v2",
+          "text": "依據：AnomalyDINO 原論文／Figures 4、6、7 ↗"
+        },
+        {
+          "href": "https://github.com/dammsi/AnomalyDINO",
+          "text": "依據：AnomalyDINO 作者實作 ↗"
+        },
+        {
+          "href": "https://arxiv.org/abs/2106.08265",
+          "text": "依據：PatchCore 原論文 ↗"
+        },
+        {
+          "href": "https://arxiv.org/abs/2303.14535",
+          "text": "依據：EfficientAD 原論文 ↗"
+        },
+        {
+          "href": "https://arxiv.org/html/2405.14529v2",
+          "text": "依據：AnomalyDINO 原論文／Figures 4、6、7 ↗"
+        },
+        {
+          "href": "https://arxiv.org/html/2405.14529v2/plots/MVTec/MVTec_examples_left.png",
+          "text": "依據：Figure 4 原圖（瓶口等案例） ↗"
+        },
+        {
+          "href": "https://arxiv.org/html/2405.14529v2/plots/MVTec/MVTec_examples_right.png",
+          "text": "依據：Figure 4 原圖（磁磚等案例） ↗"
+        },
+        {
+          "href": "https://arxiv.org/html/2405.14529v2",
+          "text": "AnomalyDINO 原論文／Figures 4、6、7 ↗"
+        },
+        {
+          "href": "https://github.com/dammsi/AnomalyDINO",
+          "text": "AnomalyDINO 作者實作 ↗"
+        },
+        {
+          "href": "https://github.com/facebookresearch/dinov2",
+          "text": "DINOv2 官方實作 ↗"
+        },
+        {
+          "href": "https://arxiv.org/abs/2106.08265",
+          "text": "PatchCore 原論文 ↗"
+        },
+        {
+          "href": "https://arxiv.org/abs/2303.14535",
+          "text": "EfficientAD 原論文 ↗"
+        },
+        {
+          "href": "https://arxiv.org/html/2405.14529v2/plots/MVTec/MVTec_examples_left.png",
+          "text": "Figure 4 原圖（瓶口等案例） ↗"
+        },
+        {
+          "href": "https://arxiv.org/html/2405.14529v2/plots/MVTec/MVTec_examples_right.png",
+          "text": "Figure 4 原圖（磁磚等案例） ↗"
+        },
+        {
+          "href": "https://arxiv.org/abs/2405.14529",
+          "text": "F01 核心原論文 ↗"
+        }
+      ]
+    },
+    {
+      "id": "ad-subspacead",
+      "links": []
+    },
+    {
+      "id": "ad-stfpm",
+      "links": []
+    },
+    {
+      "id": "ad-rd4ad",
+      "links": []
+    },
+    {
+      "id": "ad-efficientad",
+      "links": [
+        {
+          "href": "https://arxiv.org/abs/2303.14535",
+          "text": "依據：EfficientAD 原論文 ↗"
+        },
+        {
+          "href": "https://arxiv.org/abs/2303.14535",
+          "text": "依據：F01 核心原論文 ↗"
+        },
+        {
+          "href": "https://arxiv.org/abs/2303.14535",
+          "text": "依據：EfficientAD 原論文 ↗"
+        },
+        {
+          "href": "https://arxiv.org/abs/2303.14535",
+          "text": "依據：EfficientAD 原論文 ↗"
+        },
+        {
+          "href": "https://arxiv.org/abs/2303.14535",
+          "text": "依據：EfficientAD 原論文 ↗"
+        },
+        {
+          "href": "https://github.com/ultralytics/ultralytics/blob/main/docs/en/tasks/segment.md",
+          "text": "依據：Ultralytics 分割說明原始文件 ↗"
+        },
+        {
+          "href": "https://arxiv.org/abs/2303.14535",
+          "text": "依據：EfficientAD 原論文 ↗"
+        },
+        {
+          "href": "https://arxiv.org/abs/2303.14535",
+          "text": "依據：EfficientAD 原論文 ↗"
+        },
+        {
+          "href": "https://arxiv.org/abs/2303.14535",
+          "text": "依據：EfficientAD 原論文 ↗"
+        },
+        {
+          "href": "https://arxiv.org/abs/2106.08265",
+          "text": "依據：PatchCore 原論文 ↗"
+        },
+        {
+          "href": "https://github.com/ultralytics/ultralytics/blob/main/docs/en/tasks/segment.md",
+          "text": "依據：Ultralytics 分割說明原始文件 ↗"
+        },
+        {
+          "href": "https://arxiv.org/abs/2303.14535",
+          "text": "依據：EfficientAD 原論文 ↗"
+        },
+        {
+          "href": "https://arxiv.org/abs/2106.08265",
+          "text": "依據：PatchCore 原論文 ↗"
+        },
+        {
+          "href": "https://github.com/ultralytics/ultralytics/blob/main/docs/en/tasks/segment.md",
+          "text": "依據：Ultralytics 分割說明原始文件 ↗"
+        },
+        {
+          "href": "https://arxiv.org/abs/2303.14535",
+          "text": "EfficientAD 原論文 ↗"
+        },
+        {
+          "href": "https://arxiv.org/abs/2106.08265",
+          "text": "PatchCore 原論文 ↗"
+        },
+        {
+          "href": "https://github.com/ultralytics/ultralytics/blob/main/docs/en/tasks/segment.md",
+          "text": "Ultralytics 分割說明原始文件 ↗"
+        },
+        {
+          "href": "https://arxiv.org/abs/2303.14535",
+          "text": "F01 核心原論文 ↗"
+        }
+      ]
+    },
+    {
+      "id": "ad-ae",
+      "links": []
+    },
+    {
+      "id": "ad-draem",
+      "links": []
+    },
+    {
+      "id": "ad-uniad",
+      "links": []
+    },
+    {
+      "id": "ad-dinomaly",
+      "links": []
+    },
+    {
+      "id": "ad-invad",
+      "links": []
+    },
+    {
+      "id": "ad-diffad",
+      "links": []
+    },
+    {
+      "id": "ad-ddad",
+      "links": []
+    },
+    {
+      "id": "ad-winclip",
+      "links": []
+    },
+    {
+      "id": "ad-anomalyclip",
+      "links": []
+    },
+    {
+      "id": "ad-anomalygpt",
+      "links": []
+    },
+    {
+      "id": "frame-difference",
+      "links": []
+    },
+    {
+      "id": "background-subtraction",
+      "links": []
+    },
+    {
+      "id": "lucas-kanade",
+      "links": []
+    },
+    {
+      "id": "raft",
+      "links": []
+    },
+    {
+      "id": "bytetrack",
+      "links": []
+    },
+    {
+      "id": "convlstm",
+      "links": []
+    },
+    {
+      "id": "videomae",
+      "links": []
+    },
+    {
+      "id": "v-jepa",
+      "links": []
+    },
+    {
+      "id": "dinov2",
+      "links": []
+    },
+    {
+      "id": "dinov3",
+      "links": []
+    },
+    {
+      "id": "clip",
+      "links": []
+    },
+    {
+      "id": "siglip",
+      "links": []
+    },
+    {
+      "id": "llava",
+      "links": []
+    },
+    {
+      "id": "qwen-vl",
+      "links": []
+    },
+    {
+      "id": "gemini-vision",
+      "links": []
+    },
+    {
+      "id": "defectfill",
+      "links": []
+    },
+    {
+      "id": "anomalydiffusion",
+      "links": []
+    },
+    {
+      "id": "tf-idg",
+      "links": []
+    },
+    {
+      "id": "controlnet",
+      "links": []
+    },
+    {
+      "id": "inpainting",
+      "links": []
+    },
+    {
+      "id": "diffusion-restoration",
+      "links": []
+    },
+    {
+      "id": "deblur",
+      "links": []
+    },
+    {
+      "id": "super-resolution",
+      "links": []
+    }
+  ],
+  "urls": [
+    "https://arxiv.org/abs/1512.03385",
+    "https://arxiv.org/abs/1603.05027",
+    "https://arxiv.org/abs/1610.02136",
+    "https://arxiv.org/abs/1610.02391",
+    "https://arxiv.org/abs/1706.04599",
+    "https://arxiv.org/abs/2010.11929",
+    "https://arxiv.org/abs/2011.08785",
+    "https://arxiv.org/abs/2105.15203",
+    "https://arxiv.org/abs/2106.08265",
+    "https://arxiv.org/abs/2303.14535",
+    "https://arxiv.org/abs/2405.14529",
+    "https://arxiv.org/html/2106.08265v2",
+    "https://arxiv.org/html/2106.08265v2/images/false_negatives.png",
+    "https://arxiv.org/html/2106.08265v2/images/false_positives.png",
+    "https://arxiv.org/html/2106.08265v2/images/sample_segmentations.png",
+    "https://arxiv.org/html/2405.14529v2",
+    "https://arxiv.org/html/2405.14529v2/plots/MVTec/MVTec_examples_left.png",
+    "https://arxiv.org/html/2405.14529v2/plots/MVTec/MVTec_examples_right.png",
+    "https://github.com/NVlabs/SegFormer",
+    "https://github.com/NVlabs/SegFormer/blob/master/mmseg/models/backbones/mix_transformer.py",
+    "https://github.com/NVlabs/SegFormer/blob/master/mmseg/models/decode_heads/segformer_head.py",
+    "https://github.com/amazon-science/patchcore-inspection/blob/fcaa92f124fb1ad74a7acf56726decd4b27cbcad/src/patchcore/common.py",
+    "https://github.com/amazon-science/patchcore-inspection/blob/fcaa92f124fb1ad74a7acf56726decd4b27cbcad/src/patchcore/patchcore.py",
+    "https://github.com/amazon-science/patchcore-inspection/blob/fcaa92f124fb1ad74a7acf56726decd4b27cbcad/src/patchcore/sampler.py",
+    "https://github.com/dammsi/AnomalyDINO",
+    "https://github.com/facebookresearch/ConvNeXt/blob/main/models/convnext.py",
+    "https://github.com/facebookresearch/dinov2",
+    "https://github.com/facebookresearch/faiss/wiki/MetricType-and-distances",
+    "https://github.com/mtaha-ai/industrial-anomaly-detection/blob/f19d2c6263d34c5755ab5ce7b0dbb9eb089eac88/results/figures/capsule_patchcore.png",
+    "https://github.com/mtaha-ai/industrial-anomaly-detection/blob/f19d2c6263d34c5755ab5ce7b0dbb9eb089eac88/scripts/generate_figures.py",
+    "https://github.com/pytorch/pytorch/blob/v2.12.0/torch/nn/modules/batchnorm.py",
+    "https://github.com/pytorch/vision/blob/v0.27.0/torchvision/models/resnet.py",
+    "https://github.com/ultralytics/ultralytics/blob/main/docs/en/tasks/segment.md",
+    "https://huggingface.co/docs/transformers/model_doc/resnet",
+    "https://huggingface.co/docs/transformers/model_doc/segformer"
+  ],
+  "malformed_composite_candidates": [],
+  "validation": "58 actual rendered expanded lesson DOM hrefs; no network refetch"
+}

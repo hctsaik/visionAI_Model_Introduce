@@ -1,0 +1,296 @@
+{
+  "started": "2026-09-13 10:17:36",
+  "lessons": [
+    {
+      "topic": "charuco",
+      "width": 390,
+      "slides": [
+        {
+          "slide": "1",
+          "title": "ChArUco · 01 先看它交出什麼",
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/geometry-alignment-measurement/charuco/images/final/WI032-CHARUCO-01-r04-mobile.png",
+              "ok": true
+            }
+          ],
+          "prev_disabled": true,
+          "next_disabled": false
+        },
+        {
+          "slide": "2",
+          "title": "ChArUco · 02 再看它怎麼做",
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/geometry-alignment-measurement/charuco/images/final/WI032-CHARUCO-02-r04-mobile.png",
+              "ok": true
+            }
+          ],
+          "prev_disabled": false,
+          "next_disabled": false
+        },
+        {
+          "slide": "3",
+          "title": "ChArUco · 03 上線前先固定條件",
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/geometry-alignment-measurement/charuco/images/final/WI032-CHARUCO-03-r04-mobile.png",
+              "ok": true
+            }
+          ],
+          "prev_disabled": false,
+          "next_disabled": false
+        },
+        {
+          "slide": "4",
+          "title": "ChArUco · 04 選它前先看風險",
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/geometry-alignment-measurement/charuco/images/final/WI032-CHARUCO-04-r04-mobile.png",
+              "ok": true
+            }
+          ],
+          "prev_disabled": false,
+          "next_disabled": true
+        }
+      ],
+      "concepts": [
+        {
+          "index": 0,
+          "title": "ChArUco：用已知角點，建立相機幾何",
+          "broken": 0
+        },
+        {
+          "index": 1,
+          "title": "只拍中心，邊角誤差可能沒有被看見",
+          "broken": 0
+        },
+        {
+          "index": 2,
+          "title": "幾何四種工具，負責的工作不同",
+          "broken": 0
+        }
+      ],
+      "chapters": [],
+      "errors": [],
+      "default": {
+        "overflow": false,
+        "images": {
+          "total": 10,
+          "broken": []
+        },
+        "h1": [
+          "ChArUco"
+        ]
+      },
+      "learning_checks": 0,
+      "expanded": {
+        "overflow": false,
+        "images": {
+          "total": 10,
+          "broken": []
+        },
+        "h1": [
+          "ChArUco"
+        ]
+      },
+      "step_links": 7
+    },
+    {
+      "topic": "ecc",
+      "width": 390,
+      "slides": [
+        {
+          "slide": "1",
+          "title": "ECC · 01 先看它交出什麼",
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/geometry-alignment-measurement/ecc/images/final/WI032-ECC-01-r04-mobile.png",
+              "ok": true
+            }
+          ],
+          "prev_disabled": true,
+          "next_disabled": false
+        },
+        {
+          "slide": "2",
+          "title": "ECC · 02 再看它怎麼做",
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/geometry-alignment-measurement/ecc/images/final/WI032-ECC-02-r04-mobile.png",
+              "ok": true
+            }
+          ],
+          "prev_disabled": false,
+          "next_disabled": false
+        },
+        {
+          "slide": "3",
+          "title": "ECC · 03 上線前先固定條件",
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/geometry-alignment-measurement/ecc/images/final/WI032-ECC-03-r04-mobile.png",
+              "ok": true
+            }
+          ],
+          "prev_disabled": false,
+          "next_disabled": false
+        },
+        {
+          "slide": "4",
+          "title": "ECC · 04 選它前先看風險",
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/geometry-alignment-measurement/ecc/images/final/WI032-ECC-04-r04-mobile.png",
+              "ok": true
+            }
+          ],
+          "prev_disabled": false,
+          "next_disabled": true
+        }
+      ],
+      "concepts": [
+        {
+          "index": 0,
+          "title": "ECC：依外觀微調幾何對齊",
+          "broken": 0
+        },
+        {
+          "index": 1,
+          "title": "起點太遠，ECC可能對錯位置",
+          "broken": 0
+        },
+        {
+          "index": 2,
+          "title": "幾何四種工具，負責的工作不同",
+          "broken": 0
+        }
+      ],
+      "chapters": [],
+      "errors": [],
+      "default": {
+        "overflow": false,
+        "images": {
+          "total": 10,
+          "broken": []
+        },
+        "h1": [
+          "ECC"
+        ]
+      },
+      "learning_checks": 0,
+      "expanded": {
+        "overflow": false,
+        "images": {
+          "total": 10,
+          "broken": []
+        },
+        "h1": [
+          "ECC"
+        ]
+      },
+      "step_links": 7
+    },
+    {
+      "topic": "sift",
+      "width": 390,
+      "slides": [
+        {
+          "slide": "1",
+          "title": "SIFT · 01 先看它交出什麼",
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/geometry-alignment-measurement/sift/images/final/WI032-SIFT-01-r06-mobile.png",
+              "ok": true
+            }
+          ],
+          "prev_disabled": true,
+          "next_disabled": false
+        },
+        {
+          "slide": "2",
+          "title": "SIFT · 02 再看它怎麼做",
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/geometry-alignment-measurement/sift/images/final/WI032-SIFT-02-r04-mobile.png",
+              "ok": true
+            }
+          ],
+          "prev_disabled": false,
+          "next_disabled": false
+        },
+        {
+          "slide": "3",
+          "title": "SIFT · 03 上線前先固定條件",
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/geometry-alignment-measurement/sift/images/final/WI032-SIFT-03-r04-mobile.png",
+              "ok": true
+            }
+          ],
+          "prev_disabled": false,
+          "next_disabled": false
+        },
+        {
+          "slide": "4",
+          "title": "SIFT · 04 選它前先看風險",
+          "images": [
+            {
+              "src": "http://127.0.0.1:8000/docs/roadmap-model-selection/geometry-alignment-measurement/sift/images/final/WI032-SIFT-04-r04-mobile.png",
+              "ok": true
+            }
+          ],
+          "prev_disabled": false,
+          "next_disabled": true
+        }
+      ],
+      "concepts": [
+        {
+          "index": 0,
+          "title": "SIFT：用局部方向線索，找兩張圖的對應",
+          "broken": 0
+        },
+        {
+          "index": 1,
+          "title": "模糊會抹掉SIFT需要的局部線索",
+          "broken": 0
+        },
+        {
+          "index": 2,
+          "title": "幾何四種工具，負責的工作不同",
+          "broken": 0
+        }
+      ],
+      "chapters": [],
+      "errors": [],
+      "default": {
+        "overflow": false,
+        "images": {
+          "total": 10,
+          "broken": []
+        },
+        "h1": [
+          "SIFT"
+        ]
+      },
+      "learning_checks": 0,
+      "expanded": {
+        "overflow": false,
+        "images": {
+          "total": 10,
+          "broken": []
+        },
+        "h1": [
+          "SIFT"
+        ]
+      },
+      "step_links": 7
+    }
+  ],
+  "routes": [],
+  "screenshots": [
+    "lesson-390-charuco.png"
+  ],
+  "fatal": "Traceback (most recent call last):\n  File \"C:\\code\\claude\\visionAI\\teaching-images\\vision-ai-model-selection\\workitems\\wi-041\\audit-mobile.py\", line 62, in <module>\n    ledger['lessons'].append(row);save();print(width,tid,'FAIL' if row.get('failure') else 'ok',flush=True)\n                                         ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nOSError: [Errno 22] Invalid argument\n",
+  "finished": "2026-09-13 10:18:12"
+}

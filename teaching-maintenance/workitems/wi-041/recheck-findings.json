@@ -1,0 +1,338 @@
+[
+  {
+    "topic": "ad-diffad",
+    "title": "DiffusionAD",
+    "mechanism": [
+      {
+        "title": "鎖定 one-step norm-guided diffusion recipe",
+        "body": "以乾淨 normal support 訓練並保存 denoiser、noise schedule、固定 timestep、norm guidance、precision、loss、seed、ROI/transform 和 checkpoint。",
+        "why": "one-step 的定義、重建品質與成本都由這組 state 決定；不能以多步 sampler 的畫面或延遲替代它。",
+        "anchor": "工程圖核對：normal support → fixed timestep/norm guidance → denoiser",
+        "diagram": {
+          "why": "不能用多步 sampler 替代它的成本。",
+          "title": "鎖定 one-step 去噪 recipe",
+          "anchor": "normal support → one-step denoiser",
+          "body": "normal support 建立固定 timestep 與 norm guidance。"
+        }
+      },
+      {
+        "title": "測試圖一次 forward 得到 restoration",
+        "body": "test ROI 依同一 recipe 經 one-step denoiser 產生 normal-like restoration，保存 input/restoration pair。",
+        "why": "restoration 只是供比較的對照；它可能保留 defect、消除正常 microstructure 或產生自己特有的 artefact。",
+        "anchor": "工程圖核對：test image → one-step restoration",
+        "diagram": {
+          "why": "restoration 可能保留缺陷或製造 artefact。",
+          "title": "一次 forward 得 restoration",
+          "anchor": "test image → restoration",
+          "body": "test ROI 經 one-step denoiser 形成 normal-like 對照。"
+        }
+      },
+      {
+        "title": "segmentation head 同看原圖和對照",
+        "body": "將 test image 與 restoration 的聯合表示送進 discriminative segmentation path，輸出 pixel anomaly map。",
+        "why": "DiffusionAD 的 local evidence 不等於直接相減；segmentation supervision、joint input 與其 synthetic/real policy 決定模型學到什麼。",
+        "anchor": "工程圖核對：input + restoration → segmentation map",
+        "diagram": {
+          "why": "local evidence 不只是 raw residual。",
+          "title": "joint input 產生 segmentation",
+          "anchor": "input + restoration → map",
+          "body": "原圖與 restoration 一起輸出 pixel anomaly map。"
+        }
+      },
+      {
+        "title": "map 經固定後處理才成 candidate",
+        "body": "map 依鎖定 smoothing、resize、mask、aggregation、calibration、threshold 與 decision unit 成為 review candidate。",
+        "why": "後處理可以隱藏小 anomaly 或改低 FPR；one-step forward 很快也不代表 acquisition 到 hand-off 的完整 P95 可接受。",
+        "anchor": "工程圖核對：map → aggregation → calibrated gate",
+        "diagram": {
+          "why": "後處理與完整 P95 都會改部署行為。",
+          "title": "固定 map rule 交 review",
+          "anchor": "map → calibration → gate",
+          "body": "segmentation map 經校正與聚合形成候選。"
+        }
+      }
+    ],
+    "default_contains_once_forward": false,
+    "expanded_contains_once_forward": true
+  },
+  {
+    "topic": "u-net",
+    "title": "U-Net",
+    "mechanism": [
+      {
+        "title": "像素標註教任務",
+        "body": "下採樣讓表示整合更大範圍，但細節會變粗；圖中同一彎焊縫在不同尺度追蹤。",
+        "why": "由本課核心機制連接工作用途",
+        "anchor": "WI030-1",
+        "diagram": {
+          "why": "詳見本課版本與來源",
+          "title": "像素標註教任務",
+          "anchor": "WI030-1",
+          "body": "下採樣讓表示整合更大範圍，但細節會變粗；圖中同一彎焊縫在不同尺度追蹤。"
+        }
+      },
+      {
+        "title": "縮小理解，再接回細節",
+        "body": "對應尺度特徵在解碼側合併，再產生語意遮罩。能保留線索不代表邊界自動精準。",
+        "why": "由本課核心機制連接工作用途",
+        "anchor": "WI030-2",
+        "diagram": {
+          "why": "詳見本課版本與來源",
+          "title": "縮小理解，再接回細節",
+          "anchor": "WI030-2",
+          "body": "對應尺度特徵在解碼側合併，再產生語意遮罩。能保留線索不代表邊界自動精準。"
+        }
+      },
+      {
+        "title": "交出區域遮罩",
+        "body": "逐像素類別與預測區域遮罩，交邊界核對或後續量測；實體尺寸需另外校正與驗證。",
+        "why": "由本課核心機制連接工作用途",
+        "anchor": "WI030-3",
+        "diagram": {
+          "why": "詳見本課版本與來源",
+          "title": "交出區域遮罩",
+          "anchor": "WI030-3",
+          "body": "逐像素類別與預測區域遮罩，交邊界核對或後續量測；實體尺寸需另外校正與驗證。"
+        }
+      },
+      {
+        "title": "工作核對與接手",
+        "body": "用獨立影像和人工核對遮罩，分開量區域重疊、細焊縫漏失及邊界偏差；需尺寸時另做相機與尺度校正。記錄解析度、裁切、拼接與整段耗時。示意遮罩不是推論。",
+        "why": "由本課核心機制連接工作用途",
+        "anchor": "WI030-4",
+        "diagram": {
+          "why": "詳見本課版本與來源",
+          "title": "工作核對與接手",
+          "anchor": "WI030-4",
+          "body": "用獨立影像和人工核對遮罩，分開量區域重疊、細焊縫漏失及邊界偏差；需尺寸時另做相機與尺度校正。記錄解析度、裁切、拼接與整段耗時。示意遮罩不是推論。"
+        }
+      }
+    ],
+    "default_contains_once_forward": false,
+    "expanded_contains_once_forward": false
+  },
+  {
+    "topic": "yolo-seg",
+    "title": "YOLO-Seg",
+    "mechanism": [
+      {
+        "title": "先有實例標註",
+        "body": "原型提供共同基底，A和B各自一組係數形成各自遮罩；兩路不是先算A再把剩下區域當B。",
+        "why": "由本課核心機制連接工作用途",
+        "anchor": "WI030-1",
+        "diagram": {
+          "why": "詳見本課版本與來源",
+          "title": "先有實例標註",
+          "anchor": "WI030-1",
+          "body": "原型提供共同基底，A和B各自一組係數形成各自遮罩；兩路不是先算A再把剩下區域當B。"
+        }
+      },
+      {
+        "title": "共享底圖，各自組合",
+        "body": "輸出依賴偵測與遮罩品質，重疊、遮擋及小物件可造成漏檢；計數另需定義可見與允收規則。",
+        "why": "由本課核心機制連接工作用途",
+        "anchor": "WI030-2",
+        "diagram": {
+          "why": "詳見本課版本與來源",
+          "title": "共享底圖，各自組合",
+          "anchor": "WI030-2",
+          "body": "輸出依賴偵測與遮罩品質，重疊、遮擋及小物件可造成漏檢；計數另需定義可見與允收規則。"
+        }
+      },
+      {
+        "title": "分開每一件",
+        "body": "每件框、類別與獨立遮罩，供逐件核對和計數；A/B是實例ID，不代表不同產品類別或跨影格身分。",
+        "why": "由本課核心機制連接工作用途",
+        "anchor": "WI030-3",
+        "diagram": {
+          "why": "詳見本課版本與來源",
+          "title": "分開每一件",
+          "anchor": "WI030-3",
+          "body": "每件框、類別與獨立遮罩，供逐件核對和計數；A/B是實例ID，不代表不同產品類別或跨影格身分。"
+        }
+      },
+      {
+        "title": "工作核對與接手",
+        "body": "保存真實原圖與逐件標註，量物件召回、錯誤合併／切分、遮罩品質和計數誤差；孔洞保留需求另驗，示意圖不是模型結果。",
+        "why": "由本課核心機制連接工作用途",
+        "anchor": "WI030-4",
+        "diagram": {
+          "why": "詳見本課版本與來源",
+          "title": "工作核對與接手",
+          "anchor": "WI030-4",
+          "body": "保存真實原圖與逐件標註，量物件召回、錯誤合併／切分、遮罩品質和計數誤差；孔洞保留需求另驗，示意圖不是模型結果。"
+        }
+      }
+    ],
+    "default_contains_once_forward": false,
+    "expanded_contains_once_forward": false
+  },
+  {
+    "topic": "ad-efficientad",
+    "title": "EfficientAD",
+    "mechanism": [
+      {
+        "title": "正常資料教學生",
+        "body": "教師和學生看同一待測圖，對照局部特徵差。小型PDN和精簡學生降低運算需求，但實際耗時仍取決於解析度、硬體與整段流程。",
+        "why": "由本課核心機制連接工作用途",
+        "anchor": "WI030-1",
+        "diagram": {
+          "why": "詳見本課版本與來源",
+          "title": "正常資料教學生",
+          "anchor": "WI030-1",
+          "body": "教師和學生看同一待測圖，對照局部特徵差。小型PDN和精簡學生降低運算需求，但實際耗時仍取決於解析度、硬體與整段流程。"
+        }
+      },
+      {
+        "title": "局部與全域兩路",
+        "body": "autoencoder以較整體的表示重建教師特徵，再與學生另一輸出比較；以正常驗證資料校準兩路分數，避免某一路只因數值尺度大而主導。",
+        "why": "由本課核心機制連接工作用途",
+        "anchor": "WI030-2",
+        "diagram": {
+          "why": "詳見本課版本與來源",
+          "title": "局部與全域兩路",
+          "anchor": "WI030-2",
+          "body": "autoencoder以較整體的表示重建教師特徵，再與學生另一輸出比較；以正常驗證資料校準兩路分數，避免某一路只因數值尺度大而主導。"
+        }
+      },
+      {
+        "title": "校準後回查",
+        "body": "合併的異常熱圖與影像分數，交人確認污點或漏裝；不保證所有邏輯錯誤都能找到。",
+        "why": "由本課核心機制連接工作用途",
+        "anchor": "WI030-3",
+        "diagram": {
+          "why": "詳見本課版本與來源",
+          "title": "校準後回查",
+          "anchor": "WI030-3",
+          "body": "合併的異常熱圖與影像分數，交人確認污點或漏裝；不保證所有邏輯錯誤都能找到。"
+        }
+      },
+      {
+        "title": "工作核對與接手",
+        "body": "保存真實原圖、版本、正常資料切分、熱圖與覆核結果；同批獨立正常／缺陷樣本分開計誤報、漏檢，並量包含取像、前處理、模型與交接的耗時及記憶體。圖中熱區不是模型推論。",
+        "why": "由本課核心機制連接工作用途",
+        "anchor": "WI030-4",
+        "diagram": {
+          "why": "詳見本課版本與來源",
+          "title": "工作核對與接手",
+          "anchor": "WI030-4",
+          "body": "保存真實原圖、版本、正常資料切分、熱圖與覆核結果；同批獨立正常／缺陷樣本分開計誤報、漏檢，並量包含取像、前處理、模型與交接的耗時及記憶體。圖中熱區不是模型推論。"
+        }
+      }
+    ],
+    "default_contains_once_forward": false,
+    "expanded_contains_once_forward": false
+  },
+  {
+    "topic": "convlstm",
+    "title": "ConvLSTM",
+    "mechanism": [
+      {
+        "title": "連續影格的空間線索",
+        "body": "隱藏狀態與記憶不是把舊影格直接存成照片。它們由訓練目標決定保留哪些時間與空間線索。",
+        "why": "由本課核心機制連接工作用途",
+        "anchor": "WI028-1",
+        "diagram": {
+          "why": "詳見本課版本與來源",
+          "title": "連續影格的空間線索",
+          "anchor": "WI028-1",
+          "body": "隱藏狀態與記憶不是把舊影格直接存成照片。它們由訓練目標決定保留哪些時間與空間線索。"
+        }
+      },
+      {
+        "title": "卷積更新狀態",
+        "body": "原始論文以降雨預測為例；本課夾爪階段為工業改編，需要影像編碼、ConvLSTM與相應任務頭及訓練。",
+        "why": "由本課核心機制連接工作用途",
+        "anchor": "WI028-2",
+        "diagram": {
+          "why": "詳見本課版本與來源",
+          "title": "卷積更新狀態",
+          "anchor": "WI028-2",
+          "body": "原始論文以降雨預測為例；本課夾爪階段為工業改編，需要影像編碼、ConvLSTM與相應任務頭及訓練。"
+        }
+      },
+      {
+        "title": "任務頭判讀片段",
+        "body": "本例將時序狀態交給另行訓練的任務頭，產生夾取階段候選；其他接法可預測影像等，但不是單元自動具有的所有能力。",
+        "why": "由本課核心機制連接工作用途",
+        "anchor": "WI028-3",
+        "diagram": {
+          "why": "詳見本課版本與來源",
+          "title": "任務頭判讀片段",
+          "anchor": "WI028-3",
+          "body": "本例將時序狀態交給另行訓練的任務頭，產生夾取階段候選；其他接法可預測影像等，但不是單元自動具有的所有能力。"
+        }
+      },
+      {
+        "title": "工作核對與接手",
+        "body": "比較漏掉的階段、錯誤切換、事件延遲和完整運算成本；用丟幀／片段邊界負例檢查模型是否依賴正確時間線索。",
+        "why": "由本課核心機制連接工作用途",
+        "anchor": "WI028-4",
+        "diagram": {
+          "why": "詳見本課版本與來源",
+          "title": "工作核對與接手",
+          "anchor": "WI028-4",
+          "body": "比較漏掉的階段、錯誤切換、事件延遲和完整運算成本；用丟幀／片段邊界負例檢查模型是否依賴正確時間線索。"
+        }
+      }
+    ],
+    "default_contains_once_forward": false,
+    "expanded_contains_once_forward": false
+  },
+  {
+    "topic": "videomae",
+    "title": "VideoMAE",
+    "mechanism": [
+      {
+        "title": "影片遮住大部分時空塊",
+        "body": "預訓練的目標來自影片原始像素，不需要先有人為每片標動作；補圖好看不自動代表動作判得準。",
+        "why": "由本課核心機制連接工作用途",
+        "anchor": "WI028-1",
+        "diagram": {
+          "why": "詳見本課版本與來源",
+          "title": "影片遮住大部分時空塊",
+          "anchor": "WI028-1",
+          "body": "預訓練的目標來自影片原始像素，不需要先有人為每片標動作；補圖好看不自動代表動作判得準。"
+        }
+      },
+      {
+        "title": "只編碼可見塊再重建",
+        "body": "部署動作任務一般保留編碼器，接有標註資料訓練的任務頭，按方案微調；不需要把重建解碼器一直放在分類路徑。",
+        "why": "由本課核心機制連接工作用途",
+        "anchor": "WI028-2",
+        "diagram": {
+          "why": "詳見本課版本與來源",
+          "title": "只編碼可見塊再重建",
+          "anchor": "WI028-2",
+          "body": "部署動作任務一般保留編碼器，接有標註資料訓練的任務頭，按方案微調；不需要把重建解碼器一直放在分類路徑。"
+        }
+      },
+      {
+        "title": "影片特徵接任務頭",
+        "body": "影片特徵，以及本例下游任務頭的夾取階段候選。不是原生缺陷mask、物件ID或未經訓練的異常分數。",
+        "why": "由本課核心機制連接工作用途",
+        "anchor": "WI028-3",
+        "diagram": {
+          "why": "詳見本課版本與來源",
+          "title": "影片特徵接任務頭",
+          "anchor": "WI028-3",
+          "body": "影片特徵，以及本例下游任務頭的夾取階段候選。不是原生缺陷mask、物件ID或未經訓練的異常分數。"
+        }
+      },
+      {
+        "title": "工作核對與接手",
+        "body": "固定工作資料與時間窗口，和單張、簡單時序及其他影片特徵基準比較動作混淆、短事件漏報、延遲和標註維護量。",
+        "why": "由本課核心機制連接工作用途",
+        "anchor": "WI028-4",
+        "diagram": {
+          "why": "詳見本課版本與來源",
+          "title": "工作核對與接手",
+          "anchor": "WI028-4",
+          "body": "固定工作資料與時間窗口，和單張、簡單時序及其他影片特徵基準比較動作混淆、短事件漏報、延遲和標註維護量。"
+        }
+      }
+    ],
+    "default_contains_once_forward": false,
+    "expanded_contains_once_forward": false
+  }
+]

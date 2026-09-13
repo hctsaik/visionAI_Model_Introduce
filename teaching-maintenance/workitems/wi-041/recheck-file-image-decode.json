@@ -1,0 +1,5726 @@
+[
+  {
+    "width": 1440,
+    "topic": "charuco",
+    "images": [
+      {
+        "src": "_course_content/generated-concepts/charuco/wi032-charuco-core-r05-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/charuco/wi032-charuco-core-r05-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/charuco/wi032-charuco-failure-native-r05-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/charuco/wi032-charuco-failure-native-r05-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ecc/wi032-geometry-compare-native-r05-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ecc/wi032-geometry-compare-native-r05-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/geometry-alignment-measurement/charuco/images/final/WI032-CHARUCO-01-r04-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/geometry-alignment-measurement/charuco/images/final/WI032-CHARUCO-02-r04-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/geometry-alignment-measurement/charuco/images/final/WI032-CHARUCO-03-r04-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/geometry-alignment-measurement/charuco/images/final/WI032-CHARUCO-04-r04-desktop.png",
+        "ok": true
+      }
+    ],
+    "overflow": false
+  },
+  {
+    "width": 1440,
+    "topic": "ecc",
+    "images": [
+      {
+        "src": "_course_content/generated-concepts/ecc/wi032-ecc-core-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ecc/wi032-ecc-core-r01-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ecc/wi032-ecc-failure-native-r05-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ecc/wi032-ecc-failure-native-r05-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ecc/wi032-geometry-compare-native-r05-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ecc/wi032-geometry-compare-native-r05-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/geometry-alignment-measurement/ecc/images/final/WI032-ECC-01-r04-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/geometry-alignment-measurement/ecc/images/final/WI032-ECC-02-r04-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/geometry-alignment-measurement/ecc/images/final/WI032-ECC-03-r04-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/geometry-alignment-measurement/ecc/images/final/WI032-ECC-04-r04-desktop.png",
+        "ok": true
+      }
+    ],
+    "overflow": false
+  },
+  {
+    "width": 1440,
+    "topic": "sift",
+    "images": [
+      {
+        "src": "_course_content/generated-concepts/sift/wi032-sift-core-native-r05-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/sift/wi032-sift-core-native-r05-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/sift/wi032-sift-failure-native-r05-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/sift/wi032-sift-failure-native-r05-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ecc/wi032-geometry-compare-native-r05-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ecc/wi032-geometry-compare-native-r05-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/geometry-alignment-measurement/sift/images/final/WI032-SIFT-01-r06-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/geometry-alignment-measurement/sift/images/final/WI032-SIFT-02-r04-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/geometry-alignment-measurement/sift/images/final/WI032-SIFT-03-r04-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/geometry-alignment-measurement/sift/images/final/WI032-SIFT-04-r04-desktop.png",
+        "ok": true
+      }
+    ],
+    "overflow": false
+  },
+  {
+    "width": 1440,
+    "topic": "lightglue",
+    "images": [
+      {
+        "src": "_course_content/generated-concepts/lightglue/wi032-lightglue-core-native-r05-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/lightglue/wi032-lightglue-core-native-r05-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/lightglue/wi032-lightglue-failure-native-r05-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/lightglue/wi032-lightglue-failure-native-r05-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ecc/wi032-geometry-compare-native-r05-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ecc/wi032-geometry-compare-native-r05-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/geometry-alignment-measurement/lightglue/images/final/WI032-LIGHTGLUE-01-r04-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/geometry-alignment-measurement/lightglue/images/final/WI032-LIGHTGLUE-02-r04-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/geometry-alignment-measurement/lightglue/images/final/WI032-LIGHTGLUE-03-r04-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/geometry-alignment-measurement/lightglue/images/final/WI032-LIGHTGLUE-04-r04-desktop.png",
+        "ok": true
+      }
+    ],
+    "overflow": false
+  },
+  {
+    "width": 1440,
+    "topic": "resnet",
+    "images": [
+      {
+        "src": "_course_content/generated-concepts/resnet/wi030-resnet-c1-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/resnet/wi030-resnet-c1-r02-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/resnet/wi030-class-d2-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/resnet/wi030-class-d2-r03-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/resnet/wi030-class-d3-r05-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/resnet/wi030-class-d3-r06-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/resnet/wi033-resnet-deep-skip-r01-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/resnet/wi033-resnet-deep-residual-r02-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/resnet/wi033-resnet-deep-bn-r02-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/resnet/wi033-resnet-deep-residual-r02-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/resnet/wi033-resnet-deep-cnx-spatial-r02-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/resnet/wi033-resnet-deep-cnx-channel-r02-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/resnet/wi033-resnet-deep-vit-attention-r01-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/known-target-classification/resnet/images/final/WI033-RESNET-01-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/known-target-classification/resnet/images/final/WI033-RESNET-02-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/known-target-classification/resnet/images/final/WI033-RESNET-03-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/known-target-classification/resnet/images/final/WI033-RESNET-04-r01-desktop.png",
+        "ok": true
+      }
+    ],
+    "overflow": false
+  },
+  {
+    "width": 1440,
+    "topic": "convnext",
+    "images": [
+      {
+        "src": "_course_content/generated-concepts/convnext/wi030-convnext-c1-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/convnext/wi030-convnext-c1-r02-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/resnet/wi030-class-d2-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/resnet/wi030-class-d2-r03-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/resnet/wi030-class-d3-r05-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/resnet/wi030-class-d3-r06-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/known-target-classification/convnext/images/final/WI033-CONVNEXT-01-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/known-target-classification/convnext/images/final/WI033-CONVNEXT-02-r03-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/known-target-classification/convnext/images/final/WI033-CONVNEXT-03-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/known-target-classification/convnext/images/final/WI033-CONVNEXT-04-r01-desktop.png",
+        "ok": true
+      }
+    ],
+    "overflow": false
+  },
+  {
+    "width": 1440,
+    "topic": "vit-classifier",
+    "images": [
+      {
+        "src": "_course_content/generated-concepts/vit-classifier/wi030-vit-c1-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/vit-classifier/wi030-vit-c1-r02-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/resnet/wi030-class-d2-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/resnet/wi030-class-d2-r03-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/resnet/wi030-class-d3-r05-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/resnet/wi030-class-d3-r06-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/known-target-classification/vit-classifier/images/final/WI033-VIT-01-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/known-target-classification/vit-classifier/images/final/WI033-VIT-02-r03-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/known-target-classification/vit-classifier/images/final/WI033-VIT-03-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/known-target-classification/vit-classifier/images/final/WI033-VIT-04-r02-desktop.png",
+        "ok": true
+      }
+    ],
+    "overflow": false
+  },
+  {
+    "width": 1440,
+    "topic": "u-net",
+    "images": [
+      {
+        "src": "_course_content/generated-concepts/u-net/wi030-unet-c1-r04-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/u-net/wi030-unet-c1-r04-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/u-net/wi030-seg-d2-r03-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/u-net/wi030-seg-d2-r03-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/u-net/wi030-seg-d3-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/u-net/wi030-seg-d3-r01-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/known-target-classification/u-net/images/final/WI033-UNET-01-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/known-target-classification/u-net/images/final/WI033-UNET-02-r03-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/known-target-classification/u-net/images/final/WI033-UNET-03-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/known-target-classification/u-net/images/final/WI033-UNET-04-r01-desktop.png",
+        "ok": true
+      }
+    ],
+    "overflow": false
+  },
+  {
+    "width": 1440,
+    "topic": "segformer",
+    "images": [
+      {
+        "src": "_course_content/generated-concepts/segformer/wi030-segformer-c1-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/segformer/wi030-segformer-c1-r02-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/u-net/wi030-seg-d2-r03-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/u-net/wi030-seg-d2-r03-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/u-net/wi030-seg-d3-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/u-net/wi030-seg-d3-r01-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/segformer/wi033-segformer-deep-core-r04-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/segformer/wi033-segformer-deep-task-r01-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/segformer/wi033-segformer-deep-scales-r01-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/segformer/wi033-segformer-deep-sr-r02-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/segformer/wi033-segformer-deep-decoder-r03-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/known-target-classification/segformer/images/final/WI033-SEGFORMER-01-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/known-target-classification/segformer/images/final/WI033-SEGFORMER-02-r03-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/known-target-classification/segformer/images/final/WI033-SEGFORMER-03-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/known-target-classification/segformer/images/final/WI033-SEGFORMER-04-r02-desktop.png",
+        "ok": true
+      }
+    ],
+    "overflow": false
+  },
+  {
+    "width": 1440,
+    "topic": "yolo-seg",
+    "images": [
+      {
+        "src": "_course_content/generated-concepts/yolo-seg/wi030-yoloseg-c1-r07-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/yolo-seg/wi030-yoloseg-c1-r06-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/yolo-seg/wi030-instance-d2-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/yolo-seg/wi030-instance-d2-r04-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/u-net/wi030-seg-d3-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/u-net/wi030-seg-d3-r01-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/known-target-classification/yolo-seg/images/final/WI033-YOLOSEG-01-r03-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/known-target-classification/yolo-seg/images/final/WI033-YOLOSEG-02-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/known-target-classification/yolo-seg/images/final/WI033-YOLOSEG-03-r03-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/known-target-classification/yolo-seg/images/final/WI033-YOLOSEG-04-r03-desktop.png",
+        "ok": true
+      }
+    ],
+    "overflow": false
+  },
+  {
+    "width": 1440,
+    "topic": "keypoint-r-cnn",
+    "images": [
+      {
+        "src": "_course_content/generated-concepts/keypoint-r-cnn/wi030-key-c1-r04-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/keypoint-r-cnn/wi030-key-c1-r05-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/pose/wi030-pose-d2-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/pose/wi030-pose-d2-r02-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/pose/wi030-pose-d3-r03-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/pose/wi030-pose-d3-r03-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/known-target-classification/keypoint-r-cnn/images/final/WI033-KPRCNN-01-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/known-target-classification/keypoint-r-cnn/images/final/WI033-KPRCNN-02-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/known-target-classification/keypoint-r-cnn/images/final/WI033-KPRCNN-03-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/known-target-classification/keypoint-r-cnn/images/final/WI033-KPRCNN-04-r01-desktop.png",
+        "ok": true
+      }
+    ],
+    "overflow": false
+  },
+  {
+    "width": 1440,
+    "topic": "pose",
+    "images": [
+      {
+        "src": "_course_content/generated-concepts/pose/wi030-pose-c1-r03-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/pose/wi030-pose-c1-r04-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/pose/wi030-pose-d2-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/pose/wi030-pose-d2-r02-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/pose/wi030-pose-d3-r03-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/pose/wi030-pose-d3-r03-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/known-target-classification/pose/images/final/WI033-POSE-01-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/known-target-classification/pose/images/final/WI033-POSE-02-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/known-target-classification/pose/images/final/WI033-POSE-03-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/known-target-classification/pose/images/final/WI033-POSE-04-r01-desktop.png",
+        "ok": true
+      }
+    ],
+    "overflow": false
+  },
+  {
+    "width": 1440,
+    "topic": "det-yolo-dense",
+    "images": [
+      {
+        "src": "_course_content/generated-concepts/det-yolo-dense/wi024-yolo-c1-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/det-yolo-dense/wi024-yolo-c1-r01-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/det-yolo-dense/wi024-yolo-d2-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/det-yolo-dense/wi024-yolo-d2-r01-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/det-yolo-dense/wi024-known-d3-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/det-yolo-dense/wi024-known-d3-r01-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/detector/det-yolo-dense/images/final/WI033-YOLO-01-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/detector/det-yolo-dense/images/final/WI033-YOLO-02-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/detector/det-yolo-dense/images/final/WI033-YOLO-03-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/detector/det-yolo-dense/images/final/WI033-YOLO-04-r01-desktop.png",
+        "ok": true
+      }
+    ],
+    "overflow": false
+  },
+  {
+    "width": 1440,
+    "topic": "det-rtdetr",
+    "images": [
+      {
+        "src": "_course_content/generated-concepts/det-rtdetr/wi024-rtdetr-c1-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/det-rtdetr/wi024-rtdetr-c1-r01-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/det-rtdetr/wi024-rtdetr-d2-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/det-rtdetr/wi024-rtdetr-d2-r02-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/det-yolo-dense/wi024-known-d3-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/det-yolo-dense/wi024-known-d3-r01-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/detector/det-rtdetr/images/final/WI033-RTDETR-01-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/detector/det-rtdetr/images/final/WI033-RTDETR-02-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/detector/det-rtdetr/images/final/WI033-RTDETR-03-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/detector/det-rtdetr/images/final/WI033-RTDETR-04-r01-desktop.png",
+        "ok": true
+      }
+    ],
+    "overflow": false
+  },
+  {
+    "width": 1440,
+    "topic": "det-dino-detector",
+    "images": [
+      {
+        "src": "_course_content/generated-concepts/det-dino-detector/wi032-dino-core-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/det-dino-detector/wi032-dino-core-r02-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/det-dino-detector/wi032-dino-failure-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/det-dino-detector/wi032-dino-failure-r04-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/det-dino-detector/wi032-detector-compare-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/det-dino-detector/wi032-detector-compare-r02-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/detector/det-dino-detector/images/final/WI032-DINO-DET-01-r04-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/detector/det-dino-detector/images/final/WI032-DINO-DET-02-r04-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/detector/det-dino-detector/images/final/WI032-DINO-DET-03-r04-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/detector/det-dino-detector/images/final/WI032-DINO-DET-04-r04-desktop.png",
+        "ok": true
+      }
+    ],
+    "overflow": false
+  },
+  {
+    "width": 1440,
+    "topic": "det-grounding-dino-interface",
+    "images": [
+      {
+        "src": "_course_content/generated-concepts/det-grounding-dino-interface/wi024-grounding-c1-r03-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/det-grounding-dino-interface/wi024-grounding-c1-r01-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/det-grounding-dino-interface/wi024-grounding-d2-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/det-grounding-dino-interface/wi024-grounding-d2-r01-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/det-grounding-dino-interface/wi024-prompt-d3-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/det-grounding-dino-interface/wi024-prompt-d3-r01-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/detector/det-grounding-dino-interface/images/final/WI033-GROUNDING-DINO-01-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/detector/det-grounding-dino-interface/images/final/WI033-GROUNDING-DINO-02-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/detector/det-grounding-dino-interface/images/final/WI033-GROUNDING-DINO-03-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/detector/det-grounding-dino-interface/images/final/WI033-GROUNDING-DINO-04-r01-desktop.png",
+        "ok": true
+      }
+    ],
+    "overflow": false
+  },
+  {
+    "width": 1440,
+    "topic": "yolo-world",
+    "images": [
+      {
+        "src": "_course_content/generated-concepts/yolo-world/wi032-world-core-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/yolo-world/wi032-world-core-r02-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/yolo-world/wi032-world-failure-r03-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/yolo-world/wi032-world-failure-r03-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/det-dino-detector/wi032-detector-compare-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/det-dino-detector/wi032-detector-compare-r02-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/detector/yolo-world/images/final/WI032-YOLOWORLD-01-r04-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/detector/yolo-world/images/final/WI032-YOLOWORLD-02-r05-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/detector/yolo-world/images/final/WI032-YOLOWORLD-03-r07-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/detector/yolo-world/images/final/WI032-YOLOWORLD-04-r04-desktop.png",
+        "ok": true
+      }
+    ],
+    "overflow": false
+  },
+  {
+    "width": 1440,
+    "topic": "yoloe",
+    "images": [
+      {
+        "src": "_course_content/generated-concepts/yoloe/wi024-yoloe-c1-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/yoloe/wi024-yoloe-c1-r01-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/yoloe/wi024-yoloe-d2-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/yoloe/wi024-yoloe-d2-r01-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/det-grounding-dino-interface/wi024-prompt-d3-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/det-grounding-dino-interface/wi024-prompt-d3-r01-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/detector/yoloe/images/final/WI033-YOLOE-01-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/detector/yoloe/images/final/WI033-YOLOE-02-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/detector/yoloe/images/final/WI033-YOLOE-03-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/detector/yoloe/images/final/WI033-YOLOE-04-r01-desktop.png",
+        "ok": true
+      }
+    ],
+    "overflow": false
+  },
+  {
+    "width": 1440,
+    "topic": "ad-patchcore",
+    "images": [
+      {
+        "src": "_course_content/generated-concepts/ad-patchcore/wi030-patch-c1-r04-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-patchcore/wi030-patch-c1-r02-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-patchcore/wi030-ad-d2-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-patchcore/wi030-ad-d2-r02-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-patchcore/wi030-ad-d3-r04-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-patchcore/wi030-ad-d3-r03-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-patchcore/wi033-patchcore-deep-features-r02-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-patchcore/wi033-patchcore-deep-context-r01-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/anomaly-detection/ad-patchcore/images/final/WI033-PATCHCORE-01-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/anomaly-detection/ad-patchcore/images/final/WI033-PATCHCORE-02-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/anomaly-detection/ad-patchcore/images/final/WI033-PATCHCORE-03-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/anomaly-detection/ad-patchcore/images/final/WI033-PATCHCORE-04-r01-desktop.png",
+        "ok": true
+      }
+    ],
+    "overflow": false
+  },
+  {
+    "width": 1440,
+    "topic": "ad-padim",
+    "images": [
+      {
+        "src": "_course_content/generated-concepts/ad-padim/wi030-padim-c1-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-padim/wi030-padim-c1-r03-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-patchcore/wi030-ad-d2-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-patchcore/wi030-ad-d2-r02-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-patchcore/wi030-ad-d3-r04-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-patchcore/wi030-ad-d3-r03-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/anomaly-detection/ad-padim/images/final/WI033-PADIM-01-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/anomaly-detection/ad-padim/images/final/WI033-PADIM-02-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/anomaly-detection/ad-padim/images/final/WI033-PADIM-03-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/anomaly-detection/ad-padim/images/final/WI033-PADIM-04-r01-desktop.png",
+        "ok": true
+      }
+    ],
+    "overflow": false
+  },
+  {
+    "width": 1440,
+    "topic": "ad-anomalydino",
+    "images": [
+      {
+        "src": "_course_content/generated-concepts/ad-anomalydino/wi030-dino-c1-r03-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-anomalydino/wi030-dino-c1-r05-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-patchcore/wi030-ad-d2-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-patchcore/wi030-ad-d2-r02-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-patchcore/wi030-ad-d3-r04-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-patchcore/wi030-ad-d3-r03-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-anomalydino/wi033-adino-deep-rotation-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-anomalydino/wi033-adino-deep-rotation-r02-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/anomaly-detection/ad-anomalydino/images/final/WI033-ANOMALYDINO-01-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/anomaly-detection/ad-anomalydino/images/final/WI033-ANOMALYDINO-02-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/anomaly-detection/ad-anomalydino/images/final/WI033-ANOMALYDINO-03-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/anomaly-detection/ad-anomalydino/images/final/WI033-ANOMALYDINO-04-r01-desktop.png",
+        "ok": true
+      }
+    ],
+    "overflow": false
+  },
+  {
+    "width": 1440,
+    "topic": "ad-subspacead",
+    "images": [
+      {
+        "src": "_course_content/generated-concepts/ad-subspacead/wi021-subspacead-c1-r03-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-subspacead/wi021-subspacead-c1-r02-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-subspacead/wi021-subspacead-d2-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-subspacead/wi021-subspacead-d2-r01-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-stfpm/wi021-feature-methods-d3-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-stfpm/wi021-feature-methods-d3-r03-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/anomaly-detection/ad-subspacead/images/final/WI033-SUBSPACEAD-01-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/anomaly-detection/ad-subspacead/images/final/WI033-SUBSPACEAD-02-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/anomaly-detection/ad-subspacead/images/final/WI033-SUBSPACEAD-03-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/anomaly-detection/ad-subspacead/images/final/WI033-SUBSPACEAD-04-r01-desktop.png",
+        "ok": true
+      }
+    ],
+    "overflow": false
+  },
+  {
+    "width": 1440,
+    "topic": "ad-stfpm",
+    "images": [
+      {
+        "src": "_course_content/generated-concepts/ad-stfpm/wi021-stfpm-c1-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-stfpm/wi021-stfpm-c1-r01-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-stfpm/wi021-stfpm-d2-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-stfpm/wi021-stfpm-d2-r01-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-stfpm/wi021-feature-methods-d3-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-stfpm/wi021-feature-methods-d3-r03-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/anomaly-detection/ad-stfpm/images/final/WI033-STFPM-01-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/anomaly-detection/ad-stfpm/images/final/WI033-STFPM-02-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/anomaly-detection/ad-stfpm/images/final/WI033-STFPM-03-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/anomaly-detection/ad-stfpm/images/final/WI033-STFPM-04-r01-desktop.png",
+        "ok": true
+      }
+    ],
+    "overflow": false
+  },
+  {
+    "width": 1440,
+    "topic": "ad-rd4ad",
+    "images": [
+      {
+        "src": "_course_content/generated-concepts/ad-rd4ad/wi021-rd4ad-c1-r04-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-rd4ad/wi021-rd4ad-c1-r01-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-rd4ad/wi021-rd4ad-c2-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-rd4ad/wi021-rd4ad-c2-r01-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-rd4ad/wi021-rd4ad-d3-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-rd4ad/wi021-rd4ad-d3-r01-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-ae/wi021-ae-d5-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-ae/wi021-ae-d5-r02-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/anomaly-detection/ad-rd4ad/images/final/WI033-RD4AD-01-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/anomaly-detection/ad-rd4ad/images/final/WI033-RD4AD-02-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/anomaly-detection/ad-rd4ad/images/final/WI033-RD4AD-03-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/anomaly-detection/ad-rd4ad/images/final/WI033-RD4AD-04-r01-desktop.png",
+        "ok": true
+      }
+    ],
+    "overflow": false
+  },
+  {
+    "width": 1440,
+    "topic": "ad-efficientad",
+    "images": [
+      {
+        "src": "_course_content/generated-concepts/ad-efficientad/wi030-efficient-c1-r06-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-efficientad/wi030-efficient-c1-r05-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-efficientad/wi033-eff-main-failure-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-efficientad/wi033-eff-main-failure-r01-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-patchcore/wi030-ad-d3-r04-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-patchcore/wi030-ad-d3-r03-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-efficientad/wi033-eff-deep-01-core-r02-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-efficientad/wi033-eff-deep-01-work-r02-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-efficientad/wi033-eff-deep-02-data-r01-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-efficientad/wi033-eff-deep-03-meaning-r02-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-efficientad/wi033-eff-deep-04-output-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-efficientad/wi033-eff-deep-04-output-r01-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-efficientad/wi033-eff-deep-05-limits-r01-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-efficientad/wi033-eff-deep-07-comparison-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-efficientad/wi033-eff-deep-07-comparison-r01-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-efficientad/wi033-eff-deep-08-transfer-r01-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/anomaly-detection/ad-efficientad/images/final/WI033-EFFICIENTAD-01-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/anomaly-detection/ad-efficientad/images/final/WI033-EFFICIENTAD-02-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/anomaly-detection/ad-efficientad/images/final/WI033-EFFICIENTAD-03-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/anomaly-detection/ad-efficientad/images/final/WI033-EFFICIENTAD-04-r01-desktop.png",
+        "ok": true
+      }
+    ],
+    "overflow": false
+  },
+  {
+    "width": 1440,
+    "topic": "ad-ae",
+    "images": [
+      {
+        "src": "_course_content/generated-concepts/ad-ae/wi021-ae-c1-r02.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-ae/wi021-ae-c1-r04-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-ae/wi021-ae-c2-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-ae/wi021-ae-c2-r02-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-ae/wi021-ae-c3-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-ae/wi021-ae-c3-r01-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-ae/wi021-ae-d4-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-ae/wi021-ae-d4-r01-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-ae/wi021-ae-d5-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-ae/wi021-ae-d5-r02-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/anomaly-detection/ad-ae/images/final/WI033-AE-01-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/anomaly-detection/ad-ae/images/final/WI033-AE-02-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/anomaly-detection/ad-ae/images/final/WI033-AE-03-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/anomaly-detection/ad-ae/images/final/WI033-AE-04-r01-desktop.png",
+        "ok": true
+      }
+    ],
+    "overflow": false
+  },
+  {
+    "width": 1440,
+    "topic": "ad-draem",
+    "images": [
+      {
+        "src": "_course_content/generated-concepts/ad-draem/wi021-draem-c1-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-draem/wi021-draem-c1-r01-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-draem/wi021-draem-c2-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-draem/wi021-draem-c2-r03-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-draem/wi021-draem-d3-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-draem/wi021-draem-d3-r01-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-ae/wi021-ae-d5-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-ae/wi021-ae-d5-r02-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/anomaly-detection/ad-draem/images/final/WI033-DRAEM-01-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/anomaly-detection/ad-draem/images/final/WI033-DRAEM-02-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/anomaly-detection/ad-draem/images/final/WI033-DRAEM-03-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/anomaly-detection/ad-draem/images/final/WI033-DRAEM-04-r01-desktop.png",
+        "ok": true
+      }
+    ],
+    "overflow": false
+  },
+  {
+    "width": 1440,
+    "topic": "ad-uniad",
+    "images": [
+      {
+        "src": "_course_content/generated-concepts/ad-uniad/wi021-uniad-c1-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-uniad/wi021-uniad-c1-r02-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-dinomaly/wi021-multi-reconstruction-d2-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-dinomaly/wi021-multi-reconstruction-d2-r03-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-dinomaly/wi021-multi-reconstruction-d3-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-dinomaly/wi021-multi-reconstruction-d3-r02-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/anomaly-detection/ad-uniad/images/final/WI033-UNIAD-01-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/anomaly-detection/ad-uniad/images/final/WI033-UNIAD-02-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/anomaly-detection/ad-uniad/images/final/WI033-UNIAD-03-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/anomaly-detection/ad-uniad/images/final/WI033-UNIAD-04-r01-desktop.png",
+        "ok": true
+      }
+    ],
+    "overflow": false
+  },
+  {
+    "width": 1440,
+    "topic": "ad-dinomaly",
+    "images": [
+      {
+        "src": "_course_content/generated-concepts/ad-dinomaly/wi021-dinomaly-c1-r04-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-dinomaly/wi021-dinomaly-c1-r01-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-dinomaly/wi021-multi-reconstruction-d2-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-dinomaly/wi021-multi-reconstruction-d2-r03-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-dinomaly/wi021-multi-reconstruction-d3-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-dinomaly/wi021-multi-reconstruction-d3-r02-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/anomaly-detection/ad-dinomaly/images/final/WI033-DINOMALY-01-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/anomaly-detection/ad-dinomaly/images/final/WI033-DINOMALY-02-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/anomaly-detection/ad-dinomaly/images/final/WI033-DINOMALY-03-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/anomaly-detection/ad-dinomaly/images/final/WI033-DINOMALY-04-r01-desktop.png",
+        "ok": true
+      }
+    ],
+    "overflow": false
+  },
+  {
+    "width": 1440,
+    "topic": "ad-invad",
+    "images": [
+      {
+        "src": "_course_content/generated-concepts/ad-invad/wi021-invad-c1-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-invad/wi021-invad-c1-r03-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-dinomaly/wi021-multi-reconstruction-d2-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-dinomaly/wi021-multi-reconstruction-d2-r03-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-dinomaly/wi021-multi-reconstruction-d3-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-dinomaly/wi021-multi-reconstruction-d3-r02-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/anomaly-detection/ad-invad/images/final/WI033-INVAD-01-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/anomaly-detection/ad-invad/images/final/WI033-INVAD-02-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/anomaly-detection/ad-invad/images/final/WI033-INVAD-03-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/anomaly-detection/ad-invad/images/final/WI033-INVAD-04-r01-desktop.png",
+        "ok": true
+      }
+    ],
+    "overflow": false
+  },
+  {
+    "width": 1440,
+    "topic": "ad-diffad",
+    "images": [
+      {
+        "src": "_course_content/generated-concepts/ad-diffad/wi021-diffusionad-c1-r04-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-diffad/wi021-diffusionad-c1-r03-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-ddad/wi021-diffusion-methods-d2-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-ddad/wi021-diffusion-methods-d2-r03-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-ddad/wi021-diffusion-methods-d3-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-ddad/wi021-diffusion-methods-d3-r04-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/anomaly-detection/ad-diffad/images/final/WI033-DIFFAD-01-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/anomaly-detection/ad-diffad/images/final/WI033-DIFFAD-02-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/anomaly-detection/ad-diffad/images/final/WI033-DIFFAD-03-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/anomaly-detection/ad-diffad/images/final/WI033-DIFFAD-04-r02-desktop.png",
+        "ok": true
+      }
+    ],
+    "overflow": false
+  },
+  {
+    "width": 1440,
+    "topic": "ad-ddad",
+    "images": [
+      {
+        "src": "_course_content/generated-concepts/ad-ddad/wi021-ddad-c1-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-ddad/wi021-ddad-c1-r02-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-ddad/wi021-diffusion-methods-d2-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-ddad/wi021-diffusion-methods-d2-r03-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-ddad/wi021-diffusion-methods-d3-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-ddad/wi021-diffusion-methods-d3-r04-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/anomaly-detection/ad-ddad/images/final/WI033-DDAD-01-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/anomaly-detection/ad-ddad/images/final/WI033-DDAD-02-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/anomaly-detection/ad-ddad/images/final/WI033-DDAD-03-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/anomaly-detection/ad-ddad/images/final/WI033-DDAD-04-r02-desktop.png",
+        "ok": true
+      }
+    ],
+    "overflow": false
+  },
+  {
+    "width": 1440,
+    "topic": "ad-winclip",
+    "images": [
+      {
+        "src": "_course_content/generated-concepts/ad-winclip/wi021-winclip-c1-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-winclip/wi021-winclip-c1-r01-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-anomalyclip/wi021-clip-methods-d2-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-anomalyclip/wi033-clip-shared-errors-r02-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-anomalyclip/wi021-clip-methods-d3-r04-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-anomalyclip/wi033-clip-shared-methods-r01-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/anomaly-detection/ad-winclip/images/final/WI033-WINCLIP-01-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/anomaly-detection/ad-winclip/images/final/WI033-WINCLIP-02-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/anomaly-detection/ad-winclip/images/final/WI033-WINCLIP-03-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/anomaly-detection/ad-winclip/images/final/WI033-WINCLIP-04-r02-desktop.png",
+        "ok": true
+      }
+    ],
+    "overflow": false
+  },
+  {
+    "width": 1440,
+    "topic": "ad-anomalyclip",
+    "images": [
+      {
+        "src": "_course_content/generated-concepts/ad-anomalyclip/wi021-anomalyclip-c1-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-anomalyclip/wi021-anomalyclip-c1-r02-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-anomalyclip/wi021-clip-methods-d2-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-anomalyclip/wi033-clip-shared-errors-r02-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-anomalyclip/wi021-clip-methods-d3-r04-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-anomalyclip/wi033-clip-shared-methods-r01-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/anomaly-detection/ad-anomalyclip/images/final/WI033-ANOCLIP-01-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/anomaly-detection/ad-anomalyclip/images/final/WI033-ANOCLIP-02-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/anomaly-detection/ad-anomalyclip/images/final/WI033-ANOCLIP-03-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/anomaly-detection/ad-anomalyclip/images/final/WI033-ANOCLIP-04-r02-desktop.png",
+        "ok": true
+      }
+    ],
+    "overflow": false
+  },
+  {
+    "width": 1440,
+    "topic": "ad-anomalygpt",
+    "images": [
+      {
+        "src": "_course_content/generated-concepts/ad-anomalygpt/wi021-anomalygpt-c1-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-anomalygpt/wi033-core-r01-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-anomalygpt/wi021-anomalygpt-d2-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-anomalygpt/wi033-failure-r01-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-anomalyclip/wi021-clip-methods-d3-r04-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-anomalygpt/wi033-comparison-r01-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/anomaly-detection/ad-anomalygpt/images/final/WI033-ANOGPT-01-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/anomaly-detection/ad-anomalygpt/images/final/WI033-ANOGPT-02-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/anomaly-detection/ad-anomalygpt/images/final/WI033-ANOGPT-03-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/anomaly-detection/ad-anomalygpt/images/final/WI033-ANOGPT-04-r01-desktop.png",
+        "ok": true
+      }
+    ],
+    "overflow": false
+  },
+  {
+    "width": 1440,
+    "topic": "frame-difference",
+    "images": [
+      {
+        "src": "_course_content/generated-concepts/frame-difference/wi028-frame-c1-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/frame-difference/wi028-frame-c1-r02-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/frame-difference/wi028-frame-d2-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/frame-difference/wi028-frame-d2-r01-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/frame-difference/wi028-change-d3-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/frame-difference/wi028-change-d3-r03-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/video-temporal/frame-difference/images/final/WI033-FRAMEDIFF-01-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/video-temporal/frame-difference/images/final/WI033-FRAMEDIFF-02-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/video-temporal/frame-difference/images/final/WI033-FRAMEDIFF-03-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/video-temporal/frame-difference/images/final/WI033-FRAMEDIFF-04-r02-desktop.png",
+        "ok": true
+      }
+    ],
+    "overflow": false
+  },
+  {
+    "width": 1440,
+    "topic": "background-subtraction",
+    "images": [
+      {
+        "src": "_course_content/generated-concepts/background-subtraction/wi028-bg-c1-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/background-subtraction/wi028-bg-c1-r01-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/background-subtraction/wi028-bg-d2-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/background-subtraction/wi028-bg-d2-r01-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/frame-difference/wi028-change-d3-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/frame-difference/wi028-change-d3-r03-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/video-temporal/background-subtraction/images/final/WI033-BGSUB-01-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/video-temporal/background-subtraction/images/final/WI033-BGSUB-02-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/video-temporal/background-subtraction/images/final/WI033-BGSUB-03-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/video-temporal/background-subtraction/images/final/WI033-BGSUB-04-r02-desktop.png",
+        "ok": true
+      }
+    ],
+    "overflow": false
+  },
+  {
+    "width": 1440,
+    "topic": "lucas-kanade",
+    "images": [
+      {
+        "src": "_course_content/generated-concepts/lucas-kanade/wi028-lk-c1-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/lucas-kanade/wi028-lk-c1-r03-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/lucas-kanade/wi033-flow-main-failure-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/lucas-kanade/wi033-flow-main-failure-r02-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/lucas-kanade/wi028-flow-d3-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/lucas-kanade/wi028-flow-d3-r01-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/video-temporal/lucas-kanade/images/final/WI033-LK-01-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/video-temporal/lucas-kanade/images/final/WI033-LK-02-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/video-temporal/lucas-kanade/images/final/WI033-LK-03-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/video-temporal/lucas-kanade/images/final/WI033-LK-04-r02-desktop.png",
+        "ok": true
+      }
+    ],
+    "overflow": false
+  },
+  {
+    "width": 1440,
+    "topic": "raft",
+    "images": [
+      {
+        "src": "_course_content/generated-concepts/raft/wi028-raft-c1-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/raft/wi028-raft-c1-r01-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/lucas-kanade/wi033-flow-main-failure-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/lucas-kanade/wi033-flow-main-failure-r02-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/lucas-kanade/wi028-flow-d3-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/lucas-kanade/wi028-flow-d3-r01-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/video-temporal/raft/images/final/WI033-RAFT-01-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/video-temporal/raft/images/final/WI033-RAFT-02-r03-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/video-temporal/raft/images/final/WI033-RAFT-03-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/video-temporal/raft/images/final/WI033-RAFT-04-r02-desktop.png",
+        "ok": true
+      }
+    ],
+    "overflow": false
+  },
+  {
+    "width": 1440,
+    "topic": "bytetrack",
+    "images": [
+      {
+        "src": "_course_content/generated-concepts/bytetrack/wi028-byte-c1-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/bytetrack/wi028-byte-c1-r03-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/bytetrack/wi028-byte-d2-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/bytetrack/wi028-byte-d2-r01-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/bytetrack/wi028-track-d3-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/bytetrack/wi028-track-d3-r02-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/video-temporal/bytetrack/images/final/WI033-BYTETRACK-01-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/video-temporal/bytetrack/images/final/WI033-BYTETRACK-02-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/video-temporal/bytetrack/images/final/WI033-BYTETRACK-03-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/video-temporal/bytetrack/images/final/WI033-BYTETRACK-04-r01-desktop.png",
+        "ok": true
+      }
+    ],
+    "overflow": false
+  },
+  {
+    "width": 1440,
+    "topic": "convlstm",
+    "images": [
+      {
+        "src": "_course_content/generated-concepts/convlstm/wi028-conv-c1-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/convlstm/wi028-conv-c1-r01-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/convlstm/wi028-conv-d2-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/convlstm/wi028-conv-d2-r01-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/convlstm/wi028-video-d3-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/convlstm/wi028-video-d3-r02-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/video-temporal/convlstm/images/final/WI033-CONVLSTM-01-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/video-temporal/convlstm/images/final/WI033-CONVLSTM-02-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/video-temporal/convlstm/images/final/WI033-CONVLSTM-03-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/video-temporal/convlstm/images/final/WI033-CONVLSTM-04-r01-desktop.png",
+        "ok": true
+      }
+    ],
+    "overflow": false
+  },
+  {
+    "width": 1440,
+    "topic": "videomae",
+    "images": [
+      {
+        "src": "_course_content/generated-concepts/videomae/wi028-mae-c1-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/videomae/wi028-mae-c1-r05-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/videomae/wi028-video-d2-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/videomae/wi028-video-d2-r01-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/convlstm/wi028-video-d3-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/convlstm/wi028-video-d3-r02-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/video-temporal/videomae/images/final/WI033-VIDEOMAE-01-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/video-temporal/videomae/images/final/WI033-VIDEOMAE-02-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/video-temporal/videomae/images/final/WI033-VIDEOMAE-03-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/video-temporal/videomae/images/final/WI033-VIDEOMAE-04-r02-desktop.png",
+        "ok": true
+      }
+    ],
+    "overflow": false
+  },
+  {
+    "width": 1440,
+    "topic": "v-jepa",
+    "images": [
+      {
+        "src": "_course_content/generated-concepts/v-jepa/wi028-jepa-c1-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/v-jepa/wi028-jepa-c1-r02-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/videomae/wi028-video-d2-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/videomae/wi028-video-d2-r01-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/convlstm/wi028-video-d3-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/convlstm/wi028-video-d3-r02-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/video-temporal/v-jepa/images/final/WI033-VJEPA-01-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/video-temporal/v-jepa/images/final/WI033-VJEPA-02-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/video-temporal/v-jepa/images/final/WI033-VJEPA-03-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/video-temporal/v-jepa/images/final/WI033-VJEPA-04-r01-desktop.png",
+        "ok": true
+      }
+    ],
+    "overflow": false
+  },
+  {
+    "width": 1440,
+    "topic": "dinov2",
+    "images": [
+      {
+        "src": "_course_content/generated-concepts/dinov2/wi027-dinov2-c1-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/dinov2/wi027-dinov2-c1-r01-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/dinov2/wi033-dinov2-main-failure-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/dinov2/wi033-dinov2-main-failure-r01-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/dinov2/wi027-features-d3-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/dinov2/wi027-features-d3-r03-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/foundation-vlm-open-world/dinov2/images/final/WI033-DINOV2-01-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/foundation-vlm-open-world/dinov2/images/final/WI033-DINOV2-02-r03-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/foundation-vlm-open-world/dinov2/images/final/WI033-DINOV2-03-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/foundation-vlm-open-world/dinov2/images/final/WI033-DINOV2-04-r01-desktop.png",
+        "ok": true
+      }
+    ],
+    "overflow": false
+  },
+  {
+    "width": 1440,
+    "topic": "dinov3",
+    "images": [
+      {
+        "src": "_course_content/generated-concepts/dinov3/wi027-dinov3-c1-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/dinov3/wi027-dinov3-c1-r02-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/dinov3/wi033-failure-r03-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/dinov3/wi033-failure-r03-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/dinov2/wi027-features-d3-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/dinov2/wi027-features-d3-r03-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/foundation-vlm-open-world/dinov3/images/final/WI033-DINOV3-01-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/foundation-vlm-open-world/dinov3/images/final/WI033-DINOV3-02-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/foundation-vlm-open-world/dinov3/images/final/WI033-DINOV3-03-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/foundation-vlm-open-world/dinov3/images/final/WI033-DINOV3-04-r02-desktop.png",
+        "ok": true
+      }
+    ],
+    "overflow": false
+  },
+  {
+    "width": 1440,
+    "topic": "clip",
+    "images": [
+      {
+        "src": "_course_content/generated-concepts/clip/wi027-clip-c1-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/clip/wi027-clip-c1-r01-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/clip/wi027-alignment-d2-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/clip/wi027-alignment-d2-r01-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/clip/wi027-alignment-d3-r03-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/clip/wi033-alignment-comparison-r01-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/foundation-vlm-open-world/clip/images/final/WI033-CLIP-01-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/foundation-vlm-open-world/clip/images/final/WI033-CLIP-02-r03-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/foundation-vlm-open-world/clip/images/final/WI033-CLIP-03-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/foundation-vlm-open-world/clip/images/final/WI033-CLIP-04-r02-desktop.png",
+        "ok": true
+      }
+    ],
+    "overflow": false
+  },
+  {
+    "width": 1440,
+    "topic": "siglip",
+    "images": [
+      {
+        "src": "_course_content/generated-concepts/siglip/wi027-siglip-c1-r03-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/siglip/wi033-core-r02-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/clip/wi027-alignment-d2-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/clip/wi027-alignment-d2-r01-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/clip/wi027-alignment-d3-r03-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/clip/wi033-alignment-comparison-r01-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/foundation-vlm-open-world/siglip/images/final/WI033-SIGLIP-01-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/foundation-vlm-open-world/siglip/images/final/WI033-SIGLIP-02-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/foundation-vlm-open-world/siglip/images/final/WI033-SIGLIP-03-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/foundation-vlm-open-world/siglip/images/final/WI033-SIGLIP-04-r02-desktop.png",
+        "ok": true
+      }
+    ],
+    "overflow": false
+  },
+  {
+    "width": 1440,
+    "topic": "llava",
+    "images": [
+      {
+        "src": "_course_content/generated-concepts/llava/wi027-llava-c1-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/llava/wi027-llava-c1-r03-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/llava/wi027-llava-d2-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/llava/wi027-llava-d2-r02-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/llava/wi027-vlm-d3-r03-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/llava/wi027-vlm-d3-r03-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/foundation-vlm-open-world/llava/images/final/WI033-LLAVA-01-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/foundation-vlm-open-world/llava/images/final/WI033-LLAVA-02-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/foundation-vlm-open-world/llava/images/final/WI033-LLAVA-03-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/foundation-vlm-open-world/llava/images/final/WI033-LLAVA-04-r01-desktop.png",
+        "ok": true
+      }
+    ],
+    "overflow": false
+  },
+  {
+    "width": 1440,
+    "topic": "qwen-vl",
+    "images": [
+      {
+        "src": "_course_content/generated-concepts/qwen-vl/wi027-qwen-vl-c1-r03-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/qwen-vl/wi027-qwen-vl-c1-r03-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/qwen-vl/wi027-qwen-vl-d2-r03-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/qwen-vl/wi027-qwen-vl-d2-r03-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/llava/wi027-vlm-d3-r03-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/llava/wi027-vlm-d3-r03-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/foundation-vlm-open-world/qwen-vl/images/final/WI033-QWEN-01-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/foundation-vlm-open-world/qwen-vl/images/final/WI033-QWEN-02-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/foundation-vlm-open-world/qwen-vl/images/final/WI033-QWEN-03-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/foundation-vlm-open-world/qwen-vl/images/final/WI033-QWEN-04-r01-desktop.png",
+        "ok": true
+      }
+    ],
+    "overflow": false
+  },
+  {
+    "width": 1440,
+    "topic": "gemini-vision",
+    "images": [
+      {
+        "src": "_course_content/generated-concepts/gemini-vision/wi027-gemini-vision-c1-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/gemini-vision/wi027-gemini-vision-c1-r02-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/gemini-vision/wi033-gemini-vision-main-failure-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/gemini-vision/wi033-gemini-vision-main-failure-r01-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/llava/wi027-vlm-d3-r03-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/llava/wi027-vlm-d3-r03-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/foundation-vlm-open-world/gemini-vision/images/final/WI033-GEMINI-01-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/foundation-vlm-open-world/gemini-vision/images/final/WI033-GEMINI-02-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/foundation-vlm-open-world/gemini-vision/images/final/WI033-GEMINI-03-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/foundation-vlm-open-world/gemini-vision/images/final/WI033-GEMINI-04-r01-desktop.png",
+        "ok": true
+      }
+    ],
+    "overflow": false
+  },
+  {
+    "width": 1440,
+    "topic": "defectfill",
+    "images": [
+      {
+        "src": "_course_content/generated-concepts/defectfill/wi026-defectfill-c1-r03-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/defectfill/wi026-defectfill-c1-r02-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/defectfill/wi026-defectfill-d2-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/defectfill/wi026-defectfill-d2-r01-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/defectfill/wi026-generation-d3-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/defectfill/wi026-generation-d3-r01-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/diffusion-restoration/defectfill/images/final/WI033-DEFECTFILL-01-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/diffusion-restoration/defectfill/images/final/WI033-DEFECTFILL-02-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/diffusion-restoration/defectfill/images/final/WI033-DEFECTFILL-03-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/diffusion-restoration/defectfill/images/final/WI033-DEFECTFILL-04-r01-desktop.png",
+        "ok": true
+      }
+    ],
+    "overflow": false
+  },
+  {
+    "width": 1440,
+    "topic": "anomalydiffusion",
+    "images": [
+      {
+        "src": "_course_content/generated-concepts/anomalydiffusion/wi026-anomalydiffusion-c1-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/anomalydiffusion/wi026-anomalydiffusion-c1-r01-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/anomalydiffusion/wi026-anomalydiffusion-d2-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/anomalydiffusion/wi026-anomalydiffusion-d2-r01-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/defectfill/wi026-generation-d3-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/defectfill/wi026-generation-d3-r01-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/diffusion-restoration/anomalydiffusion/images/final/WI033-ANOMALYDIFFUSION-01-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/diffusion-restoration/anomalydiffusion/images/final/WI033-ANOMALYDIFFUSION-02-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/diffusion-restoration/anomalydiffusion/images/final/WI033-ANOMALYDIFFUSION-03-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/diffusion-restoration/anomalydiffusion/images/final/WI033-ANOMALYDIFFUSION-04-r01-desktop.png",
+        "ok": true
+      }
+    ],
+    "overflow": false
+  },
+  {
+    "width": 1440,
+    "topic": "tf-idg",
+    "images": [
+      {
+        "src": "_course_content/generated-concepts/tf-idg/wi026-tf-idg-c1-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/tf-idg/wi026-tf-idg-c1-r03-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/tf-idg/wi026-tf-idg-d2-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/tf-idg/wi026-tf-idg-d2-r01-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/defectfill/wi026-generation-d3-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/defectfill/wi026-generation-d3-r01-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/diffusion-restoration/tf-idg/images/final/WI033-TFIDG-01-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/diffusion-restoration/tf-idg/images/final/WI033-TFIDG-02-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/diffusion-restoration/tf-idg/images/final/WI033-TFIDG-03-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/diffusion-restoration/tf-idg/images/final/WI033-TFIDG-04-r01-desktop.png",
+        "ok": true
+      }
+    ],
+    "overflow": false
+  },
+  {
+    "width": 1440,
+    "topic": "controlnet",
+    "images": [
+      {
+        "src": "_course_content/generated-concepts/controlnet/wi026-controlnet-c1-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/controlnet/wi026-controlnet-c1-r01-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/controlnet/wi026-controlnet-d2-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/controlnet/wi026-controlnet-d2-r01-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/controlnet/wi026-editing-d3-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/controlnet/wi026-editing-d3-r02-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/diffusion-restoration/controlnet/images/final/WI033-CONTROLNET-01-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/diffusion-restoration/controlnet/images/final/WI033-CONTROLNET-02-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/diffusion-restoration/controlnet/images/final/WI033-CONTROLNET-03-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/diffusion-restoration/controlnet/images/final/WI033-CONTROLNET-04-r01-desktop.png",
+        "ok": true
+      }
+    ],
+    "overflow": false
+  },
+  {
+    "width": 1440,
+    "topic": "inpainting",
+    "images": [
+      {
+        "src": "_course_content/generated-concepts/inpainting/wi026-inpainting-c1-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/inpainting/wi026-inpainting-c1-r01-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/inpainting/wi026-inpainting-d2-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/inpainting/wi026-inpainting-d2-r01-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/controlnet/wi026-editing-d3-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/controlnet/wi026-editing-d3-r02-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/diffusion-restoration/inpainting/images/final/WI033-INPAINTING-01-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/diffusion-restoration/inpainting/images/final/WI033-INPAINTING-02-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/diffusion-restoration/inpainting/images/final/WI033-INPAINTING-03-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/diffusion-restoration/inpainting/images/final/WI033-INPAINTING-04-r01-desktop.png",
+        "ok": true
+      }
+    ],
+    "overflow": false
+  },
+  {
+    "width": 1440,
+    "topic": "diffusion-restoration",
+    "images": [
+      {
+        "src": "_course_content/generated-concepts/diffusion-restoration/wi026-diffusion-restoration-c1-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/diffusion-restoration/wi026-diffusion-restoration-c1-r02-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/diffusion-restoration/wi026-restoration-d2-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/diffusion-restoration/wi026-restoration-d2-r02-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/diffusion-restoration/wi026-restoration-d3-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/diffusion-restoration/wi026-restoration-d3-r01-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/diffusion-restoration/diffusion-restoration/images/final/WI033-DIFFUSION-RESTORATION-01-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/diffusion-restoration/diffusion-restoration/images/final/WI033-DIFFUSION-RESTORATION-02-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/diffusion-restoration/diffusion-restoration/images/final/WI033-DIFFUSION-RESTORATION-03-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/diffusion-restoration/diffusion-restoration/images/final/WI033-DIFFUSION-RESTORATION-04-r02-desktop.png",
+        "ok": true
+      }
+    ],
+    "overflow": false
+  },
+  {
+    "width": 1440,
+    "topic": "deblur",
+    "images": [
+      {
+        "src": "_course_content/generated-concepts/deblur/wi026-deblur-c1-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/deblur/wi026-deblur-c1-r02-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/deblur/wi026-deblur-d2-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/deblur/wi026-deblur-d2-r01-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/diffusion-restoration/wi026-restoration-d3-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/diffusion-restoration/wi026-restoration-d3-r01-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/diffusion-restoration/deblur/images/final/WI033-DEBLUR-01-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/diffusion-restoration/deblur/images/final/WI033-DEBLUR-02-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/diffusion-restoration/deblur/images/final/WI033-DEBLUR-03-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/diffusion-restoration/deblur/images/final/WI033-DEBLUR-04-r01-desktop.png",
+        "ok": true
+      }
+    ],
+    "overflow": false
+  },
+  {
+    "width": 1440,
+    "topic": "super-resolution",
+    "images": [
+      {
+        "src": "_course_content/generated-concepts/super-resolution/wi026-super-resolution-c1-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/super-resolution/wi026-super-resolution-c1-r01-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/super-resolution/wi033-sr-same-board-counterexample-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/super-resolution/wi033-sr-same-board-counterexample-r02-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/diffusion-restoration/wi026-restoration-d3-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/diffusion-restoration/wi026-restoration-d3-r01-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/diffusion-restoration/super-resolution/images/final/WI033-SUPERRES-01-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/diffusion-restoration/super-resolution/images/final/WI033-SUPERRES-02-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/diffusion-restoration/super-resolution/images/final/WI033-SUPERRES-03-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/diffusion-restoration/super-resolution/images/final/WI033-SUPERRES-04-r01-desktop.png",
+        "ok": true
+      }
+    ],
+    "overflow": false
+  },
+  {
+    "width": 390,
+    "topic": "charuco",
+    "images": [
+      {
+        "src": "_course_content/generated-concepts/charuco/wi032-charuco-core-r05-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/charuco/wi032-charuco-core-r05-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/charuco/wi032-charuco-failure-native-r05-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/charuco/wi032-charuco-failure-native-r05-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ecc/wi032-geometry-compare-native-r05-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ecc/wi032-geometry-compare-native-r05-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/geometry-alignment-measurement/charuco/images/final/WI032-CHARUCO-01-r04-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/geometry-alignment-measurement/charuco/images/final/WI032-CHARUCO-02-r04-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/geometry-alignment-measurement/charuco/images/final/WI032-CHARUCO-03-r04-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/geometry-alignment-measurement/charuco/images/final/WI032-CHARUCO-04-r04-desktop.png",
+        "ok": true
+      }
+    ],
+    "overflow": false
+  },
+  {
+    "width": 390,
+    "topic": "ecc",
+    "images": [
+      {
+        "src": "_course_content/generated-concepts/ecc/wi032-ecc-core-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ecc/wi032-ecc-core-r01-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ecc/wi032-ecc-failure-native-r05-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ecc/wi032-ecc-failure-native-r05-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ecc/wi032-geometry-compare-native-r05-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ecc/wi032-geometry-compare-native-r05-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/geometry-alignment-measurement/ecc/images/final/WI032-ECC-01-r04-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/geometry-alignment-measurement/ecc/images/final/WI032-ECC-02-r04-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/geometry-alignment-measurement/ecc/images/final/WI032-ECC-03-r04-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/geometry-alignment-measurement/ecc/images/final/WI032-ECC-04-r04-desktop.png",
+        "ok": true
+      }
+    ],
+    "overflow": false
+  },
+  {
+    "width": 390,
+    "topic": "sift",
+    "images": [
+      {
+        "src": "_course_content/generated-concepts/sift/wi032-sift-core-native-r05-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/sift/wi032-sift-core-native-r05-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/sift/wi032-sift-failure-native-r05-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/sift/wi032-sift-failure-native-r05-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ecc/wi032-geometry-compare-native-r05-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ecc/wi032-geometry-compare-native-r05-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/geometry-alignment-measurement/sift/images/final/WI032-SIFT-01-r06-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/geometry-alignment-measurement/sift/images/final/WI032-SIFT-02-r04-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/geometry-alignment-measurement/sift/images/final/WI032-SIFT-03-r04-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/geometry-alignment-measurement/sift/images/final/WI032-SIFT-04-r04-desktop.png",
+        "ok": true
+      }
+    ],
+    "overflow": false
+  },
+  {
+    "width": 390,
+    "topic": "lightglue",
+    "images": [
+      {
+        "src": "_course_content/generated-concepts/lightglue/wi032-lightglue-core-native-r05-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/lightglue/wi032-lightglue-core-native-r05-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/lightglue/wi032-lightglue-failure-native-r05-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/lightglue/wi032-lightglue-failure-native-r05-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ecc/wi032-geometry-compare-native-r05-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ecc/wi032-geometry-compare-native-r05-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/geometry-alignment-measurement/lightglue/images/final/WI032-LIGHTGLUE-01-r04-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/geometry-alignment-measurement/lightglue/images/final/WI032-LIGHTGLUE-02-r04-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/geometry-alignment-measurement/lightglue/images/final/WI032-LIGHTGLUE-03-r04-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/geometry-alignment-measurement/lightglue/images/final/WI032-LIGHTGLUE-04-r04-desktop.png",
+        "ok": true
+      }
+    ],
+    "overflow": false
+  },
+  {
+    "width": 390,
+    "topic": "resnet",
+    "images": [
+      {
+        "src": "_course_content/generated-concepts/resnet/wi030-resnet-c1-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/resnet/wi030-resnet-c1-r02-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/resnet/wi030-class-d2-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/resnet/wi030-class-d2-r03-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/resnet/wi030-class-d3-r05-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/resnet/wi030-class-d3-r06-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/resnet/wi033-resnet-deep-skip-r01-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/resnet/wi033-resnet-deep-residual-r02-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/resnet/wi033-resnet-deep-bn-r02-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/resnet/wi033-resnet-deep-residual-r02-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/resnet/wi033-resnet-deep-cnx-spatial-r02-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/resnet/wi033-resnet-deep-cnx-channel-r02-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/resnet/wi033-resnet-deep-vit-attention-r01-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/known-target-classification/resnet/images/final/WI033-RESNET-01-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/known-target-classification/resnet/images/final/WI033-RESNET-02-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/known-target-classification/resnet/images/final/WI033-RESNET-03-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/known-target-classification/resnet/images/final/WI033-RESNET-04-r01-desktop.png",
+        "ok": true
+      }
+    ],
+    "overflow": false
+  },
+  {
+    "width": 390,
+    "topic": "convnext",
+    "images": [
+      {
+        "src": "_course_content/generated-concepts/convnext/wi030-convnext-c1-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/convnext/wi030-convnext-c1-r02-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/resnet/wi030-class-d2-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/resnet/wi030-class-d2-r03-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/resnet/wi030-class-d3-r05-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/resnet/wi030-class-d3-r06-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/known-target-classification/convnext/images/final/WI033-CONVNEXT-01-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/known-target-classification/convnext/images/final/WI033-CONVNEXT-02-r03-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/known-target-classification/convnext/images/final/WI033-CONVNEXT-03-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/known-target-classification/convnext/images/final/WI033-CONVNEXT-04-r01-desktop.png",
+        "ok": true
+      }
+    ],
+    "overflow": false
+  },
+  {
+    "width": 390,
+    "topic": "vit-classifier",
+    "images": [
+      {
+        "src": "_course_content/generated-concepts/vit-classifier/wi030-vit-c1-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/vit-classifier/wi030-vit-c1-r02-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/resnet/wi030-class-d2-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/resnet/wi030-class-d2-r03-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/resnet/wi030-class-d3-r05-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/resnet/wi030-class-d3-r06-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/known-target-classification/vit-classifier/images/final/WI033-VIT-01-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/known-target-classification/vit-classifier/images/final/WI033-VIT-02-r03-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/known-target-classification/vit-classifier/images/final/WI033-VIT-03-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/known-target-classification/vit-classifier/images/final/WI033-VIT-04-r02-desktop.png",
+        "ok": true
+      }
+    ],
+    "overflow": false
+  },
+  {
+    "width": 390,
+    "topic": "u-net",
+    "images": [
+      {
+        "src": "_course_content/generated-concepts/u-net/wi030-unet-c1-r04-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/u-net/wi030-unet-c1-r04-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/u-net/wi030-seg-d2-r03-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/u-net/wi030-seg-d2-r03-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/u-net/wi030-seg-d3-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/u-net/wi030-seg-d3-r01-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/known-target-classification/u-net/images/final/WI033-UNET-01-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/known-target-classification/u-net/images/final/WI033-UNET-02-r03-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/known-target-classification/u-net/images/final/WI033-UNET-03-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/known-target-classification/u-net/images/final/WI033-UNET-04-r01-desktop.png",
+        "ok": true
+      }
+    ],
+    "overflow": false
+  },
+  {
+    "width": 390,
+    "topic": "segformer",
+    "images": [
+      {
+        "src": "_course_content/generated-concepts/segformer/wi030-segformer-c1-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/segformer/wi030-segformer-c1-r02-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/u-net/wi030-seg-d2-r03-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/u-net/wi030-seg-d2-r03-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/u-net/wi030-seg-d3-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/u-net/wi030-seg-d3-r01-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/segformer/wi033-segformer-deep-core-r04-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/segformer/wi033-segformer-deep-task-r01-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/segformer/wi033-segformer-deep-scales-r01-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/segformer/wi033-segformer-deep-sr-r02-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/segformer/wi033-segformer-deep-decoder-r03-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/known-target-classification/segformer/images/final/WI033-SEGFORMER-01-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/known-target-classification/segformer/images/final/WI033-SEGFORMER-02-r03-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/known-target-classification/segformer/images/final/WI033-SEGFORMER-03-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/known-target-classification/segformer/images/final/WI033-SEGFORMER-04-r02-desktop.png",
+        "ok": true
+      }
+    ],
+    "overflow": false
+  },
+  {
+    "width": 390,
+    "topic": "yolo-seg",
+    "images": [
+      {
+        "src": "_course_content/generated-concepts/yolo-seg/wi030-yoloseg-c1-r07-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/yolo-seg/wi030-yoloseg-c1-r06-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/yolo-seg/wi030-instance-d2-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/yolo-seg/wi030-instance-d2-r04-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/u-net/wi030-seg-d3-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/u-net/wi030-seg-d3-r01-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/known-target-classification/yolo-seg/images/final/WI033-YOLOSEG-01-r03-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/known-target-classification/yolo-seg/images/final/WI033-YOLOSEG-02-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/known-target-classification/yolo-seg/images/final/WI033-YOLOSEG-03-r03-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/known-target-classification/yolo-seg/images/final/WI033-YOLOSEG-04-r03-desktop.png",
+        "ok": true
+      }
+    ],
+    "overflow": false
+  },
+  {
+    "width": 390,
+    "topic": "keypoint-r-cnn",
+    "images": [
+      {
+        "src": "_course_content/generated-concepts/keypoint-r-cnn/wi030-key-c1-r04-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/keypoint-r-cnn/wi030-key-c1-r05-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/pose/wi030-pose-d2-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/pose/wi030-pose-d2-r02-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/pose/wi030-pose-d3-r03-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/pose/wi030-pose-d3-r03-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/known-target-classification/keypoint-r-cnn/images/final/WI033-KPRCNN-01-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/known-target-classification/keypoint-r-cnn/images/final/WI033-KPRCNN-02-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/known-target-classification/keypoint-r-cnn/images/final/WI033-KPRCNN-03-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/known-target-classification/keypoint-r-cnn/images/final/WI033-KPRCNN-04-r01-desktop.png",
+        "ok": true
+      }
+    ],
+    "overflow": false
+  },
+  {
+    "width": 390,
+    "topic": "pose",
+    "images": [
+      {
+        "src": "_course_content/generated-concepts/pose/wi030-pose-c1-r03-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/pose/wi030-pose-c1-r04-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/pose/wi030-pose-d2-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/pose/wi030-pose-d2-r02-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/pose/wi030-pose-d3-r03-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/pose/wi030-pose-d3-r03-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/known-target-classification/pose/images/final/WI033-POSE-01-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/known-target-classification/pose/images/final/WI033-POSE-02-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/known-target-classification/pose/images/final/WI033-POSE-03-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/known-target-classification/pose/images/final/WI033-POSE-04-r01-desktop.png",
+        "ok": true
+      }
+    ],
+    "overflow": false
+  },
+  {
+    "width": 390,
+    "topic": "det-yolo-dense",
+    "images": [
+      {
+        "src": "_course_content/generated-concepts/det-yolo-dense/wi024-yolo-c1-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/det-yolo-dense/wi024-yolo-c1-r01-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/det-yolo-dense/wi024-yolo-d2-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/det-yolo-dense/wi024-yolo-d2-r01-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/det-yolo-dense/wi024-known-d3-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/det-yolo-dense/wi024-known-d3-r01-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/detector/det-yolo-dense/images/final/WI033-YOLO-01-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/detector/det-yolo-dense/images/final/WI033-YOLO-02-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/detector/det-yolo-dense/images/final/WI033-YOLO-03-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/detector/det-yolo-dense/images/final/WI033-YOLO-04-r01-desktop.png",
+        "ok": true
+      }
+    ],
+    "overflow": false
+  },
+  {
+    "width": 390,
+    "topic": "det-rtdetr",
+    "images": [
+      {
+        "src": "_course_content/generated-concepts/det-rtdetr/wi024-rtdetr-c1-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/det-rtdetr/wi024-rtdetr-c1-r01-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/det-rtdetr/wi024-rtdetr-d2-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/det-rtdetr/wi024-rtdetr-d2-r02-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/det-yolo-dense/wi024-known-d3-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/det-yolo-dense/wi024-known-d3-r01-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/detector/det-rtdetr/images/final/WI033-RTDETR-01-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/detector/det-rtdetr/images/final/WI033-RTDETR-02-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/detector/det-rtdetr/images/final/WI033-RTDETR-03-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/detector/det-rtdetr/images/final/WI033-RTDETR-04-r01-desktop.png",
+        "ok": true
+      }
+    ],
+    "overflow": false
+  },
+  {
+    "width": 390,
+    "topic": "det-dino-detector",
+    "images": [
+      {
+        "src": "_course_content/generated-concepts/det-dino-detector/wi032-dino-core-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/det-dino-detector/wi032-dino-core-r02-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/det-dino-detector/wi032-dino-failure-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/det-dino-detector/wi032-dino-failure-r04-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/det-dino-detector/wi032-detector-compare-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/det-dino-detector/wi032-detector-compare-r02-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/detector/det-dino-detector/images/final/WI032-DINO-DET-01-r04-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/detector/det-dino-detector/images/final/WI032-DINO-DET-02-r04-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/detector/det-dino-detector/images/final/WI032-DINO-DET-03-r04-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/detector/det-dino-detector/images/final/WI032-DINO-DET-04-r04-desktop.png",
+        "ok": true
+      }
+    ],
+    "overflow": false
+  },
+  {
+    "width": 390,
+    "topic": "det-grounding-dino-interface",
+    "images": [
+      {
+        "src": "_course_content/generated-concepts/det-grounding-dino-interface/wi024-grounding-c1-r03-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/det-grounding-dino-interface/wi024-grounding-c1-r01-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/det-grounding-dino-interface/wi024-grounding-d2-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/det-grounding-dino-interface/wi024-grounding-d2-r01-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/det-grounding-dino-interface/wi024-prompt-d3-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/det-grounding-dino-interface/wi024-prompt-d3-r01-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/detector/det-grounding-dino-interface/images/final/WI033-GROUNDING-DINO-01-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/detector/det-grounding-dino-interface/images/final/WI033-GROUNDING-DINO-02-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/detector/det-grounding-dino-interface/images/final/WI033-GROUNDING-DINO-03-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/detector/det-grounding-dino-interface/images/final/WI033-GROUNDING-DINO-04-r01-desktop.png",
+        "ok": true
+      }
+    ],
+    "overflow": false
+  },
+  {
+    "width": 390,
+    "topic": "yolo-world",
+    "images": [
+      {
+        "src": "_course_content/generated-concepts/yolo-world/wi032-world-core-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/yolo-world/wi032-world-core-r02-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/yolo-world/wi032-world-failure-r03-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/yolo-world/wi032-world-failure-r03-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/det-dino-detector/wi032-detector-compare-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/det-dino-detector/wi032-detector-compare-r02-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/detector/yolo-world/images/final/WI032-YOLOWORLD-01-r04-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/detector/yolo-world/images/final/WI032-YOLOWORLD-02-r05-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/detector/yolo-world/images/final/WI032-YOLOWORLD-03-r07-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/detector/yolo-world/images/final/WI032-YOLOWORLD-04-r04-desktop.png",
+        "ok": true
+      }
+    ],
+    "overflow": false
+  },
+  {
+    "width": 390,
+    "topic": "yoloe",
+    "images": [
+      {
+        "src": "_course_content/generated-concepts/yoloe/wi024-yoloe-c1-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/yoloe/wi024-yoloe-c1-r01-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/yoloe/wi024-yoloe-d2-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/yoloe/wi024-yoloe-d2-r01-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/det-grounding-dino-interface/wi024-prompt-d3-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/det-grounding-dino-interface/wi024-prompt-d3-r01-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/detector/yoloe/images/final/WI033-YOLOE-01-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/detector/yoloe/images/final/WI033-YOLOE-02-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/detector/yoloe/images/final/WI033-YOLOE-03-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/detector/yoloe/images/final/WI033-YOLOE-04-r01-desktop.png",
+        "ok": true
+      }
+    ],
+    "overflow": false
+  },
+  {
+    "width": 390,
+    "topic": "ad-patchcore",
+    "images": [
+      {
+        "src": "_course_content/generated-concepts/ad-patchcore/wi030-patch-c1-r04-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-patchcore/wi030-patch-c1-r02-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-patchcore/wi030-ad-d2-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-patchcore/wi030-ad-d2-r02-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-patchcore/wi030-ad-d3-r04-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-patchcore/wi030-ad-d3-r03-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-patchcore/wi033-patchcore-deep-features-r02-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-patchcore/wi033-patchcore-deep-context-r01-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/anomaly-detection/ad-patchcore/images/final/WI033-PATCHCORE-01-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/anomaly-detection/ad-patchcore/images/final/WI033-PATCHCORE-02-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/anomaly-detection/ad-patchcore/images/final/WI033-PATCHCORE-03-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/anomaly-detection/ad-patchcore/images/final/WI033-PATCHCORE-04-r01-desktop.png",
+        "ok": true
+      }
+    ],
+    "overflow": false
+  },
+  {
+    "width": 390,
+    "topic": "ad-padim",
+    "images": [
+      {
+        "src": "_course_content/generated-concepts/ad-padim/wi030-padim-c1-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-padim/wi030-padim-c1-r03-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-patchcore/wi030-ad-d2-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-patchcore/wi030-ad-d2-r02-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-patchcore/wi030-ad-d3-r04-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-patchcore/wi030-ad-d3-r03-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/anomaly-detection/ad-padim/images/final/WI033-PADIM-01-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/anomaly-detection/ad-padim/images/final/WI033-PADIM-02-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/anomaly-detection/ad-padim/images/final/WI033-PADIM-03-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/anomaly-detection/ad-padim/images/final/WI033-PADIM-04-r01-desktop.png",
+        "ok": true
+      }
+    ],
+    "overflow": false
+  },
+  {
+    "width": 390,
+    "topic": "ad-anomalydino",
+    "images": [
+      {
+        "src": "_course_content/generated-concepts/ad-anomalydino/wi030-dino-c1-r03-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-anomalydino/wi030-dino-c1-r05-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-patchcore/wi030-ad-d2-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-patchcore/wi030-ad-d2-r02-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-patchcore/wi030-ad-d3-r04-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-patchcore/wi030-ad-d3-r03-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-anomalydino/wi033-adino-deep-rotation-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-anomalydino/wi033-adino-deep-rotation-r02-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/anomaly-detection/ad-anomalydino/images/final/WI033-ANOMALYDINO-01-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/anomaly-detection/ad-anomalydino/images/final/WI033-ANOMALYDINO-02-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/anomaly-detection/ad-anomalydino/images/final/WI033-ANOMALYDINO-03-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/anomaly-detection/ad-anomalydino/images/final/WI033-ANOMALYDINO-04-r01-desktop.png",
+        "ok": true
+      }
+    ],
+    "overflow": false
+  },
+  {
+    "width": 390,
+    "topic": "ad-subspacead",
+    "images": [
+      {
+        "src": "_course_content/generated-concepts/ad-subspacead/wi021-subspacead-c1-r03-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-subspacead/wi021-subspacead-c1-r02-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-subspacead/wi021-subspacead-d2-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-subspacead/wi021-subspacead-d2-r01-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-stfpm/wi021-feature-methods-d3-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-stfpm/wi021-feature-methods-d3-r03-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/anomaly-detection/ad-subspacead/images/final/WI033-SUBSPACEAD-01-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/anomaly-detection/ad-subspacead/images/final/WI033-SUBSPACEAD-02-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/anomaly-detection/ad-subspacead/images/final/WI033-SUBSPACEAD-03-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/anomaly-detection/ad-subspacead/images/final/WI033-SUBSPACEAD-04-r01-desktop.png",
+        "ok": true
+      }
+    ],
+    "overflow": false
+  },
+  {
+    "width": 390,
+    "topic": "ad-stfpm",
+    "images": [
+      {
+        "src": "_course_content/generated-concepts/ad-stfpm/wi021-stfpm-c1-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-stfpm/wi021-stfpm-c1-r01-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-stfpm/wi021-stfpm-d2-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-stfpm/wi021-stfpm-d2-r01-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-stfpm/wi021-feature-methods-d3-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-stfpm/wi021-feature-methods-d3-r03-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/anomaly-detection/ad-stfpm/images/final/WI033-STFPM-01-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/anomaly-detection/ad-stfpm/images/final/WI033-STFPM-02-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/anomaly-detection/ad-stfpm/images/final/WI033-STFPM-03-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/anomaly-detection/ad-stfpm/images/final/WI033-STFPM-04-r01-desktop.png",
+        "ok": true
+      }
+    ],
+    "overflow": false
+  },
+  {
+    "width": 390,
+    "topic": "ad-rd4ad",
+    "images": [
+      {
+        "src": "_course_content/generated-concepts/ad-rd4ad/wi021-rd4ad-c1-r04-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-rd4ad/wi021-rd4ad-c1-r01-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-rd4ad/wi021-rd4ad-c2-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-rd4ad/wi021-rd4ad-c2-r01-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-rd4ad/wi021-rd4ad-d3-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-rd4ad/wi021-rd4ad-d3-r01-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-ae/wi021-ae-d5-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-ae/wi021-ae-d5-r02-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/anomaly-detection/ad-rd4ad/images/final/WI033-RD4AD-01-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/anomaly-detection/ad-rd4ad/images/final/WI033-RD4AD-02-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/anomaly-detection/ad-rd4ad/images/final/WI033-RD4AD-03-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/anomaly-detection/ad-rd4ad/images/final/WI033-RD4AD-04-r01-desktop.png",
+        "ok": true
+      }
+    ],
+    "overflow": false
+  },
+  {
+    "width": 390,
+    "topic": "ad-efficientad",
+    "images": [
+      {
+        "src": "_course_content/generated-concepts/ad-efficientad/wi030-efficient-c1-r06-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-efficientad/wi030-efficient-c1-r05-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-efficientad/wi033-eff-main-failure-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-efficientad/wi033-eff-main-failure-r01-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-patchcore/wi030-ad-d3-r04-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-patchcore/wi030-ad-d3-r03-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-efficientad/wi033-eff-deep-01-core-r02-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-efficientad/wi033-eff-deep-01-work-r02-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-efficientad/wi033-eff-deep-02-data-r01-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-efficientad/wi033-eff-deep-03-meaning-r02-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-efficientad/wi033-eff-deep-04-output-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-efficientad/wi033-eff-deep-04-output-r01-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-efficientad/wi033-eff-deep-05-limits-r01-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-efficientad/wi033-eff-deep-07-comparison-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-efficientad/wi033-eff-deep-07-comparison-r01-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-efficientad/wi033-eff-deep-08-transfer-r01-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/anomaly-detection/ad-efficientad/images/final/WI033-EFFICIENTAD-01-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/anomaly-detection/ad-efficientad/images/final/WI033-EFFICIENTAD-02-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/anomaly-detection/ad-efficientad/images/final/WI033-EFFICIENTAD-03-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/anomaly-detection/ad-efficientad/images/final/WI033-EFFICIENTAD-04-r01-desktop.png",
+        "ok": true
+      }
+    ],
+    "overflow": false
+  },
+  {
+    "width": 390,
+    "topic": "ad-ae",
+    "images": [
+      {
+        "src": "_course_content/generated-concepts/ad-ae/wi021-ae-c1-r02.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-ae/wi021-ae-c1-r04-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-ae/wi021-ae-c2-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-ae/wi021-ae-c2-r02-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-ae/wi021-ae-c3-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-ae/wi021-ae-c3-r01-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-ae/wi021-ae-d4-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-ae/wi021-ae-d4-r01-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-ae/wi021-ae-d5-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-ae/wi021-ae-d5-r02-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/anomaly-detection/ad-ae/images/final/WI033-AE-01-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/anomaly-detection/ad-ae/images/final/WI033-AE-02-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/anomaly-detection/ad-ae/images/final/WI033-AE-03-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/anomaly-detection/ad-ae/images/final/WI033-AE-04-r01-desktop.png",
+        "ok": true
+      }
+    ],
+    "overflow": false
+  },
+  {
+    "width": 390,
+    "topic": "ad-draem",
+    "images": [
+      {
+        "src": "_course_content/generated-concepts/ad-draem/wi021-draem-c1-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-draem/wi021-draem-c1-r01-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-draem/wi021-draem-c2-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-draem/wi021-draem-c2-r03-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-draem/wi021-draem-d3-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-draem/wi021-draem-d3-r01-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-ae/wi021-ae-d5-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-ae/wi021-ae-d5-r02-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/anomaly-detection/ad-draem/images/final/WI033-DRAEM-01-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/anomaly-detection/ad-draem/images/final/WI033-DRAEM-02-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/anomaly-detection/ad-draem/images/final/WI033-DRAEM-03-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/anomaly-detection/ad-draem/images/final/WI033-DRAEM-04-r01-desktop.png",
+        "ok": true
+      }
+    ],
+    "overflow": false
+  },
+  {
+    "width": 390,
+    "topic": "ad-uniad",
+    "images": [
+      {
+        "src": "_course_content/generated-concepts/ad-uniad/wi021-uniad-c1-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-uniad/wi021-uniad-c1-r02-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-dinomaly/wi021-multi-reconstruction-d2-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-dinomaly/wi021-multi-reconstruction-d2-r03-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-dinomaly/wi021-multi-reconstruction-d3-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-dinomaly/wi021-multi-reconstruction-d3-r02-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/anomaly-detection/ad-uniad/images/final/WI033-UNIAD-01-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/anomaly-detection/ad-uniad/images/final/WI033-UNIAD-02-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/anomaly-detection/ad-uniad/images/final/WI033-UNIAD-03-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/anomaly-detection/ad-uniad/images/final/WI033-UNIAD-04-r01-desktop.png",
+        "ok": true
+      }
+    ],
+    "overflow": false
+  },
+  {
+    "width": 390,
+    "topic": "ad-dinomaly",
+    "images": [
+      {
+        "src": "_course_content/generated-concepts/ad-dinomaly/wi021-dinomaly-c1-r04-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-dinomaly/wi021-dinomaly-c1-r01-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-dinomaly/wi021-multi-reconstruction-d2-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-dinomaly/wi021-multi-reconstruction-d2-r03-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-dinomaly/wi021-multi-reconstruction-d3-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-dinomaly/wi021-multi-reconstruction-d3-r02-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/anomaly-detection/ad-dinomaly/images/final/WI033-DINOMALY-01-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/anomaly-detection/ad-dinomaly/images/final/WI033-DINOMALY-02-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/anomaly-detection/ad-dinomaly/images/final/WI033-DINOMALY-03-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/anomaly-detection/ad-dinomaly/images/final/WI033-DINOMALY-04-r01-desktop.png",
+        "ok": true
+      }
+    ],
+    "overflow": false
+  },
+  {
+    "width": 390,
+    "topic": "ad-invad",
+    "images": [
+      {
+        "src": "_course_content/generated-concepts/ad-invad/wi021-invad-c1-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-invad/wi021-invad-c1-r03-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-dinomaly/wi021-multi-reconstruction-d2-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-dinomaly/wi021-multi-reconstruction-d2-r03-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-dinomaly/wi021-multi-reconstruction-d3-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-dinomaly/wi021-multi-reconstruction-d3-r02-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/anomaly-detection/ad-invad/images/final/WI033-INVAD-01-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/anomaly-detection/ad-invad/images/final/WI033-INVAD-02-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/anomaly-detection/ad-invad/images/final/WI033-INVAD-03-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/anomaly-detection/ad-invad/images/final/WI033-INVAD-04-r01-desktop.png",
+        "ok": true
+      }
+    ],
+    "overflow": false
+  },
+  {
+    "width": 390,
+    "topic": "ad-diffad",
+    "images": [
+      {
+        "src": "_course_content/generated-concepts/ad-diffad/wi021-diffusionad-c1-r04-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-diffad/wi021-diffusionad-c1-r03-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-ddad/wi021-diffusion-methods-d2-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-ddad/wi021-diffusion-methods-d2-r03-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-ddad/wi021-diffusion-methods-d3-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-ddad/wi021-diffusion-methods-d3-r04-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/anomaly-detection/ad-diffad/images/final/WI033-DIFFAD-01-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/anomaly-detection/ad-diffad/images/final/WI033-DIFFAD-02-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/anomaly-detection/ad-diffad/images/final/WI033-DIFFAD-03-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/anomaly-detection/ad-diffad/images/final/WI033-DIFFAD-04-r02-desktop.png",
+        "ok": true
+      }
+    ],
+    "overflow": false
+  },
+  {
+    "width": 390,
+    "topic": "ad-ddad",
+    "images": [
+      {
+        "src": "_course_content/generated-concepts/ad-ddad/wi021-ddad-c1-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-ddad/wi021-ddad-c1-r02-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-ddad/wi021-diffusion-methods-d2-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-ddad/wi021-diffusion-methods-d2-r03-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-ddad/wi021-diffusion-methods-d3-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-ddad/wi021-diffusion-methods-d3-r04-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/anomaly-detection/ad-ddad/images/final/WI033-DDAD-01-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/anomaly-detection/ad-ddad/images/final/WI033-DDAD-02-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/anomaly-detection/ad-ddad/images/final/WI033-DDAD-03-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/anomaly-detection/ad-ddad/images/final/WI033-DDAD-04-r02-desktop.png",
+        "ok": true
+      }
+    ],
+    "overflow": false
+  },
+  {
+    "width": 390,
+    "topic": "ad-winclip",
+    "images": [
+      {
+        "src": "_course_content/generated-concepts/ad-winclip/wi021-winclip-c1-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-winclip/wi021-winclip-c1-r01-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-anomalyclip/wi021-clip-methods-d2-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-anomalyclip/wi033-clip-shared-errors-r02-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-anomalyclip/wi021-clip-methods-d3-r04-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-anomalyclip/wi033-clip-shared-methods-r01-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/anomaly-detection/ad-winclip/images/final/WI033-WINCLIP-01-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/anomaly-detection/ad-winclip/images/final/WI033-WINCLIP-02-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/anomaly-detection/ad-winclip/images/final/WI033-WINCLIP-03-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/anomaly-detection/ad-winclip/images/final/WI033-WINCLIP-04-r02-desktop.png",
+        "ok": true
+      }
+    ],
+    "overflow": false
+  },
+  {
+    "width": 390,
+    "topic": "ad-anomalyclip",
+    "images": [
+      {
+        "src": "_course_content/generated-concepts/ad-anomalyclip/wi021-anomalyclip-c1-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-anomalyclip/wi021-anomalyclip-c1-r02-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-anomalyclip/wi021-clip-methods-d2-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-anomalyclip/wi033-clip-shared-errors-r02-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-anomalyclip/wi021-clip-methods-d3-r04-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-anomalyclip/wi033-clip-shared-methods-r01-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/anomaly-detection/ad-anomalyclip/images/final/WI033-ANOCLIP-01-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/anomaly-detection/ad-anomalyclip/images/final/WI033-ANOCLIP-02-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/anomaly-detection/ad-anomalyclip/images/final/WI033-ANOCLIP-03-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/anomaly-detection/ad-anomalyclip/images/final/WI033-ANOCLIP-04-r02-desktop.png",
+        "ok": true
+      }
+    ],
+    "overflow": false
+  },
+  {
+    "width": 390,
+    "topic": "ad-anomalygpt",
+    "images": [
+      {
+        "src": "_course_content/generated-concepts/ad-anomalygpt/wi021-anomalygpt-c1-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-anomalygpt/wi033-core-r01-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-anomalygpt/wi021-anomalygpt-d2-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-anomalygpt/wi033-failure-r01-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-anomalyclip/wi021-clip-methods-d3-r04-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/ad-anomalygpt/wi033-comparison-r01-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/anomaly-detection/ad-anomalygpt/images/final/WI033-ANOGPT-01-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/anomaly-detection/ad-anomalygpt/images/final/WI033-ANOGPT-02-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/anomaly-detection/ad-anomalygpt/images/final/WI033-ANOGPT-03-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/anomaly-detection/ad-anomalygpt/images/final/WI033-ANOGPT-04-r01-desktop.png",
+        "ok": true
+      }
+    ],
+    "overflow": false
+  },
+  {
+    "width": 390,
+    "topic": "frame-difference",
+    "images": [
+      {
+        "src": "_course_content/generated-concepts/frame-difference/wi028-frame-c1-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/frame-difference/wi028-frame-c1-r02-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/frame-difference/wi028-frame-d2-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/frame-difference/wi028-frame-d2-r01-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/frame-difference/wi028-change-d3-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/frame-difference/wi028-change-d3-r03-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/video-temporal/frame-difference/images/final/WI033-FRAMEDIFF-01-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/video-temporal/frame-difference/images/final/WI033-FRAMEDIFF-02-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/video-temporal/frame-difference/images/final/WI033-FRAMEDIFF-03-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/video-temporal/frame-difference/images/final/WI033-FRAMEDIFF-04-r02-desktop.png",
+        "ok": true
+      }
+    ],
+    "overflow": false
+  },
+  {
+    "width": 390,
+    "topic": "background-subtraction",
+    "images": [
+      {
+        "src": "_course_content/generated-concepts/background-subtraction/wi028-bg-c1-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/background-subtraction/wi028-bg-c1-r01-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/background-subtraction/wi028-bg-d2-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/background-subtraction/wi028-bg-d2-r01-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/frame-difference/wi028-change-d3-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/frame-difference/wi028-change-d3-r03-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/video-temporal/background-subtraction/images/final/WI033-BGSUB-01-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/video-temporal/background-subtraction/images/final/WI033-BGSUB-02-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/video-temporal/background-subtraction/images/final/WI033-BGSUB-03-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/video-temporal/background-subtraction/images/final/WI033-BGSUB-04-r02-desktop.png",
+        "ok": true
+      }
+    ],
+    "overflow": false
+  },
+  {
+    "width": 390,
+    "topic": "lucas-kanade",
+    "images": [
+      {
+        "src": "_course_content/generated-concepts/lucas-kanade/wi028-lk-c1-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/lucas-kanade/wi028-lk-c1-r03-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/lucas-kanade/wi033-flow-main-failure-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/lucas-kanade/wi033-flow-main-failure-r02-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/lucas-kanade/wi028-flow-d3-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/lucas-kanade/wi028-flow-d3-r01-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/video-temporal/lucas-kanade/images/final/WI033-LK-01-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/video-temporal/lucas-kanade/images/final/WI033-LK-02-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/video-temporal/lucas-kanade/images/final/WI033-LK-03-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/video-temporal/lucas-kanade/images/final/WI033-LK-04-r02-desktop.png",
+        "ok": true
+      }
+    ],
+    "overflow": false
+  },
+  {
+    "width": 390,
+    "topic": "raft",
+    "images": [
+      {
+        "src": "_course_content/generated-concepts/raft/wi028-raft-c1-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/raft/wi028-raft-c1-r01-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/lucas-kanade/wi033-flow-main-failure-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/lucas-kanade/wi033-flow-main-failure-r02-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/lucas-kanade/wi028-flow-d3-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/lucas-kanade/wi028-flow-d3-r01-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/video-temporal/raft/images/final/WI033-RAFT-01-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/video-temporal/raft/images/final/WI033-RAFT-02-r03-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/video-temporal/raft/images/final/WI033-RAFT-03-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/video-temporal/raft/images/final/WI033-RAFT-04-r02-desktop.png",
+        "ok": true
+      }
+    ],
+    "overflow": false
+  },
+  {
+    "width": 390,
+    "topic": "bytetrack",
+    "images": [
+      {
+        "src": "_course_content/generated-concepts/bytetrack/wi028-byte-c1-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/bytetrack/wi028-byte-c1-r03-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/bytetrack/wi028-byte-d2-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/bytetrack/wi028-byte-d2-r01-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/bytetrack/wi028-track-d3-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/bytetrack/wi028-track-d3-r02-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/video-temporal/bytetrack/images/final/WI033-BYTETRACK-01-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/video-temporal/bytetrack/images/final/WI033-BYTETRACK-02-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/video-temporal/bytetrack/images/final/WI033-BYTETRACK-03-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/video-temporal/bytetrack/images/final/WI033-BYTETRACK-04-r01-desktop.png",
+        "ok": true
+      }
+    ],
+    "overflow": false
+  },
+  {
+    "width": 390,
+    "topic": "convlstm",
+    "images": [
+      {
+        "src": "_course_content/generated-concepts/convlstm/wi028-conv-c1-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/convlstm/wi028-conv-c1-r01-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/convlstm/wi028-conv-d2-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/convlstm/wi028-conv-d2-r01-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/convlstm/wi028-video-d3-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/convlstm/wi028-video-d3-r02-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/video-temporal/convlstm/images/final/WI033-CONVLSTM-01-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/video-temporal/convlstm/images/final/WI033-CONVLSTM-02-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/video-temporal/convlstm/images/final/WI033-CONVLSTM-03-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/video-temporal/convlstm/images/final/WI033-CONVLSTM-04-r01-desktop.png",
+        "ok": true
+      }
+    ],
+    "overflow": false
+  },
+  {
+    "width": 390,
+    "topic": "videomae",
+    "images": [
+      {
+        "src": "_course_content/generated-concepts/videomae/wi028-mae-c1-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/videomae/wi028-mae-c1-r05-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/videomae/wi028-video-d2-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/videomae/wi028-video-d2-r01-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/convlstm/wi028-video-d3-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/convlstm/wi028-video-d3-r02-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/video-temporal/videomae/images/final/WI033-VIDEOMAE-01-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/video-temporal/videomae/images/final/WI033-VIDEOMAE-02-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/video-temporal/videomae/images/final/WI033-VIDEOMAE-03-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/video-temporal/videomae/images/final/WI033-VIDEOMAE-04-r02-desktop.png",
+        "ok": true
+      }
+    ],
+    "overflow": false
+  },
+  {
+    "width": 390,
+    "topic": "v-jepa",
+    "images": [
+      {
+        "src": "_course_content/generated-concepts/v-jepa/wi028-jepa-c1-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/v-jepa/wi028-jepa-c1-r02-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/videomae/wi028-video-d2-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/videomae/wi028-video-d2-r01-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/convlstm/wi028-video-d3-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/convlstm/wi028-video-d3-r02-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/video-temporal/v-jepa/images/final/WI033-VJEPA-01-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/video-temporal/v-jepa/images/final/WI033-VJEPA-02-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/video-temporal/v-jepa/images/final/WI033-VJEPA-03-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/video-temporal/v-jepa/images/final/WI033-VJEPA-04-r01-desktop.png",
+        "ok": true
+      }
+    ],
+    "overflow": false
+  },
+  {
+    "width": 390,
+    "topic": "dinov2",
+    "images": [
+      {
+        "src": "_course_content/generated-concepts/dinov2/wi027-dinov2-c1-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/dinov2/wi027-dinov2-c1-r01-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/dinov2/wi033-dinov2-main-failure-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/dinov2/wi033-dinov2-main-failure-r01-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/dinov2/wi027-features-d3-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/dinov2/wi027-features-d3-r03-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/foundation-vlm-open-world/dinov2/images/final/WI033-DINOV2-01-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/foundation-vlm-open-world/dinov2/images/final/WI033-DINOV2-02-r03-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/foundation-vlm-open-world/dinov2/images/final/WI033-DINOV2-03-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/foundation-vlm-open-world/dinov2/images/final/WI033-DINOV2-04-r01-desktop.png",
+        "ok": true
+      }
+    ],
+    "overflow": false
+  },
+  {
+    "width": 390,
+    "topic": "dinov3",
+    "images": [
+      {
+        "src": "_course_content/generated-concepts/dinov3/wi027-dinov3-c1-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/dinov3/wi027-dinov3-c1-r02-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/dinov3/wi033-failure-r03-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/dinov3/wi033-failure-r03-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/dinov2/wi027-features-d3-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/dinov2/wi027-features-d3-r03-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/foundation-vlm-open-world/dinov3/images/final/WI033-DINOV3-01-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/foundation-vlm-open-world/dinov3/images/final/WI033-DINOV3-02-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/foundation-vlm-open-world/dinov3/images/final/WI033-DINOV3-03-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/foundation-vlm-open-world/dinov3/images/final/WI033-DINOV3-04-r02-desktop.png",
+        "ok": true
+      }
+    ],
+    "overflow": false
+  },
+  {
+    "width": 390,
+    "topic": "clip",
+    "images": [
+      {
+        "src": "_course_content/generated-concepts/clip/wi027-clip-c1-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/clip/wi027-clip-c1-r01-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/clip/wi027-alignment-d2-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/clip/wi027-alignment-d2-r01-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/clip/wi027-alignment-d3-r03-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/clip/wi033-alignment-comparison-r01-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/foundation-vlm-open-world/clip/images/final/WI033-CLIP-01-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/foundation-vlm-open-world/clip/images/final/WI033-CLIP-02-r03-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/foundation-vlm-open-world/clip/images/final/WI033-CLIP-03-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/foundation-vlm-open-world/clip/images/final/WI033-CLIP-04-r02-desktop.png",
+        "ok": true
+      }
+    ],
+    "overflow": false
+  },
+  {
+    "width": 390,
+    "topic": "siglip",
+    "images": [
+      {
+        "src": "_course_content/generated-concepts/siglip/wi027-siglip-c1-r03-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/siglip/wi033-core-r02-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/clip/wi027-alignment-d2-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/clip/wi027-alignment-d2-r01-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/clip/wi027-alignment-d3-r03-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/clip/wi033-alignment-comparison-r01-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/foundation-vlm-open-world/siglip/images/final/WI033-SIGLIP-01-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/foundation-vlm-open-world/siglip/images/final/WI033-SIGLIP-02-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/foundation-vlm-open-world/siglip/images/final/WI033-SIGLIP-03-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/foundation-vlm-open-world/siglip/images/final/WI033-SIGLIP-04-r02-desktop.png",
+        "ok": true
+      }
+    ],
+    "overflow": false
+  },
+  {
+    "width": 390,
+    "topic": "llava",
+    "images": [
+      {
+        "src": "_course_content/generated-concepts/llava/wi027-llava-c1-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/llava/wi027-llava-c1-r03-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/llava/wi027-llava-d2-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/llava/wi027-llava-d2-r02-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/llava/wi027-vlm-d3-r03-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/llava/wi027-vlm-d3-r03-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/foundation-vlm-open-world/llava/images/final/WI033-LLAVA-01-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/foundation-vlm-open-world/llava/images/final/WI033-LLAVA-02-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/foundation-vlm-open-world/llava/images/final/WI033-LLAVA-03-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/foundation-vlm-open-world/llava/images/final/WI033-LLAVA-04-r01-desktop.png",
+        "ok": true
+      }
+    ],
+    "overflow": false
+  },
+  {
+    "width": 390,
+    "topic": "qwen-vl",
+    "images": [
+      {
+        "src": "_course_content/generated-concepts/qwen-vl/wi027-qwen-vl-c1-r03-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/qwen-vl/wi027-qwen-vl-c1-r03-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/qwen-vl/wi027-qwen-vl-d2-r03-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/qwen-vl/wi027-qwen-vl-d2-r03-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/llava/wi027-vlm-d3-r03-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/llava/wi027-vlm-d3-r03-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/foundation-vlm-open-world/qwen-vl/images/final/WI033-QWEN-01-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/foundation-vlm-open-world/qwen-vl/images/final/WI033-QWEN-02-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/foundation-vlm-open-world/qwen-vl/images/final/WI033-QWEN-03-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/foundation-vlm-open-world/qwen-vl/images/final/WI033-QWEN-04-r01-desktop.png",
+        "ok": true
+      }
+    ],
+    "overflow": false
+  },
+  {
+    "width": 390,
+    "topic": "gemini-vision",
+    "images": [
+      {
+        "src": "_course_content/generated-concepts/gemini-vision/wi027-gemini-vision-c1-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/gemini-vision/wi027-gemini-vision-c1-r02-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/gemini-vision/wi033-gemini-vision-main-failure-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/gemini-vision/wi033-gemini-vision-main-failure-r01-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/llava/wi027-vlm-d3-r03-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/llava/wi027-vlm-d3-r03-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/foundation-vlm-open-world/gemini-vision/images/final/WI033-GEMINI-01-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/foundation-vlm-open-world/gemini-vision/images/final/WI033-GEMINI-02-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/foundation-vlm-open-world/gemini-vision/images/final/WI033-GEMINI-03-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/foundation-vlm-open-world/gemini-vision/images/final/WI033-GEMINI-04-r01-desktop.png",
+        "ok": true
+      }
+    ],
+    "overflow": false
+  },
+  {
+    "width": 390,
+    "topic": "defectfill",
+    "images": [
+      {
+        "src": "_course_content/generated-concepts/defectfill/wi026-defectfill-c1-r03-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/defectfill/wi026-defectfill-c1-r02-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/defectfill/wi026-defectfill-d2-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/defectfill/wi026-defectfill-d2-r01-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/defectfill/wi026-generation-d3-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/defectfill/wi026-generation-d3-r01-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/diffusion-restoration/defectfill/images/final/WI033-DEFECTFILL-01-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/diffusion-restoration/defectfill/images/final/WI033-DEFECTFILL-02-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/diffusion-restoration/defectfill/images/final/WI033-DEFECTFILL-03-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/diffusion-restoration/defectfill/images/final/WI033-DEFECTFILL-04-r01-desktop.png",
+        "ok": true
+      }
+    ],
+    "overflow": false
+  },
+  {
+    "width": 390,
+    "topic": "anomalydiffusion",
+    "images": [
+      {
+        "src": "_course_content/generated-concepts/anomalydiffusion/wi026-anomalydiffusion-c1-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/anomalydiffusion/wi026-anomalydiffusion-c1-r01-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/anomalydiffusion/wi026-anomalydiffusion-d2-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/anomalydiffusion/wi026-anomalydiffusion-d2-r01-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/defectfill/wi026-generation-d3-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/defectfill/wi026-generation-d3-r01-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/diffusion-restoration/anomalydiffusion/images/final/WI033-ANOMALYDIFFUSION-01-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/diffusion-restoration/anomalydiffusion/images/final/WI033-ANOMALYDIFFUSION-02-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/diffusion-restoration/anomalydiffusion/images/final/WI033-ANOMALYDIFFUSION-03-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/diffusion-restoration/anomalydiffusion/images/final/WI033-ANOMALYDIFFUSION-04-r01-desktop.png",
+        "ok": true
+      }
+    ],
+    "overflow": false
+  },
+  {
+    "width": 390,
+    "topic": "tf-idg",
+    "images": [
+      {
+        "src": "_course_content/generated-concepts/tf-idg/wi026-tf-idg-c1-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/tf-idg/wi026-tf-idg-c1-r03-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/tf-idg/wi026-tf-idg-d2-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/tf-idg/wi026-tf-idg-d2-r01-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/defectfill/wi026-generation-d3-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/defectfill/wi026-generation-d3-r01-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/diffusion-restoration/tf-idg/images/final/WI033-TFIDG-01-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/diffusion-restoration/tf-idg/images/final/WI033-TFIDG-02-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/diffusion-restoration/tf-idg/images/final/WI033-TFIDG-03-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/diffusion-restoration/tf-idg/images/final/WI033-TFIDG-04-r01-desktop.png",
+        "ok": true
+      }
+    ],
+    "overflow": false
+  },
+  {
+    "width": 390,
+    "topic": "controlnet",
+    "images": [
+      {
+        "src": "_course_content/generated-concepts/controlnet/wi026-controlnet-c1-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/controlnet/wi026-controlnet-c1-r01-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/controlnet/wi026-controlnet-d2-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/controlnet/wi026-controlnet-d2-r01-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/controlnet/wi026-editing-d3-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/controlnet/wi026-editing-d3-r02-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/diffusion-restoration/controlnet/images/final/WI033-CONTROLNET-01-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/diffusion-restoration/controlnet/images/final/WI033-CONTROLNET-02-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/diffusion-restoration/controlnet/images/final/WI033-CONTROLNET-03-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/diffusion-restoration/controlnet/images/final/WI033-CONTROLNET-04-r01-desktop.png",
+        "ok": true
+      }
+    ],
+    "overflow": false
+  },
+  {
+    "width": 390,
+    "topic": "inpainting",
+    "images": [
+      {
+        "src": "_course_content/generated-concepts/inpainting/wi026-inpainting-c1-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/inpainting/wi026-inpainting-c1-r01-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/inpainting/wi026-inpainting-d2-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/inpainting/wi026-inpainting-d2-r01-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/controlnet/wi026-editing-d3-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/controlnet/wi026-editing-d3-r02-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/diffusion-restoration/inpainting/images/final/WI033-INPAINTING-01-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/diffusion-restoration/inpainting/images/final/WI033-INPAINTING-02-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/diffusion-restoration/inpainting/images/final/WI033-INPAINTING-03-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/diffusion-restoration/inpainting/images/final/WI033-INPAINTING-04-r01-desktop.png",
+        "ok": true
+      }
+    ],
+    "overflow": false
+  },
+  {
+    "width": 390,
+    "topic": "diffusion-restoration",
+    "images": [
+      {
+        "src": "_course_content/generated-concepts/diffusion-restoration/wi026-diffusion-restoration-c1-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/diffusion-restoration/wi026-diffusion-restoration-c1-r02-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/diffusion-restoration/wi026-restoration-d2-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/diffusion-restoration/wi026-restoration-d2-r02-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/diffusion-restoration/wi026-restoration-d3-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/diffusion-restoration/wi026-restoration-d3-r01-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/diffusion-restoration/diffusion-restoration/images/final/WI033-DIFFUSION-RESTORATION-01-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/diffusion-restoration/diffusion-restoration/images/final/WI033-DIFFUSION-RESTORATION-02-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/diffusion-restoration/diffusion-restoration/images/final/WI033-DIFFUSION-RESTORATION-03-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/diffusion-restoration/diffusion-restoration/images/final/WI033-DIFFUSION-RESTORATION-04-r02-desktop.png",
+        "ok": true
+      }
+    ],
+    "overflow": false
+  },
+  {
+    "width": 390,
+    "topic": "deblur",
+    "images": [
+      {
+        "src": "_course_content/generated-concepts/deblur/wi026-deblur-c1-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/deblur/wi026-deblur-c1-r02-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/deblur/wi026-deblur-d2-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/deblur/wi026-deblur-d2-r01-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/diffusion-restoration/wi026-restoration-d3-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/diffusion-restoration/wi026-restoration-d3-r01-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/diffusion-restoration/deblur/images/final/WI033-DEBLUR-01-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/diffusion-restoration/deblur/images/final/WI033-DEBLUR-02-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/diffusion-restoration/deblur/images/final/WI033-DEBLUR-03-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/diffusion-restoration/deblur/images/final/WI033-DEBLUR-04-r01-desktop.png",
+        "ok": true
+      }
+    ],
+    "overflow": false
+  },
+  {
+    "width": 390,
+    "topic": "super-resolution",
+    "images": [
+      {
+        "src": "_course_content/generated-concepts/super-resolution/wi026-super-resolution-c1-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/super-resolution/wi026-super-resolution-c1-r01-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/super-resolution/wi033-sr-same-board-counterexample-r02-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/super-resolution/wi033-sr-same-board-counterexample-r02-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/diffusion-restoration/wi026-restoration-d3-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "_course_content/generated-concepts/diffusion-restoration/wi026-restoration-d3-r01-mobile.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/diffusion-restoration/super-resolution/images/final/WI033-SUPERRES-01-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/diffusion-restoration/super-resolution/images/final/WI033-SUPERRES-02-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/diffusion-restoration/super-resolution/images/final/WI033-SUPERRES-03-r01-desktop.png",
+        "ok": true
+      },
+      {
+        "src": "roadmap-model-selection/diffusion-restoration/super-resolution/images/final/WI033-SUPERRES-04-r01-desktop.png",
+        "ok": true
+      }
+    ],
+    "overflow": false
+  }
+]

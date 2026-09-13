@@ -1,0 +1,8 @@
+[
+  "u-net",
+  "yolo-seg",
+  "ad-efficientad",
+  "convlstm",
+  "videomae",
+  "ad-diffad"
+]

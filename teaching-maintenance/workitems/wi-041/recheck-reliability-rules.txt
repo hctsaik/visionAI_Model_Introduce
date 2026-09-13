@@ -1,0 +1,25 @@
+✔ normal-only anomaly route asks for real independent anomalies, not promised detection rate (5.3667ms)
+✔ fixed slots use a rule baseline; changing placement changes route and data requirements (15.7284ms)
+✔ touching instances remain different from whole-region segmentation (0.6806ms)
+✔ millimetres without calibration cannot be presented as ready measurement (0.5315ms)
+✔ transcription uses OCR even when no corresponding course exists (0.8378ms)
+✔ poor visibility and occlusion take priority over model suggestions (0.3051ms)
+✔ unknown visibility never counts as a usable image (0.1937ms)
+✔ missing photos produce a collection action without model cards (0.3092ms)
+✔ unknown data, stale model and invalid answers cannot silently choose a route (0.5192ms)
+✔ generation for display does not ask irrelevant image visibility or training data (2.1799ms)
+✔ video tracking identifies pipeline dependencies rather than interchangeable models (0.7655ms)
+✔ stale branch answers do not change results or remain active questions (1.6729ms)
+✔ all tasks offer unknown, produce a consistent result, and reference existing courses (3.9997ms)
+✔ questions and evaluations do not mutate caller answers or shared definitions (0.4739ms)
+✔ every reachable complete answer path references real courses and preserves unmet prerequisites (305.1508ms)
+ℹ tests 15
+ℹ suites 0
+ℹ pass 15
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 501.8551
+
+EXIT: 0
